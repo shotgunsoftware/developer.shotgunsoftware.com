@@ -1,0 +1,57 @@
+# Copyright 2019 Autodesk, Inc.  All rights reserved.
+#
+# Use of this software is subject to the terms of the Autodesk license agreement
+# provided at the time of installation or download, or which otherwise accompanies
+# this software in either electronic or hard copy form.
+#
+
+language: python
+
+python:
+    - "2.7"
+
+env:
+  global:
+    - DOC_URL=https://developer.shotgunsoftware.com
+    - DOC_PATH=/developer-beta
+    - S3_BUCKET=doctest3
+    - S3_WEB_URL=http://doctest3.s3-website.eu-west-2.amazonaws.com
+
+cache:
+  pip: true
+  directories:
+     # manually cache ruby dependencies
+     - $TRAVIS_BUILD_DIR/tk-doc-generator/vendor/bundle
+
+before_install:
+  # required dependency for sphinx
+  - sudo apt-get install -y pandoc
+
+install:
+  #
+  # install pyside - from https://stackoverflow.com/questions/24489588
+  - sudo apt-get install libqt4-dev
+  - pip install PySide --no-index --find-links https://parkin.github.io/python-wheelhouse/;
+  - python ~/virtualenv/python${TRAVIS_PYTHON_VERSION}/bin/pyside_postinstall.py -install
+  #
+  # jekyll dependencies
+  - bundle install --gemfile=./tk-doc-generator/Gemfile --deployment
+  #
+  # sphinx dependnecies
+  - pip install -r ./tk-doc-generator/requirements.txt
+
+script:
+  # script that runs the CI and handles S3 previews
+  - python ./tk-doc-generator/travis-generate-docs.py
+
+deploy:
+  # When commiting to master, auto-deploy to github-pages
+  # This will copy the contents of the _build folder to gh-pages branch and push
+- provider: pages
+  local-dir: ./_build
+  target-branch: gh-pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  on:
+    # only do this when on the master branch
+    branch: master

@@ -1,0 +1,34 @@
+# This file holds data for the landing_page custom layout found in _layouts/landing_page.html
+
+# main logo image
+image: ./images/landing_page/sg_large_logo.png
+
+# main headline blurb
+content: Welcome to the Shotgun Developer Documentation Portal. This site contains a detailed technical reference for all of the ways you can interact with Shotgun programmatically, as well as tutorials, guides, and other educational resources for learning how to make the best use of all of Shotgun's integration points.
+
+# different tiles to be displayed below headline blurb
+tiles:
+- name: Shotgun
+  description: Use Shotgun’s APIs to connect directly to your data or Event Triggers to automate repetitive tasks.
+  image: ./images/landing_page/sg.png
+  target: ./docs/shotgun
+
+- name: Toolkit
+  description: Toolkit is an extendable platform for integrating artist applications and tools.
+  image: ./images/landing_page/tk.png
+  target: ./docs/toolkit
+
+- name: RV
+  description: RV is a powerful desktop review tool that gives artists and supervisors the ability to iterate faster.
+  image: ./images/landing_page/rv.png
+  target: ./docs/rv
+
+#- name: Guides
+#  description: Explore our collection of developer guides.
+#  image: ./images/book.png
+#  target: ./docs/guides
+#
+#- name: Videos
+#  description: Watch developer training videos.
+#  image: ./images/play.png
+#  target: ./docs/glossary
