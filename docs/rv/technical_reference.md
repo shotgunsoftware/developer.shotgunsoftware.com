@@ -6,7 +6,7 @@ parent: RV
 permalink: /rv/technical_reference
 ---
 
-#### Technical Reference Manual
+# RV Technical Reference Manual
 
 The Reference Manual is the starting place for learning how to customize RV. It contains an overview of RV’s package system and Mu scripting capabilities. It is the place to start if you want to change hotkeys, add menus, customize color management, create new widgets, or integrate RV with your pipeline.
 

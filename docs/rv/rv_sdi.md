@@ -6,10 +6,7 @@ parent: RV
 permalink: /rv/rv_sdi
 ---
 
-
-
-
-#### RV-SDI Manual
+# RV-SDI Manual
 
 This manual describes Tweak’s implementation of the NVIDIA SDI video device as a presentation mode device. For more information on presentation mode and how it relates to RV in general, see the RV User Manual. To use RV-SDI, you must run the `rv` (or `rv.exe`) executable, and have an `rvsdi` license.
 

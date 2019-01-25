@@ -6,7 +6,7 @@ parent: Shotgun
 permalink: /shotgun/action_menu_items
 ---
 
-### Action Menu Item Framework
+# Action Menu Item Framework
 
 Developers can customize context menu items on a per-entity basis. For example, from a Versions page, you could select multiple versions, right-click, then select a custom menu item that will build a PDF Report. We call these Action Menu Items, or AMIs.
 
