@@ -35,7 +35,7 @@ install:
   - python ~/virtualenv/python${TRAVIS_PYTHON_VERSION}/bin/pyside_postinstall.py -install
   #
   # jekyll dependencies
-  - bundle install --deployment
+  - bundle install --gemfile=./tk-doc-generator/Gemfile --deployment
   #
   # sphinx dependnecies
   - pip install -r ./tk-doc-generator/requirements.txt
