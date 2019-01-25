@@ -11,17 +11,17 @@ tiles:
 - name: Shotgun
   description: Use Shotgun’s APIs to connect directly to your data or Event Triggers to automate repetitive tasks.
   image: ./images/landing_page/sg.png
-  target: ./docs/shotgun
+  target: ./shotgun
 
 - name: Toolkit
   description: Toolkit is an extendable platform for integrating artist applications and tools.
   image: ./images/landing_page/tk.png
-  target: ./docs/toolkit
+  target: ./toolkit
 
 - name: RV
   description: RV is a powerful desktop review tool that gives artists and supervisors the ability to iterate faster.
   image: ./images/landing_page/rv.png
-  target: ./docs/rv
+  target: ./rv
 
 #- name: Guides
 #  description: Explore our collection of developer guides.
