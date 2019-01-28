@@ -1,0 +1,19 @@
+# Copyright 2019 Autodesk, Inc.  All rights reserved.
+#
+# Use of this software is subject to the terms of the Autodesk license agreement
+# provided at the time of installation or download, or which otherwise accompanies
+# this software in either electronic or hard copy form.
+#
+
+# jekyll configuration file for Shotgun Developer Site Environment
+
+# Site settings
+title: SG Developer
+description: Resources for Shotgun Developers.
+
+# i18n configuration for all languages shotgun supports
+languages: ["en", "ko", "ja", "zh_CN"]
+lang_vars: ["English", "한국어", "日本語", "简体中文"]
+default_lang: "en"
+
+
