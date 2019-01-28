@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Toolkit
+title: トゥキツ
 nav_order: 3
 permalink: /toolkit
 has_children: true
