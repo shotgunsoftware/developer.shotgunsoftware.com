@@ -8,3 +8,22 @@
 This repository holds the source materials for the Shotgun Developer site.
 
 You can find the developer site [here](http://developer.shotgunsoftware.com/developer-beta/).
+
+## Formatting
+
+### Landing page
+
+## How to make a change
+
+- Pull request
+- 
+
+
+- pull requests
+- naming of commits
+- etc
+
+
+## Internationalization
+
+
