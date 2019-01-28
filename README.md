@@ -26,7 +26,7 @@ in as large chunks as possible.
 Once your Pull request has been reviewed and approved, merge it with master. Make sure to 
 put in a meaningful title and description, and include the pull request id. For example:
 
-[image]
+![PR](pr.png)
 
 
 ### Page headers
