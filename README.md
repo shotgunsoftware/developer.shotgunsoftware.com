@@ -1,4 +1,4 @@
-[![Shotgun Developer Docs](https://img.shields.io/badge/Shotgun-eveloper%20docs-blue.svg)](http://developer.shotgunsoftware.com/developer-beta/)
+[![Shotgun Developer Docs](https://img.shields.io/badge/Shotgun-Developer%20docs-blue.svg)](http://developer.shotgunsoftware.com/developer-beta/)
 [![Build Status](https://secure.travis-ci.org/shotgunsoftware/developer-beta.svg?branch=master)](http://travis-ci.org/shotgunsoftware/developer-beta)
 
 
