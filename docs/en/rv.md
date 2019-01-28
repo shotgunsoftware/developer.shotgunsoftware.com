@@ -2,7 +2,7 @@
 layout: default
 title: RV
 nav_order: 4
-permalink: /rv
+permalink: /rv/
 has_children: true
 ---
 

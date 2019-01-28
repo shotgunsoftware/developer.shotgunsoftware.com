@@ -3,7 +3,7 @@ layout: default
 title: User Manual
 nav_order: 1
 parent: RV
-permalink: /rv/user_manual
+permalink: /rv/user_manual/
 ---
 
 # RV User Manual

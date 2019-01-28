@@ -2,7 +2,7 @@
 layout: default
 title: Shotgun
 nav_order: 2
-permalink: /shotgun
+permalink: /shotgun/
 has_children: true
 ---
 

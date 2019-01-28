@@ -4,7 +4,7 @@ title: App APIs
 nav_order: 3
 parent: Toolkit
 has_children: true
-permalink: /toolkit/app_apis
+permalink: /toolkit/app_apis/
 ---
 
 # Toolkit App APIs

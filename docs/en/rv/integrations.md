@@ -3,7 +3,7 @@ layout: default
 title: Integrations
 nav_order: 4
 parent: RV
-permalink: /rv/integrations
+permalink: /rv/integrations/
 ---
 
 # RV Integrations
