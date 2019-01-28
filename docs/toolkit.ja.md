@@ -4,9 +4,10 @@ title: Toolkit
 nav_order: 3
 permalink: /toolkit
 has_children: true
+lang: ja
 ---
 
-# Toolkit 
+# トゥキツ 
 
 Toolkit is an extendable platform for integrating artist applications and pipeline tools with Shotgun.
 
