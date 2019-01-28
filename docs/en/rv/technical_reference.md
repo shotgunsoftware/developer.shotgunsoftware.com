@@ -3,7 +3,7 @@ layout: default
 title: Technical Reference
 nav_order: 2
 parent: RV
-permalink: /rv/technical_reference
+permalink: /rv/technical_reference/
 ---
 
 # RV Technical Reference Manual

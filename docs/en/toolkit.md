@@ -2,7 +2,7 @@
 layout: default
 title: Toolkit
 nav_order: 3
-permalink: /toolkit
+permalink: /toolkit/
 has_children: true
 ---
 

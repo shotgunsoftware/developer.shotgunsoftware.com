@@ -3,7 +3,7 @@ layout: default
 title: Action Menu Items
 nav_order: 4
 parent: Shotgun
-permalink: /shotgun/action_menu_items
+permalink: /shotgun/action_menu_items/
 ---
 
 # Action Menu Item Framework

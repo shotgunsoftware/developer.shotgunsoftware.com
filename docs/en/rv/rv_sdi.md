@@ -3,7 +3,7 @@ layout: default
 title: RV-SDI 
 nav_order: 3
 parent: RV
-permalink: /rv/rv_sdi
+permalink: /rv/rv_sdi/
 ---
 
 # RV-SDI Manual

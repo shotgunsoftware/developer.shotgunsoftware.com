@@ -4,7 +4,7 @@ title: Frameworks
 nav_order: 2
 parent: Toolkit
 has_children: true
-permalink: /toolkit/frameworks
+permalink: /toolkit/frameworks/
 ---
 
 # Toolkit Frameworks
