@@ -1,0 +1,19 @@
+# This file holds data for the landing_page custom layout found in _layouts/landing_page.html
+
+# main logo image
+image: ./images/landing_page/sg_large_logo.png
+
+# different tiles to be displayed below headline blurb
+tiles:
+- image: ./images/landing_page/sg.png
+  target: ./shotgun
+  name: shotgun
+
+- image: ./images/landing_page/tk.png
+  target: ./toolkit
+  name: toolkit
+
+- image: ./images/landing_page/rv.png
+  target: ./rv
+  name: rv
+
