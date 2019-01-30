@@ -55,7 +55,7 @@ In this guide you will use the Shotgun Advanced Configuration Wizard to generate
 
 **Step 1:** Create a new project in Shotgun called "the_other_side.”
 
-![alt text](../../images/guides/getting-started/2_new_project.png "New project")
+![New project](../../../images/learning_content/toolkit_basics_guides/advanced_config/2_new_project.png)
 
 **Step 2:** Launch the Shotgun Desktop app and log in using the same username and password from your Shotgun site.
 
