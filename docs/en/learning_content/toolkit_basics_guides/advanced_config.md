@@ -10,7 +10,7 @@ permalink: learning_content/toolkit_basics_guides/advanced_config/
  
 ## About the guide
  
-This guide will describe how to create an Advanced Configuration for a digital content creation pipeline by utilizing the Default Configuration that comes standard with Shotgun Toolkit. You will quickly become acquainted with the configuration tools, learn how to create a simple Advanced Configuration, and be presented with opportunities to learn more. Using the Advanced Configuration Wizard prepares a project’s configuration to be customized allowing the development of user environments. The environments control aspects of the UI, Shotgun Apps, and various tools necessary to support a proprietary production pipeline. Using the Advanced Configuration is just one way to edit a configuration. It will create several settings for you, so you have some standard apps and settings to utilize when you're first setting up a Pipeline Configuration.  
+This guide will describe how to create an Advanced Configuration for a digital content creation pipeline by utilizing the Default Configuration that comes standard with Shotgun Toolkit. You will quickly become acquainted with the configuration tools, learn how to create an Advanced Configuration, and be presented with opportunities to learn more. Using the Advanced Configuration Wizard prepares a baseline configuration for you to edit and extend adding environmets to support each step in your pipeline. The environments control aspects of the UI, Shotgun Apps, and various tools necessary to create a proprietary production pipeline. Using the Advanced Configuration is just one way to extend a configuration. Allong with adding environments it will create several basic settings and add some apps making it easier to utilize and customize to your needs.  
 
 This guide assumes the user: 
 
@@ -47,8 +47,7 @@ A Configuration is required for every project. The first time a project is acces
 
 ## Difference between the Default Configuration and Basic Configuration.
 
-|    &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;    SHOTGUN CONFIGURATIONs     &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   |
-| :-----------------------------------------------------: |
+## SHOTGUN CONFIGURATIONs
 
 | BASIC CONFIGURATION | DEFAULT CONFIGURATION |
 |:-------------------:|:---------------------:|
@@ -66,8 +65,8 @@ A Configuration is required for every project. The first time a project is acces
 |   | • Motionbuilder |
 |   | • Mari|
 | Change settings, add environments, modify Hooks into core code, create custom tools and apps | Change settings, add environments, modify Hooks into core code, create custom tools and apps |
-| Add software application integrations not included in the default and choose which ones are available in desktop | Can add software application integrations not included in the default and choose which ones are available in desktop |
-| Basic toolkit apps beyond software integrations included: | More toolkit apps beyond software integrations and more the basics included: |
+| Add software application integrations not included in the default and choose which ones are available in desktop | Add software application integrations not included in the default and choose which ones are available in desktop |
+| Basic toolkit apps beyond software integrations included: | More toolkit apps beyond software integrations included: |
 | • The panel | • The panel |
 | • Publisher | • Publisher |
 | • Loader | • Loader |
