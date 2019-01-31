@@ -47,22 +47,42 @@ A Configuration is required for every project. The first time a project is acces
 
 ## Difference between the Default Configuration and Basic Configuration.
 
-![alt text](../../images/guides/getting-started/1_config_comparison.png "Configuration comparison chart")
+|    &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;    SHOTGUN CONFIGURATIONs     &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   |
+| :-----------------------------------------------------: |
 
-| SHOTGUN CONFIGURATIONs        |
-| ----------------------------- |
-| # BASIC VS. DEFAULT #         |
-|:-----------------------------:|
-| A Basic Configuration is automatically downloaded and
-updated from a GitHub repository when a project is
-accessed and cannot be edited. | A Default Configuration is automatically downloaded from a
-GitHub repository when using the Advanced Configuration
-Tool, it overrides the Basic Configuration, and can be edited.|
-|:-------------:|:-------------:|
 | BASIC CONFIGURATION | DEFAULT CONFIGURATION |
-| A hidden file with limited settings that can be edited directly.| An accessible and editable file to get you started. It meets the needs of a simple pipeline workflow.|
-| A hidden file with limited settings that can be edited directly.| An accessible and editable file with a lot of basic pipeline tools embeded to get you started and meets the
+|:-------------------:|:---------------------:|
+| A Basic Configuration is automatically downloaded and updated from a GitHub repository when a project is accessed. | A Default Configuration is automatically downloaded from a GitHub repository when using the Advanced Configuration Tool and takes the place of the Basic Configuration.|
+| A hidden file with limited settings that can be edited.| An accessible file with settings that meet the needs of a simple pipeline workflow and can be edited.|
 | Automatically updated when core changes are made to shotgun | Automatically updated when core changes are made to shotgun |
+| BASIC SOFTWARE INTEGRATIONS: | MORE SOFTWARE INTEGRATIONS: |
+| • 3d max | • 3D Max | 
+| • Houdini | • Houdini |
+| • Maya | • Maya |
+| • Nuke | • Nuke |
+| • Photoshop | • Photoshop |
+| • Flame | • Flame |
+|   | • Hiero |
+|   | • Motionbuilder |
+|   | • Mari|
+| Change settings, add environments, modify Hooks into core code, create custom tools and apps | Change settings, add environments, modify Hooks into core code, create custom tools and apps |
+| Add software application integrations not included in the default and choose which ones are available in desktop | Can add software application integrations not included in the default and choose which ones are available in desktop |
+| Basic toolkit apps beyond software integrations included: | More toolkit apps beyond software integrations and more the basics included: |
+| • The panel | • The panel |
+| • Publisher | • Publisher |
+| • Loader | • Loader |
+|   | • Launch application |
+|   | • Workfiles
+|   | • Sync frame range with shotgun
+|   | • Screening room integration
+|   | • Scene breakdown
+|   | • Shotgun python console
+|   | • Scene snapshot
+|   | • Review submission
+|   | • Perforce
+|   | • About shotgun pipeline toolkit
+|   | • Shotgun toolkit demos
+|   | * *These are just the basics. There’s so much more than what’s listed here. Some apps work only in relevant software integrations, or are specific to administering shotgun.*
 
 In this guide you will use the Shotgun Advanced Configuration Wizard to generate a Default Configuration and associate it with a project. Generating a Default Configuration sets you up for editing the configuration to allow for the customizations necessary to support a proprietary production pipeline.
 
