@@ -163,7 +163,7 @@ Below are some ways you can have fun with configurations
 
 ## Using the command line to create a default configuration
 
-The "tank set_up” command will run a script that creates a default configuration and don’t worry if you follow the guide carefully you won’t blow anything up. 
+The `tank set_up` command will run a script that creates a default configuration and don’t worry if you follow the guide carefully you won’t blow anything up. 
 
 ## About the tank command.
 
