@@ -10,7 +10,7 @@ permalink: learning_content/toolkit_basics_guides/advanced_config/
  
 ## About the guide
  
-This guide will describe how to create an Advanced Configuration for a digital content creation pipeline by utilizing the Default Configuration that comes standard with Shotgun Toolkit. You will quickly become acquainted with the configuration tools, learn how to create a simple Advanced Configuration, and be presented with opportunities to learn more. Using the Advanced Configuration Wizard prepares a project’s configuration to be customized allowing the development of user environments. The environments control aspects of the UI, Shotgun Apps, and various tools necessary to support a proprietary production pipeline. 
+This guide will describe how to create an Advanced Configuration for a digital content creation pipeline by utilizing the Default Configuration that comes standard with Shotgun Toolkit. You will quickly become acquainted with the configuration tools, learn how to create a simple Advanced Configuration, and be presented with opportunities to learn more. Using the Advanced Configuration Wizard prepares a project’s configuration to be customized allowing the development of user environments. The environments control aspects of the UI, Shotgun Apps, and various tools necessary to support a proprietary production pipeline. Using the Advanced Configuration is just one way to edit a configuration. It will create several settings for you, so you have some standard apps and settings to utilize when you're first setting up a Pipeline Configuration.  
 
 This guide assumes the user: 
 
@@ -48,6 +48,21 @@ A Configuration is required for every project. The first time a project is acces
 ## Difference between the Default Configuration and Basic Configuration.
 
 ![alt text](../../images/guides/getting-started/1_config_comparison.png "Configuration comparison chart")
+
+| SHOTGUN CONFIGURATIONs        |
+| ----------------------------- |
+| # BASIC VS. DEFAULT #         |
+|:-----------------------------:|
+| A Basic Configuration is automatically downloaded and
+updated from a GitHub repository when a project is
+accessed and cannot be edited. | A Default Configuration is automatically downloaded from a
+GitHub repository when using the Advanced Configuration
+Tool, it overrides the Basic Configuration, and can be edited.|
+|:-------------:|:-------------:|
+| BASIC CONFIGURATION | DEFAULT CONFIGURATION |
+| A hidden file with limited settings that can be edited directly.| An accessible and editable file to get you started. It meets the needs of a simple pipeline workflow.|
+| A hidden file with limited settings that can be edited directly.| An accessible and editable file with a lot of basic pipeline tools embeded to get you started and meets the
+| Automatically updated when core changes are made to shotgun | Automatically updated when core changes are made to shotgun |
 
 In this guide you will use the Shotgun Advanced Configuration Wizard to generate a Default Configuration and associate it with a project. Generating a Default Configuration sets you up for editing the configuration to allow for the customizations necessary to support a proprietary production pipeline.
 
