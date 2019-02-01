@@ -14,7 +14,7 @@ This guide describes how to use the Advanced Configuration Wizard to create a De
 
 This guide assumes the user: 
 
-1. Has never used the Advanced Configuration Wiard
+1. Has never used the Advanced Configuration Wizard
 2. Has some basic knowledge of how to use Shotgun
 3. Is new to Shotgun Toolkit. 
 
