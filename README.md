@@ -25,6 +25,22 @@ put in a meaningful title and description, and include the pull request id. For 
 
 ![PR](pr.png)
 
+### Content Authoring guidelines
+
+#### Diagrams and figures
+- Use https://www.draw.io/ to author diagrams.
+- The source file should be saved next to the image.
+- Open sans (https://fonts.google.com/specimen/Open+Sans) should be used for text.
+- We are not translating any images, so text should be kept to a minimum.
+- Exported images should be 144dpi and stored in png format.
+- Graphics should be functional in style, typically using grayscales only.
+
+#### Screenshots
+- Screenshots should be 144dpi and stored in png format
+- Post processing should be kept to a minimum
+- If possible, screenshot an entire window rather than cropping things
+    - Use CMD+SHIFT+4 on the mac for easy screenshots of windows
+
 
 ### Page headers
 
