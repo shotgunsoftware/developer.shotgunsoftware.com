@@ -6,7 +6,7 @@ parent: Toolkit Basics Guides
 permalink: learning_content/toolkit_basics_guides/advanced_config/
 ---
 
-# Preparing a configuration to be edited
+# Getting started with configurations
  
 ## About the guide
  
