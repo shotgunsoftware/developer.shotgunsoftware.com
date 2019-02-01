@@ -20,3 +20,19 @@ default_lang: "en"
 jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: UA-2114792-9        # Required - replace with your tracking id
+
+# html social open graph metadata and favicon
+additional_head_html: >
+  <meta property="og:image:height" content="1257">
+  <meta property="og:image:width" content="2400">
+  <meta property="og:title" content="Shotgun Developer">
+  <meta property="og:description" content="This site contains detailed technical reference for all of the ways you can interact with Shotgun programmatically, as well as tutorials, guides, and other educational resources for learning how to make the best use of all of Shotgun's integration points.">
+  <meta property="og:url" content="https://developer.shotgunsoftware.com">
+  <meta property="og:image" content="https://developer.shotgunsoftware.com/open_graph.png/og-image.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
