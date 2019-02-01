@@ -10,11 +10,11 @@ permalink: learning_content/toolkit_basics_guides/advanced_config/
  
 ## About the guide
  
-This guide describes how to use the Advanced Configuration tool to create a Default Configuration for a digital content creation pipeline. The Default Configuration comes standard with Shotgun Toolkit and gives the user a good base to build from. You will quickly become acquainted with the configuration tools, learn how to use the Advanced Configuration tool, and be presented with opportunities to learn more. Using the Advanced Configuration Wizard prepares a baseline configuration for you to edit and extend adding environments to support each step in your pipeline. The environments control aspects of the UI, Shotgun Apps, and various tools necessary to create a proprietary production pipeline. Using the Advanced Configuration tool is just one way to extend a configuration. Along with adding default environments it will create several basic settings and add some apps making it easier to utilize and customize to your needs.  
+This guide describes how to use the Advanced Configuration Wizard to create a Default Configuration for a digital content creation pipeline. The Default Configuration comes standard with Shotgun Toolkit and gives the user a good base to build from. You will quickly become acquainted with the configuration tools, learn how to use the Advanced Configuration Wizard, and be presented with opportunities to learn more. Using the Advanced Configuration Wizard prepares a baseline configuration for you to edit and extend adding environments to support each step in your pipeline. The environments control aspects of the UI, Shotgun Apps, and various tools necessary to create a proprietary production pipeline. Using the Advanced Configuration Wizard is just one way to extend a configuration. Along with adding default environments it will create several basic settings and add some apps making it easier to utilize and customize to your needs.  
 
 This guide assumes the user: 
 
-1. Has never created an Advanced Configuration
+1. Has never used the Advanced Configuration Wiard
 2. Has some basic knowledge of how to use Shotgun
 3. Is new to Shotgun Toolkit. 
 
@@ -23,7 +23,7 @@ After completing this guide, the user will have the knowledge fundamental to exp
 
 ## Using this document
  
-To use this guide and create an Advanced Configuration the following is required:
+To use this guide and create a Default Configuration the following is required:
 
 1. An active Shotgun site. You can register for Shotgun [here](https://www.shotgunsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) and get a 30-day trial to begin exploring. 
 2. Shotgun Desktop. If Desktop is not installed, you can begin by following this [link.]( https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) 
@@ -33,7 +33,7 @@ To use this guide and create an Advanced Configuration the following is required
   
 ## About the Advanced Project Setup Wizard
 
-The Advanced Project Setup Wizard in Shotgun Desktop generates the configuration necessary to support customizations to meet the needs of your production pipeline. Using the Advanced Project Setup Wizard, you can extend the Default Configuration creating a configuration specific to a project’s proprietary pipeline needs. 
+The Advanced Project Setup Wizard in Shotgun Desktop generates a configuration that provides a solid base to build on adding customizable settings, apps and environments to support a production pipeline. It creates a Default Configuration you can edit and extend to met your needs.
 
 The Default Configuration includes: 
 * A basic filesystem schema and templates that determine where files live on disk 
