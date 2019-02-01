@@ -85,7 +85,7 @@ A Configuration is required for every project. The first time a project is acces
 
 In this guide you will use the Shotgun Advanced Configuration Wizard to generate a Default Configuration and associate it with a project. Generating a Default Configuration sets you up for editing the configuration to allow for the customizations necessary to support a proprietary production pipeline.
 
-## Prepare for creating a Default Configuration
+## Prepare to create a Default Configuration
 
 **Step 1:** Create a new project in Shotgun called "the_other_side.”
 
