@@ -22,10 +22,10 @@ To use this guide and perform an edit on a pipeline configuration the following 
 
 1. An active [Shotgun](https://www.shotgunsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) site.
 2. A project with at least one asset, or you can add an asset to the_other_side project you created in the first guide. You can review how to create an asset for a project [here](link). Or follow these simple steps.
-   1. Open the project in a Shotgun site
-   2. From within the project, select the +Asset button
-   3. Fill out the form with Asset Name and Asset Type
-   4. Select Create Asset
+   * Open the project in a Shotgun site
+   * From within the project, select the +Asset button
+   * Fill out the form with Asset Name and Asset Type
+   * Select Create Asset
 3. An Advanced Configuration for the identified project, or complete the [Shotgun Toolkit Advanced Configuration Getting Started Guide](link) and use the configuration created in that exercise.
 4. Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
 5. Shotgun Desktop installed on your system.
