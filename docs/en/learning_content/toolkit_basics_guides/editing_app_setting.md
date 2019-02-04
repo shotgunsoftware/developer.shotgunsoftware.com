@@ -26,16 +26,16 @@ To use this guide and perform an edit on a pipeline configuration the following 
    * From within the project, select the +Asset button
    * Fill out the form with Asset Name and Asset Type
    * Select Create Asset
-3. An Advanced Configuration for the identified project, or complete the [Shotgun Toolkit Advanced Configuration Getting Started Guide](link) and use the configuration created in that exercise.
+3. An Advanced Configuration for the identified project, or complete the [Getting started with configurations](link) and use the configuration created in that exercise.
 4. Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
 5. Shotgun Desktop installed on your system.
 6. An active subscription for Maya. Get a 30 day trial of Maya [here](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689) 
 
-NOTE: This guide is based on the tk-config-default2 pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here.
+NOTE: This guide is based on the `tk-config-default2` pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here.
 
 ## About the Workfiles Application
 
-The Workfiles App governs file management in Shotgun Toolkit and controls access to functionality for browsing, opening, and saving Workfiles and [Publishes](link to glossary). The **+New Task** button is an action of the Workfiles App and allows a user to add a task to any appropriate phase of the pipeline. The configuration is broken down into blocks representing each step in the pipeline. This allows you to manage functionality relative to each step in a pipeline controlling when a user can create, name and save files, execute tasks, or perform certain functions. Each block in the configuration defines the environment the artist is working in. The settings can be very high-level, for example not allowing any artist within Maya to add a file or create a new task, or very granular, stating that an artist working on assets can’t add a new file or a new task at a specific step in the pipeline. This is relevant for all the functions in the Workfiles App. Find more details in the [Advanced Topics](##advanced-topics) at the end of this document.
+The Workfiles App governs file management in Shotgun Toolkit and controls access to functionality for browsing, opening, and saving Workfiles and [Publishes](link to glossary). The **+New Task** button is an action of the Workfiles App and allows a user to add a task to any appropriate phase of the pipeline. The configuration is broken down into blocks representing each step in the pipeline. This allows you to manage functionality relative to each step in a pipeline controlling when a user can create, name and save files, execute tasks, or perform certain functions. Each block in the configuration defines the environment the artist is working in. The settings can be very high-level, for example not allowing any artist within Maya to add a file or create a new task, or very granular, stating that an artist working on assets can’t add a new file or a new task at a specific step in the pipeline. This is relevant for all the functions in the Workfiles App. Find more details in the [Advanced Topics](#advanced-topics) at the end of this document.
  
 ## Getting familiar with the configuration files
 
