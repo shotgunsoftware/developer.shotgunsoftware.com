@@ -278,7 +278,7 @@ For example, you might offer Nuke for artists working on **shot** tasks, but Mar
 
 Shotguns structure enables configurations to be easily manipulated when creating environments and adding pipeline steps. This allows the code to be lightweight, sparse, and consistent.
 
-## Creating environments based on your artist tasks
+## Creating environments based on your artist's tasks
 
 Environments are based on the tasks artists are performing and the software they’re using to do the task. Studio pipelines commonly have different workflows based on tasks. If in your studio, asset artists, like modelers and riggers working in Maya, are authorized to create their own tasks, but shot artists, like animators and lighters working in Houdini, are expected to work on tasks that production has created for them you could achieve this by editing a few settings in the configuration to make the **+New Task** button available for asset artists working in Maya, but not available for shot artists working in Houdini. This creates two specific environments based on the task the artist is performing and the software they are using to execute the task.
 
