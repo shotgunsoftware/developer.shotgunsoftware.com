@@ -276,7 +276,7 @@ For example, you might offer Nuke for artists working on **shot** tasks, but Mar
 
   * You might also have different *versions* of Maya for various steps in a pipeline requiring a new feature that only the latest beta release has, but you wouldn’t want to use a beta version for all the tasks you’re performing with Maya. In this case you would need two different environments.
 
-The environment structure enables configurations to be easily manipulated when creating, copying, and cloning. This allows the code to be lightweight, sparse, and consistent.
+Shotguns structure enables configurations to be easily manipulated when creating environments and adding pipeline steps. This allows the code to be lightweight, sparse, and consistent.
 
 ## Creating environments based on your artist tasks
 
