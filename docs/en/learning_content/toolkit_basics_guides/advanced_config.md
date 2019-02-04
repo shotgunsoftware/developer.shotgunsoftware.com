@@ -211,15 +211,12 @@ There's a lot you can do with the [tank command](https://support.shotgunsoftware
 
 Sharing configuration files allows all users with specified roles on a project to work in the same environment instantaneously. An environment is loaded based on the task the user is performing and each task can have their own environment with specific tools, UI and apps specific to that task. The simplest way to distribute a Toolkit configuration to a group of users, whether these are distributed in different locations or all working in the same building, is to [upload the configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#uploading-a-configuration-to-shotgun) to Shotgun.
 
-There will be times when you want to edit a configuration that is currently in production and you won't want to edit it while artists are using it. With just a few commands you can create a temporary copy, edit and test that copy then replace the production configuration with the new one. Shotgun provides a way to clone an existing configuration and setup a temporary Sandbox where it can be edited, tested and pushed into production. 
+There will be times when you want to edit a configuration that is currently in production and you won't want to edit it while artists are using it. With just a few commands Shotgun provides a way to copy an existing configuration, setup a temporary Sandbox to edit and test the cloned configuration, and then push it into production. This process replaces the production configuration with the new one and automatically backsup the old one. Here are some basics on [configuration management](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Basics%20of%20configuration%20management).
 
-You can clone a configuration and customize it for a specific task.
+## Working with more than one root folder
 
-Here are some basics on [configuration management](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Basics%20of%20configuration%20management).
+Ideally your facility would want to be optimized for specific tasks and for processing those tasks. Shotgun helps you with both. You can work with more than one root folder to optimize things like video playback for dailies on one server and interactive processing on another. What if you want to share files with a client? The easiest way is to give them a link to view the content on your server and create a share drive specifically for that reason while keep your work files in a secure drive somewhere else. You wouldn't want them to see what else you might be working on. Here's how to do [that](https://support.shotgunsoftware.com/hc/en-us/articles/219040478-How-do-I-convert-my-project-from-a-single-root-to-a-multi-root-configuration-).
 
-What is setting up a project programmatically and why do it?
-https://shotgunsoftware.zendesk.com/agent/tickets/94108
-
-## Working with more than one Root folder.
+You can see how cloning a configuration and customizing it for a specific task is important as well as setting things up to work more effectively.
 
 Jump into the next getting started guide. [Editing a Pipeline Configuration](link)
