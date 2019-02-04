@@ -191,25 +191,35 @@ And now the real fun begins, learning all the things you can do with the Configu
 
 # Advanced Topics
 
-Shotgun Toolkit provides many convenient ways to edit, clone, or take over a configuration. Extending existing configurations will save time and allow you access to all of the cool stuff that others within your network have created. You can take advantage of the vast Shotgun (community)[link to a good place in the community] that may have the exact configuration you need. The Shotgun community is a sharing community, so be kind, say thank you, and recognize the person who created the configuration that helped you get the job done. Oh, and don’t forget to give back, it’s how we help our fellow Shotgun gurus and what makes it so special to be a part of it! 
+Shotgun Toolkit provides many convenient ways to edit, clone, or take over a configuration. Extending existing configurations will save time and allow you access to all of the cool stuff that others within your network have created. You can take advantage of the vast Shotgun (community)[link to a good place in the community] that may have the exact configuration you need. The Shotgun community is a sharing community, so be kind, say thank you, and recognize the person who created the configuration that helped you get the job done. Oh, and don’t forget to give back, it’s how we help our fellow Shotgun gurus and what makes it so special to be a part of this community! 
 
 Below are some ways you can have fun with configurations
 
 ## Using the command line to create a default configuration
 
-The `tank set_up` command will run a script that creates a default configuration and don’t worry if you follow the guide carefully you won’t blow anything up. 
+From inside any project configuration the tank command lets you run administrative commands and apps from a command shell. The tank command lets you run administrative commands and apps from a command shell. Each new project you create gets its own Core API with a tank command. The `tank set_up` command will run a script that creates a default configuration and don’t worry if you follow the guide carefully you won’t blow anything up. 
 
-## About the tank command.
+If you’re not currently logged into your project in Desktop when using the tank command, you will be prompted to login. To see all available commands for a project navigate to a project configuration and execute the tank command:
 
-Sharing configuration files between users. This allows the users with specific roles on a project to be working in the same environment instantaneously. https://developer.shotgunsoftware.com/tk-core/initializing.html#uploading-a-configuration-to-shotgun 
+$ cd  ../configs/your_project_name
 
-Cloning a configuration and customizing it for a specific user.
-Cloning a configuration and using a Sandbox to edit it. 
+$ ./tank
+
+There's a lot you can do with the tank command. (https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#Using%20the%20tank%20command)
+
+## Sharing configuration files between users
+
+Sharing configuration files allows all users with specified roles on a project to work in the same environment instantaneously. An environment is loaded based on the task the user is performing and each task can have their own environment with specific tools, UI and apps specific to that task. The simplest way to distribute a Toolkit configuration to a group of users, whether these are distributed in different locations or all working in the same building, is to [upload the configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#uploading-a-configuration-to-shotgun) to Shotgun  
+
+There will be times when you want to edit a configuration that is currently in production and you won't want to edit it while artists are using it. With just a few commands you can create a temporary copy, edit and test that copy then replace the production configuration with the new one. Shotgun provides a way to clone an existing configuration and setup a temporary Sandbox where it can be edited, tested and pushed into production. 
+
+You can clone a configuration and customize it for a specific task.
+
+Here are some basics for [configuration management](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration).
 
 What is setting up a project programmatically and why do it?
 https://shotgunsoftware.zendesk.com/agent/tickets/94108
 
 ## Working with more than one Root folder.
 
-Jump into the next getting started guide.
-Editing a Pipeline Configuration, changing an App Setting
+Jump into the next getting started guide. [Editing a Pipeline Configuration, changing an App Setting](link)
