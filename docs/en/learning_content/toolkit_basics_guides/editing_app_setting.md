@@ -6,11 +6,11 @@ parent: Toolkit Basics Guides
 permalink: learning_content/toolkit_basics_guides/editing_app_setting
 ---
 
-# Editing Pipeline Configurations, changing an App Setting
+# Editing a Pipeline Configurations
  
 ## About the guide
  
-This guide describes how to edit settings within an existing Pipeline Configuration to meet the needs of a project pipeline. The first guide, [Shotgun Toolkit editing a configuration getting started guide](link), described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create an Advanced Configuration, complete the Advanced Configuration Guide before proceeding.
+This guide describes how to edit settings within an existing Pipeline Configuration to meet the needs of a project pipeline. The first guide, [Editing a Pipeline Configuration](link), described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create an Advanced Configuration, complete the Advanced Configuration Guide before proceeding.
 
 Through extending the Default Configuration, Shotgun Toolkit enables the creation of custom workspace [environments](link to environments document) creating an integrated UI that allows for custom pipeline workflows. An example of a customization might be as simple as enabling and disabling a button to control at what step in a pipeline a function of a Toolkit App can or cannot be used, and by whom. These customizations change the way specified users interact with the Apps. Toolkit allows proprietary configurations that enable you to work smarter and faster by: creating custom workflows, automating repetitive and mundane tasks, modifying hooks as well as adding custom tools. Unfortunately, it’s only accessible through Shotgun, and not yet released for everyday tasks like washing your clothes.
 
@@ -184,7 +184,7 @@ Looking for the `settings.tk-multi-workfiles2.launch_at_startup` in tk-maya.yml
 
 
 
-Step 18: Search the `tk-maya.yml` file for `project`. You are specifically looking to disable the **+New Task** button in the Project Environment of a specific project. You are in the configuration for that project and obtained the location information while you were in the Project Environment. 
+**Step 18:** Search the `tk-maya.yml` file for `project`. You are specifically looking to disable the **+New Task** button in the Project Environment of a specific project. You are in the configuration for that project and obtained the location information while you were in the Project Environment. 
 
 
 
@@ -192,9 +192,9 @@ Under `settings.tk-maya.projects`, the `tk-multi-workfiles2` app settings are li
 
 `tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"`
 
-This tells you to look for ‘"@settings.tk-multi-workfiles2.launch_at_startup"` in the `tk-multi-workfiles2.yml`. That file is included in the **settings** folder.
+This tells you to look for `"@settings.tk-multi-workfiles2.launch_at_startup"` in the `tk-multi-workfiles2.yml`. That file is included in the **settings** folder.
 
-Step 19: Open the `tk-multi-workfiles2.yml` file, located in the **settings** folder, and search for `launch_at_startup`.
+**Step 19:** Open the `tk-multi-workfiles2.yml` file, located in the **settings** folder, and search for `launch_at_startup`.
 
 
 
@@ -271,8 +271,29 @@ And now the real fun begins: learning all the things you can do with Shotgun Too
 You’ve learned that Toolkit is organized by environments, each environment is unique for every software implementation, and the environments are focused by project and task allowing you to have specific functions available for artists at defined steps in a pipeline.
 
 For example, you might offer Nuke for artists working on **shot** tasks, but Mari for artists working on **asset** tasks. Here are some other examples of what you can do:
-One group of artists working in Maya might want to have the File Open dialog box open automatically when they launch Maya from the Desktop and another group of artist might be working in Nuke and want the opportunity to choose the File Open function manually.
-You might also have different *versions* of Maya for various steps in a pipeline or have the same software *version* configured differently to allow multiple environments for the same task in Maya.
-The environment structure enables configurations to be easily manipulated when creating, copying, and cloning, and allows the code to be lightweight, sparse, and consistent.
 
-## Creating profiles based on your artist types
+  * One group of artists working in Maya might want to have the **File Open** dialog box open automatically when they launch Maya from the Desktop and another group of artist might be working in Nuke and want the opportunity to choose the **File Open** function manually.
+
+  * You might also have different *versions* of Maya for various steps in a pipeline requiring a new feature that only the latest beta release has, but you wouldn’t want to use a beta version for all the tasks you’re performing with Maya. In this case you would need two different environments.
+
+The environment structure enables configurations to be easily manipulated when creating, copying, and cloning. This allows the code to be lightweight, sparse, and consistent.
+
+## Creating environments based on your artist tasks
+
+Environments are based on the tasks artists are performing and the software they’re using to do the task. Studio pipelines commonly have different workflows based on tasks. If in your studio, asset artists, like modelers and riggers working in Maya, are authorized to create their own tasks, but shot artists, like animators and lighters working in Houdini, are expected to work on tasks that production has created for them you could achieve this by editing a few settings in the configuration to make the **+New Task** button available for asset artists working in Maya, but not available for shot artists working in Houdini. This creates two specific environments based on the task the artist is performing and the software they are using to execute the task.
+
+The Default Configuration provides the `shot_step` and `asset_step` environments: the former represents pipeline steps on Shot entities; the latter pipeline steps on Asset entities. To achieve the example above you would set the `allow_task_creation` to `true` for the asset_step environment for the Maya engine and false for the `shot_step` environment for the Houdini engine.
+
+## Creating custom environments
+
+The Default Configuration comes with a few defined pipeline steps [listed](anchor link to environments) above, but you can always create more. A studio might want different configuration settings for every stage in the pipeline–`asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light`, and so on. In that case, they'd need to add these pipeline steps. Hooks allow you to add pipeline steps that hook directly into the core Shotgun code. Taking over a core hook allows you to create a custom pipeline step that you can use to create the environment you need.
+
+[`pick_environment` core hook](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) contains the logic that Toolkit uses to determine the environment. You can take over the hook to modify this logic.
+
+Learn more about taking over hooks in the (Taking Over a Hook Guide)[doesn’t exist yet]
+
+Learn more about the `pick_environment` core hook in the [Environment Configuration Reference](link)
+
+Watch our [Intro to Toolkit Configurations video](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s) from our SIGGRAPH 2018 Developer Day
+
+Now that you’ve learned how to modify an app configuration setting, try [adding an app to your Toolkit configuration](link to next guide)
