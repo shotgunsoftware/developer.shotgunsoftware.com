@@ -215,7 +215,7 @@ There will be times when you want to edit a configuration that is currently in p
 
 You can clone a configuration and customize it for a specific task.
 
-Here are some basics for [configuration management](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration).
+Here are some basics on [configuration management](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Basics%20of%20configuration%20management).
 
 What is setting up a project programmatically and why do it?
 https://shotgunsoftware.zendesk.com/agent/tickets/94108
