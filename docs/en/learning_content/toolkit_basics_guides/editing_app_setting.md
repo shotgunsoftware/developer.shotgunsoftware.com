@@ -51,7 +51,7 @@ Finding the Pipeline Configuration
 
 **Step 3:** Select the **avatar** in the upper right to display the Admin menu and scroll down to select **Default Layouts > Pipeline Configuration > Pipeline Configuration List**.
 
-
+![Select project](../../../images/learning_content/toolkit_basics_guides/advanced_config/1_shotgun_project.png)
 
 **Step 4:** Once the Pipeline Configuration List is displayed, select the **+** sign on the far right of the column headers and add another column. In the dropdown list, choose the appropriate Path for your operating system.
   
