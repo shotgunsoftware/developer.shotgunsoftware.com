@@ -207,6 +207,19 @@ $ `./tank`
 
 There's a lot you can do with the [tank command](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#Using%20the%20tank%20command).
 
+## Editing a configuration that's in production
+
+Creating a staging sandbox allowing you to play with a copy of the pipeline configuration currently being used in production. In the sandbox you make changes to the copy of the configuration and test the changes before pushing the changes live into production. This way you don’t affect the live configuration until the copy is fully tested. 
+
+The reasons you would want work on a copy of a configuration are:
+
+1. To update the configuration
+2. Test some modifications before going live
+3. Upgrade, or add some apps
+4. Do development and roll it out after it’s been tested
+
+To create a copy of the live pipeline configuration you would use the creating a clone and sandbox process detailed in the Configuration, staging and rollout [guide](link to guide).
+
 ## Sharing configuration files between users
 
 Sharing configuration files allows all users with specified roles on a project to work in the same environment instantaneously. An environment is loaded based on the task the user is performing and each task can have their own environment with specific tools, UI and apps specific to that task. The simplest way to distribute a Toolkit configuration to a group of users, whether these are distributed in different locations or all working in the same building, is to [upload the configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#uploading-a-configuration-to-shotgun) to Shotgun.
