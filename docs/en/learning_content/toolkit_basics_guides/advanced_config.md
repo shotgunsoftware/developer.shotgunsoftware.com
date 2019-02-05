@@ -209,6 +209,8 @@ There's a lot you can do with the [tank command](https://support.shotgunsoftware
 
 ## Editing a configuration that's in production
 
+There will be times when you want to edit a configuration that is currently in production and you won't want to edit it while artists are using it. With just a few commands Shotgun provides a way to copy an existing configuration, setup a temporary Sandbox to edit and test the configuration, and then push it into production. This process replaces the production configuration with the new one and automatically backs up the old one. 
+
 Creating a staging sandbox allowing you to play with a copy of the pipeline configuration currently being used in production. In the sandbox you make changes to the copy of the configuration and test the changes before pushing the changes live into production. This way you don’t affect the live configuration until the copy is fully tested. 
 
 The reasons you would want work on a copy of a configuration are:
@@ -218,7 +220,11 @@ The reasons you would want work on a copy of a configuration are:
 3. Upgrade, or add some apps
 4. Do development and roll it out after it’s been tested
 
-To create a copy of the live pipeline configuration you would use the creating a clone and sandbox process detailed in the Configuration, staging and rollout [guide](link to guide).
+To create a copy of the live pipeline configuration you would use the creating a clone process detailed in the Configuration, staging and rollout [guide](link to guide). 
+
+or
+
+Here are some basics on [configuration management](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Basics%20of%20configuration%20management).
 
 ## Sharing configuration files between users
 
