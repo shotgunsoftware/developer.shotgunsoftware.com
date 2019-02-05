@@ -26,7 +26,7 @@ To use this guide and perform an edit on a pipeline configuration the following 
    * From within the project, select the +Asset button
    * Fill out the form with Asset Name and Asset Type
    * Select Create Asset
-3. An Advanced Configuration for the identified project, or complete the [Getting started with configurations](link) and use the configuration created in that exercise.
+3. A pipeline configuration for the identified project, or complete the [Getting started with configurations](link) and use the configuration created in that exercise.
 4. Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
 5. Shotgun Desktop installed on your system.
 6. An active subscription for Maya. Get a 30 day trial of Maya [here](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689) 
@@ -39,7 +39,7 @@ The Workfiles App governs file management in Shotgun Toolkit and controls access
  
 ## Getting familiar with the configuration files
 
-Use the Pipeline Configuration List in Shotgun to locate where the Pipeline Configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to Step 5.
+Use the Pipeline Configuration List in Shotgun to locate where the Pipeline Configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to **Step 5**.
 
 Finding the Pipeline Configuration
 
@@ -76,7 +76,7 @@ Toolkit uses YAML files to configure functionality. YAML was chosen as the langu
 
 Shotgun Toolkit allows alterations to the apps that are integrated within the various software applications. One of the functions of the Workfiles App is the **+New Task** button, which allows a user to add a new task in the File Open dialog box. By default this function is enabled for every user at every phase of a project. A Pipeline Technical Director (TD) might want to control which steps in a pipeline a new task can, or cannot, be added and by whom. 
 
-A studio may have a standardized naming convention for new tasks and a specific person on the production team who is responsible for maintaining the naming conventions. If it’s a large project with multiple artists working in Maya, you could imagine what kinds of issues could arise by allowing all of the artists to create new tasks and name those tasks. In this case the TD would disable the task button for all the environments where artists will be working in Maya and identify that artist as the “Maya Artist.” Using this profile the TD can create workflows and environments for that specific artist type.
+A studio may have a standardized naming convention for new tasks and a specific person on the production team who is responsible for maintaining the naming conventions for all pipeline steps in Maya. If it’s a large project with multiple artists, you can imagine what kinds of naming conventions will arise allowing all of those creative types to develop new tasks and name those tasks whatever they fancy. In this case the TD would disable the **+New Task** button for all the pipeline steps where artists will be working in Maya.
 
 ## Disabling the +New Task button for projects in Maya
 
@@ -92,7 +92,7 @@ A studio may have a standardized naming convention for new tasks and a specific 
 
 Wait for the Shotgun menu to fully load; if you have a slow internet connection this would be the time to run the configuration that makes you that perfect shot of espresso with just the right amount of crema.
 
-Once Maya and Shotgun are fully loaded, the File Open dialog box will open automatically. When launching an app from Shotgun Desktop the Environment that is loaded is the Project Environment. The Environments that are identified in the Default Configuration are `project`, `scene`, `shot`, `shot_step`, `asset`, `asset_step`. Environments are automatically loaded based on what functions are being performed.
+Once Maya and Shotgun are fully loaded, the **File Open** dialog box will open automatically. When launching an app from Shotgun Desktop the default environment that is loaded is the Maya Project Environment. The pipeline steps that are identified in the Default Configuration are `project`, `scene`, `shot`, `shot_step`, `asset`, `asset_step`. Environments are automatically loaded based on what tasks are being performed within specific software.
 
 **Step 10:** Click on the **Assets** tab in the left pane of the File Open dialog box. Select any asset inside the folder displayed in the search results. 
 
@@ -106,24 +106,24 @@ Pipeline configurations are used to create new environments and customize existi
 
 **Step 11:** Click on the arrow at the top right of the **File Open** window next to the **Project (name of project)**. 
 
-This reference box shows details about the configuration settings that control the functions of the File Open window. Some Apps in Shotgun Toolkit have a reference box to show what settings are used for the app and what the default settings are. Notice the **Location:** identifier is **tk-multi-workfiles2**. This is the identifier for the bundle of code that creates the Workfiles App. When searching a pipeline configuration this name will identify the settings for the App. There’s an [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) that lists all the configuration settings and app names used for what’s available in the Shotgun Toolkit.
+This reference box shows details about the configuration settings that control the functions of the **File Open** window. Some Apps in Shotgun Toolkit have a reference box to show what settings are used for the app and what the default settings are. Notice the **Location:** identifier is **tk-multi-workfiles2**. This is the identifier for the bundle of code that creates the Workfiles App. When searching a pipeline configuration this name will identify the settings for the App. There’s an [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) that lists all the configuration settings and app names used for what’s available in the Shotgun Toolkit.
 
 
 
-Look under the **Configuration** header to find the settings for this specific environment. A Pipeline Configuration supports multiple environments based on artist types, steps in a pipeline, and the supported software integrations.
+Look under the **Configuration** header to find the settings for this specific environment. A Pipeline Configuration supports multiple environments based on artist tasks, steps in a pipeline, and the supported software integrations.
 
 
 
 NOTE: After the setting **my_tasks_filters** is a setting **launch_at_startup**. This is important to note because it’s the default setting for the File Open app in the project environment. This tells you that when Maya is launched from the Shotgun Desktop the File Open app automatically opens. 
 
-Scroll down to **Setting allow_task_creation**. The default value of this setting is **True**, allowing a user to create a new task while in the project environment.
+Scroll down to **Setting allow_task_creation**. The default value of this setting is **True**, allowing a user to create a new task while in the Maya project environment.
 
 
 
 When searching for a setting there are several things to consider:
 
 What software application you are running.
-What file you are working on and in what Environment you are working in. This is found in the App’s reference box.
+What file you are working on and what Environment you are working in. This is found in the App’s reference box.
 What the specific setting is called. This is found in the App’s reference box or on the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page.
 What YAML file to extend. There are identifiers and a roadmap detailed in the YAML files to guide you to where the settings live.
 What specific blocks within the YAML file to extend. This is identified in the roadmap.
@@ -132,7 +132,7 @@ And, most importantly, where the configuration is stored for the current project
 
 A setting can be utilized in multiple places within a pipeline configuration. What determines where it goes are: which software integration you want to affect and where in the pipeline process you want to impact a change. 
 
-## Find where to set the value for allow_task_creation
+## Find where to set the value for `allow_task_creation`
 
 **Step 12:** Bring the main Maya window forward. 
 
