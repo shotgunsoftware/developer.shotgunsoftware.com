@@ -3,7 +3,7 @@ layout: default
 title: Editing Pipeline Configurations, changing an app setting
 nav_order: 2
 parent: Toolkit Basics Guides
-permalink: learning_content/toolkit_basics_guides/editing_app_setting
+permalink: learning_content/toolkit_basics_guides/editing_app_setting/
 ---
 
 # Editing a Pipeline Configurations
