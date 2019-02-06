@@ -1,12 +1,10 @@
 ---
 layout: default
-title: Shotgun
-nav_order: 2
+title: Overview
 permalink: /shotgun/
-has_children: true
 ---
 
-# Shotgun
+# Shotgun Development
 
 Managing a production takes a lot of work to keep all the moving pieces in sync.
 

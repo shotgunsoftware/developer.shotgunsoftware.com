@@ -1,9 +1,6 @@
 ---
 layout: default
 title: Integrations
-nav_order: 4
-parent: RV
-has_children: True
 permalink: /rv/integrations/
 ---
 

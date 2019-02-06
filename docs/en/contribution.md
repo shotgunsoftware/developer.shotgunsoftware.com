@@ -1,9 +1,7 @@
 ---
 layout: default
 title: Contribution Guide
-nav_order: 5
 permalink: /contribution/
-has_children: false
 ---
 
 # Contribution Guide
