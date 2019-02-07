@@ -33,7 +33,7 @@ To use this guide and create a Default Configuration the following is required:
   
 ## About the Advanced Project Setup Wizard
 
-The Advanced Project Setup Wizard in Shotgun Desktop generates a Default Configuration that provides a solid base to build on adding key software integrations, customizable settings, apps and UI elements to support a specific project’s pipeline. It creates a configuration you can edit and extend to met your project’s pipeline needs.
+The Advanced Project Setup Wizard in Shotgun Desktop generates a Default Configuration that provides a solid base to build on adding key software integrations, customizable settings, apps and UI elements that support the pipeline process. It creates a configuration you can edit and extend to met your project’s pipeline needs.
 
 The Default Configuration includes: 
 * A basic filesystem schema and templates that determine where files live on disk 
