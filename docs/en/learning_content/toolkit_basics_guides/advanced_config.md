@@ -163,7 +163,7 @@ The operating system path is automatically updated to identify the path where th
 
 A dialog box is displayed with the name of the project populating the text field. The name is automatically populated pulling from the project information and the path is automatically updated.
 
-![Project folder](../../../images/learning_content/toolkit_basics_guides/advanced_config/14_project_folder_name_old.png)
+![Project folder](../../../images/learning_content/toolkit_basics_guides/advanced_config/14_project_folder_name.png)
 
 Shotgun can work in either a Distributed Setup, where each user downloads a copy of the Pipeline Configuration to their local machine, or a Centralized Setup, where the users share a single configuration over a network. For this exercise we will use a Centralized Setup. 
 
