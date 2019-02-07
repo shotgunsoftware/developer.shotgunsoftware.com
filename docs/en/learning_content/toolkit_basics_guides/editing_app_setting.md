@@ -10,7 +10,7 @@ permalink: learning_content/toolkit_basics_guides/editing_app_setting/
  
 ## About the guide
  
-This guide describes how to edit settings within an existing Pipeline Configuration to meet the needs of a project pipeline. The first guide, [Editing a Pipeline Configuration](link), described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create an Advanced Configuration, complete the Advanced Configuration Guide before proceeding.
+This guide describes how to edit settings within an existing Pipeline Configuration to meet the needs of a project pipeline. The first guide, [Editing a Pipeline Configuration](./advanced_config.md), described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create an Advanced Configuration, complete the Advanced Configuration Guide before proceeding.
 
 Through extending the Default Configuration, Shotgun Toolkit enables the creation of custom workspace [environments](link to environments document) creating an integrated UI that allows for custom pipeline workflows. An example of a customization might be as simple as enabling and disabling a button to control at what step in a pipeline a function of a Toolkit App can or cannot be used, and by whom. These customizations change the way specified users interact with the Apps. Toolkit allows proprietary configurations that enable you to work smarter and faster by: creating custom workflows, automating repetitive and mundane tasks, modifying hooks as well as adding custom tools. Unfortunately, it’s only accessible through Shotgun, and not yet released for everyday tasks like washing your clothes.
 
@@ -26,7 +26,7 @@ To use this guide and perform an edit on a pipeline configuration the following 
    * From within the project, select the +Asset button
    * Fill out the form with Asset Name and Asset Type
    * Select Create Asset
-3. A pipeline configuration for the identified project, or complete the [Getting started with configurations](link) and use the configuration created in that exercise.
+3. A pipeline configuration for the identified project, or complete the [Getting started with configurations](./advanced_config.md) and use the configuration created in that exercise.
 4. Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
 5. Shotgun Desktop installed on your system.
 6. An active subscription for Maya. Get a 30 day trial of Maya [here](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689) 
