@@ -27,7 +27,7 @@ To use this guide and create a Default Configuration the following is required:
 
 1. An active Shotgun site. You can register for Shotgun [here](https://www.shotgunsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) and get a 30-day trial to begin exploring. 
 2. Shotgun Desktop. If Desktop is not installed, you can begin by following this [link.]( https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) 
-3. Access to a filesystem where you can store project files and a pipeline configuration. On the filesystem, create a "projects” folder and a "configs” folder as a proper directory setup. 
+3. Access to a filesystem where you can store project files and a pipeline configuration. On the filesystem, create a "projects” folder and a "configs” folder as a suggested directory setup. 
 4. A configuration folder named "the_other_side.” Inside the "configs” folder where you store your configs, create a folder using this project name. We will be creating a project called "the_other_side" in this exercise.
  
   
