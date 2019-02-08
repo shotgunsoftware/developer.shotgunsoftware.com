@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Advanced Configuration Setup
-nav_order: 1
-parent: Toolkit Basics Guides
-permalink: learning_content/toolkit_basics_guides/advanced_config/
+permalink: /learning_content/toolkit_basics_guides/advanced_config/
 ---
+
+{% include info title="What you will learn" content="Summary of what you will have learnt once you have read this guide." %}
 
 # Getting started with configurations
  
