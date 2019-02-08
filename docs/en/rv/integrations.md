@@ -1,21 +1,12 @@
 ---
 layout: default
 title: Integrations
-nav_order: 4
-parent: RV
 permalink: /rv/integrations/
 ---
 
 # RV Integrations
 
-## RV / Nuke Integration
+RV comes with integration tools for Nuke and Maya, in addition to a few different Shotgun integrations – Shotgun Integration, Screening Room for RV, and Shotgun Review – with differences in their feature sets.
 
-RV now comes with Nuke integration tools. This document describes installation for an individual or system wide setup and describes the workflow, tools, concepts and usage for RV/Nuke.
+The first two documents below describe installation and workflow for Nuke and Maya integrations, while the last two describe the different Shotgun integrations, helping you determine which one to use.
 
-* [RV-Nuke Integration Documentation](http://www.tweaksoftware.com/static/documentation/rv/current/html/rvnuke_help.html)
-
-## RV / Maya Integration
-
-RV now comes with Maya integration. This document explains how to install the RV/Maya Package and describes the RV/Maya workflow, how to compare and organize playblasts, how to render into edits, A/B comparisons, and layouts.
-
-* [RV-Maya Integration Documentation](http://www.tweaksoftware.com/static/documentation/rv/current/html/maya_tools_help.html) 

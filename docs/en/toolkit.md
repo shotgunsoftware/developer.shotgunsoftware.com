@@ -1,13 +1,12 @@
 ---
 layout: default
-title: Toolkit
-nav_order: 3
+title: Overview
 permalink: /toolkit/
-has_children: true
 ---
 
-# Toolkit
+# The Toolkit Platform
 
-Toolkit is an extendable platform for integrating artist applications and pipeline tools with Shotgun.
+Toolkit is an extensible platform for integrating artist applications and pipeline tools with Shotgun.
 
-The Toolkit Core API is the platform upon which all integrations are built. The Core API handles app, engine, and platform fundamentals, as well as file system and deploy management.
+The Toolkit Core API is the platform upon which all integrations are built. The Core API handles app, engine, and platform fundamentals, as well as file system organization and tool deployment.
+
