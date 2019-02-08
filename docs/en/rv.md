@@ -1,9 +1,7 @@
 ---
 layout: default
-title: RV
-nav_order: 4
+title: Overview
 permalink: /rv/
-has_children: true
 ---
 
 # RV

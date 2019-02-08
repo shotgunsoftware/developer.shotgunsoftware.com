@@ -1,9 +1,6 @@
 ---
 layout: default
 title: App APIs
-nav_order: 3
-parent: Toolkit
-has_children: true
 permalink: /toolkit/app_apis/
 ---
 
