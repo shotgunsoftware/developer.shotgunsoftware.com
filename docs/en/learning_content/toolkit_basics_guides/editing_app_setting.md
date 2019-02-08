@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Editing Pipeline Configurations, changing an app setting
+title: Editing a configuration
 permalink: /learning_content/toolkit_basics_guides/editing_app_setting/
 ---
 

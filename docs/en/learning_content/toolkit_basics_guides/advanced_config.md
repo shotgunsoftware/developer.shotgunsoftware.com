@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Advanced Configuration Setup
+title: Advanced Setup
 permalink: /learning_content/toolkit_basics_guides/advanced_config/
 ---
 
