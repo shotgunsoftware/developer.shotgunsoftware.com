@@ -59,7 +59,7 @@ A configuration is required for every project. The first time a project is acces
 | Change settings, add environments, modify Hooks into core code, add custom tools and apps | Change settings, add environments, modify Hooks into core code, add custom tools and apps |
 | Add software application integrations not included in the default and choose which ones are available in desktop | Add software application integrations not included in the default and choose which ones are available in desktop |
 | Basic toolkit apps beyond software integrations included: | More toolkit apps beyond software integrations included: |
-| The panel, Publisher, Loader | The panel, Publisher, Loader, Launch Applications, Sync Framerange, Workfiles, Scene breakdown, Screening room integration, Review submission |
+| The Panel, Publisher, Loader | The Panel, Publisher, Loader, Launch Applications, Sync Framerange, Workfiles, Scene breakdown, Screening room integration, Review submission |
 |   | * *These are just the basics. There’s so much more than what’s listed here. Some apps work only in relevant software integrations, or are specific to administering shotgun.*
 
 
