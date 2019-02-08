@@ -55,6 +55,24 @@ A configuration is required for every project. The first time a project is acces
 | A hidden file with limited settings that can be edited.| An accessible file with settings that meet the needs of a simple pipeline workflow and can be edited.|
 | Automatically updated when core changes are made to shotgun | Automatically updated when core changes are made to shotgun |
 | BASIC SOFTWARE INTEGRATIONS: | MORE SOFTWARE INTEGRATIONS: |
+| 3d max, Houdini, Maya, Nuke, Photoshop, Flame | 3d max, Houdini, Maya, Nuke, Photoshop, Flame, Hiero, Motionbulder, Mari | 
+| Change settings, add environments, modify Hooks into core code, add custom tools and apps | Change settings, add environments, modify Hooks into core code, add custom tools and apps |
+| Add software application integrations not included in the default and choose which ones are available in desktop | Add software application integrations not included in the default and choose which ones are available in desktop |
+| Basic toolkit apps beyond software integrations included: | More toolkit apps beyond software integrations included: |
+| The panel, Publisher, Loader | The panel, Publisher, Loader, Launch Applications, Sync Framerange, Workfiles, Scene breakdown, Screening room integration, Review submission |
+|   | * *These are just the basics. There’s so much more than what’s listed here. Some apps work only in relevant software integrations, or are specific to administering shotgun.*
+
+
+## Difference between the Default Configuration and Basic Configuration.
+
+## SHOTGUN CONFIGURATIONs
+
+| BASIC CONFIGURATION | DEFAULT CONFIGURATION |
+|:-------------------:|:---------------------:|
+| A Basic Configuration is automatically downloaded and updated from a GitHub repository when a project is accessed. | A Default Configuration is automatically downloaded from a GitHub repository when using the Advanced Configuration Tool and takes the place of the Basic Configuration.|
+| A hidden file with limited settings that can be edited.| An accessible file with settings that meet the needs of a simple pipeline workflow and can be edited.|
+| Automatically updated when core changes are made to shotgun | Automatically updated when core changes are made to shotgun |
+| BASIC SOFTWARE INTEGRATIONS: | MORE SOFTWARE INTEGRATIONS: |
 | • 3d max | • 3D Max | 
 | • Houdini | • Houdini |
 | • Maya | • Maya |
@@ -234,8 +252,10 @@ There will be times when you want to edit a configuration that is currently in p
 
 ## Working with more than one root folder
 
-Ideally your facility would want to be optimized for specific tasks and for processing those tasks. Shotgun helps you with both. You can work with more than one root folder to optimize things like video playback for dailies on one server and interactive processing on another. What if you want to share files with a client? The easiest way is to give them a link to view the content on your server and create a share drive specifically for that reason while keep your work files in a secure drive somewhere else. You wouldn't want them to see what else you might be working on. Here's how to do [that](https://support.shotgunsoftware.com/hc/en-us/articles/219040478-How-do-I-convert-my-project-from-a-single-root-to-a-multi-root-configuration-).
+Ideally your facility would want to be optimized for specific tasks and for processing those tasks. Shotgun helps you with both. You can work with more than one root folder to optimize things like video playback for dailies on one server and interactive processing on another. 
 
-You can see how cloning a configuration and customizing it for a specific task is important as well as setting things up to work more effectively.
+What if you want to share files with a client? The easiest way is to give them a link to view the content on your server and create a share drive specifically for that reason. You wouldn't want them to see what else you might be working on. Keeping your work files in a secure drive while giving your clients access somewhere else is ideal. Shotgun provides a way to do just [that](https://support.shotgunsoftware.com/hc/en-us/articles/219040478-How-do-I-convert-my-project-from-a-single-root-to-a-multi-root-configuration-).
+
+Cloning a configuration: copying your configuration, creating a sandbox, and safely editing, extending, and testing before pushing the new configuration live are important aspects of managing Shotgun Toolkit. Shotgun helps you with streamlining production and managing your pipeline while Shotgun Toolkit provides a way to setup the environments for artists to work and interact with content more effectively while also providing efficient ways to interact with your facility.
 
 Jump into the next getting started guide. [Editing a Pipeline Configuration](link)
