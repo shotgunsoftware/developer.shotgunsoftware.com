@@ -1,5 +1,5 @@
 [![Build Status](https://secure.travis-ci.org/shotgunsoftware/developer-beta.svg?branch=master)](http://travis-ci.org/shotgunsoftware/developer-beta)
-[![Doc Generator](https://img.shields.io/badge/Built%20With-Doc%20Generator-red.svg)](http://travis-ci.org/shotgunsoftware/tk-doc-generator)
+[![Doc Generator](https://img.shields.io/badge/Built%20With-SG%20Doc%20Generator-blue.svg)](http://github.com/shotgunsoftware/tk-doc-generator)
 
 
 
