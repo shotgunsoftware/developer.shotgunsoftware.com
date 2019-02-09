@@ -11,4 +11,4 @@ In our efforts to work as openly as possible, we have decided to build our devel
 - [Individual Contribution Agreement](contribution/ind_contrib_agmt_for_shotgun_developer_documentation.pdf)
 - [Corporate Contribution Agreement](contribution/corp_contrib_agmt_for_shotgun_developer_documentation.pdf)
 
-Once you have submitted one of the above agreements, you can follow the instructions in the [README](https://github.com/shotgunsoftware/developer-beta/#making-a-change-to-developershotgunsoftwarecom) on how to submit a change.
+Once you have submitted one of the above agreements, you can follow the instructions in the [README](https://github.com/shotgunsoftware/developer-beta/#Making-a-change-to-the-documentation) on how to submit a change.
