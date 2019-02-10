@@ -1,4 +1,7 @@
-# This file holds data for the landing_page custom layout found in _layouts/landing_page.html
+# This file holds data for the site landing page.
+# 
+# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/landing-page/
+#
 
 # main logo image
 image: ./images/landing_page/sg_large_logo.png

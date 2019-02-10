@@ -4,8 +4,11 @@
 # provided at the time of installation or download, or which otherwise accompanies
 # this software in either electronic or hard copy form.
 #
-
+#
 # jekyll configuration file for Shotgun Developer Site Environment
+#
+# For more information, see https://developer.shotgunsoftware.com/tk-doc-generator/
+
 
 # Site settings
 title: SG Developer
@@ -37,6 +40,6 @@ additional_head_html: |
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-
+# the url to connect to via the 'edit in github' button
 github_editme_path: shotgunsoftware/developer-beta/blob/master/docs
 

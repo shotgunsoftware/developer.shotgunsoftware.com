@@ -11,3 +11,7 @@ The following folders exist:
 - `zh_CN` - Chinese translated content.
 - `images` - All images should be located in the images subfolder structure.
 - `_data/en`, `_data/ja`, ... - Site metadata (e.g. landing page content), organized by language. 
+
+## Content authoring guide
+
+For more information, see the [content authoring guide](https://developer.shotgunsoftware.com/tk-doc-generator/authoring/landing-page/).
