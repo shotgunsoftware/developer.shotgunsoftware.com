@@ -12,6 +12,6 @@ The following folders exist:
 - `images` - All images should be located in the images subfolder structure.
 - `_data/en`, `_data/ja`, ... - Site metadata (e.g. landing page content), organized by language. 
 
-## Content authoring guide
+## Content Authoring
 
-For more information, see the [content authoring guide](https://developer.shotgunsoftware.com/tk-doc-generator/authoring/landing-page/).
+For more information, see the [content authoring guide](https://developer.shotgunsoftware.com/tk-doc-generator/authoring/).
