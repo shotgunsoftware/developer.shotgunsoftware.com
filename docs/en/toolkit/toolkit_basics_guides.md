@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Toolkit Basics Guides
-permalink: /learning_content/toolkit_basics_guides/
+permalink: /toolkit/toolkit_basics_guides/
 ---
 
 # Toolkit Basics Guides
