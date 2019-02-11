@@ -61,6 +61,6 @@ permalink: learning_content/toolkit_basics_guides/editing_app_setting/
 | 3d max, Houdini, Maya, Nuke, Photoshop, Flame | 3d max, Houdini, Maya, Nuke, Photoshop, Flame, Hiero, Motionbulder, Mari | 
 | Change settings, add environments, modify Hooks into core code, create custom tools and apps | Change settings, add environments, modify Hooks into core code, create custom tools and apps |
 | Add software application integrations not included in the default and choose which ones are available in desktop | Add software application integrations not included in the default and choose which ones are available in desktop |
-| BASIC TOOLKIT APPS BEYOND SOFTWARE INTEGRATIONS INCLUDED: | MORE TOOLKIT APPS BEYOND SOFTWARE INTEGRATIONS INCLUDED: More toolkit apps beyond software integrations included: |
+| BASIC TOOLKIT APPS BEYOND SOFTWARE INTEGRATIONS INCLUDED: | MORE TOOLKIT APPS BEYOND SOFTWARE INTEGRATIONS INCLUDED: |
 | The panel, Publisher, Loader | The panel, Publisher, Loader, Launch Applications, Workfiles, Scene breakdown, Screening room integration |
 |   | * *These are just the basics. There’s so much more than what’s listed here. Some apps work only in relevant software integrations, or are specific to administering shotgun.*
