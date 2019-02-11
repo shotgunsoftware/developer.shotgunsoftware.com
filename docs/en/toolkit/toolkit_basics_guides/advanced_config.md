@@ -4,10 +4,10 @@ title: Advanced Setup
 permalink: /toolkit/toolkit_basics_guides/advanced_config/
 ---
 
+# Getting started with configurations
+
 {% include info title="What you will learn" content="Summary of what you will have learnt once you have read this guide." %}
 
-# Getting started with configurations
- 
 ## About the guide
  
 This guide describes how to use the Advanced Project Setup Wizard to create a configuration for a digital content creation pipeline. You will quickly become acquainted with the configuration tools, learn how to use the Wizard, and be presented with opportunities to learn more. Using the Wizard creates a Default Configuration with information specific to your project and prepares the configuration to be edited and extended to support each step in the pipeline. The configuration controls aspects of the UI, Shotgun Apps, and various tools necessary to support a production pipeline. Using the Wizard is just one way to extend a configuration. Along with adding specific settings for each step in a pipeline it will add integrations with software applications, and add some apps making it easier to utilize and customize for any project’s pipeline needs.  

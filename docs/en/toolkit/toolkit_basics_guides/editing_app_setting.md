@@ -4,10 +4,10 @@ title: Editing a configuration
 permalink: /toolkit/toolkit_basics_guides/editing_app_setting/
 ---
 
+# Editing a Pipeline Configurations
+
 {% include info title="What you will learn" content="Summary of what you will have learnt once you have read this guide." %}
 
-# Editing a Pipeline Configurations
- 
 ## About the guide
  
 This guide describes how to edit settings within an existing Pipeline Configuration to meet the needs of a project pipeline. The first guide, [Getting started with configurations](./advanced_config.md), described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create an Advanced Configuration, complete the Advanced Configuration Guide before proceeding.
