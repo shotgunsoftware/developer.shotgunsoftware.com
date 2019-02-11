@@ -218,4 +218,4 @@ What if you want to share files with a client? The easiest way is to give them a
 
 Cloning a configuration: copying your configuration, creating a sandbox, and safely editing, extending, and testing before pushing the new configuration live are important aspects of managing Shotgun Toolkit. Shotgun helps you with streamlining production and managing your pipeline while Shotgun Toolkit provides a way to setup the environments for artists to work and interact with content more effectively while also providing efficient ways to interact with your facility.
 
-Jump into the next getting started guide. [Editing a Pipeline Configuration](link)
+Jump into the next getting started guide. [Editing a Pipeline Configuration](https://github.com/shotgunsoftware/developer-beta/blob/getting_started_guide/docs/en/toolkit/toolkit_basics_guides/editing_app_setting.md)
