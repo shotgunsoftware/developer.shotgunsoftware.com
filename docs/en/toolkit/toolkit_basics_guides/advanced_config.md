@@ -54,6 +54,7 @@ A configuration is required for every project. The first time a project is acces
 | A Basic Configuration is automatically downloaded and updated from a GitHub repository when a project is accessed. | A Default Configuration is automatically downloaded from a GitHub repository when using the Advanced Configuration Tool and takes the place of the Basic Configuration.|
 | A hidden file with limited settings that can be edited.| An accessible file with settings that meet the needs of a simple pipeline workflow and can be edited.|
 | Automatically updated when core changes are made to shotgun | Manually updated when core changes are made to shotgun |
+| No support for filesystem schema | A basic filesystem schema and templates that determine where files live on disk |
 | BASIC SOFTWARE INTEGRATIONS: | MORE SOFTWARE INTEGRATIONS: |
 | 3d max, Houdini, Maya, Nuke, Photoshop, Flame | 3d max, Houdini, Maya, Nuke, Photoshop, Flame, Hiero, Motionbulder, Mari | 
 | Change settings, add environments, modify Hooks into core code, create custom tools and apps | Change settings, add environments, modify Hooks into core code, create custom tools and apps |
