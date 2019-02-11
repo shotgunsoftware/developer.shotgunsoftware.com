@@ -177,7 +177,7 @@ The `settings` and `project` reference indicate it’s a project’s settings. T
 
 This complete line tells us to look for the `settings.tk-maya.project` block in the includes to find the configuration settings for the Maya Engine, `tk-maya`. 
 
-Shotgun Toolkit uses simple terms in the YAML files to indicate the names of the settings and what paths will lead you to them. You already know from looking in the Maya **File Open** reference box that the bundle of code, which controls how the **+New Task** button performs, is identified by the `tk-multi-workfiles2`. The Shotgun code is organized into bundles. Those bundles are referenced in the YAML files using the bundle identifiers. ‘tk-multi-workfiles2’ is the identifier for the Workfiles App code bundle. The **+New Task** button is a function of the Workfiles App.
+Shotgun Toolkit uses simple terms in the YAML files to indicate the names of the settings and what paths will lead you to them. You already know from looking in the Maya **File Open** reference box that the bundle of code, which controls how the **+New Task** button performs, is identified by the `tk-multi-workfiles2`. Shotgun Toolkit settings are organized into bundles. Those bundles are referenced in the YAML files using the bundle identifiers. ‘tk-multi-workfiles2’ is the identifier for the Workfiles App code bundle. The **+New Task** button is a function of the Workfiles App.
 
 Looking for the `settings.tk-multi-workfiles2.launch_at_startup` in tk-maya.yml
 
