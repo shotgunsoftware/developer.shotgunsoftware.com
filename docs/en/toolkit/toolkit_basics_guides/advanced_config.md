@@ -55,7 +55,7 @@ A configuration is required for every project. The first time a project is acces
 | File system support | No support for filesystem schema | A basic filesystem schema and templates that determine where files live on disk |
 | Software Integrations | BASIC: 3d max, Houdini, Maya, Nuke, Photoshop, Flame | MORE: 3d max, Houdini, Maya, Nuke, Photoshop, Flame, Hiero, Motionbulder, Mari | 
 | Options | Change settings, add environments, modify Hooks into core code, create custom tools and apps | Change settings, add environments, modify Hooks into core code, create custom tools and apps |
-| More options | Add software application integrations not included in the default and choose which ones are available in desktop | Add software application integrations not included in the default and choose which ones are available in desktop |
+| More options | Add software application integrations not included in the basic and choose which ones are available in desktop | Add software application integrations not included in the default and choose which ones are available in desktop |
 | Toolkit apps | BASIC: The panel, Publisher, Loader, Launch Applications, Review, Submit | MORE: The panel, Publisher, Loader, Launch Applications, Review, Submit, Workfiles, Snap Shot, Scene breakdown * |
 |   |   | * *These are just the basics. There’s so much more than what’s listed here. Some apps work only in relevant software integrations, or are specific to administering shotgun.*
 
