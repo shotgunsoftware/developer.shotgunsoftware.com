@@ -198,7 +198,7 @@ The reasons you would want work on a copy of a configuration are:
 3. Upgrade, or add some apps
 4. Do development and roll it out after it’s been tested
 
-To create a copy of the live pipeline configuration you would use the creating a clone process detailed in the Configuration, staging and rollout [guide](link to guide). 
+To create a copy of the live pipeline configuration you would use the creating a clone process detailed in the Configuration, staging and rollout [guide](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration). 
 
 or
 
