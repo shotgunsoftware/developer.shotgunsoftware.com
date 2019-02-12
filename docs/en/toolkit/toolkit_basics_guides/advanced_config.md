@@ -169,7 +169,7 @@ And now the real fun begins, learning all the things you can do with the Configu
 
 Shotgun Toolkit provides many convenient ways to edit, clone, or take over a configuration. Extending existing configurations will save time and allow you access to all of the cool stuff that others within your network have created. You can take advantage of the vast Shotgun [community](link to a good place in the community) that may have the exact configuration you need. The Shotgun community is a sharing community, so be kind, say thank you, and recognize the person who created the configuration that helped you get the job done. Oh, and don’t forget to give back, it’s how we help our fellow Shotgun gurus and what makes it so special to be a part of this community! 
 
-Below are some ways you can have fun with configurations
+Below are some ways you can have fun with configurations.
 
 ## Using the command line to create a default configuration
 
