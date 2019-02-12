@@ -56,7 +56,7 @@ A configuration is required for every project. The first time a project is acces
 | Software Integrations | BASIC: 3d max, Houdini, Maya, Nuke, Photoshop, Flame | MORE: 3d max, Houdini, Maya, Nuke, Photoshop, Flame, Hiero, Motionbulder, Mari | 
 | Options | Change settings, add environments, modify Hooks into core code, create custom tools and apps | Change settings, add environments, modify Hooks into core code, create custom tools and apps |
 | More options | Add software application integrations not included in the basic and choose which ones are available in desktop | Add software application integrations not included in the default and choose which ones are available in desktop |
-| Toolkit apps | BASIC: Shotgun Panel, Publisher, Loader, Launch Applications, Review, Submit | MORE: Shotgun Panel, Publisher, Loader, Launch Applications, Review, Submit, Workfiles, Snap Shot, Scene breakdown * |
+| Toolkit apps | BASIC: Shotgun Panel, Publisher, Loader, Launch Applications, Review, Submit | MORE: Shotgun Panel, Publisher, Loader, Launch Applications, Review, Submit, Workfiles, Snap Shot, Scene breakdown, Nuke write node, Houdini write node * |
 |   |   | * *These are just the basics. There’s so much more than what’s listed here. Some apps work only in relevant software integrations, or are specific to administering shotgun.*
 
 In this guide you will use the Shotgun Advanced Configuration Wizard to generate a Default Configuration and associate it with a project. Generating a Default Configuration sets you up for editing the configuration to allow for the customizations necessary to support a proprietary production pipeline.
