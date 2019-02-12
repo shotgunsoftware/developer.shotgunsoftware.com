@@ -56,7 +56,7 @@ A configuration is required for every project. The first time a project is acces
 | Software Integrations | BASIC: 3d max, Houdini, Maya, Nuke, Photoshop, Flame | MORE: 3d max, Houdini, Maya, Nuke, Photoshop, Flame, Hiero, Motionbulder, Mari | 
 | Options | Change settings, add environments, modify Hooks into core code, create custom tools and apps | Change settings, add environments, modify Hooks into core code, create custom tools and apps |
 | More options | Add software application integrations not included in the basic and choose which ones are available in desktop | Add software application integrations not included in the default and choose which ones are available in desktop |
-| Toolkit apps | BASIC: Shotgun Panel, Publisher, Loader, Launch Applications, Review, Submit | MORE: Shotgun Panel, Publisher, Loader, Launch Applications, Review, Submit, Workfiles, Snap Shot, Scene breakdown, Nuke write node, Houdini write node * |
+| Toolkit apps | BASIC: Shotgun Panel, Publisher, Loader, Launch Applications, Review, Submit | MORE: Shotgun Panel, Publisher, Loader, Launch Applications, Review, Submit, Workfiles, Snap Shot, Scene breakdown, Nuke write node, Houdini write node, and more * |
 |   |   | * *These are just the basics. There’s so much more than what’s listed here. Some apps work only in relevant software integrations, or are specific to administering shotgun.*
 
 In this guide you will use the Shotgun Advanced Configuration Wizard to generate a Default Configuration and associate it with a project. Generating a Default Configuration sets you up for editing the configuration to allow for the customizations necessary to support a proprietary production pipeline.
@@ -105,7 +105,7 @@ A dialog box will be displayed with two options and **Default** selected. At thi
 
 ![Select config](../../../images/learning_content/toolkit_basics_guides/advanced_config/8_select_config.png)
 
-**Step 6:** Click Continue.
+**Step 6:** Select **Continue**
 
 Define the storage locations for project files.
 
@@ -123,7 +123,7 @@ Three operating systems are supported in Shotgun Toolkit: Linux, Mac, and Window
 
 ![Storage root folder](../../../images/learning_content/toolkit_basics_guides/advanced_config/11_storage_root_folder.png)
 
-This setup allows Shotgun to have access to only the folder you identify for storing production data. When preparing for this exercise you added a projects directory above the Shotgun root directory. The projects directory is where Shotgun will store any local project related information. The folder you identify will be the only place a Shotgun site will store information. For more information about what data is stored here and how Shotgun accesses this folder explore [here](link to describe Shotgun local data)
+This setup allows Shotgun to have access to only the folder you identify for storing production data. When preparing for this exercise you added a projects directory above the Shotgun root directory. The projects directory is where Shotgun will store any local project related information. The folder you identify will be the only place a Shotgun site will store information. For more information about what data is stored here and how Shotgun accesses this folder explore [how Shotgun stores project data](link to describe Shotgun local data).
 
 ![Define storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/12_define_Storage3.png)
 
