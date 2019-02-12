@@ -48,7 +48,7 @@ A configuration is required for every project. The first time a project is acces
 ## SHOTGUN CONFIGURATIONs
 
 | OPTIONS | BASIC CONFIGURATION | DEFAULT CONFIGURATION |
-| ------- |:-------------------:|:---------------------:|
+| ------- | ------------------- | --------------------- |
 | Downloaded | A Basic Configuration is automatically downloaded and updated from a GitHub repository when a project is accessed. | A Default Configuration is automatically downloaded from a GitHub repository when using the Advanced Configuration Tool and takes the place of the Basic Configuration.|
 | Accessability | A hidden file with limited settings that can be edited.| An accessible file with settings that meet the needs of a simple pipeline workflow and can be edited.|
 | Updated | Automatically updated when core changes are made to shotgun | Manually updated when core changes are made to shotgun |
@@ -58,7 +58,6 @@ A configuration is required for every project. The first time a project is acces
 | More options | Add software application integrations not included in the basic and choose which ones are available in desktop | Add software application integrations not included in the default and choose which ones are available in desktop |
 | Toolkit apps | BASIC: The panel, Publisher, Loader, Launch Applications, Review, Submit | MORE: The panel, Publisher, Loader, Launch Applications, Review, Submit, Workfiles, Snap Shot, Scene breakdown * |
 |   |   | * *These are just the basics. There’s so much more than what’s listed here. Some apps work only in relevant software integrations, or are specific to administering shotgun.*
-
 
 In this guide you will use the Shotgun Advanced Configuration Wizard to generate a Default Configuration and associate it with a project. Generating a Default Configuration sets you up for editing the configuration to allow for the customizations necessary to support a proprietary production pipeline.
 
