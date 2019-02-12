@@ -47,7 +47,7 @@ A configuration is required for every project. The first time a project is acces
 
 ## SHOTGUN CONFIGURATIONs
 
-| OPTIONS | BASIC CONFIGURATION | DEFAULT CONFIGURATION |
+| FEATURES | BASIC CONFIGURATION | DEFAULT CONFIGURATION |
 | ------- | ------------------- | --------------------- |
 | Downloaded | A Basic Configuration is automatically downloaded and updated from a GitHub repository when a project is accessed. | A Default Configuration is automatically downloaded from a GitHub repository when using the Advanced Configuration Tool and takes the place of the Basic Configuration.|
 | Accessability | A hidden file with limited settings that can be edited.| An accessible file with settings that meet the needs of a simple pipeline workflow and can be edited.|
