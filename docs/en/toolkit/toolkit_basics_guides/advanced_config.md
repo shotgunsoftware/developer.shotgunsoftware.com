@@ -83,7 +83,7 @@ TIP: If a new project was created while Desktop was open, the **Projects** windo
 
 A Basic Configuration was downloaded and configured when the project was accessed. The Publish app and other software packages available with the Default Configuration were detected and automatically added to the **Apps** pane. 
 
-**Step 4:** Once the project is loaded, click on your profile Avatar at the bottom right of the screen. In the popup menu select **Advanced project setup…** to initiate the Advanced Project Setup Wizard.
+**Step 4:** Once the project is loaded, select your profile **Avatar** at the bottom right of the screen. In the popup menu select **Advanced project setup…** to initiate the Advanced Project Setup Wizard.
 
 ![Advanced project setup](../../../images/learning_content/toolkit_basics_guides/advanced_config/6_advanced_project_setup.png)
 
@@ -99,15 +99,15 @@ For this exercise use **Shotgun Default**. This option will download and configu
 
 ![Select config](../../../images/learning_content/toolkit_basics_guides/advanced_config/7_select_config.png)
 
-**Step 5:** Click Continue. 
+**Step 5:** Select **Continue** 
 
-A dialog box will be displayed with two options and **Default** selected. At this point there’s an option to select a Legacy Default Configuration setup. This configuration setup is from an older version of Shotgun for studios who still use that version. We will use the Default for this exercise.
+A dialog box will be displayed with two options and **Shotgun Default** selected. At this point there’s an option to select a Legacy Default Configuration setup. This configuration setup is from an older version of Shotgun for studios who still use that version. We will use the Default for this exercise.
 
 ![Select config](../../../images/learning_content/toolkit_basics_guides/advanced_config/8_select_config.png)
 
 **Step 6:** Select **Continue**
 
-Define the storage locations for project files.
+**Define storage locations for project files**
 
 A dialog box will appear displaying a drop down menu next to the word `Storage:`
 
@@ -133,7 +133,7 @@ This setup allows Shotgun to have access to only the folder you identify for sto
 
 The operating system path is automatically updated to identify the path where the project data is stored.
 
-**Step 10:** Select **continue**
+**Step 10:** Select **Continue**
 
 ## Name the Project Folder 
 
@@ -173,9 +173,11 @@ Below are some ways you can have fun with configurations
 
 ## Using the command line to create a default configuration
 
-From inside any project configuration the tank command lets you run administrative commands and apps from a command shell. The tank command lets you run administrative commands and apps from a command shell. Each new project you create gets its own Core API with a tank command. The `tank set_up` command will run a script that creates a default configuration and don’t worry if you follow the guide carefully you won’t blow anything up. 
+From inside any project configuration the `tank` command lets you run administrative commands and apps from a command shell. Each new project you create gets its own Core API with a dedicated `tank` command. The `tank set_up` command will run a script that creates a default configuration and don’t worry if you follow the guide carefully you won’t blow anything up. 
 
-If you’re not currently logged into your project in Desktop when using the tank command, you will be prompted to login. To see all available commands for a project navigate to a project configuration and execute the tank command:
+**NEED TO KNOW WHERE THIS COMMAND IS USED...** This doesn't tell you how to run the tank setup_project, just about what the command does. Where is this command run? https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#setup_project
+
+If you’re not currently logged into your project in Desktop when using the `tank` command, you will be prompted to login. To see all available commands for a project navigate to a project configuration and execute the `tank` command:
 
 $ `cd  ../configs/your_project_name`
 
