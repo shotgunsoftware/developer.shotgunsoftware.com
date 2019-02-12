@@ -147,7 +147,7 @@ The final step generates the appropriate folders, files, and data necessary to c
 
 ![Centralized storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/15_centralized_storage.png)
 
-**Step 11:** Under the appropriate file system select **browse** and navigate to the configuration folder you created when preparing for this exercise, **./config**, and enter the project name **the_other_side**. This creates the folder where the project configuration is stored. Select Run Setup and… wait for it… 
+**Step 11:** Under the appropriate file system select **browse** and navigate to the configuration folder you created when preparing for this exercise, **./config**, and enter the project name **the_other_side**. This creates the folder where the project configuration is stored. Select **Run Setup** and… wait for it… 
 
 ![Project setup](../../../images/learning_content/toolkit_basics_guides/advanced_config/16_project_setup_config.png)
 
