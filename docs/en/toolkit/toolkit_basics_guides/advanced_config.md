@@ -99,13 +99,13 @@ For this exercise use **Shotgun Default**. This option will download and configu
 
 ![Select config](../../../images/learning_content/toolkit_basics_guides/advanced_config/7_select_config.png)
 
-**Step 5:** Select **Continue** 
+**Step 5:** Select **Continue**. 
 
 A dialog box will be displayed with two options and **Shotgun Default** selected. At this point there’s an option to select a Legacy Default Configuration setup. This configuration setup is from an older version of Shotgun for studios who still use that version. We will use the Default for this exercise.
 
 ![Select config](../../../images/learning_content/toolkit_basics_guides/advanced_config/8_select_config.png)
 
-**Step 6:** Select **Continue**
+**Step 6:** Select **Continue**.
 
 **Define storage locations for project files**
 
@@ -133,7 +133,7 @@ This setup allows Shotgun to have access to only the folder you identify for sto
 
 The operating system path is automatically updated to identify the path where the project data is stored.
 
-**Step 10:** Select **Continue**
+**Step 10:** Select **Continue**.
 
 ## Name the Project Folder 
 
@@ -147,7 +147,7 @@ The final step generates the appropriate folders, files, and data necessary to c
 
 ![Centralized storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/15_centralized_storage.png)
 
-**Step 11:** Under the appropriate file system select **browse** and navigate to the configuration folder you created when preparing for this exercise, **./Config**, and enter the project name **the_other_side**. This creates the folder where the project configuration is stored. Select **Run Setup** and… wait for it… 
+**Step 11:** Under the appropriate file system select **browse** and navigate to the configuration folder you created when preparing for this exercise, **./Config**, and enter the project name **the_other_side**. This creates the folder where the project configuration is stored. Select **Run Setup** and wait for it to complete the setup. 
 
 ![Project setup](../../../images/learning_content/toolkit_basics_guides/advanced_config/16_project_setup_config.png)
 
