@@ -43,9 +43,9 @@ Use the Pipeline Configuration List in Shotgun to locate where the Pipeline Conf
 
 Finding the Pipeline Configuration
 
-**Step 1:** Open the Shotgun Site that manages the project you will be using for this exercise.
+**Step 1:** Open the **Shotgun Site** that manages the project you will be using for this exercise.
 
-**Step 2:** Access the project from inside of Shotgun by selecting it from the Projects page.
+**Step 2:** Access the project from the Shotgun Site by selecting it from the **Projects page**.
 
 ![Shotgun project](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/1_shotgun_project.png)
 
