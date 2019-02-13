@@ -109,7 +109,7 @@ Pipeline configurations are used to create new environments and customize existi
 
 This reference box shows details about the configuration settings that control the functions of the **File Open** window. Some apps in Shotgun Toolkit have a reference box to show what settings are used for the app and what the default settings are. Notice the **Location:** identifier is **tk-multi-workfiles2**. This is the identifier for the bundle of code that creates the workfiles app. When searching a pipeline configuration this name will identify the settings for the app. There’s an [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) that lists all the configuration settings and app names used for what’s available in the Shotgun Toolkit.
 
-![Current_work_area](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/9_current_work_area "View task button")
+![Current_work_area](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/9_current_work_area.png)
 
 Look under the **Configuration** header to find the settings for this specific environment. A Pipeline Configuration supports multiple environments and environmets are created based on artist tasks, steps in a pipeline, and the software integrations.
 
