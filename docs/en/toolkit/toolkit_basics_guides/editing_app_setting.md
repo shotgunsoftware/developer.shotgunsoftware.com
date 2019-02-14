@@ -2,6 +2,7 @@
 layout: default
 title: Editing a configuration
 permalink: /toolkit/toolkit_basics_guides/editing_app_setting/
+lang: en
 ---
 
 # Editing a Pipeline Configuration
