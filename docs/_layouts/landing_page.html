@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+
+
+<div style="margin-top: 50px; display: flex; align-items: center; flex-direction: column; justify-content: center;">
+
+    <img style="max-height: 200px;" src="{{ site.data.landing_page.image }}"/>
+
+    <div class="fs-3" style="width: 90%; margin: 20px;">
+    {{ site.data.landing_page_text.title }}
+    </div>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','qfxkCbmyXcLug2g6Jgfv','2.0.0');
+</script>
+
+<form>
+  <input type="text" class="st-default-search-input" />
+</form>
+
+<div class="st-search-container"></div>
+
+    <div style="display: flex; flex-wrap: wrap; margin-top: 10px; justify-content: center;" >
+    {% for tile in site.data.landing_page.tiles%}
+
+        <div
+            style="cursor: pointer; width: 190px; margin: 5px; padding: 5px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #0696D7; border-radius: 4px; text-align: center;"
+            onmouseover="this.style.background='#eeeeee';"
+            onmouseout="this.style.background='white';"
+            onclick="location.href='{{ tile.target }}';"
+        >
+            <img style="width: 80px; height: 80px" src="{{ tile.image }}"/>
+            <div class="fs-2">{{ site.data.landing_page_text[tile.name] }}</div>
+        </div>
+
+    {% endfor %}
+    </div>
+
+
+</div>
