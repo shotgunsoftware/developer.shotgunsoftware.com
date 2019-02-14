@@ -1,9 +1,7 @@
 ---
 layout: default
 title: 貢献ガイド
-nav_order: 5
 permalink: /contribution/
-has_children: false
 ---
 
 # 貢献ガイド

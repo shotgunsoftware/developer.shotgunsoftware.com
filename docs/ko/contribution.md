@@ -1,9 +1,7 @@
 ---
 layout: default
 title: 기여 가이드
-nav_order: 5
 permalink: /contribution/
-has_children: false
 ---
 
 # 기여 가이드

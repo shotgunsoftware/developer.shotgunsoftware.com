@@ -1,9 +1,7 @@
 ---
 layout: default
-title: RV
-nav_order: 4
+title: 概观
 permalink: /rv/
-has_children: true
 ---
 
 # RV

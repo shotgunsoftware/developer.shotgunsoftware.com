@@ -1,9 +1,7 @@
 ---
 layout: default
-title: Toolkit
-nav_order: 3
+title: 概观
 permalink: /toolkit/
-has_children: true
 ---
 
 # Toolkit

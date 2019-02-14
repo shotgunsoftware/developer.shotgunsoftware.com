@@ -1,9 +1,7 @@
 ---
 layout: default
-title: Shotgun
-nav_order: 2
+title: 개요
 permalink: /shotgun/
-has_children: true
 ---
 
 # Shotgun

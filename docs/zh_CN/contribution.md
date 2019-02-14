@@ -1,9 +1,7 @@
 ---
 layout: default
 title: 贡献手册
-nav_order: 5
 permalink: /contribution/
-has_children: false
 ---
 
 # 贡献手册

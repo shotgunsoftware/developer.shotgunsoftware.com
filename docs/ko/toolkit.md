@@ -1,9 +1,7 @@
 ---
 layout: default
-title: 툴킷
-nav_order: 3
+title: 개요
 permalink: /toolkit/
-has_children: true
 ---
 
 # 툴킷
