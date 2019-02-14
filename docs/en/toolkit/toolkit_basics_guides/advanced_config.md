@@ -2,6 +2,7 @@
 layout: default
 title: Advanced Setup
 permalink: /toolkit/toolkit_basics_guides/advanced_config/
+lang: en
 ---
 
 # Getting started with configurations
