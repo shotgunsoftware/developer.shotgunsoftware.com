@@ -1,7 +1,7 @@
 ---
 layout: landing_page
-title: Overview
+title: 개요
 permalink: /
-lang: en
+lang: ko
 ---
 

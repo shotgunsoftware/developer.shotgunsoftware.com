@@ -1,0 +1,9 @@
+# This file holds translated text strings for the site landing page.
+#
+# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/landing-page/
+#
+
+title: Shotgun의 개발자 문서 사이트에 오신 것을 환영합니다. 이 사이트에는 프로그래밍 방식으로 Shotgun과 상호 작용할 수 있는 모든 방법에 대한 상세한 기술 참조 정보는 물론, Shotgun의 모든 통합 요소를 가장 효과적으로 사용하는 방법을 배울 수 있는 튜토리얼, 안내서, 기타 교육 리소스도 준비되어 있습니다.
+shotgun: 데이터에 직접 연결하고 반복적인 작업을 자동화하고 사용자들이 Shotgun과 상호 작용할 수 있는 방법을 새롭게 추가하려면 Shotgun의 API를 사용하십시오.
+toolkit: 툴킷은 아티스트 응용프로그램과 도구를 수많은 공통 응용프로그램의 즉시 사용 가능한 워크플로우와 통합할 수 있게 해 주는 확장 가능한 플랫폼입니다.
+rv: RV는 원하는 대로 구성 가능한 강력한 기능의 데스크톱 검토 도구로 아티스트와 감독에게 미디어를 재생하고 비교할 수 있는 기능을 제공합니다.

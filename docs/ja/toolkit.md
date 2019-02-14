@@ -1,14 +1,12 @@
 ---
 layout: default
-title: トゥキツ
-nav_order: 3
+title: 概要
 permalink: /toolkit/
-has_children: true
 lang: ja
 ---
 
-# トゥキツ 
+# Toolkit
 
-Toolkit is an extendable platform for integrating artist applications and pipeline tools with Shotgun.
+Toolkit は、アーティスト向けアプリケーションおよびパイプライン ツールを Shotgun と統合するための拡張可能なプラットフォームです。
 
-The Toolkit Core API is the platform upon which all integrations are built. The Core API handles app, engine, and platform fundamentals, as well as file system and deploy management.
+Toolkit のコア API は、すべての統合を構築するためのプラットフォームです。Core API は、アプリケーション、エンジンおよびプラットフォームの基本、ファイル システムの整理とツールの配置を処理します。

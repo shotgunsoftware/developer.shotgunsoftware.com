@@ -1,4 +1,8 @@
-# Table of contents
+# This file holds the table of contents for the site
+#
+# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
+#
+#
 
 - caption: shotgun
   children:

@@ -1,0 +1,37 @@
+# Translated text strings used by the table of contents
+#
+# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
+#
+
+rv: RV
+toolkit: Toolkit
+shotgun: Shotgun
+
+python-api: Python API
+rest-api: REST API
+event-triggers: 事件驱动的触发器
+examples: 示例
+reference: 参考
+
+core-api: 核心 API
+qt-widgets: QT 控件
+shotgun-utils: Shotgun 实用程序
+publish-api: 发布 API
+app-development: 应用开发
+
+user-manual: 用户手册
+technical-reference: 技术参考文件
+rv-sdi: RV-SDI
+
+maya: Maya
+nuke: Nuke
+shotgun: Shotgun
+screening-room: 审片室和 Shotgun 审看
+troubleshooting: 疑难解答
+extending-rv: 扩展 RV
+
+other: Other
+
+shotgun-support: Shotgun 支持
+service-status: Service Status
+new-support-request: New Support Request

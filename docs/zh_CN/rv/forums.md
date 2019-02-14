@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Forums
+title: 论坛
 permalink: /rv/forums/
-lang: en
+lang: zh_CN
 ---
 
-# RV Integrations
+# RV 集成

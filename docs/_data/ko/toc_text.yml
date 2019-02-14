@@ -1,5 +1,5 @@
 # Translated text strings used by the table of contents
-# 
+#
 # For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
 #
 
@@ -9,29 +9,29 @@ shotgun: Shotgun
 
 python-api: Python API
 rest-api: REST API
-event-triggers: Event Driven Triggers
-examples: Examples
-reference: Reference
+event-triggers: 이벤트 기반 트리거
+examples: 예
+reference: 참조
 
 core-api: Core API
 qt-widgets: QT Widgets
-shotgun-utils: Shotgun Utils
-publish-api: Publish API
-app-development: App Development
+shotgun-utils: Shotgun 유틸리티
+publish-api: 게시 API
+app-development: 앱 개발
 
-user-manual: User Manual
-technical-reference: Technical Reference
+user-manual: 사용자 매뉴얼
+technical-reference: 기술 참조
 rv-sdi: RV-SDI
 
 maya: Maya
 nuke: Nuke
 shotgun: Shotgun
-screening-room: Screening Room and Shotgun Review
-troubleshooting: Troubleshooting
-extending-rv: Extending RV
+screening-room: Screening Room 및 Shotgun Review
+troubleshooting: 문제 해결
+extending-rv: RV 확장
 
 other: Other
 
-shotgun-support: Shotgun Support
+shotgun-support: Shotgun 지원
 service-status: Service Status
 new-support-request: New Support Request
