@@ -1,9 +1,6 @@
 ---
 layout: default
 title: 액션 메뉴 항목
-nav_order: 4
-parent: Shotgun
-has_children: true
 permalink: /shotgun/action_menu_items/
 ---
 

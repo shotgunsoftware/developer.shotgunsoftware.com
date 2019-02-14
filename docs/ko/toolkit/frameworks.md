@@ -1,9 +1,6 @@
 ---
 layout: default
 title: 프레임워크
-nav_order: 2
-parent: Toolkit
-has_children: true
 permalink: /toolkit/frameworks/
 ---
 
