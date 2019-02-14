@@ -13,7 +13,7 @@ lang: en
  
 This guide describes how to edit settings within an existing Pipeline Configuration to meet the needs of a project pipeline. The first guide, [Getting started with configurations](./advanced_config.md), described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create an Advanced Configuration, complete the Advanced Configuration Guide before proceeding.
 
-Through extending the default configuration, Shotgun Toolkit enables the creation of custom workspace [environments](link to environments document) creating a UI that's integrated within a software application and allows for customizing tasks for pipeline workflows. An example of a customization might be as simple as enabling and disabling a button to control at what step in a pipeline a function of a Toolkit app can or cannot be used, and by whom. These customizations change the way specified users interact with the features of Toolkit apps. Toolkit allows proprietary configurations that enable you to work smarter and faster by: creating custom workflows, automating repetitive and mundane tasks, modifying hooks as well as adding custom tools. Unfortunately, it’s only accessible through Shotgun, and not yet released for everyday tasks like washing your clothes.
+Through extending the default configuration, Shotgun Toolkit enables the creation of custom workspace [environments](link to environments document) creating a UI that's integrated within a software application and allows for customizing tasks for pipeline workflows. An example of a customization might be as simple as enabling and disabling a button to control at what step in a pipeline a function of a Toolkit app can or cannot be used, and by whom. These customizations change the way specified users interact with the features of Toolkit apps. Toolkit allows proprietary configurations that enable you to work smarter and faster by: creating custom workflows, automating repetitive and mundane tasks, modifying hooks as well as adding custom tools. Unfortunately, it’s only accessible through Shotgun software integrations, and not yet released for everyday tasks like washing your clothes.
 
 The exercises in this guide will teach you how to find what configuration settings control actions within the Shotgun software integrations, where the settings live, and how to edit them. We will edit a setting in the Workfiles app that manages the behavior of the +New Task button in Maya and prevents an artist from creating a new task when working on a project inside Maya. After completing this guide, you will have the knowledge fundamental to: finding a configuration setting for a specific Toolkit app, editing a setting, and exploring what other functions the configuration settings can extend.
 
@@ -46,7 +46,7 @@ Finding the Pipeline Configuration
 
 **Step 1:** Open the **Shotgun Site** that manages the project you will be using for this exercise.
 
-**Step 2:** Access the project from the Shotgun Site by selecting it from the **Projects page**.
+**Step 2:** Access the project from the **Shotgun Site** by selecting it from the **Projects page**.
 
 ![Shotgun project](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/1_shotgun_project.png)
 
@@ -64,7 +64,7 @@ The path will be displayed in a new field.
 
 **Step 5:** In a terminal or file manager, browse to the folder where the project’s pipeline configuration is stored and open the folder. 
 
-There are three subfolders in a Shotgun configuration root folder: **cache**, **config** and **install**. Open the **config** folder and nested inside you will find several subfolders and a few files. 
+There are three subfolders in a Toolkit configuration root folder: **cache**, **config** and **install**. Open the **config** folder and nested inside you will find several subfolders and a few files. 
 
 ![Config content](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/5_config_content.png)
 
@@ -88,13 +88,13 @@ A studio may have a standardized naming convention for new tasks and a specific 
 
 ![Load project](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/6_load_project.png)
 
-**Step 9:** Launch Maya from **Desktop**. 
+**Step 9:** Launch Maya from Shotgun Desktop. 
 
 ![Load project](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/7_view_project.png)
 
 Wait for the **Shotgun** menu to fully load; if you have a slow internet connection this would be the time to run the configuration that makes you that perfect shot of espresso with just the right amount of crema.
 
-Once Maya and Shotgun are fully loaded, the **File Open** dialog box will open automatically. When launching Maya from **Shotgun Desktop** the default environment that is loaded is the Maya project environment. The pipeline steps that are identified in the default configuration are `project`, `scene`, `shot`, `shot_step`, `asset`, `asset_step`. Environments are automatically loaded based on what tasks are being performed within a specific software integration.
+Once Maya and Shotgun are fully loaded, the **File Open** dialog box will open automatically. When launching Maya from Shotgun Desktop the default environment that is loaded is the Maya project environment. The pipeline steps that are identified in the default configuration are `project`, `scene`, `shot`, `shot_step`, `asset`, `asset_step`. Environments are automatically loaded based on what tasks are being performed within a specific software integration.
 
 **Step 10:** Select the **Assets** tab in the left pane of the **File Open** dialog box. Select any asset inside the folder displayed in the search results. 
 
@@ -104,7 +104,7 @@ The **+New Task** button is enabled.
 
 ## Find what setting controls the +New Task button
 
-Pipeline configurations are used to create new environments and customize existing environments based on the needs of each step in a pipeline. A pipeline configuration can override core Shotgun settings creating custom environments for each step in a project pipeline. Taking over an existing configuration is the easiest way to develop a configuration specific to your pipeline needs. Settings can vary from the Shotgun core as much or as little as necessary to meet the needs of a project’s pipeline. This structure allows configurations to be lightweight adding only the settings that are different from the default values in the Shotgun core code. For this exercise you will override the default setting for adding a new task by taking over and editing a default configuration.
+Pipeline configurations are used to create new environments and customize existing environments based on the needs of each step in a pipeline. A pipeline configuration can override core Shotgun integration settings creating custom environments for each step in a project pipeline. Taking over an existing configuration is the easiest way to develop a configuration specific to your pipeline needs. Settings can vary from the Shotgun core as much or as little as necessary to meet the needs of a project’s pipeline. This structure allows configurations to be lightweight adding only the settings that are different from the default values in the Shotgun core code. For this exercise you will override the default setting for adding a new task by taking over and editing a default configuration.
 
 **Step 11:** Select the **>** at the top right of the **File Open** window next to the **Project (name of project)**. 
 
@@ -142,7 +142,7 @@ A setting can be utilized in multiple places within a pipeline configuration. Wh
 
 ![Maya shotgun2](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/12_Maya_Shotgun2.png)
 
-**TIP:** If the menu isn’t visible there will be **>>** to show that some menu items are hidden. Select the **>>** to display the Shotgun menu, or you can widen the Maya window.
+**TIP:** If the menu isn’t visible there will be **>>** to show that some menu items are hidden. Select the **>>** to display the Shotgun menu or you can widen the Maya window.
 
 **Step 14:** Select **Shotgun > Project the_other_side > Work Area Info…** on the top right of the menu.
 
