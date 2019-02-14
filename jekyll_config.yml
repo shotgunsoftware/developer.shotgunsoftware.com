@@ -43,5 +43,3 @@ additional_head_html: |
 # the url to connect to via the 'edit in github' button
 github_editme_path: shotgunsoftware/developer-beta/blob/master/docs
 
-# for now, disable searching
-search_enabled: false
