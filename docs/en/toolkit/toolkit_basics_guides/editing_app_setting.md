@@ -40,9 +40,9 @@ The Workfiles app governs file management in a Shotgun software integration and 
  
 ## Getting familiar with the configuration files
 
-Use the Pipeline Configuration List in Shotgun to locate where the Pipeline Configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to **Step 5**.
+Use the pipeline configuration List in Shotgun to locate where the pipeline configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to **Step 5**.
 
-Finding the Pipeline Configuration
+## Finding the pipeline configuration
 
 **Step 1:** Open the **Shotgun Site** that manages the project you will be using for this exercise.
 
@@ -108,11 +108,11 @@ Pipeline configurations are used to create new environments and customize existi
 
 **Step 11:** Select the **>** at the top right of the **File Open** window next to the **Project (name of project)**. 
 
-This reference box shows details about the configuration settings that control the functions of the **File Open** window. Some apps in Toolkit have a reference box to show what settings are used for the app and what the default settings are. Notice the **Location:** identifier is **tk-multi-workfiles2**. This is the identifier for the bundle of code that creates the Workfiles app. When searching a pipeline configuration this name will identify where the settings live for the app. There’s an [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) that lists all the configuration settings and app names used for what’s available in the Shotgun Toolkit.
+This reference box shows details about the configuration settings that control the functions of the **File Open** window. Some apps in Toolkit have a reference box to show what settings are used for the app and what the default settings are. Notice the **Location:** identifier is **tk-multi-workfiles2**. This is the identifier for the bundle of code that creates the Workfiles app. When searching a pipeline configuration this name will identify where the settings live for the app. There’s an [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) that lists all the configuration settings, apps, and engines for what’s available in Shotgun Toolkit.
 
 ![Current_work_area](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/9_current_work_area.png)
 
-Look under the **Configuration** header to find the settings for this specific environment. A Pipeline Configuration supports multiple environments and environmets are created based on artist tasks, steps in a pipeline, and the software integrations.
+Look under the **Configuration** header to find the settings for this specific environment. A pipeline configuration supports multiple environments and environmets are created based on artist tasks, steps in a pipeline, and the software integrations.
 
 ![Configuration_ref](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/10_configuration_ref.png "View task button")
 
@@ -267,7 +267,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
   
 <!--![Workfiles2](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/18_workfiles2.png)-->
 
-The Maya reference box indicated the `allow_task_creation` setting has a default value of `true`. As a best practice, no default settings are reflected in a pipeline configuration. This allows for a sparse format adding only the settings that differ from the default code to the configuration. If a setting isn’t explicitly provided any calls accessing that setting will receive the default value. When Toolkit reads the configuration and builds an environment, the apps, Engines, and Frameworks running in that environment use that project’s Pipeline Configuration settings and override any default settings based on what’s in the configuration. 
+The Maya reference box indicated the `allow_task_creation` setting has a default value of `true`. As a best practice, no default settings are reflected in a pipeline configuration. This allows for a sparse format adding only the settings that differ from the default code to the configuration. If a setting isn’t explicitly provided any calls accessing that setting will receive the default value. When Toolkit reads the configuration and builds an environment, the apps, Engines, and Frameworks running in that environment use that project’s pipeline configuration settings and override any default settings based on what’s in the configuration. 
 
 **Step 20:** In `tk-multi-workfiles2.yml`, add `allow_task_creation` under `settings.tk-multi-workfiles2.launch_at_startup:` and set the value to `false` 
 
@@ -288,7 +288,7 @@ The [Environment Configuration Reference](link to file) lists where the configur
 
 **Step 21:** Save the file.
 
-Shotgun Desktop utilizes the Pipeline Configuration when it accesses a project. Launching a project from Shotgun Desktop initializes the Pipeline Configuration for that project. The guide, [How Shotgun Toolkit works](Link to How Shotgun Toolkit works), is a good reference for learning about the basics of Shotgun Toolkit.
+Shotgun Desktop utilizes the pipeline configuration when it accesses a project. Launching a project from Shotgun Desktop initializes the pipeline configuration for that project. The guide, [How Shotgun Toolkit works](Link to How Shotgun Toolkit works), is a good reference for learning about the basics of Shotgun Toolkit.
 
 ## Reload the configuration
 
@@ -334,7 +334,7 @@ Using the **Environment** tab in Your Current Work Area discover what environmen
 
 ![Asset step env](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/24_asset_step_env.png)
 
-Each environment will display the information necessary to determine where the settings live in the Pipeline Configuration. To disallow an artist from adding a new task it’s necessary to disable the **+New Task** button for every environment that artist works in. For each environment use the same steps outlined above to edit the configuration appropriately.
+Each environment will display the information necessary to determine where the settings live in the pipeline configuration. To disallow an artist from adding a new task it’s necessary to disable the **+New Task** button for every environment that artist works in. For each environment use the same steps outlined above to edit the configuration appropriately.
 
 NOTE: Each environment is independent, a project has a dedicated configuration, and the software integrations only read settings for their specific software from the pipeline configuration when a project is loaded.
 
