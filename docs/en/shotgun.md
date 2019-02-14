@@ -2,6 +2,7 @@
 layout: default
 title: Overview
 permalink: /shotgun/
+lang: en
 ---
 
 # Shotgun Development

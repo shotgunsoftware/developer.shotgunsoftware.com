@@ -2,6 +2,7 @@
 layout: default
 title: Contribution Guide
 permalink: /contribution/
+lang: en
 ---
 
 # Contribution Guide

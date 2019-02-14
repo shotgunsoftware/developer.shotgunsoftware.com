@@ -2,6 +2,7 @@
 layout: default
 title: Overview
 permalink: /toolkit/
+lang: en
 ---
 
 # The Toolkit Platform

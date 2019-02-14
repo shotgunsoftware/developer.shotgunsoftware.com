@@ -2,6 +2,7 @@
 layout: default
 title: Frameworks
 permalink: /toolkit/frameworks/
+lang: en
 ---
 
 # Toolkit Frameworks
