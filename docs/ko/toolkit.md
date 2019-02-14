@@ -2,6 +2,7 @@
 layout: default
 title: 개요
 permalink: /toolkit/
+lang: ko
 ---
 
 # 툴킷

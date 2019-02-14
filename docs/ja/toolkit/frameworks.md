@@ -2,6 +2,7 @@
 layout: default
 title: フレームワーク
 permalink: /toolkit/frameworks/
+lang: ja
 ---
 
 # Toolkit のフレームワーク

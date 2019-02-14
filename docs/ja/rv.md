@@ -2,6 +2,7 @@
 layout: default
 title: 概要
 permalink: /rv/
+lang: ja
 ---
 
 # RV

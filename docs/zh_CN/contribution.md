@@ -2,6 +2,7 @@
 layout: default
 title: 贡献手册
 permalink: /contribution/
+lang: zh_CN
 ---
 
 # 贡献手册

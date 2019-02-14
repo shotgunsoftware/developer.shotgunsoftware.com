@@ -2,6 +2,7 @@
 layout: default
 title: 개요
 permalink: /shotgun/
+lang: ko
 ---
 
 # Shotgun

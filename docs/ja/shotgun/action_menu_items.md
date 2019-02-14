@@ -2,6 +2,7 @@
 layout: default
 title: アクション メニュー項目
 permalink: /shotgun/action_menu_items/
+lang: ja
 ---
 
 # アクション メニュー アイテムのフレームワーク

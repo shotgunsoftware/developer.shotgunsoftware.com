@@ -2,6 +2,7 @@
 layout: default
 title: 概要
 permalink: /toolkit/
+lang: ja
 ---
 
 # Toolkit

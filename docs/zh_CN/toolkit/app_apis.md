@@ -2,6 +2,7 @@
 layout: default
 title: 应用 API
 permalink: /toolkit/app_apis/
+lang: zh_CN
 ---
 
 # Toolkit 应用 API

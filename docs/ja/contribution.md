@@ -2,6 +2,7 @@
 layout: default
 title: 貢献ガイド
 permalink: /contribution/
+lang: ja
 ---
 
 # 貢献ガイド

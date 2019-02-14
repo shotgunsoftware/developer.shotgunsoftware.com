@@ -2,6 +2,7 @@
 layout: default
 title: 框架
 permalink: /toolkit/frameworks/
+lang: zh_CN
 ---
 
 # Toolkit 框架

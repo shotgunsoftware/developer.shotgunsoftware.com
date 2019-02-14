@@ -2,6 +2,7 @@
 layout: default
 title: 統合
 permalink: /rv/integrations/
+lang: ja
 ---
 
 # RV の統合

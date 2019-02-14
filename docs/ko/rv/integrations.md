@@ -2,6 +2,7 @@
 layout: default
 title: 통합
 permalink: /rv/integrations/
+lang: ko
 ---
 
 # RV 통합

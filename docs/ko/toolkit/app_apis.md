@@ -2,6 +2,7 @@
 layout: default
 title: 앱 API
 permalink: /toolkit/app_apis/
+lang: ko
 ---
 
 # 툴킷 앱 API

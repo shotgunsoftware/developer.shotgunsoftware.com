@@ -2,6 +2,7 @@
 layout: default
 title: 개요
 permalink: /rv/
+lang: ko
 ---
 
 # RV

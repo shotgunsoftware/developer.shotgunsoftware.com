@@ -2,6 +2,7 @@
 layout: default
 title: アプリケーション API
 permalink: /toolkit/app_apis/
+lang: ja
 ---
 
 # Toolkit アプリケーション API

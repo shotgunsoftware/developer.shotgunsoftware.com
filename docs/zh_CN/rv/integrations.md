@@ -2,6 +2,7 @@
 layout: default
 title: 集成
 permalink: /rv/integrations/
+lang: zh_CN
 ---
 
 # RV 集成

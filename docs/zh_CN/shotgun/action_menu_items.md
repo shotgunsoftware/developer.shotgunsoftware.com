@@ -2,6 +2,7 @@
 layout: default
 title: 动作菜单项
 permalink: /shotgun/action_menu_items/
+lang: zh_CN
 ---
 
 # 动作菜单项框架

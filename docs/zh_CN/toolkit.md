@@ -2,6 +2,7 @@
 layout: default
 title: 概观
 permalink: /toolkit/
+lang: zh_CN
 ---
 
 # Toolkit
