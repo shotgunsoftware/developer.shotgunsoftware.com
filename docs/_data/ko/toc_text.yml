@@ -1,0 +1,37 @@
+# Translated text strings used by the table of contents
+#
+# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
+#
+
+rv: RV
+toolkit: Toolkit
+shotgun: Shotgun
+
+python-api: Python API
+rest-api: REST API
+event-triggers: 이벤트 기반 트리거
+examples: 예
+reference: 참조
+
+core-api: Core API
+qt-widgets: QT Widgets
+shotgun-utils: Shotgun 유틸리티
+publish-api: 게시 API
+app-development: 앱 개발
+
+user-manual: 사용자 매뉴얼
+technical-reference: 기술 참조
+rv-sdi: RV-SDI
+
+maya: Maya
+nuke: Nuke
+shotgun: Shotgun
+screening-room: Screening Room 및 Shotgun Review
+troubleshooting: 문제 해결
+extending-rv: RV 확장
+
+other: Other
+
+shotgun-support: Shotgun 지원
+service-status: Service Status
+new-support-request: New Support Request

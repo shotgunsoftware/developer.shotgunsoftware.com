@@ -1,5 +1,9 @@
-title: Shotgun開発者ドキュメンテーションポータルへようこそ。このサイトには、Shotgunをプログラムで操作するためのあらゆる方法の詳細なテクニカルリファレンス、およびShotgunのすべての統合ポイントを最大限に活用する方法を学ぶためのチュートリアル、ガイド、およびその他の教育リソースがあります。
-shotgun: ShotgunのAPIを使用してデータに直接接続するか、Event Triggersを使用して繰り返しの作業を自動化します。
-toolkit: Toolkitは、アーティストのアプリケーションとツールを統合するための拡張可能なプラットフォームです。
-rv: RVは、アーティストや監督者がより速く繰り返す能力を与える強力なデスクトップレビューツールです。
+# This file holds translated text strings for the site landing page.
+#
+# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/landing-page/
+#
 
+title: Shotgun の開発者用ドキュメントへようこそ。このサイトには、Shotgun をプログラムによって操作するためのあらゆる方法についての詳細な技術リファレンス、および Shotgun のすべての統合ポイントを最大限に活用する方法を学ぶためのチュートリアル、ガイド、およびその他の教育用リソースが含まれています。
+shotgun: Shotgun の API を使用すると、データに直接接続したり、反復的なタスクを自動化したり、ユーザが Shotgun を操作するための新しい方法を追加することができます。
+toolkit: Toolkit は、アーティスト向けアプリケーションおよびツールを、多くの一般的なアプリケーションですぐに使えるワークフローと統合するための拡張可能なプラットフォームです。
+rv: RV は、アーティストやスーパーバイザーがメディアを再生および比較するための機能を提供する、強力で高度に設定可能なデスクトップ レビュー ツールです。

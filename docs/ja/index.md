@@ -1,7 +1,7 @@
 ---
 layout: landing_page
-title: Overview
+title: 概要
 permalink: /
-lang: en
+lang: ja
 ---
 

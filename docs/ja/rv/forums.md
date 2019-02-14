@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Forums
+title: フォーラム
 permalink: /rv/forums/
-lang: en
+lang: ja
 ---
 
-# RV Integrations
+# RV の統合

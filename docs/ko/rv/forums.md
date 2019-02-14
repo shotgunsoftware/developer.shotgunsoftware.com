@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Forums
+title: 포럼
 permalink: /rv/forums/
-lang: en
+lang: ko
 ---
 
-# RV Integrations
+# RV 통합

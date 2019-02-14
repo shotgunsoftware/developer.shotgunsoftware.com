@@ -2,6 +2,7 @@
 layout: default
 title: Action Menu Items
 permalink: /shotgun/action_menu_items/
+lang: en
 ---
 
 # Action Menu Item Framework

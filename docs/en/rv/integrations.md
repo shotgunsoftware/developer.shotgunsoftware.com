@@ -2,6 +2,7 @@
 layout: default
 title: Integrations
 permalink: /rv/integrations/
+lang: en
 ---
 
 # RV Integrations

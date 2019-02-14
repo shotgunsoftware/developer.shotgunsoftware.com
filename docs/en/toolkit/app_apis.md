@@ -2,6 +2,7 @@
 layout: default
 title: App APIs
 permalink: /toolkit/app_apis/
+lang: en
 ---
 
 # Toolkit App APIs
