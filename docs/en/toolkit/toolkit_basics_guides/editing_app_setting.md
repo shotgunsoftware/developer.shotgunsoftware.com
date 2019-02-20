@@ -11,7 +11,7 @@ lang: en
 
 ## About the guide
  
-This guide describes how to edit settings within an existing Pipeline Configuration to meet the needs of a project pipeline. The first guide, [Getting started with configurations](./advanced_config.md), described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create an Advanced Configuration, complete the Advanced Configuration Guide before proceeding.
+This guide describes how to edit settings within an existing Pipeline Configuration to meet the needs of a project pipeline. The first guide, [Getting started with configurations](./advanced_config.md), described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create a default configuration, complete Getting started with configurations before proceeding.
 
 Through extending the default configuration, Shotgun Toolkit enables the creation of custom workspace [environments](link to environments document) creating a UI that's integrated within a software application and allows for customizing tasks for pipeline workflows. An example of a customization might be as simple as enabling and disabling a button to control at what step in a pipeline a function of a Toolkit app can or cannot be used, and by whom. These customizations change the way specified users interact with the features of Toolkit apps. Toolkit allows proprietary configurations that enable you to work smarter and faster by: creating custom workflows, automating repetitive and mundane tasks, modifying hooks as well as adding custom tools. Unfortunately, it’s only accessible through Shotgun software integrations, and not yet released for everyday tasks like washing your clothes.
 
