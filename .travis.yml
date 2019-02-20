@@ -13,7 +13,7 @@ python:
 env:
   global:
     - DOC_URL=https://developer.shotgunsoftware.com
-    - DOC_PATH=/
+    - DOC_PATH=""
     - S3_BUCKET=doctest3
     - S3_WEB_URL=http://doctest3.s3-website.eu-west-2.amazonaws.com
 
