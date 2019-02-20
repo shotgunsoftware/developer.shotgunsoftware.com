@@ -48,7 +48,7 @@ deploy:
   # When commiting to master, auto-deploy to github-pages
   # This will copy the contents of the _build folder to gh-pages branch and push
 - provider: pages
-  repo: shotgunsoftware.github.io
+  repo: shotgunsoftware/shotgunsoftware.github.io
   local-dir: ./_build
   target-branch: master
   verbose: true
