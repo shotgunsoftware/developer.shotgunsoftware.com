@@ -51,6 +51,7 @@ deploy:
   repo: shotgunsoftware.github.io
   local-dir: ./_build
   target-branch: master
+  verbose: true
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   on:
