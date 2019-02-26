@@ -13,7 +13,6 @@
 # Site settings
 title: SG Developer
 description: Resources for Shotgun Developers.
-url: "https://developer.shotgunsoftware.com"
 
 # i18n configuration for all languages shotgun supports
 languages: ["en", "ko", "ja", "zh_CN"]
