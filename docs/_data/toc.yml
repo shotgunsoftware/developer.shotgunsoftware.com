@@ -3,22 +3,27 @@
 # For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
 #
 #
+# NOTE: All external links pointing at the developer site (for example to sphinx docs)
+#       need to begin with a space character in order to indicate to the i18n system that
+#       those links shouldn't be magically turned into i18n equivalents for non-english 
+#       languages. For more info, see https://github.com/untra/polyglot#disabling-url-relativizing
+#
 
 - caption: shotgun
   children:
   - page: /shotgun/
   - text: python-api
-    url: https://developer.shotgunsoftware.com/python-api/
+    url: " https://developer.shotgunsoftware.com/python-api/"
   - text: rest-api
-    url: https://developer.shotgunsoftware.com/rest-api/
+    url: " https://developer.shotgunsoftware.com/rest-api/"
   - text: event-triggers
-    url: https://github.com/shotgunsoftware/shotgunEvents/wiki
+    url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
   - page: /shotgun/action_menu_items/
     children:
     - text: examples
-      url: http://developer.shotgunsoftware.com/python-api/cookbook/examples/ami_handler.html
+      url: " http://developer.shotgunsoftware.com/python-api/cookbook/examples/ami_handler.html"
     - text: reference
-      url: https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools
+      url: "https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
 
 - caption: toolkit
   children:
@@ -29,58 +34,58 @@
     - page: /toolkit/toolkit_basics_guides/editing_app_setting/
     - page: /toolkit/toolkit_basics_guides/installing_app/
   - text: core-api
-    url: https://developer.shotgunsoftware.com/tk-core/
+    url: " https://developer.shotgunsoftware.com/tk-core/"
   - page: /toolkit/frameworks/
     children:
     - text: qt-widgets
-      url: http://developer.shotgunsoftware.com/tk-framework-qtwidgets
+      url: " http://developer.shotgunsoftware.com/tk-framework-qtwidgets"
     - text: shotgun-utils
-      url: http://developer.shotgunsoftware.com/tk-framework-shotgunutils
+      url: " http://developer.shotgunsoftware.com/tk-framework-shotgunutils"
   - page: /toolkit/app_apis/
     children:
     - text: publish-api
-      url: https://developer.shotgunsoftware.com/tk-multi-publish2/
+      url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
   - text: app-development
-    url: https://support.shotgunsoftware.com/entries/95440137
+    url: "https://support.shotgunsoftware.com/entries/95440137"
 
 - caption: rv
   children:
   - page: /rv/
   - text: user-manual
-    url: http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_manual.html
+    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_manual.html"
   - text: technical-reference
-    url: http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_reference.html
+    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_reference.html"
   - text: rv-sdi
-    url: http://www.tweaksoftware.com/static/documentation/rv/current/html/rvsdi_manual.html
+    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvsdi_manual.html"
 
   - page: /rv/integrations/
     children:
     - text: maya
-      url: http://www.tweaksoftware.com/static/documentation/rv/current/html/maya_tools_help.html
+      url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/maya_tools_help.html"
     - text: nuke
-      url: http://www.tweaksoftware.com/static/documentation/rv/current/html/rvnuke_help.html
+      url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvnuke_help.html"
     - text: shotgun
-      url: https://support.shotgunsoftware.com/hc/en-us/articles/360013250713
+      url: "https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
     - text: screening-room
-      url: https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-
+      url: "https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"
 
   - page: /rv/forums/
     children:
     - text: troubleshooting
-      url: https://support.shotgunsoftware.com/forums/23078637-Questions-and-Troubleshooting-Python-Mu-JavaScript-etc-#recent
+      url: "https://support.shotgunsoftware.com/forums/23078637-Questions-and-Troubleshooting-Python-Mu-JavaScript-etc-#recent"
     - text: extending-rv
-      url: https://support.shotgunsoftware.com/hc/en-us/community/topics/200682488-RV-Extending-and-Customizing-RV-Python-Mu-JavaScript-etc-#recent
+      url: "https://support.shotgunsoftware.com/hc/en-us/community/topics/200682488-RV-Extending-and-Customizing-RV-Python-Mu-JavaScript-etc-#recent"
 
 
 - caption: other
   children:
   - page: /contribution/
   - text: shotgun-support
-    url: https://support.shotgunsoftware.com/
+    url: "https://support.shotgunsoftware.com/"
   - text: service-status
-    url: https://status.shotgunsoftware.com/
+    url: "https://status.shotgunsoftware.com/"
   - text: new-support-request
-    url: https://support.shotgunsoftware.com/hc/requests/new
+    url: "https://support.shotgunsoftware.com/hc/requests/new"
 
 
 
