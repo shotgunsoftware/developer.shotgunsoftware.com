@@ -39,7 +39,7 @@ An active subscription for Maya. Get a 30 day trial of Maya [here](https://www.a
 
 Apps that are referenced in pipeline configurations can be sourced from various locations. The apps that are standard in Shotgun’s Default Configuration are sourced from the Shotgun App Store. The files in a pipeline configuration specify how Shotgun integrations accesses an app, kind of like asking Toolkit, “Can you look in your little black book for the address of the Python Console App?” The pipeline configuration files tell Toolkit where to look to find the bundles of code that are utilized for a specific app.
 
-The “addresses” for Toolkit Apps are listed in the `config/env/includes/app_location.yml` file in the Default Configuration and specify how to find the code. These “addresses” are called [descriptors](https://www.google.com/url?q=https://developer.shotgunsoftware.com/tk-core/descriptor.html&sa=D&ust=1550704642274000&usg=AFQjCNFiiQUV5OrFYtntHOiW_nnLs8hrjw]. The Shotgun integrations need to be told not only how to find the code bundles for the app, but also in what environment(s) to use the app.
+The “addresses” for Toolkit Apps are listed in the `config/env/includes/app_location.yml` file in the Default Configuration and specify how to find the code. These “addresses” are called [descriptors](https://www.google.com/url?q=https://developer.shotgunsoftware.com/tk-core/descriptor.html&sa=D&ust=1550704642274000&usg=AFQjCNFiiQUV5OrFYtntHOiW_nnLs8hrjw). The Shotgun integrations need to be told not only how to find the code bundles for the app, but also in what environment(s) to use the app.
 
 Below is a conceptual overview of how to install an app and how to tell a Shotgun integration where to use it. It outlines the steps for extending the configuration, asking Toolkit to look up a descriptor, and telling Shotgun where to use the app. These steps are detailed in this guide:
 
@@ -56,11 +56,11 @@ Push the extended configuration live.
 
 **Step 1:** Open the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya) and find the information for the Shotgun Python Console under Maya. Select the title.
 
-
+![Python app](../../../images/learning_content/toolkit_basics_guides/installing_app/1_python_app.png)
 
 This will bring up the [information for the app](https://support.shotgunsoftware.com/hc/en-us/articles/219033108), which includes everything that’s needed for the little black book.
 
-
+![Python app](../../../images/learning_content/toolkit_basics_guides/installing_app/2_python_app.png)
 
 The **System Name:** is the main identifier: `tk-multi-pythonconsole`. You will also need the **Latest Version:** v1.1.2.
 
@@ -68,7 +68,7 @@ The **System Name:** is the main identifier: `tk-multi-pythonconsole`. You will 
 
 **Step 2:** Launch Maya and select the Shotgun Menu, **Shotgun > Project the_other_side** and you will see the list of apps that are available for that project in the Project environment.
 
-
+![List of apps](../../../images/learning_content/toolkit_basics_guides/installing_app/3_list_of_apps.png)
 
 ## Extend the configuration
 
@@ -82,19 +82,19 @@ Cloning a pipeline configuration automates the process of creating a copy, build
 
 **<a name=”step3”>Step 3</a>:** Open Shotgun and in the upper right, select the **Admin Menu (your avatar) > Default Layouts > Pipeline Configuration > Pipeline Configuration List**.
 
-
+![Pipeline configuration list](../../../images/learning_content/toolkit_basics_guides/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
 This action displays a detailed list of all the pipeline configurations associated with this project.
 
 **Step 4:** Once the Pipeline Configuration List is displayed, select the **+** sign on the far right of the column headers and add the column **Projects**.
 
-
+![Add project column](../../../images/learning_content/toolkit_basics_guides/installing_app/5_add_project_column.png)
 
 ### Review where the project’s configuration is located
 
 **Step 5:**  In the dropdown list, choose the appropriate **Path** for your operating system.
 
-
+![Clone_configuration](../../../images/learning_content/toolkit_basics_guides/installing_app/6_clone_configuration.png)
 
 This displays the paths to the configuration files.
 
