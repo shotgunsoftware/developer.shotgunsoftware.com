@@ -7,7 +7,7 @@ lang: en
 
 # Getting started with configurations
 
-{% include info title="What you will learn" content="Summary of what you will have learnt once you have read this guide." %}
+After completing this guide, the user will have the knowledge fundamental to exploring ways to extend the configuration for a project.
 
 ## About the guide
  
@@ -18,9 +18,6 @@ This guide assumes the user:
 1. Has never used the Advanced Project Setup Wizard
 2. Has some basic knowledge of how to use Shotgun
 3. Is new to Shotgun Toolkit. 
-
-After completing this guide, the user will have the knowledge fundamental to exploring ways to extend the configuration for a project.
-
 
 ## Using this document
  
