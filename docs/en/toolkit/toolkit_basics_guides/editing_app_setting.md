@@ -6,27 +6,26 @@ lang: en
 ---
 
 # Editing a pipeline configuration
-
-{% include info title="What you will learn" content="Summary of what you will have learnt once you have read this guide." %}
+After completing this guide, you will have the knowledge fundamental to: finding a configuration setting for a specific Toolkit app, editing a setting, and exploring what other functions the configuration settings can extend.
 
 ## About the guide
  
 This guide describes how to edit settings within an existing Pipeline Configuration to meet the needs of a project pipeline. The first guide, **[Getting started with configurations](./advanced_config.md)**, described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create a default configuration, complete **Getting started with configurations** before proceeding.
 
-Through extending the Default Configuration, Shotgun Toolkit enables the creation of custom workspace [environments](link to environments document) creating a UI that's integrated within a software application and allows for customizing tasks for pipeline workflows. An example of a customization might be as simple as enabling and disabling a button to control at what step in a pipeline a function of a Toolkit app can or cannot be used, and by whom. These customizations change the way specified users interact with the features of Toolkit apps. Toolkit allows proprietary configurations that enable you to work smarter and faster by: creating custom workflows, automating repetitive and mundane tasks, modifying hooks as well as adding custom tools. Unfortunately, it’s only accessible through Shotgun software integrations, and not yet released for everyday tasks like washing your clothes.
-
-The exercises in this guide will teach you how to find what configuration settings control actions within the Shotgun software integrations, where the settings live, and how to edit them. We will edit a setting in the Workfiles app that manages the behavior of the +New Task button in Maya and prevents an artist from creating a new task when working on a project inside Maya. After completing this guide, you will have the knowledge fundamental to: finding a configuration setting for a specific Toolkit app, editing a setting, and exploring what other functions the configuration settings can extend.
+described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create a default configuration, complete Getting started with configurations before proceeding.
+Through extending the Default Configuration, Shotgun Toolkit enables the creation of custom workspace [environments](link to environments document), creating a UI that's integrated within a software application and allows for customizing tasks for pipeline workflows. An example of a customization might be as simple as enabling a button in an app for one specific task and diabeling it for another task in the same software integration. These customizations change the way specified users interact with the features of Toolkit apps. Toolkit allows proprietary configurations that enable you to work smarter and faster by: creating custom workflows, automating repetitive and mundane tasks, modifying hooks as well as adding custom tools. Unfortunately, it’s only accessible through Shotgun software integrations, and not yet released for everyday tasks like washing your clothes.
+The exercises in this guide will teach you how to find what configuration settings control actions within the Shotgun software integrations, where the settings live, and how to edit them. We will edit a setting in the Workfiles app that manages the behavior of the +New Task button in Maya and prevents an artist from creating a new task when working on a project inside Maya.
 
 ## Using this document
  
 To use this guide and perform an edit on a pipeline configuration the following is required:
 
 1. An active [Shotgun](https://www.shotgunsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) site.
-2. A project with at least one asset, or you can add an asset to the_other_side project you created in the first guide. You can review how to create an asset for a project [here](link). Or follow these simple steps.
-   * Open the project in a Shotgun site
-   * From within the project, select the +Asset button
-   * Fill out the form with Asset Name and Asset Type
-   * Select Create Asset
+2. A project with at least one asset, or you can add an asset to the_other_side project you created in the first guide. You can review how to create an asset for a project in the [Getting started with configurations](./advanced_config.md). Or follow these simple steps.
+Open the project in a Shotgun site
+From within the project, select the +Asset button
+Fill out the form with Asset Name and Asset Type
+Select Create Asset
 3. A pipeline configuration for the identified project, or complete the [Getting started with configurations](./advanced_config.md) and use the configuration created in that exercise.
 4. Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
 5. Shotgun Desktop installed on your system.
@@ -36,11 +35,11 @@ To use this guide and perform an edit on a pipeline configuration the following 
 
 ## About the Workfiles app
 
-The Workfiles app governs file management in a Shotgun software integration and controls access to functionality for browsing, opening, and saving work files and [Publishes](link to glossary). The **+New Task** button is an action of the Workfiles app and allows a user to add a task to any appropriate phase of the pipeline. The configuration is broken down into blocks representing each step in the pipeline. This allows you to manage functionality relative to each step in a pipeline controlling when a user can create, name and save files, execute tasks, or perform certain functions. Each block in the configuration defines the environment the artist is working in. The settings can be very high-level, for example not allowing any artist within Maya to add a file or create a new task, or very granular, stating that an artist working on assets can’t add a new file or a new task at a specific step in the pipeline. This is relevant for all the functions in the Workfiles app. Find more details in the [Advanced Topics](#advanced-topics) at the end of this document.
+The Workfiles app governs file management in a Shotgun software integration and controls access to functionality for browsing, opening, and saving work files. The +New Task button is an action of the Workfiles app and allows a user to add a task to any appropriate phase of the pipeline. The configuration is broken down into blocks representing each point in the pipeline. This allows you to manage functionality relative to each point in a pipeline controlling when a user can create, name and save files, execute tasks, or perform certain functions. Each block in the configuration defines the environment the artist is working in. The settings can be very high-level, for example not allowing any artist within Maya to create a new task, or very granular, stating that an artist working on assets can’t add a new file or a new task at a specific point in the pipeline. This is relevant for all the functions in the Workfiles app and it also applies to modifying settings for any app or engine. Find more details in the [Advanced Topics](#advanced-topics) at the end of this document.
  
 ## Getting familiar with the configuration files
 
-Use the pipeline configuration List in Shotgun to locate where the pipeline configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to **Step 5**.
+Use the Pipeline Configuration List in Shotgun to locate where the pipeline configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to **Step 5**.
 
 ## Finding the pipeline configuration
 
@@ -68,17 +67,17 @@ There are three subfolders in a Toolkit configuration root folder: **cache**, **
 
 ![Config content](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/5_config_content.png)
 
-The **env** folder stores the configurations that support a project’s environments. Environments allow each step in a pipeline process and each type of user: animator, modeler, compositor, TD, etc..., to have a customized workspace. Different artist types who focus on specific steps of a pipeline can have the environment customized for the way they work and customized in a way that makes the pipeline more effective. The default configuration allows for easy setup of environments targeted at various steps in a pipeline within specific software integrations. Customizing environments based on artist types requires a more advanced setup. Explore more about [Environments](Link to environment document). 
+The **env** folder stores the integration settings that support the environments artists work within. Environments allow any point in a pipeline process: creating an asset, animate, model, lighting, creating a scene, etc..., and any type of artist to have a customized workspace geared toward the actions the artist is performing. Different artist types who focus on specific points in a pipeline can have the environment customized for the way they work and customized in a way that makes the pipeline more effective. The default configuration allows for easy setup of environments targeted at various points in a pipeline within specific software integrations. Customizing environments based on artist types requires a more advanced setup. Explore more about [Environments](Link to environment document). 
 
 **Step 6:** Open the **env** folder; the other folders are utilized to extend other areas of Toolkit.
 
-Toolkit uses YAML files to configure functionality. YAML was chosen as the language for the configurations because it allows the files in Toolkit to be formatted in a way that’s easily readable, lightweight, and simple to customize by the administrator. You can explore more about YAML [here](https://yaml.org/). The YAML files are a network of files linked together that contain identifiers for apps, software integrations, pipeline steps, and other bundles of code. It’s a roadmap of sorts guiding you to the specific bundle of code that controls the actions you want to affect.
+Toolkit uses YAML files to configure functionality. YAML was chosen as the language for the configurations because it allows the files in Toolkit to be formatted in a way that’s easily readable, lightweight, and simple to customize. You can explore more about YAML [here](https://yaml.org/). The configurations are made up of nested YAML files that provide identifiers for apps, software integrations, pipeline steps, or tasks, and other bundles of code. It’s a roadmap of sorts guiding you to the specific bundle of code that controls the actions you want to affect.
 
 ## Editing the configuration file
 
-Shotgun Toolkit allows alterations to the apps that are integrated within the various software applications. One of the functions of the Workfiles app is the **+New Task** button, which allows a user to add a new task in the **File Open** dialog box. By default this function is enabled for every user at every phase of a project. A pipeline Technical Director (TD) might want to control which steps in a pipeline a new task can, or cannot, be added and by whom. 
+Shotgun Toolkit allows alterations to the apps that are integrated within the various software applications. One of the functions of the Workfiles app is the **+New Task** button, which allows a user to add a new task in the **File Open** dialog box. By default this function is enabled for every user at every phase of a project. A pipeline Technical Director (TD) might want to control at which point in a pipeline a new task can, or cannot, be added and by whom.
 
-A studio may have a standardized naming convention for new tasks and a specific person on the production team who is responsible for maintaining the naming conventions for all pipeline steps in Maya. If it’s a large project with multiple artists, you can imagine what kinds of naming conventions will arise allowing all of those creative types to develop new tasks and name those tasks whatever they fancy. In this case the TD would disable the **+New Task** button for all the pipeline steps where artists will be working in Maya.
+A studio may have a standardized naming convention for new tasks and a specific person on the production team who is responsible for maintaining the naming conventions for all points in a pipeline involving Maya. If it’s a large project with multiple artists, you can imagine what kinds of naming conventions will arise allowing all of those creative types to develop new tasks and name those tasks whatever they fancy. In this case the TD would disable the **+New Task** button for all the points in a pipeline where artists will be working in Maya.
 
 ## Disabling the +New Task button for projects in Maya
 
@@ -94,7 +93,7 @@ A studio may have a standardized naming convention for new tasks and a specific 
 
 Wait for the **Shotgun** menu to fully load; if you have a slow internet connection this would be the time to run the configuration that makes you that perfect shot of espresso with just the right amount of crema.
 
-Once Maya and Shotgun are fully loaded, the **File Open** dialog box will open automatically. When launching Maya from Shotgun Desktop the default environment that is loaded is the Maya project environment. The pipeline steps that are identified in the default configuration are `project`, `scene`, `shot`, `shot_step`, `asset`, `asset_step`. Environments are automatically loaded based on what tasks are being performed within a specific software integration.
+Once Maya and Shotgun are fully loaded, the **File Open** dialog box will open automatically. When launching Maya from Shotgun Desktop the default environment that is loaded is the Maya project environment. The points in a pipeline that are identified in the default configuration are `project`, `sequence`, `shot`, `shot_step`, `asset`, `asset_step`. Environments are automatically loaded based on what actions are being performed within a specific software integration.
 
 **Step 10:** Select the **Assets** tab in the left pane of the **File Open** dialog box. Select any asset inside the folder displayed in the search results. 
 
@@ -104,15 +103,15 @@ The **+New Task** button is enabled.
 
 ## Find what setting controls the +New Task button
 
-Pipeline configurations are used to create new environments and customize existing environments based on the needs of each step in a pipeline. A pipeline configuration can override core Shotgun integration settings creating custom environments for each step in a project pipeline. Taking over an existing configuration is the easiest way to develop a configuration specific to your pipeline needs. Settings can vary from the Shotgun core as much or as little as necessary to meet the needs of a project’s pipeline. This structure allows configurations to be lightweight adding only the settings that are different from the default values in the Shotgun core code. For this exercise you will override the default setting for adding a new task by taking over and editing a default configuration.
+Pipeline configurations are used to create new environments and customize existing environments based on the needs of each point in a pipeline. A pipeline configuration can override core Shotgun integration settings creating custom environments for each actionable item in a project’s pipeline. Taking over an existing configuration is the easiest way to develop a configuration specific to your pipeline needs. Settings can vary from the Shotgun core as much or as little as necessary to meet the needs of a project’s pipeline. This structure allows configurations to be lightweight adding only the settings that are different from the default values in the Shotgun core code. For this exercise you will override the default setting for adding a new task by taking over and editing a default configuration.
 
 **Step 11:** Select the **>** at the top right of the **File Open** window next to the **Project (name of project)**. 
 
-This reference box shows details about the configuration settings that control the functions of the **File Open** window. Some apps in Toolkit have a reference box to show what settings are used for the app and what the default settings are. Notice the **Location:** identifier is **tk-multi-workfiles2**. This is the identifier for the bundle of code that creates the Workfiles app. When searching a pipeline configuration this name will identify where the settings live for the app. There’s an [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) that lists all the configuration settings, apps, and engines for what’s available in Shotgun Toolkit.
+This reference box shows details about the configuration settings that control the functions of the **File Open** window. Some apps in Toolkit have a reference box to show what settings are used for the app and what the default settings are. Notice the **Location:**: identifier is **tk-multi-workfiles2**. This is the identifier for the bundle of code that creates the Workfiles app. When searching a pipeline configuration this name will identify where the settings live for the app. There’s an [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) that lists all the configuration settings, apps, and engines for what’s available in a Shotgun Integration.
 
 ![Current_work_area](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/9_current_work_area.png)
 
-Look under the **Configuration** header to find the settings for this specific environment. A pipeline configuration supports multiple environments and environmets are created based on artist tasks, steps in a pipeline, and the software integrations.
+Look under the **Configuration** header to find the settings for this specific environment. A pipeline configuration supports multiple environments and environments are created based on artist tasks, points in a pipeline, and the software integrations.
 
 ![Configuration_ref](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/10_configuration_ref.png "View task button")
 
@@ -316,11 +315,9 @@ You’ve modified a configuration setting for the Workfiles app by changing the 
 
 **Step 24:** Select **+New File**
 
-By selecting **+New File** you began to create a new asset and the environment used for the **assets_step** pipeline step was loaded in Maya. When an artist selects an asset task and creates a new file the environment for **assets_step** is automatically loaded, presenting the tools and functions necessary to create and manage an asset.
+By selecting **+New File** you began to create a new asset and the environment used for the **asset_step** point in the pipeline was loaded in Maya. When an artist selects an asset task and creates a new file, the environment for **asset_step** is automatically loaded, presenting the tools and functions necessary to create and manage an asset.
 
 Discover what environment you are working in
-
-Using the **Environment** tab in Your Current Work Area discover what environment you are currently working in.
 
 **Step 25:**  In the upper right of the Maya menu select **Shotgun**.
 
@@ -338,7 +335,7 @@ Each environment will display the information necessary to determine where the s
 
 NOTE: Each environment is independent, a project has a dedicated configuration, and the software integrations only read settings for their specific software from the pipeline configuration when a project is loaded.
 
-To reiterate, the environments that are identified in the Default Configuration are **project**, **scene**, **shot**, **shot_step**, **asset**, and **asset_step**. You can add your own environments to a projects pipeline configuration.
+To reiterate, the environments that are identified in the Default Configuration are **project**, **sequence**, **shot**, **shot_step**, **asset**, and **asset_step**. You can add your own environments to a projects pipeline configuration.
 
 For more information about the different environments, adding your own, and how to manage them, view the [Environment Configuration Reference](link) and continue to read through the Advanced Topics below.
 
@@ -346,15 +343,15 @@ For more information about the different environments, adding your own, and how 
 
 And now the real fun begins: learning all the things you can do with Shotgun Toolkit environments. Here are some advanced topics to explore…
 
-You’ve learned that Toolkit is organized by environments, each environment is unique for every software implementation, and the environments are focused by project and task allowing you to have specific functions available for artists at defined steps in a pipeline.
+You’ve learned that Toolkit is organized by environments, each environment is unique for every software implementation, and the environments are focused by project and task allowing you to have specific functions available for artists at defined points in a pipeline.
 
 For example, you might offer Nuke for artists working on **shot** tasks, but Mari for artists working on **asset** tasks. Here are some other examples of what you can do:
 
   * One group of artists working in Maya might want to have the **File Open** dialog box open automatically when they launch Maya from the Desktop and another group of artist might be working in Nuke and want the opportunity to choose the **File Open** function manually.
 
-  * You might also have different *versions* of Maya for various steps in a pipeline requiring a new feature that only the latest beta release has, but you wouldn’t want to use a beta version for all the tasks you’re performing with Maya. In this case you would need two different environments.
+  * You might also have different *versions* of Maya for various points in a pipeline requiring a new feature that only the latest beta release has, but you wouldn’t want to use a beta version for all the tasks you’re performing with Maya. In this case you would need two different environments.
 
-Shotguns structure enables configurations to be easily manipulated when creating environments and adding pipeline steps. This allows the code to be lightweight, sparse, and consistent.
+Shotguns structure enables configurations to be easily manipulated when creating environments and adding points in a pipeline that define actions. This allows the code to be lightweight, sparse, and consistent.
 
 ## Creating environments based on your artist's tasks
 
@@ -364,14 +361,14 @@ The Default Configuration provides the `shot_step` and `asset_step` environments
 
 ## Creating custom environments
 
-The Default Configuration comes with a few defined pipeline steps [listed](anchor link to environments) above, but you can always create more. A studio might want different configuration settings for every stage in the pipeline–`asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light`, and so on. In that case, they'd need to add these pipeline steps. Hooks allow you to add pipeline steps that hook directly into the core Shotgun code. Taking over a core hook allows you to create a custom pipeline step that you can use to create the environment you need.
+The Default Configuration comes with a few defined pipeline steps [listed](anchor link to environments) above, but you can always create more. A studio might want different configuration settings for every stage in the pipeline–`asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light`, and so on. In that case, they'd need to add these pipeline steps. Hooks allow you to add points in a pipeline that hook directly into the core Shotgun code. Taking over the `pick_environment` core hook allows you to take a point in a pipeline and use it to configure the environment you need.
 
-[`pick_environment` core hook](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) contains the logic that Toolkit uses to determine the environment. You can take over the hook to modify this logic.
+The [`pick_environment` core hook](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) contains the logic that Toolkit uses to determine the environment. You can take over the hook to modify this logic.
 
-Learn more about taking over hooks in the (Taking Over a Hook Guide)[doesn’t exist yet]
+Learn more about taking over hooks in the [Taking Over a Hook Guide](doesn’t exist yet)
 
 Learn more about the `pick_environment` core hook in the [Environment Configuration Reference](link)
 
 Watch our [Intro to Toolkit Configurations video](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s) from our SIGGRAPH 2018 Developer Day
 
-Now that you’ve learned how to modify an app configuration setting, try [adding an app to your Toolkit configuration](link to next guide)
+Now that you’ve learned how to modify an app configuration setting, try [adding an app to your Toolkit configuration](./installing_app.md)
