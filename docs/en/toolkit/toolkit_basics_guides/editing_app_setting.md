@@ -365,10 +365,10 @@ The Default Configuration comes with a few defined pipeline steps [listed](ancho
 
 The [`pick_environment` core hook](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) contains the logic that Toolkit uses to determine the environment. You can take over the hook to modify this logic.
 
-Learn more about taking over hooks in the [Taking Over a Hook Guide](doesn’t exist yet)
+Learn more about taking over hooks in the [Taking over a hook guide](doesn’t exist yet)
 
-Learn more about the `pick_environment` core hook in the [Environment Configuration Reference](link)
+Learn more about the `pick_environment` core hook in the [Environment configuration reference](link)
 
-Watch our [Intro to Toolkit Configurations video](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s) from our SIGGRAPH 2018 Developer Day
+Watch our [Intro to Toolkit configurations video](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s) from our SIGGRAPH 2018 Developer Day
 
 Now that you’ve learned how to modify an app configuration setting, try [adding an app to your Toolkit configuration](./installing_app.md)
