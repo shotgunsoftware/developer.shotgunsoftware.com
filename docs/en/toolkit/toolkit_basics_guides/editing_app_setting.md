@@ -6,7 +6,11 @@ lang: en
 ---
 
 # Editing a pipeline configuration
-After completing this guide, you will have the knowledge fundamental to: finding a configuration setting for a specific Toolkit app, editing the setting, and exploring what other functions the configuration settings can extend.
+After completing this guide, you will have the knowledge fundamental to: 
+
+* Finding a configuration setting for a specific Toolkit app
+* Editing the settings
+* Exploring what other functions the configuration settings can extend.
 
 ## About the guide
  
