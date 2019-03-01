@@ -7,16 +7,16 @@ lang: en
 
 # Adding an app
  
-{% include info title="What you will learn" content="Summary of what you will have learnt once you have read this guide." %}
-
-## About the guide
-
-This guide will demonstrate how to add a Shotgun Toolkit app to an existing pipeline configuration. You will quickly become acquainted with the configuration management tools. Using commands available within Toolkit you will learn:
+After completing this guide, you will quickly become acquainted with the configuration management tools in Toolkit and learn:
 
 * How to safely create a copy of an active pipeline configuration.
 * Add an app to a configuration.
 * Add the settings necessary to use that app in specific environments.
 * Push an extended configuration live.
+
+## About the guide
+
+This guide will demonstrate how to add a Shotgun Toolkit app to an existing pipeline configuration. You will quickly become acquainted with the configuration management tools. 
 
 The app we will be adding is the Shotgun Python Console app. Maya has its own Python console, but there are some features in the Toolkit app that don’t exist in the Maya console. 
 
