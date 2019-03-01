@@ -44,14 +44,14 @@ The “addresses” for Toolkit Apps are listed in the `config/env/includes/app_
 
 Below is a conceptual overview of how to install an app and how to tell a Shotgun integration where to use it. It outlines the steps for extending the configuration, asking Toolkit to look up a descriptor, and telling Shotgun where to use the app. These steps are detailed in this guide:
 
-Determine the descriptor for the app you want to add.
-Make a copy of the active pipeline configuration you want to add the app descriptor to.
-See if the app’s descriptor exists in the configuration and if not, add it.
-Format the YAML file correctly using spaces and not tabs for indents.
-Determine in what environment(s) the app is to be used.
-Within those environment(s), add the setting that will allow Shotgun to use the app.
-Test the new configuration.
-Push the extended configuration live.
+* Determine the descriptor for the app you want to add.
+* Make a copy of the active pipeline configuration you want to add the app descriptor to.
+* See if the app’s descriptor exists in the configuration and if not, add it.
+* Format the YAML file correctly using spaces and not tabs for indents.
+* Determine in what environment(s) the app is to be used.
+* Within those environment(s), add the setting that will allow Shotgun to use the app.
+* Test the new configuration.
+* Push the extended configuration live.
 
 ### Find the location descriptor for the Python Console App
 
@@ -105,7 +105,7 @@ This displays the paths to the configuration files.
 
 ![Clone_complete](../../../images/learning_content/toolkit_basics_guides/installing_app/8_clone_complete.png)
 
-**Step 7:** Name the configuration in the Configuration List and name the file in the directory: Primary Clone Config 2” and “the_other_side_clone2,” respectively. Select **OK**. 
+**Step 7:** Name the configuration in the Configuration List and name the file in the directory: "Primary Clone Config 2" and “the_other_side_clone2,” respectively. Select **OK**. 
 
 ![Name clone](../../../images/learning_content/toolkit_basics_guides/installing_app/9_name_clone.png)
 
@@ -226,6 +226,7 @@ settings.tk-maya.project:
 Use the `about` app, `tk-multi-about:’, as a guide for how to add the location descriptor, then save the file. 
 
 **NOTE:** Make sure your [YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) files are formatted correctly using spaces and not tabs.
+
 ```
 tk-multi-pythonconsole:
    location: “@apps.tk-multi-pythonconsole.location”
@@ -392,11 +393,13 @@ These blocks add the Python Console app to the Desktop engine in the project ste
 
 Follow that include further to `../includes/app_locations.yml` and search for `apps.tk-multi-pythonconsole.location` to find the following:
 
-		# pythonconsole
-apps.tk-multi-pythonconsole.location:
-  type: app_store
-  name: tk-multi-pythonconsole
-  version: v1.1.2
+```
+	# pythonconsole
+        apps.tk-multi-pythonconsole.location:
+         type: app_store
+         name: tk-multi-pythonconsole
+         version: v1.1.2
+```
 
 Every app, engine, and framework has a location descriptor that is used to identify the bundles of code, some code is accessed directly and other code is placed into a cache when the software is launched and the configuration file is accessed.
 
