@@ -244,7 +244,7 @@ settings.tk-maya.project:
     tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"
 ```
  
-You will notice the **Screening Room, Shotgun Panel, and Workfiles2** app’s location identifiers are listed in a different included file and accessed differently than the **About** app. To keep things tidy, these apps were split off to the included settings folder because they have additional settings.
+You will notice the **Screening Room, Shotgun Panel, and Workfiles2** app’s location identifiers are listed in a different included file and accessed differently than the **About** app. To keep things tidy these apps were split off to the included settings folder because they have additional settings.
 
 ## View the changes in Maya
 
@@ -372,7 +372,9 @@ If there’s an environment that is using an app you want to add to your pipelin
 
 The Desktop app opens in the project environment, so find `tk-desktop` by looking in the `project.yml` file.
 
-Open `config/env/project.yml`. Note that `tk-desktop`, in the engine block, points to included content:
+Open `config/env/project.yml`. 
+
+**NOTE:** In the engine block, `tk-desktop` points to included content:
 
 includes:
 - ./includes/settings/tk-desktop.yml
@@ -380,7 +382,7 @@ includes:
 engines:
   tk-desktop: "@settings.tk-desktop.project"
 
-Follow the include: open `config/env/includes/settings/tk-desktop.yml`, and find the `settings.tk-desktop.project` block. In that block, you’ll see the following:
+Follow the include: open `config/env/includes/settings/tk-desktop.yml` and find the `settings.tk-desktop.project` block. In that block you’ll see the following:
 		
 ```
 		apps:
