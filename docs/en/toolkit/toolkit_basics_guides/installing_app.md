@@ -137,7 +137,7 @@ If an app that you want to use isn’t referenced in the little black book, you 
 
 ## Tell the Shotgun integrations where to find the app
 
-**Step 10:** Search the file for “pythonconsole.” If you used the Default Configuration for the project, you will find that the descriptor for the Python Console app is listed in this file. It should match the description we found in the [list](# Find-the-location-descriptor-for-the-Python-Console-app) of Maya apps we looked at when we started on our journey. Check to make sure the version matches what we looked at in the list of Maya apps. 
+**Step 10:** Search the file for “pythonconsole.” If you used the Default Configuration for the project, you will find that the descriptor for the Python Console app is listed in this file. It should match the description we found in the [list](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) of Maya apps we looked at when we started on our journey. Check to make sure the version matches what we looked at in the list of Maya apps. 
 
 ```
 apps.tk-multi-pythonconsole.location:
