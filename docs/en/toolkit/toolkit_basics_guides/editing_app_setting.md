@@ -12,8 +12,8 @@ After completing this guide, you will have the knowledge fundamental to: finding
  
 This guide describes how to edit settings within an existing Pipeline Configuration to meet the needs of a project pipeline. The first guide, **[Getting started with configurations](./advanced_config.md)**, described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create a default configuration, complete **Getting started with configurations** before proceeding.
 
-described how to prepare a pipeline configuration for editing. If you aren’t familiar with how to create a default configuration, complete Getting started with configurations before proceeding.
 Through extending the Default Configuration, Shotgun Toolkit enables the creation of custom workspace [environments](link to environments document), creating a UI that's integrated within a software application and allows for customizing tasks for pipeline workflows. An example of a customization might be as simple as enabling a button in an app for one specific task and diabeling it for another task in the same software integration. These customizations change the way specified users interact with the features of Toolkit apps. Toolkit allows proprietary configurations that enable you to work smarter and faster by: creating custom workflows, automating repetitive and mundane tasks, modifying hooks as well as adding custom tools. Unfortunately, it’s only accessible through Shotgun software integrations, and not yet released for everyday tasks like washing your clothes.
+
 The exercises in this guide will teach you how to find what configuration settings control actions within the Shotgun software integrations, where the settings live, and how to edit them. We will edit a setting in the Workfiles app that manages the behavior of the +New Task button in Maya and prevents an artist from creating a new task when working on a project inside Maya.
 
 ## Using this document
