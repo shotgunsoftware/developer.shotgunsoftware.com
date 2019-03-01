@@ -32,7 +32,7 @@ To use this guide and install a Toolkit app the following is required:
 4. Shotgun Desktop installed on your system.
 5. An active subscription for Maya. Get a 30 day trial of Maya [here](https://www.autodesk.com/products/maya/free-trial-dts). 
 
-**NOTE:** This guide is based on the tk-config-default2 pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here.
+  **NOTE:** This guide is based on the tk-config-default2 pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here.
 
 ## About Shotgun Toolkit apps
 
@@ -115,7 +115,7 @@ Wait while Shotgun copies all of the files and folders in the configuration and 
 
 When completed, the Configuration List will be updated with information about the cloned configuration and there will be a new configuration added to your local config folder.
 
-**NOTE:** Under **User Restrictions** your user name was added. Shotgun automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way Shotgun allows for flexibility and control.
+  **NOTE:** Under **User Restrictions** your user name was added. Shotgun automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way Shotgun allows for flexibility and control.
 
 ## Associate the cloned configuration with the project
 
@@ -147,7 +147,7 @@ apps.tk-multi-pythonconsole.location:
 
 ```
 
-**NOTE:** If you’re using a different configuration, you may need to add the descriptor to the file.
+  **NOTE:** If you’re using a different configuration, you may need to add the descriptor to the file.
 
 All apps and engines have descriptors. An app or engine can be located anywhere your network has access to. You can read about how descriptors work and how to set the `type:` in the [Descriptor section of our Core API docs] (https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types).
 
@@ -220,7 +220,7 @@ Step 15: Add the location descriptor under
 
 ```
 settings.tk-maya.project:
-   apps:
+  apps:
 ```
 
 Use the `about` app, `tk-multi-about:’, as a guide for how to add the location descriptor, then save the file. 
@@ -229,7 +229,7 @@ Use the `about` app, `tk-multi-about:’, as a guide for how to add the location
 
 ```
 tk-multi-pythonconsole:
-   location: “@apps.tk-multi-pythonconsole.location”
+  location: “@apps.tk-multi-pythonconsole.location”
 
 
 # project
@@ -278,7 +278,7 @@ Step 18: Open your terminal and browse to where your cloned configuration is sto
 
 `./tank push_configuration`
 
-	NOTE: For Windows systems you will run `tank.bat push_configuration`
+  **NOTE:** For Windows systems you will run `tank.bat push_configuration`
 
 Follow the prompts and type in the ID for your project’s Primary configuration, the configuration you want to push the changes to. 
 
@@ -380,7 +380,7 @@ Open `config/env/project.yml`.
 
 ```
 includes:
-- ./includes/settings/tk-desktop.yml
+  - ./includes/settings/tk-desktop.yml
 
 engines:
   tk-desktop: "@settings.tk-desktop.project"
@@ -390,9 +390,9 @@ engines:
 Follow the include: open `config/env/includes/settings/tk-desktop.yml` and find the `settings.tk-desktop.project` block. In that block you’ll see the following:
 		
 ```
-		apps:
-  		  tk-multi-pythonconsole:
-  		    location: "@apps.tk-multi-pythonconsole.location"
+apps:
+  tk-multi-pythonconsole:
+  location: "@apps.tk-multi-pythonconsole.location"
 
 ```
 
@@ -401,11 +401,11 @@ These blocks add the Python Console app to the Desktop engine in the project ste
 Follow that include further to `../includes/app_locations.yml` and search for `apps.tk-multi-pythonconsole.location` to find the following:
 
 ```
-	# pythonconsole
-        apps.tk-multi-pythonconsole.location:
-         type: app_store
-         name: tk-multi-pythonconsole
-         version: v1.1.2
+# pythonconsole
+apps.tk-multi-pythonconsole.location:
+  type: app_store
+  name: tk-multi-pythonconsole
+  version: v1.1.2
 ```
 
 Every app, engine, and framework has a location descriptor that is used to identify the bundles of code, some code is accessed directly and other code is placed into a cache when the software is launched and the configuration file is accessed.
