@@ -283,7 +283,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 **NOTE:** Toolkit Default Configuration settings are organized alphabetically as an easy way to find specific settings. Keeping this convention will make your life a lot easier as the code gets a little heavier.
 
-The [Environment Configuration Reference](link to file) lists where the configuration settings live for environment variables, what’s in the different YAML files, and why.
+The [Environment configuration reference](link to file) lists where the configuration settings live for environment variables, what’s in the different YAML files, and why.
 
 **Step 21:** Save the file.
 
@@ -337,7 +337,7 @@ NOTE: Each environment is independent, a project has a dedicated configuration, 
 
 To reiterate, the environments that are identified in the Default Configuration are **project**, **sequence**, **shot**, **shot_step**, **asset**, and **asset_step**. You can add your own environments to a projects pipeline configuration.
 
-For more information about the different environments, adding your own, and how to manage them, view the [Environment Configuration Reference](link) and continue to read through the Advanced Topics below.
+For more information about the different environments, adding your own, and how to manage them, view the [Environment configuration reference](link) and continue to read through the Advanced Topics below.
 
 ## Advanced topics
 
