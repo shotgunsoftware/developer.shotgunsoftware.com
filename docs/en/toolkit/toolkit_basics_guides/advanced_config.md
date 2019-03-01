@@ -7,7 +7,7 @@ lang: en
 
 # Getting started with configurations
 
-After completing this guide, the user will have the knowledge fundamental to exploring ways to extend the configuration for a project.
+After completing this guide, you will have the knowledge fundamental to exploring ways to extend the configuration for a project.
 
 ## About the guide
  
