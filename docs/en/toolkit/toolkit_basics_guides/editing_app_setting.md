@@ -39,7 +39,7 @@ The Workfiles app governs file management in a Shotgun software integration and 
  
 ## Getting familiar with the configuration files
 
-Use the Pipeline Configuration List in Shotgun to locate where the pipeline configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to **Step 5**.
+Use the Pipeline Configuration List in Shotgun to locate where the pipeline configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to **<a href=”#step5”>Step 5</a>:.
 
 ## Finding the pipeline configuration
 
@@ -61,7 +61,7 @@ The path will be displayed in a new field.
 
 ![OS path2](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/4_mac_path2.png)
 
-**Step 5:** In a terminal or file manager, browse to the folder where the project’s pipeline configuration is stored and open the folder. 
+**<a name=”step5”>Step 5</a>:** In a terminal or file manager, browse to the folder where the project’s pipeline configuration is stored and open the folder. 
 
 There are three subfolders in a Toolkit configuration root folder: **cache**, **config** and **install**. Open the **config** folder and nested inside you will find several subfolders and a few files. 
 
@@ -225,7 +225,7 @@ Shotgun Toolkit uses simple terms in the YAML files to indicate the names of the
 
 Looking for the `settings.tk-multi-workfiles2.launch_at_startup` in tk-maya.yml
 
-**Step 17:** In your text editor browse to the **env/includes/settings** folder.
+**Step 17:** In your file browser editor browse to the **env/includes/settings** folder.
 
 ![tk maya workfiles](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/16_tk_maya_workfiles.png)
 
