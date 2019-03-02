@@ -35,17 +35,17 @@ To use this guide and perform an edit on a pipeline configuration, the following
 
 ## About the Workfiles app
 
-The Workfiles app governs file management in a Shotgun software integration and controls access to functionality for browsing, opening, and saving work files. The **+New Task** button is an action of the Workfiles app and allows a user to add a task to any appropriate phase of the pipeline. The configuration is broken down into per-environment files. This allows you to manage functionality relative to different stages in the pipeline, controlling when a user can create, name and save files, execute tasks, or perform certain functions. This is relevant for all the functions in the Workfiles app and it also applies to modifying settings for any app or engine. Find more details in the [Advanced Topics](#advanced-topics) at the end of this document.
+The Workfiles app governs file management in a Shotgun software integration and controls access to functionality for browsing, opening, and saving work files. The **+New Task** button is an action of the Workfiles app that allows a user to add a task without having to go to Shotgun to do so. The configuration is broken down into per-environment files. This allows you to manage functionality relative to different stages in the pipeline, controlling when a user can create, name and save files, execute tasks, or perform certain functions. This is relevant for all the functions in the Workfiles app and it also applies to modifying settings for any app or engine. Find more details in the [Advanced Topics](#advanced-topics) at the end of this document.
  
 ## Getting familiar with the configuration files
 
-Use the Pipeline Configuration List in Shotgun to locate where the pipeline configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to **<a href=”#step5”>Step 5</a>:.
+Use the Pipeline Configuration List in Shotgun to locate where the pipeline configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to <a href="#step5">Step 5</a>.
 
 ## Finding the pipeline configuration
 
-**Step 1:** Open the **Shotgun Site** that manages the project you will be using for this exercise.
+**Step 1:** Open the **Shotgun site** that manages the project you will be using for this exercise.
 
-**Step 2:** Access the project from the **Shotgun Site** by selecting it from the **Projects page**.
+**Step 2:** Access the project from the **Shotgun site** by selecting it from the **Projects page**.
 
 ![Shotgun project](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/1_shotgun_project.png)
 
@@ -101,7 +101,7 @@ The **+New Task** button is enabled.
 
 ## Find what setting controls the +New Task button
 
-Toolkit pipeline configurations are used to customize environments to meet your pipeline's needs. A pipeline configuration can override default Shotgun integration settings, varying as much or as little as necessary to meet the needs of a project’s pipeline. This structure allows configurations to be lightweight, adding only the settings that are different from the default values in the Shotgun core code. For this exercise, you will override the default setting for adding a new task.
+Toolkit pipeline configurations are used to customize environments to meet your pipeline's needs. A pipeline configuration can override default Shotgun integration settings, varying as much or as little as necessary to meet the needs of a project’s pipeline. This structure allows configurations to be lightweight, adding only the settings that are different from the default values in the Shotgun core code. In this exercise, we want to turn off the Workfiles app's **+New Task** button, but before we can do so, we need to figure out which configuration setting controls it.
 
 **Step 11:** Select the **>** at the top right of the **File Open** window next to **Project (name of project)**. 
 
@@ -250,9 +250,17 @@ Under `settings.tk-maya.projects`, the `tk-multi-workfiles2` app settings are li
 
 `tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"`
 
-This tells you to look for `settings.tk-multi-workfiles2.launch_at_startup` in the `tk-multi-workfiles2.yml` file. That file is included in the **settings** folder.
+The `@` symbol tells us that that the value for `tk-multi-workfiles2` is coming from an included file. In the `includes` section at the top of `tk-maya.yml`, we see the following:
 
-**Step 19:** Open the `tk-multi-workfiles2.yml` file, located in the **settings** folder, and search for `settings.tk-multi-workfiles2.launch_at_startup`.
+```
+includes:
+...
+- ./tk-multi-workfiles2.yml
+```
+
+We should look for `settings.tk-multi-workfiles2.launch_at_startup` in the `tk-multi-workfiles2.yml` file, in the same directory as the current file, `config/env/includes/settings`.
+
+**Step 19:** Open the `tk-multi-workfiles2.yml` file and search for `settings.tk-multi-workfiles2.launch_at_startup`.
 
 ```
 # launches at startup.
