@@ -1,0 +1,35 @@
+############################ Header ################################################
+# Configuration file for Continuous Localization (CL) process. 
+#
+# To reduce the size of this file, instructions on what each parameter is used for,
+# with the respective values to use, can be found on:
+# https://localization.autodesk.com/display/SYS/CL+-+Setup+-+Continous+Localization+Configuration+File 
+#
+######################### End of Header ###############################################
+common:
+  branch_section:
+    pseudo_language: [jpn, chs, kor]
+    maintainer: [sunh]
+    ignore_this_branch: true
+
+  variable_section:
+    langProject: [kor, jpn, chs]
+    langISO639_1: {cat: ca, esp: es, rus: ru, ptb: pt, hrv: hr, nld: nl, enu: en, jpn: ja, nor: no, plk: pl, swe: sv, hun: hu, dnk: da, deu: de, ita: it, chs: zh, kor: ko, rom: ro, fra: fr, trk: tr, csy: cs, fin: fi}
+    langMsNet: {ptb: pt-BR, rus: ru-RU, eng: en-GB, cat: ca-ES, ptg: pt-PT, esp: es-ES, jpn: ja-JP, enu: en-US, nld: nl-NL, hrv: hr-HR, plk: pl-PL, nor: nb-NO, hun: hu-HU, cht: zh-TW, swe: sv-SE, deu: de-DE, dnk: da-DK, ita: it-IT, trk: tr-TR, fra: fr-FR, rom: ro-RO, kor: ko-KR, chs: zh-CN, fin: fi-FI, csy: cs-CZ}
+    langBCP47: {nor: no, plk: pl, hun: hu, swe: sv, cht: zh-Hant, ptb: pt-BR, rus: ru, ptg: pt-PT, cat: ca, esp: es, eng: en-GB, jpn: ja, nld: nl, hrv: hr, enu: en, trk: tr, chs: zh-Hans, rom: ro, fra: fr, kor: ko, fin: fi, csy: cs, deu: de, dnk: da, ita: it}
+    langFull: {deu: german, rus: russian, enu: english, ita: italian, jpn: japanese, kor: korean, chs: chinese_s, cht: chinese_t, csy: czech}
+    langJava: {ita: it_IT, dnk: da_DK, deu: de_DE, csy: cs_CZ, fin: fi_FI, fra: fr_FR, rom: ro_RO, kor: ko_KR, chs: zh_CN, trk: tr_TR, enu: en_US, hrv: hr_HR, nld: nl_NL, jpn: ja_JP, eng: en_GB, cat: ca_ES, ptg: pt_PT, esp: es_ES, ptb: pt_BR, rus: ru_RU, swe: sv_SE, cht: zh_TW, hun: hu_HU, plk: pl_PL, nor: nb_NO}
+    langThreeLetter: {chs: chs, kor: kor, fra: fra, trk: trk, csy: csy, deu: deu, ita: ita, plk: plk, cht: cht, hun: hun, cat: cat, esp: esp, ptg: ptg, eng: eng, ptb: ptb, rus: rus, enu: enu, jpn: jpn}
+    langCustom: {enu: en, jpn: ja, chs: zh_CN, kor: ko}
+
+  components:
+    - name: shotgun_dev_doc
+      main_owner: Doc
+      content_owner: N/A
+      lang: [kor, jpn, chs]
+      file_rules:
+        - docs\en\*.md, docs\%langCustom%\*.md
+        - docs\en\rv\*.md, docs\%langCustom%\rv\*.md
+        - docs\en\shotgun\*.md, docs\%langCustom%\shotgun\*.md
+        - docs\en\toolkit\*.md, docs\%langCustom%\toolkit\*.md
+        - docs\_data\en\*.yml, docs\_data\%langCustom%\*.yml
