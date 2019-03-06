@@ -115,7 +115,7 @@ This setup allows Shotgun to have access to only the folder you identify for sto
 
 ![Define storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/12_define_Storage3.png)
 
-**Step 9:** Select **save** to identify the projects folder as the storage destination for project data.
+**Step 9:** Select **Save** to identify the projects folder as the storage destination for project data.
 
 ![Define storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/13_define_storage4.png)
 
