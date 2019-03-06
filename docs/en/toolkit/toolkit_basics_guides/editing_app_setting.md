@@ -49,7 +49,7 @@ Use the Pipeline Configuration List in Shotgun to locate where the pipeline conf
 
 ![Shotgun project](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/1_shotgun_project.png)
 
-**Step 3:** Select the **avatar** in the upper right to display the admin menu and scroll down to select **Default Layouts > Pipeline Configuration > Pipeline Configuration List**.
+**Step 3:** Select the **avatar** in the upper right to display the **ADMIN** menu and scroll down to select **Default Layouts > Pipeline Configuration > Pipeline Configuration List**.
 
 ![Pipeline Configuration](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/2_pipeline_configuration.png)
 
@@ -89,9 +89,9 @@ Shotgun Toolkit allows alterations to the apps that are integrated within variou
 
 ![Load project](../../../images/learning_content/toolkit_basics_guides/editing_app_setting/7_view_project.png)
 
-Wait for the **Shotgun** menu to fully load; if you have a slow internet connection, this would be the time to run the configuration that makes you that perfect shot of espresso with just the right amount of crema.
+Wait for the **Shotgun** menu to fully load. If you have a slow internet connection, this would be the time to run the configuration that makes you that perfect shot of espresso with just the right amount of crema.
 
-Once Maya and Shotgun are fully loaded, the **File Open** dialog box will open automatically. When you launch Maya from Shotgun Desktop, you will enter Maya in the `project` environment; the configuration of your Toolkit workflows will be driven by the file `config/env/project.yml`. The environments that are identified in the Default Configuration are `project`, `sequence`, `shot`, `shot_step`, `asset`, `asset_step`. 
+Once Maya and Shotgun are fully loaded, the **File Open** dialog box will open automatically. When you launch Maya from Shotgun Desktop, you will enter Maya in the **project** environment; the configuration of your Toolkit workflows will be driven by the file `config/env/project.yml`. The environments that are identified in the Default Configuration are `project`, `sequence`, `shot`, `shot_step`, `asset`, `asset_step`. 
 
 **Step 10:** Select the **Assets** tab in the left pane of the **File Open** dialog box. Select any asset inside the folder displayed in the search results. 
 
