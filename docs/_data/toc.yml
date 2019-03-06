@@ -42,6 +42,7 @@
       url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
   - text: app-development
     url: "https://support.shotgunsoftware.com/entries/95440137"
+  - page: /toolkit/tutorial/
 
 - caption: rv
   children:
