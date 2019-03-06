@@ -6,4 +6,4 @@ lang: en
 ---
 
 # Pipeline Tutorial
-Hello world
+Hello world!
