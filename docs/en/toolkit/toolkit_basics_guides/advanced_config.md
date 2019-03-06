@@ -21,7 +21,7 @@ This guide assumes the user:
 
 ## Using this document
  
-To use this guide and create a Default Configuration, the following is required:
+To use this guide and create a customizable configuration for your project, the following is required:
 
 1. An active Shotgun site. You can [register for Shotgun here](https://www.shotgunsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) and get a 30-day trial to begin exploring. 
 2. Shotgun Desktop. If Desktop is not installed, you can [begin by following this link.]( https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) 
@@ -29,7 +29,7 @@ To use this guide and create a Default Configuration, the following is required:
 
 ## About the Advanced Project Setup Wizard
 
-The Advanced Project Setup Wizard in Shotgun Desktop generates a Default Configuration that provides a solid base to build on, adding key software integrations, customizable settings, apps and UI elements that support the pipeline process. It creates a configuration you can edit and extend to meet your project’s pipeline needs.
+The Advanced Project Setup Wizard in Shotgun Desktop generates a pipeline configuration based on our Default Configuration that provides a solid base to build on, adding key software integrations, customizable settings, apps and UI elements that support the pipeline process. It creates a configuration you can edit and extend to meet your project’s pipeline needs.
 
 The Default Configuration includes: 
 * A basic filesystem schema and templates that determine where files live on disk 
@@ -42,7 +42,7 @@ Customizations are only limited by imagination, cleverness, and programming know
 A configuration is required for every project. The first time a project is accessed through Shotgun Desktop, a Basic Configuration is downloaded and configured. This Basic Configuration automatically detects the supported content creation software a user has on their system and associates the configuration with the project. Settings in the pipeline configuration govern the integrations within the supported software applications. The [Panel]( https://support.shotgunsoftware.com/hc/en-us/articles/219033098-Shotgun-Panel) app displays project information from Shotgun and allows artists to reply to notes and view Versions without leaving their work session. The [Publisher](https://support.shotgunsoftware.com/hc/en-us/articles/219032998-Publishing-your-work) app allows artists to make their work available for others on their team, and through the [Loader](https://support.shotgunsoftware.com/hc/en-us/articles/219033078-Load-Published-Files-) app, artists can load their teammates' published files. The Basic Configuration does not include file system management setup or the development of templates for specifying how files and directories are named on disk. It also doesn’t have the plethora of Apps that are added when a Default Configuration is configured. It is a simple configuration that allows Toolkit to run without any manual editing of configuration files. The Wizard replaces the Basic Configuration with a Default Configuration. It provides more apps and software integrations to support you on your journey. While the Basic Configuration can be edited as well, it's not until you have an advanced setup that your project will be set up for customization.
 
 
-## Differences between the Default Configuration and Basic Configuration
+## Differences between the Basic and Default Configurations
 
 | FEATURE | BASIC CONFIGURATION | DEFAULT CONFIGURATION |
 | ------- | ------------------- | --------------------- |
@@ -53,7 +53,7 @@ A configuration is required for every project. The first time a project is acces
 | Software Integrations | 3ds Max, Houdini, Maya, Nuke, Photoshop, Flame | Basic + Hiero, Motionbulder, Mari | 
 | Toolkit Apps | Shotgun Panel, Publisher, Loader | Basic + Workfiles, Snap Shot, Scene breakdown, Nuke write node, Houdini Mantra node, and more |
 
-In this guide, you will use the Advanced Configuration Wizard in Shotgun Desktop to generate a Default Configuration and associate it with a project. Generating a Default Configuration sets you up to make the customizations necessary to support a proprietary production pipeline.
+In this guide, you will use the Advanced Configuration Wizard in Shotgun Desktop to generate a pipeline configuration for your project that's based on the Default Configuration. Generating this configuration sets you up to make the customizations necessary to support a proprietary production pipeline.
 
 ## Prepare to create a Default Configuration
 
@@ -151,9 +151,9 @@ Take a look in the `configs` folder and you will find several folders and files.
 
 ![Config](../../../images/learning_content/toolkit_basics_guides/advanced_config/18_config.png)
 
-And now the real fun begins, learning all the things you can do with the Configuration. Below are some advanced topics to explore:
+And now the real fun begins, learning all the things you can do with the Configuration. Below are some advanced topics to explore.
 
-# Advanced Topics
+# Advanced topics
 
 Shotgun Toolkit provides many convenient ways to edit, clone, or take over a configuration. Extending existing configurations will save time and allow you access to all of the cool stuff that others within your network have created. You can take advantage of the vast Shotgun [community](link to a good place in the community) that may have the exact configuration you need. The Shotgun community is a sharing community, so be kind, say thank you, and recognize the person who created the configuration that helped you get the job done. Oh, and don’t forget to give back, it’s how we help our fellow Shotgun gurus and what makes it so special to be a part of this community! 
 
@@ -184,4 +184,4 @@ This guide walks through created a **centralized configuration**: a single copy 
 
 Ideally your facility would want to be optimized for specific tasks. You can work with more than one root folder to optimize things like video playback for dailies on one server and interactive processing on another. Toolkit allows you to work with more than one storage root, in order to facilitate workflows such as these. You can [learn more about multi-root configurations here]((https://support.shotgunsoftware.com/hc/en-us/articles/219040478-How-do-I-convert-my-project-from-a-single-root-to-a-multi-root-configuration-)). 
 
-Now that you have a pipeline configuration for your project, get started on editing it! Jump into the next guide, [Editing a Pipeline Configuration](https://github.com/shotgunsoftware/developer-beta/blob/getting_started_guide/docs/en/toolkit/toolkit_basics_guides/editing_app_setting.md), to learn nhow. 
+Now that you have a pipeline configuration for your project, get started on editing it! Jump into the next guide, [Editing a Pipeline Configuration](https://github.com/shotgunsoftware/developer-beta/blob/getting_started_guide/docs/en/toolkit/toolkit_basics_guides/editing_app_setting.md), to learn how. 
