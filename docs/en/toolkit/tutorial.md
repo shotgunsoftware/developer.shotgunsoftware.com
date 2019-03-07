@@ -13,7 +13,7 @@ Much of the workflows covered in this pipeline work out-of-the-box with Shotgun'
 
 Here is a high level view of the pipeline you will build in this tutorial: 
 
-![Pipeline Overview](../../images/tk_pipeline_tutorial/image_0.png)
+![Pipeline Overview](../../images/tk_pipeline_tutorial/image_0.png 'Pipeline Overview')
 
 Pipeline Overview
 
@@ -63,11 +63,11 @@ For this Tutorial, you will need to create a new project in Shotgun and configur
 
 Here are some screenshots of what your configured project entities should look like in Shotgun:
 
-![Teapot and Table Assets](../../images/tk_pipeline_tutorial/image_1.png)
+![Teapot and Table Assets](../../images/tk_pipeline_tutorial/image_1.png 'Teapot and Table Assets')
 
-![Shot linked to a Sequence](../../images/tk_pipeline_tutorial/image_2.png)
+![Shot linked to a Sequence](../../images/tk_pipeline_tutorial/image_2.png 'Shot linked to a Sequence')
 
-![Tasks](../../images/tk_pipeline_tutorial/image_3.png){ width=400px }
+![Tasks](../../images/tk_pipeline_tutorial/image_3.png 'Tasks'){:width="400px"}
 
 ## Software Launchers
 
@@ -75,7 +75,7 @@ Next, you'll need to ensure that Maya and Nuke are available to launch in Shotgu
 
 If either application does not show up in Desktop or the expected version does not launch, you may need to manually configure the launch in Shotgun via the Software entity. 
 
-![The default Software entities defined in Shotgun](../../images/tk_pipeline_tutorial/image_4.png)
+![The default Software entities defined in Shotgun](../../images/tk_pipeline_tutorial/image_4.png 'The default Software entities defined in Shotgun')
 
 The Software entity is used to drive which DCC packages to use on your production. By default, the integrations will search for these packages in standard installation locations and make them launchable via Desktop. If you have more than one version installed or you have them installed in a non-standard location, it is possible you need to update the corresponding Software entity entry in Shotgun to curate the launch experience for your artists. 
 
@@ -91,17 +91,17 @@ By default, all new projects are configured to use the basic [Shotgun Integratio
 
 Use Shotgun Desktop (Desktop) to take over your project's configuration. RMB click within Desktop or click the user icon in the bottom right to show the popup menu. Select the **Advanced project setup…** option and follow the wizard to locally install your project configuration. The images below show the required steps. You can also follow the steps outlined in the Integrations Admin Guide for [Taking over a Pipeline Configuration](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Taking%20over%20a%20Pipeline%20Configuration). 
 
-![Select the **Advanced project setup…** in the Desktop popup menu](../../images/tk_pipeline_tutorial/image_5.png)
+![Select the **Advanced project setup…** in the Desktop popup menu](../../images/tk_pipeline_tutorial/image_5.png 'Select the **Advanced project setup…** in the Desktop popup menu')
 
-![Choose the **Shotgun Default** configuration type](../../images/tk_pipeline_tutorial/image_6.png)
+![Choose the **Shotgun Default** configuration type](../../images/tk_pipeline_tutorial/image_6.png 'Choose the **Shotgun Default** configuration type')
 
-![Choose the **Default** configuration](../../images/tk_pipeline_tutorial/image_7.png)
+![Choose the **Default** configuration](../../images/tk_pipeline_tutorial/image_7.png 'Choose the **Default** configuration')
 
-![Enter the name of the folder where your project's files will live.](../../images/tk_pipeline_tutorial/image_8.png)
+![Enter the name of the folder where your project's files will live.](../../images/tk_pipeline_tutorial/image_8.png 'Enter the name of the folder where your project's files will live.')
 
 If this is your first time setting up a Shotgun project, you'll also be prompted to define a storage location for your project data.
 
-![Make a note of the configuration path you select for the current operating system.](../../images/tk_pipeline_tutorial/image_9.png)
+![Make a note of the configuration path you select for the current operating system.](../../images/tk_pipeline_tutorial/image_9.png 'Make a note of the configuration path you select for the current operating system.')
 
 The folder you select on the screen above is where your configuration will be installed. You will explore and modify the contents of the configuration in this folder throughout this tutorial. 
 
@@ -109,7 +109,7 @@ When you click **Run Setup** on the above screen, Desktop will begin to download
 
 The configuration location you specified during the Desktop installation tutorial is recorded in Shotgun in the Pipeline Configurations page for your project. 
 
-![The Pipeline Configuration entity in Shotgun](../../images/tk_pipeline_tutorial/image_10.png)
+![The Pipeline Configuration entity in Shotgun](../../images/tk_pipeline_tutorial/image_10.png 'The Pipeline Configuration entity in Shotgun')
 
 Familiarize yourself with the contents of this folder in preparation for the next section.
 
@@ -245,7 +245,7 @@ In this section you will build on what you learned in the modeling section. You 
 
 Start by launching Maya from Desktop. If you still have Maya open after working through the previous section, you do not need to relaunch. Once Maya is open, use the **Shotgun > File Open…** menu item to open the Workfiles app. Just like in the Modeling section, use the Assets tab to drill down into the Teapot asset's tasks. This time, select the surfacing task and click **+ New File**.
 
-![](../../images/tk_pipeline_tutorial/image_21.png){ width=450px }
+![](../../images/tk_pipeline_tutorial/image_21.png){:width="450px"}
 
 You are now working in the Teapot's surfacing task. An easy way to verify that you are in the right production context is to check the first entry in the Shotgun menu. 
 
@@ -479,7 +479,7 @@ Next, let's see how artists handle upstream changes in their workflow. Open up t
 
 Open the work file in the Teapot's rigging step again (via **Shotgun > File Open…**). Now launch the **Shotgun > Scene Breakdown…** menu action. This launches the Breakdown app which shows you all of the upstream publishes that you have referenced into your work file. In this case, there is only the upstream Teapot model. You should see something like this:
 
-![](../../images/tk_pipeline_tutorial/image_37.png){ width=400px }
+![](../../images/tk_pipeline_tutorial/image_37.png){:width="400px"}
 
 For each reference, the app shows you one of two indicators:
 
@@ -490,7 +490,7 @@ Now select the referenced Teapot alembic cache item (or click the **Select All R
 
 The app will update the Maya reference to the latest iteration of the Teapot alembic cache. You should now see your new model in the file. 
 
-![](../../images/tk_pipeline_tutorial/image_40.png){ width=400px }
+![](../../images/tk_pipeline_tutorial/image_40.png){:width="400px"}
 
 Make any adjustments to your rigging setup that you need to account for the new model and then publish your changes. 
 
@@ -648,7 +648,7 @@ In the custom camera publish plugin, the **`FBXExport`** mel command in Maya was
 
 Your app settings should now look like this:
 
-![](../../images/tk_pipeline_tutorial/image_47.png){ width=400px }
+![](../../images/tk_pipeline_tutorial/image_47.png){:width="400px"}
 
 Now reload the integrations via the **Work Area Info** app to pick up the new setting, then browse to the published camera from layout. 
 
@@ -800,7 +800,7 @@ Once you are happy with your comp, use the **Shotgun > File Save…** menu actio
 
 Next, click the Shotgun logo in the left hand menu in Nuke. Click on one of the Shotgun-aware write nodes in that menu:
 
-![](../../images/tk_pipeline_tutorial/image_59.png){ width=400px }
+![](../../images/tk_pipeline_tutorial/image_59.png){:width="400px"}
 
 The Shotgun Write Node app provides a layer on top of the built-in Nuke Write node that automatically evaluates the output path based on your current Shotgun context. 
 
@@ -812,7 +812,7 @@ Render the image frames to disk. You can now publish your nuke session to associ
 
 Another useful integration is the Quick Review app. This is an output node that will quickly generate and upload a quicktime to Shotgun for Review. The app can be found in the left hand menu next to the Shotgun Write Nodes.
 
-![](../../images/tk_pipeline_tutorial/image_62.png){ width=400px }
+![](../../images/tk_pipeline_tutorial/image_62.png){:width="400px"}
 
 Create a Quick Review node, then click the Upload button to render the input to disk, generate the quicktime, and upload the result to Shotgun for review. Some standard options are provided before submitting the frames.
 
