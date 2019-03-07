@@ -53,7 +53,7 @@ A configuration is required for every project. The first time a project is acces
 | Software Integrations | 3ds Max, Houdini, Maya, Nuke, Photoshop, Flame | Basic + Hiero, Motionbulder, Mari | 
 | Toolkit Apps | Shotgun Panel, Publisher, Loader | Basic + Workfiles, Snap Shot, Scene breakdown, Nuke write node, Houdini Mantra node, and more |
 
-In this guide, you will use the Advanced Configuration Wizard in Shotgun Desktop to generate a pipeline configuration for your project that's based on the Default Configuration. Generating this configuration sets you up to make the customizations necessary to support a proprietary production pipeline.
+In this guide, you will use the Wizard in Shotgun Desktop to generate a pipeline configuration for your project based on the Default Configuration. Generating this configuration sets you up to make the customizations necessary to support a proprietary production pipeline.
 
 ## Prepare to create a Default Configuration
 
@@ -75,9 +75,9 @@ TIP: If a new project was created while Desktop was open, the **Projects** windo
 
 ## Creating the Advanced Configuration
 
-A Basic Configuration was downloaded and configured when the project was accessed. The Publish app and supported software packages were detected and automatically added to the **Apps** pane. 
+A Basic Configuration was downloaded and configured when the project was accessed. The Publish app and supported software packages were detected and automatically added to the **Apps** pane in Shotgun Desktop. 
 
-**Step 4:** Once the project is loaded, select your profile **avatar** at the bottom right of the screen. In the popup menu, select **Advanced project setup…** to initiate the Advanced Project Setup Wizard.
+**Step 4:** Once the project is loaded, select your profile **avatar** at the bottom right of the screen. In the popup menu, select **Advanced project setup…** to initiate the Wizard.
 
 ![Advanced project setup](../../../images/learning_content/toolkit_basics_guides/advanced_config/6_advanced_project_setup.png)
 
