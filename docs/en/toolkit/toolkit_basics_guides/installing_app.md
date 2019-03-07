@@ -308,7 +308,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 There will be a list of the available pipeline configurations that the cloned configuration can be pushed to. Enter the ID of the primary pipeline configuration for the project you are updating the configuration for.
 
-**NOTE:** You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in Shotgun that we viewed in **<a href=”#step3”>Step 3</a>:** of this guide. To find the project ID, go to the Configuration List and add the ID column.
+**NOTE:** You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in Shotgun that we viewed in **[Step 3](#step3):** of this guide. To find the project ID, go to the Configuration List and add the ID column.
 
 ![ID column](../../../images/learning_content/toolkit_basics_guides/installing_app/17_id_column.png)
 
@@ -340,9 +340,9 @@ Push Complete!
 
 ![App in Maya](../../../images/learning_content/toolkit_basics_guides/installing_app/19_app_in_maya.png)
 
-The Python Console app was added to the Project environment for the chosen project. We discussed in the second guide, “[Shotgun Toolkit editing a configuration getting started guide](../toolkit_basics_guides/editing_app_setting.md), that each environment is independent, a project has a dedicated configuration, and the software integrations gather settings from the pipeline configuration when a project is loaded. For the Python Console to be available in an environment, that environment will need instructions to look in the `app_locations.yml` file for the location descriptor. Given this, at any point in the pipeline where you want the Python Console app to be available will need the settings that say, “use the Python Console app here.” 
+The Python Console app was added to the Project environment for the chosen project. We discussed in the second guide, “[Editing a configuration](../toolkit_basics_guides/editing_app_setting.md), that each environment is independent, a project has a dedicated configuration, and the software integrations gather settings from the pipeline configuration when a project is loaded. For the Python Console to be available in an environment, that environment will need instructions to look in the `app_locations.yml` file for the location descriptor. Given this, at any point in the pipeline where you want the Python Console app to be available will need the settings that say, “use the Python Console app here.” 
 
-## Advanced Topics
+## Advanced topics
 
 ### The Shotgun developer community
 
@@ -370,7 +370,6 @@ includes:
 
 engines:
   tk-desktop: "@settings.tk-desktop.project"
-
 ```
 
 Follow the include: open `config/env/includes/settings/tk-desktop.yml` and find the `settings.tk-desktop.project` block. In that block you’ll see the following:
@@ -393,11 +392,9 @@ apps.tk-multi-pythonconsole.location:
   version: v1.1.2
 ```
 
-Every app, engine, and framework has a location descriptor that is used to identify the bundles of code, some code is accessed directly and other code is placed into a cache when the software is launched and the configuration file is accessed.
+Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines).
 
-Standard apps are referenced in the Default Configuration and cached automatically when a new project is accessed. Many location descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines).
-
-You can add any app to any appropriate software integration that Shotgun supports, or add your own proprietary application to your Toolkit arsonal and add apps there. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page. 
+You can add any app to any appropriate software integration that Shotgun supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page. 
 
 If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other Shotgun users will need the same function and sharing new apps is one way to give back to the Shotgun community. 
 
