@@ -14,7 +14,7 @@ Much of the workflows covered in this pipeline work out-of-the-box with Shotgun'
 Here is a high level view of the pipeline you will build in this tutorial: 
 
 <center><br>
-<img src='../../../images/tk_pipeline_tutorial/image_0.png' class='drop-shadow'>
+<img src='../../images/tk_pipeline_tutorial/image_0.png' class='drop-shadow'>
 <br><span style="font-size:80%">Pipeline Overview</span>
 <br></center>
 
