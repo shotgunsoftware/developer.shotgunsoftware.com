@@ -13,8 +13,7 @@ Much of the workflows covered in this pipeline work out-of-the-box with Shotgun'
 
 Here is a high level view of the pipeline you will build in this tutorial: 
 
-![Pipeline Overview](../../images/tk_pipeline_tutorial/image_0.png 'Pipeline Overview')
-
+![Pipeline Overview](../../images/tk_pipeline_tutorial/image_0.png)
 Pipeline Overview
 
 For simplicity, the digital content creation (DCC) software used will be kept to a minimum and limited to Maya and Nuke. Also for the sake of simplicity, data passed between pipeline steps will be limited to Maya ascii files, Alembic caches, and rendered image sequences.
@@ -63,11 +62,14 @@ For this Tutorial, you will need to create a new project in Shotgun and configur
 
 Here are some screenshots of what your configured project entities should look like in Shotgun:
 
-![Teapot and Table Assets](../../images/tk_pipeline_tutorial/image_1.png 'Teapot and Table Assets')
+![Teapot and Table Assets](../../images/tk_pipeline_tutorial/image_1.png)
+Teapot and Table Assets
 
-![Shot linked to a Sequence](../../images/tk_pipeline_tutorial/image_2.png 'Shot linked to a Sequence')
+![Shot linked to a Sequence](../../images/tk_pipeline_tutorial/image_2.png)
+Shot linked to a Sequence
 
-![Tasks](../../images/tk_pipeline_tutorial/image_3.png 'Tasks'){:width="400px"}
+![Tasks](../../images/tk_pipeline_tutorial/image_3.png){:width="400px"}
+Tasks
 
 ## Software Launchers
 
@@ -75,7 +77,8 @@ Next, you'll need to ensure that Maya and Nuke are available to launch in Shotgu
 
 If either application does not show up in Desktop or the expected version does not launch, you may need to manually configure the launch in Shotgun via the Software entity. 
 
-![The default Software entities defined in Shotgun](../../images/tk_pipeline_tutorial/image_4.png 'The default Software entities defined in Shotgun')
+![The default Software entities defined in Shotgun](../../images/tk_pipeline_tutorial/image_4.png)
+The default Software entities defined in Shotgun
 
 The Software entity is used to drive which DCC packages to use on your production. By default, the integrations will search for these packages in standard installation locations and make them launchable via Desktop. If you have more than one version installed or you have them installed in a non-standard location, it is possible you need to update the corresponding Software entity entry in Shotgun to curate the launch experience for your artists. 
 
@@ -91,17 +94,22 @@ By default, all new projects are configured to use the basic [Shotgun Integratio
 
 Use Shotgun Desktop (Desktop) to take over your project's configuration. RMB click within Desktop or click the user icon in the bottom right to show the popup menu. Select the **Advanced project setup…** option and follow the wizard to locally install your project configuration. The images below show the required steps. You can also follow the steps outlined in the Integrations Admin Guide for [Taking over a Pipeline Configuration](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Taking%20over%20a%20Pipeline%20Configuration). 
 
-![Select the **Advanced project setup…** in the Desktop popup menu](../../images/tk_pipeline_tutorial/image_5.png 'Select the **Advanced project setup…** in the Desktop popup menu')
+![Select the **Advanced project setup…** in the Desktop popup menu](../../images/tk_pipeline_tutorial/image_5.png)
+Select the **Advanced project setup…** in the Desktop popup menu
 
-![Choose the **Shotgun Default** configuration type](../../images/tk_pipeline_tutorial/image_6.png 'Choose the **Shotgun Default** configuration type')
+![Choose the **Shotgun Default** configuration type](../../images/tk_pipeline_tutorial/image_6.png)
+Choose the **Shotgun Default** configuration type
 
-![Choose the **Default** configuration](../../images/tk_pipeline_tutorial/image_7.png 'Choose the **Default** configuration')
+![Choose the **Default** configuration](../../images/tk_pipeline_tutorial/image_7.png)
+Choose the **Default** configuration
 
-![Enter the name of the folder where your project's files will live.](../../images/tk_pipeline_tutorial/image_8.png 'Enter the name of the folder where your project's files will live.')
+![Enter the name of the folder where your project's files will live.](../../images/tk_pipeline_tutorial/image_8.png)
+Enter the name of the folder where your project's files will live.
 
 If this is your first time setting up a Shotgun project, you'll also be prompted to define a storage location for your project data.
 
-![Make a note of the configuration path you select for the current operating system.](../../images/tk_pipeline_tutorial/image_9.png 'Make a note of the configuration path you select for the current operating system.')
+![Make a note of the configuration path you select for the current operating system.](../../images/tk_pipeline_tutorial/image_9.png)
+Make a note of the configuration path you select for the current operating system.
 
 The folder you select on the screen above is where your configuration will be installed. You will explore and modify the contents of the configuration in this folder throughout this tutorial. 
 
@@ -109,7 +117,8 @@ When you click **Run Setup** on the above screen, Desktop will begin to download
 
 The configuration location you specified during the Desktop installation tutorial is recorded in Shotgun in the Pipeline Configurations page for your project. 
 
-![The Pipeline Configuration entity in Shotgun](../../images/tk_pipeline_tutorial/image_10.png 'The Pipeline Configuration entity in Shotgun')
+![The Pipeline Configuration entity in Shotgun](../../images/tk_pipeline_tutorial/image_10.png)
+The Pipeline Configuration entity in Shotgun
 
 Familiarize yourself with the contents of this folder in preparation for the next section.
 
@@ -483,8 +492,8 @@ Open the work file in the Teapot's rigging step again (via **Shotgun > File Open
 
 For each reference, the app shows you one of two indicators:
 
-* <img src='../../images/tk_pipeline_tutorial/image_38.png' width='22px'>The referenced publish is the latest
-* <img src='../../images/tk_pipeline_tutorial/image_39.png' width='22px'>There is a newer publish
+* ![](../../images/tk_pipeline_tutorial/image_38.png){:width="22px"} The referenced publish is the latest
+* ![](../../images/tk_pipeline_tutorial/image_39.png){:width="22px"}There is a newer publish
 
 Now select the referenced Teapot alembic cache item (or click the **Select All Red** button at the bottom), then click **Update Selected**.
 
