@@ -28,6 +28,11 @@
 - caption: toolkit
   children:
   - page: /toolkit/
+  - page: /toolkit/toolkit_basics_guides/
+    children:
+    - page: /toolkit/toolkit_basics_guides/advanced_config/
+    - page: /toolkit/toolkit_basics_guides/editing_app_setting/
+    - page: /toolkit/toolkit_basics_guides/installing_app/
   - text: core-api
     url: " https://developer.shotgunsoftware.com/tk-core/"
   - page: /toolkit/frameworks/
@@ -70,6 +75,7 @@
       url: "https://support.shotgunsoftware.com/forums/23078637-Questions-and-Troubleshooting-Python-Mu-JavaScript-etc-#recent"
     - text: extending-rv
       url: "https://support.shotgunsoftware.com/hc/en-us/community/topics/200682488-RV-Extending-and-Customizing-RV-Python-Mu-JavaScript-etc-#recent"
+
 
 - caption: other
   children:
