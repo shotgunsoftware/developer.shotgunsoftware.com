@@ -95,7 +95,7 @@ Use Shotgun Desktop (Desktop) to take over your project's configuration. RMB cli
 
 {% include figure src="../../images/tk_pipeline_tutorial/image_6.png" caption="Choose the **Shotgun Default** configuration type" %}
 
-{% include figure src="../../images/tk_pipeline_tutorial/image_7.png" caption="Choose the **Default** configuration" %}
+{% include figure src="../../images/tk_pipeline_tutorial/image_7.png" caption="Choose the Default configuration" %}
 
 {% include figure src="../../images/tk_pipeline_tutorial/image_8.png" caption="Enter the name of the folder where your project's files will live." %}
 
