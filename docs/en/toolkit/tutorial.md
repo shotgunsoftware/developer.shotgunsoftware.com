@@ -19,7 +19,7 @@ Here is a high level view of the pipeline you will build in this tutorial:
 
 For simplicity, the digital content creation (DCC) software used will be kept to a minimum and limited to Maya and Nuke. Also for the sake of simplicity, data passed between pipeline steps will be limited to Maya ascii files, Alembic caches, and rendered image sequences.
 
-**NOTE: The simple pipeline outlined in this tutorial has not been tested on production and should only be used as an example of how a Shotgun-based pipeline could be built.**
+{% include info title="Note" content="The simple pipeline outlined in this tutorial has not been tested on production and should only be used as an example of how a Shotgun-based pipeline could be built." %}
 
 ## Prerequisites
 
@@ -147,7 +147,7 @@ At this point you should be ready to begin building a pipeline. You have a proje
 
 The following sections will walk through each step of the pipeline, highlighting the features that are available out-of-the-box and walking you through the process of customizing the Shotgun integrations. By the end of these sections, you will have a simple, fully functional, end-to-end production pipeline. You will also get a feel for the steps artists will take as they work on production.
 
-**NOTE: All code and configuration for this tutorial can be found on the **`pipeline_tutorial`** branch of the [**`tk-config-default2`** repository](https://github.com/shotgunsoftware/tk-config-default2/tree/pipeline_tutorial/). Feel free to use this branch if you need hints as to where files should live, where code should be added, etc.**
+{% include info title="Note" content="All code and configuration for this tutorial can be found on the **`pipeline_tutorial`** branch of the [**`tk-config-default2`** repository](https://github.com/shotgunsoftware/tk-config-default2/tree/pipeline_tutorial/). Feel free to use this branch if you need hints as to where files should live, where code should be added, etc." %}
 
 ## Modeling Workflow
 
@@ -273,7 +273,8 @@ Use the **Shotgun > File Save…** menu action to save the current session befor
 
 For the purposes of this simple pipeline, you will customize the Publisher app to export Maya shader networks as additional publish items from the surfacing step. Later in the tutorial, you will put together a quick and dirty solution that allows the shaders to be reconnected to the Alembic geometry caches when referenced downstream.
 
-**NOTE: The customization you'll be adding is, admittedly, very simple and fragile. A more robust solution might take into account alternate representations of a surfaced character as well as the asset management side of using external images as texture maps. This example presents only a starting point for building a real-world solution.**
+
+{% include info title="Note" content="The customization you'll be adding is, admittedly, very simple and fragile. A more robust solution might take into account alternate representations of a surfaced character as well as the asset management side of using external images as texture maps. This example presents only a starting point for building a real-world solution." %}
 
 #### Override the Maya collector
 
@@ -291,7 +292,7 @@ The collector setting defines the hook where the publisher's collection logic li
 
 This definition includes two files. When multiple files are listed in a hook setting, it implies inheritance. The first file contains the **`{self}`** token which will evaluate to the installed Publish app's hooks folder. The second file contains the **`{engine}`** token which will evaluate to the current engine's (in this case the installed Maya engine's) hooks folder. To summarize, this value says the Maya-specific collector inherits the Publish app's collector. This is a common pattern for Publisher configuration since the app's collector hook has logic that is useful regardless of the DCC that is running. The DCC-specific logic inherits from that base logic and extends it to collect items that are specific to the current session. 
 
-**NOTE: We're only changing the collector setting for the Asset step environment, so our modifications won't be seen by artists working in other contexts, like Shot steps. They will continue to use the shipped, default Maya collector.**
+{% include info title="Note" content="We're only changing the collector setting for the Asset step environment, so our modifications won't be seen by artists working in other contexts, like Shot steps. They will continue to use the shipped, default Maya collector." %}
 
 In the **Configuration** section you learned how to take over a hook. Begin the customization process by taking over the Maya engine's collector hook in your configuration. 
 
@@ -307,7 +308,7 @@ Next, update the publish2 settings file to point to your new hook location. Your
 
 Note the **`{config}`** token. The path will now resolve to the hooks folder in your project configuration. Your new copy of the collector will inherit from the collector defined by the app itself.
 
-**NOTE: If you were to publish at this point, the Publish logic would be exactly the same as the collector has simply been copied and referenced from a new location.**
+{% include info title="Note" content="If you were to publish at this point, the Publish logic would be exactly the same as the collector has simply been copied and referenced from a new location." %}
 
 Now you need to open up your copy of the collector in your preferred IDE or text editor, then locate the **`process_current_session`** method. This method is responsible for collecting all publish items in the current DCC session. Because you will be collecting a new publish type, go to the bottom of this method and add the following line:
 
@@ -315,7 +316,7 @@ Now you need to open up your copy of the collector in your preferred IDE or text
 
 This is a new method that you will add to collect any meshes found in the current session. The method will create mesh items that a shader publish plugin (that you'll create later) can act upon. The item being passed in is the session item that will be the parent for our mesh items. 
 
-**NOTE: This is a very directed approach to modifying existing publish plugins. For a deeper dive into the structure of the publisher and all of its moving parts, please [see the developer docs](http://developer.shotgunsoftware.com/tk-multi-publish2/).**
+{% include info title="Note" content="This is a very directed approach to modifying existing publish plugins. For a deeper dive into the structure of the publisher and all of its moving parts, please [see the developer docs](http://developer.shotgunsoftware.com/tk-multi-publish2/)." %}
 
 Now add the new method definition below to the bottom of the file:
 
@@ -368,7 +369,7 @@ Now add the new method definition below to the bottom of the file:
 
 The code is commented and should give you an idea of what is being done. The main point is that you've now added logic to collect mesh items for any top-level meshes in the current session. If you were to execute the publisher at this point however, you would not see any mesh items in the item tree. This is because there are no publish plugins defined to act on them. Next, you'll write a new shader publish plugin that will attach to these mesh items and handle publishing them for use downstream. 
 
-**NOTE: You probably saw the call to set an icon for the mesh item in the code above. For this to work, you will need to add an icon to your configuration at the specified path:**
+{% include info title="Note" content="You probably saw the call to set an icon for the mesh item in the code above. For this to work, you will need to add an icon to your configuration at the specified path:" %}
 
 **`config/hooks/tk-multi-publish2/icons/mesh.png`**
 
@@ -376,7 +377,7 @@ The code is commented and should give you an idea of what is being done. The mai
 
 The next step is to connect the newly collected mesh items to a publish plugin that can export the mesh's shaders to disk and publish them. You will need to create a new publish plugin to do this. [Follow this link to the source code for this hook](https://github.com/shotgunsoftware/tk-config-default2/blob/pipeline_tutorial/hooks/tk-multi-publish2/maya/publish_shader_network.py) and save it in the **`hooks/tk-multi-publish2/maya`** folder and name it **`publish_shader_network.py`**.
 
-**NOTE: The plugin is a lot of code to take in if you are new to the Toolkit platform and the publish code. Don't worry about that right now. You will have time to go through and understand what is happening as you progress through this tutorial and are exposed to the features of the publisher. For now, just create the file and know that its purpose is to handle writing the shader networks to disk.**
+{% include info title="Note" content="The plugin is a lot of code to take in if you are new to the Toolkit platform and the publish code. Don't worry about that right now. You will have time to go through and understand what is happening as you progress through this tutorial and are exposed to the features of the publisher. For now, just create the file and know that its purpose is to handle writing the shader networks to disk." %}
 
 The last step before being able to publish shaders is to add the template and configuration defined by the new shader publish plugin. You can see the setting defined by the plugin in the **`settings`** property:
 
@@ -424,7 +425,7 @@ Find the section where asset related Maya templates are defined and add the new 
 
 That should be everything. You have overridden the Publish app's collector hook to find meshes to publish shaders for. You have implemented a new publish plugin to attach to the collected shader items, and you have defined and configured a new publish template where the shader networks will be written to disk. 
 
-**NOTE: If you closed Maya while making the customizations to your configuration, do not worry. You can simply launch Maya again and use the File Open dialog to open your surfacing work file. You can skip the reloading step below.**
+{% include info title="Note" content="If you closed Maya while making the customizations to your configuration, do not worry. You can simply launch Maya again and use the File Open dialog to open your surfacing work file. You can skip the reloading step below." %}
 
 ##### Reloading the Shotgun Integrations
 
@@ -584,7 +585,7 @@ Next, add the method itself to the bottom of the file:
 
 Once again, the code is commented and should give you an idea of what is being done. You have added logic to collect camera items for all cameras in the current session. As before, if you were to execute the publisher at this point however, you would not see any camera items in the item tree. This is because there are no publish plugins defined to act on them. Next, you'll write a camera publish plugin that will attach to these items and handle publishing them for use downstream.
 
-**NOTE: You probably saw the call to set an icon for the camera item in the code above. For this to work, you will need to add an icon to your configuration at the specified path:**
+{% include info title="Note" content="You probably saw the call to set an icon for the camera item in the code above. For this to work, you will need to add an icon to your configuration at the specified path:" %}
 
 **`config/hooks/tk-multi-publish2/icons/camera.png`**
 
@@ -632,7 +633,7 @@ Use what you've learned in previous sections to complete the following tasks.
 
 * Load (reference) the maya session publish from the Shot's layout step
 
-**NOTE: You'll notice that the camera was included in the layout session publish file. In a robust pipeline, the camera might be explicitly hidden or excluded from the session publish in order to allow the separate camera publish file to be the one true camera definition. Go ahead and delete or hide the camera included by the reference.**  
+{% include info title="Note" content="You'll notice that the camera was included in the layout session publish file. In a robust pipeline, the camera might be explicitly hidden or excluded from the session publish in order to allow the separate camera publish file to be the one true camera definition. Go ahead and delete or hide the camera included by the reference." %}  
 
 ### Custom camera Loader action
 
@@ -733,7 +734,7 @@ Now add the following 2 lines at the end of the **`_create_reference`** method t
 
 The code runs whenever a new reference is created, so it should assign the shader when referencing new geometry if the shader already exists in the file. Similarly, it should work when referencing the shader and the geometry already exists. 
 
-**NOTE: This hookup logic is very brute force and does not properly handle namespaces and other Maya-related subtleties that should be considered when implementing a production-ready pipeline.**
+{% include info title="Note" content="This hookup logic is very brute force and does not properly handle namespaces and other Maya-related subtleties that should be considered when implementing a production-ready pipeline." %}
 
 Finally, point your shot's loader settings to your new hook by editing this file:
 
@@ -763,7 +764,7 @@ Render your shot to disk.
 
 {% include figure src="../../images/tk_pipeline_tutorial/image_54_5.gif" %}
 
-**NOTE: As you can see, there are issues with the surfacing of both the Teapot and the Table asset. For the purposes of this tutorial, assume these were intentional, artistic choices. If you want to address these issues, you can always load the surfacing work files for these assets and adjust the shaders and re-publish them. If you do, remember to update the references in the lighting work file and re-render. If you go through the steps, you may find that the breakdown app does not reconnect your updated shaders after reloading the reference. Based on your experience modifying the loader to hook up shader references, you should be able to update the breakdown app's scene operations hook to add the required logic. HINT: See the update method in [this file](https://github.com/shotgunsoftware/tk-multi-breakdown/blob/master/hooks/tk-maya_scene_operations.py#L69).**
+{% include info title="Note" content="As you can see, there are issues with the surfacing of both the Teapot and the Table asset. For the purposes of this tutorial, assume these were intentional, artistic choices. If you want to address these issues, you can always load the surfacing work files for these assets and adjust the shaders and re-publish them. If you do, remember to update the references in the lighting work file and re-render. If you go through the steps, you may find that the breakdown app does not reconnect your updated shaders after reloading the reference. Based on your experience modifying the loader to hook up shader references, you should be able to update the breakdown app's scene operations hook to add the required logic. HINT: See the update method in [this file](https://github.com/shotgunsoftware/tk-multi-breakdown/blob/master/hooks/tk-maya_scene_operations.py#L69)." %}
 
 The shipped Shotgun integrations will collect image sequences by looking at the render layers defined in the file. Once your render is complete, launch the publisher. You will see the rendered sequence as an item in the tree. 
 
