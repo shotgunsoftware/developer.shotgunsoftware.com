@@ -15,7 +15,7 @@ Here is a high level view of the pipeline you will build in this tutorial:
 
 {% include figure src="../../images/tk_pipeline_tutorial/image_0.png" caption="Pipeline Overview" %}
 
-Pipeline Overview
+## Pipeline Overview
 
 For simplicity, the digital content creation (DCC) software used will be kept to a minimum and limited to Maya and Nuke. Also for the sake of simplicity, data passed between pipeline steps will be limited to Maya ascii files, Alembic caches, and rendered image sequences.
 
