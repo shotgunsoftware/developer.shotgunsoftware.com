@@ -7,11 +7,11 @@ lang: en
 
 # Getting started with configurations
 
-After completing this guide, you will have the knowledge fundamental to creating an advanced setup for your Toolkit project, setting you up customize your pipeline configuration.
+After completing this guide, you will have the knowledge fundamental to extending and customizing a configuration for your project’s pipeline.
 
 ## About the guide
  
-This guide describes how to use the **Advanced Project Setup Wizard** in Shotgun Desktop to create a configuration for a digital content creation pipeline. You will quickly become acquainted with the configuration tools, learn how to use the Wizard, and be presented with opportunities to learn more. Using the Wizard creates pipeline configuration for your project and prepares it to be edited and extended to support each step in the pipeline. The configuration controls aspects of the UI, Shotgun Apps, and various tools necessary to support a production pipeline. Using the Wizard is just one way to extend a configuration. Along with adding specific settings for each step in a pipeline, it will add integrations with software applications. In this guide, we'll be basing our project's configuration on Toolkit's Default Configuration.  
+This guide describes how to use the **Advanced Project Setup Wizard** in Shotgun Desktop to create a configuration for a digital content creation pipeline. You will quickly become acquainted with the configuration tools, learn how to use the Wizard, and be presented with opportunities to learn more. Using the Wizard creates a pipeline configuration for your project and prepares it to be edited and extended to support each step in the pipeline. The configuration controls aspects of the UI, Shotgun Apps, and various tools necessary to support a production pipeline. Using the Wizard is just one way to extend a configuration. Along with adding specific settings for each step in a pipeline, it will add integrations with software applications. In this guide, we'll be basing our project's configuration on Toolkit's Default Configuration.  
 
 This guide assumes the user: 
 
@@ -29,7 +29,7 @@ To use this guide and create a customizable configuration for your project, the 
 
 ## About the Advanced Project Setup Wizard
 
-The Advanced Project Setup Wizard in Shotgun Desktop generates a pipeline configuration based on our Default Configuration that provides a solid base to build on, adding key software integrations, customizable settings, apps and UI elements that support the pipeline process. It creates a configuration you can edit and extend to meet your project’s pipeline needs.
+The Advanced Project Setup Wizard in Shotgun Desktop generates a pipeline configuration based on a Default Configuration. The Default Configuration provides a solid base to build on complete with customizable settings, apps, and UI elements that support the pipeline process. It creates a configuration you can edit and extend to meet your project’s pipeline needs.
 
 The Default Configuration includes: 
 * A basic filesystem schema and templates that determine where files live on disk 
@@ -67,13 +67,13 @@ In this guide, you will use the Wizard in Shotgun Desktop to generate a pipeline
 
 ![Load project](../../../images/learning_content/toolkit_basics_guides/advanced_config/4_load_project.png)
 
-**Step 3:** Navigate to the project where you wish to run the Advanced Project Setup Wizard by selecting its thumbnail image.
+**Step 3:** Navigate to the project where you wish to run the Wizard by selecting its thumbnail image.
 
 {% include info title="Tip" content="If a new project was created while Desktop was open, the **Projects** window may need to be refreshed to see the new projects. Select your profile **avatar** at the bottom right of the desktop and select Refresh Projects." %}
 
 ![Refresh project](../../../images/learning_content/toolkit_basics_guides/advanced_config/5_refresh_projects_list.png)
 
-## Creating the Advanced Configuration
+## Creating the Default Configuration
 
 A Basic Configuration was downloaded and configured when the project was accessed. The Publish app and supported software packages were detected and automatically added to the **Apps** pane in Shotgun Desktop. 
 
@@ -143,7 +143,7 @@ The final step generates the appropriate folders, files, and data necessary to c
 
 ![Setup complete](../../../images/learning_content/toolkit_basics_guides/advanced_config/17_project_setup_complete.png)
 
-TIP: Pin the app to the menu bar to allow quick access to Shotgun Desktop: select your **avatar** and select **Pin to Menu**.
+**TIP:** Pin the app to the menu bar to allow quick access to Shotgun Desktop: select your **avatar** and select **Pin to Menu**.
 
 You’re done; the project setup is complete. You now have a Toolkit pipeline configuration for your project in the location you specified, based on the Default Configuration, and you’re ready to start customizing.
 
