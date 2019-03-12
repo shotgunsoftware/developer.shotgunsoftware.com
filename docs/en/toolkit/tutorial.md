@@ -205,7 +205,7 @@ Now that your Teapot model is ready, you need to publish it so that it can be su
 
 The dialog shows a tree of items representing what will be published. The tree includes some entries that represent the items to be published and some entries represent the actions that will be performed during the publish operation. 
 
-On the left side of the dialog you will see an item representing the current Maya session. Underneath it, you will see a **Publish to Shotgun **child action. An additional item representing **All Session Geometry** is shown as a child item of the current session. It also has a **Publish to Shotgun** child action.  
+On the left side of the dialog you will see an item representing the current Maya session. Underneath it, you will see a **Publish to Shotgun** child action. An additional item representing **All Session Geometry** is shown as a child item of the current session. It also has a **Publish to Shotgun** child action.  
 
 Explore the Publish App by clicking on the items on the left side of the tree. You'll notice that the items to be acted upon, when selected, allow you to enter a description of what is being published. You can also take a screenshot to be associated with the item by clicking the camera icon on the right. 
 
