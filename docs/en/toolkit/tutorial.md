@@ -129,7 +129,7 @@ This tutorial also uses the templates defined in the Default pipeline configurat
 
 ### Hooks
 
-Much of this tutorial will involve modifying App hooks in order to customize the artist workflows. Before diving into that customization, you should have a basic understanding of what hooks are, how they work, and where they live. Read through the Hooks section of the  [Administration and ](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Hooks)[Configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Hooks) documentation.
+Much of this tutorial will involve modifying App hooks in order to customize the artist workflows. Before diving into that customization, you should have a basic understanding of what hooks are, how they work, and where they live. Read through the Hooks section of the  [Administration](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Hooks) and [Configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Hooks) documentation.
 
 As you progress through the tutorial, you will be asked to "take over" a hook defined by one of the Toolkit Apps. The process of taking over an app hook is straightforward. Each time you're asked to do so, simply follow these steps:
 
