@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Installing an App
+title: Adding an app
 permalink: /toolkit/toolkit_basics_guides/installing_app/
 lang: en
 ---
