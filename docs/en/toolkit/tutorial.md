@@ -320,7 +320,7 @@ This is a new method that you will add to collect any meshes found in the curren
 
 Now add the new method definition below to the bottom of the file:
 
-```
+```python
     def _collect_meshes(self, parent_item):
        """
        Collect mesh definitions and create publish items for them.
@@ -381,7 +381,7 @@ The next step is to connect the newly collected mesh items to a publish plugin t
 
 The last step before being able to publish shaders is to add the template and configuration defined by the new shader publish plugin. You can see the setting defined by the plugin in the **`settings`** property:
 
-```
+```python
     @property
     def settings(self):
        "”” … "””
@@ -533,7 +533,7 @@ Open your custom collector hook and add the following method call at the bottom 
 
 Next, add the method itself to the bottom of the file:
 
-```
+```python
     def _collect_cameras(self, parent_item):
        """
        Creates items for each camera in the session.
@@ -691,7 +691,7 @@ The shaders published in the surfacing workflow section are just Maya files, so 
 
 Add the following method at the end of the actions hook (outside the class).
 
-```
+```python
     def _hookup_shaders(reference_node):
        """
        Reconnects published shaders to the corresponding mesh.
@@ -726,7 +726,7 @@ Add the following method at the end of the actions hook (outside the class).
 
 Now add the following 2 lines at the end of the **`_create_reference`** method to call the shader hookup logic:
 
-```
+```python
     reference_node = cmds.referenceQuery(path, referenceNode=True)
     _hookup_shaders(reference_node)</td>
 ```
