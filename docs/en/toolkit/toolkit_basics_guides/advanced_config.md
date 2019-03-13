@@ -7,7 +7,7 @@ lang: en
 
 # Getting started with configurations
 
-After completing this guide, you will have the knowledge fundamental to extending and customizing a configuration for your project’s pipeline.
+After completing this guide, you will have the knowledge fundamental to adding your project information to the Default Configuration, setting you up to customize your pipeline configuration.
 
 ## About the guide
  
@@ -29,7 +29,7 @@ To use this guide and create a customizable configuration for your project, the 
 
 ## About the Advanced Project Setup Wizard
 
-The Advanced Project Setup Wizard in Shotgun Desktop generates a pipeline configuration based on a Default Configuration. The Default Configuration provides a solid base to build on complete with customizable settings, apps, and UI elements that support the pipeline process. It creates a configuration you can edit and extend to meet your project’s pipeline needs.
+The Advanced Project Setup Wizard in Shotgun Desktop generates a pipeline configuration based on the Default Configuration. The Default Configuration provides a solid base to build on, complete with customizable settings, apps, and UI elements that support the pipeline process. It creates a configuration you can edit and extend to meet your project’s pipeline needs.
 
 The Default Configuration includes: 
 * A basic filesystem schema and templates that determine where files live on disk 
