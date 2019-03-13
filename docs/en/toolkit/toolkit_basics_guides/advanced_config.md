@@ -7,7 +7,7 @@ lang: en
 
 # Getting started with configurations
 
-After completing this guide, you will have the knowledge fundamental to adding your project information to a Default Configuration, associating that configruation with your project, and setting you up to customize your pipeline configuration.
+After completing this guide, you will have the knowledge fundamental to adding your project information to a Default Configuration, associating that configuration with your project, and setting you up to customize your pipeline configuration.
 
 ## About the guide
  
@@ -37,7 +37,7 @@ The Default Configuration includes:
 
 Customizations are only limited by imagination, cleverness, and programming knowledge or the ability to borrow from what others in the Shotgun community have created.
  
-## Extending the configuration 
+## Creating the configuration 
 
 A configuration is required for every project. The first time a project is accessed through Shotgun Desktop, a Basic Configuration is downloaded and configured. This Basic Configuration automatically detects the supported content creation software a user has on their system and associates the configuration with the project. Settings in the pipeline configuration govern the integrations within the supported software applications. The [Panel]( https://support.shotgunsoftware.com/hc/en-us/articles/219033098-Shotgun-Panel) app displays project information from Shotgun and allows artists to reply to notes and view Versions without leaving their work session. The [Publisher](https://support.shotgunsoftware.com/hc/en-us/articles/219032998-Publishing-your-work) app allows artists to make their work available for others on their team, and through the [Loader](https://support.shotgunsoftware.com/hc/en-us/articles/219033078-Load-Published-Files-) app, artists can load their teammates' published files. The Basic Configuration does not include file system management setup or the development of templates for specifying how files and directories are named on disk. It also doesn’t have the plethora of Apps that are added when a Default Configuration is configured. It is a simple configuration that allows Toolkit to run without any manual editing of configuration files. The Wizard replaces the Basic Configuration with a Default Configuration. It provides more apps and software integrations to support you on your journey. While the Basic Configuration can be edited as well, it's not until you have an advanced setup that your project will be set up for customization.
 
