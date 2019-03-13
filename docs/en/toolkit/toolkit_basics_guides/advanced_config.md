@@ -129,7 +129,7 @@ A dialog box is displayed with the name of the project populating the text field
 
 ![Project folder](../../../images/learning_content/toolkit_basics_guides/advanced_config/14_project_folder_name.png)
 
-Toolkit can work in either a Distributed Setup, where the pipeline configuration is uploaded to Shotgun and cached locally for each user, or a Centralized Setup, where users access a single configuration in a shared location on disk. For this exercise we will use a Centralized Setup. You can [learn more about Distributed Setups here](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
+Toolkit can work in either a Distributed Setup, where the pipeline configuration is uploaded to Shotgun and cached locally for each user or a Centralized Setup, where users access a single configuration in a shared location on disk. For this exercise we will use a Centralized Setup. You can [learn more about Distributed Setups here](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
 
 The final step generates the appropriate folders, files, and data necessary to create the configuration specific to a project. 
 
@@ -161,11 +161,11 @@ Below are some ways you can have fun with configurations.
 
 ## Using the command line to create a default configuration
 
-From inside any project configuration, the `tank` command lets you run administrative commands from a terminal. Each project has its own dedicated `tank` command. The `tank setup_project` command's functionality is analogous to the Advanced Setup Wizard's: it creates an editable configuration on disk for your project, based either on an existing project's configuration or the Default Configuration. You can [learn more about running `tank setup_project` here](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#setup_project), and [more about the  `tank` command here](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#Using%20the%20tank%20command).
+From inside any project configuration, the `tank` command lets you run administrative commands from a terminal. Each project has its own dedicated `tank` command. The `tank setup_project` command's functionality is analogous to the Advanced Setup Wizard's: it creates an editable configuration on disk for your project based either on an existing project's configuration or the Default Configuration. You can [learn more about running `tank setup_project` here](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#setup_project), and [more about the  `tank` command here](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#Using%20the%20tank%20command).
 
 ## Editing a configuration that's in production
 
-There will be times when you want to modify a configuration that is currently in production, but you won't want to edit it while artists are using it. With just a few commands, Shotgun provides a way to copy an existing configuration, where you can test your modifications safely before pushing them into production. This process replaces the production configuration with the new one and automatically backs up the old one. 
+There will be times when you want to modify a configuration that is currently in production, but you won't want to edit it while artists are using it. With just a few commands, Shotgun provides a way to copy an existing configuration where you can test your modifications safely before pushing them into production. This process replaces the production configuration with the new one and automatically backs up the old one. 
 
 The reasons you would want work on a copy of a configuration are:
 
@@ -178,7 +178,7 @@ To learn about cloning your configuration, as well as other basics of configurat
 
 ## Cloud distribution of pipeline configurations
 
-This guide walks through created a **centralized configuration**: a single copy of a pipeline configuration that is located in a shared network location and accessed by all users. But if your workforce is distributed across locations, it may not be feasible to share a single copy of a pipeline configuration. To address this scenario, you can use a **distributed configuration**, a pipeline configuration that's uploaded to Shotgun and automatically distributed to users and cached locally. You can [learn more about distributed configuration in our Core API developer documentation](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
+This guide walks through creating a **centralized configuration**: a single copy of a pipeline configuration that is located in a shared network location and accessed by all users. But if your workforce is distributed across locations, it may not be feasible to share a single copy of a pipeline configuration. To address this scenario, you can use a **distributed configuration**, a pipeline configuration that's uploaded to Shotgun and automatically distributed to users and cached locally. You can [learn more about distributed configuration in our Core API developer documentation](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
 
 ## Working with more than one root folder
 
