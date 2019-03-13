@@ -55,7 +55,7 @@ A configuration is required for every project. The first time a project is acces
 
 In this guide, you will use the Wizard in Shotgun Desktop to generate a pipeline configuration for your project based on the Default Configuration. Generating this configuration sets you up to make the customizations necessary to support a proprietary production pipeline.
 
-## Prepare to create a Default Configuration
+## Prepare to use a Default Configuration
 
 **Step 1:** Create a new project in Shotgun called "the_other_side.”
 
@@ -73,7 +73,7 @@ In this guide, you will use the Wizard in Shotgun Desktop to generate a pipeline
 
 ![Refresh project](../../../images/learning_content/toolkit_basics_guides/advanced_config/5_refresh_projects_list.png)
 
-## Creating the Default Configuration
+## Accessing the Default Configuration
 
 A Basic Configuration was downloaded and configured when the project was accessed. The Publish app and supported software packages were detected and automatically added to the **Apps** pane in Shotgun Desktop. 
 
@@ -115,7 +115,7 @@ This setup allows Shotgun to have access to only the folder you identify for sto
 
 ![Define storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/12_define_Storage3.png)
 
-**Step 9:** Select **Save** to identify the projects folder as the storage destination for project data.
+**Step 9:** Select **SAVE** to identify the projects folder as the storage destination for project data.
 
 ![Define storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/13_define_storage4.png)
 
