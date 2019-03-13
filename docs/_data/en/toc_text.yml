@@ -10,7 +10,7 @@ shotgun: Shotgun
 python-api: Python API
 rest-api: REST API
 event-triggers: Event Driven Triggers
-jira-bridge: Shotgun Jira Bridge (Beta)
+jira-bridge: Jira Bridge (Beta)
 examples: Examples
 reference: Reference
 
