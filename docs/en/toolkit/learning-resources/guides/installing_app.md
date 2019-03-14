@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Installing an App
-permalink: /toolkit/toolkit_basics_guides/installing_app/
+permalink: /toolkit/learning-resources/guides/installing_app/
 lang: en
 ---
 

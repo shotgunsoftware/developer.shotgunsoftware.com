@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Advanced Setup
-permalink: /toolkit/toolkit_basics_guides/advanced_config/
+permalink: /toolkit/learning-resources/guides/advanced_config/
 lang: en
 ---
 
