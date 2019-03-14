@@ -18,6 +18,8 @@
     url: " https://developer.shotgunsoftware.com/rest-api/"
   - text: event-triggers
     url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
+  - text: jira-bridge
+    url: " https://developer.shotgunsoftware.com/sg-jira-bridge/"
   - page: /shotgun/action_menu_items/
     children:
     - text: examples
