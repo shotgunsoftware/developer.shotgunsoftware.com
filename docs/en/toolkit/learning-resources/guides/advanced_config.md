@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Advanced Setup
+title: Configuration Setup
 permalink: /toolkit/learning-resources/guides/advanced_config/
 lang: en
 ---
@@ -69,7 +69,7 @@ In this guide, you will use the Wizard in Shotgun Desktop to generate a pipeline
 
 **Step 3:** Navigate to the project where you wish to run the Advanced Project Setup Wizard by selecting its thumbnail image.
 
-TIP: If a new project was created while Desktop was open, the **Projects** window may need to be refreshed to see the new projects. Select your profile **avatar** at the bottom right of the desktop and select Refresh Projects.
+{% include info title="Tip" content="If a new project was created while Desktop was open, the **Projects** window may need to be refreshed to see the new projects. Select your profile **avatar** at the bottom right of the desktop and select Refresh Projects." %}
 
 ![Refresh project](../../../images/learning_content/toolkit_basics_guides/advanced_config/5_refresh_projects_list.png)
 
