@@ -482,10 +482,7 @@ Open the work file in the Teapot's rigging step again (via **Shotgun > File Open
 
 {% include figure src="../../../images/toolkit/learning-resources/tutorial/image_37.png" width="400px" %}
 
-For each reference, the app shows you one of two indicators:
-
-* <img src='../../../images/toolkit/learning-resources/tutorial/image_38.png' width='22px'>The referenced publish is the latest
-* <img src='../../../images/toolkit/learning-resources/tutorial/image_39.png' width='22px'>There is a newer publish
+For each reference, the app shows you one of two indicators -- a green check to show that the referenced publish is the latest version, or a red "x" to indicate that there is a newer publish available.  In this case, we can see that there is a newer publish available.
 
 Now select the referenced Teapot alembic cache item (or click the **Select All Red** button at the bottom), then click **Update Selected**.
 
