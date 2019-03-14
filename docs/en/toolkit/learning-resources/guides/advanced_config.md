@@ -59,19 +59,19 @@ In this guide, you will use the Wizard in Shotgun Desktop to generate a pipeline
 
 **Step 1:** Create a new project in Shotgun called "the_other_side.”
 
-![New project](../../../images/learning_content/toolkit_basics_guides/advanced_config/2_new_project.png)
+![New project](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/2_new_project.png)
 
 **Step 2:** Launch the Shotgun Desktop app and log in using the username and password from your Shotgun site.
 
-![Login](../../../images/learning_content/toolkit_basics_guides/advanced_config/3_login.png)
+![Login](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/3_login.png)
 
-![Load project](../../../images/learning_content/toolkit_basics_guides/advanced_config/4_load_project.png)
+![Load project](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/4_load_project.png)
 
 **Step 3:** Navigate to the project where you wish to run the Advanced Project Setup Wizard by selecting its thumbnail image.
 
 {% include info title="Tip" content="If a new project was created while Desktop was open, the **Projects** window may need to be refreshed to see the new projects. Select your profile **avatar** at the bottom right of the desktop and select Refresh Projects." %}
 
-![Refresh project](../../../images/learning_content/toolkit_basics_guides/advanced_config/5_refresh_projects_list.png)
+![Refresh project](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/5_refresh_projects_list.png)
 
 ## Creating the Advanced Configuration
 
@@ -79,19 +79,19 @@ A Basic Configuration was downloaded and configured when the project was accesse
 
 **Step 4:** Once the project is loaded, select your profile **avatar** at the bottom right of the screen. In the popup menu, select **Advanced project setup…** to initiate the Wizard.
 
-![Advanced project setup](../../../images/learning_content/toolkit_basics_guides/advanced_config/6_advanced_project_setup.png)
+![Advanced project setup](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/6_advanced_project_setup.png)
 
 A dialog box will be displayed with four options and Shotgun Default selected. At this point, you can choose to base your project's pipeline configuration on the configuration of an existing project, on a configuration in a git repository, or on a path on disk. 
 
 For this exercise, we'll choose **Shotgun Default**. This option will create a pipeline configuration for your project that's based on Shotgun's Default Configuration.
 
-![Select config](../../../images/learning_content/toolkit_basics_guides/advanced_config/7_select_config.png)
+![Select config](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/7_select_config.png)
 
 **Step 5:** Select **Continue**. 
 
 A dialog box will be displayed with two options and **Default** selected. At this point there’s an option to select a Legacy Default Configuration setup. This configuration setup is from an older version of Shotgun for studios who still use that version. We will use the Default for this exercise.
 
-![Select config](../../../images/learning_content/toolkit_basics_guides/advanced_config/8_select_config.png)
+![Select config](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/8_select_config.png)
 
 **Step 6:** Select **Continue**.
 
@@ -99,25 +99,25 @@ A dialog box will be displayed with two options and **Default** selected. At thi
 
 A dialog box will appear displaying a drop down menu next to the word `Storage:`
 
-![Define storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/9_define_storage1.png)
+![Define storage](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/9_define_storage1.png)
 
 **Step 7:** Identify where to store project data for this project. From the dropdown at the top of the dialogue box select **+ New** and type **projects** in the field. 
 
-![Define storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/10_define_storage2.png)
+![Define storage](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/10_define_storage2.png)
 
 Shotgun Toolkit supports three operating systems: Linux, Mac, and Windows.
 
 **Step 8:** Select the field next to the operating system utilized for storing project data. Select the folder icon and navigate to the project folder created on the filesystem prior to this exercise.
 
-![Storage root folder](../../../images/learning_content/toolkit_basics_guides/advanced_config/11_storage_root_folder.png)
+![Storage root folder](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/11_storage_root_folder.png)
 
 This setup allows Shotgun to have access to only the folder you identify for storing production data. When preparing for this exercise you added a `projects/` directory within your Shotgun root directory. The `projects/` directory is where Toolkit will store any local project related information. 
 
-![Define storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/12_define_Storage3.png)
+![Define storage](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/12_define_Storage3.png)
 
 **Step 9:** Select **Save** to identify the projects folder as the storage destination for project data.
 
-![Define storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/13_define_storage4.png)
+![Define storage](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/13_define_storage4.png)
 
 The operating system path is automatically updated to identify the path where the project data is stored.
 
@@ -127,21 +127,21 @@ The operating system path is automatically updated to identify the path where th
 
 A dialog box is displayed with the name of the project populating the text field. The name is automatically populated pulling from the project information and the path is automatically updated.
 
-![Project folder](../../../images/learning_content/toolkit_basics_guides/advanced_config/14_project_folder_name.png)
+![Project folder](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/14_project_folder_name.png)
 
 Toolkit can work in either a Distributed Setup, where the pipeline configuration is uploaded to Shotgun and cached locally for each user, or a Centralized Setup, where users access a single configuration in a shared location on disk. For this exercise we will use a Centralized Setup. You can [learn more about Distributed Setups here](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
 
 The final step generates the appropriate folders, files, and data necessary to create the configuration specific to a project. 
 
-![Centralized storage](../../../images/learning_content/toolkit_basics_guides/advanced_config/15_centralized_storage.png)
+![Centralized storage](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/15_centralized_storage.png)
 
 **Step 11:** Under the appropriate operating system, select **Browse...** and navigate to the configuration folder you created when preparing for this exercise, `configs`, and enter the project name **the_other_side**. This creates the folder where the project configuration is stored. Select **Run Setup** and wait for it to complete the setup. 
 
-![Project setup](../../../images/learning_content/toolkit_basics_guides/advanced_config/16_project_setup_config.png)
+![Project setup](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/16_project_setup_config.png)
 
 **Step 12:** Select **Done** to display the new icons populating the project windows. 
 
-![Setup complete](../../../images/learning_content/toolkit_basics_guides/advanced_config/17_project_setup_complete.png)
+![Setup complete](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/17_project_setup_complete.png)
 
 TIP: Pin the app to the menu bar to allow quick access to Shotgun Desktop: select your **avatar** and select **Pin to Menu**.
 
@@ -149,7 +149,7 @@ You’re done; the project setup is complete. You now have a Toolkit pipeline co
 
 Take a look in the `configs` folder and you will find several folders and files. Explore a little to see what’s in there.
 
-![Config](../../../images/learning_content/toolkit_basics_guides/advanced_config/18_config.png)
+![Config](⁨../../../../images/toolkit/learning-resources/guides/advanced_config/18_config.png)
 
 And now the real fun begins, learning all the things you can do with the Configuration. Below are some advanced topics to explore.
 
