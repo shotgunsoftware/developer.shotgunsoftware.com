@@ -53,6 +53,9 @@
   - text: app-development
     url: "https://support.shotgunsoftware.com/entries/95440137"
   - page: /toolkit/tutorial/
+  - page: /toolkit/quick-answers/
+    children:
+    - page: /toolkit/quick-answers/admin
 
 - caption: rv
   children:
