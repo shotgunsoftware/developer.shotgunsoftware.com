@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Frameworks
+title: Quick Answers
 permalink: /toolkit/quick-answers/
 lang: en
 ---
 
-Some info
+This is a collection of small topics.
