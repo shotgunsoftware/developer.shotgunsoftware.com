@@ -178,7 +178,7 @@ To learn about cloning your configuration, as well as other basics of configurat
 
 ## Cloud distribution of pipeline configurations
 
-This guide walks through creating a **centralized configuration**: a single copy of a pipeline configuration that is located in a shared network location and accessed by all users. But, if your workforce is distributed across locations and networks, it may not be feasible to share a single copy of a pipeline configuration. Toolkit allows for this scenario by providing a **distributed configuration** option where a pipeline configuration is uploaded to Shotgun and each time a user accesses a project the configuration is downloaded and cached locally. You can learn more about distributed configuration's in our [Core API developer documentation](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
+This guide walks through creating a **centralized configuration**: a single copy of a pipeline configuration that is located in a shared network location and accessed by all users. But, if your workforce is distributed across locations and networks, it may not be feasible to share a single copy of a pipeline configuration. Toolkit allows for this scenario by providing a **distributed configuration** option where a pipeline configuration is uploaded to Shotgun and each time a user accesses a project the configuration is downloaded and cached locally. You can learn more about distributed configurations in our [Core API developer documentation](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
 
 ## Working with more than one root folder
 
