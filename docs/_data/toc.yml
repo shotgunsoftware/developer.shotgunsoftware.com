@@ -18,6 +18,8 @@
     url: " https://developer.shotgunsoftware.com/rest-api/"
   - text: event-triggers
     url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
+  - text: jira-bridge
+    url: " https://developer.shotgunsoftware.com/sg-jira-bridge/"
   - page: /shotgun/action_menu_items/
     children:
     - text: examples
@@ -28,11 +30,14 @@
 - caption: toolkit
   children:
   - page: /toolkit/
-  - page: /toolkit/toolkit_basics_guides/
+  - page: /toolkit/learning-resources/
     children:
-    - page: /toolkit/toolkit_basics_guides/advanced_config/
-    - page: /toolkit/toolkit_basics_guides/editing_app_setting/
-    - page: /toolkit/toolkit_basics_guides/installing_app/
+    - page: /toolkit/learning-resources/guides/
+      children:
+      - page: /toolkit/learning-resources/guides/advanced_config/
+      - page: /toolkit/learning-resources/guides/editing_app_setting/
+      - page: /toolkit/learning-resources/guides/installing_app/
+    - page: /toolkit/learning-resources/tutorial/
   - text: core-api
     url: " https://developer.shotgunsoftware.com/tk-core/"
   - page: /toolkit/frameworks/
@@ -47,6 +52,7 @@
       url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
   - text: app-development
     url: "https://support.shotgunsoftware.com/entries/95440137"
+  - page: /toolkit/tutorial/
 
 - caption: rv
   children:
