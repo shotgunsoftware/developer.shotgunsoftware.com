@@ -1,7 +1,7 @@
 ---
 layout: default
 title: I: PySide example usage
-permalink: /rv/rv-manual/i-pyside-example-usage/
+permalink: /rv/rv-manual/pyside-example-usage/
 lang: en
 ---
 
