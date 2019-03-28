@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Installation
-permalink: /rv/gto/02-installation/
+permalink: /rv/gto/installation/
 lang: en
 ---
 
