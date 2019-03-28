@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Configuring the SDI Device
-permalink: /rv/rv-sdi-manual/03-configuring-the-sdi-device/
+permalink: /rv/rv-sdi-manual/configuring-the-sdi-device/
 lang: en
 ---
 
