@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Useful RV Features for SDI Output
-permalink: /rv/rv-sdi-manual/05-useful-rv-features-for-sdi-output/
+permalink: /rv/rv-sdi-manual/useful-rv-features-for-sdi-output/
 lang: en
 ---
 
