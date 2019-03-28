@@ -1,7 +1,7 @@
 ---
 layout: default
 title: TLM Server 2.6.1 Release Notes
-permalink: /rv/09-tlm-server-release-notes/
+permalink: /rv/tlm-server-release-notes/
 lang: en
 ---
 
