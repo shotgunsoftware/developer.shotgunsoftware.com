@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Modifying the Nuke Project from RV
-permalink: /rv/rv-nuke-integration/08-modifying-the-nuke-project-from-rv/
+permalink: /rv/rv-nuke-integration/modifying-the-nuke-project-from-rv/
 lang: en
 ---
 
