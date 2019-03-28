@@ -1,7 +1,7 @@
 ---
 layout: default
 title: E: RV Audio on Linux
-permalink: /rv/rv-manual/e-rv-audio-on-linux/
+permalink: /rv/rv-manual/rv-audio-on-linux/
 lang: en
 ---
 
