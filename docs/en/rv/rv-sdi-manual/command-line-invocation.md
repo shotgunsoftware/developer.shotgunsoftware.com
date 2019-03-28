@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Command Line Invocation
-permalink: /rv/rv-sdi-manual/04-command-line-invocation/
+permalink: /rv/rv-sdi-manual/command-line-invocation/
 lang: en
 ---
 
