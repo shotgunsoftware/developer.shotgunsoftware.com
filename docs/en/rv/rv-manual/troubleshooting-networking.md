@@ -1,7 +1,7 @@
 ---
 layout: default
 title: F: Troubleshooting Networking
-permalink: /rv/rv-manual/f-troubleshooting-networking/
+permalink: /rv/rv-manual/troubleshooting-networking/
 lang: en
 ---
 
