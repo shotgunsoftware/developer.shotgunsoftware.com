@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Note to Users
-permalink: /rv/rv-nuke-integration/01-note-to-users/
+permalink: /rv/rv-nuke-integration/note-to-users/
 lang: en
 ---
 
