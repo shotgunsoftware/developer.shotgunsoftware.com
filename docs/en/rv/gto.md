@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: The Kitchen Sink of Data
-permalink: /rv/10-gto/
+permalink: /rv/gto/
 lang: en
 ---
 
