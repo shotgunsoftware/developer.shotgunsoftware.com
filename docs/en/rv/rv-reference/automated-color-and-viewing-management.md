@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Automated Color and Viewing Management
-permalink: /rv/rv-reference/11-automated-color-and-viewing-management/
+permalink: /rv/rv-reference/automated-color-and-viewing-management/
 lang: en
 ---
 
