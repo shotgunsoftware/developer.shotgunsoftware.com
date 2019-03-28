@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Using LUTs in RV
-permalink: /rv/rv-manual/07-using-luts-in-rv/
+permalink: /rv/rv-manual/using-luts-in-rv/
 lang: en
 ---
 
