@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RV 7: SDI MANUAL
-permalink: /rv/04-rv-sdi-manual/
+permalink: /rv/rv-sdi-manual/
 lang: en
 ---
 
