@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Issues and Questionable Aspects of the Format
-permalink: /rv/gto/09-issues-and-questionable-aspects-of-the-format/
+permalink: /rv/gto/issues-and-questionable-aspects-of-the-format/
 lang: en
 ---
 
