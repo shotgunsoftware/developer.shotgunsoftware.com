@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Appendix A
-permalink: /rv/gto/14-appendix-a/
+permalink: /rv/gto/appendix-a/
 lang: en
 ---
 
