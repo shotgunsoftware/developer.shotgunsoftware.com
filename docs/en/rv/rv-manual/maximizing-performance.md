@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Maximizing Performance
-permalink: /rv/rv-manual/13-maximizing-performance/
+permalink: /rv/rv-manual/maximizing-performance/
 lang: en
 ---
 
