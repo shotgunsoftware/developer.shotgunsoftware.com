@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Working with Media in RV
-permalink: /rv/rv-nuke-integration/07-working-with-media-in-rv/
+permalink: /rv/rv-nuke-integration/working-with-media-in-rv/
 lang: en
 ---
 
