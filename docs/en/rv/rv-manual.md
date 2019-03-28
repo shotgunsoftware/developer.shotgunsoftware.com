@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RV 7 : User Manual
-permalink: /rv/01-rv-manual/
+permalink: /rv/rv-manual/
 lang: en
 ---
 
