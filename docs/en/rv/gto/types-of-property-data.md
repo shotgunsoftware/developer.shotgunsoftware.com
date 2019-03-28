@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Types of Property Data
-permalink: /rv/gto/05-types-of-property-data/
+permalink: /rv/gto/types-of-property-data/
 lang: en
 ---
 
