@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Build a Session in RV
-permalink: /rv/rv-maya-integration/02-build-a-session-in-rv/
+permalink: /rv/rv-maya-integration/build-a-session-in-rv/
 lang: en
 ---
 
