@@ -1,7 +1,7 @@
 ---
 layout: default
 title: D Using RV as Nuke’s Flip Book Player
-permalink: /rv/rv-manual/d-using-rv-as-nukes-flipbook-player/
+permalink: /rv/rv-manual/using-rv-as-nukes-flipbook-player/
 lang: en
 ---
 
