@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Getting Started
-permalink: /rv/rv-nuke-integration/04-getting-started/
+permalink: /rv/rv-nuke-integration/getting-started/
 lang: en
 ---
 
