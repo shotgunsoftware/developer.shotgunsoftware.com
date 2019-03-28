@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Naming Conventions
-permalink: /rv/gto/08-naming-conventions/
+permalink: /rv/gto/naming-conventions/
 lang: en
 ---
 
