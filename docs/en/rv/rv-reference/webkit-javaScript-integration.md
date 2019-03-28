@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Webkit JavaScript Integration
-permalink: /rv/rv-reference/13-webkit-javaScript-integration/
+permalink: /rv/rv-reference/webkit-javaScript-integration/
 lang: en
 ---
 
