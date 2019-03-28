@@ -1,7 +1,7 @@
 ---
 layout: default
 title: B: Licensed Components
-permalink: /rv/rv-reference/18-b-licensed-components/
+permalink: /rv/rv-reference/b-licensed-components/
 lang: en
 ---
 
