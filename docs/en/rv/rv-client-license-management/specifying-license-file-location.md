@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Specifying License File Location
-permalink: /rv/rv-client-license-management/01-specifying-license-file-location/
+permalink: /rv/rv-client-license-management/specifying-license-file-location/
 lang: en
 ---
 
