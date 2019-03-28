@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Command Line Parameters
-permalink: /rv/tweak-license-server/06-command-line-parameters/
+permalink: /rv/tweak-license-server/command-line-parameters/
 lang: en
 ---
 
