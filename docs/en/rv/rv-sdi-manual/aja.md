@@ -1,7 +1,7 @@
 ---
 layout: default
 title: AJA
-permalink: /rv/rv-sdi-manual/01-aja/
+permalink: /rv/rv-sdi-manual/aja/
 lang: en
 ---
 
