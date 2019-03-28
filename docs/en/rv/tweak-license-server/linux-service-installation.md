@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Linux Service Installation
-permalink: /rv/tweak-license-server/02-linux-service-installation/
+permalink: /rv/tweak-license-server/linux-service-installation/
 lang: en
 ---
 
