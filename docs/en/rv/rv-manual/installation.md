@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Installation
-permalink: /rv/rv-manual/01-installation/
+permalink: /rv/rv-manual/installation/
 lang: en
 ---
 
