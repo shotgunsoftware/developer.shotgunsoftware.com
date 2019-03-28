@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Getting a License File
-permalink: /rv/tweak-license-server/05-getting-a-license-file/
+permalink: /rv/tweak-license-server/getting-a-license-file/
 lang: en
 ---
 
