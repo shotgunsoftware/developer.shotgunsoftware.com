@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Writing a Custom GLSL Node
-permalink: /rv/rv-reference/02-writing-a-custom-glsl-node/
+permalink: /rv/rv-reference/writing-a-custom-glsl-node/
 lang: en
 ---
 
