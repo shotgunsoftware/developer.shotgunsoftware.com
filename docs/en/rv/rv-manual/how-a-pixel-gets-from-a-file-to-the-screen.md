@@ -1,7 +1,7 @@
 ---
 layout: default
 title: How a Pixel Gets from a File to the Screen
-permalink: /rv/rv-manual/06-how-a-pixel-gets-from-a-file-to-the-screen/
+permalink: /rv/rv-manual/how-a-pixel-gets-from-a-file-to-the-screen/
 lang: en
 ---
 
