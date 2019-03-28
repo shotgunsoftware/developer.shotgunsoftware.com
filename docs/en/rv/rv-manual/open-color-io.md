@@ -1,7 +1,7 @@
 ---
 layout: default
 title: OpenColorIO
-permalink: /rv/rv-manual/10-open-color-io/
+permalink: /rv/rv-manual/open-color-io/
 lang: en
 ---
 
