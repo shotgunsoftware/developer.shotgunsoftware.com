@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Extending Protocols or the File Format
-permalink: /rv/gto/10-extending-protocols-of-the-file-format/
+permalink: /rv/gto/extending-protocols-of-the-file-format/
 lang: en
 ---
 
