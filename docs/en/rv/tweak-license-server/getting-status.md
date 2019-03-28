@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Getting Status
-permalink: /rv/tweak-license-server/10-getting-status/
+permalink: /rv/tweak-license-server/getting-status/
 lang: en
 ---
 
