@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Disabling the License Installer
-permalink: /rv/tweak-license-server/07-disabling-the-license-installer/
+permalink: /rv/tweak-license-server/disabling-the-license-installer/
 lang: en
 ---
 
