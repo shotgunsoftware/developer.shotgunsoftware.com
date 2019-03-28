@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Overview
-permalink: /rv/gto/01-overview/
+permalink: /rv/gto/overview/
 lang: en
 ---
 
