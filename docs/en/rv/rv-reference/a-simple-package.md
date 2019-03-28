@@ -1,7 +1,7 @@
 ---
 layout: default
 title: A Simple Package
-permalink: /rv/rv-reference/09-a-simple-package/
+permalink: /rv/rv-reference/a-simple-package/
 lang: en
 ---
 
