@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RVIO
-permalink: /rv/rv-manual/15-rvio/
+permalink: /rv/rv-manual/rvio/
 lang: en
 ---
 
