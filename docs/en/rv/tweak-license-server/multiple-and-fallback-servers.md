@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Multiple and Fallback Servers
-permalink: /rv/tweak-license-server/09-multiple-and-fallback-servers/
+permalink: /rv/tweak-license-server/multiple-and-fallback-servers/
 lang: en
 ---
 
