@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Node Reference
-permalink: /rv/rv-reference/15-node-reference/
+permalink: /rv/rv-reference/node-reference/
 lang: en
 ---
 
