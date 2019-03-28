@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Text Format
-permalink: /rv/gto/04-text-format/
+permalink: /rv/gto/text-format/
 lang: en
 ---
 
