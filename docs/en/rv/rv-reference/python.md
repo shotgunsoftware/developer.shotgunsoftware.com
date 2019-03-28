@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Python
-permalink: /rv/rv-reference/03-python/
+permalink: /rv/rv-reference/python/
 lang: en
 ---
 
