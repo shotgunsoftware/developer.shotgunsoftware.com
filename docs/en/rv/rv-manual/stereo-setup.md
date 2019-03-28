@@ -1,7 +1,7 @@
 ---
 layout: default
 title: B: Stereo Setup
-permalink: /rv/rv-manual/b-stereo-setup/
+permalink: /rv/rv-manual/stereo-setup/
 lang: en
 ---
 
