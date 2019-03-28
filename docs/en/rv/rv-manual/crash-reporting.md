@@ -1,7 +1,7 @@
 ---
 layout: default
 title: H: Crash Reporting
-permalink: /rv/rv-manual/h-crash-reporting/
+permalink: /rv/rv-manual/crash-reporting/
 lang: en
 ---
 
