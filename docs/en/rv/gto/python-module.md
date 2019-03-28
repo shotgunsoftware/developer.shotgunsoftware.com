@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Python Module
-permalink: /rv/gto/12-python-module/
+permalink: /rv/gto/python-module/
 lang: en
 ---
 
