@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RV/Nuke Integration
-permalink: /rv/05-rv-nuke-integration/
+permalink: /rv/rv-nuke-integration/
 lang: en
 ---
 
