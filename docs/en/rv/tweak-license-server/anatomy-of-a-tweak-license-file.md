@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Anatomy of a Tweak License File
-permalink: /rv/tweak-license-server/12-anatomy-of-a-tweak-license-file/
+permalink: /rv/tweak-license-server/anatomy-of-a-tweak-license-file/
 lang: en
 ---
 
