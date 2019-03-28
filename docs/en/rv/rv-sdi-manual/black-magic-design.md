@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Blackmagic Design
-permalink: /rv/rv-sdi-manual/02-black-magic-design/
+permalink: /rv/rv-sdi-manual/black-magic-design/
 lang: en
 ---
 
