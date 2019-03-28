@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Appendix: Known Issues and Planned Work
-permalink: /rv/rv-nuke-integration/10-appendix-known-issues-and-planned-work/
+permalink: /rv/rv-nuke-integration/appendix-known-issues-and-planned-work/
 lang: en
 ---
 
