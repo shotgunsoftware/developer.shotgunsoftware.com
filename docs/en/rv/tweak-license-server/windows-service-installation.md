@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Windows Service Installation
-permalink: /rv/tweak-license-server/04-windows-service-installation/
+permalink: /rv/tweak-license-server/windows-service-installation/
 lang: en
 ---
 
