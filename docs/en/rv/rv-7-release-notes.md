@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RV 7 Release Notes
-permalink: /rv/03-rv-7-release-notes/
+permalink: /rv/rv-7-release-notes/
 lang: en
 ---
 
