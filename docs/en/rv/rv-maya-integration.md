@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RV/Maya Integration
-permalink: /rv/06-rv-maya-integration/
+permalink: /rv/rv-maya-integration/
 lang: en
 ---
 
