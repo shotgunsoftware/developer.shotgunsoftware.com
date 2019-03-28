@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Checkpoints and Renders
-permalink: /rv/rv-nuke-integration/06-checkpoints_and_renders/
+permalink: /rv/rv-nuke-integration/checkpoints_and_renders/
 lang: en
 ---
 
