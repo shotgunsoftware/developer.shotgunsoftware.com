@@ -1,7 +1,7 @@
 ---
 layout: default
 title: OS X Service Installation
-permalink: /rv/tweak-license-server/03-osx-service-installation/
+permalink: /rv/tweak-license-server/osx-service-installation/
 lang: en
 ---
 
