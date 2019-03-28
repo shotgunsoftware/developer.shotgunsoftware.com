@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RV File Format
-permalink: /rv/rv-reference/05-rv-file-format/
+permalink: /rv/rv-reference/rv-file-format/
 lang: en
 ---
 
