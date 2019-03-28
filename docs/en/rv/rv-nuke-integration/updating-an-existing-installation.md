@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Updating an Existing Installation
-permalink: /rv/rv-nuke-integration/02-updating-an-existing-installation/
+permalink: /rv/rv-nuke-integration/updating-an-existing-installation/
 lang: en
 ---
 
