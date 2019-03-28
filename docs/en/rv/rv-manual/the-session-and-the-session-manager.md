@@ -1,7 +1,7 @@
 ---
 layout: default
 title: The Session and the Session Manager
-permalink: /rv/rv-manual/04-the-session-and-the-session-manager/
+permalink: /rv/rv-manual/the-session-and-the-session-manager/
 lang: en
 ---
 
