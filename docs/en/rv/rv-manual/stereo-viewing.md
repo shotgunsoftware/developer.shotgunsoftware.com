@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Stereo Viewing
-permalink: /rv/rv-manual/11-stereo-viewing/
+permalink: /rv/rv-manual/stereo-viewing/
 lang: en
 ---
 
