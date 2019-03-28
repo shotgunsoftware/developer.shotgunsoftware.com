@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Modes and Widgets
-permalink: /rv/rv-reference/07-modes-and-widgets/
+permalink: /rv/rv-reference/modes-and-widgets/
 lang: en
 ---
 
