@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Binary Format
-permalink: /rv/gto/03-binary-format/
+permalink: /rv/gto/binary-format/
 lang: en
 ---
 
