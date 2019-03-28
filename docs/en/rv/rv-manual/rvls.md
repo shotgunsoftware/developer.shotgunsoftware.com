@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RVLS
-permalink: /rv/rv-manual/16-rvls/
+permalink: /rv/rv-manual/rvls/
 lang: en
 ---
 
