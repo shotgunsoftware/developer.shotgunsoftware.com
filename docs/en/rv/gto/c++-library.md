@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: C++ Library
-permalink: /rv/gto/11-c++-library/
+permalink: /rv/gto/c++-library/
 lang: en
 ---
 
