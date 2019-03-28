@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tweak License Server (tlm_server) Version 2.6
-permalink: /rv/08-tweak-license-server/
+permalink: /rv/tweak-license-server/
 lang: en
 ---
 
