@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RV Client License Management
-permalink: /rv/07-rv-client-license-management/
+permalink: /rv/rv-client-license-management/
 lang: en
 ---
 
