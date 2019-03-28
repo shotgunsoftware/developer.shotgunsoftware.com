@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Additional GLSL Node Reference
-permalink: /rv/rv-reference/16-additional-glsl-node-reference/
+permalink: /rv/rv-reference/additional-glsl-node-reference/
 lang: en
 ---
 
