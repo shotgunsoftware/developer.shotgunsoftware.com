@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Read/Write Nodes
-permalink: /rv/rv-nuke-integration/05-read_write_nodes/
+permalink: /rv/rv-nuke-integration/read_write_nodes/
 lang: en
 ---
 
