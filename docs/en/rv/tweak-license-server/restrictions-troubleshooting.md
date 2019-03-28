@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Restrictions/Troubleshooting
-permalink: /rv/tweak-license-server/11-restrictions-troubleshooting/
+permalink: /rv/tweak-license-server/restrictions-troubleshooting/
 lang: en
 ---
 
