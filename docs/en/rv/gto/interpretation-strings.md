@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Interpretation Strings
-permalink: /rv/gto/06-interpretation-strings/
+permalink: /rv/gto/interpretation-strings/
 lang: en
 ---
 
