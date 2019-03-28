@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Organizing and Comparing your Renders
-permalink: /rv/rv-maya-integration/03-organizing-and-comparing-your-renders/
+permalink: /rv/rv-maya-integration/organizing-and-comparing-your-renders/
 lang: en
 ---
 
