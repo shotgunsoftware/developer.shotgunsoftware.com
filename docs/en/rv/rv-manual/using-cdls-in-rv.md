@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Using CDLs in RV
-permalink: /rv/rv-manual/08-using-cdls-in-rv/
+permalink: /rv/rv-manual/using-cdls-in-rv/
 lang: en
 ---
 
