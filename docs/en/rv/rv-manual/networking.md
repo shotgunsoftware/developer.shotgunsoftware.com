@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Networking
-permalink: /rv/rv-manual/12-networking/
+permalink: /rv/rv-manual/networking/
 lang: en
 ---
 
