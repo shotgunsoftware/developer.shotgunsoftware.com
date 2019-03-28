@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Object Protocols
-permalink: /rv/gto/07-object-protocols/
+permalink: /rv/gto/object-protocols/
 lang: en
 ---
 
