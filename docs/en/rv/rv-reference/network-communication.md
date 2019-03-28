@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Network Communication
-permalink: /rv/rv-reference/12-network-communication/
+permalink: /rv/rv-reference/network-communication/
 lang: en
 ---
 
