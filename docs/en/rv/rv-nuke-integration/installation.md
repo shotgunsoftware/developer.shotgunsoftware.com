@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Installation
-permalink: /rv/rv-nuke-integration/03-installation/
+permalink: /rv/rv-nuke-integration/installation/
 lang: en
 ---
 
