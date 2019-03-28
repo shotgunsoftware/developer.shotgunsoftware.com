@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Rendering into Context
-permalink: /rv/rv-maya-integration/05-rendering-into-context/
+permalink: /rv/rv-maya-integration/rendering-into-context/
 lang: en
 ---
 
