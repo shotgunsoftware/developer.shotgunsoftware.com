@@ -56,20 +56,19 @@
 
 - caption: rv
   children:
-  - page: /rv/
-  - text: user-manual
-    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_manual.html"
-  - text: technical-reference
-    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_reference.html"
-  - text: rv-sdi
-    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvsdi_manual.html"
+  - page: /rv/rv-manual/
+  - page: /rv/rv-reference/
+  - page: /rv/rv-7-release-notes/
+  - page: /rv/rv-sdi-manual/
+  - page: /rv/rv-client-license-management/
+  - page: /rv/tweak-license-server/
+  - page: /rv/tlm-server-release-notes/
+  - page: /rv/gto/
 
   - page: /rv/integrations/
     children:
-    - text: maya
-      url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/maya_tools_help.html"
-    - text: nuke
-      url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvnuke_help.html"
+    - page: /rv/rv-nuke-integration/
+    - page: /rv/rv-maya-integration/
     - text: shotgun
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
     - text: screening-room
