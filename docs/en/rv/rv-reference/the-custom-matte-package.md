@@ -1,7 +1,7 @@
 ---
 layout: default
 title: The Custom Matte Package
-permalink: /rv/rv-reference/10-the-custom-matte-package/
+permalink: /rv/rv-reference/the-custom-matte-package/
 lang: en
 ---
 
