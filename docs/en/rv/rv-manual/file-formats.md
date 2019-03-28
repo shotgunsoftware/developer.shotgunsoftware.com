@@ -1,7 +1,7 @@
 ---
 layout: default
 title: File Formats
-permalink: /rv/rv-manual/14-file-formats/
+permalink: /rv/rv-manual/file-formats/
 lang: en
 ---
 
