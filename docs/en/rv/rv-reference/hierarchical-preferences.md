@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Hierarchical Preferences
-permalink: /rv/rv-reference/14-hierarchical-preferences/
+permalink: /rv/rv-reference/hierarchical-preferences/
 lang: en
 ---
 
