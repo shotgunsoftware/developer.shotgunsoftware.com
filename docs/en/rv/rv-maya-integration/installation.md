@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Installation
-permalink: /rv/rv-maya-integration/01-installation/
+permalink: /rv/rv-maya-integration/installation/
 lang: en
 ---
 
