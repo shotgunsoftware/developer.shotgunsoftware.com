@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Creating New Views
-permalink: /rv/rv-maya-integration/04-creating-new-views/
+permalink: /rv/rv-maya-integration/creating-new-views/
 lang: en
 ---
 
