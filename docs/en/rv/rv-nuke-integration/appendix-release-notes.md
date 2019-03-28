@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Appendix: Release Notes
-permalink: /rv/rv-nuke-integration/09-appendix-release-notes/
+permalink: /rv/rv-nuke-integration/appendix-release-notes/
 lang: en
 ---
 
