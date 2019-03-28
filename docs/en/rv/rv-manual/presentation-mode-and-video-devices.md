@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Presentation Mode and Video Devices
-permalink: /rv/rv-manual/05-presentation-mode-and-video-devices/
+permalink: /rv/rv-manual/presentation-mode-and-video-devices/
 lang: en
 ---
 
