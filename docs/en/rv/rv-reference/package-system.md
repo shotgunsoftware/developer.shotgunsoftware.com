@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Package System
-permalink: /rv/rv-reference/08-package-system/
+permalink: /rv/rv-reference/package-system/
 lang: en
 ---
 
