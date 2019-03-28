@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GTO: Utilities
-permalink: /rv/gto/13-utilities/
+permalink: /rv/gto/utilities/
 lang: en
 ---
 
