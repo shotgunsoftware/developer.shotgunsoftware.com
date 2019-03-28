@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Using Qt in Mu
-permalink: /rv/rv-reference/06-using-qt-in-mu/
+permalink: /rv/rv-reference/using-qt-in-mu/
 lang: en
 ---
 
