@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Event Handling
-permalink: /rv/rv-reference/04-event-handling/
+permalink: /rv/rv-reference/event-handling/
 lang: en
 ---
 
