@@ -1,7 +1,7 @@
 ---
 layout: default
 title: A: Open Source Components
-permalink: /rv/rv-reference/17-a-open-source-components/
+permalink: /rv/rv-reference/a-open-source-components/
 lang: en
 ---
 
