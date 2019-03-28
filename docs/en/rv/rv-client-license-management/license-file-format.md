@@ -1,7 +1,7 @@
 ---
 layout: default
 title: License File Format
-permalink: /rv/rv-client-license-management/02-license-file-format/
+permalink: /rv/rv-client-license-management/license-file-format/
 lang: en
 ---
 
