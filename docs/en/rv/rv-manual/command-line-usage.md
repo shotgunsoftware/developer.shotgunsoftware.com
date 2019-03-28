@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Command Line Usage
-permalink: /rv/rv-manual/02-command-line-usage/
+permalink: /rv/rv-manual/command-line-usage/
 lang: en
 ---
 
