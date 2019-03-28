@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Recommended Installation Process
-permalink: /rv/tweak-license-server/01-recommended-installation-process/
+permalink: /rv/tweak-license-server/recommended-installation-process/
 lang: en
 ---
 
