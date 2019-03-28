@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Client Licenses
-permalink: /rv/tweak-license-server/08-client-licenses/
+permalink: /rv/tweak-license-server/client-licenses/
 lang: en
 ---
 
