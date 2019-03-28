@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Packages
-permalink: /rv/rv-manual/09-packages/
+permalink: /rv/rv-manual/packages/
 lang: en
 ---
 
