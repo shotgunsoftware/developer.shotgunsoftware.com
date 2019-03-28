@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Image Processing Graph
-permalink: /rv/rv-reference/01-image-processing-graph/
+permalink: /rv/rv-reference/image-processing-graph/
 lang: en
 ---
 
