@@ -1,7 +1,7 @@
 ---
 layout: default
 title: User Interface
-permalink: /rv/rv-manual/03-user-interface/
+permalink: /rv/rv-manual/user-interface/
 lang: en
 ---
 
