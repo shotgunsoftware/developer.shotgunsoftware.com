@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RVPUSH
-permalink: /rv/rv-manual/17-rvpush/
+permalink: /rv/rv-manual/rvpush/
 lang: en
 ---
 
