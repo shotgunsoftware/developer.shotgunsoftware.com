@@ -1,6 +1,6 @@
 ---
 layout: default
-title: I: PySide example usage
+title: PySide example usage
 permalink: /rv/rv-manual/pyside-example-usage/
 lang: en
 ---
