@@ -1,6 +1,6 @@
 ---
 layout: default
-title: A: Differences between RV 3 and RV 6
+title: Differences between RV 3 and RV 6
 permalink: /rv/rv-manual/differences-between-rv3-and-rv6/
 lang: en
 ---
