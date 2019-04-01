@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: The Kitchen Sink of Data
+title: The Kitchen Sink of Data
 permalink: /rv/gto/
 lang: en
 ---
