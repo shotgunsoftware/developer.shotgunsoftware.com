@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Issues and Questionable Aspects of the Format
+title: Issues and Questionable Aspects of the Format
 permalink: /rv/gto/issues-and-questionable-aspects-of-the-format/
 lang: en
 ---
