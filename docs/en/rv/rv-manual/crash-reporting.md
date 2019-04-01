@@ -1,6 +1,6 @@
 ---
 layout: default
-title: H: Crash Reporting
+title: Crash Reporting
 permalink: /rv/rv-manual/crash-reporting/
 lang: en
 ---
