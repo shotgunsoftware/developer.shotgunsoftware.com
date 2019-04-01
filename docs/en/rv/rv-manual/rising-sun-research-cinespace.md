@@ -1,6 +1,6 @@
 ---
 layout: default
-title: G: Rising Sun Research CineSpace .csp File Format
+title: Rising Sun Research CineSpace .csp File Format
 permalink: /rv/rv-manual/rising-sun-research-cinespace/
 lang: en
 ---
