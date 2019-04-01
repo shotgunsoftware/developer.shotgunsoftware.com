@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: C++ Library
+title: C++ Library
 permalink: /rv/gto/c++-library/
 lang: en
 ---
