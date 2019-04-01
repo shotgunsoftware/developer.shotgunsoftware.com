@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Naming Conventions
+title: Naming Conventions
 permalink: /rv/gto/naming-conventions/
 lang: en
 ---
