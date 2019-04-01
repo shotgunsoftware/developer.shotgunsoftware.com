@@ -1,6 +1,6 @@
 ---
 layout: default
-title: RV/Maya Integration
+title: RV Maya Integration
 permalink: /rv/rv-maya-integration/
 lang: en
 ---
