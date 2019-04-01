@@ -1,6 +1,6 @@
 ---
 layout: default
-title: C: The RVLINK Protocol: Using RV as a URL Handler
+title: The RVLINK Protocol: Using RV as a URL Handler
 permalink: /rv/rv-manual/the-rv-link-protocol/
 lang: en
 ---
