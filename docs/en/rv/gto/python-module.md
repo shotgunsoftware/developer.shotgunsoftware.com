@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Python Module
+title: Python Module
 permalink: /rv/gto/python-module/
 lang: en
 ---
