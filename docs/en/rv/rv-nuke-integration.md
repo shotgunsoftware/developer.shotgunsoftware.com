@@ -1,6 +1,6 @@
 ---
 layout: default
-title: RV/Nuke Integration
+title: RV Nuke Integration
 permalink: /rv/rv-nuke-integration/
 lang: en
 ---
