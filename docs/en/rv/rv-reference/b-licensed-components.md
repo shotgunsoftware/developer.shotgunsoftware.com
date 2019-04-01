@@ -1,6 +1,6 @@
 ---
 layout: default
-title: B: Licensed Components
+title: Licensed Components
 permalink: /rv/rv-reference/b-licensed-components/
 lang: en
 ---
