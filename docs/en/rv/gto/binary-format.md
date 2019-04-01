@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Binary Format
+title: Binary Format
 permalink: /rv/gto/binary-format/
 lang: en
 ---
