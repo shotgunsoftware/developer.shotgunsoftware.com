@@ -1,6 +1,6 @@
 ---
 layout: default
-title: E: RV Audio on Linux
+title: RV Audio on Linux
 permalink: /rv/rv-manual/rv-audio-on-linux/
 lang: en
 ---
