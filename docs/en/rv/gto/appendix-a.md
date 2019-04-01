@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Appendix A
+title: Appendix A
 permalink: /rv/gto/appendix-a/
 lang: en
 ---
