@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Text Format
+title: Text Format
 permalink: /rv/gto/text-format/
 lang: en
 ---
