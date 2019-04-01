@@ -1,6 +1,6 @@
 ---
 layout: default
-title: RV 7: SDI MANUAL
+title: SDI MANUAL
 permalink: /rv/rv-sdi-manual/
 lang: en
 ---
