@@ -1,6 +1,6 @@
 ---
 layout: default
-title: RV 7 : User Manual
+title: User Manual
 permalink: /rv/rv-manual/
 lang: en
 ---
