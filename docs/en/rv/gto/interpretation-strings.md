@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Interpretation Strings
+title: Interpretation Strings
 permalink: /rv/gto/interpretation-strings/
 lang: en
 ---
