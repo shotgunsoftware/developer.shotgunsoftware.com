@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Utilities
+title: Utilities
 permalink: /rv/gto/utilities/
 lang: en
 ---
