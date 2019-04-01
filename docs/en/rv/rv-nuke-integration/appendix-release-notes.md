@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Appendix: Release Notes
+title: Release Notes
 permalink: /rv/rv-nuke-integration/appendix-release-notes/
 lang: en
 ---
