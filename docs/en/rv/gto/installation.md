@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Installation
+title: Installation
 permalink: /rv/gto/installation/
 lang: en
 ---
