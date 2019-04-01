@@ -1,6 +1,6 @@
 ---
 layout: default
-title: K: Tuning Platform Audio for Linux
+title: Tuning Platform Audio for Linux
 permalink: /rv/rv-manual/tuning-platform-audio-for-linux/
 lang: en
 ---
