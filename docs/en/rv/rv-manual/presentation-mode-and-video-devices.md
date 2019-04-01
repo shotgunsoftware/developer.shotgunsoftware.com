@@ -186,4 +186,4 @@ Here’s an example the timing setup that has worked for us:
 
 <center>![image](../../../../images/rv/winCustomRes.jpg)</center>
 
-<sup>7</sup> <a name="footnote_7"</a>Custom or alternate nodes inserted into the RVDisplayPipelineGroup and their property values will also be stored in the profile if they are present. This makes it possible to use custom shaders, multiple display LUTs, or OpenColorIO nodes and have them be saved in the profile.
+<sup>7</sup> <a name="footnote_7"></a>Custom or alternate nodes inserted into the RVDisplayPipelineGroup and their property values will also be stored in the profile if they are present. This makes it possible to use custom shaders, multiple display LUTs, or OpenColorIO nodes and have them be saved in the profile.
