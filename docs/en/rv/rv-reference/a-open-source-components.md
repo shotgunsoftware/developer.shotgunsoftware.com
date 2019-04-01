@@ -1,6 +1,6 @@
 ---
 layout: default
-title: A: Open Source Components
+title: Open Source Components
 permalink: /rv/rv-reference/a-open-source-components/
 lang: en
 ---
