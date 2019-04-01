@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Extending Protocols or the File Format
+title: Extending Protocols or the File Format
 permalink: /rv/gto/extending-protocols-of-the-file-format/
 lang: en
 ---
