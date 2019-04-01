@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Object Protocols
+title: Object Protocols
 permalink: /rv/gto/object-protocols/
 lang: en
 ---
