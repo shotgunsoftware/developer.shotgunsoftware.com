@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Overview
+title: Overview
 permalink: /rv/gto/overview/
 lang: en
 ---
