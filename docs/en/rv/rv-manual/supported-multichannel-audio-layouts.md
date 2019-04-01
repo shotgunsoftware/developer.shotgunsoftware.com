@@ -1,6 +1,6 @@
 ---
 layout: default
-title: J: Supported Multichannel Audio Layouts
+title: Supported Multichannel Audio Layouts
 permalink: /rv/rv-manual/supported-multichannel-audio-layouts/
 lang: en
 ---
