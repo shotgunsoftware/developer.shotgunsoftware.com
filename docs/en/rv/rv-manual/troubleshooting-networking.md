@@ -1,6 +1,6 @@
 ---
 layout: default
-title: F: Troubleshooting Networking
+title: Troubleshooting Networking
 permalink: /rv/rv-manual/troubleshooting-networking/
 lang: en
 ---
