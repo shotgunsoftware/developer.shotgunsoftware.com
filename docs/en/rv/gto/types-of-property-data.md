@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO: Types of Property Data
+title: Types of Property Data
 permalink: /rv/gto/types-of-property-data/
 lang: en
 ---
