@@ -1,15 +1,16 @@
 # Translated text strings used by the table of contents
-#
+# 
 # For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
 #
 
 rv: RV
-toolkit: Toolkit
+toolkit: 툴킷
 shotgun: Shotgun
 
 python-api: Python API
 rest-api: REST API
 event-triggers: 이벤트 기반 트리거
+jira-bridge: Jira 브리지(베타)
 examples: 예
 reference: 참조
 
@@ -30,8 +31,8 @@ screening-room: Screening Room 및 Shotgun Review
 troubleshooting: 문제 해결
 extending-rv: RV 확장
 
-other: Other
+other: 기타
 
 shotgun-support: Shotgun 지원
-service-status: Service Status
-new-support-request: New Support Request
+service-status: 서비스 상태
+new-support-request: 새 지원 요청
