@@ -56,20 +56,124 @@
 
 - caption: rv
   children:
-  - page: /rv/
-  - text: user-manual
-    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_manual.html"
-  - text: technical-reference
-    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_reference.html"
-  - text: rv-sdi
-    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvsdi_manual.html"
+  - page: /rv/rv-manual/
+    children:
+    - page: /rv/rv-manual/installation/
+    - page: /rv/rv-manual/command-line-usage/
+    - page: /rv/rv-manual/user-interface/
+    - page: /rv/rv-manual/the-session-and-the-session-manager/
+    - page: /rv/rv-manual/presentation-mode-and-video-devices/
+    - page: /rv/rv-manual/how-a-pixel-gets-from-a-file-to-the-screen/
+    - page: /rv/rv-manual/using-luts-in-rv/
+    - page: /rv/rv-manual/using-cdls-in-rv/
+    - page: /rv/rv-manual/packages/
+    - page: /rv/rv-manual/open-color-io/
+    - page: /rv/rv-manual/stereo-viewing/
+    - page: /rv/rv-manual/networking/
+    - page: /rv/rv-manual/maximizing-performance/
+    - page: /rv/rv-manual/file-formats/
+    - page: /rv/rv-manual/rvio/
+    - page: /rv/rv-manual/rvls/
+    - page: /rv/rv-manual/rvpush/
+    - page: /rv/rv-manual/differences-between-rv3-and-rv6/
+    - page: /rv/rv-manual/stereo-setup/
+    - page: /rv/rv-manual/the-rv-link-protocol/
+    - page: /rv/rv-manual/using-rv-as-nukes-flipbook-player/
+    - page: /rv/rv-manual/rv-audio-on-linux/
+    - page: /rv/rv-manual/troubleshooting-networking/
+    - page: /rv/rv-manual/rising-sun-research-cinespace/
+    - page: /rv/rv-manual/crash-reporting/
+    - page: /rv/rv-manual/pyside-example-usage/
+    - page: /rv/rv-manual/supported-multichannel-audio-layouts/
+    - page: /rv/rv-manual/tuning-platform-audio-for-linux/
+  - page: /rv/rv-reference/
+    children:
+    - page: /rv/rv-reference/image-processing-graph/
+    - page: /rv/rv-reference/writing-a-custom-glsl-node/
+    - page: /rv/rv-reference/python/
+    - page: /rv/rv-reference/event-handling/
+    - page: /rv/rv-reference/rv-file-format/
+    - page: /rv/rv-reference/using-qt-in-mu/
+    - page: /rv/rv-reference/modes-and-widgets/
+    - page: /rv/rv-reference/package-system/
+    - page: /rv/rv-reference/a-simple-package/
+    - page: /rv/rv-reference/the-custom-matte-package/
+    - page: /rv/rv-reference/automated-color-and-viewing-management/
+    - page: /rv/rv-reference/network-communication/
+    - page: /rv/rv-reference/webkit-javaScript-integration/
+    - page: /rv/rv-reference/hierarchical-preferences/
+    - page: /rv/rv-reference/node-reference/
+    - page: /rv/rv-reference/additional-glsl-node-reference/
+    - page: /rv/rv-reference/a-open-source-components/
+    - page: /rv/rv-reference/b-licensed-components/
+  - page: /rv/rv-7-release-notes/
+    children:
+    - page: /rv/rv-7-release-notes/version-7/
+    - page: /rv/rv-7-release-notes/version-6/
+  - page: /rv/rv-sdi-manual/
+    children:
+    - page: /rv/rv-sdi-manual/aja/
+    - page: /rv/rv-sdi-manual/black-magic-design/
+    - page: /rv/rv-sdi-manual/configuring-the-sdi-device/
+    - page: /rv/rv-sdi-manual/command-line-invocation/
+    - page: /rv/rv-sdi-manual/useful-rv-features-for-sdi-output/
+  - page: /rv/rv-client-license-management/
+    children:
+    - page: /rv/rv-client-license-management/specifying-license-file-location/
+    - page: /rv/rv-client-license-management/license-file-format/
+  - page: /rv/tweak-license-server/
+    children:
+    - page: /rv/tweak-license-server/recommended-installation-process/
+    - page: /rv/tweak-license-server/linux-service-installation/
+    - page: /rv/tweak-license-server/osx-service-installation/
+    - page: /rv/tweak-license-server/windows-service-installation/
+    - page: /rv/tweak-license-server/getting-a-license-file/
+    - page: /rv/tweak-license-server/command-line-parameters/
+    - page: /rv/tweak-license-server/disabling-the-license-installer/
+    - page: /rv/tweak-license-server/client-licenses/
+    - page: /rv/tweak-license-server/multiple-and-fallback-servers/
+    - page: /rv/tweak-license-server/getting-status/
+    - page: /rv/tweak-license-server/restrictions-troubleshooting/
+    - page: /rv/tweak-license-server/anatomy-of-a-tweak-license-file/
+  - page: /rv/tlm-server-release-notes/
+  - page: /rv/gto/
+    children:
+    - page: /rv/gto/overview/
+    - page: /rv/gto/installation/
+    - page: /rv/gto/binary-format/
+    - page: /rv/gto/text-format/
+    - page: /rv/gto/types-of-property-data/
+    - page: /rv/gto/interpretation-strings/
+    - page: /rv/gto/object-protocols/
+    - page: /rv/gto/naming-conventions/
+    - page: /rv/gto/issues-and-questionable-aspects-of-the-format/
+    - page: /rv/gto/extending-protocols-of-the-file-format/
+    - page: /rv/gto/c++-library/
+    - page: /rv/gto/python-module/
+    - page: /rv/gto/utilities/
+    - page: /rv/gto/appendix-a/
 
   - page: /rv/integrations/
     children:
-    - text: maya
-      url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/maya_tools_help.html"
-    - text: nuke
-      url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvnuke_help.html"
+    - page: /rv/rv-nuke-integration/
+      children:
+      - page: /rv/rv-nuke-integration/note-to-users/
+      - page: /rv/rv-nuke-integration/updating-an-existing-installation/
+      - page: /rv/rv-nuke-integration/installation/
+      - page: /rv/rv-nuke-integration/getting-started/
+      - page: /rv/rv-nuke-integration/read_write_nodes/
+      - page: /rv/rv-nuke-integration/checkpoints_and_renders/
+      - page: /rv/rv-nuke-integration/working-with-media-in-rv/
+      - page: /rv/rv-nuke-integration/modifying-the-nuke-project-from-rv/
+      - page: /rv/rv-nuke-integration/appendix-release-notes/
+      - page: /rv/rv-nuke-integration/appendix-known-issues-and-planned-work/
+    - page: /rv/rv-maya-integration/
+      children:
+      - page: /rv/rv-maya-integration/installation/
+      - page: /rv/rv-maya-integration/build-a-session-in-rv/
+      - page: /rv/rv-maya-integration/organizing-and-comparing-your-renders/
+      - page: /rv/rv-maya-integration/creating-new-views/
+      - page: /rv/rv-maya-integration/rendering-into-context/
     - text: shotgun
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
     - text: screening-room
