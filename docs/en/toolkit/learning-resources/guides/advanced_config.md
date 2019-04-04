@@ -97,7 +97,7 @@ A dialog box will be displayed with two options and **Default** selected. At thi
 
 **Step 6:** Select **Continue**.
 
-**Define storage locations for project files**
+### Define storage locations for project files
 
 A dialog box will appear displaying a drop-down menu next to the word `Storage:`
 
