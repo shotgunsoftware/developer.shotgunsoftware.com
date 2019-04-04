@@ -12,4 +12,4 @@ lang: ko
 - [개인 기여 계약서](../all_langs/contribution/ind_contrib_agmt_for_shotgun_developer_documentation.pdf)
 - [기업 기여 계약서](../all_langs/contribution/corp_contrib_agmt_for_shotgun_developer_documentation.pdf)
 
-위의 계약서 중 하나를 제출한 후에는 변경 사항 제출 방법에 대한 [읽어보기](https://github.com/shotgunsoftware/developer-beta/#making-a-change-to-developershotgunsoftwarecom)의 지침을 따르면 됩니다.
+위의 계약서 중 하나를 제출한 후에는 변경 사항 제출 방법에 대한 [읽어보기](https://github.com/shotgunsoftware/developer-beta/#Making-a-change-to-the-documentation)의 지침을 따르면 됩니다.

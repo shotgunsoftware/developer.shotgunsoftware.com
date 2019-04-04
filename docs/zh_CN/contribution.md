@@ -12,4 +12,4 @@ lang: zh_CN
 - [个人贡献协议](../all_langs/contribution/ind_contrib_agmt_for_shotgun_developer_documentation.pdf)
 - [公司贡献协议](../all_langs/contribution/corp_contrib_agmt_for_shotgun_developer_documentation.pdf)
 
-提交上面一种协议后，您可以按照[自述文件](https://github.com/shotgunsoftware/developer-beta/#making-a-change-to-developershotgunsoftwarecom)中有关如何提交变更的说明进行操作。
+提交上面一种协议后，您可以按照[自述文件](https://github.com/shotgunsoftware/developer-beta/#Making-a-change-to-the-documentation)中有关如何提交变更的说明进行操作。

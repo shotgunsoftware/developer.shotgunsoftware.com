@@ -1,5 +1,5 @@
 # Translated text strings used by the table of contents
-#
+# 
 # For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
 #
 
@@ -10,7 +10,8 @@ shotgun: Shotgun
 python-api: Python API
 rest-api: REST API
 event-triggers: イベント駆動型トリガ
-examples: 例
+jira-bridge: Jira Bridge (ベータ版)
+examples: サンプル
 reference: リファレンス
 
 core-api: Core API
@@ -20,7 +21,7 @@ publish-api: パブリッシュ API
 app-development: アプリケーション開発
 
 user-manual: ユーザ マニュアル
-technical-reference: テクニカルリファレンス
+technical-reference: テクニカル リファレンス
 rv-sdi: RV-SDI
 
 maya: Maya
@@ -30,8 +31,8 @@ screening-room: Screening Room と Shotgun Review
 troubleshooting: トラブルシューティング
 extending-rv: RV の拡張
 
-other: Other
+other: その他
 
 shotgun-support: Shotgun サポート
-service-status: Service Status
-new-support-request: New Support Request
+service-status: サービス ステータス
+new-support-request: 新しいサポート リクエスト

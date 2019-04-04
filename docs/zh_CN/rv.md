@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 概观
+title: 概述
 permalink: /rv/
 lang: zh_CN
 ---
