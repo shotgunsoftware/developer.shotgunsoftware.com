@@ -19,7 +19,7 @@ This guide assumes the user:
 2. Has some basic knowledge of how to use Shotgun
 3. Is new to Shotgun Toolkit
 
-## Using this document
+### Using this document
  
 To use this guide and create a customizable configuration for your project, the following is required:
 
@@ -33,16 +33,16 @@ The Advanced Project Setup Wizard in Shotgun Desktop generates a pipeline config
 
 The Default Configuration includes: 
 * A basic filesystem schema and templates that determine where files live on disk 
-* All of the supported [software integrations](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) allowing interaction with Shotgun and pipline functions from directly inside the user’s software applications. 
+* All of the supported [software integrations](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) allowing interaction with Shotgun and pipeline functions from directly inside the user’s software applications. 
 
 Customizations are only limited by imagination, cleverness, and programming knowledge or the ability to borrow from what others in the Shotgun community have created.
  
-## Creating the configuration 
+### Creating the configuration 
 
 A configuration is required for every project. The first time a project is accessed through Shotgun Desktop, a Basic Configuration is downloaded and configured. This Basic Configuration automatically detects the supported content creation software a user has on their system and associates the configuration with the project. Settings in the pipeline configuration govern the integrations within the supported software applications. The [Panel]( https://support.shotgunsoftware.com/hc/en-us/articles/219033098-Shotgun-Panel) app displays project information from Shotgun and allows artists to reply to notes and view Versions without leaving their work session. The [Publisher](https://support.shotgunsoftware.com/hc/en-us/articles/219032998-Publishing-your-work) app allows artists to make their work available for others on their team, and through the [Loader](https://support.shotgunsoftware.com/hc/en-us/articles/219033078-Load-Published-Files-) app, artists can load their teammates' published files. The Basic Configuration does not include file system management setup or the development of templates for specifying how files and directories are named on disk. It also doesn’t have the plethora of Apps that are added when a Default Configuration is configured. It is a simple configuration that allows Toolkit to run without any manual editing of configuration files. The Wizard replaces the Basic Configuration with a Default Configuration. It provides more apps and software integrations to support you on your journey. While the Basic Configuration can be edited as well, it's not until you have an advanced setup that your project will be set up for customization.
 
 
-## Differences between the Basic and Default Configurations
+### Differences between the Basic and Default Configurations
 
 | FEATURE | BASIC CONFIGURATION | DEFAULT CONFIGURATION |
 | ------- | ------------------- | --------------------- |
@@ -55,7 +55,9 @@ A configuration is required for every project. The first time a project is acces
 
 In this guide, you will use the Wizard in Shotgun Desktop to generate a pipeline configuration for your project based on the Default Configuration. Generating this configuration sets you up to make the customizations necessary to support a proprietary production pipeline.
 
-## Prepare to use a Default Configuration
+## Begin Exercise 
+
+### Prepare to use a Default Configuration
 
 **Step 1:** Create a new project in Shotgun called "the_other_side.”
 
@@ -73,7 +75,7 @@ In this guide, you will use the Wizard in Shotgun Desktop to generate a pipeline
 
 ![Refresh project](../../../../images/toolkit/learning-resources/guides/advanced_config/5_refresh_projects_list.png)
 
-## Accessing the Default Configuration
+### Accessing the Default Configuration
 
 A Basic Configuration was downloaded and configured when the project was accessed. The Publish app and supported software packages were detected and automatically added to the **Apps** pane in Shotgun Desktop. 
 
@@ -97,7 +99,7 @@ A dialog box will be displayed with two options and **Default** selected. At thi
 
 **Define storage locations for project files**
 
-A dialog box will appear displaying a drop down menu next to the word `Storage:`
+A dialog box will appear displaying a drop-down menu next to the word `Storage:`
 
 ![Define storage](../../../../images/toolkit/learning-resources/guides/advanced_config/9_define_storage1.png)
 
@@ -123,7 +125,7 @@ The operating system path is automatically updated to identify the path where th
 
 **Step 10:** Select **Continue**.
 
-## Name the Project Folder 
+### Name the Project Folder 
 
 A dialog box is displayed with the name of the project populating the text field. The name is automatically populated pulling from the project information and the path is automatically updated.
 
@@ -153,17 +155,17 @@ Take a look in the `configs` folder and you will find several folders and files.
 
 And now the real fun begins, learning all the things you can do with the Configuration. Below are some advanced topics to explore.
 
-# Advanced topics
+## Advanced topics
 
 Shotgun Toolkit provides many convenient ways to edit, clone, or take over a configuration. Extending existing configurations will save time and allow you access to all of the cool stuff that others within your network have created. You can take advantage of the vast Shotgun community (https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev) that may have the exact configuration you need. The Shotgun community is a sharing community, so be kind, say thank you, and recognize the person who created the configuration that helped you get the job done. Oh, and don’t forget to give back, it’s how we help our fellow Shotgun gurus and what makes it so special to be a part of this community! 
 
 Below are some ways you can have fun with configurations.
 
-## Using the command line to create a default configuration
+### Using the command line to create a default configuration
 
 From inside any project configuration, the `tank` command lets you run administrative commands from a terminal. Each project has its own dedicated `tank` command. The `tank setup_project` command's functionality is analogous to the Advanced Setup Wizard's: it creates an editable configuration on disk for your project based either on an existing project's configuration or the Default Configuration. You can learn more about running [`tank setup_project` here](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#setup_project), and more about the  [`tank` command here](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#Using%20the%20tank%20command).
 
-## Editing a configuration that's in production
+### Editing a configuration that's in production
 
 There will be times when you want to modify a configuration that is currently in production, but you won't want to edit it while artists are using it. With just a few commands, Shotgun provides a way to copy an existing configuration where you can test your modifications safely before pushing them into production. This process replaces the production configuration with the new one and automatically backs up the old one. 
 
@@ -176,12 +178,12 @@ The reasons you would want work on a copy of a configuration are:
 
 To learn about cloning your configuration, as well as other basics of configuration management, refer to the [Configuration Staging and Rollout document](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration).
 
-## Cloud distribution of pipeline configurations
+### Cloud distribution of pipeline configurations
 
 This guide walks through creating a **centralized configuration**: a single copy of a pipeline configuration that is located in a shared network location and accessed by all users. But, if your workforce is distributed across locations and networks, it may not be feasible to share a single copy of a pipeline configuration. Toolkit allows for this scenario by providing a **distributed configuration** option where a pipeline configuration is uploaded to Shotgun and each time a user accesses a project the configuration is downloaded and cached locally. You can learn more about distributed configurations in our [Core API developer documentation](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
 
-## Working with more than one root folder
+### Working with more than one root folder
 
 Ideally your facility would want to be optimized for specific tasks. You can work with more than one root folder to optimize things such as video playback for dailies on one server and interactive processing on another. Toolkit allows you to work with more than one storage root in order to facilitate workflows such as these. Check out how to convert from a [single root to a multi-root configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219040478-How-do-I-convert-my-project-from-a-single-root-to-a-multi-root-configuration-). 
 
-Now that you have a pipeline configuration for your project, get started on editing it! Jump into the next guide, [Editing a Pipeline Configuration](https://github.com/shotgunsoftware/developer-beta/blob/getting_started_guide/docs/en/toolkit/toolkit_basics_guides/editing_app_setting.md), to learn how. 
+Now that you have a pipeline configuration for your project, get started on editing it! Jump into the next guide, [Editing a Pipeline Configuration](/toolkit/learning-resources/guides/editing_app_setting/), to learn how.
