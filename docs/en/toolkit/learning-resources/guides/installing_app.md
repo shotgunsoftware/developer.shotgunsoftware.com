@@ -55,7 +55,7 @@ Below is a conceptual overview of how to install an app and how to tell a Shotgu
 
 ### Find the location descriptor for the Python Console App
 
-**Step 1:** Open the [Apps and Engines](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya) page and find the information for the Shotgun Python Console under Maya. Select the title.
+**Step 1:** Open the [Apps and Engines](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya) page and find the information for the **Shotgun Python Console** under Maya. Select the title.
 
 ![Python app](../../../../images/toolkit/learning-resources/guides/installing_app/1_python_app.png)
 
@@ -67,13 +67,13 @@ The **System Name** is the main identifier: `tk-multi-pythonconsole`. You will a
 
 ### Confirm that there’s no Python Console app in the Project environment in Maya
 
-**Step 2:** Launch Maya and select the Shotgun Menu, **Shotgun > Project the_other_side** and you will see the list of apps that are available for that project in the Project environment.
+**Step 2:** Launch Maya and select **Shotgun > Project the_other_side** and you will see the list of apps that are available for that project in the Project environment.
 
 ![List of apps](../../../../images/toolkit/learning-resources/guides/installing_app/3_list_of_apps.png)
 
 ## Extend the configuration
 
-To edit a configuration that’s in production, you’ll want to first create a copy, then edit the copy. This way you don’t affect the live configuration and you can create a safe space to test it before pushing it live. Creating a staging sandbox allows you to play with a copy of the pipeline configuration currently being used in production. In the sandbox, you make changes to the copy of the configuration and test the changes before pushing the changes live into production.
+To edit a configuration that’s in production, you’ll want to first create a copy then edit the copy. This way you don’t affect the live configuration and you can create a safe space to test it before pushing it live. Creating a staging sandbox allows you to play with a copy of the pipeline configuration currently being used in production. In the sandbox, you make changes to the copy of the configuration and test the changes before pushing the changes live into production.
 
 Cloning a pipeline configuration automates the process of creating a copy, building a sandbox where you can play with the copy, before pushing the new configuration to the live production.
 
@@ -81,7 +81,7 @@ Cloning a pipeline configuration automates the process of creating a copy, build
 
 ### Go to the Pipeline Configuration list. 
 
-**<a name=”step3”>Step 3</a>:** Open Shotgun and in the upper right, select the **Admin Menu (your avatar) > Default Layouts > Pipeline Configuration > Pipeline Configuration List**.
+**Step 3:** Open Shotgun and in the upper right, select the **Admin Menu (your avatar) > Default Layouts > Pipeline Configuration > Pipeline Configuration List**.
 
 ![Pipeline configuration list](../../../../images/toolkit/learning-resources/guides/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
@@ -93,7 +93,7 @@ This action displays a detailed list of all of your Shotgun site's pipeline conf
 
 ### Review where the project’s configuration is located
 
-**Step 5:**  Additionally, add the the appropriate **Path** field for your operating system.
+**Step 5:** Add the appropriate **Path** field for your operating system.
 
 ![Path to_config](../../../../images/toolkit/learning-resources/guides/installing_app/6_path_to_config.png)
 
@@ -308,7 +308,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 There will be a list of the available pipeline configurations that the cloned configuration can be pushed to. Enter the ID of the primary pipeline configuration for the project you are updating the configuration for.
 
-**NOTE:** You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in Shotgun that we viewed in **[Step 3](#step3):** of this guide. To find the project ID, go to the Configuration List and add the ID column.
+**NOTE:** You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in Shotgun that we viewed in **[Step 3]:** of this guide. To find the project ID, go to the Configuration List and add the ID column.
 
 ![ID column](../../../../images/toolkit/learning-resources/guides/installing_app/17_id_column.png)
 
@@ -336,7 +336,7 @@ Push Complete!
 
 ![Change config maya](../../../../images/toolkit/learning-resources/guides/installing_app/18_change_config_maya.png)
 
-**Step 20:** Launch Maya from Desktop and look in the menu **Shotgun > Project > …** to find the Shotgun Python Console...
+**Step 20:** Launch Maya from Desktop and look in the menu **Shotgun > Project > …** to find the Shotgun **Python Console...**
 
 ![App in Maya](../../../../images/toolkit/learning-resources/guides/installing_app/19_app_in_maya.png)
 
@@ -392,7 +392,7 @@ apps.tk-multi-pythonconsole.location:
   version: v1.1.2
 ```
 
-Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page.
+Every app, engine, and framework have a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page.
 
 You can add any app to any appropriate software integration that Shotgun supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page. 
 
