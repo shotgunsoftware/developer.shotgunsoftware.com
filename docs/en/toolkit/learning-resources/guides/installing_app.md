@@ -55,7 +55,7 @@ Below is a conceptual overview of how to install an app and how to tell a Shotgu
 
 ### Find the location descriptor for the Python Console App
 
-**Step 1:** Open the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya) and find the information for the Shotgun Python Console under Maya. Select the title.
+**Step 1:** Open the [Apps and Engines](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya) page and find the information for the Shotgun Python Console under Maya. Select the title.
 
 ![Python app](../../../../images/toolkit/learning-resources/guides/installing_app/1_python_app.png)
 
@@ -392,9 +392,9 @@ apps.tk-multi-pythonconsole.location:
   version: v1.1.2
 ```
 
-Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines).
+Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page.
 
-You can add any app to any appropriate software integration that Shotgun supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page. 
+You can add any app to any appropriate software integration that Shotgun supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page. 
 
 If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other Shotgun users will need the same function and sharing new apps is one way to give back to the Shotgun community. 
 
