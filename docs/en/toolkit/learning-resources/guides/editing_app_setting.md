@@ -27,7 +27,7 @@ To use this guide and perform an edit on a pipeline configuration, the following
 1. An active [Shotgun](https://www.shotgunsoftware.com/signup/) site.
 2. A pipeline configuration for the identified project, or complete the [Getting started with configurations](./advanced_config.md) guide and use the configuration created in that exercise.
 3. [Shotgun Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) installed on your system.
-4. An active subscription for Maya. Get a 30 day trial of Maya [here](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689) 
+4. An active subscription for Maya. Get a 30 day trial of Maya](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689) 
 5. Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
 
 **NOTE:** This guide is based on the `tk-config-default2` pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here.
