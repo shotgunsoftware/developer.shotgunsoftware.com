@@ -133,7 +133,7 @@ A setting can be utilized in multiple places within a pipeline configuration. Wh
 
 ## Find where to set the value for `allow_task_creation`
 
-**Step 12:** Bring the main Maya window forward. 
+**Step 11:** Bring the main Maya window forward. 
 
 **Step 13:** Find the **Shotgun** menu item in the upper right of the Maya window.
 
