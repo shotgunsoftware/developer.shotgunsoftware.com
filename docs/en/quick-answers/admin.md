@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Admin
-permalink: /quick-answers/admin
+permalink: /quick-answers/admin/
 lang: en
 ---
 
