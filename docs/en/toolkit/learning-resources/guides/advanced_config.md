@@ -7,6 +7,7 @@ lang: en
 
 # Getting started with configurations
 
+test change
 After completing this guide, you will have the knowledge fundamental to adding your project information to a configuration, associating that configuration with your project, and preparing your pipeline configuration to be customized.
 
 ## About the guide
