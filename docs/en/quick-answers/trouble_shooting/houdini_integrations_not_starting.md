@@ -5,7 +5,7 @@ permalink: /quick-answers/trouble_shooting/houdini_integrations_not_starting/
 lang: en
 ---
 
-This FAQ covers the most common reason we’ve seen for the Shotgun integrations not starting in Houdini. In this case,
+This covers the most common reason we’ve seen for the Shotgun integrations not starting in Houdini. In this case,
 Houdini launches without error from Shotgun Desktop, your Shotgun website, or the tank command. However, once Houdini
 is launched, the Shotgun menu or shelf does not appear.
 
