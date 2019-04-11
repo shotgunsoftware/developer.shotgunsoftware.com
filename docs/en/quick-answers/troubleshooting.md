@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Troubleshooting
-permalink: /quick-answers/troubleshooting
+permalink: /quick-answers/troubleshooting/
 lang: en
 ---
 
