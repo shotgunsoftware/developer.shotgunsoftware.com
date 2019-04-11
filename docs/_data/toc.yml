@@ -83,11 +83,11 @@
       url: "https://support.shotgunsoftware.com/hc/en-us/community/topics/200682488-RV-Extending-and-Customizing-RV-Python-Mu-JavaScript-etc-#recent"
 
 - caption: quick-answers
+  children:
+  - page: /quick-answers/trouble_shooting
     children:
-    - page: /quick-answers/trouble_shooting
-      children:
-      - page: /quick-answers/trouble_shooting/houdini_integrations_not_starting/
-    - page: /quick-answers/admin
+    - page: /quick-answers/trouble_shooting/houdini_integrations_not_starting/
+  - page: /quick-answers/admin
 
 - caption: other
   children:
