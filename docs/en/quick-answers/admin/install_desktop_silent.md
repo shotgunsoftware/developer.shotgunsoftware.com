@@ -1,7 +1,7 @@
 ---
 layout: default
 title: How do I install the Shotgun Desktop silently on Windows?
-permalink: /quick-answers/admin/install_desktop_silent.md
+permalink: /quick-answers/admin/install_desktop_silent/
 lang: en
 ---
 
