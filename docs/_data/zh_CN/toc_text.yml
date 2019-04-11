@@ -1,5 +1,5 @@
 # Translated text strings used by the table of contents
-#
+# 
 # For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
 #
 
@@ -10,6 +10,7 @@ shotgun: Shotgun
 python-api: Python API
 rest-api: REST API
 event-triggers: 事件驱动的触发器
+jira-bridge: Jira 桥接（Beta 版）
 examples: 示例
 reference: 参考
 
@@ -30,8 +31,8 @@ screening-room: 审片室和 Shotgun 审看
 troubleshooting: 疑难解答
 extending-rv: 扩展 RV
 
-other: Other
+other: 其他
 
 shotgun-support: Shotgun 支持
-service-status: Service Status
-new-support-request: New Support Request
+service-status: 服务状态
+new-support-request: 新的支持请求

@@ -13,3 +13,4 @@ lang: ko
 
 **QT Widgets 프레임워크** 또는 `tk-framework-qtwidgets`는 앱에 보기 좋은 프런트엔드를 빠르고 쉽게 구축할 수 있게 지원하는 대규모 Shotgun 관련 QT 위젯 모음입니다. 여기에는 많은 커스텀 QT 뷰, 대리자 및 위젯이 포함되어 있습니다.
 
+
