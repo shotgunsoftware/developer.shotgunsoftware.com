@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Where is my bundle cache
-permalink: /quick-answers/where_is_my_bundle_cache.md
+permalink: /quick-answers/admin/where_is_my_bundle_cache.md
 lang: en
 ---
 
