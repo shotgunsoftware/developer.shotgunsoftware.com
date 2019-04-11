@@ -53,9 +53,6 @@
   - text: app-development
     url: "https://support.shotgunsoftware.com/entries/95440137"
   - page: /toolkit/tutorial/
-  - page: /toolkit/quick-answers/
-    children:
-    - page: /toolkit/quick-answers/admin
 
 - caption: rv
   children:
@@ -85,6 +82,10 @@
     - text: extending-rv
       url: "https://support.shotgunsoftware.com/hc/en-us/community/topics/200682488-RV-Extending-and-Customizing-RV-Python-Mu-JavaScript-etc-#recent"
 
+- caption: quick-answers
+    children:
+    - page: /quick-answers/trouble_shooting
+    - page: /quick-answers/admin
 
 - caption: other
   children:
