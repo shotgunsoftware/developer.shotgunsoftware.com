@@ -84,6 +84,7 @@
 
 - caption: quick-answers
   children:
+  - page: /quick-answers/
   - page: /quick-answers/trouble_shooting
     children:
     - page: /quick-answers/trouble_shooting/houdini_integrations_not_starting/
