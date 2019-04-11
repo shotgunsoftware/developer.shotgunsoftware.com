@@ -84,14 +84,14 @@
 
 - caption: quick-answers
   children:
-  - page: /quick-answers/admin
-#    children:
-#    - page: /quick-answers/troubleshooting/where_is_my_cache/
-#    - page: /quick-answers/troubleshooting/install_desktop_silent/
-#    - page: /quick-answers/troubleshooting/sg_desktop_run_on_ubuntu/
-  - page: /quick-answers/troubleshooting
-#    children:
-#    - page: /quick-answers/troubleshooting/houdini_integrations_not_starting/
+  - page: /quick-answers/admin/
+    children:
+    - page: /quick-answers/troubleshooting/where_is_my_cache/
+    - page: /quick-answers/troubleshooting/install_desktop_silent/
+    - page: /quick-answers/troubleshooting/sg_desktop_run_on_ubuntu/
+  - page: /quick-answers/troubleshooting/
+    children:
+    - page: /quick-answers/troubleshooting/houdini_integrations_not_starting/
 
 
 - caption: other
