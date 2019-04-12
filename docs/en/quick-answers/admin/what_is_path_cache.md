@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Where is my cache?
+title: What is the path cache?
 permalink: /quick-answers/admin/what_is_path_cache/
 lang: en
 ---
