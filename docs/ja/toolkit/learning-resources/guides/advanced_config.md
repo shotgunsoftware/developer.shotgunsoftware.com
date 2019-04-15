@@ -69,7 +69,7 @@ Shotgun Desktop の[Advanced Project Setup]ウィザードを使用すると、�
 
 **手順 3:** サムネイル イメージを選択して、[Advanced Project Setup]ウィザードを実行するプロジェクトにナビゲートします。
 
-{% include info title="ヒント" content="Desktop を開いているときに新しいプロジェクトを作成した場合、新しいプロジェクトを表示するには、**プロジェクト** ウィンドウを更新しなければならないことがあります。デスクトップの右下にあるプロファイルの**アバター**を選択して、[Refresh Projects]を選択します。" %}
+{% include info title="ヒント" content="Desktop を開いているときに新しいプロジェクトを作成した場合、新しいプロジェクトを表示するには、**プロジェクト** ウィンドウを更新しなければならないことがあります。デスクトップの右下にあるプロファイルの**アバター**を選択して、[Refresh Projects]を選択します。"%}
 
 ![プロジェクトを最新の状態に更新](../../../../images/toolkit/learning-resources/guides/advanced_config/5_refresh_projects_list.png)
 

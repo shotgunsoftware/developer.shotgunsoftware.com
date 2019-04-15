@@ -53,7 +53,7 @@ Workfiles アプリは、Shotgun ソフトウェア統合のファイル管理�
 
 ![パイプラインの設定](../../../../images/toolkit/learning-resources/guides/editing_app_setting/2_pipeline_configuration.png)
 
-**手順 4:** **[パイプライン設定リスト](Pipeline Configuration List)**が表示されたら、列見出しの右端にある**[+]**記号を選択して、列をもう 1 つ追加します。ドロップダウン リストで、オペレーティング システムに該当するパスを選択します。
+**手順 4:** **[パイプライン設定リスト]（Pipeline Configuration List）**が表示されたら、列見出しの右端にある**[+]**記号を選択して、列をもう 1 つ追加します。ドロップダウン リストで、オペレーティング システムに該当するパスを選択します。
 
 ![OS のパス](../../../../images/toolkit/learning-resources/guides/editing_app_setting/3_mac_path.png)
 

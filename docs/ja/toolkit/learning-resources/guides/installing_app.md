@@ -81,13 +81,13 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ### [パイプラインの設定](Pipeline Configuration)リストに移動します。
 
-**<a name="&rdquo;step3&rdquo;">手順 3</a>:** Shotgun を開き、右上にある**[管理者](Admin)メニュー(アバター) > [既定のレイアウト](Default Layouts) > [パイプラインの設定](Pipeline Configuration) > [パイプライン設定リスト](Pipeline Configuration List)**を選択します。
+**<a name="&rdquo;step3&rdquo;">手順 3</a>:** Shotgun を開き、右上にある**[管理者]（Admin）メニュー（アバター） > [既定のレイアウト]（Default Layouts） > [パイプラインの設定]（Pipeline Configuration） > [パイプライン設定リスト]（Pipeline Configuration List）**を選択します。
 
 ![パイプライン設定リスト](../../../../images/toolkit/learning-resources/guides/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
 この操作を行うと、Shotgun サイトのすべてのパイプライン設定の詳細なリストが表示されます。
 
-**手順 4:** [パイプライン設定リスト](Pipeline Configuration List)が表示されたら、列見出しの右端にある**[+]**記号を選択して、**[プロジェクト](Projects)**列を追加します。
+**手順 4:** [パイプライン設定リスト]（Pipeline Configuration List）が表示されたら、列見出しの右端にある**[+]**記号を選択して、**[プロジェクト]（Projects）**列を追加します。
 
 ![プロジェクト列を追加](../../../../images/toolkit/learning-resources/guides/installing_app/5_add_project_column.png)
 
