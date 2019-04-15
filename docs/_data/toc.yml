@@ -93,7 +93,7 @@
   - page: /quick-answers/troubleshooting/
     children:
     - page: /quick-answers/troubleshooting/houdini_integrations_not_starting/
-    - page: /quick-answers/troubleshooting/where_are_my_log_files/
+    - page: /quick-answers/where_are_my_log_files/
 
 
 - caption: other
