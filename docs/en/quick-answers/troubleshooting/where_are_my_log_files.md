@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Where are my log files?
-permalink: /quick-answers/troubleshooting/where_are_my_log_files/
+permalink: /quick-answers/where_are_my_log_files/
 lang: en
 ---
 
