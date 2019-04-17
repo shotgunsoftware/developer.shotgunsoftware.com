@@ -5,8 +5,7 @@ permalink: /quick-answers/admin/what_is_path_cache/
 lang: en
 ---
 
-What is the Path Cache? What are Filesystem Locations?
-==
+# What is the Path Cache? What are Filesystem Locations?
 
 The path cache is used by Toolkit to track the associations between folders on disk and entities in Shotgun. 
 The master cache is stored in Shotgun using the `FilesystemLocation` entity type. Each user then has their own version 

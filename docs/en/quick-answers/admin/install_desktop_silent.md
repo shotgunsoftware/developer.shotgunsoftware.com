@@ -5,8 +5,7 @@ permalink: /quick-answers/admin/install_desktop_silent/
 lang: en
 ---
 
-How do I install the Shotgun Desktop silently on Windows?
-===
+# How do I install the Shotgun Desktop silently on Windows?
 
 To run the Shotgun Desktop installer silently, simply launch the Shotgun Desktop installer the following way:
 

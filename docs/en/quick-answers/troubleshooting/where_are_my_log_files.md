@@ -5,8 +5,7 @@ permalink: /quick-answers/where_are_my_log_files/
 lang: en
 ---
 
-Where are my log files?
-=====
+#Where are my log files?
 
 By default, Shotgun Desktop and Integrations store their log files in the following directory:
 

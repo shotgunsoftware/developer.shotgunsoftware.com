@@ -5,8 +5,7 @@ permalink: /quick-answers/admin/sg_desktop_run_on_ubuntu/
 lang: en
 ---
 
-Does SG Desktop run on Debian systems like Ubuntu?
-====
+# Does SG Desktop run on Debian systems like Ubuntu?
 
 We don't currently support Debian based distros for SG Desktop. We have some clients in the past who have tried to get 
 it working, extracting Desktop from the RPM using cpio and then trying to satisfy the library dependencies but this has 
