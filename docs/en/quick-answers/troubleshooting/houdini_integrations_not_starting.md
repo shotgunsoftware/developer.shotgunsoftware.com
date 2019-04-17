@@ -27,9 +27,11 @@ for that variable.
 For example, if you have something like this already in your houdini.env file:
 
     HOUDINI_PATH = /example/of/an/existing/path;&
+
 Then you should add $HOUDINI_PATH; to the end of the path defined in the file and save it:
 
     HOUDINI_PATH = /example/of/an/existing/path;$HOUDINI_PATH;&
+
 This will allow the Shotgun set value to persist when Houdini launches.
 
 On Windows we've seen `$HOUDINI_PATH` causing issue with it to try and bootstrap multiple times. If you get this

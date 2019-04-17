@@ -5,8 +5,12 @@ permalink: /quick-answers/admin/where_is_my_cache/
 lang: en
 ---
 
-Root Cache Location
+Where is my cache?
 ==
+
+
+Root Cache Location
+--
 
 Toolkit stores some data in a local cache to prevent unnecessary calls to the Shotgun server. This includes the path cache, bundle cache, and thumbnails. While the default location should work for most users, it is configurable using the cache_location core hook should you need to change it. 
 
@@ -24,21 +28,14 @@ The default cache root location is:
 
 `~/.shotgun`
 
-Thumbnails
-==
- 
-Thumbnails used by Toolkit apps (like the Loader) are stored in the local Toolkit cache. They are stored per Project, Pipeline Configuration, and App (as needed). The structure beneath the root cache directory is as follows:
-
-`<site_name>/p<project_id>c<pipeline_configuration_id>/<app_or_framework_name>/thumbs/`
-
 Path Cache
-==
+--
 The path cache is located at:
 
 `<site_name>/p<project_id>c<pipeline_configuration_id>/path_cache.db`
 
 Bundle Cache
-=
+--
 
 **Distributed Configurations**
 
@@ -64,3 +61,10 @@ The bundle cache for centralized configs are located inside the centralized conf
 `...{project configuration}/install/` 
 
 If your configuration uses a shared core, then this will be located inside your shared core's install folder instead.
+
+Thumbnails
+--
+ 
+Thumbnails used by Toolkit apps (like the Loader) are stored in the local Toolkit cache. They are stored per Project, Pipeline Configuration, and App (as needed). The structure beneath the root cache directory is as follows:
+
+`<site_name>/p<project_id>c<pipeline_configuration_id>/<app_or_framework_name>/thumbs/`

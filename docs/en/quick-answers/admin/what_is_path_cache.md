@@ -10,7 +10,7 @@ What is the Path Cache? What are Filesystem Locations?
 
 The path cache is used by Toolkit to track the associations between folders on disk and entities in Shotgun. 
 The master cache is stored in Shotgun using the `FilesystemLocation` entity type. Each user then has their own version 
-of the path cache [stored locally in the Toolkit cache directory on disk](./where_is_my_cache), which is synchronized in the background 
+of the path cache [stored locally in the Toolkit cache directory on disk](./where_is_my_cache.md), which is synchronized in the background 
 whenever applications are launched or folders are created.
 
 Typically, we don't advise modifying the path cache manually. Our internal processes not only sync your local cache 
