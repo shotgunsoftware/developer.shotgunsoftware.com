@@ -38,6 +38,8 @@
       - page: /toolkit/learning-resources/guides/editing_app_setting/
       - page: /toolkit/learning-resources/guides/installing_app/
     - page: /toolkit/learning-resources/tutorial/
+    - text: webinars
+      url: "https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
   - text: core-api
     url: " https://developer.shotgunsoftware.com/tk-core/"
   - page: /toolkit/frameworks/
