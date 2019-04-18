@@ -111,7 +111,9 @@ Now that you have a storage location selected, you'll choose the name of the dir
 
 {% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_06.png" caption="Enter the name of the folder where your project's files will live." %}
 
-For this tutorial, we'll be using a centralized configuration.  The **Distributed Setup** option provides an alternate option that can provide a different set of benefits, and may be the preferred option for studios without fast shared storage.  You can learn more about the pro and cons of different configuration setups in the [Toolkit Administering](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2) presentation.
+For this tutorial, we'll be using a centralized configuration.  The **Distributed Setup** option provides an alternate option that can provide a different set of benefits, and may be the preferred option for studios without fast shared storage.  You can learn more about the pro and cons of different configuration setups in the [Toolkit Administration](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2) presentation.
+
+Unlike the storages, which are site-wide, the configuration will be project specific, and so the directory you choose here will be used directly to store your configuration.
 
 {% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_07.png" caption="Make a note of the configuration path you select for the current operating system." %}
 
@@ -290,7 +292,7 @@ For the purposes of this simple pipeline, you will customize the Publisher app t
 
 {% include info title="Note" content="The customization you'll be adding is, admittedly, very simple and fragile. A more robust solution might take into account alternate representations of a surfaced character as well as the asset management side of using external images as texture maps. This example presents only a starting point for building a real-world solution." %}
 
-To learn more about the Publisher and the changes you'll be making, have a look at the [API Documentation](https://developer.shotgunsoftware.com/tk-multi-publish2/).
+{% include info title="Note" content="You can see the full details of how to write publisher plugins [here](https://developer.shotgunsoftware.com/tk-multi-publish2/)." %}
 
 #### Override the Maya collector
 
@@ -844,9 +846,7 @@ For more information on reviewing media in Shotgun, see the [official documentat
 
 Congratulations, you're done! Hopefully this tutorial has given you a starting point for building your own custom pipeline using the Shotgun integrations. You should have an understanding of how to extend the default integrations to meet the specific needs of your studio.
 
-To learn more about developing your own apps, check out the [App Development Guide](https://support.shotgunsoftware.com/hc/en-us/articles/219033158-Developing-Apps).
-
-Ask questions and learn how other studios are using Toolkit over at the [shotgun-dev Google Group](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev).
+Ask questions and learn how other studios are using Toolkit over at the [shotgun-dev Google Group](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev).  Be sure to subscribe to stay up to date with the latest posts!
 
 If there are features or workflows that you feel are outside of the default integrations, then you can always write your own apps. [Here is an excellent document](https://support.shotgunsoftware.com/entries/95440137) to help you get started writing your first app.
 
