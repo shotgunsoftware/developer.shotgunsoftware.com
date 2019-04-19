@@ -93,15 +93,29 @@ Use Shotgun Desktop (Desktop) to take over your project's configuration. RMB cli
 
 {% include figure src="../../../images/toolkit/learning-resources/tutorial/image_5.png" caption="Select the **Advanced project setup…** in the Desktop popup menu" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_6.png" caption="Choose the **Shotgun Default** configuration type" %}
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_01.png" caption="Choose the **Shotgun Default** configuration type" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_7.png" caption="Choose the **Default configuration**" %}
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_02.png" caption="Choose the **Default configuration**" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_8.png" caption="Enter the name of the folder where your project's files will live." %}
+If this is your first time setting up a Shotgun project, you'll also be prompted to define a storage location for your project data.  Otherwise, you can select an existing storage location.
 
-If this is your first time setting up a Shotgun project, you'll also be prompted to define a storage location for your project data.
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_03.png" caption="Create a new storage." %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_9.png" caption="Make a note of the configuration path you select for the current operating system." %}
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_04.png" caption="Name your new storage.  Remember, this storage is site-wide and not project specific." %}
+
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_05.png" caption="Set the path(s) where this storage will be accessible on the operating systems you intend to use." %}
+
+You can view and edit the storages for your shotgun site in your **Site Preferences**, under the **File Management** section.  You can learn more about these settings [here](https://support.shotgunsoftware.com/hc/en-us/articles/219030938).
+
+Now that you have a storage location selected, you'll choose the name of the directory in that location for your new project.
+
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_06.png" caption="Enter the name of the folder where your project's files will live." %}
+
+For this tutorial, we'll be using a centralized configuration.  The **Distributed Setup** option provides an alternate option that can provide a different set of benefits, and may be the preferred option for studios without fast shared storage.  You can learn more about the pro and cons of different configuration setups in the [Toolkit Administration](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2) presentation.
+
+Unlike the storages, which are site-wide, the configuration will be project specific, and so the directory you choose here will be used directly to store your configuration.
+
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_07.png" caption="Make a note of the configuration path you select for the current operating system." %}
 
 The folder you select on the screen above is where your configuration will be installed. You will explore and modify the contents of the configuration in this folder throughout this tutorial. 
 
@@ -207,6 +221,8 @@ The dialog shows a tree of items representing what will be published. The tree i
 
 On the left side of the dialog you will see an item representing the current Maya session. Underneath it, you will see a **Publish to Shotgun** child action. An additional item representing **All Session Geometry** is shown as a child item of the current session. It also has a **Publish to Shotgun** child action.  
 
+{% include info title="Note" content="If the **All Session Geometry** item doesn't show up, ensure that the [Alembic export plugin is enabled](https://support.shotgunsoftware.com/hc/en-us/articles/219039928-Publishing-Alembic-From-Maya#Before%20You%20Begin) in Maya." %}
+
 Explore the Publish App by clicking on the items on the left side of the tree. You'll notice that the items to be acted upon, when selected, allow you to enter a description of what is being published. You can also take a screenshot to be associated with the item by clicking the camera icon on the right. 
 
 When you are ready, click the **Publish** button in the bottom right corner to publish the current work file and the teapot geometry. Once complete, you can browse to the Teapot Asset in Shotgun to verify that the publish completed successfully. 
@@ -275,6 +291,8 @@ For the purposes of this simple pipeline, you will customize the Publisher app t
 
 
 {% include info title="Note" content="The customization you'll be adding is, admittedly, very simple and fragile. A more robust solution might take into account alternate representations of a surfaced character as well as the asset management side of using external images as texture maps. This example presents only a starting point for building a real-world solution." %}
+
+{% include info title="Note" content="You can see the full details of how to write publisher plugins [here](https://developer.shotgunsoftware.com/tk-multi-publish2/)." %}
 
 #### Override the Maya collector
 
@@ -612,6 +630,8 @@ At this point, you should be ready to publish your camera with the new plugin. U
 
 As you can see in the image, the new camera item is collected and the publish plugin is attached. Go ahead and click **Publish** to write the camera to disk and register it with Shotgun.
 
+{% include info title="Note" content="Similarly to Alembic export, the camera publish plugin requires the FBX export plugin to be loaded.  If you don't see the camera publish plugin item, check to ensure that the FBX plugin is loaded, and re-launch the publisher." %}
+
 You should see something like this in Shotgun:
 
 {% include figure src="../../../images/toolkit/learning-resources/tutorial/image_46.png" %} 
@@ -826,8 +846,8 @@ For more information on reviewing media in Shotgun, see the [official documentat
 
 Congratulations, you're done! Hopefully this tutorial has given you a starting point for building your own custom pipeline using the Shotgun integrations. You should have an understanding of how to extend the default integrations to meet the specific needs of your studio.
 
+Ask questions and learn how other studios are using Toolkit over at the [shotgun-dev Google Group](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev).  Be sure to subscribe to stay up to date with the latest posts!
+
 If there are features or workflows that you feel are outside of the default integrations, then you can always write your own apps. [Here is an excellent document](https://support.shotgunsoftware.com/entries/95440137) to help you get started writing your first app.
 
 As always, if you have additional questions about this tutorial or about Shotgun or the Toolkit platform in general, feel free to [submit a ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new).
-
-
