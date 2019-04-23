@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Dynamic filesystems and file naming
+title: Dynamic filesystem management
 permalink: /toolkit/learning-resources/guides/installing_app/
 lang: en
 ---
