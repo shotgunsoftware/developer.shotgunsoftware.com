@@ -57,11 +57,11 @@ Below is a conceptual overview of how to install an app and how to tell a Shotgu
 
 **Step 1:** Open the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya) and find the information for the Shotgun Python Console under Maya. Select the title.
 
-![Python app](../../../../images/toolkit/learning-resources/guides/installing_app/1_python_app.png)
+![Python app](../../../images/toolkit/learning-resources/guides/installing_app/1_python_app.png)
 
 This will bring up the [information for the app](https://support.shotgunsoftware.com/hc/en-us/articles/219033108), which includes everything that’s needed for the little black book.
 
-![Python app info](../../../../images/toolkit/learning-resources/guides/installing_app/2_python_app_info.png)
+![Python app info](../../../images/toolkit/learning-resources/guides/installing_app/2_python_app_info.png)
 
 The **System Name** is the main identifier: `tk-multi-pythonconsole`. You will also need the **Latest Version:** v1.1.2.
 
@@ -69,7 +69,7 @@ The **System Name** is the main identifier: `tk-multi-pythonconsole`. You will a
 
 **Step 2:** Launch Maya and select the Shotgun Menu, **Shotgun > Project the_other_side** and you will see the list of apps that are available for that project in the Project environment.
 
-![List of apps](../../../../images/toolkit/learning-resources/guides/installing_app/3_list_of_apps.png)
+![List of apps](../../../images/toolkit/learning-resources/guides/installing_app/3_list_of_apps.png)
 
 ## Extend the configuration
 
@@ -83,35 +83,35 @@ Cloning a pipeline configuration automates the process of creating a copy, build
 
 **<a name=”step3”>Step 3</a>:** Open Shotgun and in the upper right, select the **Admin Menu (your avatar) > Default Layouts > Pipeline Configuration > Pipeline Configuration List**.
 
-![Pipeline configuration list](../../../../images/toolkit/learning-resources/guides/installing_app/4_REPLACE_pipeline_configuration_list.png)
+![Pipeline configuration list](../../../images/toolkit/learning-resources/guides/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
 This action displays a detailed list of all of your Shotgun site's pipeline configurations.
 
 **Step 4:** Once the Pipeline Configuration List is displayed, select the **+** sign on the far right of the column headers, and add the column **Projects**.
 
-![Add project column](../../../../images/toolkit/learning-resources/guides/installing_app/5_add_project_column.png)
+![Add project column](../../../images/toolkit/learning-resources/guides/installing_app/5_add_project_column.png)
 
 ### Review where the project’s configuration is located
 
 **Step 5:**  Additionally, add the the appropriate **Path** field for your operating system.
 
-![Path to_config](../../../../images/toolkit/learning-resources/guides/installing_app/6_path_to_config.png)
+![Path to_config](../../../images/toolkit/learning-resources/guides/installing_app/6_path_to_config.png)
 
 This displays the paths to the configuration files.
 
-![Path to config 2](../../../../images/toolkit/learning-resources/guides/installing_app/7_path_to_config2.png)
+![Path to config 2](../../../images/toolkit/learning-resources/guides/installing_app/7_path_to_config2.png)
 
 **Step 6:** **Right-click** in the empty space next to the **Primary** line item and select **Clone this Configuration…** in the context menu.
 
-![Clone_complete](../../../../images/toolkit/learning-resources/guides/installing_app/8_clone_complete.png)
+![Clone_complete](../../../images/toolkit/learning-resources/guides/installing_app/8_clone_complete.png)
 
 **Step 7:** Name the configuration in the Configuration List and name the file in the directory: "Primary Clone Config 2" and “the_other_side_clone2,” respectively. Select **OK**. 
 
-![Name clone](../../../../images/toolkit/learning-resources/guides/installing_app/9_name_clone.png)
+![Name clone](../../../images/toolkit/learning-resources/guides/installing_app/9_name_clone.png)
 
 Wait while Shotgun copies all of the files and folders in the configuration and creates a cache for the apps. Now would be an opportune time to use an app that makes you a light, fluffy, melt in your mouth croissant to go with that perfect shot of espresso.
 
-![Clone Complete](../../../../images/toolkit/learning-resources/guides/installing_app/10_clone_complete.png)
+![Clone Complete](../../../images/toolkit/learning-resources/guides/installing_app/10_clone_complete.png)
 
 When completed, the Configuration List will be updated with information about the cloned configuration and there will be a new configuration added to your local config folder.
 
@@ -121,7 +121,7 @@ When completed, the Configuration List will be updated with information about th
 
 **Step 8:** Open Shotgun Desktop and select the project you created the cloned configuration for. Select the **down arrow** in the upper right to display the configurations associated with this project and select the **Primary Clone Config 2** that you just created.
 
-![Select clone](../../../../images/toolkit/learning-resources/guides/installing_app/11_select_clone.png)
+![Select clone](../../../images/toolkit/learning-resources/guides/installing_app/11_select_clone.png)
 
 Shotgun Desktop is now using the cloned config for this project.
 
@@ -129,7 +129,7 @@ Shotgun Desktop is now using the cloned config for this project.
 
 **Step 9:** Find the cloned configuration on your file system, in the path you specified when you created it. View the `config/env/includes/app_locations.yml` file.
 
-![Clone app location](../../../../images/toolkit/learning-resources/guides/installing_app/12_clone_app_locations.png)
+![Clone app location](../../../images/toolkit/learning-resources/guides/installing_app/12_clone_app_locations.png)
 
 The `app_locations.yml` file is the Default Configuration’s little black book and the descriptors for apps are listed in this file. This file points to where the app is located and allows you to create settings for the app.
 
@@ -206,7 +206,7 @@ For this specific block in the Default Configuration, ‘tk-maya.project’ is t
 
 **Step 14:** In your cloned configuration, open `config/env/includes/settings/tk-maya.yml` in a text editor, and search for `settings.tk-maya.project`. 
 
-![tk-maya](../../../../images/toolkit/learning-resources/guides/installing_app/13_tk-maya.png)
+![tk-maya](../../../images/toolkit/learning-resources/guides/installing_app/13_tk-maya.png)
 
 Step 15: Add the location descriptor under 
 
@@ -242,7 +242,7 @@ There will be a blue bar with the name of the clone that you created under the n
 
 **NOTE:** If you’re using the primary, there will be no blue bar and the configuration name won’t be visible.
 
-![Maya cloned config](../../../../images/toolkit/learning-resources/guides/installing_app/14_maya_cloned_config.png)
+![Maya cloned config](../../../images/toolkit/learning-resources/guides/installing_app/14_maya_cloned_config.png)
 
 **Step 17:** Launch Maya from Desktop and select the menu **Shotgun > Project > …**
 
@@ -256,7 +256,7 @@ If:
 
 The Python Console app will be available in Maya.
 
-![Project ID](../../../../images/toolkit/learning-resources/guides/installing_app/16_project_ID.png)
+![Project ID](../../../images/toolkit/learning-resources/guides/installing_app/16_project_ID.png)
 
 ## Push the changes into production
 
@@ -310,7 +310,7 @@ There will be a list of the available pipeline configurations that the cloned co
 
 **NOTE:** You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in Shotgun that we viewed in **[Step 3](#step3):** of this guide. To find the project ID, go to the Configuration List and add the ID column.
 
-![ID column](../../../../images/toolkit/learning-resources/guides/installing_app/17_id_column.png)
+![ID column](../../../images/toolkit/learning-resources/guides/installing_app/17_id_column.png)
 
 After you enter the ID, Shotgun will:
 
@@ -334,11 +334,11 @@ Push Complete!
 
 **Step 19:** In Shotgun Desktop, click on the arrow in the upper right and choose **Primary** in the **CONFIGURATION** list.
 
-![Change config maya](../../../../images/toolkit/learning-resources/guides/installing_app/18_change_config_maya.png)
+![Change config maya](../../../images/toolkit/learning-resources/guides/installing_app/18_change_config_maya.png)
 
 **Step 20:** Launch Maya from Desktop and look in the menu **Shotgun > Project > …** to find the Shotgun Python Console...
 
-![App in Maya](../../../../images/toolkit/learning-resources/guides/installing_app/19_app_in_maya.png)
+![App in Maya](../../../images/toolkit/learning-resources/guides/installing_app/19_app_in_maya.png)
 
 The Python Console app was added to the Project environment for the chosen project. We discussed in the second guide, “[Editing a configuration](../toolkit_basics_guides/editing_app_setting.md), that each environment is independent, a project has a dedicated configuration, and the software integrations gather settings from the pipeline configuration when a project is loaded. For the Python Console to be available in an environment, that environment will need instructions to look in the `app_locations.yml` file for the location descriptor. Given this, at any point in the pipeline where you want the Python Console app to be available will need the settings that say, “use the Python Console app here.” 
 
@@ -354,7 +354,7 @@ Standard Toolkit apps and apps created by the loving Shotgun community are activ
 
 You may have noticed when we were selecting which configuration to use for the project, the Python Console App was available in the Shotgun Desktop dropdown. 
 
-![Desktop python console](../../../../images/toolkit/learning-resources/guides/installing_app/20_desktop_python_console.png)
+![Desktop python console](../../../images/toolkit/learning-resources/guides/installing_app/20_desktop_python_console.png)
 
 If there’s an environment that is using an app you want to add to your pipeline configuration, you can use a little detective work to find the information you need to add that app to your configuration. By looking in the configuration file in the environment where the app is being used, you can determine how to add the app location descriptor and setting.
 

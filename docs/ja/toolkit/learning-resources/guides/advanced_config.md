@@ -59,19 +59,19 @@ Shotgun Desktop の[Advanced Project Setup]ウィザードを使用すると、�
 
 **手順 1:** Shotgun で「the_other_side」という新しいプロジェクトを作成します。
 
-![新しいプロジェクト](../../../../images/toolkit/learning-resources/guides/advanced_config/2_new_project.png)
+![新しいプロジェクト](../../../images/toolkit/learning-resources/guides/advanced_config/2_new_project.png)
 
 **手順 2:** Shotgun Desktop アプリを起動し、ユーザ名およびパスワードを使用して Shotgun サイトからログインします。
 
-![ログイン](../../../../images/toolkit/learning-resources/guides/advanced_config/3_login.png)
+![ログイン](../../../images/toolkit/learning-resources/guides/advanced_config/3_login.png)
 
-![プロジェクトをロード](../../../../images/toolkit/learning-resources/guides/advanced_config/4_load_project.png)
+![プロジェクトをロード](../../../images/toolkit/learning-resources/guides/advanced_config/4_load_project.png)
 
 **手順 3:** サムネイル イメージを選択して、[Advanced Project Setup]ウィザードを実行するプロジェクトにナビゲートします。
 
 {% include info title="ヒント" content="Desktop を開いているときに新しいプロジェクトを作成した場合、新しいプロジェクトを表示するには、**プロジェクト** ウィンドウを更新しなければならないことがあります。デスクトップの右下にあるプロファイルの**アバター**を選択して、[Refresh Projects]を選択します。" %}
 
-![プロジェクトを最新の状態に更新](../../../../images/toolkit/learning-resources/guides/advanced_config/5_refresh_projects_list.png)
+![プロジェクトを最新の状態に更新](../../../images/toolkit/learning-resources/guides/advanced_config/5_refresh_projects_list.png)
 
 ## 高度な設定を作成する
 
@@ -79,19 +79,19 @@ Shotgun Desktop の[Advanced Project Setup]ウィザードを使用すると、�
 
 **手順 4:** プロジェクトがロードされたら、画面の右下にあるプロファイルの**アバター**を選択します。ポップアップメニューで、**[Advanced project setup...]**を選択して、ウィザードを開始します。
 
-![高度なプロジェクトを設定](../../../../images/toolkit/learning-resources/guides/advanced_config/6_advanced_project_setup.png)
+![高度なプロジェクトを設定](../../../images/toolkit/learning-resources/guides/advanced_config/6_advanced_project_setup.png)
 
 ダイアログ ボックスが開き、[Shotgun Default]が選択された状態で 4 つのオプションが表示されます。この時点で、プロジェクトのパイプライン設定のベースを既存のプロジェクトの設定にするのか、GIT リポジトリの設定にするのか、それともディスクのパスにするのかを選択できます。
 
 この演習では**[Shotgun Default]**を選択します。このオプションを使用すると、Shotgun の既定の設定に基づいてプロジェクトのパイプライン設定が作成されます。
 
-![設定を選択](../../../../images/toolkit/learning-resources/guides/advanced_config/7_select_config.png)
+![設定を選択](../../../images/toolkit/learning-resources/guides/advanced_config/7_select_config.png)
 
 **手順 5:** **[Continue]**を選択します。
 
 ダイアログ ボックスが開き、**[Default]**が選択された状態で 2 つのオプションが表示されます。この時点で、[Legacy Default]設定オプションを選択することができます。この設定は、まだ以前のバージョンの Shotgun を使用しているスタジオのために、以前のバージョンの Shotgun の設定を継承しています。この演習では[Default]を使用します。
 
-![設定を選択](../../../../images/toolkit/learning-resources/guides/advanced_config/8_select_config.png)
+![設定を選択](../../../images/toolkit/learning-resources/guides/advanced_config/8_select_config.png)
 
 **手順 6:** **[Continue]**を選択します。
 
@@ -99,25 +99,25 @@ Shotgun Desktop の[Advanced Project Setup]ウィザードを使用すると、�
 
 ダイアログ ボックスが開き、`Storage:` という単語の横にドロップダウン メニューが表示されます。
 
-![保存場所を定義](../../../../images/toolkit/learning-resources/guides/advanced_config/9_define_storage1.png)
+![保存場所を定義](../../../images/toolkit/learning-resources/guides/advanced_config/9_define_storage1.png)
 
 **手順 7:** このプロジェクトのプロジェクト データの保存場所を識別します。ダイアログ ボックスの上部にあるドロップダウンで**[+ New]**を選択し、フィールドに「**projects**」と入力します。
 
-![保存場所を定義](../../../../images/toolkit/learning-resources/guides/advanced_config/10_define_storage2.png)
+![保存場所を定義](../../../images/toolkit/learning-resources/guides/advanced_config/10_define_storage2.png)
 
 Shotgun Toolkit では、Linux、Mac、Windows の 3 つのオペレーティング システムをサポートしています。
 
 **手順 8:** プロジェクト データを保存するのに利用するオペレーティング システムの横にあるフィールドを選択します。フォルダ アイコンを選択し、この演習の前にファイルシステム上に作成したプロジェクト フォルダにナビゲートします。
 
-![ストレージのルート フォルダ](../../../../images/toolkit/learning-resources/guides/advanced_config/11_storage_root_folder.png)
+![ストレージのルート フォルダ](../../../images/toolkit/learning-resources/guides/advanced_config/11_storage_root_folder.png)
 
 この設定の場合、Shotgun からアクセスできるのは、プロダクション データを保存するために識別されたフォルダに限定されます。この演習の準備中に、Shotgun のルート ディレクトリ内に `projects/` ディレクトリを追加しました。`projects/` ディレクトリには、プロジェクトに関連するローカルな情報が格納されます。
 
-![保存場所を定義](../../../../images/toolkit/learning-resources/guides/advanced_config/12_define_Storage3.png)
+![保存場所を定義](../../../images/toolkit/learning-resources/guides/advanced_config/12_define_Storage3.png)
 
 **手順 9:** **[Save]**を選択して、プロジェクト データの保存先としてプロジェクト フォルダを識別します。
 
-![保存場所を定義](../../../../images/toolkit/learning-resources/guides/advanced_config/13_define_storage4.png)
+![保存場所を定義](../../../images/toolkit/learning-resources/guides/advanced_config/13_define_storage4.png)
 
 オペレーティング システムのパスが自動的に更新されて、プロジェクト データの保存場所が識別されます。
 
@@ -127,21 +127,21 @@ Shotgun Toolkit では、Linux、Mac、Windows の 3 つのオペレーティン
 
 ダイアログ ボックスが表示され、プロジェクトの名前がテキスト フィールドに入力されます。この名前はプロジェクトの情報から自動的に入力され、パスは自動的に更新されます。
 
-![プロジェクト フォルダ](../../../../images/toolkit/learning-resources/guides/advanced_config/14_project_folder_name.png)
+![プロジェクト フォルダ](../../../images/toolkit/learning-resources/guides/advanced_config/14_project_folder_name.png)
 
 Toolkit は、2 つのいずれかの設定で機能します。パイプライン設定が Shotgun にアップロードされ、ユーザごとにローカルにキャッシュされる分散設定(Distributed Setup)と、ディスク上の共有場所に保管された単一の設定にユーザがアクセスする中央設定(Centralized Setup)です。この演習では分散設定を使用します。分散設定の詳細については、[こちら](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)を参照してください。
 
 最後の手順では、該当するフォルダ、ファイル、およびプロジェクトに固有の設定を作成するために必要なデータを生成します。
 
-![中央に保存](../../../../images/toolkit/learning-resources/guides/advanced_config/15_centralized_storage.png)
+![中央に保存](../../../images/toolkit/learning-resources/guides/advanced_config/15_centralized_storage.png)
 
 **手順 11:** 該当するオペレーティング システムの**[Browse...]**を選択し、この演習の準備中に作成した設定フォルダ `configs` にナビゲートして、プロジェクト名として「**the_other_side**」と入力します。プロジェクト設定が保存されるフォルダが作成されます。**[Run Setup]**を選択して、セットアップが完了するまで待ちます。
 
-![プロジェクトの設定](../../../../images/toolkit/learning-resources/guides/advanced_config/16_project_setup_config.png)
+![プロジェクトの設定](../../../images/toolkit/learning-resources/guides/advanced_config/16_project_setup_config.png)
 
 **手順 12:** **[Done]**を選択します。プロジェクト ウィンドウに入力するアイコンが表示されます。
 
-![セットアップ完了](../../../../images/toolkit/learning-resources/guides/advanced_config/17_project_setup_complete.png)
+![セットアップ完了](../../../images/toolkit/learning-resources/guides/advanced_config/17_project_setup_complete.png)
 
 ヒント: アプリをメニュー バーに固定すると、Shotgun Desktop にすばやくアクセスできるようになります。**アバター**を選択して、**[Pin to Menu]**を選択します。
 
@@ -149,7 +149,7 @@ Toolkit は、2 つのいずれかの設定で機能します。パイプライ�
 
 `configs` フォルダを調べると、いくつかのフォルダとファイルが配置されています。内容を調べてみましょう。
 
-![[環境設定]](../../../../images/toolkit/learning-resources/guides/advanced_config/18_config.png)
+![[環境設定]](../../../images/toolkit/learning-resources/guides/advanced_config/18_config.png)
 
 ここからの作業は、設定で実行できるすべての操作について楽しみながら学習することができます。次に、これから調べる高度なトピックをいくつか示します。
 

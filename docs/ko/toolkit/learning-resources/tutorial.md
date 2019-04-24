@@ -13,7 +13,7 @@ lang: ko
 
 다음은 이 튜토리얼에서 빌드할 파이프라인의 개략적인 뷰입니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_0.png" caption="파이프라인 개요" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_0.png" caption="파이프라인 개요" %}
 
 ## 파이프라인 개요
 
@@ -63,11 +63,11 @@ lang: ko
 
 다음은 구성된 프로젝트 엔티티가 Shotgun에서 어떻게 표시되는지 보여 주는 일부 스크린샷입니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_1.png" caption="주전자 및 테이블 에셋" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_1.png" caption="주전자 및 테이블 에셋" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_2.png" caption="시퀀스에 링크된 샷" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_2.png" caption="시퀀스에 링크된 샷" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_3.png" caption="태스크" width="400px" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_3.png" caption="태스크" width="400px" %}
 
 ## 소프트웨어 시작 관리자
 
@@ -75,7 +75,7 @@ lang: ko
 
 응용프로그램이 데스크톱에 표시되지 않거나 예상한 버전이 시작되지 않을 경우 소프트웨어 엔티티를 통해 Shotgun에서의 시작을 수동으로 구성해야 할 수 있습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_4.png" caption="Shotgun에 정의된 기본 소프트웨어 엔티티" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_4.png" caption="Shotgun에 정의된 기본 소프트웨어 엔티티" %}
 
 소프트웨어 엔티티는 프로덕션에 사용할 DCC 패키지를 구동하는 데 사용됩니다. 기본적으로 통합은 표준 설치 위치에서 이러한 패키지를 검색하고 데스크톱을 통해 시작할 수 있도록 합니다. 둘 이상의 버전을 설치하거나 표준 위치가 아닌 곳에 설치한 경우 아티스트의 시작 환경을 조정하기 위해 Shotgun의 해당 소프트웨어 엔티티 항목을 업데이트해야 할 수도 있습니다.
 
@@ -91,17 +91,17 @@ lang: ko
 
 Shotgun 데스크톱(데스크톱)을 사용하여 프로젝트의 구성을 인계받습니다. 데스크톱 내에서 마우스 오른쪽 버튼을 클릭하거나 오른쪽 하단의 사용자 아이콘을 클릭하면 팝업 메뉴가 표시됩니다. **고급 프로젝트 설정...(Advanced project setup…)** 옵션을 선택하고 마법사를 수행하여 프로젝트 구성을 로컬로 설치합니다. 아래 이미지는 필요한 단계를 보여 줍니다. 통합 관리자 안내서에 설명된 [파이프라인 구성 가져오기](https://support.shotgunsoftware.com/hc/ko/articles/115000067493-Integrations-Admin-Guide#Taking%20over%20a%20Pipeline%20Configuration) 단계를 수행할 수도 있습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_5.png" caption="데스크톱 팝업 메뉴에서 **고급 프로젝트 설정…**(Advanced project setup…)을 선택합니다." %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_5.png" caption="데스크톱 팝업 메뉴에서 **고급 프로젝트 설정…**(Advanced project setup…)을 선택합니다." %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_6.png" caption="**Shotgun 기본값** 구성 유형을 선택합니다." %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_6.png" caption="**Shotgun 기본값** 구성 유형을 선택합니다." %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_7.png" caption="**기본값 구성**(Default configuration)을 선택합니다." %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_7.png" caption="**기본값 구성**(Default configuration)을 선택합니다." %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_8.png" caption="프로젝트의 파일을 저장할 폴더 이름을 입력합니다." %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_8.png" caption="프로젝트의 파일을 저장할 폴더 이름을 입력합니다." %}
 
 이번에 처음으로 Shotgun 프로젝트를 설정하는 경우 프로젝트 데이터의 저장소 위치를 정의하라는 메시지가 표시될 수도 있습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_9.png" caption="현재 운영 체제에 대해 선택하는 구성 경로를 기록합니다." %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_9.png" caption="현재 운영 체제에 대해 선택하는 구성 경로를 기록합니다." %}
 
 위 화면에서 선택하는 폴더가 구성이 설치될 위치입니다. 이 튜토리얼에서는 이 폴더의 구성 컨텐츠를 살펴보고 수정합니다.
 
@@ -109,7 +109,7 @@ Shotgun 데스크톱(데스크톱)을 사용하여 프로젝트의 구성을 인
 
 데스크톱 설치 튜토리얼에서 지정한 구성 위치는 Shotgun에서 해당 프로젝트에 대한 파이프라인 구성(Pipeline Configurations) 페이지에 기록됩니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_10.png" caption="Shotgun의 파이프라인 구성 엔티티" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_10.png" caption="Shotgun의 파이프라인 구성 엔티티" %}
 
 다음 섹션을 위한 준비로 이 폴더의 컨텐츠를 숙지합니다.
 
@@ -117,7 +117,7 @@ Shotgun 데스크톱(데스크톱)을 사용하여 프로젝트의 구성을 인
 
 간단한 파이프라인 빌드 프로세스를 시작하기 전에 파이프라인 구성 편성 및 작동 방식을 이해해야 합니다. 다음 그래프에서 구성의 주요 구성 요소 및 해당 용도를 중점적으로 설명합니다. 구성 및 관리에 대한 자세한 정보는 [툴킷 관리](https://support.shotgunsoftware.com/hc/ko/articles/219033178-Administering-Toolkit) 문서를 참조하십시오.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_11.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_11.png" %}
 
 ### 프로젝트 스키마
 
@@ -137,7 +137,7 @@ Shotgun 데스크톱(데스크톱)을 사용하여 프로젝트의 구성을 인
 
 2. 구성의 최상위 수준 **`hooks`** 디렉토리에 **후크를 복사하고** 필요한 경우 이름을 바꿉니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_12.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_12.png" %}
 
 파일이 구성의 **`hooks`** 폴더에 있기만 하면 코드를 변경하고 커스터마이즈할 수 있습니다. 해당 앱을 이 새 위치로 지정하려면 추가 단계가 필요합니다. 이 단계는 튜토리얼의 후반부에 나옵니다.
 
@@ -159,7 +159,7 @@ Maya가 완전히 로드되면 파일 열기(File Open) 대화상자가 나타�
 
 에셋(Assets) 탭을 선택하고 주전자의 모델링 태스크로 드릴다운합니다. 이 태스크에 대한 아티스트 작업 파일이 아직 없으므로 **+ 새 파일(+ New File)** 버튼을 클릭합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_13.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_13.png" %}
 
 이 버튼을 클릭하여 비어 있는 새 Maya 세션을 만들고 현재 작업 중인 컨텍스트를 주전자 에셋의 모델 태스크로 설정합니다.
 
@@ -167,11 +167,11 @@ Maya가 완전히 로드되면 파일 열기(File Open) 대화상자가 나타�
 
 다음으로, 주전자를 모델링하거나 제공된 주전자를 [다운로드](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj)하여 가져옵니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_14.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_14.png" %}
 
 주전자 모델이 만족스러우면 **Shotgun > 파일 저장...(File Save…)** 메뉴 액션을 선택합니다. 이 대화상자에 지정된 이름, 버전 및 유형으로 파일을 저장할지 묻는 메시지가 표시됩니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_15.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_15.png" %}
 
 대화상자에 전체 저장 경로를 지정하라는 메시지는 표시되지 않는데 이는 앱이 **`maya_asset_work`** 템플릿으로 저장하도록 구성되었기 때문입니다. 이 템플릿은 기본적으로 다음과 같이 정의됩니다.
 
@@ -191,17 +191,17 @@ Maya가 완전히 로드되면 파일 열기(File Open) 대화상자가 나타�
 
 다음 단계는 주전자를 약간 변경하는 것입니다. 뚜껑 지오메트리가 나중에 리깅할 수 있도록 모델의 나머지 부분과 분리되는지 확인합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_16.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_16.png" %}
 
 작업이 만족스러우면 **Shotgun > 파일 저장...(File Save…)** 메뉴 액션을 다시 실행합니다. 이번 대화상자에서는 기본적으로 버전 번호가 2로 설정됩니다. 파일 버전 자동 증분을 사용하면 아티스트가 수행한 전체 작업 내역을 관리할 수 있습니다. 저장(Save) 버튼을 클릭합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_17.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_17.png" %}
 
 주전자 모델을 버전 2로 저장하고 나면 튜토리얼의 이번 섹션에서 마지막 단계를 진행할 준비가 된 것입니다.
 
 이제 주전자 모델이 준비되면 서페이스 처리 및 리깅할 수 있도록 게시해야 합니다. 게시하려면 **Shotgun > 게시...(Publish…)** 메뉴 액션을 클릭합니다. Publish 앱 대화상자가 표시됩니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_18.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_18.png" %}
 
 대화상자에 게시될 항목의 트리가 표시됩니다. 트리에서 일부는 게시할 항목을 나타내고 일부는 게시 작업 중 수행할 액션을 나타냅니다.
 
@@ -211,7 +211,7 @@ Maya가 완전히 로드되면 파일 열기(File Open) 대화상자가 나타�
 
 준비가 되었으면 오른쪽 하단에 있는**게시(Publish)** 버튼을 클릭하여 현재 작업 파일과 주전자 지오메트리를 게시합니다. 완료되면 Shotgun에서 주전자 에셋을 검색하여 게시가 성공적으로 완료되었는지 확인할 수 있습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_19.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_19.png" %}
 
 위 이미지에서 주전자 모델이 포함되어 있는 게시된 Alembic 파일을 볼 수 있습니다. Maya 세션 파일에 대한 게시도 볼 수 있습니다. 이러한 게시는 Publish 앱의 트리 뷰에 있는 항목에 해당됩니다.
 
@@ -235,7 +235,7 @@ File Save 대화상자와 달리, 게시할 때는 이름, 버전 또는 파일 
 
 축하합니다! 주전자의 첫 번째 게시된 반복을 성공적으로 만들었습니다. 학습한 내용을 활용하여 테이블 소품의 모델링 태스크에서 테이블 모델을 게시할 수 있는지 확인합니다. 결과는 다음과 같아야 합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_20.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_20.png" %}
 
 다음 단계는 서페이스 처리 워크플로우입니다.
 
@@ -245,25 +245,25 @@ File Save 대화상자와 달리, 게시할 때는 이름, 버전 또는 파일 
 
 데스크톱에서 Maya를 실행하여 시작합니다. 이전 섹션의 작업 후에 계속 Maya가 열려 있는 경우 Maya를 다시 시작할 필요가 없습니다. Maya가 열려 있으면 **Shotgun > 파일 열기...(File Open…)** 메뉴 항목을 사용하여 Workfiles 앱을 엽니다. 모델링 섹션에서와 마찬가지로 에셋(Assets) 탭을 사용하여 주전자 에셋의 태스크로 드릴다운합니다. 이때 서페이스 처리 태스크를 선택하고 **+ 새 파일(+ New File)**을 클릭합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_21.png" width="450px" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_21.png" width="450px" %}
 
 이제 주전자의 서페이스 처리 태스크에서 작업하게 됩니다. 올바른 프로덕션 컨텍스트에 있는지 쉽게 확인하는 방법은 Shotgun 메뉴의 첫 번째 항목을 확인하는 것입니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_22.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_22.png" %}
 
 다음으로 주전자 모델을 새 서페이스 처리 작업 파일로 로드해야 합니다. 이렇게 하려면 Maya의 **Shotgun > 로드...(Load…)** 메뉴 항목을 통해 Loader 앱을 시작합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_23.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_23.png" %}
 
 Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 파일을 여는 대신 게시된 파일을 검색하여 로드합니다.
 
 에셋(Assets) 탭에서 주전자 캐릭터를 찾아 이전 섹션에서 만든 주전자 게시를 표시합니다. Maya 씬 및 Alembic 캐시 게시를 볼 수 있습니다. Alembic 캐시 게시를 선택하면 대화상자 오른쪽에 상세 정보가 표시됩니다. 그런 다음 Alembic 캐시 게시의 액션(Actions) 메뉴에서 **참조 만들기(Create Reference)** 항목을 클릭합니다. 기본적으로 추가 액션을 수행할 수 있게 로더가 계속 열려 있지만 로더를 닫고 계속 진행할 수 있습니다. 모델링 태스크에서 주전자 게시를 가리키는 참조가 생성된 것을 Maya에서 볼 수 있습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_24.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_24.png" %}
 
 다음으로, 주전자에 간단한 절차 셰이더를 추가합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_25.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_25.png" %}
 
 파이프라인을 빌드할 때 셰이더 관리는 시간이 오래 걸리는 복잡한 태스크일 수 있습니다. 이는 특히 스튜디오에만 해당되는 경우가 많습니다. 왜냐하면 제공되는 Maya 통합에서 셰이더 또는 텍스처 관리 기본 기능을 처리하지 않기 때문입니다.
 
@@ -284,7 +284,7 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 이 파일은 모든 아티스트 환경 내에서 Publish 앱이 사용되는 방법을 정의합니다. 파일을 열고 **Maya** 섹션, 특히 **에셋 단계**에 대한 구성을 검색합니다. 다음과 같이 표시됩니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_26.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_26.png" %}
 
 컬렉터 설정은 게시자의 컬렉션 로직이 존재하는 후크를 정의합니다. 기본적으로 이 값은 다음과 같습니다.
 
@@ -296,7 +296,7 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 **구성** 섹션에서 후크를 인계받는 방법을 배웠습니다. 구성에 Maya 엔진의 컬렉터 후크를 인계받아 커스터마이제이션 프로세스를 시작합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_27.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_27.png" %}
 
 위의 이미지는 이 작업을 수행하는 방법을 보여 줍니다. 먼저 프로젝트 구성의 **hooks** 폴더에 폴더 구조를 만듭니다. 나중에 다른 DCC에 대해 동일한 후크를 재지정할 수 있으므로 이렇게 하면 컬렉터 플러그인에 약간의 네임스페이스를 제공합니다. 다음으로, install 폴더에서 Maya 엔진의 컬렉터 후크를 새 후크 폴더 구조로 복사합니다. 이제 구성에 다음 경로를 가진 Maya 컬렉터 사본이 생겼습니다.
 
@@ -413,7 +413,7 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 이제 구성은 다음과 같습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_28.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_28.png" %}
 
 마지막으로, 구성에 새 **`maya_shader_network_publish`** 템플릿을 정의해야 합니다. 다음 파일을 편집하여 추가합니다.
 
@@ -421,7 +421,7 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 에셋 관련 Maya 템플릿이 정의된 섹션을 찾아 새 템플릿 정의를 추가합니다. 정의는 다음과 같습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_29.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_29.png" %}
 
 모든 것이 정의되었습니다. 셰이더를 게시할 메쉬를 찾기 위해 Publish 앱의 컬렉터 후크를 재지정했습니다. 수집한 셰이더 항목에 연결할 새 게시 플러그인을 구현하고 디스크에 셰이더 네트워크를 작성할 새 게시 템플릿을 정의하고 구성했습니다.
 
@@ -431,28 +431,28 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 커스터마이제이션을 시도하려면 Maya 세션에서 통합을 다시 로드해야 합니다. 이렇게 하려면 **Shotgun > [태스크 이름(Task Name)] > 작업 영역 정보...(Work Area Info…)** 메뉴 액션을 클릭합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_30.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_30.png" %}
 
 현재 컨텍스트에 대한 정보를 제공하는 Work Area Info 앱이 시작됩니다. 구성을 변경할 때 통합을 다시 로드할 수 있는 유용한 버튼도 있습니다. 버튼을 클릭하여 앱 및 엔진을 다시 로드한 다음 대화상자를 닫습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_31.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_31.png" %}
 
 ### 셰이더 네트워크 게시
 
 이제 프로젝트 구성 변경 결과를 보겠습니다. Shotgun 메뉴에서 Publish 앱을 시작합니다. 다음과 같이 **Publish Shaders** 플러그인이 연결된 수집된 주전자 메쉬 항목이 표시됩니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_32.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_32.png" %}
 
 작업 설명을 입력하고 게시된 파일과 연결할 서페이스 처리된 주전자의 썸네일을 캡처합니다. 마지막으로, 게시(Publish)를 클릭하여 주전자 셰이더를 디스크로 내보내고 파일을 Shotgun의 게시로 등록합니다. 완료되면 세션 게시 플러그인이 자동으로 작업 파일을 다음 사용 가능한 버전으로 저장했는지 확인합니다. 지금까지가 Shotgun 통합에서 지원되는 모든 DCC 내의 기본 동작입니다.
 
 
 이제 Shotgun에서 주전자 에셋을 검색하여 모두 예상대로 작동되는지 확인할 수 있습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_33.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_33.png" %}
 
 축하합니다! 성공적으로 파이프라인을 커스터마이즈하고 주전자에 대한 셰이더를 게시했습니다. 학습한 내용을 활용하여 테이블 소품의 서페이스 처리 태스크에서 셰이더를 게시할 수 있는지 확인합니다. 결과는 다음과 같아야 합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_34.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_34.png" %}
 
 다음 단계는 리깅 워크플로우입니다.
 
@@ -472,15 +472,15 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 Shotgun에 다음과 같이 나타납니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_35.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_35.png" %}
 
 다음으로, 아티스트가 해당 워크플로우에서 업스트림 변경을 처리하는 방법을 알아보겠습니다. 모델링 작업 파일을 열고 주전자 모델을 약간 변경합니다. 그런 다음 업데이트된 작업을 게시합니다. 결과는 다음과 같습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_36.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_36.png" %}
 
 주전자의 리깅 단계에서 작업 파일을 다시 엽니다(**Shotgun > 파일 열기...(File Open…)**). 이제 **Shotgun > 씬 분할...(Scene Breakdown…)** 메뉴 액션을 시작합니다. 작업 파일에 참조한 모든 업스트림 게시를 보여 주는 Breakdown 앱이 시작됩니다. 이 경우 업스트림 주전자 모델만 있습니다. 다음과 같이 표시됩니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_37.png" width="400px" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_37.png" width="400px" %}
 
 앱은 각 참조에 대해 두 개의 표시기 중 하나를 표시합니다. 초록색 체크 표시는 참조된 게시가 최신 버전임을 나타내고 빨간색 "x"는 사용 가능한 최신 게시물이 있음을 나타냅니다. 이 경우에는 사용 가능한 최신 게시물이 있음을 확인할 수 있습니다.
 
@@ -488,7 +488,7 @@ Shotgun에 다음과 같이 나타납니다.
 
 앱에서 Maya 참조가 주전자 Alembic 캐시의 최신 반복으로 업데이트됩니다. 이제 파일에 새 모델이 표시됩니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_40.png" width="400px" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_40.png" width="400px" %}
 
 새 모델에 고려해야 하는 리깅 설정을 조정한 다음 변경 사항을 게시합니다.
 
@@ -510,7 +510,7 @@ Shotgun에 다음과 같이 나타납니다.
 
 이제 테이블에 주전자가 있는 간단한 씬을 실행합니다. 씬에 **camMain**이라는 카메라를 추가하고 몇 프레임에 애니메이션을 적용하여 샷의 카메라 이동을 만듭니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_41.gif" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_41.gif" %}
 
 샷 레이아웃이 만족스러우면 **Shotgun > 파일 저장...(File Save…)** 메뉴 액션을 통해 파일을 저장합니다. 이때 계속 진행하여 게시하면 게시할 수 있는 항목으로 전체 Maya 세션만 표시됩니다.
 
@@ -520,7 +520,7 @@ Shotgun에 다음과 같이 나타납니다.
 
 셰이더 게시에서와 같이 첫 번째 단계는 컬렉터 후크를 커스터마이즈하는 것입니다. 이미 Maya에 대한 컬렉터 후크를 인계받고 에셋 단계에 구성했습니다. 이제 샷 파이프라인 단계에 대한 구성을 업데이트해야 합니다. 이렇게 하려면 게시자의 구성 파일을 수정하고 Maya 샷 단계 컬렉터 설정을 편집합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_42.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_42.png" %}
 
 이제 샷 컨텍스트 내의 태스크에서 작업할 때 커스텀 컬렉터 로직이 실행됩니다. 다음 단계에서는 커스텀 카메라 컬렉션 로직을 추가합니다.
 
@@ -598,23 +598,23 @@ Shotgun에 다음과 같이 나타납니다.
 
 이제 구성은 다음과 같습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_43.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_43.png" %}
 
 새 플러그인의 **`settings`** 메서드에서 정의한 대로 파일에 추가된 두 개의 설정을 확인할 수 있습니다. 셰이더 플러그인과 마찬가지로 카메라 파일이 작성될 위치를 정의하는 **게시 템플릿(Publish Template)** 설정이 있습니다. 카메라 설정은 플러그인이 작동해야 할 카메라를 구동하는 카메라 문자열의 목록입니다. 즉, 일부 유형의 카메라 명명 규칙이 있고 이 설정을 사용하면 사용자가 규칙과 일치하지 않는 카메라의 항목을 게시할 수 없습니다. 위의 이미지에서는 **`camMain`** 카메라만 게시할 수 있도록 제공됩니다. 추가한 플러그인의 구현은 **`cam*`** 같이 와일드카드 패턴으로도 작동합니다.
 
 변경 사항을 테스트하기 전 마지막 단계는 새 카메라 게시 템플릿에 대한 정의를 추가하는 것입니다. **`config/core/templates.yml`** 파일을 편집하고 Maya 샷 템플릿 섹션에 템플릿 정의를 추가합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_44.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_44.png" %}
 
 이제 새 플러그인을 사용하여 카메라를 게시할 수 있습니다. **Work Area Info** 앱을 사용하여 통합을 다시 로드한 다음 게시자를 시작합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_45.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_45.png" %}
 
 이미지에서 볼 수 있듯이, 새 카메라 항목이 수집되고 게시 플러그인이 연결됩니다. 계속 진행하여 **게시(Publish)**를 클릭하여 디스크에 카메라를 작성하고 Shotgun에 등록합니다.
 
 Shotgun에 다음과 같이 나타납니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_46.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_46.png" %}
 
 이제 완료되었습니다. 다음 단계는 애니메이션입니다.
 
@@ -646,17 +646,17 @@ Maya에 대해 앱이 구성된 섹션을 찾고 **`action_mappings`** 설정의
 
 이제 앱 설정은 다음과 같습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_47.png" width="400px" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_47.png" width="400px" %}
 
 이제 **Work Area Info** 앱을 통해 통합을 다시 로드하고 새 설정을 선택한 다음 레이아웃에서 게시된 카메라를 찾습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_48.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_48.png" %}
 
 새 게시 유형별로 필터링한 다음 카메라에 대한 참조를 만듭니다. 로더를 닫고 새 참조 카메라를 사용하여 이전 섹션에서 만든 카메라 모션을 다시 재생할 수 있습니다.
 
 다음으로, 주전자 모델이 무언가를 수행하는 애니메이션을 적용합니다(간단하게 유지).
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_49.gif" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_49.gif" %}
 
 애니메이션이 만족스러우면 이전 섹션에서와 같이 작업 파일을 저장하고 게시합니다.
 
@@ -680,7 +680,7 @@ Maya에 대해 앱이 구성된 섹션을 찾고 **`action_mappings`** 설정의
 
 서페이스 처리 단계에서 게시한 셰이더를 로드하려면 이전 섹션에서 언급한 **`tk-maya-actions.py`** 후크를 인계받아야 합니다. 해당 후크를 설치 위치에서 구성으로 복사합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_50.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_50.png" %}
 
 이 후크는 지정된 게시에 대해 수행할 수 있는 액션 목록 생성을 담당합니다. Loader 앱은 제공된 통합에서 지원되는 각 DCC에 대해 이 후크와 다른 버전을 정의합니다.
 
@@ -739,37 +739,37 @@ Maya에 대해 앱이 구성된 섹션을 찾고 **`action_mappings`** 설정의
 
 또한 Maya 셰이더 네트워크 게시 유형을 참조 액션과 연결합니다. 이제 로더 설정은 다음과 같습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_51.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_51.png" %}
 
 이제 **Work Area Info** 앱을 통해 통합을 다시 로드하여 새 설정을 선택한 다음 서페이스 처리에서 게시된 셰이더를 검색합니다.
 
 주전자 셰이더 네트워크 게시에 대한 참조를 만듭니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_52.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_52.png" %}
 
 이제 테이블 셰이더 네트워크를 로드합니다. Maya에서 하드웨어 렌더링을 켜면 셰이더가 애니메이션 단계에서 자동으로 메쉬 참조에 연결해야 합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_53.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_53.png" %}
 
 이제 씬에 약간의 조명을 추가합니다(간단하게 유지).
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_54.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_54.png" %}
 
 ### Maya 렌더 게시
 
 디스크에 샷을 렌더링합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_54_5.gif" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_54_5.gif" %}
 
 {% include info title="참고" content="여기에서 볼 수 있듯이 주전자 및 테이블 에셋 둘 다 서페이스 처리에 문제가 있습니다. 이 튜토리얼에서는 의도된 예술적 선택이었다고 가정합니다. 이러한 문제를 해결하려면 언제든지 이러한 에셋의 서페이스 처리 작업 파일을 로드하고 셰이더를 조정하여 다시 게시할 수 있습니다. 이 경우, 조명 작업 파일의 참조를 업데이트하고 다시 렌더링해야 합니다. 단계를 진행하면 참조를 다시 로드한 후 Breakdown 앱이 업데이트된 셰이더를 다시 연결하지 않는다는 사실을 알 수 있습니다. 셰이더 참조를 연결하도록 로더를 수정한 경험을 기반으로 필요한 로직을 추가하도록 Breakdown 앱의 씬 작업 후크를 업데이트할 수 있어야 합니다. 힌트: [이 파일](https://github.com/shotgunsoftware/tk-multi-breakdown/blob/master/hooks/tk-maya_scene_operations.py#L69)의 업데이트 메서드를 참조하십시오." %}
 
 제공된 Shotgun 통합은 파일에 정의된 렌더 레이어를 확인하여 이미지 시퀀스를 수집합니다. 렌더가 완료되면 게시자를 시작합니다. 렌더링된 시퀀스가 트리의 항목으로 표시됩니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_55.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_55.png" %}
 
 계속 진행하여 세션 및 렌더링된 이미지 파일 시퀀스를 게시합니다. Shotgun에 다음과 같이 나타납니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_56.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_56.png" %}
 
 다음 단계는 합성입니다.
 
@@ -786,39 +786,39 @@ Maya에 대해 앱이 구성된 섹션을 찾고 **`action_mappings`** 설정의
 
 Loader 앱을 통해 이전 섹션에서 렌더링 및 게시된 이미지 시퀀스를 로드합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_57.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_57.png" %}
 
 **`Image`** 및 **`Rendered Image`** 게시 유형(유형은 파일 확장자에 따라 다름)에 정의된 액션은 **읽기 노드 만들기(Create Read Node)**입니다. 이 액션을 클릭하여 Nuke 세션에 새 **`Read`** 노드를 만듭니다.
 
 Nuke 프로젝트 설정 출력 형식이 렌더링된 이미지와 일치하는지 확인합니다. 배경으로 사용할 균일 색상을 만들고 읽기 노드와 병합합니다. 합성을 볼 뷰어를 연결합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_58.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_58.png" %}
 
 합성에 만족하면 **Shotgun > 파일 저장...(File Save…)** 메뉴 액션을 사용하여 작업 파일을 저장합니다.
 
 다음으로, Nuke의 왼쪽 메뉴에 있는 Shotgun 로고를 클릭합니다. 해당 메뉴에서 Shotgun 인식 쓰기 노드 중 하나를 클릭합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_59.png" width="400px" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_59.png" width="400px" %}
 
 Shotgun Write Node 앱에서는 기본 제공 Nuke Write node의 맨 위에 현재 Shotgun 컨텍스트를 기반으로 출력 경로를 자동으로 평가하는 레이어를 제공합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_60.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_60.png" %}
 
 디스크로 이미지 프레임을 렌더링합니다. 이제 Nuke 세션을 게시하여 렌더링된 이미지와 작업 파일을 연결할 수 있습니다. 기본적으로 게시자는 렌더링된 프레임을 수집하고 플러그인을 연결하여 Shotgun으로 프레임을 등록합니다. 두 번째 플러그인은 백그라운드에서 실행되는 리뷰 제출이라는 통합 방식으로 리뷰할 프레임을 업로드합니다. 이 앱은 Nuke를 사용하여 업로드되어 리뷰에 사용할 수 있는 Quicktime을 생성합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_61.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_61.png" %}
 
 또 다른 유용한 통합은 Quick Review 앱입니다. 이 앱은 Quicktime을 빠르게 생성하고 리뷰를 위해 Shotgun에 업로드하는 출력 노드입니다. 이 앱은 Shotgun Write Node 옆의 왼쪽 메뉴에서 찾을 수 있습니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_62.png" width="400px" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_62.png" width="400px" %}
 
 빠른 리뷰 노드를 만든 다음 Upload 버튼을 클릭하여 디스크로 입력을 렌더링하고 Quicktime을 생성하고 리뷰를 위해 결과를 Shotgun에 업로드합니다. 프레임을 제출하기 전에 몇 가지 표준 옵션이 제공됩니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_63.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_63.png" %}
 
 업로드된 Quicktime을 모두 보려면 Shotgun의 미디어(Media) 탭을 확인합니다.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_64.png" %}
+{% include figure src="../../images/toolkit/learning-resources/tutorial/image_64.png" %}
 
 Shotgun의 미디어 리뷰에 대한 자세한 정보는 [공식 설명서](https://support.shotgunsoftware.com/hc/ko/sections/204245448-Review-and-approval)를 참조하십시오.
 
