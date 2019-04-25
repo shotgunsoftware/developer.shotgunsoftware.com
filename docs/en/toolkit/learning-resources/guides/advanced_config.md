@@ -27,6 +27,18 @@ To use this guide and create a customizable configuration for your project, the 
 2. [Shotgun Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) installed on your system. 
 3. Access to a filesystem where you can store project files and a pipeline configuration. On the filesystem, create a folder called `Shotgun`, with two folders, `projects` and `configs`, within it.
 
+### Additional Resources
+
+* [Shotgun Support Site](https://support.shotgunsoftware.com)
+
+* [Shotgun Integrations](https://www.shotgunsoftware.com/integrations/)
+
+    * [User Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574)
+
+    * [Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493)
+
+    * [Developer Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067513)
+    
 ## About the Advanced Project Setup Wizard
 
 The Advanced Project Setup Wizard in Shotgun Desktop generates a pipeline configuration based on the Default Configuration. The Default Configuration provides a solid base to build on, complete with customizable settings, apps, and UI elements that support the pipeline process. It creates a configuration you can edit and extend to meet your project’s pipeline needs.
