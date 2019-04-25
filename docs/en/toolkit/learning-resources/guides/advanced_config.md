@@ -19,12 +19,12 @@ This guide assumes the user:
 2. Has some basic knowledge of how to use Shotgun
 3. Is new to Shotgun Toolkit
 
-### Using this document
+### Prerequisites
  
 To use this guide and create a customizable configuration for your project, the following is required:
 
-1. An active Shotgun site. You can [register for Shotgun here](https://www.shotgunsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) and get a 30-day trial to begin exploring. 
-2. Shotgun Desktop. If Desktop is not installed, you can [begin by following this link.]( https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) 
+1. An active [Shotgun](https://www.shotgunsoftware.com/signup/) site. 
+2. [Shotgun Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) installed on your system. 
 3. Access to a filesystem where you can store project files and a pipeline configuration. On the filesystem, create a folder called `Shotgun`, with two folders, `projects` and `configs`, within it.
 
 ## About the Advanced Project Setup Wizard
@@ -131,7 +131,7 @@ A dialog box is displayed with the name of the project populating the text field
 
 ![Project folder](../../../../images/toolkit/learning-resources/guides/advanced_config/14_project_folder_name.png)
 
-Toolkit can work in either a Distributed Setup, where the pipeline configuration is uploaded to Shotgun and cached locally for each user, or a Centralized Setup, where users access a single configuration in a shared location on disk. For this exercise we will use a Centralized Setup. You can [learn more about Distributed Setups here](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
+Toolkit can work in either a [Distributed Setup](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations/), where the pipeline configuration is uploaded to Shotgun and cached locally for each user, or a [Centralized Setup](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations/), where users access a single configuration in a shared location on disk. For this exercise we will use a Centralized Setup.
 
 The final step generates the appropriate folders, files, and data necessary to create the configuration specific to a project. 
 
@@ -180,10 +180,10 @@ To learn about cloning your configuration, as well as other basics of configurat
 
 ### Cloud distribution of pipeline configurations
 
-This guide walks through creating a **centralized configuration**: a single copy of a pipeline configuration that is located in a shared network location and accessed by all users. But, if your workforce is distributed across locations and networks, it may not be feasible to share a single copy of a pipeline configuration. Toolkit allows for this scenario by providing a **distributed configuration** option where a pipeline configuration is uploaded to Shotgun and each time a user accesses a project the configuration is downloaded and cached locally. You can learn more about distributed configurations in our [Core API developer documentation](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
+This guide walks through creating a **centralized configuration**: a single copy of a pipeline configuration that is located in a shared network location and accessed by all users. But, if your workforce is distributed across locations and networks, it may not be feasible to share a single copy of a pipeline configuration. Toolkit allows for this scenario by providing a [distributed configuration](./initializing..md#distributed-configurations/) option where a pipeline configuration is uploaded to Shotgun and each time a user accesses a project the configuration is downloaded and cached locally. You can learn more about distributed configurations in our [Core API developer documentation](./initializing..md#distributed-configurations/).
 
 ### Working with more than one root folder
 
 Ideally your facility would want to be optimized for specific tasks. You can work with more than one root folder to optimize things such as video playback for dailies on one server and interactive processing on another. Toolkit allows you to work with more than one storage root in order to facilitate workflows such as these. Check out how to convert from a [single root to a multi-root configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219040478-How-do-I-convert-my-project-from-a-single-root-to-a-multi-root-configuration-). 
 
-Now that you have a pipeline configuration for your project, get started on editing it! Jump into the next guide, [Editing a Pipeline Configuration](/toolkit/learning-resources/guides/editing_app_setting/), to learn how.
+Now that you have a pipeline configuration for your project, get started on editing it! Jump into the next guide, [Editing a Pipeline Configuration](./editing_app_setting.md/), to learn how.
