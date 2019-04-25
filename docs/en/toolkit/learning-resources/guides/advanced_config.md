@@ -30,14 +30,6 @@ To use this guide and create a customizable configuration for your project, the 
 ### Additional Resources
 
 * [Shotgun Support Site](https://support.shotgunsoftware.com)
-
-* [Shotgun Integrations](https://www.shotgunsoftware.com/integrations/)
-
-    * [User Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574)
-
-    * [Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493)
-
-    * [Developer Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067513)
     
 ## About the Advanced Project Setup Wizard
 
