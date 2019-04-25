@@ -20,7 +20,7 @@ Through extending the Default Configuration, Shotgun Toolkit allows for customiz
 
 The exercises in this guide will teach you how to find what configuration settings control actions within the Shotgun software integrations, where the settings live, and how to edit them. Specifically, we will edit a setting in the Workfiles app that manages the behavior of the **+New Task** button, preventing artists from creating a new task when working on a project inside Maya.
 
-### Using this document
+### Prerequisites 
  
 To use this guide and perform an edit on a pipeline configuration, the following is required:
 
@@ -31,6 +31,12 @@ To use this guide and perform an edit on a pipeline configuration, the following
 5. An active subscription for Maya. Get a 30 day trial of [Maya](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689) 
 
 {% include info title="Note" content="This guide is based on the `tk-config-default2` pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here." %}
+
+### Additional Resources
+
+* [Shotgun Support Site](https://support.shotgunsoftware.com)
+
+* [App and Engine Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039878-App-and-Engine-Configuration-Reference)
 
 ## About the Workfiles app
 
