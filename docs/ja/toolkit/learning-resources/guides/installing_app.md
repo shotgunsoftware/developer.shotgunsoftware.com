@@ -93,7 +93,7 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ### プロジェクトの設定の配置場所を確認する
 
-**手順 5:** オペレーティング システムに該当する**[パス](Path)**フィールドを追加します。
+**手順 5:** オペレーティング システムに該当する**[パス]（Path）**フィールドを追加します。
 
 ![設定のパス](../../../../images/toolkit/learning-resources/guides/installing_app/6_path_to_config.png)
 
@@ -101,11 +101,11 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ![設定のパス 2](../../../../images/toolkit/learning-resources/guides/installing_app/7_path_to_config2.png)
 
-**手順 6:** **[プライマリ](Primary)**行項目の横にある空のスペース内で**右クリック**して、コンテキスト メニューから**[この設定のクローンを作成...](Clone this Configuration)**を選択します。
+**手順 6:** **[プライマリ]（Primary）**行項目の横にある空のスペース内で**右クリック**して、コンテキスト メニューから**[この設定のクローンを作成...]（Clone this Configuration…）**を選択します。
 
 ![クローン作成完了](../../../../images/toolkit/learning-resources/guides/installing_app/8_clone_complete.png)
 
-**手順 7:** [パイプライン設定リスト](Pipeline Configuration List)内の設定およびディレクトリ内のファイルに、それぞれ「Primary Clone Config 2」および「the_other_side_clone2」という名前を付けます。**[OK]**をクリックします。
+**手順 7:** [パイプライン設定リスト]（Pipeline Configuration List）内の設定およびディレクトリ内のファイルに、それぞれ「Primary Clone Config 2」および「the_other_side_clone2」という名前を付けます。**[OK]**をクリックします。
 
 ![クローンに名前を付ける](../../../../images/toolkit/learning-resources/guides/installing_app/9_name_clone.png)
 
@@ -242,7 +242,7 @@ settings.tk-maya.project:
 
 ![Maya のクローン作成された設定](../../../../images/toolkit/learning-resources/guides/installing_app/14_maya_cloned_config.png)
 
-**手順 17:** Desktop から Maya を起動して、メニュー **[Shotgun] > [プロジェクト](Project) > […]**を選択します。
+**手順 17:** Desktop から Maya を起動して、メニュー **[Shotgun] > [プロジェクト]（Project） > […]**を選択します。
 
 次の場合:
 
@@ -332,7 +332,7 @@ Push Complete!
 
 ![Maya の設定の変更](../../../../images/toolkit/learning-resources/guides/installing_app/18_change_config_maya.png)
 
-**手順 20:** Desktop から Maya を起動して、メニュー**[Shotgun] > [プロジェクト](Project) > […]**を参照して、Shotgun Python コンソールを検索します。
+**手順 20:** Desktop から Maya を起動して、メニュー**[Shotgun] > [プロジェクト]（Project） > […]**を参照して、Shotgun Python コンソールを検索します。
 
 ![Maya のアプリ](../../../../images/toolkit/learning-resources/guides/installing_app/19_app_in_maya.png)
 
