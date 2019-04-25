@@ -143,7 +143,7 @@ A dialog box is displayed with the name of the project populating the text field
 
 ![Project folder](../../../../images/toolkit/learning-resources/guides/advanced_config/14_project_folder_name.png)
 
-Toolkit can work in either a [Distributed Setup](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations/), where the pipeline configuration is uploaded to Shotgun and cached locally for each user, or a [Centralized Setup](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations/), where users access a single configuration in a shared location on disk. For this exercise we will use a Centralized Setup.
+Toolkit can work in either a [Distributed Setup](./initializing.md#distributed-configurations/), where the pipeline configuration is uploaded to Shotgun and cached locally for each user, or a [Centralized Setup](./initializing.md#centralized-configurations/), where users access a single configuration in a shared location on disk. For this exercise we will use a Centralized Setup.
 
 The final step generates the appropriate folders, files, and data necessary to create the configuration specific to a project. 
 
