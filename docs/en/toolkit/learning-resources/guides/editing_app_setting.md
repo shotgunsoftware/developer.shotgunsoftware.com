@@ -27,10 +27,10 @@ To use this guide and perform an edit on a pipeline configuration, the following
 1. An active [Shotgun](https://www.shotgunsoftware.com/signup/) site.
 2. A pipeline configuration for the identified project, or complete the [Getting started with configurations](./advanced_config.md) guide and use the configuration created in that exercise.
 3. [Shotgun Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) installed on your system.
-4. An active subscription for Maya. Get a 30 day trial of [Maya](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689) 
-5. Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
+4. Familiarity with YAML, Toolkit uses YAML files for configuring Shotgun integration settings.Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
+5. An active subscription for Maya. Get a 30 day trial of [Maya](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689) 
 
-**NOTE:** This guide is based on the `tk-config-default2` pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here.
+{% include info title="Note" content="This guide is based on the `tk-config-default2` pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here." %}
 
 ## About the Workfiles app
 
@@ -110,7 +110,7 @@ Look under the **Configuration** header to find the settings for this specific e
 
 ![Configuration_ref](../../../../images/toolkit/learning-resources/guides/editing_app_setting/10_configuration_ref.png "View task button")
 
-**NOTE:** After the setting **my_tasks_filters** is a setting **launch_at_startup**. This is important to note because it’s the default setting for the **File Open** setting in the project environment. This tells you that when Maya is launched from the Shotgun Desktop, the **File Open** dialog box automatically opens. 
+{% include info title="Note" content="After the setting **my_tasks_filters** is a setting **launch_at_startup**. This is important to note because it’s the default setting for the **File Open** setting in the project environment. This tells you that when Maya is launched from the Shotgun Desktop, the **File Open** dialog box automatically opens." %}
 
 Scroll down to **Setting allow_task_creation**. The default value of this setting is **True**, allowing a user to create a new task while in the Maya project environment.
 
@@ -134,7 +134,7 @@ A setting can be utilized in multiple places within a pipeline configuration. Wh
 
 ![Maya shotgun2](../../../../images/toolkit/learning-resources/guides/editing_app_setting/12_Maya_Shotgun2.png)
 
-**TIP:** If the menu isn’t visible there will be **>>** to show that some menu items are hidden. Select the **>>** to display the Shotgun menu or you can widen the Maya window.
+{% include info title="Tip" content="If the menu isn’t visible there will be **>>** to show that some menu items are hidden. Select the **>>** to display the Shotgun menu or you can widen the Maya window." %}
 
 **Step 11:** Select **Shotgun > Project the_other_side > Work Area Info…** on the top right of the menu.
 
@@ -279,7 +279,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
   
 <!--![Edit Workfiles2](../../../../images/toolkit/learning-resources/guides/editing_app_setting/19_edit_workfiles2.png)-->
 
-**NOTE:** Toolkit Default Configuration settings are organized alphabetically as an easy way to find specific settings. Keeping this convention will make your life a lot easier as the configuration gets a little heavier.
+{% include info title="Note" content="Toolkit Default Configuration settings are organized alphabetically as an easy way to find specific settings. Keeping this convention will make your life a lot easier as the configuration gets a little heavier." %}
 
 **Step 18:** Save the file.
 
@@ -303,7 +303,7 @@ You’ve modified a configuration setting for the Workfiles app, changing the be
 
 ### Changing environments
 
-**Step 212:** Under the Assets search results, open a folder and select asset you wish to work on.
+**Step 21:** Under the Assets search results, open a folder and select asset you wish to work on.
 
 ![Move to asset env](../../../../images/toolkit/learning-resources/guides/editing_app_setting/22_moving_to_asset_environment.png)
 
@@ -327,7 +327,7 @@ By selecting **+New File**, you began to work on a new asset and the `asset_step
 
 Each environment will display the information necessary to determine where the settings live in the pipeline configuration. To disallow an artist from adding a new task, it’s necessary to disable the **+New Task** button for every environment that artist works in. For each environment, use the same steps outlined above to edit the configuration appropriately.
 
-NOTE: Each environment is independent, a project has a dedicated configuration, and the software integrations only read settings for their specific software from the pipeline configuration when a project is loaded.
+{% include info title="Note" content="Each environment is independent, a project has a dedicated configuration, and the software integrations only read settings for their specific software from the pipeline configuration when a project is loaded." %}
 
 You've now edited your pipeline configuration, making a change to the settings for an app. And now the real fun begins: learning all the things you can do with Shotgun Toolkit environments. Here are some advanced topics to explore. 
 
@@ -345,11 +345,11 @@ We disabled task creation in the project environment, but in a real studio envir
 
 ### Creating custom environments
 
-The Default Configuration comes with a set of pre-defined pipeline steps: `project`, `sequence`, `shot`, `shot_step`, `asset`, and `asset_step`. However, a studio might want different configuration settings for every stage in the pipeline – say `asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light`, and so on. You can create custom environments by adding the desired environment configuration files to `config/env` and overriding the `pick_environment` core hook to recognize your new environments. Hooks allow you to modify bits of the logic that runs at various points in Toolkit workflows, and the [`pick_environment` core hook](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) contains the logic that Toolkit uses to determine the environment. You can take over the hook to modify this logic.
+The Default Configuration comes with a set of pre-defined pipeline steps: `project`, `sequence`, `shot`, `shot_step`, `asset`, and `asset_step`. However, a studio might want different configuration settings for every stage in the pipeline – say `asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light`, and so on. You can create custom environments by adding the desired environment configuration files to `config/env` and overriding the `pick_environment` core hook to recognize your new environments. Hooks allow you to modify bits of the logic that runs at various points in Toolkit workflows, and the `pick_environment` core hook on [GitHub](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) contains the logic that Toolkit uses to determine the environment. You can take over the hook to modify this logic.
 
 ### Video Resources
 
-* [Intro to Toolkit configurations](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s) from our SIGGRAPH 2018 Developer Day
-* [Demystifying the Default Configuration webinar](https://www.youtube.com/watch?v=eKHaC1dZCeE)
+* Intro to Toolkit configurations from our SIGGRAPH 2018 Developer Day on [YouTube](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s).
+* Demystifying the Default Configuration webinar on [YouTube](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
-Now that you’ve learned how to modify an app configuration setting, try [adding an app to your Toolkit configuration](./installing_app.md)
+Now that you’ve learned how to modify an app configuration setting, try [adding an app](./installing_app.md) to your Toolkit configuration.
