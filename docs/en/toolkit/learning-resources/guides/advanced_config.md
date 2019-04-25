@@ -25,7 +25,8 @@ To use this guide and create a customizable configuration for your project, the 
 
 1. An active [Shotgun](https://www.shotgunsoftware.com/signup/) site. 
 2. [Shotgun Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) installed on your system. 
-3. Access to a filesystem where you can store project files and a pipeline configuration. On the filesystem, create a folder called `Shotgun`, with two folders, `projects` and `configs`, within it.
+3. Familiarity with YAML, Toolkit uses YAML files for configuring Shotgun integration settings.
+4. Access to a filesystem where you can store project files and a pipeline configuration. On the filesystem, create a folder called `Shotgun`, with two folders, `projects` and `configs`, within it.
 
 ### Additional Resources
 
