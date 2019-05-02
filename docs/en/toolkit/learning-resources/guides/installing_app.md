@@ -237,10 +237,12 @@ You will notice the **Screening Room, Shotgun Panel, and Workfiles2** app’s lo
 **NOTE:** The python console app already exists in the default configuration, however if you are adding an app that has never been added to your configuration before or if you have changed the version of an app, and you are using a [centralized configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), then there is an additional step you need to take. Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration’s root folder, run the following command:
 
 On Linux or Mac:
+
 `./tank cache_apps`
 
 On Windows:
-`./tank.bat cache_apps`
+
+`tank.bat cache_apps`
 
 This will scan your configuration for apps, engines and frameworks and ensure that they are all downloaded.
 
@@ -275,10 +277,12 @@ After confirming you added the Python Console app correctly, you’re ready to p
 **Step 18:** Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration's root folder, run the following command: 
 
 On Linux or Mac:
+
 `./tank push_configuration`
 
 On Windows:
-`./tank.bat push_configuration`
+
+`tank.bat push_configuration`
 
 Follow the prompts and type in the ID for your project’s Primary configuration, the configuration you want to push the changes to. 
 
