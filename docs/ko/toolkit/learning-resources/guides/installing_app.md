@@ -21,7 +21,7 @@ pagename: toolkit-guides-adding-app
 
 여기서 추가할 앱은 Shotgun Python 콘솔 앱입니다. Maya에는 자체 Python 콘솔이 있지만 이 툴킷 앱에는 Maya 콘솔에 없는 일부 기능이 있습니다.
 
-이 안내서에서는 [파이프라인 구성 편집](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/blob/getting_started_guide/docs/en/toolkit/toolkit_basics_guides/editing_app_setting.md) 안내서에서 생성한 파이프라인 구성을 활용합니다. 이 안내서를 완료하지 않았다면 기존 파이프라인 구성을 사용하여 앱을 추가할 수 있습니다.
+이 안내서에서는 [파이프라인 구성 편집](./editing_app_setting.md) 안내서에서 생성한 파이프라인 구성을 활용합니다. 이 안내서를 완료하지 않았다면 기존 파이프라인 구성을 사용하여 앱을 추가할 수 있습니다.
 
 ## 이 문서 사용
 
