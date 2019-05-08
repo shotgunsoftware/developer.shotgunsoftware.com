@@ -1,8 +1,9 @@
 ---
 layout: default
 title: フォーラム
-permalink: /rv/forums/
+permalink: /10001/
 lang: ja
+pagename: rv-forums
 ---
 
 # RV の統合

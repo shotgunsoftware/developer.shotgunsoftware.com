@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Contribution Guide
-permalink: /contribution/
+pagename: contribution
+permalink: /10012/
 lang: en
 ---
 

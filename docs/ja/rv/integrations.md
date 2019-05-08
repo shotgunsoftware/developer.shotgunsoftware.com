@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 統合
-permalink: /rv/integrations/
+permalink: /10002/
 lang: ja
+pagename: rv-integrations
 ---
 
 # RV の統合

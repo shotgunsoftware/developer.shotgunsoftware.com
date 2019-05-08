@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Toolkit Basics Guides
-permalink: /toolkit/learning-resources/guides/
+pagename: toolkit-guides
+permalink: /10007/
 lang: en
 ---
 

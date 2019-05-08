@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Forums
-permalink: /rv/forums/
+pagename: rv-forums
+permalink: /10001/
 lang: en
 ---
 

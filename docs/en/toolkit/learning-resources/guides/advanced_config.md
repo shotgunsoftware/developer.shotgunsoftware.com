@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Configuration Setup
-permalink: /toolkit/learning-resources/guides/advanced_config/
+pagename: toolkit-guides-advanced-config
+permalink: /10004/
 lang: en
 ---
 

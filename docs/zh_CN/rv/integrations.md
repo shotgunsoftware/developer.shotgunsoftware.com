@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 集成
-permalink: /rv/integrations/
+permalink: /10002/
 lang: zh_CN
+pagename: rv-integrations
 ---
 
 # RV 集成

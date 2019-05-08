@@ -1,8 +1,9 @@
 ---
 layout: default
 title: フレームワーク
-permalink: /toolkit/frameworks/
+permalink: /10011/
 lang: ja
+pagename: toolkit-frameworks
 ---
 
 # Toolkit のフレームワーク

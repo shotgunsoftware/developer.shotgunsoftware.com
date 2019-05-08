@@ -1,8 +1,9 @@
 ---
 layout: default
 title: アプリを追加する
-permalink: /toolkit/learning-resources/guides/installing_app/
+permalink: /10006/
 lang: ja
+pagename: toolkit-guides-adding-app
 ---
 
 # アプリを追加する

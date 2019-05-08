@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 概要
-permalink: /rv/
+permalink: /10014/
 lang: ja
+pagename: rv
 ---
 
 # RV
