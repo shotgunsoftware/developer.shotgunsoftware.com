@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 통합
-permalink: /rv/integrations/
+permalink: /10002/
 lang: ko
+pagename: rv-integrations
 ---
 
 # RV 통합

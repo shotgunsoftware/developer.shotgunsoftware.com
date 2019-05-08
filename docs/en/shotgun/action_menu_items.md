@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Action Menu Items
-permalink: /shotgun/action_menu_items/
+pagename: shotgun-action-menu-items
+permalink: /10003/
 lang: en
 ---
 

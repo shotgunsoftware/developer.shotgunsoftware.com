@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Adding an app
-permalink: /toolkit/learning-resources/guides/installing_app/
+pagename: toolkit-guides-adding-app
+permalink: /10006/
 lang: en
 ---
 

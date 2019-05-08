@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 設定を編集する
-permalink: /toolkit/learning-resources/guides/editing_app_setting/
+permalink: /10005/
 lang: ja
+pagename: toolkit-guides-editing-config
 ---
 
 # パイプライン設定を編集する

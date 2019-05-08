@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 구성 편집
-permalink: /toolkit/learning-resources/guides/editing_app_setting/
+permalink: /10005/
 lang: ko
+pagename: toolkit-guides-editing-config
 ---
 
 # 파이프라인 구성 편집

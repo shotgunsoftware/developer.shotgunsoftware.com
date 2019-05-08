@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Toolkit 基础知识手册
-permalink: /toolkit/learning-resources/guides/
+permalink: /10007/
 lang: zh_CN
+pagename: toolkit-guides
 ---
 
 # Toolkit 基础知识手册

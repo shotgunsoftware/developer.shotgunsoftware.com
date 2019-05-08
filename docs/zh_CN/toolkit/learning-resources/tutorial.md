@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 工作流教程
-permalink: /toolkit/learning-resources/tutorial/
+permalink: /10009/
 lang: zh_CN
+pagename: toolkit-pipeline-tutorial
 ---
 
 # 工作流教程

@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 앱 추가
-permalink: /toolkit/learning-resources/guides/installing_app/
+permalink: /10006/
 lang: ko
+pagename: toolkit-guides-adding-app
 ---
 
 # 앱 추가

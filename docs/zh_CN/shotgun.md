@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 概述
-permalink: /shotgun/
+permalink: /10015/
 lang: zh_CN
+pagename: shotgun
 ---
 
 # Shotgun 开发

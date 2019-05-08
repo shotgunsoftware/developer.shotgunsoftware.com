@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 設定セットアップ
-permalink: /toolkit/learning-resources/guides/advanced_config/
+permalink: /10004/
 lang: ja
+pagename: toolkit-guides-advanced-config
 ---
 
 # 設定の基本操作

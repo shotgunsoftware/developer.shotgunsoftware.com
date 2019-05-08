@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 添加应用
-permalink: /toolkit/learning-resources/guides/installing_app/
+permalink: /10006/
 lang: zh_CN
+pagename: toolkit-guides-adding-app
 ---
 
 # 添加应用

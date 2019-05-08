@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 액션 메뉴 항목
-permalink: /shotgun/action_menu_items/
+permalink: /10003/
 lang: ko
+pagename: shotgun-action-menu-items
 ---
 
 # 액션 메뉴 항목 프레임워크

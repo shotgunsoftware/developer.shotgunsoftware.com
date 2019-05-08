@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 개요
-permalink: /toolkit/
+permalink: /10016/
 lang: ko
+pagename: toolkit
 ---
 
 # 툴킷 플랫폼

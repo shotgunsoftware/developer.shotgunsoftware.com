@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 概要
-permalink: /shotgun/
+permalink: /10015/
 lang: ja
+pagename: shotgun
 ---
 
 # Shotgun の開発
