@@ -21,7 +21,7 @@ pagename: toolkit-guides-adding-app
 
 我们要添加的应用是 Shotgun Python 控制台应用。Maya 具有其自己的 Python 控制台，但是 Toolkit 应用中有一些功能在 Maya 控制台中不存在。
 
-本手册利用我们在[编辑工作流配置](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/blob/getting_started_guide/docs/en/toolkit/toolkit_basics_guides/editing_app_setting.md) 手册中创建的工作流配置。如果您尚未完成此手册，则可以使用现有的工作流配置，并在其中添加该应用。
+本手册利用我们在[编辑工作流配置](./editing_app_setting.md) 手册中创建的工作流配置。如果您尚未完成此手册，则可以使用现有的工作流配置，并在其中添加该应用。
 
 ## 使用本文档
 

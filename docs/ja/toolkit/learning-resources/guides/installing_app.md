@@ -21,7 +21,7 @@ pagename: toolkit-guides-adding-app
 
 ここで追加するアプリは、Shotgun Python コンソール アプリです。Maya には独自の Python コンソールがありますが、Toolkit アプリには Maya コンソールにない機能がいくつか用意されています。
 
-このガイドでは、「[パイプライン設定を編集する](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/blob/getting_started_guide/docs/en/toolkit/toolkit_basics_guides/editing_app_setting.md)」ガイドで作成したパイプライン設定を利用します。このガイドをまだ完了していない場合は、既存のパイプライン設定を使用してアプリを追加してください。
+このガイドでは、「[パイプライン設定を編集する](./editing_app_setting.md)」ガイドで作成したパイプライン設定を利用します。このガイドをまだ完了していない場合は、既存のパイプライン設定を使用してアプリを追加してください。
 
 ## このドキュメントの使い方
 
