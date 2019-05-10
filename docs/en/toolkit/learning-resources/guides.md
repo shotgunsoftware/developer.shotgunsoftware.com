@@ -2,7 +2,6 @@
 layout: default
 title: Toolkit Basics Guides
 pagename: toolkit-guides
-permalink: /10007/
 lang: en
 ---
 

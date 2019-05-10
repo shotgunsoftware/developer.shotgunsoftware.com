@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 統合
-permalink: /10002/
 lang: ja
 pagename: rv-integrations
 ---

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 앱 API
-permalink: /10010/
 lang: ko
 pagename: toolkit-app-apis
 ---

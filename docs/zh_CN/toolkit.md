@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 概述
-permalink: /10016/
 lang: zh_CN
 pagename: toolkit
 ---

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 概述
-permalink: /10015/
 lang: zh_CN
 pagename: shotgun
 ---

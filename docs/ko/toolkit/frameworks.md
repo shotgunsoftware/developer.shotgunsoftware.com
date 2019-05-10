@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 프레임워크
-permalink: /10011/
 lang: ko
 pagename: toolkit-frameworks
 ---

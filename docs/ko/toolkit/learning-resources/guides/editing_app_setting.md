@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 구성 편집
-permalink: /10005/
 lang: ko
 pagename: toolkit-guides-editing-config
 ---

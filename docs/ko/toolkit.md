@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 개요
-permalink: /10016/
 lang: ko
 pagename: toolkit
 ---

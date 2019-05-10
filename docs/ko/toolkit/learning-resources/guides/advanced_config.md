@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 구성 설정을
-permalink: /10004/
 lang: ko
 pagename: toolkit-guides-advanced-config
 ---

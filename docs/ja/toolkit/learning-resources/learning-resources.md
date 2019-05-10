@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 学習リソース
-permalink: /10008/
 lang: ja
 pagename: toolkit-learning-resources
 ---

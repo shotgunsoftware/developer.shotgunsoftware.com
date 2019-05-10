@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 概要
-permalink: /10015/
 lang: ja
 pagename: shotgun
 ---

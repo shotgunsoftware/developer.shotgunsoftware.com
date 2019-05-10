@@ -2,7 +2,6 @@
 layout: default
 title: Overview
 pagename: shotgun
-permalink: /10015/
 lang: en
 ---
 

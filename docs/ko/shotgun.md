@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 개요
-permalink: /10015/
 lang: ko
 pagename: shotgun
 ---

@@ -2,7 +2,6 @@
 layout: default
 title: Learning Resources
 pagename: toolkit-learning-resources
-permalink: /10008/
 lang: en
 ---
 

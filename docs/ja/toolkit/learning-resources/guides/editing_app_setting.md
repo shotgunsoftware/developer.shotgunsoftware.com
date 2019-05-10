@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 設定を編集する
-permalink: /10005/
 lang: ja
 pagename: toolkit-guides-editing-config
 ---

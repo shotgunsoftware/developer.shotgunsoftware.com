@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 개요
-permalink: /10014/
 lang: ko
 pagename: rv
 ---

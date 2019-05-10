@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 앱 추가
-permalink: /10006/
 lang: ko
 pagename: toolkit-guides-adding-app
 ---

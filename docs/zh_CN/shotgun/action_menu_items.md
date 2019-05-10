@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 动作菜单项
-permalink: /10003/
 lang: zh_CN
 pagename: shotgun-action-menu-items
 ---
