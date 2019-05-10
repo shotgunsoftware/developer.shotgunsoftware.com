@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 概要
-permalink: /10016/
 lang: ja
 pagename: toolkit
 ---

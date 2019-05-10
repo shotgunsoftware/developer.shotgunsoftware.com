@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 기여 가이드
-permalink: /10012/
 lang: ko
 pagename: contribution
 ---

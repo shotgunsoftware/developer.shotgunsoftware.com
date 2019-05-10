@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Toolkit 基础知识手册
-permalink: /10007/
 lang: zh_CN
 pagename: toolkit-guides
 ---

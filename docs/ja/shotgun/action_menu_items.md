@@ -1,7 +1,6 @@
 ---
 layout: default
 title: アクション メニュー項目
-permalink: /10003/
 lang: ja
 pagename: shotgun-action-menu-items
 ---

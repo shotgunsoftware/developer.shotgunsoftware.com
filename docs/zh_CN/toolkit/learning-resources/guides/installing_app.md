@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 添加应用
-permalink: /10006/
 lang: zh_CN
 pagename: toolkit-guides-adding-app
 ---

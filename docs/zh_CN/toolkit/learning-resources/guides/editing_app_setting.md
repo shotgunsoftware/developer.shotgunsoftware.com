@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 编辑配置
-permalink: /10005/
 lang: zh_CN
 pagename: toolkit-guides-editing-config
 ---

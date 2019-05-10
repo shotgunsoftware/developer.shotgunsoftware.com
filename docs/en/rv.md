@@ -2,7 +2,6 @@
 layout: default
 title: Overview
 pagename: rv
-permalink: /10014/
 lang: en
 ---
 

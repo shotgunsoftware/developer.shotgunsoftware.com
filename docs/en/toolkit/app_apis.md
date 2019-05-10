@@ -2,7 +2,6 @@
 layout: default
 title: App APIs
 pagename: toolkit-app-apis
-permalink: /10010/
 lang: en
 ---
 

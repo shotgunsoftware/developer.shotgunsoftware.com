@@ -2,7 +2,6 @@
 layout: default
 title: Overview
 pagename: toolkit
-permalink: /10016/
 lang: en
 ---
 

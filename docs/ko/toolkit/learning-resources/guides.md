@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 툴킷 기본 사항 안내서
-permalink: /10007/
 lang: ko
 pagename: toolkit-guides
 ---

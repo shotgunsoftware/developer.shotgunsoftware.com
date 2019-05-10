@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 교육 리소스
-permalink: /10008/
 lang: ko
 pagename: toolkit-learning-resources
 ---

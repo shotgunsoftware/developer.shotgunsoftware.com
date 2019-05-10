@@ -2,7 +2,6 @@
 layout: default
 title: Editing a Config
 pagename: toolkit-guides-editing-config
-permalink: /10005/
 lang: en
 ---
 

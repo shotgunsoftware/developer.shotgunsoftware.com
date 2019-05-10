@@ -1,7 +1,6 @@
 ---
 layout: default
 title: アプリを追加する
-permalink: /10006/
 lang: ja
 pagename: toolkit-guides-adding-app
 ---

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 設定セットアップ
-permalink: /10004/
 lang: ja
 pagename: toolkit-guides-advanced-config
 ---

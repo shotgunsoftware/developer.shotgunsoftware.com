@@ -2,7 +2,6 @@
 layout: default
 title: Adding an app
 pagename: toolkit-guides-adding-app
-permalink: /10006/
 lang: en
 ---
 

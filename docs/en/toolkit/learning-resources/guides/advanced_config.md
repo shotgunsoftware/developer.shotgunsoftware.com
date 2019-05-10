@@ -2,7 +2,6 @@
 layout: default
 title: Configuration Setup
 pagename: toolkit-guides-advanced-config
-permalink: /10004/
 lang: en
 ---
 

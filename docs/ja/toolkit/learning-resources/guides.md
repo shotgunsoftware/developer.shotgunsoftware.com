@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Toolkit の基本ガイド
-permalink: /10007/
 lang: ja
 pagename: toolkit-guides
 ---

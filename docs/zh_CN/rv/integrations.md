@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 集成
-permalink: /10002/
 lang: zh_CN
 pagename: rv-integrations
 ---
