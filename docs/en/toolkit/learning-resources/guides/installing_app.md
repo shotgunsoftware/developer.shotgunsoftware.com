@@ -32,7 +32,7 @@ To use this guide and install a Toolkit app, the following is required:
 4. Shotgun Desktop installed on your system.
 5. An active subscription for Maya. Get a 30 day trial of Maya [here](https://www.autodesk.com/products/maya/free-trial-dts). 
 
-  **NOTE:** This guide is based on the tk-config-default2 pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here.
+{% include info title="Note" content="This guide is based on the tk-config-default2 pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here." %}
 
 ## About Shotgun Toolkit apps
 
@@ -115,7 +115,7 @@ Wait while Shotgun copies all of the files and folders in the configuration and 
 
 When completed, the Configuration List will be updated with information about the cloned configuration and there will be a new configuration added to your local config folder.
 
-  **NOTE:** Under **User Restrictions** your user name was added. Shotgun automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way Shotgun allows for flexibility and control.
+{% include info title="Note" content="Under **User Restrictions** your user name was added. Shotgun automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way Shotgun allows for flexibility and control." %}
 
 ## Associate the cloned configuration with the project
 
@@ -234,8 +234,7 @@ settings.tk-maya.project:
  
 You will notice the **Screening Room, Shotgun Panel, and Workfiles2** app’s location identifiers are listed in a different included file and accessed differently than the **About** app. To keep things tidy, these apps were split off to the included settings folder because they have additional settings.
 
-**NOTE:** The python console app already exists in the default configuration, however if you are adding an app that has never been added to your configuration before or if you have changed the version of an app, and you are using a [centralized configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), then there is an additional step you need to take. Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration’s root folder, run the following command:
-
+{% include info title="Note" content="The python console app already exists in the Default Configuration, however if you are adding an app that has never been added to your configuration before or if you have changed the version of an app, and you are using a [centralized configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), then there is an additional step you need to take. Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration’s root folder, run the following command:
 On Linux or Mac:
 
 `./tank cache_apps`
@@ -244,7 +243,7 @@ On Windows:
 
 `tank.bat cache_apps`
 
-This will scan your configuration for apps, engines and frameworks and ensure that they are all downloaded.
+This will scan your configuration for apps, engines and frameworks and ensure that they are all downloaded." %}
 
 ## View the changes in Maya
 
@@ -252,7 +251,7 @@ This will scan your configuration for apps, engines and frameworks and ensure th
 
 There will be a blue bar with the name of the clone that you created under the name of the project. 
 
-**NOTE:** If you’re using the primary, there will be no blue bar and the configuration name won’t be visible.
+{% include info title="Note" content="If you’re using the primary, there will be no blue bar and the configuration name won’t be visible." %}
 
 ![Maya cloned config](../../../../images/toolkit/learning-resources/guides/installing_app/14_maya_cloned_config.png)
 
@@ -324,7 +323,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 There will be a list of the available pipeline configurations that the cloned configuration can be pushed to. Enter the ID of the primary pipeline configuration for the project you are updating the configuration for.
 
-**NOTE:** You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in Shotgun that we viewed in **[Step 3](#step3):** of this guide. To find the project ID, go to the Configuration List and add the ID column.
+{% include info title="Note" content="You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in Shotgun that we viewed in **[Step 3](#step3):** of this guide. To find the project ID, go to the Configuration List and add the ID column." %}
 
 ![ID column](../../../../images/toolkit/learning-resources/guides/installing_app/17_id_column.png)
 
