@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Adding an app
+redirect_from: "/toolkit/learning-resources/guides/installing_app/"
 pagename: toolkit-guides-adding-app
 lang: en
 ---

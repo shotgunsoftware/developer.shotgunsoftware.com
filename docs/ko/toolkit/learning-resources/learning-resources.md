@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 교육 리소스
+redirect_from: "/toolkit/learning-resources/"
 lang: ko
 pagename: toolkit-learning-resources
 ---

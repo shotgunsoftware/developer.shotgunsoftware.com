@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 概述
+redirect_from: "/rv/"
 lang: zh_CN
 pagename: rv
 ---

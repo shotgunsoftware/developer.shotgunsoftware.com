@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Overview
+redirect_from: "/rv/"
 pagename: rv
 lang: en
 ---

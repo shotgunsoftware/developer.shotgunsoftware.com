@@ -1,6 +1,7 @@
 ---
 layout: default
 title: アプリケーション API
+redirect_from: "/toolkit/app_apis/"
 lang: ja
 pagename: toolkit-app-apis
 ---

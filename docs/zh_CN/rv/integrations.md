@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 集成
+redirect_from: "/rv/integrations/"
 lang: zh_CN
 pagename: rv-integrations
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: フレームワーク
+redirect_from: "/toolkit/frameworks/"
 lang: ja
 pagename: toolkit-frameworks
 ---
