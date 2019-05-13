@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 添加应用
+redirect_from: "/toolkit/learning-resources/guides/installing_app/"
 lang: zh_CN
 pagename: toolkit-guides-adding-app
 ---

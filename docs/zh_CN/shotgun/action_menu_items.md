@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 动作菜单项
+redirect_from: "/shotgun/action_menu_items/"
 lang: zh_CN
 pagename: shotgun-action-menu-items
 ---

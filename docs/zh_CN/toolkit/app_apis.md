@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 应用 API
+redirect_from: "/toolkit/app_apis/"
 lang: zh_CN
 pagename: toolkit-app-apis
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 개요
+redirect_from: "/toolkit/"
 lang: ko
 pagename: toolkit
 ---

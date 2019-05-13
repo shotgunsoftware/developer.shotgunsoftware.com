@@ -2,6 +2,7 @@
 layout: default
 title: Contribution Guide
 pagename: contribution
+redirect_from: "/contribution/"
 lang: en
 ---
 

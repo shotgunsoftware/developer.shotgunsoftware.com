@@ -1,6 +1,7 @@
 ---
 layout: default
 title: パイプラインのチュートリアル
+redirect_from: "/toolkit/learning-resources/tutorial/"
 lang: ja
 pagename: toolkit-pipeline-tutorial
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 工作流教程
+redirect_from: "/toolkit/learning-resources/tutorial/"
 lang: zh_CN
 pagename: toolkit-pipeline-tutorial
 ---

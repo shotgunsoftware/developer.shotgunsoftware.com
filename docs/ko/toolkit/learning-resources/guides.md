@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 툴킷 기본 사항 안내서
+redirect_from: "/toolkit/learning-resources/guides/"
 lang: ko
 pagename: toolkit-guides
 ---
