@@ -5,7 +5,6 @@ permalink: /toolkit/learning-resources/guides/installing_app/
 lang: en
 ---
 
-
 # Adding an app
  
 By completing this guide, you will quickly become acquainted with the configuration management tools in Toolkit and learn how to:
