@@ -41,8 +41,8 @@ module Jekyll
                         # The likelyhook of a collision with SHA1 truncated to
                         # 8 chars is very small...  If it becomes a problem we
                         # could do something here to deal with it, however it
-                        # wouldn't be as simple as say shifting the windpow on
-                        # the has, since existing URIs can't change when a new
+                        # wouldn't be as simple as say shifting the window on
+                        # the hash, since existing URIs can't change when a new
                         # page is added that collides.
                         if consumed_hashes.include? uid
                             raise PageUIDCollisionException.new
