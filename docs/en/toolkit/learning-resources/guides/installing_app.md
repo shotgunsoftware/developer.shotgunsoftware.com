@@ -147,7 +147,7 @@ apps.tk-multi-pythonconsole.location:
 
 ```
 
-  **NOTE:** If you’re using a different configuration, you may need to add the descriptor to the file.
+{% include info title="Note" content="If you’re using a different configuration, you may need to add the descriptor to the file." %}
 
 All apps and engines have descriptors. You can read about how descriptors work and how to set the `type:` in the [Descriptor section of our Core API docs] (https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types).
 
@@ -217,7 +217,7 @@ settings.tk-maya.project:
 
 Use the `about` app, `tk-multi-about:`, as a guide for how to add the location descriptor, then save the file. 
 
-**NOTE:** Make sure your [YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) files are formatted correctly using spaces and not tabs.
+{% include info title="Note" content="Make sure your [YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) files are formatted correctly using spaces and not tabs." %}
 
 ```
 # project
@@ -237,11 +237,15 @@ You will notice the **Screening Room, Shotgun Panel, and Workfiles2** app’s lo
 {% include info title="Note" content="The python console app already exists in the Default Configuration, however if you are adding an app that has never been added to your configuration before or if you have changed the version of an app, and you are using a [centralized configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), then there is an additional step you need to take. Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration’s root folder, run the following command:
 On Linux or Mac:
 
-`./tank cache_apps`
+```
+./tank cache_apps
+```
 
 On Windows:
 
-`tank.bat cache_apps`
+```
+tank.bat cache_apps
+```
 
 This will scan your configuration for apps, engines and frameworks and ensure that they are all downloaded." %}
 
