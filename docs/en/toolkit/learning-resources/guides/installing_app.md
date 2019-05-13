@@ -149,7 +149,7 @@ apps.tk-multi-pythonconsole.location:
 
 {% include info title="Note" content="If you’re using a different configuration, you may need to add the descriptor to the file." %}
 
-All apps and engines have descriptors. You can read about how descriptors work and how to set the `type:` in the [Descriptor section of our Core API docs] (https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types).
+All apps and engines have descriptors. You can read about how descriptors work and how to set the `type:` in the [Descriptor section of our Core API docs](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types).
 
 ## Tell Toolkit to use the descriptor
 
@@ -235,6 +235,7 @@ settings.tk-maya.project:
 You will notice the **Screening Room, Shotgun Panel, and Workfiles2** app’s location identifiers are listed in a different included file and accessed differently than the **About** app. To keep things tidy, these apps were split off to the included settings folder because they have additional settings.
 
 {% include info title="Note" content="The python console app already exists in the Default Configuration, however if you are adding an app that has never been added to your configuration before or if you have changed the version of an app, and you are using a [centralized configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), then there is an additional step you need to take. Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration’s root folder, run the following command:
+
 On Linux or Mac:
 
 ```
@@ -381,7 +382,7 @@ The Desktop app opens in the project environment, so find `tk-desktop` in the `p
 
 Open `config/env/project.yml`. 
 
-**NOTE:** In the engine block, `tk-desktop` points to included content:
+{% include info title="Note" content="In the engine block, `tk-desktop` points to included content:
 
 ```
 includes:
@@ -392,7 +393,7 @@ engines:
 ```
 
 Follow the include: open `config/env/includes/settings/tk-desktop.yml` and find the `settings.tk-desktop.project` block. In that block you’ll see the following:
-		
+
 ```
 apps:
   tk-multi-pythonconsole:
@@ -410,6 +411,7 @@ apps.tk-multi-pythonconsole.location:
   name: tk-multi-pythonconsole
   version: v1.1.2
 ```
+" %}
 
 Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines).
 
