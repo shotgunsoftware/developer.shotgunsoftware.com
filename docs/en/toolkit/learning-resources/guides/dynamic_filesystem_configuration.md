@@ -58,20 +58,17 @@ Customizing your schema and templates will allow you to dynamically manage the f
 
 **Step 1:** Open your Shotgun site in the browser. Click on your avatar and go to ADMIN > Site Preferences. In the resulting page, expand the **Entities** section.
 
-![Python app](../../../../images/learning-resources/guides/file_system_setup/1_site_preferences.png)
-
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/1_site_preferences.png)
 
 Displayed is a list of entity types that are available in Shotgun. At the top of the list in the image below are some entity types that are configured for the current Shotgun site. Underneath these entity types are several **Custom Entities** that are not configured or enabled. 
 
 ### Choose one of the custom entity types, configure it, and enable it.
 
-(../../../../images/toolkit/learning-resources/guides/ ??)
-
-
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/2_custom_entity.png)
 
 **Step 2:** Select the arrow to open the settings on a grayed out disabled custom entity. Select the radio button next to **Yes, use Custom Entity…**, change the **Display name** to **Set** then scroll to the top of the window and select Save Changes.
 
-(../../../images...)
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/4_enable_entity.png)
 
 Doing this makes that custom entity active in Shotgun and gives it the display name *Set*. Essentially you are creating an alias for the custom entity because the system name of the entity remains `CustomEntity01`. In this example, `CustomEntity01` is used for the settings; you might be using a different custom entity.
 
@@ -85,11 +82,12 @@ Adding a data field to the Asset entity enables us to link assets to the new ent
 
 **Step 4:** Select **Assets** in your project menu bar. In the Assets menu, select **Fields > Manage Asset Fields…** 
 
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/5_manage_asset_fields.png
+)
+This action displays the asset field manager.
 
-
-This action displays the asset field manager
-
-
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/6_manage_asset_fields.png
+)
 
 Select **+ Add a new field**
 
@@ -97,7 +95,8 @@ Select the parameters for the new field.
 
 In **New Field Name**, type “Set”. In the **GENERAL** menu under **Field Type** select **Entity** and scroll down to **Restrict the type** to **Set**.
 
-
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/7_field_parameters.png
+)
 
 Select **Next** 
 
@@ -105,11 +104,7 @@ For this guide, apply it to **Only the current project** and select **Create Fie
 
 Shotgun will configure the new field.
 
-
-
-
-
-
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/8_only_current_project.png)
 
 Your change has been applied and you can select **Done**.
 
@@ -117,21 +112,21 @@ Your change has been applied and you can select **Done**.
 
 **Step 5:** Select the new **Set** field of an asset and start typing Dining Room. 
 
-
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/10_set_field.png)
 
 A dialog box is displayed stating, **No matches found. Create “Dining Room”** 
 
-
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/11_create_set.png)
 
 Select **Create “Dining Room”**
 
-
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/12_dining_room_set.png)
 
 Select **Create Set** 
 
 Adding **Dining Room** in the Set field of an asset creates an [association](https://support.shotgunsoftware.com/hc/en-us/articles/115000010973-Linking-a-custom-entity) with the Dining Room set entity. 
 
-
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/13_dining_room_associated.png)
 
 **Step 6:** Assign the Model task on the **filet** asset to yourself, so you can find it easily for testing purposes. 
 
