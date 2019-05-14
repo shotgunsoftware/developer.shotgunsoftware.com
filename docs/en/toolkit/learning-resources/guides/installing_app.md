@@ -402,7 +402,7 @@ apps:
 
 These blocks add the Python Console app to the Desktop engine in the project step. 
 
-Follow that include further to `../includes/app_locations.yml` and search for `apps.tk-multi-pythonconsole.location` to find the following:<br/>
+Follow that include further to `../includes/app_locations.yml` and search for `apps.tk-multi-pythonconsole.location` to find the following:<br/><br/>
 
 ```
 # pythonconsole
