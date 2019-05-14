@@ -58,8 +58,7 @@ Customizing your schema and templates will allow you to dynamically manage the f
 
 **Step 1:** Open your Shotgun site in the browser. Click on your avatar and go to ADMIN > Site Preferences. In the resulting page, expand the **Entities** section.
 
-(../../../../images/toolkit/learning-resources/guides/ ??)
-
+![Python app](../../../../images/learning-resources/guides/file_system_setup/1_site_preferences.png)
 
 
 Displayed is a list of entity types that are available in Shotgun. At the top of the list in the image below are some entity types that are configured for the current Shotgun site. Underneath these entity types are several **Custom Entities** that are not configured or enabled. 
@@ -72,9 +71,7 @@ Displayed is a list of entity types that are available in Shotgun. At the top of
 
 **Step 2:** Select the arrow to open the settings on a grayed out disabled custom entity. Select the radio button next to **Yes, use Custom Entity…**, change the **Display name** to **Set** then scroll to the top of the window and select Save Changes.
 
-(../../../../images/toolkit/learning-resources/guides/ ??)
-
-
+(../../../images...)
 
 Doing this makes that custom entity active in Shotgun and gives it the display name *Set*. Essentially you are creating an alias for the custom entity because the system name of the entity remains `CustomEntity01`. In this example, `CustomEntity01` is used for the settings; you might be using a different custom entity.
 
