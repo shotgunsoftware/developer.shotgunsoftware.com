@@ -15,7 +15,7 @@ module Jekyll
 
     class PermalinkRewriter < Jekyll::Generator
         safe true
-        # set priority to highest, since we're rewriting page URLs and other
+        # Set priority to highest, since we're rewriting page URLs and other
         # plugins depend on these URLs during generation.
         priority :highest
 
@@ -29,7 +29,7 @@ module Jekyll
                     # field in their slug.
                     pagename = item.data["pagename"].to_s
                     if pagename == "index"
-                        # Special caae for root index -- we want it to sit at /,
+                        # Special case for root index -- we want it to sit at /,
                         # not under a hash.
                         item.data["permalink"] = "/"
                         item.url = "/"
@@ -38,12 +38,14 @@ module Jekyll
                         # characters for better usability.
                         uid = Digest::SHA1.hexdigest(pagename)[0..7]
                         # If hashes collide, raise an exception.
-                        # The likelyhook of a collision with SHA1 truncated to
-                        # 8 chars is very small...  If it becomes a problem we
-                        # could do something here to deal with it, however it
-                        # wouldn't be as simple as say shifting the window on
-                        # the hash, since existing URIs can't change when a new
-                        # page is added that collides.
+                        # The likelyhood of a collision with SHA1 truncated to
+                        # 8 chars is very small (around 1 in 1 million,
+                        # see https://stackoverflow.com/questions/51622061).
+                        # If it becomes a problem we could do something here
+                        # to deal with it, however it wouldn't be as simple as
+                        # say shifting the window on the hash, since existing
+                        # URIs can't change when a new page is added that
+                        # collides.
                         if consumed_hashes.include? uid
                             raise PageUIDCollisionException.new
                         end
