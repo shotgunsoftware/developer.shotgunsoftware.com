@@ -138,15 +138,15 @@ Now it’s time to define the folder structure you want Toolkit to dynamically g
 
 {% include info title="Note:" content="It’s a good practice to test configurations in a *cloned* configuration, so as not to affect the active production configuration. The cloning process creates a *copy* of the configuration that you can edit safely before pushing changes to the live config. You can find details on cloning your config in the [Configuration Staging and Rollout](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration) document." %}
 
-
 **Step 7:** Navigate to your pipeline configuration. Drill down to the schema folder, `<pipeline_configuration_root>/config/core/schema` and open the `project` folder.
 
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/15_file_structure.png)
 
-The current schema, with this skeleton: 
+The current schema, which looks like this:
 
 `<project>/assets/<asset_type>/<asset>/<step>`
 
-supports dynamically creating this filesystem structure:
+supports dynamically creating this folder structure:
 
 `the_other_side/assets/prop/filet/MDL`
 
@@ -172,6 +172,7 @@ Again, our goal is to go from an `asset_type/asset/step` folder structure to `se
 
 **Step 8:** Add a `CustomEntity01` folder inside the `project/assets` folder of your schema.
 
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/16_custom_entity_folder.png)
 
 
 **Step 9:** Create a file called `CustomEntity01.yml` file next to the `CustomEntity01` folder, with the following contents:
@@ -195,10 +196,9 @@ The `filters` field limits the cases in which this dynamic folder should be crea
 
 As we want our folder structure to look like `Dining-Room/Prop/filet`, the `asset_type` folder should be *below* the `CustomEntity01` folder in our hierarchy. Move `asset_type/` and `asset_type.yml` into the `CustomEntity01` folder.
 
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/17_schema.png)
 
-
-
-### Edit the `asset.yml file
+### Edit the asset.yml file
 
 The `filters` field limits which entities have folders created for them at a given time. In its current state, the filters field looks like this:
 
@@ -274,6 +274,7 @@ The final structure matches what was expected, and Toolkit is so smart that it e
 `/the_other_side/assets/Dining-Room/Prop/Filet/MDL`
 
 
+![Python app](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/folders_done.png)
 
 ### Algorithm?
 
