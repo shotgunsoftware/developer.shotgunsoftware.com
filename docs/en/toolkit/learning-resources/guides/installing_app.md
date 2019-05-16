@@ -238,15 +238,11 @@ You will notice the **Screening Room, Shotgun Panel, and Workfiles2** app’s lo
 
 On Linux or Mac:
 
-```
-./tank cache_apps
-```
+        ./tank cache_apps
 
 On Windows:
 
-```
-tank.bat cache_apps
-```
+        tank.bat cache_apps
 
 This will scan your configuration for apps, engines and frameworks and ensure that they are all downloaded." %}
 
