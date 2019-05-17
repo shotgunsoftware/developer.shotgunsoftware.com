@@ -83,6 +83,45 @@
     - text: extending-rv
       url: "https://support.shotgunsoftware.com/hc/en-us/community/topics/200682488-RV-Extending-and-Customizing-RV-Python-Mu-JavaScript-etc-#recent"
 
+- caption: quick-answers
+  children:
+  - page: quick-answers-admin
+    children:
+    - page: where-is-my-cache
+    - page: install-desktop-silent
+    - page: sg-desktop-run-on-ubuntu
+    - page: what-is-path-cache
+    - page: update-configuration-core-locations
+    - page: share-assets-between-projects
+    - page: sg-desktop-run-on-ubuntu
+    - page: resetup-project-with-sg-desktop
+    - page: move-project-directories
+    - page: move-configuration-location
+    - page: disable-browser-integration
+    - page: create-shotgun-desktop-shortcut
+    - page: convert-from-single-root-to-multi
+  - page: quick-answers-troubleshooting
+    children:
+    - page: houdini-integrations-not-starting
+    - page: where-are-my-log-files
+    - page: turn-debug-logging-on
+    - page: menu-entries-missing-in-launched-dcc
+    - page: houdini-integrations-not-starting
+    - page: fix-ssl-certificate-verify-failed
+    - page: context-missing-task-step
+    - page: cant-use-file-linking-toolkit-app-firefox
+    - page: cant-use-file-linking-toolkit-app-chrome
+    - page: 3dsmax-crashes-on-startup
+  - page: quick-answers-developing
+    children:
+    - page: update-config-with-api
+    - page: toolkit-core-event-daemon
+    - page: nuke-path-environment-variable
+    - page: maya-shelf-app-launcher
+    - page: as-template-fields-missing-values
+  - page: workflow
+    children:
+    - page: version-publishedfile-difference.md
 
 - caption: other
   children:
