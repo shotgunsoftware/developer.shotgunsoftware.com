@@ -1,15 +1,13 @@
 ---
 layout: default
-title: How do I re-setup a Project using SG Desktop?
+title: How do I re-setup a Toolkit Project using SG Desktop?
 pagename: resetup-project-with-sg-desktop
 lang: en
 ---
 
-# How do I re-setup a Project using SG Desktop?
+# How do I re-setup a Toolkit Project using SG Desktop?
 
-{% include info title="Note" content="This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [Shotgun Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493) or contact support if you do not have a more advanced configuration." %}
-
-{% include info title="Note" content="We are aware this is a tedious process and have plans to allow you to do this directly from SG Desktop by selecting a checkbox to "force" the process again." %}
+{% include info title="Note" content="We are aware this is a tedious process and have plans to allow you to do this directly from SG Desktop by selecting a checkbox to \"force\" the process again." %}
 
 The steps you need to do to re-setup the Project are as follows.
 
