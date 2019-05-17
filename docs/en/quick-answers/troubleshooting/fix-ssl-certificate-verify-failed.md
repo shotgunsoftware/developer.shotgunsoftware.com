@@ -36,11 +36,12 @@ Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalM
 
 1. Upgrade to the Python API **v3.0.39**
 
-2a. Set `SHOTGUN_API_CACERTS` to `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`
+2.
+    a. Set `SHOTGUN_API_CACERTS` to `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`
 
-or
+    or
 
-2b. Update your scripts and set the `ca_certs=/path/to/shotgun_api3/lib/httplib2/cacerts.txt` when instantiating the `Shotgun` object.
+    b. Update your scripts and set the `ca_certs=/path/to/shotgun_api3/lib/httplib2/cacerts.txt` when instantiating the `Shotgun` object.
 
 ### If you are using Toolkit
 

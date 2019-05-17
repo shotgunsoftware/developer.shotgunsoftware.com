@@ -54,9 +54,11 @@ On the other hand, if you are greeted by one of these messages, it means there w
 
 ## How to quickly fix certificate issues
 
-The easiest way to circumvent those issues is to click **ADVANCED** and **Proceed to localhost (unsafe)**. This will let Chrome know that you are accepting the certificate nonetheless and will allow the Shotgun website to communicate with the Shotgun Desktop application. Note that this only enables the connection between your web browser and Shotgun Desktop. The trust setting just lets traffic flow between these two applications, **it does not imply trust of any other server on the internet**. Unfortunately, this process needs to be repeated on every single computer with the problem. If this doesn't solve the issue or you feel it would be too complicated to deploy to all your users, we recommend you take a look at the following steps.
+The easiest way to circumvent those issues is to click **ADVANCED** and **Proceed to localhost (unsafe)**. This will let Chrome know that you are accepting the certificate nonetheless and will allow the Shotgun website to communicate with the Shotgun Desktop application. 
 
-Note that this step fix is not applicable to the **ERR_SSL_SERVER_CERT_BAD_FORMAT** error and you will need to regenerate the certificates, as outlined below.
+{% include info title="Note" content="This only enables the connection between your web browser and Shotgun Desktop. The trust setting just lets traffic flow between these two applications, **it does not imply trust of any other server on the internet**. Unfortunately, this process needs to be repeated on every single computer with the problem. If this doesn't solve the issue or you feel it would be too complicated to deploy to all your users, we recommend you take a look at the following steps." %}
+
+{% include info title="Note" content="This step fix is not applicable to the **ERR_SSL_SERVER_CERT_BAD_FORMAT** error and you will need to regenerate the certificates, as outlined below." %}
 
 ## Fixing NET::ERR_CERT_COMMON_NAME_INVALID and ERR_SSL_SERVER_CERT_BAD_FORMAT on all platforms
 

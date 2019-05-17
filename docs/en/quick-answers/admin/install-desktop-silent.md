@@ -15,4 +15,4 @@ If you wish to also specify the installation folder, launch it with the `/D` arg
 
 `ShotgunInstaller_Current.exe /S /D=X:\path\to\install\folder.`
 
-Note that the `/D` argument must be the last argument and no " should be used in the path, even if there are spaces in it.
+{% include info title="Note" content="The `/D` argument must be the last argument and no `"` should be used in the path, even if there are spaces in it." %}

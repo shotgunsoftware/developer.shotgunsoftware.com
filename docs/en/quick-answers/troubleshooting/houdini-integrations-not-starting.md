@@ -8,7 +8,7 @@ lang: en
 # Why are my Houdini Shotgun integrations not starting?
 
 
-This FAQ covers the most common reason we’ve seen for the Shotgun integrations not starting in Houdini. In this case,
+This covers the most common reason we’ve seen for the Shotgun integrations not starting in Houdini. In this case,
 Houdini launches without error from Shotgun Desktop, your Shotgun website, or the tank command. However, once Houdini
 is launched, the Shotgun menu or shelf does not appear.
 
@@ -33,5 +33,8 @@ Then you should add $HOUDINI_PATH; to the end of the path defined in the file an
     HOUDINI_PATH = /example/of/an/existing/path;$HOUDINI_PATH;&
 
 This will allow the Shotgun set value to persist when Houdini launches.
+
+On Windows we've seen `$HOUDINI_PATH` causing issue with it to try and bootstrap multiple times. If you get this
+You should try using `%HOUDINI_PATH%` instead.
 
 If this does not fix your problem please reach out to our support team and they will help you diagnose the issue.
