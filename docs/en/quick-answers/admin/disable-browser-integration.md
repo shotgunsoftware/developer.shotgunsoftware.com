@@ -24,5 +24,8 @@ Linux: ~/.shotgun/preferences/toolkit.ini
 enabled=0
 ```
 
-Complete instructions on how to configure the browser integration are located [here](https://support.shotgunsoftware.com/entries/95442748-Initial-Setup-and-Configuration#Advanced%20Installation%20Topics).
+Complete instructions on how to configure the browser integration are located [here](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Toolkit%20Configuration%20File).
 
+**Alternate Method**
+
+If you've taken over your Toolkit pipeline configuration, an alternative would be to remove the [`tk-shotgun` engine from your environments](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/project.yml#L48) so that it can't load any actions.
