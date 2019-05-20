@@ -37,6 +37,7 @@
       - page: /toolkit/learning-resources/guides/advanced_config/
       - page: /toolkit/learning-resources/guides/editing_app_setting/
       - page: /toolkit/learning-resources/guides/installing_app/
+      - page: /toolkit/learning-resources/guides/dynamic_filesystem_configuration/
     - page: /toolkit/learning-resources/tutorial/
     - text: webinars
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
