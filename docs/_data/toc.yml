@@ -85,22 +85,23 @@
 
 - caption: quick-answers
   children:
+
   - page: quick-answers-administering
     children:
     - page: where-is-my-cache
     - page: install-desktop-silent
     - page: sg-desktop-run-on-ubuntu
     - page: what-is-path-cache
-    - page: update-configuration-core-locations
     - page: share-assets-between-projects
-    - page: sg-desktop-run-on-ubuntu
-    - page: resetup-project-with-sg-desktop
-    - page: move-project-directories
-    - page: move-configuration-location
+    - page: uninstalling-an-app-or-engine
     - page: disable-browser-integration
     - page: create-shotgun-desktop-shortcut
+    - page: resetup-project-with-sg-desktop
+    - page: update-configuration-core-locations
+    - page: move-project-directories
+    - page: move-configuration-location
     - page: convert-from-single-root-to-multi
-    - page: uninstalling-an-app-or-engine
+
   - page: quick-answers-troubleshooting
     children:
     - page: houdini-integrations-not-starting
@@ -113,6 +114,7 @@
     - page: cant-use-file-linking-toolkit-app-firefox
     - page: cant-use-file-linking-toolkit-app-chrome
     - page: 3dsmax-crashes-on-startup
+
   - page: quick-answers-developing
     children:
     - page: update-config-with-api
@@ -120,7 +122,8 @@
     - page: nuke-path-environment-variable
     - page: maya-shelf-app-launcher
     - page: as-template-fields-missing-values
-  - page: workflow
+
+  - page: quick-answers-workflow
     children:
     - page: version-publishedfile-difference.md
 

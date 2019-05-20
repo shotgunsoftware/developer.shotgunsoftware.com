@@ -7,8 +7,6 @@ lang: en
 
 # How do I re-setup a Toolkit Project using SG Desktop?
 
-{% include info title="Note" content="We are aware this is a tedious process and have plans to allow you to do this directly from SG Desktop by selecting a checkbox to \"force\" the process again." %}
-
 The steps you need to do to re-setup the Project are as follows.
 
 ## Option 1: Manually remove leftover settings and re-run setup in SG Desktop

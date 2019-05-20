@@ -38,7 +38,7 @@ You would then repeat these steps for all the other engine environment yml files
 
 ### Removing the App settings
 
-All those engines were including [the `tk-multi-publish2.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-publish2.yml) settings file. Now you have removed refrence to it in your engine ymls you can remove this file entirely.
+All those engines were including [the `tk-multi-publish2.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-publish2.yml) settings file. Now you have removed reference to it in your engine ymls you can remove this file entirely.
 
 {% include warning title="Important" content="If you remove the `tk-multi-publish2.yml` but still have engine files pointing at it then you will likely get an error along the lines of this: 
 

@@ -7,8 +7,6 @@ lang: en
 
 # How do I update my pipeline configuration core locations?
 
-{% include info title="Note" content="This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [Shotgun Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493) or contact support if you do not have a more advanced configuration." %}
-
 ## How do I update my pipeline configuration to use a local core?
 
 If your pipeline configuration has been [setup to use a shared Toolkit core](https://support.shotgunsoftware.com/hc/en-us/articles/219040468#shared), you can essentially undo that process, or "unshare" your core, installing a copy of the Toolkit Core API inside your pipeline configuration using the tank localize command. We refer to this as "localizing" your core. 
@@ -72,7 +70,7 @@ If you have an existing shared Toolkit core, you can update any existing "locali
         $ cd /sgtk/software/shotgun/scarlet
 
 
-2. Next you'll run the tank attach_to_core command and provide the valid path to the shared core on the current platform. Note that the shared studio core must be an equal or later version than the current pipeline configuration's core. test
+2. Next you'll run the tank attach_to_core command and provide the valid path to the shared core on the current platform. {% include info title="Note" content="The shared studio core must be an equal or later version than the current pipeline configuration's core." %}
     
         $ ./tank attach_to_core /sgtk/software/shotgun/studio 
         ...

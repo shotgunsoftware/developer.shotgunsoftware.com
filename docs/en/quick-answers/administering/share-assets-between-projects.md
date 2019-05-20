@@ -7,8 +7,6 @@ lang: en
 
 # How Do I Share Assets Between Projects?
 
-{% include info title="Note" content="This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [Shotgun Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493) or contact support if you do not have a more advanced configuration." %}
-
 It's not uncommon to have a project that's used as an Asset Library, containing assets that can be loaded into shots in other projects.
 
 To achieve this, you can add a tab to the [Loader app](https://support.shotgunsoftware.com/hc/en-us/articles/219033078) that lists assets from this Asset Library project. In order to do so, you'll have to define this in the Loader settings for the engine and environment you're working in. You'll potentially have to update this in multiple places.
