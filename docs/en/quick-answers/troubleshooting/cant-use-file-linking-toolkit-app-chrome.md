@@ -30,17 +30,6 @@ If you have launched Chrome before allowing the Shotgun Desktop to register the 
 
 Ensure that no firewall software is preventing connections to localhost or on port 9000.
 
-### Are you hosting your own Shotgun server?
-
-If you are using the latest version of the Shotgun Desktop engine (v2.0.0 or above), this section can be skipped as it will automatically whitelist the current Shotgun site.
-
-If you are self-hosting your Shotgun server, i.e. not a **shotgunstudio.com** site, you need to tell the Shotgun Desktop browser integration which domain can access it. To know if you are running into this error, simply open up the Shotgun Desktop console and look for **Invalid domain: xxx** errors.
-
-To fix this, you need to edit the [toolkit.ini](https://support.shotgunsoftware.com/hc/en-us/articles/219040668-Shotgun-Desktop-Download-and-Setup#Advanced%20Installation%20Topics) file. For example, if your local Shotgun server is **shotgun.mydomain.com**, you can add the following to the file:
-
-    [BrowserIntegration]
-    whitelist=shotgun.mydomain.com
-
 ### Is Chrome rejecting the certificate?
 
 You can verify that Chrome accepts the certificate by browsing to https://localhost:9000, which is the address the Shotgun website tries to access in order to do local file linking and launch Toolkit applications. You should normally be greeted by this message:
