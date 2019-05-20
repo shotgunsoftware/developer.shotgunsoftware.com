@@ -21,7 +21,7 @@ As part of our example, we’ll also edit the filenaming templates for the proje
 
 ### There are three parts to this guide
 
-* Creating a custom entity in Shotgun called “Set”, which you will use to associate with the dining room elements the artists are creating.
+* Creating a **custom entity** in Shotgun called “Set”, which you will use to associate with the dining room elements the artists are creating.
 * Editing the folder **schema**, enabling Toolkit to include a dynamically named folder based on the current set in the folder structure. 
 * Editing the **template** used for naming asset work files, enabling Toolkit to include the name of the associated set in the file name. 
 
@@ -48,7 +48,7 @@ The Toolkit platform allows you to build your folder structure dynamically by us
 
 **Templates** allow you to dynamically name and save files as they’re created using Shotgun data and information from the schema structure. The Default Configuration provides a set of starter templates that you can edit to meet the needs of your pipeline. 
 
-{% include info title="Note:" content="The Basic setup for Shotgun integrations doesn’t include filesystem management. In order to configure filesystem management for your project, your project will need and Advanced setup. The first guide, [Getting started with configurations](./advanced_config.md) goes through the Advanced setup process" %}
+{% include info title="Note" content="The Basic setup for Shotgun integrations doesn’t include filesystem management. In order to configure filesystem management for your project, your project will need and Advanced setup. The first guide, [Getting started with configurations](./advanced_config.md) goes through the Advanced setup process" %}
 
 ## Begin exercise
 
@@ -72,7 +72,7 @@ Displayed is a list of entity types that are available in Shotgun. At the top of
 
 Doing this makes that custom entity active in Shotgun and gives it the display name *Set*. Essentially you are creating an alias for the custom entity because the system name of the entity remains `CustomEntity01`. In this example, we're using `CustomEntity01`; you might use a different custom entity.
 
-{% include info title="Note:" content="Remember the system name of the custom entity you chose." %}
+{% include info title="Note" content="Remember the system name of the custom entity you chose." %}
 
 ### Add a data field to associate assets with sets
 
@@ -131,7 +131,7 @@ You’ve now enabled a Set custom entity, created a Set entity called “Dining 
 
 Now it’s time to define the folder structure you want Toolkit to dynamically generate as artists step through the production pipeline. This is done by editing the schema.
 
-{% include info title="Note:" content="It’s a good practice to test configurations in a *cloned* configuration, so as not to affect the active production configuration. The cloning process creates a *copy* of the configuration that you can edit safely before pushing changes to the live config. You can find details on cloning your config in the [Configuration Staging and Rollout](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration) document." %}
+{% include info title="Note" content="It’s a good practice to test configurations in a *cloned* configuration, so as not to affect the active production configuration. The cloning process creates a *copy* of the configuration that you can edit safely before pushing changes to the live config. You can find details on cloning your config in the [Configuration Staging and Rollout](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration) document." %}
 
 **Step 7:** Navigate to your pipeline configuration. Drill down to the schema folder, `<pipeline_configuration_root>/config/core/schema` and open the `project` folder.
 
@@ -310,7 +310,7 @@ Since templates define where Toolkit reads and writes files, it’s crucial that
 
 Then, we’ll modify the template for work files on asset steps in Maya to also include the set in the file name. In the Default Config, the template in question is `maya_asset_work`, and that’s where we’ll start. 
 
-{% include info title="Note:" content="Using a template called `maya_asset_work` for asset-based Workfiles in Maya is a convention of the Default Configuration. To confirm that that’s the right template, check the [value of the `template_work` setting for `tk-multi-workfiles2` in the `tk-maya` engine, in the `asset_step` environment](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217)." %}
+{% include info title="Note" content="Using a template called `maya_asset_work` for asset-based Workfiles in Maya is a convention of the Default Configuration. To confirm that that’s the right template, check the value of the `template_work` setting for `tk-multi-workfiles2` in the `tk-maya` engine, in the `asset_step` environment (here it is in Github)[(https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217)]." %}
 
 **Step 15:** Open `templates.yml` and search for `maya_asset_work`. 
 
@@ -321,7 +321,7 @@ Then, we’ll modify the template for work files on asset steps in Maya to also 
 
 The `definition` value for `maya_asset_work` begins with `@asset_root`. The `@` symbol signifies that the value of `@asset_root` is defined elsewhere. 
 
-{% include info title="Note:" content="A leading `@` symbol does not denote an *include* in `templates.yml` as it does in the environment configuration files." %}
+{% include info title="Note" content="A leading `@` symbol does not denote an *include* in `templates.yml` as it does in the environment configuration files." %}
 
 Since each integration, each app, and each environment might use different settings, you can imagine that the first part of a path might be used in many different places inside `templates.yml`. The configuration is set up so it can use a single variable to store a common path root, then refer to that variable within templates. You won’t have to change each instance of the path generation settings when you can reference the common root.
 
@@ -388,7 +388,7 @@ In this example, we modified a single template, but there’s plenty more you ca
 
 ### The Path Cache
 
-At folder creation time, a mapping is created between a folder on disk and a Shotgun entity. These mappings are stored as FilesystemLocation entities in Shotgun, and cached in an SQLite database on user machines. To learn more about how the path cache works, and how to work with it, see [this document](https://support.shotgunsoftware.com/hc/en-us/articles/219040418-What-is-the-Path-Cache-What-are-Filesystem-Locations-).
+At folder creation time, a mapping is created between a folder on disk and a Shotgun entity. These mappings are stored as FilesystemLocation entities in Shotgun, and cached in an SQLite database on user machines. To learn more about how the path cache works and how to work with it, see [this document](https://support.shotgunsoftware.com/hc/en-us/articles/219040418-What-is-the-Path-Cache-What-are-Filesystem-Locations-).
 
 
 ### Additional Resources
