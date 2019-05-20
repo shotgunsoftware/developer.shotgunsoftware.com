@@ -7,8 +7,6 @@ lang: en
 
 # How do I move my Project directories to a new Local Storage root?
 
-{% include info title="Note" content="This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [Shotgun Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493) or contact support if you do not have a more advanced configuration." %}
-
 Sometimes it's necessary to move your project files (scene files, renders, etc.) to a new root storage location (eg. from `/mnt/smalldrive` to `/mnt/bigdrive/foo`). This can be done whether you're using a single or multi-root configuration. For example, lets say we want to move your storage named **"asset_storage"**:
 
 - Copy (or move) your project files from the old location to the new location.

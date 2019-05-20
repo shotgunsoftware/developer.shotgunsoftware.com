@@ -85,7 +85,7 @@
 
 - caption: quick-answers
   children:
-  - page: quick-answers-admin
+  - page: quick-answers-administering
     children:
     - page: where-is-my-cache
     - page: install-desktop-silent
