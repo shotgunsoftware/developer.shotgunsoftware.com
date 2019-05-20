@@ -125,7 +125,7 @@
 
   - page: quick-answers-workflow
     children:
-    - page: version-publishedfile-difference.md
+    - page: version-publishedfile-difference
 
 - caption: other
   children:

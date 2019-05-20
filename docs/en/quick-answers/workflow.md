@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Admin
+title: Workflow
 pagename: quick-answers-workflow
 lang: en
 ---

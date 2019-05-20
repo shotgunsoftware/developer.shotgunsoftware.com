@@ -36,7 +36,7 @@ If your pipeline configuration has been [setup to use a shared Toolkit core](htt
 
 Toolkit will confirm everything before continuing. A copy of the Toolkit core that your pipeline configuration is currently pointing at, will be copied locally into your pipeline configuration.
 
-3. Toolkit will now copy all of the apps, engines, and frameworks in use by your pipeline configuration locally into the install folder. It will then copy the Toolkit core and update the configuration files in your pipeline configuration to use the newly installed local Toolkit core (Note: your output will vary depending on which apps, engines, and framework versions you have installed)
+3. Toolkit will now copy all of the apps, engines, and frameworks in use by your pipeline configuration locally into the install folder. It will then copy the Toolkit core and update the configuration files in your pipeline configuration to use the newly installed local Toolkit core. {% include info title="Note" content="Your output will vary depending on which apps, engines, and framework versions you have installed." %}
 
 
         Copying 59 apps, engines and frameworks...
