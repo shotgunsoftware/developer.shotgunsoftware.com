@@ -48,7 +48,7 @@ The Toolkit platform allows you to build your folder structure dynamically by us
 
 **Templates** allow you to dynamically name and save files as they’re created using Shotgun data and information from the schema structure. The Default Configuration provides a set of starter templates that you can edit to meet the needs of your pipeline. 
 
-{% include info title="Note" content="The Basic setup for Shotgun integrations doesn’t include filesystem management. In order to configure filesystem management for your project, your project will need and Advanced setup. The first guide, [Getting started with configurations](./advanced_config.md) goes through the Advanced setup process" %}
+{% include info title="Note" content="The Basic setup for Shotgun integrations doesn’t include filesystem management. In order to configure filesystem management for your project, your project will need an Advanced setup. The first guide, [Getting started with configurations](./advanced_config.md) goes through the Advanced setup process" %}
 
 ## Begin exercise
 
@@ -159,7 +159,7 @@ The Set entity is represented as `CustomEntity01`. While we gave CustomEntity01 
 
 A schema can contain static and dynamic folders. If you have a static folder in your schema called “assets”, it will correspond to a single folder in your production filesystem called “assets”. On the other hand, you might have a dynamic folder in your schema named “asset” that represents one folder for each asset in your project. Every dynamic folder has a corresponding YAML file next to it with the same name as the folder (eg, `asset/` and `asset.yml`) that defines the rules for how to generate production folders based on the schema folder.
 
- ### Create the new folder and YAML file for the Set entity
+### Create the new folder and YAML file for the Set entity
 
 The schema has a `project` folder that contains folders relative to the different entities Shotgun tracks. You are adding the new asset entity, CustomEntity01, to enable Shotgun to track the items in a Set. These items are assets, so you will edit the folders and YAML files under assets.
 
@@ -376,7 +376,7 @@ You can create a simple 3D object or just save the file using the **Shotgun > Sa
 
 Success!
 
-Notice the **File Save** dialog box is displaying **Preview: Dining-Room_scene.v001.ma** using the variables that were set in the `preview:`
+Notice the **File Save** dialog box is displaying **Preview: Dining-Room_scene.v001.ma** using the new settings in the template.
 
 The **Work Area**: is displaying **.../Shotgun/projects/the_other_side/assets/Dining-Room/Prop/Filet/model/work/maya** as the path for where Workfiles is saving the file.
 
