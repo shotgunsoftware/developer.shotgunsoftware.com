@@ -3,7 +3,7 @@ layout: default
 title: 개요
 redirect_from: "/shotgun/"
 lang: ko
-pagename: shotgun
+pagename: shotgun-index
 ---
 
 # Shotgun 개발

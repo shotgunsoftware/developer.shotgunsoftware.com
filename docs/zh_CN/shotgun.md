@@ -3,7 +3,7 @@ layout: default
 title: 概述
 redirect_from: "/shotgun/"
 lang: zh_CN
-pagename: shotgun
+pagename: shotgun-index
 ---
 
 # Shotgun 开发
