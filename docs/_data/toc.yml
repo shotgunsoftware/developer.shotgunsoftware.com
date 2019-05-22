@@ -11,7 +11,7 @@
 
 - caption: shotgun
   children:
-  - page: shotgun
+  - page: shotgun-index
   - text: python-api
     url: "https://developer.shotgunsoftware.com/python-api/"
   - text: rest-api
@@ -29,7 +29,7 @@
 
 - caption: toolkit
   children:
-  - page: toolkit
+  - page: toolkit-index
   - page: toolkit-learning-resources
     children:
     - page: toolkit-guides
@@ -57,7 +57,7 @@
 
 - caption: rv
   children:
-  - page: rv
+  - page: rv-index
   - text: user-manual
     url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_manual.html"
   - text: technical-reference
@@ -86,7 +86,7 @@
 
 - caption: other
   children:
-  - page: contribution
+  - page: contribution-index
   - text: shotgun-support
     url: "https://support.shotgunsoftware.com/"
   - text: service-status
