@@ -37,6 +37,7 @@
       - page: toolkit-guides-advanced-config
       - page: toolkit-guides-editing-config
       - page: toolkit-guides-adding-app
+      - page: toolkit-guides-filesystem-configuration
     - page: toolkit-pipeline-tutorial
     - text: webinars
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
