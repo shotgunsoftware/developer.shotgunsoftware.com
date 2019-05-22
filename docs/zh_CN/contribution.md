@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 贡献手册
-redirect_from: "/contribution/"
 lang: zh_CN
 pagename: contribution-index
 ---

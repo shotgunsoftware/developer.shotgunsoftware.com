@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 概要
-redirect_from: "/rv/"
 lang: ja
 pagename: rv-index
 ---

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: アプリを追加する
-redirect_from: "/toolkit/learning-resources/guides/installing_app/"
 lang: ja
 pagename: toolkit-guides-adding-app
 ---

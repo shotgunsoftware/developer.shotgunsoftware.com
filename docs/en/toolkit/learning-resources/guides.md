@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Toolkit Basics Guides
-redirect_from: "/toolkit/learning-resources/guides/"
 pagename: toolkit-guides
 lang: en
 ---

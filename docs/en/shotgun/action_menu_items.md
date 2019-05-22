@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Action Menu Items
-redirect_from: "/shotgun/action_menu_items/"
 pagename: shotgun-action-menu-items
 lang: en
 ---

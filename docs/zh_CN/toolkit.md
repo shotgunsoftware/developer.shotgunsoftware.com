@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 概述
-redirect_from: "/toolkit/"
 lang: zh_CN
 pagename: toolkit-index
 ---

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 구성 설정을
-redirect_from: "/toolkit/learning-resources/guides/advanced_config/"
 lang: ko
 pagename: toolkit-guides-advanced-config
 ---

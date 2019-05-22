@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 앱 추가
-redirect_from: "/toolkit/learning-resources/guides/installing_app/"
 lang: ko
 pagename: toolkit-guides-adding-app
 ---
