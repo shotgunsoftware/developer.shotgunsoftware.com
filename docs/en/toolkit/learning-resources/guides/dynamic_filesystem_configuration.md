@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Dynamic filesystem configuration 
+title: Filesystem configuration 
 permalink: /toolkit/learning-resources/guides/dynamic_filesystem_configuration/
 lang: en
 ---
