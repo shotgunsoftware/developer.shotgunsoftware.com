@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 配置设置
-redirect_from: "/toolkit/learning-resources/guides/advanced_config/"
 lang: zh_CN
 pagename: toolkit-guides-advanced-config
 ---

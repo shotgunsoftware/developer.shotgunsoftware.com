@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Frameworks
-redirect_from: "/toolkit/frameworks/"
 pagename: toolkit-frameworks
 lang: en
 ---

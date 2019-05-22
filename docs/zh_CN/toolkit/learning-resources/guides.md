@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Toolkit 基础知识手册
-redirect_from: "/toolkit/learning-resources/guides/"
 lang: zh_CN
 pagename: toolkit-guides
 ---

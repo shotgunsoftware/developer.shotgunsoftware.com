@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 구성 편집
-redirect_from: "/toolkit/learning-resources/guides/editing_app_setting/"
 lang: ko
 pagename: toolkit-guides-editing-config
 ---

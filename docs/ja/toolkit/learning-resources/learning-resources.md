@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 学習リソース
-redirect_from: "/toolkit/learning-resources/"
 lang: ja
 pagename: toolkit-learning-resources
 ---

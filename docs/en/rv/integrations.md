@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Integrations
-redirect_from: "/rv/integrations/"
 pagename: rv-integrations
 lang: en
 ---

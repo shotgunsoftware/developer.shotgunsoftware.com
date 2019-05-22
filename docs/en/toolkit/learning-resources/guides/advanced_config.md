@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Configuration Setup
-redirect_from: "/toolkit/learning-resources/guides/advanced_config/"
 pagename: toolkit-guides-advanced-config
 lang: en
 ---

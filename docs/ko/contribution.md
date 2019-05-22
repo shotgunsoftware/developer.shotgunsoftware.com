@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 기여 가이드
-redirect_from: "/contribution/"
 lang: ko
 pagename: contribution-index
 ---

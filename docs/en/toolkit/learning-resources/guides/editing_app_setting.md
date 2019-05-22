@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Editing a Config
-redirect_from: "/toolkit/learning-resources/guides/editing_app_setting/"
 pagename: toolkit-guides-editing-config
 lang: en
 ---

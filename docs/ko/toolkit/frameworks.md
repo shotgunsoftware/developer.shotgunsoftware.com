@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 프레임워크
-redirect_from: "/toolkit/frameworks/"
 lang: ko
 pagename: toolkit-frameworks
 ---

@@ -2,7 +2,6 @@
 layout: default
 title: Contribution Guide
 pagename: contribution-index
-redirect_from: "/contribution/"
 lang: en
 ---
 

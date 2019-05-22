@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Learning Resources
-redirect_from: "/toolkit/learning-resources/"
 pagename: toolkit-learning-resources
 lang: en
 ---
