@@ -13,17 +13,17 @@
   children:
   - page: shotgun-index
   - text: python-api
-    url: "https://developer.shotgunsoftware.com/python-api/"
+    url: " https://developer.shotgunsoftware.com/python-api/"
   - text: rest-api
-    url: "https://developer.shotgunsoftware.com/rest-api/"
+    url: " https://developer.shotgunsoftware.com/rest-api/"
   - text: event-triggers
     url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
   - text: jira-bridge
-    url: "https://developer.shotgunsoftware.com/sg-jira-bridge/"
+    url: " https://developer.shotgunsoftware.com/sg-jira-bridge/"
   - page: shotgun-action-menu-items
     children:
     - text: examples
-      url: "http://developer.shotgunsoftware.com/python-api/cookbook/examples/ami_handler.html"
+      url: " http://developer.shotgunsoftware.com/python-api/cookbook/examples/ami_handler.html"
     - text: reference
       url: "https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
 
@@ -42,17 +42,17 @@
     - text: webinars
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
   - text: core-api
-    url: "https://developer.shotgunsoftware.com/tk-core/"
+    url: " https://developer.shotgunsoftware.com/tk-core/"
   - page: toolkit-frameworks
     children:
     - text: qt-widgets
-      url: "http://developer.shotgunsoftware.com/tk-framework-qtwidgets"
+      url: " http://developer.shotgunsoftware.com/tk-framework-qtwidgets"
     - text: shotgun-utils
-      url: "http://developer.shotgunsoftware.com/tk-framework-shotgunutils"
+      url: " http://developer.shotgunsoftware.com/tk-framework-shotgunutils"
   - page: toolkit-app-apis
     children:
     - text: publish-api
-      url: "https://developer.shotgunsoftware.com/tk-multi-publish2/"
+      url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
   - text: app-development
     url: "https://support.shotgunsoftware.com/entries/95440137"
 
