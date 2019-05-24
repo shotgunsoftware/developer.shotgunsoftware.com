@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Pipeline Tutorial
-permalink: /toolkit/learning-resources/tutorial/
+pagename: toolkit-pipeline-tutorial
 lang: en
 ---
 

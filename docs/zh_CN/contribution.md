@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 贡献手册
-permalink: /contribution/
 lang: zh_CN
+pagename: contribution-index
 ---
 
 # 贡献手册

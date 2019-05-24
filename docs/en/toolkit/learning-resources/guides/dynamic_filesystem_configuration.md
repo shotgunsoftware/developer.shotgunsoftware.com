@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Filesystem configuration 
-permalink: /toolkit/learning-resources/guides/dynamic_filesystem_configuration/
+title: Filesystem configuration
+pagename: toolkit-guides-filesystem-configuration
 lang: en
 ---
 

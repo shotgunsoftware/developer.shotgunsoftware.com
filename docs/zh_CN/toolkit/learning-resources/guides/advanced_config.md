@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 配置设置
-permalink: /toolkit/learning-resources/guides/advanced_config/
 lang: zh_CN
+pagename: toolkit-guides-advanced-config
 ---
 
 # 配置快速入门

@@ -11,7 +11,7 @@
 
 - caption: shotgun
   children:
-  - page: /shotgun/
+  - page: shotgun-index
   - text: python-api
     url: " https://developer.shotgunsoftware.com/python-api/"
   - text: rest-api
@@ -20,7 +20,7 @@
     url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
   - text: jira-bridge
     url: " https://developer.shotgunsoftware.com/sg-jira-bridge/"
-  - page: /shotgun/action_menu_items/
+  - page: shotgun-action-menu-items
     children:
     - text: examples
       url: " http://developer.shotgunsoftware.com/python-api/cookbook/examples/ami_handler.html"
@@ -29,37 +29,36 @@
 
 - caption: toolkit
   children:
-  - page: /toolkit/
-  - page: /toolkit/learning-resources/
+  - page: toolkit-index
+  - page: toolkit-learning-resources
     children:
-    - page: /toolkit/learning-resources/guides/
+    - page: toolkit-guides
       children:
-      - page: /toolkit/learning-resources/guides/advanced_config/
-      - page: /toolkit/learning-resources/guides/editing_app_setting/
-      - page: /toolkit/learning-resources/guides/installing_app/
-      - page: /toolkit/learning-resources/guides/dynamic_filesystem_configuration/
-    - page: /toolkit/learning-resources/tutorial/
+      - page: toolkit-guides-advanced-config
+      - page: toolkit-guides-editing-config
+      - page: toolkit-guides-adding-app
+      - page: toolkit-guides-filesystem-configuration
+    - page: toolkit-pipeline-tutorial
     - text: webinars
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
   - text: core-api
     url: " https://developer.shotgunsoftware.com/tk-core/"
-  - page: /toolkit/frameworks/
+  - page: toolkit-frameworks
     children:
     - text: qt-widgets
       url: " http://developer.shotgunsoftware.com/tk-framework-qtwidgets"
     - text: shotgun-utils
       url: " http://developer.shotgunsoftware.com/tk-framework-shotgunutils"
-  - page: /toolkit/app_apis/
+  - page: toolkit-app-apis
     children:
     - text: publish-api
       url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
   - text: app-development
     url: "https://support.shotgunsoftware.com/entries/95440137"
-  - page: /toolkit/tutorial/
 
 - caption: rv
   children:
-  - page: /rv/
+  - page: rv-index
   - text: user-manual
     url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_manual.html"
   - text: technical-reference
@@ -67,7 +66,7 @@
   - text: rv-sdi
     url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvsdi_manual.html"
 
-  - page: /rv/integrations/
+  - page: rv-integrations
     children:
     - text: maya
       url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/maya_tools_help.html"
@@ -78,7 +77,7 @@
     - text: screening-room
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"
 
-  - page: /rv/forums/
+  - page: rv-forums
     children:
     - text: troubleshooting
       url: "https://support.shotgunsoftware.com/forums/23078637-Questions-and-Troubleshooting-Python-Mu-JavaScript-etc-#recent"
@@ -88,7 +87,7 @@
 
 - caption: other
   children:
-  - page: /contribution/
+  - page: contribution-index
   - text: shotgun-support
     url: "https://support.shotgunsoftware.com/"
   - text: service-status

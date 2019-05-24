@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 编辑配置
-permalink: /toolkit/learning-resources/guides/editing_app_setting/
 lang: zh_CN
+pagename: toolkit-guides-editing-config
 ---
 
 # 编辑工作流配置

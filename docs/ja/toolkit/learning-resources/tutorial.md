@@ -1,8 +1,8 @@
 ---
 layout: default
 title: パイプラインのチュートリアル
-permalink: /toolkit/learning-resources/tutorial/
 lang: ja
+pagename: toolkit-pipeline-tutorial
 ---
 
 # パイプラインのチュートリアル

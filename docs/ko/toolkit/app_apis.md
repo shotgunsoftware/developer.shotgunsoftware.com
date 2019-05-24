@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 앱 API
-permalink: /toolkit/app_apis/
 lang: ko
+pagename: toolkit-app-apis
 ---
 
 # 툴킷 앱 API

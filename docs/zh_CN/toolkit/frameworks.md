@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 框架
-permalink: /toolkit/frameworks/
 lang: zh_CN
+pagename: toolkit-frameworks
 ---
 
 # Toolkit 框架

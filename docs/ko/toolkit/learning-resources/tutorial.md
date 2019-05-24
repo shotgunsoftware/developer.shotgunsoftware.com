@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 파이프라인 튜토리얼
-permalink: /toolkit/learning-resources/tutorial/
 lang: ko
+pagename: toolkit-pipeline-tutorial
 ---
 
 # 파이프라인 튜토리얼

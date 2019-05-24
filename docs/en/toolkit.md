@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Overview
-permalink: /toolkit/
+pagename: toolkit-index
 lang: en
 ---
 

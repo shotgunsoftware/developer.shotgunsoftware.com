@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 포럼
-permalink: /rv/forums/
 lang: ko
+pagename: rv-forums
 ---
 
 # RV 통합

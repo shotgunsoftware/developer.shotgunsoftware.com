@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 概要
-permalink: /rv/
 lang: ja
+pagename: rv-index
 ---
 
 # RV

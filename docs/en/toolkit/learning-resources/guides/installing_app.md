@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Adding an app
-permalink: /toolkit/learning-resources/guides/installing_app/
+pagename: toolkit-guides-adding-app
 lang: en
 ---
 
@@ -20,7 +20,7 @@ This guide will demonstrate how to add a Shotgun Toolkit app to an existing pipe
 
 The app we will be adding is the Shotgun Python Console app. Maya has its own Python console, but there are some features in the Toolkit app that don’t exist in the Maya console. 
 
-This guide utilizes the pipeline configuration we created in the [Editing a Pipeline Configuration](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/blob/getting_started_guide/docs/en/toolkit/toolkit_basics_guides/editing_app_setting.md) guide. If you haven’t completed this guide, you can use an existing pipeline configuration and add the app there.
+This guide utilizes the pipeline configuration we created in the [Editing a Pipeline Configuration](./editing_app_setting.md) guide. If you haven’t completed this guide, you can use an existing pipeline configuration and add the app there.
 
 ## Using this document
  

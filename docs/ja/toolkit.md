@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 概要
-permalink: /toolkit/
 lang: ja
+pagename: toolkit-index
 ---
 
 # Toolkit プラットフォーム

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 구성 설정을
-permalink: /toolkit/learning-resources/guides/advanced_config/
 lang: ko
+pagename: toolkit-guides-advanced-config
 ---
 
 # 구성 시작하기

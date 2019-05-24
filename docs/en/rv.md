@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Overview
-permalink: /rv/
+pagename: rv-index
 lang: en
 ---
 

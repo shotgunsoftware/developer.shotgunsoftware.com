@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Editing a Config
-permalink: /toolkit/learning-resources/guides/editing_app_setting/
+pagename: toolkit-guides-editing-config
 lang: en
 ---
 
