@@ -15,7 +15,7 @@ env:
     - DOC_URL=https://developer.shotgunsoftware.com
     - DOC_PATH=""
     - S3_BUCKET=sg-devdocs
-    - S3_WEB_URL=http://sg-devdocs.s3-website-us-east-1.amazonaws.com/
+    - S3_WEB_URL=http://sg-devdocs.s3-website-us-east-1.amazonaws.com
 
 cache:
   pip: true
