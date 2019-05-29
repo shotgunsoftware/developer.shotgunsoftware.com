@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Toolkit の基本ガイド
-redirect_from: "/toolkit/learning-resources/guides/"
 lang: ja
 pagename: toolkit-guides
 ---

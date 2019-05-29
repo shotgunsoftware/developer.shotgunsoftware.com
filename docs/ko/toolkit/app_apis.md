@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 앱 API
-redirect_from: "/toolkit/app_apis/"
 lang: ko
 pagename: toolkit-app-apis
 ---

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 統合
-redirect_from: "/rv/integrations/"
 lang: ja
 pagename: rv-integrations
 ---

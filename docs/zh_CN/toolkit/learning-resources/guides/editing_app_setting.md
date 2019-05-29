@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 编辑配置
-redirect_from: "/toolkit/learning-resources/guides/editing_app_setting/"
 lang: zh_CN
 pagename: toolkit-guides-editing-config
 ---

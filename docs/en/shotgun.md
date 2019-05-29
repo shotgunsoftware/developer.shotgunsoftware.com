@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Overview
-redirect_from: "/shotgun/"
-pagename: shotgun
+pagename: shotgun-index
 lang: en
 ---
 
