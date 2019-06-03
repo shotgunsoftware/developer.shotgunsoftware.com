@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 概要
-lang: ja
 pagename: shotgun-index
+lang: ja
 ---
 
 # Shotgun の開発

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: フォーラム
-lang: ja
 pagename: rv-forums
+lang: ja
 ---
 
 # RV の統合

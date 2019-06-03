@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 구성 편집
-lang: ko
 pagename: toolkit-guides-editing-config
+lang: ko
 ---
 
 # 파이프라인 구성 편집

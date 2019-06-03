@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 学習リソース
-lang: ja
 pagename: toolkit-learning-resources
+lang: ja
 ---
 
 # Toolkit の学習リソース

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 기여 가이드
-lang: ko
 pagename: contribution-index
+lang: ko
 ---
 
 # 기여 가이드

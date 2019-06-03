@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 액션 메뉴 항목
-lang: ko
 pagename: shotgun-action-menu-items
+lang: ko
 ---
 
 # 액션 메뉴 항목 프레임워크

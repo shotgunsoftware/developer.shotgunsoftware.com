@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 툴킷 기본 사항 안내서
-lang: ko
 pagename: toolkit-guides
+lang: ko
 ---
 
 # 툴킷 기본 사항 안내서

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 개요
-lang: ko
 pagename: shotgun-index
+lang: ko
 ---
 
 # Shotgun 개발

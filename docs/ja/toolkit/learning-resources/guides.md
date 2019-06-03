@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Toolkit の基本ガイド
-lang: ja
 pagename: toolkit-guides
+lang: ja
 ---
 
 # Toolkit の基本ガイド

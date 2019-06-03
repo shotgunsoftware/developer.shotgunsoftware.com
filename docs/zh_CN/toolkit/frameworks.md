@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 框架
-lang: zh_CN
 pagename: toolkit-frameworks
+lang: zh_CN
 ---
 
 # Toolkit 框架

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 設定を編集する
-lang: ja
 pagename: toolkit-guides-editing-config
+lang: ja
 ---
 
 # パイプライン設定を編集する

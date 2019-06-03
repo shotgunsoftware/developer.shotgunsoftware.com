@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 论坛
-lang: zh_CN
 pagename: rv-forums
+lang: zh_CN
 ---
 
 # RV 集成

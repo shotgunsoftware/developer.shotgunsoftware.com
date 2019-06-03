@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 工作流教程
-lang: zh_CN
 pagename: toolkit-pipeline-tutorial
+lang: zh_CN
 ---
 
 # 工作流教程
@@ -93,15 +93,29 @@ pagename: toolkit-pipeline-tutorial
 
 {% include figure src="../../../images/toolkit/learning-resources/tutorial/image_5.png" caption="在 Desktop 弹出菜单中选择**“Advanced project setup...”**" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_6.png" caption="选择**“Shotgun Default”**配置类型" %}
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_01.png" caption="选择**“Shotgun Default”**配置类型" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_7.png" caption="选择**“默认”(Default)**配置" %}
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_02.png" caption="选择**“默认”(Default)**配置" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_8.png" caption="输入项目文件所在文件夹的名称。" %}
+如果这是您第一次设置 Shotgun 项目，系统还会提示您为项目数据定义一个存储位置。否则，可以选择现有存储位置。
 
-如果这是您第一次设置 Shotgun 项目，系统还会提示您为项目数据定义一个存储位置。
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_03.png" caption="创建新存储。" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_9.png" caption="记下为当前操作系统选择的配置路径。" %}
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_04.png" caption="为新存储命名。请记住，此存储属于站点范围，而非特定于项目。" %}
+
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_05.png" caption="设置在您要使用的操作系统上将可以访问此存储的路径。" %}
+
+您可以在**“站点偏好设置”(Site Preferences)**的**“文件管理”(File Management)**部分下查看和编辑 Shotgun 站点的存储。可以在[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219030938)了解有关这些设置的详细信息。
+
+现在，您已选择存储位置，需要在该位置为新项目选择目录名称。
+
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_06.png" caption="输入项目文件所在文件夹的名称。" %}
+
+在本教程中，我们将使用集中式配置。**“Distributed Setup”**选项提供了一个具有一组不同优势的替代选项，这可能是没有快速共享存储的工作室的首选选项。您可以在 [Toolkit 管理](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2)演示文稿中详细了解不同配置设置的优缺点。
+
+与站点范围的存储不同，配置特定于项目，因此您在此处选择的目录将直接用于存储您的配置。
+
+{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_07.png" caption="记下为当前操作系统选择的配置路径。" %}
 
 您在上面的屏幕中选择的文件夹将作为配置的安装位置。在本教程中，您将了解并修改此文件夹中的配置的内容。
 
@@ -207,6 +221,8 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 在该对话框左侧，您将看到表示当前 Maya 会话的项。在它下面，您将看到**“Publish to Shotgun”**子动作。表示**“All Session Geometry”**的另一项显示为当前会话的子项。它也有**“Publish to Shotgun”**子动作。
 
+{% include info title="注意" content="如果**“All Session Geometry”**项没有显示，请确保在 Maya 中[已启用 Alembic 导出插件](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039928#Before%20You%20Begin)。" %}
+
 可单击树左侧的项了解发布应用。您将注意到，在选择要对其执行操作的项后，您可以输入要发布的内容的说明。您还可以单击右侧的摄影机图标拍摄屏幕截图以与该项关联。
 
 当您准备好时，单击右下角的**“Publish”**按钮发布当前工作文件和茶壶几何体。完成后，您可以浏览到 Shotgun 中的茶壶资产以验证发布是否已成功完成。
@@ -275,6 +291,8 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 
 {% include info title="注意" content="您要添加的自定义非常简单并且脆弱。更保险的解决方案可能需要将已贴图角色的其他表现形式以及使用外部图像作为纹理贴图所带来的资产管理任务考虑在内。此示例只是构建实际解决方案的基础。" %}
+
+{% include info title="注意" content="您可以在[此处](https://developer.shotgunsoftware.com/tk-multi-publish2/)查看有关如何写入发布器插件的完整详细信息。" %}
 
 #### 改写 Maya 收集器
 
@@ -612,6 +630,8 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 如图中所示，收集了新摄影机项并附加了发布插件。继续操作并单击**“Publish”**将摄影机写入磁盘，然后向 Shotgun 注册该摄影机。
 
+{% include info title="注意" content="与 Alembic 导出类似，摄影机发布插件需要加载 FBX 导出插件。如果您没有看到摄影机发布插件项，请确保 FBX 插件已加载，然后重新启动发布器。" %}
+
 在 Shotgun 中您应当看到与下图类似的效果：
 
 {% include figure src="../../../images/toolkit/learning-resources/tutorial/image_46.png" %}
@@ -826,8 +846,8 @@ Shotgun 写入节点应用在内置 Nuke 写入节点之上提供了一层，它
 
 祝贺您，您已完成本教程！我们希望本教程能为您使用 Shotgun 集成打造自己的自定义工作流奠定良好的基础。学完本教程，您应该能够了解如何根据自己工作室的特定需求扩展默认的集成。
 
+在 [shotgun-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev)中提出问题，了解其他工作室如何使用 Toolkit。请订阅以查看最新的帖子！
+
 如果您认为默认的集成未涵盖某些功能或工作流，可以随时编写自己的应用。[这里是一份详实的文档](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033158)，可帮助您开始编写您的第一个应用。
 
 与以往一样，如果您对本教程或者 Shotgun 或 Toolkit 平台的一般使用有其他疑问，请随时[提交工单](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)。
-
-

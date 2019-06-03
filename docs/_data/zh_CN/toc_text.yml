@@ -13,6 +13,7 @@ event-triggers: 事件驱动的触发器
 jira-bridge: Jira 桥接（Beta 版）
 examples: 示例
 reference: 参考
+webinars: 网络讲座录像
 
 core-api: 核心 API
 qt-widgets: QT 控件

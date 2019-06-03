@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 貢献ガイド
-lang: ja
 pagename: contribution-index
+lang: ja
 ---
 
 # 貢献ガイド

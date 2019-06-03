@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 포럼
-lang: ko
 pagename: rv-forums
+lang: ko
 ---
 
 # RV 통합

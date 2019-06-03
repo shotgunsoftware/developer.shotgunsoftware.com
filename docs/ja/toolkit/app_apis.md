@@ -1,8 +1,8 @@
 ---
 layout: default
 title: アプリケーション API
-lang: ja
 pagename: toolkit-app-apis
+lang: ja
 ---
 
 # Toolkit アプリケーション API

@@ -13,6 +13,7 @@ event-triggers: 이벤트 기반 트리거
 jira-bridge: Jira 브리지(베타)
 examples: 예
 reference: 참조
+webinars: 웨비나 녹화
 
 core-api: Core API
 qt-widgets: QT Widgets

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 学习资源
-lang: zh_CN
 pagename: toolkit-learning-resources
+lang: zh_CN
 ---
 
 # Toolkit 学习资源

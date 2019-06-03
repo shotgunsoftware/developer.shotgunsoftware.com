@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 编辑配置
-lang: zh_CN
 pagename: toolkit-guides-editing-config
+lang: zh_CN
 ---
 
 # 编辑工作流配置

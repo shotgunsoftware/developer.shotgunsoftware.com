@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Toolkit 基础知识手册
-lang: zh_CN
 pagename: toolkit-guides
+lang: zh_CN
 ---
 
 # Toolkit 基础知识手册

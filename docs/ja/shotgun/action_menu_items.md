@@ -1,8 +1,8 @@
 ---
 layout: default
 title: アクション メニュー項目
-lang: ja
 pagename: shotgun-action-menu-items
+lang: ja
 ---
 
 # アクション メニュー アイテムのフレームワーク

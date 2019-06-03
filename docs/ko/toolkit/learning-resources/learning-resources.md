@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 교육 리소스
-lang: ko
 pagename: toolkit-learning-resources
+lang: ko
 ---
 
 # 툴킷 교육 리소스
