@@ -374,7 +374,7 @@ Python 콘솔 앱이 선택한 프로젝트의 프로젝트 환경에 추가되�
 
 `config/env/project.yml`을 엽니다.
 
-{% include info title="참고" content="엔진 블록에서 `tk-desktop`은 포함된 컨텐츠를 가리킵니다.
+{% include info title="참고" content='엔진 블록에서 `tk-desktop`은 포함된 컨텐츠를 가리킵니다.
 
 ```
 includes:
