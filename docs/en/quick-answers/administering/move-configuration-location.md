@@ -14,7 +14,7 @@ This command is also useful if you are only moving the location for a single pla
 - [Using the tank move_configuration command](#Using-the-tank-move-configuration-command)
 - Manually moving your pipeline configuration
 
-{% include warning title="Caution" content="If you are moving a configuration that is localized (ie. it contains it's own Toolkit core), and you have other projects that are using the Toolkit core embedded in this pipeline configuration (i.e. this configuration is a shared core), you'll have to manually update the configuration files in those projects to point to the new location for this pipeline configuration. These files are located in:
+{% include warning title="Caution" content="If you are moving a configuration that is localized (ie. it contains it's own Toolkit core), and you have other projects that are using the Toolkit core embedded in this pipeline configuration (ie. other configurations are using this as a shared core), you'll have to manually update the configuration files in those projects to point to the new location for this pipeline configuration. These files are located in:
 
 - /path/to/pipeline_configuration/install/core/core_Darwin.cfg
 - /path/to/pipeline_configuration/install/core/core_Linux.cfg
