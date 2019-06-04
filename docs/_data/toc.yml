@@ -108,6 +108,7 @@
     - page: houdini-integrations-not-starting
     - page: where-are-my-log-files
     - page: turn-debug-logging-on
+    - page: performance-troubleshooting
     - page: menu-entries-missing-in-launched-dcc
     - page: houdini-integrations-not-starting
     - page: fix-ssl-certificate-verify-failed
