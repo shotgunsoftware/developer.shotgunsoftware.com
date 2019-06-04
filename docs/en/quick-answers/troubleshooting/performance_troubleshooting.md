@@ -42,11 +42,26 @@ Table of Contents:
 
 Shotgun Toolkit [caches data to the user’s home directory](../administering/where-is-my-cache.md). This cache can include a number of different SQLite databases as well as cached apps and configs. Normally the user’s home directory is stored on the machine’s local hard drives, but it's fairly common for studios to redirect them to network storage. Doing this can impact performance—most notably to the SQLite databases, which are used for browser integration and folder creation/lookup among other things. 
 
-If your user directories are stored on a server location, we recommend repathing the Shotgun Toolkit cache using the `SHOTGUN_HOME` environment variable. The `SHOTGUN_HOME` environment variable is used to set the location where Toolkit caches various data, such as the bundle cache, thumbnails, SQLite databases used for fast lookup of data and other things.
+If your user directories are stored on a server location, we recommend repathing the Shotgun Toolkit cache using the [`SHOTGUN_HOME` environment variable](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables). The `SHOTGUN_HOME` environment variable is used to set the location where Toolkit caches various data, such as the bundle cache, thumbnails, SQLite databases used for fast lookup of data and other things.
 
 ### Debugging
+
 You can enable debug logging in Shotgun Toolkit, so that you can get more verbose output from the various processes. This can be incredibly useful when trying to diagnose issues, however, the debug setting is not designed to be enabled during normal everyday use. The increase in logging output can significantly impact performance. 
 
-When encountering performance issues, especially ones that are localized to specific machines or users, first check that debug logging isn’t enabled.
+When encountering performance issues, especially ones that are localized to specific machines or users, first check that [debug logging](./turn-debug-logging-on.md) isn’t enabled.
+
 ### Keeping up to date
+
 If you’re encountering performance issues, check that your core, apps, engines, and frameworks are up to date, as there may already be fixes or optimizations available in newer releases.
+
+### Centralized configs vs distributed configs
+
+There are two different ways of setting up advanced Toolkit configurations: [centralized and distributed](https://developer.shotgunsoftware.com/tk-core/initializing.html#the-toolkit-startup). The key differences are that the centralized configs typically live on your studio’s network storage where they can be accessed by all users, and the distributed configs are usually stored in the cloud and get cached locally per user. 
+
+Whilst the differences between these two methods extend beyond performance, they can both bring performance benefits and disadvantages. Here is a table showing the pros and cons, purely from a performance standpoint.
+
+|        | Advantages           | Disadvantages  |
+| ------------- |-------------| ----- |
+| Centralized Configs | Once the initial setup process is complete, it will have everything it needs already downloaded and ready to go for all users. <br/><br/>Future updates only need to be downloaded once to the centralized location. | Centralized configs are usually kept on network storage; therefore the performance can be degraded during normal Toolkit usage. Toolkit configurations contain many small files, and handling metadata operations on lots of small files can be a lot slower and harder for servers. Also, heavy read operations both through the use of Toolkit or through general use of the server may impact Toolkit’s performance by not being able to read the configuration as quickly.
+ |
+| Distributed Configs      | The cached apps, engines, frameworks, and cores are stored in such a way that they can be shared with other locally cached configs. This means subsequent loading of different projects will likely be faster to cache if they share the same dependencies. <br/><br/>They are stored in the user’s cache on their local hard drive and thus normally perform better than server speeds. This means that after the initial cache, the performance should be better than a centralized config. | Distributed configs need to be cached locally per user. Usually, this involves downloading the config and all the required apps, engines, frameworks, and core. The process happens seamlessly behind the scenes, but there is still the initial cost of downloading these. Every time the config gets updated to point to new versions of the dependencies, both the config and the new dependencies will need to be cached. |
