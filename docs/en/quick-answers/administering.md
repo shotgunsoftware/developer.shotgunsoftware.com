@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Admin
+title: Administering
 pagename: quick-answers-administering
 lang: en
 ---
