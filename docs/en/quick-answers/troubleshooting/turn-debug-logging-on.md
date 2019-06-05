@@ -79,23 +79,24 @@ This does not output any log messages to a file. We are working on a more standa
 
 ## Turning on debug logging for an engine in your software
 
-As an example, to turn on debugging output for the Nuke engine in the shot step environment, find the Nuke engine (tk-nuke) section in your environment file and update the setting to `debug_logging: true`
+As an example, to turn on debugging output for the Nuke engine in the shot step environment, find the Nuke engine (`tk-nuke`) section in your environment file and update the setting to `debug_logging: true`.
 
-Edit `config/env/shot_step.yml.`
+Edit `config/env/shot_step.yml`.
 
-engines: 
-  ...
-  ...
-  tk-nuke:
-    apps:
+    engines: 
       ...
       ...
-    compatibility_dialog_min_version: 9
-    debug_logging: true
-    favourite_directories: []
-    location: {name: tk-nuke, type: app_store, version: v0.2.23}
-    ...
-   ...
+      tk-nuke:
+        apps:
+          ...
+          ...
+        compatibility_dialog_min_version: 9
+        debug_logging: true
+        favourite_directories: []
+        location: {name: tk-nuke, type: app_store, version: v0.2.23}
+        ...
+       ...
+
 Save the file and relaunch your Software in the shot step environment. You will now see the debug output in the script editor window. 
 
 Turning on debug logging for the Shotgun engine
