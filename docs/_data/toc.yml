@@ -88,20 +88,20 @@
   children:
 
   - page: quick-answers-administering
-    children:
-    - page: where-is-my-cache
-    - page: install-desktop-silent
-    - page: sg-desktop-run-on-ubuntu
-    - page: what-is-path-cache
-    - page: share-assets-between-projects
-    - page: uninstalling-an-app-or-engine
-    - page: disable-browser-integration
-    - page: create-shotgun-desktop-shortcut
-    - page: resetup-project-with-sg-desktop
-    - page: update-configuration-core-locations
-    - page: move-project-directories
-    - page: move-configuration-location
-    - page: convert-from-single-root-to-multi
+#    children:
+#    - page: where-is-my-cache
+#    - page: install-desktop-silent
+#    - page: sg-desktop-run-on-ubuntu
+#    - page: what-is-path-cache
+#    - page: share-assets-between-projects
+#    - page: uninstalling-an-app-or-engine
+#    - page: disable-browser-integration
+#    - page: create-shotgun-desktop-shortcut
+#    - page: resetup-project-with-sg-desktop
+#    - page: update-configuration-core-locations
+#    - page: move-project-directories
+#    - page: move-configuration-location
+#    - page: convert-from-single-root-to-multi
 
   - page: quick-answers-troubleshooting
     children:

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: My context is missing the Task/Step but it exists as part of the filename.
+title: Why is my context is missing the Task/Step when it exists as part of the filename?
 pagename: context-missing-task-step
 lang: en
 ---
 
-# My context is missing the Task/Step but it exists as part of the filename.
+# Why is my context is missing the Task/Step when it exists as part of the filename?
 
 Toolkit uses the path cache to help associate paths on disk with entities in Shotgun and build your context. Since the path cache only stores **folder** information and not filenames, any context-related information contained in the filename (including Task or Step name) will not be detected when building the context.
 

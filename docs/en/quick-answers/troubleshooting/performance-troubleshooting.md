@@ -5,7 +5,7 @@ pagename: performance-troubleshooting
 lang: en
 ---
 
-# Performance Troubleshooting
+# Performance troubleshooting
 
 You may come across situations where Toolkit usage can become slow. There can be many reasons for encountering this, ranging from issues with the client side infrastructure such as server speeds or internet connection to configuration based issues where Toolkit or Shotgun is not configured in a performant way, to areas of our code that could use further optimization.
 
