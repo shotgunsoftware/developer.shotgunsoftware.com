@@ -11,11 +11,11 @@ You may come across situations where Toolkit usage can become slow. There can be
 
 Here is a quick list of things to check which we cover in further detail below:
 
-- Make sure your Apps, engines, frameworks, core, and Desktop are up to date.
+- Make sure your Apps, engines, frameworks, core, and Desktop [are up to date](#keeping-up-to-date).
 - Ensure [debug logging](./turn-debug-logging-on.md) is not enabled during general use.
-- Only create the folders that you need to, and limit folders so they are only created when they are actually needed. Adding too many folders to your schema will slow things down.
+- Only [create the folders that you need to](#folder-creation-is-slow), and limit folders so they are only created when they are actually needed. Adding too many folders to your schema will slow things down.
 - Storing your user caches on a server can be slow. You can redirect the user’s Shotgun cache by setting the [`SHOTGUN_HOME` environment variable](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables) to point to a location on your local drive.
-- Configure the workfiles and loader apps to filter out content that is not needed by the artist. Consider filtering by statuses to help keep the list of entities short and relevant to the artist’s current tasks.
+- [Configure the workfiles and loader apps](#file-open-file-save-or-the-loader-app-is-slow) to filter out content that is not needed by the artist. Consider filtering by statuses to help keep the list of entities short and relevant to the artist’s current tasks.
 - Check to see if you have any custom hooks and that they are not adding additional overhead.
 
 Below is a list of good practices and common slow down scenarios. This is not an exhaustive list and we will try to add to it as and when we see new patterns. If this guide doesn’t help you get to the bottom of the problem you’re facing, then please feel free to pop a [support ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new) in and our team will be happy to assist you further.
@@ -33,8 +33,8 @@ Table of Contents:
     - [Common causes of slow software launches](#common-causes-of-slow-software-launches)
 - [File Open, File Save, or the Loader app is slow?](#file-open-file-save-or-the-loader-app-is-slow)
 - [Folder Creation is slow](#folder-creation-is-slow)
-    - Tackling I/O usage
-    - Registering folders
+    - [Tackling I/O usage](#tackling-io-usage)
+    - [Registering folders](#registering-folders)
 
 ## General good practice
 
@@ -120,8 +120,8 @@ Reading logs can be tricky though and the contents may not always make sense, so
 
 ### Common causes of slow software launches
 
-| **Slow internet speed** | Pretty much every aspect of Toolkit usage where it needs to connect and communicate with the Shotgun site will be affected by slow internet speeds. In this case, typically, you will see speed issues in other situations in addition to launching software. However, if the connection is unstable rather than slow, you’re more likely to run into performance issues during launch (as there is quite a bit of Shotgun communication going on throughout the process). |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Slow internet speed** | Pretty much every aspect of Toolkit usage where it needs to connect and communicate with the Shotgun site will be affected by slow internet speeds. In this case, typically, you will see speed issues in other situations in addition to launching software. However, if the connection is unstable rather than slow, you’re more likely to run into performance issues during launch (as there is quite a bit of Shotgun communication going on throughout the process). |
 | **Slow server access**  | This can certainly affect launch times. If you're using a [centralized config](#centralized-configs-vs-distributed-configs), (i.e., your config is stored on a central server) there can be a lot of I/O as it reads your configuration files. On top of that, launching the software will trigger folder creation for the context it’s being launched in. This means that it will be checking to see if your folders are created, and creating them if not.               |
 | **Folder creation**     | As mentioned above, folder creation can be a common cause of slowdown. [See the folder creation performance troubleshooting below for more details.](#folder-creation-is-slow)                                                                                                                                                                                                                                                                                             |
 
