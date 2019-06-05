@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Performance Troubleshooting
-pagename: performance_troubleshooting
+pagename: performance-troubleshooting
 lang: en
 ---
 
