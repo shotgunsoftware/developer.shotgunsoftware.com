@@ -11,8 +11,8 @@ The easiest way to move your pipeline configuration to a new location is by usin
 
 This command is also useful if you are only moving the location for a single platform, or were not previously using a platform but would like to add it now. Toolkit will detect what needs to be moved or added and what doesn't. And will show you what it is about to do to allow you to confirm before progressing. 
 
-- [Using the tank move_configuration command](#Using-the-tank-move-configuration-command)
-- [Manually moving your pipeline configuration](#Manually-moving-your-pipeline-configuration)
+- [Using the tank move_configuration command](#using-the-tank-move-configuration-command)
+- [Manually moving your pipeline configuration](#manually-moving-your-pipeline-configuration)
 
 {% include warning title="Caution" content="If you are moving a configuration that is localized (i.e. it contains it's own Toolkit core), and you have other projects that are using the Toolkit core embedded in this pipeline configuration (i.e. other configurations are using this as a shared core), you'll have to manually update the configuration files in those projects to point to the new location for this pipeline configuration. These files are located in:
 
