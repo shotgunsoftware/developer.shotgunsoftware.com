@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Does SG Desktop run on Debian systems like Ubuntu?
+title: Does Shotgun Desktop run on Debian systems like Ubuntu?
 pagename: sg-desktop-run-on-ubuntu
 lang: en
 ---
 
-# Does SG Desktop run on Debian systems like Ubuntu?
+# Does Shotgun Desktop run on Debian systems like Ubuntu?
 
-We don't currently support Debian based distros for SG Desktop. We have some clients in the past who have tried to get 
+We don't currently support Debian based distros for Shotgun Desktop. We have some clients in the past who have tried to get 
 it working, extracting Desktop from the RPM using cpio and then trying to satisfy the library dependencies but this has 
 had relatively poor results. For reference, 
 [you can check out this thread](https://groups.google.com/a/shotgunsoftware.com/d/msg/shotgun-dev/nNBg4CKNBLc/naiGlJowBAAJ).

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: How Do I Share Assets Between Projects?
+title: How do I share assets between projects?
 pagename: share-assets-between-projects
 lang: en
 ---
 
-# How Do I Share Assets Between Projects?
+# How do I share assets between projects?
 
 It's not uncommon to have a project that's used as an Asset Library, containing assets that can be loaded into shots in other projects.
 
