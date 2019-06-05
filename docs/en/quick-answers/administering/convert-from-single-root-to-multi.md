@@ -77,7 +77,7 @@ For example, if you had an asset.yml somewhere under your secondary folder, then
 
 ## Update your template paths to specify which root to use
 
-Finally you will update1 the paths defined in your `config/core/templates.yml` file to specify which storage root to use, and update any of the paths as necessary. Remember that your template paths are very good friends with your schema and they need to match up. If you have a template path defined that doesn't match correctly with the path defined in your schema, you'll run into errors.
+Finally you will update<sup>1</sup> the paths defined in your `config/core/templates.yml` file to specify which storage root to use, and update any of the paths as necessary. Remember that your template paths are very good friends with your schema and they need to match up. If you have a template path defined that doesn't match correctly with the path defined in your schema, you'll run into errors.
 
 For example, since we want to have all of our asset work on the secondary storage, to update the maya_asset_work template path, we'd modify it to look like this:
 
@@ -87,6 +87,6 @@ For example, since we want to have all of our asset work on the secondary storag
 
 You should follow this same pattern for each template path in your `config/core/templates.yml` file. Specify the correct `root_name` for each one (**'primary'** or **'secondary'**).
 
-NOTE: You do not need to specify a `root_name` for templates that use the default storage root. The default root is indicated by specifying `default: true` in the `roots.yml` file. If a default is not explicitly defined in `roots.yml`, the root named **primary** will be considered the default.
+{% include info title="Note" content="You do not need to specify a `root_name` for templates that use the default storage root. The default root is indicated by specifying `default: true` in the `roots.yml` file. If a default is not explicitly defined in `roots.yml`, the root named **primary** will be considered the default." %}
 
-1 It is worth noting that updating the paths might not be ideal, since any old files that were created using the previous value will not be accessible by Toolkit once the new value is set (e.g. old work files won't be found by Toolkit after changing their template path). If this is a concern, you may then create a new template (e.g. houdini_shot_publish_v2) with the new location and upgrade your apps to use that new version. Not all apps handle a fallback concept like this, but this will allow some apps to recognize the old files. This does not affect publishes, as these are always linked to their publish in Shotgun.
+<sup>1</sup> *It is worth noting that updating the paths might not be ideal, since any old files that were created using the previous value will not be accessible by Toolkit once the new value is set (e.g. old work files won't be found by Toolkit after changing their template path). If this is a concern, you may then create a new template (e.g. houdini_shot_publish_v2) with the new location and upgrade your apps to use that new version. Not all apps handle a fallback concept like this, but this will allow some apps to recognize the old files. This does not affect publishes, as these are always linked to their publish in Shotgun.*
