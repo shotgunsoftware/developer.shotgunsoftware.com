@@ -22,17 +22,17 @@ Below is a list of good practices and common slow down scenarios. This is not an
 
 Table of Contents:
 - [General good practice](#general-good-practice)
-    - Cache Location
-    - Keeping up to date
-    - Centralized configs vs distributed configs
-    - Debugging
-- Launching software is slow
-    - Diagnosis
-    - Is the issue pre or post launch?
-    - Checking the logs
-    - Common causes of slow software launches
-- File Open, File Save, or the Loader app is slow?
-- Folder Creation is slow
+    - [Cache Location](#cache-location)
+    - [Keeping up to date](#keeping-up-to-date)
+    - [Centralized configs vs distributed configs](#centralized-configs-vs-distributed-configs)
+    - [Debugging](#debugging)
+- [Launching software is slow](#launching-software-is-slow)
+    - [Diagnosis](#diagnosis)
+    - [Is the issue pre or post launch?](#is-the-issue-pre-or-post-launch)
+    - [Checking the logs](#checking-the-logs)
+    - [Common causes of slow software launches](#common-causes-of-slow-software-launches)
+- [File Open, File Save, or the Loader app is slow?](#file-open-file-save-or-the-loader-app-is-slow)
+- [Folder Creation is slow](#folder-creation-is-slow)
     - Tackling I/O usage
     - Registering folders
 
@@ -86,3 +86,135 @@ The first thing you should do is figure out under what conditions this is happen
 If you believe the issue is limited to a certain OS, Python package, or software version then please let our [support team](https://support.shotgunsoftware.com/hc/en-us/requests/new) know so they can investigate further.
 6. **Does this happen for all users?** - Similar to above, it’s possible that as a different user on the same machine, the issue might disappear. In this situation, start by clearing the user’s local Shotgun cache. Also, make sure debug logging is not enabled for normal production use, as this will impact performance.
 7. **Is the slow launching exclusive to a specific app/software or are all apps/software launched abnormally slow?** - If specific software is slow to launch, this might mean that there is a configuration issue. It may be worth checking to see if you have any custom hooks set up to run either before or after launch that might be impacting performance. Common hooks used in start up are [`before_app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/before_app_launch.py), [`app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/app_launch.py), and the core hook [`engine_init.py`](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/engine_init.py). There can also be occurrences from time to time where a newer version of software is released and our integrations are suddenly much slower to start. In this situation, you should reach out to [support](https://support.shotgunsoftware.com/hc/en-us/requests/new) to check if they are aware of this, and if there is any known fix. Please provide the version number of the software your using (including patches/service pack if applicable) and the version of the tk engine and core you’re running.
+
+### Is the issue pre or post launch?
+
+If the above hasn’t helped you narrow it down, then the next step is to establish where in the startup process things are slowing down. When launching software via Toolkit, it can usually be boiled down into a two step process.
+
+The first step performs some initial operations, such as gathering the information required to launch the software, automatically creating the folders from the context and then actually launching the software. Then the second step of the process starts the Toolkit integration once the software has launched.
+
+Usually, you can see without looking at the logs if the performance issue lies in the first step of the process or the second:
+
+- By watching and seeing if it takes a long time for the software’s splash screen to start. If it does then the issue could well be in the first step.
+- By seeing the software begin to start up relatively quickly but then become slow (after getting to the point where it has finished initializing and the Shotgun menu is present). If this is the case then the issue will fall into the second step.
+
+Knowing this will help you in the next bit which is looking at the logs.
+
+### Checking the logs
+
+Now you hopefully have some idea of if the issue is in the first step or the second step of the launching; this will help target which log you will be looking in. The logs are broken up per engine, so if the issue appears to be in the pre-launch phase, then you will need to look in either the `tk-desktop.log` or in the `tk-shotgun.log`, depending on if you launched from SG Desktop or the SG site respectively.
+
+The next thing you should do is enable debug logging.
+{% include info title="Note" content="If it was already enabled, as [mentioned above](#debugging) this could be a cause for sluggishness, so you should also test without it enabled" %}
+Once debug logging is enabled, you should clear your existing logs, and then replicate the launch process. Then you can use the timestamps in the logs to see where the jumps in time appear.
+
+For example, here are a few lines where a 5 second jump in time occurs during folder creation:
+
+    2019-05-01 11:27:56,835 [82801 DEBUG sgtk.core.path_cache] Path cache syncing not necessary - local folders already up to date!
+    2019-05-01 11:28:01,847 [82801 INFO sgtk.env.asset.tk-shotgun.tk-shotgun-folders] 1 Asset processed - Processed 66 folders on disk.
+
+
+Once you locate the jumps in time, the log line will hopefully give you some idea about what was happening at that stage, such as if it occurred during folder creation, or if it was trying to get a Shotgun connection. 
+
+Reading logs can be tricky though and the contents may not always make sense, so again you can reach out to [support](https://support.shotgunsoftware.com/hc/en-us/requests/new) to assist you with this bit.
+
+### Common causes of slow software launches
+
+| **Slow internet speed** | Pretty much every aspect of Toolkit usage where it needs to connect and communicate with the Shotgun site will be affected by slow internet speeds. In this case, typically, you will see speed issues in other situations in addition to launching software. However, if the connection is unstable rather than slow, you’re more likely to run into performance issues during launch (as there is quite a bit of Shotgun communication going on throughout the process). |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Slow server access**  | This can certainly affect launch times. If you're using a [centralized config](#centralized-configs-vs-distributed-configs), (i.e., your config is stored on a central server) there can be a lot of I/O as it reads your configuration files. On top of that, launching the software will trigger folder creation for the context it’s being launched in. This means that it will be checking to see if your folders are created, and creating them if not.               |
+| **Folder creation**     | As mentioned above, folder creation can be a common cause of slowdown. [See the folder creation performance troubleshooting below for more details.](#folder-creation-is-slow)                                                                                                                                                                                                                                                                                             |
+
+## File Open, File Save, or the Loader app is slow?
+
+The first thing to do is to narrow down to certain aspects of where the app in question is slow.
+
+- **Is it slow to launch the app or navigate through the tabs?**
+    - It's possible that the app is currently configured to show too much information. The My Tasks tab and others can be configured to filter out unneeded entities from the list. For example, you could filter out tasks that are of a certain status, such as On Hold (`hld`) or Final (`fin`).  Not only does this offer performance benefits, but it also lets the artist see only the information that is important to them. Both the [Loader app](https://support.shotgunsoftware.com/hc/en-us/articles/219033078-Load-Published-Files-#The%20tree%20view) and the Workfiles app can be filtered, however, Workfiles doesn’t currently have a specific doc section on filtering but filters can be applied as part of the [hierarchy settings](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files#Step%20filtering).
+    - The hierarchy on the File Open app can also be configured to defer the loading of the [sub items until it is expanded](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files#Deferred%20queries). This is now the default configuration setup, however, if you have older configs you may wish to transition over to using this.
+    - Check that debug logging isn’t enabled. This can cause a lot of additional I/O and therefore slow things down; these apps do contain a lot of debugging output.
+- **Is it slow opening, saving, or creating a new file?**
+    - Check to see if you’ve taken over scene operations or actions hooks, and see if there is any custom behavior around these functions that might slow things down.
+    - When creating or saving a file, Workfiles will ensure that all the required folders for the context are created. Folder creation can be a common point at which performance [issues](#folder-creation-is-slow) can occur.
+
+## Folder Creation is slow
+
+Folder creation has many parts to it, which can contribute to the process being slow when an issue arises.
+
+Folder creation will:
+- Synchronise your local path cache.
+- Read your config’s schema.
+- Generate a list of paths that should be created given a certain context. 
+- Check the paths against path registries stored locally.
+- Attempt to register the new paths both on your SG site and locally, if not already registered.
+- Check to see if the folders actually exist on disk regardless of if they have already been registered, and create the folders if they are not.
+
+In short, folder creation will have potentially significant I/O usage on the disk, as well as need to write to a local database and communicate with the SG site.
+
+### Tackling I/O usage
+
+It may be possible that your storage is slow or inefficient at handling many small read-write operations, so anything that can be done to improve the infrastructure will help speed up the folder creation operations. However, there are steps that can be taken on the Toolkit configuration side to try and reduce the strain as much as possible.
+
+The first thing is to limit the folders that are created to the ones that are important to that context and thus the environment you would be working in. For example, if you're working on a Task on a Shot in Maya, then you would ideally only want it to check and create the folders for your specific Shot and software. 
+
+Basically, create the minimum required folders that allow you to save and publish your work.
+
+##### Create with parent
+
+There is a [`create_with_parent` setting](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Create%20With%20Parent%20Folder) that can be applied to schema folders.
+Setting it to true will cause the folder to be created at the same time as it’s parent. You should be careful to avoid situations where setting it to True will cause large numbers of folders to be checked and created.
+
+**Example**
+If you had a Sequence/Shot folder hierarchy and you set your Shot folder to create with its parent Sequence, then whenever a Sequence folder gets created, it will check for all associated Shots and create folders for them. 
+
+Whilst this might be convenient in some situations, it is causing a lot more folders to be checked and potentially created at once. In this scenario, if you were to create a new file in workfiles on a Task on a Shot, it would trigger the creation of the Shot’s parent Sequence folder and that in turn would create all children Shot folders, not just the Shot you’re working on. 
+
+{% include info title="Note" content="The setting for step schema folders defaults to true." %}
+
+#### Defer creation
+The [`defer_creation` setting](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Workspaces%20and%20Deferred%20Folder%20Creation) allows you to further refine when folders should be created by restricting the creation of folders to only happen when a certain engine is running. You can even use custom names, and then trigger the creation of them using the [sgtk API](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure).
+
+**Example**
+
+You may have a bunch of folders that should only be created at publish stage. In this case, you could set a custom to defer keyword of maya_publish, and then use the API to create the folders using that keyword as the engine name.
+Your folder in the schema might look something like:
+
+    # the type of dynamic content
+    type: "static"
+    # defer creation and only create this folder when Photoshop starts
+    defer_creation: "publish"
+
+And then you would create the folders with a script like this:
+
+    sgtk.create_filesystem_structure(entity["type"], entity["id"], engine="publish")
+
+**Extended Example**
+
+Taking the idea of deferring folders further, if you have a number of non-dynamic folders at the root of your project, these typically only ever need to be created once. For example, the [“editorial” and “reference”](https://github.com/shotgunsoftware/tk-config-default2/tree/master/core/schema/project) folders in the root of the Default Configuration’s  schema would only likely need creating once at the start of the project, but by default, the folder creation will check for their existence every time. 
+
+To limit this, you could create [yml files](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Static%20folders) for them, where you can set a defer keyword so that they only get created when the folder creation is run in a certain engine or passed the keyword. You could set the defer keyword to `tk-shell` and then run the folder creation via the tank command like `tank folders`. 
+
+This would mean that these folders would only get created if the folder creation was run via the tank command, which a Toolkit administrator could do when setting up the project for the first time. Alternatively, you could write a small script that ran the folder creation with a custom keyword a bit like the example above.
+
+### Registering folders
+
+During the folder creation process the folders are [registered](#../administering/what-is-path-cache.md) so that the paths can be used to look up the context in the future. [As mentioned before](#folder-creation-is-slow), part of this process requires talking to the Shotgun site, which is the central location where the registries are stored. However, these registries are also cached locally to enable faster lookup by the tools. 
+
+#### SQLite database
+
+The local [path cache](#../administering/what-is-path-cache.md) uses an SQLite database to store the data. The performance of reading and writing to the database can be severely impacted if the database is stored on network storage.
+
+#### Initial synchronization
+There can be situations where a local cache needs to be generated from scratch for a project (such as when a new user joins an already in progress project) that has a lot of folders registered. This process can take noticeably longer, but the good news here is that this should only happen once for that project. 
+
+Subsequent syncs will only pull the differences between the local cache and the site registry. If the user infrequently works on the project and a lot of folders get created between sessions, then they may experience a noticeable wait whilst everything caches.
+
+One method we’ve seen people employ here is to transfer a reasonably up to date version of a local cache to the user’s machine.
+
+{% include info title="Note" content="This approach is only necessary in situations where there is an extremely large amount of folders being created on a project." %}
+
+This update process can be achieved automatically through the use of the core hook cache_location.py. This hook can be used to set the location of the cache, but rather than changing the location, you can use this hook to copy a version of the path_cache.db file from a central location to the user’s default location, thus cutting out the need for it to do an expensive full sync. 
+
+The centrally stored path cache could then be updated periodically by either manually copying from someone's cache, or perhaps having a script transfer it on a regular basis. 
+
+{% include warning title="WARNING" content="The cache_location.py hook can be used to set the location of the cache, but setting this to point to a single location for all users should be avoided, as this can lead to database locks when one or more processes try to edit the database at the same time." %}
