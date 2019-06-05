@@ -20,17 +20,18 @@ The publisher is an app, and apps are added to engines inside the environment se
 
 Each engine has it's own yml file inside [`.../env/includes/settings`](https://github.com/shotgunsoftware/tk-config-default2/tree/master/env/includes/settings), as the publisher is included in all engines you will need to modify each engine yml. Taking the Maya engine as an example you would open up [tk-maya.yml](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml) and remove all references to the publish2 app.
 
-The first you have a reference to it in the includes section:<br/>
-https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L18
+First there is a reference to it in the includes section:<br/>
+[`.../env/includes/settings/tk-maya.yml L18`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L18)
 
 After that we have the app being included in the Maya engine when in an Asset Step context:<br/>
-https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L47<br/>
+[`.../env/includes/settings/tk-maya.yml L47`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L47)<br/>
 As well as a line adding it to the menu favourites:<br/>
-https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L56
+[`.../env/includes/settings/tk-maya.yml L56`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L56)
+
 
 Then you have a repeat of these lines under the Shot Step settings:<br/>
-https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L106<br/>
-https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L115
+[`.../env/includes/settings/tk-maya.yml L106`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L106)<br/>
+[`.../env/includes/settings/tk-maya.yml L115`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L115)
 
 You would then repeat these steps for all the other engine environment yml files, such as `tk-nuke`, `tk-3dsmaxplus`, `tk-desktop` and so on.
 

@@ -34,7 +34,7 @@ Toolkit caches information about the local storages used in a pipeline configura
         windows_path: 'z:\sgtk\secondaries'
     }
 
-NOTE: As of `tk-core v0.18.141`, the names of the roots defined in roots.yml do not need to match the names of the local storage defined in SG. You can explicitly define the connection by including a `shotgun_storage_id: <id>` key/value pair in your `roots.yml` definitions.
+{% include info title="Note" content="As of `tk-core v0.18.141`, the names of the roots defined in roots.yml do not need to match the names of the local storage defined in SG. You can explicitly define the connection by including a `shotgun_storage_id: <id>` key/value pair in your `roots.yml` definitions.
 Example:
 
     secondary: {
@@ -44,7 +44,7 @@ Example:
         shotgun_storage_id: 123
     }
 
-The storage id is currently only queryable via an API call.
+The storage id is currently only queryable via an API call." %}
 
 ## Modify your schema to use your new local storage root
 
