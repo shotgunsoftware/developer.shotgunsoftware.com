@@ -1,11 +1,11 @@
 ---
 layout: default
-title: How do I move my Project directories to a new Local Storage root?
+title: How do I move my project directories to a new Local Storage root?
 pagename: move-project-directories
 lang: en
 ---
 
-# How do I move my Project directories to a new Local Storage root?
+# How do I move my project directories to a new Local Storage root?
 
 Sometimes it's necessary to move your project files (scene files, renders, etc.) to a new root storage location (eg. from `/mnt/smalldrive` to `/mnt/bigdrive/foo`). This can be done whether you're using a single or multi-root configuration. For example, lets say we want to move your storage named **"asset_storage"**:
 

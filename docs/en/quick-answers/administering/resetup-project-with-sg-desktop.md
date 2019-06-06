@@ -1,11 +1,11 @@
 ---
 layout: default
-title: How do I re-setup a Toolkit Project using Shotgun Desktop?
+title: How do I re-setup a Toolkit project using Shotgun Desktop?
 pagename: resetup-project-with-sg-desktop
 lang: en
 ---
 
-# How do I re-setup a Toolkit Project using Shotgun Desktop?
+# How do I re-setup a Toolkit project using Shotgun Desktop?
 
 The steps you need to do to re-setup the Project are as follows.
 
