@@ -18,7 +18,6 @@ system level libraries.
 We don't have official plans for Debian support at the moment. There is the problem of building for Ubuntu, 
 but then there is the need to QA and support the extra operating system as we make changes, which isn't at all trivial.
 
-If you want to run and activate Toolkit manually without Shotgun Desktop (
-[as explained in the doc here](https://support.shotgunsoftware.com/hc/en-us/articles/219033208#Step%208.%20Run%20the%20activation%20script),) - please 
+If you want to run and activate Toolkit manually without Shotgun Desktop ([as explained in the doc here](https://support.shotgunsoftware.com/hc/en-us/articles/219033208#Step%208.%20Run%20the%20activation%20script),) - please 
 download the `activate_shotgun_pipeline_toolkit.py` script from that documentation page - it's in step 8 of the guide,
  click the "click to download..." header.

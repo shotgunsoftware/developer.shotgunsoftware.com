@@ -11,11 +11,11 @@ Quick answers around administering your Toolkit setup.
 A collection of quick answers based around administering and configuring your Toolkit setup.
 
 #### Shotgun Desktop:
+- [How do I re-setup a Toolkit Project using Shotgun Desktop?](./administering/resetup-project-with-sg-desktop.md)
+- [How do I install the Shotgun Desktop silently on Windows?](./administering/install-desktop-silent.md)
 - [How do I set up a desktop/launcher icon for Shotgun Desktop on Linux?](./administering/create-shotgun-desktop-shortcut.md)
 - [How can I disable the Shotgun Desktop's browser integration?](./administering/disable-browser-integration.md)
-- [How do I install the Shotgun Desktop silently on Windows?](./administering/install-desktop-silent.md)
 - [Does Shotgun Desktop run on Debian systems like Ubuntu?](./administering/sg-desktop-run-on-ubuntu.md)
-- [How do I re-setup a Toolkit Project using Shotgun Desktop?](./administering/resetup-project-with-sg-desktop.md)
 
 #### Managing your config:
 

@@ -7,7 +7,8 @@ lang: en
 
 # How do I modify my configuration to use multiple storage roots?
 
-The default configuration we provide is setup to use a single local storage root (eg. all of your project files are stored underneath a single root point like `/sgtk/projects`). You may want to add a new storage root to store some of your project files. This is a common situation that arises when you're running out of disk space or want some media to be on a faster storage, etc. Toolkit currently requires that you have at least one local storage named "primary" so if you're using a single root, then that's what you have. Now lets say we want to add another one named "secondary".
+The default configuration we provide is setup to use a single local storage root (eg. all of your project files are stored underneath a single root point like `/sgtk/projects`). You may want to add a new storage root to store some of your project files. This is a common situation that arises when you're running out of disk space or want some media to be on a faster storage, etc. 
+Lets say you want to add another root named "secondary", here are the steps you need to take:
 
 ## Add the local storage in Shotgun
 
@@ -17,7 +18,7 @@ The default configuration we provide is setup to use a single local storage root
 - Fill out the name ("secondary") and the paths to the storage root on all of the relevant platforms. *If you're not using a particular platform, you can simply leave it blank.*
 - Click on the **Save Page** button on the top or the bottom of the page
 
-![Shotgun file management prefs](../../../images/quick-answers/admin/shotgun-pref-file-management.png)
+![Shotgun file management prefs](../../../images/quick-answers/administering/shotgun-pref-file-management.png)
 
 ## Add the new root to your pipeline configuration
 
@@ -50,7 +51,7 @@ The storage id is currently only queryable via an API call." %}
 
 Now that you've defined the new storage root and essentially told Toolkit about it, you need to decide how you're going to use it in your directory structure. For this example, let's assume you want all of your asset work to go in the secondary storage, and all of your shot work to go in the primary storage. You might setup your schema to look like the following in `config/core/schema`:
 
-![Multi root schema layout](../../../images/quick-answers/admin/schema-multi-root.png)
+![Multi root schema layout](../../../images/quick-answers/administering/schema-multi-root.png)
 
 **config/core/schema/project.yml**
 
