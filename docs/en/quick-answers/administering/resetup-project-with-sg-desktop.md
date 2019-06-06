@@ -9,27 +9,15 @@ lang: en
 
 The steps you need to do to re-setup the Project are as follows.
 
-## Option 1: Manually remove leftover settings and re-run setup in Shotgun Desktop
+1. Delete the PipelineConfiguration entity(s) linked to your Project in Shotgun.<br/>![Access to the PipelineConfiguration entity page](../../../images/quick-answers/administering/pipeline-configuration-entity-page.png)
+2. Set the Tank Name field on your Project in Shotgun to a blank value.<br/>![Clear the project tank name field](../../../images/quick-answers/administering/clear-project-tank-name.png)
+3. Remove the corresponding pipeline configuration directory(s) on disk.
+4. In Shotgun Desktop select the Project you wish to setup. *If you were already viewing the project, jump out to the project list view and then back into your project again.*
+6. Now you can run the project setup process again.
 
-- Delete the PipelineConfiguration entity(s) linked to your Project in Shotgun. ![Access to the PipelineConfiguration entity page](../../../images/quick-answers/administering/pipeline-configuration-entity-page.png)
-- Set the Tank Name field on your Project in Shotgun to a blank value. ![Clear the project tank name field](../../../images/quick-answers/administering/clear-project-tank-name.png)
-- Remove the corresponding pipeline configuration directory(s) on disk.
-- In SG Desktop:
-    - Navigate out to the Project list.
-    - Select the Project you wish to setup.
-    - Now you can run the project setup process again.
+****
 
-## Option 2: Run project setup from the command line with --force
+{% include info title="Note" content="If you are used to using the command line to setup your project with the  `tank setup_project` command then you can add a `--force` argument to the end of the command to allow you to setup a previously setup project without following the manual steps above.
+    tank setup_project --force" %}
 
-- Open a terminal.
-- `cd` to the site config directory. By default these are located:
-    - If you are using the Shotgun Integrations:
-        - Mac: `~/Library/Caches/Shotgun/<your_site_name>/site.basic.desktop/cfg`
-        - Windows: `%APPDATA%\Shotgun\<your_site_name>\site.basic.desktop/cfg`
-        - Linux: `~/.shotgun/<your_site_name>/site.basic.desktop/cfg`
-    - If you are using the Toolkit platform:
-        - Mac: `~/Library/Application Support/Shotgun/<your_site_url>/site`
-        - Windows: `%APPDATA%\Shotgun\<your_site_url>\site`
-        - Linux: `~/.shotgun/<your_site_url>/site`
-- Run the command `./tank setup_project --force`.
-- Follow the on-screen instructions.
+    

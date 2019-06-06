@@ -73,7 +73,7 @@ At this point, we recommend that you communicate with the person who administers
 
 ## Investigating Group Policy Issues
 
-If your computer is on a domain, the administrator can try out the steps detailed in this StackExchange post (gotta give credit where credit is due).
+If your computer is on a domain, the administrator can try out the steps detailed in [this StackExchange post](https://superuser.com/questions/145394/windows-7-will-not-install-a-root-certificate/642812#642812).
 
 If your computer is not on a domain, it is possible the computer has still been locked down by the administrator. For the following steps, you will need a Windows administrator account.
 
