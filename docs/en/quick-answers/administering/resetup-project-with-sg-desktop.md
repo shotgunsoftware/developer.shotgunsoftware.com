@@ -1,15 +1,15 @@
 ---
 layout: default
-title: How do I re-setup a Toolkit Project using SG Desktop?
+title: How do I re-setup a Toolkit Project using Shotgun Desktop?
 pagename: resetup-project-with-sg-desktop
 lang: en
 ---
 
-# How do I re-setup a Toolkit Project using SG Desktop?
+# How do I re-setup a Toolkit Project using Shotgun Desktop?
 
 The steps you need to do to re-setup the Project are as follows.
 
-## Option 1: Manually remove leftover settings and re-run setup in SG Desktop
+## Option 1: Manually remove leftover settings and re-run setup in Shotgun Desktop
 
 - Delete the PipelineConfiguration entity(s) linked to your Project in Shotgun
 - Remove the corresponding pipeline configuration directory(s) on disk

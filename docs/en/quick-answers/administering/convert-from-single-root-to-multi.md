@@ -1,13 +1,13 @@
 ---
 layout: default
-title: How do I convert my project from a single root to a multi-root configuration?
+title: How do I modify my configuration to use multiple storage roots?
 pagename: convert-from-single-root-to-multi
 lang: en
 ---
 
-# How do I convert my project from a single root to a multi-root configuration?
+# How do I modify my configuration to use multiple storage roots?
 
-Your project uses a single local storage root (eg. all of your project files are stored underneath a single root point like `/sgtk/projects`). You now want to add a new storage root to store some of your project files. This is a common situation that arises when you're running out of disk space or want some media to be on a faster storage, etc. Toolkit currently requires that you have at least one local storage named "primary" so if you're using a single root, then that's what you have. Now lets say we want to add another one named "secondary".
+The default configuration we provide is setup to use a single local storage root (eg. all of your project files are stored underneath a single root point like `/sgtk/projects`). You may want to add a new storage root to store some of your project files. This is a common situation that arises when you're running out of disk space or want some media to be on a faster storage, etc. Toolkit currently requires that you have at least one local storage named "primary" so if you're using a single root, then that's what you have. Now lets say we want to add another one named "secondary".
 
 ## Add the local storage in Shotgun
 
