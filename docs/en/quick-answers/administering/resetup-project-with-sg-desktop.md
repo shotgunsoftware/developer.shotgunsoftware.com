@@ -17,7 +17,7 @@ The steps you need to do to re-setup the project are as follows.
 
 **Alternate method**
 
-If you are used to using the command line to setup your project with the  `tank setup_project` command then you can add a `--force` argument to the end of the command to allow you to setup a previously setup project without following the manual steps listed above.
+If you are used to using the command line to setup your project with the  `tank setup_project` command then you can add a `--force` argument to the end of the command. This allows you to setup a previously setup project without following the manual steps listed above.
     
     tank setup_project --force"
 
