@@ -25,4 +25,4 @@ A collection of quick answers aimed at troubleshooting issues.
 
 #### Diagnosing errors:
 - [Fixing the SSL: CERTIFICATE_VERIFY_FAILED issues with the Python API](./troubleshooting/fix-ssl-certificate-verify-failed.md)
-- [Why does 3ds Max crashes on startup when using Shotgun Toolkit?](./tr®oubleshooting/3dsmax-crashes-on-startup.md)
+- [Why does 3ds Max crashes on startup when using Shotgun Toolkit?](./troubleshooting/3dsmax-crashes-on-startup.md)
