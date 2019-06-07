@@ -201,11 +201,11 @@ This would mean that these folders would only get created if the folder creation
 
 ### Registering folders
 
-During the folder creation process the folders are [registered](#../administering/what-is-path-cache.md) so that the paths can be used to look up the context in the future. [As mentioned before](#folder-creation-is-slow), part of this process requires talking to the Shotgun site, which is the central location where the registries are stored. However, these registries are also cached locally to enable faster lookup by the tools. 
+During the folder creation process the folders are [registered](../administering/what-is-path-cache.md) so that the paths can be used to look up the context in the future. [As mentioned before](#folder-creation-is-slow), part of this process requires talking to the Shotgun site, which is the central location where the registries are stored. However, these registries are also cached locally to enable faster lookup by the tools. 
 
 #### SQLite database
 
-The local [path cache](#../administering/what-is-path-cache.md) uses an SQLite database to store the data. The performance of reading and writing to the database can be severely impacted if the database is stored on network storage.
+The local [path cache](../administering/what-is-path-cache.md) uses an SQLite database to store the data. The performance of reading and writing to the database can be severely impacted if the database is stored on network storage.
 
 #### Initial synchronization
 There can be situations where a local cache needs to be generated from scratch for a project (such as when a new user joins an already in progress project) that has a lot of folders registered. This process can take noticeably longer, but the good news here is that this should only happen once for that project. 
