@@ -22,6 +22,6 @@ To disable the browser integration, follow these two simple steps.
 
 Complete instructions on how to configure the browser integration are located [here](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Toolkit%20Configuration%20File).
 
-**Alternate Method**
+**Alternate method**
 
 If you've taken over your Toolkit pipeline configuration, an alternative would be to remove the [`tk-shotgun` engine from your environments](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/project.yml#L48) so that it can't load any actions.

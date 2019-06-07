@@ -15,9 +15,7 @@ If your pipeline configuration has been [setup to use a shared Toolkit core](htt
 
         $ cd /sgtk/software/shotgun/scarlet
 
-
 2. Run the following tank command
-
 
         $ ./tank localize
 
@@ -33,9 +31,8 @@ If your pipeline configuration has been [setup to use a shared Toolkit core](htt
 
         Do you want to proceed [yn]
 
-
-Toolkit will confirm everything before continuing. A copy of the Toolkit core that your pipeline configuration is currently pointing at, will be copied locally into your pipeline configuration.
-
+    Toolkit will confirm everything before continuing. A copy of the Toolkit core that your pipeline configuration is currently pointing at, will be copied locally into your pipeline configuration.
+    
 3. Toolkit will now copy all of the apps, engines, and frameworks in use by your pipeline configuration locally into the install folder. It will then copy the Toolkit core and update the configuration files in your pipeline configuration to use the newly installed local Toolkit core. {% include info title="Note" content="Your output will vary depending on which apps, engines, and framework versions you have installed." %}
 
 
@@ -69,7 +66,6 @@ If you have an existing shared Toolkit core, you can update any existing "locali
 
         $ cd /sgtk/software/shotgun/scarlet
 
-
 2. Next you'll run the tank attach_to_core command and provide the valid path to the shared core on the current platform. {% include info title="Note" content="The shared studio core must be an equal or later version than the current pipeline configuration's core." %}
     
         $ ./tank attach_to_core /sgtk/software/shotgun/studio 
@@ -90,7 +86,6 @@ If you have an existing shared Toolkit core, you can update any existing "locali
         have no configurations that are using the core embedded in this configuration.
 
         Do you want to proceed [yn]
-
  
     Toolkit will confirm everything before continuing. Since this shared core was already setup for multiple platforms, it shows you the location for each.
  
@@ -114,13 +109,11 @@ Here's how to create a new Toolkit Core API configuration that can be shared bet
 1. Open a terminal and navigate to an existing pipeline configuration that contains the Toolkit Core version you wish to share. Once the process is complete, this this pipeline configuration will no longer be localized, but will use the newly created shared core.
 
         $ cd /sgtk/software/shotgun/pied_piper
- 
 
 2. Run the following tank command to copy the Toolkit core to an external location on disk. You need to provide the location this path can be found on all platforms (linux_path, windows_path, mac_path). We recommend using quotes for each path. If you don't use Toolkit on a particular platform, you can simply specify an empty string "". 
 
         $ ./tank share_core "/mnt/sgtk/software/shotgun/studio" "Z:\sgtk\software\shotgun\studio" \ "/sgtk/software/shotgun/studio"
  
-
 3. You will be shown a summary of the change that is about to be made before Toolkit will proceed.
 
         ----------------------------------------------------------------------
