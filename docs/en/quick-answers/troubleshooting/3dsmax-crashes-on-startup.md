@@ -1,13 +1,11 @@
 ---
 layout: default
-title: 3ds Max crashes on startup when using Shotgun Toolkit.
+title: Why does 3ds Max crashes on startup when using Shotgun Toolkit?
 pagename: 3dsmax-crashes-on-startup
 lang: en
 ---
 
-# 3ds Max crashes on startup when using Shotgun Toolkit.
-
-{% include info title="Note" content="This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [Shotgun Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493) or contact support if you do not have a more advanced configuration." %}
+# Why does 3ds Max crashes on startup when using Shotgun Toolkit?
 
 When launching 3ds Max from Shotgun Desktop or the Shotgun website, it is possible that 3ds Max will freeze leaving you with a frozen white dialog or the following message will appear:
 

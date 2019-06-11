@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Admin
+title: Workflow
 pagename: quick-answers-workflow
 lang: en
 ---
@@ -8,4 +8,7 @@ lang: en
 Workflow based quick answers
 =====
 
-A collection of workflow related quick answers
+A collection of related quick answers based around Toolkit workflows.
+
+- [What's the difference between a Version and a PublishedFile?](./workflow/version-publishedfile-difference.md)
+

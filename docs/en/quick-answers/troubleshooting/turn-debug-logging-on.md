@@ -11,7 +11,7 @@ lang: en
 
 The easiest way to enable debugging is to toggle it on through the Shotgun Desktop app. This can be set once you are logged into Shotgun Desktop: click on your profile picture in the bottom right of the app, and select **Advanced -> Toggle Debug Logging**. This setting is persistent between sessions, so remember to turn it off when you are finished.
 
-![Toggle debug logging in SG Desktop](../../../images/quick-answers/troubleshooting/desktop-enable-debug-logging.png)
+![Toggle debug logging in SG Desktop](images/desktop-enable-debug-logging.png)
 
 It should also be noted that when this is toggled on, apps launched from Desktop, or even the Shotgun action menu items through the browser integration, will also inherit this debug state.
 
@@ -26,7 +26,7 @@ First, you will need to set up a new environment variable: TK_DEBUG=1
 
 - You can permanently turn on debug logging by navigating to the **Windows icon > Control Panel > System > Advanced system settings > Environment Variables… > New…**
 
-![Setting Windows environment variables](../../../images/quick-answers/troubleshooting/windows-setting-environment-variable.png)
+![Setting Windows environment variables](images/windows-setting-environment-variable.png)
 
 
 - **Variable name**: `TK_DEBUG`
@@ -79,23 +79,24 @@ This does not output any log messages to a file. We are working on a more standa
 
 ## Turning on debug logging for an engine in your software
 
-As an example, to turn on debugging output for the Nuke engine in the shot step environment, find the Nuke engine (tk-nuke) section in your environment file and update the setting to `debug_logging: true`
+As an example, to turn on debugging output for the Nuke engine in the shot step environment, find the Nuke engine (`tk-nuke`) section in your environment file and update the setting to `debug_logging: true`.
 
-Edit `config/env/shot_step.yml.`
+Edit `config/env/shot_step.yml`.
 
-engines: 
-  ...
-  ...
-  tk-nuke:
-    apps:
+    engines: 
       ...
       ...
-    compatibility_dialog_min_version: 9
-    debug_logging: true
-    favourite_directories: []
-    location: {name: tk-nuke, type: app_store, version: v0.2.23}
-    ...
-   ...
+      tk-nuke:
+        apps:
+          ...
+          ...
+        compatibility_dialog_min_version: 9
+        debug_logging: true
+        favourite_directories: []
+        location: {name: tk-nuke, type: app_store, version: v0.2.23}
+        ...
+       ...
+
 Save the file and relaunch your Software in the shot step environment. You will now see the debug output in the script editor window. 
 
 Turning on debug logging for the Shotgun engine

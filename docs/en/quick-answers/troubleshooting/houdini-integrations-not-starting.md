@@ -8,14 +8,14 @@ lang: en
 # Why are my Houdini Shotgun integrations not starting?
 
 
-This FAQ covers the most common reason we’ve seen for the Shotgun integrations not starting in Houdini. In this case,
+This covers the most common reason we’ve seen for the Shotgun integrations not starting in Houdini. In this case,
 Houdini launches without error from Shotgun Desktop, your Shotgun website, or the tank command. However, once Houdini
 is launched, the Shotgun menu or shelf does not appear.
 
 Often the reason for this is that the `HOUDINI_PATH` environment variable has been overridden, and Shotgun relies on that
  for passing the startup script path.
 
-When Houdini is launched from Shotgun, the launch app logic adds the Shotgun bootstrap script path to the HOUDINI_PATH
+When Houdini is launched from Shotgun, the launch app logic adds the Shotgun bootstrap script path to the `HOUDINI_PATH`
 environment variable. However, the problem can arise when Houdini has a
 [houdini.env file](http://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables).
 This file allows the user to set environment variables that will be present when Houdini is loaded, but any values
@@ -34,4 +34,7 @@ Then you should add $HOUDINI_PATH; to the end of the path defined in the file an
 
 This will allow the Shotgun set value to persist when Houdini launches.
 
-If this does not fix your problem please reach out to our support team and they will help you diagnose the issue.
+On Windows we've seen `$HOUDINI_PATH` causing issue with it to try and bootstrap multiple times. If you get this
+You should try using `%HOUDINI_PATH%` instead.
+
+If this does not fix your problem please reach out to our [support team]((https://support.shotgunsoftware.com/hc/en-us/requests/new)) and they will help you diagnose the issue.

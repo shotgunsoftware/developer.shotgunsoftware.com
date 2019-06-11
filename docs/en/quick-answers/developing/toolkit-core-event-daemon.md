@@ -9,13 +9,13 @@ lang: en
 
 **Huge thanks to [Benoit Leveau @ Milk VFX](https://github.com/benoit-leveau) for sharing this.**
 
-## The Problem
+## The problem
 
-If you're using the [shotgunEvents daemon](https://github.com/shotgunsoftware/shotgunEvents), you may want to perform Toolkit actions inside of a plugin for certain events. This can be tricky since Python only imports a module once. So if your Toolkit Core API for Project A is imported the first time the plugin is run, that is the version that will remain imported for the life of the daemon. This means if the next event dispatched to the plugin is for Project B, you may get an error from Toolkit if you try and instantiate a new Toolkit object for Project B using the core API from Project A.
+Toolkit's sgtk API is project-centric, in other words, you must import it specifically from the project you wish to use it on. Which means that if you are wanting to use sgtk API operations for multiple projects in a single python session, then you run into a problem, as python will only allow a module with the same name to be imported once.
 
-Since Toolkit is project-centric, you'll have different versions of the Toolkit core and configuration for each Project. Depending on the Project that the event was generated from, you may need to import a different version of the sgtk module from a different location in order to create the correct Toolkit instance. As mentioned, by default Python will only import a module once. So even if you modify the sys.path to point to a new location for your sgtk module and try to import it, Python will see that it has already imported an sgtk module and won't replace it. This will then cause errors when you try and perform Toolkit actions on a project that is different from the one your core API was loaded from.
+If you're using the [shotgun event daemon](https://github.com/shotgunsoftware/shotgunEvents), you may want to perform Toolkit actions inside of a plugin for certain events. This can be tricky since Python only imports a module once. So if your Toolkit Core API for Project A is imported the first time the plugin is run, that is the version that will remain imported for the life of the daemon. This means if the next event dispatched to the plugin is for Project B, you may get an error from Toolkit if you try and instantiate a new Toolkit object for Project B using the core API from Project A.
 
-**Example:**
+**Example of the problem using centralized configs:**
 
 - Event 123 is for Project A
 - The core API for Project A is located at `/mnt/toolkit/projectA/install/core/python`
@@ -29,11 +29,10 @@ Since Toolkit is project-centric, you'll have different versions of the Toolkit 
 - `import sgtk` won't do anything since Python sees it's already imported sgtk
 - instantiate a Toolkit instance with this core API and perform some action(s)
 - This will cause errors since the Toolkit core is for a different Project (A) than the Project (B) you're trying to perform actions on.
- 
 
-## The Solution
+## The solution
 
-In a general, the example below shows you how you can import the correct version of the sgtk core in a script or plugin when a different version of the module may have already been imported. The original import is unloaded and removed from memory in Python so the new instance of the module can be imported and used successfully.
+The example below shows you how you can import the correct version of the sgtk core in a script or plugin when a different version of the module may have already been imported. The original import is unloaded and removed from memory in Python so the new instance of the module can be imported and used successfully.
 
 ```
 """
@@ -98,3 +97,40 @@ def import_sgtk(project):
     import sgtk
     return sgtk
 ```
+
+## Distributed Configs
+
+The above example is assuming you are using a [centralized config](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), however, things are a bit different if you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations). Importing the sgtk API for a distributed config requires you to use the [bootstrap API](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api). When using the bootstrap API, you usually start by importing a non-project centric sgtk API and then use that to bootstrap an engine for a given project. The bootstrap process handles the swapping out of the sgtk modules and so at the end of the bootstrap process you have an engine object and if you import sgtk after bootstrap it will import the relevant sgkt module appropriate to your project. Given the example above of needing to load sgtk for multiple projects, you would need to bootstrap for multiple projects instead. The small catch here is that you can only have one engine running at a time, so you must destroy it before you load another.
+
+{% include warning title="Warning" content="Bootstrapping a config can be slow, as the process need to ensure that the config is cached locally and that all the dependencies are downloaded. Bootstrapping in an event daemon plugin could severely affect performance. One potential approach would be to spawn off separate python instances for each project bootstrap that you can communicate and send commands to from the plugins. This will avoid needing to re-bootstrap a project each time its needed." %}
+
+ Here is an example: 
+
+    # insert the path to the non project centric sgtk API
+    sys.path.insert(0,"/path/to/non/project/centric/sgtk")
+    import sgtk
+
+    sa = sgtk.authentication.ShotgunAuthenticator()
+    # Use the authenticator to create a user object.
+    user = sa.create_script_user(api_script="SCRIPTNAME",
+                                api_key="SCRIPTKEY",
+                                host="https://SITENAME.shotgunstudio.com")
+
+    sgtk.set_authenticated_user(user)
+
+    mgr = sgtk.bootstrap.ToolkitManager(sg_user=user)
+    mgr.plugin_id = "basic."
+
+    engine = mgr.bootstrap_engine("tk-shell", entity={"type": "Project", "id": 176})
+    # import sgtk again for the newly bootstrapped project, (we don't need to handle setting sys paths)
+    import sgtk
+    # perform any required operations on Project 176 ...
+    
+    # Destroy the engine to allow us to bootstrap into another project/engine.
+    engine.destroy()
+
+    # now repeat the process for the next project, although we don't need to do the initial non-project centric sgtk import this time.
+    # We can reuse the already import sgtk API to bootstrap the next
+    ...
+
+{% include info title="Note" content="Centralized configs can be bootstrapped as well, so you don't need a different method if you're using a mix." %}
