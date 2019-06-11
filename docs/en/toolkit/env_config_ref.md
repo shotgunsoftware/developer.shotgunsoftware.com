@@ -22,7 +22,7 @@ This document will also occasionally cover some of the specific choices we’ve 
 
 Within your Pipeline Configuration, the `config/` directory contains all the files and folders that are meant to be customized. In `config/`, you’ll find three sub-directories: `cache`, `core`, and `env`. The `env` dir contains all of the environment configuration files, so this document will refer to the files in `config/env`.
 
-![env folder contents](/images/toolkit/env_config_ref/1.png)
+![env Folder Contents](./images/env_config_ref/1.png)
 
 In the Default Configuration, you’ll see the following files in `config/env/`:
 
@@ -35,7 +35,7 @@ shot.yml
 shot_step.yml
 ```
 
-Each of these files corresponds to an environment; having separate files allows each to be configured differently.
+Each of these files corresponds to an environment; having separate files allows each environment to be configured differently.
 
 ### How Toolkit determines the current environment
 
@@ -57,7 +57,7 @@ bundle_name:
   setting2: value
   complex_setting:
     sub_setting1: value  
-    Sub_setting2: valu
+    Sub_setting2: value
   location: 
     type: descriptor_type
     descriptor_setting1: value
@@ -110,6 +110,7 @@ In contrast, if you are actively developing a custom bundle – say you’re wor
         type: dev
         path: /path/to/app
 ```
+
 The `dev` descriptor has different settings from the `app_store` descriptor. While it can take other settings, it can be set up simply with a `path` setting pointing to where the app lives on disk.
 
 See [the Descriptor section of the Toolkit Core API docs](https://developer.shotgunsoftware.com/tk-core/descriptor.html) for details on all available descriptor types and their settings.
@@ -179,8 +180,7 @@ Includes consist of two parts:
 
 To flesh out our above example, you might have a single file where you hold the location descriptors for all of your engines. Let’s put that file in an `includes` subfolder, and call it `engine_locations.yml`. 
 
-![engine_locations include file](/images/toolkit/env_config_ref/1.png)
-
+![engine_locations include file](./images/env_config_ref/2.png)
 
 The contents of `engine_locations.yml` would look like this:
 
@@ -325,8 +325,8 @@ Note that if the settings for `tk-multi-workfiles2` were coming from an included
 
 ### Additional resources
 
-let's put something here
+* [File system configuration reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference)
+* [Toolkit Basics Guide: Editing a pipeline configuration](./learning-resources/guides/editing_app_setting.md)
+* [Toolkit Basics Guide: Adding an app](./learning-resources/guides/installing_app.md)
+* [Descriptor reference documentation](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 
---
-Notes for when this is published:
-Let’s revisit the “Through extending the default configuration” section of Guide 2 and see if we can clean up and link here.
