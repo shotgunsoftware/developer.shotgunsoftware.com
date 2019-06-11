@@ -22,6 +22,8 @@ This document will also occasionally cover some of the specific choices we’ve 
 
 Within your Pipeline Configuration, the `config/` directory contains all the files and folders that are meant to be customized. In `config/`, you’ll find three sub-directories: `cache`, `core`, and `env`. The `env` dir contains all of the environment configuration files, so this document will refer to the files in `config/env`.
 
+![env folder contents](/images/toolkit/env_config_ref/1.png)
+
 In the Default Configuration, you’ll see the following files in `config/env/`:
 
 ```
@@ -177,6 +179,7 @@ Includes consist of two parts:
 
 To flesh out our above example, you might have a single file where you hold the location descriptors for all of your engines. Let’s put that file in an `includes` subfolder, and call it `engine_locations.yml`. 
 
+![engine_locations include file](/images/toolkit/env_config_ref/1.png)
 
 
 The contents of `engine_locations.yml` would look like this:
