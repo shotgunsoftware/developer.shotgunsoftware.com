@@ -36,7 +36,7 @@ lang: ko
 5. YAML에 대한 기본 지식
 6. 파이프라인 구성이 저장된 파일 시스템에 대해 적절하게 설정된 읽기 및 쓰기 권한
 7. 툴킷이 프로덕션 파일 시스템에 읽고 쓸 수 있도록 적절하게 설정된 읽기 및 쓰기 권한
-8. 활성 상태의 Maya 멤버쉽. [Maya](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689)의 30일 체험판을 구할 수 있습니다.
+8. 활성 상태의 Maya 멤버쉽. [Maya](https://www.autodesk.co.kr/products/maya/free-trial)의 30일 체험판을 구할 수 있습니다.
 
 {% include info title="참고" content="이 안내서는 `tk-config-default2` 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다." %}
 
@@ -58,17 +58,17 @@ lang: ko
 
 **1단계:** 브라우저에서 Shotgun 사이트를 엽니다. 아바타를 클릭하고 관리자(ADMIN) > 사이트 기본 설정(Site Preferences)으로 이동합니다. 결과 페이지에서 **엔티티**(Entities) 섹션을 확장합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/1_site_preferences.png)
+![Python 앱](./images/dynamic_filesystem_configuration/1_site_preferences.png)
 
 Shotgun에서 사용할 수 있는 엔티티 유형 목록이 표시됩니다. 아래 이미지에서 목록 상단에는 현재 Shotgun 사이트에 구성된 일부 엔티티 유형이 있습니다. 이러한 엔티티 유형 아래에는 구성되지 않았거나 활성화되지 않은 몇 가지 **커스텀 엔티티**가 있습니다.
 
 ### 커스텀 엔티티 유형 중 하나를 선택하고 구성하고 활성화합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/2_custom_entity.png)
+![Python 앱](./images/dynamic_filesystem_configuration/2_custom_entity.png)
 
 **2단계:** 화살표를 선택하여 회색으로 비활성화된 커스텀 엔티티에 대한 설정을 엽니다. **예, 커스텀 엔티티 사용...**(Yes, use Custom Entity...) 옆의 라디오 버튼을 선택하고 **표시 이름**(Display name)을 **Set**로 변경한 다음 창의 맨 위로 스크롤하여 변경 사항 저장(Save Changes)을 선택합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/4_enable_entity.png)
+![Python 앱](./images/dynamic_filesystem_configuration/4_enable_entity.png)
 
 이렇게 하면 Shotgun에서 해당 커스텀 엔티티가 활성화되고 표시 이름이 *Set*로 표시됩니다. 기본적으로 엔티티의 시스템 이름은 `CustomEntity01`로 유지되므로 커스텀 엔티티에 대한 별칭을 작성합니다. 이 예제에서는 `CustomEntity01`을 사용하지만 다른 커스텀 엔티티를 사용할 수 있습니다.
 
@@ -80,13 +80,13 @@ Shotgun에서 사용할 수 있는 엔티티 유형 목록이 표시됩니다. �
 
 **3단계:** 페이지 맨 위에 있는 **프로젝트**(Projects) 드롭다운을 선택하고 이 연습에서 사용할 프로젝트를 엽니다.
 
-**4단계:** 프로젝트 메뉴 막대에서 **에셋**(Assets)을 선택하여 에셋(Assets) 페이지로 이동합니다. 에셋(Assets) 메뉴에서 **필드(Fields) > 에셋 필드 관리...(Manage Asset Fields…)(**를 선택합니다.
+**4단계:** 프로젝트 메뉴 막대에서 **에셋**(Assets)을 선택하여 에셋(Assets) 페이지로 이동합니다. 에셋(Assets) 메뉴에서 **필드(Fields) > 에셋 필드 관리...(Manage Asset Fields…)**를 선택합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/5_manage_asset_fields.png)
+![Python 앱](./images/dynamic_filesystem_configuration/5_manage_asset_fields.png)
 
 그러면 에셋 필드 관리자가 표시됩니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/6_manage_asset_fields.png)
+![Python 앱](./images/dynamic_filesystem_configuration/6_manage_asset_fields.png)
 
 **새 필드 추가**(+ Add a new field)를 선택합니다.
 
@@ -94,13 +94,13 @@ Shotgun에서 사용할 수 있는 엔티티 유형 목록이 표시됩니다. �
 
 **새 필드 이름**(New Field Name)에 "Set"를 입력합니다. **일반**(GENERAL) 메뉴 아래 **필드 유형**(Field Type)에서 **엔티티**(Entity)를 선택하고 **유형 제한**(Restrict the type)을·스크롤하여 **Set**를 선택합니다. **다음**(Next)을 선택합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/7_field_parameters.png)
+![Python 앱](./images/dynamic_filesystem_configuration/7_field_parameters.png)
 
 이 안내서에서는 이를 **현재 프로젝트만**(Only the current project)으로 적용하고 **필드 만들기**(Create Field)를 선택합니다.
 
 Shotgun이 새 필드를 구성합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/8_only_current_project.png)
+![Python 앱](./images/dynamic_filesystem_configuration/8_only_current_project.png)
 
 변경 사항이 적용되면 **완료**(Done)를 선택할 수 있습니다.
 
@@ -108,17 +108,17 @@ Shotgun이 새 필드를 구성합니다.
 
 **5단계:** 에셋의 새 **Set** 필드를 선택하고 Dining Room을 입력합니다. **일치하는 항목을 찾을 수 없습니다. "Dining Room" 만들기**라고 적힌 대화상자가 표시됩니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/11_create_set.png)
+![Python 앱](./images/dynamic_filesystem_configuration/11_create_set.png)
 
 **"Dining Room" 만들기**(Create “Dining Room”)를 선택합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/12_dining_room_set.png)
+![Python 앱](./images/dynamic_filesystem_configuration/12_dining_room_set.png)
 
 **Set 만들기**(Create Set)를 선택합니다.
 
 에셋의 Set 필드에 **Dining Room**을 추가하면 Dining Room Set 엔티티와 [연결](https://support.shotgunsoftware.com/hc/ko/articles/115000010973-Linking-a-custom-entity)이 만들어집니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/13_dining_room_associated.png)
+![Python 앱](./images/dynamic_filesystem_configuration/13_dining_room_associated.png)
 
 **6단계:** 테스트용으로 쉽게 찾을 수 있도록 **필레** 에셋에 대한 모델 태스크를 자신에게 할당합니다.
 
@@ -132,7 +132,7 @@ Shotgun이 새 필드를 구성합니다.
 
 **7단계:** 파이프라인 구성으로 이동합니다. 스키마 폴더(`<pipeline_configuration_root>/config/core/schema`)로 드릴다운하고 `project` 폴더를 엽니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/15_file_structure.png)
+![Python 앱](./images/dynamic_filesystem_configuration/15_file_structure.png)
 
 현재 스키마는 다음과 같으며
 
@@ -164,7 +164,7 @@ Set 엔티티는 `CustomEntity01`로 표시됩니다. Shotgun에서 Set의 *표�
 
 **8단계:** 스키마의 `project/assets` 폴더 내에 `CustomEntity01` 폴더를 추가합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/16_custom_entity_folder.png)
+![Python 앱](./images/dynamic_filesystem_configuration/16_custom_entity_folder.png)
 
 
 **9단계:** 다음 내용으로 `CustomEntity01` 폴더 옆에 `CustomEntity01.yml` 파일을 만듭니다.
@@ -188,7 +188,7 @@ YAML 파일은 툴킷에서 `CustomEntity01` 폴더 이름을 무엇으로 지�
 
 `Dining-Room/Prop/filet`와 같은 폴더 구조가 필요하므로 계층에서 `asset_type` 폴더는 `CustomEntity01` 폴더 *아래*에 있어야 합니다. `asset_type/` 및 `asset_type.yml`을 `CustomEntity01` 폴더로 이동합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/17_schema.png)
+![Python 앱](./images/dynamic_filesystem_configuration/17_schema.png)
 
 ### asset.yml 파일 편집
 
@@ -266,7 +266,7 @@ In total, 23 folders were processed.
 `/the_other_side/assets/Dining-Room/Prop/Filet/model`
 
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/folders_done.png)
+![Python 앱](./images/dynamic_filesystem_configuration/folders_done.png)
 
 ### 파일을 읽고 쓰기 위한 툴킷 템플릿
 
@@ -359,17 +359,17 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 
 **18단계:** Shotgun 데스크톱에서 Maya를 시작합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/23_test_file_creation.png)
+![Python 앱](./images/dynamic_filesystem_configuration/23_test_file_creation.png)
 
 Maya에서 **Shotgun > 파일 열기(File Open)**로 이동하여 결과 대화상자에서, Shotgun에서 Set를 지정한 에셋에 대한 태스크를 선택합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/24_test_new_file.png)
+![Python 앱](./images/dynamic_filesystem_configuration/24_test_new_file.png)
 
 **+새 파일**(+New File)을 선택합니다.
 
 간단한 3D 객체를 만들거나 **Shotgun > 파일 저장(Save File)**을 사용하여 파일을 저장할 수 있습니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/file_save.png)
+![Python 앱](./images/dynamic_filesystem_configuration/file_save.png)
 
 다 되었습니다!
 

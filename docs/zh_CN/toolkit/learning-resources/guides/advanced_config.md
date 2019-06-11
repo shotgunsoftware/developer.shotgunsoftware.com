@@ -24,7 +24,7 @@ lang: zh_CN
 要使用本手册并为项目创建可自定义的配置，需要以下内容：
 
 1. 有效的 Shotgun 站点。您可以[在此处注册 Shotgun](https://www.shotgunsoftware.com/zh-cn/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 并获取 30 天试用版以开始探索。
-2. Shotgun Desktop。如果未安装 Desktop，则可以[单击此链接开始。](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)
+2. Shotgun Desktop。如果未安装 Desktop，则可以[单击此链接开始。](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#Installation%20of%20Desktop)
 3. 可用于存储项目文件和工作流配置的文件系统的访问权限。在该文件系统上，创建一个名为 `Shotgun` 的文件夹，其中包含两个文件夹 `projects` 和 `configs`。
 
 ## 关于高级项目设置向导
@@ -61,19 +61,19 @@ Shotgun Desktop 中的“高级项目设置向导”会根据默认配置生成�
 
 **步骤 1：**在 Shotgun 中创建一个名为“the_other_side”的新项目。
 
-![新建项目](../../../../images/toolkit/learning-resources/guides/advanced_config/2_new_project.png)
+![新建项目](./images/advanced_config/2_new_project.png)
 
 **步骤 2：**启动 Shotgun Desktop 应用，并使用 Shotgun 站点的用户名和密码登录。
 
-![登录](../../../../images/toolkit/learning-resources/guides/advanced_config/3_login.png)
+![登录](./images/advanced_config/3_login.png)
 
-![加载项目](../../../../images/toolkit/learning-resources/guides/advanced_config/4_load_project.png)
+![加载项目](./images/advanced_config/4_load_project.png)
 
 **步骤 3：**通过选择要运行向导的项目的缩略图图像，导航到该项目。
 
 {% include info title="提示" content="如果在 Desktop 打开时创建了新项目，则可能需要刷新**“项目”(Projects)**窗口才能看到新项目。在桌面右下角选择您的个人资料**头像**，然后选择“Refresh Projects”。" %}
 
-![刷新项目](../../../../images/toolkit/learning-resources/guides/advanced_config/5_refresh_projects_list.png)
+![刷新项目](./images/advanced_config/5_refresh_projects_list.png)
 
 ### 访问默认配置
 
@@ -81,19 +81,19 @@ Shotgun Desktop 中的“高级项目设置向导”会根据默认配置生成�
 
 **步骤 4：**加载项目后，在屏幕右下角选择您的个人资料**头像**。在弹出菜单中，选择**“Advanced project setup...”**以启动向导。
 
-![高级项目设置](../../../../images/toolkit/learning-resources/guides/advanced_config/6_advanced_project_setup.png)
+![高级项目设置](./images/advanced_config/6_advanced_project_setup.png)
 
 此时将显示一个对话框，其中包含四个选项，“Shotgun Default”处于选中状态。此时，您可以选择根据现有项目的配置、Git 库配置或磁盘路径来配置项目的工作流。
 
 对于本练习，我们将选择**“Shotgun Default”**。此选项将根据 Shotgun 默认配置为您的项目创建工作流配置。
 
-![选择配置](../../../../images/toolkit/learning-resources/guides/advanced_config/7_select_config.png)
+![选择配置](./images/advanced_config/7_select_config.png)
 
 **步骤 5：**选择**“继续”(Continue)**。
 
 此时将显示一个对话框，其中包含两个选项，**“默认”(Default)**处于选中状态。此时，有一个用于选择旧版默认配置设置的选项。此配置设置来自旧版 Shotgun，适用于仍使用相应版本的工作室。我们将在本练习中使用“默认”(Default)。
 
-![选择配置](../../../../images/toolkit/learning-resources/guides/advanced_config/8_select_config.png)
+![选择配置](./images/advanced_config/8_select_config.png)
 
 **步骤 6：**选择**“继续”(Continue)**。
 
@@ -101,25 +101,25 @@ Shotgun Desktop 中的“高级项目设置向导”会根据默认配置生成�
 
 此时将显示一个对话框，在 `Storage:` 一词旁边将显示一个下拉菜单
 
-![定义存储](../../../../images/toolkit/learning-resources/guides/advanced_config/9_define_storage1.png)
+![定义存储](./images/advanced_config/9_define_storage1.png)
 
 **步骤 7：**标识此项目的项目数据的存储位置。从对话框顶部的下拉列表中选择**“+ 新建”(+ New)**，并在字段中键入 **projects**。
 
-![定义存储](../../../../images/toolkit/learning-resources/guides/advanced_config/10_define_storage2.png)
+![定义存储](./images/advanced_config/10_define_storage2.png)
 
 Shotgun Toolkit 支持三种操作系统：Linux、Mac 和 Windows。
 
 **步骤 8：**选择用于存储项目数据的操作系统旁边的字段。选择文件夹图标，并导航到在本练习之前在文件系统上创建的项目文件夹。
 
-![存储根文件夹](../../../../images/toolkit/learning-resources/guides/advanced_config/11_storage_root_folder.png)
+![存储根文件夹](./images/advanced_config/11_storage_root_folder.png)
 
 此设置使 Shotgun 只能访问您标识用于存储制作数据的文件夹。在准备本练习时，您在 Shotgun 根目录中添加了一个 `projects/` 目录。`projects/` 目录是 Toolkit 用于存储任何本地项目相关信息的位置。
 
-![定义存储](../../../../images/toolkit/learning-resources/guides/advanced_config/12_define_Storage3.png)
+![定义存储](./images/advanced_config/12_define_Storage3.png)
 
 **步骤 9：**选择**“保存”(Save)**以将项目文件夹标识为项目数据的存储位置。
 
-![定义存储](../../../../images/toolkit/learning-resources/guides/advanced_config/13_define_storage4.png)
+![定义存储](./images/advanced_config/13_define_storage4.png)
 
 操作系统路径会自动更新，以标识项目数据的存储路径。
 
@@ -129,21 +129,21 @@ Shotgun Toolkit 支持三种操作系统：Linux、Mac 和 Windows。
 
 将显示一个对话框，其中包含填充文本字段的项目名称。该名称是使用项目信息自动填充的，路径将自动更新。
 
-![项目文件夹](../../../../images/toolkit/learning-resources/guides/advanced_config/14_project_folder_name.png)
+![项目文件夹](./images/advanced_config/14_project_folder_name.png)
 
 Toolkit 既适用于分布式设置，又适用于集中式设置。在分布式设置中，工作流配置上传到 Shotgun 并在本地为每个用户缓存；在集中式设置中，用户可以在磁盘上的共享位置访问单个配置。对于本练习，我们将使用集中式设置。您可以[在此处了解有关分布式设置的详细信息](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)。
 
 最后一步生成创建特定于项目的配置所需的相应文件夹、文件和数据。
 
-![集中式存储](../../../../images/toolkit/learning-resources/guides/advanced_config/15_centralized_storage.png)
+![集中式存储](./images/advanced_config/15_centralized_storage.png)
 
 **步骤 11：**在相应的操作系统下，选择**“浏览...”(Browse...)**并导航到您在准备本练习时创建的配置文件夹 `configs`，然后输入项目名称 **the_other_side**。这将创建存储项目配置的文件夹。选择**“Run Setup”**并等待设置完成。
 
-![项目设置](../../../../images/toolkit/learning-resources/guides/advanced_config/16_project_setup_config.png)
+![项目设置](./images/advanced_config/16_project_setup_config.png)
 
 **步骤 12：**选择**“完成”(Done)**以显示填充项目窗口的新图标。
 
-![设置完成](../../../../images/toolkit/learning-resources/guides/advanced_config/17_project_setup_complete.png)
+![设置完成](./images/advanced_config/17_project_setup_complete.png)
 
 **提示：**将应用固定到菜单栏以便快速访问 Shotgun Desktop：选择您的**头像**并选择**“Pin to Menu”**。
 
@@ -151,19 +151,19 @@ Toolkit 既适用于分布式设置，又适用于集中式设置。在分布式
 
 查看 `configs` 文件夹，您会发现几个文件夹和文件。可以看一看里面的内容。
 
-![配置](../../../../images/toolkit/learning-resources/guides/advanced_config/18_config.png)
+![配置](./images/advanced_config/18_config.png)
 
 现在，真正有趣的事情开始了：了解通过配置可以执行的所有任务。下面是一些要探索的高级主题。
 
 ## 高级主题
 
-Shotgun Toolkit 提供了许多便利的方法来编辑、克隆或接管配置。扩展现有配置可以节省时间，并使您可以访问网络中其他人创建的所有炫酷素材。您可以利用内容丰富的 Shotgun [社区](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)，其中可能包含您需要的精确配置。Shotgun 社区是一个共享社区，应该与人为善，心怀感恩，赞赏创建了配置并帮助您完成工作的用户。对了，别忘了提供反馈，这就是我们帮助其他 Shotgun 用户并成为此社区一员的亮点！
+Shotgun Toolkit 提供了许多便利的方法来编辑、克隆或接管配置。扩展现有配置可以节省时间，并使您可以访问网络中其他人创建的所有炫酷素材。您可以利用内容丰富的 Shotgun [社区](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=zh-CN#!forum/shotgun-dev)，其中可能包含您需要的精确配置。Shotgun 社区是一个共享社区，应该与人为善，心怀感恩，赞赏创建了配置并帮助您完成工作的用户。对了，别忘了提供反馈，这就是我们帮助其他 Shotgun 用户并成为此社区一员的亮点！
 
 下面是一些与配置相关的操作。
 
 ### 使用命令行创建默认配置
 
-在任何项目配置中，`tank` 命令允许您从终端运行管理命令。每个项目都有自己的专用 `tank` 命令。`tank setup_project` 命令的功能类似于“高级设置向导”：它根据现有项目的配置或默认配置在磁盘上为您的项目创建一个可编辑的配置。您可以在`tank setup_project`此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178#setup_project)了解有关运行 [ 的详细信息，并在`tank`此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178#Using%20the%20tank%20command)了解有关 [ 命令的详细信息。
+在任何项目配置中，`tank` 命令允许您从终端运行管理命令。每个项目都有自己的专用 `tank` 命令。`tank setup_project` 命令的功能类似于“高级设置向导”：它根据现有项目的配置或默认配置在磁盘上为您的项目创建一个可编辑的配置。您可以在[`tank setup_project`此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178#setup_project)了解有关运行的详细信息，并在[`tank`此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178#Using%20the%20tank%20command)了解有关命令的详细信息。
 
 ### 编辑制作活动中的配置
 

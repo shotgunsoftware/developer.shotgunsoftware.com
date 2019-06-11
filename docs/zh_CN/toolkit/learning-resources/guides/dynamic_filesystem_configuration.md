@@ -58,17 +58,17 @@ Toolkit 平台允许您使用**数据结构**来动态构建您的文件夹结�
 
 **步骤 1：**在浏览器中打开 Shotgun 站点。单击您的头像并转至“管理 > 站点偏好设置”(ADMIN > Site Preferences)。在出现的页面上，展开**“实体”(Entities)**部分。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/1_site_preferences.png)
+![Python 应用](./images/dynamic_filesystem_configuration/1_site_preferences.png)
 
 显示的是 Shotgun 中可用的实体类型列表。下图中列表的顶部是为当前 Shotgun 站点配置的某些实体类型。这些实体类型下方是尚未配置或启用的几个**自定义实体**。
 
 ### 选择其中一个自定义实体类型，对其进行配置，然后将其启用。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/2_custom_entity.png)
+![Python 应用](./images/dynamic_filesystem_configuration/2_custom_entity.png)
 
 **步骤 2：**选择箭头以打开显示为灰色的已禁用自定义实体上的设置。选择**“是，使用自定义实体…”(Yes, use Custom Entity…)**旁边的单选按钮，将**“显示名称”(Display name)**更改为 **Set**，然后滚动到窗口顶部并选择“保存更改”(Save Changes)。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/4_enable_entity.png)
+![Python 应用](./images/dynamic_filesystem_configuration/4_enable_entity.png)
 
 这样做可以使此自定义实体在 Shotgun 中处于活动状态，并将显示名称设置为 *Set*。实际上，您正在创建自定义实体的别名，因为实体的系统名称仍为 `CustomEntity01`。在此示例中，我们将使用 `CustomEntity01`；您可能会使用不同的自定义实体。
 
@@ -82,11 +82,11 @@ Toolkit 平台允许您使用**数据结构**来动态构建您的文件夹结�
 
 **步骤 4：**在项目菜单栏中选择**“资产”(Assets)**以转到“资产”(Assets)页面。在“资产”(Assets)菜单中，选择**“字段 > 管理资产字段…”(Fields > Manage Asset Fields…)**
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/5_manage_asset_fields.png)
+![Python 应用](./images/dynamic_filesystem_configuration/5_manage_asset_fields.png)
 
 此动作将显示资产字段管理器。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/6_manage_asset_fields.png)
+![Python 应用](./images/dynamic_filesystem_configuration/6_manage_asset_fields.png)
 
 选择**“+ 添加新的字段”(+ Add a new field)**。
 
@@ -94,13 +94,13 @@ Toolkit 平台允许您使用**数据结构**来动态构建您的文件夹结�
 
 在**“新建字段名称”(New Field Name)**中，键入“Set”。在**“常规”(GENERAL)**菜单的**“字段类型”(Field Type)**下，选择**“实体”(Entity)**，然后向下滚动以将类型限制为******“集”(Set)**。选择**“下一步”(Next)**。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/7_field_parameters.png)
+![Python 应用](./images/dynamic_filesystem_configuration/7_field_parameters.png)
 
 在本手册中，将其应用到**“仅当前项目”(Only the current project)**并选择**“创建字段”(Create Field)**。
 
 Shotgun 将配置新字段。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/8_only_current_project.png)
+![Python 应用](./images/dynamic_filesystem_configuration/8_only_current_project.png)
 
 已应用您的更改，您可以选择**“完成”(Done)**。
 
@@ -108,17 +108,17 @@ Shotgun 将配置新字段。
 
 **步骤 5：**选择资产的新**“集”(Set)**字段并开始键入“Dining Room”。将显示一个对话框，指出**“未找到匹配项。创建‘Dining Room’”(No matches found. Create “Dining Room”)**
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/11_create_set.png)
+![Python 应用](./images/dynamic_filesystem_configuration/11_create_set.png)
 
 选择**“创建‘Dining Room’”(Create “Dining Room”)**。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/12_dining_room_set.png)
+![Python 应用](./images/dynamic_filesystem_configuration/12_dining_room_set.png)
 
 选择**“创建集”(Create Set)**。
 
 在资产的“集”(Set)字段中添加**“Dining Room”**将会创建与餐厅集实体的[关联](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000010973)。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/13_dining_room_associated.png)
+![Python 应用](./images/dynamic_filesystem_configuration/13_dining_room_associated.png)
 
 **步骤 6：**将 **filet** 资产上的模型任务分配给您自己，以便您能够轻松找到它以进行测试。
 
@@ -132,7 +132,7 @@ Shotgun 将配置新字段。
 
 **步骤 7：**导航至您的工作流配置。向下导航到 schema 文件夹 `<pipeline_configuration_root>/config/core/schema`，然后打开 `project` 文件夹。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/15_file_structure.png)
+![Python 应用](./images/dynamic_filesystem_configuration/15_file_structure.png)
 
 当前数据结构，如下所示：
 
@@ -164,7 +164,7 @@ Shotgun 将配置新字段。
 
 **步骤 8：**在数据结构的 `project/assets` 文件夹中添加 `CustomEntity01` 文件夹。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/16_custom_entity_folder.png)
+![Python 应用](./images/dynamic_filesystem_configuration/16_custom_entity_folder.png)
 
 
 **步骤 9：**在 `CustomEntity01` 文件夹旁边创建一个名为 `CustomEntity01.yml` 的文件，该文件内容如下：
@@ -188,7 +188,7 @@ YAML 文件将向 Toolkit 提供有关如何为 `CustomEntity01` 文件夹命名
 
 我们希望我们的文件夹结构类似于 `Dining-Room/Prop/filet`，因此 `asset_type` 文件夹在层次结构中应位于 `CustomEntity01` 文件夹*下方*。将 `asset_type/` 和 `asset_type.yml` 移到 `CustomEntity01` 文件夹中。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/17_schema.png)
+![Python 应用](./images/dynamic_filesystem_configuration/17_schema.png)
 
 ### 编辑 asset.yml 文件
 
@@ -266,7 +266,7 @@ In total, 23 folders were processed.
 `/the_other_side/assets/Dining-Room/Prop/Filet/model`
 
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/folders_done.png)
+![Python 应用](./images/dynamic_filesystem_configuration/folders_done.png)
 
 ### 用于读取和写入文件的 Toolkit 模板
 
@@ -359,17 +359,17 @@ In total, 23 folders were processed.
 
 **步骤 18：**从 Shotgun Desktop 启动 Maya。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/23_test_file_creation.png)
+![Python 应用](./images/dynamic_filesystem_configuration/23_test_file_creation.png)
 
 在 Maya 中，转到**“Shotgun > File Open”**，然后在出现的对话框中，选择您已在 Shotgun 中为其指定集的资产的任务。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/24_test_new_file.png)
+![Python 应用](./images/dynamic_filesystem_configuration/24_test_new_file.png)
 
 选择**“+New File”**
 
 您可以创建简单的三维对象，也可以使用**“Shotgun > File Save”**保存文件。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/dynamic_filesystem_configuration/file_save.png)
+![Python 应用](./images/dynamic_filesystem_configuration/file_save.png)
 
 成功！
 

@@ -13,7 +13,7 @@ lang: ja
 
 次に、このチュートリアルで作成されるパイプラインの概要を示します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_0.png" caption="パイプラインの概要" %}
+{% include figure src="./images/tutorial/image_0.png" caption="パイプラインの概要" %}
 
 ## パイプラインの概要
 
@@ -63,11 +63,11 @@ lang: ja
 
 次に、Shotgun で設定したプロジェクト エンティティのスクリーンショットを示します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_1.png" caption="ティーポットとテーブル アセット" %}
+{% include figure src="./images/tutorial/image_1.png" caption="ティーポットとテーブル アセット" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_2.png" caption="シーケンスにリンクされたショット" %}
+{% include figure src="./images/tutorial/image_2.png" caption="シーケンスにリンクされたショット" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_3.png" caption="タスク" width="400px" %}
+{% include figure src="./images/tutorial/image_3.png" caption="タスク" width="400px" %}
 
 ## ソフトウェア ランチャー
 
@@ -75,7 +75,7 @@ lang: ja
 
 Desktop にアプリケーションが表示されない場合、または予期したバージョンが起動しない場合は、ソフトウェア エンティティを使用して Shotgun で起動を手動で設定しなければならない可能性があります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_4.png" caption="Shotgun で定義された規定のソフトウェア エンティティ" %}
+{% include figure src="./images/tutorial/image_4.png" caption="Shotgun で定義された規定のソフトウェア エンティティ" %}
 
 ソフトウェア エンティティは、プロダクションで使用する DCC パッケージを操作する場合に使用されます。既定では、標準のインストール場所でこれらのパッケージが検索され、Desktop を使用して起動できるようになります。複数のバージョンがインストールされている場合、または標準以外の場所にインストールされている場合は、Shotgun の対応するソフトウェア エンティティのエントリを更新して、アーティストの起動環境を整理しなければならない可能性があります。
 
@@ -91,31 +91,31 @@ Desktop にアプリケーションが表示されない場合、または予期
 
 Shotgun Desktop (以下、「Desktop」)を使用して、プロジェクトの設定を引き継ぎます。Desktop 内で右マウス ボタンをクリックするか、または右下のユーザ アイコンをクリックして、ポップアップ メニューを表示します。**[Advanced project setup...]** オプションを選択し、ウィザードに従ってプロジェクトの設定をローカルにインストールします。次の図に、必要な手順を示します。『統合管理者ガイド』の「[パイプラインの設定を引き継ぐ](https://support.shotgunsoftware.com/hc/ja/articles/115000067493#Taking%20over%20a%20Pipeline%20Configuration)」に示されている手順に従うこともできます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_5.png" caption="Desktop のポップアップ メニューで**[Advanced project setup...]**を選択する" %}
+{% include figure src="./images/tutorial/image_5.png" caption="Desktop のポップアップ メニューで**[Advanced project setup...]**を選択する" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_01.png" caption="**[Shotgun Default](Shotgun の既定値)**設定タイプを選択する" %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="**[Shotgun Default](Shotgun の既定値)**設定タイプを選択する" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_02.png" caption="**[Default configuration](既定の設定)**を選択する" %}
+{% include figure src="./images/tutorial/wizard_02.png" caption="**[Default configuration](既定の設定)**を選択する" %}
 
 初めて Shotgun プロジェクトをセットアップする場合は、プロジェクト データのストレージ場所を定義するためのプロンプトも表示されます。それ以外の場合は、既存の格納場所を選択することができます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_03.png" caption="新しいストレージを作成します。" %}
+{% include figure src="./images/tutorial/wizard_03.png" caption="新しいストレージを作成します。"%}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_04.png" caption="新しいストレージに名前を付けます。このストレージはプロジェクト固有のものではなく、サイト全体で使用されることに注意してください。"%}
+{% include figure src="./images/tutorial/wizard_04.png" caption="新しいストレージに名前を付けます。このストレージはプロジェクト固有のものではなく、サイト全体で使用されることに注意してください。"%}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_05.png" caption="使用するオペレーティング システム上でこのストレージにアクセスするパスを設定します。" %}
+{% include figure src="./images/tutorial/wizard_05.png" caption="使用するオペレーティング システム上でこのストレージにアクセスするパスを設定します。" %}
 
-**[サイト基本設定](Site Preferences)**の**[ファイル管理](File Management)**セクションで、Shotgun サイトのストレージを表示および編集できます。これらの設定について詳しくは、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219030938)を参照してください。
+**[サイト基本設定]（Site Preferences）**の**[ファイル管理]（File Management）**セクションで、Shotgun サイトのストレージを表示および編集できます。これらの設定について詳しくは、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219030938)を参照してください。
 
 格納場所が選択されたので、その場所にある新しいプロジェクトのディレクトリ名を選択します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_06.png" caption="プロジェクト ファイルを配置するフォルダの名前を入力する。" %}
+{% include figure src="./images/tutorial/wizard_06.png" caption="プロジェクト ファイルを配置するフォルダの名前を入力する。" %}
 
 このチュートリアルでは中央設定を使用します。**[分散設定](Distributed Setup)**オプションは、さまざまなメリットを提供する代替オプションを提供します。これは、高速共有ストレージのないスタジオで役に立つ場合があります。各種設定の長所と短所について詳しくは、「[ツールキット管理](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2)」のプレゼンテーションを参照してください。
 
 サイト全体にわたるストレージとは異なり、設定はプロジェクトごとに異なるため、ここで選択するディレクトリが直接設定の保存に使用されます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_07.png" caption="現在のオペレーティング システムに対して選択した設定パスをメモする。" %}
+{% include figure src="./images/tutorial/wizard_07.png" caption="現在のオペレーティング システムに対して選択した設定パスをメモする。" %}
 
 上記の画面で選択したフォルダに設定がインストールされます。このチュートリアルを通して、このフォルダに含まれている設定の内容を調べて、変更します。
 
@@ -123,7 +123,7 @@ Shotgun Desktop (以下、「Desktop」)を使用して、プロジェクトの�
 
 Desktop インストールのチュートリアルで指定された設定場所は、Shotgun のプロジェクトの[パイプラインの設定]（Pipeline Configurations）ページに記録されています。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_10.png" caption="Shotgun のパイプラインの設定エンティティ" %}
+{% include figure src="./images/tutorial/image_10.png" caption="Shotgun のパイプラインの設定エンティティ" %}
 
 次のセクションに備えて、このフォルダの内容を理解しておいてください。
 
@@ -131,7 +131,7 @@ Desktop インストールのチュートリアルで指定された設定場所
 
 単純なパイプラインの作成プロセスを開始する前に、パイプライン設定の構成方法とその仕組みについて理解しておく必要があります。次の図に、設定の主な構成要素とその目的を示します。設定とその管理の詳細については、「[ツールキットを管理する](https://support.shotgunsoftware.com/hc/ja/articles/219033178-Administering-Toolkit)」の記事を参照してください。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_11.png" %}
+{% include figure src="./images/tutorial/image_11.png" %}
 
 ### プロジェクト スキーマ
 
@@ -151,7 +151,7 @@ Desktop インストールのチュートリアルで指定された設定場所
 
 2. 設定の上位にある **`hooks`** ディレクトリに**フックをコピー**します(必要に応じて名前を変更します)。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_12.png" %}
+{% include figure src="./images/tutorial/image_12.png" %}
 
 ファイルが設定の **`hooks`** フォルダに格納されたら、変更を加えて、コードをカスタマイズすることができます。対応するアプリがこの新しい場所を参照するように設定するには、追加手順が必要です。この手順については、チュートリアルの後半で説明します。
 
@@ -173,7 +173,7 @@ Maya が完全にロードされると、[ファイルを開く]（File Open）�
 
 [アセット]（Assets）タブを選択して、ティーポットのモデリング タスクにドリル ダウンします。このタスクのアーティスト作業ファイルはまだないため、**[+ New File]**ボタンをクリックします。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_13.png" %}
+{% include figure src="./images/tutorial/image_13.png" %}
 
 このボタンをクリックすると、新しい空の Maya セッションが作成されて、現在の作業コンテキストがティーポット アセットのモデル タスクに設定されます。
 
@@ -181,11 +181,11 @@ Maya が完全にロードされると、[ファイルを開く]（File Open）�
 
 次に、ティーポットをモデリングするか、指定されたディーポットを[ダウンロード](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj)して読み込みます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_14.png" %}
+{% include figure src="./images/tutorial/image_14.png" %}
 
 ティーポット モデルに問題がなければ、**[Shotgun] > [File Save...]**メニュー アクションを選択します。 このダイアログ ボックスで、ファイルを指定した名前、バージョン、タイプで保存するように求められます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_15.png" %}
+{% include figure src="./images/tutorial/image_15.png" %}
 
 このダイアログ ボックスで完全な保存パスを指定するよう求められない理由に注目してください。これは、**`maya_asset_work`** テンプレートに保存するようにアプリが設定されているためです。このテンプレートは、既定では次のように定義されます。
 
@@ -205,29 +205,29 @@ Maya が完全にロードされると、[ファイルを開く]（File Open）�
 
 次の手順では、ティーポットにいくつかの変更を行います。ふたのジオメトリはモデルの残りの部分から独立しているため、後でリギングすることができます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_16.png" %}
+{% include figure src="./images/tutorial/image_16.png" %}
 
 作業内容に問題がなければ、**[Shotgun] > [File Save...]**メニュー アクションをもう一度実行します。今度は、ダイアログ ボックスのバージョン番号が既定の 2 になります。ファイルのバージョンは自動的に増分するため、アーティストは完了した作業の完全な履歴を維持することができます。[Save]ボタンをクリックします。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_17.png" %}
+{% include figure src="./images/tutorial/image_17.png" %}
 
 ティーポット モデルをバージョン 2 に保存したら、チュートリアルのこのセクションの最後の手順に進むことができます。
 
 ティーポット モデルの準備ができたので、モデルをパブリッシュして、サーフェスの作成やリギングを実行できるようにする必要があります。パブリッシュするには、**[Shotgun] > [Publish...]**メニュー アクションをクリックします。[Publish App]ダイアログ ボックスが表示されます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_18.png" %}
+{% include figure src="./images/tutorial/image_18.png" %}
 
 このダイアログ ボックスには、パブリッシュされる内容を表す項目がツリー表示されます。ツリーには、パブリッシュ対象の項目を表すいくつかのエントリと、パブリッシュ操作中に実行されるアクションを表すいくつかのエントリが含まれています。
 
 ダイアログ ボックスの左側には、現在の Maya セッションを表す項目が表示されます。その下に、**[Publish to Shotgun]**子アクションが表示されます。 **すべてのセッション ジオメトリ**を表す追加項目が、現在のセッションの子項目として表示されます。**[Publish to Shotgun]**子アクションも表示されます。
 
-{% include info title="注" content="**[すべてのセッション ジオメトリ](All Session Geometry)**項目が表示されない場合は、Maya で[Alembic 書き出しプラグインが有効になっていること](https://support.shotgunsoftware.com/hc/ja/articles/219039928-Publishing-Alembic-From-Maya#Before%20You%20Begin)を確認してください。" %}
+{% include info title="注" content="**[すべてのセッション ジオメトリ]（All Session Geometry）**項目が表示されない場合は、Maya で[Alembic 書き出しプラグインが有効になっていること](https://support.shotgunsoftware.com/hc/ja/articles/219039928-Publishing-Alembic-From-Maya#Before%20You%20Begin)を確認してください。" %}
 
 ツリーの左側の項目をクリックして、Publish アプリを調べます。操作を行う項目を選択すると、パブリッシュする内容の説明を入力できます。また、右側のカメラ アイコンをクリックして、項目に関連付けられるスクリーンショットを作成することもできます。
 
 準備ができたら、右下の**[Publish]**ボタンをクリックして、現在の作業ファイルおよびティーポット ジオメトリをパブリッシュします。完了したら、Shotgun でティーポット アセットを参照し、パブリッシュが正常に完了したことを確認できます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_19.png" %}
+{% include figure src="./images/tutorial/image_19.png" %}
 
 上図に、ティーポット モデルを含む、パブリッシュされた Alembic ファイルが示されています。また、Maya セッション ファイルのパブリッシュも示されています。これらのパブリッシュは、パブリッシュ アプリのツリー表示内の項目に対応します。
 
@@ -251,7 +251,7 @@ Maya が完全にロードされると、[ファイルを開く]（File Open）�
 
 お疲れ様でした。最初にパブリッシュされたティーポットの繰り返しが正常に作成されました。テーブル プロップのモデリング タスクからテーブルのモデルをパブリッシュする際に、学習した内容を使用できるかどうかを確認します。結果は以下のようになります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_20.png" %}
+{% include figure src="./images/tutorial/image_20.png" %}
 
 次に、サーフェス作成ワークフローについて説明します。
 
@@ -261,25 +261,25 @@ Maya が完全にロードされると、[ファイルを開く]（File Open）�
 
 Desktop から Maya を起動して開始します。前のセクションの作業を行った後も Maya が開いている場合は、再起動する必要はありません。Maya が開いたら、**[Shotgun] > [File Open...]**を使用して作業ファイル アプリを開きます。モデリング セクションと同様に、[Assets]タブを使用してティーポット アセットのタスクにドリル ダウンします。今回は、サーフェス作成タスクを選択して、**[+ New File]**をクリックします。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_21.png" width="450px" %}
+{% include figure src="./images/tutorial/image_21.png" width="450px" %}
 
 ティーポットのサーフェス作成タスクの作業が開始しました。右側のプロダクション コンテキスト内で作業していることを確認する最も簡単な方法は、Shotgun メニューの最初のエントリを調べることです。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_22.png" %}
+{% include figure src="./images/tutorial/image_22.png" %}
 
-次に、ティーポット モデルを新しいサーフェス作成作業ファイルにロードする必要があります。このためには、Maya の **[Shotgun] > [ロード...]（Load...）**メニュー項目を使用して、Loader アプリを起動します。
+次に、ティーポット モデルを新しいサーフェス作成作業ファイルにロードする必要があります。このためには、Maya の **[Shotgun] > [ロード…]（Load…）**メニュー項目を使用して、Loader アプリを起動します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_23.png" %}
+{% include figure src="./images/tutorial/image_23.png" %}
 
 Loader アプリのレイアウトは作業ファイル アプリと似ていますが、今は、作業ファイルを参照して開くのではなく、パブリッシュされたファイルを参照してロードします。
 
 [Assets]タブでティーポットのキャラクタを参照して、前のセクションで作成したティーポットのパブリッシュを表示します。Maya シーンおよび Alembic キャッシュ パブリッシュが表示されます。Alembic キャッシュ パブリッシュを選択して、ダイアログ ボックスの右側にその詳細を表示します次に、Alembic キャッシュ パブリッシュの[Actions]メニューで、**[Create Reference]**項目をクリックします。ローダーは既定で開いたままになるため、追加のアクションを実行できますが、ローダーを閉じて続行することもできます。モデリング タスクからティーポット パブリッシュを示す参照が作成されていることが、Maya に表示されます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_24.png" %}
+{% include figure src="./images/tutorial/image_24.png" %}
 
 次に、ティーポットに単純なプロシージャ シェーダを追加します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_25.png" %}
+{% include figure src="./images/tutorial/image_25.png" %}
 
 パイプライン作成時のシェーダ管理は時間がかかり、複雑な作業になる場合があります。これは通常、スタジオに対して非常に固有な作業になります。付属の Maya 統合で、すぐに使用できるシェーダまたはテクスチャ管理が処理されないのは、このためです。
 
@@ -302,7 +302,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 このファイルでは、すべてのアーティスト環境内での Publish アプリの使用方法を定義します。ファイルを開き、**Maya** セクション、特に**アセット ステップ**の設定を検索します。これは、次のようになります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_26.png" %}
+{% include figure src="./images/tutorial/image_26.png" %}
 
 コレクタの設定は、パブリッシャーの収集ロジックが配置されるフックを定義します。既定では、値は次のようになります。
 
@@ -314,7 +314,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 「**環境設定**」セクションでは、フックの引き継ぎ方法について学習しました。カスタマイズ プロセスを開始するには、まず、設定内の Maya エンジンのコレクタ フックを引き継ぎます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_27.png" %}
+{% include figure src="./images/tutorial/image_27.png" %}
 
 上図に、このための方法を示します。まず、プロジェクト設定の **hooks** フォルダ内にフォルダ構成を作成します。こうすると、後で他の DCC に合わせて同じフックをオーバーライドできるため、コレクタ プラグインに名前空間が提供されます。次に、インストール フォルダから新しいフック フォルダ構造に Maya エンジンのコレクタフックをコピーします。これで、設定内に、次のパスを持つ Maya コレクタのコピーが作成されました。
 
@@ -431,7 +431,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 設定は次のようになります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_28.png" %}
+{% include figure src="./images/tutorial/image_28.png" %}
 
 最後に、設定内で新しい **`maya_shader_network_publish`** テンプレートを定義する必要があります。このファイルを編集して、これを追加します。
 
@@ -439,7 +439,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 アセット関連の Maya テンプレートが定義されているセクションを見つけて、新しいテンプレート定義を追加します。定義は次のようになります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_29.png" %}
+{% include figure src="./images/tutorial/image_29.png" %}
 
 これで終了です。シェーダをパブリッシュするメッシュを検索するように、Publish アプリのコレクタ フックが上書きされました。収集されたシェーダ項目にアタッチする新しいパブリッシュ プラグインが実装されました。また、シェーダ ネットワークがディスクに書き込まれる新しいパブリッシュ テンプレートが定義および設定されました。
 
@@ -449,28 +449,28 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 カスタマイズを試すには、Maya セッション内で統合を再ロードする必要があります。このためには、**[Shotgun] > [[タスク名]] > [Work Area Info...]**メニュー アクションをクリックします。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_30.png" %}
+{% include figure src="./images/tutorial/image_30.png" %}
 
 この操作を行うと、現在のコンテキストに関する情報を示す Work Area Info アプリが起動します。設定を変更しながら統合を再ロードするための便利なボタンもあります。このボタンをクリックして、アプリおよびエンジンを再ロードしてから、ダイアログ ボックスを閉じます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_31.png" %}
+{% include figure src="./images/tutorial/image_31.png" %}
 
 ### シェーダ ネットワークをパブリッシュする
 
 これで、プロジェクトの設定を変更した場合の結果を確認できるようになりました。Shotgun メニューから Publish アプリを起動します。**Publish Shaders** プラグインがアタッチされている、収集されたティーポット メッシュ項目が表示されます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_32.png" %}
+{% include figure src="./images/tutorial/image_32.png" %}
 
 作業の説明を入力し、サーフェス ティーポットのサムネイルを取り込んで、パブリッシュされたファイルに関連付けます。最後に、パブリッシュをクリックして、ティーポット シェーダをディスクに書き出して、このファイルをパブリッシュとして Shotgun に登録します。完了すると、セッションのパブリッシュ プラグインによって、作業ファイルが次に使用可能なバージョンに自動的に保存されます。これが、Shotgun 統合でサポートされているすべての DCC の既定の動作です。
 
 
 これで、Shotgun 内のティーポット アセットを参照して、すべてが予測どおりに機能したことを確認できるようになりました。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_33.png" %}
+{% include figure src="./images/tutorial/image_33.png" %}
 
 お疲れ様でした。パイプラインが正常にカスタマイズされ、ティーポットのシェーダがパブリッシュされました。 学習した内容を使用して、テーブル プロップのサーフェス作成タスクからシェーダをパブリッシュできるかどうかを確認します。結果は以下のようになります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_34.png" %}
+{% include figure src="./images/tutorial/image_34.png" %}
 
 次に、リギング ワークフローについて説明します。
 
@@ -490,15 +490,15 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 最終的には、Shotgun で次のようになります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_35.png" %}
+{% include figure src="./images/tutorial/image_35.png" %}
 
 次に、アーティストが上流工程の変更をワークフロー内でどのように処理するのかを見てみましょうモデリング作業ファイルを開いて、ティーポット モデルに何らかの変更を加えます。次に、更新された作業をパブリッシュします。結果は次のようになります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_36.png" %}
+{% include figure src="./images/tutorial/image_36.png" %}
 
-ティーポットのリギング ステップで、作業ファイルを再び開きます(**[Shotgun] > [File Open...]**を使用)。**[Shotgun] > [Scene Breakdown...]**メニュー アクションを起動します。この操作を行うと、Breakdown アプリが起動し、作業ファイル内で参照した上流工程のパブリッシュがすべて表示されます。この場合は、上流工程のティーポット モデルのみがあります。次のように表示されます。
+ティーポットのリギング ステップで、作業ファイルを再び開きます(**[Shotgun] > [File Open…]**を使用)。**[Shotgun] > [Scene Breakdown…]**メニュー アクションを起動します。この操作を行うと、Breakdown アプリが起動し、作業ファイル内で参照した上流工程のパブリッシュがすべて表示されます。この場合は、上流工程のティーポット モデルのみがあります。次のように表示されます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_37.png" width="400px" %}
+{% include figure src="./images/tutorial/image_37.png" width="400px" %}
 
 アプリは参照ごとに 2 つのインジケータのいずれかを表示します。参照されたパブリッシュが最新バージョンであることを示す緑のチェックと、新しいパブリッシュが公開されていることを示す赤の「x」です。この場合は、新しいパブリッシュが公開されていることがわかります。
 
@@ -506,7 +506,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 Maya 参照がティーポット Alembic キャッシュの最新の繰り返しに更新されます。ファイル内に新しいモデルが含まれています。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_40.png" width="400px" %}
+{% include figure src="./images/tutorial/image_40.png" width="400px" %}
 
 新しいモデルについて考慮する必要があるリギング ステップを調整して、変更をパブリッシュします。
 
@@ -528,7 +528,7 @@ Maya 参照がティーポット Alembic キャッシュの最新の繰り返し
 
 ここで、テーブルに置かれたティーポットを含む、単純なシーンをブロックします。**camMain** という名前のシーンにカメラを追加して、いくつかのフレームをアニメートし、ショットのカメラ移動を作成します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_41.gif" %}
+{% include figure src="./images/tutorial/image_41.gif" %}
 
 ショットのレイアウトに問題がなければ、**[Shotgun] > [File Save...]**メニュー アクションを使用してファイルを保存します。先に進んで、この時点でパブリッシュする場合は、Maya セッション全体のみがパブリッシュ可能な項目として表示されます。
 
@@ -538,7 +538,7 @@ Maya 参照がティーポット Alembic キャッシュの最新の繰り返し
 
 シェーダのパブリッシュと同様に、最初にコレクタ フックをカスタマイズします。Maya のコレクタ フックをすでに引き継いで、アセット ステップで設定してあります。この設定を、ショットのパイプライン ステップに合わせて更新する必要があります。このためには、パブリッシャーの設定ファイルを修正し、Maya ショット のステップ コレクタ設定を編集します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_42.png" %}
+{% include figure src="./images/tutorial/image_42.png" %}
 
 ショットのコンテキスト内でタスクを実行している場合は、カスタム コレクタ ロジックが実行されます。次のステップでは、カスタムのカメラ コレクション ロジックを追加します。
 
@@ -616,17 +616,17 @@ Maya 参照がティーポット Alembic キャッシュの最新の繰り返し
 
 設定は次のようになります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_43.png" %}
+{% include figure src="./images/tutorial/image_43.png" %}
 
 新しいプラグインの **`settings`** メソッドで定義されているとおりに、ファイルに 2 つの設定が追加されています。シェーダ プラグインと同様に**[Publish Template]**設定があり、そこでカメラ ファイルが書き込まれる場所を定義できます。カメラの設定は、プラグインが作用するカメラを制御する、カメラに関する文字列のリストのことです。何らかのタイプのカメラ命名規則があり、この設定によって、規則に合わないカメラのパブリッシュ項目がユーザに表示されなくなると予測されます。上図では、パブリッシュ用の **`camMain`** カメラのみが表示されます。**`cam*`** などのワイルドカード パターンを使用した場合も、追加したプラグインの実装は機能します。
 
 変更をテストする前の最終ステップでは、新しいカメラ パブリッシュ テンプレートの定義を追加します。**`config/core/templates.yml`** ファイルを編集し、Maya ショット テンプレートのセクションにテンプレートの定義を追加します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_44.png" %}
+{% include figure src="./images/tutorial/image_44.png" %}
 
 この時点で、新しいプラグインを使用してカメラをパブリッシュする準備が整っています。**Work Area Info** アプリを使用して統合を再ロードしてから、パブリッシャーを起動します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_45.png" %}
+{% include figure src="./images/tutorial/image_45.png" %}
 
 図に示されているように、新しいカメラ項目が収集されて、パブリッシュ プラグインがアタッチされます。先に進んで、**[Publish]**をクリックしてディスクにカメラを書き込み、Shotgun に登録します。
 
@@ -634,7 +634,7 @@ Maya 参照がティーポット Alembic キャッシュの最新の繰り返し
 
 Shotgun では次のように表示されます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_46.png" %}
+{% include figure src="./images/tutorial/image_46.png" %}
 
 これで操作は終了しました。次に、アニメーションについて説明します。
 
@@ -666,17 +666,17 @@ Maya のアプリが設定されているセクションを見つけて、**`act
 
 アプリの設定は次のようになります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_47.png" width="400px" %}
+{% include figure src="./images/tutorial/image_47.png" width="400px" %}
 
 ここで、**Work Area Info** アプリを使用して統合を再ロードし、新しい設定を選択してから、レイアウト内のパブリッシュされたカメラを参照します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_48.png" %}
+{% include figure src="./images/tutorial/image_48.png" %}
 
 新しいパブリッシュ タイプでフィルタしてから、カメラの参照を作成します。ローダーを閉じると、新たな参照カメラを使用して、前のセクションで作成したカメラの移動を再生できるようになります。
 
 次に、何らかの動作を行うようにティーポット モデルをアニメートします(単純にします)。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_49.gif" %}
+{% include figure src="./images/tutorial/image_49.gif" %}
 
 アニメーションがうまく作成されたら、以前のセクションと同じように作業ファイルを保存してパブリッシュします。
 
@@ -700,7 +700,7 @@ Maya のアプリが設定されているセクションを見つけて、**`act
 
 サーフェス作成手順でパブリッシュしたシェーダをロードするには、前のセクションで説明した **`tk-maya-actions.py`** フックを引き継ぐ必要があります。インストール場所から設定にこのフックをコピーします。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_50.png" %}
+{% include figure src="./images/tutorial/image_50.png" %}
 
 このフックは、指定されたパブリッシュに対して実行できるアクションのリストを生成します。Loader アプリは、付属の統合でサポートされている DCC ごとに、このフックの異なるバージョンを定義します。
 
@@ -759,37 +759,37 @@ Maya のアプリが設定されているセクションを見つけて、**`act
 
 それと同時に、Maya シェーダ ネットワーク パブリッシュ タイプの参照アクションへの関連付けも行います。ローダーの設定は次のようになります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_51.png" %}
+{% include figure src="./images/tutorial/image_51.png" %}
 
 ここで、**Work Area Info** アプリを使用して統合を再ロードし、新しい設定を選択してから、サーフェス内のパブリッシュされたシェーダを参照します。
 
 ティーポット シェーダ ネットワーク パブリッシュに対する参照を作成します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_52.png" %}
+{% include figure src="./images/tutorial/image_52.png" %}
 
 ここで、テーブル シェーダ ネットワークをロードします。Maya でハードウェア テクスチャリングが有効になっている場合は、アニメーション ステップ中にシェーダがメッシュ参照に自動的に接続されています。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_53.png" %}
+{% include figure src="./images/tutorial/image_53.png" %}
 
 ここで、シーンにライトをいくつか追加します(単純にします)。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_54.png" %}
+{% include figure src="./images/tutorial/image_54.png" %}
 
 ### Maya レンダーをパブリッシュする
 
 ショットをディスクにレンダリングします。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_54_5.gif" %}
+{% include figure src="./images/tutorial/image_54_5.gif" %}
 
 {% include info title="注" content="ご覧のとおり、ティーポットとテーブル アセットのサーフェスには共に問題があります。このチュートリアルでは、これらが意図的かつ芸術的な選択肢であると想定します。これらの問題を解決する場合は、これらのアセットのサーフェス作成作業ファイルをロードして、シェーダを調整し、再びパブリッシュしてください。この操作を行う場合は、照明作業ファイル内の参照を忘れずに更新して、再度レンダリングしてください。これらの手順を実行する場合は、参照を再ロードした後に、詳細情報アプリが更新済みのシェーダを再接続しないことがあります。シェーダの参照をフックするようにローダーを変更した経験に基づいて、ユーザは詳細情報アプリのシーン操作フックを更新し、必要なロジックを追加できるようになっています。ヒント: [このファイル](https://github.com/shotgunsoftware/tk-multi-breakdown/blob/master/hooks/tk-maya_scene_operations.py#L69)内の update メソッドを参照してください。" %}
 
 付属の Shotgun 統合は、ファイル内で定義されたレンダリング レイヤを調べて、イメージ シーケンスを収集します。レンダリングが完了したら、パブリッシャーを起動します。レンダリングされたシーケンスがツリー内の項目として表示されます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_55.png" %}
+{% include figure src="./images/tutorial/image_55.png" %}
 
 先に進んで、セッションおよびレンダリングされたイメージ ファイル シーケンスをパブリッシュします。Shotgun では次のように表示されます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_56.png" %}
+{% include figure src="./images/tutorial/image_56.png" %}
 
 次に、コンポジットについて説明します。
 
@@ -806,39 +806,39 @@ Maya のアプリが設定されているセクションを見つけて、**`act
 
 Loader アプリを使用して前のセクションでレンダリングおよびパブリッシュしたイメージ シーケンスをロードします。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_57.png" %}
+{% include figure src="./images/tutorial/image_57.png" %}
 
 **`Image`** および **`Rendered Image`** パブリッシュ タイプに対して定義されているアクションは、**ノードの作成と読み取り**です(タイプはファイル拡張子によって異なります)。このアクションをクリックして、Nuke セッション内で新しい **`Read`** ノードを作成します。
 
 Nuke プロジェクト設定の出力フォーマットが、レンダリングされたイメージと一致することを確認します。バックグラウンドとして使用する一定のカラーを作成して、読み取りノードと結合します。ビューアをアタッチしてコンポジットを表示します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_58.png" %}
+{% include figure src="./images/tutorial/image_58.png" %}
 
-コンポジットに問題がなければ、**[Shotgun] > [File Save...]**メニュー アクションを使用して、作業ファイルを保存します。
+コンポジットに問題がなければ、**[Shotgun] > [File Save…]**メニュー アクションを使用して、作業ファイルを保存します。
 
 次に、Nuke の左側メニューで Shotgun のロゴをクリックします。このメニューの Shotgun 対応書き込みノードの 1 つをクリックします。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_59.png" width="400px" %}
+{% include figure src="./images/tutorial/image_59.png" width="400px" %}
 
 Shotgun Write Node アプリは、現在の Shotgun のコンテキストに基づいて出力パスを自動的に評価する組み込みの Nuke 書き込みノードの上に、レイヤを配置します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_60.png" %}
+{% include figure src="./images/tutorial/image_60.png" %}
 
 ディスクにイメージ フレームをレンダリングします。Nuke セッションをパブリッシュして、レンダリングされたイメージに作業ファイルを関連付けられるようになりました。既定では、パブリッシャーはレンダリングされたフレームを収集し、Shotgun にフレームを登録するプラグインをアタッチします。2 番目のプラグインは、レビュー提出と呼ばれる、バックグラウンドで実行される統合方法を使用して、フレームをアップロードします。このアプリは Nuke を使用して QuickTime を生成します。生成された QuickTime は、アップロードしたり、レビューしたりできます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_61.png" %}
+{% include figure src="./images/tutorial/image_61.png" %}
 
 もう 1 つの便利な統合は、Quick Review アプリです。これは、QuickTime をすばやく生成して、レビューのために Shotgun にアップロードする出力ノードです。このアプリは、左側メニュー内の、Shotgun 書き込みノードの横にあります。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_62.png" width="400px" %}
+{% include figure src="./images/tutorial/image_62.png" width="400px" %}
 
 Quick Review ノードを作成してから、[Upload]ボタンをクリックして、ディスクへの入力のレンダリング、QuickTime の生成、レビューのための Shotgun への結果のアップロードを行います。フレームを提出する前に、いくつかの標準オプションが表示されます。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_63.png" %}
+{% include figure src="./images/tutorial/image_63.png" %}
 
 Shotgun の[メディア]（Media）タブを調べて、アップロードされた QuickTime を両方とも確認します。
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_64.png" %}
+{% include figure src="./images/tutorial/image_64.png" %}
 
 Shotgun でメディアをレビューする方法の詳細については、[公式のドキュメント](https://support.shotgunsoftware.com/hc/ja/sections/204245448-Review-and-approval)を参照してください。
 

@@ -20,7 +20,7 @@ lang: ko
 
 여기서 추가할 앱은 Shotgun Python 콘솔 앱입니다. Maya에는 자체 Python 콘솔이 있지만 이 툴킷 앱에는 Maya 콘솔에 없는 일부 기능이 있습니다.
 
-이 안내서에서는 [파이프라인 구성 편집](./editing_app_setting.md) 안내서에서 생성한 파이프라인 구성을 활용합니다. 이 안내서를 완료하지 않았다면 기존 파이프라인 구성을 사용하여 앱을 추가할 수 있습니다.
+이 안내서에서는 [파이프라인 구성 편집](./editing_app_setting.md)안내서에서 생성한 파이프라인 구성을 활용합니다. 이 안내서를 완료하지 않았다면 기존 파이프라인 구성을 사용하여 앱을 추가할 수 있습니다.
 
 ## 이 문서 사용
 
@@ -57,11 +57,11 @@ lang: ko
 
 **1단계:** [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya)를 열고 Maya에서 Shotgun Python 콘솔에 대한 정보를 찾습니다. 제목을 선택합니다.
 
-![Python 앱](../../../../images/toolkit/learning-resources/guides/installing_app/1_python_app.png)
+![Python 앱](./images/installing_app/1_python_app.png)
 
 그러면 주소록에 필요한 항목이 모두 포함된 [앱 관련 정보](https://support.shotgunsoftware.com/hc/ko/articles/219033108)가 표시됩니다.
 
-![Python 앱 정보](../../../../images/toolkit/learning-resources/guides/installing_app/2_python_app_info.png)
+![Python 앱 정보](./images/installing_app/2_python_app_info.png)
 
 **시스템 이름**이 주 식별자이며 `tk-multi-pythonconsole`입니다. 또한 **최신 버전:** v1.1.2도 필요합니다.
 
@@ -69,7 +69,7 @@ lang: ko
 
 **2단계:** Maya를 실행하고 Shotgun 메뉴 **Shotgun > 프로젝트 the_other_side**(Project the_other_side)를 선택하면 프로젝트 환경에 해당 프로젝트에 사용할 수 있는 앱 목록이 표시됩니다.
 
-![앱 목록](../../../../images/toolkit/learning-resources/guides/installing_app/3_list_of_apps.png)
+![앱 목록](./images/installing_app/3_list_of_apps.png)
 
 ## 구성 확장
 
@@ -83,35 +83,35 @@ lang: ko
 
 **<a name="&rdquo;step3&rdquo;">3단계</a>:** Shotgun을 열고 오른쪽 위에서 **관리자(Admin) 메뉴(아바타) > 기본 레이아웃(Default Layouts) > 파이프라인 구성(Pipeline Configuration) > 파이프라인 구성 목록(Pipeline Configuration List)**을 선택합니다.
 
-![파이프라인 구성 목록](../../../../images/toolkit/learning-resources/guides/installing_app/4_REPLACE_pipeline_configuration_list.png)
+![파이프라인 구성 목록](./images/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
 이렇게 하면 Shotgun 사이트의 파이프라인 구성이 모두 포함된 상세 목록이 표시됩니다.
 
 **4단계:** 파이프라인 구성 목록이 표시되면 열 헤더의 맨 오른쪽에 있는 **+** 기호를 선택하고 **프로젝트**(Projects) 열을 추가합니다.
 
-![프로젝트 열 추가](../../../../images/toolkit/learning-resources/guides/installing_app/5_add_project_column.png)
+![프로젝트 열 추가](./images/installing_app/5_add_project_column.png)
 
 ### 프로젝트 구성의 위치 리뷰
 
 **5단계:** 또한, 운영 체제에 적합한 **경로**(Path) 필드를 추가합니다.
 
-![config 경로](../../../../images/toolkit/learning-resources/guides/installing_app/6_path_to_config.png)
+![config 경로](./images/installing_app/6_path_to_config.png)
 
 그러면 구성 파일의 경로가 표시됩니다.
 
-![config 2 경로](../../../../images/toolkit/learning-resources/guides/installing_app/7_path_to_config2.png)
+![config 2 경로](./images/installing_app/7_path_to_config2.png)
 
 **6단계:** **기본**(Primary) 행 항목 옆에 있는 빈 공간을 **마우스 오른쪽 버튼으로 클릭**하고 상황에 맞는 메뉴에서 **이 구성 복제…**(Clone this Configuration…)를 선택합니다.
 
-![복제 완료](../../../../images/toolkit/learning-resources/guides/installing_app/8_clone_complete.png)
+![복제 완료](./images/installing_app/8_clone_complete.png)
 
 **7단계:** 구성 목록의 구성과 디렉토리의 파일의 이름을 각각 "Primary Clone Config 2"와 "the_other_side_clone2"로 지정합니다. **확인**(OK)을 선택합니다.
 
-![복제본 이름 지정](../../../../images/toolkit/learning-resources/guides/installing_app/9_name_clone.png)
+![복제본 이름 지정](./images/installing_app/9_name_clone.png)
 
 구성에 포함된 모든 파일 및 폴더가 복사되고 앱에 대한 캐시가 생성될 때까지 기다립니다. 이제 앱을 사용할 수 있으므로 입에서 살살 녹는 크로아상과 함께 에스프레소를 마시면서 여유를 즐기십시오.
 
-![복제 완료](../../../../images/toolkit/learning-resources/guides/installing_app/10_clone_complete.png)
+![복제 완료](./images/installing_app/10_clone_complete.png)
 
 완료되면 구성 목록에 복제된 구성 관련 정보가 업데이트되고 새 구성이 로컬 구성 폴더에 추가됩니다.
 
@@ -121,7 +121,7 @@ lang: ko
 
 **8단계:** Shotgun 데스크톱을 열고 복제된 구성을 생성한 프로젝트를 선택합니다. 오른쪽 위에 있는 **아래쪽 화살표**를 선택하여 이 프로젝트와 연결된 구성을 표시하고 방금 생성한 **Primary Clone Config 2**를 선택합니다.
 
-![복제본 선택](../../../../images/toolkit/learning-resources/guides/installing_app/11_select_clone.png)
+![복제본 선택](./images/installing_app/11_select_clone.png)
 
 Shotgun 데스크톱이 이제 이 프로젝트에 대해 복제된 구성을 사용합니다.
 
@@ -129,7 +129,7 @@ Shotgun 데스크톱이 이제 이 프로젝트에 대해 복제된 구성을 �
 
 **9단계:** 파일 시스템에서 복제된 구성을 생성할 때 지정한 경로에서 해당 구성을 찾습니다. `config/env/includes/app_locations.yml` 파일을 봅니다.
 
-![복제 앱 위치](../../../../images/toolkit/learning-resources/guides/installing_app/12_clone_app_locations.png)
+![복제 앱 위치](./images/installing_app/12_clone_app_locations.png)
 
 `app_locations.yml` 파일이 기본 구성의 주소록이며 앱의 설명자가 이 파일에 나열되어 있습니다. 이 파일에 앱의 위치가 지정되며 이 파일을 사용하여 앱에 대한 설정을 생성할 수 있습니다.
 
@@ -204,7 +204,7 @@ Shotgun 통합의 코드는 앱, 엔진 및 프레임워크에 대한 번들로 
 
 **14단계:** 복제된 구성에서 텍스트 편집기로 `config/env/includes/settings/tk-maya.yml`을 열고 `settings.tk-maya.project`를 검색합니다.
 
-![tk-maya](../../../../images/toolkit/learning-resources/guides/installing_app/13_tk-maya.png)
+![tk-maya](./images/installing_app/13_tk-maya.png)
 
 15단계: 다음 아래에 위치 설명자를 추가합니다.
 
@@ -252,7 +252,7 @@ Windows:
 
 {% include info title="참고" content="기본 항목을 사용하는 경우 파란색 막대가 없고 구성 이름이 표시되지 않습니다." %}
 
-![Maya의 복제된 구성](../../../../images/toolkit/learning-resources/guides/installing_app/14_maya_cloned_config.png)
+![Maya의 복제된 구성](./images/installing_app/14_maya_cloned_config.png)
 
 **17단계:** 데스크톱에서 Maya를 실행하고 **Shotgun > 프로젝트(Project) > …** 메뉴를 선택합니다.
 
@@ -266,7 +266,7 @@ Windows:
 
 Python 콘솔 앱을 Maya에서 사용할 수 있습니다.
 
-![프로젝트 ID](../../../../images/toolkit/learning-resources/guides/installing_app/16_project_ID.png)
+![프로젝트 ID](./images/installing_app/16_project_ID.png)
 
 ## 변경 사항을 프로덕션에 적용
 
@@ -322,7 +322,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 {% include info title="참고" content="이 안내서의 **[3단계](#step3):**에서 확인한 Shotgun의 파이프라인 구성(Pipeline Configuration) 페이지에서 파이프라인 구성의 ID를 찾을 수도 있습니다. 프로젝트 ID를 찾으려면 구성 목록(Configuration List)으로 이동하고 ID 열을 추가하십시오." %}
 
-![ID 열](../../../../images/toolkit/learning-resources/guides/installing_app/17_id_column.png)
+![ID 열](./images/installing_app/17_id_column.png)
 
 ID를 입력하면 Shotgun에서 다음 작업을 수행합니다.
 
@@ -346,11 +346,11 @@ Push Complete!
 
 **19단계:** Shotgun 데스크톱의 오른쪽 위에 있는 화살표를 클릭하고 **구성**(CONFIGURATION) 목록에서 **기본**(Primary)을 선택합니다.
 
-![Maya 구성 변경](../../../../images/toolkit/learning-resources/guides/installing_app/18_change_config_maya.png)
+![Maya 구성 변경](./images/installing_app/18_change_config_maya.png)
 
 **20단계:** 데스크톱에서 Maya를 실행하고 **Shotgun > 프로젝트(Project) > …** 메뉴에서 Shotgun Python 콘솔...(Shotgun Python Console...)을 찾습니다.
 
-![Maya 내 앱](../../../../images/toolkit/learning-resources/guides/installing_app/19_app_in_maya.png)
+![Maya 내 앱](./images/installing_app/19_app_in_maya.png)
 
 Python 콘솔 앱이 선택한 프로젝트의 프로젝트 환경에 추가되었습니다. 두 번째 안내서인 "[구성 편집](../toolkit_basics_guides/editing_app_setting.md)"에서 각 환경은 서로 독립적이고, 프로젝트마다 전용 구성이 있으며, 프로젝트가 로드될 때 소프트웨어 통합이 파이프라인 구성에서 설정을 수집한다는 것을 살펴봤습니다. 환경에서 Python 콘솔을 사용할 수 있으려면 `app_locations.yml` 파일에서 위치 설명자를 찾는 지침이 환경에 제공되어야 합니다. 이 점을 고려해 볼 때 파이프라인에서 Python 콘솔 앱을 사용할 수 있게 할 위치에 "여기서 Python 콘솔 앱 사용"과 같은 설정을 지정해야 합니다.
 
@@ -360,13 +360,13 @@ Python 콘솔 앱이 선택한 프로젝트의 프로젝트 환경에 추가되�
 
 툴킷의 놀라운 특징 중 하나는 모든 작업자가 툴킷 앱을 작성할 수 있다는 점입니다. 앱을 전용 앱으로 사용할 수도 있지만, Shotgun 도구에 추가할 수 있도록 [Shotgun 커뮤니티](https://support.shotgunsoftware.com/hc/ko/articles/219039828)에서 공유할 수도 있습니다. 뛰어난 앱을 만들었으며, 이 앱을 Shotgun 커뮤니티 페이지에서 공유하고 싶다면 [support@shotgunsoftware.com](mailto:support@shotgunsoftware.com)으로 이메일을 보내 주시기 바랍니다.
 
-표준 툴킷 앱과 Shotgun 커뮤니티에서 생성된 앱에 대한 활발한 논의가 **[shotgun-dev Google 그룹](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)**에서 진행되고 있습니다. Shotgun 커뮤니티에 새로운 정보 제공 사례가 늘어남에 따라 이러한 기술 및 도구 기반은 끊임없이 확장되고 있습니다.
+표준 툴킷 앱과 Shotgun 커뮤니티에서 생성된 앱에 대한 활발한 논의가 **[shotgun-dev Google 그룹](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=ko#!forum/shotgun-dev)**에서 진행되고 있습니다. Shotgun 커뮤니티에 새로운 정보 제공 사례가 늘어남에 따라 이러한 기술 및 도구 기반은 끊임없이 확장되고 있습니다.
 
 ### 구성을 확장하는 방법 연구
 
 프로젝트에 사용할 구성을 선택할 때 Python 콘솔 앱을 Shotgun 데스크톱 드롭다운에서 찾을 수 있다는 것을 아셨을 것입니다.
 
-![데스크톱 Python 콘솔](../../../../images/toolkit/learning-resources/guides/installing_app/20_desktop_python_console.png)
+![데스크톱 Python 콘솔](./images/installing_app/20_desktop_python_console.png)
 
 파이프라인 구성에 추가하려는 앱을 사용하고 있는 환경이 있다면 간단한 탐색 작업을 거쳐 앱을 구성에 추가하는 데 필요한 정보를 찾을 수 있습니다. 환경의 구성 파일에서 앱이 사용되는 위치를 파악하면 앱 위치 설명자와 설정을 추가하는 방법을 확인할 수 있습니다.
 
@@ -404,11 +404,11 @@ apps.tk-multi-pythonconsole.location:
   version: v1.1.2
 ```' %}
 
-Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines).
+모든 앱, 엔진 및 프레임워크에는 툴킷에 특정 번들에 액세스하는 위치를 알리는 데 사용되는 위치 설명자가 있습니다. 대부분의 앱 설명자는 `app_locations.yml` 파일에 있지만, Python 콘솔 앱에서 확인한 것처럼 원하는 위치에서 참조되지 않을 수도 있습니다. 모든 표준 앱 및 엔진은 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 나와 있습니다.
 
-You can add any app to any appropriate software integration that Shotgun supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page. 
+Shotgun에서 지원하는 적합한 소프트웨어 통합에 앱을 추가할 수도 있고, 자신만의 전용 응용프로그램을 자체 툴킷 도구에 추가할 수도 있습니다. 지원되는 모든 소프트웨어 응용프로그램도 통합의 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 나와 있습니다.
 
-If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other Shotgun users will need the same function and sharing new apps is one way to give back to the Shotgun community. 
+원하는 앱을 찾을 수 없는 경우 직접 작성할 수 있습니다. 다른 Shotgun 사용자도 동일한 기능을 필요로 할 수 있으므로 새로 만든 앱을 공유하는 것도 Shotgun 커뮤니티에 기여하는 한 가지 방법입니다.
 
-In the next guide you can customize your production folder structure to match how your facility is structured. [Customize the production folder schema to match how your facility is structured.](link)
+다음 안내서에서는 프로덕션 폴더 구조를 스튜디오의 체계에 맞게 커스터마이즈하는 방법에 대해 설명합니다. [스튜디오의 체계에 맞게 프로덕션 폴더 스키마를 커스터마이즈해 보십시오.](link)
 
