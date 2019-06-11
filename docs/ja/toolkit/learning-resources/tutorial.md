@@ -93,6 +93,7 @@ Shotgun Desktop (以下、「Desktop」)を使用して、プロジェクトの�
 
 {% include figure src="./images/tutorial/image_5.png" caption="Desktop のポップアップ メニューで**[Advanced project setup...]**を選択する" %}
 
+
 {% include figure src="./images/tutorial/wizard_01.png" caption="**[Shotgun Default](Shotgun の既定値)**設定タイプを選択する" %}
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="**[Default configuration](既定の設定)**を選択する" %}
@@ -113,9 +114,11 @@ Shotgun Desktop (以下、「Desktop」)を使用して、プロジェクトの�
 
 このチュートリアルでは中央設定を使用します。**[分散設定](Distributed Setup)**オプションは、さまざまなメリットを提供する代替オプションを提供します。これは、高速共有ストレージのないスタジオで役に立つ場合があります。各種設定の長所と短所について詳しくは、「[ツールキット管理](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2)」のプレゼンテーションを参照してください。
 
+
 サイト全体にわたるストレージとは異なり、設定はプロジェクトごとに異なるため、ここで選択するディレクトリが直接設定の保存に使用されます。
 
 {% include figure src="./images/tutorial/wizard_07.png" caption="現在のオペレーティング システムに対して選択した設定パスをメモする。" %}
+
 
 上記の画面で選択したフォルダに設定がインストールされます。このチュートリアルを通して、このフォルダに含まれている設定の内容を調べて、変更します。
 
