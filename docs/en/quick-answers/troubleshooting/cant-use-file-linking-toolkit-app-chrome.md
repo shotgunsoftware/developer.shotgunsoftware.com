@@ -65,7 +65,9 @@ If your computer is not connected to the Internet and can’t download the updat
 Under certain circumstances, Windows will report that a certificate has been imported successfully, but will not make it available to applications requiring it. This can be validated by visiting the certificate dialog on Windows. To access it, hit the Windows key and type **Internet Options**. On the **Internet Properties** dialog, switch to the **Content** tab and then click on the **Certificates** button. Finally, click on the **Trusted Root Certification Authorities** and look for **localhost**.
 
 ![Search Windows for internet options](images/windows-search-internet-options.png)
+
 ![Content tab of the internet properties](images/windows-internet-properties.png)
+
 ![Windows Certificates](images/windows-certificates.png)
 
 If the entry is missing, there is probably a group policy issue on your Windows domain or local computer. If it is present, we recommend you contact our [support team](support@shotgunsoftware.com).
