@@ -34,12 +34,12 @@ Ensure that no firewall software is preventing connections to localhost or on po
 
 You can verify that Chrome accepts the certificate by browsing to https://localhost:9000, which is the address the Shotgun website tries to access in order to do local file linking and launch Toolkit applications. You should normally be greeted by this message:
 
-![Autobahn Python message](../../../images/quick-answers/troubleshooting/autobahn-python.png)
+![Autobahn Python message](images/autobahn-python.png)
 
 On the other hand, if you are greeted by one of these messages, it means there was a problem with the certificate registration process: 
 
-![Your connection is not private message](../../../images/quick-answers/troubleshooting/your-connection-is-not-private-chrome.png)
-![Can't provide a secure connection message](../../../images/quick-answers/troubleshooting/cant-provide-sceure-connection-chrome.png)
+![Your connection is not private message](images/your-connection-is-not-private-chrome.png)
+![Can't provide a secure connection message](images/cant-provide-sceure-connection-chrome.png)
 
 ## How to quickly fix certificate issues
 
@@ -63,9 +63,9 @@ If your computer is not connected to the Internet and can’t download the updat
 
 Under certain circumstances, Windows will report that a certificate has been imported successfully, but will not make it available to applications requiring it. This can be validated by visiting the certificate dialog on Windows. To access it, hit the Windows key and type **Internet Options**. On the **Internet Properties** dialog, switch to the **Content** tab and then click on the **Certificates** button. Finally, click on the **Trusted Root Certification Authorities** and look for **localhost**.
 
-![Search Windows for internet options](../../../images/quick-answers/troubleshooting/windows-search-internet-options.png)
-![Content tab of the internet properties](../../../images/quick-answers/troubleshooting/windows-internet-properties.png)
-![Windows Certificates](../../../images/quick-answers/troubleshooting/windows-certificates.png)
+![Search Windows for internet options](images/windows-search-internet-options.png)
+![Content tab of the internet properties](images/windows-internet-properties.png)
+![Windows Certificates](images/windows-certificates.png)
 
 If the entry is missing, there is probably a group policy issue on your Windows domain or local computer. If it is present, we recommend you contact our [support team](support@shotgunsoftware.com).
 
@@ -79,11 +79,11 @@ If your computer is not on a domain, it is possible the computer has still been 
 
 Hit the Windows keys, type **mmc** and hit enter. This will launch the **Microsoft Management Console**. In the application, click on the **File menu** and select **Add\Remove Snap-In**. This will show the **Add or Remove Snap-ins** dialog. On the left-hand side, search for **Group Policy Object Editor** and click **Add >**. A new dialog will appear, which you can dismiss by clicking **Finish**. Finally, click **OK** on the **Add or Remove Snap-ins** dialog.
 
-![Microsoft Managment Console Add Remove Snap-ins](../../../images/quick-answers/troubleshooting/microsoft-management-console.png)
+![Microsoft Managment Console Add Remove Snap-ins](images/microsoft-management-console.png)
 
 Finally, on the left-hand side of the main dialog, navigate to **Local Computer Policy/Computer Configuration/Windows Settings/Security Settings/Public Key Policies**. Once selected, double click **Certificate Path Validation Settings** in the central pane.
 
-![Certificate path validation settings](../../../images/quick-answers/troubleshooting/certificate-path-valiation-settings.png)
+![Certificate path validation settings](images/certificate-path-valiation-settings.png)
 
 On the next dialog, make sure that **Define these policy settings** is unchecked. If it is checked, make sure that **Allow user trusted root CAs to be used to validate certificates (recommended)** is checked. Once you're done, click **OK** and the settings will be saved.
 

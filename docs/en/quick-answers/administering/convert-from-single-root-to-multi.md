@@ -18,7 +18,7 @@ Lets say you want to add another root named "secondary", here are the steps you 
 - Fill out the name ("secondary") and the paths to the storage root on all of the relevant platforms. *If you're not using a particular platform, you can simply leave it blank.*
 - Click on the **Save Page** button on the top or the bottom of the page
 
-![Shotgun file management prefs](../../../images/quick-answers/administering/shotgun-pref-file-management.png)
+![Shotgun file management prefs](images/shotgun-pref-file-management.png)
 
 ## Add the new root to your pipeline configuration
 
@@ -51,7 +51,7 @@ The storage id is currently only queryable via an API call." %}
 
 Now that you've defined the new storage root and essentially told Toolkit about it, you need to decide how you're going to use it in your directory structure. For this example, let's assume you want all of your asset work to go in the secondary storage, and all of your shot work to go in the primary storage. You might setup your schema to look like the following in `config/core/schema`:
 
-![Multi root schema layout](../../../images/quick-answers/administering/schema-multi-root.png)
+![Multi root schema layout](images/schema-multi-root.png)
 
 **config/core/schema/project.yml**
 

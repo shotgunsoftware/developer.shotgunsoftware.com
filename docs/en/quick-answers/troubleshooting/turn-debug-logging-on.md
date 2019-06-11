@@ -11,7 +11,7 @@ lang: en
 
 The easiest way to enable debugging is to toggle it on through the Shotgun Desktop app. This can be set once you are logged into Shotgun Desktop: click on your profile picture in the bottom right of the app, and select **Advanced -> Toggle Debug Logging**. This setting is persistent between sessions, so remember to turn it off when you are finished.
 
-![Toggle debug logging in SG Desktop](../../../images/quick-answers/troubleshooting/desktop-enable-debug-logging.png)
+![Toggle debug logging in SG Desktop](images/desktop-enable-debug-logging.png)
 
 It should also be noted that when this is toggled on, apps launched from Desktop, or even the Shotgun action menu items through the browser integration, will also inherit this debug state.
 
@@ -26,7 +26,7 @@ First, you will need to set up a new environment variable: TK_DEBUG=1
 
 - You can permanently turn on debug logging by navigating to the **Windows icon > Control Panel > System > Advanced system settings > Environment Variables… > New…**
 
-![Setting Windows environment variables](../../../images/quick-answers/troubleshooting/windows-setting-environment-variable.png)
+![Setting Windows environment variables](images/windows-setting-environment-variable.png)
 
 
 - **Variable name**: `TK_DEBUG`
