@@ -47,25 +47,25 @@ Workfiles アプリは、Shotgun ソフトウェア統合のファイル管理�
 
 **手順 2:** **Shotgun サイト**の **[プロジェクト](Projects)ページ**でプロジェクトを選択して、Shotgun サイトのプロジェクトにアクセスします。
 
-![Shotgun プロジェクト](../../../../images/toolkit/learning-resources/guides/editing_app_setting/1_shotgun_project.png)
+![Shotgun プロジェクト](./images/editing_app_setting/1_shotgun_project.png)
 
 **手順 3:** 右上にある**アバター**を選択して、**[管理者](ADMIN)**メニューを表示し、下にスクロールして**[既定のレイアウト](Default Layouts) > [パイプラインの設定](Pipeline Configuration) > [パイプライン設定リスト](Pipeline Configuration List)**を選択します。
 
-![パイプラインの設定](../../../../images/toolkit/learning-resources/guides/editing_app_setting/2_pipeline_configuration.png)
+![パイプラインの設定](./images/editing_app_setting/2_pipeline_configuration.png)
 
 **手順 4:** **[パイプライン設定リスト]（Pipeline Configuration List）**が表示されたら、列見出しの右端にある**[+]**記号を選択して、列をもう 1 つ追加します。ドロップダウン リストで、オペレーティング システムに該当するパスを選択します。
 
-![OS のパス](../../../../images/toolkit/learning-resources/guides/editing_app_setting/3_mac_path.png)
+![OS のパス](./images/editing_app_setting/3_mac_path.png)
 
 新しいフィールドにパスが表示されます。
 
-![ OS パス 2 ](../../../../images/toolkit/learning-resources/guides/editing_app_setting/4_mac_path2.png)
+![ OS パス 2 ](./images/editing_app_setting/4_mac_path2.png)
 
 **手順 5:** 端末またはファイル マネージャで、プロジェクトのパイプライン設定が保存されているフォルダを参照して、開きます。
 
 Toolkit 設定のルート フォルダには、**cache**、**config**、および **install** の 3 つのサブフォルダがあります。**config** フォルダおよびその中のネストされたフォルダを開くと、サブフォルダとファイルがいくつか表示されます。
 
-![Config の内容](../../../../images/toolkit/learning-resources/guides/editing_app_setting/5_config_content.png)
+![Config の内容](./images/editing_app_setting/5_config_content.png)
 
 **env** フォルダには、アーティストの作業環境をサポートする統合の設定が保存されています。これらの環境を利用することにより、パイプラインのステージごとに設定をカスタマイズすることができます。既定の設定には事前に定義された環境セットが用意されていますが、使用しているパイプラインで詳細な環境セットが必要な場合は、これらを変更できます。
 
@@ -83,11 +83,11 @@ Shotgun Toolkit を使用すると、さまざまなソフトウェア パッケ
 
 **手順 8:** 設定を編集するプロジェクトを選択します。
 
-![プロジェクトをロード](../../../../images/toolkit/learning-resources/guides/editing_app_setting/6_load_project.png)
+![プロジェクトをロード](./images/editing_app_setting/6_load_project.png)
 
 **手順 9:** Shotgun Desktop から Maya を起動します。
 
-![プロジェクトをロード](../../../../images/toolkit/learning-resources/guides/editing_app_setting/7_view_project.png)
+![プロジェクトをロード](./images/editing_app_setting/7_view_project.png)
 
 **Shotgun** メニューが完全にロードされるまで待ちます。インターネット接続速度が遅い場合は、この間に設定を行いましょう。つまり、適度な量のクリームを入れて一杯の完璧なエスプレッソを作るようなものです。
 
@@ -95,7 +95,7 @@ Maya および Shotgun が完全にロードされると、**[File Open]**ダイ
 
 **手順 10:** **[File Open]**ダイアログ ボックスの左側のペインで**[Assets]**タブを選択します。検索結果に表示されたフォルダ内のいずれかのアセットを選択します。
 
-![タスクを表示するボタン](../../../../images/toolkit/learning-resources/guides/editing_app_setting/8_21_view_task_button.png)
+![タスクを表示するボタン](./images/editing_app_setting/8_21_view_task_button.png)
 
 **[+New Task]**ボタンが有効になります。
 
@@ -107,17 +107,17 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 この参照ボックスには、**[File Open]**ウィンドウの機能をコントロールする構成設定の詳細が表示されます。Toolkit の一部のアプリには、アプリに使用される設定と、既定の設定を表示する参照ボックスがあります。**[Location:]**に注目してください。識別子は **tk-multi-workfiles2** です。これは、Workfiles アプリを作成するコードのバンドルの識別子です。パイプライン設定を検索する場合、この名前でアプリの設定の配置場所を識別します。Shotgun の統合で使用可能な機能に関するすべての構成設定、アプリ、エンジンがリストされた「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページがあります。
 
-![Current_work_area](../../../../images/toolkit/learning-resources/guides/editing_app_setting/9_current_work_area.png)
+![Current_work_area](./images/editing_app_setting/9_current_work_area.png)
 
 **[Configuration:]**見出しの下で、この特定の環境の設定を探します。
 
-![Configuration_ref](../../../../images/toolkit/learning-resources/guides/editing_app_setting/10_configuration_ref.png "タスクを表示するボタン")
+![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png "タスクを表示するボタン")
 
 **注:** **my_tasks_filters** の設定の後に、**launch_at_startup** の設定があります。この設定に注意することは重要です。この設定がプロジェクト環境内の**[File Open]**設定の既定の設定になります。この設定は、Shotgun Desktop から Maya を起動したときに、**[File Open]**ダイアログ ボックスが自動的に開くことを示します。
 
 **[Setting allow_task_creation]**まで下にスクロールします。この設定の既定値は**[True]**です。この値の場合、ユーザは Maya プロジェクト環境内から新しいタスクを作成できます。
 
-![ファイルを開くオプション](../../../../images/toolkit/learning-resources/guides/editing_app_setting/11_open_file_options.png)
+![ファイルを開くオプション](./images/editing_app_setting/11_open_file_options.png)
 
 設定を検索する際に、考慮すべき点がいくつかあります。
 
@@ -137,13 +137,13 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 **手順 13:** Maya ウィンドウの右上にある**[Shotgun]** メニュー項目を特定します。
 
-![Maya shotgun2](../../../../images/toolkit/learning-resources/guides/editing_app_setting/12_Maya_Shotgun2.png)
+![Maya shotgun2](./images/editing_app_setting/12_Maya_Shotgun2.png)
 
 **ヒント:** メニューが表示されない場合は、一部のメニュー項目が非表示になっていることを示す**[>>]**が表示されています。**[>>]**を選択して Shotgun メニューを表示するか、Maya ウィンドウの幅を広げます。
 
 **手順 14:** **メニューの右上にある[Shotgun] > プロジェクト the_other_side > [Work Area Info...]**を選択します。
 
-![Work Area Info](../../../../images/toolkit/learning-resources/guides/editing_app_setting/13_work_area_info.png)
+![Work Area Info](./images/editing_app_setting/13_work_area_info.png)
 
 **[Work Area Info]**ダイアログ ボックスには、現在の作業領域の内容と詳細が表示されます。この情報には、ユーザが作業している環境、および設定が配置されてい環境設定ファイルのパスが含まれています。
 
@@ -151,7 +151,7 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 最初の項目は、使用されているエンジンを識別します。このエンジンは、特定のソフトウェア アプリケーションに Shotgun ツールを統合する機能を制御します。このエンジンには、各ソフトウェア統合に固有のロジックが保持されています。ウィンドウに表示される 2 番目の項目は、現在のプロジェクト環境の配置場所のパスを示します。
 
-![[Work area info]の[Environment]](../../../../images/toolkit/learning-resources/guides/editing_app_setting/14_shotgun_work_area_info_Environment.png)
+![[Work area info]の[Environment]](./images/editing_app_setting/14_shotgun_work_area_info_Environment.png)
 
 最後の 2 つのフォルダは `config/env/` と、その後の `project.yml` です。`project.yml` ファイルは、現在の環境の設定の保存場所を案内するロードマップの起点となります。
 
@@ -200,7 +200,7 @@ engines:
 frameworks: "@frameworks"
 ```
 
-<!--![Project yml env](../../../../images/toolkit/learning-resources/guides/editing_app_setting/15_project_yml_env.png)-->
+<!--![Project yml env](./images/editing_app_setting/15_project_yml_env.png)-->
 
 `project.yml` 内の説明の下に、`includes`、`engines`、および `frameworks` という 3 つのセクションがあります。`includes` セクションには、設定内の他の YAML ファイルを**参照するファイル ポインタのリストが示されています。既定の設定のアーキテクチャでは、ファイルを常に軽量化するために、ファイルをネストし、ポインタを使用するという方法も採用しています。**includes** に沿ってファイルを順に移動していくと、探している構成設定にたどり着きます。これはロシアのマトリョーシカ人形と似ています。人形を開くと、その中に次の人形が入っています。このようにして、最終的に適切な構成設定が見つかります。
 
@@ -224,7 +224,7 @@ tk-maya.yml での Workfiles アプリの検索
 
 **手順 17:** ファイル ブラウザ内で、**env/includes/settings** フォルダを参照して、`tk-maya.yml` を開きます。
 
-![tk-maya 作業ファイル](../../../../images/toolkit/learning-resources/guides/editing_app_setting/16_tk_maya_workfiles.png)
+![tk-maya 作業ファイル](./images/editing_app_setting/16_tk_maya_workfiles.png)
 
 **手順 18:** `project.yml` からのインクルードの内容に沿って、`tk-maya.yml` ファイル内で `settings.tk-maya.project` を検索します。特に行いたいのは、特定のプロジェクトのプロジェクト環境内で**[+New Task]**ボタンを無効にすることです。プロジェクト環境内で作業しながら、このプロジェクトの設定を操作し、場所の情報を取得しました。
 
@@ -242,7 +242,7 @@ settings.tk-maya.project:
   location: "@engines.tk-maya.location"
 ```
 
-<!--![tk maya project](../../../../images/toolkit/learning-resources/guides/editing_app_setting/17_tk-maya_project.png)-->
+<!--![tk maya project](./images/editing_app_setting/17_tk-maya_project.png)-->
 
 `settings.tk-maya.projects` の下に、`tk-multi-workfiles2` アプリの設定が次のように表示されています。
 
@@ -267,7 +267,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
   entities:
 ```
 
-<!--![Workfiles2](../../../../images/toolkit/learning-resources/guides/editing_app_setting/18_workfiles2.png)-->
+<!--![Workfiles2](./images/editing_app_setting/18_workfiles2.png)-->
 
 Maya 参照ボックスが示すように、`allow_task_creation` 設定には `true` の既定値があります。ベスト プラクティスとして、パイプライン設定には既定の設定が反映されていません。これにより、**簡易**形式が可能になり、既定のコードと異なる設定のみが設定に追加されます。設定が明示的に指定されていない場合は、この設定にアクセスするすべての呼び出しが既定値を受け取ります。Toolkit が設定を読み取って環境を構築するときに、この環境内で実行されているアプリ、エンジン、およびフレームワークはこのプロジェクトのパイプライン構成設定を使用し、設定の内容に基づいてすべての既定の設定をオーバーライドします。
 
@@ -281,7 +281,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
   entities:
 ```
 
-<!--![Edit Workfiles2](../../../../images/toolkit/learning-resources/guides/editing_app_setting/19_edit_workfiles2.png)-->
+<!--![Edit Workfiles2](./images/editing_app_setting/19_edit_workfiles2.png)-->
 
 **注:** Toolkit の既定の構成設定は、特定の設定を見つけやすいようにアルファベット順に編成されています。この規則に従うことにより、設定の内容が増えた場合でも作業を簡単に行うことができます。
 
@@ -291,7 +291,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 **手順 22:** Maya の**[File Open]**ダイアログ ボックスで参照ボックスを開き、**[Reload Engines and Apps]**を選択します。
 
-![エンジンの再ロード](../../../../images/toolkit/learning-resources/guides/editing_app_setting/20_refresh_engines_apps.png)
+![エンジンの再ロード](./images/editing_app_setting/20_refresh_engines_apps.png)
 
 これにより、構成設定が再ロードされます。
 
@@ -299,7 +299,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 **手順 23:** **[File Open]**ダイアログ ボックスに移動して、アセットを選択します。
 
-![タスクを表示するボタン](../../../../images/toolkit/learning-resources/guides/editing_app_setting/8_21_view_task_button.png)
+![タスクを表示するボタン](./images/editing_app_setting/8_21_view_task_button.png)
 
 **[+New Task]**ボタンが表示されないことに注目してください。
 
@@ -309,7 +309,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 **手順 24:** アセットの検索結果の下にあるフォルダを開いて、作業するアセットを選択します。
 
-![env アセットに移動](../../../../images/toolkit/learning-resources/guides/editing_app_setting/22_moving_to_asset_environment.png)
+![env アセットに移動](./images/editing_app_setting/22_moving_to_asset_environment.png)
 
 **手順 25:** **[+New File]**を選択します。
 
@@ -319,7 +319,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 **手順 26:** Maya メニューの右上で**[Shotgun]**を選択します。
 
-![Art、Asset 環境](../../../../images/toolkit/learning-resources/guides/editing_app_setting/23_Art_Asset.png)
+![Art、Asset 環境](./images/editing_app_setting/23_Art_Asset.png)
 
 **[Art, Asset]**は、ユーザが作業中であること、およびユーザが作業している環境を示します。
 
@@ -327,7 +327,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 **手順 28:** 下部にある**[Environment]**タブを選択します。
 
-![asset_step の環境](../../../../images/toolkit/learning-resources/guides/editing_app_setting/24_asset_step_env.png)
+![asset_step の環境](./images/editing_app_setting/24_asset_step_env.png)
 
 設定がパイプライン設定内のどこに配置されているのかを判別するために必要な情報が、環境ごとに表示されます。アーティストが新しいタスクを追加できないようにするには、アーティストが作業する環境ごとに**[+New Task]**ボタンを無効にする必要があります。各環境に上記と同じ手順を使用して、設定を適切に編集します。
 

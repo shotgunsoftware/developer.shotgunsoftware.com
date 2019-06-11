@@ -59,19 +59,19 @@ Shotgun 데스크톱의 고급 프로젝트 설정 마법사는 파이프라인 
 
 **1단계:** Shotgun에 "the_other_side"라는 프로젝트를 생성합니다.
 
-![새 프로젝트](../../../../images/toolkit/learning-resources/guides/advanced_config/2_new_project.png)
+![새 프로젝트](./images/advanced_config/2_new_project.png)
 
 **2단계:** Shotgun 데스크톱 앱을 실행하고 Shotgun 사이트의 사용자 이름 및 암호를 사용하여 로그인합니다.
 
-![로그인](../../../../images/toolkit/learning-resources/guides/advanced_config/3_login.png)
+![로그인](./images/advanced_config/3_login.png)
 
-![프로젝트 로드](../../../../images/toolkit/learning-resources/guides/advanced_config/4_load_project.png)
+![프로젝트 로드](./images/advanced_config/4_load_project.png)
 
 **3단계:** 썸네일 이미지를 선택하여 고급 프로젝트 설정 마법사를 실행할 프로젝트로 이동합니다.
 
 {% include info title="팁" content="데스크톱이 열려 있는 상태에서 새 프로젝트를 생성한 경우 새 프로젝트를 표시하려면 **프로젝트**(Projects) 창을 새로 고쳐야 할 수 있습니다. 데스크톱의 오른쪽 아래에 있는 프로파일 **아바타**를 선택하고 프로젝트 새로 고침(Refresh Projects)을 선택하십시오." %}
 
-![프로젝트 새로 고침](../../../../images/toolkit/learning-resources/guides/advanced_config/5_refresh_projects_list.png)
+![프로젝트 새로 고침](./images/advanced_config/5_refresh_projects_list.png)
 
 ## 고급 구성 생성하기
 
@@ -79,19 +79,19 @@ Shotgun 데스크톱의 고급 프로젝트 설정 마법사는 파이프라인 
 
 **4단계:** 프로젝트가 로드되면 화면 오른쪽 아래에 있는 프로파일 **아바타**를 선택합니다. 팝업 메뉴에서 **고급 프로젝트 설정…**(Advanced project setup…)을 선택하여 마법사를 시작합니다.
 
-![고급 프로젝트 설정](../../../../images/toolkit/learning-resources/guides/advanced_config/6_advanced_project_setup.png)
+![고급 프로젝트 설정](./images/advanced_config/6_advanced_project_setup.png)
 
 네 개의 옵션이 있고 그중에 Shotgun 기본값(Shotgun Default)이 선택되어 있는 대화상자가 표시됩니다. 여기서 프로젝트의 파이프라인 구성을 기존 프로젝트의 구성, git 리포지토리의 구성, 디스크의 경로 중 무엇을 기반으로 할지 선택할 수 있습니다.
 
 이 연습에서는 **Shotgun 기본값**(Shotgun Default)을 선택하겠습니다. 이 옵션을 선택하면 Shotgun의 기본 구성을 기반으로 프로젝트의 파이프라인 구성이 생성됩니다.
 
-![구성 선택](../../../../images/toolkit/learning-resources/guides/advanced_config/7_select_config.png)
+![구성 선택](./images/advanced_config/7_select_config.png)
 
 **5단계:** **계속**(Continue)을 선택합니다.
 
 두 개의 옵션이 있고 그중에서 **기본값**(Default)이 선택되어 있는 대화상자가 표시됩니다. 이 대화상자에는 레거시(Legacy) 기본 구성 설정을 선택할 수 있는 옵션이 있습니다. 이 구성 설정은 이전 버전의 Shotgun을 계속 사용하는 스튜디오를 위해 제공되는 이전 버전의 설정입니다. 이 연습에서는 기본값(Default)을 사용하겠습니다.
 
-![구성 선택](../../../../images/toolkit/learning-resources/guides/advanced_config/8_select_config.png)
+![구성 선택](./images/advanced_config/8_select_config.png)
 
 **6단계:** **계속**(Continue)을 선택합니다.
 
@@ -99,25 +99,25 @@ Shotgun 데스크톱의 고급 프로젝트 설정 마법사는 파이프라인 
 
 `Storage:`라는 단어 옆에 드롭다운 메뉴가 표시되는 대화상자가 나타납니다.
 
-![저장소 정의](../../../../images/toolkit/learning-resources/guides/advanced_config/9_define_storage1.png)
+![저장소 정의](./images/advanced_config/9_define_storage1.png)
 
 **7단계:** 이 프로젝트에 대한 프로젝트 데이터를 저장할 위치를 나타냅니다. 대화상자 맨 위에 있는 드롭다운에서 **+ 신규**(+ New)를 선택하고 필드에 **프로젝트**(projects)를 입력합니다.
 
-![저장소 정의](../../../../images/toolkit/learning-resources/guides/advanced_config/10_define_storage2.png)
+![저장소 정의](./images/advanced_config/10_define_storage2.png)
 
 Shotgun 툴킷은 세 개의 운영 체제인 Linux, Mac, Windows를 지원합니다.
 
 **8단계:** 프로젝트 데이터를 저장하는 데 사용되는 운영 체제 옆에 있는 필드를 선택합니다. 폴더 아이콘을 선택하고 이 연습을 진행하기 전에 파일 시스템에 생성한 프로젝트 폴더로 이동합니다.
 
-![저장소 루트 폴더](../../../../images/toolkit/learning-resources/guides/advanced_config/11_storage_root_folder.png)
+![저장소 루트 폴더](./images/advanced_config/11_storage_root_folder.png)
 
 이 설정을 진행하면 프로덕션 데이터 저장 위치로 지정한 폴더에만 Shotgun이 액세스할 수 있게 됩니다. 이 연습의 준비 과정에서 Shotgun 루트 디렉토리에 `projects/` 디렉토리를 추가했습니다. `projects/` 디렉토리는 툴킷이 로컬 프로젝트 관련 정보를 저장할 위치입니다.
 
-![저장소 정의](../../../../images/toolkit/learning-resources/guides/advanced_config/12_define_Storage3.png)
+![저장소 정의](./images/advanced_config/12_define_Storage3.png)
 
 **9단계:** **저장**(Save)을 선택하여 프로젝트 데이터를 저장할 프로젝트 폴더를 지정합니다.
 
-![저장소 정의](../../../../images/toolkit/learning-resources/guides/advanced_config/13_define_storage4.png)
+![저장소 정의](./images/advanced_config/13_define_storage4.png)
 
 프로젝트 데이터가 저장되는 경로를 나타내도록 운영 체제 경로가 자동으로 업데이트됩니다.
 
@@ -127,21 +127,21 @@ Shotgun 툴킷은 세 개의 운영 체제인 Linux, Mac, Windows를 지원합�
 
 텍스트 필드에 프로젝트 이름이 입력된 상태로 대화상자가 표시됩니다. 이 이름은 프로젝트 정보에서 가져와서 자동으로 입력되며 경로도 자동으로 업데이트됩니다.
 
-![프로젝트 폴더](../../../../images/toolkit/learning-resources/guides/advanced_config/14_project_folder_name.png)
+![프로젝트 폴더](./images/advanced_config/14_project_folder_name.png)
 
 툴킷은 파이프라인 구성이 Shotgun에 업로드되고 각 사용자에 대해 로컬로 캐시되는 분산 설정이나 사용자가 디스크에서 공유된 위치에 있는 단일 구성에 액세스하는 중앙 집중식 설정에서도 작동할 수 있습니다. 이 연습에서는 중앙 집중식 설정을 사용하겠습니다. [분산 설정에 대한 자세한 내용은 여기서 확인할 수 있습니다](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
 
 마지막 단계에서는 프로젝트와 관련된 구성을 생성하기 위해 적합한 폴더, 파일 및 데이터를 생성합니다.
 
-![중앙 저장소](../../../../images/toolkit/learning-resources/guides/advanced_config/15_centralized_storage.png)
+![중앙 저장소](./images/advanced_config/15_centralized_storage.png)
 
 **11단계:** 해당하는 운영 체제에서 **찾아보기...**(Browse...)를 선택하고 이 연습을 준비할 때 생성한 구성 폴더 `configs`로 이동한 후 프로젝트 이름 **the_other_side**를 입력합니다. 그러면 폴더가 생성되고, 이 폴더에 프로젝트 구성이 저장됩니다. **설정 실행**(Run Setup)을 선택하고 설정이 완료될 때까지 기다립니다.
 
-![프로젝트 설정](../../../../images/toolkit/learning-resources/guides/advanced_config/16_project_setup_config.png)
+![프로젝트 설정](./images/advanced_config/16_project_setup_config.png)
 
 **12단계:** **완료**(Done)를 선택하여 프로젝트 창에 나타나는 새 아이콘을 표시합니다.
 
-![설정 완료](../../../../images/toolkit/learning-resources/guides/advanced_config/17_project_setup_complete.png)
+![설정 완료](./images/advanced_config/17_project_setup_complete.png)
 
 팁: Shotgun 데스크톱에 신속하게 액세스하기 위해 메뉴 막대에 앱을 고정할 수 있습니다. 이렇게 하려면 **아바타**를 선택하고 **메뉴에 고정**(Pin to Menu)을 선택하십시오.
 
@@ -149,7 +149,7 @@ Shotgun 툴킷은 세 개의 운영 체제인 Linux, Mac, Windows를 지원합�
 
 `configs` 폴더를 살펴보면 여러 폴더와 파일을 보실 수 있을 것입니다. 어떠한 것들이 있는지 잠시 살펴보시기 바랍니다.
 
-![구성](../../../../images/toolkit/learning-resources/guides/advanced_config/18_config.png)
+![구성](./images/advanced_config/18_config.png)
 
 이제 정말로 재미있는 내용으로, 구성으로 수행할 수 있는 모든 작업에 대해 살펴보겠습니다. 여기서 살펴볼 고급 항목은 다음과 같습니다.
 
