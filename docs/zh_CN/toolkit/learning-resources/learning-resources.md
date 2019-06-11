@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 学习资源
-redirect_from: "/toolkit/learning-resources/"
 lang: zh_CN
 pagename: toolkit-learning-resources
 ---

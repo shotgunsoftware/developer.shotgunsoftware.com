@@ -9,14 +9,14 @@ image: ./images/landing_page/sg_large_logo.png
 # different tiles to be displayed below headline blurb
 tiles:
 - image: ./images/landing_page/sg.png
-  target: ./shotgun
+  target: ./6dfa5d53
   name: shotgun
 
 - image: ./images/landing_page/tk.png
-  target: ./toolkit
+  target: ./3d1cd26d
   name: toolkit
 
 - image: ./images/landing_page/rv.png
-  target: ./rv
+  target: ./a68c9f18
   name: rv
 

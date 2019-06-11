@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 添加应用
-redirect_from: "/toolkit/learning-resources/guides/installing_app/"
 lang: zh_CN
 pagename: toolkit-guides-adding-app
 ---
@@ -58,11 +57,11 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 **步骤 1：**打开[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798#tk-maya)，并在 Maya 下查找 Shotgun Python 控制台的信息。选择标题。
 
-![Python 应用](../../../../images/toolkit/learning-resources/guides/installing_app/1_python_app.png)
+![Python 应用](./images/installing_app/1_python_app.png)
 
 这将显示[应用的信息](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033108)，其中包括小黑本所需的所有内容。
 
-![Python 应用信息](../../../../images/toolkit/learning-resources/guides/installing_app/2_python_app_info.png)
+![Python 应用信息](./images/installing_app/2_python_app_info.png)
 
 **系统名称**是主标识符：`tk-multi-pythonconsole`。您还需要**最新版本**：v1.1.2。
 
@@ -70,7 +69,7 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 **步骤 2：**启动 Maya 并选择 Shotgun 菜单**“Shotgun > 项目 the_other_side”(Shotgun > Project the_other_side)**，您会看到可用于项目环境中该项目的应用列表。
 
-![应用列表](../../../../images/toolkit/learning-resources/guides/installing_app/3_list_of_apps.png)
+![应用列表](./images/installing_app/3_list_of_apps.png)
 
 ## 扩展配置
 
@@ -84,35 +83,35 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 **<a name="&rdquo;step3&rdquo;">步骤 3</a>：**打开 Shotgun，在右上角选择**“管理”(Admin)菜单（您的头像）>“默认布局 > 工作流配置 > 工作流配置列表”(Default Layouts > Pipeline Configuration > Pipeline Configuration List)**。
 
-![工作流配置列表](../../../../images/toolkit/learning-resources/guides/installing_app/4_REPLACE_pipeline_configuration_list.png)
+![工作流配置列表](./images/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
 此动作将显示 Shotgun 站点的所有工作流配置的详细列表。
 
 **步骤 4：**显示“工作流配置列表”(Pipeline Configuration List)后，选择列标题最右侧的 **+** 号，然后添加**“项目”(Projects)**列。
 
-![添加项目列](../../../../images/toolkit/learning-resources/guides/installing_app/5_add_project_column.png)
+![添加项目列](./images/installing_app/5_add_project_column.png)
 
 ### 查看项目配置所在的位置
 
 **步骤 5：**此外，针对您的操作系统添加适当的**路径**字段。
 
-![配置的路径](../../../../images/toolkit/learning-resources/guides/installing_app/6_path_to_config.png)
+![配置的路径](./images/installing_app/6_path_to_config.png)
 
 这会显示配置文件的路径。
 
-![配置的路径 2](../../../../images/toolkit/learning-resources/guides/installing_app/7_path_to_config2.png)
+![配置的路径 2](./images/installing_app/7_path_to_config2.png)
 
 **步骤 6：**在**“主要”(Primary)**行项旁边的空白区域中**单击鼠标右键**，然后在上下文菜单中选择**“克隆此配置…”(Clone this Configuration…)**。
 
-![克隆完成](../../../../images/toolkit/learning-resources/guides/installing_app/8_clone_complete.png)
+![克隆完成](./images/installing_app/8_clone_complete.png)
 
 **步骤 7：**在配置列表中命名配置，然后在目录中分别命名文件：“Primary Clone Config 2”和“the_other_side_clone2”。选择**“确定”(OK)**。
 
-![命名克隆](../../../../images/toolkit/learning-resources/guides/installing_app/9_name_clone.png)
+![命名克隆](./images/installing_app/9_name_clone.png)
 
 等待 Shotgun 复制配置中的所有文件和文件夹，并为应用创建缓存。现在就可以使用应用，让您可以一边喝着香浓咖啡，一边享用羊角面包。
 
-![克隆完成](../../../../images/toolkit/learning-resources/guides/installing_app/10_clone_complete.png)
+![克隆完成](./images/installing_app/10_clone_complete.png)
 
 完成后，将使用有关克隆配置的信息更新配置列表，并且将在本地 config 文件夹中添加新配置。
 
@@ -122,7 +121,7 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 **步骤 8：**打开 Shotgun Desktop，并选择您为其创建克隆配置的项目。选择右上角的**向下箭头**以显示与此项目关联的配置，然后选择刚创建的 **Primary Clone Config 2**。
 
-![选择克隆](../../../../images/toolkit/learning-resources/guides/installing_app/11_select_clone.png)
+![选择克隆](./images/installing_app/11_select_clone.png)
 
 Shotgun Desktop 现在正在使用此项目的克隆配置。
 
@@ -130,7 +129,7 @@ Shotgun Desktop 现在正在使用此项目的克隆配置。
 
 **步骤 9：**在文件系统中，在创建克隆配置时指定的路径中查找克隆配置。查看 `config/env/includes/app_locations.yml` 文件。
 
-![克隆应用位置](../../../../images/toolkit/learning-resources/guides/installing_app/12_clone_app_locations.png)
+![克隆应用位置](./images/installing_app/12_clone_app_locations.png)
 
 `app_locations.yml` 文件是默认配置的小黑本，应用的描述符列在此文件中。此文件指向应用所在的位置，并允许您为该应用创建设置。
 
@@ -205,7 +204,7 @@ Shotgun 集成的代码被组织成应用、插件和框架的包。在 Toolkit 
 
 **步骤 14：**在克隆配置中，在文本编辑器中打开 `config/env/includes/settings/tk-maya.yml`，并搜索 `settings.tk-maya.project`。
 
-![tk-maya](../../../../images/toolkit/learning-resources/guides/installing_app/13_tk-maya.png)
+![tk-maya](./images/installing_app/13_tk-maya.png)
 
 步骤 15：在以下部分的下方添加位置描述符
 
@@ -241,7 +240,7 @@ settings.tk-maya.project:
 
 **注意：**如果您使用的是主要配置，则不会出现蓝色条，并且配置名称将不可见。
 
-![Maya 克隆配置](../../../../images/toolkit/learning-resources/guides/installing_app/14_maya_cloned_config.png)
+![Maya 克隆配置](./images/installing_app/14_maya_cloned_config.png)
 
 **步骤 17：**从 Desktop 启动 Maya，然后选择菜单**“Shotgun > 项目 > …”(Shotgun > Project > …)**
 
@@ -255,7 +254,7 @@ settings.tk-maya.project:
 
 Python 控制台应用将在 Maya 中可用。
 
-![项目 ID](../../../../images/toolkit/learning-resources/guides/installing_app/16_project_ID.png)
+![项目 ID](./images/installing_app/16_project_ID.png)
 
 ## 将更改推送到制作中
 
@@ -307,7 +306,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 **注意：**您也可以在本手册的**[步骤 3](#step3)** 中查看的 Shotgun 中的“工作流配置”(Pipeline Configuration)页面上找到工作流配置的 ID。要查找项目 ID，请转到“配置列表”(Configuration List)，并添加“ID”列。
 
-![ID 列](../../../../images/toolkit/learning-resources/guides/installing_app/17_id_column.png)
+![ID 列](./images/installing_app/17_id_column.png)
 
 输入 ID 后，Shotgun 将：
 
@@ -331,11 +330,11 @@ Push Complete!
 
 **步骤 19：**在 Shotgun Desktop 中，单击右上角的箭头，并在**“配置”(CONFIGURATION)**列表中选择**“主要”(Primary)**。
 
-![更改配置 maya](../../../../images/toolkit/learning-resources/guides/installing_app/18_change_config_maya.png)
+![更改配置 maya](./images/installing_app/18_change_config_maya.png)
 
 **步骤 20：**从 Desktop 启动 Maya，并查看菜单**“Shotgun > 项目 > …”(Shotgun > Project > …)**以查找“Shotgun Python 控制台...”(Shotgun Python Console...)
 
-![Maya 中的应用](../../../../images/toolkit/learning-resources/guides/installing_app/19_app_in_maya.png)
+![Maya 中的应用](./images/installing_app/19_app_in_maya.png)
 
 Python 控制台应用已添加到所选项目的项目环境中。我们在第二个手册[编辑配置](../toolkit_basics_guides/editing_app_setting.md)中讨论过，每个环境都是独立的，每个项目都有专用配置，软件集成在加载项目时从工作流配置中收集设置。为使 Python 控制台在环境中可用，该环境需要使用一些指令以便在 `app_locations.yml` 文件中查找位置描述符。考虑到这一点，在工作流中您希望使用 Python 控制台应用的任何阶段，都需要“在此处使用 Python 控制台应用”设置。
 
@@ -351,7 +350,7 @@ Toolkit 的一个奇妙之处在于，任何人都可以创建 Toolkit 应用。
 
 您可能已经注意到，当我们选择要用于项目的配置时，Shotgun Desktop 下拉菜单中提供了 Python 控制台应用。
 
-![Desktop Python 控制台](../../../../images/toolkit/learning-resources/guides/installing_app/20_desktop_python_console.png)
+![Desktop Python 控制台](./images/installing_app/20_desktop_python_console.png)
 
 如果有一个环境正在使用您要添加到工作流配置的应用，则可以使用少量检测工作来查找将该应用添加到配置所需的信息。通过在使用该应用的环境中查看配置文件，您可以确定如何添加应用位置描述符和设置。
 

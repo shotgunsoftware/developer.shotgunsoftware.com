@@ -1,9 +1,8 @@
 ---
 layout: default
 title: 貢献ガイド
-redirect_from: "/contribution/"
 lang: ja
-pagename: contribution
+pagename: contribution-index
 ---
 
 # 貢献ガイド

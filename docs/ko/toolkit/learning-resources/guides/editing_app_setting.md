@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 구성 편집
-redirect_from: "/toolkit/learning-resources/guides/editing_app_setting/"
 lang: ko
 pagename: toolkit-guides-editing-config
 ---
@@ -48,25 +47,25 @@ Shotgun의 파이프라인 구성 목록을 사용하여 작업 중인 프로젝
 
 **2단계:** **Shotgun 사이트**의 **프로젝트 페이지**에서 프로젝트를 선택하여 액세스합니다.
 
-![Shotgun 프로젝트](../../../../images/toolkit/learning-resources/guides/editing_app_setting/1_shotgun_project.png)
+![Shotgun 프로젝트](./images/editing_app_setting/1_shotgun_project.png)
 
 **3단계:** 오른쪽 상단에 있는 **아바타**를 선택하여 **관리자**(ADMIN) 메뉴를 표시하고 아래로 스크롤하여 **기본 레이아웃(Default Layouts) > 파이프라인 구성(Pipeline Configuration) > 파이프라인 구성 목록(Pipeline Configuration List)**을 선택합니다.
 
-![파이프라인 구성](../../../../images/toolkit/learning-resources/guides/editing_app_setting/2_pipeline_configuration.png)
+![파이프라인 구성](./images/editing_app_setting/2_pipeline_configuration.png)
 
 **4단계:** **파이프라인 구성 목록**(Pipeline Configuration List)이 표시되면 열 헤더 맨 오른쪽의 **+** 기호를 선택하여 다른 열을 추가합니다. 드롭다운 목록에서 적절한 운영 체제 경로를 선택합니다.
 
-![OS 경로](../../../../images/toolkit/learning-resources/guides/editing_app_setting/3_mac_path.png)
+![OS 경로](./images/editing_app_setting/3_mac_path.png)
 
 경로가 새 필드에 표시됩니다.
 
-![OS 경로2](../../../../images/toolkit/learning-resources/guides/editing_app_setting/4_mac_path2.png)
+![OS 경로2](./images/editing_app_setting/4_mac_path2.png)
 
 **5단계:** 터미널 또는 파일 관리자에서 프로젝트의 파이프라인 구성이 저장된 폴더를 찾아 폴더를 엽니다.
 
 툴킷 구성 루트 폴더에는 **cache**, **config** 및 **install**이라는 3개의 하위 폴더가 있습니다. **config** 폴더를 열면 몇 개의 하위 폴더와 파일이 중첩되어 있음을 확인할 수 있습니다.
 
-![구성 컨텐츠](../../../../images/toolkit/learning-resources/guides/editing_app_setting/5_config_content.png)
+![구성 컨텐츠](./images/editing_app_setting/5_config_content.png)
 
 **env** 폴더는 아티스트가 작업하는 환경을 지원하는 통합 설정을 저장합니다. 환경을 통해 파이프라인의 여러 단계에서 구성을 커스터마이즈할 수 있습니다. 기본 구성이 일련의 미리 정의된 환경과 함께 제공되지만 이 구성은 파이프라인을 더 세부적으로 설정하기 위해 수정할 수 있습니다.
 
@@ -84,11 +83,11 @@ Shotgun 툴킷을 통해 다양한 소프트웨어 패키지 내에 통합된 �
 
 **8단계:** 편집할 구성의 프로젝트를 선택합니다.
 
-![프로젝트 로드](../../../../images/toolkit/learning-resources/guides/editing_app_setting/6_load_project.png)
+![프로젝트 로드](./images/editing_app_setting/6_load_project.png)
 
 **9단계:** Shotgun 데스크톱에서 Maya를 시작합니다.
 
-![프로젝트 로드](../../../../images/toolkit/learning-resources/guides/editing_app_setting/7_view_project.png)
+![프로젝트 로드](./images/editing_app_setting/7_view_project.png)
 
 **Shotgun** 메뉴가 완전히 로드될 때까지 기다립니다. 인터넷 연결 속도가 느릴 경우 메뉴가 로드되는 동안 커피 한 잔 준비하는 것도 좋습니다.
 
@@ -96,7 +95,7 @@ Maya와 Shotgun이 완전히 로드되면 **파일 열기**(File Open) 대화상
 
 **10단계:** **파일 열기**(File Open) 대화상자의 왼쪽 창에서 **에셋**(Assets) 탭을 선택합니다. 검색 결과에 표시되는 폴더 내의 모든 에셋을 선택합니다.
 
-![태스크 버튼 보기](../../../../images/toolkit/learning-resources/guides/editing_app_setting/8_21_view_task_button.png)
+![태스크 버튼 보기](./images/editing_app_setting/8_21_view_task_button.png)
 
 **+새 태스크**(+New Task) 버튼이 활성화되어 있습니다.
 
@@ -108,17 +107,17 @@ Maya와 Shotgun이 완전히 로드되면 **파일 열기**(File Open) 대화상
 
 이 참조 상자는 **파일 열기**(File Open) 창의 기능을 제어하는 구성 설정에 대한 상세한 정보를 보여 줍니다. 툴킷의 일부 앱에는 앱에 사용된 설정과 기본 설정을 보여 주는 참조 상자가 있습니다. **위치:**(Location:) 식별자는 **tk-multi-workfiles2**입니다. 이 식별자는 Workfiles 앱을 만드는 코드 번들의 식별자입니다. 파이프라인 구성을 검색할 때 이 이름으로 앱의 설정이 있는 위치를 확인할 수 있습니다. Shotgun 통합에서 사용할 수 있는 모든 구성 설정, 앱 및 엔진이 나열된 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)가 있습니다.
 
-![Current_work_area](../../../../images/toolkit/learning-resources/guides/editing_app_setting/9_current_work_area.png)
+![Current_work_area](./images/editing_app_setting/9_current_work_area.png)
 
 이 특정 환경에 대한 설정을 찾으려면 **구성**(Configuration) 헤더 아래를 확인하십시오.
 
-![Configuration_ref](../../../../images/toolkit/learning-resources/guides/editing_app_setting/10_configuration_ref.png "태스크 버튼 보기")
+![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png "태스크 버튼 보기")
 
 **참고:** 설정 **my_tasks_filters** 다음이 설정 **launch_at_startup**입니다. 프로젝트 환경에서 **파일 열기**(File Open) 설정의 기본 설정이므로 유의해야 합니다. 이것은 Shotgun 데스크톱에서 Maya가 시작되면 **파일 열기**(File Open) 대화상자가 자동으로 열린다는 의미입니다.
 
 설정 **allow_task_creation**까지 아래로 스크롤합니다. 이 설정의 기본값은 **True**이므로 사용자가 Maya 프로젝트 환경에 있는 동안 새 태스크를 생성할 수 있습니다.
 
-![파일 열기 옵션](../../../../images/toolkit/learning-resources/guides/editing_app_setting/11_open_file_options.png)
+![파일 열기 옵션](./images/editing_app_setting/11_open_file_options.png)
 
 설정을 검색할 때 다음 사항을 고려해야 합니다.
 
@@ -138,13 +137,13 @@ Maya와 Shotgun이 완전히 로드되면 **파일 열기**(File Open) 대화상
 
 **13단계:** Maya 창의 오른쪽 상단에서 **Shotgun** 메뉴 항목을 찾습니다.
 
-![Maya shotgun2](../../../../images/toolkit/learning-resources/guides/editing_app_setting/12_Maya_Shotgun2.png)
+![Maya shotgun2](./images/editing_app_setting/12_Maya_Shotgun2.png)
 
 **팁:** 메뉴가 표시되지 않을 경우 일부 숨겨진 메뉴 항목을 볼 수 있는 **>>**가 표시됩니다. **>>**를 선택하여 Shotgun 메뉴를 표시하거나 Maya 창을 넓히면 됩니다.
 
 **14단계:** 메뉴 오른쪽 상단에서 **Shotgun > 프로젝트 the_other_side(Project the_other_side) > 작업 영역 정보…(Work Area Info…)**를 선택합니다.
 
-![작업 영역 정보](../../../../images/toolkit/learning-resources/guides/editing_app_setting/13_work_area_info.png)
+![작업 영역 정보](./images/editing_app_setting/13_work_area_info.png)
 
 **작업 영역 정보**(Work Area Info) 대화상자에는 현재 작업 영역에 대한 후드 및 상세 정보가 표시됩니다. 여기에는 작업 중인 환경 및 설정이 위치한 환경 구성 파일의 경로도 포함됩니다.
 
@@ -152,7 +151,7 @@ Maya와 Shotgun이 완전히 로드되면 **파일 열기**(File Open) 대화상
 
 첫 번째 항목에서 사용 중인 엔진이 확인됩니다. 엔진은 특정 소프트웨어 응용프로그램 내에서 Shotgun 도구를 통합하는 기능을 구동합니다. 여기에는 각 소프트웨어 통합에 해당하는 로직이 포함됩니다. 창에 표시된 두 번째 항목은 현재 프로젝트 환경이 위치한 경로를 보여 줍니다.
 
-![작업 영역 정보 환경](../../../../images/toolkit/learning-resources/guides/editing_app_setting/14_shotgun_work_area_info_Environment.png)
+![작업 영역 정보 환경](./images/editing_app_setting/14_shotgun_work_area_info_Environment.png)
 
 마지막 두 폴더는 `project.yml`이고 그 다음에 `config/env/`이 표시됩니다. `project.yml` 파일은 현재 환경에 대한 설정이 있는 위치를 안내하는 로드맵의 시작입니다.
 
@@ -201,7 +200,7 @@ engines:
 frameworks: "@frameworks"
 ```
 
-<!--![Project yml env](../../../../images/toolkit/learning-resources/guides/editing_app_setting/15_project_yml_env.png)-->
+<!--![Project yml env](./images/editing_app_setting/15_project_yml_env.png)-->
 
 `project.yml` 내에는 설명 아래 세 가지 섹션 `includes`, `engines` 및 `frameworks`가 있습니다. `includes` 섹션은 구성에서 다른 YAML 파일을 *참조*하는 파일 포인터의 목록입니다. 기본 구성의 아키텍처에서는 파일을 간단하게 유지하기 위한 또 다른 방법으로 파일 중첩 및 포인터를 활용합니다. **includes**를 따라가면 원하는 구성 설정을 찾을 때까지 다음 파일로 이동합니다. 이는 적절한 구성 설정을 찾을 때까지 계속해서 내부에 포개진 인형이 하나씩 열리는 러시아 마트료시카 인형과 비슷합니다.
 
@@ -225,7 +224,7 @@ tk-maya.yml에서 Workfiles 앱 설정 찾기
 
 **17단계:** 파일 브라우저에서 **env/includes/settings** 폴더를 찾아 `tk-maya.yml`을 엽니다.
 
-![tk maya 작업 파일](../../../../images/toolkit/learning-resources/guides/editing_app_setting/16_tk_maya_workfiles.png)
+![tk maya 작업 파일](./images/editing_app_setting/16_tk_maya_workfiles.png)
 
 **18단계:** `project.yml`에서 include를 따라가면서 `tk-maya.yml` 파일에서 `settings.tk-maya.project`를 찾습니다. 구체적으로는 특정 프로젝트의 프로젝트 환경에서 **+새 태스크** (+New Task) 버튼을 비활성화하려고 합니다. 현재 해당 프로젝트에 대한 구성에 있으며 프로젝트 환경에 있는 동안 위치 정보를 얻었습니다.
 
@@ -243,7 +242,7 @@ settings.tk-maya.project:
   location: "@engines.tk-maya.location"
 ```
 
-<!--![tk maya project](../../../../images/toolkit/learning-resources/guides/editing_app_setting/17_tk-maya_project.png)-->
+<!--![tk maya project](./images/editing_app_setting/17_tk-maya_project.png)-->
 
 `settings.tk-maya.projects` 아래에 `tk-multi-workfiles2` 앱 설정이 다음과 같이 나열됩니다.
 
@@ -268,7 +267,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
   entities:
 ```
 
-<!--![Workfiles2](../../../../images/toolkit/learning-resources/guides/editing_app_setting/18_workfiles2.png)-->
+<!--![Workfiles2](./images/editing_app_setting/18_workfiles2.png)-->
 
 `allow_task_creation` 설정을 나타내는 Maya 참조 상자에서 기본값은 `true`입니다. 가장 좋은 방법은 파이프라인 구성에 기본 설정을 반영하지 않는 것입니다. 이렇게 하면 **스파스** 형식이 허용되어 기본 코드와 다른 설정만 구성에 추가됩니다. 설정이 명시적으로 제공되지 않는 경우 해당 설정이 액세스하는 모든 호출이 기본값을 받습니다. 툴킷이 구성을 읽고 환경을 빌드하면 해당 환경에서 실행되는 앱, 엔진 및 프레임워크는 해당 프로젝트의 파이프라인 구성 설정을 사용하고 구성에 있는 항목을 기반으로 모든 기본 설정을 재정의합니다.
 
@@ -282,7 +281,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
   entities:
 ```
 
-<!--![Edit Workfiles2](../../../../images/toolkit/learning-resources/guides/editing_app_setting/19_edit_workfiles2.png)-->
+<!--![Edit Workfiles2](./images/editing_app_setting/19_edit_workfiles2.png)-->
 
 **참고:** 툴킷 기본 구성 설정은 특정 설정을 찾기 쉽도록 알파벳순으로 구성됩니다. 이 규칙을 유지해야 구성이 복잡해질 경우에도 처리하기가 편리합니다.
 
@@ -292,7 +291,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 **22단계:** Maya 내의 **파일 열기**(File Open) 대화상자에서 참조 상자를 열고 **엔진 및 앱 다시 로드**(Reload Engines and Apps)를 선택합니다.
 
-![엔진 다시 로드](../../../../images/toolkit/learning-resources/guides/editing_app_setting/20_refresh_engines_apps.png)
+![엔진 다시 로드](./images/editing_app_setting/20_refresh_engines_apps.png)
 
 그러면 구성 설정이 다시 로드됩니다.
 
@@ -300,7 +299,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 **23단계:** **파일 열기**(File Open) 대화상자로 이동하여 에셋을 선택합니다.
 
-![태스크 버튼 보기](../../../../images/toolkit/learning-resources/guides/editing_app_setting/8_21_view_task_button.png)
+![태스크 버튼 보기](./images/editing_app_setting/8_21_view_task_button.png)
 
 **+새 태스크**(+New Task) 버튼이 표시되지 않습니다.
 
@@ -310,7 +309,7 @@ Workfiles 앱의 구성 설정을 수정하여 프로젝트 환경의 버튼 동
 
 **24단계:** 에셋(Assets) 검색 결과에서 폴더를 열고 작업할 에셋을 선택합니다.
 
-![에셋 환경으로 이동](../../../../images/toolkit/learning-resources/guides/editing_app_setting/22_moving_to_asset_environment.png)
+![에셋 환경으로 이동](./images/editing_app_setting/22_moving_to_asset_environment.png)
 
 **25단계:** **+새 파일**(+New File)을 선택합니다.
 
@@ -320,7 +319,7 @@ Workfiles 앱의 구성 설정을 수정하여 프로젝트 환경의 버튼 동
 
 **26단계:** Maya 메뉴 오른쪽 상단에서 **Shotgun**을 선택합니다.
 
-![아트 에셋 환경](../../../../images/toolkit/learning-resources/guides/editing_app_setting/23_Art_Asset.png)
+![아트 에셋 환경](./images/editing_app_setting/23_Art_Asset.png)
 
 **아트, 에셋**(Art, Asset)은 지금 작업 중이라는 것과 현재 환경을 알려 줍니다.
 
@@ -328,7 +327,7 @@ Workfiles 앱의 구성 설정을 수정하여 프로젝트 환경의 버튼 동
 
 **28단계:** 아래에 있는 **환경**(Environment) 탭을 선택합니다.
 
-![에셋 단계 환경](../../../../images/toolkit/learning-resources/guides/editing_app_setting/24_asset_step_env.png)
+![에셋 단계 환경](./images/editing_app_setting/24_asset_step_env.png)
 
 각 환경은 파이프라인 구성에서 설정이 있는 위치를 확인할 수 있도록 필요한 정보를 표시합니다. 아티스트가 새 태스크를 추가하지 않도록 하려면 아티스트가 작업하는 모든 환경에 대해 **+새 태스크**(+New Task) 버튼을 비활성화해야 합니다. 각 환경에 대해 위에 설명한 것과 동일한 단계를 사용하여 적절하게 구성을 편집합니다.
 

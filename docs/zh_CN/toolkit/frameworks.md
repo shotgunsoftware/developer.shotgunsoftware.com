@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 框架
-redirect_from: "/toolkit/frameworks/"
 lang: zh_CN
 pagename: toolkit-frameworks
 ---

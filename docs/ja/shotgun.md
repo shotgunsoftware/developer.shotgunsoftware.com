@@ -1,9 +1,8 @@
 ---
 layout: default
 title: 概要
-redirect_from: "/shotgun/"
 lang: ja
-pagename: shotgun
+pagename: shotgun-index
 ---
 
 # Shotgun の開発

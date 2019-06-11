@@ -1,9 +1,8 @@
 ---
 layout: default
 title: 개요
-redirect_from: "/rv/"
 lang: ko
-pagename: rv
+pagename: rv-index
 ---
 
 # RV

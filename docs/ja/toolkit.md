@@ -1,9 +1,8 @@
 ---
 layout: default
 title: 概要
-redirect_from: "/toolkit/"
 lang: ja
-pagename: toolkit
+pagename: toolkit-index
 ---
 
 # Toolkit プラットフォーム

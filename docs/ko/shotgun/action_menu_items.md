@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 액션 메뉴 항목
-redirect_from: "/shotgun/action_menu_items/"
 lang: ko
 pagename: shotgun-action-menu-items
 ---

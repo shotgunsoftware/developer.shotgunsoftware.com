@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Overview
-redirect_from: "/toolkit/"
-pagename: toolkit
+pagename: toolkit-index
 lang: en
 ---
 
