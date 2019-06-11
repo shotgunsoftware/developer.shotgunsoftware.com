@@ -39,6 +39,7 @@ You can verify that Chrome accepts the certificate by browsing to https://localh
 On the other hand, if you are greeted by one of these messages, it means there was a problem with the certificate registration process: 
 
 ![Your connection is not private message](images/your-connection-is-not-private-chrome.png)
+
 ![Can't provide a secure connection message](images/cant-provide-sceure-connection-chrome.png)
 
 ## How to quickly fix certificate issues
