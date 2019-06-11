@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 应用 API
-permalink: /toolkit/app_apis/
 lang: zh_CN
+pagename: toolkit-app-apis
 ---
 
 # Toolkit 应用 API

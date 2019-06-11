@@ -23,7 +23,7 @@ For documentation on syntax and formatting guidelines, please see
 the **style guide** that comes 
 with the documentation generation system.
 
-- [tk-doc-generator style guide](https://developer.shotgunsoftware.com/tk-doc-generator/authoring/)
+- [tk-doc-generator style guide](https://developer.shotgunsoftware.com/tk-doc-generator/19bd79d8/?title=Introduction)
 
 ## Site Preview
 

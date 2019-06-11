@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Overview
-permalink: /shotgun/
+pagename: shotgun-index
 lang: en
 ---
 

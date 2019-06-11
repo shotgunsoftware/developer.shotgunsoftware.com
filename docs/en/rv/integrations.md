@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Integrations
-permalink: /rv/integrations/
+pagename: rv-integrations
 lang: en
 ---
 

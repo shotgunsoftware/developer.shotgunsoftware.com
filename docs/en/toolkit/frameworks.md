@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Frameworks
-permalink: /toolkit/frameworks/
+pagename: toolkit-frameworks
 lang: en
 ---
 

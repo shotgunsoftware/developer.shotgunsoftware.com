@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 学习资源
-permalink: /toolkit/learning-resources/
 lang: zh_CN
+pagename: toolkit-learning-resources
 ---
 
 # Toolkit 学习资源

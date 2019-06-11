@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 概述
-permalink: /toolkit/
 lang: zh_CN
+pagename: toolkit-index
 ---
 
 # Toolkit 平台

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Toolkit の基本ガイド
-permalink: /toolkit/learning-resources/guides/
 lang: ja
+pagename: toolkit-guides
 ---
 
 # Toolkit の基本ガイド

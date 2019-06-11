@@ -1,7 +1,7 @@
 ---
 layout: landing_page
 title: Overview
-permalink: /
+pagename: index
 lang: en
 ---
 

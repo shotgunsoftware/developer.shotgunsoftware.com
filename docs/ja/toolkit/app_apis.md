@@ -1,8 +1,8 @@
 ---
 layout: default
 title: アプリケーション API
-permalink: /toolkit/app_apis/
 lang: ja
+pagename: toolkit-app-apis
 ---
 
 # Toolkit アプリケーション API

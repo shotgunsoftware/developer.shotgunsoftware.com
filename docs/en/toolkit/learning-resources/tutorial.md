@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Pipeline Tutorial
-permalink: /toolkit/learning-resources/tutorial/
+pagename: toolkit-pipeline-tutorial
 lang: en
 ---
 
@@ -13,7 +13,7 @@ Much of the workflows covered in this pipeline work out-of-the-box with Shotgun'
 
 Here is a high level view of the pipeline you will build in this tutorial: 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_0.png" caption="Pipeline Overview" %}
+{% include figure src="./images/tutorial/image_0.png" caption="Pipeline Overview" %}
 
 ## Pipeline Overview
 
@@ -63,11 +63,11 @@ For this Tutorial, you will need to create a new project in Shotgun and configur
 
 Here are some screenshots of what your configured project entities should look like in Shotgun:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_1.png" caption="Teapot and Table Assets" %}
+{% include figure src="./images/tutorial/image_1.png" caption="Teapot and Table Assets" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_2.png" caption="Shot linked to a Sequence" %}
+{% include figure src="./images/tutorial/image_2.png" caption="Shot linked to a Sequence" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_3.png" caption="Tasks" width="400px" %}
+{% include figure src="./images/tutorial/image_3.png" caption="Tasks" width="400px" %}
 
 ## Software Launchers
 
@@ -75,7 +75,7 @@ Next, you'll need to ensure that Maya and Nuke are available to launch in Shotgu
 
 If either application does not show up in Desktop or the expected version does not launch, you may need to manually configure the launch in Shotgun via the Software entity. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_4.png" caption="The default Software entities defined in Shotgun" %}
+{% include figure src="./images/tutorial/image_4.png" caption="The default Software entities defined in Shotgun" %}
 
 The Software entity is used to drive which DCC packages to use on your production. By default, the integrations will search for these packages in standard installation locations and make them launchable via Desktop. If you have more than one version installed or you have them installed in a non-standard location, it is possible you need to update the corresponding Software entity entry in Shotgun to curate the launch experience for your artists. 
 
@@ -91,31 +91,31 @@ By default, all new projects are configured to use the basic [Shotgun Integratio
 
 Use Shotgun Desktop (Desktop) to take over your project's configuration. RMB click within Desktop or click the user icon in the bottom right to show the popup menu. Select the **Advanced project setup…** option and follow the wizard to locally install your project configuration. The images below show the required steps. You can also follow the steps outlined in the Integrations Admin Guide for [Taking over a Pipeline Configuration](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Taking%20over%20a%20Pipeline%20Configuration). 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_5.png" caption="Select the **Advanced project setup…** in the Desktop popup menu" %}
+{% include figure src="./images/tutorial/image_5.png" caption="Select the **Advanced project setup…** in the Desktop popup menu" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_01.png" caption="Choose the **Shotgun Default** configuration type" %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="Choose the **Shotgun Default** configuration type" %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_02.png" caption="Choose the **Default configuration**" %}
+{% include figure src="./images/tutorial/wizard_02.png" caption="Choose the **Default configuration**" %}
 
 If this is your first time setting up a Shotgun project, you'll also be prompted to define a storage location for your project data.  Otherwise, you can select an existing storage location.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_03.png" caption="Create a new storage." %}
+{% include figure src="./images/tutorial/wizard_03.png" caption="Create a new storage." %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_04.png" caption="Name your new storage.  Remember, this storage is site-wide and not project specific." %}
+{% include figure src="./images/tutorial/wizard_04.png" caption="Name your new storage.  Remember, this storage is site-wide and not project specific." %}
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_05.png" caption="Set the path(s) where this storage will be accessible on the operating systems you intend to use." %}
+{% include figure src="./images/tutorial/wizard_05.png" caption="Set the path(s) where this storage will be accessible on the operating systems you intend to use." %}
 
 You can view and edit the storages for your shotgun site in your **Site Preferences**, under the **File Management** section.  You can learn more about these settings [here](https://support.shotgunsoftware.com/hc/en-us/articles/219030938).
 
 Now that you have a storage location selected, you'll choose the name of the directory in that location for your new project.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_06.png" caption="Enter the name of the folder where your project's files will live." %}
+{% include figure src="./images/tutorial/wizard_06.png" caption="Enter the name of the folder where your project's files will live." %}
 
 For this tutorial, we'll be using a centralized configuration.  The **Distributed Setup** option provides an alternate option that can provide a different set of benefits, and may be the preferred option for studios without fast shared storage.  You can learn more about the pro and cons of different configuration setups in the [Toolkit Administration](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2) presentation.
 
 Unlike the storages, which are site-wide, the configuration will be project specific, and so the directory you choose here will be used directly to store your configuration.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/wizard_07.png" caption="Make a note of the configuration path you select for the current operating system." %}
+{% include figure src="./images/tutorial/wizard_07.png" caption="Make a note of the configuration path you select for the current operating system." %}
 
 The folder you select on the screen above is where your configuration will be installed. You will explore and modify the contents of the configuration in this folder throughout this tutorial. 
 
@@ -123,7 +123,7 @@ When you click **Run Setup** on the above screen, Desktop will begin to download
 
 The configuration location you specified during the Desktop installation tutorial is recorded in Shotgun in the Pipeline Configurations page for your project. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_10.png" caption="The Pipeline Configuration entity in Shotgun" %}
+{% include figure src="./images/tutorial/image_10.png" caption="The Pipeline Configuration entity in Shotgun" %}
 
 Familiarize yourself with the contents of this folder in preparation for the next section.
 
@@ -131,7 +131,7 @@ Familiarize yourself with the contents of this folder in preparation for the nex
 
 Before beginning the process of building your simple pipeline, you need to understand how the pipeline configurations are organized and how they work. The following graphic highlights the major components of the configuration and their purposes. For additional information about configurations and their administration, see the [Administering Toolkit](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit) article.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_11.png" %}
+{% include figure src="./images/tutorial/image_11.png" %}
 
 ### Project Schema 
 
@@ -151,7 +151,7 @@ As you progress through the tutorial, you will be asked to "take over" a hook de
 
 2. **Copy the hook** (renaming it if necessary) into your configuration's top-level **`hooks`** directory.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_12.png" %}
+{% include figure src="./images/tutorial/image_12.png" %}
 
 Once the file is in your configuration's **`hooks`** folder, you will be ready to make changes and customize the code. An additional step is required to point the corresponding App to this new location. You will see how to do this later in the tutorial.
 
@@ -173,7 +173,7 @@ Once Maya has full loaded, you will see the File Open Dialog appear. This dialog
 
 Select the Assets tab and drill down into the Teapot's modeling task. Since there are no artist work files for this task yet, click the **+ New File** button. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_13.png" %}
+{% include figure src="./images/tutorial/image_13.png" %}
 
 Clicking this button will create a new, empty Maya session and set your current working context to the Teapot Asset's Model task. 
 
@@ -181,11 +181,11 @@ Clicking this button will create a new, empty Maya session and set your current 
 
 Next, model a Teapot, or [download](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj) and import the provided Teapot.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_14.png" %}
+{% include figure src="./images/tutorial/image_14.png" %}
 
 When you're happy with your Teapot model, select the **Shotgun > File Save…** menu action. This dialog will prompt you to save the file to a given name, version, and type.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_15.png" %}
+{% include figure src="./images/tutorial/image_15.png" %}
 
 Notice how the dialog does not ask you to specify the full save path. This is because the App has been configured to save to the **`maya_asset_work`** template. This template is defined like this by default:
 
@@ -205,17 +205,17 @@ An important thing to note at this point is that the steps you just completed wi
 
 The next step is to make some changes to your teapot. Make sure the lid geometry is separate from the rest of the model so that it can be rigged later on. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_16.png" %}
+{% include figure src="./images/tutorial/image_16.png" %}
 
 Once you're satisfied with your work, run the **Shotgun > File Save…** menu action again. This time the dialog will default your version number to 2. The automatic incrementing of the file version allows artists to maintain a complete history of the work they've done. Click the Save button.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_17.png" %}
+{% include figure src="./images/tutorial/image_17.png" %}
 
 Once you have saved the Teapot model to version 2, you are ready for the last step in this section of the tutorial. 
 
 Now that your Teapot model is ready, you need to publish it so that it can be surfaced and rigged. To publish, click the **Shotgun > Publish…** menu action. You will be presented with the Publish App dialog. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_18.png" %}
+{% include figure src="./images/tutorial/image_18.png" %}
 
 The dialog shows a tree of items representing what will be published. The tree includes some entries that represent the items to be published and some entries represent the actions that will be performed during the publish operation. 
 
@@ -227,7 +227,7 @@ Explore the Publish App by clicking on the items on the left side of the tree. Y
 
 When you are ready, click the **Publish** button in the bottom right corner to publish the current work file and the teapot geometry. Once complete, you can browse to the Teapot Asset in Shotgun to verify that the publish completed successfully. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_19.png" %}
+{% include figure src="./images/tutorial/image_19.png" %}
 
 In the image above, you can see the published alembic file that contains the teapot model. You should also see a publish for the maya session file. These publishes correspond to the items in the Publish app's tree view.
 
@@ -251,7 +251,7 @@ Browse to the files on disk to ensure they've been created in the correct locati
 
 Congratulations! You have successfully created the first published iteration of the Teapot. See if you can use what you've learned to publish a model of a table from the Table prop's modeling task. The result should look something like this:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_20.png" %}
+{% include figure src="./images/tutorial/image_20.png" %}
 
 Next up, the surfacing workflow. 
 
@@ -261,25 +261,25 @@ In this section you will build on what you learned in the modeling section. You 
 
 Start by launching Maya from Desktop. If you still have Maya open after working through the previous section, you do not need to relaunch. Once Maya is open, use the **Shotgun > File Open…** menu item to open the Workfiles app. Just like in the Modeling section, use the Assets tab to drill down into the Teapot asset's tasks. This time, select the surfacing task and click **+ New File**.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_21.png" width="450px" %}
+{% include figure src="./images/tutorial/image_21.png" width="450px" %}
 
 You are now working in the Teapot's surfacing task. An easy way to verify that you are in the right production context is to check the first entry in the Shotgun menu. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_22.png" %} 
+{% include figure src="./images/tutorial/image_22.png" %} 
 
 Next you need to load the teapot model into your new surfacing work file. To do this, launch the Loader app via the **Shotgun > Load…** menu item in Maya.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_23.png" %}
+{% include figure src="./images/tutorial/image_23.png" %}
 
 The layout of the Loader app is similar to the Workfiles app, but now you are browsing for published files to load rather than work files to open. 
 
 In the Assets tab, browse to the Teapot character to show the teapot publishes you created in the previous section. You should see a Maya Scene and an Alembic Cache publish. Select the Alembic Cache publish to show details about it on the right side of the dialog. Next, click the **Create Reference** item in the Actions menu of the Alembic Cache publish. The loader will remain open by default to allow additional actions to be performed, but you can close it to continue. You should see in Maya that a reference has been created pointing to the Teapot publish from the modeling task. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_24.png" %}
+{% include figure src="./images/tutorial/image_24.png" %}
 
 Next, add a simple procedural shader to the teapot. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_25.png" %}
+{% include figure src="./images/tutorial/image_25.png" %}
 
 Shader management can be a time consuming and complex task when building a pipeline. It is often very specific to a studio. It is for these reasons that the shipped Maya integration does not handle shader or texture management out-of-the-box. 
 
@@ -302,7 +302,7 @@ First, you will need to modify the Publish app's collection logic. The publisher
 
 This file defines how the Publish app will be used within all of the artist environments. Open the file and search for the **Maya** section, specifically the configuration for the **asset step**. It will look like this:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_26.png" %}
+{% include figure src="./images/tutorial/image_26.png" %}
 
 The collector setting defines the hook where the publisher's collection logic lives. By default, the value is: 
 
@@ -314,7 +314,7 @@ This definition includes two files. When multiple files are listed in a hook set
 
 In the **Configuration** section you learned how to take over a hook. Begin the customization process by taking over the Maya engine's collector hook in your configuration. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_27.png" %}
+{% include figure src="./images/tutorial/image_27.png" %}
 
 The image above shows how to do this. First, create a folder structure in your project configuration's **hooks** folder. This will provide some namespacing to the collector plugin since you may override the same hook for other DCCs later on. Next, copy the Maya engine's collector hook from the install folder into your new hook folder structure. You should now have a copy of the Maya collector in your configuration with the path: 
 
@@ -431,7 +431,7 @@ This method defines the configuration interface for the plugin. A **"Publish Tem
 
 Your configuration should look like this now:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_28.png" %}
+{% include figure src="./images/tutorial/image_28.png" %}
 
 Finally, you need to define the new **`maya_shader_network_publish`** template in your configuration. Edit this file to add it:
 
@@ -439,7 +439,7 @@ Finally, you need to define the new **`maya_shader_network_publish`** template i
 
 Find the section where asset related Maya templates are defined and add the new template definition. Your definition will look like this:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_29.png" %}
+{% include figure src="./images/tutorial/image_29.png" %}
 
 That should be everything. You have overridden the Publish app's collector hook to find meshes to publish shaders for. You have implemented a new publish plugin to attach to the collected shader items, and you have defined and configured a new publish template where the shader networks will be written to disk. 
 
@@ -449,28 +449,28 @@ That should be everything. You have overridden the Publish app's collector hook 
 
 In order to try out your customizations, you'll need to reload the integrations in your Maya session. To do this, click the **Shotgun > [Task Name] > Work Area Info…** menu action. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_30.png" %}
+{% include figure src="./images/tutorial/image_30.png" %}
 
 This will launch the Work Area Info app that provides information about your current context. It also has a handy button for reloading integrations while you're making changes to your configuration. Click the button to reload the the apps and engines, and then close the dialog.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_31.png" %}
+{% include figure src="./images/tutorial/image_31.png" %}
 
 ### Publishing Shader Networks
 
 Now it is time to see the results of your changes to the project configuration. Launch the publish app from the Shotgun menu. You should see the collected teapot mesh item with a **Publish Shaders** plugin attached:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_32.png" %}
+{% include figure src="./images/tutorial/image_32.png" %}
 
 Enter a description of your work and capture a thumbnail of your surfaced Teapot to associate with the published files. Finally, click publish to export the Teapot shaders to disk and register the file as a publish in Shotgun. When finished, notice that the session publish plugin has automatically saved your work file to the next available version. This is the default behavior within all of the DCCs supported by Shotgun integrations.
 
 
 You can now browse to the Teapot asset in Shotgun to verify that everything worked as expected.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_33.png" %}
+{% include figure src="./images/tutorial/image_33.png" %}
 
 Congratulations! You have successfully customized your pipeline and published shaders for the  Teapot. See if you can use what you've learned to publish shaders from the Table prop's surfacing task. The result should look something like this:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_34.png" %}
+{% include figure src="./images/tutorial/image_34.png" %}
 
 Next up, the rigging workflow.
 
@@ -490,15 +490,15 @@ At this point, you should feel pretty comfortable opening (or creating), saving,
 
 You should end up with something like this in Shotgun:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_35.png" %}
+{% include figure src="./images/tutorial/image_35.png" %}
 
 Next, let's see how artists handle upstream changes in their workflow. Open up the modeling work file and make some changes to the teapot model. Then publish the updated work. The result should be something like this: 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_36.png" %}
+{% include figure src="./images/tutorial/image_36.png" %}
 
 Open the work file in the Teapot's rigging step again (via **Shotgun > File Open…**). Now launch the **Shotgun > Scene Breakdown…** menu action. This launches the Breakdown app which shows you all of the upstream publishes that you have referenced into your work file. In this case, there is only the upstream Teapot model. You should see something like this:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_37.png" width="400px" %}
+{% include figure src="./images/tutorial/image_37.png" width="400px" %}
 
 For each reference, the app shows you one of two indicators -- a green check to show that the referenced publish is the latest version, or a red "x" to indicate that there is a newer publish available.  In this case, we can see that there is a newer publish available.
 
@@ -506,7 +506,7 @@ Now select the referenced Teapot alembic cache item (or click the **Select All R
 
 The app will update the Maya reference to the latest iteration of the Teapot alembic cache. You should now see your new model in the file. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_40.png" width="400px" %}
+{% include figure src="./images/tutorial/image_40.png" width="400px" %}
 
 Make any adjustments to your rigging setup that you need to account for the new model and then publish your changes. 
 
@@ -528,7 +528,7 @@ Begin by using what you learned in the previous sections to complete the followi
 
 Now block your simple scene with the Teapot on the Table. Add a camera to your scene called **camMain** and animate a few frames to create your shot's camera move. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_41.gif" %}
+{% include figure src="./images/tutorial/image_41.gif" %}
 
 Once you are happy with your shot layout, save the file via the **Shotgun > File Save…** menu action. If you were to go ahead and publish at this point, you would only see the entire maya session as an available item to publish. 
 
@@ -538,7 +538,7 @@ An easy customization to add, and one that provides a lot of flexibility to a pi
 
 As with shader publishing, the first step is to customize the collector hook. You've already taken over the collector hook for maya and configured it for the asset step. Now you need to update the configuration for the shot pipeline steps. To do this, modify the publisher's configuration file and edit the maya shot step collector setting.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_42.png" %}
+{% include figure src="./images/tutorial/image_42.png" %}
 
 Now, when working in a task within a Shot context, your custom collector logic will run. The next step is to add the custom camera collection logic. 
 
@@ -616,17 +616,17 @@ Finally, you need to update the Publish app's configuration for the Shot steps. 
 
 Your configuration should look like this now:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_43.png" %}
+{% include figure src="./images/tutorial/image_43.png" %}
 
 You'll notice the two settings added to the file as defined by the **`settings`** method of the new plugin. As with the shader plugin, there is a **Publish Template** setting which defines where the camera files will be written. The Cameras setting is a list of camera strings that drive which cameras the plugin should act on. The expectation is that there is some type of camera naming convention and this setting prevents the user from being presented with publish items for cameras that don't match the convention. In the image above, only the **`camMain`** camera will be presented for publishing. The implementation of the plugin you added will also work with wildcard patterns like **`cam*`**. 
 
 The last step before testing your changes is to add the definition for the new camera publish template. Edit the **`config/core/templates.yml`** file and add the template definition to the maya shot template section:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_44.png" %}
+{% include figure src="./images/tutorial/image_44.png" %}
 
 At this point, you should be ready to publish your camera with the new plugin. Use the **Work Area Info** app to reload the integrations, then launch the publisher. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_45.png" %}
+{% include figure src="./images/tutorial/image_45.png" %}
 
 As you can see in the image, the new camera item is collected and the publish plugin is attached. Go ahead and click **Publish** to write the camera to disk and register it with Shotgun.
 
@@ -634,7 +634,7 @@ As you can see in the image, the new camera item is collected and the publish pl
 
 You should see something like this in Shotgun:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_46.png" %} 
+{% include figure src="./images/tutorial/image_46.png" %} 
 
 That's it! Next up, animation.
 
@@ -666,17 +666,17 @@ In the custom camera publish plugin, the **`FBXExport`** mel command in Maya was
 
 Your app settings should now look like this:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_47.png" width="400px" %}
+{% include figure src="./images/tutorial/image_47.png" width="400px" %}
 
 Now reload the integrations via the **Work Area Info** app to pick up the new setting, then browse to the published camera from layout. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_48.png" %}
+{% include figure src="./images/tutorial/image_48.png" %}
 
 Filter by the new publish type, then create a reference to the camera. Close the Loader and you should be able to play back the camera motion you created in the previous section with the newly reference camera.
 
 Next, animate your Teapot model to do something (keep it simple). 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_49.gif" %}
+{% include figure src="./images/tutorial/image_49.gif" %}
 
 When you are happy with your animation, save and publish your work file just like you did in previous sections.
 
@@ -700,7 +700,7 @@ First, use what you've learned in previous sections to complete the following ta
 
 In order to load the shaders you published in the surfacing step, you will need to take over the **`tk-maya-actions.py`** hook mentioned in the previous section. Copy that hook from the install location into your configuration. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_50.png" %}
+{% include figure src="./images/tutorial/image_50.png" %}
 
 This hook is responsible for generating a list of actions that can be performed for a given publish. The Loader app defines a different version of this hook for each DCC supported by the shipped integrations. 
 
@@ -759,37 +759,37 @@ Finally, point your shot's loader settings to your new hook by editing this file
 
 While, there, also associate the Maya Shader Network publish type with the reference action. Your Loader settings should now look like this:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_51.png" %} 
+{% include figure src="./images/tutorial/image_51.png" %} 
 
 Now reload the integrations via the **Work Area Info** app to pick up the new settings, then browse to the published shaders from surfacing.
 
 Create a reference to the Teapot shader network publish. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_52.png" %} 
+{% include figure src="./images/tutorial/image_52.png" %} 
 
 Now load the Table shader network. If you turn on Hardware Texturing in Maya, your shaders should have been automatically connected to the meshes reference from the animation step. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_53.png" %}
+{% include figure src="./images/tutorial/image_53.png" %}
 
 Now add some lights to your scene (keep it simple).
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_54.png" %}
+{% include figure src="./images/tutorial/image_54.png" %}
 
 ### Publishing Maya Renders
 
 Render your shot to disk. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_54_5.gif" %}
+{% include figure src="./images/tutorial/image_54_5.gif" %}
 
 {% include info title="Note" content="As you can see, there are issues with the surfacing of both the Teapot and the Table asset. For the purposes of this tutorial, assume these were intentional, artistic choices. If you want to address these issues, you can always load the surfacing work files for these assets and adjust the shaders and re-publish them. If you do, remember to update the references in the lighting work file and re-render. If you go through the steps, you may find that the breakdown app does not reconnect your updated shaders after reloading the reference. Based on your experience modifying the loader to hook up shader references, you should be able to update the breakdown app's scene operations hook to add the required logic. HINT: See the update method in [this file](https://github.com/shotgunsoftware/tk-multi-breakdown/blob/master/hooks/tk-maya_scene_operations.py#L69)." %}
 
 The shipped Shotgun integrations will collect image sequences by looking at the render layers defined in the file. Once your render is complete, launch the publisher. You will see the rendered sequence as an item in the tree. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_55.png" %}
+{% include figure src="./images/tutorial/image_55.png" %}
 
 Go ahead and publish the session and the rendered image file sequence. You should see something like this in Shotgun:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_56.png" %}
+{% include figure src="./images/tutorial/image_56.png" %}
 
 Next up, compositing!
 
@@ -806,39 +806,39 @@ Start by following these steps to prepare your work file.
 
 Load the image sequence you rendered and published in the previous section via the Loader app.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_57.png" %}
+{% include figure src="./images/tutorial/image_57.png" %}
 
 The action defined for the **`Image`** and **`Rendered Image`** publish types (the type depends on the file extension) is **Create Read Node**. Click this action to create a new **`Read`** node in your nuke session. 
 
 Make sure your Nuke Project Settings output format matches your rendered images. Create a Constant color to use as your background and merge it with your Read node. Attach a viewer to see your composite.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_58.png" %}
+{% include figure src="./images/tutorial/image_58.png" %}
 
 Once you are happy with your comp, use the **Shotgun > File Save…** menu action to save your work file.
 
 Next, click the Shotgun logo in the left hand menu in Nuke. Click on one of the Shotgun-aware write nodes in that menu:
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_59.png" width="400px" %}
+{% include figure src="./images/tutorial/image_59.png" width="400px" %}
 
 The Shotgun Write Node app provides a layer on top of the built-in Nuke Write node that automatically evaluates the output path based on your current Shotgun context. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_60.png" %}
+{% include figure src="./images/tutorial/image_60.png" %}
 
 Render the image frames to disk. You can now publish your nuke session to associate the work file with the rendered images. By default, the publisher will collect the rendered frames and attach a plugin to register the frames with Shotgun. A second plugin will upload the frames for review by way of an integration that runs in the background called review submission. This app uses nuke to generate a quicktime that will be uploaded and made available for review.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_61.png" %}
+{% include figure src="./images/tutorial/image_61.png" %}
 
 Another useful integration is the Quick Review app. This is an output node that will quickly generate and upload a quicktime to Shotgun for Review. The app can be found in the left hand menu next to the Shotgun Write Nodes.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_62.png" width="400px" %}
+{% include figure src="./images/tutorial/image_62.png" width="400px" %}
 
 Create a Quick Review node, then click the Upload button to render the input to disk, generate the quicktime, and upload the result to Shotgun for review. Some standard options are provided before submitting the frames.
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_63.png" %}
+{% include figure src="./images/tutorial/image_63.png" %}
 
 Check the media tab in Shotgun to see both of the uploaded quicktimes. 
 
-{% include figure src="../../../images/toolkit/learning-resources/tutorial/image_64.png" %}
+{% include figure src="./images/tutorial/image_64.png" %}
 
 For more information on reviewing media in Shotgun, see the [official documentation](https://support.shotgunsoftware.com/hc/en-us/sections/204245448-Review-and-approval).
 

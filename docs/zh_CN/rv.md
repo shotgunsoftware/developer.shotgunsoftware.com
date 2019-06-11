@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 概述
-permalink: /rv/
 lang: zh_CN
+pagename: rv-index
 ---
 
 # RV

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 개요
-permalink: /rv/
 lang: ko
+pagename: rv-index
 ---
 
 # RV

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: アプリを追加する
-permalink: /toolkit/learning-resources/guides/installing_app/
 lang: ja
+pagename: toolkit-guides-adding-app
 ---
 
 # アプリを追加する
@@ -20,7 +20,7 @@ lang: ja
 
 ここで追加するアプリは、Shotgun Python コンソール アプリです。Maya には独自の Python コンソールがありますが、Toolkit アプリには Maya コンソールにない機能がいくつか用意されています。
 
-このガイドでは、「[パイプライン設定を編集する](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/blob/getting_started_guide/docs/en/toolkit/toolkit_basics_guides/editing_app_setting.md)」ガイドで作成したパイプライン設定を利用します。このガイドをまだ完了していない場合は、既存のパイプライン設定を使用してアプリを追加してください。
+このガイドでは、「[パイプライン設定を編集する](./editing_app_setting.md)」ガイドで作成したパイプライン設定を利用します。このガイドをまだ完了していない場合は、既存のパイプライン設定を使用してアプリを追加してください。
 
 ## このドキュメントの使い方
 
@@ -57,11 +57,11 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 **手順 1:** 「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798#tk-maya)」ページを開いて、Maya の Shotgun Python コンソールの情報を検索します。タイトルを選択します。
 
-![Python アプリ](../../../../images/toolkit/learning-resources/guides/installing_app/1_python_app.png)
+![Python アプリ](./images/installing_app/1_python_app.png)
 
 こうすると、アドレス帳に必要なすべての情報を含む、[アプリの情報](https://support.shotgunsoftware.com/hc/ja/articles/219033108)が表示されます。
 
-![Python アプリの情報](../../../../images/toolkit/learning-resources/guides/installing_app/2_python_app_info.png)
+![Python アプリの情報](./images/installing_app/2_python_app_info.png)
 
 **[System Name]**は主要な識別子です(`tk-multi-pythonconsole`)。**[Latest Version:]**も必要です( v1.1.2)。
 
@@ -69,7 +69,7 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 **手順 2:** Maya を起動し、Shotgun メニューを選択して(**[Shotgun] > プロジェクト the_other_side**)、プロジェクト環境内にある、このプロジェクトで使用可能なアプリのリストを表示します。
 
-![アプリのリスト](../../../../images/toolkit/learning-resources/guides/installing_app/3_list_of_apps.png)
+![アプリのリスト](./images/installing_app/3_list_of_apps.png)
 
 ## 設定を拡張する
 
@@ -83,35 +83,35 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 **<a name="&rdquo;step3&rdquo;">手順 3</a>:** Shotgun を開き、右上にある**[管理者]（Admin）メニュー（アバター） > [既定のレイアウト]（Default Layouts） > [パイプラインの設定]（Pipeline Configuration） > [パイプライン設定リスト]（Pipeline Configuration List）**を選択します。
 
-![パイプライン設定リスト](../../../../images/toolkit/learning-resources/guides/installing_app/4_REPLACE_pipeline_configuration_list.png)
+![パイプライン設定リスト](./images/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
 この操作を行うと、Shotgun サイトのすべてのパイプライン設定の詳細なリストが表示されます。
 
 **手順 4:** [パイプライン設定リスト]（Pipeline Configuration List）が表示されたら、列見出しの右端にある**[+]**記号を選択して、**[プロジェクト]（Projects）**列を追加します。
 
-![プロジェクト列を追加](../../../../images/toolkit/learning-resources/guides/installing_app/5_add_project_column.png)
+![プロジェクト列を追加](./images/installing_app/5_add_project_column.png)
 
 ### プロジェクトの設定の配置場所を確認する
 
 **手順 5:** オペレーティング システムに該当する**[パス]（Path）**フィールドを追加します。
 
-![設定のパス](../../../../images/toolkit/learning-resources/guides/installing_app/6_path_to_config.png)
+![設定のパス](./images/installing_app/6_path_to_config.png)
 
 設定ファイルのパスが表示されます。
 
-![設定のパス 2](../../../../images/toolkit/learning-resources/guides/installing_app/7_path_to_config2.png)
+![設定のパス 2](./images/installing_app/7_path_to_config2.png)
 
 **手順 6:** **[プライマリ]（Primary）**行項目の横にある空のスペース内で**右クリック**して、コンテキスト メニューから**[この設定のクローンを作成...]（Clone this Configuration…）**を選択します。
 
-![クローン作成完了](../../../../images/toolkit/learning-resources/guides/installing_app/8_clone_complete.png)
+![クローン作成完了](./images/installing_app/8_clone_complete.png)
 
 **手順 7:** [パイプライン設定リスト]（Pipeline Configuration List）内の設定およびディレクトリ内のファイルに、それぞれ「Primary Clone Config 2」および「the_other_side_clone2」という名前を付けます。**[OK]**をクリックします。
 
-![クローンに名前を付ける](../../../../images/toolkit/learning-resources/guides/installing_app/9_name_clone.png)
+![クローンに名前を付ける](./images/installing_app/9_name_clone.png)
 
 Shotgun によって設定内のすべてのファイルおよびフォルダがコピーされ、アプリのキャッシュが作成されるまで待ちます。この時間を利用して、エスプレッソの完璧なショットと一緒に、軽く、ふわっとした、口の中でとろけるクロワッサンを作成するアプリを使用しましょう。
 
-![クローン作成完了](../../../../images/toolkit/learning-resources/guides/installing_app/10_clone_complete.png)
+![クローン作成完了](./images/installing_app/10_clone_complete.png)
 
 完了すると、クローンが作成された設定の情報を使用して[パイプライン設定リスト]が更新され、ローカルな config フォルダに新しい設定が追加されます。
 
@@ -121,7 +121,7 @@ Shotgun によって設定内のすべてのファイルおよびフォルダが
 
 **手順 8:** Shotgun Desktop を開いて、クローン作成した設定を作成する対象となったプロジェクトを選択します。右上にある**下矢印**を選択して、このプロジェクトに関連付けられた設定を表示し、直前に作成した**[Primary Clone Config 2]**を選択します。
 
-![クローンを選択](../../../../images/toolkit/learning-resources/guides/installing_app/11_select_clone.png)
+![クローンを選択](./images/installing_app/11_select_clone.png)
 
 これで、Shotgun Desktop がこのプロジェクトでクローン作成した設定を使用するようになりました。
 
@@ -129,7 +129,7 @@ Shotgun によって設定内のすべてのファイルおよびフォルダが
 
 **手順 9:** クローン作成した設定を、ファイルシステム上の、この設定を作成するときに指定したパス内で検索します。`config/env/includes/app_locations.yml` ファイルを表示します。
 
-![クローン アプリの場所](../../../../images/toolkit/learning-resources/guides/installing_app/12_clone_app_locations.png)
+![クローン アプリの場所](./images/installing_app/12_clone_app_locations.png)
 
 `app_locations.yml` ファイルは既定の設定のアドレス帳です。このファイルには、アプリの記述子がリストされています。このファイルはアプリの配置場所を示しているため、ユーザはこのファイルを基にアプリの設定を作成することができます。
 
@@ -204,7 +204,7 @@ Shotgun の統合のコードは、アプリ、エンジン、およびフレー
 
 **手順 14:** クローン作成した設定内の `config/env/includes/settings/tk-maya.yml` をテキスト エディタで開き、`settings.tk-maya.project` を検索します。
 
-![tk-maya](../../../../images/toolkit/learning-resources/guides/installing_app/13_tk-maya.png)
+![tk-maya](./images/installing_app/13_tk-maya.png)
 
 手順 15: 次の行の下に場所の記述子を追加します。
 
@@ -240,7 +240,7 @@ settings.tk-maya.project:
 
 **注:** プライマリを使用している場合は、青いバーは表示されず、設定の名前は表示されません。
 
-![Maya のクローン作成された設定](../../../../images/toolkit/learning-resources/guides/installing_app/14_maya_cloned_config.png)
+![Maya のクローン作成された設定](./images/installing_app/14_maya_cloned_config.png)
 
 **手順 17:** Desktop から Maya を起動して、メニュー **[Shotgun] > [プロジェクト]（Project） > […]**を選択します。
 
@@ -254,7 +254,7 @@ settings.tk-maya.project:
 
 Maya で Python コンソール アプリを使用できるようになります。
 
-![プロジェクト ID](../../../../images/toolkit/learning-resources/guides/installing_app/16_project_ID.png)
+![プロジェクト ID](./images/installing_app/16_project_ID.png)
 
 ## プロダクションに変更をプッシュする
 
@@ -306,7 +306,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 **注:** このガイドの「**[手順 3](#step3):**」で表示した Shotgun の[パイプラインの設定]ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。
 
-![ID 列](../../../../images/toolkit/learning-resources/guides/installing_app/17_id_column.png)
+![ID 列](./images/installing_app/17_id_column.png)
 
 ID を入力した後、Shotgun は以下の処理を行います。
 
@@ -330,11 +330,11 @@ Push Complete!
 
 **手順 19:** Shotgun Desktop の右上にある矢印をクリックして、**[CONFIGURATION]**リスト内の**[Primary]**を選択します。
 
-![Maya の設定の変更](../../../../images/toolkit/learning-resources/guides/installing_app/18_change_config_maya.png)
+![Maya の設定の変更](./images/installing_app/18_change_config_maya.png)
 
 **手順 20:** Desktop から Maya を起動して、メニュー**[Shotgun] > [プロジェクト]（Project） > […]**を参照して、Shotgun Python コンソールを検索します。
 
-![Maya のアプリ](../../../../images/toolkit/learning-resources/guides/installing_app/19_app_in_maya.png)
+![Maya のアプリ](./images/installing_app/19_app_in_maya.png)
 
 Python コンソール アプリが、選択されたプロジェクトのプロジェクト環境に追加されました。2 番目のガイドの「[設定を編集する](../toolkit_basics_guides/editing_app_setting.md)」で、各環境は独立していて、プロジェクトには専用の設定があること、およびプロジェクトをロードするときに、ソフトウェアの統合によってパイプライン設定から設定が収集されることを説明しました。Python コンソールを環境内で使用できるように設定するには、`app_locations.yml` ファイル内で場所の記述子を参照するようこの環境に指示する必要があります。この場合、Python コンソール アプリを使用可能にするパイプラインの任意のポイントで、「Python コンソール アプリをここで使用する」ように設定する必要があります。
 
@@ -350,7 +350,7 @@ Toolkit の素晴らしい点の 1 つに、Toolkit アプリを誰でも作成�
 
 プロジェクトで使用する設定を選択するときにおわかりになったように、Python コンソール アプリは Shotgun Desktop のドロップダウンから使用できます。
 
-![Desktop の Python コンソール](../../../../images/toolkit/learning-resources/guides/installing_app/20_desktop_python_console.png)
+![Desktop の Python コンソール](./images/installing_app/20_desktop_python_console.png)
 
 パイプラインに追加するアプリを使用している環境がある場合は、少し推理を働かせて、このアプリを設定に追加するのに必要な情報を見つけることができます。アプリが使用されている環境内の設定ファイルを調べると、アプリの場所の記述子および設定の追加方法がわかります。
 
