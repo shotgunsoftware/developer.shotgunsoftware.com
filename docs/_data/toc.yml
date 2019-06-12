@@ -41,6 +41,7 @@
     - page: toolkit-pipeline-tutorial
     - text: webinars
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
+  - page: env-config-ref    
   - text: core-api
     url: " https://developer.shotgunsoftware.com/tk-core/"
   - page: toolkit-frameworks
