@@ -19,7 +19,7 @@ But often in studio pipelines, it’s common for different types of artists to h
 
 To support these different workflows within a project, Toolkit divides its app and engine configurations across environments. An environment contains the integrations and their settings for a set of software packages, all with a certain context in common. In the above example, artists working on assets would be working in an asset step environment, whereas artists working on shots would be working in a shot step environment. Each environment is configured independent of any others, allowing you to have distinct workflows within a project. 
 
-### A note on Toolkit’s Default Configuration
+## A note on Toolkit’s Default Configuration
 
 Toolkit gives you a lot of freedom in the way you structure your environment configuration. This document is a reference for all of the options that are available to you, so that you’ll have the necessary knowledge to make choices that best suit the needs of your pipeline. 
 
