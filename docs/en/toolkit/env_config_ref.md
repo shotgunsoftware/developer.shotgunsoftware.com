@@ -1,3 +1,10 @@
+---
+layout: default
+title: Environment Configuration Reference
+pagename: env-config-ref
+lang: en
+---
+
 ## Environment Configuration Reference
 
 ### Introduction
