@@ -20,7 +20,7 @@ This document will also occasionally cover some of the specific choices we’ve 
 
 ### File locations 
 
-Within your Pipeline Configuration, the `config/` directory contains all the files and folders that are meant to be customized. In `config/`, you’ll find three sub-directories: `cache`, `core`, and `env`. The `env` dir contains all of the environment configuration files, so this document will refer to the files in `config/env`.
+Within your Pipeline Configuration, the `config/` directory contains all the files and folders that are meant to be customized. In `config/`, you’ll find three sub-directories: `cache`, `core`, and `env`. The `env` directory holds the environment configuration files, so this document will refer to the files in `config/env`.
 
 ![env Folder Contents](./images/env_config_ref/1.png)
 
@@ -35,11 +35,11 @@ shot.yml
 shot_step.yml
 ```
 
-Each of these files corresponds to an environment; having separate files allows each environment to be configured differently.
+Each of these files corresponds to an environment; having separate files allows each environment to be configured separately.
 
 ### How Toolkit determines the current environment
 
-Toolkit uses a (core hook)[link to glossary] called [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) to determine which environment file to use at a given time. The `pick_environment` hook’s return values correspond to environment configuration files. For example, if `pick_environment` returns `shot_step`, Toolkit will use `config/env/shot_step.yml` to configure the Toolkit environment.
+Toolkit uses a core hook called [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) to determine which environment file to use at a given time. The `pick_environment` hook’s return values correspond to environment configuration files. For example, if `pick_environment` returns `shot_step`, Toolkit will use `config/env/shot_step.yml` to configure the Toolkit environment.
 
 ### Custom environments
 
@@ -117,7 +117,7 @@ See [the Descriptor section of the Toolkit Core API docs](https://developer.shot
 
 ### The apps block
 
-Apps are Toolkit’s user interfaces, and each can run independently of any others. You can choose which apps you want to use based on your pipeline needs, and the `apps:` setting within an `engine:` block is where you define which apps are available in a given engine.
+Apps are Toolkit’s user interfaces, and each can run independently of any others. You can choose which apps you want to use based on your pipeline needs, and the `apps` setting within an engine block is where you define which apps are available in a given engine.
 
 Here again is the `apps` setting from our example above:
 
@@ -171,7 +171,7 @@ To mitigate the last two issues, Toolkit configurations support *includes*.
 
 ### Includes
 
-*Includes* allow you to reference a section of one file in another file in your configuration. Using includes allows you set a configuration setting
+*Includes* allow you to reference a section of one file in another file in your configuration. Using includes allows you set a configuration setting in one place, but use it in multiple environments. 
 
 Includes consist of two parts:
 
@@ -231,7 +231,7 @@ engines:
 
 You can see here that the value of the `location` setting for the `tk-maya` engine is now a reference to a key from the included YAML file. 
 
-**NOTE:** Having all engine locations in a `config/env/includes/engine_locations.yml` file as we do in this example follows the convention of the Default Configuration.
+{% include info title="Note" content="Having all engine locations in a `config/env/includes/engine_locations.yml` file as we do in this example follows the convention of the Default Configuration." %}
 
 You can add a second include file for app locations, and in fact, the Default Configuration does just that. Let’s expand our example:
 
@@ -277,7 +277,8 @@ engines:
 
 We’re now getting the `tk-maya` engine’s descriptor from the included `engine_locations.yml` file, and the descriptor for each app defined for the `tk-maya` engine from the included `app_locations.yml` file.
 
-**NOTE:** The Default Configuration employs a second level of nesting that’s not demonstrated here. Every app or engine that has settings beyond just a descriptor has a settings file in `includes/settings` (e.g., `includes/settings/tk-maya.yml`, `includes/settings/tk-multi-workfiles2.yml`). The engine settings files include app settings from the app settings files, and the environment configuration files include from the engine settings files. For details on the Default Configuration’s structure, see [its README file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md). For a detailed walkthrough of modifying a configuration setting, see the [Toolkit Basics Guide on Editing a Configuration Setting](link).
+{% include info title="Note" content="The Default Configuration employs a second level of nesting that’s not demonstrated here. Every app or engine that has settings beyond just a descriptor has a settings file in `includes/settings` (e.g., `includes/settings/tk-maya.yml`, `includes/settings/tk-multi-workfiles2.yml`). The engine settings files include app settings from the app settings files, and the environment configuration files include from the engine settings files. For details on the Default Configuration’s structure, see [its README file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md). For a detailed walkthrough of modifying a configuration setting, see the [Toolkit Basics Guide on Editing a Configuration Setting](link)." %}
+
 
 ### Sparse configurations
 
@@ -285,7 +286,7 @@ Every Toolkit bundle has a set of available configuration settings, with a defau
 
 In our example, we haven’t specified any settings for our apps aside from `location`. So, in our configuration’s current state, our three apps will use the default values for all of their settings. So, how do we know what configuration settings are available?
 
-**NOTE:** While it’s not a requirement that Toolkit configurations be sparse, the Default Configuration is a sparse configuration. 
+{% include info title="Note" content="While it’s not a requirement that Toolkit configurations be sparse, the Default Configuration is a sparse configuration." %}
 
 ### Discovering available configuration settings
 
@@ -298,7 +299,7 @@ With sparse configurations, it’s not immediately evident what configuration se
 
 To modify a configuration from the default value, simply add it to the proper block, in the proper environment in your Pipeline Configuration, and set its value. 
 
-Going back to our example, let’s say that we want to configure `tk-multi-workfiles2` so that it launches automatically when Maya is launched in the project environment. We can see [in the app’s manifest](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/v0.11.10/info.yml#L19-L25) that there is a `launch_at_startup` setting that controls whether to launch the Workfiles UI at application startup time, and that its default value is ‘False’. So, we’ll just add the `launch_at_startup` option, and set it to `True`. Our `project.yml` file now looks like this:
+Going back to our example, let’s say that we want to configure `tk-multi-workfiles2` so that it launches automatically when Maya is launched in the project environment. We can see [in the app’s manifest](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/v0.11.10/info.yml#L19-L25) that there is a `launch_at_startup` setting that controls whether to launch the Workfiles UI at application startup time, and that its default value is `False`. So, we’ll just add the `launch_at_startup` option, and set it to `True`. Our `project.yml` file now looks like this:
 
 `config/env/project.yml`:
 
@@ -325,8 +326,9 @@ Note that if the settings for `tk-multi-workfiles2` were coming from an included
 
 ### Additional resources
 
-* [File system configuration reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference)
 * [Toolkit Basics Guide: Editing a pipeline configuration](./learning-resources/guides/editing_app_setting.md)
 * [Toolkit Basics Guide: Adding an app](./learning-resources/guides/installing_app.md)
+* [Animation pipeline tutorial](./learning-resources/tutorial.md)
 * [Descriptor reference documentation](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
-
+* [Webinar: Toolkit administration](https://youtu.be/7qZfy7KXXX0)
+* [File system configuration reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference)
