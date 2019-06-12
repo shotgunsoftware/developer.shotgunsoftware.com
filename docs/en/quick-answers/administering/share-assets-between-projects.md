@@ -1,13 +1,11 @@
 ---
 layout: default
-title: How Do I Share Assets Between Projects?
+title: How do I share assets between projects?
 pagename: share-assets-between-projects
 lang: en
 ---
 
-# How Do I Share Assets Between Projects?
-
-{% include info title="Note" content="This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [Shotgun Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493) or contact support if you do not have a more advanced configuration." %}
+# How do I share assets between projects?
 
 It's not uncommon to have a project that's used as an Asset Library, containing assets that can be loaded into shots in other projects.
 

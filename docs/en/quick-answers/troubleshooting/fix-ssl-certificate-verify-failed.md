@@ -11,7 +11,7 @@ The Python API relies on a list of certificates that is bundled with the API and
 
 While our Python API comes with a very recent copy of the certificates, as of February 21st 2019, there's a bug right now that prevents the API from using those certificates for Amazon S3 uploads, even if you are using the latest version of the API. For background please see [this AWS blog post](https://aws.amazon.com/blogs/security/how-to-prepare-for-aws-move-to-its-own-certificate-authority/). To remediate the situation temporarily, you can try the following solutions. 
 
-{% include info title="Note" content="these are temporary workarounds and we're looking into a long-term solution" %}
+{% include info title="Note" content="these are temporary workarounds and we're looking into a long-term solution." %}
 
 ## Preferred Solution
 
@@ -21,14 +21,12 @@ Add required CA certificate to the Windows Certificate Store. Windows 7 users ma
 
 2. Paste the following commands into the PowerShell window and then press Return to execute:
 
-```
-$cert_url = "https://www.amazontrust.com/repository/SFSRootCAG2.cer"
-$cert_file = New-TemporaryFile
-Invoke-WebRequest -Uri $cert_url -UseBasicParsing -OutFile $cert_file.FullName
-Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalMachine\Root
-```
+        $cert_url = "https://www.amazontrust.com/repository/SFSRootCAG2.cer"
+        $cert_file = New-TemporaryFile
+        Invoke-WebRequest -Uri $cert_url -UseBasicParsing -OutFile $cert_file.FullName
+        Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalMachine\Root
 
-3. If details of the added certificate bearing thumbprint **925A8F8D2C6D04E0665F596AFF22D863E8256F3F** are displayed then the operation is complete and PowerShell can be closed
+3. If details of the added certificate bearing thumbprint `925A8F8D2C6D04E0665F596AFF22D863E8256F3F` are displayed then the operation is complete and PowerShell can be closed.
 
 ## Alternative Solutions
 
@@ -36,11 +34,12 @@ Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalM
 
 1. Upgrade to the Python API **v3.0.39**
 
-2a. Set `SHOTGUN_API_CACERTS` to `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`
+2.
+    a. Set `SHOTGUN_API_CACERTS` to `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`
 
-or
+    or
 
-2b. Update your scripts and set the `ca_certs=/path/to/shotgun_api3/lib/httplib2/cacerts.txt` when instantiating the `Shotgun` object.
+    b. Update your scripts and set the `ca_certs=/path/to/shotgun_api3/lib/httplib2/cacerts.txt` when instantiating the `Shotgun` object.
 
 ### If you are using Toolkit
 

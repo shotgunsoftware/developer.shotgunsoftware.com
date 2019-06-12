@@ -7,23 +7,18 @@ lang: en
 
 # How do I move my pipeline configuration to a new location?
 
-{% include info title="Note" content="This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [Shotgun Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493) or contact support if you do not have a more advanced configuration." %}
-
 The easiest way to move your pipeline configuration to a new location is by using the tank move_configuration command. This will take care of moving your files, updating Shotgun, and updating your config files to point to the new location. 
 
 This command is also useful if you are only moving the location for a single platform, or were not previously using a platform but would like to add it now. Toolkit will detect what needs to be moved or added and what doesn't. And will show you what it is about to do to allow you to confirm before progressing. 
 
-- [Using the tank move_configuration command](#Using-the-tank-move-configuration-command)
-- Manually moving your pipeline configuration
+- [Using the tank move_configuration command](#using-the-tank-move_configuration-command)
+- [Manually moving your pipeline configuration](#manually-moving-your-pipeline-configuration)
 
-A Note About Moving Pipeline Configurations that are sharing their Core
-*If you are moving a configuration that is localized (ie. it contains it's own Toolkit core), and you have other projects that are using the Toolkit core embedded in this pipeline configuration, you'll have to manually update the configuration files in those projects to point to the new location for this pipeline configuration. These files are located in*
+{% include warning title="Caution" content="If you are moving a configuration that is localized (i.e. it contains it's own Toolkit core), and you have other projects that are using the Toolkit core embedded in this pipeline configuration (i.e. other configurations are using this as a shared core), you'll have to manually update the configuration files in those projects to point to the new location for this pipeline configuration. These files are located in:
 
-- /path/to/pipeline_configuration/install/core/core_Darwin.cfg
-- /path/to/pipeline_configuration/install/core/core_Linux.cfg
-- /path/to/pipeline_configuration/install/core/core_Windows.cfg
- 
-
+- `/path/to/pipeline_configuration/install/core/core_Darwin.cfg`
+- `/path/to/pipeline_configuration/install/core/core_Linux.cfg`
+- `/path/to/pipeline_configuration/install/core/core_Windows.cfg`" %}
 
 ## Using the tank move_configuration command:
 
@@ -141,7 +136,9 @@ A Note About Moving Pipeline Configurations that are sharing their Core
 
 ## Manually moving your pipeline configuration
 
-Sorry to state the obvious, but if you haven't yet moved your pipeline configuration, then we strongly advise using the built-in tank command above to take care of this automatically. But if you've already started moving things manually and are stuck, here's a rundown of what you need to change to ensure Toolkit continues to work with your pipeline configuration now in a new location.
+{% include warning title="Important" content="If you haven't yet moved your pipeline configuration, then we strongly advise using the [built-in tank command](#using-the-tank-move_configuration-command) above to take care of this automatically." %}
+
+If you've already started moving things manually and are stuck, here's a rundown of what you need to change to ensure Toolkit continues to work with your pipeline configuration now in a new location.
 
 1. Move your pipeline configuration files to their new location
 

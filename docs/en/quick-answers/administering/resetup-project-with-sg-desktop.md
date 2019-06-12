@@ -1,39 +1,26 @@
 ---
 layout: default
-title: How do I re-setup a Project using SG Desktop?
+title: How do I re-setup a Toolkit project using Shotgun Desktop?
 pagename: resetup-project-with-sg-desktop
 lang: en
 ---
 
-# How do I re-setup a Project using SG Desktop?
+# How do I re-setup a Toolkit project using Shotgun Desktop?
 
-{% include info title="Note" content="This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [Shotgun Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493) or contact support if you do not have a more advanced configuration." %}
+If you’ve already set up a Toolkit configuration for a project and need to start fresh, the Advanced Setup Wizard in Shotgun Desktop will not allow you to re-setup the project unless you’ve removed the previously setup configuration. 
 
-{% include info title="Note" content="We are aware this is a tedious process and have plans to allow you to do this directly from SG Desktop by selecting a checkbox to "force" the process again." %}
+Here are the steps for manually removing those settings:
 
-The steps you need to do to re-setup the Project are as follows.
+1. Delete the PipelineConfiguration entity(s) linked to your Project in Shotgun.<br/><br/>![Access to the PipelineConfiguration entity page](images/pipeline-configuration-entity-page.png)<br/><br/>
+2. Set the `Tank Name` field on your `Project` entity in Shotgun to a blank value.<br/><br/>![Clear the project tank name field](images/clear-project-tank-name.png)<br/><br/>
+3. Remove the corresponding pipeline configuration directory(s) on disk.
+4. In Shotgun Desktop select the project you wish to setup. *If you were already viewing the project, jump out to the project list view and then back into your project again.*
+6. Now you can run the project setup process again.
 
-## Option 1: Manually remove leftover settings and re-run setup in SG Desktop
+**Alternate method**
 
-- Delete the PipelineConfiguration entity(s) linked to your Project in Shotgun
-- Remove the corresponding pipeline configuration directory(s) on disk
-- Set the Tank Name field on your Project in Shotgun to a blank value
-- In SG Desktop
-    - Navigate out to the Project list
-    - Select the Project you wish to setup
-    - Now you can run the project setup process again
+If you are used to using the command line to setup your project with the  `tank setup_project` command then you can add a `--force` argument to the end of the command. This allows you to setup a previously setup project without following the manual steps listed above.
+    
+    tank setup_project --force"
 
-## Option 2: Run project setup from the command line with --force
-
-- Open a terminal
-- `cd` to the site config directory. By default these are located:
-    - If you are using the Shotgun Integrations
-        - Mac: `~/Library/Caches/Shotgun/<your_site_name>/site.basic.desktop/cfg`
-        - Windows: `%APPDATA%\Shotgun\<your_site_name>\site.basic.desktop/cfg`
-        - Linux: `~/.shotgun/<your_site_name>/site.basic.desktop/cfg`
-    - If you are using the Toolkit platform
-        - Mac: `~/Library/Application Support/Shotgun/<your_site_url>/site`
-        - Windows: `%APPDATA%\Shotgun\<your_site_url>\site`
-        - Linux: `~/.shotgun/<your_site_url>/site`
-- Run the command `./tank setup_project --force`
-- Follow the on-screen instructions
+    

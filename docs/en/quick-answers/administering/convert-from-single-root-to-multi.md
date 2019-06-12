@@ -1,15 +1,14 @@
 ---
 layout: default
-title: How do I convert my project from a single root to a multi-root configuration?
+title: How do I modify my configuration to use multiple storage roots?
 pagename: convert-from-single-root-to-multi
 lang: en
 ---
 
-# How do I convert my project from a single root to a multi-root configuration?
+# How do I modify my configuration to use multiple storage roots?
 
-{% include info title="Note" content="This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [Shotgun Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493) or contact support if you do not have a more advanced configuration." %}
-
-Your project uses a single local storage root (eg. all of your project files are stored underneath a single root point like `/sgtk/projects`). You now want to add a new storage root to store some of your project files. This is a common situation that arises when you're running out of disk space or want some media to be on a faster storage, etc. Toolkit currently requires that you have at least one local storage named "primary" so if you're using a single root, then that's what you have. Now lets say we want to add another one named "secondary".
+The default configuration we provide is setup to use a single local storage root (eg. all of your project files are stored underneath a single root point like `/sgtk/projects`). You may want to add a new storage root to store some of your project files. This is a common situation that arises when you're running out of disk space or want some media to be on a faster storage, etc. 
+Lets say you want to add another root named "secondary", here are the steps you need to take:
 
 ## Add the local storage in Shotgun
 
@@ -36,7 +35,7 @@ Toolkit caches information about the local storages used in a pipeline configura
         windows_path: 'z:\sgtk\secondaries'
     }
 
-NOTE: As of `tk-core v0.18.141`, the names of the roots defined in roots.yml do not need to match the names of the local storage defined in SG. You can explicitly define the connection by including a `shotgun_storage_id: <id>` key/value pair in your `roots.yml` definitions.
+{% include info title="Note" content="As of `tk-core v0.18.141`, the names of the roots defined in roots.yml do not need to match the names of the local storage defined in SG. You can explicitly define the connection by including a `shotgun_storage_id: <id>` key/value pair in your `roots.yml` definitions.
 Example:
 
     secondary: {
@@ -46,7 +45,7 @@ Example:
         shotgun_storage_id: 123
     }
 
-The storage id is currently only queryable via an API call.
+The storage id is currently only queryable via an API call." %}
 
 ## Modify your schema to use your new local storage root
 
@@ -79,7 +78,7 @@ For example, if you had an asset.yml somewhere under your secondary folder, then
 
 ## Update your template paths to specify which root to use
 
-Finally you will update1 the paths defined in your `config/core/templates.yml` file to specify which storage root to use, and update any of the paths as necessary. Remember that your template paths are very good friends with your schema and they need to match up. If you have a template path defined that doesn't match correctly with the path defined in your schema, you'll run into errors.
+Finally you will update<sup>1</sup> the paths defined in your `config/core/templates.yml` file to specify which storage root to use, and update any of the paths as necessary. Remember that your template paths are very good friends with your schema and they need to match up. If you have a template path defined that doesn't match correctly with the path defined in your schema, you'll run into errors.
 
 For example, since we want to have all of our asset work on the secondary storage, to update the maya_asset_work template path, we'd modify it to look like this:
 
@@ -89,6 +88,6 @@ For example, since we want to have all of our asset work on the secondary storag
 
 You should follow this same pattern for each template path in your `config/core/templates.yml` file. Specify the correct `root_name` for each one (**'primary'** or **'secondary'**).
 
-NOTE: You do not need to specify a `root_name` for templates that use the default storage root. The default root is indicated by specifying `default: true` in the `roots.yml` file. If a default is not explicitly defined in `roots.yml`, the root named **primary** will be considered the default.
+{% include info title="Note" content="You do not need to specify a `root_name` for templates that use the default storage root. The default root is indicated by specifying `default: true` in the `roots.yml` file. If a default is not explicitly defined in `roots.yml`, the root named **primary** will be considered the default." %}
 
-1 It is worth noting that updating the paths might not be ideal, since any old files that were created using the previous value will not be accessible by Toolkit once the new value is set (e.g. old work files won't be found by Toolkit after changing their template path). If this is a concern, you may then create a new template (e.g. houdini_shot_publish_v2) with the new location and upgrade your apps to use that new version. Not all apps handle a fallback concept like this, but this will allow some apps to recognize the old files. This does not affect publishes, as these are always linked to their publish in Shotgun.
+<sup>1</sup> *It is worth noting that updating the paths might not be ideal, since any old files that were created using the previous value will not be accessible by Toolkit once the new value is set (e.g. old work files won't be found by Toolkit after changing their template path). If this is a concern, you may then create a new template (e.g. houdini_shot_publish_v2) with the new location and upgrade your apps to use that new version. Not all apps handle a fallback concept like this, but this will allow some apps to recognize the old files. This does not affect publishes, as these are always linked to their publish in Shotgun.*
