@@ -38,7 +38,7 @@
       - page: /toolkit/learning-resources/guides/editing_app_setting/
       - page: /toolkit/learning-resources/guides/installing_app/
     - page: /toolkit/learning-resources/tutorial/
-  - page: /toolkit/env-config-ref/
+  - page: /toolkit/env_config_ref/
   - text: core-api
     url: " https://developer.shotgunsoftware.com/tk-core/"
   - page: /toolkit/frameworks/
