@@ -11,7 +11,7 @@ It's not uncommon to have a project that's used as an Asset Library, containing 
 
 To achieve this, you can add a tab to the [Loader app](https://support.shotgunsoftware.com/hc/en-us/articles/219033078) that lists assets from this Asset Library project. In order to do so, you'll have to define this in the Loader settings for the engine and environment you're working in. You'll potentially have to update this in multiple places.
 
-For example, to add this to the [Maya engine in the shot step environment](https://github.com/shotgunsoftware/tk-config-default/blob/v0.15.11/env/shot_step.yml#L515), you'd add this snippet:
+For example, to add this to the [Maya engine in the shot step environment](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-multi-loader2.yml#L122), you'd add this snippet:
 
     caption: Asset Library
     hierarchy: [project, sg_asset_type, code]

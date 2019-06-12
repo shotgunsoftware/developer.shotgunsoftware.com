@@ -18,20 +18,20 @@ The publisher is an app, and apps are added to engines inside the environment se
 
 ### Removing the App from the engines
 
-Each engine has it's own yml file inside [`.../env/includes/settings`](https://github.com/shotgunsoftware/tk-config-default2/tree/master/env/includes/settings); as the publisher is included in all engines you will need to modify each engine yml. Taking the Maya engine as an example you would open up [tk-maya.yml](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml) and remove all references to the publish2 app.
+Each engine has it's own yml file inside [`.../env/includes/settings`](https://github.com/shotgunsoftware/tk-config-default2/tree/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings); as the publisher is included in all engines you will need to modify each engine yml. Taking the Maya engine as an example you would open up [tk-maya.yml](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml) and remove all references to the publish2 app.
 
 First there is a reference to it in the includes section:<br/>
-[`.../env/includes/settings/tk-maya.yml L18`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L18)
+[`.../env/includes/settings/tk-maya.yml L18`](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-maya.yml#L18)
 
 The app is also being included in the Maya engine when in an Asset Step context:<br/>
-[`.../env/includes/settings/tk-maya.yml L47`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L47)<br/>
+[`.../env/includes/settings/tk-maya.yml L47`](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-maya.yml#L47)<br/>
 As well as a line adding it to the menu favourites:<br/>
-[`.../env/includes/settings/tk-maya.yml L56`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L56)
+[`.../env/includes/settings/tk-maya.yml L56`](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-maya.yml#L56)
 
 
 Then you have a repeat of these lines under the Shot Step settings:<br/>
-[`.../env/includes/settings/tk-maya.yml L106`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L106)<br/>
-[`.../env/includes/settings/tk-maya.yml L115`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-maya.yml#L115)
+[`.../env/includes/settings/tk-maya.yml L106`](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-maya.yml#L106)<br/>
+[`.../env/includes/settings/tk-maya.yml L115`](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-maya.yml#L115)
 
 You would then repeat these steps for all the other engine environment yml files, such as `tk-nuke`, `tk-3dsmaxplus`, `tk-desktop` and so on.
 
@@ -39,7 +39,7 @@ You would then repeat these steps for all the other engine environment yml files
 
 ### Removing the App settings
 
-All those engines yml files were including [the `tk-multi-publish2.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-publish2.yml) settings file. Now you have removed reference to it in your engine ymls you can remove this file entirely.
+All those engines yml files were including [the `tk-multi-publish2.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-multi-publish2.yml) settings file. Now you have removed reference to it in your engine ymls you can remove this file entirely.
 
 {% include warning title="Important" content="If you remove the `tk-multi-publish2.yml` but still have engine files pointing at it then you will likely get an error along the lines of this: 
 
@@ -49,4 +49,4 @@ All those engines yml files were including [the `tk-multi-publish2.yml`](https:/
 
 ### Removing the App Location
 
-All the apps store their location descriptor in [this](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/app_locations.yml) file. The `tk-multi-publish2.yml` referenced this so you would need to remove [these lines](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/app_locations.yml#L52-L56).
+All the apps store their location descriptor in [this](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/app_locations.yml) file. The `tk-multi-publish2.yml` referenced this so you would need to remove [these lines](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/app_locations.yml#L52-L56).
