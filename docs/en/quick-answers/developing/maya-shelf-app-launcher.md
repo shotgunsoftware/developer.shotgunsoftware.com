@@ -17,13 +17,7 @@ Open your Script Editor in Maya and paste in the following Python code:
 import maya.cmds as cmds 
 
 # The internal Toolkit app name
-tk_app = "tk-multi-loader2"
-
-# The public function that opens the app dialog. This function is located in the app's 
-# app.py file in the top directory (eg. install/apps/app_store/tk-multi-loader2/app.py.
-# The name of this function varies from app to app, but is generally easy to determine by
-# looking at the code. 
-call_func = "open_publish"
+tk_app = "Publish..."
 
 try: 
     import sgtk
@@ -33,14 +27,14 @@ try:
     if not current_engine: 
         cmds.error("Shotgun integration is not available!") 
 
-    # find the current instance of the app: 
-    app = current_engine.apps.get(tk_app) 
+    # find the current instance of the app.
+    # You can print current_engine.commands to list all available commands.
+    command = current_engine.commands.get(tk_app) 
     if not app: 
         cmds.error("The Toolkit app '%s' is not available!" % tk_app) 
 
-    # call the public method on the app to show the dialog: 
-    app_open_func = getattr(app, call_func)
-    app_open_func()
+    current_engine.commands[tk_app]['callback']()
+
 except Exception, e: 
     msg = "Unable to launch Toolkit app '%s': %s" % (tk_app, e)
     cmds.confirmDialog(title="Toolkit Error", icon="critical", message=msg)
