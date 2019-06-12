@@ -16,7 +16,8 @@ Open your Script Editor in Maya and paste in the following Python code:
 ```
 import maya.cmds as cmds 
 
-# The internal Toolkit app name
+# Define the name of the app command we want to run.
+# If your not sure on the actual name you can print the current_engine.commands to get a full list, see below.
 tk_app = "Publish..."
 
 try: 
@@ -33,7 +34,8 @@ try:
     if not app: 
         cmds.error("The Toolkit app '%s' is not available!" % tk_app) 
 
-    current_engine.commands[tk_app]['callback']()
+    # now we have the command we need to call the registered callback
+    command['callback']()
 
 except Exception, e: 
     msg = "Unable to launch Toolkit app '%s': %s" % (tk_app, e)
