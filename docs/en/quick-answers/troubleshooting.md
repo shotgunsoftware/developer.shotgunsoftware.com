@@ -18,6 +18,7 @@ A collection of quick answers aimed at troubleshooting issues.
 - [Why is my context is missing the Task/Step when it exists as part of the filename?](./troubleshooting/context-missing-task-step.md)
 - [Why are my Houdini Shotgun integrations not starting?](./troubleshooting/houdini-integrations-not-starting.md)
 - [I've launched Nuke/Maya/etc. from SG Desktop, but the Shotgun menu is missing entries](./troubleshooting/menu-entries-missing-in-launched-dcc.md)
+- [Why does Toolkit fail to start when I set the NUKE_PATH environment variable?](troubleshooting/nuke-path-environment-variable.md)
 
 #### Browser integration
 - [I can't use local file linking and launch Toolkit applications from Chrome](./troubleshooting/cant-use-file-linking-toolkit-app-chrome.md)
