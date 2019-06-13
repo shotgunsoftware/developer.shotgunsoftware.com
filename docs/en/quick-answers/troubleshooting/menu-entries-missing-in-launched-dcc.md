@@ -18,7 +18,7 @@ When you launch an application from [Shotgun Desktop](https://support.shotgunsof
 
 ![Shotgun Menu project actions](images/shotgun_menu_project_actions.png)
 
-You can use the [Shotgun File Manager](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files) to select the Asset, Shot, or Task to work on which will load up the appropriate new environment for you which will then have more apps enabled with menu items in your Shotgun menu.
+You can use the [Shotgun workfiles app](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files) to select the Asset, Shot, or Task to work on which will load up the appropriate new environment for you which will then have more apps enabled with menu items in your Shotgun menu.
 
 **Default Maya Asset Task actions:**
 
