@@ -14,13 +14,13 @@ It's possible you may not be seeing the app your after because your in the wrong
 
 When you launch an application from [Shotgun Desktop](https://support.shotgunsoftware.com/entries/95442947), it puts you in the project environment by default. This environment is managed by the config file in your pipeline configuration located at `.../config/env/project.yml`. Because most of your work will probably not be done in this environment, it's not configured with many apps for you to work with.
 
-**Default project actions:**
+**Default Maya Project actions:**
 
 ![Shotgun Menu project actions](images/shotgun_menu_project_actions.png)
 
 You can use the [Shotgun File Manager](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files) to select the Asset, Shot, or Task to work on which will load up the appropriate new environment for you which will then have more apps enabled with menu items in your Shotgun menu.
 
-**Default Asset Task actions:**
+**Default Maya Asset Task actions:**
 
 ![Shotgun Menu project actions](images/shotgun_menu_asset_step_actions.png)
 
