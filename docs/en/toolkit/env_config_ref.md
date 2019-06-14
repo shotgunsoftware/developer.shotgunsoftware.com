@@ -108,7 +108,7 @@ Every Toolkit bundle has a `location` setting, which we refer to as the bundle�
         version: v0.9.4
 ```
 
-This is a descriptor of type `app_store`, which tells Toolkit to get the given bundle from the Shotgun App Store. Descriptors of type ` app_store` have the settings `name` and `version`. 
+This is a descriptor of type `app_store`, which tells Toolkit to get the given bundle from the Shotgun App Store. Descriptors of type `app_store` have the settings `name` and `version`. 
 
 In contrast, if you are actively developing a custom bundle – say you’re working on writing a Toolkit app for a specific workflow in your studio, you may want to get it directly from a path on disk. In this case you’d use a descriptor of type `dev`, which might look like this: 
 
@@ -187,8 +187,6 @@ Includes consist of two parts:
 
 To flesh out our above example, you might have a single file where you hold the location descriptors for all of your engines. Let’s put that file in an `includes` subfolder, and call it `engine_locations.yml`. 
 
-![engine_locations include file](./images/env_config_ref/2.png)
-
 The contents of `engine_locations.yml` would look like this:
 
 `config/env/includes/engine_locations.yml`:
@@ -235,6 +233,8 @@ engines:
           version: v0.11.8
     location: @engines.tk-maya.location
 ```
+
+![engine_locations include file](./images/env_config_ref/2.png)
 
 You can see here that the value of the `location` setting for the `tk-maya` engine is now a reference to a key from the included YAML file. 
 
