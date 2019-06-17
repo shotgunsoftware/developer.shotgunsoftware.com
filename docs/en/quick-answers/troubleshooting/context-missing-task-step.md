@@ -13,11 +13,11 @@ If you don't have a `Task` folder in your schema then you can get in a situation
 
 **Example**
 
-Take the default schema structure below as an example where the `Asset` and `Step` folders will be registered:
+Take the default schema structure below; `Asset` and `Step` folders will be registered during the folder creation process:
 
 ![Default Asset schema](./images/asset-schema.png)
 
-If you generated a file path using a template that for example looked like this: `assets/{sg_asset_type}/{Asset}/{Step}/work/maya/{task_name}_{name}.v{version}.{maya_extension}'`, and then attempted to figure out the context from that generated path, it would only be able to establish the `Asset` and the `Step` and **not** the `Task` despite the task's name being in the file path.
+If you generated a file path using a template like this: `assets/{sg_asset_type}/{Asset}/{Step}/work/maya/{task_name}_{name}.v{version}.{maya_extension}'`, and then attempted to figure out the context from that generated path, it would only be able to establish the `Asset` and the `Step` and **not** the `Task` despite the task's name being in the file path.
 
 **Solution**
 
