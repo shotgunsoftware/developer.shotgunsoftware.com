@@ -167,4 +167,4 @@ If you've already started moving things manually and are stuck, here's a rundown
 
 Now your pipeline configuration should work as expected from the new location.
 
-Note: If you're using SG Desktop, you'll need to navigate out of your project and then click on the project icon again in order to reload the pipeline configuration from its new location.
+{% include info title="Note" content="If you're using SG Desktop, you'll need to navigate out of your project and then click on the project icon again in order to reload the pipeline configuration from its new location." %}
