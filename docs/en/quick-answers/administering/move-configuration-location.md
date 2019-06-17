@@ -7,6 +7,8 @@ lang: en
 
 # How do I move my pipeline configuration to a new location?
 
+{% include info title="Note" content="The contents of this doc only apply to [centralized configuration setups](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations). [Distributed configurations](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations) are cached locally to the individual client machines and are managed automatically by Toolkit." %}
+
 The easiest way to move your pipeline configuration to a new location is by using the tank move_configuration command. This will take care of moving your files, updating Shotgun, and updating your config files to point to the new location. 
 
 This command is also useful if you are only moving the location for a single platform, or were not previously using a platform but would like to add it now. Toolkit will detect what needs to be moved or added and what doesn't. And will show you what it is about to do to allow you to confirm before progressing. 
