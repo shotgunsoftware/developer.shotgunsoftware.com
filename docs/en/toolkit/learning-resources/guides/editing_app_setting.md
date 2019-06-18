@@ -350,7 +350,7 @@ We disabled task creation in the project environment, but in a real studio envir
 
 ### Creating custom environments
 
-The Default Configuration comes with a set of pre-defined pipeline steps: `project`, `sequence`, `shot`, `shot_step`, `asset`, and `asset_step`. However, a studio might want different configuration settings for every stage in the pipeline – say `asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light`, and so on. Toolkit supports custom environments. See the ["Custom environments" section of the Environment Configuration Reference](../../env_config_ref.md) for details. 
+The Default Configuration comes with a set of pre-defined pipeline steps: `project`, `sequence`, `shot`, `shot_step`, `asset`, and `asset_step`. However, a studio might want different configuration settings for every stage in the pipeline – say `asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light`, and so on. Toolkit supports custom environments. See the ["Custom environments" section of the Environment Configuration Reference](../../env_config_ref.md#custom-environments) for details. 
 
 ### Video Resources
 
