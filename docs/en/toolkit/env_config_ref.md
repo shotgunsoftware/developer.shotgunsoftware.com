@@ -9,7 +9,7 @@ lang: en
 
 ## Introduction
 
-At the root of a Toolkit pipeline is the environment configuration. Within a Toolkit pipeline configuration, the environment configuration files are where you define which Toolkit apps are available within different DCCs and customize the settings for each. This document is a complete reference to the structure and function of the environment configuration files. It covers the Toolkit concept of *environments* for configuring different workflows within a project, configuration structure, file referencing, and ways to discover what customizations are available.
+At the heart of a Toolkit pipeline is the environment configuration. Within a Toolkit pipeline configuration, the environment configuration files are where you define which Toolkit apps are available within different DCCs and customize the settings for each. This document is a complete reference to the structure and function of the environment configuration files. It covers the Toolkit concept of *environments* for configuring different workflows within a project, configuration structure, file referencing, and ways to discover what customizations are available.
 
 {% include info title="Note" content="While this document acts as a reference to the environment configuration files, you can  see a step-by-step example of editing a configuration setting in the [Toolkit Basics Guide on Editing a pipeline configuration](./learning-resources/guides/editing_app_setting.md)." %}
 
@@ -48,7 +48,7 @@ Each of these files corresponds to an environment; having separate files allows 
 
 ## How Toolkit determines the current environment
 
-Toolkit uses a core hook called [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) to determine which environment file to use at a given time. The `pick_environment` hook’s return values correspond to environment configuration files. For example, if `pick_environment` returns `shot_step`, Toolkit will use `config/env/shot_step.yml` to configure the Toolkit environment.
+Toolkit uses a core hook called [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) to determine which environment file to use at a given time based on the current [context](https://developer.shotgunsoftware.com/tk-core/core.html#context). The `pick_environment` hook’s return values correspond to environment configuration files. For example, if `pick_environment` returns `shot_step`, Toolkit will use `config/env/shot_step.yml` to configure the Toolkit environment.
 
 ## Custom environments
 
@@ -124,7 +124,7 @@ See [the Descriptor section of the Toolkit Core API docs](https://developer.shot
 
 ### The apps block
 
-Apps are Toolkit’s user interfaces, and each can run independently of any others. You can choose which apps you want to use based on your pipeline needs, and the `apps` setting within an engine block is where you define which apps are available in a given engine.
+Apps are Toolkit’s user tools, and each can run independently of any others. You can choose which apps you want to use based on your pipeline needs, and the `apps` setting within an engine block is where you define which apps are available in a given engine.
 
 Here again is the `apps` setting from our example above:
 
