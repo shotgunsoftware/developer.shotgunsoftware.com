@@ -7,8 +7,8 @@ lang: en
 
 # How do I modify my configuration to use multiple storage roots?
 
-The default configuration we provide is setup to use a single local storage root (eg. all of your project files are stored underneath a single root point like `/sgtk/projects`). You may want to add a new storage root to store some of your project files. This is a common situation that arises when you're running out of disk space or want some media to be on a faster storage, etc. 
-Lets say you want to add another root named "secondary", here are the steps you need to take:
+The default configuration we provide is set up to use a single local storage root (e.g., all of your project files are stored underneath a single root point like `/sgtk/projects`). You may want to add a new storage root to store some of your project files. This is a common situation that arises when you're running out of disk space or want some media to be on a faster storage, etc.
+Let’s say you want to add another root named “secondary”. Here are the steps you need to take:
 
 ## Add the local storage in Shotgun
 

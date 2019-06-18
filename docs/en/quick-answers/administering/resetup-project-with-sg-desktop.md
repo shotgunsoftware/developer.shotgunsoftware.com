@@ -14,7 +14,7 @@ Here are the steps for manually removing those settings:
 1. Delete the PipelineConfiguration entity(s) linked to your Project in Shotgun.<br/><br/>![Access to the PipelineConfiguration entity page](images/pipeline-configuration-entity-page.png)<br/><br/>
 2. Set the `Tank Name` field on your `Project` entity in Shotgun to a blank value.<br/><br/>![Clear the project tank name field](images/clear-project-tank-name.png)<br/><br/>
 3. Remove the corresponding pipeline configuration directory(s) on disk.
-4. In Shotgun Desktop select the project you wish to setup. *If you were already viewing the project, jump out to the project list view and then back into your project again.*
+4. In Shotgun Desktop select the project you wish to set up. *If you were already viewing the project, jump out to the project list view and then back into your project again.*
 6. Now you can run the project setup process again.
 
 **Alternate method**

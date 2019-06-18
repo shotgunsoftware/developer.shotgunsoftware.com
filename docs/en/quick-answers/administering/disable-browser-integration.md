@@ -9,7 +9,7 @@ lang: en
 
 To disable the browser integration, follow these two simple steps.
 
-1. Create or open the text file at
+1. Create or open the text file at:
 
         Windows: %APPDATA%\Shotgun\preferences\toolkit.ini
         Macosx: ~/Library/Preferences/Shotgun/toolkit.ini
@@ -20,7 +20,7 @@ To disable the browser integration, follow these two simple steps.
         [BrowserIntegration]
         enabled=0
 
-Complete instructions on how to configure the browser integration are located [here](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Toolkit%20Configuration%20File).
+See complete instructions on how to configure the browser integration in our [Admin guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Toolkit%20Configuration%20File).
 
 **Alternate method**
 
