@@ -9,13 +9,13 @@ lang: en
 
 The Python API relies on a list of certificates that is bundled with the API and on your machine in order to connect to the various webservices Shotgun uses. Unfortunately, new certificate authorities can be released and those might not be bundled with the Python API or OS.
 
-While our Python API comes with a very recent copy of the certificates, as of February 21st 2019, there's a bug right now that prevents the API from using those certificates for Amazon S3 uploads, even if you are using the latest version of the API. For background please see [this AWS blog post](https://aws.amazon.com/blogs/security/how-to-prepare-for-aws-move-to-its-own-certificate-authority/). To remediate the situation temporarily, you can try the following solutions. 
+While our Python API comes with a very recent copy of the certificates, as of February 21st 2019, there’s a bug that prevents the API from using those certificates for Amazon S3 uploads, even if you are using the latest version of the API. For background please see [this AWS blog post](https://aws.amazon.com/blogs/security/how-to-prepare-for-aws-move-to-its-own-certificate-authority/). To remediate the situation temporarily, you can try the following solutions. 
 
-{% include info title="Note" content="these are temporary workarounds and we're looking into a long-term solution." %}
+{% include info title="Note" content="These are temporary workarounds and we're looking into a long-term solution." %}
 
 ## Preferred Solution
 
-Add required CA certificate to the Windows Certificate Store. Windows 7 users may have to first [upgrade to PowerShell 3.0](https://docs.microsoft.com/en-us/office365/enterprise/powershell/manage-office-365-with-office-365-powershell) in order to use this solution, or alternatively use [certutil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil) to add the [required certificate](https://www.amazontrust.com/repository/SFSRootCAG2.cer).
+Add the required CA certificate to the Windows Certificate Store. Windows 7 users may have to first [upgrade to PowerShell 3.0](https://docs.microsoft.com/en-us/office365/enterprise/powershell/manage-office-365-with-office-365-powershell) in order to use this solution, or alternatively use [certutil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil) to add the [required certificate](https://www.amazontrust.com/repository/SFSRootCAG2.cer).
 
 1. Start an elevated PowerShell by right-clicking **Start** and then left-clicking **Windows PowerShell (Admin)**
 
@@ -36,9 +36,7 @@ Add required CA certificate to the Windows Certificate Store. Windows 7 users ma
 
 2.
     a. Set `SHOTGUN_API_CACERTS` to `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`
-
-    or
-
+    <br/>or<br/>
     b. Update your scripts and set the `ca_certs=/path/to/shotgun_api3/lib/httplib2/cacerts.txt` when instantiating the `Shotgun` object.
 
 ### If you are using Toolkit
@@ -46,13 +44,12 @@ Add required CA certificate to the Windows Certificate Store. Windows 7 users ma
 1. Upgrade to the latest version of the Toolkit API via the `tank core` command or by updating
 the `core/core_api.yml` file of your pipeline configuration, depending on how you deploy Toolkit.
 
-2. Download an up-to-date list of certificates at https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem
+2. Download an up-to-date list of certificates at [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem).
 
-3. Set `SHOTGUN_API_CACERTS` to the location where you saved this file. Toolkit doesn't allow you to specify the `ca_certs` parameter when creating connections unfortunately like the Python API does.
+3. Set `SHOTGUN_API_CACERTS` to the location where you saved this file. Toolkit doesn’t allow you to specify the `ca_certs` parameter when creating connections the way the Python API does.
 
 ### If you can’t update the Python API or Toolkit
 
-1. Download an up-to-date list of certificates at https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem
+1. Download an up-to-date list of certificates at [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem). 
 
 2. Set the `SSL_CERT_FILE` environment variable to the location where you saved this file.
-

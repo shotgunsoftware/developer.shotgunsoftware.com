@@ -11,10 +11,10 @@ lang: en
 
 Sometimes in Shotgun the action menu will not display the list of Toolkit applications available or will error when using local file linking, even with Shotgun Desktop running.  This doc is a guide to troubleshooting Shotgun’s connection to Desktop and will hopefully help you get things working.
 
-Diagnosing the issue
-How to quickly fix certificate issues
-Fixing ERR_CERT_COMMON_NAME_INVALID or ERR_SSL_SERVER_CERT_BAD_FORMAT on all platforms
-Fixing ERR_CERT_AUTHORITY_INVALID on Windows
+- [Diagnosing the issue](#diagnosing-the-issue)
+- [How to quickly fix certificate issues](#how-to-quickly-fix-certificate-issues)
+- [Fixing ERR_CERT_COMMON_NAME_INVALID or ERR_SSL_SERVER_CERT_BAD_FORMAT on all platforms](#fixing-neterr_cert_common_name_invalid-and-err_ssl_server_cert_bad_format-on-all-platforms)
+- [Fixing ERR_CERT_AUTHORITY_INVALID on Windows](#fixing-neterr_cert_authority_invalid-on-windows)
 
 ## Diagnosing the issue
 
@@ -32,7 +32,7 @@ Ensure that no firewall software is preventing connections to localhost or on po
 
 ### Is Chrome rejecting the certificate?
 
-You can verify that Chrome accepts the certificate by browsing to https://localhost:9000, which is the address the Shotgun website tries to access in order to do local file linking and launch Toolkit applications. You should normally be greeted by this message:
+You can verify that Chrome accepts the certificate by browsing to https://localhost:9000. This is the address the Shotgun website tries to access in order to do local file linking and launch Toolkit applications. You should normally be greeted by this message:
 
 ![Autobahn Python message](images/autobahn-python.png)
 
@@ -46,15 +46,17 @@ On the other hand, if you are greeted by one of these messages, it means there w
 
 The easiest way to circumvent those issues is to click **ADVANCED** and **Proceed to localhost (unsafe)**. This will let Chrome know that you are accepting the certificate nonetheless and will allow the Shotgun website to communicate with the Shotgun Desktop application. 
 
-{% include info title="Note" content="This only enables the connection between your web browser and Shotgun Desktop. The trust setting just lets traffic flow between these two applications, **it does not imply trust of any other server on the internet**. Unfortunately, this process needs to be repeated on every single computer with the problem. If this doesn't solve the issue or you feel it would be too complicated to deploy to all your users, we recommend you take a look at the following steps." %}
+{% include info title="Note" content="This only enables the connection between your web browser and Shotgun Desktop. The trust setting lets traffic flow between these two applications, **it does not imply trust of any other server on the internet**. Unfortunately, this process needs to be repeated on every single computer with the problem. If this doesn't solve the issue or you feel it would be too complicated to deploy to all your users, we recommend you take a look at the following steps." %}
 
 {% include info title="Note" content="This step fix is not applicable to the **ERR_SSL_SERVER_CERT_BAD_FORMAT** error and you will need to regenerate the certificates, as outlined below." %}
 
 ## Fixing NET::ERR_CERT_COMMON_NAME_INVALID and ERR_SSL_SERVER_CERT_BAD_FORMAT on all platforms
 
-Chrome regularly upgrades its security around self-signed certificates and our browser integration is sometimes broken by these updates. Unfortunately, these sort of issues can only be remediated by regenerating the certificates.
-certificate_path
-To regenerate the certificates, you can pick the **Regenerate Certificates** option under the **Advanced** section of the Shotgun Desktop's user menu. (If you don't see this option, please make sure you update the `tk-desktop` engine to unlock it.) After confirming that you want to regenerate the certificates, a series of dialogs will pop-up just like the first time you've generated the certificates. On Windows and macOS, you will be prompted to update the Windows Certificate Store or the macOS keychain twice: once to remove the old certificate and once to register the new one. On Linux, the registration is done silently. Once this is done, let the Shotgun Desktop restart.
+Chrome regularly upgrades its security around self-signed certificates and our browser integration is sometimes broken by these updates. Unfortunately, these sorts of issues can only be remediated by regenerating the certificate’s certificate_path.
+
+To regenerate the certificates, you can pick the **Regenerate Certificates** option under the **Advanced** section of the Shotgun Desktop's user menu. (If you don't see this option, please make sure you update the `tk-desktop` engine to unlock it.) 
+
+After confirming that you want to regenerate the certificates, a series of dialogs will pop-up just like the first time you've generated the certificates. On Windows and macOS, you will be prompted to update the Windows Certificate Store or the macOS keychain twice: once to remove the old certificate and once to register the new one. On Linux, the registration is done silently. Once this is done, let the Shotgun Desktop restart.
 
 Once the Shotgun Desktop is back up and running, we recommend you restart Chrome by typing [chrome://restart](chrome://restart/) in the address bar to ensure that Chrome is completely shut down and that its certificate cache is cleared.
 

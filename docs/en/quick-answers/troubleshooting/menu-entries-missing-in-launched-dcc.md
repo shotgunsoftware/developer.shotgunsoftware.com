@@ -7,7 +7,7 @@ lang: en
 
 # I've launched Nuke/Maya/etc. from SG Desktop, but the Shotgun menu is missing entries
 
-The actions that show up in the Shotgun menu are contextually configured. That means the list of available actions may be different depending on the context your in.
+The actions that show up in the Shotgun menu are contextually configured. That means the list of available actions may be different depending on the context you’re in.
 It's possible you may not be seeing the app your after because your in the wrong context.
 
 ## Example
