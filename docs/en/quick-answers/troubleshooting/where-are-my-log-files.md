@@ -21,7 +21,6 @@ By default, Shotgun Desktop and Integrations store their log files in the follow
 
 `~/.shotgun/logs/`
 
-Log file names are in the form `tk-<ENGINE>.log`, for example `tk-desktop.log` or `tk-maya.log`.
+Log file names are in the form `tk-<ENGINE>.log`. Examples include `tk-desktop.log` or `tk-maya.log`.
 
-{% include info title="Note" content="You can also reach this directory from Shotgun Desktop, by selecting a project, clicking the down-arrow 
-button to the right of the project name, and choosing **Open Log Folder**." %}
+{% include info title="Note" content="You can also reach this directory from Shotgun Desktop. Selecting a project, click the down-arrow button to the right of the project name, and choose **Open Log Folder**." %}

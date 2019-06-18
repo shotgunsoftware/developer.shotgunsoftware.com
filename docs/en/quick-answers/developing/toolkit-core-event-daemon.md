@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How can I load different Toolkit Core modules using the shotgunEvent daemon?
+title: How can I load different Toolkit Core modules using the Shotgun Event Daemon?
 pagename: toolkit-core-event-daemon
 lang: en
 ---
@@ -11,23 +11,24 @@ lang: en
 
 ## The problem
 
-Toolkit's sgtk API is project-centric, in other words, you must import it specifically from the project you wish to use it on. Which means that if you are wanting to use sgtk API operations for multiple projects in a single python session, then you run into a problem, as python will only allow a module with the same name to be imported once.
+Toolkit's sgtk API is project-centric. In other words, you must import it specifically from the project you wish to use it on.
+This means that if you use sgtk API operations for multiple projects in a single Python session, then you will run into a problem, as Python only allows a module with the same name to be imported once.
 
 If you're using the [shotgun event daemon](https://github.com/shotgunsoftware/shotgunEvents), you may want to perform Toolkit actions inside of a plugin for certain events. This can be tricky since Python only imports a module once. So if your Toolkit Core API for Project A is imported the first time the plugin is run, that is the version that will remain imported for the life of the daemon. This means if the next event dispatched to the plugin is for Project B, you may get an error from Toolkit if you try and instantiate a new Toolkit object for Project B using the core API from Project A.
 
 **Example of the problem using centralized configs:**
 
-- Event 123 is for Project A
-- The core API for Project A is located at `/mnt/toolkit/projectA/install/core/python`
-- Prepend `sys.path` with this directory
-- `import sgtk` imports it from this location
-- instantiate a Toolkit instance with this core API and perform some action(s)
-- pop the core API directory off of `sys.path`
-- Event 234 is for Project B
-- The core API for Project B is located at `/mnt/toolkit/projectB/install/core/python`
-- Prepend `sys.path` with this directory
-- `import sgtk` won't do anything since Python sees it's already imported sgtk
-- instantiate a Toolkit instance with this core API and perform some action(s)
+- Event 123 is for Project A.
+- The core API for Project A is located at `/mnt/toolkit/projectA/install/core/python`.
+- Prepend `sys.path` with this directory.
+- `import sgtk` imports it from this location.
+- Instantiate a Toolkit instance with this core API and perform some action(s).
+- Pop the core API directory off of `sys.path`.
+- Event 234 is for Project B.
+- The core API for Project B is located at `/mnt/toolkit/projectB/install/core/python`.
+- Prepend `sys.path` with this directory.
+- `import sgtk` won't do anything since Python sees it's already imported sgtk.
+- Instantiate a Toolkit instance with this core API and perform some action(s).
 - This will cause errors since the Toolkit core is for a different Project (A) than the Project (B) you're trying to perform actions on.
 
 ## The solution
@@ -100,9 +101,11 @@ def import_sgtk(project):
 
 ## Distributed Configs
 
-The above example is assuming you are using a [centralized config](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), however, things are a bit different if you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations). Importing the sgtk API for a distributed config requires you to use the [bootstrap API](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api). When using the bootstrap API, you usually start by importing a non-project centric sgtk API and then use that to bootstrap an engine for a given project. The bootstrap process handles the swapping out of the sgtk modules and so at the end of the bootstrap process you have an engine object and if you import sgtk after bootstrap it will import the relevant sgkt module appropriate to your project. Given the example above of needing to load sgtk for multiple projects, you would need to bootstrap for multiple projects instead. The small catch here is that you can only have one engine running at a time, so you must destroy it before you load another.
+The above example is assuming you are using a [centralized config](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), however, things are a bit different if you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations). Importing the sgtk API for a distributed config requires you to use the [bootstrap API](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api). When using the bootstrap API, you usually start by importing a non-project centric sgtk API and then use that to bootstrap an engine for a given project. 
+The bootstrap process handles the swapping out of the sgtk modules so that at the end of the bootstrap process you have an engine object. If you import sgtk after bootstrap, it will import the relevant sgtk module appropriate to your project. Given the example above of needing to load sgtk for multiple projects, you would need to bootstrap for multiple projects instead. The small catch here is that you can only have one engine running at a time, so you must destroy it before you load another.
 
-{% include warning title="Warning" content="Bootstrapping a config can be slow, as the process need to ensure that the config is cached locally and that all the dependencies are downloaded. Bootstrapping in an event daemon plugin could severely affect performance. One potential approach would be to spawn off separate python instances for each project bootstrap that you can communicate and send commands to from the plugins. This will avoid needing to re-bootstrap a project each time its needed." %}
+{% include warning title="Warning" content="Bootstrapping a config can be slow, as the process needs to ensure the config is cached locally and all the dependencies are downloaded. Bootstrapping in an Event Daemon plugin could severely affect performance. One potential approach would be to spawn off separate Python instances for each project bootstrap to communicate and send commands from the plugins. This will avoid needing to re-bootstrap a project each time it is needed." %}
+
 
  Here is an example: 
 

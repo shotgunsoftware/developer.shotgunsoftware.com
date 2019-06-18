@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Why is my context is missing the Task/Step when it exists as part of the filename?
+title: Why is my context missing the Task/Step when it exists as part of the filename?
 pagename: context-missing-task-step
 lang: en
 ---
 
-# Why is my context is missing the Task/Step when it exists as part of the filename?
+# Why is my context missing the Task/Step when it exists as part of the filename?
 
-When you create folders via Toolkit it registers the path against the entity, so that a lookup may be performed. I.e. given a path you can determine the correct context.
+When you create folders via Toolkit it registers the path against the entity so that a lookup may be performed. This means that given a path, you can determine the correct context.
 Toolkit will only create registries for folders generated from the schema, and so it doesn't consider things like file names or folders that were defined solely in the `templates.yml`.
 If you don't have a `Task` folder in your schema then you can get in a situation where Toolkit needs to know the task of the file but is unable to work out the task from the path alone.
 

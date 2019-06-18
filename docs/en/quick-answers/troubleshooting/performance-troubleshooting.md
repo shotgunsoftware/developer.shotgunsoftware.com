@@ -7,18 +7,18 @@ lang: en
 
 # Performance troubleshooting
 
-You may come across situations where Toolkit usage can become slow. There can be many reasons for encountering this, ranging from issues with the client side infrastructure such as server speeds or internet connection to configuration based issues where Toolkit or Shotgun is not configured in a performant way, to areas of our code that could use further optimization.
+You may come across situations where Toolkit usage can become slow. There can be many reasons for encountering this, ranging from issues with the client side infrastructure such as server speeds or internet connection, to configuration based issues where Toolkit or Shotgun is not configured in a performant way, to areas of our code that could use further optimization.
 
 Here is a quick list of things to check which we cover in further detail below:
 
-- Make sure your Apps, engines, frameworks, core, and Desktop [are up to date](#keeping-up-to-date).
+- Make sure your apps, engines, frameworks, core, and Shotgun Desktop [are up to date](#keeping-up-to-date).
 - Ensure [debug logging](./turn-debug-logging-on.md) is not enabled during general use.
 - Only [create the folders that you need to](#folder-creation-is-slow), and limit folders so they are only created when they are actually needed. Adding too many folders to your schema will slow things down.
 - Storing your user caches on a server can be slow. You can redirect the user’s Shotgun cache by setting the [`SHOTGUN_HOME` environment variable](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables) to point to a location on your local drive.
 - [Configure the workfiles and loader apps](#file-open-file-save-or-the-loader-app-is-slow) to filter out content that is not needed by the artist. Consider filtering by statuses to help keep the list of entities short and relevant to the artist’s current tasks.
 - Check to see if you have any custom hooks and that they are not adding additional overhead.
 
-Below is a list of good practices and common slow down scenarios. This is not an exhaustive list and we will try to add to it as and when we see new patterns. If this guide doesn’t help you get to the bottom of the problem you’re facing, then please feel free to pop a [support ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new) in and our team will be happy to assist you further.
+Below is a list of good practices and common slow down scenarios. This is not an exhaustive list and we will try to add to it as and when we see new patterns. If this guide doesn’t help you get to the bottom of the problem you’re facing, then please feel free to submit a [support ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new) in and our team will be happy to assist you further.
 
 Table of Contents:
 - [General good practice](#general-good-practice)

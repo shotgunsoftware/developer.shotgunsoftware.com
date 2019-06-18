@@ -20,7 +20,7 @@ It should also be noted that when this is toggled on, apps launched from Desktop
 ### Permanently turning on debug logging
 First, you will need to set up a new environment variable: TK_DEBUG=1
 
-{% include info title="Note" content=" We suggest discussing how to set up environment variables with technical expertise at your studio since instructions are platform specific. However, the example below includes setting up an environment variable on a Windows 7 machine." %}
+{% include info title="Note" content="We suggest discussing how to set up environment variables with a technical expert at your studio since instructions are platform specific. However, the example below includes setting up an environment variable on a Windows 7 machine." %}
 
 #### Example using Windows 7
 
@@ -33,7 +33,9 @@ First, you will need to set up a new environment variable: TK_DEBUG=1
 - **Variable value**: `1`
 - Select OK
 
-Now, your environment variable is set up properly and debug logging is turned on. **Note:** *Make sure to restart Desktop in order for logging to take effect.*
+Now, your environment variable is set up properly and debug logging is turned on.
+
+{% include info title="Note" content="Make sure to restart Desktop in order for logging to take effect." %}
 
 If you would like to turn debug logging off, you can either:
 
@@ -53,7 +55,9 @@ This will ensure that once you launch Desktop, debug logging will be turned on.
 
 If you would like to use debug logging temporarily for a session instead, you can open a terminal and set debug logging with the following command: `set TK_DEBUG=1`
 
-Then, launch the Desktop through your terminal. **Note:** *once you close Shotgun Desktop and your terminal, debug logging is no longer turned on.*
+Then, launch the Desktop through your terminal.
+
+{% include info title="Note" content="Once you close Shotgun Desktop and your terminal, debug logging is no longer turned on." %}
 
 ## Examining debug outputs in log files
 
@@ -75,7 +79,7 @@ If you are in an advanced setup, there are a few more options for you. This func
 
 Every engine has a `debug_logging` setting in the environment file. Turning this on will emit additional debug-level log messages to the default output in your Software (e.g., the script editor in Nuke or Maya). All of the apps running in your engine will emit these debug-level messages so turning this on for the engine will effectively turn it on for all of your apps as well.
 
-This does not output any log messages to a file. We are working on a more standard logging framework that will allow this. The exceptions are [SG Desktop](https://support.shotgunsoftware.com/entries/95445597) and the [Photoshop engine](https://support.shotgunsoftware.com/entries/95446068), which log output both in a GUI console and to a file.
+This does not output any log messages to a file. We are working on a more standard logging framework that will allow this. The exceptions are [SG Desktop](https://support.shotgunsoftware.com/entries/95445597) and the [Photoshop engine](https://support.shotgunsoftware.com/hc/en-us/articles/115000026653-Photoshop-CC), which log output both in a GUI console and to a file.
 
 ## Turning on debug logging for an engine in your software
 

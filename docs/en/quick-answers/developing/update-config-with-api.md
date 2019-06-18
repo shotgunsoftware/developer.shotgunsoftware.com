@@ -29,7 +29,7 @@ if hasattr(sgtk, "set_authenticated_user"):
 c.execute({})
 ```
 
-{% include warning title="Caution" content="This will update all of the engines, apps, and frameworks in this pipelne configuration to the latest version without any further interaction or confirmation. Just be sure you're aware of this before proceeding." %}
+{% include warning title="Caution" content="This will update all of the engines, apps, and frameworks in this pipeline configuration to the latest version without any further interaction or confirmation. Be sure you’re aware of this before proceeding." %}
 
 ## Updating the core
 
@@ -52,7 +52,7 @@ If you want to update your Project's core version from a script in order to run 
     # finally, execute the command
     c.execute({})
 
-{% include warning title="Caution" content="This will update the Toolkit core to the latest version without any further interaction or confirmation. If the core you are running this from is a shared core, this will update the core version that is used by all projects sharing this core version! Just be sure you're aware of this before proceeding." %}
+{% include warning title="Caution" content="This will update the Toolkit core to the latest version without any further interaction or confirmation. If the core you are running this from is a shared core, this will update the core version that is used by all projects sharing this core version! Be sure you're aware of this before proceeding." %}
 
 See also:
 
