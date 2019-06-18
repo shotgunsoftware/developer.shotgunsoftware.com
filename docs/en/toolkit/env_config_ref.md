@@ -11,6 +11,8 @@ lang: en
 
 At the root of a Toolkit pipeline is the environment configuration. Within a Toolkit pipeline configuration, the environment configuration files are where you define which Toolkit apps are available within different DCCs and customize the settings for each. This document is a complete reference to the structure and function of the environment configuration files. It covers the Toolkit concept of *environments* for configuring different workflows within a project, configuration structure, file referencing, and ways to discover what customizations are available.
 
+{% include info title="Note" content="While this document acts as a reference to the environment configuration files, you can  see a step-by-step example of editing a configuration setting in the [Toolkit Basics Guide on Editing a pipeline configuration](./learning-resources/guides/editing_app_setting.md)." %}
+
 ## What is an environment?
 
 The Shotgun Toolkit platform provides a fully customizable set of integrations for commonly used content creation software with which you can build your studio pipeline. Within a project’s configuration, you can specify which software packages have integrations, which specific Toolkit apps are available in each, and your options for each app, building out artists workflows to suit your studio’s needs.
@@ -23,7 +25,7 @@ To support these different workflows within a project, Toolkit divides its app a
 
 Toolkit gives you a lot of freedom in the way you structure your environment configuration. This document is a reference for all of the options that are available to you, so that you’ll have the necessary knowledge to make choices that best suit the needs of your pipeline. 
 
-This document will also occasionally cover some of the specific choices we’ve made in the pipeline configuration provided as a starting point, known as [the Default Configuration](https://github.com/shotgunsoftware/tk-config-default2). When you’re ready to customize your pipeline, the first step is to create an editable pipeline configuration for your project. While these choices are only conventions and not hardcoded into the Toolkit workflow, it’s helpful to refer to the Default Configuration as an example for learning what features are available once you start customizing your pipeline and best practices for structuring your own configurations. And, since it's the suggested starting point for new Toolkit users, it’s helpful to know some of its conventions. We will always distinguish between general features of the Toolkit environment configuration and specific choices in the Default Configuration in this document. For specific details on the Default Configuration’s environment structure, see [its README file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md).
+This document will also occasionally cover some of the specific choices we’ve made in the pipeline configuration provided as a starting point, known as [the Default Configuration](https://github.com/shotgunsoftware/tk-config-default2). When you’re ready to customize your pipeline, the first step is to [create an editable pipeline configuration for your project](./learning-resources/guides/editing_app_setting.md). While these choices are only conventions and not hardcoded into the Toolkit workflow, it’s helpful to refer to the Default Configuration as an example for learning what features are available once you start customizing your pipeline and best practices for structuring your own configurations. And, since it's the suggested starting point for new Toolkit users, it’s helpful to know some of its conventions. We will always distinguish between general features of the Toolkit environment configuration and specific choices in the Default Configuration in this document. For specific details on the Default Configuration’s environment structure, see [its README file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md).
 
 ## File locations 
 
@@ -71,9 +73,7 @@ bundle_name:
     descriptor_setting2: value
 ```
 
-Bundles can be nested; the value of a setting for one bundle may itself be another bundle. Specifically, as you’ll see in the example below, every engine has an `apps` setting, and its value is the list of apps that are defined for that engine, along with each of the app’s own settings.
-
-Let’s start with a very simple example: an environment in which you have a single engine, with a single app defined within it. The following might be the contents of `project.yml` in this config:
+To demonstrate this structure, here is a very simple example: an environment in which there is a single engine, with a single app defined within it. The following might be the contents of `project.yml` in this config:
 
 ```
 engines:
@@ -90,14 +90,14 @@ engines:
         version: v0.9.4
 ```
 
-## The engines block
+### The engines block
 
 Every environment configuration file starts with an `engines` block. Nested within it are all of the engines defined for that environment.
 
-In our example, only a single engine is defined, `tk-maya`. It has two settings listed, `apps` and `location`. The `apps` setting is a list of all the apps defined for the engine, each with its own settings. In this case, only one app is defined for the engine, `tk-multi-workfiles2`. `location` is a special setting that every bundle requires.
+In our example, only a single engine is defined, `tk-maya`. It has two settings listed, `apps` and `location`. `location` is a special setting that every bundle requires. The `apps` setting is a list of all the apps defined for the engine, each with its own settings. In this case, only one app is defined for the engine, `tk-multi-workfiles2`. 
 
 
-## The location descriptor
+### The location descriptor
 
 Every Toolkit bundle has a `location` setting, which we refer to as the bundle’s *descriptor*. The descriptor tells Toolkit where to find the given bundle, and depending on its type, whether to access it directly or cache it locally. Some examples of locations that a Toolkit bundle can come from are the Shotgun App Store, a git repository, a path on disk, or a zip file uploaded to your Shotgun site. Each of these has a corresponding descriptor type, with settings specific to that type. Here again is the descriptor for the `tk-maya` engine from the example above:
 
@@ -122,7 +122,7 @@ The `dev` descriptor has different settings from the `app_store` descriptor. Whi
 
 See [the Descriptor section of the Toolkit Core API docs](https://developer.shotgunsoftware.com/tk-core/descriptor.html) for details on all available descriptor types and their settings.
 
-## The apps block
+### The apps block
 
 Apps are Toolkit’s user interfaces, and each can run independently of any others. You can choose which apps you want to use based on your pipeline needs, and the `apps` setting within an engine block is where you define which apps are available in a given engine.
 
@@ -172,11 +172,11 @@ There are a few important things to note at this time:
 
 * The Default Config lists bundles in alphabetical order, and this example follows that convention.
 * The file is beginning to get long, and we haven’t even added any configuration settings yet. 
-* You might imagine that you’ll be using these same apps in other engines and other environments. For example, you’ll probably have all three of these apps – the Panel, the About app, and the Workfiles app – in different engines (say, Houdini, Nuke, or Photoshop), and in different environments (like `asset_step` or `shot_step`). Defining the same app settings in many places in your config means that when it comes time to make a change, you’ll have to make the modification in many places.
+* You might imagine that you’ll be using these same apps in other engines and other environments. For example, you’ll probably have all three of these apps – the Panel, the About app, and the Workfiles app – in different engines (say, Houdini, Nuke, or Photoshop), and in different environments (like `asset_step` or `shot_step`). Defining common app settings in many places in your config means that when it comes time to make a change, you’ll have to make the modification in many places.
 
 To mitigate the last two issues, Toolkit configurations support *includes*.
 
-## Includes
+### Includes
 
 *Includes* allow you to reference a section of one file in another file in your configuration. Using includes allows you set a configuration setting in one place, but use it in multiple environments. 
 
