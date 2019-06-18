@@ -7,14 +7,14 @@ lang: en
 
 # How do I move my project directories to a new Local Storage root?
 
-{% include warning title="Caution" content="Moving a project location mid project can have many ramifications even extending beyond Shotgun Toolkit, it should not be undertaken lightly." %}
+{% include warning title="Caution" content="Moving a project location mid project can have many ramifications even extending beyond Shotgun Toolkit. It should not be undertaken lightly." %}
 
-Sometimes it's necessary to move your project files (scene files, renders, etc.) to a new root storage location (eg. from `/mnt/smalldrive` to `/mnt/bigdrive/foo`). This can be done whether you're using a single or multi-root configuration. For example, lets say we want to move your storage named **"asset_storage"**:
+Sometimes it's necessary to move your project files (scene files, renders, etc.) to a new root storage location (e.g., from `/mnt/smalldrive` to `/mnt/bigdrive/foo`). This can be done whether you're using a single or multi-root configuration. For example, let's say we want to move your storage named **"asset_storage"**:
 
 - Copy (or move) your project files from the old location to the new location.
 - In Shotgun, navigate to the **Admin > Site Preferences** page and open the **File Management** section.
     ![Shotgun storage roots section in the site preferences.](./images/shotgun_storage_roots.png)
-- Update the Local File Storage named "primary" with the paths for each platform to the new storage for your project files. If you're not using a specific platform, just leave it blank.
+- Update the Local File Storage named "primary" with the paths for each platform to the new storage for your project files. If you're not using a specific platform, leave it blank.
 - Click on the **"Save Changes"** button on the top or bottom of the page.
 - Update your `config/core/roots.yml` file in your project configuration to match the new path values you just saved in Shotgun.
 

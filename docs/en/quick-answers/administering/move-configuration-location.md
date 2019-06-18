@@ -11,7 +11,7 @@ lang: en
 
 The easiest way to move your pipeline configuration to a new location is by using the tank move_configuration command. This will take care of moving your files, updating Shotgun, and updating your config files to point to the new location. 
 
-This command is also useful if you are only moving the location for a single platform, or were not previously using a platform but would like to add it now. Toolkit will detect what needs to be moved or added and what doesn't. And will show you what it is about to do to allow you to confirm before progressing. 
+This command is also useful if you are only moving the location for a single platform, or were not previously using a platform but would like to add it now. Toolkit will detect what needs to be moved or added and what doesn’t, and will show you what it is about to do to allow you to confirm before progressing. 
 
 - [Using the tank move_configuration command](#using-the-tank-move_configuration-command)
 - [Manually moving your pipeline configuration](#manually-moving-your-pipeline-configuration)
@@ -146,11 +146,11 @@ If you've already started moving things manually and are stuck, here's a rundown
 
         $ mv /sgtk/software/shotgun/scarlet /mnt/newserver/sgtk/software/shotgun/scarlet_new
 
-2. Edit your `install_location.yml` which helps Toolkit find where the pipeline configuration is located:
+2. Edit your `install_location.yml`, which helps Toolkit find where the pipeline configuration is located:
 
         $ vi /mnt/newserver/sgtk/software/shotgun/scarlet_new/config/core/install_location.yml
 
-    Update the paths in this file to point to the new location for your pipeline configuration on all of the applicable platforms. If you're not using a platform, enter a blank string ''
+    Update the paths in this file to point to the new location for your pipeline configuration on all of the applicable platforms. If you're not using a platform, enter an empty string `''`
 
         # Shotgun Pipeline Toolkit configuration file
         # This file was automatically created by setup_project

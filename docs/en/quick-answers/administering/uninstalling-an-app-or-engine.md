@@ -9,7 +9,7 @@ lang: en
 
 You can remove an app or engine by editing your configuration's environment yml files, so that the app or engine is no longer present. 
 As the environment files allow you to configure apps to only be available in certain contexts or engines instead of removing them entirely.
-To find out more about editing environment in general, take a look at [this guide](.../.../toolkit/learning-resources/guides/editing_app_setting.md).
+To find out more about editing environment in general, take a look at [this guide](../../toolkit/learning-resources/guides/editing_app_setting.md).
 
 ## Example 
 
