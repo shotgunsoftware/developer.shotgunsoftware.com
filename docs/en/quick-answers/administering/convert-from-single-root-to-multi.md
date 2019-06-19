@@ -7,7 +7,7 @@ lang: en
 
 # How do I modify my configuration to use multiple storage roots?
 
-The default configuration we provide is set up to use a single local storage root (e.g., all of your project files are stored underneath a single root point like `/sgtk/projects`). You may want to add a new storage root to store some of your project files. This is a common situation that arises when you're running out of disk space or want some media to be on a faster storage, etc.
+The Default Configuration we provide is set up to use a single local storage root (i.e, all of your project files are stored underneath a single root point like `/sgtk/projects`). You may want to add a new storage root to store some of your project files. This is a common situation that arises when you're running out of disk space or want some media to be on a faster storage, etc.
 Let’s say you want to add another root named “secondary”. Here are the steps you need to take:
 
 ## Add the local storage in Shotgun
@@ -69,7 +69,7 @@ Now that you've defined the new storage root and essentially told Toolkit about 
     # name of project root as defined in roots.yml
     root_name: "secondary"
 
-You will also need to modify any sub .yml files that reference the root in their filters.
+You will also need to modify any YAML files that reference the root in their filters.
 For example, if you had an asset.yml somewhere under your secondary folder, then you need to update the filters so that it filters the project against the secondary folder value.
 
     filters:
@@ -83,8 +83,8 @@ Finally you will update<sup>1</sup> the paths defined in your `config/core/templ
 For example, since we want to have all of our asset work on the secondary storage, to update the maya_asset_work template path, we'd modify it to look like this:
 
     maya_asset_work:
-    definition: '@asset_root/work/maya/{name}.v{version}.ma'
-    root_name: 'secondary'
+        definition: '@asset_root/work/maya/{name}.v{version}.ma'
+        root_name: 'secondary'
 
 You should follow this same pattern for each template path in your `config/core/templates.yml` file. Specify the correct `root_name` for each one (**'primary'** or **'secondary'**).
 

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: How can I disable the Shotgun Desktop's browser integration?
+title: How can I disable Shotgun Desktop's browser integration?
 pagename: disable-browser-integration
 lang: en
 ---
 
-# How can I disable the Shotgun Desktop's browser integration?
+# How can I disable Shotgun Desktop's browser integration?
 
-To disable the browser integration, follow these two simple steps.
+To disable browser integration, follow these two simple steps.
 
 1. Create or open the text file at:
 

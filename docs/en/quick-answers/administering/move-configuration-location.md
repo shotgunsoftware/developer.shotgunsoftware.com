@@ -9,14 +9,14 @@ lang: en
 
 {% include info title="Note" content="The contents of this doc only apply to [centralized configuration setups](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations). [Distributed configurations](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations) are cached locally to the individual client machines and are managed automatically by Toolkit." %}
 
-The easiest way to move your pipeline configuration to a new location is by using the tank move_configuration command. This will take care of moving your files, updating Shotgun, and updating your config files to point to the new location. 
+The easiest way to move your pipeline configuration to a new location is by using the `tank move_configuration` command. This will take care of moving your files, updating Shotgun, and updating your config files to point to the new location. 
 
-This command is also useful if you are only moving the location for a single platform, or were not previously using a platform but would like to add it now. Toolkit will detect what needs to be moved or added and what doesn’t, and will show you what it is about to do to allow you to confirm before progressing. 
+This command is also useful if you are only moving the location for a single operating system, or were not previously using a certain operating system but would like to add it now. Toolkit will detect what needs to be moved or added and what doesn’t, and will show you what it is about to do to allow you to confirm before progressing. 
 
 - [Using the tank move_configuration command](#using-the-tank-move_configuration-command)
 - [Manually moving your pipeline configuration](#manually-moving-your-pipeline-configuration)
 
-{% include warning title="Caution" content="If you are moving a configuration that is localized (i.e. it contains it's own Toolkit core), and you have other projects that are using the Toolkit core embedded in this pipeline configuration (i.e. other configurations are using this as a shared core), you'll have to manually update the configuration files in those projects to point to the new location for this pipeline configuration. These files are located in:
+{% include warning title="Caution" content="If you are moving a configuration that has a localized core, and you have other projects that are using the Toolkit core embedded in this pipeline configuration (i.e. other configurations are using this as a shared core), you'll have to manually update the configuration files in those projects to point to the new location for this pipeline configuration. These files are located in:
 
 - `/path/to/pipeline_configuration/install/core/core_Darwin.cfg`
 - `/path/to/pipeline_configuration/install/core/core_Linux.cfg`
@@ -159,7 +159,7 @@ If you've already started moving things manually and are stuck, here's a rundown
         # configuration defined for this project.
         Windows: 'Y:\sgtk\software\shotgun\scarlet_new'
         Darwin: '/mnt/newserver/sgtk/software/shotgun/scarlet_new'
-        Linux: '/mnt/newserver/sgtk/software/shotgun/scarlet_new'
+        Linux: ''
 
         # End of file.
 
