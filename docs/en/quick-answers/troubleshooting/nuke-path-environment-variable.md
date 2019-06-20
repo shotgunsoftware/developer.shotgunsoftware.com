@@ -12,7 +12,7 @@ It's the [`tk-multi-launchapp`](https://support.shotgunsoftware.com/hc/en-us/art
 
 If you're setting this environment variable during the launch process using something like `os.environ['NUKE_PATH'] = "/my/custom/path"`, then the Shotgun integration won't ever be started, because you'll have removed our startup script path from the environment variable.
 
-Use this function in `tank.util` to will append or prepend your path to the `NUKE_PATH` environment variable while preserving the path to the Toolkit bootstrap:
+Use this function in `tank.util` to append or prepend your path to the `NUKE_PATH` environment variable, while preserving the path to the Toolkit bootstrap:
 
 ```
 tank.util.append_path_to_env_var("NUKE_PATH", "/my/custom/path")
