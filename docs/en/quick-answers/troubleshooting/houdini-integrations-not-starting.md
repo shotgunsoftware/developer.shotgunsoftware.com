@@ -34,6 +34,10 @@ Then you should add `$HOUDINI_PATH;` to the end of the path defined in the file 
 
 This will allow the Shotgun set value to persist when Houdini launches.
 
-{% include warning title="Caution" content="On Windows we've seen `$HOUDINI_PATH` causing issues. It sometimes tries to bootstrap the Shotgun integration multiple times generating an error like this: `Toolkit bootstrap is missing a required variable : TANK_CONTEXT`.<br/> If you get this you should try using `%HOUDINI_PATH%` instead." %}
+{% include warning title="Caution" content="On Windows we've seen `$HOUDINI_PATH` causing issues. It sometimes tries to bootstrap the Shotgun integration multiple times generating an error like this: 
+
+    Toolkit bootstrap is missing a required variable : TANK_CONTEXT
+
+If you get this you should try using `%HOUDINI_PATH%` instead." %}
 
 If this does not fix your problem please reach out to our [support team]((https://support.shotgunsoftware.com/hc/en-us/requests/new)) and they will help you diagnose the issue.
