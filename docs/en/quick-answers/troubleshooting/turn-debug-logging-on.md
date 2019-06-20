@@ -13,12 +13,12 @@ The easiest way to enable debugging is to toggle it on through the Shotgun Deskt
 
 ![Toggle debug logging in SG Desktop](images/desktop-enable-debug-logging.png)
 
-It should also be noted that when this is toggled on, apps launched from Desktop, or even the Shotgun action menu items through the browser integration, will also inherit this debug state.
+It should also be noted that when this is toggled on, apps launched from Shotgun Desktop, or even the Shotgun action menu items through the browser integration, will also inherit this debug state.
 
 ## Setting up an environment variable
 
 ### Permanently turning on debug logging
-First, you will need to set up a new environment variable: TK_DEBUG=1
+First, you will need to set up a new environment variable: `TK_DEBUG=1`
 
 {% include info title="Note" content="We suggest discussing how to set up environment variables with a technical expert at your studio since instructions are platform specific. However, the example below includes setting up an environment variable on a Windows 7 machine." %}
 
@@ -45,7 +45,7 @@ b. Delete the `TK_DEBUG` environment variable.
 
 ### Checking to see if the environment variable is already set
 
-To check and see if the environment variable has already been set, open a terminal and execute the following command: `set`
+To see if the environment variable has already been set, open a terminal and execute the following command: `set`
 
 Then, search for `TK_DEBUG=1`.
 
@@ -61,19 +61,9 @@ Then, launch the Desktop through your terminal.
 
 ## Examining debug outputs in log files
 
-By default, all logging files go to:
+Take a look at our [where are my log files?](./where-are-my-log-files.md) doc to help locate your log files.
 
-`%APPDATA% => C:\Users\<login>\AppData\Roaming`
-
-Windows: `%APPDATA%\Shotgun\Logs\tk-<software>.log`
-
-Mac: `~/Library/Logs/Shotgun`
-
-Linux: `~/.shotgun/logs`
-
-If the current user’s home directory is not an appropriate location to store user files, [you can use the `SHOTGUN_HOME` environment variable to override the root location of these files](http://developer.shotgunsoftware.com/tk-core/utils.html#localfilestoragemanager). In this case, the logging location will be: `$SHOTGUN_HOME/logs`.
-
-## Debug logging for more advanced configurations
+## Advanced configuration debug logging options
 
 If you are in an advanced setup, there are a few more options for you. This functionality is only available if you have taken control over a Toolkit configuration.
 
@@ -81,7 +71,7 @@ Every engine has a `debug_logging` setting in the environment file. Turning this
 
 This does not output any log messages to a file. We are working on a more standard logging framework that will allow this. The exceptions are [SG Desktop](https://support.shotgunsoftware.com/entries/95445597) and the [Photoshop engine](https://support.shotgunsoftware.com/hc/en-us/articles/115000026653-Photoshop-CC), which log output both in a GUI console and to a file.
 
-## Turning on debug logging for an engine in your software
+### Turning on debug logging for an engine in your software
 
 As an example, to turn on debugging output for the Nuke engine in the shot step environment, find the Nuke engine (`tk-nuke`) section in your environment file and update the setting to `debug_logging: true`.
 
@@ -101,25 +91,11 @@ Edit `config/env/shot_step.yml`.
         ...
        ...
 
-Save the file and relaunch your Software in the shot step environment. You will now see the debug output in the script editor window. 
+Save the file and relaunch Nuke in the shot step environment. You will now see the debug output in the script editor window. 
 
-Turning on debug logging for the Shotgun engine
-If you want to debug issues occurring when you’re trying to launch Toolkit from the Shotgun web application, the process is mostly the same but you’ll be editing the shotgun_*.yml environment file. For example, if you’re launching from a Task in Shotgun, you’ll want to turn on debug logging in the Shotgun engine in config/env/shotgun_task.yml: 
+### Turning on debug logging for the tank command
 
-    engines:
-
-    tk-shotgun:
-        apps:
-        ...
-        ...
-        debug_logging: true
-        location: {name: tk-shotgun, type: app_store, version: v0.5.1}
-
-Save the file and reload the full page in the Shotgun web application. Then launch your Toolkit action. You will now see all the debug output in the panel that pops up inside of Shotgun.
-
-## Turning on debug logging for the tank command
-
-If you’re running the tank command and want to see debug output in your terminal, use the --debug option with the command you’re running and this will turn on debug logging for the command.
+If you’re running the tank command and want to see debug output in your terminal, use the `--debug` option with the command you’re running and this will turn on debug logging for the command.
 
     ./tank --debug core
     DEBUG [10:11:38 617.835998535]:

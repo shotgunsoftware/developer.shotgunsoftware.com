@@ -21,19 +21,19 @@ environment variable. However, the problem can arise when Houdini has a
 This file allows the user to set environment variables that will be present when Houdini is loaded, but any values
 defined in the file will overwrite pre-existing environment variables in the current session.
 
-The fix for this is to make sure you include the pre-existing HOUDINI_PATH environment variable in the new definition
+The fix for this is to make sure you include the pre-existing `HOUDINI_PATH` environment variable in the new definition
 for that variable.
 
-For example, if you have something like this already in your houdini.env file:
+For example, if you have something like this already in your `houdini.env` file:
 
     HOUDINI_PATH = /example/of/an/existing/path;&
 
-Then you should add $HOUDINI_PATH; to the end of the path defined in the file and save it:
+Then you should add `$HOUDINI_PATH;` to the end of the path defined in the file and save it:
 
     HOUDINI_PATH = /example/of/an/existing/path;$HOUDINI_PATH;&
 
 This will allow the Shotgun set value to persist when Houdini launches.
 
-On Windows we've seen `$HOUDINI_PATH` causing issue with it to try and bootstrap multiple times. If you get this you should try using `%HOUDINI_PATH%` instead.
+{% include warning title="Caution" content="On Windows we've seen `$HOUDINI_PATH` causing issues. It sometimes tries to bootstrap the Shotgun integration multiple times generating an error like this: `Toolkit bootstrap is missing a required variable : TANK_CONTEXT`.<br/> If you get this you should try using `%HOUDINI_PATH%` instead." %}
 
 If this does not fix your problem please reach out to our [support team]((https://support.shotgunsoftware.com/hc/en-us/requests/new)) and they will help you diagnose the issue.
