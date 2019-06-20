@@ -9,10 +9,10 @@ lang: zh_CN
 
 通过完成本手册，您将很快熟悉 Toolkit 中的配置管理工具，并学会如何：
 
-* 安全地创建活动工作流配置的副本
+* 安全地创建使用中的工作流配置的副本
 * 将应用添加到配置
 * 添加在特定环境中使用该应用所需的设置
-* 将更改推送回活动配置
+* 将更改同步回使用中的工作流配置
 
 ## 关于本手册
 
@@ -32,7 +32,7 @@ lang: zh_CN
 4. 在系统上安装 Shotgun Desktop。
 5. Maya 的有效固定期限的使用许可。在[此处](https://www.autodesk.com.cn/products/maya/free-trial) 获取 Maya 的 30 天试用版。
 
-{% include info title="注意" content="本手册基于 tk-config-default2 工作流配置。如果您的配置已修改，则 YAML 设置的文件、文件夹和块的位置可能与此处描述的不同。"%}
+{% include info title="注意" content="本手册基于 tk-config-default2 工作流配置。如果您的配置文件已修改，则文件和文件夹的位置、YAML 设置的区块可能就与此处描述的不同。"%}
 
 ## 关于 Shotgun Toolkit 应用
 
@@ -230,7 +230,7 @@ settings.tk-maya.project:
     tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"
 ```
 
-您会注意到，**审片室、Shotgun 面板和工作文件 2** 应用的位置标识符列在不同的包含文件中，并且以不同于**关于**应用的方式进行访问。为了保持整洁，这些应用被拆分到包含的 settings 文件夹，因为它们具有其他设置。
+您会注意到，**审片室、Shotgun 面板和 Workfiles 2** 应用的位置标识符列在不同的包含文件中，并且以不同于**关于**应用的方式进行访问。为了保持整洁，这些应用被拆分到包含的 settings 文件夹，因为它们具有其他设置。
 
 {% include info title="注意" content="Python 控制台应用已经存在于默认配置中，但是如果您添加的应用以前从未添加到配置中，或者您已更改应用的版本，并且使用的是[集中式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)，则需要额外执行一个步骤。打开终端，并浏览到存储克隆配置的位置。从克隆配置的根文件夹中，运行以下命令：<br/>
 

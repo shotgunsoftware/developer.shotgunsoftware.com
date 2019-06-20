@@ -92,7 +92,7 @@ Shotgun で利用可能なエンティティのタイプのリストが表示さ
 
 新しいフィールドのパラメータを選択します。
 
-**[新しいフィールド名]（New Field Name）**に「Set」と入力します。**[一般]（GENERAL）**メニューの**フィールド タイプ（Field Type）**で、**エンティティ（Entity）**を選択し、**[タイプを制限]（Restrict the type）**までスクロールダウンして、**Set** を選択します。**[次へ](Next)**を選択します。
+**[新しいフィールド名]（New Field Name）**に「Set」と入力します。**[一般]（GENERAL）**メニューの**フィールド タイプ（Field Type）**で、**エンティティ（Entity）**を選択し、**[タイプを制限]（Restrict the type）**までスクロールダウンして、**Set** を選択します。**[次へ]（Next）**を選択します。
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/7_field_parameters.png)
 
