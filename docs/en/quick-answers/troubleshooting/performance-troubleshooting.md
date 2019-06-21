@@ -162,12 +162,13 @@ The first thing is to limit the folders that are created to the ones that are im
 
 Basically, create the minimum required folders that allow you to save and publish your work.
 
-##### Create with parent
+#### Create with parent
 
 There is a [`create_with_parent` setting](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Create%20With%20Parent%20Folder) that can be applied to schema folders.
 Setting it to true will cause the folder to be created at the same time as it’s parent. You should be careful to avoid situations where setting it to True will cause large numbers of folders to be checked and created.
 
 **Example**
+
 If you had a Sequence/Shot folder hierarchy and you set your Shot folder to create with its parent Sequence, then whenever a Sequence folder gets created, it will check for all associated Shots and create folders for them. 
 
 Whilst this might be convenient in some situations, it is causing a lot more folders to be checked and potentially created at once. In this scenario, if you were to create a new file in workfiles on a Task on a Shot, it would trigger the creation of the Shot’s parent Sequence folder and that in turn would create all children Shot folders, not just the Shot you’re working on. 
