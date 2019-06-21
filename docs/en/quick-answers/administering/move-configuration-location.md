@@ -7,23 +7,20 @@ lang: en
 
 # How do I move my pipeline configuration to a new location?
 
-{% include info title="Note" content="This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [Shotgun Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493) or contact support if you do not have a more advanced configuration." %}
+{% include info title="Note" content="The contents of this doc only apply to [centralized configuration setups](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations). [Distributed configurations](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations) are cached locally to the individual client machines and are managed automatically by Toolkit." %}
 
-The easiest way to move your pipeline configuration to a new location is by using the tank move_configuration command. This will take care of moving your files, updating Shotgun, and updating your config files to point to the new location. 
+The easiest way to move your pipeline configuration to a new location is by using the `tank move_configuration` command. This will take care of moving your files, updating Shotgun, and updating your config files to point to the new location. 
 
-This command is also useful if you are only moving the location for a single platform, or were not previously using a platform but would like to add it now. Toolkit will detect what needs to be moved or added and what doesn't. And will show you what it is about to do to allow you to confirm before progressing. 
+This command is also useful if you are only moving the location for a single operating system, or were not previously using a certain operating system but would like to add it now. Toolkit will detect what needs to be moved or added and what doesn’t, and will show you what it is about to do to allow you to confirm before progressing. 
 
-- [Using the tank move_configuration command](#Using-the-tank-move-configuration-command)
-- Manually moving your pipeline configuration
+- [Using the tank move_configuration command](#using-the-tank-move_configuration-command)
+- [Manually moving your pipeline configuration](#manually-moving-your-pipeline-configuration)
 
-A Note About Moving Pipeline Configurations that are sharing their Core
-*If you are moving a configuration that is localized (ie. it contains it's own Toolkit core), and you have other projects that are using the Toolkit core embedded in this pipeline configuration, you'll have to manually update the configuration files in those projects to point to the new location for this pipeline configuration. These files are located in*
+{% include warning title="Caution" content="If you are moving a configuration that has a localized core, and you have other projects that are using the Toolkit core embedded in this pipeline configuration (i.e. other configurations are using this as a shared core), you'll have to manually update the configuration files in those projects to point to the new location for this pipeline configuration. These files are located in:
 
-- /path/to/pipeline_configuration/install/core/core_Darwin.cfg
-- /path/to/pipeline_configuration/install/core/core_Linux.cfg
-- /path/to/pipeline_configuration/install/core/core_Windows.cfg
- 
-
+- `/path/to/pipeline_configuration/install/core/core_Darwin.cfg`
+- `/path/to/pipeline_configuration/install/core/core_Linux.cfg`
+- `/path/to/pipeline_configuration/install/core/core_Windows.cfg`" %}
 
 ## Using the tank move_configuration command:
 
@@ -141,17 +138,19 @@ A Note About Moving Pipeline Configurations that are sharing their Core
 
 ## Manually moving your pipeline configuration
 
-Sorry to state the obvious, but if you haven't yet moved your pipeline configuration, then we strongly advise using the built-in tank command above to take care of this automatically. But if you've already started moving things manually and are stuck, here's a rundown of what you need to change to ensure Toolkit continues to work with your pipeline configuration now in a new location.
+{% include warning title="Important" content="If you haven't yet moved your pipeline configuration, then we strongly advise using the [built-in tank command](#using-the-tank-move_configuration-command) above to take care of this automatically." %}
+
+If you've already started moving things manually and are stuck, here's a rundown of what you need to change to ensure Toolkit continues to work with your pipeline configuration now in a new location.
 
 1. Move your pipeline configuration files to their new location
 
         $ mv /sgtk/software/shotgun/scarlet /mnt/newserver/sgtk/software/shotgun/scarlet_new
 
-2. Edit your `install_location.yml` which helps Toolkit find where the pipeline configuration is located:
+2. Edit your `install_location.yml`, which helps Toolkit find where the pipeline configuration is located:
 
         $ vi /mnt/newserver/sgtk/software/shotgun/scarlet_new/config/core/install_location.yml
 
-    Update the paths in this file to point to the new location for your pipeline configuration on all of the applicable platforms. If you're not using a platform, enter a blank string ''
+    Update the paths in this file to point to the new location for your pipeline configuration on all of the applicable platforms. If you're not using a platform, enter an empty string `''`
 
         # Shotgun Pipeline Toolkit configuration file
         # This file was automatically created by setup_project
@@ -160,7 +159,7 @@ Sorry to state the obvious, but if you haven't yet moved your pipeline configura
         # configuration defined for this project.
         Windows: 'Y:\sgtk\software\shotgun\scarlet_new'
         Darwin: '/mnt/newserver/sgtk/software/shotgun/scarlet_new'
-        Linux: '/mnt/newserver/sgtk/software/shotgun/scarlet_new'
+        Linux: ''
 
         # End of file.
 
@@ -170,4 +169,4 @@ Sorry to state the obvious, but if you haven't yet moved your pipeline configura
 
 Now your pipeline configuration should work as expected from the new location.
 
-Note: If you're using SG Desktop, you'll need to navigate out of your project and then click on the project icon again in order to reload the pipeline configuration from its new location.
+{% include info title="Note" content="If you're using SG Desktop, you'll need to navigate out of your project and then click on the project icon again in order to reload the pipeline configuration from its new location." %}
