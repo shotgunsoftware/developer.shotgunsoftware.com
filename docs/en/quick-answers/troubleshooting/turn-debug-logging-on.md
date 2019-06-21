@@ -13,7 +13,7 @@ The easiest way to enable debugging is to toggle it on through the Shotgun Deskt
 
 ![Toggle debug logging in SG Desktop](images/desktop-enable-debug-logging.png)
 
-It should also be noted that when this is toggled on, apps launched from Shotgun Desktop, or even the Shotgun Toolkit action menu items through the browser integration, will also inherit this debug state.
+It should also be noted that when this is toggled on, apps launched from Shotgun Desktop, or even the Toolkit commands through the browser integration, will also inherit this debug state.
 
 ## Setting up an environment variable
 
