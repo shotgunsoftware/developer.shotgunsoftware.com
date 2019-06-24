@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 設定を編集する
-lang: ja
 pagename: toolkit-guides-editing-config
+lang: ja
 ---
 
 # パイプライン設定を編集する
@@ -45,11 +45,11 @@ Workfiles アプリは、Shotgun ソフトウェア統合のファイル管理�
 
 **手順 1:** この演習で使用するプロジェクトを管理している **Shotgun サイト**を開きます。
 
-**手順 2:** **Shotgun サイト**の **[プロジェクト](Projects)ページ**でプロジェクトを選択して、Shotgun サイトのプロジェクトにアクセスします。
+**手順 2:** **Shotgun サイト**の **[プロジェクト]（Projects）ページ**でプロジェクトを選択して、Shotgun サイトのプロジェクトにアクセスします。
 
 ![Shotgun プロジェクト](./images/editing_app_setting/1_shotgun_project.png)
 
-**手順 3:** 右上にある**アバター**を選択して、**[管理者](ADMIN)**メニューを表示し、下にスクロールして**[既定のレイアウト](Default Layouts) > [パイプラインの設定](Pipeline Configuration) > [パイプライン設定リスト](Pipeline Configuration List)**を選択します。
+**手順 3:** 右上にある**アバター**を選択して、**[管理者]（ADMIN）**メニューを表示し、下にスクロールして**[既定のレイアウト]（Default Layouts）> [パイプラインの設定]（Pipeline Configuration）> [パイプライン設定リスト]（Pipeline Configuration List）**を選択します。
 
 ![パイプラインの設定](./images/editing_app_setting/2_pipeline_configuration.png)
 
@@ -151,7 +151,7 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 最初の項目は、使用されているエンジンを識別します。このエンジンは、特定のソフトウェア アプリケーションに Shotgun ツールを統合する機能を制御します。このエンジンには、各ソフトウェア統合に固有のロジックが保持されています。ウィンドウに表示される 2 番目の項目は、現在のプロジェクト環境の配置場所のパスを示します。
 
-![[Work area info]の[Environment]](./images/editing_app_setting/14_shotgun_work_area_info_Environment.png)
+![Work area info environment](./images/editing_app_setting/14_shotgun_work_area_info_Environment.png)
 
 最後の 2 つのフォルダは `config/env/` と、その後の `project.yml` です。`project.yml` ファイルは、現在の環境の設定の保存場所を案内するロードマップの起点となります。
 

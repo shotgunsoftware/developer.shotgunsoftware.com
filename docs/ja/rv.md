@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 概要
-lang: ja
 pagename: rv-index
+lang: ja
 ---
 
 # RV

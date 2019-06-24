@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 动作菜单项
-lang: zh_CN
 pagename: shotgun-action-menu-items
+lang: zh_CN
 ---
 
 # 动作菜单项框架

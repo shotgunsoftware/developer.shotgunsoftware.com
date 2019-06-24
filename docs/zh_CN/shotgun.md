@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 概述
-lang: zh_CN
 pagename: shotgun-index
+lang: zh_CN
 ---
 
 # Shotgun 开发

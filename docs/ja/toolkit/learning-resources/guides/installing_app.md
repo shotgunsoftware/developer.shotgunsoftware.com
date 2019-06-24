@@ -1,8 +1,8 @@
 ---
 layout: default
 title: アプリを追加する
-lang: ja
 pagename: toolkit-guides-adding-app
+lang: ja
 ---
 
 # アプリを追加する
@@ -20,7 +20,7 @@ pagename: toolkit-guides-adding-app
 
 ここで追加するアプリは、Shotgun Python コンソール アプリです。Maya には独自の Python コンソールがありますが、Toolkit アプリには Maya コンソールにない機能がいくつか用意されています。
 
-このガイドでは、「[パイプライン設定を編集する](./editing_app_setting.md)」ガイドで作成したパイプライン設定を利用します。このガイドをまだ完了していない場合は、既存のパイプライン設定を使用してアプリを追加してください。
+このガイドでは、「[パイプライン設定を編集する](./editing_app_setting.md)」ガイドで作成したパイプライン設定を利用します。 このガイドをまだ完了していない場合は、既存のパイプライン設定を使用してアプリを追加してください。
 
 ## このドキュメントの使い方
 
@@ -32,7 +32,7 @@ pagename: toolkit-guides-adding-app
 4. システムにインストールされた Shotgun Desktop。
 5. Maya の有効なサブスクリプション。Maya の 30 日間無償体験版は[こちら](https://www.autodesk.co.jp/products/maya/free-trial)から取得してください。
 
-**注:** このガイドは tk-config-default2 パイプライン設定をベースにしています。設定が変更されている場合は、YAML 設定のファイル、フォルダ、およびブロックの場所がここに記載されている内容と異なる可能性があります。
+{% include info title="注" content="このガイドは tk-config-default2 パイプライン設定をベースにしています。 設定が変更されている場合は、YAML 設定のファイル、フォルダ、およびブロックの場所がここに記載されている内容と異なる可能性があります。"%}
 
 ## Shotgun Toolkit アプリについて
 
@@ -79,7 +79,7 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ## アプリを追加するパイプライン設定のクローンを作成する
 
-### [パイプラインの設定](Pipeline Configuration)リストに移動します。
+### [パイプラインの設定]（Pipeline Configuration）リストに移動します。
 
 **<a name="&rdquo;step3&rdquo;">手順 3</a>:** Shotgun を開き、右上にある**[管理者]（Admin）メニュー（アバター） > [既定のレイアウト]（Default Layouts） > [パイプラインの設定]（Pipeline Configuration） > [パイプライン設定リスト]（Pipeline Configuration List）**を選択します。
 
@@ -115,7 +115,7 @@ Shotgun によって設定内のすべてのファイルおよびフォルダが
 
 完了すると、クローンが作成された設定の情報を使用して[パイプライン設定リスト]が更新され、ローカルな config フォルダに新しい設定が追加されます。
 
-**注:** **[ユーザ制限](User Restrictions)**の下にユーザ名が追加されています。Shotgun は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、Shotgun の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。
+{% include info title="注" content="**[ユーザ制限](User Restrictions)**の下にユーザ名が追加されています。Shotgun は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、Shotgun の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
 
 ## クローン作成された設定にプロジェクトを関連付ける
 
@@ -146,7 +146,7 @@ apps.tk-multi-pythonconsole.location:
 	version: v1.1.2
 ```
 
-**注:** 別の設定を使用している場合は、その記述子をファイルに追加しなければならいことがあります。
+{% include info title="注" content="別の設定を使用している場合は、その記述子をファイルに追加しなければならいことがあります。"%}
 
 すべてのアプリおよびエンジンに記述子があります。記述子の仕組みと `type:` の設定方法の詳細については、[Core API ドキュメントの記述子に関するセクション](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types)を参照してください。
 
@@ -215,7 +215,7 @@ settings.tk-maya.project:
 
 `about` アプリの `tk-multi-about:` をガイドとして使用して、場所の記述子を追加し、ファイルを保存します。
 
-**注:** [YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) ファイルが、タブでなくスペースを使用して正しくフォーマットされていることを確認してください。
+{% include info title="注" content="[YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) ファイルが、タブでなくスペースを使用して正しくフォーマットされていることを確認してください。"%}
 
 ```
 # project
@@ -232,13 +232,25 @@ settings.tk-maya.project:
 
 **Screening Room、Shotgun Panel、および Workfiles2** アプリの場所識別子は別のインクルードされたファイルにリストされていて、**About** アプリとアクセス方法が異なります。これらのアプリには追加設定があるため、情報整理しておくために、これらのアプリはインクルードされた設定フォルダに分割して配置されています。
 
+{% include info title="注" content="python コンソール アプリは既に既定の設定に存在しますが、これまでに設定に追加したことがないアプリを追加する場合、またはアプリのバージョンを変更し、[中央設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)を使用している場合は、追加の手順が必要になります。端末を開いて、クローン作成した設定の保存場所を参照します。クローン作成した設定のルート フォルダから、次のコマンドを実行します。<br/>
+
+Linux または Mac の場合:
+
+    ./tank cache_apps
+
+Windows の場合:
+
+    tank.bat cache_apps
+
+これにより、設定内のアプリ、エンジン、フレームワークがスキャンされ、それらがすべてダウンロードされたことが確認されます。"%}
+
 ## Maya で変更内容を表示する
 
 **手順 16:** Shotgun Desktop を開いて、作業しているプロジェクトを選択し、クローン作成された設定を使用していることを確認します。
 
 青いバーが表示され、プロジェクトの名前の下に、作成したクローンの名前が示されます。
 
-**注:** プライマリを使用している場合は、青いバーは表示されず、設定の名前は表示されません。
+{% include info title="注" content="プライマリを使用している場合は、青いバーは表示されず、設定の名前は表示されません。" %}
 
 ![Maya のクローン作成された設定](./images/installing_app/14_maya_cloned_config.png)
 
@@ -262,9 +274,13 @@ Python コンソール アプリが正しく追加されたことを確認した
 
 **手順 18:** 端末を開いて、クローン作成した設定の保存場所を参照します。クローン作成した設定のルート フォルダから、次のコマンドを実行します。
 
+Linux または Mac の場合:
+
 `./tank push_configuration`
 
-**注:** Windows システムの場合は、`tank.bat push_configuration` を実行します。
+Windows の場合:
+
+`tank.bat push_configuration`
 
 プロンプトに従って、プロジェクトのプライマリ設定(変更のプッシュ先の設定)の ID を入力します。
 
@@ -304,7 +320,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 クローン作成した設定のプッシュ先に指定できるパイプライン設定のリストが表示されます。設定を更新しているプロジェクトのプライマリ パイプライン設定の ID を入力します。
 
-**注:** このガイドの「**[手順 3](#step3):**」で表示した Shotgun の[パイプラインの設定]ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。
+{% include info title="注" content="このガイドの「**[手順 3](#step3):**」で表示した Shotgun の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 
@@ -344,7 +360,7 @@ Python コンソール アプリが、選択されたプロジェクトのプロ
 
 Toolkit の素晴らしい点の 1 つに、Toolkit アプリを誰でも作成できることがあります。また、アプリの所有権を維持したり、[Shotgun コミュニティ](https://support.shotgunsoftware.com/hc/ja/articles/219039828)内でアプリを共有して Shotgun ツールに追加したりできます。非常に便利なアプリを作成したため、Shotgun コミュニティ ページで共有したい場合は、[support@shotgunsoftware.com](mailto:support@shotgunsoftware.com) にメールでお問い合わせください。
 
-標準的な Toolkit アプリや、愛情のこもった Shotgun コミュニティで作成されたアプリについては、**[shotgun-dev Google グループ](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)**で活発に議論されています。Shotgun コミュニティの貢献度が高まるにつれて、知識やツールの基盤も拡大しています。
+標準的な Toolkit アプリや、愛情のこもった Shotgun コミュニティで作成されたアプリについては、**[shotgun-dev Google グループ](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=ja#!forum/shotgun-dev)**で活発に議論されています。Shotgun コミュニティの貢献度が高まるにつれて、知識やツールの基盤も拡大しています。
 
 ### 設定の拡張方法を調べる
 
@@ -358,7 +374,7 @@ Desktop アプリはプロジェクト環境内で開くため、`project.yml` �
 
 `config/env/project.yml` を開きます。
 
-**注:** engine ブロック内の `tk-desktop` は、インクルードされた内容を指します。
+{% include info title="注" content='engine ブロック内の `tk-desktop` は、インクルードされた内容を指します。
 
 ```
 includes:
@@ -368,7 +384,7 @@ engines:
   tk-desktop: "@settings.tk-desktop.project"
 ```
 
-インクルードの内容に従って、`config/env/includes/settings/tk-desktop.yml` を開き、`settings.tk-desktop.project` ブロックを検索します。このブロック内に、次の行が含まれています。
+インクルードの内容に従って、`config/env/includes/settings/tk-desktop.yml` を開き、`settings.tk-desktop.project` ブロックを検索します。このブロック内に、次の行が含まれています。<br/><br/>
 
 ```
 apps:
@@ -378,7 +394,7 @@ apps:
 
 これらのブロックに従い、プロジェクトの手順中に Python コンソール アプリが Desktop エンジンに追加されます。
 
-インクルードの内容に沿って `../includes/app_locations.yml` に進み、`apps.tk-multi-pythonconsole.location` を検索します。次のようになっています。
+インクルードの内容に沿って `../includes/app_locations.yml` に進み、`apps.tk-multi-pythonconsole.location` を検索します。次のようになっています。<br/><br/>
 
 ```
 # pythonconsole
@@ -386,7 +402,7 @@ apps.tk-multi-pythonconsole.location:
   type: app_store
   name: tk-multi-pythonconsole
   version: v1.1.2
-```
+```' %}
 
 すべてのアプリ、エンジン、およびフレームワークに、特定のバンドルのアクセス場所を Toolkit に指示するための場所の記述子が設定されています。多くのアプリ記述子が `app_locations.yml` ファイルに含まれていますが、Python コンソール アプリで確認したように、これらの記述子が必要な場所で参照されていない可能性があります。すべての標準アプリおよびエンジンは、「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページにリストされています。
 
@@ -395,3 +411,4 @@ apps.tk-multi-pythonconsole.location:
 探しているアプリが見つからない場合は、自分で作成できます。これを機会に、他の Shotgun ユーザにこの機能の必要性が広まる可能性があります。また、新しいアプリを共有することで、Shotgun コミュニティに恩返しができます。
 
 次のガイドでは、施設の構成方法に合わせてプロダクション フォルダの構成をカスタマイズできます。[施設の構成方法に合わせてプロダクション フォルダのスキーマをカスタマイズします。](link)
+

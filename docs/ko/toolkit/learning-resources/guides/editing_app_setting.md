@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 구성 편집
-lang: ko
 pagename: toolkit-guides-editing-config
+lang: ko
 ---
 
 # 파이프라인 구성 편집
@@ -24,12 +24,12 @@ pagename: toolkit-guides-editing-config
 
 이 안내서를 사용하고 파이프라인 구성에 대한 편집을 수행하려면 다음이 필요합니다.
 
-1. 활성 [Shotgun](https://www.shotgunsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 사이트.
+1. 활성 [Shotgun](https://www.shotgunsoftware.com/kr/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 사이트.
 2. 하나 이상의 에셋이 있는 프로젝트. 첫 번째 안내서에서 생성한 the_other_side 프로젝트에 에셋을 추가할 수 있습니다. [구성 시작하기](./advanced_config.md) 안내서에서 프로젝트의 에셋을 생성하는 방법을 익힐 수 있습니다.
 3. 식별된 프로젝트에 대한 파이프라인 구성이나 [구성 시작하기](./advanced_config.md) 안내서를 완료하고 해당 연습에서 생성한 구성 사용.
 4. 파이프라인 구성이 저장된 파일 시스템에 대해 적절하게 설정된 읽기 및 쓰기 권한.
 5. Shotgun 데스크톱이 시스템에 설치되어 있어야 함.
-6. 활성 상태의 Maya 멤버쉽. Maya의 30일 체험판은 [여기](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689)에서 구할 수 있습니다.
+6. 활성 상태의 Maya 멤버쉽. Maya의 30일 체험판은 [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 구할 수 있습니다.
 
 **참고:** 이 안내서는 `tk-config-default2` 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다.
 

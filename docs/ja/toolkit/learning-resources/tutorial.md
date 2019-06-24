@@ -1,8 +1,8 @@
 ---
 layout: default
 title: パイプラインのチュートリアル
-lang: ja
 pagename: toolkit-pipeline-tutorial
+lang: ja
 ---
 
 # パイプラインのチュートリアル
@@ -93,15 +93,29 @@ Shotgun Desktop (以下、「Desktop」)を使用して、プロジェクトの�
 
 {% include figure src="./images/tutorial/image_5.png" caption="Desktop のポップアップ メニューで**[Advanced project setup...]**を選択する" %}
 
-{% include figure src="./images/tutorial/image_6.png" caption="**[Shotgun Default]**設定タイプを選択する" %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="**[Shotgun Default]（Shotgun の既定値）**設定タイプを選択する" %}
 
-{% include figure src="./images/tutorial/image_7.png" caption="**[Default configuration]**を選択する" %}
+{% include figure src="./images/tutorial/wizard_02.png" caption="**[Default configuration]（既定の設定）**を選択する" %}
 
-{% include figure src="./images/tutorial/image_8.png" caption="プロジェクト ファイルを配置するフォルダの名前を入力する." %}
+初めて Shotgun プロジェクトをセットアップする場合は、プロジェクト データのストレージ場所を定義するためのプロンプトも表示されます。それ以外の場合は、既存の格納場所を選択することができます。
 
-初めて Shotgun プロジェクトをセットアップする場合は、プロジェクト データのストレージ場所を定義するためのプロンプトも表示されます。
+{% include figure src="./images/tutorial/wizard_03.png" caption="新しいストレージを作成します。"%}
 
-{% include figure src="./images/tutorial/image_9.png" caption="現在のオペレーティング システムに対して選択した設定パスをメモする" %}
+{% include figure src="./images/tutorial/wizard_04.png" caption="新しいストレージに名前を付けます。このストレージはプロジェクト固有のものではなく、サイト全体で使用されることに注意してください。"%}
+
+{% include figure src="./images/tutorial/wizard_05.png" caption="使用するオペレーティング システム上でこのストレージにアクセスするパスを設定します。" %}
+
+**[サイト基本設定]（Site Preferences）**の**[ファイル管理]（File Management）**セクションで、Shotgun サイトのストレージを表示および編集できます。これらの設定について詳しくは、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219030938)を参照してください。
+
+格納場所が選択されたので、その場所にある新しいプロジェクトのディレクトリ名を選択します。
+
+{% include figure src="./images/tutorial/wizard_06.png" caption="プロジェクト ファイルを配置するフォルダの名前を入力する。" %}
+
+このチュートリアルでは中央設定を使用します。**[分散設定]（Distributed Setup）**オプションは、さまざまなメリットを提供する代替オプションを提供します。これは、高速共有ストレージのないスタジオで役に立つ場合があります。各種設定の長所と短所について詳しくは、「[ツールキット管理](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2)」のプレゼンテーションを参照してください。
+
+サイト全体にわたるストレージとは異なり、設定はプロジェクトごとに異なるため、ここで選択するディレクトリが直接設定の保存に使用されます。
+
+{% include figure src="./images/tutorial/wizard_07.png" caption="現在のオペレーティング システムに対して選択した設定パスをメモする。" %}
 
 上記の画面で選択したフォルダに設定がインストールされます。このチュートリアルを通して、このフォルダに含まれている設定の内容を調べて、変更します。
 
@@ -207,6 +221,8 @@ Maya が完全にロードされると、[ファイルを開く]（File Open）�
 
 ダイアログ ボックスの左側には、現在の Maya セッションを表す項目が表示されます。その下に、**[Publish to Shotgun]**子アクションが表示されます。 **すべてのセッション ジオメトリ**を表す追加項目が、現在のセッションの子項目として表示されます。**[Publish to Shotgun]**子アクションも表示されます。
 
+{% include info title="注" content="**[すべてのセッション ジオメトリ]（All Session Geometry）**項目が表示されない場合は、Maya で[Alembic 書き出しプラグインが有効になっていること](https://support.shotgunsoftware.com/hc/ja/articles/219039928-Publishing-Alembic-From-Maya#Before%20You%20Begin)を確認してください。" %}
+
 ツリーの左側の項目をクリックして、Publish アプリを調べます。操作を行う項目を選択すると、パブリッシュする内容の説明を入力できます。また、右側のカメラ アイコンをクリックして、項目に関連付けられるスクリーンショットを作成することもできます。
 
 準備ができたら、右下の**[Publish]**ボタンをクリックして、現在の作業ファイルおよびティーポット ジオメトリをパブリッシュします。完了したら、Shotgun でティーポット アセットを参照し、パブリッシュが正常に完了したことを確認できます。
@@ -251,7 +267,7 @@ Desktop から Maya を起動して開始します。前のセクションの作
 
 {% include figure src="./images/tutorial/image_22.png" %}
 
-次に、ティーポット モデルを新しいサーフェス作成作業ファイルにロードする必要があります。このためには、Maya の **[Shotgun] > [ロード...]（Load...）**メニュー項目を使用して、Loader アプリを起動します。
+次に、ティーポット モデルを新しいサーフェス作成作業ファイルにロードする必要があります。このためには、Maya の **[Shotgun] > [ロード…]（Load…）**メニュー項目を使用して、Loader アプリを起動します。
 
 {% include figure src="./images/tutorial/image_23.png" %}
 
@@ -275,6 +291,8 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 
 {% include info title="注" content="追加するカスタマイズは、明らかに、非常に単純かつ不安定です。より堅牢なソリューションを作成する場合は、サーフェス キャラクタの代替表現と、テクスチャ マップとして外部イメージを使用するというアセット管理の側面を取り入れることができます。この例は、実際のソリューションを作成する際の第一歩として使用してください。" %}
+
+{% include info title="注" content="パブリッシャー プラグインの作成方法の詳細については[こちら](https://developer.shotgunsoftware.com/tk-multi-publish2/)を参照してください。" %}
 
 #### Maya コレクタをオーバーライドする
 
@@ -478,7 +496,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 {% include figure src="./images/tutorial/image_36.png" %}
 
-ティーポットのリギング ステップで、作業ファイルを再び開きます(**[Shotgun] > [File Open...]**を使用)。**[Shotgun] > [Scene Breakdown...]**メニュー アクションを起動します。この操作を行うと、Breakdown アプリが起動し、作業ファイル内で参照した上流工程のパブリッシュがすべて表示されます。この場合は、上流工程のティーポット モデルのみがあります。次のように表示されます。
+ティーポットのリギング ステップで、作業ファイルを再び開きます(**[Shotgun] > [File Open…]**を使用)。**[Shotgun] > [Scene Breakdown…]**メニュー アクションを起動します。この操作を行うと、Breakdown アプリが起動し、作業ファイル内で参照した上流工程のパブリッシュがすべて表示されます。この場合は、上流工程のティーポット モデルのみがあります。次のように表示されます。
 
 {% include figure src="./images/tutorial/image_37.png" width="400px" %}
 
@@ -611,6 +629,8 @@ Maya 参照がティーポット Alembic キャッシュの最新の繰り返し
 {% include figure src="./images/tutorial/image_45.png" %}
 
 図に示されているように、新しいカメラ項目が収集されて、パブリッシュ プラグインがアタッチされます。先に進んで、**[Publish]**をクリックしてディスクにカメラを書き込み、Shotgun に登録します。
+
+{% include info title="注" content="Alembic 書き出しと同様、カメラのパブリッシュ プラグインには FBX 書き出しプラグインをロードする必要があります。カメラのパブリッシュ プラグイン項目が表示されない場合は、FBX プラグインがロードされていることを確認し、パブリッシャを再起動してください。"%}
 
 Shotgun では次のように表示されます。
 
@@ -794,7 +814,7 @@ Nuke プロジェクト設定の出力フォーマットが、レンダリング
 
 {% include figure src="./images/tutorial/image_58.png" %}
 
-コンポジットに問題がなければ、**[Shotgun] > [File Save...]**メニュー アクションを使用して、作業ファイルを保存します。
+コンポジットに問題がなければ、**[Shotgun] > [File Save…]**メニュー アクションを使用して、作業ファイルを保存します。
 
 次に、Nuke の左側メニューで Shotgun のロゴをクリックします。このメニューの Shotgun 対応書き込みノードの 1 つをクリックします。
 
@@ -826,8 +846,8 @@ Shotgun でメディアをレビューする方法の詳細については、[�
 
 おめでとうございます。これで完了です。このチュートリアルが、Shotgun 統合を使用して独自のカスタム パイプラインを作成する際の第一歩になるはずです。スタジオ固有のニーズに合わせて既存の Shotgun アプリを拡張する方法について理解できたことでしょう。
 
+Toolkit に関する質問がある場合や、他のスタジオで Toolkit がどのように使用されているかを知りたい場合は、[shotgun-dev Google Group](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev) にアクセスしてください。常に最新の投稿を読むことができるよう、サブスクライプすることをお勧めします。
+
 機能やワークフローを既定の統合で実現できないと感じた場合は、独自のアプリをいつでも作成できます。初めてアプリを作成する場合は、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033158)を参照してください。
 
 このチュートリアルの詳細または Shotgun や Toolkit プラットフォームの概要に関して質問がある場合は、[チケットを送信](https://support.shotgunsoftware.com/hc/ja/requests/new)してください。
-
-

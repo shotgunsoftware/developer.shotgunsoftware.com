@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 파이프라인 튜토리얼
-lang: ko
 pagename: toolkit-pipeline-tutorial
+lang: ko
 ---
 
 # 파이프라인 튜토리얼
@@ -91,17 +91,31 @@ pagename: toolkit-pipeline-tutorial
 
 Shotgun 데스크톱(데스크톱)을 사용하여 프로젝트의 구성을 인계받습니다. 데스크톱 내에서 마우스 오른쪽 버튼을 클릭하거나 오른쪽 하단의 사용자 아이콘을 클릭하면 팝업 메뉴가 표시됩니다. **고급 프로젝트 설정...(Advanced project setup…)** 옵션을 선택하고 마법사를 수행하여 프로젝트 구성을 로컬로 설치합니다. 아래 이미지는 필요한 단계를 보여 줍니다. 통합 관리자 안내서에 설명된 [파이프라인 구성 가져오기](https://support.shotgunsoftware.com/hc/ko/articles/115000067493-Integrations-Admin-Guide#Taking%20over%20a%20Pipeline%20Configuration) 단계를 수행할 수도 있습니다.
 
-{% include figure src="./images/tutorial/image_5.png" caption="데스크톱 팝업 메뉴에서 **고급 프로젝트 설정…**(Advanced project setup…)을 선택합니다." %}
+{% include figure src="./images/tutorial/image_5.png" caption="데스크톱 팝업 메뉴에서 **고급 프로젝트 설정...(Advanced project setup…)**을 선택합니다" %}
 
-{% include figure src="./images/tutorial/image_6.png" caption="**Shotgun 기본값** 구성 유형을 선택합니다." %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="**Shotgun 기본값**(Shotgun Default) 구성 유형을 선택합니다." %}
 
-{% include figure src="./images/tutorial/image_7.png" caption="**기본값 구성**(Default configuration)을 선택합니다." %}
+{% include figure src="./images/tutorial/wizard_02.png" caption="**기본값 구성**(Default configuration)을 선택합니다." %}
 
-{% include figure src="./images/tutorial/image_8.png" caption="프로젝트의 파일을 저장할 폴더 이름을 입력합니다." %}
+이번에 처음으로 Shotgun 프로젝트를 설정하는 경우 프로젝트 데이터의 저장소 위치를 정의하라는 메시지가 표시될 수도 있습니다.  아니면 기존 저장소 위치를 선택할 수 있습니다.
 
-이번에 처음으로 Shotgun 프로젝트를 설정하는 경우 프로젝트 데이터의 저장소 위치를 정의하라는 메시지가 표시될 수도 있습니다.
+{% include figure src="./images/tutorial/wizard_03.png" caption="새 저장소를 만듭니다." %}
 
-{% include figure src="./images/tutorial/image_9.png" caption="현재 운영 체제에 대해 선택하는 구성 경로를 기록합니다." %}
+{% include figure src="./images/tutorial/wizard_04.png" caption="새 저장소 이름을 지정합니다.  이 저장소는 사이트 전체 수준의 저장소이며 프로젝트별 저장소가 아닙니다." %}
+
+{% include figure src="./images/tutorial/wizard_05.png" caption="사용할 운영 체제에서 이 저장소에 액세스할 수 있는 경로를 설정합니다." %}
+
+**사이트 기본 설정**(Site Preferences)의 **파일 관리**(File Management) 섹션에서 Shotgun 사이트에 대한 저장소를 보고 편집할 수 있습니다.  이러한 설정에 대한 자세한 내용은 [여기](https://support.shotgunsoftware.com/hc/ko/articles/219030938)에서 확인할 수 있습니다.
+
+저장소 위치를 선택했으므로 이제 해당 위치에서 새 프로젝트에 대한 디렉토리 이름을 선택합니다.
+
+{% include figure src="./images/tutorial/wizard_06.png" caption="프로젝트의 파일을 저장할 폴더 이름을 입력합니다." %}
+
+이 튜토리얼에서는 중앙 집중식 구성을 사용합니다.  **분산 설정**(Distributed Setup) 옵션은 다른 혜택을 제공할 수 있는 대체 옵션을 제공하며 빠른 공유 저장소가 없는 스튜디오의 경우 자주 사용하는 옵션이 될 수 있습니다.  다른 구성 설정의 장단점에 대한 자세한 내용은 [툴킷 관리](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2) 프리젠테이션에서 확인할 수 있습니다.
+
+사이트 전체 수준의 저장소와 달리 구성은 프로젝트별로 다르므로 여기서 선택하는 디렉토리는 구성을 저장하는 데 직접 사용됩니다.
+
+{% include figure src="./images/tutorial/wizard_07.png" caption="현재 운영 체제에 대해 선택하는 구성 경로를 기록합니다." %}
 
 위 화면에서 선택하는 폴더가 구성이 설치될 위치입니다. 이 튜토리얼에서는 이 폴더의 구성 컨텐츠를 살펴보고 수정합니다.
 
@@ -109,7 +123,7 @@ Shotgun 데스크톱(데스크톱)을 사용하여 프로젝트의 구성을 인
 
 데스크톱 설치 튜토리얼에서 지정한 구성 위치는 Shotgun에서 해당 프로젝트에 대한 파이프라인 구성(Pipeline Configurations) 페이지에 기록됩니다.
 
-{% include figure src="./images/tutorial/image_10.png" caption="Shotgun의 파이프라인 구성 엔티티" %}
+{% include figure src="./images/tutorial/image_10.png" caption="Shotgun에서 파이프라인 구성 엔티티 복제" %}
 
 다음 섹션을 위한 준비로 이 폴더의 컨텐츠를 숙지합니다.
 
@@ -207,6 +221,8 @@ Maya가 완전히 로드되면 파일 열기(File Open) 대화상자가 나타�
 
 대화상자의 왼쪽에 현재 Maya 세션을 나타내는 항목이 표시됩니다. 그 아래에 **Shotgun에 게시(Publish to Shotgun)** 하위 액션이 표시됩니다. **모든 세션 지오메트리(All Session Geometry)**를 나타내는 추가 항목이 현재 세션의 하위 항목으로 표시됩니다. 여기에도 **Shotgun에 게시(Publish to Shotgun)** 하위 액션이 있습니다.
 
+{% include info title="참고" content="**모든 세션 지오메트리**(All Session Geometry) 항목이 표시되지 않으면 Maya에서 [Alembic 내보내기 플러그인이 활성화되어 있는지](https://support.shotgunsoftware.com/hc/ko/articles/219039928-Publishing-Alembic-From-Maya#Before%20You%20Begin) 확인합니다." %}
+
 트리 왼쪽의 항목을 클릭하여 Publish 앱을 탐색합니다. 수행할 항목을 선택하면 게시되는 항목에 대한 설명을 입력할 수 있습니다. 오른쪽의 카메라 아이콘을 클릭하여 항목과 관련된 스크린샷을 찍을 수 있습니다.
 
 준비가 되었으면 오른쪽 하단에 있는**게시(Publish)** 버튼을 클릭하여 현재 작업 파일과 주전자 지오메트리를 게시합니다. 완료되면 Shotgun에서 주전자 에셋을 검색하여 게시가 성공적으로 완료되었는지 확인할 수 있습니다.
@@ -275,6 +291,8 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 
 {% include info title="참고" content="추가할 커스터마이즈는 확실히 매우 간단하고 쉽습니다. 보다 강력한 솔루션을 위해 외부 이미지를 텍스처 맵으로 사용하는 에셋 관리 측면뿐만 아니라 서페이스 처리된 캐릭터의 대체 표현을 고려해야 할 수 있습니다. 이 예제는 실제 솔루션을 빌드하기 위한 시작점만 제공합니다." %}
+
+{% include info title="참고" content="게시자 플러그인을 작성하는 방법에 대한 전체 상세 정보는 [여기](https://developer.shotgunsoftware.com/tk-multi-publish2/)에서 확인할 수 있습니다." %}
 
 #### Maya 컬렉터 재지정
 
@@ -612,6 +630,8 @@ Shotgun에 다음과 같이 나타납니다.
 
 이미지에서 볼 수 있듯이, 새 카메라 항목이 수집되고 게시 플러그인이 연결됩니다. 계속 진행하여 **게시(Publish)**를 클릭하여 디스크에 카메라를 작성하고 Shotgun에 등록합니다.
 
+{% include info title="참고" content="Alembic 내보내기와 유사하게 카메라 게시 플러그인을 사용하려면 FBX 내보내기 플러그인을 로드해야 합니다.  카메라 게시 플러그인 항목이 표시되지 않으면 FBX 플러그인이 로드되었는지 확인하고 게시자를 다시 시작합니다." %}
+
 Shotgun에 다음과 같이 나타납니다.
 
 {% include figure src="./images/tutorial/image_46.png" %}
@@ -826,8 +846,8 @@ Shotgun의 미디어 리뷰에 대한 자세한 정보는 [공식 설명서](htt
 
 축하합니다. 모두 완료했습니다. 이 튜토리얼이 Shotgun 통합을 사용하여 고유한 커스텀 파이프라인을 빌드하는 시작점이 되었기를 바랍니다. 기본 통합을 확장하여 스튜디오의 특정 요구 사항을 충족하는 방법을 이해할 수 있어야 합니다.
 
-기본 통합에서 제공되지 않는 기능이나 워크플로우가 있으면 언제든 자체 앱을 작성할 수 있습니다. 첫 번째 앱 작성을 시작하려면 [이 문서](https://support.shotgunsoftware.com/entries/95440137)를 참조하십시오.
+[shotgun-dev Google 그룹](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev)에서 다른 스튜디오에서는 툴킷을 어떻게 사용하는지 질문하고 배울 수 있습니다.  최신 게시물을 보려면 등록하십시오.
+
+기본 통합에서 제공되지 않는 기능이나 워크플로우가 있으면 언제든 자체 앱을 작성할 수 있습니다. 첫 번째 앱 작성을 시작하려면 [이 문서](https://support.shotgunsoftware.com/hc/ko/articles/219033158)를 참조하십시오.
 
 언제나처럼 이 튜토리얼에 대한 추가 질문이나 Shotgun 또는 툴킷 플랫폼에 대한 일반적인 질문이 있으면 언제든지 [티켓을 제출해 주십시오](https://support.shotgunsoftware.com/hc/ko/requests/new).
-
-

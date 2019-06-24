@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 통합
-lang: ko
 pagename: rv-integrations
+lang: ko
 ---
 
 # RV 통합

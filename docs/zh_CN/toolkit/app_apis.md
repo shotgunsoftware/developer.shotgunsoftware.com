@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 应用 API
-lang: zh_CN
 pagename: toolkit-app-apis
+lang: zh_CN
 ---
 
 # Toolkit 应用 API

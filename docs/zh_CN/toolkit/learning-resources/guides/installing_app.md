@@ -1,18 +1,18 @@
 ---
 layout: default
 title: 添加应用
-lang: zh_CN
 pagename: toolkit-guides-adding-app
+lang: zh_CN
 ---
 
 # 添加应用
 
 通过完成本手册，您将很快熟悉 Toolkit 中的配置管理工具，并学会如何：
 
-* 安全地创建活动工作流配置的副本
+* 安全地创建使用中的工作流配置的副本
 * 将应用添加到配置
 * 添加在特定环境中使用该应用所需的设置
-* 将更改推送回活动配置
+* 将更改同步回使用中的工作流配置
 
 ## 关于本手册
 
@@ -20,7 +20,7 @@ pagename: toolkit-guides-adding-app
 
 我们要添加的应用是 Shotgun Python 控制台应用。Maya 具有其自己的 Python 控制台，但是 Toolkit 应用中有一些功能在 Maya 控制台中不存在。
 
-本手册利用我们在[编辑工作流配置](./editing_app_setting.md) 手册中创建的工作流配置。如果您尚未完成此手册，则可以使用现有的工作流配置，并在其中添加该应用。
+本手册利用我们在[编辑工作流配置](./editing_app_setting.md)手册中创建的工作流配置。 如果您尚未完成此手册，则可以使用现有的工作流配置，并在其中添加该应用。
 
 ## 使用本文档
 
@@ -32,7 +32,7 @@ pagename: toolkit-guides-adding-app
 4. 在系统上安装 Shotgun Desktop。
 5. Maya 的有效固定期限的使用许可。在[此处](https://www.autodesk.com.cn/products/maya/free-trial) 获取 Maya 的 30 天试用版。
 
-**注意：**本手册基于 tk-config-default2 工作流配置。如果您的配置已修改，则 YAML 设置的文件、文件夹和块的位置可能与此处描述的不同。
+{% include info title="注意" content="本手册基于 tk-config-default2 工作流配置。如果您的配置文件已修改，则文件和文件夹的位置、YAML 设置的区块可能就与此处描述的不同。"%}
 
 ## 关于 Shotgun Toolkit 应用
 
@@ -115,7 +115,7 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 完成后，将使用有关克隆配置的信息更新配置列表，并且将在本地 config 文件夹中添加新配置。
 
-**注意：**在**“用户限制”(User Restrictions)**下，添加了您的用户名。Shotgun 自动将对新配置的访问权限限制为仅创建配置的人员。您可以添加要编辑、测试并最终使用此配置的人员。另一方面，Shotgun 可实现灵活性和可控性。
+{% include info title="注意" content="在**“用户限制”(User Restrictions)**下，添加了您的用户名。Shotgun 自动将对新配置的访问权限限制为仅创建配置的人员。您可以添加要编辑、测试并最终使用此配置的人员。另一方面，Shotgun 可实现灵活性和可控性。" %}
 
 ## 将克隆的配置与项目相关联
 
@@ -146,9 +146,9 @@ apps.tk-multi-pythonconsole.location:
 	version: v1.1.2
 ```
 
-**注意：**如果您使用的是其他配置，则可能需要将描述符添加到文件中。
+{% include info title="注意" content="如果您使用的是其他配置，则可能需要将描述符添加到文件中。" %}
 
-所有应用和插件都有描述符。您可以在 [核心 API 文档的“描述符”部分] (https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types) 中阅读有关描述符工作方式以及如何设置 `type:` 的内容。
+所有应用和插件都有描述符。您可以在[核心 API 文档的“描述符”部分](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types)中阅读有关描述符工作方式以及如何设置 `type:` 的内容。
 
 ## 告知 Toolkit 使用描述符
 
@@ -215,7 +215,7 @@ settings.tk-maya.project:
 
 使用 `about` 应用 `tk-multi-about:`，作为如何添加位置描述符的指南，然后保存该文件。
 
-**注意：**请确保使用空格而不是制表符正确设置 [YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) 文件的格式。
+{% include info title="注意" content="请确保使用空格而不是制表符正确设置 [YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) 文件的格式。" %}
 
 ```
 # project
@@ -230,7 +230,19 @@ settings.tk-maya.project:
     tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"
 ```
 
-您会注意到，**审片室、Shotgun 面板和工作文件 2** 应用的位置标识符列在不同的包含文件中，并且以不同于**关于**应用的方式进行访问。为了保持整洁，这些应用被拆分到包含的 settings 文件夹，因为它们具有其他设置。
+您会注意到，**审片室、Shotgun 面板和 Workfiles 2** 应用的位置标识符列在不同的包含文件中，并且以不同于**关于**应用的方式进行访问。为了保持整洁，这些应用被拆分到包含的 settings 文件夹，因为它们具有其他设置。
+
+{% include info title="注意" content="Python 控制台应用已经存在于默认配置中，但是如果您添加的应用以前从未添加到配置中，或者您已更改应用的版本，并且使用的是[集中式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)，则需要额外执行一个步骤。打开终端，并浏览到存储克隆配置的位置。从克隆配置的根文件夹中，运行以下命令：<br/>
+
+在 Linux 或 Mac 上：
+
+    ./tank cache_apps
+
+在 Windows 上：
+
+    tank.bat cache_apps
+
+这将扫描应用、插件和框架的配置并确保它们均已下载。" %}
 
 ## 查看 Maya 中的更改
 
@@ -238,7 +250,7 @@ settings.tk-maya.project:
 
 在项目名称下，将出现一个蓝色条，其中包含您创建的克隆的名称。
 
-**注意：**如果您使用的是主要配置，则不会出现蓝色条，并且配置名称将不可见。
+{% include info title="注意" content="如果您使用的是主要配置，则不会出现蓝色条，并且配置名称将不可见。" %}
 
 ![Maya 克隆配置](./images/installing_app/14_maya_cloned_config.png)
 
@@ -262,9 +274,13 @@ Python 控制台应用将在 Maya 中可用。
 
 **步骤 18：**打开终端，并浏览到存储克隆配置的位置。从克隆配置的根文件夹中，运行以下命令：
 
+在 Linux 或 Mac 上：
+
 `./tank push_configuration`
 
-**注意：**对于 Windows 系统，您将运行 `tank.bat push_configuration`
+在 Windows 上：
+
+`tank.bat push_configuration`
 
 按照提示操作，并键入项目主要配置（您要将更改推送到的配置）的 ID。
 
@@ -304,7 +320,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 将出现一个可以将克隆配置推送到的可用工作流配置的列表。输入您要为其更新配置的项目的主要工作流配置的 ID。
 
-**注意：**您也可以在本手册的**[步骤 3](#step3)** 中查看的 Shotgun 中的“工作流配置”(Pipeline Configuration)页面上找到工作流配置的 ID。要查找项目 ID，请转到“配置列表”(Configuration List)，并添加“ID”列。
+{% include info title="注意" content="您也可以在本手册的**[“步骤 3](#step3)”**中查看的 Shotgun 中的“工作流配置”(Pipeline Configuration)页面上找到工作流配置的 ID。要查找项目 ID，请转到“配置列表”(Configuration List)，并添加“ID”列。" %}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 
@@ -344,7 +360,7 @@ Python 控制台应用已添加到所选项目的项目环境中。我们在第�
 
 Toolkit 的一个奇妙之处在于，任何人都可以创建 Toolkit 应用。应用可以保持专有，也可以在 [Shotgun 社区](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039828) 中分享，并添加到 Shotgun 库。如果您创建了一个非常出色的应用，并且想在 Shotgun 社区页面中分享，请发送电子邮件至 [support@shotgunsoftware.com](mailto:support@shotgunsoftware.com)。
 
-在 **[shotgun-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)** 中对标准 Toolkit 应用和由充满爱心的 Shotgun 社区创建的应用进行了热烈的讨论。随着 Shotgun 社区内容日益丰富，知识和工具库将不断壮大。
+在 **[shotgun-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=zh-CN#!forum/shotgun-dev)** 中对标准 Toolkit 应用和由充满爱心的 Shotgun 社区创建的应用进行了热烈的讨论。随着 Shotgun 社区内容日益丰富，知识和工具库将不断壮大。
 
 ### 研究如何扩展配置
 
@@ -358,7 +374,7 @@ Desktop 应用会在项目环境中打开，因此在 `project.yml` 文件中查
 
 打开 `config/env/project.yml`。
 
-**注意：**在插件块中，`tk-desktop` 指向包含的内容：
+{% include info title="注意" content='在插件块中，`tk-desktop` 指向包含的内容：
 
 ```
 includes:
@@ -368,7 +384,7 @@ engines:
   tk-desktop: "@settings.tk-desktop.project"
 ```
 
-在包含内容之后，打开 `config/env/includes/settings/tk-desktop.yml` 并查找 `settings.tk-desktop.project` 块。在该块中，您会看到以下内容：
+在包含内容之后，打开 `config/env/includes/settings/tk-desktop.yml` 并查找 `settings.tk-desktop.project` 块。在该块中，您会看到以下内容：<br/><br/>
 
 ```
 apps:
@@ -378,7 +394,7 @@ apps:
 
 在项目工序中，这些块将 Python 控制台应用添加到 Desktop 插件。
 
-在此之后，进一步包含 `../includes/app_locations.yml`，并搜索 `apps.tk-multi-pythonconsole.location` 以查找以下内容：
+在此之后，进一步包含 `../includes/app_locations.yml`，并搜索 `apps.tk-multi-pythonconsole.location` 以查找以下内容：<br/><br/>
 
 ```
 # pythonconsole
@@ -386,7 +402,7 @@ apps.tk-multi-pythonconsole.location:
   type: app_store
   name: tk-multi-pythonconsole
   version: v1.1.2
-```
+```' %}
 
 每个应用、插件和框架都有位置描述符，用于告知 Toolkit 在何处访问特定的包。许多应用描述符都位于 `app_locations.yml` 文件中，但可能无法在所需的位置引用它们，正如我们在 Python 控制台应用中看到的那样。所有标准应用和插件都列在[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798) 中。
 

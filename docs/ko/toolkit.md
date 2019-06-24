@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 개요
-lang: ko
 pagename: toolkit-index
+lang: ko
 ---
 
 # 툴킷 플랫폼

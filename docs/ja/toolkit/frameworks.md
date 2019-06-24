@@ -1,8 +1,8 @@
 ---
 layout: default
 title: フレームワーク
-lang: ja
 pagename: toolkit-frameworks
+lang: ja
 ---
 
 # Toolkit のフレームワーク

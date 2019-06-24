@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 統合
-lang: ja
 pagename: rv-integrations
+lang: ja
 ---
 
 # RV の統合
