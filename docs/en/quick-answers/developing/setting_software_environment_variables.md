@@ -38,7 +38,7 @@ For example if you need to add a path to `NUKE_PATH` (for Nuke), or the `PYTHONP
 You can use our convenience method for this:
 
 ```python
-tank.util.append_path_to_env_var("NUKE_PATH", "/my/custom/path")
+tank.util.append_path_to_env_var(\"NUKE_PATH\", \"/my/custom/path\")
 ```
 " %}
 
