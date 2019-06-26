@@ -208,7 +208,7 @@ For this specific block in the Default Configuration, ‘tk-maya.project’ is t
 
 ![tk-maya](./images/installing_app/13_tk-maya.png)
 
-Step 15: Add the location descriptor under 
+**Step 15:** Add the location descriptor under 
 
 ```
 settings.tk-maya.project:
