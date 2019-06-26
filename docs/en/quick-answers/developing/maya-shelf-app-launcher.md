@@ -13,7 +13,7 @@ Adding a shelf button in Maya to launch Toolkit apps in Maya is pretty straightf
 
 Open your Script Editor in Maya and paste in the following Python code: 
 
-```
+```python
 import maya.cmds as cmds 
 
 # Define the name of the app command we want to run.

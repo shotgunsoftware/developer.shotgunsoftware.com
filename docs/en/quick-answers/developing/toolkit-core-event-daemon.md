@@ -35,7 +35,7 @@ If you're using the [shotgun event daemon](https://github.com/shotgunsoftware/sh
 
 The example below shows you how you can import the correct version of the sgtk core in a script or plugin when a different version of the module may have already been imported. The original import is unloaded and removed from memory in Python so the new instance of the module can be imported and used successfully.
 
-```
+```python
 """
 Example of how to import the correct sgtk core code in a script where
 a different instance of the module may have already been imported. The
