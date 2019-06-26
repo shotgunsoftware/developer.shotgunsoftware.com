@@ -12,7 +12,7 @@ It's common to need to set environment before launching a given software so that
 Shotgun Toolkit allows you to configure the environment during the launch process through the use of hooks which allow for custom code to be run. 
 
 When you launch software such as Nuke or Maya for exmaple via Shotgun Desktop or through the browser integration, the `tk-multi-launchapp` will be run.
-This app is responsible for launching the software and ensuring the Shotgun integrations startup as expected. There are two points during this process that are exposed via hooks to allow custom code to be run.
+This app is responsible for launching the software and ensuring the Shotgun integrations start up as expected. There are two points during this process that are exposed via hooks to allow custom code to be run.
 
 ## before_app_launch.py
 
@@ -34,7 +34,7 @@ class BeforeAppLaunch(tank.Hook):
 ```
 
 {% include warning title="Warning" content="Be careful not to completely redefine environment variables set by Shotgun. 
-For example if you need to add a path to `NUKE_PATH` (for Nuke), or the `PYTHONPATH` (for Maya) then make sure you append your path to the existing value rather than replacing it. 
+For example, if you need to add a path to `NUKE_PATH` (for Nuke), or `PYTHONPATH` (for Maya), make sure you append your path to the existing value, rather than replace it.
 You can use our convenience method for this:
 
 ```python
