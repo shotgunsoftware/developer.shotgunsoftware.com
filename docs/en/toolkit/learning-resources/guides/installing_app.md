@@ -139,7 +139,7 @@ If an app that you want to use isn’t referenced in the little black book, you 
 
 **Step 10:** Search the file for `pythonconsole`. If you used the Default Configuration for the project, you will find that the descriptor for the Python Console app is listed in this file. It should match the description we found in the [list](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) of Maya apps we looked at when we started on our journey. Check to make sure the version matches what we looked at in the list of Maya apps. 
 
-```YAML
+```yaml
 apps.tk-multi-pythonconsole.location:
 	type: app_store
 	name: tk-multi-pythonconsole
@@ -157,7 +157,7 @@ Now we need to tell Toolkit to use the descriptor to locate the Python Console a
 
 **Step 11:** Open the `config/env/project.yml` file in your cloned config and find the settings for the `tk-maya` engine.
 
-```YAML
+```yaml
 # configuration for all engines to load in a project context
 
 engines:
@@ -210,7 +210,7 @@ For this specific block in the Default Configuration, ‘tk-maya.project’ is t
 
 Step 15: Add the location descriptor under 
 
-```YAML
+```yaml
 settings.tk-maya.project:
   apps:
 ```
@@ -219,7 +219,7 @@ Use the `about` app, `tk-multi-about:`, as a guide for how to add the location d
 
 {% include info title="Note" content="Make sure your [YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) files are formatted correctly using spaces and not tabs." %}
 
-```YAML
+```yaml
 # project
 settings.tk-maya.project:
   apps:
@@ -380,7 +380,7 @@ Open `config/env/project.yml`.
 
 {% include info title="Note" content='In the engine block, `tk-desktop` points to included content:
 
-```YAML
+```yaml
 includes:
   - ./includes/settings/tk-desktop.yml
 
@@ -390,7 +390,7 @@ engines:
 
 Follow the include: open `config/env/includes/settings/tk-desktop.yml` and find the `settings.tk-desktop.project` block. In that block you’ll see the following:<br/><br/>
 
-```YAML
+```yaml
 apps:
   tk-multi-pythonconsole:
   location: "@apps.tk-multi-pythonconsole.location"
@@ -400,7 +400,7 @@ These blocks add the Python Console app to the Desktop engine in the project ste
 
 Follow that include further to `../includes/app_locations.yml` and search for `apps.tk-multi-pythonconsole.location` to find the following:<br/><br/>
 
-```YAML
+```yaml
 # pythonconsole
 apps.tk-multi-pythonconsole.location:
   type: app_store
