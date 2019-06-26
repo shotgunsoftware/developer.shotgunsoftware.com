@@ -190,7 +190,9 @@ Your folder in the schema might look something like:
 
 And then you would create the folders with a script like this:
 
-    sgtk.create_filesystem_structure(entity["type"], entity["id"], engine="publish")
+```python
+sgtk.create_filesystem_structure(entity["type"], entity["id"], engine="publish")
+```
 
 **Extended Example**
 

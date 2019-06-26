@@ -22,30 +22,33 @@ This is generally due to a version of `msvcr90.dll` in your path that conflicts 
 
 First, go to your pipeline configuration’s `config/hooks` folder and create the file `before_app_launch.py`. In it, paste the following:
 
-    """
-    Before App Launch Hook
-    This hook is executed prior to application launch and is useful if you need
-    to set environment variables or run scripts as part of the app initialization.
-    """
-    import os
-    import tank
+```python
 
-    class BeforeAppLaunch(tank.get_hook_baseclass()):
+"""
+Before App Launch Hook
+This hook is executed prior to application launch and is useful if you need
+to set environment variables or run scripts as part of the app initialization.
+"""
+import os
+import tank
+
+class BeforeAppLaunch(tank.get_hook_baseclass()):
+    """
+    Hook to set up the system prior to app launch.
+    """
+    def execute(self, **kwargs):
         """
-        Hook to set up the system prior to app launch.
+        The execute functon of the hook will be called to start the required application
         """
-        def execute(self, **kwargs):
-            """
-            The execute functon of the hook will be called to start the required application
-            """
-            env_path = os.environ["PATH"]
-            paths = env_path.split(os.path.pathsep)
-            # Remove folders which have msvcr90.dll from the PATH
-            paths = [path for path in paths if "msvcr90.dll" not in map(
-                str.lower, os.listdir(path))
-            ]
-            env_path = os.path.pathsep.join(paths)
-            os.environ["PATH"] = env_path
+        env_path = os.environ["PATH"]
+        paths = env_path.split(os.path.pathsep)
+        # Remove folders which have msvcr90.dll from the PATH
+        paths = [path for path in paths if "msvcr90.dll" not in map(
+            str.lower, os.listdir(path))
+        ]
+        env_path = os.path.pathsep.join(paths)
+        os.environ["PATH"] = env_path
+```
 
 Now save the file.
 
