@@ -111,7 +111,7 @@ This reference box shows details about the configuration settings that control t
 
 Look under the **Configuration** header to find the settings for this specific environment. 
 
-![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png "View task button")
+![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png)
 
 **NOTE:** After the setting **my_tasks_filters** is a setting **launch_at_startup**. This is important to note because it’s the default setting for the **File Open** setting in the project environment. This tells you that when Maya is launched from the Shotgun Desktop, the **File Open** dialog box automatically opens. 
 
