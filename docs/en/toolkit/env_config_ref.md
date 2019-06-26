@@ -66,7 +66,7 @@ To do so, add the desired environment config files to the `config/env` directory
 
 Toolkit’s configuration files are written in [YAML](https://yaml.org/). The general configuration structure for any bundle (an app, engine, or framework) is as follows:
 
-```YAML
+```yaml
 bundle_name:
   setting1: value
   setting2: value
@@ -81,7 +81,7 @@ bundle_name:
 
 To demonstrate this structure, here is a very simple example: an environment in which there is a single engine, with a single app defined within it. The following might be the contents of `project.yml` in this config:
 
-```YAML
+```yaml
 engines:
   tk-maya:
     apps:
@@ -109,7 +109,7 @@ In our example, only a single engine is defined, `tk-maya`. It has two settings 
 
 Every Toolkit bundle has a `location` setting, which we refer to as the bundle’s *descriptor*. The descriptor tells Toolkit where to find the given bundle, and depending on its type, whether to access it directly or cache it locally. Some examples of locations that a Toolkit bundle can come from are the Shotgun App Store, a git repository, a path on disk, or a zip file uploaded to your Shotgun site. Each of these has a corresponding descriptor type, with settings specific to that type. Here again is the descriptor for the `tk-maya` engine from the example above:
 
-```YAML
+```yaml
     location:
         type: app_store
         name: tk-maya
@@ -120,7 +120,7 @@ This is a descriptor of type `app_store`, which tells Toolkit to get the given b
 
 In contrast, if you are actively developing a custom bundle&mdash;say you’re working on writing a Toolkit app for a specific workflow in your studio, you may want to get it directly from a path on disk. In this case you’d use a descriptor of type `dev`, which might look like this: 
 
-```YAML
+```yaml
     location:
         type: dev
         path: /path/to/app
@@ -136,7 +136,7 @@ Apps are Toolkit’s user tools, and each can run independently of any others. Y
 
 Here again is the `apps` setting from our example above:
 
-```YAML
+```yaml
 engines:
   tk-maya:
     apps:
@@ -151,7 +151,7 @@ You can see that we have a single app defined, the `tk-multi-workfiles2` app. It
 
 If you wanted to make other apps available in the `tk-maya` engine in the `project` environment, you’d add them here. Let’s add the Panel, `tk-multi-shotgunpanel`, and the About app, `tk-multi-about`, to our engine. Our example `project.yml` file now looks like this:
 
-```YAML
+```yaml
 engines:
   tk-maya:
     apps:
@@ -199,7 +199,7 @@ The contents of `engine_locations.yml` would look like this:
 
 `config/env/includes/engine_locations.yml`:
 
-```YAML
+```yaml
 engines.tk-maya.location:
   type: app_store
   name: tk-maya
@@ -217,7 +217,7 @@ This file can act as a single source for all engine locations, and all of your e
 
 `config/env/project.yml`:
 
-```YAML
+```yaml
 includes:
 - includes/engine_locations.yml
 
@@ -252,7 +252,7 @@ You can add a second include file for app locations, and in fact, the Default Co
 
 `config/env/includes/app_locations.yml:`
 
-```YAML
+```yaml
 apps.tk-multi-about.location:
   type: app_store
   name: tk-multi-about
@@ -272,7 +272,7 @@ apps.tk-multi-workfiles2.location:
 
 `config/env/project.yml`:
 
-```YAML
+```yaml
 includes:
 - includes/app_locations.yml
 - includes/engine_locations.yml
@@ -318,7 +318,7 @@ Going back to our example, let’s say that we want to configure `tk-multi-workf
 
 `config/env/project.yml`:
 
-```YAML
+```yaml
 includes:
 - includes/app_locations.yml
 - includes/engine_locations.yml
