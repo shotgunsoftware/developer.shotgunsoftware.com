@@ -14,7 +14,7 @@ If you're setting this environment variable during the launch process using some
 
 Use this function in `tank.util` to append or prepend your path to the `NUKE_PATH` environment variable, while preserving the path to the Toolkit bootstrap:
 
-```
+```python
 tank.util.append_path_to_env_var("NUKE_PATH", "/my/custom/path")
 ```
 

@@ -35,7 +35,7 @@ If you're using the [shotgun event daemon](https://github.com/shotgunsoftware/sh
 
 The example below shows you how you can import the correct version of the sgtk core in a script or plugin when a different version of the module may have already been imported. The original import is unloaded and removed from memory in Python so the new instance of the module can be imported and used successfully.
 
-```
+```python
 """
 Example of how to import the correct sgtk core code in a script where
 a different instance of the module may have already been imported. The
@@ -107,33 +107,35 @@ The bootstrap process handles the swapping out of the sgtk modules so that at th
 {% include warning title="Warning" content="Bootstrapping a config can be slow, as the process needs to ensure the config is cached locally and all the dependencies are downloaded. Bootstrapping in an Event Daemon plugin could severely affect performance. One potential approach would be to spawn off separate Python instances for each project bootstrap to communicate and send commands from the plugins. This will avoid needing to re-bootstrap a project each time it is needed." %}
 
 
- Here is an example: 
+Here is an example: 
 
-    # insert the path to the non project centric sgtk API
-    sys.path.insert(0,"/path/to/non/project/centric/sgtk")
-    import sgtk
+```python
+# insert the path to the non project centric sgtk API
+sys.path.insert(0,"/path/to/non/project/centric/sgtk")
+import sgtk
 
-    sa = sgtk.authentication.ShotgunAuthenticator()
-    # Use the authenticator to create a user object.
-    user = sa.create_script_user(api_script="SCRIPTNAME",
-                                api_key="SCRIPTKEY",
-                                host="https://SITENAME.shotgunstudio.com")
+sa = sgtk.authentication.ShotgunAuthenticator()
+# Use the authenticator to create a user object.
+user = sa.create_script_user(api_script="SCRIPTNAME",
+                            api_key="SCRIPTKEY",
+                            host="https://SITENAME.shotgunstudio.com")
 
-    sgtk.set_authenticated_user(user)
+sgtk.set_authenticated_user(user)
 
-    mgr = sgtk.bootstrap.ToolkitManager(sg_user=user)
-    mgr.plugin_id = "basic."
+mgr = sgtk.bootstrap.ToolkitManager(sg_user=user)
+mgr.plugin_id = "basic."
 
-    engine = mgr.bootstrap_engine("tk-shell", entity={"type": "Project", "id": 176})
-    # import sgtk again for the newly bootstrapped project, (we don't need to handle setting sys paths)
-    import sgtk
-    # perform any required operations on Project 176 ...
-    
-    # Destroy the engine to allow us to bootstrap into another project/engine.
-    engine.destroy()
+engine = mgr.bootstrap_engine("tk-shell", entity={"type": "Project", "id": 176})
+# import sgtk again for the newly bootstrapped project, (we don't need to handle setting sys paths)
+import sgtk
+# perform any required operations on Project 176 ...
 
-    # now repeat the process for the next project, although we don't need to do the initial non-project centric sgtk import this time.
-    # We can reuse the already import sgtk API to bootstrap the next
-    ...
+# Destroy the engine to allow us to bootstrap into another project/engine.
+engine.destroy()
+
+# now repeat the process for the next project, although we don't need to do the initial non-project centric sgtk import this time.
+# We can reuse the already import sgtk API to bootstrap the next
+...
+```
 
 {% include info title="Note" content="Centralized configs can be bootstrapped as well, so you don't need a different method if you're using a mix." %}

@@ -172,7 +172,7 @@ Again, our goal is to go from an `asset_type/asset/step` folder structure to `se
 
 **Step 9:** Create a file called `CustomEntity01.yml` file next to the `CustomEntity01` folder, with the following contents:
 
-```
+```yaml
 type: "shotgun_entity"
 
 name: "code"
@@ -197,7 +197,7 @@ As we want our folder structure to look like `Dining-Room/Prop/filet`, the `asse
 
 The `filters` field limits which entities have folders created for them at a given time. In its current state, the filters field in `asset.yml` looks like this:
 
-```
+```yaml
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
@@ -214,7 +214,7 @@ To prevent that, we’ll add a third filter, which will ensure that an asset’s
 
 **Step 11:** Modify the `filters` field in `asset.yml` to look like this:
 
-```
+```yaml
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
@@ -299,7 +299,7 @@ The first thing to do is define a new key for the Set entity, using the entity�
 
 **Step 14:** Add the following lines to the `keys` section of `templates.yml`, being mindful of proper indentation: 
 
-```
+```yaml
        CustomEntity01:
            type: str
 ```
@@ -314,7 +314,7 @@ Then, we’ll modify the template for work files on asset steps in Maya to also 
 
 **Step 15:** Open `templates.yml` and search for `maya_asset_work`. 
 
-```
+```yaml
    maya_asset_work:
         definition: '@asset_root/work/maya/{name}.v{version}.{maya_extension}'
 ```
@@ -349,7 +349,7 @@ The `{name}` template key is a special key that represents user input in the Wor
 
 **Step 17:** Modify the `maya_asset_work` template definition so that it looks like this:
 
-```
+```yaml
     maya_asset_work:
         definition: '@asset_root/work/maya/{CustomEntity01}_{Asset}.v{version}.{maya_extension}'
 ```

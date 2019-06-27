@@ -157,7 +157,7 @@ The last two folders are `config/env/` followed by `project.yml`. The `project.y
 
 **Step 16:** Open `project.yml` in your favorite text editor.
 
-```
+```yaml
 description: Apps and Engines when launching with a project only context.
 
 ################################################################################
@@ -229,7 +229,7 @@ Looking for the Workfiles App settings in tk-maya.yml
 
 **Step 18:** Following the include from `project.yml`, search the `tk-maya.yml` file for `settings.tk-maya.project`. You are specifically looking to disable the **+New Task** button in the project environment of a specific project. You are in the configuration for that project and obtained the location information while you were in the project environment. 
 
-```
+```yaml
 # project
 settings.tk-maya.project:
   apps:
@@ -251,7 +251,7 @@ Under `settings.tk-maya.projects`, the `tk-multi-workfiles2` app settings are li
 
 The `@` symbol tells us that that the value for `tk-multi-workfiles2` is coming from an included file. In the `includes` section at the top of `tk-maya.yml`, we see the following:
 
-```
+```yaml
 includes:
 ...
 - ./tk-multi-workfiles2.yml
@@ -261,7 +261,7 @@ We should look for `settings.tk-multi-workfiles2.launch_at_startup` in the `tk-m
 
 **Step 19:** Open the `tk-multi-workfiles2.yml` file and search for `settings.tk-multi-workfiles2.launch_at_startup`.
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   launch_at_startup: true
@@ -274,7 +274,7 @@ The Maya reference box indicated the `allow_task_creation` setting has a default
 
 **Step 20:** In `tk-multi-workfiles2.yml`, add `allow_task_creation` under `settings.tk-multi-workfiles2.launch_at_startup:` and set the value to `false` 
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   allow_task_creation: false
