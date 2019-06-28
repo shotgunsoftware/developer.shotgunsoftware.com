@@ -7,11 +7,9 @@ lang: en
 
 # How do I set environment variables before launching software?
 
-It's common to need to set environment before launching a given software so that your studio customizations are applied.
+Shotgun Toolkit allows you to use hooks during the launch process to configure the environment and run custom code.
 
-Shotgun Toolkit allows you to configure the environment during the launch process through the use of hooks which allow for custom code to be run. 
-
-When you launch software such as Nuke or Maya for exmaple via Shotgun Desktop or through the browser integration, the `tk-multi-launchapp` will be run.
+When you launch software, for example Nuke or Maya, via Shotgun Desktop or through the browser integration, the `tk-multi-launchapp` will be run.
 This app is responsible for launching the software and ensuring the Shotgun integrations start up as expected. There are two points during this process that are exposed via hooks to allow custom code to be run.
 
 ## before_app_launch.py
@@ -44,5 +42,5 @@ tank.util.append_path_to_env_var(\"NUKE_PATH\", \"/my/custom/path\")
 
 ## app_launch.py
  
-The [`app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/6a884aa144851148e8369e9f35a2471087f98d16/hooks/app_launch.py) hook is called at the point in the process where the launch software command is executed.
-You can modify this to change how the software is launched. This might be useful if for example you are launching a custom executable that handles the environment rather than the software executable directly, and need to change the way in which it is executed. 
+The [`app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/6a884aa144851148e8369e9f35a2471087f98d16/hooks/app_launch.py) hook is called at the point in the process where the software's executable is run.
+You can modify this to change how the software is launched. For example you might wish to remove the `/b` from the Windows start command so that it doesn't suppress any popups, such as Nuke's command output window.

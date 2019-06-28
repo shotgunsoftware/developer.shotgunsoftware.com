@@ -13,11 +13,13 @@ To achieve this, you can add a tab to the [Loader app](https://support.shotgunso
 
 For example, to add this to the [Maya engine in the shot step environment](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-multi-loader2.yml#L122), you'd add this snippet:
 
-    caption: Asset Library
-    hierarchy: [project, sg_asset_type, code]
-    entity_type: Asset
-    filters:
-    - [project, is, {'type': 'Project', 'id': 207}]
+```yaml
+caption: Asset Library
+hierarchy: [project, sg_asset_type, code]
+entity_type: Asset
+filters:
+- [project, is, {'type': 'Project', 'id': 207}]
+```
 
 replacing `207` with your library project's ID.
 
