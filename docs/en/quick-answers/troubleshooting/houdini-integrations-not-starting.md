@@ -40,4 +40,4 @@ This will allow the Shotgun set value to persist when Houdini launches.
 
 If you get this you should try using `%HOUDINI_PATH%` instead." %}
 
-If this does not fix your problem please reach out to our [support team]((https://support.shotgunsoftware.com/hc/en-us/requests/new)) and they will help you diagnose the issue.
+If this does not fix your problem please reach out to our [support team](https://support.shotgunsoftware.com/hc/en-us/requests/new) and they will help you diagnose the issue.
