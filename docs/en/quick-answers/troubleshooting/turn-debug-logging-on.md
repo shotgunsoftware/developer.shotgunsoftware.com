@@ -69,7 +69,7 @@ If you are in an advanced setup, there are a few more options for you. This func
 
 Every engine has a `debug_logging` setting in the environment file. Turning this on will emit additional debug-level log messages to the default output in your Software (e.g., the script editor in Nuke or Maya). All of the apps running in your engine will emit these debug-level messages so turning this on for the engine will effectively turn it on for all of your apps as well.
 
-This does not output any log messages to a file. We are working on a more standard logging framework that will allow this. The exceptions are [SG Desktop](https://support.shotgunsoftware.com/entries/95445597) and the [Photoshop engine](https://support.shotgunsoftware.com/hc/en-us/articles/115000026653-Photoshop-CC), which log output both in a GUI console and to a file.
+This does not output any log messages to a file. We are working on a more standard logging framework that will allow this. The exceptions are [SG Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/219039818-Shotgun-Desktop) and the [Photoshop engine](https://support.shotgunsoftware.com/hc/en-us/articles/115000026653-Photoshop-CC), which log output both in a GUI console and to a file.
 
 ### Turning on debug logging for an engine in your software
 
@@ -77,19 +77,21 @@ As an example, to turn on debugging output for the Nuke engine in the shot step 
 
 Edit `config/env/shot_step.yml`.
 
-    engines: 
+```yaml
+engines: 
+  ...
+  ...
+  tk-nuke:
+    apps:
       ...
       ...
-      tk-nuke:
-        apps:
-          ...
-          ...
-        compatibility_dialog_min_version: 9
-        debug_logging: true
-        favourite_directories: []
-        location: {name: tk-nuke, type: app_store, version: v0.2.23}
-        ...
-       ...
+    compatibility_dialog_min_version: 9
+    debug_logging: true
+    favourite_directories: []
+    location: {name: tk-nuke, type: app_store, version: v0.2.23}
+    ...
+   ...
+```
 
 Save the file and relaunch Nuke in the shot step environment. You will now see the debug output in the script editor window. 
 
