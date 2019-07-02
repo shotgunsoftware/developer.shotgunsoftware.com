@@ -292,7 +292,7 @@ engines:
 
 インクルードされた `engine_locations.yml` ファイルから `tk-maya` エンジンのディスクリプタを取得し、インクルードされた `app_locations.yml` ファイルから `tk-maya` エンジン用に定義された各アプリのディスクリプタを取得します。
 
-{% include info title="注" content="既定の設定では、この例では示されていない 2 番目のネスト レベルを使用しています。単なるディスクリプタ以上の設定を持つすべてのアプリまたはエンジンは、`includes/settings` に設定ファイルがあります(例: `includes/settings/tk-maya.yml`、`includes/settings/tk-multi-workfiles2.yml`)。エンジン設定ファイルには、アプリ設定ファイルからのアプリ設定が含まれ、環境設定ファイルにはエンジン設定ファイルからの設定が含まれています。既定の設定の構造の詳細については、[README ファイル](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)を参照してください。構成設定の変更に関する詳細な手順については、『[構成設定の編集に関する Toolkit の基本ガイド](./learning-resources/guides/editing_app_setting.md)』を参照してください。%}
+{% include info title="注" content="既定の設定では、この例では示されていない 2 番目のネスト レベルを使用しています。単なるディスクリプタ以上の設定を持つすべてのアプリまたはエンジンは、`includes/settings` に設定ファイルがあります(例: `includes/settings/tk-maya.yml`、`includes/settings/tk-multi-workfiles2.yml`)。エンジン設定ファイルには、アプリ設定ファイルからのアプリ設定が含まれ、環境設定ファイルにはエンジン設定ファイルからの設定が含まれています。既定の設定の構造の詳細については、[README ファイル](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)を参照してください。構成設定の変更に関する詳細な手順については、『[構成設定の編集に関する Toolkit の基本ガイド](./learning-resources/guides/editing_app_setting.md)』を参照してください。" %}
 
 
 ## スパース構成
