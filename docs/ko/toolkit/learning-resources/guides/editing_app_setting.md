@@ -349,7 +349,7 @@ Workfiles 앱의 시스템 이름은 `tk-multi-workfiles2`이고 여기서 `mult
 
 ### 커스텀 환경 생성
 
-기본 구성은 일련의 미리 정의된 파이프라인 단계(`project`, `sequence`, `shot`, `shot_step`, `asset` 및 `asset_step`)와 함께 제공됩니다. 그러나 스튜디오에서는 파이프라인 단계(`asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light` 등)마다 다른 구성 설정을 원할 수 있습니다. 원하는 환경 구성 파일을 `config/env`에 추가하고 새 환경을 인식하도록 `pick_environment` 코어 후크를 재정의하여 커스텀 환경을 생성할 수 있습니다. 후크를 사용하면 툴킷 워크플로우의 다양한 지점에서 실행되는 간단한 로직을 수정할 수 있으며 [`pick_environment` 코어 후크](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py)에는 툴킷이 환경을 결정하는 데 사용하는 로직이 포함되어 있습니다. 후크를 인계하여 이 로직을 수정할 수 있습니다.
+기본 구성은 일련의 미리 정의된 파이프라인 단계(`project`, `sequence`, `shot`, `shot_step`, `asset` 및 `asset_step`)와 함께 제공됩니다. 그러나 스튜디오에서는 파이프라인 단계(`asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light` 등)마다 다른 구성 설정을 원할 수 있습니다. 툴킷은 커스텀 환경을 지원합니다. 자세한 내용은 [환경 구성 참조의 "커스텀 환경" 섹션](../../env_config_ref.md#custom-environments)을 참조하십시오.
 
 ### 비디오 리소스
 

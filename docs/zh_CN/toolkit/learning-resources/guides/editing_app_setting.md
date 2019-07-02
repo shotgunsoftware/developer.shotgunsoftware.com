@@ -105,7 +105,7 @@ Toolkit 工作流配置用于自定义环境以满足您的工作流需求。工
 
 **步骤 11：**选择**“File Open”**窗口右上角**“Project (项目名称)”**旁边的 **>**。
 
-此参考框显示有关控制**“File Open”**窗口功能的配置设置的详细信息。Toolkit 中的某些应用具有参考框，以显示该应用使用的设置以及默认设置。请注意，**“Location:”**标识符是 **tk-multi-workfiles2**。这是创建工作文件应用的代码包的标识符。在搜索工作流配置时，此名称将标识应用的设置所在位置。有一个[“应用和插件”页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798)，其中列出了 Shotgun 集成中可用的工作流的所有配置设置、应用和插件。
+此参考框显示有关控制**“File Open”**窗口功能的配置设置的详细信息。Toolkit 中的某些应用具有参考框，以显示该应用使用的设置以及默认设置。请注意，**“Location:”**标识符是 **tk-multi-workfiles2**。这是创建 Workfiles 应用的代码包的标识符。在搜索工作流配置时，此名称将标识应用的设置所在位置。有一个[“应用和插件”页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798)，其中列出了 Shotgun 集成中可用的工作流的所有配置设置、应用和插件。
 
 ![Current_work_area](./images/editing_app_setting/9_current_work_area.png)
 
@@ -349,7 +349,7 @@ Workfiles 应用的系统名称是 `tk-multi-workfiles2`，名称中的 `multi` 
 
 ### 创建自定义环境
 
-默认配置附带了一组预定义的工作流工序：`project`、`sequence`、`shot`、`shot_step`、`asset` 和 `asset_step`。但是，工作室可能需要为工作流的每个阶段（即 `asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` 等）使用不同的配置设置。通过将所需的环境配置文件添加到 `config/env` 并覆盖 `pick_environment` 核心挂钩以识别新环境，您可以创建自定义环境。通过挂钩，您可以修改在 Toolkit 工作流的各个点运行的逻辑位，[`pick_environment` 核心挂钩](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) 包含 Toolkit 用于确定环境的逻辑。您可以接管挂钩来修改此逻辑。
+默认配置附带了一组预定义的工作流工序：`project`、`sequence`、`shot`、`shot_step`、`asset` 和 `asset_step`。但是，工作室可能需要为工作流的每个阶段（即 `asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` 等）使用不同的配置设置。Toolkit 支持自定义环境。有关详细信息，请参见[“环境配置参考”的“自定义环境”部分](../../env_config_ref.md#custom-environments)。
 
 ### 视频资源
 

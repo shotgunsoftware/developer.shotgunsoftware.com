@@ -349,7 +349,7 @@ Workfiles アプリのシステム名は `tk-multi-workfiles2` です。名前�
 
 ### カスタム環境を作成する
 
-既定の設定には、`project`、`sequence`、`shot`、`shot_step`、`asset`、および `asset_step` という、パイプラインに関する一連の定義済みの手順が付属しています。ただし、スタジオによっては、パイプラインのステージごとに異なる構成設定が必要な場合があります(`asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` など)。カスタム環境を作成するには、必要な環境設定ファイルを `config/env` に追加し、新しい環境を認識するように `pick_environment` コア フックをオーバーライドします。フックを使用すると、Toolkit ワークフローのさまざまなポイントで実行されるロジックを変更できます。[`pick_environment` コア フック](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py)には、環境を判別するために Toolkit で使用されるロジックが含まれています。フックを引き継いで、このロジックを変更することができます。
+既定の設定には、`project`、`sequence`、`shot`、`shot_step`、`asset`、および `asset_step` という、パイプラインに関する一連の定義済みの手順が付属しています。ただし、スタジオによっては、パイプラインのステージごとに異なる構成設定が必要な場合があります(`asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` など)。Toolkit はカスタム環境をサポートしています。詳しくは、[『環境設定リファレンス』の「カスタム環境」セクション](../../env_config_ref.md#custom-environments)を参照してください。
 
 ### ビデオのリソース
 
