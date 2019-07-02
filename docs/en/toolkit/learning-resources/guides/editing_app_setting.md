@@ -31,7 +31,7 @@ To use this guide and perform an edit on a pipeline configuration, the following
 5. Shotgun Desktop installed on your system.
 6. An active subscription for Maya. Get a 30 day trial of Maya [here](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689) 
 
-**NOTE:** This guide is based on the `tk-config-default2` pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here.
+{% include info title="Note" content="This guide is based on the `tk-config-default2` pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here." %}
 
 ## About the Workfiles app
 
@@ -111,9 +111,9 @@ This reference box shows details about the configuration settings that control t
 
 Look under the **Configuration** header to find the settings for this specific environment. 
 
-![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png "View task button")
+![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png)
 
-**NOTE:** After the setting **my_tasks_filters** is a setting **launch_at_startup**. This is important to note because it’s the default setting for the **File Open** setting in the project environment. This tells you that when Maya is launched from the Shotgun Desktop, the **File Open** dialog box automatically opens. 
+{% include info title="Note" content="After the setting **my_tasks_filters** is a setting **launch_at_startup**. This is important to note because it’s the default setting for the **File Open** setting in the project environment. This tells you that when Maya is launched from Shotgun Desktop, the **File Open** dialog automatically opens." %}
 
 Scroll down to **Setting allow_task_creation**. The default value of this setting is **True**, allowing a user to create a new task while in the Maya project environment.
 
@@ -357,4 +357,4 @@ The Default Configuration comes with a set of pre-defined pipeline steps: `proje
 * [Intro to Toolkit configurations](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s) from our SIGGRAPH 2018 Developer Day
 * [Demystifying the Default Configuration webinar](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
-Now that you’ve learned how to modify an app configuration setting, try [adding an app to your Toolkit configuration](./installing_app.md)
+Now that you’ve learned how to modify an app configuration setting, try [adding an app to your Toolkit configuration](./installing_app.md).

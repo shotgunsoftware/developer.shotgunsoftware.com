@@ -82,13 +82,11 @@ Adding a data field to the Asset entity enables us to link assets to the new ent
 
 **Step 4:** Select **Assets** in your project menu bar to go to an Assets page. In the Assets menu, select **Fields > Manage Asset Fields…** 
 
-![Python app](./images/dynamic_filesystem_configuration/5_manage_asset_fields.png
-)
+![Python app](./images/dynamic_filesystem_configuration/5_manage_asset_fields.png)
 
 This action displays the asset field manager.
 
-![Python app](./images/dynamic_filesystem_configuration/6_manage_asset_fields.png
-)
+![Python app](./images/dynamic_filesystem_configuration/6_manage_asset_fields.png)
 
 Select **+ Add a new field**
 
@@ -96,8 +94,7 @@ Select the parameters for the new field.
 
 In **New Field Name**, type “Set”. In the **GENERAL** menu under **Field Type**, select **Entity** and scroll down to **Restrict the type** to **Set**. Select **Next**.
 
-![Python app](./images/dynamic_filesystem_configuration/7_field_parameters.png
-)
+![Python app](./images/dynamic_filesystem_configuration/7_field_parameters.png)
 
 For this guide, apply it to **Only the current project** and select **Create Field**. 
 
