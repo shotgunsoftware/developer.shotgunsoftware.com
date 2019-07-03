@@ -16,13 +16,13 @@ When you launch an application from [Shotgun Desktop](https://support.shotgunsof
 
 **Default Maya Project actions:**
 
-![Shotgun Menu project actions](images/shotgun_menu_project_actions.png)
+![Shotgun Menu project actions](images/shotgun-menu-project-actions.png)
 
 You can use the [Shotgun Workfiles app](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files) to select the Asset, Shot, or Task to work on. This will load up the appropriate new environment for you which will then have more apps enabled with menu items in your Shotgun menu.
 
 **Default Maya Asset Task actions:**
 
-![Shotgun Menu project actions](images/shotgun_menu_asset_step_actions.png)
+![Shotgun Menu project actions](images/shotgun-menu-asset-step-actions.png)
 
 If you believe you're in the correct environment and the actions are still not showing, then the next step is to check the relevant [log](where-are-my-log-files.md), and see if there are any errors.
 You may need to [enable debug logging](turn-debug-logging-on.md) to get the full output.
