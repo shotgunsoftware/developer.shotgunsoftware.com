@@ -24,6 +24,8 @@ jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: UA-2114792-9        # Required - replace with your tracking id
 
+google_custom_search_id: "015683694229584726942:8l32_vorpny"
+
 # html head metadata: social open graph and favicon
 additional_head_html: |
   <meta property="og:image:height" content="1257">
