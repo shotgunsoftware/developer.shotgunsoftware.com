@@ -1,13 +1,14 @@
 ---
 layout: default
-title: SG Desktop / browser integration fails to launch on Linux
+title: Shotgun Desktop / browser integration fails to launch on Linux
 pagename: browser-integration-fails-linux
 lang: en
 ---
 
-# SG Desktop / browser integration fails to launch on Linux
+# Shotgun Desktop / browser integration fails to launch on Linux
 
-When running the SG Desktop on Linux for the first time, you may experience one of these error messages. If so, please follow the steps below for your specific error to see if that resolves things. If you're still stuck, please don't hesitate to  contact support@shotgunsoftware.com.
+When running the Shotgun Desktop on Linux for the first time, you may experience one of these error messages. If so, please follow the steps below for your specific error to see if that resolves things.
+If you're still stuck, please don't hesitate to contact support@shotgunsoftware.com.
 
 ###Contents
 - [OPENSSL_1.0.1_EC or HTTPSConnection related issues](#openssl_101_ec-or-httpsconnection-related-issues)
@@ -50,13 +51,13 @@ You need to install libffi. To do so, run the following command as an administra
 yum install libffi
 ```
 
-If you've installed libffi and it still doesn't work, try linking the following and then re-launching the SG Desktop:
+If you've installed libffi and it still doesn't work, try creating the following symlink and then re-launching the Shotgun Desktop:
 
 ```
 sudo ln -s /usr/lib64/libffi.so.6.0.1 /usr/lib64/libffi.so.5
 ```
 
-Some users have reported success with the above. Others still have issues. The latest version of SG Desktop added some additional dependencies with the web socket server which we're currently looking into. 
+Some users have reported success with the above. Others still have issues. The latest version of Shotgun Desktop added some additional dependencies with the web socket server which we're currently looking into. 
 
 ## Certificate validation failed related issues
 
@@ -70,9 +71,9 @@ certutil: function failed: SEC_ERROR_BAD_DATABASE: security library: bad databas
 
 **Solution** 
 
-If you have Google Chrome installed on your computer, launch it and then relaunch the SG Desktop. If you still have the issue, please contact support@shotgunsoftware.com.
+If you have Google Chrome installed on your computer, launch it and then relaunch the Shotgun Desktop. If you still have the issue, please contact support@shotgunsoftware.com.
 
-If you don't have Chrome, open a terminal and look for a folder named .pki in your home folder.
+If you don't have Chrome, open a terminal and run the following command:
 
 ```
 ls -al $HOME/.pki/nssdb
@@ -92,17 +93,18 @@ $ certutil -N -d "sql:$HOME/.pki/nssdb"
 ```
 Do not enter any password.
 
-Launching the SG Desktop should now work correctly.
+Launching the Shotgun Desktop should now work correctly.
 
 ## Incompatible Qt versions
 
 **Possible errors**
 
-Cannot mix incompatible Qt library (version 0x40805) with this library (version 0x40807)
+Cannot mix incompatible Qt library (version `0x40805`) with this library (version `0x40807`)
 
 **Solution**
 
-Often this comes up because there is an override happening that ends up loading incompatible Qt libraries.  You can try modifying your environment with this to keep that from happening:
+Often this comes up because there is an override happening that ends up loading incompatible Qt libraries.
+ ou can try modifying your environment with this command to keep that from happening:
 
 ```
 unset QT_PLUGIN_PATH

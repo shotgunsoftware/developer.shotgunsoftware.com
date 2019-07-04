@@ -9,7 +9,7 @@ lang: en
 
 ## What is the problem?
 
-With the release of our After Effects integration there is a common plugin that can be used by all Adobe apps that integrate with Shotgun. As part of this change we needed to rename the extension so that we could preserve backward compatibility with our older Photoshop integration and make it possible for studios to cleanly transition to the update.
+With the release of our After Effects integration, there is a common plugin that can be used by all Adobe apps that integrate with Shotgun. As part of this change, we needed to rename the extension so that we could preserve backward compatibility with our older Photoshop integration and make it possible for studios to cleanly transition to the update.
 
 Unfortunately, this also means that it is possible to have two Shotgun extensions installed as you upgrade:
 
@@ -21,8 +21,8 @@ The **Shotgun Adobe Panel** is the new one, and should be used when you are usi
 
 To get rid of the older extension, you can remove it from the Adobe install location in your home directory. The folder for this can be seen in the debug output upon Photoshop launch, and is
 
-- OSX: ~/Library/Application Support/Adobe/CEP/extensions/com.sg.basic.ps
-- Windows: %AppData%\Adobe\CEP\extensions\com.sg.basic.ps
+- OSX: `~/Library/Application Support/Adobe/CEP/extensions/com.sg.basic.ps`
+- Windows: `%AppData%\Adobe\CEP\extensions\com.sg.basic.ps`
 
 ![Multiple Shotgun extensions showing in the Photoshop menu](./images/shotgun-desktop-console-photoshop-extension.png)
 

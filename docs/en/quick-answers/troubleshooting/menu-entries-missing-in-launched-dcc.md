@@ -1,11 +1,11 @@
 ---
 layout: default
-title: I've launched Nuke/Maya/etc. from SG Desktop, but the Shotgun menu is missing entries
+title: I've launched Nuke/Maya/etc. from Shotgun Desktop, but the Shotgun menu is missing entries
 pagename: menu-entries-missing-in-launched-dcc
 lang: en
 ---
 
-# I've launched Nuke/Maya/etc. from SG Desktop, but the Shotgun menu is missing entries
+# I've launched Nuke/Maya/etc. from Shotgun Desktop, but the Shotgun menu is missing entries
 
 The actions that show up in the Shotgun menu are contextually configured. That means the list of available actions may be different depending on the context you’re in.
 It's possible you may not be seeing the app you're after because you're in the wrong context.
