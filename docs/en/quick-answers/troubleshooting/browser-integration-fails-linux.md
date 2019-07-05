@@ -104,7 +104,7 @@ Cannot mix incompatible Qt library (version `0x40805`) with this library (versio
 **Solution**
 
 Often this comes up because there is an override happening that ends up loading incompatible Qt libraries.
- ou can try modifying your environment with this command to keep that from happening:
+You can try modifying your environment with this command to keep that from happening:
 
 ```
 unset QT_PLUGIN_PATH
