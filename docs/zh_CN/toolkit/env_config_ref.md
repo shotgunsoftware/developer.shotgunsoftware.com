@@ -73,7 +73,7 @@ bundle_name:
   complex_setting:
     sub_setting1: value  
     Sub_setting2: value
-  location: 
+  location:
     type: descriptor_type
     descriptor_setting1: value
     descriptor_setting2: value
@@ -186,7 +186,7 @@ engines:
 
 ### includes
 
-通过 includes**，可以在配置中的一个文件中引用其他文件的一部分。通过使用 includes，可以在一个位置设置一个配置设置，但在多个环境中使用它。
+通过 *includes*，可以在配置中的一个文件中引用其他文件的一部分。通过使用 includes，可以在一个位置设置一个配置设置，但在多个环境中使用它。
 
 includes 包括两个部分：
 
@@ -242,7 +242,7 @@ engines:
     location: @engines.tk-maya.location
 ```
 
-![engine_locations 包含文件](./images/env_config_ref/2.png)
+![engine_locations include file](./images/env_config_ref/2.png)
 
 在此处可以看到，`tk-maya` 插件的 `location` 设置的值现在是对包含的 YAML 文件中的一个键的引用。
 

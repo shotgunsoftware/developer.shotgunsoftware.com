@@ -18,7 +18,7 @@ lang: zh_CN
 
 通过扩展默认配置，Shotgun Toolkit 允许自定义工作流中的任务。在一个或多个软件包内的 Toolkit 应用中启用或禁用按钮就是简单的自定义示例，它可以更改用户与 Toolkit 功能进行交互的方式。Toolkit 允许使用专用配置，通过创建自定义工作流、自动执行重复和单调的任务、修改挂钩甚至添加基于 Toolkit 平台的自定义工具，让您可以更智能和更快速地工作。遗憾的是，它只能通过 Shotgun 软件集成进行访问，还不能用于像洗衣服这样的日常任务。
 
-本手册中的练习将向您讲解如何查找哪些配置设置控制应用软件中 Shotgun 应用的动作，设置所在的位置以及如何对其进行编辑。举个具体的例子，我们可以通过编辑“Workfiles”应用下的设置，禁止艺术家用 Maya 的**“新建任务”**按钮创建新任务。
+本手册中的练习将向您讲解如何查找哪些配置设置控制应用软件中 Shotgun 应用的动作，设置所在的位置以及如何对其进行编辑。举个具体的例子，我们可以通过编辑“Workfiles”应用下的设置，禁止艺术家用 Maya 的**“+New Task”**按钮创建新任务。
 
 ## 使用本文档
 
@@ -198,6 +198,7 @@ engines:
 # reference all of the common frameworks
 
 frameworks: "@frameworks"
+
 ```
 
 <!--![Project yml env](./images/editing_app_setting/15_project_yml_env.png)-->

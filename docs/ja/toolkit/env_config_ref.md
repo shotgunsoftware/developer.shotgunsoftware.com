@@ -73,7 +73,7 @@ bundle_name:
   complex_setting:
     sub_setting1: value  
     Sub_setting2: value
-  location: 
+  location:
     type: descriptor_type
     descriptor_setting1: value
     descriptor_setting2: value
@@ -186,7 +186,7 @@ engines:
 
 ### インクルード
 
-**「インクルード」を使用すると、あるファイルのセクションを構成内の別のファイルで参照できます。インクルードを使用すると、構成設定を一箇所で設定し、複数の環境で使用できます。
+*「インクルード」*を使用すると、あるファイルのセクションを構成内の別のファイルで参照できます。インクルードを使用すると、構成設定を一箇所で設定し、複数の環境で使用できます。
 
 インクルードは次の 2 つの部分で構成されます。
 
@@ -242,7 +242,7 @@ engines:
     location: @engines.tk-maya.location
 ```
 
-![engine_locations インクルード ファイル](./images/env_config_ref/2.png)
+![engine_locations include file](./images/env_config_ref/2.png)
 
 ここでは、`tk-maya` エンジンの `location` 設定の値が、インクルードされる YAML ファイルのキーを参照していることがわかります。
 

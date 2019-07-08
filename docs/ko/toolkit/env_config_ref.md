@@ -73,7 +73,7 @@ bundle_name:
   complex_setting:
     sub_setting1: value  
     Sub_setting2: value
-  location: 
+  location:
     type: descriptor_type
     descriptor_setting1: value
     descriptor_setting2: value
@@ -242,7 +242,7 @@ engines:
     location: @engines.tk-maya.location
 ```
 
-![engine_locations 포함 파일](./images/env_config_ref/2.png)
+![engine_locations include file](./images/env_config_ref/2.png)
 
 `tk-maya` 엔진에 대한 `location` 설정 값이 이제 포함된 YAML 파일의 키에 대한 참조임을 확인할 수 있습니다.
 
@@ -346,5 +346,5 @@ engines:
 * [애니메이션 파이프라인 튜토리얼](./learning-resources/tutorial.md)
 * [설명자 참조 설명서](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [웨비나: 툴킷 관리](https://youtu.be/7qZfy7KXXX0)
-* [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference)
+* [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference)
 * [기본 구성 환경 구조 읽어보기](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)
