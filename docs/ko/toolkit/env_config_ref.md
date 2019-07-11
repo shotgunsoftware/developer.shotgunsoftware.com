@@ -21,7 +21,7 @@ Shotgun 툴킷 플랫폼은 스튜디오 파이프라인을 구축하는 데 일
 
 소프트웨어 패키지뿐 아니라 동일한 툴킷 앱에 대한 설정도 아티스트별로 다르게 지정할 수 있습니다. 예를 들어 샷 아티스트와 에셋 아티스트 둘 다 [Workfiles 앱](https://support.shotgunsoftware.com/hc/ko/articles/219033088)을 사용할 수 있지만 샷 아티스트는 샷 엔티티, 에셋 아티스트는 에셋 엔티티와 관련된 파일로만 파일 탐색을 제한할 수 있습니다.
 
-프로젝트 내에서 이렇게 서로 다른 워크플로우를 지원하기 위해 툴킷은 환경에서 앱과 엔진 구성을 분리합니다. 특정 컨텍스트의 모든 환경에는 일반적으로 일련의 소프트웨어 패키지에 대한 통합 및 설정이 포함됩니다.
+프로젝트 내에서 이렇게 서로 다른 워크플로우를 지원하기 위해 툴킷은 환경에서 앱과 엔진 구성을 분리합니다. 각 환경에는 소프트웨어 패키지 셋트의 통합과 설정이 모두 공통적으로 포함되어 있습니다.
 
 위의 예에서 에셋 작업 중인 아티스트는 에셋 단계 환경에서 작업하고 샷 작업 중인 아티스트는 샷 단계 환경에서 작업합니다. 각 환경은 서로 독립적으로 구성되므로 한 프로젝트 내에서 각기 다른 워크플로우를 사용할 수 있습니다.
 
@@ -66,7 +66,7 @@ shot_step.yml
 
 툴킷의 구성 파일은 [YAML](https://yaml.org/)로 작성됩니다. 모든 번들(앱, 엔진 또는 프레임워크)의 일반적인 구성은 다음과 같은 구조로 되어 있습니다.
 
-```
+```yaml
 bundle_name:
   setting1: value
   setting2: value
@@ -81,7 +81,7 @@ bundle_name:
 
 이 구조를 보여 주는 간단한 예제가 아래에 있습니다(단일 엔진이 있고 엔진 내에 단일 앱이 정의된 환경). 다음은 이 구성에서 `project.yml`의 내용이 될 수 있습니다.
 
-```
+```yaml
 engines:
   tk-maya:
     apps:
@@ -109,7 +109,7 @@ engines:
 
 모든 툴킷 번들에는 번들의 *설명자*라고 불리는 `location` 설정이 있습니다. 설명자를 통해 툴킷은 지정된 번들의 위치를 파악하고 해당 유형에 따라 직접 액세스할지 아니면 로컬로 캐시할지 여부를 파악합니다. 툴킷 번들을 가져올 수 있는 위치는 Shotgun 앱 스토어, git 리포지토리, 디스크의 경로 또는 Shotgun 사이트에 업로드된 ZIP 파일 등입니다. 이러한 각 위치에 해당하는 설명자 유형이 있으며 여기에는 해당 유형과 관련된 설정이 포함됩니다. 위 예제의 `tk-maya` 엔진에 대한 설명자는 다음과 같습니다.
 
-```
+```yaml
     location:
         type: app_store
         name: tk-maya
@@ -120,7 +120,7 @@ engines:
 
 한편, 커스텀 번들을 개발 중이고 스튜디오의 특정 워크플로우에 대한 툴킷 앱을 작성 중인 경우 디스크의 경로에서 직접 가져오고 싶을 수 있습니다. 이 경우 다음과 같이 `dev` 유형의 설명자를 사용합니다.
 
-```
+```yaml
     location:
         type: dev
         path: /path/to/app
@@ -136,7 +136,7 @@ engines:
 
 위 예제에서 `apps` 설정은 다음과 같습니다.
 
-```
+```yaml
 engines:
   tk-maya:
     apps:
@@ -151,7 +151,7 @@ engines:
 
 `project` 환경의 `tk-maya` 엔진에서 다른 앱을 사용할 수 있도록 하려면 여기에 추가합니다. 엔진에 패널 `tk-multi-shotgunpanel` 및 앱 정보 `tk-multi-about`을 추가해 보겠습니다. `project.yml` 예제 파일은 이제 다음과 같이 표시됩니다.
 
-```
+```yaml
 engines:
   tk-maya:
     apps:
@@ -199,7 +199,7 @@ includes는 두 부분으로 구성됩니다.
 
 `config/env/includes/engine_locations.yml`:
 
-```
+```yaml
 engines.tk-maya.location:
   type: app_store
   name: tk-maya
@@ -217,7 +217,7 @@ engines.tk-nuke.location:
 
 `config/env/project.yml`:
 
-```
+```yaml
 includes:
 - includes/engine_locations.yml
 
@@ -252,7 +252,7 @@ engines:
 
 `config/env/includes/app_locations.yml:`
 
-```
+```yaml
 apps.tk-multi-about.location:
   type: app_store
   name: tk-multi-about
@@ -272,7 +272,7 @@ apps.tk-multi-workfiles2.location:
 
 `config/env/project.yml`:
 
-```
+```yaml
 includes:
 - includes/app_locations.yml
 - includes/engine_locations.yml
@@ -318,7 +318,7 @@ engines:
 
 `config/env/project.yml`:
 
-```
+```yaml
 includes:
 - includes/app_locations.yml
 - includes/engine_locations.yml

@@ -34,8 +34,8 @@ lang: ko
 3. [Shotgun 데스크톱](https://support.shotgunsoftware.com/hc/ko/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop)이 시스템에 설치되어 있어야 함
 4. 식별된 프로젝트에 대한 복제된 파이프라인 구성이나 [구성 시작하기](./advanced_config.md) 안내서를 완료하고 해당 연습에서 생성한 구성 복제
 5. YAML에 대한 기본 지식
-6. 파이프라인 구성이 저장된 파일 시스템에 대해 적절하게 설정된 읽기 및 쓰기 권한
-7. 툴킷이 프로덕션 파일 시스템에 읽고 쓸 수 있도록 적절하게 설정된 읽기 및 쓰기 권한
+6. 파이프라인 구성이 저장된 파일 시스템에 대해 읽기 및 쓰기 권한을 적절하게 설정합니다.
+7. 툴킷이 프로덕션 파일 시스템에 읽고 쓸 수 있도록 읽기 및 쓰기 권한을 적절하게 설정합니다.
 8. 활성 상태의 Maya 멤버쉽. [Maya](https://www.autodesk.co.kr/products/maya/free-trial)의 30일 체험판을 구할 수 있습니다.
 
 {% include info title="참고" content="이 안내서는 `tk-config-default2` 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다." %}

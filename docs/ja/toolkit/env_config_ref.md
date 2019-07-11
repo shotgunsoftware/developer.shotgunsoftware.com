@@ -66,7 +66,7 @@ Toolkitは [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/ma
 
 Toolkit の設定ファイルは [YAML](https://yaml.org/) で記述されます。バンドル(アプリ、エンジン、またはフレームワーク)の一般的な設定の構成は次のとおりです。
 
-```
+```yaml
 bundle_name:
   setting1: value
   setting2: value
@@ -81,7 +81,7 @@ bundle_name:
 
 この構成を説明するために、非常に単純な例を示します。単一のエンジンがあり、その中に単一のアプリケーションが定義されている環境です。以下は、この設定の `project.yml` の内容です。
 
-```
+```yaml
 engines:
   tk-maya:
     apps:
@@ -109,7 +109,7 @@ engines:
 
 すべての Toolkit バンドルには `location` 設定があり、これをバンドルの**「ディスクリプタ」と呼びます。ディスクリプタは、特定のバンドルの入手元、およびそのタイプに応じて直接アクセスするかローカルにキャッシュするかを Toolkit に指示します。Toolkit バンドルを入手できる場所の例としては、Shotgun App Store、GIT リポジトリ、ディスク上のパス、または Shotgun サイトにアップロードされた zip ファイルなどがあります。これらには、それぞれ対応するディスクリプタ タイプがあり、そのタイプに固有の設定があります。以下に、上記の例の `tk-maya` エンジンのディスクリプタをもう一度示します。
 
-```
+```yaml
     location:
         type: app_store
         name: tk-maya
@@ -120,7 +120,7 @@ engines:
 
 対照的に、スタジオでカスタム バンドルをアクティブに開発している場合、たとえば特定のワークフロー用の Toolkit アプリを作成している場合は、ディスク上のパスから直接入手することができます。この場合、以下に示すようにタイプ `dev` のディスクリプタを使用します。
 
-```
+```yaml
     location:
         type: dev
         path: /path/to/app
@@ -136,7 +136,7 @@ engines:
 
 以下に、上記の例の `apps` 設定をもう一度示します。
 
-```
+```yaml
 engines:
   tk-maya:
     apps:
@@ -151,7 +151,7 @@ engines:
 
 `project` 環境の `tk-maya` エンジンで他のアプリを利用できるようにするには、ここで追加します。ここでは、エンジンに Panel、`tk-multi-shotgunpanel`、および About アプリ、`tk-multi-about` を追加します。例の `project.yml` ファイルは次のようになります。
 
-```
+```yaml
 engines:
   tk-maya:
     apps:
@@ -199,7 +199,7 @@ engines:
 
 `config/env/includes/engine_locations.yml`:
 
-```
+```yaml
 engines.tk-maya.location:
   type: app_store
   name: tk-maya
@@ -217,7 +217,7 @@ engines.tk-nuke.location:
 
 `config/env/project.yml`:
 
-```
+```yaml
 includes:
 - includes/engine_locations.yml
 
@@ -252,7 +252,7 @@ engines:
 
 `config/env/includes/app_locations.yml:`
 
-```
+```yaml
 apps.tk-multi-about.location:
   type: app_store
   name: tk-multi-about
@@ -272,7 +272,7 @@ apps.tk-multi-workfiles2.location:
 
 `config/env/project.yml`:
 
-```
+```yaml
 includes:
 - includes/app_locations.yml
 - includes/engine_locations.yml
@@ -318,7 +318,7 @@ engines:
 
 `config/env/project.yml`:
 
-```
+```yaml
 includes:
 - includes/app_locations.yml
 - includes/engine_locations.yml

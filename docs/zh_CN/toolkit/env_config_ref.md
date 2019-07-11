@@ -66,7 +66,7 @@ Toolkit 使用称为 [pick_environment](https://github.com/shotgunsoftware/tk-co
 
 Toolkit 的配置文件采用 [YAML](https://yaml.org/) 编写。任何包（应用、插件或框架）的常规配置结构如下：
 
-```
+```yaml
 bundle_name:
   setting1: value
   setting2: value
@@ -81,7 +81,7 @@ bundle_name:
 
 为了说明此结构，此处提供一个非常简单的示例：在一个环境中有一个插件，此插件中定义一个应用。在此配置中 `project.yml` 的内容可能如下所示：
 
-```
+```yaml
 engines:
   tk-maya:
     apps:
@@ -109,7 +109,7 @@ engines:
 
 每个 Toolkit 包都有一个 `location` 设置，我们将其称为包的描述符**。描述符告知 Toolkit 在何处查找给定包，以及根据其类型，是直接访问它还是在本地缓存它。Toolkit 包可以来自多个位置，例如，Shotgun App Store、git 库、磁盘上的路径或上传到 Shotgun 站点的 zip 文件。其中每个位置都有一个对应的描述符类型，相应类型具有特定设置。下面是上述示例中 `tk-maya` 插件的描述符：
 
-```
+```yaml
     location:
         type: app_store
         name: tk-maya
@@ -120,7 +120,7 @@ engines:
 
 相反，如果您正在开发自定义包 - 即您正在为工作室中的一个特定工作流编写一个 Toolkit 应用，您可能希望直接从磁盘上的路径获取它。在此示例中，将使用类型为 `dev` 的描述符，它可能如下所示：
 
-```
+```yaml
     location:
         type: dev
         path: /path/to/app
@@ -136,7 +136,7 @@ engines:
 
 下面是上述示例中的 `apps` 设置：
 
-```
+```yaml
 engines:
   tk-maya:
     apps:
@@ -151,7 +151,7 @@ engines:
 
 如果您要在 `project` 环境的 `tk-maya` 插件中提供其他应用，可以在此处添加它们。现在将 Panel `tk-multi-shotgunpanel` 和 About 应用 `tk-multi-about` 添加到插件中。示例 `project.yml` 文件现在如下所示：
 
-```
+```yaml
 engines:
   tk-maya:
     apps:
@@ -199,7 +199,7 @@ includes 包括两个部分：
 
 `config/env/includes/engine_locations.yml`：
 
-```
+```yaml
 engines.tk-maya.location:
   type: app_store
   name: tk-maya
@@ -217,7 +217,7 @@ engines.tk-nuke.location:
 
 `config/env/project.yml`：
 
-```
+```yaml
 includes:
 - includes/engine_locations.yml
 
@@ -252,7 +252,7 @@ engines:
 
 `config/env/includes/app_locations.yml:`
 
-```
+```yaml
 apps.tk-multi-about.location:
   type: app_store
   name: tk-multi-about
@@ -272,7 +272,7 @@ apps.tk-multi-workfiles2.location:
 
 `config/env/project.yml`：
 
-```
+```yaml
 includes:
 - includes/app_locations.yml
 - includes/engine_locations.yml
@@ -318,7 +318,7 @@ engines:
 
 `config/env/project.yml`：
 
-```
+```yaml
 includes:
 - includes/app_locations.yml
 - includes/engine_locations.yml
