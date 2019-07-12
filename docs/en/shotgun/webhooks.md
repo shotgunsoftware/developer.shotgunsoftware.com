@@ -64,21 +64,12 @@ Verification of SSL certificates is an optional feature that will help ensure th
 
 A webhook can have one of several different statuses, indicating its health and ability to continue receiving deliveries.
 
-### Active
-
-The webhook is operating in a stable fashion. No deliveries to this webhook have failed to reach their destination in the past 24 hours. Active webhooks are denoted in the webhooks list by a green bar on the left side of the webhook’s card.
-
-### Unstable
-
-The webhook is operating in an unstable fashion. Some deliveries have failed to reach their destination in the past 24 hours, but not enough to cause Shotgun to consider the webhook to be dead. Unstable webhooks are denoted in the webhooks list by an orange bar on the left side of the webhook’s card.
-
-### Failed
-
-The webhook is considered to be dead, and no further deliveries will be attempted. This is a result of too many delivery failures in a short period of time, and the system has determined that the webhook should no longer be considered viable. A webhook is considered failed if it has 10 failed deliveries in the past 24 hours. Failed webhooks are denoted in the webhooks list by a red bar on the left side of the webhook’s card.
-
-### Disabled
-
-The webhook is in a disabled state, and no further deliveries will be attempted until it is re-enabled.
+| Status | Description | Example |
+|--------|:-----------:|--------:|
+| Active | The webhook is operating in a stable fashion. No deliveries to this webhook have failed to reach their destination in the past 24 hours. | **TODO** |
+| Unstable | The webhook is operating in an unstable fashion. Some deliveries have failed to reach their destination in the past 24 hours, but not enough to cause Shotgun to consider the webhook to be dead. | **TODO** |
+| Failed | The webhook is considered to be dead, and no further deliveries will be attempted. This is a result of too many delivery failures in a short period of time, and the system has determined that the webhook should no longer be considered viable. **A webhook is considered failed if it has 10 failed deliveries in the past 24 hours**. | **TODO** |
+| Disabled | The webhook is in a disabled state, and no further deliveries will be attempted until it is re-enabled. | **TODO** |
 
 ## Deliveries
 
@@ -100,7 +91,7 @@ You can use any of the freely available webhook URL generators online for testin
 
 We recommend [webhook.site](https://webhook.site). It provides a unique URL that can be copied andpasted into a webhook, and will show you deliveries made to that address in real time. The page can be customized to respond to deliveries with a specific status code and body, which means you can test delivery success and failure.
 
-The webhook.site service is aggressively rate limited. This means that it is easy to end up in a situation where some deliveries are rejected, resulting in unstable or failed webhooks. When testing, we recommend that you use a known, controllable project environment rather than live data in production. *It is also not good to send production event data to publicly available, third party web services!*
+The webhook.site service is aggressively rate limited. This means that it is easy to end up in a situation where some deliveries are rejected, resulting in unstable or failed webhooks. When testing, we recommend that you use a known, controllable project environment rather than live data in production. **It is also not good to send production event data to publicly available, third party web services!**
 
 ### Responding to deliveries
 
@@ -108,21 +99,15 @@ A consumer service must respond to deliveries in order for the system to conside
 
 #### Status codes
 
-##### Success
-
-Any status code that is less than 400.
-
-##### Error
-
-Any status code that is 400 or greater.
-
-##### Redirects
-
-Any 3xx redirect status codes will be heeded and followed.
+| Status | Code | Description |
+|--------|:----:|------------:|
+| Success | < 400 | The delivery was received and processed successfully. |
+| Error | >= 400 | The delivery was received but was not processed successfully. |
+| Redirect | 3xx | The delivery was received, but should be redirected to another URL. |
 
 #### Response time
 
-A response must be received within 6 seconds of delivery to a webhook’s URL, after which the connection will be closed. Failure to respond in time will result in a failed delivery. 
+**A response must be received within 6 seconds of delivery to a webhook’s URL, after which the connection will be closed.** Failure to respond in time will result in a failed delivery. 
 
 ### Acknowledgement
 
