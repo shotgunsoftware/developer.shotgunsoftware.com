@@ -66,10 +66,10 @@ A webhook can have one of several different statuses, indicating its health and 
 
 | Status | Description | Example |
 |--------|:-----------:|--------:|
-| Active | The webhook is operating in a stable fashion. No deliveries to this webhook have failed to reach their destination in the past 24 hours. | **TODO** |
-| Unstable | The webhook is operating in an unstable fashion. Some deliveries have failed to reach their destination in the past 24 hours, but not enough to cause Shotgun to consider the webhook to be dead. | **TODO** |
-| Failed | The webhook is considered to be dead, and no further deliveries will be attempted. This is a result of too many delivery failures in a short period of time, and the system has determined that the webhook should no longer be considered viable. **A webhook is considered failed if it has 10 failed deliveries in the past 24 hours**. | **TODO** |
-| Disabled | The webhook is in a disabled state, and no further deliveries will be attempted until it is re-enabled. | **TODO** |
+| Active | The webhook is operating in a stable fashion. No deliveries to this webhook have failed to reach their destination in the past 24 hours. | ![Active](./images/webhooks/webhook_status_active.png) |
+| Unstable | The webhook is operating in an unstable fashion. Some deliveries have failed to reach their destination in the past 24 hours, but not enough to cause Shotgun to consider the webhook to be dead. | ![Unstable](./images/webhooks/webhook_status_unstable.png) |
+| Failed | The webhook is considered to be dead, and no further deliveries will be attempted. This is a result of too many delivery failures in a short period of time, and the system has determined that the webhook should no longer be considered viable. **A webhook is considered failed if it has 10 failed deliveries in the past 24 hours**. | ![Failed](./images/webhooks/webhook_status_failed.png) |
+| Disabled | The webhook is in a disabled state, and no further deliveries will be attempted until it is re-enabled. | ![Disabled](./images/webhooks/webhook_status_disabled.png) |
 
 ## Deliveries
 
