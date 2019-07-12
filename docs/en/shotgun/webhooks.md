@@ -31,7 +31,7 @@ To get started creating a webhook, navigate to the button above the webhooks lis
 
 ### The webhook creation dialog
 
-Next up is to fill out the necessary information required to create the new webhook.
+Next up is to fill out the information required to create the new webhook.
 
 ![Create Webhook Dialog](./images/webhooks/create_webhook_dialog.png)
 
