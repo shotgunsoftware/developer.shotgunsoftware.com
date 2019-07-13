@@ -79,7 +79,7 @@ A webhook can have one of several different statuses, indicating its health and 
 
 ## Deliveries
 
-Selecting a webhook in the webhooks list will show all of the deliveries that have been made for that webhook dating back as far as 5 days ago. Delivery logs older than 5 days are removed and are not recoverable.
+Selecting a webhook in the webhooks list will show all of the deliveries that have been made for that webhook dating back as far as 5 days ago. **Delivery logs older than 5 days are removed and are not recoverable**.
 
 ### Delivery status
 
