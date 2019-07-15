@@ -25,4 +25,4 @@ lang: zh_CN
 
 如果您已将 [`SHOTGUN_HOME` 环境变量](http://developer.shotgunsoftware.com/tk-core/utils.html#localfilestoragemanager)设置为覆盖用户的缓存位置，那么日志文件将位于：`$SHOTGUN_HOME/logs`。
 
-{% include info title="注意" content="您还可以从 Shotgun Desktop 访问此目录。选择一个项目，单击项目名称右侧的向下箭头按钮，然后选择“Open Log Folder”****。%}
+{% include info title="注意" content="您还可以从 Shotgun Desktop 访问此目录。选择一个项目，单击项目名称右侧的向下箭头按钮，然后选择“Open Log Folder”****。"%}

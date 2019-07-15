@@ -15,4 +15,4 @@ Shotgun Desktop インストーラをサイレントで実行するには、次�
 
 `ShotgunInstaller_Current.exe /S /D=X:\path\to\install\folder.`
 
-{% include info title="注" content="引数 `/D` は最後の引数として指定する必要があります。パスの中にスペースがある場合でも、`\"` は使用しないでください。%}
+{% include info title="注" content="引数 `/D` は最後の引数として指定する必要があります。パスの中にスペースがある場合でも、`\"` は使用しないでください。"%}
