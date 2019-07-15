@@ -157,7 +157,7 @@ Toolkit 工作流配置用于自定义环境以满足您的工作流需求。工
 
 **步骤 16：**通过您喜欢的文本编辑器打开 `project.yml`。
 
-```
+```yaml
 description: Apps and Engines when launching with a project only context.
 
 ################################################################################
@@ -229,7 +229,7 @@ Shotgun Toolkit 会在 YAML 文件中使用简单的术语，来指示设置的�
 
 **步骤 18：**在 `project.yml` 中的 include 之后，在 `tk-maya.yml` 文件中搜索 `settings.tk-maya.project`。您明确希望在特定项目的项目环境中禁用**“+New Task”**按钮。您处于该项目的配置中，并在项目环境中时获得了位置信息。
 
-```
+```yaml
 # project
 settings.tk-maya.project:
   apps:
@@ -251,7 +251,7 @@ settings.tk-maya.project:
 
 `@` 符号告诉我们，`tk-multi-workfiles2` 的值来自一个包含文件。在 `includes` 部分 `tk-maya.yml` 的顶部，我们看到以下内容：
 
-```
+```yaml
 includes:
 ...
 - ./tk-multi-workfiles2.yml
@@ -261,7 +261,7 @@ includes:
 
 **步骤 19：**打开 `tk-multi-workfiles2.yml` 文件并搜索 `settings.tk-multi-workfiles2.launch_at_startup`。
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   launch_at_startup: true
@@ -274,7 +274,7 @@ Maya 参考框指示 `allow_task_creation` 设置的默认值为 `true`。最佳
 
 **步骤 20：**在 `tk-multi-workfiles2.yml` 中，在 `settings.tk-multi-workfiles2.launch_at_startup:` 下添加 `allow_task_creation` 并将值设置为 `false`
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   allow_task_creation: false

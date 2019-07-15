@@ -197,7 +197,7 @@ includes 包括两个部分：
 
 `engine_locations.yml` 的内容如下所示：
 
-`config/env/includes/engine_locations.yml`：
+`config/env/includes/engine_locations.yml`:
 
 ```yaml
 engines.tk-maya.location:
@@ -215,7 +215,7 @@ engines.tk-nuke.location:
 
 此文件可以用作所有插件位置的单个源，而且所有环境配置都可以引用它。使用此包含文件后，我们的示例现在如下所示：
 
-`config/env/project.yml`：
+`config/env/project.yml`:
 
 ```yaml
 includes:
@@ -270,13 +270,12 @@ apps.tk-multi-workfiles2.location:
 ```
 
 
-`config/env/project.yml`：
+`config/env/project.yml`:
 
 ```yaml
 includes:
 - includes/app_locations.yml
 - includes/engine_locations.yml
-
 
 engines:
   tk-maya:
@@ -316,7 +315,7 @@ engines:
 
 回到我们的示例，假设我们要配置 `tk-multi-workfiles2`，以便在项目环境中启动 Maya 时它会自动启动。我们可以[在应用的清单文件中](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/v0.11.10/info.yml#L19-L25)看到有一个 `launch_at_startup` 设置（用于控制是否在应用程序启动时启动 Workfiles UI），其默认值为 `False`。因此，我们只需添加 `launch_at_startup` 选项，并将其设置为 `True`。`project.yml` 文件现在如下所示：
 
-`config/env/project.yml`：
+`config/env/project.yml`:
 
 ```yaml
 includes:

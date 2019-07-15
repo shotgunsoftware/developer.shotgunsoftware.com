@@ -139,7 +139,7 @@ Shotgun 데스크톱이 이제 이 프로젝트에 대해 복제된 구성을 �
 
 **10단계:** 파일에서 `pythonconsole`을 검색합니다. 프로젝트에 기본 구성을 사용한 경우 Python 콘솔 앱에 대한 설명자가 이 파일에 나열되어 있는 것을 볼 수 있습니다. 이 설명자는 이 과정을 시작할 때 살펴본 Maya 앱의 [목록](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 있는 설명과 일치해야 합니다. 버전이 Maya 앱 목록에서 확인한 항목과 일치하는지 확인합니다.
 
-```
+```yaml
 apps.tk-multi-pythonconsole.location:
 	type: app_store
 	name: tk-multi-pythonconsole
@@ -157,7 +157,7 @@ apps.tk-multi-pythonconsole.location:
 
 **11단계:** 복제된 구성에서 `config/env/project.yml` 파일을 열고 `tk-maya` 엔진에 대한 설정을 찾습니다.
 
-```
+```yaml
 # configuration for all engines to load in a project context
 
 engines:
@@ -210,7 +210,7 @@ Shotgun 통합의 코드는 앱, 엔진 및 프레임워크에 대한 번들로 
 
 15단계: 다음 아래에 위치 설명자를 추가합니다.
 
-```
+```yaml
 settings.tk-maya.project:
   apps:
 ```
@@ -219,7 +219,7 @@ settings.tk-maya.project:
 
 {% include info title="참고" content="[YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) 파일의 서식이 탭이 아니라 공백을 사용하여 올바르게 지정되었는지 확인하십시오." %}
 
-```
+```yaml
 # project
 settings.tk-maya.project:
   apps:
@@ -380,7 +380,7 @@ Python 콘솔 앱이 선택한 프로젝트의 프로젝트 환경에 추가되�
 
 {% include info title="참고" content='엔진 블록에서 `tk-desktop`은 포함된 컨텐츠를 가리킵니다.
 
-```
+```yaml
 includes:
   - ./includes/settings/tk-desktop.yml
 
@@ -390,7 +390,7 @@ engines:
 
 includes:의 경로를 따라 `config/env/includes/settings/tk-desktop.yml`을 열고 `settings.tk-desktop.project` 블록을 찾습니다. 해당 블록에서 다음을 확인할 수 있습니다.<br/><br/>
 
-```
+```yaml
 apps:
   tk-multi-pythonconsole:
   location: "@apps.tk-multi-pythonconsole.location"
@@ -400,7 +400,7 @@ apps:
 
 includes의 경로를 `../includes/app_locations.yml`까지 따라가 `apps.tk-multi-pythonconsole.location`을 검색하여 다음을 확인합니다.<br/><br/>
 
-```
+```yaml
 # pythonconsole
 apps.tk-multi-pythonconsole.location:
   type: app_store

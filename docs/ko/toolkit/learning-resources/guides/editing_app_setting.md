@@ -157,7 +157,7 @@ Maya와 Shotgun이 완전히 로드되면 **파일 열기**(File Open) 대화상
 
 **16단계:** 즐겨 사용하는 텍스트 편집기에서 `project.yml`을 엽니다.
 
-```
+```yaml
 description: Apps and Engines when launching with a project only context.
 
 ################################################################################
@@ -229,7 +229,7 @@ tk-maya.yml에서 Workfiles 앱 설정 찾기
 
 **18단계:** `project.yml`에서 include를 따라가면서 `tk-maya.yml` 파일에서 `settings.tk-maya.project`를 찾습니다. 구체적으로는 특정 프로젝트의 프로젝트 환경에서 **+새 태스크** (+New Task) 버튼을 비활성화하려고 합니다. 현재 해당 프로젝트에 대한 구성에 있으며 프로젝트 환경에 있는 동안 위치 정보를 얻었습니다.
 
-```
+```yaml
 # project
 settings.tk-maya.project:
   apps:
@@ -251,7 +251,7 @@ settings.tk-maya.project:
 
 `@` 기호는 `tk-multi-workfiles2` 값이 포함된 파일에서 제공된 것임을 나타냅니다. `tk-maya.yml`의 맨 위에 있는 `includes` 섹션에서 다음을 확인할 수 있습니다.
 
-```
+```yaml
 includes:
 ...
 - ./tk-multi-workfiles2.yml
@@ -261,7 +261,7 @@ includes:
 
 **19단계:** `tk-multi-workfiles2.yml` 파일을 열고 `settings.tk-multi-workfiles2.launch_at_startup`을 찾습니다.
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   launch_at_startup: true
@@ -274,7 +274,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 **20단계:** `tk-multi-workfiles2.yml`에서 `settings.tk-multi-workfiles2.launch_at_startup:` 아래 `allow_task_creation`을 추가하고 값을 `false`로 설정합니다.
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   allow_task_creation: false

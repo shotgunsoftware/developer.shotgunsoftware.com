@@ -157,7 +157,7 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 **手順 16:** お気に入りのテキスト エディタで `project.yml` を開きます。
 
-```
+```yaml
 description: Apps and Engines when launching with a project only context.
 
 ################################################################################
@@ -229,7 +229,7 @@ tk-maya.yml での Workfiles アプリの検索
 
 **手順 18:** `project.yml` からのインクルードの内容に沿って、`tk-maya.yml` ファイル内で `settings.tk-maya.project` を検索します。特に行いたいのは、特定のプロジェクトのプロジェクト環境内で**[+New Task]**ボタンを無効にすることです。プロジェクト環境内で作業しながら、このプロジェクトの設定を操作し、場所の情報を取得しました。
 
-```
+```yaml
 # project
 settings.tk-maya.project:
   apps:
@@ -251,7 +251,7 @@ settings.tk-maya.project:
 
 `@` 記号は、`tk-multi-workfiles2` の値がインクルードされたファイルから取得されていることを示します。`tk-maya.yml` の上部にある `includes` セクションに、以下のように表示されています。
 
-```
+```yaml
 includes:
 ...
 - ./tk-multi-workfiles2.yml
@@ -261,7 +261,7 @@ includes:
 
 **手順 19:** `tk-multi-workfiles2.yml` ファイルを開いて、`settings.tk-multi-workfiles2.launch_at_startup` を検索します。
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   launch_at_startup: true
@@ -274,7 +274,7 @@ Maya 参照ボックスが示すように、`allow_task_creation` 設定には `
 
 **手順 20:** `tk-multi-workfiles2.yml` の `settings.tk-multi-workfiles2.launch_at_startup:` の下に `allow_task_creation` を追加して、その値を `false` に設定します。
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   allow_task_creation: false

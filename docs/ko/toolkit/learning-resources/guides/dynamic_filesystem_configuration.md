@@ -169,7 +169,7 @@ Set 엔티티는 `CustomEntity01`로 표시됩니다. Shotgun에서 Set의 *표�
 
 **9단계:** 다음 내용으로 `CustomEntity01` 폴더 옆에 `CustomEntity01.yml` 파일을 만듭니다.
 
-```
+```yaml
 type: "shotgun_entity"
 
 name: "code"
@@ -194,7 +194,7 @@ YAML 파일은 툴킷에서 `CustomEntity01` 폴더 이름을 무엇으로 지�
 
 `filters` 필드는 지정 시간에 생성된 폴더가 있는 엔티티를 제한합니다. 현재 상태에서 `asset.yml`의 필터 필드는 다음과 같습니다.
 
-```
+```yaml
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
@@ -211,7 +211,7 @@ assets/Classroom/Prop/spoon
 
 **11단계:** `asset.yml`에서 `filters` 필드를 다음과 같이 수정합니다.
 
-```
+```yaml
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
@@ -296,7 +296,7 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 
 **14단계:** 들여쓰기에 유의하여 `templates.yml`의 `keys` 섹션에 다음 줄을 추가합니다.
 
-```
+```yaml
        CustomEntity01:
            type: str
 ```
@@ -311,7 +311,7 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 
 **15단계:** `templates.yml`을 열고 `maya_asset_work`를 찾습니다.
 
-```
+```yaml
    maya_asset_work:
         definition: '@asset_root/work/maya/{name}.v{version}.{maya_extension}'
 ```
@@ -346,7 +346,7 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 
 **17단계:** `maya_asset_work` 템플릿 정의를 다음과 같이 수정합니다.
 
-```
+```yaml
     maya_asset_work:
         definition: '@asset_root/work/maya/{CustomEntity01}_{Asset}.v{version}.{maya_extension}'
 ```
