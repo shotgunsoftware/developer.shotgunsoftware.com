@@ -25,29 +25,27 @@ Another great example of how to automate status management would be to trigger a
 
 ## Creating a webhook
 
-To get started creating a webhook, navigate to the button above the webhooks list.
+To get started creating a webhook, go to a Webhooks page, then navigate to the button above the webhooks list.
 
 ![Create Webhook Button](./images/webhooks/create_webhook_button.png)
-
-### The webhook creation dialog
 
 Next up is to fill out the information required to create the new webhook.
 
 ![Create Webhook Dialog](./images/webhooks/create_webhook_dialog.png)
 
-#### Secret token
+### Secret token
 
 Assigning a secret token to a webhook is optional. If provided, any request sent to the webhook URL will be signed using that token. The token value is sent with the request as a header named `X-SG-SIGNATURE`. The signature is calculated using HMAC with SHA1 and the message signed is the JSON body of the request.
 
-##### Header format
+#### Header format
 
 `<algorithm>=<signature>`
 
-##### Why use a secret token?
+#### Why use a secret token?
 
 While not strictly required, providing a secret token causes the payload sent to the webhook URL to be signed. This allows the consumer service to verify that the data originated from the source it expects, and that the payload has not been altered in any way during transit.
 
-##### Signature verification
+#### Signature verification
 
 An example of how to verify the signature of the payload is provided below using Python.
 
@@ -60,7 +58,7 @@ An example of how to verify the signature of the payload is provided below using
 True
 ```
 
-#### Verify SSL certificate
+### Verify SSL certificate
 
 Verification of SSL certificates is an optional feature that will help ensure the security of any connections made to the webhook’s consumer URL. If turned on, when a delivery is made to the webhook’s URL, Shotgun will use OpenSSL’s certificate validation routine to verify the certificate.
 
@@ -140,7 +138,7 @@ Provided as part of the event payload is the `session_uuid` that triggered the e
 
 ##### Payload size
 
-The maximum size of a delivery's payload is 1 megabyte. Any event triggered in Shotgun that would result in a payload size larger than 1 megabyte will have its `new_value` and `old_value` keys removed, and a `warning` key added that contains a message explaining what happened, why, and how to retrieve the entire event log entry from Shotgun.
+The maximum size of a delivery's payload is one megabyte. Any event triggered in Shotgun that would result in a payload size larger than 1 megabyte will have its `new_value` and `old_value` keys removed, and a `warning` key added that contains a message explaining what happened, why, and how to retrieve the entire event log entry from Shotgun.
 
 ## Testing webhooks
 
@@ -150,11 +148,15 @@ You can use any of the freely available webhook URL generators online for testin
 
 We recommend [webhook.site](https://webhook.site). It provides a unique URL that can be copied and pasted into a webhook, and will show you deliveries made to that address in real time. The page can be customized to respond to deliveries with a specific status code and body, which means you can test delivery success and failure.
 
-The webhook.site service is aggressively rate limited. This means that it is easy to end up in a situation where some deliveries are rejected, resulting in unstable or failed webhooks. When testing, we recommend that you use a known, controllable project environment rather than live data in production. **It is also not good to send production event data to publicly available, third party web services!**
+The webhook.site service is aggressively rate limited. This means that it is easy to end up in a situation where some deliveries are rejected, resulting in unstable or failed webhooks. When testing, we recommend that you use a known, controllable project environment rather than live data in production.
+
+{% include warning title="Production Data" content="It is not good to send production event data to publicly available, third party web services! We recommend using test data only when using services like webhook.site to test webhooks." %}
 
 ### Responding to deliveries
 
 A consumer service must respond to deliveries in order for the system to consider them successfully delivered.
+
+{% include warning title="Response Timeouts" content="A response must be received within 6 seconds of delivery to a webhook’s URL, after which the connection will be closed.** Failure to respond in time will result in a failed delivery." %}
 
 #### Status codes
 
@@ -163,10 +165,6 @@ A consumer service must respond to deliveries in order for the system to conside
 | Success | < 400 | The delivery was received and processed successfully. |
 | Error | >= 400 | The delivery was received but was not processed successfully. |
 | Redirect | 3xx | The delivery was received, but should be redirected to another URL. |
-
-#### Response time
-
-**A response must be received within 6 seconds of delivery to a webhook’s URL, after which the connection will be closed.** Failure to respond in time will result in a failed delivery. 
 
 ### Acknowledgement
 
