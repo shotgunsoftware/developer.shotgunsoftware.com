@@ -7,7 +7,7 @@ lang: en
 
 # Webhooks
 
-Webhooks allow you to be notified of events that occur in Shotgun. When you create a webhook, you specify the type of event you are interested in and tell Shotgun what URL to send data to when it is triggered. Once the relevant event happens in Shotgun, a payload of data describing the event will be sent to the webhook’s URL. This allows you to build tight integrations with Shotgun and automate portions of your workflow.
+Webhooks allow a service you control to be notified of events that occur in Shotgun. When you create a webhook, you specify the type of event you are interested in and tell Shotgun what URL to send data to when it is triggered. Once the relevant event happens in Shotgun, a payload of data describing the event will be sent to the webhook’s URL. This allows you to build tight integrations with Shotgun and automate portions of your workflow.
 
 ## What are some examples of how to use webhooks?
 
@@ -58,9 +58,9 @@ An example of how to verify the signature of the payload is provided below using
 True
 ```
 
-### Verify SSL certificate
+### Validate SSL certificate
 
-Verification of SSL certificates is an optional feature that will help ensure the security of any connections made to the webhook’s consumer URL. If turned on, when a delivery is made to the webhook’s URL, Shotgun will use OpenSSL’s certificate validation routine to verify the certificate.
+Validation of SSL certificates is an optional feature that will help ensure the security of any connections made to the webhook’s consumer URL. If turned on, when a delivery is made to the webhook’s URL, Shotgun will use OpenSSL’s certificate validation routine to verify the certificate.
 
 ## Webhook status
 
@@ -156,7 +156,7 @@ The webhook.site service is aggressively rate limited. This means that it is eas
 
 A consumer service must respond to deliveries in order for the system to consider them successfully delivered.
 
-{% include warning title="Response Timeouts" content="A response must be received within 6 seconds of delivery to a webhook’s URL, after which the connection will be closed.** Failure to respond in time will result in a failed delivery." %}
+{% include warning title="Response Timeouts" content="A response must be received within six seconds of delivery to a webhook’s URL, after which the connection will be closed.** Failure to respond in time will result in a failed delivery." %}
 
 #### Status codes
 
