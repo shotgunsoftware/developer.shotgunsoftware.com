@@ -40,5 +40,14 @@ additional_head_html: |
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
+custom_pre_content: |
+  <span id="article-type" style="display:none;" data-swiftype-name="type" data-swiftype-type="enum">Article</span>
+  <span id="article-locale" style="display:none;" data-swiftype-name="locale" data-swiftype-type="enum">en-us</span>
+  <div class="article-body markdown" data-swiftype-name="body" data-swiftype-type="text">
+
+custom_post_content: |
+  </div>
+
+
 # the url to connect to via the 'edit in github' button
 github_editme_path: shotgunsoftware/developer.shotgunsoftware.com/blob/master/docs
