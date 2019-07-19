@@ -9,7 +9,7 @@ lang: en
 
 ## How do I update my pipeline configuration to use a local core?
 
-If your pipeline configuration has been [setup to use a shared Toolkit core](https://support.shotgunsoftware.com/hc/en-us/articles/219040468#shared), you can essentially undo that process, or "unshare" your core, installing a copy of the Toolkit Core API inside your pipeline configuration using the tank localize command. We refer to this as "localizing" your core. 
+If your pipeline configuration has been setup to use a shared Toolkit core, you can essentially undo that process, or "unshare" your core, installing a copy of the Toolkit Core API inside your pipeline configuration using the tank localize command. We refer to this as "localizing" your core. 
 
 1. Open a terminal and navigate to the pipeline configuration you wish to install the Toolkit core into.
 

@@ -184,6 +184,6 @@ This guide walks through creating a **centralized configuration**: a single copy
 
 ### Working with more than one root folder
 
-Ideally your facility would want to be optimized for specific tasks. You can work with more than one root folder to optimize things such as video playback for dailies on one server and interactive processing on another. Toolkit allows you to work with more than one storage root in order to facilitate workflows such as these. Check out how to convert from a [single root to a multi-root configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219040478-How-do-I-convert-my-project-from-a-single-root-to-a-multi-root-configuration-). 
+Ideally your facility would want to be optimized for specific tasks. You can work with more than one root folder to optimize things such as video playback for dailies on one server and interactive processing on another. Toolkit allows you to work with more than one storage root in order to facilitate workflows such as these. Check out how to convert from a [single root to a multi-root configuration](../../../quick-answers/administering/convert-from-single-root-to-multi.md). 
 
-Now that you have a pipeline configuration for your project, get started on editing it! Jump into the next guide, [Editing a Pipeline Configuration](/toolkit/learning-resources/guides/editing_app_setting/), to learn how.
+Now that you have a pipeline configuration for your project, get started on editing it! Jump into the next guide, [Editing a Pipeline Configuration](./editing_app_setting.md), to learn how.
