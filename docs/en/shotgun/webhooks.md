@@ -23,6 +23,10 @@ When your animation team is finished with their work, why not go ahead and chang
 
 Another great example of how to automate status management would be to trigger a status change on a Task when a new Note is created. This is a good way to indicate to the artist and production teams that a supervisor has requested changes or fixes to the current work after a review session.
 
+## When should webhooks be used instead of the Shotgun event daemon?
+
+Webhooks and the [Shotgun event daemon](https://github.com/shotgunsoftware/shotgunEvents/wiki) offer similar features, but with a few key differences. The event daemon requires that you run, monitor, and maintain your own service. All of your code must be written in Python, and it allows you to initiate your own connections to Shotgun. Webhooks, in contrast, answer connections and can be written in any programming language. They can be hosted in a serverless environment, such as [AWS Lambda](https://aws.amazon.com/lambda/), or can trigger any of the automation platforms available online, such as [Zapier](https://zapier.com) and [IFTTT](https://ifttt.com). If your use case works with webhooks, it should be the preferred solution.
+
 ## Creating a webhook
 
 To get started creating a webhook, go to a Webhooks page, then navigate to the button above the webhooks list.
@@ -158,7 +162,7 @@ The webhook.site service is aggressively rate limited. This means that it is eas
 
 A consumer service must respond to deliveries in order for the system to consider them successfully delivered.
 
-{% include warning title="Response Timeouts" content="A response must be received within six seconds of delivery to a webhook’s URL, after which the connection will be closed.** Failure to respond in time will result in a failed delivery." %}
+{% include warning title="Response Timeouts" content="A response must be received within six seconds of delivery to a webhook’s URL, after which the connection will be closed. Failure to respond in time will result in a failed delivery." %}
 
 #### Status codes
 
