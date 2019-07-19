@@ -45,8 +45,7 @@ custom_pre_content: |
   <span id="article-locale" style="display:none;" data-swiftype-name="locale" data-swiftype-type="enum">en-us</span>
   <div class="article-body markdown" data-swiftype-name="body" data-swiftype-type="text">
 
-custom_post_content: |
-  </div>
+custom_post_content: </div>
 
 
 # the url to connect to via the 'edit in github' button
