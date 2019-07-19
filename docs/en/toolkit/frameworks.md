@@ -7,7 +7,7 @@ lang: en
 
 # Toolkit Frameworks
 
-Toolkit frameworks are collections of code that can be used across apps and engines. You can read more about the frameworks in general [in our core API documentation](https://developer.shotgunsoftware.com/tk-core/platform.html#frameworks).
+Toolkit frameworks are collections of code that can be used across apps and engines. You can read more about frameworks in general [in our core API documentation](https://developer.shotgunsoftware.com/tk-core/platform.html#frameworks).
 
 We provide a public API for the following provided frameworks which can be used in your app development:
 
