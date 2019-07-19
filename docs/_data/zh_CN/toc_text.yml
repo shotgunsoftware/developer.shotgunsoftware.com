@@ -6,6 +6,7 @@
 rv: RV
 toolkit: Toolkit
 shotgun: Shotgun
+quick-answers: 快速解答
 
 python-api: Python API
 rest-api: REST API

@@ -169,7 +169,7 @@ Set エンティティは `CustomEntity01` として表されます。Shotgun �
 
 **手順 9:** 以下の内容で、`CustomEntity01` フォルダの隣に `CustomEntity01.yml` という名前のファイルを作成します。
 
-```
+```yaml
 type: "shotgun_entity"
 
 name: "code"
@@ -194,7 +194,7 @@ YAML ファイルは、`CustomEntity01` フォルダに付ける名前を Toolki
 
 `filters` フィールドは、特定の時点でどのエンティティにフォルダを作成するかを制限します。現在の状態では、`asset.yml` のフィルタ フィールドは次のようになります。
 
-```
+```yaml
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
@@ -211,7 +211,7 @@ assets/Classroom/Prop/spoon
 
 **手順 11:** `asset.yml` の `filters` フィールドを次のように変更します。
 
-```
+```yaml
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
@@ -296,7 +296,7 @@ Workfiles の**[File Open]**アクションを使用してファイルにアク�
 
 **手順 14:** 適切なインデントを使用し、`templates.yml` の `keys` セクションに次の行を追加します。
 
-```
+```yaml
        CustomEntity01:
            type: str
 ```
@@ -311,7 +311,7 @@ Toolkit がファイルを読み書きする場所はテンプレートが定義
 
 **手順 15:** `templates.yml` を開いて、`maya_asset_work` を検索します。
 
-```
+```yaml
    maya_asset_work:
         definition: '@asset_root/work/maya/{name}.v{version}.{maya_extension}'
 ```
@@ -346,7 +346,7 @@ Toolkit がファイルを読み書きする場所はテンプレートが定義
 
 **手順 17:** `maya_asset_work`テンプレート定義を次のように変更します。
 
-```
+```yaml
     maya_asset_work:
         definition: '@asset_root/work/maya/{CustomEntity01}_{Asset}.v{version}.{maya_extension}'
 ```

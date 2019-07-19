@@ -115,7 +115,7 @@ Shotgun によって設定内のすべてのファイルおよびフォルダが
 
 完了すると、クローンが作成された設定の情報を使用して[パイプライン設定リスト]が更新され、ローカルな config フォルダに新しい設定が追加されます。
 
-{% include info title="注" content="**[ユーザ制限](User Restrictions)**の下にユーザ名が追加されています。Shotgun は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、Shotgun の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
+{% include info title="注" content="**[ユーザ制限]（User Restrictions）**の下にユーザ名が追加されています。Shotgun は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、Shotgun の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
 
 ## クローン作成された設定にプロジェクトを関連付ける
 
@@ -139,11 +139,12 @@ Shotgun によって設定内のすべてのファイルおよびフォルダが
 
 **手順 10:** ファイル内で `pythonconsole` を検索します。プロジェクトで既定の設定を使用した場合は、Python コンソール アプリの記述子がこのファイル内にリストされます。この記述子は、作業開始時に調べた Maya アプリの[リスト](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)内にある記述子と一致する必要があります。アプリのバージョンが、Maya アプリのリスト内にあったバージョンと一致することを確認します。
 
-```
+```yaml
 apps.tk-multi-pythonconsole.location:
 	type: app_store
 	name: tk-multi-pythonconsole
 	version: v1.1.2
+
 ```
 
 {% include info title="注" content="別の設定を使用している場合は、その記述子をファイルに追加しなければならいことがあります。"%}
@@ -156,7 +157,7 @@ Maya のプロジェクト環境内で作業している場合は、記述子を
 
 **手順 11:** クローン作成した設定内にある `config/env/project.yml` ファイルを開き、`tk-maya` エンジンの設定を検索します。
 
-```
+```yaml
 # configuration for all engines to load in a project context
 
 engines:
@@ -173,6 +174,7 @@ engines:
   tk-photoshopcc: "@settings.tk-photoshopcc.project"
   tk-shell: "@settings.tk-shell.project"
   tk-shotgun: "@settings.tk-shotgun.project"
+
 ```
 
 `@settings` を使用する `tk-maya: “@settings.tk-maya.project”` 行は、設定がインクルードされたファイルに含まれていることを示します。`tk-maya` は Maya エンジンを識別し、`project` は環境を識別します。
@@ -208,7 +210,7 @@ Shotgun の統合のコードは、アプリ、エンジン、およびフレー
 
 手順 15: 次の行の下に場所の記述子を追加します。
 
-```
+```yaml
 settings.tk-maya.project:
   apps:
 ```
@@ -217,7 +219,7 @@ settings.tk-maya.project:
 
 {% include info title="注" content="[YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) ファイルが、タブでなくスペースを使用して正しくフォーマットされていることを確認してください。"%}
 
-```
+```yaml
 # project
 settings.tk-maya.project:
   apps:
@@ -285,6 +287,7 @@ Windows の場合:
 プロンプトに従って、プロジェクトのプライマリ設定(変更のプッシュ先の設定)の ID を入力します。
 
 ```
+
 $ ls
 cache		config		install		tank		tank.bat
 $ ./tank push_configuration
@@ -315,7 +318,8 @@ Your existing configuration will be backed up.
 The following pipeline configurations are available to push to:
  - [1] Primary (/Users/michelle/Documents/Shotgun/configs/the_other_side)
 
-Please type in the id of the configuration to push to (ENTER to exit): 
+Please type in the id of the configuration to push to (ENTER to exit):
+
 ```
 
 クローン作成した設定のプッシュ先に指定できるパイプライン設定のリストが表示されます。設定を更新しているプロジェクトのプライマリ パイプライン設定の ID を入力します。
@@ -376,7 +380,7 @@ Desktop アプリはプロジェクト環境内で開くため、`project.yml` �
 
 {% include info title="注" content='engine ブロック内の `tk-desktop` は、インクルードされた内容を指します。
 
-```
+```yaml
 includes:
   - ./includes/settings/tk-desktop.yml
 
@@ -386,7 +390,7 @@ engines:
 
 インクルードの内容に従って、`config/env/includes/settings/tk-desktop.yml` を開き、`settings.tk-desktop.project` ブロックを検索します。このブロック内に、次の行が含まれています。<br/><br/>
 
-```
+```yaml
 apps:
   tk-multi-pythonconsole:
   location: "@apps.tk-multi-pythonconsole.location"
@@ -396,7 +400,7 @@ apps:
 
 インクルードの内容に沿って `../includes/app_locations.yml` に進み、`apps.tk-multi-pythonconsole.location` を検索します。次のようになっています。<br/><br/>
 
-```
+```yaml
 # pythonconsole
 apps.tk-multi-pythonconsole.location:
   type: app_store

@@ -157,7 +157,7 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 **手順 16:** お気に入りのテキスト エディタで `project.yml` を開きます。
 
-```
+```yaml
 description: Apps and Engines when launching with a project only context.
 
 ################################################################################
@@ -198,11 +198,12 @@ engines:
 # reference all of the common frameworks
 
 frameworks: "@frameworks"
+
 ```
 
 <!--![Project yml env](./images/editing_app_setting/15_project_yml_env.png)-->
 
-`project.yml` 内の説明の下に、`includes`、`engines`、および `frameworks` という 3 つのセクションがあります。`includes` セクションには、設定内の他の YAML ファイルを**参照するファイル ポインタのリストが示されています。既定の設定のアーキテクチャでは、ファイルを常に軽量化するために、ファイルをネストし、ポインタを使用するという方法も採用しています。**includes** に沿ってファイルを順に移動していくと、探している構成設定にたどり着きます。これはロシアのマトリョーシカ人形と似ています。人形を開くと、その中に次の人形が入っています。このようにして、最終的に適切な構成設定が見つかります。
+`project.yml` 内の説明の下に、`includes`、`engines`、および `frameworks` という 3 つのセクションがあります。`includes` セクションには、設定内の他の YAML ファイルを*参照*するファイル ポインタのリストが示されています。既定の設定のアーキテクチャでは、ファイルを常に軽量化するために、ファイルをネストし、ポインタを使用するという方法も採用しています。**includes** に沿ってファイルを順に移動していくと、探している構成設定にたどり着きます。これはロシアのマトリョーシカ人形と似ています。人形を開くと、その中に次の人形が入っています。このようにして、最終的に適切な構成設定が見つかります。
 
 すべてのエンジンが `tk-<name of software application>` として識別されています。Maya の設定に反映させたいため、求めている識別子は `tk-maya` になります。
 
@@ -228,7 +229,7 @@ tk-maya.yml での Workfiles アプリの検索
 
 **手順 18:** `project.yml` からのインクルードの内容に沿って、`tk-maya.yml` ファイル内で `settings.tk-maya.project` を検索します。特に行いたいのは、特定のプロジェクトのプロジェクト環境内で**[+New Task]**ボタンを無効にすることです。プロジェクト環境内で作業しながら、このプロジェクトの設定を操作し、場所の情報を取得しました。
 
-```
+```yaml
 # project
 settings.tk-maya.project:
   apps:
@@ -250,7 +251,7 @@ settings.tk-maya.project:
 
 `@` 記号は、`tk-multi-workfiles2` の値がインクルードされたファイルから取得されていることを示します。`tk-maya.yml` の上部にある `includes` セクションに、以下のように表示されています。
 
-```
+```yaml
 includes:
 ...
 - ./tk-multi-workfiles2.yml
@@ -260,7 +261,7 @@ includes:
 
 **手順 19:** `tk-multi-workfiles2.yml` ファイルを開いて、`settings.tk-multi-workfiles2.launch_at_startup` を検索します。
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   launch_at_startup: true
@@ -273,7 +274,7 @@ Maya 参照ボックスが示すように、`allow_task_creation` 設定には `
 
 **手順 20:** `tk-multi-workfiles2.yml` の `settings.tk-multi-workfiles2.launch_at_startup:` の下に `allow_task_creation` を追加して、その値を `false` に設定します。
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   allow_task_creation: false
@@ -349,7 +350,7 @@ Workfiles アプリのシステム名は `tk-multi-workfiles2` です。名前�
 
 ### カスタム環境を作成する
 
-既定の設定には、`project`、`sequence`、`shot`、`shot_step`、`asset`、および `asset_step` という、パイプラインに関する一連の定義済みの手順が付属しています。ただし、スタジオによっては、パイプラインのステージごとに異なる構成設定が必要な場合があります(`asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` など)。カスタム環境を作成するには、必要な環境設定ファイルを `config/env` に追加し、新しい環境を認識するように `pick_environment` コア フックをオーバーライドします。フックを使用すると、Toolkit ワークフローのさまざまなポイントで実行されるロジックを変更できます。[`pick_environment` コア フック](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py)には、環境を判別するために Toolkit で使用されるロジックが含まれています。フックを引き継いで、このロジックを変更することができます。
+既定の設定には、`project`、`sequence`、`shot`、`shot_step`、`asset`、および `asset_step` という、パイプラインに関する一連の定義済みの手順が付属しています。ただし、スタジオによっては、パイプラインのステージごとに異なる構成設定が必要な場合があります(`asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` など)。Toolkit はカスタム環境をサポートしています。詳しくは、[『環境設定リファレンス』の「カスタム環境」セクション](../../env_config_ref.md#custom-environments)を参照してください。
 
 ### ビデオのリソース
 
