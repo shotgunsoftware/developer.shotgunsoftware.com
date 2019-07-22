@@ -69,7 +69,7 @@ b. `TK_DEBUG` 環境変数を削除します。
 
 すべてのエンジンの環境ファイルには `debug_logging` 設定があります。これをオンにすると、ソフトウェア(Nuke または Maya のスクリプト エディタなど)の既定の出力に追加のデバッグレベル ログ メッセージが送信されます。 エンジンで実行中のアプリすべてがこのようなデバッグ レベルのメッセージを発行するため、エンジンでこの設定をオンにすると、すべてのアプリの設定も実質的にオンになります。
 
-これにより、ファイルにログ メッセージが出力されることはありません。標準的なロギング フレームワークでこの出力が可能になるように現在取り組んでいます。例外は [SG Desktop](https://support.shotgunsoftware.com/entries/95445597) および [Photoshop エンジン](https://support.shotgunsoftware.com/hc/ja/articles/115000026653-Photoshop-CC)で、これらは出力を GUI コンソールとファイルの両方に記録します。
+これにより、ファイルにログ メッセージが出力されることはありません。標準的なロギング フレームワークでこの出力が可能になるように現在取り組んでいます。例外は [SG Desktop](https://support.shotgunsoftware.com/hc/ja/articles/219039818-Shotgun-Desktop) および [Photoshop エンジン](https://support.shotgunsoftware.com/hc/ja/articles/115000026653-Photoshop-CC)で、これらは出力を GUI コンソールとファイルの両方に記録します。
 
 ### ソフトウェアでエンジンのデバッグ ログをオンにする
 
@@ -77,19 +77,21 @@ b. `TK_DEBUG` 環境変数を削除します。
 
 `config/env/shot_step.yml` を編集します。
 
-    engines:
-    ...
-    ...
-    tk-nuke:
+```yaml
+engines:
+  ...
+  ...
+  tk-nuke:
     apps:
-    ...
-    ...
+      ...
+      ...
     compatibility_dialog_min_version: 9
     debug_logging: true
     favourite_directories: []
     location: {name: tk-nuke, type: app_store, version: v0.2.23}
     ...
-    ...
+   ...
+```
 
 ファイルを保存し、ショットのステップ環境で Nuke を再起動します。これで、スクリプト エディタ ウィンドウにデバッグ出力が表示されます。
 
@@ -123,7 +125,7 @@ tank コマンドを実行し、ターミナルでデバッグ出力を確認す
     /sgtk/software/shotgun/scarlet
     DEBUG [10:11:38 620.270967484]: Location of this script (__file__):
     /sgtk/software/shotgun/scarlet/install/core/scripts/tank_cmd.py
-    
+
     Welcome to the Shotgun Pipeline Toolkit!
     For documentation, see https://toolkit.shotgunsoftware.com
     Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
@@ -138,26 +140,26 @@ tank コマンドを実行し、ターミナルでデバッグ出力を確認す
     DEBUG [10:11:39 129.276990891]: No need to load up the engine for this
     command.
     - Running command core...
-    
-    
+
+
     ----------------------------------------------------------------------
     Command: Core
     ----------------------------------------------------------------------
-    
-    
+
+
     Welcome to the Shotgun Pipeline Toolkit update checker!
     This script will check if the Toolkit Core API installed
     in /sgtk/software/shotgun/scarlet
     is up to date.
-    
-    
+
+
     Please note that when you upgrade the core API, you typically affect more than
     one project. If you want to test a Core API upgrade in isolation prior to
     rolling it out to multiple projects, we recommend creating a special
     *localized* pipeline configuration. For more information about this, please
     see the Toolkit documentation.
-    
-    
+
+
     You are currently running version v0.15.18 of the Shotgun Pipeline Toolkit
     No need to update the Toolkit Core API at this time!
     DEBUG [10:11:39 981.74405098]: Exiting with exit code None

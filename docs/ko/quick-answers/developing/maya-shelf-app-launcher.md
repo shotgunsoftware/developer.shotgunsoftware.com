@@ -7,7 +7,7 @@ lang: ko
 
 # Maya에서 툴킷 앱 실행을 위한 선반 버튼을 추가하려면 어떻게 해야 합니까?
 
-Maya에서 툴킷 앱을 실행하기 위한 선반 버튼을 Maya에 추가하는 작업은 정말 간단합니다. 다음은 [Loader 앱](https://support.shotgunsoftware.com/entries/95442527)을 여는 커스텀 선반 버튼을 추가하는 방법을 보여 주는 예입니다.
+Maya에서 툴킷 앱을 실행하기 위한 선반 버튼을 Maya에 추가하는 작업은 정말 간단합니다. 다음은 [Loader 앱](https://support.shotgunsoftware.com/hc/ko/articles/219033078)을 여는 커스텀 선반 버튼을 추가하는 방법을 보여 주는 예입니다.
 
 {% include info title="참고" content="이 예는 툴킷이 현재 Maya 세션에서 활성화되어 있다고 가정한 것입니다. 이 예제 코드는 툴킷을 부트스트랩하지 않습니다." %}
 

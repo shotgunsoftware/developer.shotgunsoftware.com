@@ -31,7 +31,7 @@ lang: ko
 5. Shotgun 데스크톱이 시스템에 설치되어 있어야 합니다.
 6. 활성 상태의 Maya 멤버쉽. Maya의 30일 체험판은 [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 구할 수 있습니다.
 
-**참고:** 이 안내서는 `tk-config-default2` 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다.
+{% include info title="참고" content="이 안내서는 `tk-config-default2` 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다." %}
 
 ## Workfiles 앱 정보
 
@@ -111,9 +111,9 @@ Maya와 Shotgun이 완전히 로드되면 **파일 열기**(File Open) 대화상
 
 이 특정 환경에 대한 설정을 찾으려면 **구성**(Configuration) 헤더 아래를 확인하십시오.
 
-![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png "태스크 버튼 보기")
+![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png)
 
-**참고:** 설정 **my_tasks_filters** 다음이 설정 **launch_at_startup**입니다. 프로젝트 환경에서 **파일 열기**(File Open) 설정의 기본 설정이므로 유의해야 합니다. 이것은 Shotgun 데스크톱에서 Maya가 시작되면 **파일 열기**(File Open) 대화상자가 자동으로 열린다는 의미입니다.
+{% include info title="참고" content="**my_tasks_filters** 설정 다음이 **launch_at_startup** 설정입니다. 프로젝트 환경에서 **파일 열기**(File Open) 설정의 기본 설정이므로 유의해야 합니다. 이는 Shotgun 데스크톱에서 Maya가 실행되면 **파일 열기**(File Open) 대화상자가 자동으로 열린다는 의미입니다." %}
 
 설정 **allow_task_creation**까지 아래로 스크롤합니다. 이 설정의 기본값은 **True**이므로 사용자가 Maya 프로젝트 환경에 있는 동안 새 태스크를 생성할 수 있습니다.
 

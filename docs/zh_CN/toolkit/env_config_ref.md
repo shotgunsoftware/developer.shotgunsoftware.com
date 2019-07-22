@@ -182,7 +182,7 @@ engines:
 * 文件会开始变长，即使尚未添加任何配置设置也是如此。
 * 您可以设想将在其他插件和其他环境中使用这些应用。例如，您可能将在不同的插件（如 Houdini、Nuke 或 Photoshop）和不同的环境（如 `asset_step` 或 `shot_step`）中使用所有这三个应用（Panel、About 应用以及 Workfiles 应用）。在配置中的多个位置定义常用应用设置，这意味着进行更改时，必须在多个位置进行修改。
 
-为了解决最后两个问题，Toolkit 支持 includes**。
+为了解决最后两个问题，Toolkit 支持 *includes*。
 
 ### includes
 

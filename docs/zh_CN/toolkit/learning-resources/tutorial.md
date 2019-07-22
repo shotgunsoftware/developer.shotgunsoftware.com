@@ -376,7 +376,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
                "Mesh",
                object
            )
-          
+
            # set the icon for the item
            mesh_item.set_icon_from_path(icon_path)
 

@@ -21,11 +21,11 @@ Windows 証明書ストアに必要な CA 証明書を追加します。Windows 
 
 2. 次のコマンドを PowerShell ウィンドウに貼り付けて、[Return]キーを押して実行します。
 
-       $cert_url = "https://www.amazontrust.com/repository/SFSRootCAG2.cer"
-       $cert_file = New-TemporaryFile
-       Invoke-WebRequest -Uri $cert_url -UseBasicParsing -OutFile $cert_file.FullName
-       Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalMachine\Root
-   
+        $cert_url = "https://www.amazontrust.com/repository/SFSRootCAG2.cer"
+        $cert_file = New-TemporaryFile
+        Invoke-WebRequest -Uri $cert_url -UseBasicParsing -OutFile $cert_file.FullName
+        Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalMachine\Root
+
 3. サムプリント `925A8F8D2C6D04E0665F596AFF22D863E8256F3F` を保持している追加証明書の詳細が表示されたら操作は完了しているので、PowerShell を閉じることができます。
 
 ## 代わりの解決策

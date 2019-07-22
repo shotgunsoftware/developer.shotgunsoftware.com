@@ -33,4 +33,4 @@ Shotgun에서 Houdini가 시작되면 시작 앱 로직에서는 Shotgun 부트�
 
 이 오류가 발생하면 대신 `%HOUDINI_PATH%`를 사용해야 합니다." %}
 
-그래도 문제가 해결되지 않으면 문제를 진단할 수 있도록 당사의 [지원 팀]((https://support.shotgunsoftware.com/hc/en-us/requests/new))에 문의하십시오.
+그래도 문제가 해결되지 않으면 문제를 진단할 수 있도록 당사 [지원 팀](https://support.shotgunsoftware.com/hc/ko/requests/new)에 문의해 주십시오.

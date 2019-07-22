@@ -23,6 +23,7 @@ Shotgun Desktop または Shotgun Web サイトから 3ds Max を起動すると
 最初に、パイプライン設定の `config/hooks` フォルダに移動し、ファイル `before_app_launch.py` を作成します。そのファイル内に次のコードを貼り付けます。
 
 ```python
+
 """
 Before App Launch Hook
 This hook is executed prior to application launch and is useful if you need

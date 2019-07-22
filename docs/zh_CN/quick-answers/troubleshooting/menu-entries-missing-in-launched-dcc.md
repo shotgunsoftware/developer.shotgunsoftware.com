@@ -11,7 +11,7 @@ lang: zh_CN
 
 ## 示例
 
-从 [Shotgun Desktop](https://support.shotgunsoftware.com/entries/95442947) 启动应用程序时，默认进入项目环境中。此环境由工作流配置中位于 `config/env/project.yml` 下的配置文件进行管理。由于用户的大多数工作可能不在此环境中进行，其中并未配置许多应用供您使用。
+从 [Shotgun Desktop](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039818) 启动应用程序时，默认进入项目环境中。此环境由工作流配置中位于 `config/env/project.yml` 下的配置文件进行管理。由于用户的大多数工作可能不在此环境中进行，其中并未配置许多应用供您使用。
 
 **默认 Maya 项目动作：**
 

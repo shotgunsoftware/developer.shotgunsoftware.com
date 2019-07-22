@@ -25,23 +25,23 @@ lang: zh_CN
 Toolkit 在 `config/core/roots.yml` 文件中缓存工作流配置中使用的本地存储相关信息。编辑此文件以添加刚刚在 Shotgun 中创建的新 **secondary** 存储根：
 
     primary: {
-    linux_path: /mnt/hgfs/sgtk/projects,
-    mac_path: /sgtk/projects,
-    windows_path: 'z:\sgtk\projects'
+        linux_path: /mnt/hgfs/sgtk/projects,
+        mac_path: /sgtk/projects,
+        windows_path: 'z:\sgtk\projects'
     }
     secondary: {
-    linux_path: /mnt/hgfs/sgtk/secondaries,
-    mac_path: /sgtk/secondaries,
-    windows_path: 'z:\sgtk\secondaries'
+        linux_path: /mnt/hgfs/sgtk/secondaries,
+        mac_path: /sgtk/secondaries,
+        windows_path: 'z:\sgtk\secondaries'
     }
 
 {% include info title="注意" content="自 `tk-core v0.18.141` 起，roots.yml 中定义的根名称不需要与 SG 中定义的本地存储名称一致。您可以通过在 `roots.yml` 定义中添加 `shotgun_storage_id: <id>` 键/值对来明确定义连接。示例：
 
     secondary: {
-    linux_path: /mnt/hgfs/sgtk/secondaries,
-    mac_path: /sgtk/secondaries,
-    windows_path: 'z:\sgtk\secondaries'
-    shotgun_storage_id: 123
+        linux_path: /mnt/hgfs/sgtk/secondaries,
+        mac_path: /sgtk/secondaries,
+        windows_path: 'z:\sgtk\secondaries'
+        shotgun_storage_id: 123
     }
 
 当前，存储 ID 仅可通过 API 调用查询。" %}
@@ -56,7 +56,7 @@ Toolkit 在 `config/core/roots.yml` 文件中缓存工作流配置中使用的�
 
     # the type of dynamic content
     type: "project"
-    
+
     # name of project root as defined in roots.yml
     root_name: "primary"
 
@@ -64,7 +64,7 @@ Toolkit 在 `config/core/roots.yml` 文件中缓存工作流配置中使用的�
 
     # the type of dynamic content
     type: "project"
-    
+
     # name of project root as defined in roots.yml
     root_name: "secondary"
 
@@ -72,8 +72,8 @@ Toolkit 在 `config/core/roots.yml` 文件中缓存工作流配置中使用的�
 例如，如果您的 secondary 文件夹下某处存在 asset.yml，则需要更新过滤器，以使其根据 secondary 文件夹值过滤项目。
 
     filters:
-    - { "path": "project", "relation": "is", "values": [ "$secondary" ] }
-    - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
+        - { "path": "project", "relation": "is", "values": [ "$secondary" ] }
+        - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
 
 ## 更新模板路径以指定要使用的存储根
 
@@ -82,8 +82,8 @@ Toolkit 在 `config/core/roots.yml` 文件中缓存工作流配置中使用的�
 例如，由于我们希望所有资产工作保存在 secondary 存储上，因此为了更新 maya_asset_work 模板路径，我们需要将其修改为如下所示：
 
     maya_asset_work:
-    definition: '@asset_root/work/maya/{name}.v{version}.ma'
-    root_name: 'secondary'
+        definition: '@asset_root/work/maya/{name}.v{version}.ma'
+        root_name: 'secondary'
 
 您应该对 `config/core/templates.yml` 文件中的每个模板路径采用与此相同的模式。为每个路径指定正确的 `root_name`（**primary** 或 **secondary**）。
 

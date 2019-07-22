@@ -19,7 +19,7 @@ lang: zh_CN
 
     assets/{sg_asset_type}/{Asset}/{Step}/work/maya/{task_name}_{name}.v{version}.{maya_extension}`
 
-然后尝试从生成的路径确定上下文，这仅可以构建 `Asset` 和 `Step`，而不是**** `Task`，不论文件路径中的任务名称是什么。
+然后尝试从生成的路径确定上下文，这仅可以构建 `Asset` 和 `Step`，而**不是** `Task`，不论文件路径中的任务名称是什么。
 
 **解决方案**
 
