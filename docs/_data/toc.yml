@@ -9,6 +9,12 @@
 #       languages. For more info, see https://github.com/untra/polyglot#disabling-url-relativizing
 #
 
+- caption: getting-started
+- caption: guides
+- caption: reference
+
+
+
 - caption: shotgun
   children:
   - page: shotgun-index
