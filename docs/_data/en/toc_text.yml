@@ -3,6 +3,10 @@
 # For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
 #
 
+reference: Reference
+guides: Guides
+
+
 rv: RV
 toolkit: Toolkit
 shotgun: Shotgun
@@ -13,7 +17,6 @@ rest-api: REST API
 event-triggers: Event Driven Triggers
 jira-bridge: Jira Bridge (Beta)
 examples: Examples
-reference: Reference
 webinars: Webinar Recordings
 
 core-api: Core API
