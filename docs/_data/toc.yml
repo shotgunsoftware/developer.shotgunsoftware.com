@@ -10,33 +10,17 @@
 #
 
 - caption: getting-started
+
 - caption: guides
-- caption: reference
-
-
-
-- caption: shotgun
-  children:
-  - page: shotgun-index
-  - text: python-api
-    url: " https://developer.shotgunsoftware.com/python-api/"
-  - text: rest-api
-    url: " https://developer.shotgunsoftware.com/rest-api/"
-  - text: event-triggers
+  - text: shotgun-action-menu-items
+    url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
+ - text: event-triggers
     url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
+
+- caption: reference
   - text: jira-bridge
     url: " https://developer.shotgunsoftware.com/sg-jira-bridge/"
-  - page: shotgun-action-menu-items
-    children:
-    - text: examples
-      url: " http://developer.shotgunsoftware.com/python-api/cookbook/examples/ami_handler.html"
-    - text: reference
-      url: "https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
-
-- caption: toolkit
-  children:
   - page: toolkit-index
-  - page: toolkit-learning-resources
     children:
     - page: toolkit-guides
       children:
@@ -45,6 +29,22 @@
       - page: toolkit-guides-adding-app
       - page: toolkit-guides-filesystem-configuration
     - page: toolkit-pipeline-tutorial
+   
+
+- caption: shotgun
+  children:
+  - page: shotgun-index
+  - text: python-api
+    url: " https://developer.shotgunsoftware.com/python-api/"
+  - text: rest-api
+    url: " https://developer.shotgunsoftware.com/rest-api/"
+  
+
+- caption: toolkit
+  children:
+  - page: toolkit-index
+  - page: toolkit-learning-resources
+
     - text: webinars
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
   - page: env-config-ref    
