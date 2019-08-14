@@ -7,4 +7,4 @@ lang: en
 
 # Creating Folders
 
-Toolkit makes use of infomration stored
+If your using a Toolkit configuraiton
