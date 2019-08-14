@@ -38,6 +38,9 @@
       - page: toolkit-guides-editing-config
       - page: toolkit-guides-adding-app
       - page: toolkit-guides-filesystem-configuration
+    - page: sgtk-developer-guides
+      children:
+      - page: importing-sgtk-guide
     - page: toolkit-pipeline-tutorial
     - text: webinars
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
