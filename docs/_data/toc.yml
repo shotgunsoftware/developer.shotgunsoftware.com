@@ -46,7 +46,7 @@
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
   - page: env-config-ref    
   - text: core-api
-    url: " https://developer.shotgunsoftware.com/tk-core/"
+    url: "https://developer.shotgunsoftware.com/tk-core/"
   - page: toolkit-frameworks
     children:
     - text: qt-widgets
@@ -81,13 +81,9 @@
     - text: screening-room
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"
 
-  - page: rv-forums
-    children:
-    - text: troubleshooting
-      url: "https://support.shotgunsoftware.com/forums/23078637-Questions-and-Troubleshooting-Python-Mu-JavaScript-etc-#recent"
-    - text: extending-rv
-      url: "https://support.shotgunsoftware.com/hc/en-us/community/topics/200682488-RV-Extending-and-Customizing-RV-Python-Mu-JavaScript-etc-#recent"
-
+  - text: forums
+    url: "http://community.shotgunsoftware.com/c/rv"
+    
 - caption: quick-answers
   children:
   - page: quick-answers-administering

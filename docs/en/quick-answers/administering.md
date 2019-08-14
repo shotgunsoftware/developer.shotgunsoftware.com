@@ -15,7 +15,6 @@ A collection of quick answers based around administering and configuring your To
 - [How do I install the Shotgun Desktop silently on Windows?](./administering/install-desktop-silent.md)
 - [How do I set up a desktop/launcher icon for Shotgun Desktop on Linux?](./administering/create-shotgun-desktop-shortcut.md)
 - [How can I disable the Shotgun Desktop's browser integration?](./administering/disable-browser-integration.md)
-- [Does Shotgun Desktop run on Debian systems like Ubuntu?](./administering/sg-desktop-run-on-ubuntu.md)
 
 #### Managing your config:
 
