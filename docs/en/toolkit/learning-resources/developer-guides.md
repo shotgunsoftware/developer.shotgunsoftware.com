@@ -28,9 +28,9 @@ by the env, you will be able to import the sgtk API and generate a path and publ
 1. [Importing `sgtk`](./developer-guides/part-1-importing-sgtk.md)
 2. [Getting a `Sgtk` instance](./developer-guides/part-2-getting-sgtk-instance.md)
 3. [Getting context](./developer-guides/part-3-getting-context.md)
-4. Creating folders
-5. Using a template and context to build a path
-6. Finding existing files and getting the latest version number
+4. [Creating folders](./developer-guides/part-4-creating-folders.md)
+5. [Using a template to build a path](./developer-guides/part-5-build-a-path.md)
+6. [Finding existing files and getting the latest version number](./developer-guides/part-6-find-latest-version.md)
 7. Registering a published file
 8. Pulling it all together into a complete script
 

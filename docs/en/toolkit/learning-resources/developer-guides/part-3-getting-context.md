@@ -24,32 +24,34 @@ In a later step you will be using the context to help resolve a path that can be
 ## Acquiring a Context
 
 To create a context you must use one of the following constructor methods `Sgtk.context_from_entity()`, `Sgtk.context_from_entity_dictionary()` or `Sgtk.context_from_path()`.
-You access these methods through the sgtk instance we created in the previous step.
+You access these methods through the sgtk instance we created in the previous step. 
 
-Instead of creating a new context however, we could grab the current context from the engine like this:
+{% include info title="Note" content="in order to get a context from a path you must have already created folders which is step after in this guide." %}
+
+Instead of creating a new context however, we could [grab the current context from the engine](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context) like this:
 
 ```python
 current_engine = sgtk.platform.current_engine()
 
-ctx = current_engine.context
+context = current_engine.context
 ```
 Since we will be using the context to help resolve a file path for a Task on a Shot in later steps we need to be certain the context contains the relevant information.  
 
 If your code was running as part of a Toolkit app, 
 and your app was configured to only run in a shot_step environment then you could safely assume you would get an appropriate current context.
 However, for the sake of avoiding ambiguity in this guide, 
-you will create a context explicitly from a `Task` (that must belong to a `Shot`) using the `Sgtk.context_from_entity()`.
+you will create a context explicitly from a `Task`, (that must belong to a `Shot`), using the `Sgtk.context_from_entity()`.
 
 When you create a context you provide the deepest level required for your operations.
 For example you could create a context from a Task and Toolkit will work out the rest of the context parameters for you.
 
 ```python
-ctx = tk.context_from_entity("Task", 13155)
+context = tk.context_from_entity("Task", 13155)
 ```
 
 If you print out a representation of the context instance you will get something like this:
 ```python
-print(repr(ctx))
+print(repr(context))
 
 >> <Sgtk Context:   Project: {'type': 'Project', 'name': 'My Project', 'id': 176}
   Entity: {'type': 'Shot', 'name': 'shot01_running_away', 'id': 1381}
@@ -77,5 +79,5 @@ current_engine = sgtk.platform.current_engine()
 tk = current_engine.sgtk
 
 # Get a context object from a Task, this Task must belong to a Shot for the future steps to work. 
-ctx = sgtk.context_from_entity("Task", 13155)
+context = sgtk.context_from_entity("Task", 13155)
 ```
