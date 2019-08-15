@@ -25,8 +25,8 @@ by the env, you will be able to import the sgtk API and generate a path and publ
 
 ### Steps
 
-1. [Importing `sgtk`](./developer-guides/part-1-importing-sgtk.md)
-2. [Getting a `Sgtk` instance](./developer-guides/part-2-getting-sgtk-instance.md)
+1. [Importing sgtk](./developer-guides/part-1-importing-sgtk.md)
+2. [Getting an Sgtk instance](./developer-guides/part-2-getting-sgtk-instance.md)
 3. [Getting context](./developer-guides/part-3-getting-context.md)
 4. [Creating folders](./developer-guides/part-4-creating-folders.md)
 5. [Using a template to build a path](./developer-guides/part-5-build-a-path.md)
