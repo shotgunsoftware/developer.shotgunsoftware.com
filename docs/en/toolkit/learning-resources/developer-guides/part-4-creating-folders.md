@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Importing sgtk
+title: Part 4 Importing sgtk
 pagename: part-4-creating-folders
 lang: en
 ---
 
-# Creating Folders
+# Part 4 - Creating Folders
 
 Toolkit can dynamically generate a folder structure on disk based upon your project entities.
 
@@ -34,7 +34,7 @@ current_engine = sgtk.platform.current_engine()
 tk = current_engine.sgtk
 
 # Get a context object from a Task, this Task must belong to a Shot for the future steps to work. 
-context = sgtk.context_from_entity("Task", 13155)
+context = tk.context_from_entity("Task", 13155)
 
 # create the required folders based upon the task
 tk.create_filesystem_structure("Task", context.task["id"])

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Getting an Sgtk instance
+title: Part 2 Getting an Sgtk instance
 pagename: part-2-sgtk-instance-guide
 lang: en
 ---
 
-# Getting an Sgtk instance
+# Part 2 - Getting an Sgtk instance
 
 Now you've imported the `sgtk` API the next step towards the end goal of being able to generate a path and publish it, is
 to create an `Sgtk` instance.

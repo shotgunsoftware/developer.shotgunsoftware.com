@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Getting a context object
+title: Part 3 Getting a context object
 pagename: part-3-getting-context-guide
 lang: en
 ---
 
-# Getting context
+# Part 3 - Getting context
 
 ## What is a context and why do I need it?
 
@@ -79,5 +79,5 @@ current_engine = sgtk.platform.current_engine()
 tk = current_engine.sgtk
 
 # Get a context object from a Task, this Task must belong to a Shot for the future steps to work. 
-context = sgtk.context_from_entity("Task", 13155)
+context = tk.context_from_entity("Task", 13155)
 ```

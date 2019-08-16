@@ -21,7 +21,8 @@ by the env, you will be able to import the sgtk API and generate a path and publ
 
 ### Requirements
 
-- A project with an advanced configuration. If you havent setup a configuration before you can follow the ["Getting started with configurations"](need link) guide.
+- Understanding of the fundamentals of Python programing. 
+- A project with an advanced configuration. If you haven't setup a configuration before you can follow the ["Getting started with configurations"](need link) guide.
 
 ### Steps
 
@@ -31,8 +32,8 @@ by the env, you will be able to import the sgtk API and generate a path and publ
 4. [Creating folders](./developer-guides/part-4-creating-folders.md)
 5. [Using a template to build a path](./developer-guides/part-5-build-a-path.md)
 6. [Finding existing files and getting the latest version number](./developer-guides/part-6-find-latest-version.md)
-7. Registering a published file
-8. Pulling it all together into a complete script
+7. [Registering a published file](./developer-guides/part-7-registering-publish.md)
+8. [Pulling it all together into a complete script](./developer-guides/part-8-getting-started-complete-script.md)
 
 ## Bootstrapping and running an app
 

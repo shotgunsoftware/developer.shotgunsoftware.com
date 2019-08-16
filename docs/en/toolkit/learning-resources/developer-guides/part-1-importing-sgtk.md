@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Importing sgtk
+title: Part 1 Importing sgtk
 pagename: part-1-importing-sgtk-guide
 lang: en
 ---
 
-# Importing sgtk
+# Part 1 - Importing sgtk
 
 The sgtk API is contained in a python package called `sgtk`. Each Toolkit configuration has it's own copy of the API.
 In order to use the API on a project's configuration, you must import the sgtk package from the configuration 

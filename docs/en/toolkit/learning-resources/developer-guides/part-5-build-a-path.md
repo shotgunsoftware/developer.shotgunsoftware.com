@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Using a template to build a path
+title: Part 5 Using a template to build a path
 pagename: part-5-build-a-path
 lang: en
 ---
 
-# Using a template to build a path
+# Part 5 - Using a template to build a path
 
 When ever you need to know where a file should be placed or found in Toolkit you can use the templates to resolve an absolute path on disk.
 
@@ -79,9 +79,9 @@ current_engine = sgtk.platform.current_engine()
 tk = current_engine.sgtk
 
 # Get a context object from a Task, this Task must belong to a Shot for the future steps to work. 
-context = sgtk.context_from_entity("Task", 13155)
+context = tk.context_from_entity("Task", 13155)
 
-# create the required folders based upon the task
+# Create the required folders based upon the task
 tk.create_filesystem_structure("Task", context.task["id"])
 
 # Get a template instance by providing a name of a valid template in your config's templates.yml
@@ -97,7 +97,7 @@ fields["version"] = 1
 # Use the fields to resolve the template path into an absolute path.
 publish_path = template.apply_fields(fields)
 
-# make sure we create any missing folders
+# Make sure we create any missing folders
 current_engine.ensure_folder_exists(publish_path)
 ```
 
