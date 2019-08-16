@@ -75,6 +75,10 @@ def get_next_version_number(tk, template_name, fields):
 get_next_version_number(tk, "maya_shot_work", fields)
 ```
 
+The [`sgtk.paths_from_template()`](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=paths_from_template#sgtk.Sgtk.paths_from_template) method
+will gather all the files on disk that match the provided template and fields. This is method is also useful for scenarios
+where you want to find and display a list of files to the user. 
+
 ## Conclusion
 
 Now you have the logic to figure out the latest version, you can remove the hardcoded version and replace it with this logic.
