@@ -10,33 +10,34 @@
 #
 
 - caption: getting-started
-
 - caption: guides
-  - text: shotgun-action-menu-items
-    url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
- - text: event-triggers
-    url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
+  children:
+    - text: shotgun-action-menu-items
+      url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
+    - text: event-triggers
+      url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
 - caption: reference
-  - text: jira-bridge
-    url: " https://developer.shotgunsoftware.com/sg-jira-bridge/"
-  - page: toolkit-index
-    children:
-    - page: toolkit-guides
+  children:
+    - text: jira-bridge
+      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/"
+    - page: toolkit-index
       children:
-      - page: toolkit-guides-advanced-config
-      - page: toolkit-guides-editing-config
-      - page: toolkit-guides-adding-app
-      - page: toolkit-guides-filesystem-configuration
-    - page: toolkit-pipeline-tutorial
+        - page: toolkit-guides
+          children:
+            - page: toolkit-guides-advanced-config
+            - page: toolkit-guides-editing-config
+            - page: toolkit-guides-adding-app
+            - page: toolkit-guides-filesystem-configuration
+        - page: toolkit-pipeline-tutorial
 - caption: other
   children:
-  - page: contribution-index
-  - text: shotgun-support
-    url: "https://support.shotgunsoftware.com/"
-  - text: service-status
-    url: "https://status.shotgunsoftware.com/"
-  - text: new-support-request
-    url: "https://support.shotgunsoftware.com/hc/requests/new"
+    - page: contribution-index
+    - text: shotgun-support
+      url: "https://support.shotgunsoftware.com/"
+    - text: service-status
+      url: "https://status.shotgunsoftware.com/"
+    - text: new-support-request
+      url: "https://support.shotgunsoftware.com/hc/requests/new"
 
 
 
