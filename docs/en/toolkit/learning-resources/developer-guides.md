@@ -21,7 +21,7 @@ by the env, you will be able to import the sgtk API and generate a path and publ
 
 ### Requirements
 
-- Understanding of the fundamentals of Python programing. 
+- An understanding of Python programing fundamentals. 
 - A project with an advanced configuration. If you haven't setup a configuration before you can follow the ["Getting started with configurations"](need link) guide.
 
 ### Steps

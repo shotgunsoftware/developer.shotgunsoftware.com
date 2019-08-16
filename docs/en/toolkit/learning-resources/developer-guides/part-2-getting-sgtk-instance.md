@@ -57,4 +57,4 @@ current_engine = sgtk.platform.current_engine()
 tk = current_engine.sgtk
 ```
 
-The next step is getting a context.
+The next step is [getting a context](./part-3-getting-context.md).

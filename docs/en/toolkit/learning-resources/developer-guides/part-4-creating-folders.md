@@ -40,4 +40,4 @@ context = tk.context_from_entity("Task", 13155)
 tk.create_filesystem_structure("Task", context.task["id"])
 ```
 
-You've now completed all the preparation steps and are ready to move onto generating a path using a template.
+You've now completed all the preparation steps and are ready to move onto [generating a path using a template](./part-5-build-a-path.md).

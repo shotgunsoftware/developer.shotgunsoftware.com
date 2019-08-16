@@ -125,4 +125,4 @@ publish_path = template.apply_fields(fields)
 current_engine.ensure_folder_exists(publish_path)
 ```
 
-The next and final step is to register the path as a published file.
+The next step is to [register the path as a published file](./part-7-registering-publish.md).

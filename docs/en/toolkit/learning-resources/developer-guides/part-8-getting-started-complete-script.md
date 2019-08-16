@@ -78,4 +78,4 @@ sgtk.util.register_publish(tk,
                            published_file_type = "Maya Scene")
 ```
 
-By this point the code is getting a bit long, so a recommended next step would be to tidy it up a bit and break things into methods.
+{% include info title="Tip" content="By this point the code is getting a bit long, so a recommended next step would be to tidy it up a bit and break things into methods." %}

@@ -66,8 +66,7 @@ print(repr(context))
 
 Even though you only provided the task, it should have filled in the other related details.  
 
-We're now ready to make use of the context 
-In conclusion our publish script now looks like this
+The publish script should now look like this:
 
 ```python
 import sgtk
@@ -81,3 +80,5 @@ tk = current_engine.sgtk
 # Get a context object from a Task, this Task must belong to a Shot for the future steps to work. 
 context = tk.context_from_entity("Task", 13155)
 ```
+
+Next step is to [generate the folders.](./part-4-creating-folders.md)
