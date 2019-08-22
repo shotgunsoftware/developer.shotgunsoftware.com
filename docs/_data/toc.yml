@@ -12,10 +12,21 @@
 - caption: getting-started
 - caption: guides
   children:
-    - text: shotgun-action-menu-items
+    - text: action-menu-items
       url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
     - text: event-triggers
       url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
+    - page: pipeline-integrations
+      children:
+      - page: toolkit-guides
+        children:
+        - page: toolkit-guides-advanced-config
+        - page: toolkit-guides-editing-config
+        - page: toolkit-guides-adding-app
+        - page: toolkit-guides-filesystem-configuration
+      - page: toolkit-pipeline-tutorial    
+    
+    
 - caption: reference
   children:
     - text: jira-bridge
