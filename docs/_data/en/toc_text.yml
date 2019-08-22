@@ -11,10 +11,12 @@ rv: RV
 toolkit: Toolkit
 shotgun: Shotgun
 quick-answers: Quick Answers
+pipeline-integrations: Pipeline Integrations
 
 python-api: Python API
 rest-api: REST API
-event-triggers: Event Driven Triggers
+event-triggers: Writing Event-Driven Triggers
+action-menu-items: Creating custom Action Menu Items
 jira-bridge: Jira Bridge (Beta)
 examples: Examples
 webinars: Webinar Recordings
