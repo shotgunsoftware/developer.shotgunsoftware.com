@@ -15,7 +15,11 @@
     - text: action-menu-items
       url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
     - text: event-triggers
-      url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
+      url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
+    - text: jira-bridge
+      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"`
+    - text: developer-training-videos
+      url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"
     - page: pipeline-integrations
       children:
       - page: toolkit-guides
@@ -24,31 +28,34 @@
         - page: toolkit-guides-editing-config
         - page: toolkit-guides-adding-app
         - page: toolkit-guides-filesystem-configuration
-      - page: toolkit-pipeline-tutorial    
+      - page: toolkit-pipeline-tutorial
+      - page: development 
+        children: 
+         - text: app-development
+           url: " https://support.shotgunsoftware.com/hc/en-us/articles/219033158"
+         - text: engine-development
+           url: " https://support.shotgunsoftware.com/hc/en-us/articles/219040348"
     
     
 - caption: reference
   children:
-    - text: jira-bridge
-      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/"
-    - page: toolkit-index
-      children:
-        - page: toolkit-guides
-          children:
-            - page: toolkit-guides-advanced-config
-            - page: toolkit-guides-editing-config
-            - page: toolkit-guides-adding-app
-            - page: toolkit-guides-filesystem-configuration
-        - page: toolkit-pipeline-tutorial
+  - text: python-api
+    url: " https://developer.shotgunsoftware.com/python-api/"
+  - text: rest-api
+    url: " https://developer.shotgunsoftware.com/rest-api/"
+  - text: jira-bridge
+    url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
+    
+
 - caption: other
   children:
     - page: contribution-index
     - text: shotgun-support
-      url: "https://support.shotgunsoftware.com/"
+      url: " https://support.shotgunsoftware.com/"
     - text: service-status
-      url: "https://status.shotgunsoftware.com/"
+      url: " https://status.shotgunsoftware.com/"
     - text: new-support-request
-      url: "https://support.shotgunsoftware.com/hc/requests/new"
+      url: " https://support.shotgunsoftware.com/hc/requests/new"
 
 
 
