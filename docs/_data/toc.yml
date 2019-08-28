@@ -17,7 +17,7 @@
     - text: event-triggers
       url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
     - text: jira-bridge
-      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"`
+      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
     - text: developer-training-videos
       url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"
     - page: pipeline-integrations
