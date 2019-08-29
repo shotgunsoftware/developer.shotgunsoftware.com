@@ -12,7 +12,7 @@ lang: en
 
 ```python
 # Initialization
-================
+# ==============
 
 import sgtk
 
@@ -29,7 +29,7 @@ context = tk.context_from_entity("Task", 13155)
 tk.create_filesystem_structure("Task", context.task["id"])
 
 # Generating a Path
-===================
+# =================
 
 # Get a template instance by providing a name of a valid template in your config's templates.yml
 template = tk.templates["maya_shot_publish"]
@@ -62,11 +62,11 @@ publish_path = template.apply_fields(fields)
 current_engine.ensure_folder_exists(publish_path)
 
 # Creating a file
-=================
+# ===============
 # This is the bit where you would add your own logic to copy or save a file using the path.
 
 # Publishing
-=============
+# ==========
 
 # So as to match publishes created by the publish app's, we are adding the extension to the end of the publish name.
 publish_name = fields["name"] + ".ma"
