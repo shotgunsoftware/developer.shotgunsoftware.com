@@ -33,4 +33,4 @@ also comes with [it's own API](https://developer.shotgunsoftware.com/tk-multi-pu
 Although that is still essentially using this same `register_publish` method. 
 It builds upon the publishing process by providing a framework to handle collection, validation and publishing.
 
-The final step is to bring it all together in a [complete script](./part-8-getting-started-complete-script.md).
+The final step is to bring it all together in a [complete script](part-8-getting-started-complete-script.md).

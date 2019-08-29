@@ -101,4 +101,4 @@ publish_path = template.apply_fields(fields)
 current_engine.ensure_folder_exists(publish_path)
 ```
 
-Next step is to [dynamically work out the next version number](./part-6-find-latest-version.md) rather than hard coding it.
+Next step is to [dynamically work out the next version number](part-6-find-latest-version.md) rather than hard coding it.

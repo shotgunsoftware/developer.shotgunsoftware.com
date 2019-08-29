@@ -40,7 +40,8 @@
       - page: toolkit-guides-filesystem-configuration
     - page: sgtk-developer-getting-started
       children:
-      - page: part-1-importing-sgtk-guide
+      - page: sgtk-developer-generating-path-and-publish
+      - page: sgtk-developer-bootstrapping
     - page: toolkit-pipeline-tutorial
     - text: webinars
       url: "https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"

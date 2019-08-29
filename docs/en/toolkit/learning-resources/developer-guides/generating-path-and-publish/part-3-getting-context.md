@@ -81,4 +81,4 @@ tk = current_engine.sgtk
 context = tk.context_from_entity("Task", 13155)
 ```
 
-Next step is to [generate the folders.](./part-4-creating-folders.md)
+Next step is to [generate the folders.](part-4-creating-folders.md)

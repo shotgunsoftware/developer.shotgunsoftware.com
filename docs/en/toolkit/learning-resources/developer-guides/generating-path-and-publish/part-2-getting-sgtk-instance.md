@@ -35,14 +35,10 @@ As the API documentation states you don't create an instance of `Sgtk` directly.
 2. [`sgtk.sgtk_from_entity`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity) - 
     if you are running in a environment where an engine hasn't already been started you can use this method to get a `Sgtk` instance based upon an entity id.
     The entity who's id you are supplying must belong to the same project that the `sgtk` API was imported from. 
-    Example:
-    ```python
-    tk = sgtk.sgtk_from_entity("Project",123)
-    ```
  
 3. [`sgtk.sgtk_from_path`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path) -
     much like the `sgtk_from_entity` except this will accept a path to a configuration or a path inside the project root.
-    This approach however is not recommended for distributed configurations however as it's ... NEED TO CHECK
+
 
 You now have a `Sgtk` instance and your ready to start using the API.
 In conclusion our publish script now looks like this
@@ -57,4 +53,4 @@ current_engine = sgtk.platform.current_engine()
 tk = current_engine.sgtk
 ```
 
-The next step is [getting a context](./part-3-getting-context.md).
+The next step is [getting a context](part-3-getting-context.md).
