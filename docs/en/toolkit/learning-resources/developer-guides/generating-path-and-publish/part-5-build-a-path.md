@@ -10,6 +10,8 @@ lang: en
 [Overview](./sgtk-developer-generating-path-and-publish.md)<br/>
 [Previous step](./part-4-creating-folders.md)
 
+### Generating the path
+
 When ever you need to know where a file should be placed or found in Toolkit you can use the templates to resolve an absolute path on disk.
 
 The first thing you need to do is get a template instance for the path you wish to generate.
@@ -55,6 +57,8 @@ publish_path = template.apply_fields(fields)
 >> /sg_toolkit/mysite.shotgunstudio.com/my_project/sequences/seq01_chase/shot01_running_away/comp/publish/maya/myscene.v001.ma
 ```
 
+### Ensuring the folders exist
+
 Although you ran the folder creation method earlier you may need perform an additonal step to ensure that all the folders exist.
 This can be required if for example your template defines folders that are not present in the schema, and so were not created
 in the original `create_filesystem_structure()` call.
@@ -66,15 +70,15 @@ method.
 Or if your running code outside of an engine, there's [`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists)
 Make sure to import the `os` module and only create the folders for the directory and not the full file path.
 
+### Creating or copying a file using the path
 At this point you have a path, and you could use this to say tell Maya to save a file there, 
 or perhaps copy file from a different location. 
 It's not important for the sake of this guide that you implement any behaviour that actually creates a file on disk in that location.
 You can still publish the path even if there is no file there. 
 However you can use [`sgtk.util.filesystem.touch_file`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file) to get sgtk to create an empty file on disk.
 
-sgtk.util.filesystem.touch_file(publish_path)
 
-Recap, this is what your code should look like now:
+### Bringing it all together so far
 
 ```python
 import sgtk
