@@ -5,7 +5,7 @@ pagename: sgtk-developer-generating-path-and-publish
 lang: en
 ---
 
-# Generating a path and publishing it - Overview
+# Generating a path and publishing it
 
 This guide covers getting started with the sgtk (Shotgun Toolkit) Python API, 
 which is what our pipeline integrations are built with.

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Getting Started
+title: Getting Started with Toolkit Development
 pagename: sgtk-developer-getting-started
 lang: en
 ---
