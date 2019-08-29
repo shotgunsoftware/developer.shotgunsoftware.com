@@ -7,6 +7,9 @@ lang: en
 
 # Part 5 - Using a template to build a path
 
+[Overview](./sgtk-developer-generating-path-and-publish.md)<br/>
+[Previous step](./part-4-creating-folders.md)
+
 When ever you need to know where a file should be placed or found in Toolkit you can use the templates to resolve an absolute path on disk.
 
 The first thing you need to do is get a template instance for the path you wish to generate.

@@ -7,6 +7,9 @@ lang: en
 
 # Part 7 - Registering a published file
 
+[Overview](./sgtk-developer-generating-path-and-publish.md)<br/>
+[Previous step](./part-6-find-latest-version.md)
+
 Now that you have a path your ready to publish it. To do this we can use the utility method
 [`sgtk.util.register_publish()` method](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish).
 

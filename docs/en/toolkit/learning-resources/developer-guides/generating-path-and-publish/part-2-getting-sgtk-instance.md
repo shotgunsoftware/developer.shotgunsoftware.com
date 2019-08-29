@@ -7,6 +7,9 @@ lang: en
 
 # Part 2 - Getting an Sgtk instance
 
+[Overview](./sgtk-developer-generating-path-and-publish.md)<br/>
+[Previous step](./part-1-importing-sgtk.md)
+
 Now you've imported the `sgtk` API the next step towards the end goal of being able to generate a path and publish it, is
 to create an `Sgtk` instance.
 

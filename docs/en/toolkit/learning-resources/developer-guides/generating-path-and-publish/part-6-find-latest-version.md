@@ -7,6 +7,9 @@ lang: en
 
 # Part 6 - Finding existing files and getting the latest version number
 
+[Overview](./sgtk-developer-generating-path-and-publish.md)<br/>
+[Previous step](./part-5-build-a-path.md)
+
 There two methods you could use here. 
 
 1. Since in this particular example you are resolving a publish file, you could use the Shotgun API to query for the

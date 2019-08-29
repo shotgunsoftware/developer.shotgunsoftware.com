@@ -7,6 +7,9 @@ lang: en
 
 # Part 8 - The complete script
 
+[Overview](./sgtk-developer-generating-path-and-publish.md)<br/>
+[Previous step](./part-7-registering-publish.md)
+
 ```python
 # Initialization
 ================

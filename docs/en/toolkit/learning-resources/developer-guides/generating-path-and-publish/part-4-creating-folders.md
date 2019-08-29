@@ -7,6 +7,9 @@ lang: en
 
 # Part 4 - Creating Folders
 
+[Overview](./sgtk-developer-generating-path-and-publish.md)<br/>
+[Previous step](./part-3-getting-context.md)
+
 Toolkit can dynamically generate a folder structure on disk based upon your project entities.
 
 This fulfills two purposes.

@@ -7,6 +7,9 @@ lang: en
 
 # Part 3 - Getting context
 
+[Overview](./sgtk-developer-generating-path-and-publish.md)<br/>
+[Previous step](./part-2-getting-sgtk-instance.md)
+
 ## What is a context and why do I need it?
 
 A lot of what happens in Toolkit revolves around context, in other words knowing what you are working on and being able to act accordingly.

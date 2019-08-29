@@ -6,3 +6,5 @@ lang: en
 ---
 
 # Part 1 - Authentication
+
+[Overview](./sgtk-developer-bootstrapping.md)

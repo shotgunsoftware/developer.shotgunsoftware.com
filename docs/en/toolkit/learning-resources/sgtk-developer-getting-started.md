@@ -31,6 +31,7 @@ The Toolkit's API instead focuses on the integrations and management of file pat
 Bellow we have a bunch of Guides designed to get you familiar with the API.
 
 ### Generating a path and publishing it
+
 1. [Overview](./developer-guides/generating-path-and-publish/sgtk-developer-generating-path-and-publish.md)
 1. [Importing sgtk](./developer-guides/generating-path-and-publish/part-1-importing-sgtk.md)
 2. [Getting an Sgtk instance](./developer-guides/generating-path-and-publish/part-2-getting-sgtk-instance.md)
@@ -43,9 +44,9 @@ Bellow we have a bunch of Guides designed to get you familiar with the API.
 
 ### Bootstrapping and running an app
 
-1. Overview
-2. Authentication
-3. How to bootstrap an engine
-4. launching an app
+1. [Overview](./developer-guides/bootstrapping-and-running-an-app/sgtk-developer-bootstrapping.md)
+2. [Authentication](./developer-guides/bootstrapping-and-running-an-app/part-1-authentication.md)
+3. [How to bootstrap an engine](./developer-guides/bootstrapping-and-running-an-app/part-2-bootstrapping.md)
+4. [launching an app](./developer-guides/bootstrapping-and-running-an-app/part-3-launching-an-app.md)
 
 
