@@ -60,20 +60,25 @@ This can be required if for example your template defines folders that are not p
 in the original `create_filesystem_structure()` call.
 
 There are a couple of convenience methods you can use to do this.
-If you code is running in a Toolkit app or hook you can use the [`Application.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) method.
+If your code is running in a Toolkit app or hook you can use the [`Application.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) method.
 If there is an engine present you can use [`Engine.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.ensure_folder_exists)
 method. 
 Or if your running code outside of an engine, there's [`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists)
+Make sure to import the `os` module and only create the folders for the directory and not the full file path.
 
 At this point you have a path, and you could use this to say tell Maya to save a file there, 
 or perhaps copy file from a different location. 
 It's not important for the sake of this guide that you implement any behaviour that actually creates a file on disk in that location.
-You can still publish the path even if there is no file there.
+You can still publish the path even if there is no file there. 
+However you can use [`sgtk.util.filesystem.touch_file`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file) to get sgtk to create an empty file on disk.
+
+sgtk.util.filesystem.touch_file(publish_path)
 
 Recap, this is what your code should look like now:
 
 ```python
 import sgtk
+import os
 
 # Get the engine instance that is currently running.
 current_engine = sgtk.platform.current_engine()
@@ -84,10 +89,10 @@ tk = current_engine.sgtk
 # Get a context object from a Task, this Task must belong to a Shot for the future steps to work. 
 context = tk.context_from_entity("Task", 13155)
 
-# Create the required folders based upon the task
+# Create the required folders based upon the task.
 tk.create_filesystem_structure("Task", context.task["id"])
 
-# Get a template instance by providing a name of a valid template in your config's templates.yml
+# Get a template instance by providing a name of a valid template in your config's templates.yml.
 template = tk.templates["maya_shot_publish"]
 
 # Use the context to resolve as many of the template fields as possible.
@@ -100,8 +105,11 @@ fields["version"] = 1
 # Use the fields to resolve the template path into an absolute path.
 publish_path = template.apply_fields(fields)
 
-# Make sure we create any missing folders
-current_engine.ensure_folder_exists(publish_path)
+# Make sure we create any missing folders.
+current_engine.ensure_folder_exists(os.path.dirname(publish_path))
+
+# Create a empty file on disk. (optional - should be replaced by actual file save or copy logic)
+sgtk.util.filesystem.touch_file(publish_path)
 ```
 
 Next step is to [dynamically work out the next version number](part-6-find-latest-version.md) rather than hard coding it.

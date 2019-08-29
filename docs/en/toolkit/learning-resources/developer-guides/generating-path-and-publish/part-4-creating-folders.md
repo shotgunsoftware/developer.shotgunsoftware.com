@@ -39,7 +39,7 @@ tk = current_engine.sgtk
 # Get a context object from a Task, this Task must belong to a Shot for the future steps to work. 
 context = tk.context_from_entity("Task", 13155)
 
-# create the required folders based upon the task
+# Create the required folders based upon the task.
 tk.create_filesystem_structure("Task", context.task["id"])
 ```
 
