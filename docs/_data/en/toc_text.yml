@@ -27,6 +27,7 @@ qt-widgets: QT Widgets
 shotgun-utils: Shotgun Utils
 publish-api: Publish API
 app-development: App Development
+file-system-configuration: File System Configuration
 
 user-manual: User Manual
 technical-reference: Technical Reference
