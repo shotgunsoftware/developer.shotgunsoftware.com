@@ -12,12 +12,10 @@
 - caption: getting-started
 - caption: guides
   children:
-    - text: action-menu-items
-      url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
     - text: event-triggers
       url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
     - text: jira-bridge
-      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
+      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
     - text: developer-training-videos
       url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"
     - page: pipeline-integrations
@@ -45,7 +43,15 @@
     url: " https://developer.shotgunsoftware.com/rest-api/"
   - text: jira-bridge
     url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
-    
+  - text: action-menu-items
+    url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
+  - page: pipeline-integrations
+    children:
+    - text: core-api
+      url: " https://developer.shotgunsoftware.com/tk-core"
+    - text: file-system-configuration
+      url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
+    - page: env-config-ref  
 
 - caption: other
   children:
