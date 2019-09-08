@@ -385,7 +385,7 @@ In this example, we modified a single template, but there’s plenty more you ca
 
 ### The Path Cache
 
-At folder creation time, a mapping is created between a folder on disk and a Shotgun entity. These mappings are stored as FilesystemLocation entities in Shotgun, and cached in an SQLite database on user machines. To learn more about how the path cache works and how to work with it, see [this document](https://support.shotgunsoftware.com/hc/en-us/articles/219040418-What-is-the-Path-Cache-What-are-Filesystem-Locations-).
+At folder creation time, a mapping is created between a folder on disk and a Shotgun entity. These mappings are stored as FilesystemLocation entities in Shotgun, and cached in an SQLite database on user machines. To learn more about how the path cache works and how to work with it, see [this document](../../../quick-answers/administering/what-is-path-cache.md).
 
 
 ### Additional Resources

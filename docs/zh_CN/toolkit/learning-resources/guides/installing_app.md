@@ -139,7 +139,7 @@ Shotgun Desktop 现在正在使用此项目的克隆配置。
 
 **步骤 10：**在此文件中搜索 `pythonconsole`。如果为项目使用了默认配置，您会发现此文件中列出了 Python 控制台应用的描述符。它应该与我们开始配置时查看的 Maya 应用[列表](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798) 中的描述相匹配。检查以确保版本与我们在 Maya 应用列表中查看的内容相匹配。
 
-```
+```yaml
 apps.tk-multi-pythonconsole.location:
 	type: app_store
 	name: tk-multi-pythonconsole
@@ -156,7 +156,7 @@ apps.tk-multi-pythonconsole.location:
 
 **步骤 11：**打开克隆配置中的 `config/env/project.yml` 文件，并找到 `tk-maya` 插件的设置。
 
-```
+```yaml
 # configuration for all engines to load in a project context
 
 engines:
@@ -208,7 +208,7 @@ Shotgun 集成的代码被组织成应用、插件和框架的包。在 Toolkit 
 
 步骤 15：在以下部分的下方添加位置描述符
 
-```
+```yaml
 settings.tk-maya.project:
   apps:
 ```
@@ -217,7 +217,7 @@ settings.tk-maya.project:
 
 {% include info title="注意" content="请确保使用空格而不是制表符正确设置 [YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) 文件的格式。" %}
 
-```
+```yaml
 # project
 settings.tk-maya.project:
   apps:
@@ -376,7 +376,7 @@ Desktop 应用会在项目环境中打开，因此在 `project.yml` 文件中查
 
 {% include info title="注意" content='在插件块中，`tk-desktop` 指向包含的内容：
 
-```
+```yaml
 includes:
   - ./includes/settings/tk-desktop.yml
 
@@ -386,7 +386,7 @@ engines:
 
 在包含内容之后，打开 `config/env/includes/settings/tk-desktop.yml` 并查找 `settings.tk-desktop.project` 块。在该块中，您会看到以下内容：<br/><br/>
 
-```
+```yaml
 apps:
   tk-multi-pythonconsole:
   location: "@apps.tk-multi-pythonconsole.location"
@@ -396,7 +396,7 @@ apps:
 
 在此之后，进一步包含 `../includes/app_locations.yml`，并搜索 `apps.tk-multi-pythonconsole.location` 以查找以下内容：<br/><br/>
 
-```
+```yaml
 # pythonconsole
 apps.tk-multi-pythonconsole.location:
   type: app_store

@@ -34,8 +34,8 @@ lang: ko
 3. [Shotgun 데스크톱](https://support.shotgunsoftware.com/hc/ko/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop)이 시스템에 설치되어 있어야 함
 4. 식별된 프로젝트에 대한 복제된 파이프라인 구성이나 [구성 시작하기](./advanced_config.md) 안내서를 완료하고 해당 연습에서 생성한 구성 복제
 5. YAML에 대한 기본 지식
-6. 파이프라인 구성이 저장된 파일 시스템에 대해 적절하게 설정된 읽기 및 쓰기 권한
-7. 툴킷이 프로덕션 파일 시스템에 읽고 쓸 수 있도록 적절하게 설정된 읽기 및 쓰기 권한
+6. 파이프라인 구성이 저장된 파일 시스템에 대해 읽기 및 쓰기 권한을 적절하게 설정합니다.
+7. 툴킷이 프로덕션 파일 시스템에 읽고 쓸 수 있도록 읽기 및 쓰기 권한을 적절하게 설정합니다.
 8. 활성 상태의 Maya 멤버쉽. [Maya](https://www.autodesk.co.kr/products/maya/free-trial)의 30일 체험판을 구할 수 있습니다.
 
 {% include info title="참고" content="이 안내서는 `tk-config-default2` 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다." %}
@@ -169,7 +169,7 @@ Set 엔티티는 `CustomEntity01`로 표시됩니다. Shotgun에서 Set의 *표�
 
 **9단계:** 다음 내용으로 `CustomEntity01` 폴더 옆에 `CustomEntity01.yml` 파일을 만듭니다.
 
-```
+```yaml
 type: "shotgun_entity"
 
 name: "code"
@@ -194,7 +194,7 @@ YAML 파일은 툴킷에서 `CustomEntity01` 폴더 이름을 무엇으로 지�
 
 `filters` 필드는 지정 시간에 생성된 폴더가 있는 엔티티를 제한합니다. 현재 상태에서 `asset.yml`의 필터 필드는 다음과 같습니다.
 
-```
+```yaml
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
@@ -211,7 +211,7 @@ assets/Classroom/Prop/spoon
 
 **11단계:** `asset.yml`에서 `filters` 필드를 다음과 같이 수정합니다.
 
-```
+```yaml
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
@@ -296,7 +296,7 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 
 **14단계:** 들여쓰기에 유의하여 `templates.yml`의 `keys` 섹션에 다음 줄을 추가합니다.
 
-```
+```yaml
        CustomEntity01:
            type: str
 ```
@@ -311,7 +311,7 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 
 **15단계:** `templates.yml`을 열고 `maya_asset_work`를 찾습니다.
 
-```
+```yaml
    maya_asset_work:
         definition: '@asset_root/work/maya/{name}.v{version}.{maya_extension}'
 ```
@@ -346,7 +346,7 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 
 **17단계:** `maya_asset_work` 템플릿 정의를 다음과 같이 수정합니다.
 
-```
+```yaml
     maya_asset_work:
         definition: '@asset_root/work/maya/{CustomEntity01}_{Asset}.v{version}.{maya_extension}'
 ```

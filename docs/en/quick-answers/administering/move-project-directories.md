@@ -13,7 +13,7 @@ Sometimes it's necessary to move your project files (scene files, renders, etc.)
 
 - Copy (or move) your project files from the old location to the new location.
 - In Shotgun, navigate to the **Admin > Site Preferences** page and open the **File Management** section.
-    ![Shotgun storage roots section in the site preferences.](./images/shotgun_storage_roots.png)
+    ![Shotgun storage roots section in the site preferences.](./images/shotgun-storage-roots.png)
 - Update the Local File Storage named "primary" with the paths for each platform to the new storage for your project files. If you're not using a specific platform, leave it blank.
 - Click on the **"Save Changes"** button on the top or bottom of the page.
 - Update your `config/core/roots.yml` file in your project configuration to match the new path values you just saved in Shotgun.
