@@ -11,7 +11,7 @@ lang: en
 
 The sgtk API is contained in a python package called `sgtk`. Each Toolkit configuration has it's own copy of the API.
 In order to use the API on a project's configuration, you must import the sgtk package from the configuration 
-you wish to work with, importing it from a different configruation will lead to errors.
+you wish to work with, importing it from a different configuration will lead to errors.
 
 {% include info title="Note" content="You may sometimes come across references to a `tank` package, this is the legacy name for the same thing,
  whilst both work `sgtk` is the correct name to use going forward." %}

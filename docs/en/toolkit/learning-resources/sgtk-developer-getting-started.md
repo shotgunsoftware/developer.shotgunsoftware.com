@@ -45,8 +45,9 @@ Bellow we have a bunch of Guides designed to get you familiar with the API.
 ### Bootstrapping and running an app
 
 1. [Overview](./developer-guides/bootstrapping-and-running-an-app/sgtk-developer-bootstrapping.md)
-2. [Authentication](./developer-guides/bootstrapping-and-running-an-app/part-1-authentication.md)
-3. [How to bootstrap an engine](./developer-guides/bootstrapping-and-running-an-app/part-2-bootstrapping.md)
-4. [launching an app](./developer-guides/bootstrapping-and-running-an-app/part-3-launching-an-app.md)
+2. [Importing the sgtk API for bootstrapping](developer-guides/bootstrapping-and-running-an-app/part-1-importing-sgtk-for-bootstrapping.md)
+2. [Authentication](developer-guides/bootstrapping-and-running-an-app/part-2-authentication.md)
+3. [How to bootstrap an engine](developer-guides/bootstrapping-and-running-an-app/part-3-bootstrapping.md)
+4. [launching an app](developer-guides/bootstrapping-and-running-an-app/part-4-launching-an-app.md)
 
 

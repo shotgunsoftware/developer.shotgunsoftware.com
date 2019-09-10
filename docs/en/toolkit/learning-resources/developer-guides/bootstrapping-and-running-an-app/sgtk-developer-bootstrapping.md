@@ -7,7 +7,12 @@ lang: en
 
 # Bootstrapping and running an app
 
-This guide walks your through the process of authenticating the Toolkit API with your Shotgun site.
+This guide walks you through the process of initializing a Toolkit engine so that you are able to run custom code or launch apps,
+also known as bootstrapping.
+
+Bootstrapping is useful in situations where a Toolkit engine has not already been started and you need to use the API.
+For example you might have a processing script that runs on a render farm and needs to utilize the Toolkit API to handle paths and context.
+Or you may wish to be able to run your Toolkit app from your favourite IDE.
 
 ### Requirements
 
@@ -16,6 +21,7 @@ This guide walks your through the process of authenticating the Toolkit API with
 
 ### Steps
 
-1. [Authentication](./part-1-authentication.md)
-2. [How to bootstrap an engine](./part-2-bootstrapping.md)
-3. [launching an app](./part-3-launching-an-app.md)
+1. [Importing the sgtk API for bootstrapping](part-1-importing-sgtk-for-bootstrapping.md)
+1. [Authentication](./part-2-authentication.md)
+2. [How to bootstrap an engine](./part-3-bootstrapping.md)
+3. [launching an app](./part-4-launching-an-app.md)
