@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Pipeline Tutorial
+title: Animation Pipeline Tutorial
 pagename: toolkit-pipeline-tutorial
 lang: en
 ---
 
-# Pipeline Tutorial
+# Animation Pipeline Tutorial
 
 This tutorial covers building a simplified, yet typical, pipeline for animation or visual effects production. By following this tutorial you will build a pipeline that provides all of the pieces necessary to push Assets from modeling through look development, and then into and through a production scene. 
 
