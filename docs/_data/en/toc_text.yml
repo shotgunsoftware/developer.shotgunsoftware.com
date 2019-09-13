@@ -17,7 +17,8 @@ python-api: Python API
 rest-api: REST API
 event-triggers: Writing Event-Driven Triggers
 action-menu-items: Creating custom Action Menu Items
-jira-bridge: Jira Bridge (Beta)
+jira-bridge-guide: Sync Data Between Jira and Shotgun (Beta)
+jira-bridge-ref: Jira Bridge Dev Resources (Beta)
 examples: Examples
 webinars: Webinar Recordings
 developer-training-videos: Developer Training Videos
