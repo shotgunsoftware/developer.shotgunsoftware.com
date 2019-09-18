@@ -342,7 +342,7 @@ engines:
 
 * [Toolkit 基础知识手册：编辑工作流配置](./learning-resources/guides/editing_app_setting.md)
 * [Toolkit 基础知识手册：添加应用](./learning-resources/guides/installing_app.md)
-* [动画工作流教程](./learning-resources/tutorial.md)
+* [动画工作流教程](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [描述符参考文档](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [网络讲座：Toolkit 管理](https://youtu.be/7qZfy7KXXX0)
 * [文件系统配置参考](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868)

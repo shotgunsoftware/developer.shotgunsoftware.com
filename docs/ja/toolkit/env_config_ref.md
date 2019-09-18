@@ -342,7 +342,7 @@ engines:
 
 * [Toolkit の基本ガイド: パイプライン設定を編集する](./learning-resources/guides/editing_app_setting.md)
 * [Toolkit の基本ガイド: アプリを追加する](./learning-resources/guides/installing_app.md)
-* [アニメーション パイプラインのチュートリアル](./learning-resources/tutorial.md)
+* [アニメーション パイプラインのチュートリアル](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [ディスクリプタのリファレンス ドキュメント](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [ウェビナー: Toolkit の管理](https://youtu.be/7qZfy7KXXX0)
 * [ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference)

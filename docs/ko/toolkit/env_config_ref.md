@@ -342,7 +342,7 @@ engines:
 
 * [툴킷 기본 사항 안내서: 파이프라인 구성 편집](./learning-resources/guides/editing_app_setting.md)
 * [툴킷 기본 사항 안내서: 앱 추가](./learning-resources/guides/installing_app.md)
-* [애니메이션 파이프라인 튜토리얼](./learning-resources/tutorial.md)
+* [애니메이션 파이프라인 튜토리얼](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [설명자 참조 설명서](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [웨비나: 툴킷 관리](https://youtu.be/7qZfy7KXXX0)
 * [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference)
