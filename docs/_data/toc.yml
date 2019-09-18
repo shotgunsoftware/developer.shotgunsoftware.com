@@ -23,10 +23,10 @@
       children:
       - page: toolkit-getting-started
         children:
-        - page: workflows-advanced-config
-        - page: workflows-editing-config
-        - page: workflows-adding-app
-        - page: workflows-filesystem-configuration
+        - page: toolkit-guides-advanced-config
+        - page: toolkit-guides-editing-config
+        - page: toolkit-guides-adding-app
+        - page: toolkit-guides-filesystem-configuration
       - page: toolkit-workflows
         children:
         - page: toolkit-pipeline-tutorial

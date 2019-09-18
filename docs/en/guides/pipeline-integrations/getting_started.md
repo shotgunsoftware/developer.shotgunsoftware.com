@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Toolkit Basics Guides
+title: Getting Started
 pagename: toolkit-getting-started
 lang: en
 ---
