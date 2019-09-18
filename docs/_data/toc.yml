@@ -28,10 +28,12 @@
         - page: workflows-adding-app
         - page: workflows-filesystem-configuration
       - page: toolkit-workflows
+        children:
         - page: toolkit-pipeline-tutorial
         - text: episodic-pipeline-tutorial
           url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002689053-Episodic-workflow-with-Nuke-Studio"
       - page: toolkit-administration
+        children:
         - page: disabling-auto-updates-and-offline
       - page: development 
         children: 
