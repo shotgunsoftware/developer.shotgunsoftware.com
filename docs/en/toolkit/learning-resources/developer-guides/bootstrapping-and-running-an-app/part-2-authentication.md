@@ -15,7 +15,7 @@ Before you can perform the bootstrapping you need to authenticate the API agains
 You can either authenticate using user credentials or with script credentials. Which you should use will depend on your
 use case.
 
-If the purpose is to bootstrap for a user facing process like launching an app, or running some code that will require user input
+If the purpose is to bootstrap for a user facing process like launching an app, or running some code that will require user input,
 then user authentication is probably the best way to go (This is how all our integrations work by default).
 If your writing a script to automate something and a user is not present to authenticate then you should use script credentials.
 
@@ -39,8 +39,6 @@ authenticator.clear_default_user()
 # on the command line. The user object returned encapsulates the login
 # information.
 user = authenticator.get_user()
-
-# print "User is '%s'" % user
 
 # Tells Toolkit which user to use for connecting to Shotgun. Note that this should
 # always take place before creating a Sgtk instance.
@@ -70,8 +68,6 @@ user = authenticator.create_script_user(
  api_script="Script Name",
  api_key="4e48f....<use the key from your Shotgun site>"
 )
-
-# print "User is '%s'" % user
 
 # Tells Toolkit which user to use for connecting to Shotgun.
 sgtk.set_authenticated_user(user)

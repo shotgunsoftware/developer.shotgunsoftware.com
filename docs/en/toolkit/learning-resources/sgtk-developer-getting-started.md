@@ -20,7 +20,7 @@ To do any of these things it's important to understand how to work with the Tool
 Shotgun as a whole has three main API's
 - Shotgun Python API
 - Shotgun REST API
-- Shotgun Toolkit API 
+- Shotgun Toolkit API
 
 In this section we cover how to get started with the Shotgun Toolkit API. 
 This API is designed to be used along side the Shotgun Python API or REST API, and is not a replacement for them.
