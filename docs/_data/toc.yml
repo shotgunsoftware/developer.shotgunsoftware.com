@@ -10,6 +10,7 @@
 #
 
 - caption: getting-started
+
 - caption: guides
   children:
     - text: event-triggers
@@ -57,6 +58,13 @@
     - text: file-system-configuration
       url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
     - page: env-config-ref  
+
+- caption: quick-answers
+  children:
+  - page: quick-answers-administering
+  - page: quick-answers-troubleshooting
+  - page: quick-answers-developing
+  - page: quick-answers-workflow
 
 - caption: other
   children:
