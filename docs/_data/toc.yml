@@ -21,12 +21,12 @@
       url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"
     - page: pipeline-integrations
       children:
-      - page: toolkit-guides
+      - page: workflows
         children:
-        - page: toolkit-guides-advanced-config
-        - page: toolkit-guides-editing-config
-        - page: toolkit-guides-adding-app
-        - page: toolkit-guides-filesystem-configuration
+        - page: workflows-advanced-config
+        - page: workflows-editing-config
+        - page: workflows-adding-app
+        - page: workflows-filesystem-configuration
       - page: workflows
         - page: toolkit-pipeline-tutorial
         - text: episodic-pipeline-tutorial
