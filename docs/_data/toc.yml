@@ -31,7 +31,7 @@
         - page: toolkit-pipeline-tutorial
         - text: episodic-pipeline-tutorial
           url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002689053-Episodic-workflow-with-Nuke-Studio"
-      - page: Administration
+      - page: administration
         - page: disabling-auto-updates-and-offline
       - page: development 
         children: 
