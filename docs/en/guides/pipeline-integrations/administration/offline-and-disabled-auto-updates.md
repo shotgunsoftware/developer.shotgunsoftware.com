@@ -84,7 +84,7 @@ In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE
     - Project: The project you want to lock down
     - Plugin ids: `basic.*`
     - Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
-  ![Pipeline Configuration entity with a setup for a project with disabled updates.](../../../toolkit/learning-resources/images/freeze_single_project.png)
+  ![Pipeline Configuration entity with a setup for a project with disabled updates.](images/offline-and-disabled-auto-updates/freeze_single_project.png)
  
 3. Anyone starting Shotgun Desktop on the project will now always use `v1.0.36`. Any new users starting to work on the project will also get `v1.0.36`.
 
@@ -110,7 +110,7 @@ To disable updates for all your projects, you can follow the steps in the above 
 
 With no override in the `Project` field, this Pipeline Configuration entity will apply to all projects, including the “site” project, i.e., the site configuration that is used by Desktop outside of any project.
 
-![Pipeline Configuration entity with a setup for disabled updates on all projects.](../../../toolkit/learning-resources/images/freeze_all_projects.jpg)
+![Pipeline Configuration entity with a setup for disabled updates on all projects.](images/offline-and-disabled-auto-updates/freeze_all_projects.jpg)
 
 #### Good to know
 
@@ -131,7 +131,7 @@ You can
     - Project: The project you want not to lock down
     - Plugin ids: `basic.*`
     - Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic`
-    ![Two Pipeline Configurations, one disabling updates to the whole site, and the other enabling updates on a single project](../../../toolkit/learning-resources/images/freeze_all_but_one_project.jpg)
+    ![Two Pipeline Configurations, one disabling updates to the whole site, and the other enabling updates on a single project](images/offline-and-disabled-auto-updates/freeze_all_but_one_project.jpg)
 
 #### Good to know
 

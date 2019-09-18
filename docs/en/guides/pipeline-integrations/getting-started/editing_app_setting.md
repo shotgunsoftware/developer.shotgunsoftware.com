@@ -350,11 +350,11 @@ We disabled task creation in the project environment, but in a real studio envir
 
 ### Creating custom environments
 
-The Default Configuration comes with a set of pre-defined pipeline steps: `project`, `sequence`, `shot`, `shot_step`, `asset`, and `asset_step`. However, a studio might want different configuration settings for every stage in the pipeline – say `asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light`, and so on. Toolkit supports custom environments. See the ["Custom environments" section of the Environment Configuration Reference](../../env_config_ref.md#custom-environments) for details. 
+The Default Configuration comes with a set of pre-defined pipeline steps: `project`, `sequence`, `shot`, `shot_step`, `asset`, and `asset_step`. However, a studio might want different configuration settings for every stage in the pipeline – say `asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light`, and so on. Toolkit supports custom environments. See the ["Custom environments" section of the Environment Configuration Reference](../../../toolkit/env_config_ref.md#custom-environments) for details. 
 
 ### Video Resources
 
 * [Intro to Toolkit configurations](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s) from our SIGGRAPH 2018 Developer Day
 * [Demystifying the Default Configuration webinar](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
-Now that you’ve learned how to modify an app configuration setting, try [adding an app to your Toolkit configuration](./installing_app.md).
+Now that you’ve learned how to modify an app configuration setting, try [adding an app to your Toolkit configuration](installing_app.md).
