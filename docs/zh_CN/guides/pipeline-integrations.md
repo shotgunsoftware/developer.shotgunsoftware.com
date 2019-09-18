@@ -2,7 +2,7 @@
 layout: default
 title: Pipeline Integrations
 pagename: toolkit-pipeline-integrations
-lang: en
+lang: zh_CN
 ---
 
 # Pipeline Integrations

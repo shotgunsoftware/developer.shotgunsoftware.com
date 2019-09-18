@@ -2,7 +2,7 @@
 layout: default
 title: Administration
 pagename: toolkit-administration
-lang: en
+lang: ja
 ---
 
 # Administration

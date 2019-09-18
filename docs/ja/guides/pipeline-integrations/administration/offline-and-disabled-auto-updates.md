@@ -2,7 +2,7 @@
 layout: default
 title: Disabling auto updates and offline usage
 pagename: disabling-auto-updates-and-offline
-lang: en
+lang: ja
 ---
 
 # Disabling auto updates and offline usage

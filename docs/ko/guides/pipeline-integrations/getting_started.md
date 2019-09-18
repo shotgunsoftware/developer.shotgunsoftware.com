@@ -2,7 +2,7 @@
 layout: default
 title: Getting Started
 pagename: toolkit-getting-started
-lang: en
+lang: ko
 ---
 
 # Getting Started
