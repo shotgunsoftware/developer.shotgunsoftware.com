@@ -342,7 +342,7 @@ Note that if the settings for `tk-multi-workfiles2` were coming from an included
 
 * [Toolkit Basics Guide: Editing a pipeline configuration](./learning-resources/guides/editing_app_setting.md)
 * [Toolkit Basics Guide: Adding an app](./learning-resources/guides/installing_app.md)
-* [Animation pipeline tutorial](./learning-resources/tutorial.md)
+* [Animation pipeline tutorial](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [Descriptor reference documentation](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [Webinar: Toolkit administration](https://youtu.be/7qZfy7KXXX0)
 * [File system configuration reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference)
