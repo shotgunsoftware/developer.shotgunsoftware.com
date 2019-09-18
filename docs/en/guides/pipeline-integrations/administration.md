@@ -5,4 +5,4 @@ pagename: toolkit-administration
 lang: en
 ---
 
-# Toolkit Administration
+# Administration
