@@ -359,17 +359,17 @@ You’ve now modified `templates.yml` to reflect the new set folder in your prod
 
 **Step 18:** Launch Maya from Shotgun Desktop.
 
-![Python app](./images/dynamic_filesystem_configuration/23_test_file_creation.png)
+![Python app](images/dynamic_filesystem_configuration/23_test_file_creation.png)
 
 In Maya, go to **Shotgun > File Open**, and in the resulting dialog, select a task on an asset for which you’ve specified a Set in Shotgun. 
 
-![Python app](./images/dynamic_filesystem_configuration/24_test_new_file.png)
+![Python app](images/dynamic_filesystem_configuration/24_test_new_file.png)
 
 Select **+New File**.
 
 You can create a simple 3D object or just save the file using the **Shotgun > Save File**.
 
-![Python app](./images/dynamic_filesystem_configuration/file_save.png)
+![Python app](images/dynamic_filesystem_configuration/file_save.png)
 
 Success!
 

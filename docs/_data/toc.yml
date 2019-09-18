@@ -21,17 +21,17 @@
       url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"
     - page: pipeline-integrations
       children:
-      - page: workflows
+      - page: toolkit-getting-started
         children:
         - page: workflows-advanced-config
         - page: workflows-editing-config
         - page: workflows-adding-app
         - page: workflows-filesystem-configuration
-      - page: workflows
+      - page: toolkit-workflows
         - page: toolkit-pipeline-tutorial
         - text: episodic-pipeline-tutorial
           url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002689053-Episodic-workflow-with-Nuke-Studio"
-      - page: administration
+      - page: toolkit-administration
         - page: disabling-auto-updates-and-offline
       - page: development 
         children: 
