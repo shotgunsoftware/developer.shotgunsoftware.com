@@ -46,7 +46,8 @@ Also any projects that aren't using the default site configuration (I.e. a proje
 If your studio has restricted internet access or no internet access then you will need to ensure that you have all the required parts cached locally.
 You will still need one machine that can connect to the internet in order to download Shotgun Create or Shotgun Desktop.
 
-Shotgun Create and Shotgun Desktop come prepackaged with all the dependencies required to run the basic integrations.
+Shotgun Desktop comes prepackaged with all the dependencies required to run the basic integrations. 
+Whilst Shotgun Create also comes bundled with the dependencies, it requires you to follow the steps mentioned in [Managing udpates](#managing-updates) 
 When you start either of them up, it will automatically try to look for updates, but if it cannot connect to the Shotgun App Store, it will simply run the most recent version that exists locally.
 
 It is recommended that you follow the "Managing updates" steps bellow after installing Shotgun Desktop, as the components bundled with the installer may not be the latest.
@@ -63,16 +64,14 @@ To update the `tk-framework-desktopstartup` component, you will need to [downloa
 
 For the `tk-config-basic` component it's a bit more tricky, due to all its dependencies.
 
-1. Run Shotgun Desktop on a workstation connected to the internet. When it starts up, the latest upgrades will be automatically downloaded.
+1. Run Shotgun Desktop or Shotgun Create on a workstation connected to the internet. When it starts up, the latest upgrades will be automatically downloaded.
 (Ensure `SHOTGUN_DISABLE_APPSTORE_ACCESS` is not set on this machine.)
 2. Copy the bundle cache to a shared location where all machines can access it.
 3. Set the `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` environment variable on offline machines to point to this location.
-4. When Desktop starts up on offline machines, they will pick up the latest upgrades that are available in the bundle cache.
+4. When Shotgun Desktop or Shotgun Create starts up on offline machines, they will pick up the latest upgrades that are available in the bundle cache.
 
 {% include info title="Warning" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
 In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
-
-**CREATE does come with it's own bundled config, however it doesn't seem to have the engines, or atleast doesn't share them when launching Maya for example.**
 
 ## Disabling auto updates
 
