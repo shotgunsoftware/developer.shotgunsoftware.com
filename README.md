@@ -1,8 +1,6 @@
 [![Build Status](https://secure.travis-ci.org/shotgunsoftware/developer.shotgunsoftware.com.svg?branch=master)](http://travis-ci.org/shotgunsoftware/developer.shotgunsoftware.com)
 [![Doc Generator](https://img.shields.io/badge/Built%20With-SG%20Doc%20Generator-blue.svg)](http://github.com/shotgunsoftware/tk-doc-generator)
 
-
-
 # [developer.shotgunsoftware.com](http://developer.shotgunsoftware.com/)
 
 Welcome to the source repository for [developer.shotgunsoftware.com](http://developer.shotgunsoftware.com/). This repository holds the markdown source and configuration used to generate the Shotgun developer site.
