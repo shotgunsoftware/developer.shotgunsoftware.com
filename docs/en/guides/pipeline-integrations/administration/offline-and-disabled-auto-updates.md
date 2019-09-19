@@ -82,10 +82,10 @@ Follow these steps to disable automatic updates for the integrations.
 1. Determine the version you want to stay at. You can find the integration releases [here](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations).
 2. In Shotgun, create a Pipeline Configuration entity either on a project or on a global page, with the following fields populated (In this example, we are locking down the config to use v1.0.36 of the integrations):
 
-   - Name: `Primary`
-   - Project: Leave empty if you want updates disabled for all projects, or pick a specific project if you only want to lock down a single project.
-   - Plugin ids: `basic.*`
-   - Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
+   1. Name: `Primary`
+   2. Project: Leave empty if you want updates disabled for all projects, or pick a specific project if you only want to lock down a single project.
+   3. Plugin ids: `basic.*`
+   4. Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
    
    ![Pipeline Configuration entity with a setup for a project with disabled updates.](images/offline-and-disabled-auto-updates/freeze_all_projects.jpg)
 3. Start Shotgun Desktop, and if you left the project field empty then Shotgun Desktop will have switched over to using this version if it wasn't already doing so.
