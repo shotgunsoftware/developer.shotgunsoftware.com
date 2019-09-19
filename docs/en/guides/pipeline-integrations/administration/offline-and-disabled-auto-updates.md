@@ -47,7 +47,7 @@ If your studio has restricted internet access or no internet access then you wil
 You will still need one machine that can connect to the internet in order to download Shotgun Create or Shotgun Desktop.
 
 Shotgun Desktop comes prepackaged with all the dependencies required to run the basic integrations. 
-Whilst Shotgun Create also comes bundled with the dependencies, it requires you to follow the steps mentioned in [Managing udpates](#managing-updates) 
+Whilst Shotgun Create also comes bundled with the dependencies, it requires you to follow the steps mentioned in [Managing updates](#managing-updates). 
 When you start either of them up, it will automatically try to look for updates, but if it cannot connect to the Shotgun App Store, it will simply run the most recent version that exists locally.
 
 It is recommended that you follow the "Managing updates" steps bellow after installing Shotgun Desktop, as the components bundled with the installer may not be the latest.
