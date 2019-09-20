@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Offline usage and Disabling auto updates
+title: Offline usage and disabling auto updates
 pagename: disabling-auto-updates-and-offline
 lang: en
 ---
 
-# Offline usage and Disabling auto updates
+# Offline usage and disabling auto updates
 
 - [Auto updates](#auto-updates)
     - [What parts auto update?](#what-parts-auto-update)
@@ -46,7 +46,7 @@ We occasionally release new Shotgun Desktop installers when we need to update th
 
 ## Running the integrations offline
 
-### Initial Setup
+### Initial setup
 
 If your studio has restricted internet access or no internet access then you will need to ensure that you have all the required parts cached locally.
 You will still need one machine that can connect to the internet in order to download Shotgun Create or Shotgun Desktop.
