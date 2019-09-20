@@ -14,6 +14,7 @@ lang: en
     - [Initial Setup](#initial-setup)
     - [Managing updates](#managing-updates)
 - [Disabling auto updates](#disabling-auto-updates)
+    - [Disabling updates at a project or site level](#disabling-updates-at-a-project-or-site-level)
     - [Disabling updates for all but one project](#disabling-updates-for-all-but-one-project)
     - [Upgrading](#upgrading)
 
@@ -36,8 +37,12 @@ However the integration features provided in Shotgun Create work in a similar wa
 
 ### What doesn't auto update?
 
-If you have taken over a site configuration, then it won't check for newer `tk-config-basic` updates but more on that further down.
-Also any projects that aren't using the default site configuration (I.e. a project where the Toolkit advanced setup wizard has been run on it.), will not have their configuration auto updated.
+- If you have taken over a site configuration, then it won't check for newer `tk-config-basic` updates but more on that [further down](#disabling-updates-at-a-project-or-site-level).
+
+- Any projects that aren't using the default site configuration (I.e. a project where the Toolkit advanced setup wizard has been run on it.), will not have their configuration auto updated.
+
+- Resources such as Python and QT that come bundled with Shotgun Desktop, don't auto update. 
+We occasionally release new Shotgun Desktop installers when we need to update these parts.
 
 ## Running the integrations offline
 
@@ -47,10 +52,11 @@ If your studio has restricted internet access or no internet access then you wil
 You will still need one machine that can connect to the internet in order to download Shotgun Create or Shotgun Desktop.
 
 Shotgun Desktop comes prepackaged with all the dependencies required to run the basic integrations. 
-Whilst Shotgun Create also comes bundled with the dependencies, it requires you to follow the steps mentioned in [Managing updates](#managing-updates). 
+Whilst Shotgun Create also comes bundled with the dependencies, it requires you to follow the steps mentioned in [managing updates](#managing-updates) as well.
+ 
 When you start either of them up, it will automatically try to look for updates, but if it cannot connect to the Shotgun App Store, it will simply run the most recent version that exists locally.
 
-It is recommended that you follow the "Managing updates" steps bellow after installing Shotgun Desktop, as the components bundled with the installer may not be the latest.
+It is recommended that you follow the [managing updates](#managing-updates) steps bellow after installing Shotgun Desktop, as the components bundled with the installer may not be the latest.
 
 {% include info title="Note" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
 In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
@@ -75,6 +81,8 @@ In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE
 
 ## Disabling auto updates
 
+### Disabling updates at a project or site level
+
 {% include info title="Note" content="If possible we recommend that you continue to allow auto updates to avoid missing out on new features and bug fixes." %}
 
 Follow these steps to disable automatic updates for the integrations.
@@ -97,7 +105,7 @@ Follow these steps to disable automatic updates for the integrations.
 `SGTK_DESKTOP_STARTUP_LOCATION` to point to its location on disk, (This only applies to Shotgun Desktop.)
 
 It's The majority for the functionality is controlled by the config which can be locked down with the previous steps, however as mentioned in the "what parts auto update?" section, the 
- component is also updated and that is handled seperately from the config. This also only applies to Shotgun Desktop.
+ component is also updated and that is handled separately from the config. This also only applies to Shotgun Desktop.
 
 #### Good to know
 
