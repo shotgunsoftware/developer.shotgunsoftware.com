@@ -28,7 +28,7 @@ lang: ko
 
 1. 유효한 [Shotgun](https://www.shotgunsoftware.com/kr/signup/) 사이트.
 2. 지정한 프로젝트에 대한 파이프라인 구성. 또는 [구성 시작하기 안내서](link)의 연습에서 생성한 구성을 사용하십시오.
-3. 파이프라인 구성이 저장된 파일 시스템에 대해 적절하게 설정된 읽기 및 쓰기 권한
+3. 파이프라인 구성이 저장된 파일 시스템에 대해 읽기 및 쓰기 권한을 적절하게 설정합니다.
 4. Shotgun 데스크톱이 시스템에 설치되어 있어야 함
 5. 활성 상태의 Maya 멤버쉽. [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 Maya 30일 체험판을 다운로드하십시오.
 
@@ -139,11 +139,12 @@ Shotgun 데스크톱이 이제 이 프로젝트에 대해 복제된 구성을 �
 
 **10단계:** 파일에서 `pythonconsole`을 검색합니다. 프로젝트에 기본 구성을 사용한 경우 Python 콘솔 앱에 대한 설명자가 이 파일에 나열되어 있는 것을 볼 수 있습니다. 이 설명자는 이 과정을 시작할 때 살펴본 Maya 앱의 [목록](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 있는 설명과 일치해야 합니다. 버전이 Maya 앱 목록에서 확인한 항목과 일치하는지 확인합니다.
 
-```
+```yaml
 apps.tk-multi-pythonconsole.location:
 	type: app_store
 	name: tk-multi-pythonconsole
 	version: v1.1.2
+
 ```
 
 {% include info title="참고" content="다른 구성을 사용하는 경우 파일에 설명자를 추가해야 할 수 있습니다." %}
@@ -156,7 +157,7 @@ apps.tk-multi-pythonconsole.location:
 
 **11단계:** 복제된 구성에서 `config/env/project.yml` 파일을 열고 `tk-maya` 엔진에 대한 설정을 찾습니다.
 
-```
+```yaml
 # configuration for all engines to load in a project context
 
 engines:
@@ -173,6 +174,7 @@ engines:
   tk-photoshopcc: "@settings.tk-photoshopcc.project"
   tk-shell: "@settings.tk-shell.project"
   tk-shotgun: "@settings.tk-shotgun.project"
+
 ```
 
 `@settings`를 사용하는 `tk-maya: “@settings.tk-maya.project”` 행은 설정이 포함된 파일에 있음을 나타냅니다. `tk-maya`는 Maya 엔진을 나타내고 `project`는 환경을 나타냅니다.
@@ -208,7 +210,7 @@ Shotgun 통합의 코드는 앱, 엔진 및 프레임워크에 대한 번들로 
 
 15단계: 다음 아래에 위치 설명자를 추가합니다.
 
-```
+```yaml
 settings.tk-maya.project:
   apps:
 ```
@@ -217,7 +219,7 @@ settings.tk-maya.project:
 
 {% include info title="참고" content="[YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) 파일의 서식이 탭이 아니라 공백을 사용하여 올바르게 지정되었는지 확인하십시오." %}
 
-```
+```yaml
 # project
 settings.tk-maya.project:
   apps:
@@ -285,6 +287,7 @@ Windows:
 프롬프트에 따라 변경 사항을 적용하려는 구성인 프로젝트 기본 구성의 ID를 입력합니다.
 
 ```
+
 $ ls
 cache		config		install		tank		tank.bat
 $ ./tank push_configuration
@@ -315,7 +318,8 @@ Your existing configuration will be backed up.
 The following pipeline configurations are available to push to:
  - [1] Primary (/Users/michelle/Documents/Shotgun/configs/the_other_side)
 
-Please type in the id of the configuration to push to (ENTER to exit): 
+Please type in the id of the configuration to push to (ENTER to exit):
+
 ```
 
 복제된 구성을 적용할 수 있는 사용 가능한 파이프라인 구성 목록이 표시됩니다. 구성을 업데이트하려는 프로젝트에 대한 기본 파이프라인 구성의 ID를 입력합니다.
@@ -376,7 +380,7 @@ Python 콘솔 앱이 선택한 프로젝트의 프로젝트 환경에 추가되�
 
 {% include info title="참고" content='엔진 블록에서 `tk-desktop`은 포함된 컨텐츠를 가리킵니다.
 
-```
+```yaml
 includes:
   - ./includes/settings/tk-desktop.yml
 
@@ -386,7 +390,7 @@ engines:
 
 includes:의 경로를 따라 `config/env/includes/settings/tk-desktop.yml`을 열고 `settings.tk-desktop.project` 블록을 찾습니다. 해당 블록에서 다음을 확인할 수 있습니다.<br/><br/>
 
-```
+```yaml
 apps:
   tk-multi-pythonconsole:
   location: "@apps.tk-multi-pythonconsole.location"
@@ -396,7 +400,7 @@ apps:
 
 includes의 경로를 `../includes/app_locations.yml`까지 따라가 `apps.tk-multi-pythonconsole.location`을 검색하여 다음을 확인합니다.<br/><br/>
 
-```
+```yaml
 # pythonconsole
 apps.tk-multi-pythonconsole.location:
   type: app_store
@@ -411,4 +415,5 @@ Shotgun에서 지원하는 적합한 소프트웨어 통합에 앱을 추가할 
 원하는 앱을 찾을 수 없는 경우 직접 작성할 수 있습니다. 다른 Shotgun 사용자도 동일한 기능을 필요로 할 수 있으므로 새로 만든 앱을 공유하는 것도 Shotgun 커뮤니티에 기여하는 한 가지 방법입니다.
 
 다음 안내서에서는 프로덕션 폴더 구조를 스튜디오의 체계에 맞게 커스터마이즈하는 방법에 대해 설명합니다. [스튜디오의 체계에 맞게 프로덕션 폴더 스키마를 커스터마이즈해 보십시오.](link)
+
 

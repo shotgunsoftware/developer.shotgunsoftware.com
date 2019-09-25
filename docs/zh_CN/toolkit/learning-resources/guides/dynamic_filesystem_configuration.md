@@ -169,7 +169,7 @@ Shotgun 将配置新字段。
 
 **步骤 9：**在 `CustomEntity01` 文件夹旁边创建一个名为 `CustomEntity01.yml` 的文件，该文件内容如下：
 
-```
+```yaml
 type: "shotgun_entity"
 
 name: "code"
@@ -194,7 +194,7 @@ YAML 文件将向 Toolkit 提供有关如何为 `CustomEntity01` 文件夹命名
 
 `filters` 字段限制了在指定时间为哪些实体创建了文件夹。在当前状态下，`asset.yml` 中的过滤器字段如下所示：
 
-```
+```yaml
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
@@ -211,7 +211,7 @@ assets/Classroom/Prop/spoon
 
 **步骤 11：**修改 `asset.yml` 中的 `filters` 字段，使其如下所示：
 
-```
+```yaml
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
@@ -296,7 +296,7 @@ In total, 23 folders were processed.
 
 **步骤 14：**将以下行添加到 `templates.yml` 的 `keys` 部分，注意正确缩进：
 
-```
+```yaml
        CustomEntity01:
            type: str
 ```
@@ -311,7 +311,7 @@ In total, 23 folders were processed.
 
 **步骤 15：**打开 `templates.yml` 并搜索 `maya_asset_work`。
 
-```
+```yaml
    maya_asset_work:
         definition: '@asset_root/work/maya/{name}.v{version}.{maya_extension}'
 ```
@@ -346,7 +346,7 @@ In total, 23 folders were processed.
 
 **步骤 17：**修改 `maya_asset_work` 模板定义，使其类似如下：
 
-```
+```yaml
     maya_asset_work:
         definition: '@asset_root/work/maya/{CustomEntity01}_{Asset}.v{version}.{maya_extension}'
 ```

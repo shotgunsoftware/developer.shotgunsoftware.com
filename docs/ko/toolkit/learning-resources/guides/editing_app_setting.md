@@ -16,7 +16,7 @@ lang: ko
 
 이 안내서에서는 기존 파이프라인 구성 내에서 설정을 프로젝트 파이프라인의 요구 사항에 맞게 편집하는 방법에 대해 설명합니다. 첫 번째 안내서인 **[구성 시작하기](./advanced_config.md)**에서는 편집을 위해 파이프라인 구성을 준비하는 방법을 설명합니다. 편집 가능한 프로젝트 구성을 만드는 데 익숙하지 않다면 먼저 **구성 시작하기**를 전체적으로 검토하십시오.
 
-기본 구성을 확장하는 방법으로 Shotgun 툴킷에서 파이프라인 워크플로우 내의 태스크를 커스터마이즈할 수 있습니다. 커스터마이즈의 간단한 예로, 하나 이상의 소프트웨어 패키지 내에서 툴킷 앱의 버튼을 활성화 또는 비활성화하여 사용자들이 툴킷의 기능과 상호 작용하는 방식을 변경할 수 있습니다. 툴킷은 독자적인 구성을 지원하므로 커스텀 워크플로우를 생성하고, 반복적이고 일상적인 태스크를 자동화하고, 후크를 수정하고, 툴킷 플랫폼에 커스텀 도구를 추가함으로써 더 스마트하고 빠르게 작업할 수 있습니다. 그러나 Shotgun 소프트웨어 통합을 통해서만 액세스할 수 있으며 일상적인 작업용으로는 아직 릴리즈되지 않았습니다.
+기본 구성을 확장하는 방법으로 Shotgun 툴킷에서 파이프라인 워크플로우 내의 태스크를 커스터마이즈할 수 있습니다. 커스터마이즈의 간단한 예로, 하나 이상의 소프트웨어 패키지 내에서 툴킷 앱의 버튼을 활성화 또는 비활성화하여 사용자들이 툴킷의 기능과 상호 작용하는 방식을 변경할 수 있습니다. 툴킷은 독자적인 구성을 지원하므로 커스텀 워크플로우를 생성하고, 반복적이고 일상적인 태스크를 자동화하고, 후크를 수정하고, 툴킷 플랫폼에 커스텀 도구를 추가함으로써 더 스마트하고 빠르게 작업할 수 있습니다. 그러나 Shotgun 소프트웨어 통합을 통해서만 액세스할 수 있으며 일상적인 작업용으로는 아직 출시되지 않았습니다.
 
 이 안내서의 연습을 통해 Shotgun 소프트웨어 통합 내에서 구성 설정 제어 액션을 찾는 방법과 설정이 존재하는 위치, 설정을 편집하는 방법을 익힐 수 있습니다. 특히 Maya 내에서 프로젝트 작업 중에 아티스트가 새 태스크를 생성하지 못하도록 **+새 태스크**(+New Task) 버튼의 동작을 관리하는 Workfiles 앱의 설정을 편집해 보겠습니다.
 
@@ -26,9 +26,9 @@ lang: ko
 
 1. 활성 [Shotgun](https://www.shotgunsoftware.com/kr/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 사이트.
 2. 하나 이상의 에셋이 있는 프로젝트. 첫 번째 안내서에서 생성한 the_other_side 프로젝트에 에셋을 추가할 수 있습니다. [구성 시작하기](./advanced_config.md) 안내서에서 프로젝트의 에셋을 생성하는 방법을 익힐 수 있습니다.
-3. 식별된 프로젝트에 대한 파이프라인 구성이나 [구성 시작하기](./advanced_config.md) 안내서를 완료하고 해당 연습에서 생성한 구성 사용.
-4. 파이프라인 구성이 저장된 파일 시스템에 대해 적절하게 설정된 읽기 및 쓰기 권한.
-5. Shotgun 데스크톱이 시스템에 설치되어 있어야 함.
+3. 식별된 프로젝트에 대한 파이프라인 구성이나 [구성 시작하기](./advanced_config.md) 안내서를 완료하고 해당 연습에서 생성한 구성을 사용합니다.
+4. 파이프라인 구성이 저장된 파일 시스템에 대해 읽기 및 쓰기 권한을 적절하게 설정합니다.
+5. Shotgun 데스크톱이 시스템에 설치되어 있어야 합니다.
 6. 활성 상태의 Maya 멤버쉽. Maya의 30일 체험판은 [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 구할 수 있습니다.
 
 **참고:** 이 안내서는 `tk-config-default2` 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다.
@@ -145,7 +145,7 @@ Maya와 Shotgun이 완전히 로드되면 **파일 열기**(File Open) 대화상
 
 ![작업 영역 정보](./images/editing_app_setting/13_work_area_info.png)
 
-**작업 영역 정보**(Work Area Info) 대화상자에는 현재 작업 영역에 대한 후드 및 상세 정보가 표시됩니다. 여기에는 작업 중인 환경 및 설정이 위치한 환경 구성 파일의 경로도 포함됩니다.
+**작업 영역 정보**(Work Area Info) 대화상자에는 현재 작업 영역이 어떻게 돌아가는지 및 상세 정보가 표시됩니다. 여기에는 작업 중인 환경 및 설정이 위치한 환경 구성 파일의 경로도 포함됩니다.
 
 **15단계:** **현재 작업 영역**(Your Current Work Area) 대화상자에서 아래에 있는 **환경**(Environment) 탭을 선택합니다.
 
@@ -157,7 +157,7 @@ Maya와 Shotgun이 완전히 로드되면 **파일 열기**(File Open) 대화상
 
 **16단계:** 즐겨 사용하는 텍스트 편집기에서 `project.yml`을 엽니다.
 
-```
+```yaml
 description: Apps and Engines when launching with a project only context.
 
 ################################################################################
@@ -198,6 +198,7 @@ engines:
 # reference all of the common frameworks
 
 frameworks: "@frameworks"
+
 ```
 
 <!--![Project yml env](./images/editing_app_setting/15_project_yml_env.png)-->
@@ -228,7 +229,7 @@ tk-maya.yml에서 Workfiles 앱 설정 찾기
 
 **18단계:** `project.yml`에서 include를 따라가면서 `tk-maya.yml` 파일에서 `settings.tk-maya.project`를 찾습니다. 구체적으로는 특정 프로젝트의 프로젝트 환경에서 **+새 태스크** (+New Task) 버튼을 비활성화하려고 합니다. 현재 해당 프로젝트에 대한 구성에 있으며 프로젝트 환경에 있는 동안 위치 정보를 얻었습니다.
 
-```
+```yaml
 # project
 settings.tk-maya.project:
   apps:
@@ -250,7 +251,7 @@ settings.tk-maya.project:
 
 `@` 기호는 `tk-multi-workfiles2` 값이 포함된 파일에서 제공된 것임을 나타냅니다. `tk-maya.yml`의 맨 위에 있는 `includes` 섹션에서 다음을 확인할 수 있습니다.
 
-```
+```yaml
 includes:
 ...
 - ./tk-multi-workfiles2.yml
@@ -260,7 +261,7 @@ includes:
 
 **19단계:** `tk-multi-workfiles2.yml` 파일을 열고 `settings.tk-multi-workfiles2.launch_at_startup`을 찾습니다.
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   launch_at_startup: true
@@ -273,7 +274,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 **20단계:** `tk-multi-workfiles2.yml`에서 `settings.tk-multi-workfiles2.launch_at_startup:` 아래 `allow_task_creation`을 추가하고 값을 `false`로 설정합니다.
 
-```
+```yaml
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
   allow_task_creation: false
@@ -349,7 +350,7 @@ Workfiles 앱의 시스템 이름은 `tk-multi-workfiles2`이고 여기서 `mult
 
 ### 커스텀 환경 생성
 
-기본 구성은 일련의 미리 정의된 파이프라인 단계(`project`, `sequence`, `shot`, `shot_step`, `asset` 및 `asset_step`)와 함께 제공됩니다. 그러나 스튜디오에서는 파이프라인 단계(`asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light` 등)마다 다른 구성 설정을 원할 수 있습니다. 원하는 환경 구성 파일을 `config/env`에 추가하고 새 환경을 인식하도록 `pick_environment` 코어 후크를 재정의하여 커스텀 환경을 생성할 수 있습니다. 후크를 사용하면 툴킷 워크플로우의 다양한 지점에서 실행되는 간단한 로직을 수정할 수 있으며 [`pick_environment` 코어 후크](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py)에는 툴킷이 환경을 결정하는 데 사용하는 로직이 포함되어 있습니다. 후크를 인계하여 이 로직을 수정할 수 있습니다.
+기본 구성은 일련의 미리 정의된 파이프라인 단계(`project`, `sequence`, `shot`, `shot_step`, `asset` 및 `asset_step`)와 함께 제공됩니다. 그러나 스튜디오에서는 파이프라인 단계(`asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light` 등)마다 다른 구성 설정을 원할 수 있습니다. 툴킷은 커스텀 환경을 지원합니다. 자세한 내용은 [환경 구성 참조의 "커스텀 환경" 섹션](../../env_config_ref.md#custom-environments)을 참조하십시오.
 
 ### 비디오 리소스
 

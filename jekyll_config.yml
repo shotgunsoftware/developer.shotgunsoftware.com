@@ -24,6 +24,9 @@ jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: UA-2114792-9        # Required - replace with your tracking id
 
+# custom google search integration
+google_custom_search_id: "015683694229584726942:8l32_vorpny"
+
 # html head metadata: social open graph and favicon
 additional_head_html: |
   <meta property="og:image:height" content="1257">
@@ -39,6 +42,14 @@ additional_head_html: |
   <link rel="mask-icon" href="/site-metadata/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
+
+custom_pre_content: |
+  <span id="article-type" style="display:none;" data-swiftype-name="type" data-swiftype-type="enum">Article</span>
+  <span id="article-locale" style="display:none;" data-swiftype-name="locale" data-swiftype-type="enum">en-us</span>
+  <div class="article-body markdown" data-swiftype-name="body" data-swiftype-type="text">
+
+custom_post_content: </div>
+
 
 # the url to connect to via the 'edit in github' button
 github_editme_path: shotgunsoftware/developer.shotgunsoftware.com/blob/master/docs

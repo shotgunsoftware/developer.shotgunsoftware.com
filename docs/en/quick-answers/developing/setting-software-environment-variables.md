@@ -1,7 +1,7 @@
 ---
 layout: default
 title: How do I set environment variables before launching software?
-pagename: setting_software_environment_variables
+pagename: setting-software-environment-variables
 lang: en
 ---
 
