@@ -7,6 +7,8 @@ lang: en
 
 # Webhooks
 
+{% include info title="Beta" content="Webhooks is currently in beta. If you would like to join the beta, please email: webhooks-beta@shotgunsoftware.com" %}
+
 Webhooks allow a service you control to be notified of events that occur in Shotgun. When you create a webhook, you specify the type of event you are interested in and tell Shotgun what URL to send data to when it is triggered. Once the relevant event happens in Shotgun, a payload of data describing the event will be sent to the webhook’s URL. This allows you to build tight integrations with Shotgun and automate portions of your workflow.
 
 ## What are some examples of how to use webhooks?
@@ -101,7 +103,7 @@ Deliveries can be expanded to show detailed information about the request sent t
 
 The payload sent to the webhook's URL contains information describing the event that occurred in Shotgun and who triggered it. It is provided in JSON format.
 
-{% include warning title="Payload size" content="The maximum size of a delivery's payload is one megabyte. Any event triggered in Shotgun that would result in a payload size larger than 1 megabyte will have its `new_value` and `old_value` keys removed, and a `warning` key added that contains a message explaining what happened, why, and how to retrieve the entire event log entry from Shotgun." %}
+{% include warning title="Payload size" content="The maximum size of a delivery's payload is 1 megabyte. Any event triggered in Shotgun that would result in a payload size larger than 1 megabyte will have its `new_value` and `old_value` keys removed, and a `warning` key added that contains a message explaining what happened, why, and how to retrieve the entire event log entry from Shotgun." %}
 
 ##### Example payload
 
