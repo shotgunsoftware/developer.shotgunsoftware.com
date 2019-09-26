@@ -16,6 +16,7 @@
     url: " https://developer.shotgunsoftware.com/python-api/"
   - text: rest-api
     url: " https://developer.shotgunsoftware.com/rest-api/"
+  - page: shotgun-webhooks
   - text: event-triggers
     url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
   - text: jira-bridge
