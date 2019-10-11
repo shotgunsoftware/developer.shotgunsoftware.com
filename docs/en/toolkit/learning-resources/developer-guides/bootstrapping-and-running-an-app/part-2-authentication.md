@@ -22,6 +22,9 @@ If your writing a script to automate something and a user is not present to auth
 ## User Authentication
 
 ```python
+# Import Toolkit so we can access to Toolkit specific features.
+import sgtk
+
 # Import the ShotgunAuthenticator from the tank_vendor.shotgun_authentication
 # module. This class allows you to authenticate either programmatically or, in this
 # case, interactively.
@@ -72,3 +75,5 @@ user = authenticator.create_script_user(
 # Tells Toolkit which user to use for connecting to Shotgun.
 sgtk.set_authenticated_user(user)
 ```
+
+Next step [bootstrapping!](#part-3-bootstrapping.md)

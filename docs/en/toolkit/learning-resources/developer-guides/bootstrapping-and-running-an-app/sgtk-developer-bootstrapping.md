@@ -23,5 +23,5 @@ Or you may wish to be able to run your Toolkit app from your favourite IDE.
 
 1. [Importing the sgtk API for bootstrapping](part-1-importing-sgtk-for-bootstrapping.md)
 1. [Authentication](./part-2-authentication.md)
-2. [How to bootstrap an engine](./part-3-bootstrapping.md)
+2. [Bootstrapping an engine](./part-3-bootstrapping.md)
 3. [launching an app](./part-4-launching-an-app.md)

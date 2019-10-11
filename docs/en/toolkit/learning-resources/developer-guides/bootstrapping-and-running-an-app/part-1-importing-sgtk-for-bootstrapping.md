@@ -29,7 +29,7 @@ Then you can add the path to `sys.path`, if it's not located in a standard locat
 ## Code
 
 ```python
-# if your sgtk package is not located in a location where Python will automatically look
+# If your sgtk package is not located in a location where Python will automatically look
 # then add the path to sys.path
 import sys
 sys.path.insert(0, "/path/to/sgtk-package")
@@ -37,3 +37,4 @@ sys.path.insert(0, "/path/to/sgtk-package")
 import sgtk
 ```
 
+Now to [authenticate](part-2-authentication.md).

@@ -15,10 +15,9 @@ There two methods you could use here.
 1. Since in this particular example you are resolving a publish file, you could use the Shotgun API to query for the
 next available version number on `PublishedFile` entities.
 2. You can scan the files on disk and work out what versions already exist, and extract the next version number. 
-This is helpful if the files your working with aren't tracked in Shotgun (such as work files).
+This is helpful if the files you're working with aren't tracked in Shotgun (such as work files).
 
 Whilst the first option would probably be most suitable for the example in this guide, both approaches have their uses so we'll cover them both.
-Also if you had work files as well and only considered the publish 
 
 ## Querying Shotgun for the next version number.
 
@@ -35,6 +34,8 @@ r = sg.summarize(entity_type="PublishedFile",
 # In scenarios where there are no files already this summary will return 0.
 fields["version"] = r["summaries"]["version_number"] + 1
 ```
+
+{% include info title="Note" content="To save writing out the name twice, you can take it from the fields dictionary you defined in the previous step." %}
 
 ## Searching the file system for the next version number.
 
