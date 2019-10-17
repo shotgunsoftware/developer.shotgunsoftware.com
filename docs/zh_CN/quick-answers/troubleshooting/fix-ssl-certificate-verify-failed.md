@@ -21,11 +21,11 @@ Python API 依赖与 API 捆绑在一起且位于计算机上的一组证书才�
 
 2. 将以下命令粘贴到 PowerShell 窗口中，然后按回车键以执行：
 
-       $cert_url = "https://www.amazontrust.com/repository/SFSRootCAG2.cer"
-       $cert_file = New-TemporaryFile
-       Invoke-WebRequest -Uri $cert_url -UseBasicParsing -OutFile $cert_file.FullName
-       Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalMachine\Root
-   
+        $cert_url = "https://www.amazontrust.com/repository/SFSRootCAG2.cer"
+        $cert_file = New-TemporaryFile
+        Invoke-WebRequest -Uri $cert_url -UseBasicParsing -OutFile $cert_file.FullName
+        Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalMachine\Root
+
 3. 如果显示带 Thumbprint `925A8F8D2C6D04E0665F596AFF22D863E8256F3F` 的已添加证书详细信息，则表示操作已完成，可以关闭 PowerShell。
 
 ## 替代解决方案

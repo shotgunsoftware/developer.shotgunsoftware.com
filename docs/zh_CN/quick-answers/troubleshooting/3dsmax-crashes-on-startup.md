@@ -9,12 +9,12 @@ lang: zh_CN
 
 从 Shotgun Desktop 或 Shotgun 网站启动 3ds Max 时，3ds Max 可能会冻结，同时出现一个冻结的白色对话框或者显示以下消息：
 
-    Microsoft Visual C++ 运行库（不响应）
-    运行时错误！
-    程序：C:\Program Files\Autodesk\3ds Max 2016\3dsmax.exe
+    Microsoft Visual C++ Runtime Library (Not Responding)
+    Runtime Error!
+    Program: C:\Program Files\Autodesk\3ds Max 2016\3dsmax.exe
     R6034
-    应用程序错误地尝试加载 C 运行库。
-    有关详细信息，请联系应用程序支持团队。
+    An Application has made an attempt to load the C runtime library incorrectly.
+    Please contact the application's support team for more information.
 
 这通常是由于路径中的 `msvcr90.dll` 版本与 3ds Max 捆绑的 Python 版本发生冲突。
 
@@ -23,6 +23,7 @@ lang: zh_CN
 首先，转到工作流配置的 `config/hooks` 文件夹并创建文件 `before_app_launch.py`。在该文件中，粘贴以下内容：
 
 ```python
+
 """
 Before App Launch Hook
 This hook is executed prior to application launch and is useful if you need

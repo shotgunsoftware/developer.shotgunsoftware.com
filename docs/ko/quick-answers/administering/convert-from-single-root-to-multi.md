@@ -25,24 +25,24 @@ lang: ko
 툴킷은 파이프라인 구성에서 사용되는 로컬 저장소에 관한 정보를 `config/core/roots.yml` 파일에 캐시합니다. Shotgun에서 지금 막 생성한 새로운 **secondary** 저장소 루트를 추가하려면 이 파일을 편집합니다.
 
     primary: {
-    linux_path: /mnt/hgfs/sgtk/projects,
-    mac_path: /sgtk/projects,
-    windows_path: 'z:\sgtk\projects'
+        linux_path: /mnt/hgfs/sgtk/projects,
+        mac_path: /sgtk/projects,
+        windows_path: 'z:\sgtk\projects'
     }
     secondary: {
-    linux_path: /mnt/hgfs/sgtk/secondaries,
-    mac_path: /sgtk/secondaries,
-    windows_path: 'z:\sgtk\secondaries'
+        linux_path: /mnt/hgfs/sgtk/secondaries,
+        mac_path: /sgtk/secondaries,
+        windows_path: 'z:\sgtk\secondaries'
     }
 
 {% include info title="참고" content="`tk-core v0.18.141`부터 roots.yml에 정의된 루트 이름이 SG에 정의된 로컬 저장소 이름과 일치할 필요가 없습니다. `roots.yml` 정의에 `shotgun_storage_id: <id>` 키/값 쌍을 포함하여 연결을 명시적으로 정의할 수 있습니다.
 예시:
 
     secondary: {
-    linux_path: /mnt/hgfs/sgtk/secondaries,
-    mac_path: /sgtk/secondaries,
-    windows_path: 'z:\sgtk\secondaries'
-    shotgun_storage_id: 123
+        linux_path: /mnt/hgfs/sgtk/secondaries,
+        mac_path: /sgtk/secondaries,
+        windows_path: 'z:\sgtk\secondaries'
+        shotgun_storage_id: 123
     }
 
 저장소 ID는 현재 API 호출을 통해서만 쿼리할 수 있습니다." %}
@@ -57,7 +57,7 @@ lang: ko
 
     # the type of dynamic content
     type: "project"
-    
+
     # name of project root as defined in roots.yml
     root_name: "primary"
 
@@ -65,7 +65,7 @@ lang: ko
 
     # the type of dynamic content
     type: "project"
-    
+
     # name of project root as defined in roots.yml
     root_name: "secondary"
 
@@ -73,8 +73,8 @@ lang: ko
 예를 들어, secondary 폴더 아래 어딘가에 asset.yml이 있다면 필터를 업데이트하여 secondary 폴더 값을 기준으로 해당 프로젝트를 필터링해야 합니다.
 
     filters:
-    - { "path": "project", "relation": "is", "values": [ "$secondary" ] }
-    - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
+        - { "path": "project", "relation": "is", "values": [ "$secondary" ] }
+        - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
 
 ## 템플릿 경로를 업데이트하여 사용할 루트 지정
 
@@ -83,8 +83,8 @@ lang: ko
 예를 들어, 여기에서는 모든 에셋 작업을 secondary 저장소에 저장하려고 하기 때문에 maya_asset_work 템플릿 경로를 업데이트하려면 이를 다음과 같이 수정해야 합니다.
 
     maya_asset_work:
-    definition: '@asset_root/work/maya/{name}.v{version}.ma'
-    root_name: 'secondary'
+        definition: '@asset_root/work/maya/{name}.v{version}.ma'
+        root_name: 'secondary'
 
 `config/core/templates.yml` 파일의 각 템플릿 경로에 대해 이와 같은 패턴을 따라야 합니다. 각각에 대해 올바른 `root_name`을 지정합니다(**'primary'** 또는 **'secondary'**).
 

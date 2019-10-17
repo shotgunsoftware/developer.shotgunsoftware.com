@@ -38,12 +38,12 @@ Toolkit は、Shotgun サーバに対する不要な呼び出しを防止する�
 
 バンドル キャッシュとは、Shotgun サイト上のプロジェクトすべてで使用される、すべてのアプリケーション、エンジン、およびフレームワークのキャッシュ コレクションです。 分散設定用のバンドル キャッシュは次の場所に保存されています。
 
-`~/Library/Caches/Shotgun/bundle_cache`Mac:
+Mac: `~/Library/Caches/Shotgun/bundle_cache`
 
 Windows:
 `%APPDATA%\Shotgun\bundle_cache`
 
-`~/.shotgun/bundle_cache`Linux:
+Linux: `~/.shotgun/bundle_cache`
 
 {% include info title="注" content="これらの場所は `SHOTGUN_BUNDLE_CACHE_PATH` 環境変数を使用してオーバーライドできるため、具体的な実装は変わる可能性があります。"%}
 

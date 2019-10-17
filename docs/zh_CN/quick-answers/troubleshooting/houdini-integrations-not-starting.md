@@ -12,7 +12,7 @@ lang: zh_CN
 
 通常导致这种情况的原因是，`HOUDINI_PATH` 环境变量已被覆盖，而 Shotgun 依赖于该变量来传递启动脚本路径。
 
-Houdini 从 Shotgun 启动时，启动应用逻辑会将 Shotgun 引导脚本路径添加到 `HOUDINI_PATH` 环境变量。 但是，如果 Houdini 具有 
+Houdini 从 Shotgun 启动时，启动应用逻辑会将 Shotgun 引导脚本路径添加到 `HOUDINI_PATH` 环境变量。 但是，如果 Houdini 具有
 [houdini.env 文件](http://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables)，可能会出现此问题。此文件允许用户设置加载 Houdini 时将显示的环境变量，但是此文件中定义的任何值都将覆盖当前会话中已存在的环境变量。
 
 解决此问题的方法是确保在 `HOUDINI_PATH` 环境变量的新定义中包含先前存在的该变量。
@@ -33,4 +33,4 @@ Houdini 从 Shotgun 启动时，启动应用逻辑会将 Shotgun 引导脚本路
 
 如果出现这种情况，您应尝试改为使用 `%HOUDINI_PATH%`。" %}
 
-如果这样做无法解决问题，请联系我们的[支持团队]((https://support.shotgunsoftware.com/hc/en-us/requests/new))，他们将帮助您诊断问题。
+如果这样做无法解决问题，请联系我们的[支持团队](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)，他们将帮助您诊断问题。

@@ -7,7 +7,7 @@ lang: zh_CN
 
 # 为什么我的上下文缺少任务/工序，但它是文件名的一部分？
 
-通过 Toolkit 创建文件夹时，它会根据实体[注册路径](../administering/what-is-path-cache.md)，以便执行查找。这意味着如果指定了路径，就可以确定正确的上下文。Toolkit 将仅为从数据结构生成的文件夹创建注册表，因此不考虑仅在 `templates.yml` 文件中定义的文件名或文件夹等因素。如果您的数据结构中没有 `Task` 文件夹，则可能会遇到 Toolkit 需要了解文件的任务，但无法仅从路径完成任务的情况。
+通过 Toolkit 创建文件夹时，它会根据实体[注册路径](../administering/what-is-path-cache.md)，以便执行查找。这意味着如果指定了路径，就可以确定正确的上下文。Toolkit 将仅为从数据结构生成的文件夹创建注册表，因此不考虑仅在 `templates.yml` 文件中定义的文件名或文件夹等因素。如果您的数据结构中没有 `Task` 文件夹，则可能会遇到 Toolkit 需要了解文件的任务，但无法仅从路径中读取任务的情况。
 
 **示例**
 
@@ -19,7 +19,7 @@ lang: zh_CN
 
     assets/{sg_asset_type}/{Asset}/{Step}/work/maya/{task_name}_{name}.v{version}.{maya_extension}`
 
-然后尝试从生成的路径确定上下文，这仅可以构建 `Asset` 和 `Step`，而不是**** `Task`，不论文件路径中的任务名称是什么。
+然后尝试从生成的路径确定上下文，这仅可以构建 `Asset` 和 `Step`，而**不是** `Task`，不论文件路径中的任务名称是什么。
 
 **解决方案**
 

@@ -13,11 +13,13 @@ lang: ko
 
 예를 들어, [샷 단계 환경의 Maya 엔진](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-multi-loader2.yml#L122)에 이를 추가하려면 다음 조각을 추가하면 됩니다.
 
-    caption: Asset Library
-    hierarchy: [project, sg_asset_type, code]
-    entity_type: Asset
-    filters:
-    - [project, is, {'type': 'Project', 'id': 207}]
+```yaml
+caption: Asset Library
+hierarchy: [project, sg_asset_type, code]
+entity_type: Asset
+filters:
+- [project, is, {'type': 'Project', 'id': 207}]
+```
 
 `207`을 라이브러리 프로젝트의 ID로 바꿉니다.
 

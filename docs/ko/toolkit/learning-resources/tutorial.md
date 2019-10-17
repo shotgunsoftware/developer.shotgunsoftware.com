@@ -376,7 +376,7 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
                "Mesh",
                object
            )
-          
+
            # set the icon for the item
            mesh_item.set_icon_from_path(icon_path)
 

@@ -41,7 +41,7 @@ Toolkit 将某些数据存储在本地缓存中，以防止向 Shotgun 服务器
 Mac：
 `~/Library/Caches/Shotgun/bundle_cache`
 
-`%APPDATA%\Shotgun\bundle_cache`Windows：
+Windows：`%APPDATA%\Shotgun\bundle_cache`
 
 Linux：
 `~/.shotgun/bundle_cache`
@@ -58,6 +58,6 @@ Linux：
 
 ## 缩略图
 
-Toolkit 应用使用的缩略图（如[加载器](https://support.shotgunsoftware.com/entries/95442527)）存储在本地 Toolkit 缓存中。它们根据需要按项目、工作流配置和应用进行存储。根缓存目录下的结构如下所示：
+Toolkit 应用使用的缩略图（如[加载器](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033078)）存储在本地 Toolkit 缓存中。它们根据需要按项目、工作流配置和应用进行存储。根缓存目录下的结构如下所示：
 
 `<site_name>/p<project_id>c<pipeline_configuration_id>/<app_or_framework_name>/thumbs/`
