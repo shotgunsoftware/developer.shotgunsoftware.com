@@ -15,12 +15,12 @@ Shotgun メニューに表示されるアクションはコンテキストに応
 
 **既定の Maya プロジェクト アクション:**
 
-![Shotgun メニューのプロジェクト アクション](images/shotgun_menu_project_actions.png)
+![Shotgun メニューのプロジェクト アクション](images/shotgun-menu-project-actions.png)
 
 [Shotgun Workfiles アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)を使用すると、作業するアセット、ショット、またはタスクを選択できます。これにより、新しい適切な環境をロードし、多くのアプリで Shotgun メニューのメニュー項目を有効にできます。
 
 **既定の Maya アセット タスク アクション:**
 
-![Shotgun メニューのプロジェクト アクション](images/shotgun_menu_asset_step_actions.png)
+![Shotgun メニューのプロジェクト アクション](images/shotgun-menu-asset-step-actions.png)
 
 環境が正しいにもかかわらずアクションが表示されない場合は、関連する[ログ](where-are-my-log-files.md)を調べ、エラーがないかどうかを確認します。完全な出力を取得するには、[デバッグ ログを有効に](turn-debug-logging-on.md)しなければならない可能性があります。

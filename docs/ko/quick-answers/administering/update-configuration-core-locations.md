@@ -9,7 +9,7 @@ lang: ko
 
 ## 파이프라인 구성이 로컬 코어를 사용하도록 업데이트하려면 어떻게 해야 합니까?
 
-파이프라인 구성이 [공유 Toolkit Core를 사용하도록 설정](https://support.shotgunsoftware.com/hc/ko/articles/219040468#shared)되어 있는 경우에는 해당 프로세스를 실행 취소하거나 tank localize 명령을 사용하여 파이프라인 구성 내부에 Toolkit Core API의 사본을 설치함으로써 코어의 "공유를 해제"할 수 있습니다. 이를 가리켜 코어를 "지역화"한다고 합니다. 
+파이프라인 구성이 공유 Toolkit Core를 사용하도록 설정되어 있는 경우에는 해당 프로세스를 실행 취소하거나 tank localize 명령을 사용하여 파이프라인 구성 내부에 Toolkit Core API의 사본을 설치함으로써 코어의 "공유를 해제"할 수 있습니다. 이를 가리켜 코어를 "지역화"한다고 합니다. 
 
 1. 터미널을 열고 Toolkit Core를 설치하려는 파이프라인 구성으로 이동합니다.
 

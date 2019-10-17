@@ -16,13 +16,13 @@ Shotgun 메뉴에 표시되는 액션은 상황에 맞게 구성됩니다. 즉, 
 
 **기본 Maya 프로젝트 액션:**
 
-![Shotgun 메뉴 프로젝트 액션](images/shotgun_menu_project_actions.png)
+![Shotgun 메뉴 프로젝트 액션](images/shotgun-menu-project-actions.png)
 
 [Shotgun Workfiles 앱](https://support.shotgunsoftware.com/hc/ko/articles/219033088-Your-Work-Files)을 사용하여 작업할 에셋, 샷 또는 태스크를 선택할 수 있습니다. 이렇게 하면 적합한 새 환경이 로드되고 Shotgun 메뉴에 더 많은 앱과 메뉴 항목이 활성화됩니다.
 
 **기본 Maya 에셋 태스크 액션**
 
-![Shotgun 메뉴 프로젝트 액션](images/shotgun_menu_asset_step_actions.png)
+![Shotgun 메뉴 프로젝트 액션](images/shotgun-menu-asset-step-actions.png)
 
 올바른 환경에 있는데도 액션이 표시되지 않을 경우 다음 단계는 관련 [로그](where-are-my-log-files.md)에 오류가 있는지 확인하는 것입니다.
 전체 출력을 얻으려면 [디버그 로깅을 활성화](turn-debug-logging-on.md)해야 합니다.

@@ -385,7 +385,7 @@ In total, 23 folders were processed.
 
 ### 路径缓存
 
-在创建文件夹时，将在磁盘上的文件夹与 Shotgun 实体之间创建映射。这些映射将存储为 Shotgun 中的 FilesystemLocation 实体，并缓存在用户计算机上的 SQLite 数据库中。要详细了解路径缓存的工作方式及其使用方式，请参见[此文档](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040418)。
+在创建文件夹时，将在磁盘上的文件夹与 Shotgun 实体之间创建映射。这些映射将存储为 Shotgun 中的 FilesystemLocation 实体，并缓存在用户计算机上的 SQLite 数据库中。要详细了解路径缓存的工作方式及其使用方式，请参见[此文档](../../../quick-answers/administering/what-is-path-cache.md)。
 
 
 ### 其他资源
