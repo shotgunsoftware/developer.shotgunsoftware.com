@@ -23,9 +23,9 @@ examples: Examples
 webinars: Webinar Recordings
 developer-training-videos: Developer Training Videos
 
-core-api: Core API
-qt-widgets: QT Widgets
-shotgun-utils: Shotgun Utils
+core-api: Toolkit Core API
+qt-widgets: QT Widgets Framework
+shotgun-utils: Shotgun Utils Framework
 publish-api: Publish API
 app-development: App Development
 file-system-configuration: File System Configuration
