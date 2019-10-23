@@ -59,9 +59,15 @@
     children:
     - text: core-api
       url: " https://developer.shotgunsoftware.com/tk-core"
+    - text: qt-widgets
+      url: " https://developer.shotgunsoftware.com/tk-framework-qtwidgets/"
+    - text: shotgun-utils
+      url: " https://developer.shotgunsoftware.com/tk-framework-shotgunutils/"
+    - text: publish-api
+      url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
     - text: file-system-configuration
       url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
-    - page: env-config-ref  
+    - page: env-config-ref
 
 - caption: quick-answers
   children:
