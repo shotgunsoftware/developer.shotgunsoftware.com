@@ -37,7 +37,7 @@ Shotgun Toolkit 平台为常用内容创建软件提供了一组完全可自定�
 
 在工作流配置中，`config/` 目录包含要自定义的所有文件和文件夹。在 `config/` 中，包含三个子目录：`cache`、`core` 和 `env`。`env` 目录包含环境配置文件，因此本文档将涉及 `config/env` 中的文件。
 
-![env 文件夹内容](./images/env_config_ref/1.png)
+![env 文件夹内容](./images/env-config-ref/1.png)
 
 在默认配置中，`config/env/` 中包含以下文件：
 
@@ -242,7 +242,7 @@ engines:
     location: @engines.tk-maya.location
 ```
 
-![engine_locations include file](./images/env_config_ref/2.png)
+![engine_locations include file](./images/env-config-ref/2.png)
 
 在此处可以看到，`tk-maya` 插件的 `location` 设置的值现在是对包含的 YAML 文件中的一个键的引用。
 
