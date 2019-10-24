@@ -42,4 +42,3 @@ When code is merged into master, make sure to
 put in a meaningful title and description, and include the pull request id. For example:
 
 ![PR](pr.png)
-
