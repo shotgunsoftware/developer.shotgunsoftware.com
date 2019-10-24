@@ -37,7 +37,7 @@ Toolkit での環境設定の構築には多くの自由が与えられていま
 
 パイプライン設定内の `config/` ディレクトリには、カスタマイズ対象のすべてのファイルとフォルダが含まれています。`config/` には、`cache`、`core`、および `env` の 3 つのサブディレクトリがあります。`env` ディレクトリには環境設定ファイルが保持されるため、このドキュメントでは `config/env` 内のファイルを参照します。
 
-![env フォルダの内容](./images/env_config_ref/1.png)
+![env フォルダの内容](./images/env-config-ref/1.png)
 
 既定の設定では、`config/env/` に次のファイルが表示されます。
 
@@ -242,7 +242,7 @@ engines:
     location: @engines.tk-maya.location
 ```
 
-![engine_locations include file](./images/env_config_ref/2.png)
+![engine_locations include file](./images/env-config-ref/2.png)
 
 ここでは、`tk-maya` エンジンの `location` 設定の値が、インクルードされる YAML ファイルのキーを参照していることがわかります。
 
