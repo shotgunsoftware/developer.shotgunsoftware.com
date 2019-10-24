@@ -37,7 +37,7 @@ Shotgun 툴킷 플랫폼은 스튜디오 파이프라인을 구축하는 데 일
 
 파이프라인 구성에서 `config/` 디렉토리에는 커스터마이즈할 수 있는 모든 파일 및 폴더가 포함됩니다. `config/`에는 세 개의 하위 디렉토리(`cache`, `core` 및 `env`)가 있습니다. `env` 디렉토리에 환경 구성 파일이 있으므로 이 문서에서는 `config/env`의 파일을 참조합니다.
 
-![env 폴더 컨텐츠](./images/env_config_ref/1.png)
+![env 폴더 컨텐츠](./images/env-config-ref/1.png)
 
 기본 구성의 `config/env/`에는 다음 파일이 있습니다.
 
@@ -242,7 +242,7 @@ engines:
     location: @engines.tk-maya.location
 ```
 
-![engine_locations include file](./images/env_config_ref/2.png)
+![engine_locations include file](./images/env-config-ref/2.png)
 
 `tk-maya` 엔진에 대한 `location` 설정 값이 이제 포함된 YAML 파일의 키에 대한 참조임을 확인할 수 있습니다.
 
