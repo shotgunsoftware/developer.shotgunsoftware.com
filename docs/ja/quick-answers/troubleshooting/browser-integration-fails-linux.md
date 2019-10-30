@@ -11,10 +11,10 @@ Linux で Shotgun Desktop を初めて実行すると、次のいずれかのエ
 問題が解決しない場合は、support@shotgunsoftware.com までお気軽にお問い合わせください。
 
 ### 目次
-- [](#openssl_101_ec-or-httpsconnection-related-issues)OPENSSL_1.0.1_EC または HTTPSConnection に関連する問題
-- [](#libffiso5-related-issues)libffi.so.5 に関連する問題
-- [](#certificate-validation-failed-related-issues)証明書検証の失敗に関連する問題
-- [](#incompatible-qt-versions)互換性のない Qt バージョン
+- [OPENSSL_1.0.1_EC または HTTPSConnection に関連する問題](#openssl_101_ec-or-httpsconnection-related-issues)
+- [libffi.so.5 に関連する問題](#libffiso5-related-issues)
+- [証明書検証の失敗に関連する問題](#certificate-validation-failed-related-issues)
+- [互換性のない Qt バージョン](#incompatible-qt-versions)
 
 ## OPENSSL_1.0.1_EC または HTTPSConnection に関連する問題
 

@@ -10,7 +10,7 @@ lang: ja
 オートデスクの sgtk API には、Shotgun で `PublishedFiles` エンティティを登録するための[便利なメソッド](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.register_publish)が用意されています。
 
 また、[独自の API](https://developer.shotgunsoftware.com/tk-multi-publish2/) が付属している Publish アプリもあります。
-Publish API は最終的にコア sgtk API メソッドを使用して PublishedFile を登録しますが、カスマイズ可能な、コレクション、検証、およびパブリッシュに関するフレームワークも用意されています。Publish API ドキュメントだけでなく、[パイプライン チュートリアル](https://developer.shotgunsoftware.com/cb8926fc/?title=Pipeline+Tutorial)にも、独自のパブリッシュ プラグインを記述する例が記載されています。
+Publish API は最終的にコア sgtk API メソッドを使用して PublishedFile を登録しますが、カスマイズ可能な、コレクション、検証、およびパブリッシュに関するフレームワークも用意されています。Publish API ドキュメントだけでなく、[パイプライン チュートリアル](https://developer.shotgunsoftware.com/ja/cb8926fc/)にも、独自のパブリッシュ プラグインを記述する例が記載されています。
 
 ## register_publish() API メソッドを使用する
 未処理の Shotgun API 呼び出しを使用して Shotgun でパブリッシュ レコードを作成することは可能ですが、Toolkit の便利なメソッドを使用することをお勧めします。

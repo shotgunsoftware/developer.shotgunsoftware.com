@@ -10,7 +10,7 @@ lang: zh_CN
 我们的 sgtk API 提供了一种在 Shotgun 中注册 `PublishedFiles` 实体的[便捷方法](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.register_publish)。
 
 此外，我们还提供 Publish 应用（附带[自己的 API](https://developer.shotgunsoftware.com/tk-multi-publish2/)）。
-发布 API 最终使用核心 sgtk API 方法来注册 PublishedFile，但它还会围绕集合、验证和发布提供一个可自定义的框架。除了发布 API 文档外，我们还在[工作流教程](https://developer.shotgunsoftware.com/cb8926fc/?title=Pipeline+Tutorial)中举例说明了如何编写自己的发布插件。
+发布 API 最终使用核心 sgtk API 方法来注册 PublishedFile，但它还会围绕集合、验证和发布提供一个可自定义的框架。除了发布 API 文档外，我们还在[工作流教程](https://developer.shotgunsoftware.com/zh_CN/cb8926fc/)中举例说明了如何编写自己的发布插件。
 
 ## 使用 register_publish() API 方法
 虽然可以使用原始 Shotgun API 调用在 Shotgun 中创建发布记录，但是我们强烈建议使用 Toolkit 的便捷方法。

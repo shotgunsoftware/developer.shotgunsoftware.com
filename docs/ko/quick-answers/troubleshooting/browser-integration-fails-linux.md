@@ -11,10 +11,10 @@ Linux에서 Shotgun 데스크톱을 처음 실행하면 다음 오류 메시지 
 여전히 해결되지 않으면 support@shotgunsoftware.com으로 문의하시기 바랍니다.
 
 ### 목차
-- [](#openssl_101_ec-or-httpsconnection-related-issues)OPENSSL_1.0.1_EC 또는 HTTPSConnection 관련 문제
-- [](#libffiso5-related-issues)libffi.so.5 관련 문제
-- [](#certificate-validation-failed-related-issues)인증서 유효성 확인 실패 관련 문제
-- [](#incompatible-qt-versions)호환되지 않는 Qt 버전
+- [OPENSSL_1.0.1_EC 또는 HTTPSConnection 관련 문제](#openssl_101_ec-or-httpsconnection-related-issues)
+- [libffi.so.5 관련 문제](#libffiso5-related-issues)
+- [인증서 유효성 확인 실패 관련 문제](#certificate-validation-failed-related-issues)
+- [호환되지 않는 Qt 버전](#incompatible-qt-versions)
 
 ## OPENSSL_1.0.1_EC 또는 HTTPSConnection 관련 문제
 

@@ -11,10 +11,10 @@ lang: zh_CN
 如果问题仍存在，请随时发送电子邮件到 support@shotgunsoftware.com 以联系我们。
 
 ### 目录
-- [](#openssl_101_ec-or-httpsconnection-related-issues)OPENSSL_1.0.1_EC 或 HTTPSConnection 相关问题
-- [](#libffiso5-related-issues)libffi.so.5 相关问题
-- [](#certificate-validation-failed-related-issues)与证书验证失败相关的问题
-- [](#incompatible-qt-versions)不兼容的 Qt 版本
+- [OPENSSL_1.0.1_EC 或 HTTPSConnection 相关问题](#openssl_101_ec-or-httpsconnection-related-issues)
+- [libffi.so.5 相关问题](#libffiso5-related-issues)
+- [与证书验证失败相关的问题](#certificate-validation-failed-related-issues)
+- [不兼容的 Qt 版本](#incompatible-qt-versions)
 
 ## OPENSSL_1.0.1_EC 或 HTTPSConnection 相关问题
 

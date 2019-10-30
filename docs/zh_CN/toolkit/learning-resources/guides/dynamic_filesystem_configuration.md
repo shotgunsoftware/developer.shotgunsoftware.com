@@ -92,7 +92,7 @@ Toolkit 平台允许您使用**数据结构**来动态构建您的文件夹结�
 
 为新字段选择参数。
 
-在**“新建字段名称”(New Field Name)**中，键入“Set”。在**“常规”(GENERAL)**菜单的**“字段类型”(Field Type)**下，选择**“实体”(Entity)**，然后向下滚动以将类型限制为******“集”(Set)**。选择**“下一步”(Next)**。
+在**“新建字段名称”(New Field Name)**中，键入“Set”。在**“常规”(GENERAL)**菜单的**“字段类型”(Field Type)**下，选择**“实体”(Entity)**，然后向下滚动以将**类型限制**为**“集”(Set)**。选择**“下一步”(Next)**。
 
 ![Python 应用](./images/dynamic_filesystem_configuration/7_field_parameters.png)
 
