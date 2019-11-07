@@ -29,6 +29,7 @@ shotgun-utils: Shotgun Utils Framework
 publish-api: Publish API
 app-development: App Development
 file-system-configuration: File System Configuration
+development: Development
 
 user-manual: User Manual
 technical-reference: Technical Reference
