@@ -9,7 +9,7 @@ lang: zh_CN
 
 ## 如何更新我的工作流配置以使用本地核心？
 
-如果您的工作流配置已[设置为使用共享 Toolkit 核心](https://support.shotgunsoftware.com/hc/en-us/articles/219040468#shared)，那么您实际上可以撤消该过程，或者“取消共享”核心，并使用 tank localize 命令在工作流配置内安装 Toolkit 核心 API 的副本。我们将其称为“本地化”核心。 
+如果您的工作流配置已设置为使用共享 Toolkit 核心，那么您实际上可以撤消该过程，或者“取消共享”核心，并使用 tank localize 命令在工作流配置内安装 Toolkit 核心 API 的副本。我们将其称为“本地化”核心。 
 
 1. 打开终端并导航到要安装 Toolkit 核心的工作流配置。
 

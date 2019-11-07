@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 当我设置 NUKE_PATH 环境变量时为什么 Toolkit 无法启动？
+title: 当我设置 NUKE_PATH 环境变量时为什么 Nuke 集成无法启动？
 pagename: nuke-path-environment-variable
 lang: zh_CN
 ---
 
-# 当我设置 NUKE_PATH 环境变量时为什么 Toolkit 无法启动？
+# 当我设置 NUKE_PATH 环境变量时为什么 Nuke 集成无法启动？
 
 启动 NUKE 时，我们的集成会设置 `NUKE_PATH` 环境变量，以便引导脚本在 NUKE 启动过程中运行。[`tk-multi-launchapp`](https://support.shotgunsoftware.com/hc/zh-cn/articles/219032968-Application-Launcher#Set%20Environment%20Variables%20and%20Automate%20Behavior%20at%20Launch) 在执行 [`before_launch_app.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/6a884aa144851148e8369e9f35a2471087f98d16/hooks/before_app_launch.py) 挂钩之前专门定义了 `NUKE_PATH`。
 

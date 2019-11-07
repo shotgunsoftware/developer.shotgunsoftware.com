@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "解决与 Python API 相关的 SSL: CERTIFICATE_VERIFY_FAILED 问题"
+title: “解决与 Python API 相关的 SSL: CERTIFICATE_VERIFY_FAILED 问题”
 pagename: fix-ssl-certificate-verify-failed
 lang: zh_CN
 ---

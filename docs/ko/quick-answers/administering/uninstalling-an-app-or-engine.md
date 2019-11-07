@@ -43,8 +43,7 @@ lang: ko
 {% include warning title="중요" content="`tk-multi-publish2.yml`을 제거해도 이를 가리키는 엔진 파일이 남아 있는 경우 다음과 같은 내용의 오류가 발생합니다.
 
     Error
-    Include resolve error in '/configs/my_project/env/./includes/settings/tk-desktop2.yml': './tk-multi-publish2.yml' resolved to '/configs/my_project/env/./includes/settings/./tk-multi-publish2.yml' which does not exist!
-" %}
+    Include resolve error in '/configs/my_project/env/./includes/settings/tk-desktop2.yml': './tk-multi-publish2.yml' resolved to '/configs/my_project/env/./includes/settings/./tk-multi-publish2.yml' which does not exist! " %}
 
 ### 앱 위치 제거
 

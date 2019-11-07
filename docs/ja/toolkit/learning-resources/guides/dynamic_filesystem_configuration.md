@@ -385,7 +385,7 @@ Maya で、**[Shotgun] > [File Open]（ファイルを開く）**に移動し、
 
 ### パス キャッシュ
 
-フォルダ作成時に、ディスク上のフォルダと Shotgun エンティティの間にマッピングが作成されます。これらのマッピングは Shotgun の FilesystemLocation エンティティとして保存され、ユーザのマシンの SQLite データベースにキャッシュされます。パス キャッシュの機能とその使用方法の詳細については、[このドキュメント](https://support.shotgunsoftware.com/hc/ja/articles/219040418-What-is-the-Path-Cache-What-are-Filesystem-Locations-)を参照してください。
+フォルダ作成時に、ディスク上のフォルダと Shotgun エンティティの間にマッピングが作成されます。これらのマッピングは Shotgun の FilesystemLocation エンティティとして保存され、ユーザのマシンの SQLite データベースにキャッシュされます。パス キャッシュの仕組みと、その使用方法の詳細については、[このドキュメント](../../../quick-answers/administering/what-is-path-cache.md)を参照してください。
 
 
 ### その他のリソース

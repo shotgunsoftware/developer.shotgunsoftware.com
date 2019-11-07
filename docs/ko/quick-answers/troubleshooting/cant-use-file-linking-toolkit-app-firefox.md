@@ -9,7 +9,8 @@ lang: ko
 
 ## 개요
 
-간혹 Shotgun의 액션 메뉴에 사용 가능한 툴킷 응용프로그램 목록이 표시되지 않거나, Shotgun 데스크톱이 실행 중인데도 로컬 파일 링크를 사용하면 오류가 발생할 수 있습니다. 이 문서는 Firefox에서 Shotgun 데스크톱의 브라우저 통합 문제를 해결하고, 원하는 기능들이 제대로 작동하도록 하는 데 도움을 주기 위한 안내서입니다. [Chrome](./cant-use-file-linking-toolkit-app-chrome.md)의 경우 별도의 안내서가 있습니다.
+간혹 Shotgun의 액션 메뉴에 사용 가능한 툴킷 응용프로그램 목록이 표시되지 않거나, Shotgun 데스크톱이 실행 중인데도 로컬 파일 링크를 사용하면 오류가 발생할 수 있습니다.
+이 문서는 Firefox에서 Shotgun 데스크톱의 브라우저 통합 문제를 해결하고, 원하는 기능들이 제대로 작동하도록 하는 데 도움을 주기 위한 안내서입니다. [Chrome](./cant-use-file-linking-toolkit-app-chrome.md)의 경우 별도의 안내서가 있습니다.
 
 ## 문제 진단
 
@@ -19,7 +20,7 @@ lang: ko
 
 ### 방화벽 소프트웨어를 사용 중입니까?
 
-**방화벽 소프트웨어가 **localhost** 또는 포트 **9000 접속을 차단 중이지 않은지 확인하십시오.
+방화벽 소프트웨어가 **localhost** 또는 포트 **9000** 접속을 차단 중이지 않은지 확인하십시오.
 
 ### Firefox가 인증서를 거부합니까?
 
@@ -41,7 +42,7 @@ https://localhost:9000으로 이동하여 Firefox가 인증서를 수락하는�
 
 ****인증서 가져오기(Get Certificate)**를 클릭한 다음 **보안 예외 확인(Confirm Security Exception)을 클릭합니다. 인증서를 신뢰할 수 없다는 메시지는 무시해도 됩니다. 인증서가 인증 기관이 아닌 Shotgun 데스크톱에 의해 생성된 경우에 보통 발생하는 일입니다.
 
-이제 Shotgun 사이트에서 로컬 파일 링크에 액세스하고 툴킷 응용프로그램을 실행할 수 있습니다. 예외를 추가하고도 계속 문제가 발생하면 [지원 팀](support@shotgunsoftware.com)에 문의하십시오.
+이제 Shotgun 사이트에서 로컬 파일 링크에 액세스하고 툴킷 응용프로그램을 실행할 수 있습니다. 예외를 추가한 뒤에도 계속 문제가 발생하면 support@shotgunsoftware.com으로 문의하십시오.
 
 ## "보안 연결 실패" 문제를 해결하는 방법
 
@@ -57,4 +58,4 @@ https://localhost:9000으로 이동하여 Firefox가 인증서를 수락하는�
 
 이때 위에 설명된 단계에 따라 예외를 추가해야 합니다.
 
-이 화면이 아닌 다른 화면이 나타난 경우 [지원 팀](support@shotgunsoftware.com)에 문의하십시오.
+이 화면이 아닌 다른 화면이 표시된 경우 support@shotgunsoftware.com으로 문의하십시오.

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Python API で発生する SSL: CERTIFICATE_VERIFY_FAILED の問題の解決"
+title: Python API で発生する SSL: CERTIFICATE_VERIFY_FAILED の問題の解決
 pagename: fix-ssl-certificate-verify-failed
 lang: ja
 ---

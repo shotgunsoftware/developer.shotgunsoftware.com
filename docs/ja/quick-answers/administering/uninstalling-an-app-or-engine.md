@@ -41,8 +41,7 @@ lang: ja
 {% include warning title="重要" content="`tk-multi-publish2.yml` を削除したにもかかわらず、これを指しているエンジン ファイルが存続している場合は、次の行と共にエラーが表示される可能性があります。
 
     Error
-    Include resolve error in '/configs/my_project/env/./includes/settings/tk-desktop2.yml': './tk-multi-publish2.yml' resolved to '/configs/my_project/env/./includes/settings/./tk-multi-publish2.yml' which does not exist!
-" %}
+    Include resolve error in '/configs/my_project/env/./includes/settings/tk-desktop2.yml': './tk-multi-publish2.yml' resolved to '/configs/my_project/env/./includes/settings/./tk-multi-publish2.yml' which does not exist!" %}
 
 ### アプリの場所を削除する
 
