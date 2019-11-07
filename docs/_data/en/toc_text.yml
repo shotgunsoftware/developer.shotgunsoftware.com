@@ -27,9 +27,10 @@ core-api: Toolkit Core API
 qt-widgets: QT Widgets Framework
 shotgun-utils: Shotgun Utils Framework
 publish-api: Publish API
-app-development: App Development
-file-system-configuration: File System Configuration
 development: Development
+app-development: App Development
+engine-development: Engine Development
+file-system-configuration: File System Configuration
 
 user-manual: User Manual
 technical-reference: Technical Reference
