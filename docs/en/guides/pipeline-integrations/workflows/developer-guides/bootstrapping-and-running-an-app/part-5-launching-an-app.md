@@ -5,7 +5,7 @@ pagename: part-4-launching-an-app
 lang: en
 ---
 
-# Part 4 - Launching an app
+# Part 5 - Launching an app
 
 Now you have an engine instance, your ready to start using the Toolkit API.
 
@@ -71,4 +71,4 @@ if app_command:
 Your app should now have started, and if your running the `tk-shell` engine then the output should be appearing in the terminal/console.
 
 [Overview](./sgtk-developer-bootstrapping.md)<br/>
-[Previous step](./part-3-bootstrapping.md)
+[Previous step](part-4-bootstrapping.md)

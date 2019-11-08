@@ -37,4 +37,4 @@ sys.path.insert(0, "/path/to/sgtk-package")
 import sgtk
 ```
 
-Now to [authenticate](part-2-authentication.md).
+Now to [authenticate](part-2-logging.md).

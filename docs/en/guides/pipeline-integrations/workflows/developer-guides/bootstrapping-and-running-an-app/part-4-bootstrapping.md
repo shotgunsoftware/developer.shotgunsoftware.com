@@ -5,10 +5,10 @@ pagename: part-3-bootstrapping
 lang: en
 ---
 
-# Part 3 - Bootstrapping an engine
+# Part 4 - Bootstrapping an engine
 
 [Overview](./sgtk-developer-bootstrapping.md)<br/>
-[Previous step](./part-2-authentication.md)
+[Previous step](part-3-authentication.md)
 
 Now you have an authenticated sgtk API, you can start the bootstrapping process.
 You can find a lot of information on the bootstrap API in our [reference docs](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api).
@@ -122,13 +122,4 @@ project = {"type": "Project", "id": 176}
 engine = mgr.bootstrap_engine("tk-shell", entity=project)
 ```
 
-# TODO: maybe move this to it's own section? 
-Enabling Debug
-```python
-# initialize the logger so we get output to our terminal
-sgtk.LogManager().initialize_custom_handler()
-# set debugging to true
-sgtk.LogManager().global_debug = True
-```
-
-Next step [launching an app](part-4-launching-an-app.md).
+Next step [launching an app](part-5-launching-an-app.md).

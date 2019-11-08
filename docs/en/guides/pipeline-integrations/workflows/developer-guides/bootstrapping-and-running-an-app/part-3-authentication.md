@@ -5,10 +5,10 @@ pagename: part-2-authentication
 lang: en
 ---
 
-# Part 2 - Authentication
+# Part 3 - Authentication
 
 [Overview](./sgtk-developer-bootstrapping.md)<br/>
-[Previous step](./part-1-importing-sgtk-for-bootstrapping.md)
+[Previous step](./part-2-logging.md)
 
 When running a script that uses the sgtk API out side of an an environment where sgtk has already been started you will 
 always need to authenticate. So before you can perform the bootstrapping you need to authenticate the API with 
