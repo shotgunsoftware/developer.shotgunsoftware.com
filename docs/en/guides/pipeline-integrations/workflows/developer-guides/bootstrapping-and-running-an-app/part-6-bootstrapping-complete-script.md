@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Part 8 The complete script
-pagename: part-8-getting-started-complete-script
+pagename: part-8-bootstrapping-complete-script
 lang: en
 ---
 
