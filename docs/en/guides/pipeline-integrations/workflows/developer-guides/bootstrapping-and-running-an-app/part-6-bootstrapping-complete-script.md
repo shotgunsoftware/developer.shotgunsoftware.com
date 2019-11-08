@@ -7,8 +7,8 @@ lang: en
 
 # Part 6 - The complete script
 
-[Overview](./sgtk-developer-generating-path-and-publish.md)<br/>
-[Previous step](./part-7-registering-publish.md)
+[Overview](./sgtk-developer-bootstrapping.md)<br/>
+[Previous step](./part-6-bootstrapping-complete-script.md)
 
 ```python
 # Import Toolkit so we can access to Toolkit specific features.

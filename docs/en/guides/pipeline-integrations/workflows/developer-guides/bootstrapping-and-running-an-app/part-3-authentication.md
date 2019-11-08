@@ -78,4 +78,4 @@ user = authenticator.create_script_user(
 sgtk.set_authenticated_user(user)
 ```
 
-Next step [bootstrapping!](#part-3-bootstrapping.md)
+Next step [bootstrapping!](part-4-bootstrapping.md)

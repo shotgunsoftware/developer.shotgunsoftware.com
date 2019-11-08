@@ -7,6 +7,9 @@ lang: en
 
 # Part 5 - Launching an app
 
+[Overview](./sgtk-developer-bootstrapping.md)<br/>
+[Previous step](part-4-bootstrapping.md)
+
 Now you have an engine instance, your ready to start using the Toolkit API.
 
 Before moving onto launching the app, it's worth pointing out you can get hold of the [current context](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), [Sgtk instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk), and [Shotgun API instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun) via the engine.
@@ -70,5 +73,4 @@ if app_command:
 
 Your app should now have started, and if your running the `tk-shell` engine then the output should be appearing in the terminal/console.
 
-[Overview](./sgtk-developer-bootstrapping.md)<br/>
-[Previous step](part-4-bootstrapping.md)
+Finally here is the [complete script](part-6-bootstrapping-complete-script.md).
