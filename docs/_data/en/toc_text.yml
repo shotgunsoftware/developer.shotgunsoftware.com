@@ -3,24 +3,34 @@
 # For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
 #
 
+reference: Reference
+guides: Guides
+
+
 rv: RV
 toolkit: Toolkit
 shotgun: Shotgun
 quick-answers: Quick Answers
+pipeline-integrations: Pipeline Integrations
 
 python-api: Python API
 rest-api: REST API
-event-triggers: Event Driven Triggers
-jira-bridge: Jira Bridge (Beta)
+event-triggers: Writing Event-Driven Triggers
+action-menu-items: Creating custom Action Menu Items
+jira-bridge-guide: Sync Data Between Jira and Shotgun (Beta)
+jira-bridge-ref: Jira Bridge Dev Resources (Beta)
 examples: Examples
-reference: Reference
 webinars: Webinar Recordings
+developer-training-videos: Developer Training Videos
 
-core-api: Core API
-qt-widgets: QT Widgets
-shotgun-utils: Shotgun Utils
+core-api: Toolkit Core API
+qt-widgets: QT Widgets Framework
+shotgun-utils: Shotgun Utils Framework
 publish-api: Publish API
+development: Development
 app-development: App Development
+engine-development: Engine Development
+file-system-configuration: File System Configuration
 
 user-manual: User Manual
 technical-reference: Technical Reference

@@ -1,13 +1,12 @@
 ---
 layout: default
-title: Overview
+title: Pipeline Integrations
 pagename: toolkit-index
 lang: en
 ---
 
-# The Toolkit Platform
+# Pipeline Integrations
 
-Toolkit is an extensible platform for integrating artist applications and pipeline tools with Shotgun.
+Shotgun includes integrations that bring the Shotgun experience into the creative tools artists use every day. Out of the box, you get plugin within artists’ tools that give you the foundation for a basic publish pipeline.
 
-The Toolkit Core API is the platform upon which all integrations are built. The Core API handles app, engine, and platform fundamentals, as well as file system organization and tool deployment.
-
+These integrations are built on the Toolkit platform, a set of APIs, UIs, and configurations that give studios the tools to build custom workflows. 
