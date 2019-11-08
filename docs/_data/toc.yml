@@ -35,7 +35,7 @@
       - page: toolkit-administration
         children:
         - page: disabling-auto-updates-and-offline
-      - page: development 
+      - page: toolkit-development 
         children: 
          - text: app-development
            url: " https://support.shotgunsoftware.com/hc/en-us/articles/219033158"
