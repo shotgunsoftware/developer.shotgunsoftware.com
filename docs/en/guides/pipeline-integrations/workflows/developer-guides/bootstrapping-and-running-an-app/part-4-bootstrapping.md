@@ -86,6 +86,11 @@ Here is a recap of the code so far:
 # Import Toolkit so we can access to Toolkit specific features.
 import sgtk
 
+# Initialize the logger so we get output to our terminal.
+sgtk.LogManager().initialize_custom_handler()
+# Set debugging to true so that we get more verbose output, (should only be used for testing).
+sgtk.LogManager().global_debug = True
+
 # Authentication
 ################
 
