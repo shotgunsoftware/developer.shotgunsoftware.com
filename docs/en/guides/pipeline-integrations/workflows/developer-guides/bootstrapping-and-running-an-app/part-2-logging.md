@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Part 1 Importing the sgtk API for bootstrapping
-pagename: part-1-importing-sgtk-bootstrap
+title: Part 2 Logging
+pagename: part-2-logging
 lang: en
 ---
 
