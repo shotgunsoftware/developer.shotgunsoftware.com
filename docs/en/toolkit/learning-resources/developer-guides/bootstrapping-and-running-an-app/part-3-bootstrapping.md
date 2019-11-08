@@ -21,8 +21,9 @@ If they are not present, and they are using cloud based descriptors such as app 
 3. Swaps out the current loaded sgtk core for the one appropriate to the config.
 4. Initializes the engine, apps and frameworks.
 
-Usually bootstrapping should take care of everything that is needed for that engine to run successfully.
-However, in some situations, the engine may have specific setup requirements that fall outside of the bootstrap process, and must be handled separately.
+
+{% include info title="Note" content="Usually bootstrapping should take care of everything that is needed for that engine to run successfully.
+However, in some situations, the engine may have specific setup requirements that fall outside of the bootstrap process, and must be handled separately." %}
 
 
 ## Bootstrap Preperation
@@ -33,7 +34,7 @@ mgr = sgtk.bootstrap.ToolkitManager()
 ```
 
 In order for Toolkit to bootstrap, it needs to know at least the entity, plugin id, and engine.
-This guide wont cover all the available parameters and options, as that's covered in the [reference documentation](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api) .
+This guide wont cover all the available parameters and options, as that's covered in the [reference documentation](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api).
 
 #### Plugin ID
 
@@ -48,7 +49,7 @@ If your goal is to launch an app or run Toolkit code in a standalone python envi
 then `tk-shell` is the engine you will want to bootstrap into. 
 
 If you are wanting to run Toolkit apps within a supported Software then you will want to pick the appropriate engine, such as `tk-maya` or `tk-nuke`.
-This parameter is passed directly to the bootstrap method
+This parameter is passed directly to the `bootstrap_engine` method.
 
 ```python
 engine = mgr.bootstrap_engine("tk-shell", ...
@@ -66,18 +67,18 @@ task = {"type": "Task", "id": 17264}
 engine = mgr.bootstrap_engine("tk-shell", entity=task)
 ```
 
-TODO: mention the perils of path cache not being sync'd and trying to load contexts other than Project. Mention callback to run sync during bootstrap.
+# TODO: mention the perils of path cache not being sync'd and trying to load contexts other than Project. Mention callback to run sync during bootstrap.
 
 #### Choice of configuration
 
 You have the choice of explicitly defining which configuration to bootstrap, or leaving the bootstrap logic to [autodetect an appropriate configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#managing-distributed-configurations).
 You can even set a fall back configuration in case one is not automatically found.
-In this guide we assume the automatically selected configuration is fine. 
+In this guide we assume that your project has a configuration already setup and that it will be found automatically. 
 
 ## Bootstrapping
 
 Once all the `ToolkitManager` parameters have been set, and you call the `bootstrap_engine` engine method, it will start the
-engine, and return back pointer to the engine instance.
+engine, and return back a pointer to the engine instance.
 
 Here is a recap of the code so far:
 
@@ -121,6 +122,7 @@ project = {"type": "Project", "id": 176}
 engine = mgr.bootstrap_engine("tk-shell", entity=project)
 ```
 
+# TODO: maybe move this to it's own section? 
 Enabling Debug
 ```python
 # initialize the logger so we get output to our terminal

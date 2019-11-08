@@ -10,14 +10,16 @@ lang: en
 [Overview](./sgtk-developer-bootstrapping.md)<br/>
 [Previous step](./part-1-importing-sgtk-for-bootstrapping.md)
 
-Before you can perform the bootstrapping you need to authenticate the API against your Shotgun site.
+When running a script that uses the sgtk API out side of an an environment where sgtk has already been started you will 
+always need to authenticate. So before you can perform the bootstrapping you need to authenticate the API with 
+your Shotgun site.
 
 You can either authenticate using user credentials or with script credentials. Which you should use will depend on your
 use case.
 
 If the purpose is to bootstrap for a user facing process like launching an app, or running some code that will require user input,
-then user authentication is probably the best way to go (This is how all our integrations work by default).
-If your writing a script to automate something and a user is not present to authenticate then you should use script credentials.
+then user authentication is the best way to go, (This is how all our integrations work by default).
+If you're writing a script to automate something and a user is not present to authenticate then you should use script credentials.
 
 ## User Authentication
 

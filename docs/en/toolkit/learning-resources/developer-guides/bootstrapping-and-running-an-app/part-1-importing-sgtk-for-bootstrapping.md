@@ -12,7 +12,7 @@ lang: en
 ## Where should I import sgtk from?
 
 If you've followed the [generating a path and publishing it](../generating-path-and-publish/sgtk-developer-generating-path-and-publish.md) 
-guide then your'll have covered the step of importing sgtk. In that step it states that you must import the sgtk API package from
+guide then your'll have covered the step of importing sgtk. In that guide it states that you must import the sgtk API package from
 the project configuration you wish to work with. This is still true, however, with bootstrapping, it doesn't actually matter
 which initial sgtk API you import, as any sgtk API can perform the bootstrap operation into a different project configuration.
 As part of this process it will swap out the currently imported sgtk package for the new project config's sgtk API.
@@ -23,8 +23,8 @@ To start with you need to import an sgtk API package.
 You could import one from an existing project, however this might be tricky to conveniently locate.
 A recommended approach would be to download a standalone copy 
 of the [latest core API]((https://github.com/shotgunsoftware/tk-core/releases)) which will be used purely for the purpose of bootstrapping.
-You should store it in a conveinent place where it can be imported. 
-Then you can add the path to `sys.path`, if it's not located in a standard location that python will look in.
+You should store it in a convenient place where it can be imported. 
+If it's not located in a standard location that python will look in, then you can add the path to `sys.path`. 
 
 ## Code
 
