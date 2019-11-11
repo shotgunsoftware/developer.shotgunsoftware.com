@@ -85,6 +85,8 @@
 
 - caption: other
   children:
+  - text: community
+    url: " https://community.shotgunsoftware.com/"
   - page: contribution-index
   - text: shotgun-support
     url: " https://support.shotgunsoftware.com/"
