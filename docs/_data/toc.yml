@@ -17,8 +17,6 @@
       url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
     - text: jira-bridge-guide
       url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
-    - text: developer-training-videos
-      url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"
     - page: toolkit-pipeline-integrations
       children:
       - page: toolkit-getting-started
@@ -76,13 +74,22 @@
   - page: quick-answers-developing
   - page: quick-answers-workflow
 
+- caption: videos
+  children:
+  - text: siggraph-shotgun-day
+    url: " https://www.youtube.com/playlist?list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d"
+  - text: developer-training-videos
+    url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"  
+  - text: toolkit-webinars
+    url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
+
 - caption: other
   children:
-    - page: contribution-index
-    - text: shotgun-support
-      url: " https://support.shotgunsoftware.com/"
-    - text: service-status
-      url: " https://status.shotgunsoftware.com/"
-    - text: new-support-request
-      url: " https://support.shotgunsoftware.com/hc/requests/new"
+  - page: contribution-index
+  - text: shotgun-support
+    url: " https://support.shotgunsoftware.com/"
+  - text: service-status
+    url: " https://status.shotgunsoftware.com/"
+  - text: new-support-request
+    url: " https://support.shotgunsoftware.com/hc/requests/new"
 
