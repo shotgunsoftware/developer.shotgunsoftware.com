@@ -17,7 +17,6 @@
       url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
     - text: jira-bridge-guide
       url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
-    - page: review   
     - page: toolkit-pipeline-integrations
       children:
       - page: toolkit-getting-started
@@ -40,6 +39,22 @@
            url: " https://support.shotgunsoftware.com/hc/en-us/articles/219033158"
          - text: engine-development
            url: " https://support.shotgunsoftware.com/hc/en-us/articles/219040348"
+    - page: review
+      children:
+      - text: user-manual
+        url: " http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_manual.html"
+      - text: rv-sdi
+        url: " http://www.tweaksoftware.com/static/documentation/rv/current/html/rvsdi_manual.html"
+      - page: rv-integrations
+        children:
+        - text: maya
+          url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/maya_tools_help.html"
+        - text: nuke
+          url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvnuke_help.html"
+        - text: shotgun
+          url: "https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
+        - text: screening-room
+          url: "https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"   
     - page: shotgun-webhooks
 
 
