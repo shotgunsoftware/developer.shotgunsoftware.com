@@ -10,6 +10,7 @@ guides: Guides
 rv: RV
 toolkit: Toolkit
 shotgun: Shotgun
+review: Review
 quick-answers: Quick Answers
 pipeline-integrations: Pipeline Integrations
 
@@ -34,6 +35,7 @@ file-system-configuration: File System Configuration
 
 user-manual: User Manual
 technical-reference: Technical Reference
+rv-technical-reference: RV Technical Reference
 rv-sdi: RV-SDI
 forums: Forums
 
