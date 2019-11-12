@@ -2,6 +2,7 @@
 layout: default
 title: Review
 pagename: review
+lang: en
 ---
 
 # Review
