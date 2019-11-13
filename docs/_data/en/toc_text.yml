@@ -28,6 +28,7 @@ core-api: Toolkit Core API
 qt-widgets: QT Widgets Framework
 shotgun-utils: Shotgun Utils Framework
 publish-api: Publish API
+hiero-export-api: Hiero Export API
 development: Development
 app-development: App Development
 engine-development: Engine Development
