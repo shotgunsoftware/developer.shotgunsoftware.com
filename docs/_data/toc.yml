@@ -80,6 +80,8 @@
       url: " https://developer.shotgunsoftware.com/tk-framework-shotgunutils/"
     - text: publish-api
       url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
+    - text: hiero-export-api
+      url: " https://developer.shotgunsoftware.com/tk-hiero-export"
     - text: file-system-configuration
       url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
     - page: env-config-ref
