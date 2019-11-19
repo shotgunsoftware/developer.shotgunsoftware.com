@@ -38,9 +38,8 @@
       - page: toolkit-development 
         children:
          - page: sgtk-developer-getting-started
-           children:
-           - page: sgtk-developer-generating-path-and-publish
-           - page: sgtk-developer-bootstrapping
+         - page: sgtk-developer-generating-path-and-publish
+         - page: sgtk-developer-bootstrapping
          - text: app-development
            url: " https://support.shotgunsoftware.com/hc/en-us/articles/219033158"
          - text: engine-development
