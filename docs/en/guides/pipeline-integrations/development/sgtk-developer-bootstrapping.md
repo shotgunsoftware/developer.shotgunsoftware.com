@@ -17,16 +17,16 @@ Or you may wish to be able to run your Toolkit app from your favourite IDE.
 ### Requirements
 
 - An understanding of Python programing fundamentals. 
-- A project with an advanced configuration. If you haven't setup a configuration before you can follow the ["Getting started with configurations"](need link) guide.
+- A project with an advanced configuration. If you haven't setup a configuration before you can follow the ["Getting started with configurations"](../getting-started/advanced_config.md) guide.
 
 ### Steps
 
-1. [Importing the sgtk API for bootstrapping](../workflows/developer-guides/bootstrapping-and-running-an-app/part-1-importing-sgtk-for-bootstrapping.md)
-2. [Logging](../workflows/developer-guides/bootstrapping-and-running-an-app/part-2-logging.md)
-3. [Authentication](../workflows/developer-guides/bootstrapping-and-running-an-app/part-3-authentication.md)
-4. [Bootstrapping an engine](../workflows/developer-guides/bootstrapping-and-running-an-app/part-4-bootstrapping.md)
-5. [launching an app](../workflows/developer-guides/bootstrapping-and-running-an-app/part-5-launching-an-app.md)
-6. [Complete script](../workflows/developer-guides/bootstrapping-and-running-an-app/part-6-bootstrapping-complete-script.md)
+1. [Importing the sgtk API for bootstrapping](#part-1---importing-the-sgtk-api-for-bootstrapping)
+2. [Logging](#part-2---logging)
+3. [Authentication](#part-3---authentication)
+4. [Bootstrapping an engine](#part-4---bootstrapping-an-engine)
+5. [launching an app](#part-5---launching-an-app)
+6. [Complete script](#part-6---the-complete-script)
 
 ## Part 1 - Importing the sgtk API for bootstrapping
 
@@ -168,7 +168,7 @@ However, in some situations, the engine may have specific setup requirements tha
 
 
 ### Bootstrap Preperation
-To bootstrap you must first create a `ToolkitManager` instance.
+To bootstrap you must first create a [`ToolkitManager`](https://developer.shotgunsoftware.com/tk-core/initializing.html#toolkitmanager) instance.
 
 ```python
 mgr = sgtk.bootstrap.ToolkitManager()
@@ -190,7 +190,7 @@ If your goal is to launch an app or run Toolkit code in a standalone python envi
 then `tk-shell` is the engine you will want to bootstrap into. 
 
 If you are wanting to run Toolkit apps within a supported Software then you will want to pick the appropriate engine, such as `tk-maya` or `tk-nuke`.
-This parameter is passed directly to the `bootstrap_engine` method.
+This parameter is passed directly to the [`bootstrap_engine` method](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine).
 
 ```python
 engine = mgr.bootstrap_engine("tk-shell", ...
@@ -199,7 +199,7 @@ engine = mgr.bootstrap_engine("tk-shell", ...
 #### Entity
 The entity can be of any entity type that the configuration is setup to work with. 
 For example if you provide a `Project` entity, the engine will start up in a project context, using the project environment settings.
-Like wise you could provide a `Task` entity (where the task is linked to an `Asset`), and it will start up using the asset_step environment.
+Likewise you could provide a `Task` entity (where the task is linked to an `Asset`), and it will start up using the `asset_step.yml` environment.
 
 You need to provide the entity in the format of a Shotgun entity dictionary which must contain at least the type and id: 
 
@@ -208,7 +208,27 @@ task = {"type": "Task", "id": 17264}
 engine = mgr.bootstrap_engine("tk-shell", entity=task)
 ```
 
-# TODO: mention the perils of path cache not being sync'd and trying to load contexts other than Project. Mention callback to run sync during bootstrap.
+If you bootstrap into an entity type other than `Project`, you may need to ensure your path cache is in sync, 
+otherwise it may not be able to load the environment if for example it tries to resolve a template.
+Since you don't have an `Sgtk` instance before bootstrapping, you will need to tell the bootstrap process to perform the 
+synchronization after it's created an `Sgtk` instance but before it starts the engine.
+You can do this by setting the [`pre_engine_start_callback`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.pre_engine_start_callback)
+property to point to a custom method. In that method you can then run the synchronization:
+
+```python
+def pre_engine_start_callback(ctx):
+    '''
+    Called before the engine is started.
+
+    :param :class:"~sgtk.Context" ctx: Context into
+        which the engine will be launched. This can also be used
+        to access the Toolkit instance.
+    '''
+    ctx.sgtk.synchronize_filesystem_structure()
+
+mgr.pre_engine_start_callback = pre_engine_start_callback
+```
+
 
 #### Choice of configuration
 
