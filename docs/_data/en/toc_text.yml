@@ -10,6 +10,7 @@ guides: Guides
 rv: RV
 toolkit: Toolkit
 shotgun: Shotgun
+review: Review
 quick-answers: Quick Answers
 pipeline-integrations: Pipeline Integrations
 
@@ -27,6 +28,7 @@ core-api: Toolkit Core API
 qt-widgets: QT Widgets Framework
 shotgun-utils: Shotgun Utils Framework
 publish-api: Publish API
+hiero-export-api: Hiero Export API
 development: Development
 app-development: App Development
 engine-development: Engine Development
@@ -34,6 +36,7 @@ file-system-configuration: File System Configuration
 
 user-manual: User Manual
 technical-reference: Technical Reference
+rv-technical-reference: RV Technical Reference
 rv-sdi: RV-SDI
 forums: Forums
 
@@ -44,8 +47,13 @@ screening-room: Screening Room and Shotgun Review
 troubleshooting: Troubleshooting
 extending-rv: Extending RV
 
-other: Other
+videos: Videos
+siggraph-shotgun-day: SIGGRAPH Shotgun Day
+developer-training: Developer Training
+toolkit-webinars: Toolkit Webinars
 
+other: Other
+community: Community
 shotgun-support: Shotgun Support
 service-status: Service Status
 new-support-request: New Support Request

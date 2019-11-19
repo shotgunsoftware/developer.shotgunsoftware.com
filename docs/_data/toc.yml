@@ -17,8 +17,6 @@
       url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
     - text: jira-bridge-guide
       url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
-    - text: developer-training-videos
-      url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"
     - page: toolkit-pipeline-integrations
       children:
       - page: toolkit-getting-started
@@ -44,8 +42,23 @@
            url: " https://support.shotgunsoftware.com/hc/en-us/articles/219033158"
          - text: engine-development
            url: " https://support.shotgunsoftware.com/hc/en-us/articles/219040348"
+    - page: review
+      children:
+      - text: user-manual
+        url: " http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_manual.html"
+      - text: rv-sdi
+        url: " http://www.tweaksoftware.com/static/documentation/rv/current/html/rvsdi_manual.html"
+      - page: rv-integrations
+        children:
+        - text: maya
+          url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/maya_tools_help.html"
+        - text: nuke
+          url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvnuke_help.html"
+        - text: shotgun
+          url: "https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
+        - text: screening-room
+          url: "https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"   
     - page: shotgun-webhooks
-
 
 
 - caption: reference
@@ -58,6 +71,8 @@
     url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
   - text: action-menu-items
     url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
+  - text: rv-technical-reference
+    url: " http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_reference.html"
   - page: pipeline-integrations-reference
     children:
     - text: core-api
@@ -68,6 +83,8 @@
       url: " https://developer.shotgunsoftware.com/tk-framework-shotgunutils/"
     - text: publish-api
       url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
+    - text: hiero-export-api
+      url: " https://developer.shotgunsoftware.com/tk-hiero-export"
     - text: file-system-configuration
       url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
     - page: env-config-ref
@@ -79,13 +96,24 @@
   - page: quick-answers-developing
   - page: quick-answers-workflow
 
+- caption: videos
+  children:
+  - text: siggraph-shotgun-day
+    url: " https://www.youtube.com/playlist?list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d"
+  - text: developer-training
+    url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"  
+  - text: toolkit-webinars
+    url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
+
 - caption: other
   children:
-    - page: contribution-index
-    - text: shotgun-support
-      url: " https://support.shotgunsoftware.com/"
-    - text: service-status
-      url: " https://status.shotgunsoftware.com/"
-    - text: new-support-request
-      url: " https://support.shotgunsoftware.com/hc/requests/new"
+  - text: community
+    url: " https://community.shotgunsoftware.com/"
+  - page: contribution-index
+  - text: shotgun-support
+    url: " https://support.shotgunsoftware.com/"
+  - text: service-status
+    url: " https://status.shotgunsoftware.com/"
+  - text: new-support-request
+    url: " https://support.shotgunsoftware.com/hc/requests/new"
 
