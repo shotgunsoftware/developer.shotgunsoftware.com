@@ -14,12 +14,15 @@ When running a script that uses the sgtk API out side of an an environment where
 always need to authenticate. So before you can perform the bootstrapping you need to authenticate the API with 
 your Shotgun site.
 
-You can either authenticate using user credentials or with script credentials. Which you should use will depend on your
+You can either authenticate using user credentials or with script credentials. Which you should use, will depend on your
 use case.
 
 If the purpose is to bootstrap for a user facing process like launching an app, or running some code that will require user input,
 then user authentication is the best way to go, (This is how all our integrations work by default).
 If you're writing a script to automate something and a user is not present to authenticate then you should use script credentials.
+
+Authentication is handled via the [`ShotgunAuthenticator`](https://developer.shotgunsoftware.com/tk-core/authentication.html?highlight=shotgunauthenticator#sgtk.authentication.ShotgunAuthenticator) 
+class, here is an example of both user and script authentication.
 
 ## User Authentication
 

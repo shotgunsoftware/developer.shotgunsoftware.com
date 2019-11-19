@@ -12,9 +12,9 @@ lang: en
 
 If you are running this script via an IDE or shell, then you will most likely want to enable the logging
 to be output. To do this you need to run [`LogManager().initialize_custom_handler()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.log.LogManager.initialize_custom_handler).
-You don't need to provide a custom handler for this purpose, as not providing one will set up a [standard stream based logging handler](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.log.LogManager.initialize_custom_handler).
+You don't need to provide a custom handler for this purpose, as not providing one will set up a standard stream based logging handler.
 
-Optionally you can also set the `LogManager().global_debug = True` to give you more verbose output. In other words any
+Optionally you can also set the [`LogManager().global_debug = True`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.log.LogManager.global_debug) to give you more verbose output. In other words any
  `logger.debug()` calls should also be output. You should only set this when developing as it can have an impact on performance. 
 
 ```python

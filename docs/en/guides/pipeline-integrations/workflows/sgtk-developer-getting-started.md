@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Getting Started with Toolkit Development
+title: Getting Started with The Toolkit API
 pagename: sgtk-developer-getting-started
 lang: en
 ---
 
-# Getting started with Toolkit development
+# Getting started with the Toolkit API
 
 ## Intro
 

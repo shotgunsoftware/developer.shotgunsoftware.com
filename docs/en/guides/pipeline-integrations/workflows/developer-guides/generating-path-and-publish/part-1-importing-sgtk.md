@@ -19,7 +19,7 @@ you wish to work with, importing it from a different configuration will lead to 
 To import the API you need to make sure that the path to the [core's python folder](https://github.com/shotgunsoftware/tk-core/tree/v0.18.167/python)
 exists in the `sys.path`. 
 However for this example we recommend that you run this code in the Shotgun Python console via Shotgun Desktop.
-This will mean tht the correct sgtk API path is already added to your sys path. Equally you don't need to add the path
+This will mean that the correct sgtk API path is already added to your sys path. Equally you don't need to add the path
 if you are running this code within Software where the Shotgun integration is already running.
 
 When running your code in an environment where Shotgun is already started you can import the API by simply writing:
