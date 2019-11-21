@@ -101,7 +101,7 @@ This displays the paths to the configuration files.
 
 ![Path to config 2](./images/installing_app/7_path_to_config2.png)
 
-**Step 6:** **Right-click** in the empty space next to the **Primary** line item and select **Clone this Configuration…** in the context menu.
+**Step 6:** **Right-click** in the empty space next to the **Primary** line item and select **Clone this Configuration…** in the context menu. _Your pipeline configuration must be assigned to a Project for this option to appear._
 
 ![Clone_complete](./images/installing_app/8_clone_complete.png)
 
