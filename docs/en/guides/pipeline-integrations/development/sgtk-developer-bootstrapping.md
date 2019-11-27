@@ -12,7 +12,7 @@ also known as bootstrapping.
 
 Bootstrapping is useful in situations where a Toolkit engine has not already been started and you need to use the API.
 For example, you might have a processing script that runs on a render farm and needs to utilize the Toolkit API to handle paths and context.
-Or you may wish to be able to run your Toolkit app from your favourite IDE.
+Or you may wish to be able to run your Toolkit app from your favorite IDE.
 
 ### Requirements
 
@@ -82,15 +82,14 @@ When running a script that uses the sgtk API outside of an environment where sgt
 always need to authenticate. So before you can perform the bootstrapping you need to authenticate the API with 
 your Shotgun site.
 
-You can either authenticate using user credentials or with script credentials. Which you should use, will depend on your
-use case.
+You can authenticate with user credentials or with script credentials.
 
-If the purpose is to bootstrap for a user-facing process like launching an app, or running some code that will require user input,
+- If the purpose is to bootstrap for a user-facing process like launching an app, or running some code that will require user input,
 then user authentication is the best way to go, (This is how all our integrations work by default).
-If you're writing a script to automate something and a user is not present to authenticate then you should use script credentials.
+- If you're writing a script to automate something and a user is not present to authenticate then you should use script credentials.
 
 Authentication is handled via the [`ShotgunAuthenticator`](https://developer.shotgunsoftware.com/tk-core/authentication.html?highlight=shotgunauthenticator#sgtk.authentication.ShotgunAuthenticator) 
-class, here is an example of both user and script authentication.
+class. Here is an example of both user and script authentication.
 
 ### User Authentication
 
@@ -110,7 +109,7 @@ authenticator = ShotgunAuthenticator()
 authenticator.clear_default_user()
 
 # The user will be prompted for their username,
-# password and optional 2-factor authentication code. If a QApplication is
+# password, and optional 2-factor authentication code. If a QApplication is
 # available, a UI will pop-up. If not, the credentials will be prompted
 # on the command line. The user object returned encapsulates the login
 # information.
@@ -156,11 +155,11 @@ You can find a lot of information on the bootstrap API in our [reference docs](h
 
 The bootstrapping process at a high level essentially performs the following steps:
 
-1. Gets the configuration to use.
+1. Retrieves or locates the Toolkit configuration folder.
 2. Ensures that the configuration dependencies such as the apps and engines are present in the bundle cache. 
-If they are not present, and they are using cloud-based descriptors such as app store, or Shotgun then it will download them to the bundle cache.
+If they are not present, and they are using cloud-based descriptors such as `app_store`, or `shotgun` then it will download them to the bundle cache.
 3. Swaps out the current loaded sgtk core for the one appropriate to the config.
-4. Initializes the engine, apps and frameworks.
+4. Initializes the engine, apps, and frameworks.
 
 
 {% include info title="Note" content="Usually bootstrapping should take care of everything that is needed for that engine to run successfully.
@@ -209,7 +208,7 @@ engine = mgr.bootstrap_engine("tk-shell", entity=task)
 ```
 
 If you bootstrap into an entity type other than `Project`, you may need to ensure your path cache is in sync, 
-otherwise, it may not be able to load the environment if for example, it tries to resolve a template.
+otherwise, it may not be able to load the environment if, for example, it tries to resolve a template.
 Since you don't have an `Sgtk` instance before bootstrapping, you will need to tell the bootstrap process to perform the 
 synchronization after it's created an `Sgtk` instance but before it starts the engine.
 You can do this by setting the [`pre_engine_start_callback`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.pre_engine_start_callback)
@@ -292,7 +291,7 @@ engine = mgr.bootstrap_engine("tk-shell", entity=project)
 
 Now you have an engine instance, you're ready to start using the Toolkit API.
 
-Before moving onto launching the app, it's worth pointing out you can get hold of the [current context](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), [Sgtk instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk), and [Shotgun API instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun) via the engine.
+Before covering how to launch the app, it's worth pointing out you can get hold of the [current context](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), [Sgtk instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk), and [Shotgun API instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun) via the engine.
 
 ```python
 engine.context

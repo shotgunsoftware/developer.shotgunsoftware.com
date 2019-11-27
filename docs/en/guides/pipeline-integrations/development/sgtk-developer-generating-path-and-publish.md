@@ -51,7 +51,7 @@ import sgtk
 ``` 
 
 If you are wanting to use the API outside of a Shotgun integration, for example, you might wish to test it in 
-your favourite IDE, then you will need to set the path to the API first:
+your favorite IDE, then you will need to set the path to the API first:
 
 ```python
 import sys
@@ -63,7 +63,7 @@ import sgtk
 If your using distributed configs and your wanting to import `sgtk` in an environment where Toolkit hasn't already been bootstrapped, 
 you will need to take a different approach, please see the bootstrapping guide for more details.
 
-Now you've imported the sgtk API you're ready to start using it.
+Now that you've imported the sgtk API you're ready to start using it.
 
 ## Part 2 - Getting an Sgtk instance
 
@@ -87,9 +87,9 @@ As the API documentation states, you don't create an instance of `Sgtk` directly
     tk = current_engine.sgtk
     ```
 
-    You can access the `Sgtk` through the [`engine.sgtk`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) parameter.
-    You should note that sometimes pointers to the `Sgtk` instance as referred to by `sgtk` which is not to be confused 
-    with `sgtk` the package which you imported the step before. In this guide, it will be stored in a variable called `tk`.
+    You can access the `Sgtk` instance through the [`engine.sgtk`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) parameter.
+    The `engine.sgtk` should not be confused with or considered the same as the `sgtk` package that you imported in part 1. 
+    In this guide, it will be stored in a variable called `tk`.
     If you're using the Shotgun Python console then you will have a pre-defined variable called `tk` which you can use.
 
 2. [`sgtk.sgtk_from_entity`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity) - 
@@ -121,7 +121,7 @@ A lot of what happens in Toolkit revolves around context, in other words knowing
 In the sgtk API, we need to be able to store important details about the entities we are working with, and share it with 
 apps or other processes so they can operate in a contextually aware way. 
 
-The [`Context` class](https://developer.shotgunsoftware.com/tk-core/core.html#context) fulfils this purpose, by acting as a container for this information.
+The [`Context` class](https://developer.shotgunsoftware.com/tk-core/core.html#context) fulfills this purpose, by acting as a container for this information.
 You can store the `Task`, `Step`, `entity` (such as a `Shot` or `Asset`), `Project`, and current `HumanUser` within an instance of the class, among a few other things.
 
 You can create as many different context objects as you like in a given session however when there is running engine present there is a concept of a single current context, which the engine keeps track of.
@@ -193,9 +193,9 @@ context = tk.context_from_entity("Task", 13155)
 
 Toolkit can dynamically generate a folder structure on disk based upon your project entities.
 
-This fulfils two purposes.
+This fulfills two purposes.
 
-1. You get an organised structure created on disk where you can place your files.
+1. You get an organized structure created on disk where you can place your files.
 2. It allows Toolkit to programmatically understand your structure, derive context from it, and know where to place files.
 
 You need to ensure that the folders exist on disk so that you can resolve the path in a later step.
@@ -285,7 +285,7 @@ There are a couple of convenience methods you can use to do this.
 If your code is running in a Toolkit app or hook you can use the [`Application.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) method.
 If there is an engine present you can use [`Engine.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.ensure_folder_exists)
 method. 
-Or if your running code outside of an engine, there's [`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists)
+Or if you're running code outside of an engine, there's [`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists)
 Make sure to import the `os` module and only create the folders for the directory and not the full file path.
 
 ### Creating or copying a file using the path
