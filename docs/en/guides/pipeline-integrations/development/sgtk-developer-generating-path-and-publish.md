@@ -151,7 +151,7 @@ However, for the sake of avoiding ambiguity in this guide,
 you will create a context explicitly from a `Task`, (that must belong to a `Shot`), using the `Sgtk.context_from_entity()`.
 
 When you create a context you provide the deepest level required for your operations.
-For example you, could create a context from a Task and Toolkit will work out the rest of the context parameters for you.
+For example, you could create a context from a Task and Toolkit will work out the rest of the context parameters for you.
 
 ```python
 context = tk.context_from_entity("Task", 13155)
@@ -176,7 +176,7 @@ Even though you only provided the task, it should have filled in the other relat
 
 The publish script should now look like this:
 
-```python
+```python 
 import sgtk
 
 # Get the engine instance that is currently running.
@@ -291,7 +291,7 @@ Make sure to import the `os` module and only create the folders for the director
 ### Creating or copying a file using the path
 At this point you have a path, and you could use this to say tell Maya to save a file there, 
 or perhaps copy the file from a different location. 
-It's not important for the sake of this guide that you implement any behaviour that actually creates a file on disk in that location.
+It's not important for the sake of this guide that you implement any behavior that actually creates a file on disk in that location.
 You can still publish the path even if there is no file there. 
 However, you can use [`sgtk.util.filesystem.touch_file`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file) to get sgtk to create an empty file on disk.
 
@@ -334,7 +334,7 @@ current_engine.ensure_folder_exists(os.path.dirname(publish_path))
 sgtk.util.filesystem.touch_file(publish_path)
 ```
 
-Next step is to dynamically work out the next version number rather than hard coding it.
+The next step is to dynamically work out the next version number rather than hard coding it.
 
 ## Part 6 - Finding existing files and getting the latest version number
 
@@ -467,7 +467,7 @@ It is possible to use the Shotgun API's `create` method to create a `PublishedFi
 recommend using the Toolkit API for this as it will ensure all the required fields are provided and filled in correctly.
 
 ```python
-# So as to match the publish app's default behaviour, we are adding the extension to the end of the publish name.
+# So as to match the publish app's default behavior, we are adding the extension to the end of the publish name.
 # This is optional, however.
 publish_name = fields["name"] + ".ma"
 version_number = fields["version"]
@@ -484,7 +484,7 @@ sgtk.util.register_publish(tk,
 At this point, it's also worth noting that our [Publish app](https://support.shotgunsoftware.com/hc/en-us/articles/115000097513-Publishing-your-work)
 also comes with [its own API](https://developer.shotgunsoftware.com/tk-multi-publish2/) as well. 
 Although that is still essentially using this same `register_publish` method. 
-It builds upon the publishing process by providing a framework to handle collection, validation and publishing.
+It builds upon the publishing process by providing a framework to handle collection, validation, and publishing.
 
 ## Part 8 - The complete script
 
