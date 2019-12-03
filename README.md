@@ -36,11 +36,14 @@ For a new file to show up on the site, you'll need to add it to the Table of Con
 ```
 ---
 layout: default
-title: Pipeline Integrations
+title: "Pipeline Integrations"
 pagename: pipeline-integrations
 lang: en
 ---
 ```
+
+**Special Characters:** If using special characters (including colons) in page titles, it's necessary to wrap the title in ASCII double quotes, as shown in the example above.
+
 
 ## Site Preview
 
