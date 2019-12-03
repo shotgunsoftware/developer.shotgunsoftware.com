@@ -13,6 +13,7 @@ shotgun: Shotgun
 review: Review
 quick-answers: Quick Answers
 pipeline-integrations: Pipeline Integrations
+rv-integrations: RV Integrations
 
 python-api: Python API
 rest-api: REST API
