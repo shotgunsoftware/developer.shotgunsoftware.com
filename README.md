@@ -25,6 +25,23 @@ with the documentation generation system.
 
 - [tk-doc-generator style guide](https://developer.shotgunsoftware.com/tk-doc-generator/19bd79d8/?title=Introduction)
 
+## Adding content
+
+For a new file to show up on the site, you'll need to add it to the Table of Contents in the left sidebar:
+
+1. Add it to [`docs/_data/toc.yml`](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/blob/master/docs/_data/toc.yml). Use a meaningful token to identify your page, using dashes to separate words, for example, `pipeline-integrations`.
+2. In [`docs/_data/en/toc_text.yml`](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/blob/master/docs/_data/en/toc_text.yml), provide the English translation for the token you used, as you want it to show up in the left sidebar, for example, "Pipeline Integrations".
+3. Create the file in the proper place in the directory structure. Add metadata to the top, using the identifier you used in `toc.yml`, and following this model:
+
+```
+---
+layout: default
+title: Pipeline Integrations
+pagename: pipeline-integrations
+lang: en
+---
+```
+
 ## Site Preview
 
 Once you have created a pull request, the system will automatically
