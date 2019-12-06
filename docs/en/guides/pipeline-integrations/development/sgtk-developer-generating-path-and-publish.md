@@ -60,7 +60,7 @@ sys.path.append("/shotgun/configs/my_project_config/install/core/python")
 import sgtk
 ```
 
-If your using distributed configs and your wanting to import `sgtk` in an environment where Toolkit hasn't already been bootstrapped, 
+If you're using distributed configs and your wanting to import `sgtk` in an environment where Toolkit hasn't already been bootstrapped, 
 you will need to take a different approach, please see the bootstrapping guide for more details.
 
 Now that you've imported the sgtk API you're ready to start using it.
