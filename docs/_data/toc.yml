@@ -41,7 +41,7 @@
            url: " https://support.shotgunsoftware.com/hc/en-us/articles/219040348"
     - page: review
       children:
-      - text: user-manual
+      - text: rv-user-manual
         url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024712894-User-Manual"
       - text: rv-sdi
         url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025736833-RV-SDI-Manual"
