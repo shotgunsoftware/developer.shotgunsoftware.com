@@ -35,7 +35,7 @@ app-development: App Development
 engine-development: Engine Development
 file-system-configuration: File System Configuration
 
-user-manual: User Manual
+rv-user-manual: RV User Manual
 technical-reference: Technical Reference
 rv-technical-reference: RV Technical Reference
 rv-sdi: RV-SDI
