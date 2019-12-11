@@ -1,24 +1,11 @@
 ---
 layout: default
-title: Getting Started with App Development
+title: Developing your own App Development
 pagename: sgtk-developer-app
 lang: en
 ---
 
-# Getting Started with App Development
-
-Table of Contents:
-- [Introduction](#introduction)
-- [Part 1 - Creating a development sandbox](#part-1---creating-a-development-sandbox)
-- [Part 2 - Forking or downloading the starter app repository](#part-2---forking-or-downloading-the-starter-app-repository)
-- [Part 3 - Adding the app to your config](#part-3---adding-the-app-to-your-config)
-- [Part 4 - Developing the app](#part-4---developing-the-app)
-    - [Anatomy of the Template Starter App](#anatomy-of-the-template-starter-app)
-    - [Configuration settings](#configuration-settings)
-    - [Frameworks](#frameworks)
-    - [Reloading your changes](#reloading-your-changes)
-- [Part 5 - Testing](#part-5---testing)
-
+# Developing your own App Development
 
 ## Introduction
 The Shotgun Pipeline Toolkit is not only a collection of Apps and Engines maintained by Shotgun Software - it is also a framework and a development platform which makes it easy to quickly build custom pipeline tools! This document outlines the workflows in both these cases and also explains some of the basics around app development.
@@ -30,6 +17,17 @@ We assume that you are familiar with Github and git workflows but please note th
 
 #TODO: Need a what is an app section. Talk about how it relates to an engine and framework. What an app can do, GUI non gui, registering commands or not.
 
+Steps:
+1. [Creating a development sandbox](#part-1---creating-a-development-sandbox)
+2. [Forking or downloading the starter app repository](#part-2---forking-or-downloading-the-starter-app-repository)
+3. [Adding the app to your config](#part-3---adding-the-app-to-your-config)
+4. [Developing the app](#part-4---developing-the-app)
+    - [Anatomy of the Template Starter App](#anatomy-of-the-template-starter-app)
+    - [Configuration settings](#configuration-settings)
+    - [Frameworks](#frameworks)
+    - [Reloading your changes](#reloading-your-changes)
+5. [Testing](#part-5---testing)
+6. [Preparing your first release](#part-6---preparing-your-first-release)
 
 ## Part 1 - Creating a development sandbox
 Before you do anything else, we recommend that you set up a [development sandbox by cloning the project configuration](../getting-started/installing_app.md#clone-the-pipeline-configuration-you-want-to-add-an-app-to).
@@ -64,7 +62,7 @@ tk-multi-starterapp:
     type: dev
     path: /path/to/source_code/tk-multi-starterapp
 ```
-
+This instructs Toolkit to load the app code directly from disk in the given location, which is great for development, where you want to change the code all the time.
 Later when you add the app to your production config, you may want to use a different descriptor.
 
 Now you've added the app to an environment, you should be able to go ahead and launch it. How you launch it will depend
@@ -150,49 +148,51 @@ For more information about frameworks and how they can be useful, check out the 
 
 ### Reloading your changes
 
-#TODO: if you are testing in the software
-As a convenience, as soon as you have one more more dev items in your configuration, 
-Toolkit will automatically add a Reload and Restart option to the menu inside of maya, Nuke etc.. 
+If you are testing your app within software such as Maya, then as soon as you have one more more dev items in your configuration, 
+Toolkit will automatically add a **Reload and Restart** option to the Shotgun menu.
+![Shotgun menu Reload and Restart option](./images/reload-restart.png)
+
 Clicking this will reload your configuration and code and then restart your engine. 
-This means that you can iterate quickly: Start maya once, then each time when you have made code or configuration changes that you want to try out, simply hit the reload and restart button and your changes will be pulled in. 
+This means that you can iterate quickly: Start maya once, and then each time you make code or configuration changes that you want to try out, 
+simply hit the reload and restart button and your changes will be pulled in. 
 
 {% include info title="Note" content="If you have any UIs active on screen, these will not automatically update, but you have to go in and re-launch the UIs from the menu." %}
 
 ## Part 5 - Testing
-When you want to test your code, you can easily invite other users to your dev sandbox by adding them to the pipeline configuration entry in Shotgun. 
-As soon as you have added a user, they will see new entries on their menus inside of Shotgun.
+When you want to test your code, you can easily invite other users to your dev sandbox by adding them to the `PipelineConfiguration` entity in Shotgun. 
+As soon as you have added a user, they will see new entries on their menus inside of Shotgun Create, and the browser actions as well as an option to pick the configuration inside of Shotgun Desktop.
 
-
-They can then go in and for example click the launch maya menu entry associated with your dev sandbox. 
-When maya starts up they will be running it from your configuration and seeing your in progress work, just the way you are seeing it. 
+![Dev configuration selectable in Shotgun Desktop](./images/dev-configuration.png)
 
 {% include info title="Note" content="Make sure they have access to see your app code too, otherwise the app will not load." %}
 
+## Part 6 - Preparing your first release
 
-## Preparing your first release
-When you feel ready to create your first release, if you haven't already, we recommend that you start using source control to make sure that changes are tracked. 
-Toolkit supports git (http://git-scm.com/) out of the box and we strongly recommend using this. 
-The rest of this document assumes that are familiar with git and have it set up on your machine.
-
-Now you may already have a git repository set up for your app. 
-If you haven't, it is time to create that and push your first commit. 
+Toolkit supports git (http://git-scm.com/) out of the box. 
+If you haven't already, we recommend that you start using source control to make sure that changes are tracked.
 Toolkit git repos need to contain just a single app -- basically your git repo should have the same structure as the starter app repository where you got the original code from.
+The rest of this document assumes that are familiar with git, have it set up on your machine, and have already pushed your first commit to your repository.
 
-When you do development, Toolkit uses a dev location in the environment file, something looking like this:
-
-```yaml
-location: {path: /Users/manne/dev/tk-multi-mynewapp, type: dev}
-```
-This instructs Toolkit to load the app code directly from disk in the given location, which is great for development, where you want to change the code all the time.
-
-For released software, we want to ensure that things are versioned so that they can be upgraded safely and easily. All Toolkit's built-in apps uses the Toolkit app store to track updates and releases, and they will have a location tag that looks something like this:
+In [part three](#part-3---adding-the-app-to-your-config) you set up your dev configuration to use a dev descriptor to point to your app.
+For released software, we want to ensure that things are versioned so that they can be upgraded safely and easily. 
+All Toolkit's built-in apps uses the Toolkit app store to track updates and releases, and they will have a location tag that looks something like this:
 
 ```yaml
-location: {name: tk-multi-setframerange, type: app_store, version: v0.1.7}
+location:
+   name: tk-multi-setframerange
+   type: app_store
+   version: v0.1.7
 ```
-This allows Toolkit (for example the tank updates command) to check when updates are available, update and maintain configurations in a very safe way. Whenever a new version is available, Toolkit will automatically download the code and place it in a local "app cache" on disk and ensure that users have access to it.
+This allows Toolkit (for example the tank updates command) to check when updates are available, update and maintain configurations in a very safe way. 
+Whenever a new version is available, Toolkit will automatically download the code and place it in a local "app cache" on disk and ensure that users have access to it.
 
-For in-house tools, you can use the same principle, but instead of using the Toolkit app store you can use tags in git. So for your new app, create and push a new tag to git. Note that if you have cloned our starter app, there are already tags defined. We strongly recommend that you use Semantic Versioning when creating your tags ( see http://semver.org ). Toolkit will use these version numbers to try to determine which version is the most recent, and by following the convention vX.Y.Z your app versioning will be compatible with Toolkit.
+For in-house tools, you can use the same principle, but instead of using the Toolkit app store you can use tags in git.
+So for your new app, create and push a new tag to git.
+
+{% include info title="Note" content="If you have cloned our starter app, there are already tags defined. " %}
+
+We strongly recommend that you use Semantic Versioning when creating your tags ( see http://semver.org ). 
+Toolkit will use these version numbers to try to determine which version is the most recent, and by following the convention vX.Y.Z your app versioning will be compatible with Toolkit.
 
 
 Installing changes into the production config
