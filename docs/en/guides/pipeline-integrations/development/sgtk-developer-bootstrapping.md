@@ -97,13 +97,8 @@ class. Here is an example of both user and script authentication.
 # Import Toolkit so we can access to Toolkit specific features.
 import sgtk
 
-# Import the ShotgunAuthenticator from the tank_vendor.shotgun_authentication
-# module. This class allows you to authenticate either programmatically or, in this
-# case, interactively.
-from tank_vendor.shotgun_authentication import ShotgunAuthenticator
-
-# Instantiate the authenticator object, passing in the defaults manager.
-authenticator = ShotgunAuthenticator()
+# Instantiate the authenticator object.
+authenticator = sgtk.authentication.ShotgunAuthenticator()
 
 # Optionally you can clear any previously cached sessions. This will force you to enter credentials each time.
 authenticator.clear_default_user()
@@ -126,22 +121,14 @@ sgtk.set_authenticated_user(user)
 # Import Toolkit so we can access to Toolkit specific features.
 import sgtk
 
-# Import the ShotgunAuthenticator from the tank_vendor.shotgun_authentication
-# module. This class allows you to authenticate either interactively or, in this
-# case, programmatically.
-from tank_vendor.shotgun_authentication import ShotgunAuthenticator
-
-# Instantiate the CoreDefaultsManager. This allows the ShotgunAuthenticator to
-# retrieve the site, proxy and optional script_user credentials from shotgun.yml
-cdm = sgtk.util.CoreDefaultsManager()
-
-# Instantiate the authenticator object, passing in the defaults manager.
-authenticator = ShotgunAuthenticator(cdm)
+# Instantiate the authenticator object.
+authenticator = sgtk.authentication.ShotgunAuthenticator()
 
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>"
+ api_key="4e48f....<use the key from your Shotgun site>",
+ host="https://yoursite.shotgunstudio.com"
 )
 
 # Tells Toolkit which user to use for connecting to Shotgun.
@@ -254,22 +241,14 @@ sgtk.LogManager().global_debug = True
 # Authentication
 ################
 
-# Import the ShotgunAuthenticator from the tank_vendor.shotgun_authentication
-# module. This class allows you to authenticate either interactively or, in this
-# case, programmatically.
-from tank_vendor.shotgun_authentication import ShotgunAuthenticator
-
-# Instantiate the CoreDefaultsManager. This allows the ShotgunAuthenticator to
-# retrieve the site, proxy and optional script_user credentials from shotgun.yml
-cdm = sgtk.util.CoreDefaultsManager()
-
-# Instantiate the authenticator object, passing in the defaults manager.
-authenticator = ShotgunAuthenticator(cdm)
+# Instantiate the authenticator object.
+authenticator = sgtk.authentication.ShotgunAuthenticator()
 
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>"
+ api_key="4e48f....<use the key from your Shotgun site>",
+ host="https://yoursite.shotgunstudio.com"
 )
 
 # Tells Toolkit which user to use for connecting to Shotgun.
@@ -366,17 +345,8 @@ sgtk.LogManager().global_debug = True
 # Authentication
 ################
 
-# Import the ShotgunAuthenticator from the tank_vendor.shotgun_authentication
-# module. This class allows you to authenticate either interactively or, in this
-# case, programmatically.
-from tank_vendor.shotgun_authentication import ShotgunAuthenticator
-
-# Instantiate the CoreDefaultsManager. This allows the ShotgunAuthenticator to
-# retrieve the site, proxy and optional script_user credentials from shotgun.yml
-cdm = sgtk.util.CoreDefaultsManager()
-
-# Instantiate the authenticator object, passing in the defaults manager.
-authenticator = ShotgunAuthenticator(cdm)
+# Instantiate the authenticator object.
+authenticator = sgtk.authentication.ShotgunAuthenticator()
 
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
