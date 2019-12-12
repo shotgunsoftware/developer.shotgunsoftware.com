@@ -351,7 +351,8 @@ authenticator = sgtk.authentication.ShotgunAuthenticator()
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>"
+ api_key="4e48f....<use the key from your Shotgun site>",
+ host="https://yoursite.shotgunstudio.com"
 )
 
 # Tells Toolkit which user to use for connecting to Shotgun.
