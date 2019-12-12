@@ -3,7 +3,4 @@
 # For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/landing-page/
 #
 
-title: Welcome to Shotgun's Developer Documentation. This site contains detailed technical reference for all of the ways you can interact with Shotgun programmatically, as well as tutorials, guides, and other educational resources for learning how to make the best use of all of Shotgun's integration points.
-shotgun: Use Shotgun’s APIs to connect directly to your data, to automate repetitive tasks, and to add new ways for users to interact with Shotgun.
-toolkit: Toolkit is an extendable platform for integrating artist applications and tools with out of the box workflows in many common applications.
-rv: RV is a powerful and incredibly configurable desktop review tool that gives artists and supervisors the ability to playback and compare their media.
+title: This site is here to teach you about all of the ways that developers can interact with the Shotgun web app, the Toolkit platform for building artist pipelines, and the RV suite of digital review tools. The **Guides** section contains tutorials, guides, and other educational resources, while the **Reference** section holds detailed technical documentation for APIs and configuration files.
