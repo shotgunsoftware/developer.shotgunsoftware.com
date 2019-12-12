@@ -164,17 +164,13 @@ As soon as you have added a user, they will see new entries on their menus insid
 
 ![Dev configuration selectable in Shotgun Desktop](./images/dev-configuration.png)
 
-{% include info title="Note" content="Make sure they have access to see your app code too, otherwise the app will not load." %}
+{% include info title="Note" content="Make sure they have access to see your app code as well, otherwise the app will not load." %}
 
 ## Part 6 - Preparing your first release
 
-Toolkit supports git (http://git-scm.com/) out of the box. 
-If you haven't already, we recommend that you start using source control to make sure that changes are tracked.
-Toolkit git repos need to contain just a single app -- basically your git repo should have the same structure as the starter app repository where you got the original code from.
-The rest of this document assumes that are familiar with git, have it set up on your machine, and have already pushed your first commit to your repository.
-
 In [part three](#part-3---adding-the-app-to-your-config) you set up your dev configuration to use a dev descriptor to point to your app.
-For released software, we want to ensure that things are versioned so that they can be upgraded safely and easily. 
+For released software, you will want to ensure that your app can be accessed by all users, and that things are versioned so that they can be upgraded safely and easily.
+
 All Toolkit's built-in apps uses the Toolkit app store to track updates and releases, and they will have a location tag that looks something like this:
 
 ```yaml
@@ -184,7 +180,18 @@ location:
    version: v0.1.7
 ```
 This allows Toolkit (for example the tank updates command) to check when updates are available, update and maintain configurations in a very safe way. 
-Whenever a new version is available, Toolkit will automatically download the code and place it in a local "app cache" on disk and ensure that users have access to it.
+Whenever the updates command is run and a new version is available, Toolkit will download the code and place it in a local "bundle cache" on disk and ensure that users have access to it.
+
+There are a few different options for sourcing your app.
+
+- Git and GitHub
+- Shotgun Uploads
+- Local paths
+
+Toolkit supports git (http://git-scm.com/) out of the box. 
+If you haven't already, we recommend that you start using source control to make sure that changes are tracked.
+Toolkit git repos need to contain just a single app -- basically your git repo should have the same structure as the starter app repository where you got the original code from.
+The rest of this document assumes that are familiar with git, have it set up on your machine, and have already pushed your first commit to your repository.
 
 For in-house tools, you can use the same principle, but instead of using the Toolkit app store you can use tags in git.
 So for your new app, create and push a new tag to git.
@@ -192,21 +199,28 @@ So for your new app, create and push a new tag to git.
 {% include info title="Note" content="If you have cloned our starter app, there are already tags defined. " %}
 
 We strongly recommend that you use Semantic Versioning when creating your tags ( see http://semver.org ). 
-Toolkit will use these version numbers to try to determine which version is the most recent, and by following the convention vX.Y.Z your app versioning will be compatible with Toolkit.
+Toolkit will use these version numbers to try to determine which version is the most recent, 
+and by following the convention vX.Y.Z your app versioning will be compatible with Toolkit.
 
 
 Installing changes into the production config
-Once you have created your first tag in git (eg. v1.0.0), we can safely install this in your production config. This means that everyone on the production will get access to the new tool. Installing the app is done using the install app command. Make sure that you are using the tank command that belongs to the primary production config when you run the install command:
+Once you have created your first tag in git (eg. v1.0.0), we can safely install this in your production config. 
+This means that everyone on the production will get access to the new tool. 
+Installing the app is done using the install app command. 
+Make sure that you are using the tank command that belongs to the primary production config when you run the install command:
 
 ```text
 > cd /your/primary/tank/configuration
 > ./tank install_app shot_step tk-maya user@remotehost:/path_to/tk-multi-mynewapp.git
 ```
-This will find the highest version tag in git and install this into the environment. Once installed, you can simply run tank updates, and if new tags have been created, you will be prompted if you want to upgrade. The workflow is now identical to the one which happens with official app store apps.
+This will find the highest version tag in git and install this into the environment. 
+Once installed, you can simply run tank updates, and if new tags have been created, you will be prompted if you want to upgrade. 
+The workflow is now identical to the one which happens with official app store apps.
 
 
 ## Modifying an existing app
-Rather than starting from an empty starter template, it is sometimes necessary to add a minor feature to an existing app, for example one of Shotgun Software's standard Apps. When you work with a modified version of an app, you typically want to 'track' against the source app and make sure to regularly pull in changes and bug fixes.
+Rather than starting from an empty starter template, it is sometimes necessary to add a minor feature to an existing app, for example one of Shotgun Software's standard Apps. 
+When you work with a modified version of an app, you typically want to 'track' against the source app and make sure to regularly pull in changes and bug fixes.
 
 When you do this type of development, you pick up the parent code, then apply some of your changes, then release this to your pipeline. Your release effectively consists of the base version of the app PLUS your applied local changes. We recommend that you add a version suffix to the existing version number. This will work seamlessly with Toolkit and is relatively straight forward. The following workflow illustrates how to proceed:
 
