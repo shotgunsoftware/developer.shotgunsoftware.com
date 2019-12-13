@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Fixing the SSL: CERTIFICATE_VERIFY_FAILED issues with the Python API"
+title: "Fixing the SSL: "CERTIFICATE_VERIFY_FAILED issues with the Python API"
 pagename: fix-ssl-certificate-verify-failed
 lang: en
 ---
