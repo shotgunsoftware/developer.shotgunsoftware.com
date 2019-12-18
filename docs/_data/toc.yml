@@ -56,7 +56,34 @@
         - text: screening-room
           url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"   
     - page: shotgun-webhooks
-
+    - page: vpc
+      children:
+      - page: vpc-getting_started
+        children:
+        - page: vpc-getting_started-about
+        - page: vpc-getting_started-responsibilities
+        - page: vpc-getting_started-onboarding
+      - page: vpc-setup
+        children:
+        - page: vpc-setup-planning
+        - page: vpc-setup-planning-aws_account
+        - page: vpc-setup-s3_bucket
+        - page: vpc-setup-closed_vpc
+        - page: vpc-setup-media_segregation
+        - page: vpc-setup-traffic_segregation
+        - page: vpc-setup-tuning
+      - page: vpc-knowledge
+        children:
+        - page: vpc-knowledge-connecting
+        - page: vpc-knowledge-direct_connect_onboarding
+        - page: vpc-knowledge-s3
+        - page: vpc-knowledge-vpc_iam_sec
+        - page: vpc-knowledge-direct_connect
+        - page: vpc-knowledge-private_link
+        - page: vpc-knowledge-endpoints
+      - text: vpc-cloud_studios
+        url: "https://aws.amazon.com/media/resources/"
+      - page: vpc-learn
 
 - caption: reference
   children:
