@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Developing your own App Development
+title: Developing your own App
 pagename: sgtk-developer-app
 lang: en
 ---
 
-# Developing your own App Development
+# Developing your own App
 
 ## Introduction
 The Shotgun Pipeline Toolkit is not only a collection of Apps and Engines maintained by Shotgun Software - it is also a framework and a development platform which makes it easy to quickly build custom pipeline tools! This document outlines the workflows in both these cases and also explains some of the basics around app development.
@@ -168,7 +168,7 @@ As soon as you have added a user, they will see new entries on their menus insid
 
 ## Part 6 - Preparing your first release
 
-In [part three](#part-3---adding-the-app-to-your-config) you set up your dev configuration to use a dev descriptor to point to your app.
+In [part three](#part-3---adding-the-app-to-your-config) you set configuration to point to your app using a dev descriptor.
 For released software, you will want to ensure that your app can be accessed by all users, and that things are versioned so that they can be upgraded safely and easily.
 
 All Toolkit's built-in apps uses the Toolkit app store to track updates and releases, and they will have a location tag that looks something like this:
@@ -184,10 +184,11 @@ Whenever the updates command is run and a new version is available, Toolkit will
 
 There are a few different options for sourcing your app.
 
-- Git and GitHub
-- Shotgun Uploads
-- Local paths
+- [Git and GitHub](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git)
+- [Shotgun Uploads](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
+- [Local paths](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
 
+### Git based descriptors
 Toolkit supports git (http://git-scm.com/) out of the box. 
 If you haven't already, we recommend that you start using source control to make sure that changes are tracked.
 Toolkit git repos need to contain just a single app -- basically your git repo should have the same structure as the starter app repository where you got the original code from.
@@ -202,7 +203,7 @@ We strongly recommend that you use Semantic Versioning when creating your tags (
 Toolkit will use these version numbers to try to determine which version is the most recent, 
 and by following the convention vX.Y.Z your app versioning will be compatible with Toolkit.
 
-
+# This section needs rewriting, to exclude the install_app command, and maybe mention the dev utils for running updates?
 Installing changes into the production config
 Once you have created your first tag in git (eg. v1.0.0), we can safely install this in your production config. 
 This means that everyone on the production will get access to the new tool. 
@@ -222,12 +223,21 @@ The workflow is now identical to the one which happens with official app store a
 Rather than starting from an empty starter template, it is sometimes necessary to add a minor feature to an existing app, for example one of Shotgun Software's standard Apps. 
 When you work with a modified version of an app, you typically want to 'track' against the source app and make sure to regularly pull in changes and bug fixes.
 
-When you do this type of development, you pick up the parent code, then apply some of your changes, then release this to your pipeline. Your release effectively consists of the base version of the app PLUS your applied local changes. We recommend that you add a version suffix to the existing version number. This will work seamlessly with Toolkit and is relatively straight forward. The following workflow illustrates how to proceed:
+When you do this type of development, you pick up the parent code, then apply some of your changes, then release this to your pipeline. 
+Your release effectively consists of the base version of the app PLUS your applied local changes. 
+We recommend that you add a version suffix to the existing version number. 
+This will work seamlessly with Toolkit and is relatively straight forward. 
+The following workflow illustrates how to proceed:
 
-You for the parent app and create your own repository. With the fork you get all the git tags. The latest tag is called v0.2.12 and the master branch basically equals the contents in this tag.
-You apply your changes and commit to your master. You now basically have v0.2.12 PLUS your changes. When you release this to production you need to create a tag. Name the tag v0.2.12.1, to indicate that your code is based on v0.2.12 and it is the first release.
-Now someone finds a bug in your modifications. Fix the bug and tag up and release v0.2.12.2.
-A number of important bug fixes have been released in the parent repository. Pull them down to your repository. The most recent tag is now v0.2.15 due to releases that have happened in the parent repository. Now merge your changes with master and test. You now basically have parent app v0.2.15 merged with your changes. Tag up v0.2.15.1.
+- You fork the parent app and create your own repository. With the fork you get all the git tags. 
+The latest tag is called v0.2.12 and the master branch basically equals the contents in this tag.
+- You apply your changes and commit to your master. You now basically have v0.2.12 PLUS your changes. 
+When you release this to production you need to create a tag. Name the tag v0.2.12.1, to indicate that your code is based on v0.2.12 and it is the first release.
+- Now someone finds a bug in your modifications. Fix the bug and tag up and release v0.2.12.2.
+- A number of important bug fixes have been released in the parent repository. 
+Pull them down to your repository. The most recent tag is now v0.2.15 due to releases that have happened in the parent repository. 
+Now merge your changes with master and test. You now basically have parent app v0.2.15 merged with your changes. Tag up v0.2.15.1.
+
 The tagging scheme outlined above guarantees that the Toolkit updates work correctly and makes it easy to quickly see what code each tag in your fork is based on.
 
 
@@ -249,16 +259,9 @@ The Platform API reference documentation covers the Engine and App base classes 
 
 The Apps Configuration reference documentation outlines the various ways you can set up parameters and configuration for your app.
 
-
-
-
-
 ## Forking an existing app
 Because all the Shotgun Toolkit Apps are open source, it is also possible to use their source code as a base for further app development.
 If you find that one of our default apps is missing a crucial feature, you can clone it in github and continue your own development!
 We love pull requests, so if you feel you have made a change that can benefit others, don't hesitate to feed it back to us as pull request.
 We may then fold it back into the main version of the App.
 Alternatively add a suggestion for a new idea on our [roadmap page](https://www.shotgunsoftware.com/roadmap/).
-
-
-Big Buck Bunny - footage courtesy of (CC) Blender Foundation, www.blender.org
