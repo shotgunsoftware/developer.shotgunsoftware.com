@@ -45,8 +45,8 @@ The goal with the engine is that once it has launched, it will provide a consist
 Since all engines implement the same base class, apps can call methods on the engines, for example, to create UIs. 
 It is up to each engine to implement these methods so that they work nicely inside the host application.
 
-{% include info title="Tip" content="The [Developing your own App](sgtk-developer-app.md) also contains information that can be useful in engine development, 
-so it worth checking that out as well." %}
+{% include info title="Tip" content="The [Developing your own App](sgtk-developer-app.md) also contains step by step guide to developing an app, 
+which contains principles that apply to developing an engine as well, which are not covered in this guide." %}
 
 ## Approaches to Engine Integration
 Depending on what the capabilities of the host app are, engine development may be more or less complex. 

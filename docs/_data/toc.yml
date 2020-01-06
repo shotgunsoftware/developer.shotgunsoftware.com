@@ -39,8 +39,7 @@
          - page: sgtk-developer-generating-path-and-publish
          - page: sgtk-developer-bootstrapping
          - page: sgtk-developer-app
-         - text: engine-development
-           url: " https://support.shotgunsoftware.com/hc/en-us/articles/219040348"
+         - page: sgtk-developer-engine
     - page: review
       children:
       - text: rv-user-manual
