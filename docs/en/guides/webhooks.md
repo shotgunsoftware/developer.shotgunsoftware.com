@@ -17,13 +17,13 @@ There are numerous use cases for webhooks. A few that we think are compelling ar
 
 ### Create a directory structure on disk when an entity is created
 
-One workflow that we have seen repeated many times over is the need to create a directory structure on disk when a new entity is created in Shotgun. Why not go ahead and make sure that new Shot is ready for artist work automatically once it is created in Shotgun?
+One workflow that we have seen repeated many times over is the need to create a directory structure on disk when a new entity is created in Shotgun. Why not go ahead and make sure that a new shot is ready for artist work automatically once it is created in Shotgun?
 
 ### Automation of status management
 
 When your animation team is finished with their work, why not go ahead and change the status of downstream Tasks in the same Shot to indicate that more work is ready to begin? This way, you can automatically notify the assigned artists in different disciplines that everything is ready to go!
 
-Another great example of how to automate status management would be to trigger a status change on a Task when a new Note is created. This is a good way to indicate to the artist and production teams that a supervisor has requested changes or fixes to the current work after a review session.
+Another great example of how to automate status management would be to trigger a status change on a `Task` entity when a new `Note` is created. This is a good way to indicate to the artist and production teams that a supervisor has requested changes or fixes to the current work after a review session.
 
 ## When should webhooks be used instead of the Shotgun event daemon?
 
@@ -55,7 +55,7 @@ While not strictly required, providing a secret token causes the payload sent to
 
 An example of how to verify the signature of the payload is provided below using Python.
 
-```python
+```
 >>> import hmac
 >>> import hashlib
 >>> body | `<json body>'
@@ -148,7 +148,7 @@ Provided as part of the event payload is the `session_uuid` that triggered the e
 
 ### Acknowledgements
 
-A delivery can be updated to include an acknowledgement. When a delivery is made, headers are provided as part of the request. Included in those headers is the ID of the delivery record, stored in the `x-sg-delivery-id` key. This id can be used to update the delivery record to include an acknowledgement using [the Shotgun REST API](https://developer.shotgunsoftware.com/rest-api).
+A delivery can be updated to include an acknowledgement. When a delivery is made, headers are provided as part of the request. Included in those headers is the ID of the delivery record, stored in the `x-sg-delivery-id` key. This ID can be used to update the delivery record to include an acknowledgement using [the Shotgun REST API](https://developer.shotgunsoftware.com/rest-api).
 
 {% include warning title="Acknowledgement size" content="The maximum size allowed for an acknowledgement is 4 kilobytes." %}
 
@@ -169,7 +169,7 @@ A delivery can be updated to include an acknowledgement. When a delivery is made
 
 #### What are acknowledgements used for?
 
-Acknowledgements allow for out of band, detailed reporting of success or failure to process a delivery that was successfully received by your webhook's URL. This allows you to separate the status of receiving the delivery from Shotgun from the success or failure to process the event associated with that delivery. In that way, successfully-delivered events can contain additional information useful for debugging purposes. A good example would be a webhook triggered on Asset creation. If that webhook's responsibility is to create a directory structure on disk for each new Asset, the webhook's URL could successfully receive a delivery, but be unable to create the associated directories due to a disk or network outage. It could then update the delivery record with a detailed error message stating that the directory structure was not created, and why.
+Acknowledgements allow for out of band, detailed reporting of success or failure to process a delivery that was successfully received by your webhook's URL. This creates a separation between the status of receiving the delivery from Shotgun and the success or failure to process the event associated with that delivery. In this way, successfully-delivered events can contain additional information useful for debugging purposes. A good example would be a webhook triggered on the creation of an `Asset` entity. If that webhook's responsibility is to create a directory structure on disk for each new `Asset`, the webhook's URL could successfully receive a delivery, but be unable to create the associated directories due to a disk or network outage. It could then update the delivery record with a detailed error message stating that the directory structure was not created, and why.
 
 ## Testing webhooks
 

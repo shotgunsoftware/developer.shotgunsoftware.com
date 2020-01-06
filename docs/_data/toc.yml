@@ -44,20 +44,20 @@
            url: " https://support.shotgunsoftware.com/hc/en-us/articles/219040348"
     - page: review
       children:
-      - text: user-manual
-        url: " http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_manual.html"
+      - text: rv-user-manual
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024712894-User-Manual"
       - text: rv-sdi
-        url: " http://www.tweaksoftware.com/static/documentation/rv/current/html/rvsdi_manual.html"
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025736833-RV-SDI-Manual"
       - page: rv-integrations
         children:
         - text: maya
-          url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/maya_tools_help.html"
+          url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025583533-RV-Maya-Integration-v1-4-"
         - text: nuke
-          url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvnuke_help.html"
+          url: " https://support.shotgunsoftware.com/hc/en-us/articles/219042148-Nuke-RV-integration"
         - text: shotgun
-          url: "https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
+          url: " https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
         - text: screening-room
-          url: "https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"   
+          url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"   
     - page: shotgun-webhooks
 
 
@@ -72,7 +72,7 @@
   - text: action-menu-items
     url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
   - text: rv-technical-reference
-    url: " http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_reference.html"
+    url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024280254-Reference-Manual"
   - page: pipeline-integrations-reference
     children:
     - text: core-api

@@ -6,7 +6,6 @@
 reference: Reference
 guides: Guides
 
-
 rv: RV
 toolkit: Toolkit
 shotgun: Shotgun
@@ -24,6 +23,7 @@ jira-bridge-ref: Jira Bridge Dev Resources (Beta)
 examples: Examples
 webinars: Webinar Recordings
 developer-training-videos: Developer Training Videos
+episodic-pipeline-tutorial: Episodic Pipeline Tutorial
 
 core-api: Toolkit Core API
 qt-widgets: QT Widgets Framework
@@ -35,7 +35,7 @@ app-development: App Development
 engine-development: Engine Development
 file-system-configuration: File System Configuration
 
-user-manual: User Manual
+rv-user-manual: RV User Manual
 technical-reference: Technical Reference
 rv-technical-reference: RV Technical Reference
 rv-sdi: RV-SDI
