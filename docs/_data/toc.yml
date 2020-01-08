@@ -13,8 +13,6 @@
 
 - caption: guides
   children:
-    - text: event-triggers
-      url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
     - page: toolkit-pipeline-integrations
       children:
       - page: toolkit-getting-started
@@ -51,6 +49,10 @@
         url: " https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
       - text: screening-room-and-shotgun-review
         url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"   
+    - text: action-menu-items
+      url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
+    - text: event-triggers
+      url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
     - text: jira-bridge-guide
       url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
     - page: shotgun-webhooks
@@ -64,8 +66,6 @@
     url: " https://developer.shotgunsoftware.com/rest-api/"
   - text: jira-bridge-ref
     url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
-  - text: action-menu-items
-    url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
   - text: rv-technical-reference
     url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024280254-Reference-Manual"
   - page: pipeline-integrations-reference
