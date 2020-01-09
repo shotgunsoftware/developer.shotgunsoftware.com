@@ -9,79 +9,81 @@
 #       languages. For more info, see https://github.com/untra/polyglot#disabling-url-relativizing
 #
 
-- caption: shotgun
+- caption: getting-started
+
+- caption: guides
   children:
-  - page: shotgun-index
+    - page: toolkit-pipeline-integrations
+      children:
+      - page: toolkit-getting-started
+        children:
+        - page: toolkit-guides-advanced-config
+        - page: toolkit-guides-editing-config
+        - page: toolkit-guides-adding-app
+        - page: toolkit-guides-filesystem-configuration
+      - page: toolkit-workflows
+        children:
+        - page: toolkit-pipeline-tutorial
+        - text: episodic-pipeline-tutorial
+          url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002689053-Episodic-workflow-with-Nuke-Studio"
+      - page: toolkit-administration
+        children:
+        - page: disabling-auto-updates-and-offline
+      - page: toolkit-development 
+        children: 
+         - text: app-development
+           url: " https://support.shotgunsoftware.com/hc/en-us/articles/219033158"
+         - text: engine-development
+           url: " https://support.shotgunsoftware.com/hc/en-us/articles/219040348"
+    - page: review
+      children:
+      - text: rv-user-manual
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024712894-User-Manual"
+      - text: rv-sdi
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025736833-RV-SDI-Manual"
+      - text: rv-maya-integration
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025583533-RV-Maya-Integration-v1-4-"
+      - text: rv-nuke-integration
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/219042148-Nuke-RV-integration"
+      - text: rv-shotgun-integration
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
+      - text: screening-room-and-shotgun-review
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"   
+    - text: action-menu-items
+      url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
+    - text: event-triggers
+      url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
+    - text: jira-bridge-guide
+      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
+    - page: shotgun-webhooks
+
+
+- caption: reference
+  children:
   - text: python-api
     url: " https://developer.shotgunsoftware.com/python-api/"
   - text: rest-api
     url: " https://developer.shotgunsoftware.com/rest-api/"
-  - page: shotgun-webhooks
-  - text: event-triggers
-    url: "https://github.com/shotgunsoftware/shotgunEvents/wiki"
-  - text: jira-bridge
-    url: " https://developer.shotgunsoftware.com/sg-jira-bridge/"
-  - page: shotgun-action-menu-items
+  - text: jira-bridge-ref
+    url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
+  - text: rv-technical-reference
+    url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024280254-Reference-Manual"
+  - page: pipeline-integrations-reference
     children:
-    - text: examples
-      url: " http://developer.shotgunsoftware.com/python-api/cookbook/examples/ami_handler.html"
-    - text: reference
-      url: "https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
-
-- caption: toolkit
-  children:
-  - page: toolkit-index
-  - page: toolkit-learning-resources
-    children:
-    - page: toolkit-guides
-      children:
-      - page: toolkit-guides-advanced-config
-      - page: toolkit-guides-editing-config
-      - page: toolkit-guides-adding-app
-      - page: toolkit-guides-filesystem-configuration
-    - page: toolkit-pipeline-tutorial
-    - text: webinars
-      url: "https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
-  - page: env-config-ref    
-  - text: core-api
-    url: "https://developer.shotgunsoftware.com/tk-core/"
-  - page: toolkit-frameworks
-    children:
+    - text: core-api
+      url: " https://developer.shotgunsoftware.com/tk-core"
     - text: qt-widgets
-      url: " http://developer.shotgunsoftware.com/tk-framework-qtwidgets"
+      url: " https://developer.shotgunsoftware.com/tk-framework-qtwidgets/"
     - text: shotgun-utils
-      url: " http://developer.shotgunsoftware.com/tk-framework-shotgunutils"
-  - page: toolkit-app-apis
-    children:
+      url: " https://developer.shotgunsoftware.com/tk-framework-shotgunutils/"
     - text: publish-api
       url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
-  - text: app-development
-    url: "https://support.shotgunsoftware.com/entries/95440137"
+    - text: hiero-export-api
+      url: " https://developer.shotgunsoftware.com/tk-hiero-export"
+    - text: file-system-configuration
+      url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
+    - page: env-config-ref
 
-- caption: rv
-  children:
-  - page: rv-index
-  - text: user-manual
-    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_manual.html"
-  - text: technical-reference
-    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rv_reference.html"
-  - text: rv-sdi
-    url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvsdi_manual.html"
-
-  - page: rv-integrations
-    children:
-    - text: maya
-      url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/maya_tools_help.html"
-    - text: nuke
-      url: "http://www.tweaksoftware.com/static/documentation/rv/current/html/rvnuke_help.html"
-    - text: shotgun
-      url: "https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
-    - text: screening-room
-      url: "https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"
-
-  - text: forums
-    url: "http://community.shotgunsoftware.com/c/rv"
-    
 - caption: quick-answers
   children:
   - page: quick-answers-administering
@@ -89,20 +91,24 @@
   - page: quick-answers-developing
   - page: quick-answers-workflow
 
+- caption: videos
+  children:
+  - text: siggraph-shotgun-day
+    url: " https://www.youtube.com/playlist?list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d"
+  - text: developer-training
+    url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"  
+  - text: toolkit-webinars
+    url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
+
 - caption: other
   children:
+  - text: community
+    url: " https://community.shotgunsoftware.com/"
   - page: contribution-index
   - text: shotgun-support
-    url: "https://support.shotgunsoftware.com/"
+    url: " https://support.shotgunsoftware.com/"
   - text: service-status
-    url: "https://status.shotgunsoftware.com/"
+    url: " https://status.shotgunsoftware.com/"
   - text: new-support-request
-    url: "https://support.shotgunsoftware.com/hc/requests/new"
-
-
-
-
-
-
-
+    url: " https://support.shotgunsoftware.com/hc/requests/new"
 
