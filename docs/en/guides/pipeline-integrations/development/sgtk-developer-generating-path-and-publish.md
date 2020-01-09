@@ -29,22 +29,23 @@ The purpose of this guide is to walk through a basic example of how you can use 
 
 ## Part 1: Importing sgtk
 
-The sgtk API is contained in a python package called `sgtk`. Each Toolkit configuration has its own copy of the API.
-To use the API on a project's configuration, you must import the sgtk package from the configuration you wish to work with, importing it from a different configuration will lead to errors.
+The Shotgun Toolkit API is contained in a python package called `sgtk`. 
+Each Toolkit configuration has its own copy of the API, which comes as part of [`tk-core`](https://developer.shotgunsoftware.com/tk-core/overview.html).
+To use the API on a project's configuration, you must import the sgtk package from the configuration you wish to work with; importing it from a different configuration will lead to errors.
 
-{% include info title="Note" content="You may sometimes come across references to a `tank` package, this is the legacy name for the same thing, whilst both work `sgtk` is the correct name to use going forward." %}
+{% include info title="Note" content="You may sometimes come across references to a `tank` package. This is the legacy name for the same thing. While both work `sgtk` is the correct name to use going forward." %}
 
-To import the API you need to make sure that the path to the [core's python folder](https://github.com/shotgunsoftware/tk-core/tree/v0.18.167/python) exists in the `sys.path`.
-However, for this example, we recommend that you run this code in the Shotgun Python console via Shotgun Desktop.
-This will mean that the correct sgtk API path is already added to your sys path. Equally, you don't need to add the path if you are running this code within Software where the Shotgun integration is already running.
+To import the API you need to make sure that the path to the [core's python folder](https://github.com/shotgunsoftware/tk-core/tree/v0.18.167/python) exists in the [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path).
+However, for this example, we recommend that you run this code in the Shotgun Desktop's Python console.
+This will mean that the correct `sgtk` package path is already added to your `sys.path`.
+Equally, you don't need to add the path if you are running this code within software where the Shotgun integration is already running.
 
 When running your code in an environment where Shotgun is already started you can import the API by simply writing:
 
 ```python
 import sgtk
 ``` 
-
-If you are wanting to use the API outside of a Shotgun integration, for example, you might wish to test it in your favorite IDE, then you will need to set the path to the API first:
+If you want to use the API outside of a Shotgun integration, for example, if you're testing it in your favorite IDE, then you will need to set the path to the API first:
 
 ```python
 import sys
@@ -53,21 +54,22 @@ sys.path.append("/shotgun/configs/my_project_config/install/core/python")
 import sgtk
 ```
 
-If you're using distributed configs and your wanting to import `sgtk` in an environment where Toolkit hasn't already been bootstrapped, you will need to take a different approach, please see the bootstrapping guide for more details.
+{% include info title="Note" content="If you're using distributed configs and you want to import `sgtk` in an environment where Toolkit hasn't already been bootstrapped, you will need to take a different approach. Please see the [bootstrapping guide](sgtk-developer-bootstrapping.md) for more details." %}
 
-Now that you've imported the sgtk API you're ready to start using it.
+Now that you've imported the Shotgun Toolkit API, you're ready to start using it.
 
 ## Part 2: Getting an Sgtk instance
 
-Now you've imported the `sgtk` API the next step towards the end goal of being able to generate a path and publish it, is to create an `Sgtk` instance.
+In order to start using the Shotgun Toolkit API, you'll need to create an instance of the `Sgtk` class.
 
 [`Sgtk`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk) is a class in the `sgtk` package that acts as the main interface to the API.
-Once we create an instance of `Sgtk` you will be able to do things like get a context, create folders, or access the templates.
+Once you create an instance of `Sgtk`, you will be able to do things like get a context, create folders, or access the templates.
 
 As the API documentation states, you don't create an instance of `Sgtk` directly. Here are some options for getting an `Sgtk` instance.
 
-1. You can get a `Sgtk` instance from the current engine if you are running the Python code within an environment where the Shotgun integrations are already started.
-   For example in Maya you could run the following:
+1. You can get an `Sgtk` instance from the current engine if you are running the Python code within an environment where the Shotgun integrations are already running. 
+   The `Engine.sgtk` property holds the engine's `Sgtk` instance.
+   So for example, in Maya, you could run the following:
  
     ```python
     # Get the engine that is currently running.
@@ -78,20 +80,22 @@ As the API documentation states, you don't create an instance of `Sgtk` directly
     ```
 
     You can access the `Sgtk` instance through the [`engine.sgtk`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) parameter.
-    The `engine.sgtk` should not be confused with or considered the same as the `sgtk` package that you imported in part 1. 
-    In this guide, it will be stored in a variable called `tk`.
-    If you're using the Shotgun Python console then you will have a pre-defined variable called `tk` which you can use.
+    
+    {% include info title="Note" content="The `engine.sgtk` should not be confused with or considered the same as the `sgtk` package that you imported in part 1." %}
 
 2. [`sgtk.sgtk_from_entity`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity) - 
-    if you are running in an environment where an engine hasn't already been started you can use this method to get an `Sgtk` instance based upon an entity id.
-    The entity whose id you are supplying must belong to the same project that the `sgtk` API was imported from. 
+    If you are running in an environment where an engine hasn't already been started, you can use this method to get an `Sgtk` instance based upon an entity id.
+    The entity whose id you are supplying must belong to the project that the `sgtk` API was imported from. 
  
 3. [`sgtk.sgtk_from_path`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path) -
     much like the `sgtk_from_entity` except this will accept a path to a configuration or a path inside the project root.
 
+Throughout this guide we will assume you are running this code in an environment where an engine has already been started, so we'll use option 1.
+Also you will store the `Sgtk` class instance in a variable called `tk`.
+If you're using the Shotgun Python Console then the `tk` variable is already pre-defined as a global variable.
 
 You now have an `Sgtk` instance and you're ready to start using the API.
-In conclusion, our publish script now looks like this:
+Your publish script should now look like this:
 
 ```python
 import sgtk
@@ -108,12 +112,13 @@ tk = current_engine.sgtk
 ### What is a context and why do I need it?
 
 A lot of what happens in Toolkit revolves around context, in other words knowing what you are working on and being able to act accordingly.
-In the sgtk API, we need to be able to store important details about the entities we are working with, and share it with apps or other processes so they can operate in a contextually aware way. 
+With the sgtk API, you will need to be able to store important details about the entities you are working with, and share them with apps or other processes so they can operate in a contextually aware way.
+For example, when Toolkit knows what task you're working on, it can automatically link your published files to that task in Shotgun.
 
 The [`Context` class](https://developer.shotgunsoftware.com/tk-core/core.html#context) fulfills this purpose, by acting as a container for this information.
 You can store the `Task`, `Step`, `entity` (such as a `Shot` or `Asset`), `Project`, and current `HumanUser` within an instance of the class, among a few other things.
 
-You can create as many different context objects as you like in a given session however when there is running engine present there is a concept of a single current context, which the engine keeps track of.
+You can create as many different context objects as you like in a given session. However, when there is an engine present, there is a concept of a single current context, which the engine keeps track of.
 This is the context that the user is currently working in, and that currently running apps should be working with.
 
 In a later step, you will be using the context to help resolve a path that can be used for saving or copying a file.
@@ -121,15 +126,13 @@ In a later step, you will be using the context to help resolve a path that can b
 ### Acquiring a Context
 
 To create a context you must use one of the following constructor methods `Sgtk.context_from_entity()`, `Sgtk.context_from_entity_dictionary()` or `Sgtk.context_from_path()`.
-You access these methods through the sgtk instance we created in the previous step. 
+You access these methods through the `Sgtk` instance you created in the previous step, which you stored in the `tk` variable.
 
-{% include info title="Note" content="To get a context from a path you must have already created folders which is covered in the next step of this guide." %}
+{% include info title="Note" content="To get a context from a path, you must have already created folders, which is covered in the next step of this guide." %}
 
-Instead of creating a new context however, we could [grab the current context from the engine](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context) like this:
+Instead of creating a new context however, we could [grab the current context from the engine](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), that we gathered in [part 2](#part-2-getting-an-sgtk-instance), like this:
 
 ```python
-current_engine = sgtk.platform.current_engine()
-
 context = current_engine.context
 ```
 Since we will be using the context to help resolve a file path for a Task on a Shot in later steps we need to be certain the context contains the relevant information.  
@@ -355,7 +358,7 @@ fields["version"] = r["summaries"]["version_number"] + 1
 Using the Toolkit API we can gather a list of existing files, extract the template field values from them, and then figure out the next version.
 
 In the example below, it's gathering the latest version from the work file template. 
-Assuming the work file and publish file templates have the same fields you could call this twice with the same fields to work out the highest publish and work file version and decide and decide using a combination of the two.
+Assuming the work file template and publish file template have the same fields, you could call the method below twice with the same fields to work out the highest publish and work file version and decide using a combination of the two.
 
 ```python
 def get_next_version_number(tk, template_name, fields):

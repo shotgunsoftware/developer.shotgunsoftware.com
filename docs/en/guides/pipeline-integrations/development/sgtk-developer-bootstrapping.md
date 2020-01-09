@@ -268,15 +268,15 @@ engine.context
 engine.sgtk
 engine.shotgun
 ```
-With these, you could instead of launching an app, test code snippets, or run some automation requiring the Toolkit API.
+Whilst the end goal of this guide is to show you how to launch an app, you could from this point make use of the above attributes and test some code snippets or run some automation that makes use of the Toolkit API.
 
 ### Launching the App
 
 When the engine starts, it initializes all the apps defined for the environment. 
-The apps in turn register commands with the engine, and the engine usually displays these as actions in a menu, if running a Software like Maya.
+The apps in turn register commands with the engine, and the engine usually displays these as actions in a menu, if running in Software like Maya.
 
 #### Finding the commands
-To first see what commands have been registered you can print our the [`engine.commands`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.commands)
+To first see what commands have been registered, you can print out the [`engine.commands`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.commands) property:
 
 ```python
 # use pprint to give us a nicely formatted output.
@@ -299,7 +299,8 @@ With that list, you can see which commands have been registered and can be run.
 #### Running the command
 
 How you run the command will be different depending on the engine, as there is currently no standardized method.
-For the `tk-shell` engine you can use `engine.execute_command` which expects a command string name, which we listed out earlier, and a list of parameters that the app's command expects to be passed.
+For the `tk-shell` engine, you can use `engine.execute_command`.
+It expects a command string name, which we listed out earlier, and a list of parameters that the app's command expects to be passed.
 
 ```python
 if "Publish..." in engine.commands:
@@ -314,7 +315,7 @@ If you're not running in the `tk-shell` engine, then you can call the registered
 app_command = engine.commands.get("Publish...")
 
 if app_command:
-    # now run the command, which in this case will launch the Work Area Info app.
+    # now run the command, which in this case will launch the Publish Info app.
     app_command["callback"]()
 ```
 
