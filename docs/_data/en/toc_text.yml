@@ -6,14 +6,12 @@
 reference: Reference
 guides: Guides
 
-
 rv: RV
 toolkit: Toolkit
 shotgun: Shotgun
 review: Review
 quick-answers: Quick Answers
 pipeline-integrations: Pipeline Integrations
-rv-integrations: RV Integrations
 
 python-api: Python API
 rest-api: REST API
@@ -24,6 +22,7 @@ jira-bridge-ref: Jira Bridge Dev Resources (Beta)
 examples: Examples
 webinars: Webinar Recordings
 developer-training-videos: Developer Training Videos
+episodic-pipeline-tutorial: Episodic Pipeline Tutorial
 
 core-api: Toolkit Core API
 qt-widgets: QT Widgets Framework
@@ -41,10 +40,13 @@ rv-technical-reference: RV Technical Reference
 rv-sdi: RV-SDI
 forums: Forums
 
+rv-maya-integration: RV Maya Integration
+rv-nuke-integration: RV Nuke Integration
+rv-shotgun-integration: RV Shotgun Integration
 maya: Maya
 nuke: Nuke
 shotgun: Shotgun
-screening-room: Screening Room and Shotgun Review
+screening-room-and-shotgun-review: Screening Room and Shotgun Review
 troubleshooting: Troubleshooting
 extending-rv: Extending RV
 

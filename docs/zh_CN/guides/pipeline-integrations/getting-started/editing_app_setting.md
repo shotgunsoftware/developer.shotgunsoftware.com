@@ -31,7 +31,7 @@ lang: zh_CN
 5. 在系统上安装 Shotgun Desktop。
 6. Maya 的有效固定期限的使用许可。在[此处](https://www.autodesk.com.cn/products/maya/free-trial)获取 Maya 的 30 天试用版
 
-**注意：**本手册基于 `tk-config-default2` 工作流配置。如果您的配置文件已修改，则文件和文件夹的位置、YAML 设置的区块可能就与此处描述的不同。
+{% include info title="注意" content="本手册基于 `tk-config-default2` 工作流配置。如果您的配置文件已修改，则文件和文件夹的位置、YAML 设置的区块可能就与此处描述的不同。" %}
 
 ## 关于工作文件应用
 
@@ -111,9 +111,9 @@ Toolkit 工作流配置用于自定义环境以满足您的工作流需求。工
 
 在**“Configuration”**标题下查看以查找此特定环境的设置。
 
-![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png "查看任务按钮")
+![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png)
 
-**注意：**在设置 **my_tasks_filters** 之后是设置 **launch_at_startup**。这一点很重要，因为它是项目环境中**“File Open”**设置的默认设置。这告诉您，当从 Shotgun Desktop 启动 Maya 时，会自动打开**“File Open”**对话框。
+{% include info title="注意" content="在设置 **my_tasks_filters** 之后是设置 **launch_at_startup**。这一点很重要，因为它是项目环境中**“File Open”**设置的默认设置。这告诉您，当从 Shotgun Desktop 启动 Maya 时，会自动打开**“File Open”**对话框。" %}
 
 向下滚动到 **Setting allow_task_creation**。此设置的默认值为 **True**，使用户能够在处于 Maya 项目环境中时创建新任务。
 
@@ -357,4 +357,4 @@ Workfiles 应用的系统名称是 `tk-multi-workfiles2`，名称中的 `multi` 
 * [Toolkit 配置简介](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)（来源：SIGGRAPH 2018 Developer Day）
 * [揭秘默认配置网络讲座](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
-现在您已了解如何修改应用配置设置，请尝试[将应用添加到 Toolkit 配置](installing_app.md)
+现在您已了解如何修改应用配置设置，请尝试[将应用添加到 Toolkit 配置](./installing_app.md)。

@@ -95,7 +95,7 @@ Follow these steps to disable automatic updates for the integrations.
    3. Plugin ids: `basic.*`
    4. Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
    
-   ![Pipeline Configuration entity with a setup for a project with disabled updates.](images/offline-and-disabled-auto-updates/freeze_all_projects.jpg)
+   ![Pipeline Configuration entity with a setup for a project with disabled updates.](images/offline-and-disabled-auto-updates/freeze-all-projects.jpg)
 3. Start Shotgun Desktop, and if you left the project field empty then Shotgun Desktop will have switched over to using this version if it wasn't already doing so.
 
     ![Shotgun Desktop About](images/offline-and-disabled-auto-updates/shotgun-desktop-about.png)
@@ -133,7 +133,7 @@ You can
     - Project: The project you want not to lock down
     - Plugin ids: `basic.*`
     - Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic`
-    ![Two Pipeline Configurations, one disabling updates to the whole site, and the other enabling updates on a single project](images/offline-and-disabled-auto-updates/freeze_all_but_one_project.jpg)
+    ![Two Pipeline Configurations, one disabling updates to the whole site, and the other enabling updates on a single project](images/offline-and-disabled-auto-updates/freeze-all-but-one-project.jpg)
     With the version number omitted from the Descriptor field, the project is now tracking the latest release of the basic config.
 
 ### Upgrading

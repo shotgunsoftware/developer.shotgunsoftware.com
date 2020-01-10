@@ -11,7 +11,9 @@ lang: en
 
 At the heart of a Toolkit pipeline is the environment configuration. Within a Toolkit pipeline configuration, the environment configuration files are where you define which Toolkit apps are available within different DCCs and customize the settings for each. This document is a complete reference to the structure and function of the environment configuration files. It covers the Toolkit concept of *environments* for configuring different workflows within a project, configuration structure, file referencing, and ways to discover what customizations are available.
 
-{% include info title="Note" content="While this document acts as a reference to the environment configuration files, you can  see a step-by-step example of editing a configuration setting in the [Toolkit Basics Guide on Editing a pipeline configuration](./learning-resources/guides/editing_app_setting.md)." %}
+{% include info title="Note" content="While this document acts as a reference to the environment configuration files, you can  see a step-by-step example of editing a configuration setting in the [Toolkit Basics Guide on Editing a pipeline configuration](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)." %}
+
+
 
 ## What is an environment?
 
@@ -29,7 +31,7 @@ In the above example, artists working on assets would be working in an asset ste
 
 Toolkit gives you a lot of freedom in the way you structure your environment configuration. This document is a reference for all of the options that are available to you, so that you’ll have the necessary knowledge to make choices that best suit the needs of your pipeline. 
 
-This document will also occasionally cover some of the specific choices we’ve made in the pipeline configuration provided as a starting point, known as [the Default Configuration](https://github.com/shotgunsoftware/tk-config-default2). When you’re ready to customize your pipeline, the first step is to [create an editable pipeline configuration for your project](./learning-resources/guides/editing_app_setting.md). 
+This document will also occasionally cover some of the specific choices we’ve made in the pipeline configuration provided as a starting point, known as [the Default Configuration](https://github.com/shotgunsoftware/tk-config-default2). When you’re ready to customize your pipeline, the first step is to [create an editable pipeline configuration for your project](../../guides/pipeline-integrations/getting-started/editing_app_setting.md). 
 
 While these choices are only conventions and not hardcoded into the Toolkit workflow, it’s helpful to refer to the Default Configuration as an example for learning what features are available once you start customizing your pipeline and best practices for structuring your own configurations. And, since it's the suggested starting point for new Toolkit users, it’s helpful to know some of its conventions. We will always distinguish between general features of the Toolkit environment configuration and specific choices in the Default Configuration in this document. For specific details on the Default Configuration’s environment structure, see [its README file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md).
 
@@ -342,7 +344,7 @@ Note that if the settings for `tk-multi-workfiles2` were coming from an included
 
 * [Toolkit Basics Guide: Editing a pipeline configuration](./learning-resources/guides/editing_app_setting.md)
 * [Toolkit Basics Guide: Adding an app](./learning-resources/guides/installing_app.md)
-* [Animation pipeline tutorial](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
+* [Animation pipeline tutorial](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [Descriptor reference documentation](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [Webinar: Toolkit administration](https://youtu.be/7qZfy7KXXX0)
 * [File system configuration reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference)

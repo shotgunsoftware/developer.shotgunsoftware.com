@@ -69,7 +69,7 @@ b. `TK_DEBUG` 환경 변수를 삭제합니다.
 
 모든 엔진은 환경 파일에 `debug_logging` 설정이 있습니다. 이 설정을 켜면 추가 디버그 레벨 로그 메시지가 소프트웨어(예: Nuke 또는 Maya의 스크립트 편집기)의 기본 출력으로 전송됩니다. 엔진에서 실행 중인 모든 앱이 이 디버그 레벨 메시지를 전송하기 때문에 엔진에 대해 이 설정을 켜면 결국 모든 앱에 대해서도 켜는 셈입니다.
 
-이렇게 해도 파일로 어떤 로그 메시지를 출력하지는 않습니다. 이를 가능하게 할 추가 표준 로깅 프레임워크를 구현하기 위해 작업 중입니다. 예외는 [SG 데스크톱](https://support.shotgunsoftware.com/entries/95445597) 및 [Photoshop 엔진](https://support.shotgunsoftware.com/hc/ko/articles/115000026653-Photoshop-CC)이며 GUI 콘솔과 파일에 모두 출력을 로깅합니다.
+이렇게 해도 파일로 어떤 로그 메시지를 출력하지는 않습니다. 이를 가능하게 할 추가 표준 로깅 프레임워크를 구현하기 위해 작업 중입니다. 예외는 [SG 데스크톱](https://support.shotgunsoftware.com/hc/ko/articles/219039818-Shotgun-Desktop) 및 [Photoshop 엔진](https://support.shotgunsoftware.com/hc/ko/articles/115000026653-Photoshop-CC)이며 GUI 콘솔과 파일 모두에 출력을 로깅합니다.
 
 ### 소프트웨어의 엔진에 대해 디버그 로깅 켜기
 
@@ -77,19 +77,21 @@ b. `TK_DEBUG` 환경 변수를 삭제합니다.
 
 `config/env/shot_step.yml`을 편집합니다.
 
-    engines:
-    ...
-    ...
-    tk-nuke:
+```yaml
+engines:
+  ...
+  ...
+  tk-nuke:
     apps:
-    ...
-    ...
+      ...
+      ...
     compatibility_dialog_min_version: 9
     debug_logging: true
     favourite_directories: []
     location: {name: tk-nuke, type: app_store, version: v0.2.23}
     ...
-    ...
+   ...
+```
 
 파일을 저장하고 샷 단계 환경에서 Nuke를 다시 실행합니다. 이제 스크립트 편집기 창에서 디버그 출력을 볼 수 있을 것입니다.
 
@@ -99,18 +101,17 @@ tank 명령을 실행 중인데 터미널에서 디버그 출력을 보고 싶�
 
     ./tank --debug core
     DEBUG [10:11:38 617.835998535]:
-    DEBUG [10:11:38 618.768930435].: 디버그 출력을 활성화한 상태에서 실행합니다.
+    DEBUG [10:11:38 618.768930435]: 디버그 출력을 활성화한 상태에서 실행합니다.
     DEBUG [10:11:38 618.921995163]:
-    DEBUG [10:11:38 619.092941284]: Core API는 현지화된 파이프라인 구성 내부에
-    있습니다.
-    DEBUG [10:11:38 619.235992432]: 전달된 전체 명령줄:
+    DEBUG [10:11:38 619.092941284]: Core API는 현지화된 파이프라인 구성 내부에 있습니다.
+    DEBUG [10:11:38 619.235992432]: 전체 명령줄이 전달됨:
     ['/sgtk/software/shotgun/scarlet/install/core/scripts/tank_cmd.py',
     '/sgtk/software/shotgun/scarlet', '--debug', 'core']
     DEBUG [10:11:38 619.364023209]:
     DEBUG [10:11:38 619.463920593]:
-    DEBUG [10:11:38 619.575977325]: 코드 설치 루트: 
+    DEBUG [10:11:38 619.575977325]: 코드 설치 루트:
     /sgtk/software/shotgun/scarlet
-    DEBUG [10:11:38 619.678020477]: 파이프라인 구성 루트: 
+    DEBUG [10:11:38 619.678020477]: 파이프라인 구성 루트:
     /sgtk/software/shotgun/scarlet
     DEBUG [10:11:38 619.756937027]:
     DEBUG [10:11:38 619.826078415]:
@@ -118,12 +119,12 @@ tank 명령을 실행 중인데 터미널에서 디버그 출력을 보고 싶�
     DEBUG [10:11:38 619.978904724]: 컨텍스트 항목:
     ['/sgtk/software/shotgun/scarlet']
     DEBUG [10:11:38 620.06688118]: 명령: core
-    DEBUG [10:11:38 620.129108429]: 명령 인자: []
+    DEBUG [10:11:38 620.129108429]: 명령 인수: []
     DEBUG [10:11:38 620.193004608]: Sgtk 파이프라인 구성 위치:
     /sgtk/software/shotgun/scarlet
     DEBUG [10:11:38 620.270967484]: 이 스크립트의 위치(__file__):
     /sgtk/software/shotgun/scarlet/install/core/scripts/tank_cmd.py
-    
+
     Shotgun Pipeline Toolkit을 시작합니다.
     설명서는 https://toolkit.shotgunsoftware.com을 참조하십시오.
     현재 경로 '/sgtk/software/shotgun/scarlet'에 대해 툴킷 시작
@@ -135,29 +136,27 @@ tank 명령을 실행 중인데 터미널에서 디버그 출력을 보고 싶�
     DEBUG [10:11:39 126.588106155]: 컨텍스트: scarlet
     - '기본' 구성 및 Core v0.15.18 사용
     - 컨텍스트를 scarlet으로 설정
-    DEBUG [10:11:39 129.276990891]: 이 명령의 경우 엔진을 로드할 필요가
-    없습니다.
-    - 명령 코어 실행 중...
-    
-    
+    DEBUG [10:11:39 129.276990891]: 이 명령의 경우 엔진을 로드할 필요가 없습니다.
+    - 명령 코어 실행...
+
+
     ----------------------------------------------------------------------
     명령: Core
     ----------------------------------------------------------------------
-    
-    
+
+
     Shotgun Pipeline Toolkit 업데이트 검사 프로그램을 시작합니다.
-    이 스크립트는 /sgtk/software/shotgun/scarlet에
-    설치된 Toolkit Core API가 최신인지
+    이 스크립트는 /sgtk/software/shotgun/scarlet에 설치된
+    Toolkit Core API가 최신인지
     확인합니다.
-    
-    
+
     Core API 업그레이드 시 일반적으로 둘 이상의 프로젝트에 영향을
-    미칩니다. 다중 프로젝트에 롤아웃하기 전에 별개로 Core API 업그레이드를
-    테스트하려면 *현지화된* 특수 파이프라인 구성을 만드는 것이
-    좋습니다. 이에 대한 자세한 내용은 툴킷 문서를
+    미칩니다. 여러 프로젝트에 롤아웃하기 전에 별개로 Core API 업그레이드를
+    테스트하려면 *현지화된* 특수 파이프라인 구성을 생성하는 것이
+    좋습니다. 자세한 내용은 툴킷 문서를
     참조하십시오.
-    
-    
+
+
     현재 Shotgun Pipeline Toolkit v0.15.18 버전을 실행 중입니다.
     지금은 Toolkit Core API를 업데이트할 필요가 없습니다.
     DEBUG [10:11:39 981.74405098]: 종료 코드를 사용한 종료가 없음

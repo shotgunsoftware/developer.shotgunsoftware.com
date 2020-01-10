@@ -32,4 +32,4 @@ Houdini を Shotgun から起動すると、起動アプリケーション ロ�
 
 このエラーが表示される場合は、代わりに `%HOUDINI_PATH%` を使用してください。"%}
 
-問題が解決しない場合は、[サポート チーム]((https://support.shotgunsoftware.com/hc/en-us/requests/new))に問い合わて問題の診断を依頼してください。
+問題が解決しない場合は、[サポート チーム](https://support.shotgunsoftware.com/hc/ja/requests/new)に問い合わせて問題の診断を依頼してください。

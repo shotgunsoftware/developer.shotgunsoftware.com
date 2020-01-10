@@ -60,13 +60,13 @@ Shotgun Toolkit [将数据缓存到用户的主目录](../administering/where-is
 
 虽然这两种方法之间的差异超出了性能范围，但它们都会在性能方面带来一些优点和缺点。下表仅从性能角度展示了利弊。
 
-|  | 优点 | 缺点 |
+|                         | 优点 | 缺点 |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **集中式配置** | - 一旦初始设置过程完成，它所需的一切内容均已下载，可供所有用户使用。 | - 集中式配置通常保存在网络存储中，因此在正常的 Toolkit 使用期间性能可能会降低。 |
-|  | - 未来的更新只需要在集中位置下载一次。 | - Toolkit 配置包含许多小文件，处理大量小文件的元数据操作对服务器而言可能要慢得多，也更难。此外，通过使用 Toolkit 或通过常规使用服务器进行大量读取操作可能会因为无法快速读取配置而影响 Toolkit 的性能。 |
+|                         | - 未来的更新只需要在集中位置下载一次。 | - Toolkit 配置包含许多小文件，处理大量小文件的元数据操作对服务器而言可能要慢得多，也更难。此外，通过使用 Toolkit 或通过常规使用服务器进行大量读取操作可能会因为无法快速读取配置而影响 Toolkit 的性能。 |
 | **分布式配置** | - 缓存的应用、插件、框架和核心采用一种可以与其他本地缓存的配置共享的方式存储。这意味着，如果不同的项目共享相同的依赖项，则这些项目的后续加载可能会更快地缓存。 | - 分布式配置需要按用户在本地缓存。通常，这包括下载配置和所有必需的应用、插件、框架和核心。 |
-|  | - 它们存储在用户本地硬盘驱动器上的缓存中，因此通常比服务器速度更快。这意味着，在初始缓存后，性能应该优于集中式配置。 | - 这一过程会在后台无缝进行，但是仍然需要下载这些文件的初始成本。 |
-|  |  | - 每次更新配置以指向依赖项的新版本时，都需要缓存配置和新的依赖项。 |
+|                         | - 它们存储在用户本地硬盘驱动器上的缓存中，因此通常比服务器速度更快。这意味着，在初始缓存后，性能应该优于集中式配置。 | - 这一过程会在后台无缝进行，但是仍然需要下载这些文件的初始成本。 |
+|                         |                                                                                                                                                                                                                                                               | - 每次更新配置以指向依赖项的新版本时，都需要缓存配置和新的依赖项。 |
 
 总之，如果您的存储速度较慢，但是 Internet 连接良好，那么分布式配置可能是最佳的解决方案，但是如果您的服务器存储性能很好，而 Internet 连接很差，那么集中式配置可能更合适。
 
@@ -85,7 +85,7 @@ Shotgun Toolkit [将数据缓存到用户的主目录](../administering/where-is
 2. **不管您使用哪种方法启动，速度都很慢吗？也就是说，如果您从 SG Desktop 启动或使用浏览器集成从 SG 站点启动，情况是否大致相同？** - 如果是从 Shotgun 站点而不是从 SG Desktop 启动很慢，那么这可能是浏览器集成的问题，或者它可能意味着在磁盘上创建文件夹的问题。如果是从项目以外的上下文启动，那么很可能是在磁盘上创建了更多文件夹，所以这可能解释了所花的时间。同样值得注意的是，每次启动软件时，我们都会检查所需的文件夹是否存在。
 3. **是否在所有项目中都发生？** - 如果不是，那么它很可能特定于配置的设置方式。
 4. **是否发生在一天中的特定时刻？** - 如果是，那么这可能表明对基础设施的需求较高，例如在一天的某些时间服务器使用率较高。
-5. **是否针对使用的所有计算机/操作系统发生此情况？** - 如果特定计算机速度很慢，则可能是 Toolkit 以外的某些内容导致了问题。但是，清除该计算机上的 Toolkit 缓存是一个良好的开端。不同的操作系统随附不同版本的软件和 Python 软件包，有时可能在特定的内部版本中出现性能问题。具体来说，我们已经看到在 Windows 上使用 Samba (SMB) 共享的性能问题。目前还没有解决此问题的方法，但是如果您正在使用它，那么最好能够意识到这一点。如果您认为该问题仅限于特定的操作系统、Python 软件包或软件版本，请联系我们的[支持团队](https://support.shotgunsoftware.com/hc/en-us/requests/new)，以便他们可以进一步调查。
+5. **是否针对使用的所有计算机/操作系统发生此情况？** - 如果特定计算机速度很慢，则可能是 Toolkit 以外的某些内容导致了问题。那么，首先想到是清除该计算机上的 Toolkit 缓存。不同的操作系统随附不同版本的软件和 Python 软件包，有时可能在特定的内部版本中出现性能问题。具体来说，我们已经看到在 Windows 上使用 Samba (SMB) 共享的性能问题。目前还没有解决此问题的方法，但是如果您正在使用它，那么最好能够意识到这一点。如果您认为该问题仅限于特定的操作系统、Python 软件包或软件版本，请联系我们的[支持团队](https://support.shotgunsoftware.com/hc/en-us/requests/new)，以便他们可以进一步调查。
 6. **是否针对所有用户都发生这种情况？** - 与上文类似，如果是同一台计算机上的其他用户，这个问题可能会消失。在这种情况下，首先清除用户的本地 Shotgun 缓存。此外，请确保没有为正常的生产用途启用调试日志记录，因为这将影响性能。
 7. **启动速度慢局限于特定的应用/软件，还是所有应用/软件的启动速度都异常缓慢？** - 如果特定软件启动缓慢，这可能意味着存在配置问题。可能有必要检查一下，是否有任何自定义挂钩设置为在启动之前或之后运行，这可能会影响性能。启动时使用的常见挂钩是 [`before_app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/before_app_launch.py)、[`app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/app_launch.py) 和核心挂钩 [`engine_init.py`](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/engine_init.py)。有时也会出现以下情况：发布了更新版本的软件，而我们的集成启动速度突然慢很多。在这种情况下，您应该联系[支持](https://support.shotgunsoftware.com/hc/en-us/requests/new) 以确认他们是否了解这一点，以及是否有任何已知的修复。请提供您使用的软件版本号（如果适用，包括修补程序/Service Pack），以及您正在运行的 TK 插件和核心的版本。
 
@@ -131,8 +131,8 @@ Shotgun Toolkit [将数据缓存到用户的主目录](../administering/where-is
 首先要做的是将问题范围缩小到相关应用速度慢的某些方面。
 
 - **启动应用或浏览选项卡是否很慢？**
-   - 有可能是该应用当前配置为显示太多信息。可以将“我的任务”(My Tasks)选项卡和其他选项卡配置为从列表中过滤出不需要的实体。例如，您可以过滤出处于特定状态的任务，例如“暂停”(On Hold) (`hld`) 或“最终”(Final) (`fin`)。这不仅提供了性能优势，而且还让美工人员仅看到对他们来说重要的信息。可以过滤[加载器应用](https://support.shotgunsoftware.com/hc/en-us/articles/219033078-Load-Published-Files-#The%20tree%20view)和 Workfiles 应用，但是过滤时 Workfiles 目前没有特定的文档部分，不过过滤器可以作为[层次结构设置](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files#Step%20filtering)的一部分应用。
-   - “File Open”应用的层次结构也可以配置为延迟加载[子项直到它被展开](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files#Deferred%20queries)。现在这是默认的配置设置，但是，如果您有较旧的配置，则可能希望过渡到使用该设置。
+   - 有可能是该应用当前配置为显示太多信息。可以将“我的任务”(My Tasks)选项卡和其他选项卡配置为从列表中过滤出不需要的实体。例如，您可以过滤出处于特定状态的任务，例如“暂停”(On Hold) (`hld`) 或“最终”(Final) (`fin`)。这不仅提供了性能优势，而且还让美工人员仅看到对他们来说重要的信息。可以过滤[加载器应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033078#The%20tree%20view)和 Workfiles 应用，但是过滤时 Workfiles 目前没有特定的文档部分，不过过滤器可以作为[层次结构设置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088#Step%20filtering)的一部分应用。
+   - “File Open”应用的层次结构也可以配置为延迟加载[子项直到它被展开](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088#Deferred%20queries)。现在这是默认的配置设置，但是，如果您有较旧的配置，则可能希望过渡到使用该设置。
    - 确认未启用调试日志记录。这可能会导致大量额外的 I/O，因此会降低速度；这些应用确实包含大量的调试输出。
 - **打开、保存或创建新文件时是否很慢？**
    - 检查您是否已接管场景操作或动作挂钩，并确定这些功能是否有任何可能会降低速度的自定义行为。
@@ -162,7 +162,7 @@ Shotgun Toolkit [将数据缓存到用户的主目录](../administering/where-is
 
 #### 随父文件夹一起创建
 
-有一个 [`create_with_parent` 设置](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Create%20With%20Parent%20Folder)，可应用于数据结构文件夹。
+有一个 [`create_with_parent` 设置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Create%20With%20Parent%20Folder)，可应用于数据结构文件夹。
 将其设置为 True 会导致子文件夹随父文件夹一起创建。您应注意避免这种情况，因为将其设置为 True 会导致检查并创建大量的文件夹。
 
 **示例**
@@ -174,7 +174,7 @@ Shotgun Toolkit [将数据缓存到用户的主目录](../administering/where-is
 {% include info title="注意" content="工序数据结构文件夹的设置默认为 True。" %}
 
 #### 延迟创建
-[`defer_creation` 设置](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Workspaces%20and%20Deferred%20Folder%20Creation)允许您将文件夹的创建限制为仅在特定插件运行时才创建文件夹，从而进一步细化何时应创建文件夹。您甚至可以使用自定义名称，然后使用 [sgtk API](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure) 触发它们的创建。
+[`defer_creation` 设置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Workspaces%20and%20Deferred%20Folder%20Creation)允许您将文件夹的创建限制为仅在特定插件运行时才创建文件夹，从而进一步细化何时应创建文件夹。您甚至可以使用自定义名称，然后使用 [sgtk API](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure) 触发它们的创建。
 
 **示例**
 
@@ -195,7 +195,7 @@ sgtk.create_filesystem_structure(entity["type"], entity["id"], engine="publish")
 
 考虑进一步延迟文件夹，如果在项目的根目录下有许多非动态文件夹，通常只需要创建一次。例如，默认配置的数据结构根目录下的[“editorial”和“reference”](https://github.com/shotgunsoftware/tk-config-default2/tree/master/core/schema/project)文件夹可能只需要在项目开始时创建一次，但默认情况下，每次创建文件夹时都将检查它们是否存在。
 
-为了限制这一点，可以为它们创建 [yml 文件](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Static%20folders)，您可以在其中设置一个延迟关键字，这样只有在特定插件中运行文件夹创建或传递该关键字时才会创建它们。您可以将延迟关键字设置为 `tk-shell`，然后通过 tank 命令（如 `tank folders`）运行文件夹创建。
+为了限制这一点，可以为它们创建 [yml 文件](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Static%20folders)，您可以在其中设置一个延迟关键字，这样只有在特定插件中运行文件夹创建或传递该关键字时才会创建它们。您可以将延迟关键字设置为 `tk-shell`，然后通过 tank 命令（如 `tank folders`）运行文件夹创建。
 
 这意味着，只有在通过 tank 命令运行文件夹创建时才会创建这些文件夹，这是 Toolkit 管理员在第一次设置项目时可以执行的操作。或者，您可以编写一个小型脚本，使用 custom 关键字运行文件夹创建，类似于上面的示例。
 

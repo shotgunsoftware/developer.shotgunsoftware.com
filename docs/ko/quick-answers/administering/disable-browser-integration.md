@@ -11,15 +11,15 @@ lang: ko
 
 1. 다음 위치에서 텍스트 파일을 생성하거나 엽니다.
 
-       Windows: %APPDATA%\Shotgun\preferences\toolkit.ini
-       Macosx: ~/Library/Preferences/Shotgun/toolkit.ini
-       Linux: ~/.shotgun/preferences/toolkit.ini
-   
+        Windows: %APPDATA%\Shotgun\preferences\toolkit.ini
+        Macosx: ~/Library/Preferences/Shotgun/toolkit.ini
+        Linux: ~/.shotgun/preferences/toolkit.ini
+
 2. 다음 섹션을 추가합니다.
 
-       [BrowserIntegration]
-       enabled=0
-   
+        [BrowserIntegration]
+        enabled=0
+
 브라우저 통합 구성 방법에 대한 자세한 내용은 [관리자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000067493-Integrations-Admin-Guide#Toolkit%20Configuration%20File)를 참조하십시오.
 
 **대체 방법**
