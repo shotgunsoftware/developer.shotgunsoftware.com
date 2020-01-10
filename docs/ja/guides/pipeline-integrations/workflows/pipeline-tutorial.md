@@ -376,7 +376,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
                "Mesh",
                object
            )
-          
+
            # set the icon for the item
            mesh_item.set_icon_from_path(icon_path)
 

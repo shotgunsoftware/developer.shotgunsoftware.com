@@ -15,7 +15,6 @@ Toolkit セットアップの管理および設定に基づくクイック ア�
 - [Windows で Shotgun Desktop をサイレント インストールするにはどうすればいいですか?](./administering/install-desktop-silent.md)
 - [Linux で Shotgun Desktop のデスクトップ/ランチャー アイコンをセットアップするにはどうすればいいですか?](./administering/create-shotgun-desktop-shortcut.md)
 - [Shotgun Desktop のブラウザ統合を無効にするにはどうすればいいですか?](./administering/disable-browser-integration.md)
-- [Shotgun Desktop は Ubuntu のような Debian システムで動作しますか?](./administering/sg-desktop-run-on-ubuntu.md)
 
 #### 設定の管理:
 

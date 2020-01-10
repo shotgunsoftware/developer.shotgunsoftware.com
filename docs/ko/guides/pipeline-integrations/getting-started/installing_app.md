@@ -27,9 +27,9 @@ lang: ko
 이 안내서를 사용하고 툴킷 앱을 설치하려면 다음이 필요합니다.
 
 1. 유효한 [Shotgun](https://www.shotgunsoftware.com/kr/signup/) 사이트.
-2. 지정한 프로젝트에 대한 파이프라인 구성. 또는 [구성 시작하기 안내서](link)의 연습에서 생성한 구성을 사용하십시오.
+2. 지정한 프로젝트에 대한 파이프라인 구성. 또는 [구성 시작하기 안내서](./advanced_config.md)의 연습에서 생성한 구성을 사용하십시오.
 3. 파이프라인 구성이 저장된 파일 시스템에 대해 읽기 및 쓰기 권한을 적절하게 설정합니다.
-4. Shotgun 데스크톱이 시스템에 설치되어 있어야 함
+4. Shotgun 데스크톱이 시스템에 설치되어 있어야 합니다.
 5. 활성 상태의 Maya 멤버쉽. [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 Maya 30일 체험판을 다운로드하십시오.
 
 {% include info title="참고" content="이 안내서는 tk-config-default2 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다." %}
@@ -40,7 +40,7 @@ lang: ko
 
 파이프라인 구성에서 참조하는 앱은 다양한 위치에서 가져온 것일 수 있습니다. 기본 구성에서 표준인 앱은 Shotgun 앱 스토어에서 가져온 것입니다. 파이프라인 구성의 파일은 툴킷에 "주소록에서 Python 콘솔 앱의 주소를 찾아줄래?"라고 묻는 것처럼 Shotgun 통합이 앱에 액세스하는 방법을 지정합니다. 파이프라인 구성 파일은 툴킷에 특정 앱에 활용되는 코드의 번들을 찾는 위치를 알려줍니다.
 
-기본 구성에서 툴킷 앱의 "주소"는 `config/env/includes/app_locations.yml` 파일에 나열되어 있으며 코드를 찾는 위치를 지정합니다. 이러한 "주소"를 [설명자](../tk-core/descriptor.html&sa=D&ust=1550704642274000&usg=AFQjCNFiiQUV5OrFYtntHOiW_nnLs8hrjw)라고 합니다. Shotgun 통합은 앱에 대한 코드 번들을 찾는 위치뿐 아니라 앱을 사용하는 환경도 알아야 합니다.
+기본 구성에서 툴킷 앱의 "주소"는 `config/env/includes/app_locations.yml` 파일에 나열되어 있으며 코드를 찾는 위치를 지정합니다. 이러한 "주소"를 [설명자](https://developer.shotgunsoftware.com/tk-core/descriptor.html)라고 합니다. Shotgun 통합은 앱에 대한 코드 번들을 찾는 위치뿐 아니라 앱을 사용하는 환경도 알아야 합니다.
 
 다음은 앱 설치 방법과 Shotgun 통합에 앱을 사용하는 위치를 알리는 방법에 대한 개념적인 개요입니다. 여기서는 구성을 확장하고 툴킷에 설명자를 조회하도록 요청하고 Shotgun에 앱을 사용하는 위치를 알리는 단계를 간략하게 설명합니다. 이 안내서에서는 다음 단계를 자세히 살펴봅니다.
 
@@ -81,7 +81,7 @@ lang: ko
 
 ### 파이프라인 구성 목록으로 이동합니다.
 
-**<a name="&rdquo;step3&rdquo;">3단계</a>:** Shotgun을 열고 오른쪽 위에서 **관리자(Admin) 메뉴(아바타) > 기본 레이아웃(Default Layouts) > 파이프라인 구성(Pipeline Configuration) > 파이프라인 구성 목록(Pipeline Configuration List)**을 선택합니다.
+**3단계:** Shotgun을 열고 오른쪽 위에서 **관리자(Admin) 메뉴(아바타) > 기본 레이아웃(Default Layouts) > 파이프라인 구성(Pipeline Configuration) > 파이프라인 구성 목록(Pipeline Configuration List)**을 선택합니다.
 
 ![파이프라인 구성 목록](./images/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
@@ -208,7 +208,7 @@ Shotgun 통합의 코드는 앱, 엔진 및 프레임워크에 대한 번들로 
 
 ![tk-maya](./images/installing_app/13_tk-maya.png)
 
-15단계: 다음 아래에 위치 설명자를 추가합니다.
+**15단계:** 다음 아래에 위치 설명자를 추가합니다.
 
 ```yaml
 settings.tk-maya.project:
@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 복제된 구성을 적용할 수 있는 사용 가능한 파이프라인 구성 목록이 표시됩니다. 구성을 업데이트하려는 프로젝트에 대한 기본 파이프라인 구성의 ID를 입력합니다.
 
-{% include info title="참고" content="이 안내서의 **[3단계](#step3):**에서 확인한 Shotgun의 파이프라인 구성(Pipeline Configuration) 페이지에서 파이프라인 구성의 ID를 찾을 수도 있습니다. 프로젝트 ID를 찾으려면 구성 목록(Configuration List)으로 이동하고 ID 열을 추가하십시오." %}
+{% include info title="참고" content="이 안내서의 **3단계**에서 확인한 Shotgun의 파이프라인 구성(Pipeline Configuration) 페이지에서 파이프라인 구성의 ID를 찾을 수도 있습니다. 프로젝트 ID를 찾으려면 구성 목록(Configuration List)으로 이동하고 ID 열을 추가하십시오." %}
 
 ![ID 열](./images/installing_app/17_id_column.png)
 
@@ -356,7 +356,7 @@ Push Complete!
 
 ![Maya 내 앱](./images/installing_app/19_app_in_maya.png)
 
-Python 콘솔 앱이 선택한 프로젝트의 프로젝트 환경에 추가되었습니다. 두 번째 안내서인 "[구성 편집](../toolkit_basics_guides/editing_app_setting.md)"에서 각 환경은 서로 독립적이고, 프로젝트마다 전용 구성이 있으며, 프로젝트가 로드될 때 소프트웨어 통합이 파이프라인 구성에서 설정을 수집한다는 것을 살펴봤습니다. 환경에서 Python 콘솔을 사용할 수 있으려면 `app_locations.yml` 파일에서 위치 설명자를 찾는 지침이 환경에 제공되어야 합니다. 이 점을 고려해 볼 때 파이프라인에서 Python 콘솔 앱을 사용할 수 있게 할 위치에 "여기서 Python 콘솔 앱 사용"과 같은 설정을 지정해야 합니다.
+Python 콘솔 앱이 선택한 프로젝트의 프로젝트 환경에 추가되었습니다. 두 번째 안내서인 "[구성 편집](./editing_app_setting.md)"에서 각 환경은 서로 독립적이고, 프로젝트마다 전용 구성이 있으며, 프로젝트가 로드될 때 소프트웨어 통합이 파이프라인 구성에서 설정을 수집한다는 것을 살펴봤습니다. 환경에서 Python 콘솔을 사용할 수 있으려면 `app_locations.yml` 파일에서 위치 설명자를 찾는 지침이 환경에 제공되어야 합니다. 이 점을 고려해 볼 때 파이프라인에서 Python 콘솔 앱을 사용할 수 있게 할 위치에 "여기서 Python 콘솔 앱 사용"과 같은 설정을 지정해야 합니다.
 
 ## 고급 항목
 
@@ -408,12 +408,12 @@ apps.tk-multi-pythonconsole.location:
   version: v1.1.2
 ```' %}
 
-모든 앱, 엔진 및 프레임워크에는 툴킷에 특정 번들에 액세스하는 위치를 알리는 데 사용되는 위치 설명자가 있습니다. 대부분의 앱 설명자는 `app_locations.yml` 파일에 있지만, Python 콘솔 앱에서 확인한 것처럼 원하는 위치에서 참조되지 않을 수도 있습니다. 모든 표준 앱 및 엔진은 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 나와 있습니다.
+모든 앱, 엔진 및 프레임워크에는 툴킷에 특정 번들에 액세스하는 위치를 알리는 데 사용되는 위치 설명자가 있습니다. 대부분의 앱 설명자는 `app_locations.yml` 파일에 있지만, Python 콘솔 앱에서 확인한 것처럼 원하는 위치에서 참조되지 않을 수도 있습니다. 모든 표준 앱 및 엔진이 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 정리되어 있습니다.
 
-Shotgun에서 지원하는 적합한 소프트웨어 통합에 앱을 추가할 수도 있고, 자신만의 전용 응용프로그램을 자체 툴킷 도구에 추가할 수도 있습니다. 지원되는 모든 소프트웨어 응용프로그램도 통합의 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 나와 있습니다.
+Shotgun에서 지원하는 적합한 소프트웨어 통합에 앱을 추가할 수도 있고, 자신만의 전용 응용프로그램을 자체 툴킷 도구에 추가할 수도 있습니다. 지원되는 모든 소프트웨어 응용프로그램도 통합의 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 정리되어 있습니다. 
 
-원하는 앱을 찾을 수 없는 경우 직접 작성할 수 있습니다. 다른 Shotgun 사용자도 동일한 기능을 필요로 할 수 있으므로 새로 만든 앱을 공유하는 것도 Shotgun 커뮤니티에 기여하는 한 가지 방법입니다.
+원하는 앱을 찾을 수 없는 경우 직접 작성할 수 있습니다. 다른 Shotgun 사용자도 동일한 기능을 필요로 할 수 있으므로 새로 만든 앱을 공유하는 것도 Shotgun 커뮤니티에 기여하는 한 가지 방법입니다. 
 
-다음 안내서에서는 프로덕션 폴더 구조를 스튜디오의 체계에 맞게 커스터마이즈하는 방법에 대해 설명합니다. [스튜디오의 체계에 맞게 프로덕션 폴더 스키마를 커스터마이즈해 보십시오.](link)
+다음 안내서에서는 스튜디오의 [구조에 따라 프로덕션 폴더 구조를 커스터마이즈하는 방법을 알아봅니다](./dynamic_filesystem_configuration.md).
 
 

@@ -13,10 +13,6 @@
 
 - caption: guides
   children:
-    - text: event-triggers
-      url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
-    - text: jira-bridge-guide
-      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
     - page: toolkit-pipeline-integrations
       children:
       - page: toolkit-getting-started
@@ -34,10 +30,7 @@
         children:
         - page: disabling-auto-updates-and-offline
       - page: toolkit-development 
-        children:
-         - page: sgtk-developer-getting-started
-         - page: sgtk-developer-generating-path-and-publish
-         - page: sgtk-developer-bootstrapping
+        children: 
          - text: app-development
            url: " https://support.shotgunsoftware.com/hc/en-us/articles/219033158"
          - text: engine-development
@@ -48,16 +41,20 @@
         url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024712894-User-Manual"
       - text: rv-sdi
         url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025736833-RV-SDI-Manual"
-      - page: rv-integrations
-        children:
-        - text: maya
-          url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025583533-RV-Maya-Integration-v1-4-"
-        - text: nuke
-          url: " https://support.shotgunsoftware.com/hc/en-us/articles/219042148-Nuke-RV-integration"
-        - text: shotgun
-          url: " https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
-        - text: screening-room
-          url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"   
+      - text: rv-maya-integration
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025583533-RV-Maya-Integration-v1-4-"
+      - text: rv-nuke-integration
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/219042148-Nuke-RV-integration"
+      - text: rv-shotgun-integration
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
+      - text: screening-room-and-shotgun-review
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"   
+    - text: action-menu-items
+      url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
+    - text: event-triggers
+      url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
+    - text: jira-bridge-guide
+      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
     - page: shotgun-webhooks
 
 
@@ -69,8 +66,6 @@
     url: " https://developer.shotgunsoftware.com/rest-api/"
   - text: jira-bridge-ref
     url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
-  - text: action-menu-items
-    url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
   - text: rv-technical-reference
     url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024280254-Reference-Manual"
   - page: pipeline-integrations-reference

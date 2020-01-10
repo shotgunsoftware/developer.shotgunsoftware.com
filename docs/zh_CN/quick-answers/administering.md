@@ -15,7 +15,6 @@ lang: zh_CN
 - [如何在 Windows 上静默安装 Shotgun Desktop？](./administering/install-desktop-silent.md)
 - [如何在 Linux 上为 Shotgun Desktop 设置桌面/启动程序图标？](./administering/create-shotgun-desktop-shortcut.md)
 - [如何禁用 Shotgun Desktop 的浏览器集成？](./administering/disable-browser-integration.md)
-- [Shotgun Desktop 能否在 Ubuntu 等 Debian 系统上运行？](./administering/sg-desktop-run-on-ubuntu.md)
 
 #### 管理您的配置：
 

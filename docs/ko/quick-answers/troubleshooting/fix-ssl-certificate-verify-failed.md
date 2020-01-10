@@ -21,11 +21,11 @@ Python API는 최신 인증서 사본을 제공하지만 2019년 2월 21일부�
 
 2. PowerShell 창에 다음 명령을 붙여넣은 후 Return 키를 눌러 실행합니다.
 
-       $cert_url = "https://www.amazontrust.com/repository/SFSRootCAG2.cer"
-       $cert_file = New-TemporaryFile
-       Invoke-WebRequest -Uri $cert_url -UseBasicParsing -OutFile $cert_file.FullName
-       Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalMachine\Root
-   
+        $cert_url = "https://www.amazontrust.com/repository/SFSRootCAG2.cer"
+        $cert_file = New-TemporaryFile
+        Invoke-WebRequest -Uri $cert_url -UseBasicParsing -OutFile $cert_file.FullName
+        Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalMachine\Root
+
 3. 추가된 인증서에 포함된 자세한 지문 `925A8F8D2C6D04E0665F596AFF22D863E8256F3F`가 표시되면 작업이 완료된 것이며 PowerShell을 닫을 수 있습니다.
 
 ## 대체 솔루션
