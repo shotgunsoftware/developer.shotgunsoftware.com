@@ -13,11 +13,13 @@ lang: zh_CN
 
 例如，要将该选项卡添加到[镜头工序环境中的 Maya 插件](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-multi-loader2.yml#L122)，您需要添加以下代码段：
 
-    caption: Asset Library
-    hierarchy: [project, sg_asset_type, code]
-    entity_type: Asset
-    filters:
-    - [project, is, {'type': 'Project', 'id': 207}]
+```yaml
+caption: Asset Library
+hierarchy: [project, sg_asset_type, code]
+entity_type: Asset
+filters:
+- [project, is, {'type': 'Project', 'id': 207}]
+```
 
 将 `207` 替换为库项目的 ID。
 

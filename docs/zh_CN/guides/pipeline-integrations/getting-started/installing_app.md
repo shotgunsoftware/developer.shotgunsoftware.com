@@ -27,7 +27,7 @@ lang: zh_CN
 要使用本手册并安装 Toolkit 应用，需要以下内容：
 
 1. 有效的 [Shotgun](https://www.shotgunsoftware.com/zh-cn/signup/) 站点。
-2. 已标识项目的工作流配置，或完成[配置快速入门手册](link)并使用该练习中创建的配置。
+2. 已标识项目的工作流配置，或完成[配置快速入门手册](./advanced_config.md)并使用该练习中创建的配置。
 3. 为存储工作流配置的文件系统设置适当的读取和写入权限。
 4. 在系统上安装 Shotgun Desktop。
 5. Maya 的有效固定期限的使用许可。在[此处](https://www.autodesk.com.cn/products/maya/free-trial) 获取 Maya 的 30 天试用版。
@@ -40,7 +40,7 @@ lang: zh_CN
 
 工作流配置中引用的应用可以来自不同的位置。默认配置中的标准应用来自 Shotgun App Store。工作流配置中的文件指定 Shotgun 集成如何访问应用，有点像询问 Toolkit，“您能在小黑本中查找 Python 控制台应用的地址吗？”工作流配置文件告知 Toolkit 在何处可以找到用于特定应用的代码包。
 
-Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_locations.yml` 文件中，并指定如何查找代码。这些“地址”称为[描述符](../tk-core/descriptor.html&sa=D&ust=1550704642274000&usg=AFQjCNFiiQUV5OrFYtntHOiW_nnLs8hrjw)。不仅需要告诉 Shotgun 集成如何查找应用的代码包，还需要告诉它在哪些环境中使用该应用。
+Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_locations.yml` 文件中，并指定如何查找代码。这些“地址”称为[描述符](https://developer.shotgunsoftware.com/tk-core/descriptor.html)。不仅需要告诉 Shotgun 集成如何查找应用的代码包，还需要告诉它在哪些环境中使用该应用。
 
 下面概念性概述了如何安装应用以及如何告知 Shotgun 集成在何处使用它。它概述了扩展配置的步骤，要求 Toolkit 查找描述符，并告知 Shotgun 在何处使用该应用。本手册详细介绍了这些步骤：
 
@@ -81,7 +81,7 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 ### 转到工作流配置列表。
 
-**<a name="&rdquo;step3&rdquo;">步骤 3</a>：**打开 Shotgun，在右上角选择**“管理”(Admin)菜单（您的头像）>“默认布局 > 工作流配置 > 工作流配置列表”(Default Layouts > Pipeline Configuration > Pipeline Configuration List)**。
+**步骤 3：**打开 Shotgun，在右上角选择**“管理”(Admin)菜单（您的头像）>“默认布局 > 工作流配置 > 工作流配置列表”(Default Layouts > Pipeline Configuration > Pipeline Configuration List)**。
 
 ![工作流配置列表](./images/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
@@ -144,6 +144,7 @@ apps.tk-multi-pythonconsole.location:
 	type: app_store
 	name: tk-multi-pythonconsole
 	version: v1.1.2
+
 ```
 
 {% include info title="注意" content="如果您使用的是其他配置，则可能需要将描述符添加到文件中。" %}
@@ -173,6 +174,7 @@ engines:
   tk-photoshopcc: "@settings.tk-photoshopcc.project"
   tk-shell: "@settings.tk-shell.project"
   tk-shotgun: "@settings.tk-shotgun.project"
+
 ```
 
 使用 `@settings` 的 `tk-maya: “@settings.tk-maya.project”` 行表明这些设置位于包含文件中。`tk-maya` 标识 Maya 插件，`project` 标识环境。
@@ -206,7 +208,7 @@ Shotgun 集成的代码被组织成应用、插件和框架的包。在 Toolkit 
 
 ![tk-maya](./images/installing_app/13_tk-maya.png)
 
-步骤 15：在以下部分的下方添加位置描述符
+**步骤 15：**在以下部分的下方添加位置描述符
 
 ```yaml
 settings.tk-maya.project:
@@ -285,6 +287,7 @@ Python 控制台应用将在 Maya 中可用。
 按照提示操作，并键入项目主要配置（您要将更改推送到的配置）的 ID。
 
 ```
+
 $ ls
 cache		config		install		tank		tank.bat
 $ ./tank push_configuration
@@ -315,12 +318,13 @@ Your existing configuration will be backed up.
 The following pipeline configurations are available to push to:
  - [1] Primary (/Users/michelle/Documents/Shotgun/configs/the_other_side)
 
-Please type in the id of the configuration to push to (ENTER to exit): 
+Please type in the id of the configuration to push to (ENTER to exit):
+
 ```
 
 将出现一个可以将克隆配置推送到的可用工作流配置的列表。输入您要为其更新配置的项目的主要工作流配置的 ID。
 
-{% include info title="注意" content="您也可以在本手册的**[“步骤 3](#step3)”**中查看的 Shotgun 中的“工作流配置”(Pipeline Configuration)页面上找到工作流配置的 ID。要查找项目 ID，请转到“配置列表”(Configuration List)，并添加“ID”列。" %}
+{% include info title="注意" content="您也可以在本手册的**“步骤 3”**中查看的 Shotgun 中的“工作流配置”(Pipeline Configuration)页面上找到工作流配置的 ID。要查找项目 ID，请转到“配置列表”(Configuration List)，并添加“ID”列。" %}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 
@@ -352,7 +356,7 @@ Push Complete!
 
 ![Maya 中的应用](./images/installing_app/19_app_in_maya.png)
 
-Python 控制台应用已添加到所选项目的项目环境中。我们在第二个手册[编辑配置](../toolkit_basics_guides/editing_app_setting.md)中讨论过，每个环境都是独立的，每个项目都有专用配置，软件集成在加载项目时从工作流配置中收集设置。为使 Python 控制台在环境中可用，该环境需要使用一些指令以便在 `app_locations.yml` 文件中查找位置描述符。考虑到这一点，在工作流中您希望使用 Python 控制台应用的任何阶段，都需要“在此处使用 Python 控制台应用”设置。
+Python 控制台应用已添加到所选项目的项目环境中。我们在第二个手册[编辑配置](./editing_app_setting.md)中讨论过，每个环境都是独立的，每个项目都有专用配置，软件集成在加载项目时从工作流配置中收集设置。为使 Python 控制台在环境中可用，该环境需要使用一些指令以便在 `app_locations.yml` 文件中查找位置描述符。考虑到这一点，在工作流中您希望使用 Python 控制台应用的任何阶段，都需要“在此处使用 Python 控制台应用”设置。
 
 ## 高级主题
 
@@ -404,10 +408,12 @@ apps.tk-multi-pythonconsole.location:
   version: v1.1.2
 ```' %}
 
-每个应用、插件和框架都有位置描述符，用于告知 Toolkit 在何处访问特定的包。许多应用描述符都位于 `app_locations.yml` 文件中，但可能无法在所需的位置引用它们，正如我们在 Python 控制台应用中看到的那样。所有标准应用和插件都列在[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798) 中。
+每个应用、插件和框架都有位置描述符，用于告知 Toolkit 在何处访问特定的包。许多应用描述符都位于 `app_locations.yml` 文件中，但可能无法在所需的位置引用它们，正如我们在 Python 控制台应用中看到的那样。所有标准应用和插件都列在[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798-Integrations-Apps-and-Engines) 中。
 
-您可以将任何应用添加到 Shotgun 支持的任何适当的软件集成中，也可以将您自己的专有应用添加到 Toolkit 库中。所有受支持的软件应用程序也列在集成[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798) 中。
+您可以将任何应用添加到 Shotgun 支持的任何适当的软件集成中，也可以将您自己的专有应用添加到 Toolkit 库中。所有受支持的软件应用程序也列在集成[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798-Integrations-Apps-and-Engines) 中。
 
 如果找不到您要查找的确切应用，则可以创建一个。其他 Shotgun 用户很有可能需要同样的功能，因此分享新应用是回馈 Shotgun 社区的一种方式。
 
-在下一个手册中，您可以自定义 production 文件夹结构，以匹配您的设施的构造方式。[自定义 production 文件夹数据结构，以匹配您的设施的构造方式。](link)
+在下一个手册中，您将了解[如何自定义 production 文件夹结构，以呈现您的设施的构造方式](./dynamic_filesystem_configuration.md)。
+
+

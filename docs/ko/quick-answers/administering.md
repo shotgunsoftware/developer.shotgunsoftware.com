@@ -15,7 +15,6 @@ lang: ko
 - [Windows에서 Shotgun 데스크톱을 자동으로 설치하려면 어떻게 해야 합니까?](./administering/install-desktop-silent.md)
 - [Linux에서 Shotgun 데스크톱의 데스크톱/시작 관리자 아이콘을 어떻게 설정합니까?](./administering/create-shotgun-desktop-shortcut.md)
 - [Shotgun 데스크톱의 브라우저 통합을 어떻게 비활성화할 수 있습니까?](./administering/disable-browser-integration.md)
-- [Shotgun 데스크톱이 Ubuntu 같은 Debian 시스템에서도 작동합니까?](./administering/sg-desktop-run-on-ubuntu.md)
 
 #### 구성 관리:
 

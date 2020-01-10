@@ -13,6 +13,56 @@
 
 - caption: guides
   children:
+    - page: toolkit-pipeline-integrations
+      children:
+      - page: toolkit-getting-started
+        children:
+        - page: toolkit-guides-advanced-config
+        - page: toolkit-guides-editing-config
+        - page: toolkit-guides-adding-app
+        - page: toolkit-guides-filesystem-configuration
+      - page: toolkit-workflows
+        children:
+        - page: toolkit-pipeline-tutorial
+        - text: episodic-pipeline-tutorial
+          url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002689053-Episodic-workflow-with-Nuke-Studio"
+      - page: toolkit-administration
+        children:
+        - page: disabling-auto-updates-and-offline
+      - page: toolkit-development
+        children:
+        - page: sgtk-developer-getting-started
+        - page: sgtk-developer-generating-path-and-publish
+        - page: sgtk-developer-bootstrapping
+        - text: app-development
+          url: " https://support.shotgunsoftware.com/hc/en-us/articles/219033158"
+        - text: engine-development
+          url: " https://support.shotgunsoftware.com/hc/en-us/articles/219040348"
+    - page: review
+      children:
+      - text: rv-user-manual
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024712894-User-Manual"
+      - text: rv-sdi
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025736833-RV-SDI-Manual"
+      - text: rv-maya-integration
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025583533-RV-Maya-Integration-v1-4-"
+      - text: rv-nuke-integration
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/219042148-Nuke-RV-integration"
+      - text: rv-shotgun-integration
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
+      - text: screening-room-and-shotgun-review
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"
+    - text: action-menu-items
+      url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
+    - text: event-triggers
+      url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
+    - text: jira-bridge-guide
+      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
+    - page: shotgun-webhooks
+- caption: getting-started
+
+- caption: guides
+  children:
     - text: event-triggers
       url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
     - text: jira-bridge-guide
@@ -33,7 +83,7 @@
       - page: toolkit-administration
         children:
         - page: disabling-auto-updates-and-offline
-      - page: toolkit-development 
+      - page: toolkit-development
         children:
          - page: sgtk-developer-getting-started
          - page: sgtk-developer-generating-path-and-publish
@@ -57,7 +107,7 @@
         - text: shotgun
           url: " https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
         - text: screening-room
-          url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"   
+          url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"
     - page: shotgun-webhooks
 
 
@@ -69,8 +119,6 @@
     url: " https://developer.shotgunsoftware.com/rest-api/"
   - text: jira-bridge-ref
     url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
-  - text: action-menu-items
-    url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
   - text: rv-technical-reference
     url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024280254-Reference-Manual"
   - page: pipeline-integrations-reference
@@ -101,7 +149,7 @@
   - text: siggraph-shotgun-day
     url: " https://www.youtube.com/playlist?list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d"
   - text: developer-training
-    url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"  
+    url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"
   - text: toolkit-webinars
     url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
 
@@ -116,4 +164,11 @@
     url: " https://status.shotgunsoftware.com/"
   - text: new-support-request
     url: " https://support.shotgunsoftware.com/hc/requests/new"
+
+
+
+
+
+
+
 

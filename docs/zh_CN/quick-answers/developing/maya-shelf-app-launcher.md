@@ -7,7 +7,7 @@ lang: zh_CN
 
 # 如何在 Maya 中添加用于启动 Toolki 应用的工具架按钮？
 
-在 Maya 中添加一个用于启动 Maya 的 Toolkit 应用的工具架按钮是一项非常简单的操作。以下示例显示了如何添加自定义工具架按钮，以便打开[加载器应用](https://support.shotgunsoftware.com/entries/95442527)。
+在 Maya 中添加一个用于启动 Maya 的 Toolkit 应用的工具架按钮是一项非常简单的操作。以下示例显示了如何添加自定义工具架按钮，以便打开[加载器应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033078)。
 
 {% include info title="注意" content="假设 Toolkit 当前在 Maya 会话中处于启用状态。此示例代码不会引导 Toolkit。" %}
 

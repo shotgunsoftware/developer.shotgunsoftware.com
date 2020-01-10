@@ -41,8 +41,7 @@ lang: zh_CN
 {% include warning title="重要信息" content="如果您删除了 `tk-multi-publish2.yml` 但仍有插件文件指向它，则可能会收到错误，如下所示：
 
     Error
-    Include resolve error in '/configs/my_project/env/./includes/settings/tk-desktop2.yml': './tk-multi-publish2.yml' resolved to '/configs/my_project/env/./includes/settings/./tk-multi-publish2.yml' which does not exist!
-" %}
+    Include resolve error in '/configs/my_project/env/./includes/settings/tk-desktop2.yml': './tk-multi-publish2.yml' resolved to '/configs/my_project/env/./includes/settings/./tk-multi-publish2.yml' which does not exist!" %}
 
 ### 删除应用位置
 

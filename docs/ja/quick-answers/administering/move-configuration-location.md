@@ -132,7 +132,7 @@ lang: ja
         Updating Shotgun Configuration Record...
         Deleting original configuration files...
 
-        All done! 設定は正常に移動しました。
+        All done! Your configuration has been successfully moved.
 
 
 ## パイプライン設定を手動で移動する

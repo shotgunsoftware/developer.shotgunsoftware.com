@@ -24,116 +24,115 @@ lang: ko
 
 ## tank move_configuration 명령 사용:
 
-    $ cd /sgtk/software/shotgun/scarlet
-    $ ./tank move_configuration
-    
-    Shotgun Pipeline Toolkit을 시작합니다.
-    설명서는 https://toolkit.shotgunsoftware.com을 참조하십시오.
-    현재 경로 '/sgtk/software/shotgun/scarlet'에 대해 툴킷 시작
-    - 경로가 Shotgun 객체와 연결되어 있지 않음
-    - 기본 프로젝트 설정으로 폴백
-    - '기본' 구성 및 Core v0.15.22 
-    - 컨텍스트를 Scarlet으로 설정
-    - 명령 move_configuration 실행 중...
-    
-    
-    ----------------------------------------------------------------------
-    명령: 구성 이동
-    ----------------------------------------------------------------------
-    
-    구문: move_configuration linux_path windows_path mac_path
-    
-    이 명령은 지정된 파이프라인 구성 위치를 이동합니다.
-    또한 이 명령을 사용하여 파이프라인 구성에 새 플랫폼을
-    추가할 수도 있습니다.
-    
-    현재 경로
-    --------------------------------------------------------------
-    
-    현재 Linux 경로:   '/mnt/hgfs/sgtk/software/shotgun/scarlet'
-    현재 Windows 경로: 'z:\sgtk\software\shotgun\scarlet'
-    현재 Mac 경로:     '/sgtk/software/shotgun/scarlet'
-    
-    
-    일반적으로 경로는 다음과 같이 따옴표로 묶어야 합니다.
-    
-    > tank move_configuration "/linux_root/my_config" "p:\configs\my_config"
-    "/mac_root/my_config"
-    
-    플랫폼을 비워 두려면 빈 따옴표를 사용합니다. 예를 들어
-    Windows에서만 작동하는 구성을 원할 경우 다음을 수행합니다.
-    
-    > tank move_configuration "" "p:\configs\my_config" ""
+        $ cd /sgtk/software/shotgun/scarlet
+        $ ./tank move_configuration
+
+        Welcome to the Shotgun Pipeline Toolkit!
+        For documentation, see https://toolkit.shotgunsoftware.com
+        Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
+        - The path is not associated with any Shotgun object.
+        - Falling back on default project settings.
+        - Using configuration 'Primary' and Core v0.15.22
+        - Setting the Context to Scarlet.
+        - Running command move_configuration...
+
+
+        ----------------------------------------------------------------------
+        Command: Move configuration
+        ----------------------------------------------------------------------
+
+        Syntax: move_configuration linux_path windows_path mac_path
+
+        This will move the location of the given pipeline configuration.
+        You can also use this command to add a new platform to the pipeline
+        configuration.
+
+        Current Paths
+        --------------------------------------------------------------
+
+        Current Linux Path:   '/mnt/hgfs/sgtk/software/shotgun/scarlet'
+        Current Windows Path: 'z:\sgtk\software\shotgun\scarlet'
+        Current Mac Path:     '/sgtk/software/shotgun/scarlet'
+
+
+        You typically need to quote your paths, like this:
+
+        > tank move_configuration "/linux_root/my_config" "p:\configs\my_config"
+        "/mac_root/my_config"
+
+        If you want to leave a platform blank, just just empty quotes. For example, if
+        you want a configuration which only works on windows, do like this:
+
+        > tank move_configuration "" "p:\configs\my_config" ""
 
 
 ### 예시:
 
-    $ cd /sgtk/software/shotgun/scarlet
-    $ ./tank move_configuration "/mnt/hgfs/sgtk/software/shotgun/scarlet_new" "z:\sgtk\software\shotgun\scarlet_new" "/sgtk/software/shotgun/scarlet_new"
-    
-    Shotgun Pipeline Toolkit을 시작합니다.
-    설명서는 https://toolkit.shotgunsoftware.com을 참조하십시오.
-    경로 '/sgtk/software/shotgun/scarlet'에 대해 툴킷 시작
-    - 경로가 Shotgun 객체와 연결되어 있지 않음
-    - 기본 프로젝트 설정으로 폴백
-    - '기본' 구성 및 Core v0.15.22 
-    - 컨텍스트를 Scarlet으로 설정
-    - 명령 move_configuration 실행 중...
-    
-    
-    ----------------------------------------------------------------------
-    명령: 구성 이동
-    ----------------------------------------------------------------------
-    
-    
-    현재 경로
-    --------------------------------------------------------------
-    현재 Linux 경로:   '/sgtk/software/shotgun/scarlet'
-    현재 Windows 경로: 'z:\sgtk\software\shotgun\scarlet'
-    현재 Mac 경로:     '/sgtk/software/shotgun/scarlet'
-    
-    새 경로
-    --------------------------------------------------------------
-    새 Linux 경로:   '/mnt/hgfs/sgtk/software/shotgun/scarlet_new'
-    새 Windows 경로: 'z:\sgtk\software\shotgun\scarlet_new'
-    새 Mac 경로:     '/sgtk/software/shotgun/scarlet_new'
-    
-    
-    지정한 경로 변경을 반영하도록 구성이 이동됩니다.
-    
-    고급 사용자를 위한 참고 사항: 구성이 현지화되고 이 구성에 포함된 Core API에 링크된 다른
-    프로젝트가 있는 경우 이동 작업 후 이 링크를 수동으로
-    업데이트해야 합니다.
-    
-    구성을 이동하시겠습니까? [예/아니오] 예
-    '/sgtk/software/shotgun/scarlet' 복사 중 -> '/sgtk/software/shotgun/scarlet_new'
-    /sgtk/software/shotgun/scarlet/cache 복사 중...
-    /sgtk/software/shotgun/scarlet/config 복사 중...
-    /sgtk/software/shotgun/scarlet/config/core 복사 중...
-    /sgtk/software/shotgun/scarlet/config/core/hooks 복사 중...
-    /sgtk/software/shotgun/scarlet/config/core/schema 복사 중...
-    /sgtk/software/shotgun/scarlet/config/env 복사 중...
-    /sgtk/software/shotgun/scarlet/config/env/includes 복사 중...
-    /sgtk/software/shotgun/scarlet/config/hooks 복사 중...
-    /sgtk/software/shotgun/scarlet/config/icons 복사 중...
-    /sgtk/software/shotgun/scarlet/install 복사 중...
-    /sgtk/software/shotgun/scarlet/install/apps 복사 중...
-    /sgtk/software/shotgun/scarlet/install/apps/app_store 복사 중...
-    /sgtk/software/shotgun/scarlet/install/core 복사 중...
-    /sgtk/software/shotgun/scarlet/install/core/python 복사 중...
-    /sgtk/software/shotgun/scarlet/install/core.backup 복사 중...
-    /sgtk/software/shotgun/scarlet/install/core.backup/20150518_143244 복사 중...
-    /sgtk/software/shotgun/scarlet/install/core.backup/20150518_143940 복사 중...
-    /sgtk/software/shotgun/scarlet/install/engines 복사 중...
-    /sgtk/software/shotgun/scarlet/install/engines/app_store 복사 중...
-    /sgtk/software/shotgun/scarlet/install/frameworks 복사 중...
-    /sgtk/software/shotgun/scarlet/install/frameworks/app_store 복사 중...
-    /sgtk/software/shotgun/scarlet_new/config/core/install_location.yml에서 캐시된 위치 업데이트 중...
-    Shotgun 구성 레코드 업데이트 중...
-    원본 구성 파일 삭제 중...
-    
-    완료되었습니다. 구성을 성공적으로 이동했습니다.
+        $ cd /sgtk/software/shotgun/scarlet
+        $ ./tank move_configuration "/mnt/hgfs/sgtk/software/shotgun/scarlet_new" "z:\sgtk\software\shotgun\scarlet_new" "/sgtk/software/shotgun/scarlet_new"
 
+        Welcome to the Shotgun Pipeline Toolkit!
+        For documentation, see https://toolkit.shotgunsoftware.com
+        Starting toolkit for path '/sgtk/software/shotgun/scarlet'
+        - The path is not associated with any Shotgun object.
+        - Falling back on default project settings.
+        - Using configuration 'Primary' and Core v0.15.22
+        - Setting the Context to Scarlet.
+        - Running command move_configuration...
+
+
+        ----------------------------------------------------------------------
+        Command: Move configuration
+        ----------------------------------------------------------------------
+
+
+        Current Paths
+        --------------------------------------------------------------
+        Current Linux Path:   '/sgtk/software/shotgun/scarlet'
+        Current Windows Path: 'z:\sgtk\software\shotgun\scarlet'
+        Current Mac Path:     '/sgtk/software/shotgun/scarlet'
+
+        New Paths
+        --------------------------------------------------------------
+        New Linux Path:   '/mnt/hgfs/sgtk/software/shotgun/scarlet_new'
+        New Windows Path: 'z:\sgtk\software\shotgun\scarlet_new'
+        New Mac Path:     '/sgtk/software/shotgun/scarlet_new'
+
+
+        The configuration will be moved to reflect the specified path changes.
+
+        Note for advanced users: If your configuration is localized and you have other
+        projects which are linked to the core API embedded in this configuration,
+        these links must be manually updated after the move operation.
+
+        Are you sure you want to move your configuration? [Yes/No] yes
+        Copying '/sgtk/software/shotgun/scarlet' -> '/sgtk/software/shotgun/scarlet_new'
+        Copying /sgtk/software/shotgun/scarlet/cache...
+        Copying /sgtk/software/shotgun/scarlet/config...
+        Copying /sgtk/software/shotgun/scarlet/config/core...
+        Copying /sgtk/software/shotgun/scarlet/config/core/hooks...
+        Copying /sgtk/software/shotgun/scarlet/config/core/schema...
+        Copying /sgtk/software/shotgun/scarlet/config/env...
+        Copying /sgtk/software/shotgun/scarlet/config/env/includes...
+        Copying /sgtk/software/shotgun/scarlet/config/hooks...
+        Copying /sgtk/software/shotgun/scarlet/config/icons...
+        Copying /sgtk/software/shotgun/scarlet/install...
+        Copying /sgtk/software/shotgun/scarlet/install/apps...
+        Copying /sgtk/software/shotgun/scarlet/install/apps/app_store...
+        Copying /sgtk/software/shotgun/scarlet/install/core...
+        Copying /sgtk/software/shotgun/scarlet/install/core/python...
+        Copying /sgtk/software/shotgun/scarlet/install/core.backup...
+        Copying /sgtk/software/shotgun/scarlet/install/core.backup/20150518_143244...
+        Copying /sgtk/software/shotgun/scarlet/install/core.backup/20150518_143940...
+        Copying /sgtk/software/shotgun/scarlet/install/engines...
+        Copying /sgtk/software/shotgun/scarlet/install/engines/app_store...
+        Copying /sgtk/software/shotgun/scarlet/install/frameworks...
+        Copying /sgtk/software/shotgun/scarlet/install/frameworks/app_store...
+        Updating cached locations in /sgtk/software/shotgun/scarlet_new/config/core/install_location.yml...
+        Updating Shotgun Configuration Record...
+        Deleting original configuration files...
+
+        All done! Your configuration has been successfully moved.
 
 
 ## 수동으로 파이프라인 구성 이동
@@ -144,25 +143,25 @@ lang: ko
 
 1. 파이프라인 구성 파일을 새 위치로 이동
 
-       $ mv /sgtk/software/shotgun/scarlet /mnt/newserver/sgtk/software/shotgun/scarlet_new
-   
+        $ mv /sgtk/software/shotgun/scarlet /mnt/newserver/sgtk/software/shotgun/scarlet_new
+
 2. 툴킷이 파이프라인 구성의 위치를 파악하는 데 도움을 주도록 `install_location.yml`을 편집:
 
-       $ vi /mnt/newserver/sgtk/software/shotgun/scarlet_new/config/core/install_location.yml
-   
+        $ vi /mnt/newserver/sgtk/software/shotgun/scarlet_new/config/core/install_location.yml
+
    해당하는 모든 플랫폼에서 이 파일의 경로가 새 파이프라인 구성 위치를 가리키도록 업데이트합니다. 플랫폼을 사용하고 있지 않다면 빈 문자열 `''`을 입력합니다.
 
-       # Shotgun Pipeline Toolkit 구성 파일
-       # 이 파일은 setup_project에 의해 자동으로 생성되었습니다.
-       # 이 파일은 기본 파이프라인의 경로를 반영합니다.
-       
-       # 이 프로젝트에 대해 정의된 구성.
-       Windows: 'Y:\sgtk\software\shotgun\scarlet_new'
-       Darwin: '/mnt/newserver/sgtk/software/shotgun/scarlet_new'
-       Linux: ''
-       
-       # 파일 끝.
-   
+        # Shotgun Pipeline Toolkit configuration file
+        # This file was automatically created by setup_project
+        # This file reflects the paths in the primary pipeline
+
+        # configuration defined for this project.
+        Windows: 'Y:\sgtk\software\shotgun\scarlet_new'
+        Darwin: '/mnt/newserver/sgtk/software/shotgun/scarlet_new'
+        Linux: ''
+
+        # End of file.
+
 3. Shotgun에서 이 프로젝트에 대한 해당 파이프라인 구성 엔티티를 찾아 Linux 경로, Mac 경로 및 Windows 경로 필드 값이 위에서 변경한 사항과 일치하도록 수정합니다.
 
 ![Shotgun에서 파이프라인 구성 위치](images/new-pipeline-configuration-locations.png)

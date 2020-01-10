@@ -27,7 +27,7 @@ lang: ja
 このガイドを使用して Toolkit アプリをインストールするには、以下が必要です。
 
 1. アクティブな [Shotgun](https://www.shotgunsoftware.com/jp/signup/) サイト。
-2. 指定したプロジェクトのパイプライン設定。この設定がない場合は、「[設定の基本操作](link)」ガイドの手順を完了し、その演習で作成した設定を使用します。
+2. 指定したプロジェクトのパイプライン設定。この設定がない場合は、「[設定の基本操作](./advanced_config.md)」ガイドの手順を完了し、その演習で作成した設定を使用します。
 3. パイプライン設定の保存先のファイルシステムに最適になるように設定された読み取りおよび書き込み権限。
 4. システムにインストールされた Shotgun Desktop。
 5. Maya の有効なサブスクリプション。Maya の 30 日間無償体験版は[こちら](https://www.autodesk.co.jp/products/maya/free-trial)から取得してください。
@@ -40,7 +40,7 @@ lang: ja
 
 パイプライン設定で参照されているアプリは、さまざまな場所から取得できます。既定の設定の標準アプリは、Shotgun アプリ ストアから取得されています。パイプライン設定内のファイルを使って、Shotgun 統合からアプリにアクセスする方法を指定します。これはたとえば Toolkit に、「アドレス帳にある Python コンソール アプリのアドレスを調べることはできますか」と尋ねるようなものです。パイプライン設定ファイルは Toolkit に、特定のアプリで利用されているコードのバンドルの検索場所を指示します。
 
-Toolkit アプリの「アドレス」は既定の設定の `config/env/includes/app_locations.yml` ファイルにリストされていて、コードの検索方法を指定します。これらの「アドレス」は[記述子](../tk-core/descriptor.html&sa=D&ust=1550704642274000&usg=AFQjCNFiiQUV5OrFYtntHOiW_nnLs8hrjw)といいます。Shotgun の統合には、アプリのコード バンドルの検索方法だけでなく、アプリの使用環境も指示する必要があります。
+Toolkit アプリの「アドレス」は既定の設定の `config/env/includes/app_locations.yml` ファイルにリストされていて、コードの検索方法を指定します。これらの「アドレス」は[記述子](https://developer.shotgunsoftware.com/tk-core/descriptor.html)といいます。Shotgun の統合には、アプリのコード バンドルの検索方法だけでなく、アプリの使用環境も指示する必要があります。
 
 以下に、アプリのインストール方法と、Shotgun の統合にアプリの使用場所を指示する方法について、概念を示します。また、設定を拡張し、記述子を検索するよう Toolkit に要求して、アプリの使用場所を Shotgun に指示する手順についても説明します。このガイドでは、次の手順について詳細に説明します。
 
@@ -81,7 +81,7 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ### [パイプラインの設定]（Pipeline Configuration）リストに移動します。
 
-**<a name="&rdquo;step3&rdquo;">手順 3</a>:** Shotgun を開き、右上にある**[管理者]（Admin）メニュー（アバター） > [既定のレイアウト]（Default Layouts） > [パイプラインの設定]（Pipeline Configuration） > [パイプライン設定リスト]（Pipeline Configuration List）**を選択します。
+**手順 3**: Shotgun を開き、右上にある**[管理者]（Admin）メニュー（アバター） > [既定のレイアウト]（Default Layouts） > [パイプラインの設定]（Pipeline Configuration） > [パイプライン設定リスト]（Pipeline Configuration List）**を選択します。
 
 ![パイプライン設定リスト](./images/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
@@ -208,7 +208,7 @@ Shotgun の統合のコードは、アプリ、エンジン、およびフレー
 
 ![tk-maya](./images/installing_app/13_tk-maya.png)
 
-手順 15: 次の行の下に場所の記述子を追加します。
+**手順 15:** 次の行の下に場所の記述子を追加します。
 
 ```yaml
 settings.tk-maya.project:
@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 クローン作成した設定のプッシュ先に指定できるパイプライン設定のリストが表示されます。設定を更新しているプロジェクトのプライマリ パイプライン設定の ID を入力します。
 
-{% include info title="注" content="このガイドの「**[手順 3](#step3):**」で表示した Shotgun の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
+{% include info title="注" content="このガイドの「**手順 3**」に示した Shotgun の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 
@@ -356,7 +356,7 @@ Push Complete!
 
 ![Maya のアプリ](./images/installing_app/19_app_in_maya.png)
 
-Python コンソール アプリが、選択されたプロジェクトのプロジェクト環境に追加されました。2 番目のガイドの「[設定を編集する](../toolkit_basics_guides/editing_app_setting.md)」で、各環境は独立していて、プロジェクトには専用の設定があること、およびプロジェクトをロードするときに、ソフトウェアの統合によってパイプライン設定から設定が収集されることを説明しました。Python コンソールを環境内で使用できるように設定するには、`app_locations.yml` ファイル内で場所の記述子を参照するようこの環境に指示する必要があります。この場合、Python コンソール アプリを使用可能にするパイプラインの任意のポイントで、「Python コンソール アプリをここで使用する」ように設定する必要があります。
+Python コンソール アプリが、選択されたプロジェクトのプロジェクト環境に追加されました。2 番目のガイドの「[設定を編集する](./editing_app_setting.md)」で、各環境は独立していて、プロジェクトには専用の設定があること、およびプロジェクトをロードするときに、ソフトウェアの統合によってパイプライン設定から設定が収集されることを説明しました。Python コンソールを環境内で使用できるように設定するには、`app_locations.yml` ファイル内で場所の記述子を参照するようこの環境に指示する必要があります。この場合、Python コンソール アプリを使用可能にするパイプラインの任意のポイントで、「Python コンソール アプリをここで使用する」ように設定する必要があります。
 
 ## 高度なトピック
 
@@ -414,5 +414,6 @@ apps.tk-multi-pythonconsole.location:
 
 探しているアプリが見つからない場合は、自分で作成できます。これを機会に、他の Shotgun ユーザにこの機能の必要性が広まる可能性があります。また、新しいアプリを共有することで、Shotgun コミュニティに恩返しができます。
 
-次のガイドでは、施設の構成方法に合わせてプロダクション フォルダの構成をカスタマイズできます。[施設の構成方法に合わせてプロダクション フォルダのスキーマをカスタマイズします。](link)
+次のガイドでは、[会社の構成方法に合わせて制作用フォルダの構成をカスタマイズする方法について学習します](./dynamic_filesystem_configuration.md)。
+
 

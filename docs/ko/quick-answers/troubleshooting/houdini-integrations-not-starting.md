@@ -8,7 +8,7 @@ lang: ko
 # Houdini Shotgun 통합이 시작되지 않는 이유는 무엇일까요?
 
 
-여기서는 Houdini에서 Shotgun 통합을 시작할 수 없는 가장 일반적인 원인을 살펴봅니다. 이 경우, Houdini는 Shotgun 데스크톱, Shotgun 웹 사이트 또는 tank 명령으로 오류 없이 시작됩니다. 하지만 Houdini가 시작된 후에 Shotgun 메뉴 또는 선반이 나타나지 않습니다.
+여기서는 Houdini에서 Shotgun 통합을 시작할 수 없는 가장 일반적인 원인을 살펴봅니다. 이 경우, Houdini는 Shotgun 데스크톱, Shotgun 웹 사이트 또는 tank 명령으로 오류 없이 시작됩니다. 하지만 Houdini가 시작된 후에 Shotgun 메뉴 또는 쉘프가 나타나지 않습니다.
 
 원인은 Shotgun이 재정의된 `HOUDINI_PATH` 환경 변수를 사용하여 시작 스크립트 경로를 전달하기 때문인 경우가 많습니다.
 
@@ -33,4 +33,4 @@ Shotgun에서 Houdini가 시작되면 시작 앱 로직에서는 Shotgun 부트�
 
 이 오류가 발생하면 대신 `%HOUDINI_PATH%`를 사용해야 합니다." %}
 
-그래도 문제가 해결되지 않으면 문제를 진단할 수 있도록 당사의 [지원 팀]((https://support.shotgunsoftware.com/hc/en-us/requests/new))에 문의하십시오.
+그래도 문제가 해결되지 않으면 문제를 진단할 수 있도록 당사 [지원 팀](https://support.shotgunsoftware.com/hc/ko/requests/new)에 문의해 주십시오.
