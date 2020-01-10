@@ -23,7 +23,7 @@ Or you may wish to be able to run your Toolkit app from your favorite IDE.
 
 ### Steps
 
-1. [Importing the Toolkit API for bootstrapping](#part-1---importing-the-sgtk-api-for-bootstrapping)
+1. [Importing the Toolkit API for bootstrapping](#part-1-importing-the-toolkit-api-for-bootstrapping)
 2. [Logging](#part-2---logging)
 3. [Authentication](#part-3---authentication)
 4. [Bootstrapping an engine](#part-4---bootstrapping-an-engine)
