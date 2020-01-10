@@ -13,9 +13,12 @@ Bootstrapping is useful in situations where a Toolkit engine has not already bee
 For example, you might have a processing script that runs on a render farm and needs to utilize the Toolkit API to handle paths and context.
 Or you may wish to be able to run your Toolkit app from your favorite IDE.
 
+{% include info title="Note" content="If you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations), a Toolkit engine must be initialized before running Toolkit API methods. It is possible to use the API without bootstrapping an engine if you are using a [centralized config](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), using the [factory methods](https://developer.shotgunsoftware.com/tk-core/initializing.html#factory-methods), however, you will need to manually find the path to the correct core API for your project when importing `sgtk`." %}
+
+
 ### Requirements
 
-- An understanding of Python programming fundamentals. 
+- An understanding of Python programming fundamentals.
 - A project with an advanced configuration. If you haven't set up a configuration before you can follow the ["Getting started with configurations"](../getting-started/advanced_config.md) guide.
 
 ### Steps
@@ -38,10 +41,10 @@ The bootstrap process will swap out the currently imported sgtk package for the 
 
 ### Downloading a standalone sgtk core API
 
-To start, you need to import an sgtk API package. 
+To start, you need to import an `sgtk` API package which is found in [`tk-core`](https://github.com/shotgunsoftware/tk-core/tree/v0.18.172/python).
 You could import one from an existing project, however, this might be tricky to conveniently locate.
 A recommended approach would be to download a standalone copy 
-of the [latest core API]((https://github.com/shotgunsoftware/tk-core/releases)) which will be used purely for the purpose of bootstrapping.
+of the [latest core API](https://github.com/shotgunsoftware/tk-core/releases) which will be used purely for the purpose of bootstrapping.
 You should store it in a convenient place where it can be imported. 
 If it's not located in a standard location where Python will look, then you can add the path to `sys.path`. 
 
@@ -141,8 +144,8 @@ You can find a lot of information on the bootstrap API in our [reference docs](h
 The bootstrapping process at a high level essentially performs the following steps:
 
 1. Retrieves or locates the Toolkit configuration folder.
-2. Ensures that the configuration dependencies such as the apps and engines are present in the [bundle cache](https://developer.shotgunsoftware.com/7c9867c0/#bundle-cache). 
-If they are not present, and they are using cloud-based descriptors such as `app_store`, or `shotgun` then it will download them to the bundle cache.
+2. Ensures that the configuration dependencies such as the apps and engines are present in the [bundle cache](../../../quick-answers/administering/where-is-my-cache.md#bundle-cache). 
+If they are not present, and they are using cloud-based descriptors such as [`app_store`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#the-shotgun-app-store), or [`shotgun`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun) then it will download them to the bundle cache.
 3. Swaps out the current loaded sgtk core for the one appropriate to the config.
 4. Initializes the engine, apps, and frameworks.
 
@@ -173,9 +176,10 @@ mgr.plugin_id = "basic.shell"
 If your goal is to launch an app or run Toolkit code in a standalone python environment outside of software such as Maya or Nuke, then `tk-shell` is the engine you will want to bootstrap into. 
 
 If you are wanting to run Toolkit apps within supported Software, then you will want to pick the appropriate engine, such as `tk-maya` or `tk-nuke`.
-This parameter is passed directly to the [`bootstrap_engine` method](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine). See the example in the [entity section](#entity) bellow.
+This parameter is passed directly to the [`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) method. See the example in the [entity section](#entity) bellow.
 
 #### Entity
+The [`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) methods `entity` parameter, is used to set the [context](https://developer.shotgunsoftware.com/tk-core/core.html#context) and therefore [environment](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment) for the launched engine.
 The entity can be of any entity type that the configuration is set up to work with. 
 For example, if you provide a `Project` entity, the engine will start up in a project context, using the project environment settings.
 Likewise, you could provide a `Task` entity (where the task is linked to an `Asset`), and it will start up using the `asset_step.yml` environment.
@@ -190,7 +194,7 @@ engine = mgr.bootstrap_engine("tk-shell", entity=task)
 
 If you bootstrap into an entity type other than `Project`, you may need to ensure your [path cache](https://developer.shotgunsoftware.com/cbbf99a4/) is in sync, otherwise, it may not be able to load the environment if, for example, it tries to resolve a template.
 Since you don't have an `Sgtk` instance before bootstrapping, you will need to tell the bootstrap process to perform the synchronization after it's created an `Sgtk` instance but before it starts the engine.
-You can do this by setting the [`pre_engine_start_callback`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.pre_engine_start_callback) property to point to a custom method.
+You can do this by setting the [`ToolkitManager.pre_engine_start_callback`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.pre_engine_start_callback) property to point to a custom method.
 In that method you can then run the synchronization:
 
 ```python
@@ -216,7 +220,7 @@ In this guide, we assume that your project has a configuration already setup and
 
 ### Bootstrapping
 
-Once all the `ToolkitManager` parameters have been set, and you call the `bootstrap_engine` engine method, it will start the engine, and return a pointer to the engine instance.
+Once all the [`ToolkitManager`](https://developer.shotgunsoftware.com/tk-core/initializing.html#toolkitmanager) parameters have been set, and you call the [`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) method, it will start the engine, and return a pointer to the engine instance.
 
 Here is a recap of the code so far:
 
@@ -276,7 +280,7 @@ When the engine starts, it initializes all the apps defined for the environment.
 The apps in turn register commands with the engine, and the engine usually displays these as actions in a menu, if running in Software like Maya.
 
 #### Finding the commands
-To first see what commands have been registered, you can print out the [`engine.commands`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.commands) property:
+To first see what commands have been registered, you can print out the [`Engine.commands`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.commands) property:
 
 ```python
 # use pprint to give us a nicely formatted output.
@@ -299,7 +303,7 @@ With that list, you can see which commands have been registered and can be run.
 #### Running the command
 
 How you run the command will be different depending on the engine, as there is currently no standardized method.
-For the `tk-shell` engine, you can use `engine.execute_command`.
+For the `tk-shell` engine, you can use the convenience method: `Engine.execute_command()`.
 It expects a command string name, which we listed out earlier, and a list of parameters that the app's command expects to be passed.
 
 ```python
@@ -308,14 +312,14 @@ if "Publish..." in engine.commands:
     engine.execute_command("Publish...",[])
 ```
 
-If you're not running in the `tk-shell` engine, then you can call the registered callback directly.
+If you're not running in the `tk-shell` engine, then you can fallback to calling the registered callback directly.
 
 ```python
 # now find the command we specifically want to execute
 app_command = engine.commands.get("Publish...")
 
 if app_command:
-    # now run the command, which in this case will launch the Publish Info app.
+    # now run the command, which in this case will launch the Publish app.
     app_command["callback"]()
 ```
 
