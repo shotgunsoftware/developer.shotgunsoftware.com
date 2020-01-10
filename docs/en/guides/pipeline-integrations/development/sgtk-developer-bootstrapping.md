@@ -23,23 +23,23 @@ Or you may wish to be able to run your Toolkit app from your favorite IDE.
 
 ### Steps
 
-1. [Importing the sgtk API for bootstrapping](#part-1---importing-the-sgtk-api-for-bootstrapping)
+1. [Importing the Toolkit API for bootstrapping](#part-1---importing-the-sgtk-api-for-bootstrapping)
 2. [Logging](#part-2---logging)
 3. [Authentication](#part-3---authentication)
 4. [Bootstrapping an engine](#part-4---bootstrapping-an-engine)
 5. [launching an app](#part-5---launching-an-app)
 6. [Complete script](#part-6---the-complete-script)
 
-## Part 1: Importing the sgtk API for bootstrapping
+## Part 1: Importing the Toolkit API for bootstrapping
 
 ### Where should I import sgtk from?
 
-If you've followed the ["generating a path and publishing it"](sgtk-developer-generating-path-and-publish.md) guide then you'll have covered the step of importing sgtk.
-That guide states that you must import the sgtk API package from the project configuration you wish to work with.
-With bootstrapping, this is still true, however, it doesn't matter which initial sgtk API you import, as any sgtk API can perform the bootstrap operation into a different project configuration.
-The bootstrap process will swap out the currently imported sgtk package for the new project config's sgtk API.
+If you've followed the ["generating a path and publishing it"](sgtk-developer-generating-path-and-publish.md) guide then you'll have covered the step of importing `sgtk`.
+That guide states that you must import the `sgtk` package from the project configuration you wish to work with.
+With bootstrapping, this is still true, however, it doesn't matter which initial `sgtk` package you import, as any Toolkit API can perform the bootstrap operation into a different project configuration.
+The bootstrap process will swap out the currently imported sgtk package for the new project config's Toolkit API.
 
-### Downloading a standalone sgtk core API
+### Downloading a standalone Toolkit core API
 
 To start, you need to import an `sgtk` API package which is found in [`tk-core`](https://github.com/shotgunsoftware/tk-core/tree/v0.18.172/python).
 You could import one from an existing project, however, this might be tricky to conveniently locate.
@@ -80,8 +80,8 @@ sgtk.LogManager().global_debug = True
 
 ## Part 3: Authentication
 
-When running a script that uses the sgtk API outside of an environment where sgtk has already been started, you will always need to authenticate.
-So before you can perform the bootstrapping, you need to authenticate the API with your Shotgun site.
+When running a script that uses the Toolkit API outside of an environment where Shotgun Toolkit has already been started, you will always need to authenticate.
+So before you can perform the bootstrapping, you need to authenticate the Toolkit API with your Shotgun site.
 
 You can authenticate with user credentials or with script credentials.
 
@@ -138,7 +138,7 @@ sgtk.set_authenticated_user(user)
 
 ## Part 4: Bootstrapping an engine
 
-Now that you have authenticated the sgtk API for the session, you can start the bootstrapping process.
+Now that you have authenticated the Toolkit API for the session, you can start the bootstrapping process.
 You can find a lot of information on the bootstrap API in our [reference docs](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api).
 
 The bootstrapping process at a high level essentially performs the following steps:
