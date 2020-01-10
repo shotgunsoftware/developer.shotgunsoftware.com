@@ -18,26 +18,25 @@ Table of Contents:
 - [QT Window Parenting](#qt-window-parenting)
 - [Host application wish list](#host-application-wish-list)
 
+- We provide a bunch of integrations already
+- There are community built integrations
+- Reach out to us before starting
+
 
 ## Introduction
-This document briefly outlines some of the technical details relating to Toolkit Engine development. 
+This document outlines some of the technical details relating to Toolkit Engine development. 
 When developing an Engine, you effectively establish a bridge between the host application and the various apps and frameworks that are loaded into the engine. 
 The engine makes it possible to abstract the differences between applications so that apps can be written in more of a software agnostic manner using Python and QT.
 
 The engine is a collection of files, similar in structure to an App. It has an `engine.py` file and this must derive from the Tank Core Engine [Base class](https://github.com/shotgunsoftware/tk-core/blob/master/python/tank/platform/engine.py). 
 Different engines then re-implement various aspect of this base class depending on their internal complexity. 
-A summary of functionality includes:
-
-- The base class exposes various init and destroy methods which are executed at various points in the startup process. 
-These can be overridden to control startup and shutdown execution.
-- The engine provides a `commands` dictionary containing all the command objects registered by apps. This is typically accessed when menu entries are created.
-- Methods for displaying UI dialogs and windows can be overridden if the way the engine handles QT is different from the default base class behavior.
-
-The typical things an engine needs to handle are:
+An engine typically handles or provides the following services:
 
 - Menu management. At engine startup, once the apps have been loaded, the engine needs to create its Shotgun menu and add the various apps to this menu.
 - Logging methods are typically overridden to write to the application log/console.
-- UI methods are usually overridden to ensure seamless integration of windows launched by Toolkit apps and the underlying host application window management setup.
+- Methods for displaying UI dialogs and windows. These methods are usually overridden, if the way the engine handles QT is different from the default base class behavior, to ensure seamless integration of windows launched by Toolkit apps and the underlying host application window management setup.
+- Provides a `commands` dictionary containing all the command objects registered by apps. This is typically accessed when menu entries are created.
+- The base class exposes various init and destroy methods which are executed at various points in the startup process. These can be overridden to control startup and shutdown execution.
 
 Engines are launched by the Tank Core Platform using the `stgk.platform.start_engine()` command. 
 This command will read the configuration files, launch the engines, load all apps etc.
@@ -45,8 +44,7 @@ The goal with the engine is that once it has launched, it will provide a consist
 Since all engines implement the same base class, apps can call methods on the engines, for example, to create UIs. 
 It is up to each engine to implement these methods so that they work nicely inside the host application.
 
-{% include info title="Tip" content="The [Developing your own App](sgtk-developer-app.md) also contains step by step guide to developing an app, 
-which contains principles that apply to developing an engine as well, which are not covered in this guide." %}
+{% include info title="Tip" content="The [Developing your own App](sgtk-developer-app.md) contains a step by step guide to developing an app, which contains principles that apply to developing an engine as well, which are not covered in this guide." %}
 
 ## Approaches to Engine Integration
 Depending on what the capabilities of the host app are, engine development may be more or less complex. 
@@ -61,8 +59,8 @@ The nuke engine is a good example of this. Integration is merely a matter of hoo
 ### Host application includes QT and Python but not PySide/PyQt
 This class of applications includes for example Maya and Motionbuilder and is relatively easy to integrate. 
 Since the host application itself was written in QT and contains a Python interpreter, it is possible to compile a version of PySide or PyQt and distribute with the engine.
- This PySide is then added to the Python environment and will allow access of the QT objects using Python. 
- It is common that the exact compiler settings that were used when compiling the shot application must be used when compiling PySide, in order to guarantee for it to work.
+This PySide is then added to the Python environment and will allow access of the QT objects using Python. 
+It is common that the exact compiler settings that were used when compiling the shot application must be used when compiling PySide, in order to guarantee for it to work.
 
 
 ### Host application includes Python

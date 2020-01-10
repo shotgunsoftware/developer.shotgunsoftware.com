@@ -50,9 +50,7 @@ When adding the app your config, you need to consider where your app will be use
 You also need to think about the context that your app will depend on. For example can your app only run when you know the Task the user is working on, or can it run with just the project known.
 Knowing this will dictate which environment yamls and engines you need to add your app settings to.
 
-If your not sure right now, it's a good idea to start by adding it to the `tk-shell` engine in the project environment, 
-that way you can [run it from your IDE](./sgtk-developer-bootstrapping.md) or via the command line with the tank command 
-if you have a [centralized config](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), which will make it quicker to develop with.
+If your not sure right now, it's a good idea to start by adding it to the `tk-shell` engine in the project environment, that way you can [run it from your IDE](./sgtk-developer-bootstrapping.md) or via the command line with the tank command if you have a [centralized config](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), which will make it quicker to develop with.
 
 To start with you will use a [dev descriptor](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk) for the location of your app.
 
@@ -65,8 +63,7 @@ tk-multi-starterapp:
 This instructs Toolkit to load the app code directly from disk in the given location, which is great for development, where you want to change the code all the time.
 Later when you add the app to your production config, you may want to use a different descriptor.
 
-Now you've added the app to an environment, you should be able to go ahead and launch it. How you launch it will depend
-on the engine and environment you defined it in.
+Now you've added the app to an environment, you should be able to go ahead and launch it. How you launch it will depend on the engine and environment you defined it in.
 
 ## Part 4 - Developing the app
 
@@ -153,8 +150,7 @@ Toolkit will automatically add a **Reload and Restart** option to the Shotgun me
 ![Shotgun menu Reload and Restart option](./images/reload-restart.png)
 
 Clicking this will reload your configuration and code and then restart your engine. 
-This means that you can iterate quickly: Start maya once, and then each time you make code or configuration changes that you want to try out, 
-simply hit the reload and restart button and your changes will be pulled in. 
+This means that you can iterate quickly: Start maya once, and then each time you make code or configuration changes that you want to try out, simply hit the reload and restart button and your changes will be pulled in. 
 
 {% include info title="Note" content="If you have any UIs active on screen, these will not automatically update, but you have to go in and re-launch the UIs from the menu." %}
 
@@ -168,10 +164,10 @@ As soon as you have added a user, they will see new entries on their menus insid
 
 ## Part 6 - Preparing your first release
 
-In [part three](#part-3---adding-the-app-to-your-config) you set configuration to point to your app using a dev descriptor.
+In [part three](#part-3---adding-the-app-to-your-config) you set your configuration to point to your app using a dev descriptor.
 For released software, you will want to ensure that your app can be accessed by all users, and that things are versioned so that they can be upgraded safely and easily.
 
-All Toolkit's built-in apps uses the Toolkit app store to track updates and releases, and they will have a location tag that looks something like this:
+All apps provided by Shotgun use the Toolkit app store to track updates and releases, and they will have a location tag that looks something like this:
 
 ```yaml
 location:
@@ -184,40 +180,30 @@ Whenever the updates command is run and a new version is available, Toolkit will
 
 There are a few different options for sourcing your app.
 
-- [Git and GitHub](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git)
+- [Git](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) and [GitHub](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
 - [Shotgun Uploads](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
 - [Local paths](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
 
+In your production config you add your app, and switch to using the descriptor that suits your needs.
+
 ### Git based descriptors
-Toolkit supports git (http://git-scm.com/) out of the box. 
-If you haven't already, we recommend that you start using source control to make sure that changes are tracked.
-Toolkit git repos need to contain just a single app -- basically your git repo should have the same structure as the starter app repository where you got the original code from.
-The rest of this document assumes that are familiar with git, have it set up on your machine, and have already pushed your first commit to your repository.
 
-For in-house tools, you can use the same principle, but instead of using the Toolkit app store you can use tags in git.
-So for your new app, create and push a new tag to git.
+We recommend that you start using source control to make sure that changes are tracked, regardless of if you intend to use a git descriptor.
 
-{% include info title="Note" content="If you have cloned our starter app, there are already tags defined. " %}
+Toolkit supports git (http://git-scm.com/) out of the box, and when running `tank updates` on a configuration, it can check for the latest release in github and update your configuration, just like with the app store descriptor.
 
-We strongly recommend that you use Semantic Versioning when creating your tags ( see http://semver.org ). 
-Toolkit will use these version numbers to try to determine which version is the most recent, 
-and by following the convention vX.Y.Z your app versioning will be compatible with Toolkit.
+The requirements for this are:
 
-# This section needs rewriting, to exclude the install_app command, and maybe mention the dev utils for running updates?
-Installing changes into the production config
-Once you have created your first tag in git (eg. v1.0.0), we can safely install this in your production config. 
-This means that everyone on the production will get access to the new tool. 
-Installing the app is done using the install app command. 
-Make sure that you are using the tank command that belongs to the primary production config when you run the install command:
+- Your git repo needs to contain just a single app
+- Your git repo should have the same structure as the [starter app repository](https://github.com/shotgunsoftware/tk-multi-starterapp).
+- You use Semantic Versioning when creating your tags ( see http://semver.org ). 
+Toolkit will use these version numbers to try to determine which version is the most recent, and by following the convention vX.Y.Z.
 
-```text
-> cd /your/primary/tank/configuration
-> ./tank install_app shot_step tk-maya user@remotehost:/path_to/tk-multi-mynewapp.git
-```
-This will find the highest version tag in git and install this into the environment. 
-Once installed, you can simply run tank updates, and if new tags have been created, you will be prompted if you want to upgrade. 
+Once you have created your first tag in git (eg. v1.0.0), you could then setup your config to use a git descriptor that points to your tag.
+Once installed, you can simply run `tank updates`, and if new tags have been created, you will be prompted if you want to upgrade. 
 The workflow is now identical to the one which happens with official app store apps.
 
+{% include warning title="Caution" content="The git descriptor works well with [centralized configs](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), where the caching of apps is usually run by an admin and is stored to a central location where all user's can access it. However, if you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations), then it may not be as suitable. Your app will need to be downloaded per user, which means each user will need to have git installed and setup to authenticate with your repo, and access the code." %}
 
 ## Modifying an existing app
 Rather than starting from an empty starter template, it is sometimes necessary to add a minor feature to an existing app, for example one of Shotgun Software's standard Apps. 
