@@ -27,7 +27,7 @@ Shotgun as a whole has three main API's
 - [Shotgun REST API](https://developer.shotgunsoftware.com/rest-api/)
 - [Shotgun Toolkit API](https://developer.shotgunsoftware.com/tk-core)
 
-The Toolkit API is designed to be used alongside the Shotgun Python API or REST API, and is not a replacement for them.
+The Toolkit API is a for Python, designed to be used alongside the Shotgun Python API or REST API, and is not a replacement for them.
 Although the Toolkit API does have some wrapper methods, in general whenever you need to access data from your Shotgun site you will use the Shotgun Python or REST APIs instead.
 
 The Toolkit API instead focuses on the integrations and management of file paths.
