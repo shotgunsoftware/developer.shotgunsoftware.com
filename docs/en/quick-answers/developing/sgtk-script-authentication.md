@@ -13,12 +13,12 @@ If you're seeing an error like the one below coming from your script, then it me
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'
 ```
-The error message may appear a bit misleading, as the fallback check for authentication is to check to see if any credentials have been defined in the config's `shotgun.yml` file. However defining credentials in your `shotgun.yml` file is the old method of handling authentication.
+The error message may appear a bit misleading, as Toolkit falls back to checking credentials have been defined in the config's `shotgun.yml` file, if user authentication or script authentication is not provided up front. Defining credentials in your `shotgun.yml` file is the old method of handling authentication.
 You should avoid defining them in the `shotgun.yml` file, and instead use one of the approaches detailed below:
 
 
 ## User-facing scripts
-If the script is user facing, you can add this at the beginning, before creating a Sgtk/Tank instance:
+If the script is user facing, you can add this at the beginning, before creating a `Sgtk` instance:
 
 ```python
 # Import Toolkit so we can access to Toolkit specific features.
@@ -68,7 +68,10 @@ If `QApplication` is available, you'll get something akin to this:
 
 ![](./images/sign_in_window.png)
 
-{% include info title="Note" content="If you are importing a Toolkit API, (`sgtk` package), that isn't associated with a configuration, for example one that you have downloaded to use to bootstrap into a different configuration; then you shouldn't attempt to create a `CoreDefaultsManager` and instead you should just create a `ShotgunAuthenticator()` instance without passing a defaults manager." %}
+{% include info title="Note" content="If you are importing a Toolkit API, (`sgtk` package), that isn't associated with a configuration, for example one that you have downloaded to use to bootstrap into a different configuration; then you shouldn't attempt to create a `CoreDefaultsManager` and instead you should just create a `ShotgunAuthenticator()` instance without passing a defaults manager.
+```python
+authenticator = ShotgunAuthenticator()
+```" %}
 
 ## Non-user-facing scripts
 If the script is not user-facing, like on a render farm or in the event handler, you can add this at the beginning, before creating a Sgtk/Tank instance:
@@ -101,7 +104,7 @@ user = authenticator.create_script_user(
 sgtk.set_authenticated_user(user)
 ```
 
-{% include info title="Note" content="As noted in the User facing scripts section, you shouldn't create a defaults manager if the `sgtk` package you imported is standalone/isn't from a configuration. Instead you should provide the `host` kwarg to the `create_script_user()` method:
+{% include info title="Note" content="As noted at the end of the [user facing scripts](#user-facing-scripts) section, you shouldn't create a defaults manager if the `sgtk` package you imported is standalone/isn't from a configuration. Also you should provide the `host` kwarg to the `create_script_user()` method:
 
 ```python
 user = authenticator.create_script_user(
