@@ -13,9 +13,9 @@ If you're seeing an error like the one below coming from your script, then it me
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'
 ```
-The error message may appear a bit misleading, as Toolkit falls back to checking credentials have been defined in the config's `shotgun.yml` file, if user authentication or script authentication is not provided up front. Defining credentials in your `shotgun.yml` file is the old method of handling authentication.
+If user authentication or script authentication is not provided up front, then Toolkit falls back to checking credentials have been defined in the config's `shotgun.yml` file.
+Defining credentials in your `shotgun.yml` file is the old method of handling authentication.
 You should avoid defining them in the `shotgun.yml` file, and instead use one of the approaches detailed below:
-
 
 ## User-facing scripts
 If the script is user facing, you can add this at the beginning, before creating a `Sgtk` instance:
