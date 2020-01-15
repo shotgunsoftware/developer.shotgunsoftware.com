@@ -1,21 +1,19 @@
 ---
 layout: default
-title: Developing your own App
+title: Developing your own app
 pagename: sgtk-developer-app
 lang: en
 ---
 
-# Developing your own App
+# Developing your own app
 
 ## Introduction
-The Shotgun Pipeline Toolkit is not only a collection of Apps and Engines maintained by Shotgun Software - it is also a framework and a development platform which makes it easy to quickly build custom pipeline tools! This document outlines the workflows in both these cases and also explains some of the basics around app development.
 
-All apps and engines maintained and released by Shotgun Software are open source and you can find them in [Github](https://github.com/shotgunsoftware).
+This guide outlines what a Toolkit App is, and covers how to create your own, and also explains some of the basics around app development.
+Shotgun Pipeline Toolkit is not only a collection of apps and engines maintained by Shotgun Software, it is also a development platform which makes it easy to quickly build custom pipeline tools!
 
-This section goes through how to create a new app using our starter template. 
-We assume that you are familiar with Github and git workflows but please note that you can do Toolkit development even if you are not using git as your source control solution.
-
-#TODO: Need a what is an app section. Talk about how it relates to an engine and framework. What an app can do, GUI non gui, registering commands or not.
+- [What is a Toolkit app?](#what-is-a-toolkit-app)
+- [Creating your own app](#creating-your-own-app)
 
 Steps:
 1. [Creating a development sandbox](#part-1---creating-a-development-sandbox)
@@ -29,26 +27,52 @@ Steps:
 5. [Testing](#part-5---testing)
 6. [Preparing your first release](#part-6---preparing-your-first-release)
 
-## Part 1 - Creating a development sandbox
-Before you do anything else, we recommend that you set up a [development sandbox by cloning the project configuration](../getting-started/installing_app.md#clone-the-pipeline-configuration-you-want-to-add-an-app-to).
-This will result in a separate configuration where you can do development and make changes (and break things!) without affecting anyone one else on the production. 
+Additional info:
+- [Modifying an existing app](#modifying-an-existing-app)
+    - [Pull requests](#pull-requests)
 
-## Part 2 - Forking or downloading the starter app repository
+## What is a Toolkit app?
+
+A Toolkit apps can be defined as follows:
+
+- A Tool that is usually run by an end user, using the Shotgun integrations.
+- They usually have a graphical user interface with which the user can guide the app's operations, but it doesn't have to, it can also be a command registered with the integrations, triggered by the user from the Shotgun menu in the software.
+- They can have an API/public methods in which other processes or apps could interact.
+- They can be multi platform, and software agnostic.
+- Can be setup to be configured differently per [environment](https://developer.shotgunsoftware.com/487a9f2c/?title=Environment+Configuration+Reference#what-is-an-environment).
+- They can be contextually aware. In other words can can know the task the user is currently working in and act accordingly.
+- They can only be run from a Toolkit engine.
+
+Toolkit apps are initialized by Toolkit engines. Engines are designed run within a specific software environment, where they then provide an interface from which to run Toolkit apps. The engine abstracts away the complexity of needing handle the various software environments from the app.
+Which means the app only needs to focus on providing the functionality to fulfil it's purpose, and doesn't need to for example, handle window parenting, keeping track of the user's context, or providing a short cut for launching itself.
+
+## Creating your own app.
+All apps and engines maintained and released by Shotgun Software are open source and you can find them in [GitHub](https://github.com/shotgunsoftware).
+
+This section goes through how to create a new app using our starter template. 
+We assume that you are familiar with GitHub and git workflows but please note that you can do Toolkit development even if you are not using git as your source control solution.
+
+
+## Part 1: Creating a development sandbox
+Before you do anything else, we recommend that you set up a [development sandbox by cloning the project configuration](../getting-started/installing_app.md#clone-the-pipeline-configuration-you-want-to-add-an-app-to).
+This will result in a separate configuration where you can develop your code, and test changes without affecting anyone one else on the production. 
+
+## Part 2: Forking or downloading the starter app repository
 We provide a [template starter app](https://github.com/shotgunsoftware/tk-multi-starterapp), that you can use as a starting point for your own app.
 By using this app you get all the standard Toolkit boilerplate code set up for you, and an basic example GUI.
 
 ![Toolkit starter app default GUI](./images/starter-app.png)
 
 To use it, you can either fork the git repository and then clone it to your local dev area on disk, 
-or if you don't want to use git source control just yet, you can just download the files from Github as a zip file, and unzip them locally (you can always setup a git repository later).
+or if you don't want to use git source control at this stage, you can just download the files from GitHub as a zip file, and unzip them locally (you can always setup a git repository later).
 Either way, the goal is to have a local copy of the starter app code so you can start making changes.
 
-## Part 3 - Adding the app to your config
-We recommend reading the "[Adding an app](../getting-started/installing_app.md)" guide, as it explains in more detail how to add an app app to your configuration.
+## Part 3: Adding the app to your config
+We recommend reading the "[Adding an app](../getting-started/installing_app.md)" guide, as it explains in more detail how to add an app to your configuration.
 
 When adding the app your config, you need to consider where your app will be used, i.e. perhaps only in Nuke or in multiple different software, or standalone from Shotgun Desktop.
-You also need to think about the context that your app will depend on. For example can your app only run when you know the Task the user is working on, or can it run with just the project known.
-Knowing this will dictate which environment yamls and engines you need to add your app settings to.
+You also need to think about the context that your app will depend on. For example can your app only run when you know the task the user is working on, or can it run with just the project known.
+Knowing this will dictate which environment YAMLs and engines you need to add your app settings to.
 
 If your not sure right now, it's a good idea to start by adding it to the `tk-shell` engine in the project environment, that way you can [run it from your IDE](./sgtk-developer-bootstrapping.md) or via the command line with the tank command if you have a [centralized config](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), which will make it quicker to develop with.
 
@@ -65,9 +89,9 @@ Later when you add the app to your production config, you may want to use a diff
 
 Now you've added the app to an environment, you should be able to go ahead and launch it. How you launch it will depend on the engine and environment you defined it in.
 
-## Part 4 - Developing the app
+## Part 4: Developing the app
 
-You are now all set to do development!
+You are now all set to start developing your app!
 
 ### Anatomy of the Template Starter App
 
@@ -84,12 +108,12 @@ Settings are often useful if you want reusable apps and you don't want to hard c
 Once you have made changes you have to execute the `build_resources.sh` script which will convert the ui file to python code and store it as the `/python/app/ui/dialo.py`.
 - **style.qss** - You can define qss (QT style sheets) for your UI in this file.
 
-{% include info title="Note" content="An app doesn't need to have a UI however, and the minimum requirements for a valid app are an `app.py` containing an `Application` class and an `info.yml`" %}
+{% include info title="Note" content="An app doesn't need to have a UI however, and the minimum requirements for a valid app are an `app.py` containing an `Application` class and an `info.yml`." %}
 
 ### Configuration settings
-Inside the manifest file there should be a `configuration` section. In this section you can define app settings.
+Inside the manifest file there should be a `configuration` section where you can define app settings.
 
-Defining a setting allows you to set setting values for your app in the environment YAML files.
+Defining a setting in the manifest file, allows you to configure different setting values for your app in the environment YAML files.
 This is useful if your app needs to behave differently depending on the environment it is in.
 
 For example you may wish to have a setting that defines a template to use when saving a file. 
@@ -154,7 +178,7 @@ This means that you can iterate quickly: Start maya once, and then each time you
 
 {% include info title="Note" content="If you have any UIs active on screen, these will not automatically update, but you have to go in and re-launch the UIs from the menu." %}
 
-## Part 5 - Testing
+## Part 5: Testing
 When you want to test your code, you can easily invite other users to your dev sandbox by adding them to the `PipelineConfiguration` entity in Shotgun. 
 As soon as you have added a user, they will see new entries on their menus inside of Shotgun Create, and the browser actions as well as an option to pick the configuration inside of Shotgun Desktop.
 
@@ -162,7 +186,7 @@ As soon as you have added a user, they will see new entries on their menus insid
 
 {% include info title="Note" content="Make sure they have access to see your app code as well, otherwise the app will not load." %}
 
-## Part 6 - Preparing your first release
+## Part 6: Preparing your first release
 
 In [part three](#part-3---adding-the-app-to-your-config) you set your configuration to point to your app using a dev descriptor.
 For released software, you will want to ensure that your app can be accessed by all users, and that things are versioned so that they can be upgraded safely and easily.
@@ -178,7 +202,7 @@ location:
 This allows Toolkit (for example the tank updates command) to check when updates are available, update and maintain configurations in a very safe way. 
 Whenever the updates command is run and a new version is available, Toolkit will download the code and place it in a local "bundle cache" on disk and ensure that users have access to it.
 
-There are a few different options for sourcing your app.
+There are a few different options for sourcing your app releases.
 
 - [Git](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) and [GitHub](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
 - [Shotgun Uploads](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
@@ -190,20 +214,20 @@ In your production config you add your app, and switch to using the descriptor t
 
 We recommend that you start using source control to make sure that changes are tracked, regardless of if you intend to use a git descriptor.
 
-Toolkit supports git (http://git-scm.com/) out of the box, and when running `tank updates` on a configuration, it can check for the latest release in github and update your configuration, just like with the app store descriptor.
+Toolkit supports git (http://git-scm.com/) out of the box, and when running `tank updates` on a configuration, it can check for the latest release in your git repository and update your configuration, just like with the app store descriptor.
 
 The requirements for this are:
 
 - Your git repo needs to contain just a single app
 - Your git repo should have the same structure as the [starter app repository](https://github.com/shotgunsoftware/tk-multi-starterapp).
-- You use Semantic Versioning when creating your tags ( see http://semver.org ). 
-Toolkit will use these version numbers to try to determine which version is the most recent, and by following the convention vX.Y.Z.
+- You use [Semantic Versioning](http://semver.org) when creating your tags. 
+Toolkit will use these version numbers to try to determine which version is the most recent, and by following the convention `vX.Y.Z`.
 
-Once you have created your first tag in git (eg. v1.0.0), you could then setup your config to use a git descriptor that points to your tag.
-Once installed, you can simply run `tank updates`, and if new tags have been created, you will be prompted if you want to upgrade. 
+Once you have created your first tag in git (eg. `v1.0.0`), you could then setup your config to use a git descriptor that points to your tag.
+Then you can simply run `tank updates`, and if new tags have been created, you will be prompted if you want to upgrade. 
 The workflow is now identical to the one which happens with official app store apps.
 
-{% include warning title="Caution" content="The git descriptor works well with [centralized configs](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), where the caching of apps is usually run by an admin and is stored to a central location where all user's can access it. However, if you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations), then it may not be as suitable. Your app will need to be downloaded per user, which means each user will need to have git installed and setup to authenticate with your repo, and access the code." %}
+{% include warning title="Caution" content="The git descriptor works well with [centralized configs](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), where the caching of apps is usually run by an admin and is stored to a central location where all user's can access it. However, if you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations), then it may not be as suitable. Your app will be downloaded per user, which means each user will need to have git installed and setup to authenticate with your repo, and access the code." %}
 
 ## Modifying an existing app
 Rather than starting from an empty starter template, it is sometimes necessary to add a minor feature to an existing app, for example one of Shotgun Software's standard Apps. 
@@ -216,38 +240,17 @@ This will work seamlessly with Toolkit and is relatively straight forward.
 The following workflow illustrates how to proceed:
 
 - You fork the parent app and create your own repository. With the fork you get all the git tags. 
-The latest tag is called v0.2.12 and the master branch basically equals the contents in this tag.
-- You apply your changes and commit to your master. You now basically have v0.2.12 PLUS your changes. 
-When you release this to production you need to create a tag. Name the tag v0.2.12.1, to indicate that your code is based on v0.2.12 and it is the first release.
-- Now someone finds a bug in your modifications. Fix the bug and tag up and release v0.2.12.2.
+Lets say the latest tag is called `v0.2.12` and the master branch basically equals the contents in this tag.
+- You apply your changes and commit to your master. You now basically have `v0.2.12` PLUS your changes. 
+When you release this to production you need to create a tag. Name the tag `v0.2.12.1`, to indicate that your code is based on `v0.2.12` and it is the first release.
+- Now someone finds a bug in your modifications. Fix the bug and tag up and release `v0.2.12.2`.
 - A number of important bug fixes have been released in the parent repository. 
-Pull them down to your repository. The most recent tag is now v0.2.15 due to releases that have happened in the parent repository. 
-Now merge your changes with master and test. You now basically have parent app v0.2.15 merged with your changes. Tag up v0.2.15.1.
+Pull them down to your repository. The most recent tag is now `v0.2.15` due to releases that have happened in the parent repository. 
+Now merge your changes with master and test. You now basically have parent app `v0.2.15` merged with your changes. Tag up `v0.2.15.1`.
 
 The tagging scheme outlined above guarantees that the Toolkit updates work correctly and makes it easy to quickly see what code each tag in your fork is based on.
 
-
-## Documentation Resources
-Apart from this document, we also have a number of other documentation resources available that can be useful when doing app development:
-
-	
-> Core API Reference
-
-The Core API reference documentation contains all the commands that you use to manipulate the context, the file system templates and other core mechanisms in the system.
-
-	
-> Platform API Reference
-
-The Platform API reference documentation covers the Engine and App base classes and contains detailed information about what your options are when you are writing App code.
-
-	
-> Apps and Engines Configuration Reference
-
-The Apps Configuration reference documentation outlines the various ways you can set up parameters and configuration for your app.
-
-## Forking an existing app
-Because all the Shotgun Toolkit Apps are open source, it is also possible to use their source code as a base for further app development.
-If you find that one of our default apps is missing a crucial feature, you can clone it in github and continue your own development!
-We love pull requests, so if you feel you have made a change that can benefit others, don't hesitate to feed it back to us as pull request.
+### Pull requests
+We love pull requests! If you feel you have made a change that can benefit others, don't hesitate to feed it back to us as pull request.
 We may then fold it back into the main version of the App.
 Alternatively add a suggestion for a new idea on our [roadmap page](https://www.shotgunsoftware.com/roadmap/).

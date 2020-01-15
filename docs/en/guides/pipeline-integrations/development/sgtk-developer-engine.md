@@ -1,14 +1,21 @@
 ---
 layout: default
-title: Developing your own Engine
+title: Developing your own engine
 pagename: sgtk-developer-engine
 lang: en
 ---
 
-# Developing your own Engine
+# Developing your own engine
+
+
+#TODO: explain how startup and software detection is handled.
+
+## Introduction
+This document outlines some of the technical details relating to Toolkit Engine development.
 
 Table of Contents:
-- [Introduction](#introduction)
+- [What is a Toolkit engine?](#what-is-a-toolkit-engine)
+- [Before you start](#before-you-start)
 - [Approaches to Engine Integration](#approaches-to-engine-integration)
     - [Host application includes QT, PyQt/PySide and Python](#host-application-includes-qt-pyqtpyside-and-python)
     - [Host application includes QT and Python but not PySide/PyQt](#host-application-includes-qt-and-python-but-not-pysidepyqt)
@@ -18,17 +25,11 @@ Table of Contents:
 - [QT Window Parenting](#qt-window-parenting)
 - [Host application wish list](#host-application-wish-list)
 
-- We provide a bunch of integrations already
-- There are community built integrations
-- Reach out to us before starting
-
-
-## Introduction
-This document outlines some of the technical details relating to Toolkit Engine development. 
-When developing an Engine, you effectively establish a bridge between the host application and the various apps and frameworks that are loaded into the engine. 
+## What is a Toolkit engine?
+When developing an engine, you effectively establish a bridge between the host application and the various apps and frameworks that are loaded into the engine. 
 The engine makes it possible to abstract the differences between applications so that apps can be written in more of a software agnostic manner using Python and QT.
 
-The engine is a collection of files, similar in structure to an App. It has an `engine.py` file and this must derive from the Tank Core Engine [Base class](https://github.com/shotgunsoftware/tk-core/blob/master/python/tank/platform/engine.py). 
+The engine is a collection of files, similar in structure to an app. It has an `engine.py` file and this must derive from the Tank Core Engine [Base class](https://github.com/shotgunsoftware/tk-core/blob/master/python/tank/platform/engine.py). 
 Different engines then re-implement various aspect of this base class depending on their internal complexity. 
 An engine typically handles or provides the following services:
 
@@ -37,6 +38,7 @@ An engine typically handles or provides the following services:
 - Methods for displaying UI dialogs and windows. These methods are usually overridden, if the way the engine handles QT is different from the default base class behavior, to ensure seamless integration of windows launched by Toolkit apps and the underlying host application window management setup.
 - Provides a `commands` dictionary containing all the command objects registered by apps. This is typically accessed when menu entries are created.
 - The base class exposes various init and destroy methods which are executed at various points in the startup process. These can be overridden to control startup and shutdown execution.
+- Start up logic that gets called by the `tk-multi-launchapp` at launch time, as well as automatic software discovery.
 
 Engines are launched by the Tank Core Platform using the `stgk.platform.start_engine()` command. 
 This command will read the configuration files, launch the engines, load all apps etc.
@@ -44,9 +46,26 @@ The goal with the engine is that once it has launched, it will provide a consist
 Since all engines implement the same base class, apps can call methods on the engines, for example, to create UIs. 
 It is up to each engine to implement these methods so that they work nicely inside the host application.
 
-{% include info title="Tip" content="The [Developing your own App](sgtk-developer-app.md) contains a step by step guide to developing an app, which contains principles that apply to developing an engine as well, which are not covered in this guide." %}
+## Before you start
+
+We provide a bunch of [integrations](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) already.
+There are also [engines that Toolkit Community members have built and shared back](https://support.shotgunsoftware.com/hc/en-us/articles/219039828-Community-Shared-Integrations). But sometimes you'll need pipeline integrations for software that doesn't have a Toolkit engine yet. 
+
+If you have the time and resources, we encourage you to help the Toolkit Community (and yourselves) in writing a missing engine you would like to use!
+
+Before embarking on writing code, [talk to us!](toolkitsupport@shotgunsoftware.com) We can't promise anything, but we will be happy to discuss your plans with you. 
+We may also be able to connect you to other users who are interested in or have done work on the same engine.
+If you can, open a channel of communication with a technical contact or developer of the software you are looking to integrate Toolkit into. 
+This helps gain insight into what the possibilities and/or roadblocks are for getting something going. 
+Once you establish a contact and talk through the basics of what you are trying to do, you can bring us into the conversation and setup a meeting with all of us to talk through some of the specifics of the engine.
+Also you can engage directly with the Toolkit community in the [Shotgun community forum](https://community.shotgunsoftware.com/c/pipeline). 
+
+We love to see new integrations, and are eternally grateful for peoples generous contributions to the Toolkit Community!
+
+{% include info title="Tip" content="The [Developing your own app](sgtk-developer-app.md) contains a step by step guide to developing an app, which contains principles that apply to developing an engine as well, which are not covered in this guide." %}
 
 ## Approaches to Engine Integration
+
 Depending on what the capabilities of the host app are, engine development may be more or less complex. 
 This section outlines a couple of different complexity levels that we have noticed during engine development.
 
@@ -85,7 +104,7 @@ If the host application cannot be accessed programmatically in any way, it is no
 ## QT Window Parenting
 Special attention typically needs to be paid to window parenting. 
 Usually, the PySide windows will not have a natural parent in the widget hierarchy and this needs to be explicitly called out. 
-The window parenting is important in order to provide a consistent experience and without it implemented, Toolkit App windows may appear behind the main window, which can be quite confusing.
+The window parenting is important in order to provide a consistent experience and without it implemented, Toolkit app windows may appear behind the main window, which can be quite confusing.
 
 
 ## Host application wish list
