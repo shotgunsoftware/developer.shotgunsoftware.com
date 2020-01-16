@@ -354,8 +354,6 @@ r = sg.summarize(entity_type="PublishedFile",
 fields["version"] = r["summaries"]["version_number"] + 1
 ```
 
-{% include info title="Note" content="To save writing out the name twice, you can take it from the fields dictionary you defined in the previous step." %}
-
 ### Searching the file system for the next version number.
 
 Using the Toolkit API you can gather a list of existing files, extract the template field values from them, and then figure out the next version.
@@ -503,6 +501,6 @@ sgtk.util.register_publish(tk,
 ### Final Thoughts
 
 This guide has hopefully left you with a foundational understanding of how to get started with the Toolkit API.
-There is of course many other uses for the API, so we recommend reading through the [tk-core API](https://developer.shotgunsoftware.com/tk-core/index.html) for more information.
+There are of course many other uses for the API, so we recommend reading through the [tk-core API](https://developer.shotgunsoftware.com/tk-core/index.html) for more information.
 
 Also our [forums](https://community.shotgunsoftware.com/c/pipeline/6) are an excellent place to discuss API questions and get answers, and even leave feedback for us about the this guide.
