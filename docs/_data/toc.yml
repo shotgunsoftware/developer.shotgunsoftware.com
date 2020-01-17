@@ -36,6 +36,7 @@
          - page: sgtk-developer-bootstrapping
          - page: sgtk-developer-app
          - page: sgtk-developer-engine
+         - page: sgtk-developer-framework
     - page: review
       children:
       - text: rv-user-manual

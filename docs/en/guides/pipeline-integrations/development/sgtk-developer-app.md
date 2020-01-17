@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Developing your own app
+title: Developing apps
 pagename: sgtk-developer-app
 lang: en
 ---
@@ -9,7 +9,7 @@ lang: en
 
 ## Introduction
 
-This guide outlines what a Toolkit App is, and covers how to create your own, and also explains some of the basics around app development.
+This guide outlines what a Toolkit app is, and covers how to create your own, and also explains some of the basics around app development.
 Shotgun Pipeline Toolkit is not only a collection of apps and engines maintained by Shotgun Software, it is also a development platform which makes it easy to quickly build custom pipeline tools!
 
 - [What is a Toolkit app?](#what-is-a-toolkit-app)
@@ -104,7 +104,7 @@ The [template starter app](https://github.com/shotgunsoftware/tk-multi-starterap
 Settings are often useful if you want reusable apps and you don't want to hard code any values in the app itself.
 - **python/app/dialog.py** - This contains the logic and event callbacks etc. that produces the main app window.
 - **python/app/ui** - This folder contains the automatically generated ui code and resource file. You don't edit this directly, instead you edit the QT ui file in the resources folder.
-- **resources/** - In the resources folder, the `dialog.ui` file is a QT Designer file which you can open up and use to rapidly design and define the look and feel of the App. 
+- **resources/** - In the resources folder, the `dialog.ui` file is a QT Designer file which you can open up and use to rapidly design and define the look and feel of the app. 
 Once you have made changes you have to execute the `build_resources.sh` script which will convert the ui file to python code and store it as the `/python/app/ui/dialo.py`.
 - **style.qss** - You can define qss (QT style sheets) for your UI in this file.
 
@@ -230,7 +230,7 @@ The workflow is now identical to the one which happens with official app store a
 {% include warning title="Caution" content="The git descriptor works well with [centralized configs](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), where the caching of apps is usually run by an admin and is stored to a central location where all user's can access it. However, if you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations), then it may not be as suitable. Your app will be downloaded per user, which means each user will need to have git installed and setup to authenticate with your repo, and access the code." %}
 
 ## Modifying an existing app
-Rather than starting from an empty starter template, it is sometimes necessary to add a minor feature to an existing app, for example one of Shotgun Software's standard Apps. 
+Rather than starting from an empty starter template, it is sometimes necessary to add a minor feature to an existing app, for example one of Shotgun Software's standard apps. 
 When you work with a modified version of an app, you typically want to 'track' against the source app and make sure to regularly pull in changes and bug fixes.
 
 When you do this type of development, you pick up the parent code, then apply some of your changes, then release this to your pipeline. 
@@ -252,5 +252,5 @@ The tagging scheme outlined above guarantees that the Toolkit updates work corre
 
 ### Pull requests
 We love pull requests! If you feel you have made a change that can benefit others, don't hesitate to feed it back to us as pull request.
-We may then fold it back into the main version of the App.
+We may then fold it back into the main version of the app.
 Alternatively add a suggestion for a new idea on our [roadmap page](https://www.shotgunsoftware.com/roadmap/).
