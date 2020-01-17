@@ -18,10 +18,10 @@ Defining credentials in your `shotgun.yml` file is the old method of handling au
 You should avoid defining them in the `shotgun.yml` file, and instead use one of the approaches detailed below:
 
 ## User-facing scripts
-If the script is user facing, you can add this at the beginning, before creating a `Sgtk` instance:
+If the script is user-facing, you can add this at the beginning, before creating a `Sgtk` instance:
 
 ```python
-# Import Toolkit so we can access to Toolkit specific features.
+# Import the Toolkit API so we can access Toolkit specific features.
 import sgtk
 
 # Import the ShotgunAuthenticator from the tank_vendor.shotgun_authentication
@@ -55,11 +55,11 @@ user = authenticator.get_user()
 sgtk.set_authenticated_user(user)
 
 #
-# Add your app code goes here...
+# Add your app code here...
 #
 # When you are done, you could optionally clear the current user. Doing so
 # however, means that the next time the script is run, the user will be prompted
-# for his or her credentials again. You should probably avoid doing this in
+# for their credentials again. You should probably avoid doing this in
 # order to provide a user experience that is as frictionless as possible.
 authenticator.clear_default_user()
 ```
@@ -68,7 +68,7 @@ If `QApplication` is available, you'll get something akin to this:
 
 ![](./images/sign_in_window.png)
 
-{% include info title="Note" content="If you are importing a Toolkit API, (`sgtk` package), that isn't associated with a configuration, for example one that you have downloaded to use to bootstrap into a different configuration; then you shouldn't attempt to create a `CoreDefaultsManager` and instead you should just create a `ShotgunAuthenticator()` instance without passing a defaults manager.
+{% include info title="Note" content="If you are importing a Toolkit API (`sgtk` package) that isn't associated with a configuration, for example one that you have downloaded to use to bootstrap into a different configuration, then you shouldn't attempt to create a `CoreDefaultsManager`. Instead, create a `ShotgunAuthenticator()` instance without passing a defaults manager.
 ```python
 authenticator = ShotgunAuthenticator()
 ```" %}
