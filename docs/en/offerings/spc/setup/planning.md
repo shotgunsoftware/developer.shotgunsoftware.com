@@ -5,7 +5,7 @@ pagename: spc-setup-planning
 lang: en
 ---
 
-# Planning
+# Planning Your Setup
 
 ## Introduction
 

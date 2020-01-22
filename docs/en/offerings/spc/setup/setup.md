@@ -5,7 +5,7 @@ pagename: spc-setup
 lang: en
 ---
 
-# Environment Configuration Reference
+# Shotgun Private Cloud - Setup
 
 ## Introduction
 

@@ -5,7 +5,7 @@ pagename: spc-getting_started
 lang: en
 ---
 
-# Getting Started with Shotgun Private Cloud
+# Shotgun Private Cloud - Getting Started
 
 ## Introduction
 
