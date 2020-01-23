@@ -70,18 +70,18 @@ This section outlines a couple of different complexity levels that we have notic
 
 ### Host software includes Qt, PyQt/PySide, and Python
 This is the best setup for Toolkit and implementing an engine on top of a host software that supports Qt, Python, and PySide is very straight forward. 
-The nuke engine is a good example of this. Integration is merely a matter of hooking up some log file management and write code to set up the Shotgun menu.
+The [Nuke engine](https://github.com/shotgunsoftware/tk-nuke) or the [Maya engine](https://github.com/shotgunsoftware/tk-maya) is a good example of this. Integration is merely a matter of hooking up some log file management and write code to set up the Shotgun menu.
 
 
 ### Host software includes Qt and Python but not PySide/PyQt
-This class of software includes for example Maya and Motionbuilder and is relatively easy to integrate. 
+This class of software includes for example [Motionbuilder](https://github.com/shotgunsoftware/tk-motionbuilder) and is relatively easy to integrate. 
 Since the host software itself was written in Qt and contains a Python interpreter, it is possible to compile a version of PySide or PyQt and distribute it with the engine.
 This PySide is then added to the Python environment and will allow access to the Qt objects using Python. 
 Commonly, the exact compiler settings that were used when compiling the shot application must be used when compiling PySide, to guarantee it to work.
 
 
 ### Host software includes Python
-This class includes Houdini and Softimage. These host software have a non-Qt UI but contain a Python interpreter. 
+These host software have a non-Qt UI but contain a Python interpreter. 
 This means that Python code can execute inside of the environment, but there is no existing Qt event loop running. 
 In this case, Qt and PySide will need to be included with the engine and the Qt message pump (event) loop must be hooked up with the main event loop in the UI. 
 Sometimes the host software may contain special methods for doing precisely this. 
@@ -89,7 +89,8 @@ If not, arrangements must be made so that the Qt event loop runs regularly, for 
 
 
 ### Host software does not contain Python but you can write plugins
-This class includes [Photoshop](https://github.com/shotgunsoftware/tk-photoshopcc). There is no Python scripting, but C++ plugins can be created. 
+This class includes [Photoshop](https://github.com/shotgunsoftware/tk-photoshopcc) and [After Effects](https://github.com/shotgunsoftware/tk-aftereffects).
+There is no Python scripting, but C++ plugins can be created. 
 In this case, the strategy is often to create a plugin that contains an IPC layer and launches Qt and Python in a separate process at startup.
  Once the secondary process is running, commands are sent back and forth using the IPC layer. 
  This type of host software usually means significant work to get a working engine solution.
