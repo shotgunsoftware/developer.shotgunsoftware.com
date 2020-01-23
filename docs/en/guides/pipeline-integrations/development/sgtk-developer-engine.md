@@ -89,10 +89,13 @@ If not, arrangements must be made so that the Qt event loop runs regularly, for 
 
 
 ### Host software does not contain Python but you can write plugins
-This class includes Photoshop. There is no Python scripting, but C++ plugins can be created. 
+This class includes [Photoshop](https://github.com/shotgunsoftware/tk-photoshopcc). There is no Python scripting, but C++ plugins can be created. 
 In this case, the strategy is often to create a plugin that contains an IPC layer and launches Qt and Python in a separate process at startup.
  Once the secondary process is running, commands are sent back and forth using the IPC layer. 
  This type of host software usually means significant work to get a working engine solution.
+ 
+ {% include info title="Tip" content="With the Photoshop and After Effects engines we actually created [a framework that handles the adobe plugin](https://github.com/shotgunsoftware/tk-framework-adobe).
+  Both engine make use of the framework to communicate with the host software, and it makes it easier to build other engines for the rest of the adobe family." %}
 
 
 ### Host software provides no scriptability at all
