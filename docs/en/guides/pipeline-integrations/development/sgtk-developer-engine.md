@@ -60,7 +60,7 @@ Also, you can engage directly with the Toolkit community in the [Shotgun communi
 
 We love to see new integrations, and are always eternally grateful for people's generous contributions to the Toolkit Community!
 
-{% include info title="Tip" content="The [Developing your own app](sgtk-developer-app.md) contains a step by step guide to developing an app, which contains principles that apply to developing an engine as well, which are not covered in this guide." %}
+{% include info title="Tip" content="The [Developing your own app](sgtk-developer-app.md) contains a step by step guide to developing an app, which contains principles that apply to developing an engine as well that are not covered in this guide." %}
 
 ## Approaches to engine integration
 

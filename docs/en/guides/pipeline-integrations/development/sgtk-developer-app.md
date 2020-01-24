@@ -102,7 +102,7 @@ The [template starter app](https://github.com/shotgunsoftware/tk-multi-starterap
 ![](./images/tk-multi-starterapp-directory.png)
 
 - **app.py** - The app entry point and menu registration can be found in the `app.py` file. This is where you typically set up your classes, get things initialized, and get menu items registered.
-- **info.yml** - Also known as the manifest file. It defines all the different settings, that this app requires when it is installed, along with their default values if supplied. 
+- **info.yml** - Also known as the manifest file. It defines all the different settings that this app requires when it is installed, along with their default values if supplied. 
 Settings are often useful if you want reusable apps and you don't want to hard code any values in the app itself.
 - **python/app/dialog.py** - This contains the logic, event callbacks, etc. that produce the main app window.
 - **python/app/ui** - This folder contains the automatically generated UI code and resource file. You don't edit this directly; instead, you edit the Qt UI file in the `resources` folder.
