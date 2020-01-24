@@ -81,6 +81,7 @@ Commonly, the exact compiler settings that were used when compiling the shot app
 
 
 ### Host software includes Python
+This class of software includes for example, the third party integration [Unreal](https://github.com/ue4plugins/tk-unreal).
 These host software have a non-Qt UI but contain a Python interpreter. 
 This means that Python code can execute inside of the environment, but there is no existing Qt event loop running. 
 In this case, Qt and PySide will need to be included with the engine and the Qt message pump (event) loop must be hooked up with the main event loop in the UI. 
