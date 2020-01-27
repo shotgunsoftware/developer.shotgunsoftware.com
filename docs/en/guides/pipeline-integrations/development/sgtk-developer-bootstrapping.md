@@ -24,11 +24,11 @@ Or you may wish to be able to run your Toolkit app from your favorite IDE.
 ### Steps
 
 1. [Importing the Toolkit API for bootstrapping](#part-1-importing-the-toolkit-api-for-bootstrapping)
-2. [Logging](#part-2---logging)
-3. [Authentication](#part-3---authentication)
-4. [Bootstrapping an engine](#part-4---bootstrapping-an-engine)
-5. [launching an app](#part-5---launching-an-app)
-6. [Complete script](#part-6---the-complete-script)
+2. [Logging](#part-2-logging)
+3. [Authentication](#part-3-authentication)
+4. [Bootstrapping an engine](#part-4-bootstrapping-an-engine)
+5. [launching an app](#part-5-launching-an-app)
+6. [Complete script](#part-6-the-complete-script)
 
 ## Part 1: Importing the Toolkit API for bootstrapping
 

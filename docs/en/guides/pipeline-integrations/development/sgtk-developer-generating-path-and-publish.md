@@ -18,14 +18,14 @@ The purpose of this guide is to walk through a basic example of how you can use 
 
 ### Steps
 
-1. [Importing sgtk](#part-1---importing-sgtk)
-2. [Getting an Sgtk instance](#part-2---getting-an-sgtk-instance)
-3. [Getting context](#part-3---getting-context)
-4. [Creating folders](#part-4---creating-folders)
-5. [Using a template to build a path](#part-5---using-a-template-to-build-a-path)
-6. [Finding existing files and getting the latest version number](#part-6---finding-existing-files-and-getting-the-latest-version-number)
-7. [Registering a published file](#part-7---registering-a-published-file)
-8. [Pulling it all together into a complete script](#part-8---the-complete-script)
+1. [Importing sgtk](#part-1-importing-sgtk)
+2. [Getting an Sgtk instance](#part-2-getting-an-sgtk-instance)
+3. [Getting context](#part-3-getting-context)
+4. [Creating folders](#part-4-creating-folders)
+5. [Using a template to build a path](#part-5-using-a-template-to-build-a-path)
+6. [Finding existing files and getting the latest version number](#part-6-finding-existing-files-and-getting-the-latest-version-number)
+7. [Registering a published file](#part-7-registering-a-published-file)
+8. [Pulling it all together into a complete script](#part-8-the-complete-script)
 
 ## Part 1: Importing sgtk
 

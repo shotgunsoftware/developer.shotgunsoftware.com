@@ -16,16 +16,16 @@ Shotgun Pipeline Toolkit is not only a collection of apps and engines maintained
 - [Creating your own app](#creating-your-own-app)
 
 Steps:
-1. [Creating a development sandbox](#part-1---creating-a-development-sandbox)
-2. [Forking or downloading the starter app repository](#part-2---forking-or-downloading-the-starter-app-repository)
-3. [Adding the app to your config](#part-3---adding-the-app-to-your-config)
-4. [Developing the app](#part-4---developing-the-app)
+1. [Creating a development sandbox](#part-1-creating-a-development-sandbox)
+2. [Forking or downloading the starter app repository](#part-2-forking-or-downloading-the-starter-app-repository)
+3. [Adding the app to your config](#part-3-adding-the-app-to-your-config)
+4. [Developing the app](#part-4-developing-the-app)
     - [Anatomy of the Template Starter App](#anatomy-of-the-template-starter-app)
     - [Configuration settings](#configuration-settings)
     - [Frameworks](#frameworks)
     - [Reloading your changes](#reloading-your-changes)
-5. [Testing](#part-5---testing)
-6. [Preparing your first release](#part-6---preparing-your-first-release)
+5. [Testing](#part-5-testing)
+6. [Preparing your first release](#part-6-preparing-your-first-release)
 
 Additional info:
 - [Modifying an existing app](#modifying-an-existing-app)
