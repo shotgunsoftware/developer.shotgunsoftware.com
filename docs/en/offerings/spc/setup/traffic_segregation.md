@@ -5,6 +5,6 @@ pagename: spc-setup-traffic_segregation
 lang: en
 ---
 
-# Environment Configuration Reference
+# Web Traffic Segregation
 
 Coming soon.
