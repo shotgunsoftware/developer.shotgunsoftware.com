@@ -7,7 +7,7 @@ lang: en
 
 # Media Segregation
 
-TODO
+The media segregation allows your users to access your media on AWS S3 privatly (not transitin on the public internet). 
 
 ## Add an S3 endpoint to your VPC
 
