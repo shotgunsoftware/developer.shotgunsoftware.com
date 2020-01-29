@@ -31,7 +31,7 @@ Shotgun Private Cloud is a solution that requires less upkeep and IT/System Admi
 Shotgun Private Cloud is not a completely isolated solution. The compute services and the database services are shared amongst clients, and managed by Shotgun. Shotgun Private Cloud doesn't garantee a complete segregation from a hardware standpoint.
 
 # High Level Architecture
-![us-east-1 arch](../images/spc-about-arch.png)
+![spc-arch](../images/spc-about-arch.png)
 
 Shotgun Cloud offerings can be decoupled at a high level in 3 parts;
 
