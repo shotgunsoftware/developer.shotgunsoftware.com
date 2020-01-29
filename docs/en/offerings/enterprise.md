@@ -9,7 +9,7 @@ lang: en
 
 ## What is Shotgun Enterprise?
 
-Shotgun Enterprise is a on-premise solution that gives our clients complete ownership of the Shotgun Platform. Clients deploys Shotgun on their own servers, on their studio infrastructure. By doing so, clients are in full control of the maintenance and the security of their Shotgun instance.
+Shotgun Enterprise is an on-premise solution that gives our clients complete ownership of the Shotgun Platform. Clients deploy Shotgun on their own servers, on their studio infrastructure. By doing so, clients are in full control of the maintenance and the security of their Shotgun instance.
 
 ## Further Reading
 
