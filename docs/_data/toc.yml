@@ -115,8 +115,7 @@
         - page: spc-knowledge-direct_connect
         - page: spc-knowledge-private_link
         - page: spc-knowledge-endpoints
-      - text: spc-cloud_studios
-        url: "https://aws.amazon.com/media/resources/"
+        - page: spc-knowledge-aws
       - page: spc-learn
     - page: enterprise-index
 
