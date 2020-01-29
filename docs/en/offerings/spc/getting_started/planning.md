@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Planning Your Setup
-pagename: spc-setup-planning
+pagename: spc-getting_started-planning
 lang: en
 ---
 
