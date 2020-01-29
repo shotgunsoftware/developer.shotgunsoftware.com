@@ -96,9 +96,10 @@
         - page: spc-getting_started-about
         - page: spc-getting_started-responsibilities
         - page: spc-getting_started-onboarding
+        - page: spc-getting_started-planning
       - page: spc-setup
         children:
-        - page: spc-setup-planning
+        - page: spc-setup-workflow
         - page: spc-setup-planning-aws_account
         - page: spc-setup-s3_bucket
         - page: spc-setup-closed_vpc
