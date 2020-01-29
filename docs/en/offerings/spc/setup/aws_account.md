@@ -1,10 +1,11 @@
 ---
 layout: default
-title: AWS Account Setup
+title: AWS Account Creation
 pagename: spc-setup-aws_account
 lang: en
 ---
 
-# AWS Account Setup
+# AWS Account Creation
 
-Contact your AWS contacts to help you get an AWS Account if you don't have one already.
+You can create your AWS Account by yourself. [Link](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+You can also contact your AWS contacts to help with your AWS account setup.
