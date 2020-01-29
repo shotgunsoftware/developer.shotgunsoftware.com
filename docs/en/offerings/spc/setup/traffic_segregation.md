@@ -7,9 +7,9 @@ lang: en
 
 # Web Traffic Segregation
 
-## Setup AWS Private link to privately access Shotgun site
+The goal is to setup an AWS Private link to privately access Shotgun site.
 
-### Setup a VPC with in us-east-1 AWS region if needed
+## Setup a VPC with in us-east-1 AWS region if needed
 
 Using the AWS Console:
 
@@ -21,7 +21,7 @@ Using the AWS Console:
 
 ![Create subnets](../images/spc-subnet-create.png)
 
-### Setup Private Link to Shotgun
+## Setup Private Link to Shotgun
 
 * Add a new VPC Endpoint in your us-east-1 VPC
 
