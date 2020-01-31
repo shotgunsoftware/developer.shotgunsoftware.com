@@ -11,7 +11,7 @@ lang: en
 
 ## AWS CloudFormation template
 
-It's possible to start from the [Private S3 bucket AWS CloudFormation template](https://github.com/shotgunsoftware/shotgun-vpc/blob/master/sg-private-s3-bucket.yml) and customize for your needs for a faster deployment.
+It's possible to start from the [Private S3 bucket AWS CloudFormation template](https://github.com/shotgunsoftware/shotgun-vpc/blob/master/sg-private-s3-bucket.yml) and customize it for your needs for a faster deployment.
 
 ## Steps
 
