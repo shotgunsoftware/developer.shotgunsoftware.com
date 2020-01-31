@@ -9,6 +9,7 @@ lang: en
 
 ## In This Section
 
+* [Setup Workflow](./workflow.md)
 * [AWS Account Setup](./aws_account.md)
 * [Private S3 Bucket](./s3_bucket.md)
 * [Closed VPC](./closed_vpc.md)

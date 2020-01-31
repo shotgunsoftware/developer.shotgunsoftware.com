@@ -14,11 +14,10 @@ When you use Shotgun Private Cloud, you isolate sensitive content from the Publi
 
 ### Getting Started
 * [What is Shotgun Private Cloud?](./spc/getting_started/about.md)
-* [Client Responsibilities for Shotgun Private Cloud](./spc/getting_started/responsibilities.md)
 * [Onboarding Process](./spc/getting_started/onboarding.md)
+* [Planning Your Setup](./spc/getting_started/planning.md)
 
 ### Setup
-* [Planning Your Setup](./spc/setup/planning.md)
 * [AWS Account Setup](./spc/setup/aws_account.md)
 * [Private S3 Bucket](./spc/setup/s3_bucket.md)
 * [Closed VPC](./spc/setup/closed_vpc.md)
@@ -34,9 +33,4 @@ When you use Shotgun Private Cloud, you isolate sensitive content from the Publi
 * [Direct Connect](./spc/knowledge/direct_connect.md)
 * [Private Link](./spc/knowledge/private_link.md)
 * [VPC Endpoints](./spc/knowledge/vpc_endpoints.md)
-
-### AWS Cloud Studios
-* [AWS Cloud Studios](https://aws.amazon.com/media/resources/)
-
-### Learn
-* [Online Curriculum](./spc/learn/learn.md)
+* [AWS Knowledge](./spc/knowledge/aws.md)

@@ -9,6 +9,6 @@ lang: en
 
 ## In This Section
 
-* [What is Shotgun Private Cloud?](../spc/getting_started/about.md)
-* [Client Responsibilities for Shotgun Private Cloud](../spc/getting_started/responsibilities.md)
-* [Onboarding Process](../spc/getting_started/onboarding.md)
+* [What is Shotgun Private Cloud?](./about.md)
+* [Onboarding Process](./onboarding.md)
+* [Planning Your Setup](./planning.md)
