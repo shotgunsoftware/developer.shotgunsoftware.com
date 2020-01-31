@@ -21,12 +21,6 @@ Using the AWS Console:
 
 ![Create subnets](../images/spc-subnet-create.png)
 
-## Add an S3 endpoint to your VPC
-
-![Add endpoint](../images/spc-endpoint-create-1.png)
-![Add endpoint](../images/spc-endpoint-create-2.png)
-![Add endpoint](../images/spc-endpoint-create-3.png)
-
 ## Setup access from your site network to your AWS VPC
 
 Options provided by AWS:
@@ -34,8 +28,3 @@ Options provided by AWS:
 * [AWS Direct Connect](https://aws.amazon.com/directconnect/)
 
 {% include info title="Note" content="If Direct Connect is chosen, we recommend to test with a simpler/faster solution first to validate the setup, then to replace the solution with Direct Connect when the setup is completed." %}
-
-## Setup S3 proxy
-
-An S3 proxy is needed in your VPC to proxy the traffic from your network into the S3 VPC endpoint. See [here](https://github.com/shotgunsoftware/s3-proxy-example) for an example Docker image that could be run in your AWS account using AWS ECS.
-
