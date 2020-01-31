@@ -85,6 +85,39 @@
       url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
     - page: env-config-ref
 
+- caption: offerings
+  children:
+    - page: cloud-index
+    - page: spc-index
+      children:
+      - page: spc-getting_started
+        children:
+        - page: spc-getting_started-about
+#        - page: spc-getting_started-responsibilities
+        - page: spc-getting_started-onboarding
+        - page: spc-getting_started-planning
+      - page: spc-setup
+        children:
+        - page: spc-setup-workflow
+        - page: spc-setup-aws_account
+        - page: spc-setup-s3_bucket
+        - page: spc-setup-closed_vpc
+        - page: spc-setup-media_segregation
+        - page: spc-setup-traffic_segregation
+        - page: spc-setup-tuning
+      - page: spc-knowledge
+        children:
+        - page: spc-knowledge-connecting
+        - page: spc-knowledge-direct_connect_onboarding
+        - page: spc-knowledge-s3
+        - page: spc-knowledge-vpc_iam_sec
+        - page: spc-knowledge-direct_connect
+        - page: spc-knowledge-private_link
+        - page: spc-knowledge-endpoints
+        - page: spc-knowledge-aws
+#      - page: spc-learn
+    - page: enterprise-index
+
 - caption: quick-answers
   children:
   - page: quick-answers-administering
