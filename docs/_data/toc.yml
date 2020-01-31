@@ -31,13 +31,12 @@
         - page: disabling-auto-updates-and-offline
       - page: toolkit-development
         children:
-        - page: sgtk-developer-getting-started
-        - page: sgtk-developer-generating-path-and-publish
-        - page: sgtk-developer-bootstrapping
-        - text: app-development
-          url: " https://support.shotgunsoftware.com/hc/en-us/articles/219033158"
-        - text: engine-development
-          url: " https://support.shotgunsoftware.com/hc/en-us/articles/219040348"
+         - page: sgtk-developer-getting-started
+         - page: sgtk-developer-generating-path-and-publish
+         - page: sgtk-developer-bootstrapping
+         - page: sgtk-developer-app
+         - page: sgtk-developer-engine
+         - page: sgtk-developer-framework
     - page: review
       children:
       - text: rv-user-manual
