@@ -7,4 +7,6 @@ lang: en
 
 # Private Link
 
-Coming soon.
+[AWS PrivateLink](https://aws.amazon.com/privatelink/) is an AWS service that connects different AWS VPCs without going through the public internet. 
+
+In conjunction with [AWS Direct Connect](./direct_connect.md), PrivateLink helps create a dedicated connection between a client studio and Shotgun infrastructure.
