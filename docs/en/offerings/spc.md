@@ -6,7 +6,7 @@ lang: en
 ---
 
 # Shotgun Private Cloud
-Shotgun Private Cloud is an hybrid cloud solution that allows you to satisfy their security and legal requirements, while reducing to a minimum the upkeep and the Shotgun System Admin specific required knowledge. Shotgun Private Cloud allows you to stay in control of their sensitive content, while removing the need to host the service on their infrastructure.
+Shotgun Private Cloud is a hybrid cloud solution that satisfies strict security and legal requirements, while minimizing Shotgun System Admin specific required knowledge and maintenance. Shotgun Private Cloud allows you to stay in control of sensitive content, while removing the need to host the service on your own infrastructure.
 
 When you use Shotgun Private Cloud, you isolate sensitive content from the Public Internet, allowing you to meet security requirements that may not be met by the Shotgun Cloud standard offering.
 
