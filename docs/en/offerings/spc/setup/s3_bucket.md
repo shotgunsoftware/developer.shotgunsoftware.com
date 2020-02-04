@@ -9,6 +9,10 @@ lang: en
 
 {% include info title="Disclaimer" content="The client is solely responsible to secure his S3 bucket, and the integrity of your data will be at risk without it. We very strongly recommend [securing your S3 bucket properly](https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/)." %}
 
+## AWS CloudFormation template
+
+It's possible to start from the [Private S3 bucket AWS CloudFormation template](https://github.com/shotgunsoftware/shotgun-vpc/blob/master/sg-private-s3-bucket.yml) and customize it for your needs for a faster deployment.
+
 ## Steps
 
 * Create your S3 bucket in your selected region.
