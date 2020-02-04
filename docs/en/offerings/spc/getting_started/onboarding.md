@@ -5,6 +5,8 @@ pagename: spc-getting_started-onboarding
 lang: en
 ---
 
+THIS IS A TEST!
+
 # Onboarding Process
 
 Shotgun Private Cloud is an enterprise level offering that requires adopters to become AWS users. In order to make sure this joint venture between Shotgun, AWS and our clients is as streamlines as possible, we decided to work closely with Amazon to define a cooperative onboarding process that would meet client expectations for a premium offering.
