@@ -5,6 +5,8 @@ pagename: spc-getting_started-planning
 lang: en
 ---
 
+BLAHBLAH
+
 # Planning Your Setup
 
 ## Pick your options
