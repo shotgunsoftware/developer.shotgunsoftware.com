@@ -59,9 +59,7 @@ Then, launch the Desktop through your terminal.
 
 {% include info title="Note" content="Once you close Shotgun Desktop and your terminal, debug logging is no longer turned on." %}
 
-## Examining debug outputs in log files
 
-Take a look at our [where are my log files?](./where-are-my-log-files.md) doc to help locate your log files.
 
 ## Advanced configuration debug logging options
 
@@ -94,6 +92,8 @@ engines:
 ```
 
 Save the file and relaunch Nuke in the shot step environment. You will now see the debug output in the script editor window. 
+
+{% include info title="Note" content="If debug logging is enabled via any one of the Desktop checkbox, environment variable, or engine configuration setting, debug logging will be output. Additionally, each of these three is modified independently of the others: the checkbox value is a QSetting, and it persists across sessions of Desktop via QSetting, totally independent of the engine setting or env var. This means that while the Desktop checkbox may be unchecked, debug logging might still be enabled by way of one of the other methods." %}
 
 ### Turning on debug logging for the tank command
 
@@ -163,3 +163,7 @@ If you’re running the tank command and want to see debug output in your termin
     You are currently running version v0.15.18 of the Shotgun Pipeline Toolkit
     No need to update the Toolkit Core API at this time!
     DEBUG [10:11:39 981.74405098]: Exiting with exit code None
+
+## Examining debug outputs in log files
+
+Take a look at our [where are my log files?](./where-are-my-log-files.md) doc to help locate your log files.
