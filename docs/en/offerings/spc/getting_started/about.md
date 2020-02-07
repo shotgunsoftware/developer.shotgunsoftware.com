@@ -42,4 +42,4 @@ Shotgun Cloud offerings can be decoupled at a high level in 3 parts:
 **Media Storage:** Where the client's attachments, media, and assets are stored. Shotgun uses AWS S3 to store client content.
 
 ## Ephemeral compute and memory segregation
-While Shotgun Private Cloud clients share the same infrastructure, Shotgun Cloud guarantees a complete in-memory isolation, but in transit and at rest, of client data. This makes Shotgun Cloud less prone to data leaking due to architecture flaws or software vulnerabilities exploiting memory, like buffer overflow.
+While Shotgun Private Cloud clients share the same infrastructure, Shotgun Cloud guarantees a complete in-memory isolation, both in transit and at rest, of client data. This makes Shotgun Cloud less prone to data leaking due to architecture flaws or software vulnerabilities exploiting memory, like buffer overflow.

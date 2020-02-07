@@ -7,9 +7,9 @@ lang: en
 
 # Web Traffic Segregation
 
-The goal is to setup an AWS Private link to privately access Shotgun site.
+The goal is to set up an AWS PrivateLink to privately access your Shotgun site.
 
-## Setup a VPC with in us-east-1 AWS region if needed
+## Setup a VPC within the us-east-1 AWS region if needed
 
 Using the AWS Console:
 
@@ -21,7 +21,7 @@ Using the AWS Console:
 
 ![Create subnets](../images/spc-subnet-create.png)
 
-## Setup Private Link to Shotgun
+## Set up PrivateLink to Shotgun
 
 * Add a new VPC Endpoint in your us-east-1 VPC
 
@@ -29,6 +29,6 @@ Using the AWS Console:
 
 * For the security group, Shotgun only requires the inbound port tcp/443 to be open
 
-* Please contact Shotgun Support to get the endpoint approved so you can start using it
+* Please contact Shotgun Support to get the endpoint approved, so that you can start using it
 
 ![Create endpoint](../images/spc-endpoint-create_privatelink.png)

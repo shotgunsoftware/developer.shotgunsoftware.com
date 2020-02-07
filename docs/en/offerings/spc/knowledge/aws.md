@@ -7,7 +7,7 @@ lang: en
 
 # AWS Knowledge
 
-Below you can find links to additional reading material from AWS, including documentation on technologies leveraged by Shotgun Private Cloud and compliance information.
+Below you can find links to additional reading material from AWS, including documentation on technologies leveraged by Shotgun Private Cloud, as well as compliance information:
 
 * [**[AWS Media Blog]** Securing Studio IP in AWS: Cloud-based VFX Project Management with Autodesk Shotgun](https://aws.amazon.com/blogs/media/securing-studio-ip-in-aws-cloud-based-vfx-project-management-with-autodesk-shotgun/)
 * [**[AWS Media Blog]** Designing for Studio-Grade Security](https://aws.amazon.com/blogs/media/designing-for-studio-grade-security/)

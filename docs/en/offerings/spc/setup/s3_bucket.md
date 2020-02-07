@@ -7,7 +7,7 @@ lang: en
 
 # Private S3 Bucket
 
-{% include info title="Disclaimer" content="The client is solely responsible to secure his S3 bucket, and the integrity of your data will be at risk without it. We very strongly recommend [securing your S3 bucket properly](https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/)." %}
+{% include info title="Disclaimer" content="The security of your S3 bucket is solely a client responsibility, and the integrity of your data will be at risk without it. We very strongly recommend [securing your S3 bucket properly](https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/)." %}
 
 ## AWS CloudFormation template
 
@@ -16,11 +16,11 @@ It's possible to start from the [Private S3 bucket AWS CloudFormation template](
 ## Steps
 
 * Create your S3 bucket in your selected region.
-* Configure the bucket Default Encryption, Shotgun use the bucket Default Encryption to encrypt new S3 objects.
+* Configure the bucket Default Encryption, as Shotgun uses the bucket Default Encryption to encrypt new S3 objects.
 
 ## CORS Configuration
 
-You need to configure CORS policy on your new S3 bucket. Replace mystudio.shotgunstudio.com by your Shotgun hosted site URL.
+You need to configure CORS policy on your new S3 bucket. Replace mystudio.shotgunstudio.com with your Shotgun hosted site URL.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -39,9 +39,9 @@ You need to configure CORS policy on your new S3 bucket. Replace mystudio.shotgu
 
 ## IAM Role
 
-Create an AWS Role with the following permission on your bucket with the following policies:
+Create an AWS Role with the following permissions on your bucket, using the below policies:
 
-* Add a policy to allow access Shotgun access to your S3 bucket. Eg.
+* Add a policy to allow Shotgun to access your S3 bucket. Example:
 
 ```json
 {
@@ -63,7 +63,7 @@ Create an AWS Role with the following permission on your bucket with the followi
 }
 ```
 
-* Add a policy to allow access to KMS if you are using AWS-KMS S3 encryption. Eg.
+* Add a policy to allow access to KMS if you are using AWS-KMS S3 encryption. Example:
 
 ```json
 {
@@ -82,7 +82,7 @@ Create an AWS Role with the following permission on your bucket with the followi
 }
 ```
 
-* Allow Shotgun account to assume the role by editing the role Trust Relationship. Eg.
+* Allow the Shotgun account to assume the role by editing the role Trust Relationship. Example:
 
 ```json
 {
