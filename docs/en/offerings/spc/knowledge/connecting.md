@@ -7,16 +7,16 @@ lang: en
 
 # Connecting Your Studio With Your AWS VPC
 
-Clients can connect their studio networks with AWS using in one of many ways, described in detail in [Amazon Virtual Private Cloud Connectivity Options](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/network-to-amazon-vpc-connectivity-options.html) whitepaper.
+You can connect your studio networks with AWS using one of many options, described in detail in this [Amazon Virtual Private Cloud Connectivity Options](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/network-to-amazon-vpc-connectivity-options.html) whitepaper.
 
-Some of the common options our clients have used include
+Some of the common options our clients have used include:
 
 ## VPN Connection
 
-Using a VPN appliance - AWS managed or client managed - a client studio can establish a secure connection between their data center, or offices to their AWS private VPC.
+Using a VPN appliance - AWS-managed or client-managed - your studio can establish a secure connection between your data center (or offices) to your AWS private VPC.
 
 
 ## AWS Direct Connect
 
-[AWS Direct Connect](./direct_connect.md), creates a dedicated link between a client studio and the client's AWS VPC. This will help segregate the client studio's network traffic to their private AWS VPC from general internet traffic.
+[AWS Direct Connect](./direct_connect.md) creates a dedicated link between your studio and your AWS VPC. This will help segregate your studio's network traffic to your private AWS VPC from general internet traffic.
 
