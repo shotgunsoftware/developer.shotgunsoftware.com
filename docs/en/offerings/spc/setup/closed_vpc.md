@@ -7,9 +7,9 @@ lang: en
 
 # Closed VPC
 
-{% include info title="Disclaimer" content="This documentation is provided as an example. It explains how to setup your Shotgun Tier 1 environment so it can be connected to Shotgun Tier 1 infrastructure. Please adapt it to you studio security requirements. As Shotgun as no visibility on your AWS Account. Making sure that this account is secure is the client responsibility." %}
+{% include info title="Disclaimer" content="This documentation is provided solely as an example. It explains how to set up your Shotgun Private Cloud environment so that it can be connected to Shotgun Private Cloud infrastructure. Please adapt it to your studio security requirements as needed. As Shotgun has no visibility on your AWS Account, ensuring that this account is secure is a client responsibility." %}
 
-## Setup a VPC with private subnets in the your S3 bucket AWS region
+## Set up a VPC with private subnets in your S3 bucket AWS region
 
 Using the AWS Console:
 
@@ -21,10 +21,10 @@ Using the AWS Console:
 
 ![Create subnets](../images/spc-subnet-create.png)
 
-## Setup access from your site network to your AWS VPC
+## Set up access from your site network to your AWS VPC
 
 Options provided by AWS:
 * [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html)
 * [AWS Direct Connect](https://aws.amazon.com/directconnect/)
 
-{% include info title="Note" content="If Direct Connect is chosen, we recommend to test with a simpler/faster solution first to validate the setup, then to replace the solution with Direct Connect when the setup is completed." %}
+{% include info title="Note" content="If Direct Connect is chosen, we recommend testing it with a simpler/faster solution first to validate the setup. You can then replace that solution with Direct Connect once the setup is complete." %}
