@@ -11,16 +11,16 @@ lang: en
 
 Pick which Shotgun Private Cloud options you want to implement:
   * Private S3 Bucket
-  * Media Segragation
+  * Media Segregation
   * Traffic Segregation
 
 ## Choose an AWS Region
 
-Choose an AWS Region for your AWS S3 bucket and VPC. Prefer us-east-1 if you can because traffic segregation will be easier.
+Choose an AWS Region for your AWS S3 bucket and VPC. We recommend us-east-1 if possible, as traffic segregation will be easier.
 
 ## Plan the VPC IP ranges
 
-Plan the AWS VPC subnets IP ranges.
+Plan the AWS VPC subnets' IP ranges.
 
 ### IP Range Example
 
@@ -30,7 +30,7 @@ Plan the AWS VPC subnets IP ranges.
 | ap-southeast-2 | 10.1.0.0/16 | 10.1.0.0/24 | 10.1.1.0/24 | 10.1.2.0/24 |
 
 
-### Plan how you will access your AWS VPC privatly
+### Plan how you will privately access your AWS VPC
 
   * AWS Direct Connect
   * Other VPN solution

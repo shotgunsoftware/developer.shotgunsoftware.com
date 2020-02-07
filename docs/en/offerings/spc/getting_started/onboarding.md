@@ -7,34 +7,34 @@ lang: en
 
 # Onboarding Process
 
-Shotgun Private Cloud is an enterprise level offering that requires adopters to become AWS users. In order to make sure this joint venture between Shotgun, AWS and our clients is as streamlines as possible, we decided to work closely with Amazon to define a cooperative onboarding process that would meet client expectations for a premium offering.
+Shotgun Private Cloud is an enterprise level offering that requires adopters to become AWS users. In order to ensure that this joint venture between Shotgun, AWS, and our clients is as streamlines as possible, we decided to work closely with Amazon to define a cooperative onboarding process that would meet client expectations for a premium offering.
 
-Shotgun and Amazon will provide dedicated resources during the on-boarding process to help you in this journey.
+Shotgun and Amazon will provide dedicated resources during the onboarding process to help you on this journey.
 
 # Onboarding Process Overview
 
 ![onboarding-process](../images/spc-onboarding-process.png)
 
-During the onboarding process, you'll have direct access to Shotgun and AWS Leaders that will support you during the implementation of Shotgun Private Cloud.
+During the onboarding process, you'll have direct access to Shotgun and AWS Leaders who will support you during the implementation of Shotgun Private Cloud.
 
-**Tech Briefing.**  Overview meeting of all our offering, where we underline advantages and disadvanges of all our offerings.
+**Tech Briefing:**  Overview meeting of all of our offerings, where we underline the advantages and disadvantages of each.
 
-**Tier 1 Tech Deep Dive.**  OPTIONAL. Deeper technical dive on Tier 1. This meeting can be combined with the Tech Briefing.
+**Tech Deep Dive:**  OPTIONAL. Deeper technical dive into Shotgun Private Cloud. This meeting can be combined with the Tech Briefing.
 
-**Pre-qualification.** Qualification, from a technical point of view. Determine, alongside client, what will be the implications of choosing an offering over another.
+**Pre-qualification:** Qualification, from a technical point of view. Determine what the implications will be of choosing one offering over another.
 
-**Offering Selection.** Client select the offering that suits him, under Tech Sales guidance.
+**Offering Selection:** Here, you will select the offering that best suits you, under Tech Sales guidance.
 
-**Kickoff Meeting.**	AWS and Shotgun leaders go over the setup process with the client
+**Kickoff Meeting:**	AWS and Shotgun Leaders review the setup process with the you.
 
-**Setup / Test / Validation.**	Iterative installation process where clients get his Tier 1 setup ready, step by step
+**Setup / Test / Validation:**	Iterative installation process where you ready your Shotgun Private Cloud setup, step by step.
 
-**Training.** OPTIONAL. Help the client ramping up on the AWS/Shotgun technologies required to securely set-up a Tier 1 site.
+**Training:** OPTIONAL. Help sessions, if needed, as you ramp up on the AWS/Shotgun technologies required to securely set-up a Shotgun Private Cloud site.
 
 # Onboarding Resources
 
-**Shotgun Community.** The [Shotgun Private Cloud Community](https://community.shotgunsoftware.com/c/beta-private-cloud/31) forum can be used to ask question that can be answer by either Shotgun Experts or other Virtual Private Cloud users. This should be the first place where you go to find question about Private Cloud.
+**Shotgun Community:** The [Shotgun Private Cloud Community](https://community.shotgunsoftware.com/c/beta-private-cloud/31) forum can be used to ask questions that can be answered by either Shotgun Experts or other Shotgun Private Cloud users. This should be your first stop when asking general questions about Shotgun Private Cloud, during setup and beyond.
 
-**Private Slack Channel.** During the on-boarding, you will be given access to a dedicated Autodesk Slack Channel. Your Shotgun and AWS Leaders will be available for quick feedback, answer and ad-hoc meetings to help you progress as fast as possible with your Shotgun Private Cloud setup. This channel will be available only for the on-boarding period.
+**Private Slack Channel:** During the onboarding, you will be given access to a dedicated Autodesk Slack Channel. Your Shotgun and AWS Leaders will be available for quick feedback, answers, and ad-hoc meetings to help you progress as fast as possible with your Shotgun Private Cloud setup. This channel will be available only for the onboarding period.
 
-**Shotgun Support.** [Shotgun Support](https://support.shotgunsoftware.com/hc/en-us/requests/new) ticket will be used to track, at the higher level, on-boarding for each clients. Once Private Cloud setup is complete, follow-up support tickets can be opened with the support team.
+**Shotgun Support:** A [Shotgun Support](https://support.shotgunsoftware.com/hc/en-us/requests/new) ticket will be used to track your onboarding at a higher level. Once your Shotgun Private Cloud setup is complete, follow-up support tickets can be opened with the support team as needed.
