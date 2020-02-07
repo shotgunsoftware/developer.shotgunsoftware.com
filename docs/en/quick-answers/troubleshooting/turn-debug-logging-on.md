@@ -7,7 +7,7 @@ lang: en
 
 # How do I turn on debug logging?
 
-Sometimes you want to see more logging data than Toolkit tools output by default. You can enable *debug logging* to get more verbose log output, and there are a few methods to do so. 
+Sometimes you want to see more logging data than Toolkit tools output by default. You can enable **debug logging** to get more verbose log output, and there are a few methods to do so. 
 
 {% include info title="Note" content="Not sure where to find your log files? Take a look at our [Where are my log files?](./where-are-my-log-files.md) doc." %}
 
