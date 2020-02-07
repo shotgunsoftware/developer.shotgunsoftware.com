@@ -7,6 +7,10 @@ lang: en
 
 # How do I turn on debug logging?
 
+Sometimes you want to see more logging data than Toolkit tools output by default. You can enable **debug logging** to get more verbose log output, and there are a few methods to do so. 
+
+{% include info title="Note" content="Not sure where to find your log files? Take a look at our [Where are my log files?](./where-are-my-log-files.md) doc." %}
+
 ## Enable debugging through Shotgun Desktop
 
 The easiest way to enable debugging is to toggle it on through the Shotgun Desktop app. This can be set once you are logged into Shotgun Desktop: click on your profile picture in the bottom right of the app, and select **Advanced -> Toggle Debug Logging**. This setting is persistent between sessions, so remember to turn it off when you are finished.
@@ -59,9 +63,7 @@ Then, launch the Desktop through your terminal.
 
 {% include info title="Note" content="Once you close Shotgun Desktop and your terminal, debug logging is no longer turned on." %}
 
-## Examining debug outputs in log files
 
-Take a look at our [where are my log files?](./where-are-my-log-files.md) doc to help locate your log files.
 
 ## Advanced configuration debug logging options
 
@@ -69,7 +71,7 @@ If you are in an advanced setup, there are a few more options for you. This func
 
 Every engine has a `debug_logging` setting in the environment file. Turning this on will emit additional debug-level log messages to the default output in your Software (e.g., the script editor in Nuke or Maya). All of the apps running in your engine will emit these debug-level messages so turning this on for the engine will effectively turn it on for all of your apps as well.
 
-This does not output any log messages to a file. We are working on a more standard logging framework that will allow this. The exceptions are [SG Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/219039818-Shotgun-Desktop) and the [Photoshop engine](https://support.shotgunsoftware.com/hc/en-us/articles/115000026653-Photoshop-CC), which log output both in a GUI console and to a file.
+This does not output any log messages to a file. We are working on a more standard logging framework that will allow this. The exceptions are [Shotgun Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/219039818-Shotgun-Desktop) and the [Photoshop engine](https://support.shotgunsoftware.com/hc/en-us/articles/115000026653-Photoshop-CC), which log output both in a GUI console and to a file.
 
 ### Turning on debug logging for an engine in your software
 
@@ -94,6 +96,8 @@ engines:
 ```
 
 Save the file and relaunch Nuke in the shot step environment. You will now see the debug output in the script editor window. 
+
+{% include info title="Note" content="If debug logging is enabled via any one of the Shotgun Desktop checkbox, environment variable, or engine configuration setting, debug logging will be output. Additionally, each of these three is modified independently of the others: the checkbox value a persistent app setting, totally independent of the engine setting or environment variable. This means that while the Desktop checkbox may be unchecked, debug logging might still be enabled by way of one of the other methods." %}
 
 ### Turning on debug logging for the tank command
 
@@ -163,3 +167,4 @@ If you’re running the tank command and want to see debug output in your termin
     You are currently running version v0.15.18 of the Shotgun Pipeline Toolkit
     No need to update the Toolkit Core API at this time!
     DEBUG [10:11:39 981.74405098]: Exiting with exit code None
+
