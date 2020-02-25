@@ -24,7 +24,7 @@ Finally, it's worth noting that while it is possible to continue to support Pyth
 
 ## What's Different in Python 3
 
-Python 3 comes with some slight syntax changes, changes to builtin functions, new features, and small behavior changes.  There are [many](https://docs.python.org/3.0/whatsnew/3.0.htmlsyntax.html) [great](https://portingguide.readthedocs.io/en/latest/) [guides](https://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html) that enumerate these specific changes and provide examples.  Rather than dive into specifics here, the goal of this guide will be to describe the porting process from a higher-level perspective, with a few small deep dives where compatibility may be more complicated than just matching syntax.
+Python 3 comes with some slight syntax changes, changes to builtin functions, new features, and small behavior changes.  There are [many](https://docs.python.org/3.0/whatsnew/3.0.html#overview-of-syntax-changes) [great](https://portingguide.readthedocs.io/en/latest/) [guides](https://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html) that enumerate these specific changes and provide examples.  Rather than dive into specifics here, the goal of this guide will be to describe the porting process from a higher-level perspective, with a few small deep dives where compatibility may be more complicated than just matching syntax.
 
 ## Porting Options
 
