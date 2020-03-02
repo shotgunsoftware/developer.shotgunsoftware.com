@@ -15,7 +15,7 @@ It's possible to start from the [Private S3 bucket AWS CloudFormation template](
 
 ## Steps
 
-* Create your S3 bucket in your selected region.
+* Create your S3 bucket in your selected region. Please avoid `.` in the bucket name, Shotgun don't support them.
 * Configure the bucket Default Encryption, as Shotgun uses the bucket Default Encryption to encrypt new S3 objects.
 
 ## CORS Configuration
