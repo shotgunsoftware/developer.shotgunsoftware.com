@@ -9,9 +9,11 @@ lang: ja
 
 ## はじめに
 
-Toolkit パイプラインの中心にあるのは環境設定です。Toolkit パイプライン設定内の環境構成ファイルでは、さまざまな DCC 内で使用可能な Toolkit アプリを定義し、それぞれの設定をカスタマイズできます。このドキュメントは環境設定ファイルの構造と機能についての完全なリファレンスです。ここでは、プロジェクト内のさまざまなワークフローを設定するための Toolkit の**「環境」の概念、環境設定の構成、ファイル参照、そしてどのようなカスタマイズが行えるかを確認する方法について説明します。
+Toolkit パイプラインの中心にあるのは環境設定です。Toolkit パイプライン設定内の環境構成ファイルでは、さまざまな DCC 内で使用可能な Toolkit アプリを定義し、それぞれの設定をカスタマイズできます。このドキュメントは環境設定ファイルの構造と機能についての完全なリファレンスです。ここでは、プロジェクト内のさまざまなワークフローを設定するための Toolkit の*「環境」*の概念、環境設定の構成、ファイル参照、そしてどのようなカスタマイズが行えるかを確認する方法について説明します。
 
-{% include info title="注" content="このドキュメントは環境設定ファイルのリファレンスとして使用しますが、『[パイプライン設定の編集に関する Toolkit の基本ガイド](./learning-resources/guides/editing_app_setting.md)』には、構成設定を編集するステップバイステップの手順が例として記載されています。" %}
+{% include info title="注" content="このドキュメントは環境設定ファイルのリファレンスとして使用しますが、『[パイプライン設定の編集に関する Toolkit の基本ガイド](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)』には、構成設定を編集するステップバイステップの手順が例として記載されています。" %}
+
+
 
 ## 環境について
 
@@ -29,7 +31,7 @@ Shotgun Toolkit プラットフォームは、一般的に使用されるコン�
 
 Toolkit での環境設定の構築には多くの自由が与えられています。このドキュメントは利用可能なすべてのオプションのリファレンスで、実際のパイプラインのニーズに最も適した選択をするのに必要な知識を得ることができます。
 
-またこのドキュメントでは、[既定の設定](https://github.com/shotgunsoftware/tk-config-default2)と呼ばれる、パイプライン設定の出発点として選択された特別な設定についても説明します。パイプラインをカスタマイズする準備が整ったら、最初の手順は[プロジェクト用の編集可能なパイプライン設定を作成する](./learning-resources/guides/editing_app_setting.md)ことです。
+またこのドキュメントでは、[既定の設定](https://github.com/shotgunsoftware/tk-config-default2)と呼ばれる、パイプライン設定の出発点として選択された特別な設定についても説明します。パイプラインをカスタマイズする準備が整ったら、最初の手順は[プロジェクト用の編集可能なパイプライン設定を作成する](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)ことです。
 
 これらの選択は単なる規則であり、Toolkit のワークフローにハードコードされているわけではありませんが、既定の設定を例として参照すると、パイプラインのカスタマイズを開始した後に使用できる機能や、独自の設定を構築するためのベスト プラクティスについて学ぶことができます。また、新しい Toolkit ユーザが既定の設定を出発点として参照すれば、Toolkit の規則について知るのにも役立ちます。このドキュメントでは、Toolkit の環境設定の一般的な機能と、既定の設定における特定の選択とを常に区別します。既定の設定の環境構成の詳細については、[README ファイル](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)を参照してください。
 
@@ -107,7 +109,7 @@ engines:
 
 ### ロケーション ディスクリプタ
 
-すべての Toolkit バンドルには `location` 設定があり、これをバンドルの**「ディスクリプタ」と呼びます。ディスクリプタは、特定のバンドルの入手元、およびそのタイプに応じて直接アクセスするかローカルにキャッシュするかを Toolkit に指示します。Toolkit バンドルを入手できる場所の例としては、Shotgun App Store、GIT リポジトリ、ディスク上のパス、または Shotgun サイトにアップロードされた zip ファイルなどがあります。これらには、それぞれ対応するディスクリプタ タイプがあり、そのタイプに固有の設定があります。以下に、上記の例の `tk-maya` エンジンのディスクリプタをもう一度示します。
+すべての Toolkit バンドルには `location` 設定があり、これをバンドルの*「ディスクリプタ」*と呼びます。ディスクリプタは、特定のバンドルの入手元、およびそのタイプに応じて直接アクセスするかローカルにキャッシュするかを Toolkit に指示します。Toolkit バンドルを入手できる場所の例としては、Shotgun App Store、GIT リポジトリ、ディスク上のパス、または Shotgun サイトにアップロードされた zip ファイルなどがあります。これらには、それぞれ対応するディスクリプタ タイプがあり、そのタイプに固有の設定があります。以下に、上記の例の `tk-maya` エンジンのディスクリプタをもう一度示します。
 
 ```yaml
     location:
@@ -342,7 +344,7 @@ engines:
 
 * [Toolkit の基本ガイド: パイプライン設定を編集する](./learning-resources/guides/editing_app_setting.md)
 * [Toolkit の基本ガイド: アプリを追加する](./learning-resources/guides/installing_app.md)
-* [アニメーション パイプラインのチュートリアル](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
+* [アニメーション パイプラインのチュートリアル](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [ディスクリプタのリファレンス ドキュメント](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [ウェビナー: Toolkit の管理](https://youtu.be/7qZfy7KXXX0)
 * [ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference)

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 工作流教程
+title: 动画工作流教程
 pagename: toolkit-pipeline-tutorial
 lang: zh_CN
 ---
 
-# 工作流教程
+# 动画工作流教程
 
 本教程介绍如何为动画或视觉效果制作打造一个简化但却典型的工作流。按照本教程，您将打造一个全面的工作流，为资产的建模、视觉开发到融入制作场景提供所有必要环节。
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Maya에서 툴킷 앱 실행을 위한 선반 버튼을 추가하려면 어떻게 해야 합니까?
+title: Maya에서 툴킷 앱 실행을 위한 쉘프 버튼을 추가하려면 어떻게 해야 합니까?
 pagename: maya-shelf-app-launcher
 lang: ko
 ---

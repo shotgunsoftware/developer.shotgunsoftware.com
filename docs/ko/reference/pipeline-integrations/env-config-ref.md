@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 환경 구성 참조
+title: 환경 구성
 pagename: env-config-ref
 lang: ko
 ---
@@ -11,7 +11,9 @@ lang: ko
 
 툴킷 파이프라인의 핵심에는 환경 구성이 있습니다. 툴킷 파이프라인 구성 내에서 환경 구성 파일은 다양한 DCC 내에서 사용할 수 있는 툴킷 앱을 정의하고 각 설정을 커스터마이즈할 수 있는 곳입니다. 이 문서는 환경 구성 파일의 구조 및 기능을 전체적으로 소개하는 완전한 참조 자료입니다. 이 문서에서는 프로젝트 내에서 다양한 워크플로우를 구성할 수 있게 해 주는 툴킷 *환경*의 개념과 커스터마이즈할 수 있는 항목을 찾는 방법에 대해 설명합니다.
 
-{% include info title="참고" content="이 문서는 환경 구성 파일에 대한 참조 자료로 사용될 수 있으며 [툴킷 기본 사항 안내서의 파이프라인 구성 편집](./learning-resources/guides/editing_app_setting.md)에서는 구성 설정 편집에 대한 단계별 예제를 확인할 수 있습니다." %}
+{% include info title="참고" content="이 문서는 환경 구성 파일에 대한 참조 자료로 사용될 수 있으며 [툴킷 기본 사항 안내서의 파이프라인 구성 편집](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)에서는 구성 설정 편집에 대한 단계별 예제를 확인할 수 있습니다." %}
+
+
 
 ## 환경이란?
 
@@ -29,7 +31,7 @@ Shotgun 툴킷 플랫폼은 스튜디오 파이프라인을 구축하는 데 일
 
 툴킷은 환경을 구성하는 방식에 있어 매우 자유롭습니다. 이 문서에서는 사용 가능한 모든 옵션을 모두 소개하므로 파이프라인 요구 사항에 가장 적합한 선택을 하는 데 필요한 지식을 얻을 수 있습니다.
 
-또한 이 문서에서는 [기본 구성](https://github.com/shotgunsoftware/tk-config-default2)이라는 시작점으로 제공되는 파이프라인 구성의 선택 사항에 대해서도 설명합니다. 파이프라인을 커스터마이즈할 준비가 된 경우 첫 번째 단계는 [프로젝트에 대해 편집 가능한 파이프라인 구성을 만드는 것](./learning-resources/guides/editing_app_setting.md)입니다.
+또한 이 문서에서는 [기본 구성](https://github.com/shotgunsoftware/tk-config-default2)이라는 시작점으로 제공되는 파이프라인 구성의 선택 사항에 대해서도 설명합니다. 파이프라인을 커스터마이즈할 준비가 된 경우 첫 번째 단계는 [프로젝트에 대해 편집 가능한 파이프라인 구성을 만드는 것](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)입니다.
 
 이러한 선택 사항은 일반적인 규칙일 뿐이고 툴킷 워크플로우에 하드코딩되지 않으므로, 기본 구성은 파이프라인을 커스터마이즈한 후 사용할 수 있는 기능을 학습하기 위한 예제로 참조하거나 고유의 구성을 설정하기 위한 모범 사례로 사용하는 것이 좋습니다. 또한 새로운 툴킷 사용자를 위한 시작점으로도 좋으며 몇 가지 규칙을 알아 두면 유용합니다. 이 문서에서는 툴킷 환경 구성의 일반적인 기능과 기본 구성에 특정한 선택 사항을 구분해 두었습니다. 기본 구성의 환경 구조에 대한 자세한 내용은 [읽어보기 파일](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)을 참조하십시오.
 
@@ -342,7 +344,7 @@ engines:
 
 * [툴킷 기본 사항 안내서: 파이프라인 구성 편집](./learning-resources/guides/editing_app_setting.md)
 * [툴킷 기본 사항 안내서: 앱 추가](./learning-resources/guides/installing_app.md)
-* [애니메이션 파이프라인 튜토리얼](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
+* [애니메이션 파이프라인 튜토리얼](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [설명자 참조 설명서](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [웨비나: 툴킷 관리](https://youtu.be/7qZfy7KXXX0)
 * [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference)
