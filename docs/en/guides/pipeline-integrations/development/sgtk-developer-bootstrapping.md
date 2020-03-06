@@ -46,7 +46,7 @@ You could import one from an existing project, however, this might be tricky to 
 A recommended approach would be to download a standalone copy 
 of the [latest core API](https://github.com/shotgunsoftware/tk-core/releases) which will be used purely for the purpose of bootstrapping.
 You should store it in a convenient place where it can be imported. 
-Make sure that the path you add points to the `python` folder inside the `tk-core` folder. 
+Make sure that the path you add points to the `python` folder inside the `tk-core` folder as this is where the `sgtk` package is located. 
 
 ### Code
 
