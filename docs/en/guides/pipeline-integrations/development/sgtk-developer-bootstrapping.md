@@ -46,15 +46,15 @@ You could import one from an existing project, however, this might be tricky to 
 A recommended approach would be to download a standalone copy 
 of the [latest core API](https://github.com/shotgunsoftware/tk-core/releases) which will be used purely for the purpose of bootstrapping.
 You should store it in a convenient place where it can be imported. 
-If it's not located in a standard location where Python will look, then you can add the path to `sys.path`. 
+Make sure that the path you add points to the `python` folder inside the `tk-core` folder. 
 
 ### Code
 
 ```python
 # If your sgtk package is not located in a location where Python will automatically look
-# then add the path to sys.path
+# then add the path to sys.path.
 import sys
-sys.path.insert(0, "/path/to/sgtk-package")
+sys.path.insert(0, "/path/to/tk-core/python")
 
 import sgtk
 ```
