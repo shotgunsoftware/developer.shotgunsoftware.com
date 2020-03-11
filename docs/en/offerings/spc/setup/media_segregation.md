@@ -17,7 +17,7 @@ The media segregation allows your users to access your media in your AWS S3 buck
 
 ## Set up S3 proxy
 
-You will need to deploy an S3 proxy in your VPC to proxy the traffic from your network into the S3 VPC endpoint. We provide an [S3 proxy CloudFormatiom Template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) as a starting point. This will create an ECS Cluster and will create an ECS service to run the S3 proxy on AWS Fargate behind an AWS ALB.
+You will need to deploy an S3 proxy in your VPC to proxy the traffic from your network into the S3 VPC endpoint. We provide an [S3 proxy CloudFormatiom Template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) as a starting point. This will create an ECS Cluster and an ECS service to run the S3 proxy on AWS Fargate behind an AWS ALB.
 
 ### Upload the Docker image to a private AWS Docker repositoty
 
@@ -26,8 +26,8 @@ Create an [AWS ECR Repository](https://aws.amazon.com/ecr/) named s3-proxy.
 
 Upload the s3-proxy Docker image to your ECR repository.
  
-  * You will to first install Docker on your workstation then run the following commands
-  * Do the docker login usings instructions in your AWS Console *View push commands* button.
+  * You will need to install Docker on your workstation then run the following commands.
+  * Do the docker login using instructions in your AWS Console *View push commands* button.
 
 You will need to change the ECR repository URL to match yours.
   
@@ -56,4 +56,4 @@ Try to access your S3 proxy using the ping route. ie: https://s3-proxy.mystudio.
 ### Configure your stating site to use your S3 proxy.
 
 Go in your test site Preferences menu and set S3 Proxy Host Address to the S3 proxy url. ie: https://s3-proxy.mystudio.com.
-Check if you call still access and upload new medias.
+Check if you call still access and upload new media.
