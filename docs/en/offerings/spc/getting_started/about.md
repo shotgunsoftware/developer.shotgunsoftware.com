@@ -41,5 +41,7 @@ Shotgun Cloud offerings can be decoupled at a high level in 3 parts:
 
 **Media Storage:** Where the client's attachments, media, and assets are stored. Shotgun uses AWS S3 to store client content.
 
+Please read [Securing Studio IP in AWS: Cloud-based VFX Project Management with Autodesk Shotgun blog post](https://aws.amazon.com/blogs/media/securing-studio-ip-in-aws-cloud-based-vfx-project-management-with-autodesk-shotgun/) for more details.
+
 ## Ephemeral compute and memory segregation
 While Shotgun Private Cloud clients share the same infrastructure, Shotgun Cloud guarantees a complete in-memory isolation, both in transit and at rest, of client data. This makes Shotgun Cloud less prone to data leaking due to architecture flaws or software vulnerabilities exploiting memory, like buffer overflow.

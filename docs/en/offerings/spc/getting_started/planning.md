@@ -7,6 +7,8 @@ lang: en
 
 # Planning Your Setup
 
+![Architecture](../images/spc-arch-setup.png)
+
 ## Pick your options
 
 Pick which Shotgun Private Cloud options you want to implement:
