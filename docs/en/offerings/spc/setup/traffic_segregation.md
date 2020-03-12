@@ -28,5 +28,5 @@ You need to configre your office DNS server to resolve your shotgun site to your
 Example DNS entry
 
 ```
-mystudio-staging.shotgunstudion.com   CNAME   vpce-048447456a4f57e14-1j3wh50q.vpce-svc-0b054415458f57634.us-west-2.vpce.amazonaws.com
+mystudio-staging.shotgunstudio.com   CNAME   vpce-048447456a4f57e14-1j3wh50q.vpce-svc-0b054415458f57634.us-west-2.vpce.amazonaws.com
 ```
