@@ -9,26 +9,24 @@ lang: en
 
 The goal is to set up an AWS PrivateLink to privately access your Shotgun site.
 
-## Setup a VPC within the us-east-1 AWS region if needed
-
-Using the AWS Console:
-
-* Create your VPC
-
-![Create VPC](../images/spc-vpc-create.png)
-
-* Create your private subnets
-
-![Create subnets](../images/spc-subnet-create.png)
-
 ## Set up PrivateLink to Shotgun
 
-* Add a new VPC Endpoint in your us-east-1 VPC
+* Ask Shotgun support to provide you with the Shotgun PrivateLink service name for your AWS region.
 
-* The service name is `com.amazonaws.vpce.us-east-1.vpce-svc-001d9eddae4b841b8`
+* Add a new VPC Endpoint in your VPC
 
-* For the security group, Shotgun only requires the inbound port tcp/443 to be open
+* For the security group, Shotgun service only requires the inbound port tcp/443 to be open.
 
 * Please contact Shotgun Support to get the endpoint approved, so that you can start using it
 
 ![Create endpoint](../images/spc-endpoint-create_privatelink.png)
+
+## Split Horizon DNS
+
+You need to configre your office DNS server to resolve your shotgun site to your Shotgun VPC Endpoint DNS name.
+
+Example DNS entry
+
+```
+mystudio-staging.shotgunstudion.com   CNAME   vpce-048447456a4f57e14-1j3wh50q.vpce-svc-0b054415458f57634.us-west-2.vpce.amazonaws.com
+```
