@@ -9,17 +9,10 @@ lang: en
 
 {% include info title="Disclaimer" content="This documentation is provided solely as an example. It explains how to set up your Shotgun Private Cloud environment so that it can be connected to Shotgun Private Cloud infrastructure. Please adapt it to your studio security requirements as needed. As Shotgun has no visibility on your AWS Account, ensuring that this account is secure is a client responsibility." %}
 
+
 ## Set up a VPC with private subnets in your S3 bucket AWS region
 
-Using the AWS Console:
-
-* Create your VPC
-
-![Create VPC](../images/spc-vpc-create.png)
-
-* Create your private subnets
-
-![Create subnets](../images/spc-subnet-create.png)
+You will need to deploy a private VPC with the required VPC endpoints. We provide a [private VPC CloudFormation template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) as a starting point. The template creates a VPC with 2 private subnets and the required VPC endpoints.
 
 ## Set up access from your site network to your AWS VPC
 
