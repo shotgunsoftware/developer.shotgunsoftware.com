@@ -12,7 +12,7 @@ lang: en
 
 ## Set up a VPC with private subnets in your S3 bucket AWS region
 
-You will need to deploy a private VPC with the required VPC endpoints. We provide an [Private VPC CloudFormatiom Template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) as a starting point. The template creates a VPC with 2 private subnets and the required VPC endpoints.
+You will need to deploy a private VPC with the required VPC endpoints. We provide a [private VPC CloudFormation template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) as a starting point. The template creates a VPC with 2 private subnets and the required VPC endpoints.
 
 ## Set up access from your site network to your AWS VPC
 
