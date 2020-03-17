@@ -81,7 +81,7 @@ Shotgun Desktop には、基本的な統合の実行に必要なすべての依�
 2. Shotgun で、プロジェクトまたはグローバル ページのいずれかにパイプライン設定エンティティを作成し、次のフィールドを入力します(この例では、v1.0.36 の統合を使用するように環境設定をロックしています)。
 
    1. 名前: `Primary`
-   2. [プロジェクト](Project): すべてのプロジェクトで更新を無効にする場合は、空のままにします。特定のプロジェクトのみをロックする場合は、特定のプロジェクトを選択します。
+   2. [プロジェクト]（Project）: すべてのプロジェクトで更新を無効にする場合は、空のままにします。特定のプロジェクトのみをロックする場合は、特定のプロジェクトを選択します。
    3. プラグインの ID: `basic.*`
    4. 記述子: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
 
@@ -90,7 +90,7 @@ Shotgun Desktop には、基本的な統合の実行に必要なすべての依�
 
    ![Shotgun Desktop の[バージョン情報](About)](images/offline-and-disabled-auto-updates/shotgun-desktop-about.png)
 
-   プロジェクトを設定した場合は、設定したプロジェクトのみが影響を受け、Shotgun Desktop の[バージョン情報](About)ウィンドウは変更されません。
+   プロジェクトを設定した場合は、設定したプロジェクトのみが影響を受け、Shotgun Desktop の[バージョン情報]（About）ウィンドウは変更されません。
 4. [オプション] `tk-framework-desktopstartup` のバージョンをロックするには、[最新バージョンをダウンロード](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases)し、ディスク上の場所を指すように環境変数 `SGTK_DESKTOP_STARTUP_LOCATION` を設定する必要があります(これは Shotgun Desktop にのみ適用されます)。
 
 大部分の機能は、以前の手順でロックできる環境設定によってコントロールされます。ただし、「自動更新の対象となる部分」セクションに記載されているように、コンポーネントも更新され、環境設定とは別に処理されます。これは Shotgun Desktop にのみ適用されます。
@@ -119,14 +119,14 @@ Shotgun Desktop には、基本的な統合の実行に必要なすべての依�
    - 名前: `Primary`
    - プロジェクト: ロックしないプロジェクト
    - プラグインの ID: `basic.*`
-   - 記述子: `sgtk:descriptor:app_store?name=tk-config-basic` ![2 つのパイプライン設定(1 つはサイト全体の更新を無効にし、もう 1 つは単一プロジェクトの更新を有効にする)](images/offline-and-disabled-auto-updates/freeze-all-but-one-project.jpg)[記述子](Descriptor)フィールドでバージョン番号を省略すると、プロジェクトは基本設定の最新リリースをトラックします。
+   - 記述子: `sgtk:descriptor:app_store?name=tk-config-basic` ![2 つのパイプライン設定(1 つはサイト全体の更新を無効にし、もう 1 つは単一プロジェクトの更新を有効にする)](images/offline-and-disabled-auto-updates/freeze-all-but-one-project.jpg)[記述子]（Descriptor）フィールドでバージョン番号を省略すると、プロジェクトは基本設定の最新リリースをトラックします。
 
 ### アップグレード
 
 設定を更新する場合は、すべてのユーザに展開する前に、新しいバージョンをテストしなければならないことがあります。
 
-1. Shotgun でパイプラインの設定エンティティを右クリックし、**[選択した項目を複製](Duplicate Selected)**を選択して複製します。
-2. クローン作成した設定に「update test」という名前をつけて、自分を[ユーザ制限](User Restrictions)フィールドに割り当てます。
+1. Shotgun でパイプラインの設定エンティティを右クリックし、**[選択した項目を複製]（Duplicate Selected）**を選択して複製します。
+2. クローン作成した設定に「update test」という名前をつけて、自分を[ユーザ制限]（User Restrictions）フィールドに割り当てます。
 3. このパイプライン設定を使用するようになります。
 4. テストするバージョンを指すように記述子を変更します。
 4. テストに参加させるユーザは、`User Restrictions` フィールドに追加して招待できます。

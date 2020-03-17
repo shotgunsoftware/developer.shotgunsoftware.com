@@ -71,8 +71,8 @@ authenticator.clear_default_user()
 authenticator = ShotgunAuthenticator()
 ```" %}
 
-## Non-user-facing scripts
-If the script is not user-facing, like on a render farm or in the event handler, you can add this at the beginning, before creating a Sgtk/Tank instance:
+## ユーザ向け以外のスクリプト
+レンダリング ファームやイベント ハンドラなど、スクリプトがユーザ向けではない場合は、Sgtk/Tank インスタンスを作成する前に、最初に以下を追加します。
 
 ```python
 # Import Toolkit so we can access to Toolkit specific features.

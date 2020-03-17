@@ -142,8 +142,8 @@ sgtk.set_authenticated_user(user)
 高级别的引导过程基本上会执行以下步骤：
 
 1. 检索或找到 Toolkit 配置文件夹。
-2. 确保[包缓存](../../../quick-answers/administering/where-is-my-cache.md#bundle-cache)中存在配置依存项（如应用和插件）。
-   如果它们不存在，并且它们使用基于相关服务的描述符（如 [`app_store`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#the-shotgun-app-store) 或 [`shotgun`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)），则该过程会将其下载到包缓存。
+2. 确保[缓存](../../../quick-answers/administering/where-is-my-cache.md#bundle-cache)中存在配置依存项（如应用和插件）。
+   如果它们不存在，并且它们使用基于相关服务的描述符（如 [`app_store`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#the-shotgun-app-store) 或 [`shotgun`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)），则该过程会将其下载到缓存。
 3. 将当前加载的 sgtk 核心换为适合配置的核心。
 4. 初始化插件、应用和框架。
 
@@ -180,7 +180,7 @@ mgr.plugin_id = "basic.shell"
 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 方法 `entity` 参数用于为启动的插件设置[上下文](https://developer.shotgunsoftware.com/tk-core/core.html#context)以及[环境](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)。该实体可以是将配置设置为与其一起使用的任何实体类型。
 例如，如果提供 `Project` 实体，则插件将在项目上下文中启动，并使用项目环境设置。
 同样，您可以提供 `Task` 实体（即任务链接到 `Asset`），则它将使用 `asset_step.yml` 环境启动。
-这取决于默认配置行为，[选择的环境](https://developer.shotgunsoftware.com/487a9f2c/?title=Environment+Configuration+Reference#how-toolkit-determines-the-current-environment)通过核心挂钩 [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py) 进行控制，因此可以更改为根据上下文或其他参数选取不同的环境。
+这取决于默认配置行为，[选择的环境](https://developer.shotgunsoftware.com/zh_CN/487a9f2c/#toolkit-%E7%A1%AE%E5%AE%9A%E5%BD%93%E5%89%8D%E7%8E%AF%E5%A2%83%E7%9A%84%E6%96%B9%E5%BC%8F)通过核心挂钩 [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py) 进行控制，因此可以更改为根据上下文或其他参数选取不同的环境。
 
 您需要以 Shotgun 实体词典的格式提供实体，必须至少包含类型和 ID：
 
@@ -189,7 +189,7 @@ task = {"type": "Task", "id": 17264}
 engine = mgr.bootstrap_engine("tk-shell", entity=task)
 ```
 
-如果引导到 `Project` 以外的实体类型，则可能需要确保[缓存路径](https://developer.shotgunsoftware.com/cbbf99a4/)同步，否则，在某些情况下（如引导过程尝试解析模板），可能无法加载环境。
+如果引导到 `Project` 以外的实体类型，则可能需要确保[缓存路径](https://developer.shotgunsoftware.com/zh_CN/cbbf99a4/)同步，否则，在某些情况下（如引导过程尝试解析模板），可能无法加载环境。
 由于在引导之前没有 `Sgtk` 实例，因此您需要告知引导过程在创建 `Sgtk` 实例后、启动插件之前执行同步。
 这可以通过将 [`ToolkitManager.pre_engine_start_callback`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.pre_engine_start_callback) 属性设置为指向自定义方法来实现。
 然后可以在该方法中运行同步：

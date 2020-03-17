@@ -157,7 +157,7 @@ Maya や Nuke などのソフトウェアの外部にあるスタンドアロン
 サポート対象ソフトウェア内で Toolkit アプリを実行する場合は、`tk-maya` または `tk-nuke`などの適切なエンジンを選択します。このパラメータは、[`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) メソッドに直接渡されます。以下の[エンティティ セクション](#entity)の例を参照してください。
 
 #### エンティティ
-[`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) メソッドの `entity` パラメータを使用する目的は、[コンテキスト](https://developer.shotgunsoftware.com/tk-core/core.html#context)、つまり、起動したエンジンの[環境](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)を設定することです。エンティティには、環境設定が機能する任意のエンティティ タイプを指定できます。たとえば、`Project` エンティティを指定した場合、エンジンはプロジェクトの環境設定を使用してプロジェクト コンテキスト内で起動します。同様に、(タスクが `Asset` にリンクされている) `Task` エンティティを指定して、エンジンが `asset_step.yml` 環境を使用して起動するように設定できます。この動作は既定の設定動作に基づいて決まり、[選択した環境](https://developer.shotgunsoftware.com/ja/487a9f2c/?title=Environment+Configuration+Reference#how-toolkit-determines-the-current-environment)はコア フック [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py) によってコントロールされます。したがって、コンテキストやその他のパラメータに基づいて異なる環境を選択するよう変更することができます。
+[`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) メソッドの `entity` パラメータを使用する目的は、[コンテキスト](https://developer.shotgunsoftware.com/tk-core/core.html#context)、つまり、起動したエンジンの[環境](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)を設定することです。エンティティには、環境設定が機能する任意のエンティティ タイプを指定できます。たとえば、`Project` エンティティを指定した場合、エンジンはプロジェクトの環境設定を使用してプロジェクト コンテキスト内で起動します。同様に、(タスクが `Asset` にリンクされている) `Task` エンティティを指定して、エンジンが `asset_step.yml` 環境を使用して起動するように設定できます。この動作は既定の設定動作に基づいて決まり、[選択した環境](https://developer.shotgunsoftware.com/ja/487a9f2c/#toolkit-%E3%81%8C%E7%8F%BE%E5%9C%A8%E3%81%AE%E7%92%B0%E5%A2%83%E3%82%92%E5%88%A4%E6%96%AD%E3%81%99%E3%82%8B%E4%BB%95%E7%B5%84%E3%81%BF)はコア フック [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py) によってコントロールされます。したがって、コンテキストやその他のパラメータに基づいて異なる環境を選択するよう変更することができます。
 
 エンティティは、タイプと ID が最低限必要となる Shotgun エンティティ ディクショナリの形式で指定する必要があります。
 
@@ -166,7 +166,7 @@ task = {"type": "Task", "id": 17264}
 engine = mgr.bootstrap_engine("tk-shell", entity=task)
 ```
 
-`Project` 以外のエンティティ タイプにブートストラップする場合は、[パス キャッシュ](https://developer.shotgunsoftware.com/cbbf99a4/)が同期していることを確認する必要があります。パス キャッシュが同期していない場合は、テンプレートの解決を試みる場合のように、環境をロードできないことがあります。ブートストラップする前に `Sgtk` インスタンスが存在しないため、`Sgtk` インスタンスを作成してからエンジンを起動するまでの間に、同期を実行するようブートストラップ プロセスに指示する必要があります。この操作を行うには、カスタム メソッドを指すように [`ToolkitManager.pre_engine_start_callback`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.pre_engine_start_callback) プロパティを設定します。このメソッドで、同期を実行できます。
+`Project` 以外のエンティティ タイプにブートストラップする場合は、[パス キャッシュ](https://developer.shotgunsoftware.com/ja/cbbf99a4/)が同期していることを確認する必要があります。パス キャッシュが同期していない場合は、テンプレートの解決を試みる場合のように、環境をロードできないことがあります。ブートストラップする前に `Sgtk` インスタンスが存在しないため、`Sgtk` インスタンスを作成してからエンジンを起動するまでの間に、同期を実行するようブートストラップ プロセスに指示する必要があります。この操作を行うには、カスタム メソッドを指すように [`ToolkitManager.pre_engine_start_callback`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.pre_engine_start_callback) プロパティを設定します。このメソッドで、同期を実行できます。
 
 ```python
 def pre_engine_start_callback(ctx):

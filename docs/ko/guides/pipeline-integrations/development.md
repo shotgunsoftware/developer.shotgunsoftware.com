@@ -28,7 +28,7 @@ Shotgun에는 전체적으로 세 가지 주요 API가 있습니다.
 - [Shotgun 툴킷 API](https://developer.shotgunsoftware.com/tk-core)
 
 툴킷 API는 Shotgun Python API 또는 REST API와 함께 사용하도록 설계된 Python API이며 대체용 API가 아닙니다.
-툴킷 API에 몇 가지 래퍼 메서드가 있지만 일반적으로 Shotgun 사이트에서 데이터에 액세스해야 할 때는 Shotgun Python API 또는 REST API를 사용합니다.
+툴킷 API에 몇 가지 래퍼 방식이 있지만 일반적으로 Shotgun 사이트에서 데이터에 액세스해야 할 때는 Shotgun Python API 또는 REST API를 사용합니다.
 
 대신 툴킷 API는 파일 경로의 통합 및 관리에 중점을 둡니다.
 일부 툴킷 앱 및 프레임워크에는 [자체 API](../../reference/pipeline-integrations.md)도 있습니다.

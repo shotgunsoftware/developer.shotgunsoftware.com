@@ -54,7 +54,7 @@ sys.path.append("/shotgun/configs/my_project_config/install/core/python")
 import sgtk
 ```
 
-{% include info title="참고" content="분산 구성을 사용 중이고 툴킷이 이미 부트스트랩되지 않은 환경에서 `sgtk`를 가져오려는 경우에는 다른 방법을 사용해야 합니다. 자세한 내용은 [부트스트랩 안내서](sgtk-developer-bootstrapping.md)를 참조하십시오." %}
+{% include info title="참고" content="분산 구성을 사용 중이고 툴킷이 이미 부트스트랩(Bootstrapping)되지 않은 환경에서 `sgtk`를 가져오려는 경우에는 다른 방법을 사용해야 합니다. 자세한 내용은 [부트스트랩 안내서](sgtk-developer-bootstrapping.md)를 참조하십시오." %}
 
 ## 2부: Sgtk 인스턴스 가져오기
 
@@ -81,7 +81,7 @@ API 설명서에 언급된 것처럼 `Sgtk` 인스턴스를 직접 만들지는 
 
    *참고: `Engine.sgtk` 특성을 1부에서 가져온 `sgtk` 패키지와 혼동하거나 동일하게 간주해서는 안 됩니다.*
 
-2. [`sgtk.sgtk_from_entity()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity) - 엔진이 아직 시작되지 않은 환경에서 실행 중인 경우 이 메서드를 사용하여 엔티티 ID에 맞게 `Sgtk` 인스턴스를 가져올 수 있습니다.
+2. [`sgtk.sgtk_from_entity()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity) - 엔진이 아직 시작되지 않은 환경에서 실행 중인 경우 이 방식을 사용하여 엔티티 ID에 맞게 `Sgtk` 인스턴스를 가져올 수 있습니다.
    ID를 제공하는 엔티티는 `sgtk` API를 가져온 프로젝트에 속해야 합니다.
    *이 방식은 분산 구성에서 작동하지 않습니다. 자세한 내용은 [부트스트랩 안내서](sgtk-developer-bootstrapping.md)를 참조하십시오.*
 
@@ -123,8 +123,8 @@ tk = current_engine.sgtk
 
 ### 컨텍스트 획득
 
-컨텍스트를 생성하려면 생성자 메서드 `Sgtk.context_from_entity()`, `Sgtk.context_from_entity_dictionary()` 또는 `Sgtk.context_from_path()` 중 하나를 사용해야 합니다.
-이전 단계에서 만든, `tk` 변수에 저장한 `Sgtk` 인스턴스를 통해 이러한 메서드에 액세스합니다.
+컨텍스트를 생성하려면 생성자 방식 `Sgtk.context_from_entity()`, `Sgtk.context_from_entity_dictionary()` 또는 `Sgtk.context_from_path()` 중 하나를 사용해야 합니다.
+이전 단계에서 만든, `tk` 변수에 저장한 `Sgtk` 인스턴스를 통해 이러한 방식에 액세스합니다.
 
 {% include info title="참고" content="경로에서 컨텍스트를 가져오려면 이미 생성된 폴더가 있어야 합니다. 이 부분은 안내서의 다음 단계에서 설명합니다." %}
 
@@ -188,7 +188,7 @@ context = tk.context_from_entity("Task", 13155)
 2. 이렇게 하면 툴킷이 프로그래밍 방식으로 구조를 이해하고 해당 구조에서 컨텍스트를 파생하고 파일을 배치할 위치를 알 수 있습니다.
 
 나중에 경로를 해석할 수 있도록 디스크에 폴더가 있는지 확인해야 합니다.
-이를 위해서는 [Sgtk.create_filesystem_structure()](https://developer.shotgunsoftware.com/tk-core/core.html?#sgtk.Sgtk.create_filesystem_structure) 메서드를 사용합니다.
+이를 위해서는 [Sgtk.create_filesystem_structure()](https://developer.shotgunsoftware.com/tk-core/core.html?#sgtk.Sgtk.create_filesystem_structure) 방식을 사용합니다.
 
 ```python
 tk.create_filesystem_structure("Task", context.task["id"])
@@ -246,7 +246,7 @@ fields = context.as_template_fields(template)
 
 >> {'Sequence': 'seq01_chase', 'Shot': 'shot01_running_away', 'Step': 'comp'}
 ```
-[`Context.as_template_fields()`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk.Context.as_template_fields) 메서드를 사용하면 템플릿 키를 올바르게 해석하기 위한 값을 포함하는 사전(dictionary)이 제공됩니다.
+[`Context.as_template_fields()`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk.Context.as_template_fields) 방식을 사용하면 템플릿 키를 올바르게 해석하기 위한 값을 포함하는 사전(dictionary)이 제공됩니다.
 그러나 모든 키에 대해 값이 제공되지는 않습니다. `name`, `version` 및 `maya_extension`은 여전히 누락된 상태입니다.
 
 `maya_extension` 키는 템플릿 키 섹션에서 [기본값을 정의](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.8/core/templates.yml#L139)하므로 기본값을 제외한 다른 값을 원하더라도 해당 값을 제공할 필요가 없습니다.
@@ -269,13 +269,13 @@ publish_path = template.apply_fields(fields)
 
 ### 폴더 존재 여부 확인
 
-앞에서 폴더 생성 메서드를 실행했지만 모든 폴더가 있는지 확인하기 위해 추가 단계를 수행해야 할 수 있습니다.
+앞에서 폴더 생성 방식을 실행했지만 모든 폴더가 있는지 확인하기 위해 추가 단계를 수행해야 할 수 있습니다.
 이 단계는 예를 들어 템플릿이 스키마에 없는 폴더를 정의하여 이에 따라 원래 `create_filesystem_structure()` 호출에서 생성되지 않은 폴더를 정의하는 경우에 필요할 수 있습니다.
 
 이 작업을 수행할 때 편리하게 사용할 수 있는 몇 가지 방법이 있습니다.
-코드가 툴킷 앱 또는 후크에서 실행 중인 경우 [`Application.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) 메서드를 사용할 수 있습니다.
-엔진이 있는 경우 [`Engine.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.ensure_folder_exists) 메서드를 사용할 수 있습니다.
-또는 엔진 외부에서 코드를 실행하는 경우 [`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists) 메서드를 사용할 수 있습니다.
+코드가 툴킷 앱 또는 후크에서 실행 중인 경우 [`Application.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) 방식을 사용할 수 있습니다.
+엔진이 있는 경우 [`Engine.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.ensure_folder_exists) 방식을 사용할 수 있습니다.
+또는 엔진 외부에서 코드를 실행하는 경우 [`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists) 방식을 사용할 수 있습니다.
 전체 파일 경로가 아닌 해당 디렉토리의 폴더만 생성해야 합니다.
 [`os`](https://docs.python.org/3/library/os.html) 모듈을 가져오고 [`os.path.dirname(publish_path)`](https://docs.python.org/3/library/os.path.html#os.path.dirname)를 실행하여 폴더의 전체 파일 경로를 추출할 수 있습니다.
 
@@ -338,7 +338,7 @@ sgtk.util.filesystem.touch_file(publish_path)
 
 ### Shotgun에 다음 버전 번호 쿼리
 
-Shotgun API와 [`summarize()` 메서드](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)를 사용하여 동일한 이름과 태스크를 공유하는 `PublishedFile` 엔티티 중에서 가장 높은 버전 번호를 가져온 다음 1을 추가하면 됩니다.
+Shotgun API와 [`summarize()` 방식](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)을 사용하여 동일한 이름과 태스크를 공유하는 `PublishedFile` 엔티티 중에서 가장 높은 버전 번호를 가져온 다음 1을 추가하면 됩니다.
 
 ```python
 r = sg.summarize(entity_type="PublishedFile",
@@ -357,7 +357,7 @@ fields["version"] = r["summaries"]["version_number"] + 1
 툴킷 API를 사용하여 기존 파일 목록을 수집하고 기존 파일에서 템플릿 필드 값을 추출한 후 다음 버전을 계산할 수 있습니다.
 
 아래 예에서는 작업 파일 템플릿에서 최신 버전을 수집합니다.
-작업 파일 템플릿과 게시 파일 템플릿에 동일한 필드가 있다고 가정하면 아래의 메서드를 동일한 필드로 두 번 호출하여 가장 높은 게시 및 작업 파일 버전을 확인하고 두 버전의 조합을 사용할지 결정할 수 있습니다.
+작업 파일 템플릿과 게시 파일 템플릿에 동일한 필드가 있다고 가정하면 아래의 방식을 동일한 필드로 두 번 호출하여 가장 높은 게시 및 작업 파일 버전을 확인하고 두 버전의 조합을 사용할지 결정할 수 있습니다.
 
 ```python
 def get_next_version_number(tk, template_name, fields):
@@ -386,16 +386,16 @@ def get_next_version_number(tk, template_name, fields):
 fields["version"] = get_next_version_number(tk, "maya_shot_work", fields)
 ```
 
-[`sgtk.paths_from_template()`](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=paths_from_template#sgtk.Sgtk.paths_from_template) 메서드는 제공된 템플릿 및 필드와 일치하는 디스크의 파일을 모두 수집합니다.
-이 메서드는 파일 목록을 찾아서 사용자에게 표시하려는 시나리오에도 유용합니다.
+[`sgtk.paths_from_template()`](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=paths_from_template#sgtk.Sgtk.paths_from_template) 방식은 제공된 템플릿 및 필드와 일치하는 디스크의 파일을 모두 수집합니다.
+이 방식은 파일 목록을 찾아서 사용자에게 표시하려는 시나리오에도 유용합니다.
 
 두 옵션 중 하나를 사용하도록 선택할 수 있으며, 이 안내서에서는 코드를 간단하게 유지할 수 있도록 옵션 1의 코드를 사용합니다.
 
 ## 7부: 게시된 파일 등록
 
-이제 경로가 생성되고 게시할 준비가 되었습니다. 유틸리티 메서드 [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish)를 사용하여 이 작업을 수행할 수 있습니다.
+이제 경로가 생성되고 게시할 준비가 되었습니다. 유틸리티 방식 [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish)를 사용하여 이 작업을 수행할 수 있습니다.
 
-Shotgun API의 [`Shotgun.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) 메서드를 사용하여 `PublishedFile` 엔티티를 만들 수도 있지만 필요한 모든 필드가 제공되고 올바르게 입력되기 때문에 툴킷 API를 사용하는 것이 가장 좋습니다.
+Shotgun API의 [`Shotgun.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) 방식을 사용하여 `PublishedFile` 엔티티를 만들 수도 있지만 필요한 모든 필드가 제공되고 올바르게 입력되기 때문에 툴킷 API를 사용하는 것이 가장 좋습니다.
 
 ```python
 # So as to match the Publish app's default behavior, we are adding the extension to the end of the publish name.
@@ -412,8 +412,8 @@ sgtk.util.register_publish(tk,
                            published_file_type = "Maya Scene")
 ```
 
-또한 [Publish 앱](https://support.shotgunsoftware.com/hc/ko/articles/115000097513-Publishing-your-work)이 자체 API[https://developer.shotgunsoftware.com/tk-multi-publish2/](와 함께 제공된다는 점도 주목할 만합니다.)
-이 경우에도 기본적으로 동일한 [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) 메서드를 사용하지만 컬렉션, 유효성 확인 및 게시를 처리하는 프레임워크를 제공하여 게시 프로세스를 기반으로 빌드합니다.
+또한 [Publish 앱](https://support.shotgunsoftware.com/hc/ko/articles/115000097513-Publishing-your-work)[이 자체 API](https://developer.shotgunsoftware.com/tk-multi-publish2/)와 함께 제공된다는 점도 주목할 만합니다.
+이 경우에도 기본적으로 동일한 [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) 방식을 사용하지만 컬렉션, 유효성 확인 및 게시를 처리하는 프레임워크를 제공하여 게시 프로세스를 기반으로 빌드합니다.
 
 ## 8부: 전체 스크립트
 
@@ -494,7 +494,7 @@ sgtk.util.register_publish(tk,
                            published_file_type = "Maya Scene")
 ```
 
-{% include info title="팁" content="지금까지 코드가 약간 길었으므로 다음 단계에서는 여러 메서드로 나누는 방법을 알아보겠습니다." %}
+{% include info title="팁" content="지금까지 코드가 약간 길었으므로 다음 단계에서는 여러 방식으로 나누는 방법을 알아보겠습니다." %}
 
 ### 최종 의견
 

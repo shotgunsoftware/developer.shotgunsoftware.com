@@ -35,12 +35,12 @@ Shotgun은 자체 앱을 만들 때 유용한 몇 가지 사전 작성 [프레�
 프레임워크에는 `app.py` 파일 대신 프레임워크 패키지의 루트에 [`Framework`](https://developer.shotgunsoftware.com/tk-core/platform.html?highlight=hide_tk_title_bar#framework) 기본 클래스에서 파생된 클래스가 포함된 `framework.py`가 있습니다.
 또한 프레임워크는 엔진에 명령을 등록하지 않습니다.
 
-대신, 프레임워크 인스턴스 자체에 메서드를 직접 저장하거나 `python/` 폴더 내에 모듈을 저장할 수 있습니다.
+대신, 프레임워크 인스턴스 자체에 방식을 직접 저장하거나 `python/` 폴더 내에 모듈을 저장할 수 있습니다.
 예를 들어 [shotgunutils 프레임워크는 이를 python 폴더에 저장](https://github.com/shotgunsoftware/tk-framework-shotgunutils/tree/v5.6.2/python)합니다.
-여기에 액세스하려면 프레임워크를 가져온 다음 [`import_module()` 메서드](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Framework.import_module)를 사용하여 하위 모듈에 액세스합니다.
+여기에 액세스하려면 프레임워크를 가져온 다음 [`import_module()` 방식](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Framework.import_module)을 사용하여 하위 모듈에 액세스합니다.
 
 API 문서에는 [프레임워크를 가져오는 방법](https://developer.shotgunsoftware.com/tk-core/platform.html?highlight=hide_tk_title_bar#frameworks)에 대한 예가 있습니다.
 
 ## 후크에서 프레임워크 사용
 후크를 통해 몇 가지 공통 로직을 공유하도록 프레임워크를 생성하는 것이 유용할 수 있습니다.
-[`Hook.load_framework()`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk.Hook.load_framework) 메서드를 이용하면 앱/프레임워크에서 매니페스트 파일에 명시적으로 요구하지 않는 경우에도 앱 또는 기타 프레임워크 후크에서 프레임워크를 사용할 수 있습니다. 코어 후크에서는 이 메서드를 사용하더라도 프레임워크를 사용할 수 없습니다.
+[`Hook.load_framework()`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk.Hook.load_framework) 방식을 이용하면 앱/프레임워크에서 매니페스트 파일에 명시적으로 요구하지 않는 경우에도 앱 또는 기타 프레임워크 후크에서 프레임워크를 사용할 수 있습니다. 코어 후크에서는 이 방식을 사용하더라도 프레임워크를 사용할 수 없습니다.

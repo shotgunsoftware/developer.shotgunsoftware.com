@@ -32,22 +32,22 @@ lang: ko
 엔진은 일반적으로 다음과 같은 서비스를 처리 또는 제공합니다.
 
 - 메뉴 관리. 엔진 시작 시 앱이 로드되고 나면 엔진은 해당 Shotgun 메뉴를 생성하고, 여러 앱을 이 메뉴에 추가합니다.
-- 일반적으로 로깅 메서드는 소프트웨어의 로그/콘솔에 기록하도록 재정의됩니다.
-- UI 대화상자 및 창을 표시하는 메서드. 엔진이 QT를 처리하는 방식이 기본적인 기본 클래스 동작과 다를 경우 이 메서드는 툴킷 앱 및 기본 호스트 소프트웨어 창 관리 설정에서 시작한 창을 원활하게 통합할 수 있도록 재정의됩니다.
+- 일반적으로 로깅 방식은 소프트웨어의 로그/콘솔에 기록하도록 재정의됩니다.
+- UI 대화상자 및 창을 표시하는 방식. 엔진이 QT를 처리하는 방식이 기본적인 기본 클래스 동작과 다를 경우 이 방식은 툴킷 앱 및 기본 호스트 소프트웨어 창 관리 설정에서 시작한 창을 원활하게 통합할 수 있도록 재정의됩니다.
 - 앱에 의해 등록된 모든 명령 객체를 포함하는 `commands` 사전(dictionary) 제공. 보통 메뉴 항목이 생성될 때 이 사전에 액세스합니다.
-- 기본 클래스는 시작 프로세스의 여러 지점에서 실행되는 다양한 init 및 destroy 메서드를 제공합니다. 시작 및 종료 실행을 제어하기 위해 이 메서드를 재정의할 수 있습니다.
+- 기본 클래스는 시작 프로세스의 여러 지점에서 실행되는 다양한 init 및 destroy 방식을 제공합니다. 시작 및 종료 실행을 제어하기 위해 이 방식을 재정의할 수 있습니다.
 - 자동 소프트웨어 탐색 및 시작 시 `tk-multi-launchapp`에 의해 호출되는 시작 로직.
 
-엔진은 [`sgtk.platform.start_engine()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.start_engine) 또는 [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 메서드를 사용하여 툴킷 플랫폼에 의해 시작됩니다.
+엔진은 [`sgtk.platform.start_engine()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.start_engine) 또는 [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식을 사용하여 툴킷 플랫폼에 의해 시작됩니다.
 이 명령은 구성 파일을 읽고, 엔진을 시작하고, 모든 앱을 로드하는 등의 역할을 수행합니다.
 엔진의 목표는 일단 시작된 후에 앱에 일관된 Python/QT 인터페이스를 제공하는 것입니다.
-모든 엔진이 같은 기본 클래스를 구현하므로 앱은 UI 생성 등의 작업을 수행하기 위해 엔진에서 메서드를 호출할 수 있습니다.
-메서드가 호스트 소프트웨어 내에서 원활하게 작동하도록 메서드를 구현하는 것은 각 엔진의 몫입니다.
+모든 엔진이 같은 기본 클래스를 구현하므로 앱은 UI 생성 등의 작업을 수행하기 위해 엔진에서 이 방식을 호출할 수 있습니다.
+호스트 소프트웨어 내에서 원활하게 작동하도록 이 방식을 구현하는 것은 각 엔진의 몫입니다.
 
 ## 시작하기 전에 알아야 할 사항
 
 Shotgun 팀에서는 가장 일반적으로 사용되는 컨텐츠 생성 소프트웨어에 대한 [통합](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)을 제공합니다.
-툴킷 커뮤니티 멤버가 빌드하고 공유한 [https://support.shotgunsoftware.com/hc/ko/articles/219039828-Community-Shared-Integrations](엔진도 있습니다). 하지만 툴킷 엔진이 없는 소프트웨어에 대한 파이프라인 통합이 필요한 경우도 있습니다.
+[툴킷 커뮤니티 멤버가 빌드하고 공유한](https://support.shotgunsoftware.com/hc/ko/articles/219039828-Community-Shared-Integrations) 엔진도 있습니다. 하지만 툴킷 엔진이 없는 소프트웨어에 대한 파이프라인 통합이 필요한 경우도 있습니다.
 
 시간과 리소스가 있다면 누락된 엔진 중 사용하고 싶은 엔진을 직접 작성하여 툴킷 커뮤니티(그리고 여러분 자신)를 지원해 주시기 바랍니다!
 
@@ -85,7 +85,7 @@ Shotgun 팀에서는 가장 일반적으로 사용되는 컨텐츠 생성 소프
 이 호스트 소프트웨어는 비-Qt UI를 갖고 있지만 Python 인터프리터를 포함합니다.
 즉, Python 코드를 환경 내에서 실행할 수 있지만 실행 중인 기존 Qt 이벤트 루프는 없습니다.
 이 경우에는 Qt 및 PySide가 엔진에 포함되어야 하며, Qt 메시지 펌프(이벤트) 루프가 UI 내 메인 이벤트 루프와 연결되어야 합니다.
-간혹 이 작업을 정확히 수행하기 위한 특별한 메서드가 호스트 소프트웨어에 포함되기도 합니다.
+간혹 이 작업을 정확히 수행하기 위한 특별한 방식이 호스트 소프트웨어에 포함되기도 합니다.
 포함되어 있지 않으면 정렬을 수행하여 Qt 이벤트 루프가 정기적으로(예: on-idle 호출을 통해) 실행되도록 해야 합니다.
 
 
@@ -121,7 +121,7 @@ Python 스크립팅이 없지만 C++ 플러그인을 생성할 수 있습니다.
 - 기본 제공 Python 인터프리터, Qt 및 PySide!
 - 소프트웨어 시작/초기화 시 코드를 실행할 수 있는 능력.
 - 두 시점(소프트웨어가 시작 및 실행되고 있을 때와 UI가 완전히 초기화되었을 때)에 코드에 액세스하여 자동 실행할 수 있는 능력.
-- 파일 시스템 상호 작용(열기, 저장, 다른 이름으로 저장, 참조 추가 등)을 래핑하는 API 명령.
+- 파일 시스템 상호 작용을 래핑하는 API 명령: 열기, 저장, 다른 이름으로 저장, 참조 추가 등.
 - UI 요소를 추가하기 위한 API 명령
 
    - 커스텀 Qt 위젯을 앱에 패널로 추가(이상적으로는 번들 PySide를 통해 추가)

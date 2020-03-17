@@ -47,4 +47,4 @@ lang: ko
 
 ### 앱 위치 제거
 
-기본 구성에서 모든 앱은 [.../env/includes/app_locations.yml](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/app_locations.yml) 파일에 해당 위치 설명자를 저장합니다. `tk-multi-publish2.yml`은 이를 참조하므로 [설명자 줄](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/app_locations.yml#L52-L56)을 제거해야 합니다.
+기본 구성에서 모든 앱은 [.../env/includes/app_locations.yml](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/app_locations.yml) 파일에 해당 위치 디스크립터를 저장합니다. `tk-multi-publish2.yml`은 이를 참조하므로 [디스크립터 줄](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/app_locations.yml#L52-L56)을 제거해야 합니다.

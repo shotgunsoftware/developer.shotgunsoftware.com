@@ -45,7 +45,7 @@ lang: zh_CN
 
 ## 开始之前要了解的事项
 
-我们为最常用的内容创建软件提供了[集成](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines)。
+我们为最常用的内容创建软件提供了[集成](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798)。
 此外，还有 [Toolkit 社区成员构建和共享的插件](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039828-Community-Shared-Integrations)。但是，有时需要对还没有 Toolkit 插件的软件使用工作流集成。
 
 如果您有时间和资源，我们鼓励您帮助 Toolkit 社区（以及您自己）编写您想要使用但目前缺少的插件！
@@ -119,7 +119,7 @@ Toolkit 插件可利用宿主软件的以下特性 (Trait)。
 - 内置 Python 解释器、Qt 和 PySide！
 - 可在软件启动/初始化时运行代码。
 - 可在两种情况下访问和自动运行代码：一个是软件正常运行时，另一个是 UI 已完全初始化时。
-- 提供 API 命令来打包文件系统交互操作：“打开”(Open)、“保存”(Save)、“另存为”(Save As)、“Add Refernece”等。
+- 提供 API 命令来打包文件系统交互操作：“打开”(Open)、“保存”(Save)、“另存为”(Save As)、“添加参考”(Add Refernece)等。
 - 提供 API 命令来添加用户界面元素
 
    - 向应用中添加自定义 QT 控件作为面板（最好是通过捆绑的 PySide）

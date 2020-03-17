@@ -27,7 +27,7 @@ lang: ko
 
 ## 언제 Shotgun 이벤트 데몬 대신 웹후크를 사용해야 합니까?
 
-웹후크와 [Shotgun 이벤트 데몬](https://github.com/shotgunsoftware/shotgunEvents/wiki)은 비슷한 기능을 제공하지만 몇 가지 중요한 차이점이 있습니다. 이벤트 데몬을 사용하려면 사용자 고유의 서비스를 실행, 모니터링 및 유지 관리해야 합니다. 모든 사용자 코드는 Python으로 작성해야 하며 그래야 Shotgun에 대한 사용자 고유의 연결을 시작할 수 있습니다. 웹후크는 이와 달리 연결에 응답하며 모든 프로그래밍 언어로 작성할 수 있습니다. 웹후크는 [AWS Lambda](https://aws.amazon.com/lambda/)와 같은 서버리스 환경에서 호스트되거나 [Zapier](https://zapier.com) 및 [IFTTT](https://ifttt.com)와 같이 온라인으로 사용 가능한 모든 자동화 플랫폼을 트리거할 수 있습니다. 웹후크를 사용한 경우에는 이 솔루션을 사용하는 것이 좋습니다.
+웹후크와 [Shotgun 이벤트 데몬](https://github.com/shotgunsoftware/shotgunEvents/wiki)은 비슷한 기능을 제공하지만 몇 가지 중요한 차이점이 있습니다. 이벤트 데몬을 사용하려면 사용자 고유의 서비스를 실행, 모니터링 및 유지 관리해야 합니다. 모든 사용자 코드는 Python으로 작성해야 하며 그래야 Shotgun에 대한 사용자 고유의 연결을 시작할 수 있습니다. 웹후크는 이와 달리 연결에 응답하며 모든 프로그래밍 언어로 작성할 수 있습니다. 웹후크는 [AWS Lambda](https://aws.amazon.com/ko/lambda/)와 같은 서버리스 환경에서 호스트되거나 [Zapier](https://zapier.com) 및 [IFTTT](https://ifttt.com)와 같이 온라인으로 사용 가능한 모든 자동화 플랫폼을 트리거할 수 있습니다. 웹후크를 사용한 경우에는 이 솔루션을 사용하는 것이 좋습니다.
 
 ## 웹후크 생성
 

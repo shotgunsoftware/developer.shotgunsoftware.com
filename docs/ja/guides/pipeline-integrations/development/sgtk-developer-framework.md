@@ -22,7 +22,7 @@ Toolkit の[フレームワーク](https://developer.shotgunsoftware.com/tk-core
 
 ## 既製の Shotgun フレームワーク
 
-Shotgun には、独自のアプリを作成するときに役立つことがある、既製の[フレームワーク](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines#frameworks)がいくつか用意されています。[Qt ウィジェット](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/)と [Shotgun ユーティリティ](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/)のフレームワークは、アプリ開発時に特に役立ちます。
+Shotgun には、独自のアプリを作成するときに役立つことがある、既製の[フレームワーク](https://support.shotgunsoftware.com/hc/ja/articles/219039798#frameworks)がいくつか用意されています。[Qt ウィジェット](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/)と [Shotgun ユーティリティ](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/)のフレームワークは、アプリ開発時に特に役立ちます。
 
 ## フレームワークを作成する
 

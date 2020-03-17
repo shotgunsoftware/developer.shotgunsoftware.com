@@ -141,7 +141,7 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 **ヒント:** メニューが表示されない場合は、一部のメニュー項目が非表示になっていることを示す**[>>]**が表示されています。**[>>]**を選択して Shotgun メニューを表示するか、Maya ウィンドウの幅を広げます。
 
-**手順 14:** **メニューの右上にある[Shotgun] > プロジェクト the_other_side > [Work Area Info...]**を選択します。
+**手順 14:** メニューの右上にある**[Shotgun] > [Project the_other_side] > [Work Area Info...]**を選択します。
 
 ![Work Area Info](./images/editing_app_setting/13_work_area_info.png)
 

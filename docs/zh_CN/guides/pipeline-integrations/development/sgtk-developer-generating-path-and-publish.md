@@ -405,7 +405,7 @@ sgtk.util.register_publish(tk,
                            published_file_type = "Maya Scene")
 ```
 
-此时，还值得注意的是，我们的[发布应用](https://support.shotgunsoftware.com/hc/en-us/articles/115000097513-Publishing-your-work)还附带了[自己的 API](https://developer.shotgunsoftware.com/tk-multi-publish2/)。
+此时，还值得注意的是，我们的[发布应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000097513)还附带了[自己的 API](https://developer.shotgunsoftware.com/tk-multi-publish2/)。
 尽管这仍然在本质上使用了相同的 [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) 方法，但它基于发布过程构建而成，通过提供框架进行收集、验证和发布。
 
 ## 第 8 部分：完整脚本

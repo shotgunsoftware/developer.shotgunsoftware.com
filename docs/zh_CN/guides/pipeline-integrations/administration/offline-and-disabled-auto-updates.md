@@ -64,9 +64,9 @@ Shotgun Desktop 预先打包了运行基本集成所需的所有依存项。虽�
 对于 `tk-config-basic` 组件，由于它的所有依存项，情况有点棘手。
 
 1. 在连接到 Internet 的工作站上运行 Shotgun Desktop 或 Shotgun Create。当它启动时，将会自动下载最新升级。（确保未在此计算机上设置 `SHOTGUN_DISABLE_APPSTORE_ACCESS`。）
-2. 将包缓存复制到所有计算机都可以访问的共享位置。
+2. 将缓存复制到所有计算机都可以访问的共享位置。
 3. 在脱机计算机上设置 `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` 环境变量以指向此位置。
-4. 在脱机计算机上启动 Shotgun Desktop 或 Shotgun Create 后，它们将选取包缓存中可用的最新升级。
+4. 在脱机计算机上启动 Shotgun Desktop 或 Shotgun Create 后，它们将选取缓存中可用的最新升级。
 
 {% include info title="警告" content="根据您的网络设置情况，有时可能即使无法访问更新，也会一直尝试联机查找更新。
 在这种情况下，您可以将环境变量 `SHOTGUN_DISABLE_APPSTORE_ACCESS` 设置为 `\"1\"` 以阻止其尝试查找更新。" %}
@@ -79,7 +79,7 @@ Shotgun Desktop 预先打包了运行基本集成所需的所有依存项。虽�
 
 要对集成禁用自动更新，请按照以下步骤操作。
 
-1. 确定要使用的版本。您可以在[此处](https://support.shotgunsoftware.com/hc/zh-cn/sections/115000020494)查找集成版本。
+1. 确定要使用的版本。您可以在[此处](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations)查找集成版本。
 2. 在 Shotgun 中，在项目或全局页面上创建工作流配置实体，并填充以下字段（在此示例中，我们将配置锁定为使用集成 v1.0.36）：
 
    1. 名称(Name)：`Primary`

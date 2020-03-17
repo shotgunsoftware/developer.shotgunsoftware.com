@@ -20,8 +20,8 @@ python-api: Python API
 rest-api: REST API
 event-triggers: イベント駆動型トリガを記述する
 action-menu-items: カスタム アクション メニュー アイテムを作成する
-jira-bridge-guide: JIRA と Shotgun (ベータ)間でデータを同期する
-jira-bridge-ref: JIRA Bridge 開発リソース(ベータ)
+jira-bridge-guide: JIRA と Shotgun 間でデータを同期する
+jira-bridge-ref: JIRA Bridge 開発リソース
 examples: 例
 webinars: ウェビナーの録画
 developer-training-videos: 開発者向けトレーニング ビデオ 

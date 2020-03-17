@@ -86,13 +86,13 @@ Shotgun 데스크톱에는 기본 통합을 실행하는 데 필요한 모든 �
 
 통합에 대한 자동 업데이트를 비활성화하려면 다음 단계를 수행하십시오.
 
-1. 유지할 버전을 결정합니다. 통합 릴리즈는 [여기](https://support.shotgunsoftware.com/hc/ko/sections/115000020494-Integrations)에서 찾을 수 있습니다.
+1. 유지할 버전을 결정합니다. 통합 릴리즈는 [여기](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations)에서 찾을 수 있습니다.
 2. Shotgun의 프로젝트 또는 전역 페이지에서 파이프라인 구성 엔티티를 만들고 다음 필드를 입력합니다(이 예에서는 v1.0.36의 통합을 사용하도록 구성을 잠금).
 
    1. 이름: `Primary`
    2. 프로젝트: 모든 프로젝트에 대해 업데이트를 비활성화하려면 비어 있는 상태로 두고, 단일 프로젝트에 대해서만 잠그려면 특정 프로젝트를 선택합니다.
    3. 플러그인 ID: `basic.*`
-   4. 설명자: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
+   4. 디스크립터: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
 
    ![업데이트가 비활성화된 프로젝트에 대한 설정이 포함된 파이프라인 구성 엔티티.](images/offline-and-disabled-auto-updates/freeze-all-projects.jpg)
 3. Shotgun 데스크톱을 시작합니다. 프로젝트 필드를 비워 둔 경우에는 Shotgun 데스크톱이 이 버전을 사용하도록 전환됩니다(아직 사용하지 않은 경우).
@@ -117,7 +117,7 @@ Shotgun 데스크톱에는 기본 통합을 실행하는 데 필요한 모든 �
    - 이름: `Primary`
    - 프로젝트: 잠그려는 프로젝트(또는 모든 프로젝트에 대해 "없음")
    - 플러그인 ID: `basic.flame`
-   - 설명자: `sgtk:descriptor:app_store?name=tk-config-flameplugin`
+   - 디스크립터: `sgtk:descriptor:app_store?name=tk-config-flameplugin`
 
 ### 한 프로젝트만 제외하고 모든 프로젝트에 대한 업데이트 비활성화
 
@@ -128,8 +128,8 @@ Shotgun 데스크톱에는 기본 통합을 실행하는 데 필요한 모든 �
    - 이름: `Primary`
    - 프로젝트: 잠그지 않으려는 프로젝트
    - 플러그인 ID: `basic.*`
-   - 설명자: `sgtk:descriptor:app_store?name=tk-config-basic`
-      ![두 개의 파이프라인 구성. 하나는 전체 사이트에 대한 업데이트를 비활성화하는 것이고 다른 하나는 단일 프로젝트에 대한 업데이트를 활성화하는 것입니다.](images/offline-and-disabled-auto-updates/freeze-all-but-one-project.jpg)설명자 필드에서 생략한 버전 번호로 이제 프로젝트는 기본 구성의 최신 릴리즈를 추적합니다.
+   - 디스크립터: `sgtk:descriptor:app_store?name=tk-config-basic`
+      ![두 개의 파이프라인 구성. 하나는 전체 사이트에 대한 업데이트를 비활성화하는 것이고 다른 하나는 단일 프로젝트에 대한 업데이트를 활성화하는 것입니다.](images/offline-and-disabled-auto-updates/freeze-all-but-one-project.jpg)디스크립터 필드에서 생략한 버전 번호로 이제 프로젝트는 기본 구성의 최신 릴리즈를 추적합니다.
 
 ### 업그레이드
 
@@ -138,7 +138,7 @@ Shotgun 데스크톱에는 기본 통합을 실행하는 데 필요한 모든 �
 1. Shotgun에서 파이프라인 구성 엔티티를 마우스 오른쪽 버튼으로 클릭하고 **"선택 항목 복제(Duplicate Selected)"**를 선택하여 복제합니다.
 2. 복제한 구성 이름을 "update test"로 지정하고 자신을 사용자 제한(User Restrictions) 필드에 할당합니다.
 3. 이제 이 파이프라인 구성을 사용하기 시작합니다.
-4. 테스트할 버전을 가리키도록 설명자를 변경합니다.
+4. 테스트할 버전을 가리키도록 디스크립터를 변경합니다.
 4. 테스트에 참여하게 하려는 모든 사용자를 `User Restrictions` 필드에 추가하면 초대할 수 있습니다.
 5. 테스트에 만족한 경우 기본 파이프라인 구성이 해당 버전을 사용하도록 업데이트하기만 하면 됩니다.
 6. 사용자가 Shotgun 데스크톱을 다시 시작하고 Shotgun 통합이 실행 중인 상태에서 현재 열려 있는 소프트웨어를 다시 시작하면 업데이트가 선택됩니다.

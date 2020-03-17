@@ -50,8 +50,8 @@ Shotgun 데스크톱의 고급 프로젝트 설정(Advanced Project Setup) 마�
 | 접근성 | 시스템 위치에 저장됨 | 수동으로 편집 가능한 파일 |
 | 업데이트 | 자동으로 업데이트됨 | 수동으로 업데이트됨 |
 | 파일 시스템 지원 | 파일 시스템 스키마 지원 안 함 | 폴더 구조와 파일 명명 표준을 지원하는 도구 포함 |
-| 소프트웨어 통합 | 3ds Max, Houdini, Maya, Nuke, Photoshop, Flame | Basic + Hiero, Motionbulder, Mari |
-| 툴킷 앱 | Shotgun Panel, Publisher, Loader | Basic + Workfiles, Snap Shot, Scene Breakdown, Nuke Write Node, Houdini Mantra Node 등 |
+| 소프트웨어 통합 | 3ds Max, Houdini, Maya, Nuke, Photoshop, Flame | 기초 구성 + Hiero, Motionbulder, Mari |
+| 툴킷 앱 | Shotgun Panel, Publisher, Loader | 기초 구성 + Workfiles, Snap Shot, Scene Breakdown, Nuke Write Node, Houdini Mantra Node 등 |
 
 이 안내서에서는 Shotgun 데스크톱의 마법사를 사용하여 기본 구성을 기반으로 프로젝트의 파이프라인 구성을 생성합니다. 이 구성을 생성하면 자체 프로덕션 파이프라인을 지원하는 데 필요한 커스터마이즈를 수행할 수 있게 됩니다.
 

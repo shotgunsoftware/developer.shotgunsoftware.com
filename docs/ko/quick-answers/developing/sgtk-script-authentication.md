@@ -68,13 +68,13 @@ authenticator.clear_default_user()
 
 ![](./images/sign_in_window.png)
 
-{% include info title="참고" content="구성과 연관되지 않은 툴킷 API(`sgtk` 패키지)를 가져오는 경우(예: 다른 구성으로 부트스트랩하는 데 사용하기 위해 다운로드한 패키지) `CoreDefaultsManager`를 만들면 안 됩니다. 대신 기본값 관리자를 전달하지 말고 `ShotgunAuthenticator()` 인스턴스를 생성하십시오.
+{% include info title="참고" content="구성과 연관되지 않은 툴킷 API(`sgtk` 패키지)를 가져오는 경우(예: 다른 구성으로 부트스트랩(Bootstrapping)하는 데 사용하기 위해 다운로드한 패키지) `CoreDefaultsManager`를 만들면 안 됩니다. 대신 기본값 관리자를 전달하지 말고 `ShotgunAuthenticator()` 인스턴스를 생성하십시오.
 ```python
 authenticator = ShotgunAuthenticator()
 ```" %}
 
-## Non-user-facing scripts
-If the script is not user-facing, like on a render farm or in the event handler, you can add this at the beginning, before creating a Sgtk/Tank instance:
+## 비-사용자 대상 스크립트
+스크립트가 렌더 팜 또는 이벤트 처리기처럼 사용자 대상 유형이 아닌 경우에는 Sgtk/Tank 인스턴스를 생성하기 전에 다음을 시작 부분에 추가할 수 있습니다.
 
 ```python
 # Import Toolkit so we can access to Toolkit specific features.
@@ -104,7 +104,7 @@ user = authenticator.create_script_user(
 sgtk.set_authenticated_user(user)
 ```
 
-{% include info title="참고" content="[사용자 대상 스크립트](#user-facing-scripts) 섹션의 끝 부분에 언급했듯이 가져온 `sgtk` 패키지가 독립 실행형이거나 구성에서 가져온 패키지가 아닌 경우 기본값 관리자를 생성하지 마십시오. 또한 `create_script_user()` 메서드에 `host`를 제공해야 합니다.
+{% include info title="참고" content="[사용자 대상 스크립트](#user-facing-scripts) 섹션의 끝 부분에 언급했듯이 가져온 `sgtk` 패키지가 독립 실행형이거나 구성에서 가져온 패키지가 아닌 경우 기본값 관리자를 생성하지 마십시오. 또한 `create_script_user()` 방식에 `host`를 제공해야 합니다.
 
 ```python
 user = authenticator.create_script_user(

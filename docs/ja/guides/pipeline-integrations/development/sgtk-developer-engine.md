@@ -27,7 +27,7 @@ lang: ja
 エンジンを開発する場合は、ホスト ソフトウェアと、エンジンにロードされている各種の Toolkit アプリおよびフレームワークの間で効果的にブリッジを確立します。
 エンジンを使用すると、ソフトウェア間の相違を抽象化することができるため、Python と Qt を使用してソフトウェアに依存しない方法でアプリを作成できるようになります。
 
-エンジンはファイルのコレクションのことで、[構造としてはアプリに似ています](sgtk-developer-app.md#anatomy-of-the-template-starter-app)。エンジンには `engine.py` ファイルがあり、このファイルはコアとなる [https://github.com/shotgunsoftware/tk-core/blob/master/python/tank/platform/engine.py`Engine`基本クラス]() から派生している必要があります。その後、別のエンジンが内部の複雑さに応じてこの基本クラスの各種の側面を再実装します。
+エンジンはファイルのコレクションのことで、[構造としてはアプリに似ています](sgtk-developer-app.md#anatomy-of-the-template-starter-app)。エンジンには `engine.py` ファイルがあり、このファイルはコアとなる [`Engine` 基本クラス](https://github.com/shotgunsoftware/tk-core/blob/master/python/tank/platform/engine.py) から派生している必要があります。その後、別のエンジンが内部の複雑さに応じてこの基本クラスの各種の側面を再実装します。
 通常、エンジンは次のサービスを処理または提供します。
 
 - メニュー管理。エンジンが起動され、アプリがロードされたら、エンジンは Shotgun メニューを作成し、このメニュー内にさまざまなアプリを追加する必要があります。
@@ -43,7 +43,7 @@ lang: ja
 
 ## 開始する前に必要な情報
 
-オートデスクは、最も一般に使用されるコンテンツ作成ソフトウェアを[統合](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines)しています。さらに、[Toolkit Community のメンバーが作成し、共有しているエンジン](https://support.shotgunsoftware.com/hc/en-us/articles/219039828-Community-Shared-Integrations)もあります。ただし、Toolkit エンジンがまだ組み込まれていないソフトウェアでは、パイプライン統合が必要になる場合があります。
+オートデスクは、最も一般に使用されるコンテンツ作成ソフトウェアを[統合](https://support.shotgunsoftware.com/hc/ja/articles/219039798)しています。さらに、[Toolkit Community のメンバーが作成し、共有しているエンジン](https://support.shotgunsoftware.com/hc/ja/articles/219039828)もあります。ただし、Toolkit エンジンがまだ組み込まれていないソフトウェアでは、パイプライン統合が必要になる場合があります。
 
 時間とリソースがあれば、使用したいが見つからないエンジンを作成することで、Toolkit Community に貢献していただくことができます。これはご自分にとっても有益です。
 

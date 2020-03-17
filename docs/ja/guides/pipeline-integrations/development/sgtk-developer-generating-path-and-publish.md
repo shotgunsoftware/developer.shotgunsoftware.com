@@ -109,7 +109,7 @@ Toolkit の多くの機能は、コンテキストに関するものです。つ
 
 {% include info title="注" content="パスのコンテキストを取得するには、フォルダを作成しておく必要があります。これについては、このガイドの次の手順で説明します。"%}
 
-ただし、新しいコンテキストを作成する代わりに、次のように、[パート 2](#part-2-getting-an-sgtk-instance) で収集した現在のコンテキストをエンジンから取得する[](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context)ことができます。
+ただし、新しいコンテキストを作成する代わりに、次のように、[パート 2](#part-2-getting-an-sgtk-instance) [で収集した現在のコンテキストをエンジンから取得する](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context)ことができます。
 
 ```python
 context = current_engine.context
@@ -199,7 +199,7 @@ tk.create_filesystem_structure("Task", context.task["id"])
 
 Toolkit 内のファイルの配置場所や検索場所を把握する必要がある場合は、テンプレートを使用してディスク上の絶対パスを解決できます。
 
-[テンプレート](https://developer.shotgunsoftware.com/tk-core/core.html#templates)とは、コンテキストおよびその他のデータを適用した場合にファイルシステムのパスに解決できる、本質的にトークン化された文字列のことです。テンプレートは、[プロジェクトのパイプライン設定](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)を使用してカスタマイズできます。テンプレートの目的は、ファイルの保存場所を解決するための標準化された方法を提供することです。
+[テンプレート](https://developer.shotgunsoftware.com/tk-core/core.html#templates)とは、コンテキストおよびその他のデータを適用した場合にファイルシステムのパスに解決できる、本質的にトークン化された文字列のことです。テンプレートは、[プロジェクトのパイプライン設定](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)を使用してカスタマイズできます。テンプレートの目的は、ファイルの保存場所を解決するための標準化された方法を提供することです。
 
 最初に、生成するパスのテンプレート インスタンスを取得する必要があります。作成した `Sgtk` インスタンスを使用すると、`Sgtk.templates` アトリビュートを介して目的の `Template` インスタンスにアクセスできます。このアトリビュートは、キーがテンプレート名、値が [`Template`](https://developer.shotgunsoftware.com/tk-core/core.html#template) インスタンスであるディクショナリです。
 
@@ -372,7 +372,7 @@ sgtk.util.register_publish(tk,
                            published_file_type = "Maya Scene")
 ```
 
-この時点で、[Publish アプリ](https://support.shotgunsoftware.com/hc/en-us/articles/115000097513-Publishing-your-work) にも[独自の API](https://developer.shotgunsoftware.com/tk-multi-publish2/) が提供されることに注目してください。このアプリは基本的に同じ [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) メソッドを使用していますが、コレクション、検証、およびパブリッシュを処理するフレームワークを提供することで、パブリッシュ プロセスに基づいて動作します。
+この時点で、[Publish アプリ](https://support.shotgunsoftware.com/hc/ja/articles/115000097513) にも[独自の API](https://developer.shotgunsoftware.com/tk-multi-publish2/) が提供されることに注目してください。このアプリは基本的に同じ [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) メソッドを使用していますが、コレクション、検証、およびパブリッシュを処理するフレームワークを提供することで、パブリッシュ プロセスに基づいて動作します。
 
 ## パート 8: 完全なスクリプト
 

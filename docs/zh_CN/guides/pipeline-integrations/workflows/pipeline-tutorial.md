@@ -846,7 +846,7 @@ Shotgun 写入节点应用在内置 Nuke 写入节点之上提供了一层，它
 
 祝贺您，您已完成本教程！我们希望本教程能为您使用 Shotgun 集成打造自己的自定义工作流奠定良好的基础。学完本教程，您应该能够了解如何根据自己工作室的特定需求扩展默认的集成。
 
-在 [shotgun-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev)中提出问题，了解其他工作室如何使用 Toolkit。请订阅以查看最新的帖子！
+在 [shotgun-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=zh_CN#!forum/shotgun-dev)中提出问题，了解其他工作室如何使用 Toolkit。请订阅以查看最新的帖子！
 
 如果您认为默认的集成未涵盖某些功能或工作流，可以随时编写自己的应用。[这里是一份详实的文档](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033158)，可帮助您开始编写您的第一个应用。
 

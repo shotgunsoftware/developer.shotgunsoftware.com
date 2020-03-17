@@ -20,8 +20,8 @@ python-api: Python API
 rest-api: REST API
 event-triggers: 编写事件驱动的触发器
 action-menu-items: 创建自定义的动作菜单项
-jira-bridge-guide: 在 Jira 与 Shotgun 之间同步数据（Beta 版）
-jira-bridge-ref: Jira 桥接开发资源（Beta 版）
+jira-bridge-guide: 在 Jira 与 Shotgun 之间同步数据
+jira-bridge-ref: Jira 桥接开发资源
 examples: 示例
 webinars: 网络讲座录像
 developer-training-videos: 开发人员培训视频

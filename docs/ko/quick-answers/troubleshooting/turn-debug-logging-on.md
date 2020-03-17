@@ -105,63 +105,66 @@ tank 명령을 실행 중인데 터미널에서 디버그 출력을 보고 싶�
 
     ./tank --debug core
     DEBUG [10:11:38 617.835998535]:
-    DEBUG [10:11:38 618.768930435]: 디버그 출력을 활성화한 상태에서 실행합니다.
+    DEBUG [10:11:38 618.768930435]: Running with debug output enabled.
     DEBUG [10:11:38 618.921995163]:
-    DEBUG [10:11:38 619.092941284]: Core API는 현지화된 파이프라인 구성 내부에 있습니다.
-    DEBUG [10:11:38 619.235992432]: 전체 명령줄이 전달됨:
+    DEBUG [10:11:38 619.092941284]: Core API resides inside a (localized) pipeline
+    configuration.
+    DEBUG [10:11:38 619.235992432]: Full command line passed:
     ['/sgtk/software/shotgun/scarlet/install/core/scripts/tank_cmd.py',
     '/sgtk/software/shotgun/scarlet', '--debug', 'core']
     DEBUG [10:11:38 619.364023209]:
     DEBUG [10:11:38 619.463920593]:
-    DEBUG [10:11:38 619.575977325]: 코드 설치 루트:
+    DEBUG [10:11:38 619.575977325]: Code install root:
     /sgtk/software/shotgun/scarlet
-    DEBUG [10:11:38 619.678020477]: 파이프라인 구성 루트:
+    DEBUG [10:11:38 619.678020477]: Pipeline Config Root:
     /sgtk/software/shotgun/scarlet
     DEBUG [10:11:38 619.756937027]:
     DEBUG [10:11:38 619.826078415]:
     DEBUG [10:11:38 619.905948639]:
-    DEBUG [10:11:38 619.978904724]: 컨텍스트 항목:
+    DEBUG [10:11:38 619.978904724]: Context items:
     ['/sgtk/software/shotgun/scarlet']
-    DEBUG [10:11:38 620.06688118]: 명령: core
-    DEBUG [10:11:38 620.129108429]: 명령 인수: []
-    DEBUG [10:11:38 620.193004608]: Sgtk 파이프라인 구성 위치:
+    DEBUG [10:11:38 620.06688118]: Command: core
+    DEBUG [10:11:38 620.129108429]: Command Arguments: []
+    DEBUG [10:11:38 620.193004608]: Sgtk Pipeline Config Location:
     /sgtk/software/shotgun/scarlet
-    DEBUG [10:11:38 620.270967484]: 이 스크립트의 위치(__file__):
+    DEBUG [10:11:38 620.270967484]: Location of this script (__file__):
     /sgtk/software/shotgun/scarlet/install/core/scripts/tank_cmd.py
-
-    Shotgun Pipeline Toolkit을 시작합니다.
-    설명서는 https://toolkit.shotgunsoftware.com을 참조하십시오.
-    현재 경로 '/sgtk/software/shotgun/scarlet'에 대해 툴킷 시작
-    - 경로가 Shotgun 객체와 연결되어 있지 않음
-    - 기본 프로젝트 설정으로 폴백
-    DEBUG [10:11:39 125.463962555]: Sgtk API 및 컨텍스트가 완전히 해석합니다.
-    DEBUG [10:11:39 126.449108124]: Sgtk API: Sgtk Core v0.15.18, 구성
+    
+    Welcome to the Shotgun Pipeline Toolkit!
+    For documentation, see https://toolkit.shotgunsoftware.com
+    Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
+    - The path is not associated with any Shotgun object.
+    - Falling back on default project settings.
+    DEBUG [10:11:39 125.463962555]: Sgtk API and Context resolve complete.
+    DEBUG [10:11:39 126.449108124]: Sgtk API: Sgtk Core v0.15.18, config
     /sgtk/software/shotgun/scarlet
-    DEBUG [10:11:39 126.588106155]: 컨텍스트: scarlet
-    - '기본' 구성 및 Core v0.15.18 사용
-    - 컨텍스트를 scarlet으로 설정
-    DEBUG [10:11:39 129.276990891]: 이 명령의 경우 엔진을 로드할 필요가 없습니다.
-    - 명령 코어 실행...
-
-
+    DEBUG [10:11:39 126.588106155]: Context: scarlet
+    - Using configuration 'Primary' and Core v0.15.18
+    - Setting the Context to scarlet.
+    DEBUG [10:11:39 129.276990891]: No need to load up the engine for this
+    command.
+    - Running command core...
+    
+    
     ----------------------------------------------------------------------
-    명령: Core
+    Command: Core
     ----------------------------------------------------------------------
-
-
-    Shotgun Pipeline Toolkit 업데이트 검사 프로그램을 시작합니다.
-    이 스크립트는 /sgtk/software/shotgun/scarlet에 설치된
-    Toolkit Core API가 최신인지
-    확인합니다.
-
-    Core API 업그레이드 시 일반적으로 둘 이상의 프로젝트에 영향을
-    미칩니다. 여러 프로젝트에 롤아웃하기 전에 별개로 Core API 업그레이드를
-    테스트하려면 *현지화된* 특수 파이프라인 구성을 생성하는 것이
-    좋습니다. 자세한 내용은 툴킷 문서를
-    참조하십시오.
-
-
-    현재 Shotgun Pipeline Toolkit v0.15.18 버전을 실행 중입니다.
-    지금은 Toolkit Core API를 업데이트할 필요가 없습니다.
-    DEBUG [10:11:39 981.74405098]: 종료 코드를 사용한 종료가 없음
+    
+    
+    Welcome to the Shotgun Pipeline Toolkit update checker!
+    This script will check if the Toolkit Core API installed
+    in /sgtk/software/shotgun/scarlet
+    is up to date.
+    
+    
+    Please note that when you upgrade the core API, you typically affect more than
+    one project. If you want to test a Core API upgrade in isolation prior to
+    rolling it out to multiple projects, we recommend creating a special
+    *localized* pipeline configuration. For more information about this, please
+    see the Toolkit documentation.
+    
+    
+    You are currently running version v0.15.18 of the Shotgun Pipeline Toolkit
+    No need to update the Toolkit Core API at this time!
+    DEBUG [10:11:39 981.74405098]: Exiting with exit code None
 

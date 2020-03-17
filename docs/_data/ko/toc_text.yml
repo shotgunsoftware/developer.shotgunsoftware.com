@@ -20,8 +20,8 @@ python-api: Python API
 rest-api: REST API
 event-triggers: 이벤트 구동 트리거 작성
 action-menu-items: 커스텀 액션 메뉴 항목 생성
-jira-bridge-guide: Jira 및 Shotgun(베타) 간 데이터 동기화
-jira-bridge-ref: Jira 브리지 개발 리소스(베타)
+jira-bridge-guide: Jira 및 Shotgun 간 데이터 동기화
+jira-bridge-ref: Jira 브리지 개발 리소스
 examples: 예
 webinars: 웨비나 녹화
 developer-training-videos: 개발자 교육 동영상 

@@ -27,7 +27,7 @@ Shotgun で新しいエンティティを作成するときに何度も繰り返
 
 ## Shotgun のイベント デーモンではなく、Web フックを使用する場合
 
-Web フックおよび [Shotgun のイベント デーモン](https://github.com/shotgunsoftware/shotgunEvents/wiki)の機能は似ていますが、重要な違いがいくつかあります。イベント デーモンは、ユーザ独自のサービスを実行、監視、メンテナンスする必要があります。すべてのコードを Python で記述する必要があり、これによって Shotgun との独自の接続を開始することが可能となります。対照的に、Web フックは複数の接続に対応し、任意のプログラム言語で記述することができます。Web フックは、[AWS Lambda](https://aws.amazon.com/lambda/) などのサーバレス環境にホストしたり、[Zapier](https://zapier.com) や [IFTTT](https://ifttt.com) など、オンラインで使用可能な任意の自動化プラットフォームをトリガしたりできます。Web フックを使用できるのであれば、Web フックがお勧めのソリューションです。
+Web フックおよび [Shotgun のイベント デーモン](https://github.com/shotgunsoftware/shotgunEvents/wiki)の機能は似ていますが、重要な違いがいくつかあります。イベント デーモンは、ユーザ独自のサービスを実行、監視、メンテナンスする必要があります。すべてのコードを Python で記述する必要があり、これによって Shotgun との独自の接続を開始することが可能となります。対照的に、Web フックは複数の接続に対応し、任意のプログラム言語で記述することができます。Web フックは、[AWS Lambda](https://aws.amazon.com/jp/lambda/) などのサーバレス環境にホストしたり、[Zapier](https://zapier.com) や [IFTTT](https://ifttt.com) など、オンラインで使用可能な任意の自動化プラットフォームをトリガしたりできます。Web フックを使用できるのであれば、Web フックがお勧めのソリューションです。
 
 ## Web フックを作成する
 

@@ -38,7 +38,7 @@ Toolkit 应用可定义如下：
 - 这些应用通常具有图形用户界面，用户可以使用该界面来指导应用的操作，但这不是必需的。应用也可以是向集成注册的命令，由用户从宿主软件中的 Shotgun 菜单触发。
 - 它们可以包含 API/公共方法，其他流程或应用可以通过这些方法进行交互。
 - 它们可以支持多平台且与软件无关。
-- 可以将它们设置为根据[环境](https://developer.shotgunsoftware.com/487a9f2c/?title=Environment+Configuration+Reference#what-is-an-environment)进行不同配置。
+- 可以将它们设置为根据[环境](https://developer.shotgunsoftware.com/zh_CN/487a9f2c/#%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%AF%E5%A2%83)进行不同配置。
 - 它们可以支持上下文感知。例如，应用可以识别用户正在处理的任务，并执行相应的动作。
 - 只能从 Toolkit 插件运行它们。
 
@@ -188,7 +188,7 @@ location:
    version: v0.1.7
 ```
 通过该标记，Toolkit（例如 `tank updates` 命令）可以检查更新何时可用，并以一种非常安全的方式更新和维护配置。
-每当运行更新命令以及有新版本可用时，Toolkit 都会下载代码，将其放在磁盘上的一个本地“包缓存”中，并确保用户可以访问它。
+每当运行更新命令以及有新版本可用时，Toolkit 都会下载代码，将其放在磁盘上的一个本地“缓存”中，并确保用户可以访问它。
 
 有几个不同的选项可用于为应用版本提供来源。
 
@@ -208,7 +208,7 @@ Toolkit 支持即时使用 Git (http://git-scm.com/)，在对配置运行 `tank 
 
 - 您的 Git 库需要仅包含一个应用
 - 您的 Git 库的结构应该与[入门应用库](https://github.com/shotgunsoftware/tk-multi-starterapp)相同。
-- 创建标记时使用[语义版本控制](http://semver.org)。Toolkit 将使用这些版本号来尝试确定哪个版本是最新版本，版本号遵循 `vX.Y.Z` 约定形式。
+- 创建标记时使用[语义版本控制](https://semver.org/lang/zh-CN/)。Toolkit 将使用这些版本号来尝试确定哪个版本是最新版本，版本号遵循 `vX.Y.Z` 约定形式。
 
 当您在 Git 中创建好第一个标记后（例如 `v1.0.0`），就可以将配置设置为使用指向您的标记的 Git 描述符。然后，您就可以直接运行 `tank updates`，如果已创建新标记，程序将提示您是否要升级。
 此时，整个工作流便与官方应用商店的流程完全相同。

@@ -51,7 +51,7 @@ Shotgun Desktop 中的“高级项目设置向导”会根据默认配置生成�
 | 更新 | 自动更新 | 手动更新 |
 | 文件系统支持 | 不支持文件系统数据结构 | 包含用于支持文件夹结构和文件命名标准的工具 |
 | 软件集成 | 3ds Max、Houdini、Maya、Nuke、Photoshop、Flame | 基本 + Hiero、Motionbulder、Mari |
-| Toolkit 应用 | Shotgun 面板、发布器、加载器 | 基本 + 工作文件、快照、场景细分、Nuke 写入节点、Houdini Mantra 节点等 |
+| Toolkit 应用 | Shotgun Panel、Publisher、Loader | 基本 + 工作文件、快照、场景细分、Nuke 写入节点、Houdini Mantra 节点等 |
 
 在本手册中，您将使用 Shotgun Desktop 中的向导，根据默认配置为项目生成工作流配置。生成此配置将使您能够进行支持专用制作工作流所需的自定义。
 

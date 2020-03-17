@@ -107,9 +107,9 @@ engines:
 `location`은 모든 번들에 필요한 특수한 설정입니다. `apps` 설정은 엔진에 대해 정의된 모든 앱의 목록으로, 각 앱에는 자체 설정이 있습니다. 이 예에서는 엔진에 대해 하나의 앱, `tk-multi-workfiles2`만 정의되어 있습니다.
 
 
-### 위치 설명자
+### 위치 디스크립터
 
-모든 툴킷 번들에는 번들의 *설명자*라고 불리는 `location` 설정이 있습니다. 설명자를 통해 툴킷은 지정된 번들의 위치를 파악하고 해당 유형에 따라 직접 액세스할지 아니면 로컬로 캐시할지 여부를 파악합니다. 툴킷 번들을 가져올 수 있는 위치는 Shotgun 앱 스토어, git 리포지토리, 디스크의 경로 또는 Shotgun 사이트에 업로드된 ZIP 파일 등입니다. 이러한 각 위치에 해당하는 설명자 유형이 있으며 여기에는 해당 유형과 관련된 설정이 포함됩니다. 위 예제의 `tk-maya` 엔진에 대한 설명자는 다음과 같습니다.
+모든 툴킷 번들에는 번들의 *디스크립터*라고 불리는 `location` 설정이 있습니다. 디스크립터를 통해 툴킷은 지정된 번들의 위치를 파악하고 해당 유형에 따라 직접 액세스할지 아니면 로컬로 캐시할지 여부를 파악합니다. 툴킷 번들을 가져올 수 있는 위치는 Shotgun 앱 스토어, git 리포지토리, 디스크의 경로 또는 Shotgun 사이트에 업로드된 ZIP 파일 등입니다. 이러한 각 위치에 해당하는 디스크립터 유형이 있으며 여기에는 해당 유형과 관련된 설정이 포함됩니다. 위 예제의 `tk-maya` 엔진에 대한 디스크립터는 다음과 같습니다.
 
 ```yaml
     location:
@@ -118,9 +118,9 @@ engines:
         version: v0.9.4
 ```
 
-이 예는 `app_store` 유형의 설명자로, 툴킷이 Shotgun 앱 스토어에서 지정된 번들을 가져오도록 합니다. `app_store` 유형의 설명자에는 `name` 및 `version` 설정이 있습니다.
+이 예는 `app_store` 유형의 디스크립터로, 툴킷이 Shotgun 앱 스토어에서 지정된 번들을 가져오도록 합니다. `app_store` 유형의 디스크립터에는 `name` 및 `version` 설정이 있습니다.
 
-한편, 커스텀 번들을 개발 중이고 스튜디오의 특정 워크플로우에 대한 툴킷 앱을 작성 중인 경우 디스크의 경로에서 직접 가져오고 싶을 수 있습니다. 이 경우 다음과 같이 `dev` 유형의 설명자를 사용합니다.
+한편, 커스텀 번들을 개발 중이고 스튜디오의 특정 워크플로우에 대한 툴킷 앱을 작성 중인 경우 디스크의 경로에서 직접 가져오고 싶을 수 있습니다. 이 경우 다음과 같이 `dev` 유형의 디스크립터를 사용합니다.
 
 ```yaml
     location:
@@ -128,9 +128,9 @@ engines:
         path: /path/to/app
 ```
 
-`dev` 설명자에는 `app_store` 설명자와 다른 설정이 있습니다. 다른 설정을 가져올 수 있지만 디스크에 있는 앱 위치를 가리키는 `path` 설정으로 간단하게 설정할 수 있습니다.
+`dev` 디스크립터에는 `app_store` 디스크립터와 다른 설정이 있습니다. 다른 설정을 가져올 수 있지만 디스크에 있는 앱 위치를 가리키는 `path` 설정으로 간단하게 설정할 수 있습니다.
 
-사용 가능한 모든 설명자 유형 및 해당 설정에 대한 자세한 내용은 [Toolkit Core API 문서의 설명자 섹션](https://developer.shotgunsoftware.com/tk-core/descriptor.html)을 참조하십시오.
+사용 가능한 모든 디스크립터 유형 및 해당 설정에 대한 자세한 내용은 [Toolkit Core API 문서의 디스크립터 섹션](https://developer.shotgunsoftware.com/tk-core/descriptor.html)을 참조하십시오.
 
 ### 앱 블록
 
@@ -149,7 +149,7 @@ engines:
           version: v0.11.8
 ```
 
-단일 앱인 `tk-multi-workfiles2` 앱이 정의되어 있는 것을 확인할 수 있습니다. 현재는 하나의 설정(설명자)만 정의되어 있습니다.
+단일 앱인 `tk-multi-workfiles2` 앱이 정의되어 있는 것을 확인할 수 있습니다. 현재는 하나의 설정(디스크립터)만 정의되어 있습니다.
 
 `project` 환경의 `tk-maya` 엔진에서 다른 앱을 사용할 수 있도록 하려면 여기에 추가합니다. 엔진에 패널 `tk-multi-shotgunpanel` 및 앱 정보 `tk-multi-about`을 추가해 보겠습니다. `project.yml` 예제 파일은 이제 다음과 같이 표시됩니다.
 
@@ -195,7 +195,7 @@ includes는 두 부분으로 구성됩니다.
 * `includes` 목록: 키가 `includes`인 YAML 사전이며 값은 포함할 모든 파일의 목록입니다.
 * 구성 설정 내의 참조: 앞에 `@` 기호가 붙고, 포함된 파일에서 참조할 섹션의 이름을 가리키도록 명명됩니다.
 
-위의 예제를 구체화하기 위해 모든 엔진에 대한 위치 설명자가 있는 단일 파일이 있다고 가정합니다. 이 파일을 `includes` 하위 폴더에 넣고 `engine_locations.yml`로 지정하겠습니다.
+위의 예제를 구체화하기 위해 모든 엔진에 대한 위치 디스크립터가 있는 단일 파일이 있다고 가정합니다. 이 파일을 `includes` 하위 폴더에 넣고 `engine_locations.yml`로 지정하겠습니다.
 
 `engine_locations.yml`의 내용은 다음과 같습니다.
 
@@ -291,9 +291,9 @@ engines:
     location: @engines.tk-maya.location
 ```
 
-이제 포함된 `engine_locations.yml` 파일에서 `tk-maya` 엔진의 설명자를 가져오고 포함된 `app_locations.yml` 파일에서 `tk-maya` 엔진에 대해 정의된 각 앱의 설명자를 가져옵니다.
+이제 포함된 `engine_locations.yml` 파일에서 `tk-maya` 엔진의 디스크립터를 가져오고 포함된 `app_locations.yml` 파일에서 `tk-maya` 엔진에 대해 정의된 각 앱의 디스크립터를 가져옵니다.
 
-{% include info title="참고" content="기본 구성은 여기에 설명되지 않은 두 번째 중첩 수준을 사용합니다. 설명자 외에도 설정이 있는 모든 앱 또는 엔진에 `includes/settings`의 설정 파일(예: `includes/settings/tk-maya.yml`, `includes/settings/tk-multi-workfiles2.yml`)이 있습니다. 엔진 설정 파일에는 앱 설정 파일의 앱 설정이 포함되고 환경 구성 파일에는 엔진 설정 파일의 설정이 포함됩니다. 기본 구성의 구조에 대한 자세한 내용은 [읽어보기 파일](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)을 참조하십시오. 구성 설정 수정에 대한 자세한 내용은 [툴킷 기본 사항 안내서의 파이프라인 구성 편집](./learning-resources/guides/editing_app_setting.md)을 참조하십시오." %}
+{% include info title="참고" content="기본 구성은 여기에 설명되지 않은 두 번째 중첩 수준을 사용합니다. 디스크립터 외에도 설정이 있는 모든 앱 또는 엔진에 `includes/settings`의 설정 파일(예: `includes/settings/tk-maya.yml`, `includes/settings/tk-multi-workfiles2.yml`)이 있습니다. 엔진 설정 파일에는 앱 설정 파일의 앱 설정이 포함되고 환경 구성 파일에는 엔진 설정 파일의 설정이 포함됩니다. 기본 구성의 구조에 대한 자세한 내용은 [읽어보기 파일](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)을 참조하십시오. 구성 설정 수정에 대한 자세한 내용은 [툴킷 기본 사항 안내서의 파이프라인 구성 편집](./learning-resources/guides/editing_app_setting.md)을 참조하십시오." %}
 
 
 ## 스파스 구성
@@ -345,7 +345,7 @@ engines:
 * [툴킷 기본 사항 안내서: 파이프라인 구성 편집](./learning-resources/guides/editing_app_setting.md)
 * [툴킷 기본 사항 안내서: 앱 추가](./learning-resources/guides/installing_app.md)
 * [애니메이션 파이프라인 튜토리얼](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
-* [설명자 참조 설명서](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
+* [디스크립터 참조 설명서](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [웨비나: 툴킷 관리](https://youtu.be/7qZfy7KXXX0)
 * [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference)
 * [기본 구성 환경 구조 읽어보기](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

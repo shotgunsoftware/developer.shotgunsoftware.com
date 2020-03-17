@@ -163,7 +163,7 @@ Shotgun Toolkit では、さまざまな方法で設定の編集、クローン�
 
 ### コマンド ラインを使用して既定の設定を作成する
 
-いずれかのプロジェクト設定内で `tank` コマンドを使用すると、端末から管理コマンドを実行できます。各プロジェクトには専用の `tank` コマンドがあります。`tank setup_project` コマンドの機能は、[Advanced Setup Wizard]の機能と似ていて、既存のプロジェクトの設定や既定の設定に基づいて、プロジェクトで使用される編集可能な設定をディスク上に作成することができます。[ の実行方法については、`tank setup_project`こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#setup_project)を、[ コマンドの詳細については、`tank`こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Using%20the%20tank%20command)を参照してください。
+いずれかのプロジェクト設定内で `tank` コマンドを使用すると、端末から管理コマンドを実行できます。各プロジェクトには専用の `tank` コマンドがあります。`tank setup_project` コマンドの機能は、[Advanced Setup Wizard]の機能と似ていて、既存のプロジェクトの設定や既定の設定に基づいて、プロジェクトで使用される編集可能な設定をディスク上に作成することができます。`tank setup_project` の実行方法については、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#setup_project)を、`tank` コマンドの詳細については、[ こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Using%20the%20tank%20command)を参照してください。
 
 ### プロダクション中に設定を編集する
 

@@ -27,7 +27,7 @@ Webhook 允许向您控制的服务通知 Shotgun 中发生的事件。当您创
 
 ## 何时应使用 Webhook，而不是 Shotgun 事件进程？
 
-Webhook 和 [Shotgun 事件进程](https://github.com/shotgunsoftware/shotgunEvents/wiki)提供类似的功能，但存在一些关键区别。事件进程要求您运行、监视和维护自己的服务。您的所有代码都必须使用 Python 编写，并且允许您启动自己的 Shotgun 连接。相反，Webhook 会应答连接，并且可以使用任何编程语言编写。它们可以在无服务器环境中托管，例如 [AWS Lambda](https://aws.amazon.com/lambda/)，也可以触发任何在线提供的自动化平台，例如 [Zapier](https://zapier.com) 和 [IFTTT](https://ifttt.com)。如果您的用例用到 Webhook，这应该是首选解决方案。
+Webhook 和 [Shotgun 事件进程](https://github.com/shotgunsoftware/shotgunEvents/wiki)提供类似的功能，但存在一些关键区别。事件进程要求您运行、监视和维护自己的服务。您的所有代码都必须使用 Python 编写，并且允许您启动自己的 Shotgun 连接。相反，Webhook 会应答连接，并且可以使用任何编程语言编写。它们可以在无服务器环境中托管，例如 [AWS Lambda](https://aws.amazon.com/cn/lambda)，也可以触发任何在线提供的自动化平台，例如 [Zapier](https://zapier.com) 和 [IFTTT](https://ifttt.com)。如果您的用例用到 Webhook，这应该是首选解决方案。
 
 ## 创建 Webhook
 
