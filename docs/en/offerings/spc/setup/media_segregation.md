@@ -9,7 +9,7 @@ lang: en
 
 The media segregation allows your users to access your media in your AWS S3 bucket privately (not transiting on the public internet). 
 
-## Add an S3 endpoint to your VPC
+## Add an S3 endpoint to your VPC if you didn't use the CloudFormation template.
 
 ![Add endpoint](../images/spc-endpoint-create-1.png)
 ![Add endpoint](../images/spc-endpoint-create-2.png)
