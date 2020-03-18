@@ -13,7 +13,7 @@ The goal is to set up an AWS PrivateLink to privately access your Shotgun site.
 
   * Ask Shotgun support to provide you with the Shotgun PrivateLink service name for your AWS region.
 
-  * Update the private VPC CloudFormation stack you creaed earlier and set ShotgunPrivateServiceName parameter.
+  * Update the private VPC CloudFormation stack you created earlier and set ShotgunPrivateServiceName parameter.
 
 ### Manual steps if needed
 
@@ -35,7 +35,7 @@ mystudio-staging.shotgunstudio.com   CNAME   vpce-048447456a4f57e14-1j3wh50q.vpc
 
 ## Validation
 
-Verify that your site resolve to IPs in your AWS VPC block.
+Verify that your site resolves to IPs in your AWS VPC block.
 
 ```
 nslookup mystudio-staging.shotgunstudio.com
