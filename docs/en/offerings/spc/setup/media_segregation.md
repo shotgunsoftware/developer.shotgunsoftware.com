@@ -49,11 +49,13 @@ Shotgun only support https S3 proxy. You will need to configure https support on
   * Get a SSL certificate for your url, we recommend using [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/).
   * Configure the HTTPS support on the S3 proxy by adding a new HTTPS listener on the AWS load balancer.
 
+## Validation
+
 ### Test the S3 proxy
 
 Try to access your S3 proxy using the ping route. ie: https://s3-proxy.mystudio.com/ping 
 
-### Configure your stating site to use your S3 proxy.
+### Configure your test site to use your S3 proxy.
 
 Go in your test site Preferences menu and set S3 Proxy Host Address to the S3 proxy url. ie: https://s3-proxy.mystudio.com.
 Check if you call still access and upload new media.
