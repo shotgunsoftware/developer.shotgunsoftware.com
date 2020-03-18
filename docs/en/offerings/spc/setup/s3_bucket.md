@@ -13,12 +13,12 @@ lang: en
 
 It's possible to start from the [Private S3 bucket AWS CloudFormation template](https://github.com/shotgunsoftware/shotgun-vpc/blob/master/sg-private-s3-bucket.yml) and customize it for your needs for a faster deployment.
 
-## Steps
+## Manual Steps
 
 * Create your S3 bucket in your selected region. Please avoid `.` in the bucket name, Shotgun doesn't support them.
 * Configure the bucket Default Encryption, as Shotgun uses the bucket Default Encryption to encrypt new S3 objects.
 
-## CORS Configuration
+### CORS Configuration
 
 You need to configure CORS policy on your new S3 bucket. Replace mystudio.shotgunstudio.com with your Shotgun hosted site URL.
 
@@ -37,7 +37,7 @@ You need to configure CORS policy on your new S3 bucket. Replace mystudio.shotgu
 </CORSConfiguration>
 ```
 
-## IAM Role
+### IAM Role
 
 Create an AWS Role with the following permissions on your bucket, using the below policies:
 
@@ -103,3 +103,13 @@ Create an AWS Role with the following permissions on your bucket, using the belo
   ]
 }
 ```
+
+## Validation
+
+Please contact Shotgun support via the dedicated Slack channel and provide the following information:
+  * S3 bucket name
+  * AWS Region
+  * Shotgun Role ARN
+
+Shotgun will configure your test site to use your own S3 bucket. 
+Once the configuration is done, you can test upload and download of media on your test site.
