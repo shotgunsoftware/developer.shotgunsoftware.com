@@ -9,6 +9,11 @@ lang: en
 
 {% include info title="Disclaimer" content="The security of your S3 bucket is solely a client responsibility, and the integrity of your data will be at risk without it. We very strongly recommend [securing your S3 bucket properly](https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/)." %}
 
+# AWS Account Creation
+
+You can quickly [create your AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
+You should also contact your AWS contacts to get help with your AWS account setup.
+
 ## AWS CloudFormation template
 
 It's possible to start from the [Private S3 bucket AWS CloudFormation template](https://github.com/shotgunsoftware/shotgun-vpc/blob/master/sg-private-s3-bucket.yml) and customize it for your needs for a faster deployment.
