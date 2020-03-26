@@ -293,7 +293,7 @@ engines:
 
 We’re now getting the `tk-maya` engine’s descriptor from the included `engine_locations.yml` file, and the descriptor for each app defined for the `tk-maya` engine from the included `app_locations.yml` file.
 
-{% include info title="Note" content="The Default Configuration employs a second level of nesting that’s not demonstrated here. Every app or engine that has settings beyond just a descriptor has a settings file in `includes/settings` (e.g., `includes/settings/tk-maya.yml`, `includes/settings/tk-multi-workfiles2.yml`). The engine settings files include app settings from the app settings files, and the environment configuration files include from the engine settings files. For details on the Default Configuration’s structure, see [its README file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md). For a detailed walkthrough of modifying a configuration setting, see the [Toolkit Basics Guide on Editing a Configuration Setting](./learning-resources/guides/editing_app_setting.md)." %}
+{% include info title="Note" content="The Default Configuration employs a second level of nesting that’s not demonstrated here. Every app or engine that has settings beyond just a descriptor has a settings file in `includes/settings` (e.g., `includes/settings/tk-maya.yml`, `includes/settings/tk-multi-workfiles2.yml`). The engine settings files include app settings from the app settings files, and the environment configuration files include from the engine settings files. For details on the Default Configuration’s structure, see [its README file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md). For a detailed walkthrough of modifying a configuration setting, see the [Toolkit Basics Guide on Editing a Configuration Setting](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)." %}
 
 
 ## Sparse configurations
@@ -342,8 +342,8 @@ Note that if the settings for `tk-multi-workfiles2` were coming from an included
 
 ## Additional resources
 
-* [Toolkit Basics Guide: Editing a pipeline configuration](./learning-resources/guides/editing_app_setting.md)
-* [Toolkit Basics Guide: Adding an app](./learning-resources/guides/installing_app.md)
+* [Toolkit Basics Guide: Editing a pipeline configuration](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)
+* [Toolkit Basics Guide: Adding an app](../../guides/pipeline-integrations/getting-started/installing_app.md)
 * [Animation pipeline tutorial](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [Descriptor reference documentation](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [Webinar: Toolkit administration](https://youtu.be/7qZfy7KXXX0)
