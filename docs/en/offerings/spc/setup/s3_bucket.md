@@ -9,7 +9,7 @@ lang: en
 
 {% include info title="Disclaimer" content="The security of your S3 bucket is solely a client responsibility, and the integrity of your data will be at risk without it. We very strongly recommend [securing your S3 bucket properly](https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/)." %}
 
-# AWS Account Creation
+## AWS Account Creation
 
 You can quickly [create your AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 You should also contact your AWS contacts to get help with your AWS account setup.
@@ -18,7 +18,17 @@ You should also contact your AWS contacts to get help with your AWS account setu
 
 It's possible to start from the [Private S3 bucket AWS CloudFormation template](https://github.com/shotgunsoftware/shotgun-vpc/blob/master/sg-private-s3-bucket.yml) and customize it for your needs for a faster deployment.
 
-## Manual Steps
+## Validation
+
+Please contact Shotgun support via the dedicated Slack channel and provide the following information:
+  * S3 bucket name
+  * AWS Region
+  * Shotgun Role ARN
+
+Shotgun will configure your test site to use your own S3 bucket. 
+Once the configuration is done, you can test upload and download of media on your test site.
+
+## Manual Steps if needed
 
 * Create your S3 bucket in your selected region. Please avoid `.` in the bucket name, Shotgun doesn't support them.
 * Configure the bucket Default Encryption, as Shotgun uses the bucket Default Encryption to encrypt new S3 objects.
@@ -109,12 +119,4 @@ Create an AWS Role with the following permissions on your bucket, using the belo
 }
 ```
 
-## Validation
 
-Please contact Shotgun support via the dedicated Slack channel and provide the following information:
-  * S3 bucket name
-  * AWS Region
-  * Shotgun Role ARN
-
-Shotgun will configure your test site to use your own S3 bucket. 
-Once the configuration is done, you can test upload and download of media on your test site.
