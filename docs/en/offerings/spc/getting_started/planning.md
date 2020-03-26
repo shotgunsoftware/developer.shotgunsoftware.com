@@ -22,7 +22,7 @@ Choose an AWS Region for your AWS S3 bucket and VPC.
 
 ## Plan the VPC IP ranges
 
-Plan our AWS VPC and subnets IP ranges.
+Plan your AWS VPC and subnets IP ranges.
 
 ### IP Range Example
 

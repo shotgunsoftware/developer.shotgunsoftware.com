@@ -18,9 +18,7 @@ When you use Shotgun Private Cloud, you isolate sensitive content from the Publi
 * [Planning Your Setup](./spc/getting_started/planning.md)
 
 ### Setup
-* [AWS Account Setup](./spc/setup/aws_account.md)
 * [Private S3 Bucket](./spc/setup/s3_bucket.md)
-* [Closed VPC](./spc/setup/closed_vpc.md)
 * [Media Segregation](./spc/setup/media_segregation.md)
 * [Traffic Segregation](./spc/setup/traffic_segregation.md)
 * [Fine Tuning](./spc/setup/tuning.md)

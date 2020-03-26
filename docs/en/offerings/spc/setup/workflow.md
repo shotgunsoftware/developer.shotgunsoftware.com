@@ -12,17 +12,13 @@ lang: en
 <div class="mermaid" align="center">
 graph TB
    a[/Plan Your Setup\]
-   b[AWS Account Setup]
    c[Private S3 Bucket]
-   d[Closed VPC]
    e[Media Segregation]
    f[Traffic Segregation]
    g["Fine Tuning<br>[Optional]"]
    h[\Done/]
-   a-->b
-   b-->c
-   c-->d
-   d-->e
+   a-->c
+   c-->e
    e-->f
    f-.->h
    f-->g
