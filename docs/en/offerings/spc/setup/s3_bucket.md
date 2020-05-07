@@ -16,7 +16,7 @@ You should also contact your AWS contacts to get help with your AWS account setu
 
 ## AWS CloudFormation template
 
-It's possible to start from the [Private S3 bucket AWS CloudFormation template](https://github.com/shotgunsoftware/shotgun-vpc/blob/master/sg-private-s3-bucket.yml) and customize it for your needs for a faster deployment.
+It's possible to start from the [Private S3 bucket AWS CloudFormation template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-s3-bucket.yml) and customize it for your needs for a faster deployment.
 
 ## Validation
 
