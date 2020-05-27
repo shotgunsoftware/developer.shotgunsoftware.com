@@ -13,7 +13,7 @@ It's possible to add S3 replication between 2 S3 buckets in different regions an
 
 ## Features
 
- * Support one replica bucket in another region leveraging S3 replication feature. https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html
+ * Support one replica bucket in another region leveraging [AWS S3 replication feature](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html).
  * Each human User can be configured to use the replica bucket and get faster download.
 
 ## How it work
