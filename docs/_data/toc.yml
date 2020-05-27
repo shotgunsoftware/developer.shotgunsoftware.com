@@ -106,6 +106,7 @@
         - page: spc-setup-media_segregation
         - page: spc-setup-traffic_segregation
         - page: spc-setup-tuning
+        - page: spc-setup-s3_replication
       - page: spc-knowledge
         children:
         - page: spc-knowledge-connecting
