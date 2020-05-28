@@ -35,3 +35,10 @@ Human users with use replicate S3 bucket activated download all media files from
     * Replica Bucket Name
     * Replica Bucket Region
     * Replica S3 proxy URL
+
+
+# FAQ
+
+## Copy existing media
+
+Once the S3 replication is activated, you still have to copy existing media from master bucket to replica bucket. You can simply use `aws cli` sync or use [Amazon S3 Batch Operations](https://aws.amazon.com/s3/features/batch-operations/) if you have a lot of media.
