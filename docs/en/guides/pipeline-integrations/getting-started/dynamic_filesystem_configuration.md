@@ -307,7 +307,7 @@ Since templates define where Toolkit reads and writes files, it’s crucial that
 
 Then, we’ll modify the template for work files on asset steps in Maya to also include the set in the file name. In the Default Config, the template in question is `maya_asset_work`, and that’s where we’ll start. 
 
-{% include info title="Note" content="Using a template called `maya_asset_work` for asset-based Workfiles in Maya is a convention of the Default Configuration. To confirm that that’s the right template, check the value of the `template_work` setting for `tk-multi-workfiles2` in the `tk-maya` engine, in the `asset_step` environment [here it is in Github](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217)." %}
+{% include info title="Note" content="Using a template called `maya_asset_work` for asset-based Workfiles in Maya is a convention of the Default Configuration. To confirm that that’s the right template, check the value of the `template_work` setting for `tk-multi-workfiles2` in the `tk-maya` engine, in the `asset_step` environment ([here it is in Github](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217))." %}
 
 **Step 15:** Open `templates.yml` and search for `maya_asset_work`. 
 
