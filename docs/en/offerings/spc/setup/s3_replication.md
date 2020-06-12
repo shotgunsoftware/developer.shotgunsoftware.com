@@ -9,38 +9,38 @@ lang: en
 
 ## Description
 
-It's possible to add S3 replication between 2 S3 buckets in different regions and configure Shotgun to leverage it for faster access to media.
+It's possible to add S3 replication between two S3 buckets in different regions and configure Shotgun to leverage it for faster access to media.
 
 ![S3 Replication Diagram](../images/spc-s3-replication.png)
 
 ## Features
 
- * Support one replica bucket in another region leveraging [AWS S3 replication feature](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html).
- * Each human User can be configured to use the replica bucket and get faster download.
+ * Support one replica bucket in another region leveraging the [AWS S3 replication feature](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html).
+ * A preference at the individual Shotgun user level can be configured to use the primary or replica bucket
 
-## How it work
+## How it works
 
-Human users with use replicate S3 bucket activated download all media files from the replica S3 bucket faster.
+When S3 bucket replication is activated users download media files from the replica S3 bucket.
 
 ## Limitations
 
- * Only downloads from replica are supported.
- * Wait a configurable delay for new files before using the replica S3 bucket.
+ * A maximum of one replica S3 bucket can be configured
+ * Only downloading from the replica bucket is supported
+ * Configurable delay for new media to populate in the replica bucket before being made available to users
 
 # Setup steps
 
-  * Create the replica S3 bucket in a new AWS region.
-  * Update your shotgun role policy to allow Shotgun to access the replica bucket.
-  * Setup the replication rules on the primary S3 bucket.
-  * Setup a VPC + Direct Connect + S3 proxy in the new AWS region.
-  * Contact Shotgun support to configure your site to use the new S3 replica bucket.
+  * Create the replica S3 bucket in a new AWS region
+  * Update your Shotgun role policy to allow Shotgun to access the replica bucket
+  * Setup the replication rules on the primary S3 bucket
+  * Setup a VPC + Direct Connect + S3 proxy in the new AWS region
+  * Contact Shotgun Support to configure your site to use the new S3 replica bucket, providing the following:
     * Replica Bucket Name
     * Replica Bucket Region
     * Replica S3 proxy URL
-
 
 # FAQ
 
 ## Copy existing media
 
-Once the S3 replication is activated, you still have to copy existing media from master bucket to replica bucket. You can simply use `aws cli` sync or use [Amazon S3 Batch Operations](https://aws.amazon.com/s3/features/batch-operations/) if you have a lot of media.
+S3 replication only applies to media uploaded after the feature has been enabled. Existing media in the primary bucket must be copied to the replica bucket manually. You can simply use `aws-cli` sync or use [Amazon S3 Batch Operations](https://aws.amazon.com/s3/features/batch-operations/) if you have a lot of media to achieve this.
