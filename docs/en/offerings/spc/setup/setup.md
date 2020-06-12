@@ -14,3 +14,4 @@ lang: en
 * [Media Segregation](./media_segregation.md)
 * [Traffic Segregation](./traffic_segregation.md)
 * [Fine Tuning](./tuning.md)
+* [S3 Replication](./s3_replication.md)
