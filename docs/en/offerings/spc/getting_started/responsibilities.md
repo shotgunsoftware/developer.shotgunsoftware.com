@@ -22,13 +22,13 @@ You understand that an estimated period of 2-6 weeks is usually required to set 
 |Type|	Description / Agreement |	Responsibility	| Available for Assistance|
 |--------|-----|----------|---------|
 |AWS Knowledge	|	Acquiring the AWS-specific knowledge required to set up a Shotgun Private Cloud site	|You	|N/A|
-|S3|	* Setting up the S3 Bucket that will host Your media Securing access to the S3 Bucket * Additional high-availability measures (versioning, bucket replication, etc.)	|You	|Shotgun</br>*AWS|
-|Closed VPC	|</br>Setting up DirectConnect/VPN, etc. to allow closed access to the VPC</br>Securing the VPC by putting the correct Security Groups in place	|You	|*AWS |
-|Media Segregation	|</br>Creating the S3 end-points</br>Deploying theS3 Proxy	|You|	Shotgun|*AWS |
-|Web Traffic Segregation	|</br>Creating VPCs</br>Creating Subnets|	You|Shotgun|
-|Private Access Point|	</br>Checking that the access point is only available from Your network|	Shotgun|	N/A|
-|Monitoring and Reliability|	</br>Maintaining uptime up to Autodesk standards</br>High availability and redundancy of Cloud Services</br>Metadata and database resiliency and redundancy</br>Maintaining Recovery Point Objective (RPO) for metadata and database	|Shotgun|N/A|
-|Service Level Objective|</br>Maintaining Shotgun target RPO and RTO (See Shotgun Security White Paper for more details)|Shotgun|	N/A|
-|Security and Governance |	</br>Maintaining the Shotgun Cloud Services that Shotgun Private Cloud clients are interfacing with, so that they are meeting expectations in terms of security, vulnerability patching, scanning, auditing, etc. (See Shotgun Security White Paper for more details)|	Shotgun	|N/A|
+|S3|	* Setting up the S3 Bucket that will host Your media Securing access to the S3 Bucket * Additional high-availability measures (versioning, bucket replication, etc.)	|You	|Shotgun and *AWS|
+|Closed VPC	|Setting up DirectConnect/VPN, etc. to allow closed access to the VPC. Securing the VPC by putting the correct Security Groups in place	|You	|*AWS |
+|Media Segregation	|Creating the S3 end-points. Deploying the S3 Proxy	|You|	Shotgun and *AWS |
+|Web Traffic Segregation	|Creating VPCs. Creating Subnets|	You|Shotgun|
+|Private Access Point|Checking that the access point is only available from Your network|	Shotgun|	N/A|
+|Monitoring and Reliability|Maintaining uptime up to Autodesk standards. High availability and redundancy of Cloud Services. Metadata and database resiliency and redundancy. Maintaining Recovery Point Objective (RPO) for metadata and database	|Shotgun|N/A|
+|Service Level Objective|Maintaining Shotgun target RPO and RTO (See Shotgun Security White Paper for more details)|Shotgun|	N/A|
+|Security and Governance |Maintaining the Shotgun Cloud Services that Shotgun Private Cloud clients are interfacing with, so that they are meeting expectations in terms of security, vulnerability patching, scanning, auditing, etc. (See Shotgun Security White Paper for more details)|	Shotgun	|N/A|
 
 *You are solely responsible to seek or obtain any support services AWS may provide under any existing relationship between You and AWS. Autodesk and Shotgun team are not parties to Your relationship with AWS and therefore not responsible or liable for any services or lack thereof provided by AWS to You. 
