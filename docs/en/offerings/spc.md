@@ -14,8 +14,10 @@ When you use Shotgun Private Cloud, you isolate sensitive content from the Publi
 
 ### Getting Started
 * [What is Shotgun Private Cloud?](./spc/getting_started/about.md)
+* [Client Responsibilities](./spc/getting_started/responsibilities.md)
 * [Onboarding Process](./spc/getting_started/onboarding.md)
 * [Planning Your Setup](./spc/getting_started/planning.md)
+
 
 ### Setup
 * [Private S3 Bucket](./spc/setup/s3_bucket.md)

@@ -10,5 +10,6 @@ lang: en
 ## In This Section
 
 * [What is Shotgun Private Cloud?](./about.md)
+* [Client Responsibilities](./responsibilities.md)
 * [Onboarding Process](./onboarding.md)
 * [Planning Your Setup](./planning.md)
