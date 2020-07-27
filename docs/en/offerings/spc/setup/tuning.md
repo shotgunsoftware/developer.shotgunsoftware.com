@@ -20,3 +20,8 @@ Read more about S3 Infrequent Access and other storage classes [here](https://aw
 ## S3 endpoint policy
 
 We recommend setting a VPC endpoint policy on your S3 endpoint to allow access to your S3 bucket only. See [here](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html#vpc-endpoints-policies-s3) for an example.
+
+## Application Load Balancer
+
+  * We recommend you [enable deletion protection](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#deletion-protection) on the S3 proxy load balancer to prevent accidental deletion.
+  * We recommend you [enable access logging](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) on the S3 proxy load balancer to aid in traffic analysis and identification of security issues.
