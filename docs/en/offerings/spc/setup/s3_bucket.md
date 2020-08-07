@@ -110,6 +110,8 @@ Create an AWS Role with the following permissions on your bucket, using the belo
         "AWS": [
           "arn:aws:iam::468106423547:role/cos_ctr_shotgun-p-ue1-db",
           "arn:aws:iam::468106423547:role/cos_ctr_shotgun-p-ue1-wa",
+          "arn:aws:iam::468106423547:role/cos_ctr_shotgun-p-ue1-sa",
+          "arn:aws:iam::468106423547:role/cos_ctr_shotgun-p-ue1-sd",
           "arn:aws:iam::468106423547:role/cos_ctr_shotts-p-ue1"
         ]
       },
