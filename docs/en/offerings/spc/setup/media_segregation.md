@@ -15,6 +15,15 @@ The media segregation allows your users to access your media in your AWS S3 buck
 
 You will need to deploy a private VPC with the required VPC endpoints. We provide a [private VPC CloudFormation template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) as a starting point. The template creates a VPC with 2 private subnets and the required VPC endpoints.
 
+  * Go the CloudFormation service in AWS Console.
+  * Select Template is ready.
+  * Set Amazon S3 URL to https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml.
+  * Next.
+  * Set a stack name like shotgun-vpc.
+  * Set your S3 bucket name.
+  * Next
+  * Next
+
 ## Set up access from your site network to your AWS VPC
 
 Options provided by AWS:
@@ -35,7 +44,6 @@ You will need to deploy an S3 proxy in your VPC to proxy the traffic from your n
 
 ### Upload the Docker image to a private AWS Docker repositoty
 
-
 Create an [AWS ECR Repository](https://aws.amazon.com/ecr/) named s3-proxy.
 
 Upload the s3-proxy Docker image to your ECR repository.
@@ -54,6 +62,16 @@ docker push 627791357434.dkr.ecr.us-west-2.amazonaws.com/s3-proxy:1.0.6
 ### Create CloudFormation stack
 
 Create a new stack in AWS Console using the [S3 proxy CloudFormatiom Template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml).
+
+  * Go the CloudFormation service in AWS Console.
+  * Select Template is ready.
+  * Set Amazon S3 URL to https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml
+  * Next.
+  * Set a stack name like shotgun-s3-proxy.
+  * Set all the parameters with no default value.
+  * Next
+  * Accept `I acknowledge that AWS CloudFormation might create IAM resources.`
+  * Next
 
 ### Configure HTTPS
 
