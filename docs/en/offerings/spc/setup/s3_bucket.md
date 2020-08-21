@@ -18,14 +18,14 @@ You should also contact your AWS contacts to get help with your AWS account setu
 
 It's possible to start from the [Private S3 bucket AWS CloudFormation template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-s3-bucket.yml) and customize it for your needs for a faster deployment.
 
-  * Go the CloudFormation service in AWS Console.
-  * Select Template is ready.
-  * Set Amazon S3 URL to https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-s3-bucket.yml.
-  * Next.
-  * Set a stack name like shotgun-s3-bucket.
-  * Set your S3 bucket name and your Shotgun site name.
+  * Go the CloudFormation service in AWS Console
+  * Select Template is ready
+  * Set Amazon S3 URL to https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-s3-bucket.yml
   * Next
-  * Accept `I acknowledge that AWS CloudFormation might create IAM resources.`
+  * Set a stack name like shotgun-s3-bucket
+  * Set your S3 bucket name and your Shotgun site name
+  * Next
+  * Accept `I acknowledge that AWS CloudFormation might create IAM resources`
   * Next
 
 ## Validation
