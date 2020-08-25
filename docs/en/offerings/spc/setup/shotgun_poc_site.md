@@ -7,6 +7,4 @@ lang: en
 
 # Shotgun POC site
 
-Shotgun support team create a temporary proof of concept Shotgun site where you will test your tier 1 setup.
-
-
+The Shotgun team will create a temporary site to be used as a Proof of Concept for your Shotgun Private Cloud deployment. Upon the successful completion of the setup process, your existing Shotgun site can be migrated to Shotgun Private Cloud.
