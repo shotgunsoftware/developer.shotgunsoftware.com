@@ -12,12 +12,14 @@ lang: en
 <div class="mermaid" align="center">
 graph TB
    a[/Plan Your Setup\]
+   b[Shotgun POC site]
    c[Private S3 Bucket]
    e[Media Segregation]
    f[Traffic Segregation]
    g["Fine Tuning<br>[Optional]"]
    h[\Done/]
-   a-->c
+   a-->b
+   b-->c
    c-->e
    e-->f
    f-.->h

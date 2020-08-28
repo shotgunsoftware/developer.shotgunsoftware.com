@@ -101,6 +101,7 @@
         children:
         - page: spc-setup-workflow
         - page: spc-setup-aws_account
+        - page: spc-setup-shotgun_poc_site
         - page: spc-setup-s3_bucket
         - page: spc-setup-closed_vpc
         - page: spc-setup-media_segregation
