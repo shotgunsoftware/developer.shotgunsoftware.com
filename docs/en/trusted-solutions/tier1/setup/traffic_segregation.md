@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Web Traffic Segregation
+title: Web Traffic Isolation
 pagename: tier1-setup-traffic_segregation
 lang: en
 ---
 
-# Web Traffic Segregation
+# Web Traffic Isolation
 
 The goal is to set up an AWS PrivateLink to privately access your Shotgun site.
 

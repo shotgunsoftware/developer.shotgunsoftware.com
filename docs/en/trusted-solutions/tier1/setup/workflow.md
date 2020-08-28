@@ -12,10 +12,10 @@ lang: en
 <div class="mermaid" align="center">
 graph TB
    a[/Plan Your Setup\]
-   b[Shotgun POC site]
-   c[Private S3 Bucket]
-   e[Media Segregation]
-   f[Traffic Segregation]
+   b[Migration Test site]
+   c[Media Isolation]
+   e[Media Traffic Isolation]
+   f[Web Traffic Isolation]
    g["Fine Tuning<br>[Optional]"]
    h[\Done/]
    a-->b

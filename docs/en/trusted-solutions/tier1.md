@@ -6,7 +6,7 @@ lang: en
 ---
 
 # Shotgun Isolation Feature Set
-Shotgun isolation feature set is a hybrid cloud solution that satisfies strict security and legal requirements, while minimizing Shotgun System Admin specific required knowledge and maintenance. These features enable creative studios to confidently meet their supplier’s and studio’s highly stringent security, privacy, and performance requirements—from the cloud.
+Shotgun isolation feature set is an hybrid solution that satisfies strict security and legal requirements, while minimizing Shotgun System Admin specific required knowledge and maintenance. These features enable creative studios to confidently meet their supplier’s and studio’s highly stringent security, privacy, and performance requirements—from the cloud.
 
 ## In This Section
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Private S3 Bucket
+title: Media Isolation
 pagename: tier1-setup-s3_bucket
 lang: en
 ---

@@ -28,7 +28,7 @@ The isolation feature set is a solution that requires less upkeep, as well as le
 
 ## What the Isolation Feature Set is not
 
-The isolation feature set is not a completely isolated solution. Both the compute services and the database services are shared amongst clients, and managed by Shotgun. From a hardware standpoint, the isolation features does not guarantee complete segregation.
+The isolation feature set is not a completely isolated solution. Both the compute services and the database services are shared amongst clients, and managed by Shotgun. From a hardware standpoint, the isolation features does not guarantee complete physical isolation.
 
 # High Level Architecture
 ![tier1-arch](../images/tier1-about-arch.png)
@@ -43,5 +43,5 @@ The Shotgun cloud service  can be decoupled at a high level in 3 parts:
 
 Please read [Securing Studio IP in AWS: Cloud-based VFX Project Management with Autodesk Shotgun blog post](https://aws.amazon.com/blogs/media/securing-studio-ip-in-aws-cloud-based-vfx-project-management-with-autodesk-shotgun/) for more details.
 
-## Ephemeral compute and memory segregation
+## Ephemeral compute and memory isolation
 Even if clients share the same infrastructure, Shotgun guarantees a complete memory isolation, both in transit and at rest, of client data. This makes Shotgun less prone to data leaking due to architecture flaws or software vulnerabilities exploiting memory, like buffer overflow.
