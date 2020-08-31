@@ -12,29 +12,29 @@ Shotgun isolation feature set is an hybrid solution that satisfies strict securi
 
 ### Getting Started
 <!-- When updating this, also update getting_started/getting_started.md -->
-* [About the Isolation Feature Set](./about.md)
-* [Client Responsibilities](./responsibilities.md)
-* [Onboarding Process](./onboarding.md)
-* [Planning Your Setup](./planning.md)
+* [About the Isolation Feature Set](./tier1/getting_started/about.md)
+* [Client Responsibilities](./tier1/getting_started/responsibilities.md)
+* [Onboarding Process](./tier1/getting_started/onboarding.md)
+* [Planning Your Setup](./tier1/getting_started/planning.md)
 
 
 ### Setup
 <!-- When updating this, also update setup/setup.md -->
-* [Setup Workflow](./workflow.md)
-* [Migration Test Site](./shotgun_poc_site.md)
-* [Media Isolation](./s3_bucket.md)
-* [Media Traffic Isolation](./media_segregation.md)
-* [Web Traffic Isolation](./traffic_segregation.md)
-* [Isolation Fine Tuning](./tuning.md)
-* [S3 Replication](./s3_replication.md)
+* [Setup Workflow](./tier1/setup/workflow.md)
+* [Migration Test Site](./tier1/setup/shotgun_poc_site.md)
+* [Media Isolation](./tier1/setup/s3_bucket.md)
+* [Media Traffic Isolation](./tier1/setup/media_segregation.md)
+* [Web Traffic Isolation](./tier1/setup/traffic_segregation.md)
+* [Isolation Fine Tuning](./tier1/setup/tuning.md)
+* [S3 Replication](./tier1/setup/s3_replication.md)
 
 ### AWS Knowledge
 <!-- When updating this, also update knowledge/knowledge.md -->
-* [Connecting Your Studio With Your AWS VPC](./connecting.md)
-* [Shotgun AWS Direct Connect Onboarding](./direct_connect_onboarding.md)
-* [S3](./s3.md)
-* [VPC / IAM / Security Group](./vpc_iam_sec.md)
-* [Direct Connect](./direct_connect.md)
-* [Private Link](./private_link.md)
-* [VPC Endpoints](./vpc_endpoints.md)
-* [AWS Knowledge](./aws.md)
+* [Connecting Your Studio With Your AWS VPC](./tier1/knowledge/connecting.md)
+* [Shotgun AWS Direct Connect Onboarding](./tier1/knowledge/direct_connect_onboarding.md)
+* [S3](./tier1/knowledge/s3.md)
+* [VPC / IAM / Security Group](./tier1/knowledge/vpc_iam_sec.md)
+* [Direct Connect](./tier1/knowledge/direct_connect.md)
+* [Private Link](./tier1/knowledge/private_link.md)
+* [VPC Endpoints](./tier1/knowledge/vpc_endpoints.md)
+* [AWS Knowledge](./tier1/knowledge/aws.md)
