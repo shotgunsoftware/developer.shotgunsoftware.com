@@ -20,7 +20,7 @@ It's possible to add S3 replication between two S3 buckets in different regions 
 
 ## How it works
 
-When S3 bucket replication is activated users download media files from the replica S3 bucket.
+When S3 bucket replication is activated, users download media files from the replica S3 bucket.
 
 ## Limitations
 
@@ -30,11 +30,11 @@ When S3 bucket replication is activated users download media files from the repl
 
 # Setup steps
 
-  * Create the replica S3 bucket in a new AWS region
-  * Update your Shotgun role policy to allow Shotgun to access the replica bucket
-  * Setup the replication rules on the primary S3 bucket
-  * Setup a VPC + Direct Connect + S3 proxy in the new AWS region
-  * Contact Shotgun Support to configure your site to use the new S3 replica bucket, providing the following:
+  * Create the replica S3 bucket in a new AWS region. See [Private S3 Bucket](../s3_bucket.md)
+  * Update your existing Shotgun role policy to allow Shotgun to also access the replica bucket
+  * Setup the replication rules on the primary S3 bucket. See [How do I add a replication rule to an S3 bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-replication.html#enable-replication-add-rule)
+  * Setup a VPC + Direct Connect + S3 proxy in the new AWS region. See [Media Segregation](../media_segregation.md)
+  * Contact Shotgun Support to configure your site to use the new S3 replica bucket, providing the following information:
     * Replica Bucket Name
     * Replica Bucket Region
     * Replica S3 proxy URL
