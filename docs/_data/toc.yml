@@ -86,40 +86,38 @@
       url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
     - page: env-config-ref
 
-- caption: offerings
+- caption: trusted-solutions
   children:
     - page: cloud-index
-    - page: spc-index
+    - page: tier1-index
       children:
-      - page: spc-getting_started
+      - page: tier1-getting_started
         children:
-        - page: spc-getting_started-about
-        - page: spc-getting_started-responsibilities
-        - page: spc-getting_started-onboarding
-        - page: spc-getting_started-planning
-      - page: spc-setup
+        - page: tier1-getting_started-about
+        - page: tier1-getting_started-responsibilities
+        - page: tier1-getting_started-onboarding
+        - page: tier1-getting_started-planning
+      - page: tier1-setup
         children:
-        - page: spc-setup-workflow
-        - page: spc-setup-aws_account
-        - page: spc-setup-shotgun_poc_site
-        - page: spc-setup-s3_bucket
-        - page: spc-setup-closed_vpc
-        - page: spc-setup-media_segregation
-        - page: spc-setup-traffic_segregation
-        - page: spc-setup-tuning
-        - page: spc-setup-s3_replication
-      - page: spc-knowledge
+        - page: tier1-setup-workflow
+        - page: tier1-setup-aws_account
+        - page: tier1-setup-shotgun_poc_site
+        - page: tier1-setup-s3_bucket
+        - page: tier1-setup-closed_vpc
+        - page: tier1-setup-media_segregation
+        - page: tier1-setup-traffic_segregation
+        - page: tier1-setup-tuning
+        - page: tier1-setup-s3_replication
+      - page: tier1-knowledge
         children:
-        - page: spc-knowledge-connecting
-        - page: spc-knowledge-direct_connect_onboarding
-        - page: spc-knowledge-s3
-        - page: spc-knowledge-vpc_iam_sec
-        - page: spc-knowledge-direct_connect
-        - page: spc-knowledge-private_link
-        - page: spc-knowledge-endpoints
-        - page: spc-knowledge-aws
-#      - page: spc-learn
-    - page: enterprise-index
+        - page: tier1-knowledge-connecting
+        - page: tier1-knowledge-direct_connect_onboarding
+        - page: tier1-knowledge-s3
+        - page: tier1-knowledge-vpc_iam_sec
+        - page: tier1-knowledge-direct_connect
+        - page: tier1-knowledge-private_link
+        - page: tier1-knowledge-endpoints
+        - page: tier1-knowledge-aws
 
 - caption: quick-answers
   children:
