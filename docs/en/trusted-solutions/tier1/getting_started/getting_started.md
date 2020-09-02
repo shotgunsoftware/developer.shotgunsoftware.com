@@ -7,6 +7,10 @@ lang: en
 
 # Isolation Feature Set - Getting Started
 
+Want to learn more about the isolation features? See [About the Isolation Feature Set](./about.md) for more details about what is in store for you.
+
+To talk with our Isolation expert or to get the on-boarding process started, please open a ticket on [Shotgun Support](https://support.shotgunsoftware.com/hc/en-us/requests/new).
+
 ## In This Section
 <!-- When updating this, also update tier1.md -->
 * [About the Isolation Feature Set](./about.md)

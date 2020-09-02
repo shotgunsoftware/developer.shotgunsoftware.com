@@ -11,6 +11,8 @@ Leveraging the isolation features requires adopters to become AWS users. In orde
 
 Autodesk and Amazon will provide dedicated resources during the onboarding process to help you on this journey.
 
+To start the on-boarding process for any of the Isolation features, please open a [Shotgun Support ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new)
+
 # Onboarding Process Overview
 
 ![onboarding-process](../images/tier1-onboarding-process.png)
