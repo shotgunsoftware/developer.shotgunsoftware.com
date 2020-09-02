@@ -12,21 +12,21 @@ Shotgun isolation feature set is an hybrid solution that satisfies strict securi
 
 ### Getting Started
 <!-- When updating this, also update getting_started/getting_started.md -->
-* [About the Isolation Feature Set](./tier1/getting_started/about.md)
+* [About Isolation](./tier1/getting_started/about.md)
 * [Client Responsibilities](./tier1/getting_started/responsibilities.md)
 * [Onboarding Process](./tier1/getting_started/onboarding.md)
-* [Planning Your Setup](./tier1/getting_started/planning.md)
+* [Planning your Setup](./tier1/setup/planning.md)
 
 
 ### Setup
 <!-- When updating this, also update setup/setup.md -->
-* [Setup Workflow](./tier1/setup/workflow.md)
+* [Setup Overview](./tier1/setup/setup.md)
 * [Migration Test Site](./tier1/setup/shotgun_poc_site.md)
 * [Media Isolation](./tier1/setup/s3_bucket.md)
 * [Media Traffic Isolation](./tier1/setup/media_segregation.md)
 * [Web Traffic Isolation](./tier1/setup/traffic_segregation.md)
-* [Isolation Fine Tuning](./tier1/setup/tuning.md)
 * [S3 Replication](./tier1/setup/s3_replication.md)
+* [Isolation Fine Tuning](./tier1/setup/tuning.md)
 
 ### AWS Knowledge
 <!-- When updating this, also update knowledge/knowledge.md -->
