@@ -96,18 +96,15 @@
         - page: tier1-getting_started-about
         - page: tier1-getting_started-responsibilities
         - page: tier1-getting_started-onboarding
-        - page: tier1-getting_started-planning
       - page: tier1-setup
         children:
-        - page: tier1-setup-workflow
-        - page: tier1-setup-aws_account
+        - page: tier1-getting_started-planning
         - page: tier1-setup-shotgun_poc_site
         - page: tier1-setup-s3_bucket
-        - page: tier1-setup-closed_vpc
         - page: tier1-setup-media_segregation
         - page: tier1-setup-traffic_segregation
-        - page: tier1-setup-tuning
         - page: tier1-setup-s3_replication
+        - page: tier1-setup-tuning
       - page: tier1-knowledge
         children:
         - page: tier1-knowledge-connecting

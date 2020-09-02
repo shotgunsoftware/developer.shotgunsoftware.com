@@ -21,10 +21,6 @@ During the onboarding process, you'll have direct access to Autodesk and AWS Lea
 
 **Tech Deep Dive:**  OPTIONAL. Deeper technical dive into isolation features. This meeting can be combined with the Tech Briefing.
 
-**Pre-qualification:** Qualification, from a technical point of view. Determine what the implications will be of choosing one offering over another.
-
-**Offering Selection:** Here, you will select the offering that best suits you, under Tech Sales guidance.
-
 **Kickoff Meeting:**	AWS and Shotgun Leaders review the setup process with the you.
 
 **Setup / Test / Validation:**	Iterative installation process where you connect your AWS resources to Shotgun, and activate the isolation features.

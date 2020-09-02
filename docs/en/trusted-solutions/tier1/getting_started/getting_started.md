@@ -12,4 +12,4 @@ lang: en
 * [About the Isolation Feature Set](./about.md)
 * [Client Responsibilities](./responsibilities.md)
 * [Onboarding Process](./onboarding.md)
-* [Planning Your Setup](./planning.md)
+* [Planning Your Setup](../setup/setup.md)

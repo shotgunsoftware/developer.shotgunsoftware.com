@@ -5,7 +5,7 @@ pagename: tier1-setup-s3_replication
 lang: en
 ---
 
-# Shotgun S3 Replication Support (BETA)
+# Shotgun S3 Replication Support
 
 ## Description
 
