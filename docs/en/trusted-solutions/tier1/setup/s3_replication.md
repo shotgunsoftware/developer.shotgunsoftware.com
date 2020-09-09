@@ -20,11 +20,19 @@ It's possible to add S3 replication between two S3 buckets in different regions 
 
 ## How it works
 
-When S3 bucket replication is activated, users download media files from the replica S3 bucket.
+When S3 bucket replication is activated, users will be able download media files from the replica S3 bucket.
+
+For each user, the S3 replication is activated by the `Use S3 Replication` field.
+
+| Value| Behavior | 
+|------|----------------------------------------------|
+|`no`  | Never use the replica S3 bucket (default)|
+|`yes` | Use the replica S3 bucket when delay is over|
+|`auto`| Use replica S3 bucket if when delay is over and client IP is in `IP Adresses for S3 replication`|
 
 ## Limitations
 
- * A maximum of one replica S3 bucket can be configured
+ * Only one replica S3 bucket can be configured
  * Only downloading from the replica bucket is supported
  * Configurable delay for new media to populate in the replica bucket before being made available to users
 
