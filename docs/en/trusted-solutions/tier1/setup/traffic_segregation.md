@@ -23,22 +23,17 @@ The goal is to set up an AWS PrivateLink to privately access your Shotgun site.
 
 ![Create endpoint](../images/tier1-endpoint-create_privatelink.png)
 
-## Split Horizon DNS
 
-You need to configre your office DNS server to resolve your shotgun site to your Shotgun VPC Endpoint DNS name.
+## DNS Configuration
 
-Example DNS entry
-
-```
-mystudio-staging.shotgunstudio.com   CNAME   vpce-048447456a4f57e14-1j3wh50q.vpce-svc-0b054415458f57634.us-west-2.vpce.amazonaws.com
-```
+  * Provide your PrivateLink DNS name to Shotgun support. We will setup an endpoint just for you that will look like `mystudio-staging.priv.shotgunstudio.com`.
 
 ## Validation
 
 Verify that your site resolves to IPs in your AWS VPC block.
 
 ```
-nslookup mystudio-staging.shotgunstudio.com
+nslookup mystudio-staging.priv.shotgunstudio.com
 ```
 
-Try to access your test site from inside your office ie https://mystudio-staging.shotgunstudio.com
+Try to access your test site from inside your office ie https://mystudio-staging.priv.shotgunstudio.com
