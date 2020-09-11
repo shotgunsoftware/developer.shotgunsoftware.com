@@ -5,7 +5,7 @@ pagename: tier1-setup-s3_bucket
 lang: en
 ---
 
-# Private S3 Bucket
+# Media Isolation
 
 {% include info title="Disclaimer" content="The security of your S3 bucket is solely a client responsibility, and the integrity of your data will be at risk without it. We very strongly recommend [securing your S3 bucket properly](https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/)." %}
 
