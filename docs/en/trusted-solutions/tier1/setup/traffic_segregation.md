@@ -26,11 +26,11 @@ The goal is to set up an AWS PrivateLink to privately access your Shotgun site.
 
 ## DNS Configuration
 
-  * Provide your PrivateLink DNS name to Shotgun support. We will setup an endpoint just for you that will look like `mystudio-staging.priv.shotgunstudio.com`.
+Provide your PrivateLink DNS name to Shotgun support. We will setup a new private URL for your site that will look like `mystudio-staging.priv.shotgunstudio.com`.
 
 ## Validation
 
-Verify that your site resolves to IPs in your AWS VPC block.
+Verify that your site private URL resolves to IPs in your AWS VPC block.
 
 ```
 nslookup mystudio-staging.priv.shotgunstudio.com
