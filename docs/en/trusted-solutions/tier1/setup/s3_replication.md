@@ -1,11 +1,11 @@
 ---
 layout: default
-title: S3 Replication
+title: Media Replication
 pagename: tier1-setup-s3_replication
 lang: en
 ---
 
-# Shotgun S3 Replication Support
+# Media Replication
 
 ## Description
 
