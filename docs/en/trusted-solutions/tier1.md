@@ -28,6 +28,7 @@ Shotgun isolation feature set is an hybrid solution that satisfies strict securi
 * [Media Replication](./tier1/setup/s3_replication.md)
 * [Isolation Fine Tuning](./tier1/setup/tuning.md)
 
+
 ### AWS Knowledge
 <!-- When updating this, also update knowledge/knowledge.md -->
 * [Connecting Your Studio With Your AWS VPC](./tier1/knowledge/connecting.md)
