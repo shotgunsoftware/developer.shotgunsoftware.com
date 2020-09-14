@@ -19,7 +19,7 @@ The setup process will depend on which feature you want to activate for your sit
 * [Media Traffic Isolation](./media_segregation.md)
 * [Web Traffic Isolation](./traffic_segregation.md)
 * [Isolation Fine Tuning](./tuning.md)
-* [S3 Replication](./s3_replication.md)
+* [Media Replication](./s3_replication.md)
 
 # Setup Process
 
@@ -45,7 +45,7 @@ This feature allows for private routing of the media through the AWS Backbone an
 
 This feature isolate the web traffic on AWS Backbone and your studio network, isolating the traffic from the public internet.
 
-## [S3 Replication](./s3_replication.md)
+## [Media Replication](./s3_replication.md)
 
 This feature allows the media to be replicated between AWS Regions, for faster access in your world wide studios. Media Isolation is required.
 

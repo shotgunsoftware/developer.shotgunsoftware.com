@@ -25,8 +25,9 @@ Shotgun isolation feature set is an hybrid solution that satisfies strict securi
 * [Media Isolation](./tier1/setup/s3_bucket.md)
 * [Media Traffic Isolation](./tier1/setup/media_segregation.md)
 * [Web Traffic Isolation](./tier1/setup/traffic_segregation.md)
-* [S3 Replication](./tier1/setup/s3_replication.md)
+* [Media Replication](./tier1/setup/s3_replication.md)
 * [Isolation Fine Tuning](./tier1/setup/tuning.md)
+
 
 ### AWS Knowledge
 <!-- When updating this, also update knowledge/knowledge.md -->
