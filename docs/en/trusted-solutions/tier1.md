@@ -1,12 +1,17 @@
 ---
 layout: default
-title: Shotgun Isolation
+title: Isolation features
 pagename: tier1-index
 lang: en
 ---
 
-# Shotgun Isolation Feature Set
-Shotgun isolation feature set is an hybrid solution that satisfies strict security and legal requirements, while minimizing Shotgun System Admin specific required knowledge and maintenance. These features enable creative studios to confidently meet their supplier’s and studio’s highly stringent security, privacy, and performance requirements—from the cloud.
+# Isolation Feature Set
+
+![isolation-theme](./tier1/images/isolation_theme.jpg)
+
+The isolation feature set is an hybrid solution that satisfies strict security and legal requirements, while minimizing Shotgun System Admin specific required knowledge and maintenance. These features enable creative studios to confidently meet their supplier’s and studio’s highly stringent security, privacy, and performance requirements—from the cloud.
+
+Continue to [About the isolation feature set](./tier1/getting_started/about.md) for more details.
 
 ## In This Section
 
