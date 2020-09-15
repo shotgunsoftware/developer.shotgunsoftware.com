@@ -45,6 +45,19 @@ lang: en
 **Special Characters:** If using special characters (including colons) in page titles, it's necessary to wrap the title in ASCII double quotes, as shown in the example above.
 
 
+## Updating ``tk-doc-generator`` version
+
+To update the version of ``tk-doc-generator``, follow these steps:
+
+    git submodule init
+    git submodule update
+    cd tk-doc-generator
+    git fetch
+    git checkout <commit-id-you-need-or-branch-name>
+    cd ..
+    git commit -m "Updated version of tk-doc-generator"
+
+
 ## Site Preview
 
 Once you have created a pull request, the system will automatically
