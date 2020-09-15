@@ -55,7 +55,7 @@ To update the version of ``tk-doc-generator``, follow these steps:
     git fetch
     git checkout <commit-id-you-need-or-branch-name>
     cd ..
-    git commit -m "Updated version of tk-doc-generator"
+    git commit -a -m "Updated version of tk-doc-generator"
 
 
 ## Site Preview
