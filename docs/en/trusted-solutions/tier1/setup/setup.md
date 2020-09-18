@@ -21,17 +21,25 @@ The setup process will depend on which feature you want to activate for your sit
 * [Isolation Fine Tuning](./tuning.md)
 * [Media Replication](./s3_replication.md)
 
-# Setup Process
+# Setup Overview
 
 ![tier1-setup-process](../images/tier1-setup-process.png)
 
+## [Understand your responsibilities](../getting_started/responsibilities.md)
+
+Make sure that you understand the [client responsibilities and the implication](../getting_started/responsibilities.md) of activating any of the Isolation feature.
+
+## [Start the onboarding process](../getting_started/onboarding.md)
+
+Leveraging the isolation features requires adopters to become AWS users. The features activation also requires Autodesk Support intervention. In order to ensure that this joint venture between Autodesk, AWS, and our clients is as streamlined as possible, we decided to work closely with AWS to define a cooperative onboarding process that would meet client expectations for a premium offering. [Kick-start the onboarding process](../getting_started/onboarding.md) before going further.
+
 ## [Planning your Setup](./planning.md)
 
-The first step consist in planning your setup, choosing the feature you need and get the required security/legal approval from your team to get started with the Isolation feature set.
+Before you start working on your setup, [put a plan in place](./planning.md). Choose the features you need and get the required security/legal approval from your team to get started with the Isolation feature set.
 
 ## [Migration Test Site](./shotgun_poc_site.md)
 
-To help you setting up the Isolation features without breaking your production environment and to helping smooting the migration, Shotgun propose to use a test site on which to test your setup before applying the result to production.
+To help you setting up the Isolation features without breaking your production environment and to helping smooting the migration to your isolated environment, Shotgun propose to use a test site on which to test your setup before applying the result to production.
 
 ## [Media Isolation](./s3_bucket.md)
 

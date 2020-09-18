@@ -37,3 +37,9 @@ nslookup mystudio-staging.priv.shotgunstudio.com
 ```
 
 Try to access your test site from inside your office ie https://mystudio-staging.priv.shotgunstudio.com
+
+## Next Steps
+
+See [Fine Tuning](./tuning.md) to finalize your setup and optimize costs and security.
+
+Go to [Setup](./setup.md) for an overview of the possible next steps.
