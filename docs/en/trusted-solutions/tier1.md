@@ -13,6 +13,8 @@ The isolation feature set is an hybrid solution that satisfies strict security a
 
 Continue to [About the isolation feature set](./tier1/getting_started/about.md) for more details.
 
+Go to [Setup](./tier1/setup/setup.md) if you are ready to activate the Isolation features.
+
 ## In This Section
 
 ### Getting Started

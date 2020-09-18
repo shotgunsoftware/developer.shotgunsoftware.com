@@ -9,7 +9,9 @@ lang: en
 
 {% include info title="Disclaimer" content="This documentation is provided solely as an example. It explains how to set up your Shotgun Isolation environment so that it can be connected to Shotgun cloud infrastructure. Please adapt it to your studio security requirements as needed. As Shotgun has no visibility on your AWS Account, ensuring that this account is secure is a client responsibility." %}
 
-The media traffic isolation allows your users to access your media in your AWS S3 bucket privately (not transiting on the public internet). 
+The media traffic isolation allows your users to access your media in your AWS S3 bucket privately (not transiting on the public internet).
+
+Media Isolation activation is a pre-requisite to enable this feature. If you didn't do so already, see [Media Isolation](./s3_bucket.md)
 
 ## Set up a VPC with private subnets in your S3 bucket AWS region
 
@@ -91,3 +93,11 @@ Try to access your S3 proxy using the ping route. ie: https://s3-proxy.mystudio.
 
 Go in your test site Preferences menu and set S3 Proxy Host Address to the S3 proxy url. ie: https://s3-proxy.mystudio.com.
 Check if you call still access and upload new media.
+
+## Next Steps
+
+See [Web Traffic Isolation](./traffic_segregation.md) to activate the Web Traffic Isolation feature.
+
+See [Media Replication](./s3_replication.md) to activate the Web Traffic Isolation feature.
+
+Go to [Setup](./setup.md) for an overview of the possible next steps.

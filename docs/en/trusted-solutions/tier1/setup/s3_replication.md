@@ -51,3 +51,9 @@ For each user, the S3 replication is activated by the `Use S3 Replication` field
 ## Copy existing media
 
 S3 replication only applies to media uploaded after the feature has been enabled. Existing media in the primary bucket must be copied to the replica bucket manually. You can simply use `aws-cli` sync or use [Amazon S3 Batch Operations](https://aws.amazon.com/s3/features/batch-operations/) if you have a lot of media to achieve this.
+
+## Next Steps
+
+See [Fine Tuning](./tuning.md) to finalize your setup and optimize costs and security.
+
+Go to [Setup](./setup.md) for an overview of the possible next steps.
