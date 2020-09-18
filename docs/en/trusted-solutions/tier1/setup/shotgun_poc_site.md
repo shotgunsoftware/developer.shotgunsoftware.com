@@ -5,9 +5,9 @@ pagename: tier1-setup-shotgun_poc_site
 lang: en
 ---
 
-Activating the isolation feature set is an intrusive procedure that can have an impact on the usability of your site. To prevent a production stopping event, we require clients to follow an approach where the configuration is first validated on a test site, before being applied to the production site.
-
 # Shotgun Migration Test Site
+
+Activating the isolation feature set is an intrusive procedure that can have an impact on the usability of your site. To prevent a production stopping event, we require clients to follow an approach where the configuration is first validated on a test site, before being applied to the production site.
 
 The Shotgun team will create a temporary site to be used as a Proof of Concept for your Shotgun Isolation deployment. Upon the successful completion of the setup process, your existing Shotgun site can be migrated to your Shotgun Isolation environment.
 
