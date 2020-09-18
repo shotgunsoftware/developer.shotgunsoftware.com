@@ -39,8 +39,7 @@ CORS policy on your S3 bucket will be minimally configured, allowing only the re
 The template will create an AWS Role with the following permissions on your bucket:
 
 * Allow Shotgun to access your S3 bucket.
-* Allow access to KMS (if you choose to activate AWS-KMS S3 encryption)
-* Allow the Shotgun account to assume the role by editing the role Trust Relationship.
+* Allow the Shotgun account to assume the role by setting the role Trust Relationship.
 
 ## Media Isolation Activation
 
