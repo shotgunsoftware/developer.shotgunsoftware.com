@@ -34,6 +34,7 @@ Go to [Setup](./tier1/setup/setup.md) if you are ready to activate the Isolation
 * [Web Traffic Isolation](./tier1/setup/traffic_segregation.md)
 * [Media Replication](./tier1/setup/s3_replication.md)
 * [Isolation Fine Tuning](./tier1/setup/tuning.md)
+* [Migration](./tier1/setup/migration.md)
 
 
 ### AWS Knowledge
