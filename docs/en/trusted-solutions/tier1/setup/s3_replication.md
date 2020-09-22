@@ -29,6 +29,8 @@ For each user, the S3 replication is activated by the `Use S3 Replication` field
 |`yes` | Use replica S3 bucket when delay is over|
 |`auto`| Use replica S3 bucket when delay is over and the client IP is in `IP Adresses for S3 replication` range|
 
+The `IP Adresses for S3 replication` preference can be edited in Site Preferences under the Isolation category.
+
 ## Limitations
 
  * Only one replica S3 bucket can be configured
