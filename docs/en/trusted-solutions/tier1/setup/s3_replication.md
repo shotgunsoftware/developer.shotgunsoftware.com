@@ -29,6 +29,8 @@ For each user, the S3 replication is activated by the `Use S3 Replication` field
 |`yes` | Use replica S3 bucket when delay is over|
 |`auto`| Use replica S3 bucket when delay is over and the client IP is in `IP Adresses for S3 replication` range|
 
+The `IP Adresses for S3 replication` preference can be edited in Site Preferences under the Isolation category.
+
 ## Limitations
 
  * Only one replica S3 bucket can be configured
@@ -46,9 +48,9 @@ For each user, the S3 replication is activated by the `Use S3 Replication` field
     * Replica Bucket Region
     * Replica S3 proxy URL
 
-# FAQ
+## FAQ
 
-## Copy existing media
+### Copy existing media
 
 S3 replication only applies to media uploaded after the feature has been enabled. Existing media in the primary bucket must be copied to the replica bucket manually. You can simply use `aws-cli` sync or use [Amazon S3 Batch Operations](https://aws.amazon.com/s3/features/batch-operations/) if you have a lot of media to achieve this.
 

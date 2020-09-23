@@ -18,8 +18,9 @@ The setup process will depend on which feature you want to activate for your sit
 * [Media Isolation](./s3_bucket.md)
 * [Media Traffic Isolation](./media_segregation.md)
 * [Web Traffic Isolation](./traffic_segregation.md)
-* [Isolation Fine Tuning](./tuning.md)
 * [Media Replication](./s3_replication.md)
+* [Isolation Fine Tuning](./tuning.md)
+* [Migration](./migration.md)
 
 # Setup Overview
 
@@ -60,3 +61,7 @@ This feature allows the media to be replicated between AWS Regions, for faster a
 ## [Fine Tuning](./tuning.md)
 
 Once the isolation features you need are activated, make sure that you everything is properly configured for security and cost-efficiency by reviewing this fine tuning guide.
+
+## [Migration](./migration.md)
+
+Once everything is ready, it's now time to migrate your production site to use the isolation features.
