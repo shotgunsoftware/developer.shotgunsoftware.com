@@ -11,7 +11,7 @@ Once everything is configured and properly tested with the migration test site, 
 
 ## Test migration
 
-The first step is to do a test migration.
+Ask the Shotgun team to start the migration process in support ticket/slack.
 
   * Shotgun will clone your production site database to your migration test site.
   * You will do a first sync of the media from Shotgun's S3 bucket to your bucket. Shotgun will provide the exact instructions.
