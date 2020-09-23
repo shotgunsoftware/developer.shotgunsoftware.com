@@ -21,6 +21,8 @@ Read more about S3 Infrequent Access and other storage classes [here](https://aw
 
 We recommend you restrict access to your S3 bucket to only your VPC and Shotgun transcoding services IPs. There is an example policy, replace `your_vpc_id` and `your_s3_bucket` by your values.
 
+We strongly recommend you test media access and media transcoding in your migration test site right after applying the bucket policy changes to be sure your S3 bucket is still accessible from your VPC and from Shotgun transcoders.
+
 ```
 {
     "Version": "2012-10-17",
@@ -50,9 +52,9 @@ We recommend you restrict access to your S3 bucket to only your VPC and Shotgun 
             "Condition": {
                 "NotIpAddress": {
                     "aws:SourceIp": [
-                        "52.40.153.208/32",
-                        "35.165.170.157/32",
-                        "52.24.113.26/32"
+                        "34.200.155.69/32",
+                        "34.224.232.103/32",
+                        "34.202.127.170/32"
                     ]
                 },
                 "StringNotEquals": {
