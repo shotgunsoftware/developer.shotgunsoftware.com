@@ -15,9 +15,9 @@ You are entirely responsible for the validity, security, and execution of the Is
  
 Autodesk is available during the process for assistance, but the configuration of Isolation features in Your AWS Account is to be executed by You on Your own.
 
-Isolation features activation requires the Shotgun Support team intervention. Activation delays are to be expected, and will depend on demand. You understand that an estimated period of 2-8 weeks is usually required to complete the setup required by the isolation feature set. The setup time is highly dependant on your cooperation, so please plan to dedicate resources for the setup before starting with the onboarding.
+Isolation feature set activation requires the Shotgun Support team's intervention. Activation delays are to be expected and will depend on demand. You understand that an estimated period of 2-8 weeks is usually required to complete the setup necessary to implement the isolation feature set. The setup time is highly dependent on your cooperation, so please plan to dedicate resources for the setup before beginning the onboarding process.
 
-Autodesk does not guarantee on any timeline of setup completion.
+Autodesk does not guarantee any timeline for setup completion.
 
 ## Onboarding
 
