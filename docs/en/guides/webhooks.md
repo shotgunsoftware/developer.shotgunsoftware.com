@@ -31,7 +31,7 @@ Webhooks and the [Shotgun event daemon](https://github.com/shotgunsoftware/shotg
 
 ## Creating a webhook
 
-To get started creating a webhook, go to a Webhooks page, then navigate to the button above the webhooks list.
+To get started creating a webhook, go to a Webhooks page, then navigate to the button above the webhooks list. Access to webhooks is controlled by the "Advanced -> Show Webhooks" permission. It is enabled for default Admin and Manager roles. 
 
 ![Create Webhook Button](./images/webhooks/create_webhook_button.png)
 
