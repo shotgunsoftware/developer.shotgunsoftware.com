@@ -7,7 +7,9 @@ lang: en
 
 # Isolation Feature Set - Getting Started
 
-Want to learn more about the isolation features? See [About the Isolation Feature Set](./about.md) for more details about what is in store for you.
+Want to learn more about the isolation features? See [About the Isolation Feature Set](./about.md) for more details about what is in store for you. 
+**The Isolation feature set is available only to Super Awesome clients. Before starting, make sure to upgrade your subscription to Super Awesome.**
+
 
 To get the onboarding process started, go to [Onboarding Process](./onboarding.md).
 

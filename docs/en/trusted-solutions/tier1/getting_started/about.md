@@ -34,6 +34,11 @@ Media Isolation allows your studio to keep the ownership and control of the medi
 Media and Web traffic isolation features can be enabled to prevent your traffic from being routed on the public internet, limiting it to the AWS backbone and your studio network. The traffic between Shotgun Services and your studio stays in closed network, never going outside AWS or your Studio network.
 
 
+# Eligibility
+
+The Isolation feature set is available for all Super Awesome clients. See [Getting Started](./getting_started.md) for more details about how to active the different features. The activation of the isolation feature set is not instantaneous, and requires manual setup involving your AWS account.
+
+
 # What the Isolation Feature Set is not
 
 The isolation feature set is not a completely isolated solution. Both the compute services and the database services are shared amongst clients, and managed by Shotgun. From a hardware standpoint, the isolation features does not guarantee complete physical isolation. However, Shotgun services are guaranteeing isolation at the memory level. Processes are never reused to answer requests from different clients during their lifetime. Client metadata is stored in different databases. Client media is individually stored on S3.
