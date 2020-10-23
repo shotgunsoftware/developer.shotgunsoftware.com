@@ -30,8 +30,13 @@ The isolation feature set is a solution that requires less upkeep, as well as le
 ## Media isolation feature
 Media Isolation allows your studio to keep the ownership and control of the media and attachments that you upload to Shotgun. With Media Isolation, all the content that you upload to Shotgun can be store in your studio private S3 bucket. Access to the media is provided to the Shotgun service only, using AWS AssumeRole keyless Security Token Service. Your studio remains in control of the assets and the access to the assets, access that you can revoke at will.
 
+With the media isolation feature, the media will only leave your studio infrastructure once to get transcoded.
+
 ## Traffic isolation features
 Media and Web traffic isolation features can be enabled to prevent your traffic from being routed on the public internet, limiting it to the AWS backbone and your studio network. The traffic between Shotgun Services and your studio stays in closed network, never going outside AWS or your Studio network.
+
+## Media Replication
+Shotgun is compatible with the S3 Cross-Region replication feature, allowing your users located in different regions to read from the region closer to them in order to reduce latency and increase throughput. S3 replication currently supports up to two regions.
 
 
 # Eligibility
@@ -59,3 +64,8 @@ Please read [Securing Studio IP in AWS: Cloud-based VFX Project Management with 
 
 ## Ephemeral compute and memory isolation
 Even if clients share the same infrastructure, Shotgun guarantees a complete memory isolation, both in transit and at rest, of client data. This makes Shotgun less prone to data leaking due to architecture flaws or software vulnerabilities exploiting memory, like buffer overflow.
+
+## Ephemeral transcoding
+![tier1-transcoding](../images/tier1-about-transcoding.png)
+
+Everytime media is uploaded to Shotgun, the transcoding service is invoked to create a web friendly versions of your assets. That process happens only once, after the initial upload. The media is directly uploaded from the client to S3, from where it is fetched by the Shotgun Transcoding Service. Each transcoding job is handled by a single container, which is killed after that unique job. The only place the media temporarily lives is in the container memory. The Shotgun Transcoding service doesn't store permanently a copy of your media.
