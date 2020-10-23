@@ -14,7 +14,7 @@ Leveraging the isolation feature set has the following advantages over the Stand
 * **Media Isolation** by hosting of assets and attachments in a **client-owned S3 Bucket**
 * **Web Traffic Isolation** from the public internet
 * **Media Traffic Isolation** from the public internet
-* **Media Replication** allowing you to replicate media in two different AWS Regions
+* **Media Replication** allowing you to replicate media in one additional AWS Region
 * Access to fully managed Shotgun Cloud Services
 * Automatic and continuous version upgrades
 * Ephemeral compute + in-memory segration between clients
@@ -30,13 +30,13 @@ The isolation feature set is a solution that requires less upkeep, as well as le
 ## Media isolation feature
 Media Isolation allows your studio to keep the ownership and control of the media and attachments that you upload to Shotgun. With Media Isolation, all the content that you upload to Shotgun can be store in your studio private S3 bucket. Access to the media is provided to the Shotgun service only, using AWS AssumeRole keyless Security Token Service. Your studio remains in control of the assets and the access to the assets, access that you can revoke at will.
 
-With the media isolation feature, the media will only leave your studio infrastructure once to get transcoded.
-
 ## Traffic isolation features
 Media and Web traffic isolation features can be enabled to prevent your traffic from being routed on the public internet, limiting it to the AWS backbone and your studio network. The traffic between Shotgun Services and your studio stays in closed network, never going outside AWS or your Studio network.
 
+With the Media Traffic Isolation feature activated, the media will only leave your studio infrastructure once to get transcoded.
+
 ## Media Replication
-Shotgun is compatible with the S3 Cross-Region replication feature, allowing your users located in different regions to read from the region closer to them in order to reduce latency and increase throughput. S3 replication currently supports up to two regions.
+Shotgun is compatible with the S3 Cross-Region replication feature, allowing your users located in different regions to read from the region closer to them in order to reduce latency and increase throughput. Replication to one region is currently supported.
 
 
 # Eligibility
