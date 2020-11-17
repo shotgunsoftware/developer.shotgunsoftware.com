@@ -7,7 +7,7 @@ lang: en
 
 # Webhooks
 
-{% include info title="Beta" content="Webhooks is currently in beta. If you would like to join the beta, please email: [webhooks-beta@shotgunsoftware.com](mailto:webhooks-beta@shotgunsoftware.com)" %}
+{% include info title="Beta" content="Webhooks is currently in beta. Join the [webhooks community forum](https://community.shotgunsoftware.com/c/webhooks) to learn more and participate." %}
 
 Webhooks allow a service you control to be notified of events that occur in Shotgun. When you create a webhook, you specify the type of event you are interested in and tell Shotgun what URL to send data to when it is triggered. Once the relevant event happens in Shotgun, a payload of data describing the event will be sent to the webhook’s URL. This allows you to build tight integrations with Shotgun and automate portions of your workflow.
 
@@ -85,7 +85,7 @@ A webhook can have one of several different statuses, indicating its health and 
 
 Selecting a webhook in the webhooks list will show all of the deliveries that have been made for that webhook dating back as far as five days ago.
 
-{% include info title="Note" content="Delivery logs older than five days are removed and are not recoverable." %}
+{% include info title="Note" content="Delivery logs older than seven days are removed and are not recoverable." %}
 
 ### Delivery status
 
