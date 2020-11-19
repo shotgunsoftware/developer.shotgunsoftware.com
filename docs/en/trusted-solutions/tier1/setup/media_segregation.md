@@ -65,37 +65,38 @@ You will need to deploy an S3 proxy in your VPC to proxy the traffic from your n
     docker push 627791357434.dkr.ecr.us-west-2.amazonaws.com/s3-proxy:1.0.6
     ```
 
-### Create CloudFormation stack
+### Create S3 proxy CloudFormation stack
 
 Create a new stack in AWS Console using the [S3 proxy CloudFormatiom Template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml).
 
   * Go the CloudFormation service in AWS Console
+  * Click Create stack -> With new resources (standard)
   * Select Template is ready
-  * Set Amazon S3 URL to https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml
+  * Set Amazon S3 URL to [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml)
   * Click Next
-  * Set a stack name like shotgun-s3-proxy
-  * Set all the parameters with no default value
+  * Set a stack name like `shotgun-s3-proxy`
+  * Set the parameters that do not have default values with those used when creating the ECR repository, VPC and S3 bucket previously
   * Click Next
   * Accept `I acknowledge that AWS CloudFormation might create IAM resources`
   * Click Next
 
 ### Configure HTTPS
 
-Shotgun only support https S3 proxy. You will need to configure https support on the AWS ALB. 
+Shotgun only support HTTPS with the S3 proxy. You will need to configure HTTPS support on the AWS ALB. 
 
-  * First add a DNS Entry in your domain to access the S3 proxy. ie: https://s3-proxy.mystudio.com
-  * Get a SSL certificate for your url, we recommend using [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/)
-  * Configure the HTTPS support on the S3 proxy by adding a new HTTPS listener on the AWS load balancer
+  * First add a DNS Entry in your domain to access the S3 proxy. Eg. `https://s3-proxy.mystudio.com`
+  * Obtain a SSL certificate for your URL, we recommend using [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/)
+  * Configure HTTPS for the S3 proxy by adding a new HTTPS listener on the AWS load balancer
 
 ## Validation
 
 ### Test the S3 proxy
 
-Try to access your S3 proxy using the ping route. ie: https://s3-proxy.mystudio.com/ping 
+Try to access your S3 proxy using the ping route. Eg. `https://s3-proxy.mystudio.com/ping`
 
 ### Configure your test site to use your S3 proxy.
 
-Go in your test site Preferences menu and set S3 Proxy Host Address to the S3 proxy url. ie: https://s3-proxy.mystudio.com.
+Go in your test site Preferences menu and set S3 Proxy Host Address to the S3 proxy url. Eg. `https://s3-proxy.mystudio.com`
 Check if you call still access and upload new media.
 
 ## Next Steps
