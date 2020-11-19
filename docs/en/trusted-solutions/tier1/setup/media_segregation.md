@@ -115,7 +115,7 @@ In order for the S3 proxy to communicate with your S3 bucket, your bucket policy
 
 Try to access your S3 proxy using the ping route. Eg. `https://s3-proxy.mystudio.com/ping`
 
-### Configure your test site to use your S3 proxy.
+### Configure your test site to use the S3 proxy
 
 * Navigate to the Site Preferences menu within Shotgun and expand the Isolation section
 * Set S3 Proxy Host Address to the S3 proxy url. Eg. `https://s3-proxy.mystudio.com` then click Save changes
