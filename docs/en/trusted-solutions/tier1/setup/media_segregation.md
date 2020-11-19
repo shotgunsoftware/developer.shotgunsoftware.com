@@ -48,7 +48,7 @@ Options provided by AWS:
 
 ## Set up S3 proxy
 
-You will need to deploy an S3 proxy in your VPC to proxy the traffic from your network into the S3 VPC endpoint. We provide an [S3 proxy CloudFormation Template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) as a starting point. This will create an ECS Cluster and an ECS service to run the S3 proxy on AWS Fargate behind an AWS ALB.
+You will need to deploy an S3 proxy in your VPC to proxy the traffic from your network into the S3 VPC endpoint. We provide both [private](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) and [public](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml) S3 proxy CloudFormation templates as a starting point. These will create the necessary Elastic Cloud Stack (ECS) cluster, ECS service and other resources to run the S3 proxy on AWS Fargate behind an AWS Application Load Balancer (ALB).
 
 ### Make the Docker image available from a private AWS ECR repository
 
@@ -99,7 +99,7 @@ Shotgun requires that the S3 proxy be accessed via HTTPS, therefore the AWS Appl
   * Configure HTTPS for the S3 proxy by adding a new HTTPS listener to the AWS ALB
     * Go to the [EC2 Load Balancers dashboard](https://console.aws.amazon.com/ec2/home?#LoadBalancers), select your S3 proxy's ALB and click on the Listeners tab
     * Click Add listener
-    * Select HTTPS as the protocol from the Protocol dropdown menu
+    * Select HTTPS from the Protocol dropdown menu
     * Click Add action -> Forward to...
     * Select your S3 proxy's target group from the Target group dropdown menu
     * Select the Security policy you'd like to use. Eg. `TLS-1-2-Ext-2018-06` (See [AWS documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies) for more information)
