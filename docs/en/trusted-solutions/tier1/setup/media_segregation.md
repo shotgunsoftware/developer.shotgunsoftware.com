@@ -18,6 +18,7 @@ Media Isolation activation is a pre-requisite to enable this feature. If you did
 You will need to deploy a private VPC with the required VPC endpoints. We provide a [private VPC CloudFormation template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) as a starting point. The template creates a VPC with 2 private subnets and the required VPC endpoints.
 
   * Go the CloudFormation service in AWS Console
+  * Click Create stack -> With new resources (standard)
   * Select Template is ready
   * Set Amazon S3 URL to https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml
   * Next
