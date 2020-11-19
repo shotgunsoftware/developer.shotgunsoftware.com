@@ -67,7 +67,7 @@ You will need to deploy an S3 proxy in your VPC to proxy the traffic from your n
 
 ### Create S3 proxy CloudFormation stack
 
-Create a new stack in AWS Console using the [S3 proxy CloudFormatiom Template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml).
+Create a new stack in AWS Console using either the [private](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) or [public](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml) CloudFormation template.
 
   * Go the CloudFormation service in AWS Console
   * Click Create stack -> With new resources (standard)
