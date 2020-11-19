@@ -13,9 +13,9 @@ The media traffic isolation allows your users to access your media in your AWS S
 
 Media Isolation activation is a pre-requisite to enable this feature. If you didn't do so already, see [Media Isolation](./s3_bucket.md)
 
-## Set up a VPC with private subnets in your S3 bucket AWS region
+## Set up a VPC in your S3 bucket AWS region
 
-You will need to deploy a private VPC with the required VPC endpoints. We provide a [private VPC CloudFormation template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) as a starting point. The template creates a VPC with 2 private subnets and the required VPC endpoints.
+You will need to deploy a private VPC with the required VPC endpoints. We provide both a [private VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) and [public VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) CloudFormation templates as starting points. These template create the necessary VPCs, subnets and VPC endpoints.
 
   * Go the CloudFormation service in AWS Console
   * Click Create stack -> With new resources (standard)
@@ -72,7 +72,11 @@ Create a new stack in AWS Console using the [S3 proxy CloudFormatiom Template](h
   * Go the CloudFormation service in AWS Console
   * Click Create stack -> With new resources (standard)
   * Select Template is ready
-  * Set Amazon S3 URL to [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml)
+  * Set Amazon S3 URL depending upon your desired configuration
+    * Private S3 proxy (default):
+      [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml)
+    * Public S3 proxy:
+      [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml)
   * Click Next
   * Set a stack name up to 32 characters in length. Eg. `shotgun-s3-proxy`
   * Set the parameters that do not have default values with those used when creating the ECR repository, VPC and S3 bucket previously
@@ -82,11 +86,25 @@ Create a new stack in AWS Console using the [S3 proxy CloudFormatiom Template](h
 
 ### Configure HTTPS
 
-Shotgun only support HTTPS with the S3 proxy. You will need to configure HTTPS support on the AWS ALB. 
+Shotgun requires that the S3 proxy be accessed via HTTPS, therefore the AWS Application Load Balancer (ALB) handling requests for your newly created S3 proxy stack must be configured to handle HTTPS requests.
 
-  * First add a DNS Entry in your domain to access the S3 proxy. Eg. `https://s3-proxy.mystudio.com`
-  * Obtain a SSL certificate for your URL, we recommend using [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/)
-  * Configure HTTPS for the S3 proxy by adding a new HTTPS listener on the AWS load balancer
+  * Create a DNS entry pointing to your S3 proxy, depending upon whether public or private
+    * Private S3 proxy (default):
+      * Go to the [EC2 Load Balancers dashboard](https://console.aws.amazon.com/ec2/home?#LoadBalancers), select your S3 proxy's ALB and make a note of the DNS name
+      * Add a DNS CNAME record pointing to the DNS name of the AWS Global Accelerator from the previous step. Eg. `s3-proxy.mystudio.com. 300 IN CNAME s3proxy-12R1MXX0MFFAV-2025360147.us-east-1.elb.amazonaws.com.`
+    * Public S3 proxy:
+      * Go to the [AWS Global Accelerator dashboard](https://console.aws.amazon.com/ec2/v2/home?#GlobalAcceleratorDashboard:) and make a note of the DNS name associated with your S3 proxy's accelerator
+      * Add a DNS CNAME record pointing to the DNS name of the AWS Global Accelerator from the previous step. Eg. `s3-proxy.mystudio.com. 300 IN CNAME a48a2a8de7cfd28d3.awsglobalaccelerator.com.`
+  * Obtain an SSL certificate for your chosen URL, we recommend using [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) for this
+  * Configure HTTPS for the S3 proxy by adding a new HTTPS listener to the AWS ALB
+    * Go to the [EC2 Load Balancers dashboard](https://console.aws.amazon.com/ec2/home?#LoadBalancers), select your S3 proxy's ALB and click on the Listeners tab
+    * Click Add listener
+    * Select HTTPS as the protocol from the Protocol dropdown menu
+    * Click Add action -> Forward to...
+    * Select your S3 proxy's target group from the Target group dropdown menu
+    * Select the Security policy you'd like to use. Eg. `TLS-1-2-Ext-2018-06` (See [AWS documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies) for more information)
+    * Select the SSL certificate you'd like to use from ACM or import a new certificate
+    * Click Save
 
 ## Validation
 
