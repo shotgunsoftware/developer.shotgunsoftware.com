@@ -206,5 +206,3 @@ If a high rate of overall throughput is needed, then consumer endpoints should b
 | Success | < 400 | The delivery was received and processed successfully. |
 | Error | >= 400 | The delivery was received but was not processed successfully. |
 | Redirect | 3xx | The delivery was received, but should be redirected to another URL. |
-
-
