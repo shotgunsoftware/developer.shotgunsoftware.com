@@ -88,10 +88,10 @@ Shotgun requires that the S3 proxy be accessed via HTTPS, therefore the AWS Appl
 * Create a DNS entry pointing to your S3 proxy, depending upon whether public or private
   * Private S3 proxy (default):
     * Go to the [EC2 Load Balancers dashboard](https://console.aws.amazon.com/ec2/home?#LoadBalancers), select your S3 proxy's ALB and make a note of the DNS name
-    * Add a DNS CNAME record pointing to the DNS name of the AWS Global Accelerator from the previous step. Eg. `s3-proxy.mystudio.com. 300 IN CNAME s3proxy-12R1MXX0MFFAV-2025360147.us-east-1.elb.amazonaws.com.`
+    * Add a DNS CNAME record pointing to the DNS name of the ALB. Eg. `s3-proxy.mystudio.com. 300 IN CNAME s3proxy-12R1MXX0MFFAV-2025360147.us-east-1.elb.amazonaws.com.`
   * Public S3 proxy:
     * Go to the [AWS Global Accelerator dashboard](https://console.aws.amazon.com/ec2/v2/home?#GlobalAcceleratorDashboard:) and make a note of the DNS name associated with your S3 proxy's accelerator
-    * Add a DNS CNAME record pointing to the DNS name of the AWS Global Accelerator from the previous step. Eg. `s3-proxy.mystudio.com. 300 IN CNAME a48a2a8de7cfd28d3.awsglobalaccelerator.com.`
+    * Add a DNS CNAME record pointing to the DNS name of the Global Accelerator. Eg. `s3-proxy.mystudio.com. 300 IN CNAME a48a2a8de7cfd28d3.awsglobalaccelerator.com.`
 * Obtain an SSL certificate for your chosen URL, we recommend using [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) for this
 * Configure HTTPS for the S3 proxy by adding a new HTTPS listener to the AWS ALB
   * Go to the [EC2 Load Balancers dashboard](https://console.aws.amazon.com/ec2/home?#LoadBalancers), select your S3 proxy's ALB and click on the Listeners tab
@@ -102,6 +102,10 @@ Shotgun requires that the S3 proxy be accessed via HTTPS, therefore the AWS Appl
   * Select the Security policy you'd like to use. Eg. `TLS-1-2-Ext-2018-06` (See [AWS documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies) for more information)
   * Select the SSL certificate you'd like to use from ACM or import a new certificate
   * Click Save
+
+### Add S3 proxy VPC to S3 bucket policy
+
+In order for the S3 proxy to be able to communicate with your S3 bucket, your bucket policy must allow access from the S3 proxy's VPC. You can find instructions on how to configure the policy in the [Fine Tuning](./tuning.md#s3-bucket-policy) step.
 
 ## Validation
 
