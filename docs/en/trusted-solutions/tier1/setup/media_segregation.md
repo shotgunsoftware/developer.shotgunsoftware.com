@@ -50,7 +50,7 @@ Options provided by AWS:
 
 You will need to deploy an S3 proxy in your VPC to proxy the traffic from your network into the S3 VPC endpoint. We provide an [S3 proxy CloudFormatiom Template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) as a starting point. This will create an ECS Cluster and an ECS service to run the S3 proxy on AWS Fargate behind an AWS ALB.
 
-### Upload the Docker image to a private AWS Docker repositoty
+### Upload the Docker image to a private AWS Docker repository
 
 Create an [AWS ECR Repository](https://aws.amazon.com/ecr/) named s3-proxy.
 
