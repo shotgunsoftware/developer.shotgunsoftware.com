@@ -15,7 +15,7 @@ Media Isolation activation is a pre-requisite to enable this feature. If you did
 
 ## Set up a VPC in your S3 bucket AWS region
 
-You will need to deploy a private VPC with the required VPC endpoints. We provide both a [private VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) and [public VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) CloudFormation templates as starting points. These template create the necessary VPCs, subnets and VPC endpoints.
+You will need to deploy a private VPC with the required VPC endpoints. We provide both [private VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) and [public VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) CloudFormation templates as starting points. These template create the necessary VPCs, subnets and VPC endpoints.
 
 * Create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home?#/stacks/create/template)
 * Select Template is ready
@@ -47,7 +47,7 @@ Options provided by AWS:
 
 ## Set up S3 proxy
 
-You will need to deploy an S3 proxy in your VPC to proxy the traffic from your network into the S3 VPC endpoint. We provide both [private](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) and [public](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml) S3 proxy CloudFormation templates as a starting point. These will create the necessary Elastic Cloud Stack (ECS) cluster, ECS service and other resources to run the S3 proxy on AWS Fargate behind an AWS Application Load Balancer (ALB).
+You will need to deploy an S3 proxy in your VPC to proxy the traffic from your network into the S3 VPC endpoint. We provide both [private](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) and [public](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml) S3 proxy CloudFormation templates as starting points for this purpose. These will create the necessary Elastic Cloud Stack (ECS) cluster, ECS service and other resources to run the S3 proxy on AWS Fargate behind an AWS Application Load Balancer (ALB).
 
 ### Make the Docker image available from a private AWS ECR repository
 
@@ -88,10 +88,12 @@ Shotgun requires that the S3 proxy be accessed via HTTPS, therefore the AWS Appl
 * Create a DNS entry pointing to your S3 proxy, depending upon whether public or private
   * Private S3 proxy (default):
     * Go to the [EC2 Load Balancers dashboard](https://console.aws.amazon.com/ec2/home?#LoadBalancers), select your S3 proxy's ALB and make a note of the DNS name
-    * Add a DNS CNAME record pointing to the DNS name of the ALB. Eg. `s3-proxy.mystudio.com. 300 IN CNAME s3proxy-12R1MXX0MFFAV-2025360147.us-east-1.elb.amazonaws.com.`
+    * Add a DNS CNAME record pointing to the DNS name of the ALB
+      Eg. `s3-proxy.mystudio.com. 300 IN CNAME s3proxy-12R1MXX0MFFAV-2025360147.us-east-1.elb.amazonaws.com.`
   * Public S3 proxy:
     * Go to the [AWS Global Accelerator dashboard](https://console.aws.amazon.com/ec2/v2/home?#GlobalAcceleratorDashboard:) and make a note of the DNS name associated with your S3 proxy's accelerator
-    * Add a DNS CNAME record pointing to the DNS name of the Global Accelerator. Eg. `s3-proxy.mystudio.com. 300 IN CNAME a48a2a8de7cfd28d3.awsglobalaccelerator.com.`
+    * Add a DNS CNAME record pointing to the DNS name of the Global Accelerator
+      Eg. `s3-proxy.mystudio.com. 300 IN CNAME a48a2a8de7cfd28d3.awsglobalaccelerator.com.`
 * Obtain an SSL certificate for your chosen URL, we recommend using [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) for this
 * Configure HTTPS for the S3 proxy by adding a new HTTPS listener to the AWS ALB
   * Go to the [EC2 Load Balancers dashboard](https://console.aws.amazon.com/ec2/home?#LoadBalancers), select your S3 proxy's ALB and click on the Listeners tab
@@ -105,7 +107,7 @@ Shotgun requires that the S3 proxy be accessed via HTTPS, therefore the AWS Appl
 
 ### Add S3 proxy VPC to S3 bucket policy
 
-In order for the S3 proxy to be able to communicate with your S3 bucket, your bucket policy must allow access from the S3 proxy's VPC. You can find instructions on how to configure the policy in the [Fine Tuning](./tuning.md#s3-bucket-policy) step.
+In order for the S3 proxy to communicate with your S3 bucket, your bucket policy must allow access from the S3 proxy's VPC. You can find instructions on how to configure the policy in the [Fine Tuning](./tuning.md#s3-bucket-policy) step.
 
 ## Validation
 
@@ -115,8 +117,10 @@ Try to access your S3 proxy using the ping route. Eg. `https://s3-proxy.mystudio
 
 ### Configure your test site to use your S3 proxy.
 
-Go in your test site Preferences menu and set S3 Proxy Host Address to the S3 proxy url. Eg. `https://s3-proxy.mystudio.com`
-Check if you call still access and upload new media.
+* Navigate to the Site Preferences menu within Shotgun and expand the Isolation section
+* Set S3 Proxy Host Address to the S3 proxy url. Eg. `https://s3-proxy.mystudio.com` then click Save changes
+* Confirm that you are still able to access existing media
+* Attempt to upload new media
 
 ## Next Steps
 
