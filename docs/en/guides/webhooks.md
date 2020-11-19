@@ -83,7 +83,7 @@ A webhook can have one of several different statuses, indicating its health and 
 
 ## Deliveries
 
-Selecting a webhook in the webhooks list will show all of the deliveries that have been made for that webhook dating back as far as five days ago.
+Selecting a webhook in the webhooks list will show all of the deliveries that have been made for that webhook dating back as far as seven days ago.
 
 {% include info title="Note" content="Delivery logs older than seven days are removed and are not recoverable." %}
 
@@ -189,6 +189,16 @@ A consumer service must respond to deliveries in order for the system to conside
 
 {% include warning title="Response timeouts" content="A response must be received within six seconds of delivery to a webhook’s URL, after which the connection will be closed. Failure to respond in time will result in a failed delivery." %}
 
+#### Throttling
+
+Your consumer response times to deliveries will impact webhooks throughput for your site.
+Each site is allowed 1 minute of response time per minute. So if all configured consumer endpoints for a site take the full 6 seconds to respond, webhooks deliveries for that site will be throttled to 10 per a minute.
+
+If a high rate of overall throughput is needed, then consumer endpoints should be designed according to the following model:
+ 1. Receive the request
+ 2. Spawn another process/thread to handle it the way you want
+ 3. Answer an acknowledging 200 immediately
+
 #### Status codes
 
 | Status | Code | Description |
@@ -196,3 +206,5 @@ A consumer service must respond to deliveries in order for the system to conside
 | Success | < 400 | The delivery was received and processed successfully. |
 | Error | >= 400 | The delivery was received but was not processed successfully. |
 | Redirect | 3xx | The delivery was received, but should be redirected to another URL. |
+
+
