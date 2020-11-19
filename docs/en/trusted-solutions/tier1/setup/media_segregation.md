@@ -22,15 +22,15 @@ You will need to deploy a private VPC with the required VPC endpoints. We provid
   * Select Template is ready
   * Set Amazon S3 URL depending upon your desired configuration
     * Private VPC (default):
-      [https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml)
+      [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml)`
     * Public VPC:
-      [https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-public-vpc.yml](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-public-vpc.yml)
-  * Next
+      [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-public-vpc.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-public-vpc.yml)
+  * Click Next
   * Set a stack name like `shotgun-vpc`
   * Choose network ranges that doesn't conflict with your studio network and set subnet CIDR values accordingly
   * Set your S3 bucket name
-  * Next
-  * Next
+  * Click Next
+  * Click Next
 
 ## Set up access from your site network to your AWS VPC
 
