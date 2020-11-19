@@ -50,22 +50,20 @@ Options provided by AWS:
 
 You will need to deploy an S3 proxy in your VPC to proxy the traffic from your network into the S3 VPC endpoint. We provide an [S3 proxy CloudFormation Template](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) as a starting point. This will create an ECS Cluster and an ECS service to run the S3 proxy on AWS Fargate behind an AWS ALB.
 
-### Upload the Docker image to a private AWS Docker repository
+### Make the Docker image available from a private AWS ECR repository
 
-Create an [AWS ECR Repository](https://aws.amazon.com/ecr/) named s3-proxy.
-
-Upload the s3-proxy Docker image to your ECR repository.
- 
-  * You will need to install Docker on your workstation then run the following commands.
-  * Do the docker login using instructions in your AWS Console *View push commands* button.
-
-You will need to change the ECR repository URL to match yours.
+  * Create an [AWS ECR Repository](https://aws.amazon.com/ecr/) in the region you intend to run your S3 Proxy
+  * Name the repository `s3-proxy`
+  * Upload the s3-proxy Docker image to the newly created ECR repository using the following commands
+    * Docker must be installed on your workstation
+    * The `docker login` instructions from the AWS Console *View push commands* button should be completed before running these commands
+    * Substitute the ECR endpoint in the example for yours
   
-```
-docker pull quay.io/shotgun/s3-proxy:1.0.6
-docker tag quay.io/shotgun/s3-proxy:1.0.6 627791357434.dkr.ecr.us-west-2.amazonaws.com/s3-proxy:1.0.6
-docker push 627791357434.dkr.ecr.us-west-2.amazonaws.com/s3-proxy:1.0.6
-```
+    ```
+    docker pull quay.io/shotgun/s3-proxy:1.0.6
+    docker tag quay.io/shotgun/s3-proxy:1.0.6 627791357434.dkr.ecr.us-west-2.amazonaws.com/s3-proxy:1.0.6
+    docker push 627791357434.dkr.ecr.us-west-2.amazonaws.com/s3-proxy:1.0.6
+    ```
 
 ### Create CloudFormation stack
 
@@ -74,20 +72,20 @@ Create a new stack in AWS Console using the [S3 proxy CloudFormatiom Template](h
   * Go the CloudFormation service in AWS Console
   * Select Template is ready
   * Set Amazon S3 URL to https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml
-  * Next
+  * Click Next
   * Set a stack name like shotgun-s3-proxy
   * Set all the parameters with no default value
-  * Next
+  * Click Next
   * Accept `I acknowledge that AWS CloudFormation might create IAM resources`
-  * Next
+  * Click Next
 
 ### Configure HTTPS
 
 Shotgun only support https S3 proxy. You will need to configure https support on the AWS ALB. 
 
-  * First add a DNS Entry in your domain to access the S3 proxy. ie: https://s3-proxy.mystudio.com.
-  * Get a SSL certificate for your url, we recommend using [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/).
-  * Configure the HTTPS support on the S3 proxy by adding a new HTTPS listener on the AWS load balancer.
+  * First add a DNS Entry in your domain to access the S3 proxy. ie: https://s3-proxy.mystudio.com
+  * Get a SSL certificate for your url, we recommend using [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/)
+  * Configure the HTTPS support on the S3 proxy by adding a new HTTPS listener on the AWS load balancer
 
 ## Validation
 
