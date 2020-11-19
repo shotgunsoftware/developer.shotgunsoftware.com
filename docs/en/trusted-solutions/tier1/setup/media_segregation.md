@@ -74,7 +74,7 @@ Create a new stack in AWS Console using the [S3 proxy CloudFormatiom Template](h
   * Select Template is ready
   * Set Amazon S3 URL to [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml)
   * Click Next
-  * Set a stack name like `shotgun-s3-proxy`
+  * Set a stack name up to 32 characters in length. Eg. `shotgun-s3-proxy`
   * Set the parameters that do not have default values with those used when creating the ECR repository, VPC and S3 bucket previously
   * Click Next
   * Accept `I acknowledge that AWS CloudFormation might create IAM resources`
