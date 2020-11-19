@@ -55,7 +55,7 @@ You will need to deploy an S3 proxy in your VPC to proxy the traffic from your n
   * Create an [AWS ECR Repository](https://aws.amazon.com/ecr/) in the region you intend to run your S3 Proxy
   * Name the repository `s3-proxy`
   * Upload the s3-proxy Docker image to the newly created ECR repository using the following commands
-    * Docker must be installed on your workstation
+    * Docker must be [installed on your workstation](https://docs.docker.com/get-docker/)
     * The `docker login` instructions from the AWS Console *View push commands* button should be completed before running these commands
     * Substitute the ECR endpoint in the example for yours
   
