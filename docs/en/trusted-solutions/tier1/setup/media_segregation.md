@@ -9,13 +9,15 @@ lang: en
 
 {% include info title="Disclaimer" content="This documentation is provided solely as an example. It explains how to set up your Shotgun Isolation environment so that it can be connected to Shotgun cloud infrastructure. Please adapt it to your studio security requirements as needed. As Shotgun has no visibility on your AWS Account, ensuring that this account is secure is a client responsibility." %}
 
-The media traffic isolation allows your users to access your media in your AWS S3 bucket privately (not transiting on the public internet). Please note that if you have a multi-region setup and that you are leveraging the Shotgun Transcoding service, there may still be cases where the media in going throught the public internet. Reach out to our support team for more details.
+The media traffic isolation feature allows your users to access media in your AWS S3 bucket privately (not transiting over the public Internet). Please note that if you have a multi-region setup and that leverages the Shotgun Transcoding service there may still be instances where media transits across the public Internet. Reach out to our support team for more details.
 
-Media Isolation activation is a pre-requisite to enable this feature. If you didn't do so already, see [Media Isolation](./s3_bucket.md)
+Media Isolation activation is a pre-requisite to enable this feature. If you haven't done so already, see [Media Isolation](./s3_bucket.md).
 
 ## Set up a VPC in your S3 bucket AWS region
 
-You will need to deploy a private VPC with the required VPC endpoints. We provide both [private VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) and [public VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) CloudFormation templates as starting points. These template create the necessary VPCs, subnets and VPC endpoints.
+{% include info title="Disclaimer" content="Before starting, decide whether your S3 proxy will be privately accessible within your VPC or publicly accessible via the Internet and choose the relevant templates in the following instructions." %}
+
+You will need to deploy a VPC with the required VPC endpoints. We provide both [private VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) and [public VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) CloudFormation templates as starting points. These template create the necessary VPCs, subnets and VPC endpoints.
 
 * Create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home?#/stacks/create/template)
 * Select Template is ready
@@ -25,7 +27,7 @@ You will need to deploy a private VPC with the required VPC endpoints. We provid
   * Public VPC:
     [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-public-vpc.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-public-vpc.yml)
 * Click Next
-* Set a stack name like `shotgun-vpc`
+* Set a stack name. Eg. `shotgun-vpc`
 * Choose network ranges that doesn't conflict with your studio network and set subnet CIDR values accordingly
 * Set your S3 bucket name
 * Click Next
@@ -37,9 +39,11 @@ Options provided by AWS:
 * [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html)
 * [AWS Direct Connect](https://aws.amazon.com/directconnect/)
 
-{% include info title="Note" content="If Direct Connect is chosen, we recommend testing it with a simpler/faster solution first to validate the setup. You can then replace that solution with Direct Connect once the setup is complete." %}
+{% include info title="Note" content="If Direct Connect is chosen, we recommend testing with a simpler / faster solution in the meantime to validate your Isolation setup. You can then replace that solution with Direct Connect once it is available." %}
 
-## Add an S3 endpoint to your VPC if you didn't use the CloudFormation template.
+## Add an S3 endpoint to your VPC
+
+{% include info title="Note" content="This step should only be performed if the CloudFormation template was *not* used when configuring [Media Isolation](./s3_bucket.md)." %}
 
 ![Add endpoint](../images/tier1-endpoint-create-1.png)
 ![Add endpoint](../images/tier1-endpoint-create-2.png)
@@ -47,7 +51,7 @@ Options provided by AWS:
 
 ## Set up S3 proxy
 
-You will need to deploy an S3 proxy in your VPC to proxy the traffic from your network into the S3 VPC endpoint. We provide both [private](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) and [public](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml) S3 proxy CloudFormation templates as starting points for this purpose. These will create the necessary Elastic Cloud Stack (ECS) cluster, ECS service and other resources to run the S3 proxy on AWS Fargate behind an AWS Application Load Balancer (ALB).
+You will need to deploy an S3 proxy in your VPC to forward traffic to the S3 VPC endpoint. We provide both [private](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) and [public](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml) S3 proxy CloudFormation templates as starting points for this purpose. These will create the necessary Elastic Cloud Stack (ECS) cluster, ECS service and other resources to run the S3 proxy on AWS Fargate behind an AWS Application Load Balancer (ALB).
 
 ### Make the Docker image available from a private AWS ECR repository
 
@@ -83,7 +87,7 @@ Create a new stack in AWS Console using either the [private](https://sg-shotguns
 
 ### Configure HTTPS
 
-Shotgun requires that the S3 proxy be accessed via HTTPS, therefore the AWS Application Load Balancer (ALB) handling requests for your newly created S3 proxy stack must be configured to handle HTTPS requests.
+Shotgun requires that the S3 proxy be accessed via HTTPS, therefore the AWS ALB handling requests for your newly created S3 proxy stack must be configured to accept HTTPS requests.
 
 * Create a DNS entry pointing to your S3 proxy, depending upon whether public or private
   * Private S3 proxy (default):
@@ -107,7 +111,7 @@ Shotgun requires that the S3 proxy be accessed via HTTPS, therefore the AWS Appl
 
 ### Add S3 proxy VPC to S3 bucket policy
 
-In order for the S3 proxy to communicate with your S3 bucket, your bucket policy must allow access from the S3 proxy's VPC. You can find instructions on how to configure the policy in the [Fine Tuning](./tuning.md#s3-bucket-policy) step.
+In order for the S3 proxy to communicate with your S3 bucket your bucket policy must allow access from the S3 proxy's VPC. You can find instructions on how to configure the policy in the [Fine Tuning](./tuning.md#s3-bucket-policy) step.
 
 ## Validation
 
