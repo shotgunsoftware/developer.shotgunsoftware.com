@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Webhooks (Coming soon!)
+title: Webhooks
 pagename: shotgun-webhooks
 lang: en
 ---
