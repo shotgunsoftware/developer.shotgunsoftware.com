@@ -51,7 +51,7 @@ Options provided by AWS:
 
 ## Set up S3 proxy
 
-You will need to deploy an S3 proxy in your VPC to forward traffic to the S3 VPC endpoint. We provide both [private](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) and [public](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml) S3 proxy CloudFormation templates as starting points for this purpose. These will create the necessary Elastic Cloud Stack (ECS) cluster, ECS service and other resources to run the S3 proxy on AWS Fargate behind an AWS Application Load Balancer (ALB).
+You will need to deploy an S3 proxy in your VPC to forward traffic to the S3 VPC endpoint. We provide both [private](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) and [public](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml) S3 proxy CloudFormation templates as starting points for this purpose. These will create the necessary Elastic Container Service (ECS) cluster and other resources to run the S3 proxy on AWS Fargate behind an AWS Application Load Balancer (ALB).
 
 ### Make the Docker image available from a private AWS ECR repository
 
@@ -59,7 +59,7 @@ You will need to deploy an S3 proxy in your VPC to forward traffic to the S3 VPC
 * Name the repository `s3-proxy`
 * Upload the s3-proxy Docker image to the newly created ECR repository
   * [Install Docker](https://docs.docker.com/get-docker/) on your workstation
-  * Follow the `docker login` instructions shown by clicking the *View push commands* button w
+  * Follow the `docker login` instructions shown by clicking the *View push commands* button
   * Run the following commands, substituting the ECR endpoint in the example for yours:
     ```
     docker pull quay.io/shotgun/s3-proxy:1.0.6
