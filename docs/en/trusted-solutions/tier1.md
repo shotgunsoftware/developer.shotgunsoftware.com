@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Isolation features
+title: Isolation Features
 pagename: tier1-index
 lang: en
 ---
@@ -24,6 +24,12 @@ Go to [Setup](./tier1/setup/setup.md) if you are ready to activate the Isolation
 * [Onboarding Process](./tier1/getting_started/onboarding.md)
 * [Planning your Setup](./tier1/setup/planning.md)
 
+### Features Description
+<!-- When updating this, also update features/features.md -->
+* [Media Isolation](./features/media_isolation.md)
+* [Media Traffic Isolation](./features/media_traffic_isolation.md)
+* [Web Traffic Isolation](./features/web_traffic_isolation.md)
+* [Media Replication](./features/media_replication.md)
 
 ### Setup
 <!-- When updating this, also update setup/setup.md -->
