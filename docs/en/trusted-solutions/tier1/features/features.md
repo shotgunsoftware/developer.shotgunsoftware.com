@@ -9,6 +9,8 @@ lang: en
 
 This section describes in details each of the Isolation Features.
 
+<img alt="features-description-overview" src="../images/features-description-overview.png" width="400">
+
 To get the onboarding process started, go to [Onboarding Process](./onboarding.md).
 
 To start the setup for any of the Isolation features, go to the [Setup section](../setup/setup.md)
