@@ -15,7 +15,7 @@ Shotgun is compatible with the S3 Cross-Region replication feature, allowing you
 Media Isolation is required in order to elect Media Replication.
 
 ## Configuration by users
-When using media replication, each users can customize from which region data is read from. A user can either specify the region to use, or use the automatic mode. In automatic mode, a user will use the replica if it is amongst the IP range specified in the Isolation Preferences.
+When using Media Replication, each user can customize which region data is read from. A user can either specify the region to use, or use automatic mode. In automatic mode Shotgun selects the replica determined by the user's IP address using IP ranges specified in the Isolation Preferences.
 
 <img alt="media-replication-preferences" src="../images/media-replication-preferences.png" width="400">
 
