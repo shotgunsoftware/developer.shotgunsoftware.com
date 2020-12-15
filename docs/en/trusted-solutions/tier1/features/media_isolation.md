@@ -6,11 +6,11 @@ lang: en
 ---
 
 # Media Isolation
-Media Isolation allows your studio to keep ownership and control of the media and attachments that you upload to Shotgun. With Media Isolation, all the content that you upload to Shotgun is stored in your studios private S3 Bucket. Access to the media is provided to the Shotgun services only, using [AWS AssumeRole keyless Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html).
+Media Isolation allows your studio to retain ownership and control of the media and attachments that you upload to Shotgun. With Media Isolation, all the content that you upload to Shotgun is stored in your studio's private S3 Bucket. Access to the media is provided to the Shotgun services only, using [AWS AssumeRole keyless Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html).
 
 <img alt="media-isolation-overview" src="../images/media-isolation-overview.png" width="400">
 
-## Client Owned S3 Bucket
+## Client-Owned S3 Bucket
 Storing media and attachments in an S3 bucket that you own means that you remain the legal owner of these artifacts, allowing you to comply with your company's security and legal policies. Your studio retains control of asset storage and access, access that you can revoke at will.
 
 <img alt="media-isolation-arch" src="../images/media-isolation-arch.png" width="400">
