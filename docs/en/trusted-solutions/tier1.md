@@ -26,10 +26,10 @@ Go to [Setup](./tier1/setup/setup.md) if you are ready to activate the Isolation
 
 ### Features Description
 <!-- When updating this, also update features/features.md -->
-* [Media Isolation](./features/media_isolation.md)
-* [Media Traffic Isolation](./features/media_traffic_isolation.md)
-* [Web Traffic Isolation](./features/web_traffic_isolation.md)
-* [Media Replication](./features/media_replication.md)
+* [Media Isolation](./tier1/features/media_isolation.md)
+* [Media Traffic Isolation](./tier1/features/media_traffic_isolation.md)
+* [Web Traffic Isolation](./tier1/features/web_traffic_isolation.md)
+* [Media Replication](./tier1/features/media_replication.md)
 
 ### Setup
 <!-- When updating this, also update setup/setup.md -->
