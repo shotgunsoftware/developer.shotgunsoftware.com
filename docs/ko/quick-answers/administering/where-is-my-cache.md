@@ -10,7 +10,7 @@ lang: ko
 
 ## 루트 캐시 위치
 
-툴킷은 일부 데이터를 로컬 캐시에 저장하여 Shotgun 서버에 대한 불필요한 호출을 방지합니다. 여기에는 [경로 캐시](./what-is-path-cache.md), 번들 캐시 및 썸네일이 포함됩니다. 대부분의 사용자는 기본 위치로도 문제 없지만 이를 변경해야 한다면 [cache_location 코어 후크](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/cache_location.py)를 사용하여 구성할 수 있습니다.
+툴킷은 일부 데이터를 로컬 캐시에 저장하여 {% include product %} 서버에 대한 불필요한 호출을 방지합니다. 여기에는 [경로 캐시](./what-is-path-cache.md), 번들 캐시 및 썸네일이 포함됩니다. 대부분의 사용자는 기본 위치로도 문제 없지만 이를 변경해야 한다면 [cache_location 코어 후크](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/cache_location.py)를 사용하여 구성할 수 있습니다.
 
 기본 캐시 루트 위치는 다음과 같습니다.
 
@@ -36,7 +36,7 @@ lang: ko
 
 **분산 구성**
 
-번들 캐시는 Shotgun 사이트의 프로젝트 전반에 사용되는 전체 응용프로그램, 엔진, 프레임워크의 캐시 모음입니다. 분산 구성의 번들 캐시는 다음 위치에 저장됩니다.
+번들 캐시는 {% include product %} 사이트의 프로젝트 전반에 사용되는 전체 응용프로그램, 엔진, 프레임워크의 캐시 모음입니다. 분산 구성의 번들 캐시는 다음 위치에 저장됩니다.
 
 Mac: `~/Library/Caches/Shotgun/bundle_cache`
 
@@ -46,7 +46,7 @@ Windows:
 Linux:
 `~/.shotgun/bundle_cache`
 
-{% include info title="참고" content="`SHOTGUN_BUNDLE_CACHE_PATH` 환경 변수를 사용하여 이러한 위치를 재정의할 수 있으므로 실제 구현은 다를 수 있습니다." %}
+{% include info title="참고" content="`{% include product %}_BUNDLE_CACHE_PATH` 환경 변수를 사용하여 이러한 위치를 재정의할 수 있으므로 실제 구현은 다를 수 있습니다." %}
 
 **중앙 집중식 구성**
 

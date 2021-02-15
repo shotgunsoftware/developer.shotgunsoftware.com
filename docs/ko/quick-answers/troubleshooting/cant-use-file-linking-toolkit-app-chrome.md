@@ -9,7 +9,7 @@ lang: ko
 
 ## 개요
 
-간혹 Shotgun의 액션 메뉴에 사용 가능한 툴킷 응용프로그램 목록이 표시되지 않거나, Shotgun 데스크톱이 실행 중인데도 로컬 파일 링크를 사용하면 오류가 발생할 수 있습니다. 이 문서는 Chrome에서 Shotgun 데스크톱의 브라우저 통합 문제를 해결하고, 원하는 기능들이 제대로 작동하도록 지원하는 안내서입니다. [Firefox](./cant-use-file-linking-toolkit-app-firefox.md)의 경우 별도의 안내서가 있습니다.
+간혹 {% include product %}의 액션 메뉴에 사용 가능한 툴킷 응용프로그램 목록이 표시되지 않거나, {% include product %} 데스크톱이 실행 중인데도 로컬 파일 링크를 사용하면 오류가 발생할 수 있습니다. 이 문서는 Chrome에서 {% include product %} 데스크톱의 브라우저 통합 문제를 해결하고, 원하는 기능들이 제대로 작동하도록 지원하는 안내서입니다. [Firefox](./cant-use-file-linking-toolkit-app-firefox.md)의 경우 별도의 안내서가 있습니다.
 
 - [문제 진단](#diagnosing-the-issue)
 - [인증서 문제를 빠르게 해결하는 방법](#how-to-quickly-fix-certificate-issues)
@@ -18,13 +18,13 @@ lang: ko
 
 ## 문제 진단
 
-### Shotgun 데스크톱이 실행 중입니까?
+### {% include product %} 데스크톱이 실행 중입니까?
 
 예, 알고 있습니다. 이미 확인하셨을 것이라 생각했지만 다시 한번 확인했습니다. :)
 
-### Shotgun 데스크톱을 시작한 후에 Chrome을 다시 시작했습니까?
+### {% include product %} 데스크톱을 시작한 후에 Chrome을 다시 시작했습니까?
 
-Shotgun 데스크톱이 인증서를 등록(Shotgun 데스크톱을 처음 실행할 때에만 등록하면 되고, 이후부터는 문제 없음)하기 전에 Chrome을 실행했다면 Chrome이 오래된 인증서 사본을 사용하면서 Shotgun 데스크톱 연결을 거부합니다. 모든 탭을 닫는다고 해서 Chrome이 닫히는 것은 아니므로 주소 표시줄에 [chrome://restart](chrome://restart/)를 입력하고 Enter 키를 누르는 것이 좋습니다. 이렇게 하면 모든 Chrome 관련 프로세스가 종료되고, Chrome이 다시 시작됩니다.
+{% include product %} 데스크톱이 인증서를 등록({% include product %} 데스크톱을 처음 실행할 때에만 등록하면 되고, 이후부터는 문제 없음)하기 전에 Chrome을 실행했다면 Chrome이 오래된 인증서 사본을 사용하면서 {% include product %} 데스크톱 연결을 거부합니다. 모든 탭을 닫는다고 해서 Chrome이 닫히는 것은 아니므로 주소 표시줄에 [chrome://restart](chrome://restart/)를 입력하고 Enter 키를 누르는 것이 좋습니다. 이렇게 하면 모든 Chrome 관련 프로세스가 종료되고, Chrome이 다시 시작됩니다.
 
 ### 방화벽 소프트웨어를 사용 중입니까?
 
@@ -32,7 +32,7 @@ Shotgun 데스크톱이 인증서를 등록(Shotgun 데스크톱을 처음 실�
 
 ### Chrome이 인증서를 거부합니까?
 
-https://localhost:9000으로 이동하여 Chrome이 인증서를 수락하는지 확인할 수 있습니다. 이 주소는 Shotgun 웹 사이트가 로컬 파일 링크를 수행하고 툴킷 응용프로그램을 실행하기 위해 액세스하는 주소입니다. 보통 다음 메시지가 나타나야 합니다.
+https://localhost:9000으로 이동하여 Chrome이 인증서를 수락하는지 확인할 수 있습니다. 이 주소는 {% include product %} 웹 사이트가 로컬 파일 링크를 수행하고 툴킷 응용프로그램을 실행하기 위해 액세스하는 주소입니다. 보통 다음 메시지가 나타나야 합니다.
 
 ![Autobahn Python 메시지](images/autobahn-python.png)
 
@@ -44,9 +44,9 @@ https://localhost:9000으로 이동하여 Chrome이 인증서를 수락하는지
 
 ## 인증서 문제를 빠르게 해결하는 방법
 
-이 문제를 방지하는 가장 쉬운 방법은 **고급(ADVANCED)**, **localhost로 진행(Proceed to localhost)**(안전하지 않음)을 클릭하는 것입니다. 이렇게 하면 Chrome에서 여러분이 인증서를 수락하려고 한다는 것을 인식하고, Shotgun 웹 사이트가 Shotgun 데스크톱과 통신하도록 허용합니다.
+이 문제를 방지하는 가장 쉬운 방법은 **고급(ADVANCED)**, **localhost로 진행(Proceed to localhost)**(안전하지 않음)을 클릭하는 것입니다. 이렇게 하면 Chrome에서 여러분이 인증서를 수락하려고 한다는 것을 인식하고, {% include product %} 웹 사이트가 {% include product %} 데스크톱과 통신하도록 허용합니다.
 
-{% include info title="참고" content="웹 브라우저와 Shotgun 데스크톱 간에 연결이 이루어지도록 할 수 있는 방법은 이것뿐입니다. 신뢰 설정은 두 응용프로그램 간 트래픽 흐름을 가능하도록 할 뿐, **인터넷 상의 다른 모든 서버에 대한 신뢰를 의미하는 것은 아닙니다**. 아쉽게도 이 프로세스는 문제가 있는 모든 컴퓨터마다 반복해야 합니다. 이렇게 해도 문제가 해결되지 않거나 모든 사용자들에게 알려주기에는 너무 복잡한 방법이라고 생각되는 경우 다음 단계를 살펴보시기 바랍니다." %}
+{% include info title="참고" content="웹 브라우저와 {% include product %} 데스크톱 간에 연결이 이루어지도록 할 수 있는 방법은 이것뿐입니다. 신뢰 설정은 두 응용프로그램 간 트래픽 흐름을 가능하도록 할 뿐, **인터넷 상의 다른 모든 서버에 대한 신뢰를 의미하는 것은 아닙니다**. 아쉽게도 이 프로세스는 문제가 있는 모든 컴퓨터마다 반복해야 합니다. 이렇게 해도 문제가 해결되지 않거나 모든 사용자들에게 알려주기에는 너무 복잡한 방법이라고 생각되는 경우 다음 단계를 살펴보시기 바랍니다." %}
 
 {% include info title="참고" content="이 단계 해결 방법은 **ERR_SSL_SERVER_CERT_BAD_FORMAT** 오류에는 적용되지 않으며, 아래 설명에 따라 인증서를 다시 생성해야 합니다." %}
 
@@ -54,11 +54,11 @@ https://localhost:9000으로 이동하여 Chrome이 인증서를 수락하는지
 
 Chrome은 자체 서명 인증서에 관한 보안을 정기적으로 업그레이드하며, 이 업데이트로 인해 종종 브라우저 통합이 끊어집니다. 불행히도 이런 종류의 문제는 인증서의 certificate_path를 다시 생성하는 방법으로만 해결할 수 있습니다.
 
-인증서를 다시 생성하려면 Shotgun 데스크톱의 사용자 메뉴에 있는 **고급(Advanced)** 섹션에서 **인증서 재생성(Regenerate Certificates)** 옵션을 선택해야 합니다. (이 옵션이 보이지 않으면 `tk-desktop` 엔진을 업데이트하여 잠금 해제합니다.)
+인증서를 다시 생성하려면 {% include product %} 데스크톱의 사용자 메뉴에 있는 **고급(Advanced)** 섹션에서 **인증서 재생성(Regenerate Certificates)** 옵션을 선택해야 합니다. (이 옵션이 보이지 않으면 `tk-desktop` 엔진을 업데이트하여 잠금 해제합니다.)
 
-인증서 재생성을 확인하고 나면 인증서를 처음 생성했을 때처럼 일련의 대화상자가 나타납니다. Windows 및 macOS에서는 Windows 인증서 저장소 또는 macOS 키체인을 업데이트하라는 메시지가 두 번 나타납니다. 한 번은 이전 인증서를 제거하라는 메시지가 나타나고, 새 인증서를 등록하라는 메시지가 한 번 더 나타납니다. Linux에서는 등록이 자동으로 이루어집니다. 등록이 끝나면 Shotgun 데스크톱을 다시 시작합니다.
+인증서 재생성을 확인하고 나면 인증서를 처음 생성했을 때처럼 일련의 대화상자가 나타납니다. Windows 및 macOS에서는 Windows 인증서 저장소 또는 macOS 키체인을 업데이트하라는 메시지가 두 번 나타납니다. 한 번은 이전 인증서를 제거하라는 메시지가 나타나고, 새 인증서를 등록하라는 메시지가 한 번 더 나타납니다. Linux에서는 등록이 자동으로 이루어집니다. 등록이 끝나면 {% include product %} 데스크톱을 다시 시작합니다.
 
-Shotgun 데스크톱이 다시 시작되어 실행되면 주소 표시줄에 [chrome://restart](chrome://restart/)를 입력해 Chrome을 다시 시작함으로써 Chrome이 완전히 종료되고 인증서 캐시가 지워지도록 하는 것이 좋습니다.
+{% include product %} 데스크톱이 다시 시작되어 실행되면 주소 표시줄에 [chrome://restart](chrome://restart/)를 입력해 Chrome을 다시 시작함으로써 Chrome이 완전히 종료되고 인증서 캐시가 지워지도록 하는 것이 좋습니다.
 
 컴퓨터가 인터넷에 연결되어 있지 않아 업데이트를 다운로드할 수 없다면 support@shotgunsoftware.com에 문의하시기 바랍니다.
 
@@ -98,4 +98,4 @@ Windows 키를 클릭하고 **mmc**를 입력한 다음 Enter 키를 누릅니�
 
 ## 다른 OS에서 문제 해결
 
-다른 OS에서 Shotgun 데스크톱 통합과 관련한 문제가 발생한다면 [지원 팀](https://support.shotgunsoftware.com/hc/ko/requests/new)에 연락해 도움을 받고, 이 게시글도 업데이트하도록 해 주십시오.
+다른 OS에서 {% include product %} 데스크톱 통합과 관련한 문제가 발생한다면 [지원 팀](https://support.shotgunsoftware.com/hc/ko/requests/new)에 연락해 도움을 받고, 이 게시글도 업데이트하도록 해 주십시오.

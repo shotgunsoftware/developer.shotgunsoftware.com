@@ -9,12 +9,12 @@ lang: ja
 
 ## 概要
 
-Shotgun のアクション メニューで Toolkit アプリケーションのリストが表示されなかったり、Shotgun Desktop が動作していてもローカル ファイル リンクを使用するときにエラーが発生したりする場合があります。
-これは Firefox での Shotgun Desktop のブラウザ統合のトラブルシューティングに関するガイドです。皆さんの役に立つことを願っています。[Chrome](./cant-use-file-linking-toolkit-app-chrome.md) のための個別のガイドがあります。
+{% include product %} のアクション メニューで Toolkit アプリケーションのリストが表示されなかったり、{% include product %} Desktop が動作していてもローカル ファイル リンクを使用するときにエラーが発生したりする場合があります。
+これは Firefox での {% include product %} Desktop のブラウザ統合のトラブルシューティングに関するガイドです。皆さんの役に立つことを願っています。[Chrome](./cant-use-file-linking-toolkit-app-chrome.md) のための個別のガイドがあります。
 
 ## 問題を診断する
 
-### Shotgun Desktop は動作していますか?
+### {% include product %} Desktop は動作していますか?
 
 もちろん、そうだと思います。 既に確認済みだと思いますが、 念のためお尋ねしました。 
 
@@ -24,7 +24,7 @@ Shotgun のアクション メニューで Toolkit アプリケーションの�
 
 ### Firefox が証明書を拒否していますか?
 
-Firefox が証明書を受け入れていることを確認するには、https://localhost:9000 を参照します。これは、ローカル ファイル リンクを使用して Toolkit アプリケーションを起動するために Shotgun Web サイトがアクセスを試みるアドレスです。通常、次のメッセージが表示されます。
+Firefox が証明書を受け入れていることを確認するには、https://localhost:9000 を参照します。これは、ローカル ファイル リンクを使用して Toolkit アプリケーションを起動するために {% include product %} Web サイトがアクセスを試みるアドレスです。通常、次のメッセージが表示されます。
 
 ![Autobahn Python メッセージ](images/autobahn-python.png)
 
@@ -40,9 +40,9 @@ Firefox が証明書を受け入れていることを確認するには、https:
 
 ![Firefox に例外を追加](images/add-exception-firefox.png)
 
-****[証明書を取得]（Get Certificate）**、**[セキュリティ例外を承認]（Confirm Security Exception）の順にクリックします。 証明書を信頼できないというメッセージは無視します。証明書は認証局ではなく Shotgun Desktop によって生成されているため、問題ありません。
+****[証明書を取得]（Get Certificate）**、**[セキュリティ例外を承認]（Confirm Security Exception）の順にクリックします。 証明書を信頼できないというメッセージは無視します。証明書は認証局ではなく {% include product %} Desktop によって生成されているため、問題ありません。
 
-これで Shotgun サイトからローカル ファイル リンクにアクセスし、Toolkit アプリケーションを起動できるようになるはずです。 例外を追加しても問題が解決しない場合は、support@shotgunsoftware.com までご連絡ください。
+これで {% include product %} サイトからローカル ファイル リンクにアクセスし、Toolkit アプリケーションを起動できるようになるはずです。 例外を追加しても問題が解決しない場合は、support@shotgunsoftware.com までご連絡ください。
 
 ## 「安全な接続ができませんでした」というエラーを解決する方法
 

@@ -5,9 +5,9 @@ pagename: browser-integration-fails-linux
 lang: zh_CN
 ---
 
-# 无法在 Linux 上启动 Shotgun Desktop/浏览器集成
+# 无法在 Linux 上启动 {% include product %} Desktop/浏览器集成
 
-首次在 Linux 上运行 Shotgun Desktop 时，可能会出现以下错误消息之一。如果出现这些消息，请按照具体错误下方的步骤进行操作，以确定能否解决问题。
+首次在 Linux 上运行 {% include product %} Desktop 时，可能会出现以下错误消息之一。如果出现这些消息，请按照具体错误下方的步骤进行操作，以确定能否解决问题。
 如果问题仍存在，请随时发送电子邮件到 support@shotgunsoftware.com 以联系我们。
 
 ### 目录
@@ -51,13 +51,13 @@ libffi.so.5: cannot open shared object file: No such file or directory
 yum install libffi
 ```
 
-如果您已经安装 libffi 但仍无法运行，请尝试创建以下符号链接，然后重新启动 Shotgun Desktop：
+如果您已经安装 libffi 但仍无法运行，请尝试创建以下符号链接，然后重新启动 {% include product %} Desktop：
 
 ```
 sudo ln -s /usr/lib64/libffi.so.6.0.1 /usr/lib64/libffi.so.5
 ```
 
-部分用户报告通过上述操作解决了问题。但其他用户仍存在问题。最新版本的 Shotgun Desktop 添加了与 WebSocket 服务器之间的一些其他依存关系，这是我们目前正在研究的方面。
+部分用户报告通过上述操作解决了问题。但其他用户仍存在问题。最新版本的 {% include product %} Desktop 添加了与 WebSocket 服务器之间的一些其他依存关系，这是我们目前正在研究的方面。
 
 ## 与证书验证失败相关的问题
 
@@ -71,7 +71,7 @@ certutil: function failed: SEC_ERROR_BAD_DATABASE: security library: bad databas
 
 **解决方案**
 
-如果您的计算机上已经安装 Google Chrome，请启动它，然后重新启动 Shotgun Desktop。如果仍有问题，请发送电子邮件到 support@shotgunsoftware.com。
+如果您的计算机上已经安装 Google Chrome，请启动它，然后重新启动 {% include product %} Desktop。如果仍有问题，请发送电子邮件到 support@shotgunsoftware.com。
 
 如果没有安装 Chrome，请打开终端并运行以下命令：
 
@@ -93,7 +93,7 @@ $ certutil -N -d "sql:$HOME/.pki/nssdb"
 ```
 不要输入任何密码。
 
-Shotgun Desktop 现在应该能够正常启动。
+{% include product %} Desktop 现在应该能够正常启动。
 
 ## 不兼容的 Qt 版本
 

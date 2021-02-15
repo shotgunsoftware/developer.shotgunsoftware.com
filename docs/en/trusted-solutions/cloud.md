@@ -5,11 +5,11 @@ pagename: cloud-index
 lang: en
 ---
 
-# Shotgun in the Cloud
+# {% include product %} in the Cloud
 
-## What is Shotgun in the Cloud?
+## What is {% include product %} in the Cloud?
 
-Shotgun Cloud is our default offering, hosted on AWS and built on top of Autodesk's Cloud technology platform. Shotgun Cloud is the latest generation of our hosted service and is completely cloud based.
+{% include product %} Cloud is our default offering, hosted on AWS and built on top of Autodesk's Cloud technology platform. {% include product %} Cloud is the latest generation of our hosted service and is completely cloud based.
 
 ## Further Reading
 

@@ -5,9 +5,9 @@ pagename: browser-integration-fails-linux
 lang: en
 ---
 
-# Shotgun Desktop / browser integration fails to launch on Linux
+# {% include product %} Desktop / browser integration fails to launch on Linux
 
-When running the Shotgun Desktop on Linux for the first time, you may experience one of these error messages. If so, please follow the steps below for your specific error to see if that resolves things.
+When running the {% include product %} Desktop on Linux for the first time, you may experience one of these error messages. If so, please follow the steps below for your specific error to see if that resolves things.
 If you're still stuck, please don't hesitate to contact support@shotgunsoftware.com.
 
 ###Contents
@@ -51,13 +51,13 @@ You need to install libffi. To do so, run the following command as an administra
 yum install libffi
 ```
 
-If you've installed libffi and it still doesn't work, try creating the following symlink and then re-launching the Shotgun Desktop:
+If you've installed libffi and it still doesn't work, try creating the following symlink and then re-launching the {% include product %} Desktop:
 
 ```
 sudo ln -s /usr/lib64/libffi.so.6.0.1 /usr/lib64/libffi.so.5
 ```
 
-Some users have reported success with the above. Others still have issues. The latest version of Shotgun Desktop added some additional dependencies with the web socket server which we're currently looking into. 
+Some users have reported success with the above. Others still have issues. The latest version of {% include product %} Desktop added some additional dependencies with the web socket server which we're currently looking into. 
 
 ## Certificate validation failed related issues
 
@@ -71,7 +71,7 @@ certutil: function failed: SEC_ERROR_BAD_DATABASE: security library: bad databas
 
 **Solution** 
 
-If you have Google Chrome installed on your computer, launch it and then relaunch the Shotgun Desktop. If you still have the issue, please contact support@shotgunsoftware.com.
+If you have Google Chrome installed on your computer, launch it and then relaunch the {% include product %} Desktop. If you still have the issue, please contact support@shotgunsoftware.com.
 
 If you don't have Chrome, open a terminal and run the following command:
 
@@ -93,7 +93,7 @@ $ certutil -N -d "sql:$HOME/.pki/nssdb"
 ```
 Do not enter any password.
 
-Launching the Shotgun Desktop should now work correctly.
+Launching the {% include product %} Desktop should now work correctly.
 
 ## Incompatible Qt versions
 

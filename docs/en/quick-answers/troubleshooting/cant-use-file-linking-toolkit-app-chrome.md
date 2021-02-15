@@ -9,7 +9,7 @@ lang: en
 
 ## Overview
 
-Sometimes in Shotgun the action menu will not display the list of Toolkit applications available or will error when using local file linking, even with Shotgun Desktop running. This is a guide to troubleshooting Shotgun Desktop's browser integration in Chrome and will hopefully help you get things working. We have a separate guide for [Firefox](./cant-use-file-linking-toolkit-app-firefox.md).
+Sometimes in {% include product %} the action menu will not display the list of Toolkit applications available or will error when using local file linking, even with {% include product %} Desktop running. This is a guide to troubleshooting {% include product %} Desktop's browser integration in Chrome and will hopefully help you get things working. We have a separate guide for [Firefox](./cant-use-file-linking-toolkit-app-firefox.md).
 
 - [Diagnosing the issue](#diagnosing-the-issue)
 - [How to quickly fix certificate issues](#how-to-quickly-fix-certificate-issues)
@@ -18,13 +18,13 @@ Sometimes in Shotgun the action menu will not display the list of Toolkit applic
 
 ## Diagnosing the issue
 
-### Is Shotgun Desktop running?
+### Is {% include product %} Desktop running?
 
 Yes, we know. You probably already checked. We had to ask. :)
 
-### Have you restarted Chrome since Shotgun Desktop started?
+### Have you restarted Chrome since {% include product %} Desktop started?
 
-If you have launched Chrome before allowing Shotgun Desktop to register the certificate (this happens only the first time you launch Shotgun Desktop and will not be an issue afterwards), Chrome will use an out of date copy of the certificates and will refuse to connect to Shotgun Desktop. Closing all tabs will not necessarily close Chrome, so we recommend that you type [chrome://restart](chrome://restart/) in the address bar and hit enter. This will ensure that all Chrome related processes will be terminated and Chrome then restarted.
+If you have launched Chrome before allowing {% include product %} Desktop to register the certificate (this happens only the first time you launch {% include product %} Desktop and will not be an issue afterwards), Chrome will use an out of date copy of the certificates and will refuse to connect to {% include product %} Desktop. Closing all tabs will not necessarily close Chrome, so we recommend that you type [chrome://restart](chrome://restart/) in the address bar and hit enter. This will ensure that all Chrome related processes will be terminated and Chrome then restarted.
 
 ### Are you using firewall software?
 
@@ -32,7 +32,7 @@ Ensure that no firewall software is preventing connections to localhost or on po
 
 ### Is Chrome rejecting the certificate?
 
-You can verify that Chrome accepts the certificate by browsing to https://localhost:9000. This is the address the Shotgun website tries to access in order to do local file linking and launch Toolkit applications. You should normally be greeted by this message:
+You can verify that Chrome accepts the certificate by browsing to https://localhost:9000. This is the address the {% include product %} website tries to access in order to do local file linking and launch Toolkit applications. You should normally be greeted by this message:
 
 ![Autobahn Python message](images/autobahn-python.png)
 
@@ -44,9 +44,9 @@ On the other hand, if you are greeted by one of these messages, it means there w
 
 ## How to quickly fix certificate issues
 
-The easiest way to circumvent those issues is to click **ADVANCED** and **Proceed to localhost (unsafe)**. This will let Chrome know that you are accepting the certificate nonetheless and will allow the Shotgun website to communicate with Shotgun Desktop. 
+The easiest way to circumvent those issues is to click **ADVANCED** and **Proceed to localhost (unsafe)**. This will let Chrome know that you are accepting the certificate nonetheless and will allow the {% include product %} website to communicate with {% include product %} Desktop. 
 
-{% include info title="Note" content="This only enables the connection between your web browser and Shotgun Desktop. The trust setting lets traffic flow between these two applications, **it does not imply trust of any other server on the internet**. Unfortunately, this process needs to be repeated on every single computer with the problem. If this doesn't solve the issue or you feel it would be too complicated to deploy to all your users, we recommend you take a look at the following steps." %}
+{% include info title="Note" content="This only enables the connection between your web browser and {% include product %} Desktop. The trust setting lets traffic flow between these two applications, **it does not imply trust of any other server on the internet**. Unfortunately, this process needs to be repeated on every single computer with the problem. If this doesn't solve the issue or you feel it would be too complicated to deploy to all your users, we recommend you take a look at the following steps." %}
 
 {% include info title="Note" content="This step fix is not applicable to the **ERR_SSL_SERVER_CERT_BAD_FORMAT** error and you will need to regenerate the certificates, as outlined below." %}
 
@@ -54,11 +54,11 @@ The easiest way to circumvent those issues is to click **ADVANCED** and **Procee
 
 Chrome regularly upgrades its security around self-signed certificates and our browser integration is sometimes broken by these updates. Unfortunately, these sorts of issues can only be remediated by regenerating the certificate’s certificate_path.
 
-To regenerate the certificates, you can pick the **Regenerate Certificates** option under the **Advanced** section of Shotgun Desktop's user menu. (If you don't see this option, please make sure you update the `tk-desktop` engine to unlock it.) 
+To regenerate the certificates, you can pick the **Regenerate Certificates** option under the **Advanced** section of {% include product %} Desktop's user menu. (If you don't see this option, please make sure you update the `tk-desktop` engine to unlock it.) 
 
-After confirming that you want to regenerate the certificates, a series of dialogs will pop-up just like the first time you've generated the certificates. On Windows and macOS, you will be prompted to update the Windows Certificate Store or the macOS keychain twice: once to remove the old certificate and once to register the new one. On Linux, the registration is done silently. Once this is done, let Shotgun Desktop restart.
+After confirming that you want to regenerate the certificates, a series of dialogs will pop-up just like the first time you've generated the certificates. On Windows and macOS, you will be prompted to update the Windows Certificate Store or the macOS keychain twice: once to remove the old certificate and once to register the new one. On Linux, the registration is done silently. Once this is done, let {% include product %} Desktop restart.
 
-Once Shotgun Desktop is back up and running, we recommend you restart Chrome by typing [chrome://restart](chrome://restart/) in the address bar to ensure that Chrome is completely shut down and that its certificate cache is cleared.
+Once {% include product %} Desktop is back up and running, we recommend you restart Chrome by typing [chrome://restart](chrome://restart/) in the address bar to ensure that Chrome is completely shut down and that its certificate cache is cleared.
 
 If your computer is not connected to the Internet and can’t download the updates, please contact support@shotgunsoftware.com.
 
@@ -98,4 +98,4 @@ If you still encounter issues using the browser integration after these changes,
 
 ## Troubleshooting on other OSes
 
-If you have issues with the Shotgun Desktop integration on other OSes, please contact our [support team](https://support.shotgunsoftware.com/hc/en-us/requests/new) so that we can assist you and update this article.
+If you have issues with the {% include product %} Desktop integration on other OSes, please contact our [support team](https://support.shotgunsoftware.com/hc/en-us/requests/new) so that we can assist you and update this article.

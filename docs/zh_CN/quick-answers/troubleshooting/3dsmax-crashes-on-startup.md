@@ -5,9 +5,9 @@ pagename: 3dsmax-crashes-on-startup
 lang: zh_CN
 ---
 
-# 使用 Shotgun Toolkit 时，为什么启动时 3ds Max 发生崩溃？
+# 使用 {% include product %} Toolkit 时，为什么启动时 3ds Max 发生崩溃？
 
-从 Shotgun Desktop 或 Shotgun 网站启动 3ds Max 时，3ds Max 可能会冻结，同时出现一个冻结的白色对话框或者显示以下消息：
+从 {% include product %} Desktop 或 {% include product %} 网站启动 3ds Max 时，3ds Max 可能会冻结，同时出现一个冻结的白色对话框或者显示以下消息：
 
     Microsoft Visual C++ Runtime Library (Not Responding)
     Runtime Error!
@@ -54,4 +54,4 @@ class BeforeAppLaunch(tank.get_hook_baseclass()):
 
 然后，打开工作流配置中的 `config/env/includes/app_launchers.yml` 并查找 `launch_3dsmax` 条目。您应该将 `hook_before_app_launch: default` 替换为 `hook_before_app_launch: '{config}/before_app_launch.py'`。
 
-您现在应该能够正常从 Shotgun 和 Shotgun Desktop 启动 3ds Max。如果仍然有问题，请联系 support@shotgunsoftware.com。
+您现在应该能够正常从 {% include product %} 和 {% include product %} Desktop 启动 3ds Max。如果仍然有问题，请联系 support@shotgunsoftware.com。

@@ -9,13 +9,13 @@ lang: ja
 
 ## どんな問題がありますか?
 
-After Effects 統合のリリースに伴い、Shotgun と統合されるすべての Adobe アプリで使用できる共通プラグインが用意されました。この変更の一環として、以前の Photoshop 統合との後方互換性を保ち、スタジオが更新プログラムに正しく移行できるようにするため、機能拡張の名前を変更する必要がありました。
+After Effects 統合のリリースに伴い、{% include product %} と統合されるすべての Adobe アプリで使用できる共通プラグインが用意されました。この変更の一環として、以前の Photoshop 統合との後方互換性を保ち、スタジオが更新プログラムに正しく移行できるようにするため、機能拡張の名前を変更する必要がありました。
 
-これは残念ながら、アップグレード時に 2 つの Shotgun 機能拡張がインストールされる可能性があることも意味します。
+これは残念ながら、アップグレード時に 2 つの {% include product %} 機能拡張がインストールされる可能性があることも意味します。
 
-![Photoshop メニューに複数の Shotgun 機能拡張が表示される](./images/photoshop-extension-panel.png)
+![Photoshop メニューに複数の {% include product %} 機能拡張が表示される](./images/photoshop-extension-panel.png)
 
-**Shotgun Adobe Panel** が新しい機能拡張であり、`v1.7.0` 以降の Photoshop 統合を使用している場合にはこちらを使用する必要があります。
+**{% include product %} Adobe Panel** が新しい機能拡張であり、`v1.7.0` 以降の Photoshop 統合を使用している場合にはこちらを使用する必要があります。
 
 ## エラーの修正方法
 
@@ -24,7 +24,7 @@ After Effects 統合のリリースに伴い、Shotgun と統合されるすべ�
 - `~/Library/Application Support/Adobe/CEP/extensions/com.sg.basic.ps`OSX:
 - Windows: `%AppData%\Adobe\CEP\extensions\com.sg.basic.ps`
 
-![Photoshop メニューに複数の Shotgun 機能拡張が表示される](./images/shotgun-desktop-console-photoshop-extension.png)
+![Photoshop メニューに複数の {% include product %} 機能拡張が表示される](./images/shotgun-desktop-console-photoshop-extension.png)
 
 Photoshop を終了してそのディレクトリを削除すると、再起動時の拡張拡張は 1 つだけになります。
 

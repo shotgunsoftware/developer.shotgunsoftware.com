@@ -7,13 +7,13 @@ lang: zh_CN
 
 # 如何启用调试日志记录？
 
-## 通过 Shotgun Desktop 启用调试
+## 通过 {% include product %} Desktop 启用调试
 
-启用调试最简单的方法是，通过 Shotgun Desktop 应用进行启用。登录 Shotgun Desktop 后便可进行相关设置：单击应用右下方的个人资料图片，然后依次选择**“高级”(Advanced)和“Toggle Debug Logging”。**此设置在会话之间持久有效，因此请在完成后将其禁用。
+启用调试最简单的方法是，通过 {% include product %} Desktop 应用进行启用。登录 {% include product %} Desktop 后便可进行相关设置：单击应用右下方的个人资料图片，然后依次选择**“高级”(Advanced)和“Toggle Debug Logging”。**此设置在会话之间持久有效，因此请在完成后将其禁用。
 
 ![在 SG Desktop 中切换调试日志记录](images/desktop-enable-debug-logging.png)
 
-此外还应注意，启用此项后，从 Shotgun Desktop 启动的应用，甚至整个浏览器集成中的 Toolkit 命令，也将继承此调试状态。
+此外还应注意，启用此项后，从 {% include product %} Desktop 启动的应用，甚至整个浏览器集成中的 Toolkit 命令，也将继承此调试状态。
 
 ## 设置环境变量
 
@@ -57,7 +57,7 @@ b. 删除 `TK_DEBUG` 环境变量。
 
 然后，通过您的终端启动 Desktop。
 
-{% include info title="注意" content="关闭 Shotgun Desktop 和终端后，调试日志记录将不再启用。" %}
+{% include info title="注意" content="关闭 {% include product %} Desktop 和终端后，调试日志记录将不再启用。" %}
 
 ## 检查日志文件中的调试输出
 

@@ -5,9 +5,9 @@ pagename: browser-integration-fails-linux
 lang: ja
 ---
 
-# Linux で Shotgun Desktop/ブラウザ統合の起動に失敗する
+# Linux で {% include product %} Desktop/ブラウザ統合の起動に失敗する
 
-Linux で Shotgun Desktop を初めて実行すると、次のいずれかのエラー メッセージが表示される場合があります。この場合、特定のエラーに合わせて次の手順を実行して問題が解決されるかどうかを確認します。
+Linux で {% include product %} Desktop を初めて実行すると、次のいずれかのエラー メッセージが表示される場合があります。この場合、特定のエラーに合わせて次の手順を実行して問題が解決されるかどうかを確認します。
 問題が解決しない場合は、support@shotgunsoftware.com までお気軽にお問い合わせください。
 
 ### 目次
@@ -51,13 +51,13 @@ libffi をインストールする必要があります。このためには、�
 yum install libffi
 ```
 
-libffi をインストールしても問題が継続する場合は、次の symlink を作成して Shotgun Desktop を再起動してください。
+libffi をインストールしても問題が継続する場合は、次の symlink を作成して {% include product %} Desktop を再起動してください。
 
 ```
 sudo ln -s /usr/lib64/libffi.so.6.0.1 /usr/lib64/libffi.so.5
 ```
 
-上記の手順で成功したユーザもいますが、 問題が解決しなかったユーザもいます。最新バージョンの Shotgun Desktop には、現在調査している Web ソケット サーバとの依存関係がいくつか追加されています。
+上記の手順で成功したユーザもいますが、 問題が解決しなかったユーザもいます。最新バージョンの {% include product %} Desktop には、現在調査している Web ソケット サーバとの依存関係がいくつか追加されています。
 
 ## 証明書検証の失敗に関連する問題
 
@@ -71,7 +71,7 @@ certutil: function failed: SEC_ERROR_BAD_DATABASE: security library: bad databas
 
 **解決策**
 
-コンピュータに Google Chrome をインストールしている場合は、Google Chrome を起動してから Shotgun Desktop を再起動します。問題が解決しない場合は、support@shotgunsoftware.com までお問い合わせください。
+コンピュータに Google Chrome をインストールしている場合は、Google Chrome を起動してから {% include product %} Desktop を再起動します。問題が解決しない場合は、support@shotgunsoftware.com までお問い合わせください。
 
 Chrome がインストールされていない場合は、端末を開いて、次のコマンドを実行します。
 
@@ -93,7 +93,7 @@ $ certutil -N -d "sql:$HOME/.pki/nssdb"
 ```
 パスワードは入力しないでください。
 
-これで、Shotgun Desktop が正しく起動されるようになります。
+これで、{% include product %} Desktop が正しく起動されるようになります。
 
 ## 互換性のない Qt バージョン
 
