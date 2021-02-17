@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 There will be a list of the available pipeline configurations that the cloned configuration can be pushed to. Enter the ID of the primary pipeline configuration for the project you are updating the configuration for.
 
-{% include info title="Note" content="You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in {% include product %} that we viewed in **Step 3** of this guide. To find the project ID, go to the Configuration List and add the ID column." %}
+{% include info title="Note" content="You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in shotgun that we viewed in **Step 3** of this guide. To find the project ID, go to the Configuration List and add the ID column." %}
 
 ![ID column](./images/installing_app/17_id_column.png)
 

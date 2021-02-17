@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 将出现一个可以将克隆配置推送到的可用工作流配置的列表。输入您要为其更新配置的项目的主要工作流配置的 ID。
 
-{% include info title="注意" content="您也可以在本手册的**“步骤 3”**中查看的 {% include product %} 中的“工作流配置”(Pipeline Configuration)页面上找到工作流配置的 ID。要查找项目 ID，请转到“配置列表”(Configuration List)，并添加“ID”列。" %}
+{% include info title="注意" content="您也可以在本手册的**“步骤 3”**中查看的 shotgun 中的“工作流配置”(Pipeline Configuration)页面上找到工作流配置的 ID。要查找项目 ID，请转到“配置列表”(Configuration List)，并添加“ID”列。" %}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 

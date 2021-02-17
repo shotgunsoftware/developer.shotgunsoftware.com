@@ -75,7 +75,7 @@ lang: zh_CN
 
 如果任一应用程序未显示在 Desktop 中或预期版本无法启动，则可能需要在 {% include product %} 中通过软件实体手动配置启动。
 
-{% include figure src="./images/tutorial/image_4.png" caption="{% include product %} 中定义的默认软件实体" %}
+{% include figure src="./images/tutorial/image_4.png" caption="shotgun 中定义的默认软件实体" %}
 
 软件实体用于驱动在您的制作中使用哪些 DCC 软件包。默认情况下，集成将在标准安装位置搜索这些软件包并使其可通过 Desktop 启动。如果您安装了多个版本或将它们安装在非标准位置，您可能需要在 {% include product %} 中更新相应的软件实体条目以管理您的艺术家的启动体验。
 

@@ -93,7 +93,7 @@ Use {% include product %} Desktop (Desktop) to take over your project's configur
 
 {% include figure src="./images/tutorial/image_5.png" caption="Select the **Advanced project setup…** in the Desktop popup menu" %}
 
-{% include figure src="./images/tutorial/wizard_01.png" caption="Choose the **{% include product %} Default** configuration type" %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="Choose the **shotgun Default** configuration type" %}
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="Choose the **Default configuration**" %}
 

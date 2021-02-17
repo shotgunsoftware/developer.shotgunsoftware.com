@@ -75,7 +75,7 @@ lang: ko
 
 응용프로그램이 데스크톱에 표시되지 않거나 예상한 버전이 시작되지 않을 경우 소프트웨어 엔티티를 통해 {% include product %}에서의 시작을 수동으로 구성해야 할 수 있습니다.
 
-{% include figure src="./images/tutorial/image_4.png" caption="{% include product %}에 정의된 기본 소프트웨어 엔티티" %}
+{% include figure src="./images/tutorial/image_4.png" caption="shotgun에 정의된 기본 소프트웨어 엔티티" %}
 
 소프트웨어 엔티티는 프로덕션에 사용할 DCC 패키지를 구동하는 데 사용됩니다. 기본적으로 통합은 표준 설치 위치에서 이러한 패키지를 검색하고 데스크톱을 통해 시작할 수 있도록 합니다. 둘 이상의 버전을 설치하거나 표준 위치가 아닌 곳에 설치한 경우 아티스트의 시작 환경을 조정하기 위해 {% include product %}의 해당 소프트웨어 엔티티 항목을 업데이트해야 할 수도 있습니다.
 

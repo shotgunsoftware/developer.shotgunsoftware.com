@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 クローン作成した設定のプッシュ先に指定できるパイプライン設定のリストが表示されます。設定を更新しているプロジェクトのプライマリ パイプライン設定の ID を入力します。
 
-{% include info title="注" content="このガイドの「**手順 3**」に示した {% include product %} の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
+{% include info title="注" content="このガイドの「**手順 3**」に示した shotgun の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 

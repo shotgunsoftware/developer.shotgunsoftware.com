@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 복제된 구성을 적용할 수 있는 사용 가능한 파이프라인 구성 목록이 표시됩니다. 구성을 업데이트하려는 프로젝트에 대한 기본 파이프라인 구성의 ID를 입력합니다.
 
-{% include info title="참고" content="이 안내서의 **3단계**에서 확인한 {% include product %}의 파이프라인 구성(Pipeline Configuration) 페이지에서 파이프라인 구성의 ID를 찾을 수도 있습니다. 프로젝트 ID를 찾으려면 구성 목록(Configuration List)으로 이동하고 ID 열을 추가하십시오." %}
+{% include info title="참고" content="이 안내서의 **3단계**에서 확인한 shotgun의 파이프라인 구성(Pipeline Configuration) 페이지에서 파이프라인 구성의 ID를 찾을 수도 있습니다. 프로젝트 ID를 찾으려면 구성 목록(Configuration List)으로 이동하고 ID 열을 추가하십시오." %}
 
 ![ID 열](./images/installing_app/17_id_column.png)
 

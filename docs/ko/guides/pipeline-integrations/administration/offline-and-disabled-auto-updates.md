@@ -54,7 +54,7 @@ It is recommended that you follow the "Managing updates" steps bellow after inst
 {% include info title="Note" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
 In this situation you can set the environment variable `shotgun_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
 
-{% include info title="Note" content="You will still need to be able to connect to your {% include product %} site. When we say offline we are talking about not being able to connect to our app store to download updates." %}
+{% include info title="Note" content="You will still need to be able to connect to your shotgun site. When we say offline we are talking about not being able to connect to our app store to download updates." %}
 
 ### Managing updates
 
