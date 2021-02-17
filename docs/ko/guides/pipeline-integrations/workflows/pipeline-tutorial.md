@@ -93,7 +93,7 @@ lang: ko
 
 {% include figure src="./images/tutorial/image_5.png" caption="데스크톱 팝업 메뉴에서 **고급 프로젝트 설정...(Advanced project setup…)**을 선택합니다" %}
 
-{% include figure src="./images/tutorial/wizard_01.png" caption="**{% include product %} 기본값**({% include product %} Default) 구성 유형을 선택합니다." %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="**shotgun 기본값**(shotgun Default) 구성 유형을 선택합니다." %}
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="**기본값 구성**(Default configuration)을 선택합니다." %}
 
@@ -123,7 +123,7 @@ lang: ko
 
 데스크톱 설치 튜토리얼에서 지정한 구성 위치는 {% include product %}에서 해당 프로젝트에 대한 파이프라인 구성(Pipeline Configurations) 페이지에 기록됩니다.
 
-{% include figure src="./images/tutorial/image_10.png" caption="{% include product %}에서 파이프라인 구성 엔티티 복제" %}
+{% include figure src="./images/tutorial/image_10.png" caption="shotgun에서 파이프라인 구성 엔티티 복제" %}
 
 다음 섹션을 위한 준비로 이 폴더의 컨텐츠를 숙지합니다.
 
@@ -177,7 +177,7 @@ Maya가 완전히 로드되면 파일 열기(File Open) 대화상자가 나타�
 
 이 버튼을 클릭하여 비어 있는 새 Maya 세션을 만들고 현재 작업 중인 컨텍스트를 주전자 에셋의 모델 태스크로 설정합니다.
 
-{%include info title="참고" content="이 튜토리얼에서 언제든지 Maya 또는 Nuke의 {% include product %} 메뉴를 통해 {% include product %} 패널을 시작할 수 있습니다. 이 패널에서는 DCC를 종료하지 않고 프로젝트 데이터에 뷰를 제공합니다. 현재 작업 중인 컨텍스트와 해당 컨텍스트 내의 최근 액티비티가 표시됩니다. 또한 패널로 직접 피드백에 대한 노트를 추가할 수 있습니다. 자세한 정보는 [{% include product %} 패널 설명서](https://support.shotgunsoftware.com/hc/ko/articles/115000068574-Integrations-user-guide#The%20Shotgun%20Panel)를 참조하십시오." %}
+{%include info title="참고" content="이 튜토리얼에서 언제든지 Maya 또는 Nuke의 shotgun 메뉴를 통해 shotgun 패널을 시작할 수 있습니다. 이 패널에서는 DCC를 종료하지 않고 프로젝트 데이터에 뷰를 제공합니다. 현재 작업 중인 컨텍스트와 해당 컨텍스트 내의 최근 액티비티가 표시됩니다. 또한 패널로 직접 피드백에 대한 노트를 추가할 수 있습니다. 자세한 정보는 [shotgun 패널 설명서](https://support.shotgunsoftware.com/hc/ko/articles/115000068574-Integrations-user-guide#The%20Shotgun%20Panel)를 참조하십시오." %}
 
 다음으로, 주전자를 모델링하거나 제공된 주전자를 [다운로드](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj)하여 가져옵니다.
 

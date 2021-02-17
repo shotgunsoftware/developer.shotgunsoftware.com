@@ -93,7 +93,7 @@ lang: zh_CN
 
 {% include figure src="./images/tutorial/image_5.png" caption="在 Desktop 弹出菜单中选择**“Advanced project setup...”**" %}
 
-{% include figure src="./images/tutorial/wizard_01.png" caption="选择**“{% include product %} Default”**配置类型" %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="选择**“shotgun Default”**配置类型" %}
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="选择**“默认”(Default)**配置" %}
 
@@ -123,7 +123,7 @@ lang: zh_CN
 
 您在学习 Desktop 安装教程期间指定的配置位置记录在 {% include product %} 中，位于项目的“工作流配置”(Pipeline Configurations)页面。
 
-{% include figure src="./images/tutorial/image_10.png" caption="{% include product %} 中的工作流配置实体" %}
+{% include figure src="./images/tutorial/image_10.png" caption="shotgun 中的工作流配置实体" %}
 
 熟悉此文件夹中的内容，以便为下一节做好准备。
 

@@ -177,7 +177,7 @@ Select the Assets tab and drill down into the Teapot's modeling task. Since ther
 
 Clicking this button will create a new, empty Maya session and set your current working context to the Teapot Asset's Model task. 
 
-{%include info title="Note" content="At any time during this tutorial you can launch the {% include product %} Panel via the {% include product %} menu in Maya or Nuke. This panel provides a view into your project data without leaving your DCC. It will show you your current working context and any recent activity within that context. You can also add notes for feedback directly into the panel. See the [{% include product %} Panel documentation](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#The%20Shotgun%20Panel) for more info." %}
+{%include info title="Note" content="At any time during this tutorial you can launch the shotgun Panel via the shotgun menu in Maya or Nuke. This panel provides a view into your project data without leaving your DCC. It will show you your current working context and any recent activity within that context. You can also add notes for feedback directly into the panel. See the [shotgun Panel documentation](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#The%20Shotgun%20Panel) for more info." %}
 
 Next, model a Teapot, or [download](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj) and import the provided Teapot.
 

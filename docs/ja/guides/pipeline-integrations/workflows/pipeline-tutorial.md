@@ -93,7 +93,7 @@ Desktop にアプリケーションが表示されない場合、または予期
 
 {% include figure src="./images/tutorial/image_5.png" caption="Desktop のポップアップ メニューで**[Advanced project setup...]**を選択する" %}
 
-{% include figure src="./images/tutorial/wizard_01.png" caption="**[{% include product %} Default]（{% include product %} の既定値）**設定タイプを選択する" %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="**[shotgun Default]（shotgun の既定値）**設定タイプを選択する" %}
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="**[Default configuration]（既定の設定）**を選択する" %}
 
@@ -123,7 +123,7 @@ Desktop にアプリケーションが表示されない場合、または予期
 
 Desktop インストールのチュートリアルで指定された設定場所は、{% include product %} のプロジェクトの[パイプラインの設定]（Pipeline Configurations）ページに記録されています。
 
-{% include figure src="./images/tutorial/image_10.png" caption="{% include product %} のパイプラインの設定エンティティ" %}
+{% include figure src="./images/tutorial/image_10.png" caption="shotgun のパイプラインの設定エンティティ" %}
 
 次のセクションに備えて、このフォルダの内容を理解しておいてください。
 

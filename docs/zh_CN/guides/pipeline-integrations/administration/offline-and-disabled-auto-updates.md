@@ -70,7 +70,7 @@ For the `tk-config-basic` component it's a bit more tricky, due to all its depen
 4. When Desktop starts up on offline machines, they will pick up the latest upgrades that are available in the bundle cache.
 
 {% include info title="Warning" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
-In this situation you can set the environment variable `{% include product %}_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
+In this situation you can set the environment variable `shotgun_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
 
 **CREATE does come with it's own bundled config, however it doesn't seem to have the engines, or atleast doesn't share them when launching Maya for example.**
 
