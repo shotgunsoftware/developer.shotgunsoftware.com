@@ -113,7 +113,7 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 ![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png)
 
-{% include info title="注" content=" **my_tasks_filters** の設定の後に、**launch_at_startup** の設定があります。この設定に注意することは重要です。この設定がプロジェクト環境内の**[File Open]**設定の既定の設定になります。この設定は、shotgun Desktop から Maya を起動したときに、**[File Open]**ダイアログが自動的に開くことを示します。"%}
+{% include info title="注" content=" **my_tasks_filters** の設定の後に、**launch_at_startup** の設定があります。この設定に注意することは重要です。この設定がプロジェクト環境内の**[File Open]**設定の既定の設定になります。この設定は、Shotgun Desktop から Maya を起動したときに、**[File Open]**ダイアログが自動的に開くことを示します。"%}
 
 **[Setting allow_task_creation]**まで下にスクロールします。この設定の既定値は**[True]**です。この値の場合、ユーザは Maya プロジェクト環境内から新しいタスクを作成できます。
 

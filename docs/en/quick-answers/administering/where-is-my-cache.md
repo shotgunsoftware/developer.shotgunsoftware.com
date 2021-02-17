@@ -48,7 +48,7 @@ Windows:
 Linux:
 `~/.shotgun/bundle_cache`
 
-{% include info title="Note" content="You can override these locations with the `shotgun_BUNDLE_CACHE_PATH` environment variable, so specific implementations may vary." %}
+{% include info title="Note" content="You can override these locations with the `SHOTGUN_BUNDLE_CACHE_PATH` environment variable, so specific implementations may vary." %}
 
 **Centralized Configurations**
 

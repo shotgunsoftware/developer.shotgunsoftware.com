@@ -45,7 +45,7 @@ Windows:
 
 Linux: `~/.shotgun/bundle_cache`
 
-{% include info title="注" content="これらの場所は `shotgun_BUNDLE_CACHE_PATH` 環境変数を使用してオーバーライドできるため、具体的な実装は変わる可能性があります。"%}
+{% include info title="注" content="これらの場所は `SHOTGUN_BUNDLE_CACHE_PATH` 環境変数を使用してオーバーライドできるため、具体的な実装は変わる可能性があります。"%}
 
 **一元管理設定**
 

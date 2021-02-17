@@ -52,9 +52,9 @@ When you start either of them up, it will automatically try to look for updates,
 It is recommended that you follow the "Managing updates" steps bellow after installing {% include product %} Desktop, as the components bundled with the installer may not be the latest.
 
 {% include info title="Note" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
-In this situation you can set the environment variable `shotgun_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
+In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
 
-{% include info title="Note" content="You will still need to be able to connect to your shotgun site. When we say offline we are talking about not being able to connect to our app store to download updates." %}
+{% include info title="Note" content="You will still need to be able to connect to your Shotgun site. When we say offline we are talking about not being able to connect to our app store to download updates." %}
 
 ### Managing updates
 
@@ -64,13 +64,13 @@ To update the `tk-framework-desktopstartup` component, you will need to [downloa
 For the `tk-config-basic` component it's a bit more tricky, due to all its dependencies.
 
 1. Run {% include product %} Desktop on a workstation connected to the internet. When it starts up, the latest upgrades will be automatically downloaded.
-(Ensure `{% include product %}_DISABLE_APPSTORE_ACCESS` is not set on this machine.)
+(Ensure `SHOTGUN_DISABLE_APPSTORE_ACCESS` is not set on this machine.)
 2. Copy the bundle cache to a shared location where all machines can access it.
-3. Set the `{% include product %}_BUNDLE_CACHE_FALLBACK_PATHS` environment variable on offline machines to point to this location.
+3. Set the `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` environment variable on offline machines to point to this location.
 4. When Desktop starts up on offline machines, they will pick up the latest upgrades that are available in the bundle cache.
 
 {% include info title="Warning" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
-In this situation you can set the environment variable `shotgun_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
+In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
 
 **CREATE does come with it's own bundled config, however it doesn't seem to have the engines, or atleast doesn't share them when launching Maya for example.**
 

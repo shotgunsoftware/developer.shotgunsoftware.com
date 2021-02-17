@@ -26,7 +26,7 @@ Houdini を {% include product %} から起動すると、起動アプリケー�
 
 これにより、Houdini の起動時に {% include product %} の設定値が維持されます。
 
-{% include warning title="注意" content="Windows では、`$HOUDINI_PATH` によって問題が発生することがあります。この変数によって {% include product %} の統合へのブートストラップが数回試行され、次のようなエラーが表示されます。
+{% include warning title="注意" content="Windows では、`$HOUDINI_PATH` によって問題が発生することがあります。この変数によって Shotgun の統合へのブートストラップが数回試行され、次のようなエラーが表示されます。
 
     Toolkit bootstrap is missing a required variable : TANK_CONTEXT
 

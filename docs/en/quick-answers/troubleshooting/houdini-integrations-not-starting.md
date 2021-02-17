@@ -34,7 +34,7 @@ Then you should add `$HOUDINI_PATH;` to the end of the path defined in the file 
 
 This will allow the {% include product %} set value to persist when Houdini launches.
 
-{% include warning title="Caution" content="On Windows we've seen `$HOUDINI_PATH` causing issues. It sometimes tries to bootstrap the {% include product %} integration multiple times generating an error like this: 
+{% include warning title="Caution" content="On Windows we've seen `$HOUDINI_PATH` causing issues. It sometimes tries to bootstrap the Shotgun integration multiple times generating an error like this: 
 
     Toolkit bootstrap is missing a required variable : TANK_CONTEXT
 

@@ -115,7 +115,7 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 完了すると、クローンが作成された設定の情報を使用して[パイプライン設定リスト]が更新され、ローカルな config フォルダに新しい設定が追加されます。
 
-{% include info title="注" content="**[ユーザ制限]（User Restrictions）**の下にユーザ名が追加されています。shotgun は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、shotgun の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
+{% include info title="注" content="**[ユーザ制限]（User Restrictions）**の下にユーザ名が追加されています。Shotgun は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、Shotgun の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
 
 ## クローン作成された設定にプロジェクトを関連付ける
 
@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 クローン作成した設定のプッシュ先に指定できるパイプライン設定のリストが表示されます。設定を更新しているプロジェクトのプライマリ パイプライン設定の ID を入力します。
 
-{% include info title="注" content="このガイドの「**手順 3**」に示した shotgun の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
+{% include info title="注" content="このガイドの「**手順 3**」に示した Shotgun の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 

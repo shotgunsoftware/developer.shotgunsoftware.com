@@ -103,7 +103,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 웹후크 URL로 전송한 페이로드에는 {% include product %}에서 발생한 이벤트 및 이벤트를 트리거한 사용자에 대한 정보가 포함됩니다. JSON 형식으로 제공됩니다.
 
-{% include warning title="페이로드 크기" content="전달 페이로드의 최대 크기는 1MB입니다. shotgun에서 트리거된 이벤트의 페이로드 크기가 1MB보다 크면 `new_value` 및 `old_value` 키가 제거되고 발생 이벤트, 원인 및 shotgun에서 전체 이벤트 로그 항목을 검색하는 방법을 설명하는 메시지가 포함된 `warning` 키가 추가됩니다." %}
+{% include warning title="페이로드 크기" content="전달 페이로드의 최대 크기는 1MB입니다. Shotgun에서 트리거된 이벤트의 페이로드 크기가 1MB보다 크면 `new_value` 및 `old_value` 키가 제거되고 발생 이벤트, 원인 및 Shotgun에서 전체 이벤트 로그 항목을 검색하는 방법을 설명하는 메시지가 포함된 `warning` 키가 추가됩니다." %}
 
 ##### 페이로드 예시
 

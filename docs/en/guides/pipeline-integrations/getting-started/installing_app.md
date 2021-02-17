@@ -115,7 +115,7 @@ Wait while {% include product %} copies all of the files and folders in the conf
 
 When completed, the Configuration List will be updated with information about the cloned configuration and there will be a new configuration added to your local config folder.
 
-{% include info title="Note" content="Under **User Restrictions** your user name was added. shotgun automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way shotgun allows for flexibility and control." %}
+{% include info title="Note" content="Under **User Restrictions** your user name was added. Shotgun automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way Shotgun allows for flexibility and control." %}
 
 ## Associate the cloned configuration with the project
 
@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 There will be a list of the available pipeline configurations that the cloned configuration can be pushed to. Enter the ID of the primary pipeline configuration for the project you are updating the configuration for.
 
-{% include info title="Note" content="You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in shotgun that we viewed in **Step 3** of this guide. To find the project ID, go to the Configuration List and add the ID column." %}
+{% include info title="Note" content="You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in Shotgun that we viewed in **Step 3** of this guide. To find the project ID, go to the Configuration List and add the ID column." %}
 
 ![ID column](./images/installing_app/17_id_column.png)
 

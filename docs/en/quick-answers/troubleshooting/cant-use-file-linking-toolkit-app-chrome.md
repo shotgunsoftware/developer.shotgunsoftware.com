@@ -46,7 +46,7 @@ On the other hand, if you are greeted by one of these messages, it means there w
 
 The easiest way to circumvent those issues is to click **ADVANCED** and **Proceed to localhost (unsafe)**. This will let Chrome know that you are accepting the certificate nonetheless and will allow the {% include product %} website to communicate with {% include product %} Desktop. 
 
-{% include info title="Note" content="This only enables the connection between your web browser and shotgun Desktop. The trust setting lets traffic flow between these two applications, **it does not imply trust of any other server on the internet**. Unfortunately, this process needs to be repeated on every single computer with the problem. If this doesn't solve the issue or you feel it would be too complicated to deploy to all your users, we recommend you take a look at the following steps." %}
+{% include info title="Note" content="This only enables the connection between your web browser and Shotgun Desktop. The trust setting lets traffic flow between these two applications, **it does not imply trust of any other server on the internet**. Unfortunately, this process needs to be repeated on every single computer with the problem. If this doesn't solve the issue or you feel it would be too complicated to deploy to all your users, we recommend you take a look at the following steps." %}
 
 {% include info title="Note" content="This step fix is not applicable to the **ERR_SSL_SERVER_CERT_BAD_FORMAT** error and you will need to regenerate the certificates, as outlined below." %}
 

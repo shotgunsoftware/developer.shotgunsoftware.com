@@ -115,7 +115,7 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 完成后，将使用有关克隆配置的信息更新配置列表，并且将在本地 config 文件夹中添加新配置。
 
-{% include info title="注意" content="在**“用户限制”(User Restrictions)**下，添加了您的用户名。shotgun 自动将对新配置的访问权限限制为仅创建配置的人员。您可以添加要编辑、测试并最终使用此配置的人员。另一方面，shotgun 可实现灵活性和可控性。" %}
+{% include info title="注意" content="在**“用户限制”(User Restrictions)**下，添加了您的用户名。Shotgun 自动将对新配置的访问权限限制为仅创建配置的人员。您可以添加要编辑、测试并最终使用此配置的人员。另一方面，Shotgun 可实现灵活性和可控性。" %}
 
 ## 将克隆的配置与项目相关联
 
@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 将出现一个可以将克隆配置推送到的可用工作流配置的列表。输入您要为其更新配置的项目的主要工作流配置的 ID。
 
-{% include info title="注意" content="您也可以在本手册的**“步骤 3”**中查看的 shotgun 中的“工作流配置”(Pipeline Configuration)页面上找到工作流配置的 ID。要查找项目 ID，请转到“配置列表”(Configuration List)，并添加“ID”列。" %}
+{% include info title="注意" content="您也可以在本手册的**“步骤 3”**中查看的 Shotgun 中的“工作流配置”(Pipeline Configuration)页面上找到工作流配置的 ID。要查找项目 ID，请转到“配置列表”(Configuration List)，并添加“ID”列。" %}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 

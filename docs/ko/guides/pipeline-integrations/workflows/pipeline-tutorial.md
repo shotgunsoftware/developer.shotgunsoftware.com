@@ -19,7 +19,7 @@ lang: ko
 
 편의상 사용되는 DCC(디지털 컨텐츠 생성) 소프트웨어는 최소로 유지되며 Maya 및 Nuke로 제한됩니다. 마찬가지 이유로 파이프라인 단계 간에 전달되는 데이터는 Maya ascii 파일, Alembic 캐시 및 렌더링된 이미지 시퀀스로 제한됩니다.
 
-{% include info title="참고" content="이 튜토리얼에 설명된 간단한 파이프라인은 프로덕션에서 테스트되지 않았으므로 shotgun 기반 파이프라인을 빌드하는 방법에 대한 예제로만 사용해야 합니다." %}
+{% include info title="참고" content="이 튜토리얼에 설명된 간단한 파이프라인은 프로덕션에서 테스트되지 않았으므로 Shotgun 기반 파이프라인을 빌드하는 방법에 대한 예제로만 사용해야 합니다." %}
 
 ## 필수 요건
 
@@ -75,7 +75,7 @@ lang: ko
 
 응용프로그램이 데스크톱에 표시되지 않거나 예상한 버전이 시작되지 않을 경우 소프트웨어 엔티티를 통해 {% include product %}에서의 시작을 수동으로 구성해야 할 수 있습니다.
 
-{% include figure src="./images/tutorial/image_4.png" caption="shotgun에 정의된 기본 소프트웨어 엔티티" %}
+{% include figure src="./images/tutorial/image_4.png" caption="Shotgun에 정의된 기본 소프트웨어 엔티티" %}
 
 소프트웨어 엔티티는 프로덕션에 사용할 DCC 패키지를 구동하는 데 사용됩니다. 기본적으로 통합은 표준 설치 위치에서 이러한 패키지를 검색하고 데스크톱을 통해 시작할 수 있도록 합니다. 둘 이상의 버전을 설치하거나 표준 위치가 아닌 곳에 설치한 경우 아티스트의 시작 환경을 조정하기 위해 {% include product %}의 해당 소프트웨어 엔티티 항목을 업데이트해야 할 수도 있습니다.
 
@@ -93,7 +93,7 @@ lang: ko
 
 {% include figure src="./images/tutorial/image_5.png" caption="데스크톱 팝업 메뉴에서 **고급 프로젝트 설정...(Advanced project setup…)**을 선택합니다" %}
 
-{% include figure src="./images/tutorial/wizard_01.png" caption="**shotgun 기본값**(shotgun Default) 구성 유형을 선택합니다." %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="**Shotgun 기본값**(Shotgun Default) 구성 유형을 선택합니다." %}
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="**기본값 구성**(Default configuration)을 선택합니다." %}
 
@@ -123,7 +123,7 @@ lang: ko
 
 데스크톱 설치 튜토리얼에서 지정한 구성 위치는 {% include product %}에서 해당 프로젝트에 대한 파이프라인 구성(Pipeline Configurations) 페이지에 기록됩니다.
 
-{% include figure src="./images/tutorial/image_10.png" caption="shotgun에서 파이프라인 구성 엔티티 복제" %}
+{% include figure src="./images/tutorial/image_10.png" caption="Shotgun에서 파이프라인 구성 엔티티 복제" %}
 
 다음 섹션을 위한 준비로 이 폴더의 컨텐츠를 숙지합니다.
 
@@ -177,7 +177,7 @@ Maya가 완전히 로드되면 파일 열기(File Open) 대화상자가 나타�
 
 이 버튼을 클릭하여 비어 있는 새 Maya 세션을 만들고 현재 작업 중인 컨텍스트를 주전자 에셋의 모델 태스크로 설정합니다.
 
-{%include info title="참고" content="이 튜토리얼에서 언제든지 Maya 또는 Nuke의 shotgun 메뉴를 통해 shotgun 패널을 시작할 수 있습니다. 이 패널에서는 DCC를 종료하지 않고 프로젝트 데이터에 뷰를 제공합니다. 현재 작업 중인 컨텍스트와 해당 컨텍스트 내의 최근 액티비티가 표시됩니다. 또한 패널로 직접 피드백에 대한 노트를 추가할 수 있습니다. 자세한 정보는 [shotgun 패널 설명서](https://support.shotgunsoftware.com/hc/ko/articles/115000068574-Integrations-user-guide#The%20Shotgun%20Panel)를 참조하십시오." %}
+{%include info title="참고" content="이 튜토리얼에서 언제든지 Maya 또는 Nuke의 Shotgun 메뉴를 통해 shotgun 패널을 시작할 수 있습니다. 이 패널에서는 DCC를 종료하지 않고 프로젝트 데이터에 뷰를 제공합니다. 현재 작업 중인 컨텍스트와 해당 컨텍스트 내의 최근 액티비티가 표시됩니다. 또한 패널로 직접 피드백에 대한 노트를 추가할 수 있습니다. 자세한 정보는 [Shotgun 패널 설명서](https://support.shotgunsoftware.com/hc/ko/articles/115000068574-Integrations-user-guide#The%20Shotgun%20Panel)를 참조하십시오." %}
 
 다음으로, 주전자를 모델링하거나 제공된 주전자를 [다운로드](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj)하여 가져옵니다.
 

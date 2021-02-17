@@ -57,7 +57,7 @@ b. `TK_DEBUG` 環境変数を削除します。
 
 次に、ターミナルを介して Desktop を起動します。
 
-{% include info title="注" content="shotgun Desktop とターミナルを閉じると、デバッグ ログはオンではなくなります。"%}
+{% include info title="注" content="Shotgun Desktop とターミナルを閉じると、デバッグ ログはオンではなくなります。"%}
 
 ## ログ ファイルでデバッグ出力を確認する
 

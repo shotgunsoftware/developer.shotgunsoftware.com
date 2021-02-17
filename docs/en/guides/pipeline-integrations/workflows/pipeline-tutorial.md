@@ -19,7 +19,7 @@ Here is a high level view of the pipeline you will build in this tutorial:
 
 For simplicity, the digital content creation (DCC) software used will be kept to a minimum and limited to Maya and Nuke. Also for the sake of simplicity, data passed between pipeline steps will be limited to Maya ascii files, Alembic caches, and rendered image sequences.
 
-{% include info title="Note" content="The simple pipeline outlined in this tutorial has not been tested on production and should only be used as an example of how a shotgun-based pipeline could be built." %}
+{% include info title="Note" content="The simple pipeline outlined in this tutorial has not been tested on production and should only be used as an example of how a Shotgun-based pipeline could be built." %}
 
 ## Prerequisites
 
@@ -93,7 +93,7 @@ Use {% include product %} Desktop (Desktop) to take over your project's configur
 
 {% include figure src="./images/tutorial/image_5.png" caption="Select the **Advanced project setup…** in the Desktop popup menu" %}
 
-{% include figure src="./images/tutorial/wizard_01.png" caption="Choose the **shotgun Default** configuration type" %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="Choose the **Shotgun Default** configuration type" %}
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="Choose the **Default configuration**" %}
 
@@ -177,7 +177,7 @@ Select the Assets tab and drill down into the Teapot's modeling task. Since ther
 
 Clicking this button will create a new, empty Maya session and set your current working context to the Teapot Asset's Model task. 
 
-{%include info title="Note" content="At any time during this tutorial you can launch the shotgun Panel via the shotgun menu in Maya or Nuke. This panel provides a view into your project data without leaving your DCC. It will show you your current working context and any recent activity within that context. You can also add notes for feedback directly into the panel. See the [shotgun Panel documentation](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#The%20Shotgun%20Panel) for more info." %}
+{%include info title="Note" content="At any time during this tutorial you can launch the Shotgun Panel via the Shotgun menu in Maya or Nuke. This panel provides a view into your project data without leaving your DCC. It will show you your current working context and any recent activity within that context. You can also add notes for feedback directly into the panel. See the [Shotgun Panel documentation](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#The%20Shotgun%20Panel) for more info." %}
 
 Next, model a Teapot, or [download](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj) and import the provided Teapot.
 

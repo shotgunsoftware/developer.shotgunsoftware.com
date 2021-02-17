@@ -7,7 +7,7 @@ lang: en
 
 # Media Traffic Isolation
 
-{% include info title="Disclaimer" content="This documentation is provided solely as an example. It explains how to set up your shotgun Isolation environment so that it can be connected to shotgun cloud infrastructure. Please adapt it to your studio security requirements as needed. As shotgun has no visibility on your AWS Account, ensuring that this account is secure is a client responsibility." %}
+{% include info title="Disclaimer" content="This documentation is provided solely as an example. It explains how to set up your Shotgun Isolation environment so that it can be connected to Shotgun cloud infrastructure. Please adapt it to your studio security requirements as needed. As Shotgun has no visibility on your AWS Account, ensuring that this account is secure is a client responsibility." %}
 
 The media traffic isolation feature allows your users to access media in your AWS S3 bucket privately (not transiting over the public Internet). Please note that if you have a multi-region setup and that leverages the {% include product %} Transcoding service there may still be instances where media transits across the public Internet. Reach out to our support team for more details.
 
