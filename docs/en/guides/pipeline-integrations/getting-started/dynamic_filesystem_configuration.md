@@ -48,7 +48,7 @@ The Toolkit platform allows you to build your folder structure dynamically by us
 
 **Templates** allow you to dynamically name and save files as they’re created using {% include product %} data and information from the schema structure. The Default Configuration provides a set of starter templates that you can edit to meet the needs of your pipeline. 
 
-{% include info title="Note" content="The Basic setup for {% include product %} integrations doesn’t include filesystem management. In order to configure filesystem management for your project, your project will need an Advanced setup. The first guide, [Getting started with configurations](./advanced_config.md) goes through the Advanced setup process" %}
+{% include info title="Note" content="The Basic setup for shotgun integrations doesn’t include filesystem management. In order to configure filesystem management for your project, your project will need an Advanced setup. The first guide, [Getting started with configurations](./advanced_config.md) goes through the Advanced setup process" %}
 
 ## Begin exercise
 

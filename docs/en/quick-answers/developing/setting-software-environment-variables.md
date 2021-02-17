@@ -45,4 +45,4 @@ tank.util.append_path_to_env_var(\"NUKE_PATH\", \"/my/custom/path\")
 Some studios have custom wrappers that handle setting the environment variables and launching the software. 
 If you prefer to use custom code like this to set the environment, you can point the `Software` entity's [path fields](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Example:%20Add%20your%20own%20Software) to your executable wrapper, and `tk-multi-launchapp` will run that instead.
 
-{% include warning title="Warning" content="Take care with this approach to preserve the environment variables set by {% include product %} other wise the integration will not start." %}
+{% include warning title="Warning" content="Take care with this approach to preserve the environment variables set by shotgun other wise the integration will not start." %}

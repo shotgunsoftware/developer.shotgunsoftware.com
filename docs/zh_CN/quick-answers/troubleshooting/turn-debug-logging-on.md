@@ -57,7 +57,7 @@ b. 删除 `TK_DEBUG` 环境变量。
 
 然后，通过您的终端启动 Desktop。
 
-{% include info title="注意" content="关闭 {% include product %} Desktop 和终端后，调试日志记录将不再启用。" %}
+{% include info title="注意" content="关闭 shotgun Desktop 和终端后，调试日志记录将不再启用。" %}
 
 ## 检查日志文件中的调试输出
 

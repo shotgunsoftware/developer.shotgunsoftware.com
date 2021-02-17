@@ -115,7 +115,7 @@ Wait while {% include product %} copies all of the files and folders in the conf
 
 When completed, the Configuration List will be updated with information about the cloned configuration and there will be a new configuration added to your local config folder.
 
-{% include info title="Note" content="Under **User Restrictions** your user name was added. {% include product %} automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way {% include product %} allows for flexibility and control." %}
+{% include info title="Note" content="Under **User Restrictions** your user name was added. shotgun automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way shotgun allows for flexibility and control." %}
 
 ## Associate the cloned configuration with the project
 

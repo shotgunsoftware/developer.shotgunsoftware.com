@@ -46,7 +46,7 @@ Windows:
 Linux:
 `~/.shotgun/bundle_cache`
 
-{% include info title="참고" content="`{% include product %}_BUNDLE_CACHE_PATH` 환경 변수를 사용하여 이러한 위치를 재정의할 수 있으므로 실제 구현은 다를 수 있습니다." %}
+{% include info title="참고" content="`shotgun_BUNDLE_CACHE_PATH` 환경 변수를 사용하여 이러한 위치를 재정의할 수 있으므로 실제 구현은 다를 수 있습니다." %}
 
 **중앙 집중식 구성**
 

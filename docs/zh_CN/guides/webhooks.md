@@ -103,7 +103,7 @@ True
 
 发送到 Webhook URL 的有效负载包含描述在 {% include product %} 中发生的事件及其触发者的信息。它以 JSON 格式提供。
 
-{% include warning title="有效负载大小" content="交付的有效负载最大为 1 MB。{% include product %} 中触发的任何导致有效负载超过 1 MB 的事件都将移除其 `new_value` 和 `old_value` 键，并添加一个 `warning` 键，其中包含消息，说明发生了什么、为什么以及如何从 {% include product %} 检索完整事件日志条目。" %}
+{% include warning title="有效负载大小" content="交付的有效负载最大为 1 MB。shotgun 中触发的任何导致有效负载超过 1 MB 的事件都将移除其 `new_value` 和 `old_value` 键，并添加一个 `warning` 键，其中包含消息，说明发生了什么、为什么以及如何从 shotgun 检索完整事件日志条目。" %}
 
 ##### 有效负载示例
 

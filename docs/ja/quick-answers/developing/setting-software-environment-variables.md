@@ -41,4 +41,4 @@ tank.util.append_path_to_env_var(\"NUKE_PATH\", \"/my/custom/path\")
 
 スタジオによっては、環境変数の設定とソフトウェアの起動を処理するカスタム ラッパーが用意されている場合があります。このようなカスタム コードを使用する場合は、`Software` エンティティの[パス フィールド](https://support.shotgunsoftware.com/hc/ja/articles/115000067493-Integrations-Admin-Guide#Example:%20Add%20your%20own%20Software)が実行可能なラッパーを示すように指定すると、`tk-multi-launchapp` が代わりに実行されます。
 
-{% include warning title="警告" content="この方法を使用する場合は、{% include product %} で設定された環境変数を保持するよう注意してください。そうしないと、統合が起動しなくなります。" %}
+{% include warning title="警告" content="この方法を使用する場合は、shotgun で設定された環境変数を保持するよう注意してください。そうしないと、統合が起動しなくなります。" %}

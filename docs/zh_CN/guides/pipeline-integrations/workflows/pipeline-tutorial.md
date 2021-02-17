@@ -19,7 +19,7 @@ lang: zh_CN
 
 为了简单起见，这里使用的数字内容创作 (DCC) 软件将尽可能最少，并且仅限于 Maya 和 Nuke。还是为了简单，工作流各个工序之间传递的数据仅限 Maya ASCII 文件、Alembic 缓存和渲染的图像序列。
 
-{% include info title="注意" content="本教程中概述的简单工作流尚未在实际制作活动中进行测试，因此应仅作为示例来讲解如何构建基于 {% include product %} 的工作流。" %}
+{% include info title="注意" content="本教程中概述的简单工作流尚未在实际制作活动中进行测试，因此应仅作为示例来讲解如何构建基于 shotgun 的工作流。" %}
 
 ## 先决条件
 

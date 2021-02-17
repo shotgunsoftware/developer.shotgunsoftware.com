@@ -19,7 +19,7 @@ Here is a high level view of the pipeline you will build in this tutorial:
 
 For simplicity, the digital content creation (DCC) software used will be kept to a minimum and limited to Maya and Nuke. Also for the sake of simplicity, data passed between pipeline steps will be limited to Maya ascii files, Alembic caches, and rendered image sequences.
 
-{% include info title="Note" content="The simple pipeline outlined in this tutorial has not been tested on production and should only be used as an example of how a {% include product %}-based pipeline could be built." %}
+{% include info title="Note" content="The simple pipeline outlined in this tutorial has not been tested on production and should only be used as an example of how a shotgun-based pipeline could be built." %}
 
 ## Prerequisites
 

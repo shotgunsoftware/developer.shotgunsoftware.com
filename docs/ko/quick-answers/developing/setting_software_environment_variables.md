@@ -45,4 +45,4 @@ tank.util.append_path_to_env_var(\"NUKE_PATH\", \"/my/custom/path\")
 일부 스튜디오에서는 환경 변수 설정 및 소프트웨어 실행을 처리하는 커스텀 래퍼를 사용합니다.
 이와 같은 커스텀 코드를 사용하여 환경을 설정하려는 경우 `Software` 엔티티의 [경로 필드](https://support.shotgunsoftware.com/hc/ko/articles/115000067493-Integrations-Admin-Guide#Example:%20Add%20your%20own%20Software)를 실행 가능한 래퍼로 지정하면 `tk-multi-launchapp`이 대신 실행합니다.
 
-{% include warning title="경고" content="이 경우 {% include product %}에서 설정한 환경 변수를 유지해야 합니다. 그러지 않으면 통합이 시작되지 않습니다." %}
+{% include warning title="경고" content="이 경우 shotgun에서 설정한 환경 변수를 유지해야 합니다. 그러지 않으면 통합이 시작되지 않습니다." %}

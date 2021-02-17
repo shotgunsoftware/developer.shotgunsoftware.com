@@ -40,4 +40,4 @@ tank.util.append_path_to_env_var(\"NUKE_PATH\", \"/my/custom/path\")
 
 某些工作室具有自定义封装器，支持设置环境变量和启动软件。如果您更愿意使用像这样的自定义代码设置环境，可以将 `Software` 实体的[路径字段](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067493-Integrations-Admin-Guide#Example:%20Add%20your%20own%20Software)指向可执行封装器，此时将改为由 `tk-multi-launchapp` 运行。
 
-{% include warning title="警告" content="请谨慎使用此方法以保留 {% include product %} 设置的环境变量，否则集成将无法启动。" %}
+{% include warning title="警告" content="请谨慎使用此方法以保留 shotgun 设置的环境变量，否则集成将无法启动。" %}

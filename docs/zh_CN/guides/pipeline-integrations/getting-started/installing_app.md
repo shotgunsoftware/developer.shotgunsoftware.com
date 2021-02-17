@@ -115,7 +115,7 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 完成后，将使用有关克隆配置的信息更新配置列表，并且将在本地 config 文件夹中添加新配置。
 
-{% include info title="注意" content="在**“用户限制”(User Restrictions)**下，添加了您的用户名。{% include product %} 自动将对新配置的访问权限限制为仅创建配置的人员。您可以添加要编辑、测试并最终使用此配置的人员。另一方面，{% include product %} 可实现灵活性和可控性。" %}
+{% include info title="注意" content="在**“用户限制”(User Restrictions)**下，添加了您的用户名。shotgun 自动将对新配置的访问权限限制为仅创建配置的人员。您可以添加要编辑、测试并最终使用此配置的人员。另一方面，shotgun 可实现灵活性和可控性。" %}
 
 ## 将克隆的配置与项目相关联
 

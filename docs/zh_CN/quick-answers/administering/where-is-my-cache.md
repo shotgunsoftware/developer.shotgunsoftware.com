@@ -46,7 +46,7 @@ Windows：`%APPDATA%\Shotgun\bundle_cache`
 Linux：
 `~/.shotgun/bundle_cache`
 
-{% include info title="注意" content="您可以使用 `{% include product %}_BUNDLE_CACHE_PATH` 环境变量覆盖这些位置，因此，特定实施可能会有所不同。" %}
+{% include info title="注意" content="您可以使用 `shotgun_BUNDLE_CACHE_PATH` 环境变量覆盖这些位置，因此，特定实施可能会有所不同。" %}
 
 **集中式配置**
 

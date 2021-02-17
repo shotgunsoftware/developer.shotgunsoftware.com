@@ -59,7 +59,7 @@ When you start either of them up, it will automatically try to look for updates,
 It is recommended that you follow the [managing updates](#managing-updates) steps bellow after installing {% include product %} Desktop, as the components bundled with the installer may not be the latest.
 
 {% include info title="Note" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
-In this situation you can set the environment variable `{% include product %}_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
+In this situation you can set the environment variable `shotgun_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
 
 {% include info title="Note" content="You will still need to be able to connect to your {% include product %} site. When we say offline we are talking about not being able to connect to our app store to download updates." %}
 

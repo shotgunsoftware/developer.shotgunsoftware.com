@@ -61,7 +61,7 @@ If you would like to use debug logging temporarily for a session instead, you ca
 
 Then, launch the Desktop through your terminal.
 
-{% include info title="Note" content="Once you close {% include product %} Desktop and your terminal, debug logging is no longer turned on." %}
+{% include info title="Note" content="Once you close shotgun Desktop and your terminal, debug logging is no longer turned on." %}
 
 
 

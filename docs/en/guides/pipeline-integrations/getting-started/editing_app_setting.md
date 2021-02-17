@@ -113,7 +113,7 @@ Look under the **Configuration** header to find the settings for this specific e
 
 ![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png)
 
-{% include info title="Note" content="After the setting **my_tasks_filters** is a setting **launch_at_startup**. This is important to note because it’s the default setting for the **File Open** setting in the project environment. This tells you that when Maya is launched from {% include product %} Desktop, the **File Open** dialog automatically opens." %}
+{% include info title="Note" content="After the setting **my_tasks_filters** is a setting **launch_at_startup**. This is important to note because it’s the default setting for the **File Open** setting in the project environment. This tells you that when Maya is launched from shotgun Desktop, the **File Open** dialog automatically opens." %}
 
 Scroll down to **Setting allow_task_creation**. The default value of this setting is **True**, allowing a user to create a new task while in the Maya project environment.
 
