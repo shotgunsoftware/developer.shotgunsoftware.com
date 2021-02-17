@@ -31,7 +31,7 @@ The engine is a collection of files, [similar in structure to an app](sgtk-devel
 Different engines then re-implement various aspects of this base class depending on their internal complexity. 
 An engine typically handles or provides the following services:
 
-- Menu management. At engine startup, once the apps have been loaded, the engine needs to create its Shotgun menu and add the various apps to this menu.
+- Menu management. At engine startup, once the apps have been loaded, the engine needs to create its {% include product %} menu and add the various apps to this menu.
 - Logging methods are typically overridden to write to the software's log/console.
 - Methods for displaying UI dialogs and windows. These methods are usually overridden, if the way the engine handles Qt is different from the default base class behavior, to ensure seamless integration of windows launched by Toolkit apps and the underlying host software window management setup.
 - Provides a `commands` dictionary containing all the command objects registered by apps. This is typically accessed when menu entries are created.
@@ -56,7 +56,7 @@ We may also be able to connect you to other users who are interested in or have 
 If you can, open a channel of communication with a technical contact or developer of the software you are looking to integrate Toolkit into. 
 This helps gain insight into what the possibilities and/or roadblocks are for getting something going. 
 Once you establish a contact and talk through the basics of what you are trying to do, you can bring us into the conversation and set up a meeting with all of us to talk through some of the specifics of the engine.
-Also, you can engage directly with the Toolkit community in the [Shotgun community forum](https://community.shotgunsoftware.com/c/pipeline). 
+Also, you can engage directly with the Toolkit community in the [{% include product %} community forum](https://community.shotgunsoftware.com/c/pipeline). 
 
 We love to see new integrations, and are always eternally grateful for people's generous contributions to the Toolkit Community!
 
@@ -70,7 +70,7 @@ This section outlines a couple of different complexity levels that we have notic
 
 ### Host software includes Qt, PyQt/PySide, and Python
 This is the best setup for Toolkit and implementing an engine on top of a host software that supports Qt, Python, and PySide is very straight forward. 
-The [Nuke engine](https://github.com/shotgunsoftware/tk-nuke) or the [Maya engine](https://github.com/shotgunsoftware/tk-maya) is a good example of this. Integration is merely a matter of hooking up some log file management and write code to set up the Shotgun menu.
+The [Nuke engine](https://github.com/shotgunsoftware/tk-nuke) or the [Maya engine](https://github.com/shotgunsoftware/tk-maya) is a good example of this. Integration is merely a matter of hooking up some log file management and write code to set up the {% include product %} menu.
 
 
 ### Host software includes Qt and Python but not PySide/PyQt

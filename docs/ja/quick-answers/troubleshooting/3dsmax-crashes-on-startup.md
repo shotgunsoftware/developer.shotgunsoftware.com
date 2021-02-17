@@ -5,9 +5,9 @@ pagename: 3dsmax-crashes-on-startup
 lang: ja
 ---
 
-# Shotgun Toolkit を使用する場合、3ds Max が起動時にクラッシュするのはなぜですか?
+# {% include product %} Toolkit を使用する場合、3ds Max が起動時にクラッシュするのはなぜですか?
 
-Shotgun Desktop または Shotgun Web サイトから 3ds Max を起動すると、真っ白なダイアログが表示されて 3ds Max がフリーズするか、または次のメッセージが表示されます。
+{% include product %} Desktop または {% include product %} Web サイトから 3ds Max を起動すると、真っ白なダイアログが表示されて 3ds Max がフリーズするか、または次のメッセージが表示されます。
 
     Microsoft Visual C++ Runtime Library (Not Responding)
     Runtime Error!
@@ -54,4 +54,4 @@ class BeforeAppLaunch(tank.get_hook_baseclass()):
 
 次に、パイプライン設定で `config/env/includes/app_launchers.yml` を開き、エントリ `launch_3dsmax` を探します。`hook_before_app_launch: default` を `hook_before_app_launch: '{config}/before_app_launch.py'` に置き換える必要があります。
 
-これで Shotgun と Shotgun Desktop から 3ds Max を正しく起動できるようになりました。まだ問題が解決しない場合は、support@shotgunsoftware.com までご連絡ください。
+これで {% include product %} と {% include product %} Desktop から 3ds Max を正しく起動できるようになりました。まだ問題が解決しない場合は、support@shotgunsoftware.com までご連絡ください。

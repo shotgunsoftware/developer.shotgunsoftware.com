@@ -9,7 +9,7 @@ lang: en
 
 {% include info title="Beta" content="Webhooks is currently in beta. Join the [webhooks community forum](https://community.shotgunsoftware.com/c/webhooks) to learn more and participate." %}
 
-Webhooks allow a service you control to be notified of events that occur in Shotgun. When you create a webhook, you specify the type of event you are interested in and tell Shotgun what URL to send data to when it is triggered. Once the relevant event happens in Shotgun, a payload of data describing the event will be sent to the webhook’s URL. This allows you to build tight integrations with Shotgun and automate portions of your workflow.
+Webhooks allow a service you control to be notified of events that occur in {% include product %}. When you create a webhook, you specify the type of event you are interested in and tell {% include product %} what URL to send data to when it is triggered. Once the relevant event happens in {% include product %}, a payload of data describing the event will be sent to the webhook’s URL. This allows you to build tight integrations with {% include product %} and automate portions of your workflow.
 
 ## What are some examples of how to use webhooks?
 
@@ -17,7 +17,7 @@ There are numerous use cases for webhooks. A few that we think are compelling ar
 
 ### Create a directory structure on disk when an entity is created
 
-One workflow that we have seen repeated many times over is the need to create a directory structure on disk when a new entity is created in Shotgun. Why not go ahead and make sure that a new shot is ready for artist work automatically once it is created in Shotgun?
+One workflow that we have seen repeated many times over is the need to create a directory structure on disk when a new entity is created in {% include product %}. Why not go ahead and make sure that a new shot is ready for artist work automatically once it is created in {% include product %}?
 
 ### Automation of status management
 
@@ -25,9 +25,9 @@ When your animation team is finished with their work, why not go ahead and chang
 
 Another great example of how to automate status management would be to trigger a status change on a `Task` entity when a new `Note` is created. This is a good way to indicate to the artist and production teams that a supervisor has requested changes or fixes to the current work after a review session.
 
-## When should webhooks be used instead of the Shotgun event daemon?
+## When should webhooks be used instead of the {% include product %} event daemon?
 
-Webhooks and the [Shotgun event daemon](https://github.com/shotgunsoftware/shotgunEvents/wiki) offer similar features, but with a few key differences. The event daemon requires that you run, monitor, and maintain your own service. All of your code must be written in Python, and it allows you to initiate your own connections to Shotgun. Webhooks, in contrast, answer connections and can be written in any programming language. They can be hosted in a serverless environment, such as [AWS Lambda](https://aws.amazon.com/lambda/), or can trigger any of the automation platforms available online, such as [Zapier](https://zapier.com) and [IFTTT](https://ifttt.com). If your use case works with webhooks, it should be the preferred solution.
+Webhooks and the [{% include product %} event daemon](https://github.com/shotgunsoftware/shotgunEvents/wiki) offer similar features, but with a few key differences. The event daemon requires that you run, monitor, and maintain your own service. All of your code must be written in Python, and it allows you to initiate your own connections to {% include product %}. Webhooks, in contrast, answer connections and can be written in any programming language. They can be hosted in a serverless environment, such as [AWS Lambda](https://aws.amazon.com/lambda/), or can trigger any of the automation platforms available online, such as [Zapier](https://zapier.com) and [IFTTT](https://ifttt.com). If your use case works with webhooks, it should be the preferred solution.
 
 ## Creating a webhook
 
@@ -66,7 +66,7 @@ True
 
 ### Validate SSL certificate
 
-Validation of SSL certificates is an optional feature that will help ensure the security of any connections made to the webhook’s consumer URL. If turned on, when a delivery is made to the webhook’s URL, Shotgun will use OpenSSL’s certificate validation routine to verify the certificate.
+Validation of SSL certificates is an optional feature that will help ensure the security of any connections made to the webhook’s consumer URL. If turned on, when a delivery is made to the webhook’s URL, {% include product %} will use OpenSSL’s certificate validation routine to verify the certificate.
 
 ## Webhook status
 
@@ -77,7 +77,7 @@ A webhook can have one of several different statuses, indicating its health and 
 | Status | Example | Description |
 |--------|:-------:|:-----------:|
 | Active | ![Active](./images/webhooks/webhook_status_active.png) | The webhook is operating in a stable fashion. No deliveries to this webhook's consumer URL have failed to reach their destination in the past 24 hours. |
-| Unstable | ![Unstable](./images/webhooks/webhook_status_unstable.png) | The webhook is operating in an unstable fashion. Some deliveries have failed to reach their destination in the past 24 hours, but not enough to cause Shotgun to consider the webhook to be dead. |
+| Unstable | ![Unstable](./images/webhooks/webhook_status_unstable.png) | The webhook is operating in an unstable fashion. Some deliveries have failed to reach their destination in the past 24 hours, but not enough to cause {% include product %} to consider the webhook to be dead. |
 | Failed | ![Failed](./images/webhooks/webhook_status_failed.png) | The webhook is considered to be dead, and no further deliveries will be attempted. This is a result of too many delivery failures in a short period of time, and the system has determined that the webhook should no longer be considered viable. **A webhook is considered failed if it has 10 failed deliveries in the past 24 hours**. |
 | Disabled | ![Disabled](./images/webhooks/webhook_status_disabled.png) | The webhook is in a disabled state, and no further deliveries will be attempted until it is re-enabled. |
 
@@ -101,7 +101,7 @@ Deliveries can be expanded to show detailed information about the request sent t
 
 #### Request Payload
 
-The payload sent to the webhook's URL contains information describing the event that occurred in Shotgun and who triggered it. It is provided in JSON format.
+The payload sent to the webhook's URL contains information describing the event that occurred in {% include product %} and who triggered it. It is provided in JSON format.
 
 {% include warning title="Payload size" content="The maximum size of a delivery's payload is 1 megabyte. Any event triggered in Shotgun that would result in a payload size larger than 1 megabyte will have its `new_value` and `old_value` keys removed, and a `warning` key added that contains a message explaining what happened, why, and how to retrieve the entire event log entry from Shotgun." %}
 
@@ -144,7 +144,7 @@ The payload sent to the webhook's URL contains information describing the event 
 
 ##### Session UUID
 
-Provided as part of the event payload is the `session_uuid` that triggered the event in Shotgun. This value can be provided to [Shotgun's Python API](https://developer.shotgunsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid), which will cause any open browser session with that session_uuid to display updates for events generated by the API.
+Provided as part of the event payload is the `session_uuid` that triggered the event in {% include product %}. This value can be provided to [{% include product %}'s Python API](https://developer.shotgunsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid), which will cause any open browser session with that session_uuid to display updates for events generated by the API.
 
 ### Responding to deliveries
 
@@ -174,7 +174,7 @@ Where a high rate of overall throughput is needed, then consumer endpoints shoul
 
 ### Acknowledgements
 
-A delivery can be updated to include an acknowledgement. When a delivery is made, headers are provided as part of the request. Included in those headers is the ID of the delivery record, stored in the `x-sg-delivery-id` key. This ID can be used to update the delivery record to include an acknowledgement using [the Shotgun REST API](https://developer.shotgunsoftware.com/rest-api).
+A delivery can be updated to include an acknowledgement. When a delivery is made, headers are provided as part of the request. Included in those headers is the ID of the delivery record, stored in the `x-sg-delivery-id` key. This ID can be used to update the delivery record to include an acknowledgement using [the {% include product %} REST API](https://developer.shotgunsoftware.com/rest-api).
 
 {% include warning title="Acknowledgement size" content="The maximum size allowed for an acknowledgement is 4 kilobytes." %}
 
@@ -195,7 +195,7 @@ A delivery can be updated to include an acknowledgement. When a delivery is made
 
 #### What are acknowledgements used for?
 
-Acknowledgements allow for out of band, detailed reporting of success or failure to process a delivery that was successfully received by your webhook's URL. This creates a separation between the status of receiving the delivery from Shotgun and the success or failure to process the event associated with that delivery. In this way, successfully-delivered events can contain additional information useful for debugging purposes. A good example would be a webhook triggered on the creation of an `Asset` entity. If that webhook's responsibility is to create a directory structure on disk for each new `Asset`, the webhook's URL could successfully receive a delivery, but be unable to create the associated directories due to a disk or network outage. It could then update the delivery record with a detailed error message stating that the directory structure was not created, and why.
+Acknowledgements allow for out of band, detailed reporting of success or failure to process a delivery that was successfully received by your webhook's URL. This creates a separation between the status of receiving the delivery from {% include product %} and the success or failure to process the event associated with that delivery. In this way, successfully-delivered events can contain additional information useful for debugging purposes. A good example would be a webhook triggered on the creation of an `Asset` entity. If that webhook's responsibility is to create a directory structure on disk for each new `Asset`, the webhook's URL could successfully receive a delivery, but be unable to create the associated directories due to a disk or network outage. It could then update the delivery record with a detailed error message stating that the directory structure was not created, and why.
 
 ## Testing webhooks
 

@@ -17,7 +17,7 @@ At the heart of a Toolkit pipeline is the environment configuration. Within a To
 
 ## What is an environment?
 
-The Shotgun Toolkit platform provides a fully customizable set of integrations for commonly used content creation software with which you can build your studio pipeline. Within a project’s configuration, you can specify which software packages have integrations, which specific Toolkit apps are available in each, and your options for each app&mdash;building out artists workflows to suit your studio’s needs.
+The {% include product %} Toolkit platform provides a fully customizable set of integrations for commonly used content creation software with which you can build your studio pipeline. Within a project’s configuration, you can specify which software packages have integrations, which specific Toolkit apps are available in each, and your options for each app&mdash;building out artists workflows to suit your studio’s needs.
 
 But often in studio pipelines, it’s common for different types of artists to have different workflows. As a simple example, for artists working on assets, you might want to make texture painting software such as Mari available, whereas for artists working on shots, you might want to make compositing software such as Nuke available. 
 
@@ -109,7 +109,7 @@ In our example, only a single engine is defined, `tk-maya`. It has two settings 
 
 ### The location descriptor
 
-Every Toolkit bundle has a `location` setting, which we refer to as the bundle’s *descriptor*. The descriptor tells Toolkit where to find the given bundle, and depending on its type, whether to access it directly or cache it locally. Some examples of locations that a Toolkit bundle can come from are the Shotgun App Store, a git repository, a path on disk, or a zip file uploaded to your Shotgun site. Each of these has a corresponding descriptor type, with settings specific to that type. Here again is the descriptor for the `tk-maya` engine from the example above:
+Every Toolkit bundle has a `location` setting, which we refer to as the bundle’s *descriptor*. The descriptor tells Toolkit where to find the given bundle, and depending on its type, whether to access it directly or cache it locally. Some examples of locations that a Toolkit bundle can come from are the {% include product %} App Store, a git repository, a path on disk, or a zip file uploaded to your {% include product %} site. Each of these has a corresponding descriptor type, with settings specific to that type. Here again is the descriptor for the `tk-maya` engine from the example above:
 
 ```yaml
     location:
@@ -118,7 +118,7 @@ Every Toolkit bundle has a `location` setting, which we refer to as the bundle�
         version: v0.9.4
 ```
 
-This is a descriptor of type `app_store`, which tells Toolkit to get the given bundle from the Shotgun App Store. Descriptors of type `app_store` have the settings `name` and `version`. 
+This is a descriptor of type `app_store`, which tells Toolkit to get the given bundle from the {% include product %} App Store. Descriptors of type `app_store` have the settings `name` and `version`. 
 
 In contrast, if you are actively developing a custom bundle&mdash;say you’re working on writing a Toolkit app for a specific workflow in your studio, you may want to get it directly from a path on disk. In this case you’d use a descriptor of type `dev`, which might look like this: 
 

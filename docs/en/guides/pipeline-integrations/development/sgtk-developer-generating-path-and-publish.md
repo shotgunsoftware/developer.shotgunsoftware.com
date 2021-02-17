@@ -7,7 +7,7 @@ lang: en
 
 # Generating a path and publishing it
 
-This guide covers getting started with the Shotgun Toolkit Python API, which is what our pipeline integrations are built with.
+This guide covers getting started with the {% include product %} Toolkit Python API, which is what our pipeline integrations are built with.
 
 The purpose of this guide is to walk through a basic example of how you can use the API, and by the end, you will be able to import the Toolkit API and generate a path and publish it.
 
@@ -36,16 +36,16 @@ To use the API on a project's configuration, you must import the `sgtk` package 
 {% include info title="Note" content="You may sometimes come across references to a `tank` package. This is the legacy name for the same thing. While both work `sgtk` is the correct name to use going forward." %}
 
 To import the API you need to make sure that the path to the [core's python folder](https://github.com/shotgunsoftware/tk-core/tree/v0.18.167/python) exists in the [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path).
-However, for this example, we recommend that you run this code in the Shotgun Desktop's Python console.
+However, for this example, we recommend that you run this code in the {% include product %} Desktop's Python console.
 This will mean that the correct `sgtk` package path is already added to your `sys.path`.
-Equally, you don't need to add the path if you are running this code within software where the Shotgun integration is already running.
+Equally, you don't need to add the path if you are running this code within software where the {% include product %} integration is already running.
 
-When running your code in an environment where Shotgun is already started you can import the API by simply writing:
+When running your code in an environment where {% include product %} is already started you can import the API by simply writing:
 
 ```python
 import sgtk
 ``` 
-If you want to use the API outside of a Shotgun integration, for example, if you're testing it in your favorite IDE, then you will need to set the path to the API first:
+If you want to use the API outside of a {% include product %} integration, for example, if you're testing it in your favorite IDE, then you will need to set the path to the API first:
 
 ```python
 import sys
@@ -65,7 +65,7 @@ Once you create an instance of `Sgtk`, you will be able to do things like get a 
 
 As the API documentation states, you don't create an instance of `Sgtk` directly. Here are some options for getting an `Sgtk` instance.
 
-1. You can get an `Sgtk` instance from the current engine, if you are running the Python code within an environment where the Shotgun integrations are already running, (such as the Maya Python console, if Maya was launched from Shotgun.)
+1. You can get an `Sgtk` instance from the current engine, if you are running the Python code within an environment where the {% include product %} integrations are already running, (such as the Maya Python console, if Maya was launched from {% include product %}.)
    The `Engine.sgtk` property holds the engine's `Sgtk` instance.
    So for example, in Maya, you could run the following:
  
@@ -92,7 +92,7 @@ As the API documentation states, you don't create an instance of `Sgtk` directly
 
 Throughout this guide we will assume you are running this code in an environment where an engine has already been started, so we'll use option 1.
 Also you will store the `Sgtk` class instance in a variable called `tk`.
-If you're using the Shotgun Python Console then the `tk` variable is already pre-defined as a global variable.
+If you're using the {% include product %} Python Console then the `tk` variable is already pre-defined as a global variable.
 
 You now have an `Sgtk` instance and you're ready to start using the API.
 Your publish script should now look like this:
@@ -332,15 +332,15 @@ The next step is to dynamically work out the next version number rather than har
 
 There two methods you could use here. 
 
-1. Since in this particular example you are resolving a publish file, you could use the [Shotgun API](https://developer.shotgunsoftware.com/python-api/) to query for the next available version number on `PublishedFile` entities.
+1. Since in this particular example you are resolving a publish file, you could use the [{% include product %} API](https://developer.shotgunsoftware.com/python-api/) to query for the next available version number on `PublishedFile` entities.
 2. You can scan the files on disk and work out what versions already exist, and extract the next version number. 
-This is helpful if the files you're working with aren't tracked in Shotgun (such as work files).
+This is helpful if the files you're working with aren't tracked in {% include product %} (such as work files).
 
 While the first option would probably be most suitable for the example in this guide, both approaches have their uses so we'll cover them both.
 
-### Querying Shotgun for the next version number.
+### Querying {% include product %} for the next version number.
 
-Using the Shotgun API and the [`summarize()` method](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize) you can get the highest version number amongst the `PublishedFile` entities, that share the same name and task, and then add 1.
+Using the {% include product %} API and the [`summarize()` method](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize) you can get the highest version number amongst the `PublishedFile` entities, that share the same name and task, and then add 1.
 
 ```python
 r = sg.summarize(entity_type="PublishedFile",
@@ -397,7 +397,7 @@ You can chose to use either option, but the guide will use the code from option 
 
 Now that you have a path you're ready to publish it. To do this you can use the utility method [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish).
 
-It is possible to use the Shotgun API's [`Shotgun.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) method to create a `PublishedFile` entity as well, but we strongly recommend using the Toolkit API for this as it will ensure all the required fields are provided and filled in correctly.
+It is possible to use the {% include product %} API's [`{% include product %}.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) method to create a `PublishedFile` entity as well, but we strongly recommend using the Toolkit API for this as it will ensure all the required fields are provided and filled in correctly.
 
 ```python
 # So as to match the Publish app's default behavior, we are adding the extension to the end of the publish name.

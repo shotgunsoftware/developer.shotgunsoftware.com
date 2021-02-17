@@ -16,9 +16,9 @@ lang: ko
 
 ## 안내서 정보
 
-이 안내서에서는 Shotgun 툴킷 앱을 기존 파이프라인 구성에 추가하는 방법을 살펴보고 구성 관리 도구에 대해 간단히 알아보겠습니다.
+이 안내서에서는 {% include product %} 툴킷 앱을 기존 파이프라인 구성에 추가하는 방법을 살펴보고 구성 관리 도구에 대해 간단히 알아보겠습니다.
 
-여기서 추가할 앱은 Shotgun Python 콘솔 앱입니다. Maya에는 자체 Python 콘솔이 있지만 이 툴킷 앱에는 Maya 콘솔에 없는 일부 기능이 있습니다.
+여기서 추가할 앱은 {% include product %} Python 콘솔 앱입니다. Maya에는 자체 Python 콘솔이 있지만 이 툴킷 앱에는 Maya 콘솔에 없는 일부 기능이 있습니다.
 
 이 안내서에서는 [파이프라인 구성 편집](./editing_app_setting.md)안내서에서 생성한 파이프라인 구성을 활용합니다. 이 안내서를 완료하지 않았다면 기존 파이프라인 구성을 사용하여 앱을 추가할 수 있습니다.
 
@@ -26,36 +26,36 @@ lang: ko
 
 이 안내서를 사용하고 툴킷 앱을 설치하려면 다음이 필요합니다.
 
-1. 유효한 [Shotgun](https://www.shotgunsoftware.com/kr/signup/) 사이트.
+1. 유효한 [{% include product %}](https://www.shotgunsoftware.com/kr/signup/) 사이트.
 2. 지정한 프로젝트에 대한 파이프라인 구성. 또는 [구성 시작하기 안내서](./advanced_config.md)의 연습에서 생성한 구성을 사용하십시오.
 3. 파이프라인 구성이 저장된 파일 시스템에 대해 읽기 및 쓰기 권한을 적절하게 설정합니다.
-4. Shotgun 데스크톱이 시스템에 설치되어 있어야 합니다.
+4. {% include product %} 데스크톱이 시스템에 설치되어 있어야 합니다.
 5. 활성 상태의 Maya 멤버쉽. [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 Maya 30일 체험판을 다운로드하십시오.
 
 {% include info title="참고" content="이 안내서는 tk-config-default2 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다." %}
 
-## Shotgun 툴킷 앱 정보
+## {% include product %} 툴킷 앱 정보
 
 ### Toolkit 앱의 작동 방식
 
-파이프라인 구성에서 참조하는 앱은 다양한 위치에서 가져온 것일 수 있습니다. 기본 구성에서 표준인 앱은 Shotgun 앱 스토어에서 가져온 것입니다. 파이프라인 구성의 파일은 툴킷에 "주소록에서 Python 콘솔 앱의 주소를 찾아줄래?"라고 묻는 것처럼 Shotgun 통합이 앱에 액세스하는 방법을 지정합니다. 파이프라인 구성 파일은 툴킷에 특정 앱에 활용되는 코드의 번들을 찾는 위치를 알려줍니다.
+파이프라인 구성에서 참조하는 앱은 다양한 위치에서 가져온 것일 수 있습니다. 기본 구성에서 표준인 앱은 {% include product %} 앱 스토어에서 가져온 것입니다. 파이프라인 구성의 파일은 툴킷에 "주소록에서 Python 콘솔 앱의 주소를 찾아줄래?"라고 묻는 것처럼 {% include product %} 통합이 앱에 액세스하는 방법을 지정합니다. 파이프라인 구성 파일은 툴킷에 특정 앱에 활용되는 코드의 번들을 찾는 위치를 알려줍니다.
 
-기본 구성에서 툴킷 앱의 "주소"는 `config/env/includes/app_locations.yml` 파일에 나열되어 있으며 코드를 찾는 위치를 지정합니다. 이러한 "주소"를 [설명자](https://developer.shotgunsoftware.com/tk-core/descriptor.html)라고 합니다. Shotgun 통합은 앱에 대한 코드 번들을 찾는 위치뿐 아니라 앱을 사용하는 환경도 알아야 합니다.
+기본 구성에서 툴킷 앱의 "주소"는 `config/env/includes/app_locations.yml` 파일에 나열되어 있으며 코드를 찾는 위치를 지정합니다. 이러한 "주소"를 [설명자](https://developer.shotgunsoftware.com/tk-core/descriptor.html)라고 합니다. {% include product %} 통합은 앱에 대한 코드 번들을 찾는 위치뿐 아니라 앱을 사용하는 환경도 알아야 합니다.
 
-다음은 앱 설치 방법과 Shotgun 통합에 앱을 사용하는 위치를 알리는 방법에 대한 개념적인 개요입니다. 여기서는 구성을 확장하고 툴킷에 설명자를 조회하도록 요청하고 Shotgun에 앱을 사용하는 위치를 알리는 단계를 간략하게 설명합니다. 이 안내서에서는 다음 단계를 자세히 살펴봅니다.
+다음은 앱 설치 방법과 {% include product %} 통합에 앱을 사용하는 위치를 알리는 방법에 대한 개념적인 개요입니다. 여기서는 구성을 확장하고 툴킷에 설명자를 조회하도록 요청하고 {% include product %}에 앱을 사용하는 위치를 알리는 단계를 간략하게 설명합니다. 이 안내서에서는 다음 단계를 자세히 살펴봅니다.
 
 1. 추가하려는 앱의 설명자를 결정합니다.
 2. 앱 설명자를 추가하려는 활성 파이프라인 구성의 복사본을 생성합니다.
 3. 앱의 설명자가 구성에 존재하는지 확인하고, 존재하지 않는 경우 추가합니다.
 4. 들여쓰기에 탭이 아니라 공백을 사용하여 YAML 파일의 서식을 올바르게 지정합니다.
 5. 앱이 사용되는 환경을 결정합니다.
-6. 이러한 환경 내에서 Shotgun이 앱을 사용할 수 있도록 허용하는 설정을 추가합니다.
+6. 이러한 환경 내에서 {% include product %}이 앱을 사용할 수 있도록 허용하는 설정을 추가합니다.
 7. 새 구성을 테스트합니다.
 8. 확장된 구성을 라이브로 적용합니다.
 
 ### Python 콘솔 앱에 대한 위치 설명자 찾기
 
-**1단계:** [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya)를 열고 Maya에서 Shotgun Python 콘솔에 대한 정보를 찾습니다. 제목을 선택합니다.
+**1단계:** [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya)를 열고 Maya에서 {% include product %} Python 콘솔에 대한 정보를 찾습니다. 제목을 선택합니다.
 
 ![Python 앱](./images/installing_app/1_python_app.png)
 
@@ -67,7 +67,7 @@ lang: ko
 
 ### Maya의 프로젝트 환경에서 Python 콘솔 앱이 없음을 확인
 
-**2단계:** Maya를 실행하고 Shotgun 메뉴 **Shotgun > 프로젝트 the_other_side**(Project the_other_side)를 선택하면 프로젝트 환경에 해당 프로젝트에 사용할 수 있는 앱 목록이 표시됩니다.
+**2단계:** Maya를 실행하고 {% include product %} 메뉴 **{% include product %} > 프로젝트 the_other_side**(Project the_other_side)를 선택하면 프로젝트 환경에 해당 프로젝트에 사용할 수 있는 앱 목록이 표시됩니다.
 
 ![앱 목록](./images/installing_app/3_list_of_apps.png)
 
@@ -81,11 +81,11 @@ lang: ko
 
 ### 파이프라인 구성 목록으로 이동합니다.
 
-**3단계:** Shotgun을 열고 오른쪽 위에서 **관리자(Admin) 메뉴(아바타) > 기본 레이아웃(Default Layouts) > 파이프라인 구성(Pipeline Configuration) > 파이프라인 구성 목록(Pipeline Configuration List)**을 선택합니다.
+**3단계:** {% include product %}을 열고 오른쪽 위에서 **관리자(Admin) 메뉴(아바타) > 기본 레이아웃(Default Layouts) > 파이프라인 구성(Pipeline Configuration) > 파이프라인 구성 목록(Pipeline Configuration List)**을 선택합니다.
 
 ![파이프라인 구성 목록](./images/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
-이렇게 하면 Shotgun 사이트의 파이프라인 구성이 모두 포함된 상세 목록이 표시됩니다.
+이렇게 하면 {% include product %} 사이트의 파이프라인 구성이 모두 포함된 상세 목록이 표시됩니다.
 
 **4단계:** 파이프라인 구성 목록이 표시되면 열 헤더의 맨 오른쪽에 있는 **+** 기호를 선택하고 **프로젝트**(Projects) 열을 추가합니다.
 
@@ -119,11 +119,11 @@ lang: ko
 
 ## 복제된 구성을 프로젝트와 연결
 
-**8단계:** Shotgun 데스크톱을 열고 복제된 구성을 생성한 프로젝트를 선택합니다. 오른쪽 위에 있는 **아래쪽 화살표**를 선택하여 이 프로젝트와 연결된 구성을 표시하고 방금 생성한 **Primary Clone Config 2**를 선택합니다.
+**8단계:** {% include product %} 데스크톱을 열고 복제된 구성을 생성한 프로젝트를 선택합니다. 오른쪽 위에 있는 **아래쪽 화살표**를 선택하여 이 프로젝트와 연결된 구성을 표시하고 방금 생성한 **Primary Clone Config 2**를 선택합니다.
 
 ![복제본 선택](./images/installing_app/11_select_clone.png)
 
-Shotgun 데스크톱이 이제 이 프로젝트에 대해 복제된 구성을 사용합니다.
+{% include product %} 데스크톱이 이제 이 프로젝트에 대해 복제된 구성을 사용합니다.
 
 ## 파이프라인 구성 편집
 
@@ -181,7 +181,7 @@ engines:
 
 ### YAML 파일
 
-Shotgun 툴킷 파이프라인 구성은 [YAML](https://yaml.org/spec/1.2/spec.html) 파일에서 단순한 용어를 사용하여 앱과 엔진의 위치와 해당 설정을 식별합니다.
+{% include product %} 툴킷 파이프라인 구성은 [YAML](https://yaml.org/spec/1.2/spec.html) 파일에서 단순한 용어를 사용하여 앱과 엔진의 위치와 해당 설정을 식별합니다.
 
 이 블록에서
 
@@ -190,11 +190,11 @@ Shotgun 툴킷 파이프라인 구성은 [YAML](https://yaml.org/spec/1.2/spec.h
 * `tk-maya`는 Maya에 대한 툴킷 엔진의 식별자입니다.
 * `@`은 설정 값을 포함된 파일에서 가져온다는 것을 나타내는 데 사용되는 툴킷 용어입니다.
 
-YAML 파일은 Shotgun 통합으로 통하는 창입니다. 이 파일을 사용하면 파이프라인의 요구사항을 충족하는 작업 환경을 더욱 손쉽게 구성할 수 있습니다.
+YAML 파일은 {% include product %} 통합으로 통하는 창입니다. 이 파일을 사용하면 파이프라인의 요구사항을 충족하는 작업 환경을 더욱 손쉽게 구성할 수 있습니다.
 
 ### 구성이 툴킷 번들을 참조하는 방식
 
-Shotgun 통합의 코드는 앱, 엔진 및 프레임워크에 대한 번들로 구성됩니다. 번들은 툴킷의 YAML 파일에서 `tk-maya`, `tk-multi-pythonconsole` 등과 같은 식별자로 참조됩니다. YAML에서 각 번들에 해당하는 블록에는 식별된 번들의 액세스 및 활용 방식을 제어하는 설정이 포함됩니다.
+{% include product %} 통합의 코드는 앱, 엔진 및 프레임워크에 대한 번들로 구성됩니다. 번들은 툴킷의 YAML 파일에서 `tk-maya`, `tk-multi-pythonconsole` 등과 같은 식별자로 참조됩니다. YAML에서 각 번들에 해당하는 블록에는 식별된 번들의 액세스 및 활용 방식을 제어하는 설정이 포함됩니다.
 
 ## Python 콘솔에 대한 설정을 추가할 위치
 
@@ -232,7 +232,7 @@ settings.tk-maya.project:
     tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"
 ```
 
-**Screening Room, Shotgun 패널 및 Workfiles2** 앱의 위치 식별자가 포함된 다른 파일에 나열되어 있고 **About** 앱과 다르게 액세스되는 것을 알 수 있습니다. 이러한 앱에는 추가 설정이 있으므로 정리를 위해 포함된 설정 폴더로 분리되었습니다.
+**Screening Room, {% include product %} 패널 및 Workfiles2** 앱의 위치 식별자가 포함된 다른 파일에 나열되어 있고 **About** 앱과 다르게 액세스되는 것을 알 수 있습니다. 이러한 앱에는 추가 설정이 있으므로 정리를 위해 포함된 설정 폴더로 분리되었습니다.
 
 {% include info title="참고" content="Python 콘솔 앱은 기본 구성에 이미 있지만, 사용 중인 구성에 이전에 추가한 적이 없는 앱을 추가할 경우 또는 앱의 버전을 변경하고 [중앙 집중식 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)을 사용하는 경우에는 추가 단계를 수행해야 합니다. 터미널을 열고 복제된 구성이 저장된 위치를 찾습니다. 복제된 구성의 루트 폴더에서 다음 명령을 실행합니다.<br/>
 
@@ -248,7 +248,7 @@ Windows:
 
 ## Maya에서 변경 사항 보기
 
-**16단계:** Shotgun 데스크톱을 열고 작업하는 프로젝트를 선택한 후 복제된 구성을 사용하고 있는지 확인합니다.
+**16단계:** {% include product %} 데스크톱을 열고 작업하는 프로젝트를 선택한 후 복제된 구성을 사용하고 있는지 확인합니다.
 
 프로젝트 이름 아래, 생성된 복제본의 이름에 파란색 막대가 표시됩니다.
 
@@ -256,7 +256,7 @@ Windows:
 
 ![Maya의 복제된 구성](./images/installing_app/14_maya_cloned_config.png)
 
-**17단계:** 데스크톱에서 Maya를 실행하고 **Shotgun > 프로젝트(Project) > …** 메뉴를 선택합니다.
+**17단계:** 데스크톱에서 Maya를 실행하고 **{% include product %} > 프로젝트(Project) > …** 메뉴를 선택합니다.
 
 다음에 해당하는 경우:
 
@@ -264,7 +264,7 @@ Windows:
 * 복제된 구성이 올바르게 확장되었습니다.
 * 확장된 파일을 저장했습니다.
 * 복제된 구성과 프로젝트를 연결했습니다.
-* Shotgun 데스크톱에서 Maya를 다시 실행했습니다.
+* {% include product %} 데스크톱에서 Maya를 다시 실행했습니다.
 
 Python 콘솔 앱을 Maya에서 사용할 수 있습니다.
 
@@ -328,7 +328,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 ![ID 열](./images/installing_app/17_id_column.png)
 
-ID를 입력하면 Shotgun에서 다음 작업을 수행합니다.
+ID를 입력하면 {% include product %}에서 다음 작업을 수행합니다.
 
 * 기본 구성 백업
 * 복제된 구성 복사
@@ -348,11 +348,11 @@ Push Complete!
 
 ## 기본 구성에서 수행한 변경 사항 표시
 
-**19단계:** Shotgun 데스크톱의 오른쪽 위에 있는 화살표를 클릭하고 **구성**(CONFIGURATION) 목록에서 **기본**(Primary)을 선택합니다.
+**19단계:** {% include product %} 데스크톱의 오른쪽 위에 있는 화살표를 클릭하고 **구성**(CONFIGURATION) 목록에서 **기본**(Primary)을 선택합니다.
 
 ![Maya 구성 변경](./images/installing_app/18_change_config_maya.png)
 
-**20단계:** 데스크톱에서 Maya를 실행하고 **Shotgun > 프로젝트(Project) > …** 메뉴에서 Shotgun Python 콘솔...(Shotgun Python Console...)을 찾습니다.
+**20단계:** 데스크톱에서 Maya를 실행하고 **{% include product %} > 프로젝트(Project) > …** 메뉴에서 {% include product %} Python 콘솔...({% include product %} Python Console...)을 찾습니다.
 
 ![Maya 내 앱](./images/installing_app/19_app_in_maya.png)
 
@@ -360,15 +360,15 @@ Python 콘솔 앱이 선택한 프로젝트의 프로젝트 환경에 추가되�
 
 ## 고급 항목
 
-### Shotgun 개발자 커뮤니티
+### {% include product %} 개발자 커뮤니티
 
-툴킷의 놀라운 특징 중 하나는 모든 작업자가 툴킷 앱을 작성할 수 있다는 점입니다. 앱을 전용 앱으로 사용할 수도 있지만, Shotgun 도구에 추가할 수 있도록 [Shotgun 커뮤니티](https://support.shotgunsoftware.com/hc/ko/articles/219039828)에서 공유할 수도 있습니다. 뛰어난 앱을 만들었으며, 이 앱을 Shotgun 커뮤니티 페이지에서 공유하고 싶다면 [support@shotgunsoftware.com](mailto:support@shotgunsoftware.com)으로 이메일을 보내 주시기 바랍니다.
+툴킷의 놀라운 특징 중 하나는 모든 작업자가 툴킷 앱을 작성할 수 있다는 점입니다. 앱을 전용 앱으로 사용할 수도 있지만, {% include product %} 도구에 추가할 수 있도록 [{% include product %} 커뮤니티](https://support.shotgunsoftware.com/hc/ko/articles/219039828)에서 공유할 수도 있습니다. 뛰어난 앱을 만들었으며, 이 앱을 {% include product %} 커뮤니티 페이지에서 공유하고 싶다면 [support@shotgunsoftware.com](mailto:support@shotgunsoftware.com)으로 이메일을 보내 주시기 바랍니다.
 
-표준 툴킷 앱과 Shotgun 커뮤니티에서 생성된 앱에 대한 활발한 논의가 **[shotgun-dev Google 그룹](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=ko#!forum/shotgun-dev)**에서 진행되고 있습니다. Shotgun 커뮤니티에 새로운 정보 제공 사례가 늘어남에 따라 이러한 기술 및 도구 기반은 끊임없이 확장되고 있습니다.
+표준 툴킷 앱과 {% include product %} 커뮤니티에서 생성된 앱에 대한 활발한 논의가 **[{% include product %}-dev Google 그룹](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=ko#!forum/shotgun-dev)**에서 진행되고 있습니다. {% include product %} 커뮤니티에 새로운 정보 제공 사례가 늘어남에 따라 이러한 기술 및 도구 기반은 끊임없이 확장되고 있습니다.
 
 ### 구성을 확장하는 방법 연구
 
-프로젝트에 사용할 구성을 선택할 때 Python 콘솔 앱을 Shotgun 데스크톱 드롭다운에서 찾을 수 있다는 것을 아셨을 것입니다.
+프로젝트에 사용할 구성을 선택할 때 Python 콘솔 앱을 {% include product %} 데스크톱 드롭다운에서 찾을 수 있다는 것을 아셨을 것입니다.
 
 ![데스크톱 Python 콘솔](./images/installing_app/20_desktop_python_console.png)
 

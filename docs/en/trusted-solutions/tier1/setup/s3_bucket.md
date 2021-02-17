@@ -24,8 +24,8 @@ It's possible to start from the [Private S3 bucket AWS CloudFormation template](
   * Select Template is ready
   * Set Amazon S3 URL to https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-s3-bucket.yml
   * Next
-  * Set a stack name like shotgun-s3-bucket
-  * Set your S3 bucket name and your Shotgun site name
+  * Set a stack name like {% include product %}-s3-bucket
+  * Set your S3 bucket name and your {% include product %} site name
   * Next
   * Accept `I acknowledge that AWS CloudFormation might create IAM resources`
   * Next
@@ -38,21 +38,21 @@ CORS policy on your S3 bucket will be minimally configured, allowing only the re
 
 The template will create an AWS Role with the following permissions on your bucket:
 
-* Allow Shotgun to access your S3 bucket.
-* Allow the Shotgun account to assume the role by setting the role Trust Relationship.
+* Allow {% include product %} to access your S3 bucket.
+* Allow the {% include product %} account to assume the role by setting the role Trust Relationship.
 
 ## Media Isolation Activation
 
-Please contact Shotgun support via the dedicated Slack channel and provide the following information:
+Please contact {% include product %} support via the dedicated Slack channel and provide the following information:
   * S3 bucket name
   * AWS Region
-  * Shotgun Role ARN
+  * {% include product %} Role ARN
 
-Shotgun will configure your test site to use your own S3 bucket.
+{% include product %} will configure your test site to use your own S3 bucket.
 
 ## Validation
 
-At this stage, you should be able to upload and download media. The Shotgun Transcoding Service should also be able to read, transcode and write back the thumbnails, filmstrip and web friendly versions of your media back to your S3 Bucket. To validate this:
+At this stage, you should be able to upload and download media. The {% include product %} Transcoding Service should also be able to read, transcode and write back the thumbnails, filmstrip and web friendly versions of your media back to your S3 Bucket. To validate this:
 
 1. Log in your Migration Test Site.
 2. From the Navigation Bar, go the the Media app

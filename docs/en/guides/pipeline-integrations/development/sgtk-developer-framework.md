@@ -12,7 +12,7 @@ This document outlines some of the technical details relating to Toolkit framewo
 
 Table of Contents:
 - [What is a Toolkit framework?](#what-is-a-toolkit-framework)
-- [Pre-made Shotgun frameworks](#pre-made-shotgun-frameworks)
+- [Pre-made {% include product %} frameworks](#pre-made-shotgun-frameworks)
 - [Creating a Framework](#creating-a-framework)
 - [Using Frameworks from hooks](#using-frameworks-from-hooks)
 
@@ -24,10 +24,10 @@ Instead, you would import a framework into your app or engine. It allows you to 
 An example of a framework would be a library of reusable UI components, that might contain a playlist picker component.
 You could then import that framework in your app, and plug in the playlist picker component to your main app UI.  
 
-## Pre-made Shotgun frameworks
+## Pre-made {% include product %} frameworks
 
-Shotgun supplies some premade [frameworks](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines#frameworks) that you may find useful when creating your own apps.
-The [Qt Widgets](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/) and [Shotgun Utils](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/) frameworks are especially useful in app development.
+{% include product %} supplies some premade [frameworks](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines#frameworks) that you may find useful when creating your own apps.
+The [Qt Widgets](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/) and [{% include product %} Utils](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/) frameworks are especially useful in app development.
 
 ## Creating a Framework
 

@@ -7,10 +7,10 @@ lang: en
 
 # How do I set environment variables before launching software?
 
-Shotgun Toolkit allows you to use hooks during the launch process to configure the environment and run custom code.
+{% include product %} Toolkit allows you to use hooks during the launch process to configure the environment and run custom code.
 
-When you launch software, for example Nuke or Maya, via Shotgun Desktop or through the browser integration, the `tk-multi-launchapp` will be run.
-This app is responsible for launching the software and ensuring the Shotgun integrations start up as expected. There are two points during this process that are exposed via hooks to allow custom code to be run.
+When you launch software, for example Nuke or Maya, via {% include product %} Desktop or through the browser integration, the `tk-multi-launchapp` will be run.
+This app is responsible for launching the software and ensuring the {% include product %} integrations start up as expected. There are two points during this process that are exposed via hooks to allow custom code to be run.
 
 ## before_app_launch.py
 

@@ -10,7 +10,7 @@ lang: en
 
 ## Root Cache Location
 
-Toolkit stores some data in a local cache to prevent unnecessary calls to the Shotgun server. This includes the [path cache](./what-is-path-cache.md), bundle cache, and thumbnails. While the default location should work for most users, it is configurable using the [cache_location core hook](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/cache_location.py) should you need to change it. 
+Toolkit stores some data in a local cache to prevent unnecessary calls to the {% include product %} server. This includes the [path cache](./what-is-path-cache.md), bundle cache, and thumbnails. While the default location should work for most users, it is configurable using the [cache_location core hook](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/cache_location.py) should you need to change it. 
 
 The default cache root location is:
 
@@ -37,7 +37,7 @@ The path cache is located at:
 **Distributed Configurations**
 
 The bundle cache is a cached collection of all the applications, engines, and frameworks used across all of the 
-projects on your Shotgun site. The bundle cache for distributed configs is stored in the following location:
+projects on your {% include product %} site. The bundle cache for distributed configs is stored in the following location:
 
 Mac:
 `~/Library/Caches/Shotgun/bundle_cache`

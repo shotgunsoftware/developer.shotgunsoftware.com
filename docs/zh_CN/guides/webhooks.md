@@ -9,7 +9,7 @@ lang: zh_CN
 
 {% include info title="Beta" content="Webhook 当前为 Beta 版。如果您想要加入 Beta 版，请发送电子邮件至 [webhooks-beta@shotgunsoftware.com](mailto:webhooks-beta@shotgunsoftware.com)" %}
 
-Webhook 允许向您控制的服务通知 Shotgun 中发生的事件。当您创建 Webhook 时，需指定感兴趣的事件类型，并告诉 Shotgun 在该事件触发后要将数据发送至哪个 URL。Shotgun 中发生相关事件后，会将描述事件的数据的有效负载发送到 Webhook 的 URL。这样就可以构建与 Shotgun 的紧密集成并使工作流的某些部分实现自动化。
+Webhook 允许向您控制的服务通知 {% include product %} 中发生的事件。当您创建 Webhook 时，需指定感兴趣的事件类型，并告诉 {% include product %} 在该事件触发后要将数据发送至哪个 URL。{% include product %} 中发生相关事件后，会将描述事件的数据的有效负载发送到 Webhook 的 URL。这样就可以构建与 {% include product %} 的紧密集成并使工作流的某些部分实现自动化。
 
 ## 有哪些示例说明 Webhook 的用法？
 
@@ -17,7 +17,7 @@ Webhook 允许向您控制的服务通知 Shotgun 中发生的事件。当您创
 
 ### 创建实体后在磁盘上创建目录结构
 
-我们看到重复出现多次的一个工作流就是，在 Shotgun 中创建新实体后需要在磁盘上创建目录结构。为何不提前准备，确保在 Shotgun 中创建新镜头后即可自动供艺术家使用？
+我们看到重复出现多次的一个工作流就是，在 {% include product %} 中创建新实体后需要在磁盘上创建目录结构。为何不提前准备，确保在 {% include product %} 中创建新镜头后即可自动供艺术家使用？
 
 ### 状态管理自动化
 
@@ -25,9 +25,9 @@ Webhook 允许向您控制的服务通知 Shotgun 中发生的事件。当您创
 
 另一个说明如何自动进行状态管理的示例是，在创建新的注释后触发任务状态更改。这是一种很好的方法，可以告知艺术家和制作团队，主管在审核会话后已请求更改或修复当前作品。
 
-## 何时应使用 Webhook，而不是 Shotgun 事件进程？
+## 何时应使用 Webhook，而不是 {% include product %} 事件进程？
 
-Webhook 和 [Shotgun 事件进程](https://github.com/shotgunsoftware/shotgunEvents/wiki)提供类似的功能，但存在一些关键区别。事件进程要求您运行、监视和维护自己的服务。您的所有代码都必须使用 Python 编写，并且允许您启动自己的 Shotgun 连接。相反，Webhook 会应答连接，并且可以使用任何编程语言编写。它们可以在无服务器环境中托管，例如 [AWS Lambda](https://aws.amazon.com/lambda/)，也可以触发任何在线提供的自动化平台，例如 [Zapier](https://zapier.com) 和 [IFTTT](https://ifttt.com)。如果您的用例用到 Webhook，这应该是首选解决方案。
+Webhook 和 [{% include product %} 事件进程](https://github.com/shotgunsoftware/shotgunEvents/wiki)提供类似的功能，但存在一些关键区别。事件进程要求您运行、监视和维护自己的服务。您的所有代码都必须使用 Python 编写，并且允许您启动自己的 {% include product %} 连接。相反，Webhook 会应答连接，并且可以使用任何编程语言编写。它们可以在无服务器环境中托管，例如 [AWS Lambda](https://aws.amazon.com/lambda/)，也可以触发任何在线提供的自动化平台，例如 [Zapier](https://zapier.com) 和 [IFTTT](https://ifttt.com)。如果您的用例用到 Webhook，这应该是首选解决方案。
 
 ## 创建 Webhook
 
@@ -66,7 +66,7 @@ True
 
 ### 验证 SSL 证书
 
-验证 SSL 证书是一项可选功能，该功能可帮助确保到 Webhook 的使用者 URL 的任何连接的安全性。如果启用，则向 Webhook 的 URL 交付内容时，Shotgun 将使用 OpenSSL 的证书验证例程来验证证书。
+验证 SSL 证书是一项可选功能，该功能可帮助确保到 Webhook 的使用者 URL 的任何连接的安全性。如果启用，则向 Webhook 的 URL 交付内容时，{% include product %} 将使用 OpenSSL 的证书验证例程来验证证书。
 
 ## Webhook 状态
 
@@ -77,7 +77,7 @@ True
 | 状态 | 示例 | 说明 |
 |--------|:-------:|:-----------:|
 | 活动 | ![活动](./images/webhooks/webhook_status_active.png) | Webhook 运行稳定。在过去 24 小时内，对此 Webhook 进行的交付都已到达其目的地。 |
-| 不稳定 | ![不稳定](./images/webhooks/webhook_status_unstable.png) | Webhook 运行不稳定。在过去 24 小时内，某些交付未能到达其目的地，但不足以导致 Shotgun 将 Webhook 视为终止。 |
+| 不稳定 | ![不稳定](./images/webhooks/webhook_status_unstable.png) | Webhook 运行不稳定。在过去 24 小时内，某些交付未能到达其目的地，但不足以导致 {% include product %} 将 Webhook 视为终止。 |
 | 失败 | ![失败](./images/webhooks/webhook_status_failed.png) | Webhook 被视为终止，且不会再尝试交付。这是因为在短时间内出现太多交付失败，且系统已确定不应再将 Webhook 视为可行。**如果在过去 24 小时内出现 10 次交付失败，Webhook 将被视为失败**。 |
 | 禁用 | ![禁用](./images/webhooks/webhook_status_disabled.png) | Webhook 处于禁用状态，并且在重新启用之前，不会再尝试进行任何交付。 |
 
@@ -101,7 +101,7 @@ True
 
 #### 有效负载
 
-发送到 Webhook URL 的有效负载包含描述在 Shotgun 中发生的事件及其触发者的信息。它以 JSON 格式提供。
+发送到 Webhook URL 的有效负载包含描述在 {% include product %} 中发生的事件及其触发者的信息。它以 JSON 格式提供。
 
 {% include warning title="有效负载大小" content="交付的有效负载最大为 1 MB。Shotgun 中触发的任何导致有效负载超过 1 MB 的事件都将移除其 `new_value` 和 `old_value` 键，并添加一个 `warning` 键，其中包含消息，说明发生了什么、为什么以及如何从 Shotgun 检索完整事件日志条目。" %}
 
@@ -144,11 +144,11 @@ True
 
 ##### 会话 UUID
 
-事件有效负载的一部分是在 Shotgun 中触发事件的 `session_uuid`。此值可以提供给 [Shotgun 的 Python API](https://developer.shotgunsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)，这将导致具有该 session_uuid 的任何已打开浏览器会话为 API 生成的事件显示更新。
+事件有效负载的一部分是在 {% include product %} 中触发事件的 `session_uuid`。此值可以提供给 [{% include product %} 的 Python API](https://developer.shotgunsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)，这将导致具有该 session_uuid 的任何已打开浏览器会话为 API 生成的事件显示更新。
 
 ### 确认
 
-可以更新交付，使其包含确认。进行交付后，标题将作为请求的一部分提供。标题中包含交付记录的 ID（存储在 `x-sg-delivery-id` 键中）。此 ID 可以用于更新交付记录，以使用 [Shotgun REST API](https://developer.shotgunsoftware.com/rest-api) 包含确认。
+可以更新交付，使其包含确认。进行交付后，标题将作为请求的一部分提供。标题中包含交付记录的 ID（存储在 `x-sg-delivery-id` 键中）。此 ID 可以用于更新交付记录，以使用 [{% include product %} REST API](https://developer.shotgunsoftware.com/rest-api) 包含确认。
 
 {% include warning title="确认大小" content="确认的最大允许大小为 4 KB。" %}
 
@@ -169,7 +169,7 @@ True
 
 #### 确认有什么用途？
 
-确认允许在带外详细报告对 Webhook URL 已成功接收的交付的处理是成功还是失败。这使您可以将从 Shotgun 接收交付的状态与此次交付的关联事件处理成功还是失败分开。通过这种方式，成功交付的事件可以包含其他信息以用于调试。一个很好的示例是在创建资产时触发的 Webhook。如果该 Webhook 的职责是为每个新资产在磁盘上创建目录结构，则 Webhook URL 可以成功接收交付，但由于磁盘或网络故障无法创建关联的目录。然后它可以使用详细的错误消息更新交付记录，说明未创建目录结构及其原因。
+确认允许在带外详细报告对 Webhook URL 已成功接收的交付的处理是成功还是失败。这使您可以将从 {% include product %} 接收交付的状态与此次交付的关联事件处理成功还是失败分开。通过这种方式，成功交付的事件可以包含其他信息以用于调试。一个很好的示例是在创建资产时触发的 Webhook。如果该 Webhook 的职责是为每个新资产在磁盘上创建目录结构，则 Webhook URL 可以成功接收交付，但由于磁盘或网络故障无法创建关联的目录。然后它可以使用详细的错误消息更新交付记录，说明未创建目录结构及其原因。
 
 ## 测试 Webhook
 

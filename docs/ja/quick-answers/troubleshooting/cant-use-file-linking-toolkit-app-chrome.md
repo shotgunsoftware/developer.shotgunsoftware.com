@@ -9,7 +9,7 @@ lang: ja
 
 ## 概要
 
-Shotgun のアクション メニューで Toolkit アプリケーションのリストが表示されなかったり、Shotgun Desktop が動作していてもローカル ファイル リンクを使用するときにエラーが発生したりする場合があります。 これは Chrome での Shotgun Desktop のブラウザ統合のトラブルシューティングに関するガイドです。皆さんの役に立つことを願っています。[Firefox](./cant-use-file-linking-toolkit-app-firefox.md) のための個別のガイドがあります。
+{% include product %} のアクション メニューで Toolkit アプリケーションのリストが表示されなかったり、{% include product %} Desktop が動作していてもローカル ファイル リンクを使用するときにエラーが発生したりする場合があります。 これは Chrome での {% include product %} Desktop のブラウザ統合のトラブルシューティングに関するガイドです。皆さんの役に立つことを願っています。[Firefox](./cant-use-file-linking-toolkit-app-firefox.md) のための個別のガイドがあります。
 
 - [問題を診断する](#diagnosing-the-issue)
 - [証明書問題をすばやく修正する方法](#how-to-quickly-fix-certificate-issues)
@@ -18,13 +18,13 @@ Shotgun のアクション メニューで Toolkit アプリケーションの�
 
 ## 問題を診断する
 
-### Shotgun Desktop は動作していますか?
+### {% include product %} Desktop は動作していますか?
 
 もちろん、そうだと思います。 既に確認済みだと思いますが、 念のためお尋ねしました。:)
 
-### Shotgun Desktop の起動後に Chrome を再起動しましたか?
+### {% include product %} Desktop の起動後に Chrome を再起動しましたか?
 
-Shotgun Desktop が証明書を登録する前に Chrome を起動した場合(Shotgun Desktop を初めて起動した場合にのみ発生し、その後は問題になりません)、Chrome は期限切れの証明書のコピーを使用し、Shotgun Desktop への接続を拒否します。すべてのタブを閉じても Chrome は終了する必要がないため、アドレス バーに [chrome://restart](chrome://restart/) と入力して[Enter]キーを押します。これにより、Chrome に関連するすべてのプロセスを終了し、Chrome を再起動させます。
+{% include product %} Desktop が証明書を登録する前に Chrome を起動した場合({% include product %} Desktop を初めて起動した場合にのみ発生し、その後は問題になりません)、Chrome は期限切れの証明書のコピーを使用し、{% include product %} Desktop への接続を拒否します。すべてのタブを閉じても Chrome は終了する必要がないため、アドレス バーに [chrome://restart](chrome://restart/) と入力して[Enter]キーを押します。これにより、Chrome に関連するすべてのプロセスを終了し、Chrome を再起動させます。
 
 ### ファイアウォール ソフトウェアを使用していますか?
 
@@ -32,7 +32,7 @@ Shotgun Desktop が証明書を登録する前に Chrome を起動した場合(S
 
 ### Chrome が証明書を拒否していますか?
 
-Chrome が証明書を受け入れていることを確認するには、https://localhost:9000 を参照します。これは、ローカル ファイル リンクを使用して Toolkit アプリケーションを起動するために Shotgun Web サイトがアクセスを試みるアドレスです。通常、次のメッセージが表示されます。
+Chrome が証明書を受け入れていることを確認するには、https://localhost:9000 を参照します。これは、ローカル ファイル リンクを使用して Toolkit アプリケーションを起動するために {% include product %} Web サイトがアクセスを試みるアドレスです。通常、次のメッセージが表示されます。
 
 ![Autobahn Python メッセージ](images/autobahn-python.png)
 
@@ -44,7 +44,7 @@ Chrome が証明書を受け入れていることを確認するには、https:/
 
 ## 証明書問題をすばやく修正する方法
 
-この問題を回避する最も簡単な方法は、**ADVANCED** と **Proceed to localhost (unsafe)** をクリックすることです。 これにより、Chrome は証明書を承認していることを把握でき、Shotgun Web サイトが Shotgun Desktop と通信できるようになります。
+この問題を回避する最も簡単な方法は、**ADVANCED** と **Proceed to localhost (unsafe)** をクリックすることです。 これにより、Chrome は証明書を承認していることを把握でき、{% include product %} Web サイトが {% include product %} Desktop と通信できるようになります。
 
 {% include info title="注" content="このため、Web ブラウザと Shotgun Desktop 間の接続のみが有効になります。信頼設定は 2 つのアプリケーション間のトラフィック フローを許可しますが、**インターネット上の他のサーバの信頼性を暗示しているわけではありません**。 残念なことに、問題を抱えたすべてのコンピュータにこのプロセスを繰り返し適用する必要があります。問題が解決されない場合、またはすべてのユーザに展開するには複雑すぎる場合は、次の手順を試すことをお勧めします。"%}
 
@@ -54,11 +54,11 @@ Chrome が証明書を受け入れていることを確認するには、https:/
 
 Chrome は自己署名証明書のセキュリティを定期的に更新しますが、ブラウザ統合がこの更新で壊れることがあります。 残念ながら、このような問題を解決するには証明書の certificate_path を再生成するしかありません。
 
-証明書を再生成するには、Shotgun Desktop のユーザ メニューの **[詳細設定]（Advanced）**セクションにある **Regenerate Certificates** オプションを選択します。(このオプションが表示されない場合は、ロック解除のために `tk-desktop` エンジンを更新してください。)
+証明書を再生成するには、{% include product %} Desktop のユーザ メニューの **[詳細設定]（Advanced）**セクションにある **Regenerate Certificates** オプションを選択します。(このオプションが表示されない場合は、ロック解除のために `tk-desktop` エンジンを更新してください。)
 
-証明書の再生成を確定すると、証明書を初めて生成したときのように一連のダイアログが表示されます。Windows と macOS で、Windows Certificate Store または macOS キーチェーンの更新を求めるプロンプトが 2 回表示されます。1 回目は古い証明書の削除のときで、2 回目は新しい証明書の登録のときです。Linux では、確認なしで登録されます。 登録されると、Shotgun Desktop が再起動されます。
+証明書の再生成を確定すると、証明書を初めて生成したときのように一連のダイアログが表示されます。Windows と macOS で、Windows Certificate Store または macOS キーチェーンの更新を求めるプロンプトが 2 回表示されます。1 回目は古い証明書の削除のときで、2 回目は新しい証明書の登録のときです。Linux では、確認なしで登録されます。 登録されると、{% include product %} Desktop が再起動されます。
 
-Shotgun Desktop の準備が完了したら、Chrome が完全にシャットダウンしてその証明書キャッシュがクリアされるように、アドレス バーに [chrome://restart](chrome://restart/) と入力して Chrome を再起動することをお勧めします。
+{% include product %} Desktop の準備が完了したら、Chrome が完全にシャットダウンしてその証明書キャッシュがクリアされるように、アドレス バーに [chrome://restart](chrome://restart/) と入力して Chrome を再起動することをお勧めします。
 
 コンピュータがインターネットに接続されておらず、更新をダウンロードできない場合は、support@shotgunsoftware.com までお問い合わせください。
 
@@ -98,4 +98,4 @@ Shotgun Desktop の準備が完了したら、Chrome が完全にシャットダ
 
 ## 他の OS でのトラブルシューティング
 
-他の OS での Shotgun Desktop 統合に問題がある場合は、この記事を更新してサポートできるように、[サポート チーム](https://support.shotgunsoftware.com/hc/ja/requests/new)までご連絡ください。
+他の OS での {% include product %} Desktop 統合に問題がある場合は、この記事を更新してサポートできるように、[サポート チーム](https://support.shotgunsoftware.com/hc/ja/requests/new)までご連絡ください。

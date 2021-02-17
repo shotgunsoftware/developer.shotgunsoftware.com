@@ -5,11 +5,11 @@
 
 # [developer.shotgunsoftware.com](http://developer.shotgunsoftware.com/)
 
-Welcome to the source repository for [developer.shotgunsoftware.com](http://developer.shotgunsoftware.com/). This repository holds the markdown source and configuration used to generate the Shotgun developer site.
+Welcome to the source repository for [developer.shotgunsoftware.com](http://developer.shotgunsoftware.com/). This repository holds the markdown source and configuration used to generate the {% include product %} developer site.
 
 ## How does it work?
 
-The Shotgun Developer site uses *continous integration*. What you see in the master branch of this repository is reflected on the developer website. You create github issues and pull requests in order to make changes to the Repository.
+The {% include product %} Developer site uses *continous integration*. What you see in the master branch of this repository is reflected on the developer website. You create github issues and pull requests in order to make changes to the Repository.
 
 The site uses the [Toolkit Documentation Generation system](https://github.com/shotgunsoftware/tk-doc-generator) to convert markdown, sphinx and other content to a website, complete with search, table of contents etc.
 

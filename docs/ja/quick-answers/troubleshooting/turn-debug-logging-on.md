@@ -7,13 +7,13 @@ lang: ja
 
 # デバッグ ログをオフにするにはどうすればいいですか?
 
-## Shotgun Desktop によるデバッグを有効にする
+## {% include product %} Desktop によるデバッグを有効にする
 
-デバッグを有効にする最も簡単な方法は、Shotgun Desktop アプリを使用してオンに切り替えることです。これは、Shotgun Desktop にログインした後で設定できます。アプリの右下にあるプロファイル画像をクリックして、**[Advanced] -> [Toggle Debug Logging]**を選択します。この設定はセッションの終了後も維持されるため、デバッグが終了したら忘れずにオフにしてください。
+デバッグを有効にする最も簡単な方法は、{% include product %} Desktop アプリを使用してオンに切り替えることです。これは、{% include product %} Desktop にログインした後で設定できます。アプリの右下にあるプロファイル画像をクリックして、**[Advanced] -> [Toggle Debug Logging]**を選択します。この設定はセッションの終了後も維持されるため、デバッグが終了したら忘れずにオフにしてください。
 
 ![SG Desktop でのデバッグ ログの切り替え](images/desktop-enable-debug-logging.png)
 
-デバッグをオンにすると、Shotgun Desktop から起動されたアプリ、またはブラウザ統合を介した Toolkit コマンドも、このデバッグ状態を継承することに注意してください。
+デバッグをオンにすると、{% include product %} Desktop から起動されたアプリ、またはブラウザ統合を介した Toolkit コマンドも、このデバッグ状態を継承することに注意してください。
 
 ## 環境変数をセットアップする
 

@@ -12,11 +12,11 @@ lang: en
 Sometimes it's necessary to move your project files (scene files, renders, etc.) to a new root storage location (e.g., from `/mnt/smalldrive` to `/mnt/bigdrive/foo`). This can be done whether you're using a single or multi-root configuration. For example, let's say we want to move your storage named **"asset_storage"**:
 
 - Copy (or move) your project files from the old location to the new location.
-- In Shotgun, navigate to the **Admin > Site Preferences** page and open the **File Management** section.
-    ![Shotgun storage roots section in the site preferences.](./images/shotgun-storage-roots.png)
+- In {% include product %}, navigate to the **Admin > Site Preferences** page and open the **File Management** section.
+    ![{% include product %} storage roots section in the site preferences.](./images/shotgun-storage-roots.png)
 - Update the Local File Storage named "primary" with the paths for each platform to the new storage for your project files. If you're not using a specific platform, leave it blank.
 - Click on the **"Save Changes"** button on the top or bottom of the page.
-- Update your `config/core/roots.yml` file in your project configuration to match the new path values you just saved in Shotgun.
+- Update your `config/core/roots.yml` file in your project configuration to match the new path values you just saved in {% include product %}.
 
 Toolkit stores publish paths as relative paths from a storage root. So with the old storage root the path was expanded like so:
 
@@ -26,7 +26,7 @@ With the new storage root definition, the path is now expanded like this:
 
     [asset-storage]/assets/Character/betty => /mnt/bigdrive/foo/assets/Character/betty
 
-and we don't need to worry about updating any other publish information in Shotgun or Toolkit! 
+and we don't need to worry about updating any other publish information in {% include product %} or Toolkit! 
 
 {% include warning title="Warning" content="The above steps assume that you are re-pathing the existing storage root. If instead you trash the existing one or create a new one then you will need to re-register all your folders and re-publish your `PublishedFiles` entities." %}
 
@@ -36,4 +36,4 @@ If any of your scene files have references in them that are pointing to the old 
 
 ## Versions
 
-If you have Version entities in Shotgun that store information in the Path to Movie or Path to Frames fields that are affected by this change, these will also have to be updated to point to the new location since these fields are string fields that contain an absolute path to the media.
+If you have Version entities in {% include product %} that store information in the Path to Movie or Path to Frames fields that are affected by this change, these will also have to be updated to point to the new location since these fields are string fields that contain an absolute path to the media.

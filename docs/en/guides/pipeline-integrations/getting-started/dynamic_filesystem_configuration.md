@@ -11,9 +11,9 @@ In this guide, you will learn how to modify your Toolkit pipeline configuration 
 
 ## About the guide
 
-One of the hardest things about managing a pipeline is keeping track of the myriad files that will be created. Your Toolkit pipeline automates filesystem management: by creating folders based on data in Shotgun and a configured folder structure, and automatically writing files to the right place and with standardized naming, artists can focus on content creation. Your pipeline configuration comes with a default set of folder and file naming conventions, but productions often customize them. This guide will provide the knowledge necessary to make those customizations. 
+One of the hardest things about managing a pipeline is keeping track of the myriad files that will be created. Your Toolkit pipeline automates filesystem management: by creating folders based on data in {% include product %} and a configured folder structure, and automatically writing files to the right place and with standardized naming, artists can focus on content creation. Your pipeline configuration comes with a default set of folder and file naming conventions, but productions often customize them. This guide will provide the knowledge necessary to make those customizations. 
 
-In the Default Configuration, assets are managed in a folder structure like `asset_type/asset/pipeline_step`. In this guide, we’ll be using a custom entity called “Set” to organize them further by the production set on which each asset is used. We will first set up the custom entity in Shotgun, then use it to manage the assets created for any given set, so that the folder structure looks like `set/asset_type/asset/pipeline_step`. 
+In the Default Configuration, assets are managed in a folder structure like `asset_type/asset/pipeline_step`. In this guide, we’ll be using a custom entity called “Set” to organize them further by the production set on which each asset is used. We will first set up the custom entity in {% include product %}, then use it to manage the assets created for any given set, so that the folder structure looks like `set/asset_type/asset/pipeline_step`. 
 
 We can demonstrate the idea behind organizing assets by set with an example: say you have a project where some scenes take place in a garage, while others take place in a dining room. With our setup, files for assets like “wrench”, “oilcan”, or “workbench” would be organized in a “garage” folder, while “plate”, “winebottle”, or “tablecloth” would be organized in a “dining_room” folder. In our example, we'll be ensuring that a juicy "filet" asset is properly placed in the dining room. 
 
@@ -21,7 +21,7 @@ As part of our example, we’ll also edit the filenaming templates for the proje
 
 ### There are three parts to this guide
 
-* Creating a **custom entity** in Shotgun called “Set”, which you will use to associate with the dining room elements the artists are creating.
+* Creating a **custom entity** in {% include product %} called “Set”, which you will use to associate with the dining room elements the artists are creating.
 * Editing the folder **schema**, enabling Toolkit to include a dynamically named folder based on the current set in the folder structure. 
 * Editing the **template** used for naming asset work files, enabling Toolkit to include the name of the associated set in the file name. 
 
@@ -29,9 +29,9 @@ As part of our example, we’ll also edit the filenaming templates for the proje
  
 To use this guide, the following is required:
 
-1. An active [Shotgun](https://www.shotgunsoftware.com/signup/) site. You should have a project with at least one Asset created. The asset should have a Model task. 
-2. A basic understanding of how a Shotgun site is used to manage assets
-3. [Shotgun Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) installed on your system.
+1. An active [{% include product %}](https://www.shotgunsoftware.com/signup/) site. You should have a project with at least one Asset created. The asset should have a Model task. 
+2. A basic understanding of how a {% include product %} site is used to manage assets
+3. [{% include product %} Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) installed on your system.
 4. A cloned pipeline configuration for the identified project, or complete the [Getting started with configurations](./advanced_config.md) guide and clone the configuration created in that exercise.
 5. Basic familiarity with YAML. 
 6. Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
@@ -42,11 +42,11 @@ To use this guide, the following is required:
 
 ### About file schemas and templates
 
-The schema and templates in the Toolkit pipeline configuration allow you to take advantage of your Shotgun data for managing production files on disk. The schema in the Default Configuration includes entities like **Shot**, **Sequence**, **Asset**, **Asset Type**, etc.  Other entities like **Level**, **Episode**, **Season**, or in our case, custom entities like **Set** can be added. 
+The schema and templates in the Toolkit pipeline configuration allow you to take advantage of your {% include product %} data for managing production files on disk. The schema in the Default Configuration includes entities like **Shot**, **Sequence**, **Asset**, **Asset Type**, etc.  Other entities like **Level**, **Episode**, **Season**, or in our case, custom entities like **Set** can be added. 
 
 The Toolkit platform allows you to build your folder structure dynamically by using a **schema**, a miniature version of a production folder structure that will be used as a template when building out your actual production filesystem. The schema is an explicit guide for the dynamic creation of folders, and uses YAML files to define the rules for dynamically created folders. The Default Configuration includes a pre-configured schema that supports folder creation for both asset and shot pipelines. You will be modifying the portion of the schema that supports creating the asset folder structure, `/assets/<asset_type>/<asset>/<step>`, to add support for the new **Set** entity you’re creating. 
 
-**Templates** allow you to dynamically name and save files as they’re created using Shotgun data and information from the schema structure. The Default Configuration provides a set of starter templates that you can edit to meet the needs of your pipeline. 
+**Templates** allow you to dynamically name and save files as they’re created using {% include product %} data and information from the schema structure. The Default Configuration provides a set of starter templates that you can edit to meet the needs of your pipeline. 
 
 {% include info title="Note" content="The Basic setup for Shotgun integrations doesn’t include filesystem management. In order to configure filesystem management for your project, your project will need an Advanced setup. The first guide, [Getting started with configurations](./advanced_config.md) goes through the Advanced setup process" %}
 
@@ -56,11 +56,11 @@ Customizing your schema and templates will allow you to dynamically manage the f
 
 ### Enabling a custom entity
 
-**Step 1:** Open your Shotgun site in the browser. Click on your avatar and go to ADMIN > Site Preferences. In the resulting page, expand the **Entities** section.
+**Step 1:** Open your {% include product %} site in the browser. Click on your avatar and go to ADMIN > Site Preferences. In the resulting page, expand the **Entities** section.
 
 ![Python app](./images/dynamic_filesystem_configuration/1_site_preferences.png)
 
-Displayed is a list of entity types that are available in Shotgun. At the top of the list in the image below are some entity types that are configured for the current Shotgun site. Underneath these entity types are several **Custom Entities** that are not configured or enabled. 
+Displayed is a list of entity types that are available in {% include product %}. At the top of the list in the image below are some entity types that are configured for the current {% include product %} site. Underneath these entity types are several **Custom Entities** that are not configured or enabled. 
 
 ### Choose one of the custom entity types, configure it, and enable it.
 
@@ -70,7 +70,7 @@ Displayed is a list of entity types that are available in Shotgun. At the top of
 
 ![Python app](./images/dynamic_filesystem_configuration/4_enable_entity.png)
 
-Doing this makes that custom entity active in Shotgun and gives it the display name *Set*. Essentially you are creating an alias for the custom entity because the system name of the entity remains `CustomEntity01`. In this example, we're using `CustomEntity01`; you might use a different custom entity.
+Doing this makes that custom entity active in {% include product %} and gives it the display name *Set*. Essentially you are creating an alias for the custom entity because the system name of the entity remains `CustomEntity01`. In this example, we're using `CustomEntity01`; you might use a different custom entity.
 
 {% include info title="Note" content="Remember the system name of the custom entity you chose." %}
 
@@ -98,7 +98,7 @@ In **New Field Name**, type “Set”. In the **GENERAL** menu under **Field Typ
 
 For this guide, apply it to **Only the current project** and select **Create Field**. 
 
-Shotgun will configure the new field.
+{% include product %} will configure the new field.
 
 ![Python app](./images/dynamic_filesystem_configuration/8_only_current_project.png)
 
@@ -124,7 +124,7 @@ Adding **Dining Room** in the Set field of an asset creates an [association](htt
 
 ### Setting up the schema
 
-You’ve now enabled a Set custom entity, created a Set entity called “Dining Room”, and linked an Asset entity to the Dining Room set. You’ve got all the pieces in place in your Shotgun site to now modify your folder structure. When an artist starts working on a task, Toolkit uses the associated Shotgun data to determine what folders to create in the filesystem. New folders are created and named automatically based on the pipeline configuration’s schema. 
+You’ve now enabled a Set custom entity, created a Set entity called “Dining Room”, and linked an Asset entity to the Dining Room set. You’ve got all the pieces in place in your {% include product %} site to now modify your folder structure. When an artist starts working on a task, Toolkit uses the associated {% include product %} data to determine what folders to create in the filesystem. New folders are created and named automatically based on the pipeline configuration’s schema. 
 
 Now it’s time to define the folder structure you want Toolkit to dynamically generate as artists step through the production pipeline. This is done by editing the schema.
 
@@ -150,7 +150,7 @@ To achieve this, you would set up the schema like this:
 
 `<project>/assets/<CustomEntity01>/<asset_type>/<asset>/<step>`
 
-The Set entity is represented as `CustomEntity01`. While we gave CustomEntity01 the *display name* of Set in Shotgun, in our configuration, we’ll always refer to it by its system name, `CustomEntity01`. 
+The Set entity is represented as `CustomEntity01`. While we gave CustomEntity01 the *display name* of Set in {% include product %}, in our configuration, we’ll always refer to it by its system name, `CustomEntity01`. 
 
 ### How the schema uses YAML files
 
@@ -158,7 +158,7 @@ A schema can contain static and dynamic folders. If you have a static folder in 
 
 ### Create the new folder and YAML file for the Set entity
 
-The schema has a `project` folder that contains folders relative to the different entities Shotgun tracks. You are adding the new asset entity, CustomEntity01, to enable Shotgun to track the items in a Set. These items are assets, so you will edit the folders and YAML files under assets.
+The schema has a `project` folder that contains folders relative to the different entities {% include product %} tracks. You are adding the new asset entity, CustomEntity01, to enable {% include product %} to track the items in a Set. These items are assets, so you will edit the folders and YAML files under assets.
 
 Again, our goal is to go from an `asset_type/asset/step` folder structure to `set/asset_type/asset/step`. So, we’ll want to add a folder to represent set in our schema, with a corresponding YAML file. Since we need to use the system name for custom entities, we’ll be creating the `CustomEntity01/` folder and `CustomEntity01.yml`. 
 
@@ -180,7 +180,7 @@ filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
 ```
 
-The YAML file will give the instructions to Toolkit for what to name the `CustomEntity01` folder. In this case, we’re making a folder of type `shotgun_entity`, which means that it corresponds to a Shotgun query. The `entity_type` field tells us to query the `CustomEntity01` entity in Shotgun, and the `name` field tells us which *field* on the entity to query – in this case we’re getting the `code` field from `CustomEntity01`. 
+The YAML file will give the instructions to Toolkit for what to name the `CustomEntity01` folder. In this case, we’re making a folder of type `{% include product %}_entity`, which means that it corresponds to a {% include product %} query. The `entity_type` field tells us to query the `CustomEntity01` entity in {% include product %}, and the `name` field tells us which *field* on the entity to query – in this case we’re getting the `code` field from `CustomEntity01`. 
 
 The `filters` field limits the cases in which this dynamic folder should be created.
 
@@ -225,10 +225,10 @@ You’ve now successfully modified your schema to organize assets by a Set custo
 
 Folders are created at a few points in Toolkit pipeline workflows:
 
-* **Application launchers**: Every time a user launches a DCC for a task, Toolkit will create the directories for that task if they’re not already there. Since launching a DCC tends to be the first thing someone does with Toolkit, this is the usual way directories get created. This can happen via the right-click menus in Shotgun, or from Shotgun Desktop or Create apps.
-* **Shotgun menu**: The most direct way to create folders for a task is to right-click on it in Shotgun and choose the “Create Folders” menu item.
-* **Toolkit API**: You can trigger the directory creation logic directly through the Toolkit API. This can be used to plug Toolkit into a custom launcher, or for something like an event trigger for a workflow where you want to automatically create the directories for a Shot as it is created in Shotgun.
-* **tank command**: Analogous to the menu item in Shotgun, the `tank folders` terminal command will also create folders for a task.
+* **Application launchers**: Every time a user launches a DCC for a task, Toolkit will create the directories for that task if they’re not already there. Since launching a DCC tends to be the first thing someone does with Toolkit, this is the usual way directories get created. This can happen via the right-click menus in {% include product %}, or from {% include product %} Desktop or Create apps.
+* **{% include product %} menu**: The most direct way to create folders for a task is to right-click on it in {% include product %} and choose the “Create Folders” menu item.
+* **Toolkit API**: You can trigger the directory creation logic directly through the Toolkit API. This can be used to plug Toolkit into a custom launcher, or for something like an event trigger for a workflow where you want to automatically create the directories for a Shot as it is created in {% include product %}.
+* **tank command**: Analogous to the menu item in {% include product %}, the `tank folders` terminal command will also create folders for a task.
 
 We’ll test with the `tank` command.
 
@@ -274,7 +274,7 @@ Now that we’ve set up our folder structure, the next step is to edit the *temp
 
 ### How Toolkit apps use templates
 
-You first created a way to associate an asset with a set in Shotgun by enabling CustomEntity01 to represent sets, then adding a link field to the Asset entity to represent the link between an asset and a set. After establishing the relationship between assets and sets, you set up your folder schema to use that association to place all asset *folders* within a folder for their associated set. Now you’re going to create a way to dynamically name *files* and allow Toolkit Apps to manage the files automatically. 
+You first created a way to associate an asset with a set in {% include product %} by enabling CustomEntity01 to represent sets, then adding a link field to the Asset entity to represent the link between an asset and a set. After establishing the relationship between assets and sets, you set up your folder schema to use that association to place all asset *folders* within a folder for their associated set. Now you’re going to create a way to dynamically name *files* and allow Toolkit Apps to manage the files automatically. 
 
 As artists start working on tasks in a project, the necessary folder structure is generated. Then,  when they initiate the Workfiles app’s **File Save** action, the file is named automatically. A template accessed through Toolkit’s Workfiles app is used to name that file. Render apps like Nuke Write node and Houdini Mantra node use templates to name and save rendered files, as does the Publisher app for published files.
 
@@ -357,17 +357,17 @@ You’ve now modified `templates.yml` to reflect the new set folder in your prod
 
 ### Test it
 
-**Step 18:** Launch Maya from Shotgun Desktop.
+**Step 18:** Launch Maya from {% include product %} Desktop.
 
 ![Python app](images/dynamic_filesystem_configuration/23_test_file_creation.png)
 
-In Maya, go to **Shotgun > File Open**, and in the resulting dialog, select a task on an asset for which you’ve specified a Set in Shotgun. 
+In Maya, go to **{% include product %} > File Open**, and in the resulting dialog, select a task on an asset for which you’ve specified a Set in {% include product %}. 
 
 ![Python app](images/dynamic_filesystem_configuration/24_test_new_file.png)
 
 Select **+New File**.
 
-You can create a simple 3D object or just save the file using the **Shotgun > Save File**.
+You can create a simple 3D object or just save the file using the **{% include product %} > Save File**.
 
 ![Python app](images/dynamic_filesystem_configuration/file_save.png)
 
@@ -375,17 +375,17 @@ Success!
 
 Notice the **File Save** dialog box is displaying **Preview: Dining-Room_scene.v001.ma** using the new settings in the template.
 
-The **Work Area**: is displaying **.../Shotgun/projects/the_other_side/assets/Dining-Room/Prop/Filet/model/work/maya** as the path for where Workfiles is saving the file.
+The **Work Area**: is displaying **.../{% include product %}/projects/the_other_side/assets/Dining-Room/Prop/Filet/model/work/maya** as the path for where Workfiles is saving the file.
 
 ## Advanced topics
 
 ### Extending the example
 
-In this example, we modified a single template, but there’s plenty more you can do with your filesystem configuration. In a real world example, you’d likely change *all* asset-related files to have the same file naming conventions. You can make modifications based on other entities (Season, Episode, Level, etc.), create user folders, name your folders based on Shotgun data manipulated with regular expressions, and much more. You can learn about all of Toolkit’s folder and schema options in the [Filesystem Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868). 
+In this example, we modified a single template, but there’s plenty more you can do with your filesystem configuration. In a real world example, you’d likely change *all* asset-related files to have the same file naming conventions. You can make modifications based on other entities (Season, Episode, Level, etc.), create user folders, name your folders based on {% include product %} data manipulated with regular expressions, and much more. You can learn about all of Toolkit’s folder and schema options in the [Filesystem Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868). 
 
 ### The Path Cache
 
-At folder creation time, a mapping is created between a folder on disk and a Shotgun entity. These mappings are stored as FilesystemLocation entities in Shotgun, and cached in an SQLite database on user machines. To learn more about how the path cache works and how to work with it, see [this document](../../../quick-answers/administering/what-is-path-cache.md).
+At folder creation time, a mapping is created between a folder on disk and a {% include product %} entity. These mappings are stored as FilesystemLocation entities in {% include product %}, and cached in an SQLite database on user machines. To learn more about how the path cache works and how to work with it, see [this document](../../../quick-answers/administering/what-is-path-cache.md).
 
 
 ### Additional Resources

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: 如何在 Windows 上静默安装 Shotgun Desktop？
+title: 如何在 Windows 上静默安装 {% include product %} Desktop？
 pagename: install-desktop-silent
 lang: zh_CN
 ---
 
-# 如何在 Windows 上静默安装 Shotgun Desktop？
+# 如何在 Windows 上静默安装 {% include product %} Desktop？
 
-要以静默方式运行 Shotgun Desktop 安装程序，只需按以下方法启动 Shotgun Desktop 安装程序：
+要以静默方式运行 {% include product %} Desktop 安装程序，只需按以下方法启动 {% include product %} Desktop 安装程序：
 
 `ShotgunInstaller_Current.exe /S`
 
