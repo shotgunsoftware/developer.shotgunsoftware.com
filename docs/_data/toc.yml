@@ -51,10 +51,16 @@
         url: " https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
       - text: screening-room-and-shotgun-review
         url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"
+    - page: event-daemon
+      children:
+        - page: event-daemon-installation
+        - page: event-daemon-configuration
+        - page: event-daemon-plugins
+        - page: event-daemon-api
+        - page: event-daemon-technical-details
+        - page: event-daemon-example-plugins
     - text: action-menu-items
       url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
-    - text: event-triggers
-      url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
     - text: jira-bridge-guide
       url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
     - page: shotgun-webhooks
