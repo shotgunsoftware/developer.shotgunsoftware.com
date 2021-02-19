@@ -65,7 +65,7 @@ example from here on out.
 
 The source and archives are available on GitHub at [https://github.com/shotgunsoftware/shotgunEvents]()
 
-{% include info title="Note" content="**Windows Note:** You could use `C:\shotgun\shotgunEvents` if you have a Windows server but for this documentation we will be using the Linux path." %}
+{% include info title="Note" content="**For Windows:** You could use `C:\shotgun\shotgunEvents` if you have a Windows server but for this documentation we will be using the Linux path." %}
 
 <a id="Cloning_Source"></a>
 ### Cloning the source
@@ -170,4 +170,4 @@ Starting and stopping the service can be achieved through the normal service man
 
 In most cases you will need to be sure you are running each of the commands listed as your system's administrative user. You can do so by right clicking the cmd application and choosing "Run as Administrator".
 
-{% include info title="Note" content="**Please Note:** If you have installed the daemon on Windows in a network location or if you have configured it to read and write logs and other resources from a network location you will need to edit the service's properties to change the user running the service from the "local machine" account to a domain account that has access to the network resources." %}
+{% include info title="Note" content="If you have installed the daemon on Windows in a network location or if you have configured it to read and write logs and other resources from a network location you will need to edit the service's properties to change the user running the service from the local machine account to a domain account that has access to the network resources." %}

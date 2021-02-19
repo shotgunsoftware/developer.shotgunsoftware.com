@@ -138,7 +138,7 @@ matchEvents = {
 The `args` argument will not be used by the event framework itself but
 will simply be passed back to your callback without any modification.
 
-{% include info title="Note" content="**Note:** The point of the `args` argument is for you to be able to process time consuming stuff in the [`registerCallbacks`](#wiki-registerCallbacks) function and have it passed back to you at event processing time." %}
+{% include info title="Note" content="The point of the `args` argument is for you to be able to process time consuming stuff in the [`registerCallbacks`](#wiki-registerCallbacks) function and have it passed back to you at event processing time." %}
 
 Another use of the `args` argument could be to pass in a common mutable, a `dict` for example, to multiple callbacks to have them share data.
 
@@ -162,4 +162,4 @@ Any plugin entry point registered by [`Registrar.registerCallback`](#wiki-regist
 * `event`: A {% include product %} event to process.
 * `args`: The args argument specified at callback registration time.
 
-{% include info title="Note" content="**Note:** Implementing a callback as a `__call__` method on an object instance is possible but left as an exercise for the user." %}
+{% include info title="Note" content="Implementing a callback as a `__call__` method on an object instance is possible but left as an exercise for the user." %}

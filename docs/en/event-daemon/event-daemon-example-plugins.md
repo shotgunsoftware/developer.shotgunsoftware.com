@@ -109,4 +109,4 @@ Depending on what your plugin does, you can also register it to just keep trucki
 
 https://github.com/shotgunsoftware/shotgunEvents/wiki/API#wiki-registerCallback
 
-{% include info title="Note" content="Note: the plugin won't stop but any failed attempts won't be retried." %}
+{% include info title="Note" content="The plugin won't stop but any failed attempts won't be retried." %}

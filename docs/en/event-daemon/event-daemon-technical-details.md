@@ -84,7 +84,7 @@ plugins will be processed.
 
 Each plugin within a plugin path is then processed in ascending alphabetical order.
 
-{% include info title="Note" content="**Note:** Internally the filenames are put in a list and sorted." %}
+{% include info title="Note" content="Internally the filenames are put in a list and sorted." %}
 
 Finally, each callback registered by a plugin is called in registration order.
 First registered, first run.

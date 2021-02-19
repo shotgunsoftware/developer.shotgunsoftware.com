@@ -15,7 +15,7 @@ needs. Most of them have defaults that will work fine for most studios, however,
 there are some settings that must be configured (specifically, your {% include product %}
 server URL, script name, and application key so the {% include product %}EventDaemon can connect to your {% include product %} server).
 
-{% include info title="Note" content="**Windows note:** Windows users will need to change all the paths in the configuration file for Windows equivalents. We suggest keeping all paths, including logging, under one single location for the sake of simplicity. This documentation tends to refer to `C:\shotgun\shotgunEvents` when mentioning Windows paths." %}
+{% include info title="Note" content="**For Windows:** Windows users will need to change all the paths in the configuration file for Windows equivalents. We suggest keeping all paths, including logging, under one single location for the sake of simplicity. This documentation tends to refer to `C:\shotgun\shotgunEvents` when mentioning Windows paths." %}
 
 <a id="Edit_shotgunEventDaemon_conf"></a>
 ## Edit {% include product %}EventDaemon.conf
@@ -81,11 +81,9 @@ By default, the daemon will look for the {% include product %}EventDaemon.conf f
 If you need to put the conf file in another directory, it's recommended you 
 create a symlink to it from the current directory.
 
-{% include info title="Note" content="**Note:** If for some reason the above won't work for you, the search paths for the
-config file are located in the `_getConfigPath()` function at the bottom of
-the `shotgunEventDaemon.py` script" %}
+{% include info title="Note" content="If for some reason the above won't work for you, the search paths for the config file are located in the `_getConfigPath()` function at the bottom of the `shotgunEventDaemon.py` script" %}
 
-{% include info title="Note" content="**Windows Note:** The `/etc` doesn't exist on Windows so the configuration file should be put in the same directory as the Python files." %}
+{% include info title="Note" content="**For Windows** The `/etc` doesn't exist on Windows so the configuration file should be put in the same directory as the Python files." %}
 
 <a id="Testing_the_Daemon"></a>
 ## Testing the Daemon
@@ -96,8 +94,7 @@ always an obvious way to see what they're doing. Lucky for us, the
 we have done the minimum required setup, let's go ahead and test the daemon
 and see how things go.
 
-{% include info title="Note" content="**Note:** The default values used here may require root access (for example, to write to the/var/log directory). The examples provided use are run using `sudo` to 
-accommodate this." %}
+{% include info title="Note" content="The default values used here may require root access (for example, to write to the/var/log directory). The examples provided use are run using `sudo` to accommodate this." %}
 
 ```
 $ sudo ./shotgunEventDaemon.py foreground
@@ -114,7 +111,7 @@ the script is running and the plugin is working. If you're at a busy studio,
 you may have already noticed a rapid stream of messages flowing by. If not,
 login to your {% include product %} server in your web browser and change some values or create something. You should see log statements printed out to your terminal window corresponding to the type of event you generated with your changes. 
 
-{% include info title="Note" content="NOTE: there are variables in the logArgs.py file that need to be filled in with appropriate values. '$DEMO_SCRIPT_NAMES$' and '$DEMO_API_KEY$' must be edited to contain the same values that were used in the shotgunEventDaemon.conf file in order for the logging to function correctly." %}
+{% include info title="Note" content="There are variables in the logArgs.py file that need to be filled in with appropriate values. '$DEMO_SCRIPT_NAMES$' and '$DEMO_API_KEY$' must be edited to contain the same values that were used in the shotgunEventDaemon.conf file in order for the logging to function correctly." %}
 
 If you don't see anything logged to the log file, check your log-related settings 
 in {% include product %}EventDaemon.conf to ensure that the ``logging`` value is set to log 
@@ -271,9 +268,7 @@ setting below.
 logPath: /var/log/shotgunEventDaemon
 ```
 
-{% include info title="Note" content="**Note:** The shotgunEventDaemon will have to have write permissions for this
-directory. In a typical setup, the daemon is set to run automatically when the
-machine starts up and is given root privileges at that point." %}
+{% include info title="Note" content="The shotgunEventDaemon will have to have write permissions for this directory. In a typical setup, the daemon is set to run automatically when the machine starts up and is given root privileges at that point." %}
 
 **logFile**
 
@@ -353,8 +348,7 @@ The URL for the {% include product %} server to connect to.
 server: %(SG_ED_SITE_URL)s
 ```
 
-{% include info title="Note" content="**Note:** There is no default value here. Set the `SG_ED_SITE_URL` environment variable to 
-the URL for your Shotgun server (ie. https://awesome.shotgunstudio.com)" %}
+{% include info title="Note" content="There is no default value here. Set the `SG_ED_SITE_URL` environment variable to the URL for your Shotgun server (ie. https://awesome.shotgunstudio.com)" %}
 
 **name**
 
@@ -364,8 +358,7 @@ The {% include product %} Script name the {% include product %}EventDaemon shoul
 name: %(SG_ED_SCRIPT_NAME)s
 ```
         
-{% include info title="Note" content="**Note:** There is no default value here. Set the `SG_ED_SCRIPT_NAME` environment variable
-to the Script name for your Shotgun server (ie. `shotgunEventDaemon`)" %}
+{% include info title="Note" content="There is no default value here. Set the `SG_ED_SCRIPT_NAME` environment variable to the Script name for your Shotgun server (ie. `shotgunEventDaemon`)" %}
 
 **key**
 
@@ -375,9 +368,7 @@ The {% include product %} Application Key for the Script name specified above.
 key: %(SG_ED_API_KEY)s
 ```
         
-{% include info title="Note" content="**Note:** There is no default value here. Set the `SG_ED_API_KEY` environment variable to
-the Application Key for your Script name above (ie. 
-`0123456789abcdef0123456789abcdef01234567`)" %}
+{% include info title="Note" content="There is no default value here. Set the `SG_ED_API_KEY` environment variable to the Application Key for your Script name above (ie:`0123456789abcdef0123456789abcdef01234567`)" %}
 
 **use_session_uuid**
 
@@ -392,8 +383,7 @@ use_session_uuid: True
 - {% include product %} server v2.3+ is required for this feature.
 - {% include product %} API v3.0.5+ is required for this feature.
 
-{% include info title="Note" content="**Note:** The Shotgun UI will *only* show updates live for the browser session that spawned the original event. Other browser windows with the same page open 
-will not see updates live." %}
+{% include info title="Note" content="The Shotgun UI will *only* show updates live for the browser session that spawned the original event. Other browser windows with the same page open will not see updates live." %}
 
 <a id="Plugin_Settings_details"></a>
 ### Plugin Settings
@@ -406,8 +396,7 @@ A comma-delimited list of complete paths where the framework should look for plu
 paths: /usr/local/shotgun/plugins
 ```
 
-{% include info title="Note" content="**Note:** There is no default value here. You must set the value to the location(s) of your plugin files (ie.
-`/usr/local/shotgun/shotgunEvents/plugins` or `C:\shotgun\shotgunEvents\plugins` on Windows)" %}
+{% include info title="Note" content="There is no default value here. You must set the value to the location(s) of your plugin files (ie:`/usr/local/shotgun/shotgunEvents/plugins` or `C:\shotgun\shotgunEvents\plugins` on Windows)" %}
 
 <a id="Email_Settings"></a>
 ### Email Settings
@@ -431,8 +420,7 @@ for `username` and `password`
 server: smtp.yourdomain.com
 ```
         
-{% include info title="Note" content="**Note:** There is no default value here. You must replace the smtp.yourdomain.com
-token with the address of your SMTP server (ie. `smtp.mystudio.com`)." %}
+{% include info title="Note" content="There is no default value here. You must replace the smtp.yourdomain.com token with the address of your SMTP server (ie. `smtp.mystudio.com`)." %}
 
 **username**
 
@@ -462,8 +450,7 @@ The from address that should be used in emails.
 from: support@yourdomain.com
 ```
 
-{% include info title="Note" content="**Note:** There is no default value here. You must replace`support@yourdomain.com`
-with a valid value (ie. `noreply@mystudio.com`)." %}
+{% include info title="Note" content="There is no default value here. You must replace`support@yourdomain.com` with a valid value (ie. `noreply@mystudio.com`)." %}
 
 **to**
 
@@ -473,8 +460,7 @@ A comma-delimited list of email addresses to whom these alerts should be sent.
 to: you@yourdomain.com
 ```
 
-{% include info title="Note" content="**Note:** There is no default value here. You must replace `you@yourdomain.com`
-with a valid value (ie. `shotgun_admin@mystudio.com`)." %}
+{% include info title="Note" content="There is no default value here. You must replace `you@yourdomain.com` with a valid value (ie. `shotgun_admin@mystudio.com`)." %}
 
 **subject**
 
