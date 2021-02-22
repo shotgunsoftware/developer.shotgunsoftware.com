@@ -13,11 +13,7 @@ The following guide will help you setup {% include product %}Events for your stu
 <a id="System_Requirements"></a>
 ## System Requirements
 
-The daemon can run on any machine that has Python installed and has network
-access to your {% include product %} server. It does **not** need to run on the {% include product %} server
-itself. In fact, if you are using the hosted version of {% include product %}, this isn't
-an option. However, you may run it on your {% include product %} server if you like. Otherwise,
-any server will do.
+The daemon can run on any machine that has Python installed and has network access to your {% include product %} server. It does **not** need to run on the {% include product %} server itself. In fact, if you are using the hosted version of {% include product %}, this isn't an option. However, you may run it on your {% include product %} server if you like. Otherwise, any server will do.
 
 * Python v2.6, v2.7 or 3.7
 * [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)
@@ -28,13 +24,10 @@ any server will do.
 <a id="Installing_Shotgun_API"></a>
 ## Installing the {% include product %} API
 
-Assuming Python is already installed on your machine, you now need to install
-the {% include product %} Python API so that the {% include product %} Event Daemon can use it to connect to your
-{% include product %} server. You can do this in a couple of ways:
+Assuming Python is already installed on your machine, you now need to install the {% include product %} Python API so that the {% include product %} Event Daemon can use it to connect to your {% include product %} server. You can do this in a couple of ways:
 
 - place it in the same directory as the {% include product %} Event Daemon
-- place it in one of the directories specified by the [`PYTHONPATH` environment 
-  variable](http://docs.python.org/tutorial/modules.html).
+- place it in one of the directories specified by the [`PYTHONPATH` environment variable](http://docs.python.org/tutorial/modules.html).
 
 To test that the {% include product %} API is installed correctly, from your terminal window:
 
@@ -42,9 +35,7 @@ To test that the {% include product %} API is installed correctly, from your ter
 $ python -c "import shotgun_api3"
 ```
 
-You should see no output. If you see something like the output below then you 
-need to make sure your `PYTHONPATH` is setup correctly or that the {% include product %} API
-is located in the current directory.
+You should see no output. If you see something like the output below then you need to make sure your `PYTHONPATH` is setup correctly or that the {% include product %} API is located in the current directory.
 
 ```
 $ python -c "import shotgun_api3"
@@ -56,12 +47,7 @@ ImportError: No module named shotgun_api3
 <a id="Installing_shotgunEvents"></a>
 ## Installing {% include product %}Events
 
-The location you choose to install {% include product %}Events is really up to you. Again, as
-long as Python and the {% include product %} API are installed on the machine, and it has
-network access to your {% include product %} server, it can run from anywhere. However, it
-makes sense to install it somehwere that is logical to your studio, something
-like `/usr/local/shotgun/shotgunEvents` seems logical so we'll use that as the
-example from here on out.
+The location you choose to install {% include product %}Events is really up to you. Again, as long as Python and the {% include product %} API are installed on the machine, and it has network access to your {% include product %} server, it can run from anywhere. However, it makes sense to install it somehwere that is logical to your studio, something like `/usr/local/shotgun/shotgunEvents` seems logical so we'll use that as the example from here on out.
 
 The source and archives are available on GitHub at [https://github.com/shotgunsoftware/shotgunEvents]()
 
@@ -70,55 +56,47 @@ The source and archives are available on GitHub at [https://github.com/shotgunso
 <a id="Cloning_Source"></a>
 ### Cloning the source
 
-The easiest way to grab the source if you have `git` installed on the machine
-is to simply clone the project. This way you can also easily pull in any updates
-that are committed to ensure you stay up to date with bug fixes and new 
-features.
+The easiest way to grab the source if you have `git` installed on the machine is to simply clone the project. This way you can also easily pull in any updates that are committed to ensure you stay up to date with bug fixes and new features.
 
 ```
 $ cd /usr/local/shotgun
 $ git clone git://github.com/shotgunsoftware/shotgunEvents.git
 ```
 
-**Warning:** Always make sure you backup your configuration, plugins, and any modifications
-you make to {% include product %}Events before pulling in updates from GitHub so you don't 
-lose anything. Or, fork the project yourself so you can maintain your own
-repository of changes :)
+{% include info title="Warning" content="Always make sure you backup your configuration, plugins, and any modifications you make to shotgunEvents before pulling in updates from GitHub so you don't lose anything. Or, fork the project yourself so you can maintain your own repository of changes :)" %}
 
 <a id="Downloading_Archive"></a>
 ### Downloading the archive
 
-If you don't have `git` on your machine or you simply would rather download
-an archive of the source, you can get things rolling following these steps.
+If you don't have `git` on your machine or you simply would rather download an archive of the source, you can get things rolling following these steps.
 
 - head over to [https://github.com/shotgunsoftware/shotgunEvents/archives/master]()
 - download the source in the format you want
 - save it to your machine
 - extract the files to the `/usr/local/shotgun` directory
-- rename the `/usr/local/shotgun/shotgunsoftware-shotgunEvents-xxxxxxx` directory 
-  to `/usr/local/shotgun/shotgunEvents`
+- rename the `/usr/local/shotgun/shotgunsoftware-shotgunEvents-xxxxxxx` directory to `/usr/local/shotgun/shotgunEvents`
 
 #### Extracting the archive into `/usr/local/shotgun`.
 
-For .tar.gz archives
+For .tar.gz archives:
 
 ```
 $ tar -zxvf shotgunsoftware-shotgunEvents-v0.9-12-g1c0c3eb.tar.gz -C /usr/local/shotgun
 ```
 
-For .zip archives
+For .zip archives:
 
 ```
 $ unzip shotgunsoftware-shotgunEvents-v0.9-12-g1c0c3eb.zip -d /usr/local/shotgun
 ```
 
-Then you can rename the GitHub-assigned directory name to `shotgunEvents`
+Then you can rename the GitHub-assigned directory name to `shotgunEvents`:
 
 ```
 $ mv shotgunsoftware-shotgunEvents-1c0c3eb shotgunEvents
 ```
 
-Now you should now have something like this
+Now you should now have something like this:
 
 ```
 $ ls -l /usr/local/shotgun/shotgunEvents

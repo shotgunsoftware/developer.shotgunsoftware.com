@@ -75,22 +75,17 @@ When a new thumbnail is uploaded for an entity, an Event Log entry is created wi
 <a id="Plugin_Processing_Order"></a>
 ## Plugin Processing Order
 
-Each event is always processed in the same predictable order so that if any plugins
-or callbacks are co-dependant, you can safely organize their processing.
+Each event is always processed in the same predictable order so that if any plugins or callbacks are co-dependant, you can safely organize their processing.
 
-The configuration file specifies a `paths` config that contains one or multiple
-plugin locations. The earlier the location in the list the sooner the contained
-plugins will be processed.
+The configuration file specifies a `paths` config that contains one or multiple plugin locations. The earlier the location in the list the sooner the contained plugins will be processed.
 
 Each plugin within a plugin path is then processed in ascending alphabetical order.
 
 {% include info title="Note" content="Internally the filenames are put in a list and sorted." %}
 
-Finally, each callback registered by a plugin is called in registration order.
-First registered, first run.
+Finally, each callback registered by a plugin is called in registration order. First registered, first run.
 
-We suggested keeping any functionality that needs to share state somehow in
-the same plugin as one or multiple callbacks.
+We suggested keeping any functionality that needs to share state somehow in the same plugin as one or multiple callbacks.
 
 <a id="Sharing_State"></a>
 ## Sharing state
@@ -98,14 +93,9 @@ the same plugin as one or multiple callbacks.
 Many options exist for multiple callbacks that need to share state.
 
 - Global variables. Ick. Please don't do this.
-- An imported module that holds the state information. Ick, but a bit better
-  than simple globals.
-- A mutable passed in the `args` argument when calling
-  [`Registrar.registerCallback`](API#wiki-registerCallback). A state object of your design or something
-  as simple as a `dict`. Preferred.
-- Implement callbacks such as `__call__` on object instances and provide some shared
-  state object at callback object initialization. Most powerful yet most convoluted method.
-  May be redundant compared to the args argument method above.
+- An imported module that holds the state information. Ick, but a bit better than simple globals.
+- A mutable passed in the `args` argument when calling [`Registrar.registerCallback`](API#wiki-registerCallback). A state object of your design or something as simple as a `dict`. Preferred.
+- Implement callbacks such as `__call__` on object instances and provide some shared state object at callback object initialization. Most powerful yet most convoluted method. May be redundant compared to the args argument method above.
 
 
 <a id="Event_Backlogs"></a>
