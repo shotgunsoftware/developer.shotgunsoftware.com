@@ -5,6 +5,8 @@ pagename: event-daemon-example-plugins
 lang: en
 ---
 
+# Example Plugins
+
 There is a [folder of example plugins](https://github.com/shotgunsoftware/shotgunEvents/tree/master/src/examplePlugins) in the source code. 
 
 This page includes a few more simple examples, for anyone looking to get started. You can copy/paste this code and it should run(Note: you'll have to update the `script_name`, and `script_key` values to something specific for your installation)
