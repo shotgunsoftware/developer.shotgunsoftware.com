@@ -72,6 +72,8 @@
     url: " https://developer.shotgunsoftware.com/python-api/"
   - text: rest-api
     url: " https://developer.shotgunsoftware.com/rest-api/"
+  - text: core-api
+    url: " https://developer.shotgunsoftware.com/tk-core"
   - text: jira-bridge-ref
     url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
   - text: rv-technical-reference
@@ -80,8 +82,6 @@
     children:
     - page: toolkit-apis
       children:
-      - text: core-api
-        url: " https://developer.shotgunsoftware.com/tk-core"
       - text: publish-api
         url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
       - text: hiero-export-api
