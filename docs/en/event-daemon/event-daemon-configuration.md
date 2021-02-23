@@ -61,7 +61,7 @@ When you're first getting started, a good plugin to test with is the `logArgs.py
 
 By default, the daemon will look for the shotgunEventDaemon.conf file in the same directory that {% include product %}EventDaemon.py is in, and in the `/etc` directory. If you need to put the conf file in another directory, it's recommended you create a symlink to it from the current directory.
 
-{% include info title="Note" content="If for some reason the above won't work for you, the search paths for the config file are located in the `_getConfigPath()` function at the bottom of the `{% include product %}EventDaemon.py` script" %}
+{% include info title="Note" content="If for some reason the above won't work for you, the search paths for the config file are located in the `_getConfigPath()` function at the bottom of the `shotgunEventDaemon.py` script" %}
 
 {% include info title="Note" content="**For Windows** The `/etc` doesn't exist on Windows so the configuration file should be put in the same directory as the Python files." %}
 
