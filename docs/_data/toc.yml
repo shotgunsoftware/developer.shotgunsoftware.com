@@ -78,19 +78,68 @@
     url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024280254-Reference-Manual"
   - page: pipeline-integrations-reference
     children:
-    - text: core-api
-      url: " https://developer.shotgunsoftware.com/tk-core"
-    - text: qt-widgets
-      url: " https://developer.shotgunsoftware.com/tk-framework-qtwidgets/"
-    - text: shotgun-utils
-      url: " https://developer.shotgunsoftware.com/tk-framework-shotgunutils/"
-    - text: publish-api
-      url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
-    - text: hiero-export-api
-      url: " https://developer.shotgunsoftware.com/tk-hiero-export"
-    - text: file-system-configuration
-      url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
-    - page: env-config-ref
+    - page: toolkit-apis
+      children:
+      - text: core-api
+        url: " https://developer.shotgunsoftware.com/tk-core"
+      - text: publish-api
+        url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
+      - text: hiero-export-api
+        url: " https://developer.shotgunsoftware.com/tk-hiero-export"
+    - page: toolkit-apps
+      children:
+      - page: tk-multi-about
+      - page: tk-multi-breakdown
+      - page: tk-multi-demo
+      - page: tk-multi-launchapp
+      - page: tk-multi-loader2
+      - page: tk-multi-publish2
+      - page: tk-multi-pythonconsole
+      - page: tk-multi-reviewsubmission
+      - page: tk-multi-screeningroom
+      - page: tk-multi-setframerange
+      - page: tk-multi-shotgunpanel
+      - page: tk-multi-snapshot
+      - page: tk-multi-workfiles2
+      - page: tk-hiero-export
+      - page: tk-hiero-openinshotgun
+      - page: tk-nuke-quickreview
+      - page: tk-nuke-writenode
+      - page: tk-shotgun-folders
+      - page: tk-shotgun-launchfolder
+      - page: tk-shotgun-launchpublish
+      - page: tk-flame-export
+      - page: tk-flame-review
+      - page: tk-houdini-alembicnode
+      - page: tk-houdini-mantranode
+      - page: tk-mari-projectmanager
+    - page: toolkit-engines
+      children:
+      - page: tk-3dsmax
+      - page: tk-aftereffects
+      - page: tk-alias
+      - page: tk-desktop
+      - page: tk-flame
+      - page: tk-houdini
+      - page: tk-mari
+      - page: tk-maya
+      - page: tk-motionbuilder
+      - page: tk-nuke
+      - page: tk-photoshopcc
+      - page: tk-shell
+      - page: tk-shotgun
+      - page: tk-vred
+    - page: toolkit-frameworks
+      children:
+      - text: qt-widgets
+        url: " https://developer.shotgunsoftware.com/tk-framework-qtwidgets/"
+      - text: shotgun-utils
+        url: " https://developer.shotgunsoftware.com/tk-framework-shotgunutils/"
+    - page: toolkit-configuration
+      children:
+      - text: file-system-configuration
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
+      - page: toolkit-config-ref
 
 - caption: trusted-solutions
   children:
