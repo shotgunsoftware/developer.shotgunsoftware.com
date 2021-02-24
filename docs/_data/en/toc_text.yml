@@ -26,8 +26,8 @@ developer-training-videos: Developer Training Videos
 episodic-pipeline-tutorial: Episodic Pipeline Tutorial
 
 core-api: Toolkit Core API
-qt-widgets: QT Widgets Framework
-shotgun-utils: Shotgun Utils Framework
+qt-widgets: QT Widgets
+shotgun-utils: Shotgun Utils
 publish-api: Publish API
 hiero-export-api: Hiero Export API
 development: Development

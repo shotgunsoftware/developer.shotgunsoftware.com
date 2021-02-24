@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Environment Configuration
-pagename: env-config-ref
+pagename: toolkit-config-ref
 lang: en
 ---
 
