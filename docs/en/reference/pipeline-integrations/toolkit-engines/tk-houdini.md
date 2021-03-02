@@ -59,7 +59,7 @@ Once you've enabled the {% include product %} shelf, you need to manually add it
 
 ![Add the {% include product %} shelf](../images/engines/add_shelf.png)
 
-Once added to a shelf set the {% include product %} shelf will remain there between houdini sessions and will update dynamically as your shotgun context changes. 
+Once added to a shelf set the {% include product %} shelf will remain there between houdini sessions and will update dynamically as your {% include product %} context changes. 
 
 ## Panels
 
