@@ -99,7 +99,10 @@
       - page: tk-multi-screeningroom
       - page: tk-multi-setframerange
       - page: tk-multi-shotgunpanel
-      - page: tk-multi-snapshot
+      # No docs for the Mari project manager, but we'll keep it here
+      # for if we get to putting basic docs together for it in the
+      # future.
+      # - page: tk-multi-snapshot
       - page: tk-multi-workfiles2
       - page: tk-hiero-export
       - page: tk-hiero-openinshotgun
@@ -112,7 +115,10 @@
       - page: tk-flame-review
       - page: tk-houdini-alembicnode
       - page: tk-houdini-mantranode
-      - page: tk-mari-projectmanager
+      # No docs for the Mari project manager, but we'll keep it here
+      # for if we get to putting basic docs together for it in the
+      # future.
+      # - page: tk-mari-projectmanager
     - page: toolkit-engines
       children:
       - page: tk-3dsmax
