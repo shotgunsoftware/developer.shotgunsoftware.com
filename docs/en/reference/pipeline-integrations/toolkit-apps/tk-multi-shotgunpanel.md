@@ -5,19 +5,19 @@ pagename: tk-multi-shotgunpanel
 lang: en
 ---
 
+# Shotgun Panel
+
 This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [{% include product %} Integrations User Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-User-Guide#The%20Shotgun%20Panel) for details.
 
 ## Configuring the {% include product %} Panel
 
 There are two main areas that you can configure extensively in the {% include product %} Panel: The appearance of text in the UI and the actions you want to associate with data. The sections below outline how to control the configuration for the two systems.
 
-
 ### Configuring what is being displayed
 
 The values in the detail area and the listings are both configurable through the `{% include product %}_fields` hook. You can subclass this hook and change the implementation in order to display the exact values you want:
 
 ![config](../images/apps/multi-shotgunpanel-config.png)
-
 
 **Templating System**
 
@@ -36,7 +36,7 @@ This hook contains the following methods:
 
 The `get_list_item_definition()` method returns a dictionary that controls the appearance of items in the various listings, given a {% include product %} entity type. It returns a dictionary with the keys `top_left`, `top_right` and `body`, for example:
 
-```
+```python
 {
  "top_left": "<big>{code}</big>",
  "top_right": "{updated_at}",
@@ -48,7 +48,7 @@ The `get_list_item_definition()` method returns a dictionary that controls the a
 
 The `get_main_view_definition()` method returns a dictionary with the keys `title` and `body` given a {% include product %} entity type. These values controls the appearance of an object in the detail area, for example:
 
-```
+```python
 {
  "title": "{type} {code}",
  "body": "By: {created_by}<br>Description: {description}"
@@ -58,7 +58,6 @@ The `get_main_view_definition()` method returns a dictionary with the keys `titl
 **Controlling the fields shown in the Info tab**
 
 The `get_all_fields()` methods returns a list of fields to display for a given entity when this is rendered in the Info tab.
-
 
 ### Configuring Actions
 
@@ -95,7 +94,7 @@ For each application that the panel supports, there is an actions hook which imp
 
 The panel uses Toolkit's second generation hooks interface, allowing for greater flexibility. This hook format uses an improved syntax. You can see this in the default configuration settings, looking something like this:
 
-```
+```yaml
 actions_hook: '{self}/tk-maya_actions.py'
 ```
 

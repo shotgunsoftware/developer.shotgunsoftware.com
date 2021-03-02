@@ -5,9 +5,11 @@ pagename: tk-houdini-mantranode
 lang: en
 ---
 
+# Houdini Mantra Node
+
 The Houdini Mantra Node App provides a custom {% include product %} Mantra Output node which makes it easy to standardise the location where render files are output.  It can be configured for each environment.
 
-# General Use
+## General Use
 
 In order to use the {% include product %} Mantra Node, save your script as a Toolkit work file first and then create a new node via the TAB menu in Houdini. This will create a node which looks similar to a normal Mantra output node:
 
@@ -23,7 +25,7 @@ Rather than entering a path by hand, you just specify which configuration to use
 
 The rendered files will be versioned and the version number will always follow the current Houdini scene file version which will be incremented automatically when you publish using Multi Publish.
 
-# Configuration
+## Configuration
 
 The Toolkit mantra node provides the ability to specify multiple output profiles for an environment configuration. Here's an example of configuring the node with multiple profiles:
 

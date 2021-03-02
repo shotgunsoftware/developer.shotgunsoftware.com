@@ -5,16 +5,11 @@ pagename: tk-multi-pythonconsole
 lang: en
 ---
 
+# Python Console
+
 This is a python console panel for use in DCCs with access to a python interpreter that have limited or no support for interacting with said interpreter.
 
 ![{% include product %} Python Console](../images/apps/multi-pythonconsole-python_console.png)
-<br>
-Python Console in Photoshop CC 2017
-<br>
-<br>
-![{% include product %} Python Console](../images/apps/multi-pythonconsole-console_flame.png)
-<br>
-Python Console in Flame
 
 ## Panel
 

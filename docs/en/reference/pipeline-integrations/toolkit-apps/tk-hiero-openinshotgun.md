@@ -4,6 +4,9 @@ title: Hiero/Nuke Studio Open in Shotgun
 pagename: tk-hiero-openinshotgun
 lang: en
 ---
+
+# Hiero/Nuke Studio Open in {% include product %}
+
 This app adds a context menu to the Hiero spreadsheet and timeline that allows you to 
 open a given track item in {% include product %} if there is a Shot for that item.
 

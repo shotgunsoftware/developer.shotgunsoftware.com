@@ -5,6 +5,8 @@ pagename: tk-multi-reviewsubmission
 lang: en
 ---
 
+# Review Submission
+
 ## How do I use this App?
 
 ### As an API
@@ -15,13 +17,9 @@ This mode creates quicktimes from image sequences and submits them as Versions t
 
 Here are a the current default formats for slate and burnin:
 
-
 ![Main Menu](../images/apps/multi-reviewsubmission-quicktime_slate.png) 
 
-
-
 ![Main Menu](../images/apps/multi-reviewsubmission-quicktime_burnin.png) 
-
 
 Should you want to leverage this app from within your own apps or hooks here is a quick rundown of the simple way to go about it.
 
@@ -73,7 +71,8 @@ In order to add this functionality to your context, you need to:
 * Set the `submitter_hook` field to `{self}/submitter_create.py`
 
 Like this:
-```
+
+```yaml
 tk-multi-reviewsubmission:
   display_name: Send for review
   render_media_hook: '{self}/render_media.py:{self}/{engine_name}/render_media.py'

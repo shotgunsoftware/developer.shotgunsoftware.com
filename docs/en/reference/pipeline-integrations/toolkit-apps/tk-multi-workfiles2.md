@@ -5,6 +5,8 @@ pagename: tk-multi-workfiles2
 lang: en
 ---
 
+# Workfiles
+
 ## File Open dialog
 
 ### Navigating your work areas
@@ -61,7 +63,7 @@ In order to save a file in a different context, a user can click on the expand b
 
 With the new file save dialog, it is possible to pick the extension of the file being saved. In order to enable this, you need to tweak your pipeline configuration's `templates.yml` file. First, a token needs to be defined in the token list inside `templates.yml`.
 
-```
+```yaml
 maya_extension:
     type: str
     choices:
@@ -75,7 +77,7 @@ maya_extension:
 
 Then, this token can be added to any Maya specific template.
 
-```
+```yaml
 maya_shot_work:
     definition: '@shot_root/work/maya/{name}.v{version}.{maya_extension}'
     root_name: 'primary'
@@ -96,7 +98,8 @@ When retrieving Tasks, and if `step` is included in the hierarchy, the amount of
 The list of Steps displayed in a tab is controlled with the `step_filter_on` setting. If not set, all existing Pipeline Steps are displayed.
 
 The example below defines two tabs, respectively displaying Tasks for Assets and Shots:
-```
+
+```yaml
   - caption: Assets Tasks
     entity_type: Task
     step_filter_on: Asset
@@ -113,7 +116,6 @@ The example below defines two tabs, respectively displaying Tasks for Assets and
 
 ![step filter](../images/apps/multi-workfiles2-step_filter.png)
 
-
 ## Deferred queries
 
 For better performances, building the Entities tree can be broken into two step queries:
@@ -122,7 +124,7 @@ For better performances, building the Entities tree can be broken into two step 
 
 With the following settings, Assets and Shots would be retrieved from {% include product %} when the app is started. And then Tasks linked to a particular Asset or Shot would only be retrieved when this Asset or Shot is selected or expanded in the tree view.
 
-```
+```yaml
   entities:
   - caption: Assets
     entity_type: Asset
@@ -143,10 +145,5 @@ With the following settings, Assets and Shots would be retrieved from {% include
       link_field: entity
       hierarchy: [step]
 ```
+
 ![entity tree view](../images/apps/multi-workfiles2-entity_tree_view.png)
-
-
-## Known Issues
-
-- **3ds Max and Motionbuilder Support** - File performance is slower in these DCCs under Windows compared to Maya and Nuke.
-- **Perforce/Versionless files** - The application still needs to go through testing with the Perforce workflow so it is very likely that it won't work well.

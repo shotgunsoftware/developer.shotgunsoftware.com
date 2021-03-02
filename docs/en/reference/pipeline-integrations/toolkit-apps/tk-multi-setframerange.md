@@ -5,6 +5,8 @@ pagename: tk-multi-setframerange
 lang: en
 ---
 
+# Set Frame Range
+
 This app helps managing the frame range in the currently open scene. You can access it from the {% include product %} menu by clicking the **Sync Frame Range with {% include product %}** menu option.
 
 When you click it, the {% include product %} Toolkit will look at the {% include product %} entity associated with the current work area (typically a Shot) and look for in and out fields which contain the in and out frame information. Typically, this is something used in conjunction with Shots and in that case the app uses the standard shot in and out fields defined in {% include product %}'s default config. However, it is perfectly possible to configure the app to pull the frame ranges from other fields too.
@@ -14,7 +16,6 @@ When you click it, the {% include product %} Toolkit will look at the {% include
 Once you run the App, it will update the current scene with those ins and outs and finally display a summary message:
 
 ![Nuke](../images/apps/multi-setframerange-nuke.png)
-
 
 ## Multiple {% include product %} field synchronisation options
 

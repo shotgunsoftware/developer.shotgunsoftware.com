@@ -5,9 +5,11 @@ pagename: tk-nuke-writenode
 lang: en
 ---
 
+# Nuke Write Node
+
 The Nuke Write Node App provides a custom {% include product %} Write node which makes it easy to standardise the location where images are rendered to.  It can be configured for each environment.  In addition to the path, the configuration will also determine the render format to be used.
 
-# General Use
+## General Use
 
 In order to use the {% include product %} Write Node, save your script as a Toolkit work file first and then create a new node via the Nuke menu. This will create a node which looks similar to a normal write node:
 
@@ -17,7 +19,7 @@ Rather than entering a path by hand, you just specify an output name and Toolkit
 
 The renders will be versioned and the version number will always follow the current nuke script version which will be incremented automatically when you publish using Multi Publish.
 
-# Resetting the render path
+## Resetting the render path
 
 The Write Node will cache the current path so that it is still valid if the file is opened outside a Toolkit Work Area.  Occasionally, this can mean that the path becomes out of sync and 'locked'.  If the render path is locked then renders created with this Write Node cannot be published.
 
@@ -25,12 +27,11 @@ To reset a render path, either version-up the scene using the Work-files app's '
 
 ![Write Graph](../images/apps/nuke-writenode-write_node_reset_path.png)
 
-# Adding Another Write Node Profile
+## Adding Another Write Node Profile
 
 The {% include product %} Write Node wraps Nuke's built-in write node, so any format supported by Nuke can be used with the app and additional nodes can be added via configuration.  The simplest way to start is to set up a simple Nuke write node with the parameters you want. For the example, let's imagine you are doing 16-bit tifs with LZW compression. If you look at your Nuke script in a text editor, the write node will look something like this:
 
 ```
-...
 Write {
     file /Users/ryanmayeda/Desktop/test.%04d.tif
     file_type tiff
@@ -41,11 +42,11 @@ Write {
     xpos -145
     ypos -61
 }
-...
 ```
+
 The text will tell you what the parameter names and values you need are. In this case it's `datatype` and `compression`. Next, go into your environment configuration (for example: `/path/to/pipeline/config/env/shot_step.yml`) and find the area where the `tk-nuke-writenode` app is configured.  Add another Write Node, with these two parameters in the `settings`:
+
 ```yaml
-...
 tk-nuke-writenode:
   location: {name: tk-nuke-writenode, type: app_store, version: v0.1.6}
   template_script_work: nuke_shot_work
@@ -65,22 +66,18 @@ tk-nuke-writenode:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: []
-...
 ```
-The updated configuration will then result in the additional {% include product %} Write Node appearing in Nuke:
 
+The updated configuration will then result in the additional {% include product %} Write Node appearing in Nuke:
 
 ![Add New](../images/apps/nuke-writenode-write_node_add_new.png)
 
 __Note:__ Be sure to add any new templates (e.g. nuke_shot_render_mono_tif) to your `templates.yml` file which can be found in your project's configuration (`<configuration root>/config/core/templates.yml`).
 
-LINKBOX_DOC:4:Read this doc for more information about templates.
-
 Another example, showing how to add a {% include product %} Write Node that outputs to JPEG with 0.5 compression and a 4:2:2 sub-sampling is shown below. This profile also makes use of the "promote_write_knobs" option to promote the jpeg quality knob to the gizmo's user interface. This allows the profile to set the default value for quality, but also provide the user the slider to alter that setting themselves:
+
 ```yaml
-...
 tk-nuke-writenode:
-  ...
   write_nodes:
     - file_type: jpeg
       name: Compressed JPEG
@@ -92,18 +89,17 @@ tk-nuke-writenode:
       tank_type: Rendered Image
       tile_color: []
       promote_write_knobs: [_jpeg_quality]
-...
 ```
 
-## Promoting Write Knobs
+### Promoting Write Knobs
 
 As shown in the profile example above, knobs from the encapsulated write node can be promoted to become visible in the {% include product %} Write Node's properties panel. The promoted write knobs are defined as part of a profile and are identified by knob name. Multiple knobs may be promoted.
 
-# Render Farm Integration
+## Render Farm Integration
 
 It's common for studios to use a render farm that runs job management tools such as [Deadline](https://deadline.thinkboxsoftware.com/),  which typically launch Nuke directly when rendering. Because these tools do not launch Nuke in a {% include product %}-aware way (e.g., via Desktop or the `tank` command), the {% include product %} write node does not have the information it needs to run. We offer a couple options to get around this limitation.
 
-## Convert {% include product %} write nodes to standard Nuke write nodes
+### Convert {% include product %} write nodes to standard Nuke write nodes
 
 A simple solution is to convert the {% include product %} write nodes to regular Nuke write nodes before sending the script to be rendered. There are two options 1. you can enable and use the convert menu options, 2. you can use the API convert methods on the app.
 
@@ -133,13 +129,13 @@ This will remove the {% include product %} write nodes from the scene, so our su
 
 **Note:** There is a corresponding `convert_from_write_nodes()` method available, but to ensure data integrity, we recommend that it only be used for debugging and not as part of your pipeline. 
 
-## Bootstrap the {% include product %} Pipeline Toolkit engine using init.py
+### Bootstrap the {% include product %} Pipeline Toolkit engine using init.py
 
 Nuke will run any `init.py` scripts found in its plugin path. This option consists of adding code to `init.py` that will perform a minimal bootstrap of the `tk-nuke` engine, so that {% include product %} write nodes behave as expected on the render farm.
 
 There are a few steps to this workflow: First, a “pre-flight” submission script that runs in a {% include product %}-aware Nuke session gets data that will be used to set the environment for your farm job. Next, additional environment variables used to authenticate the {% include product %} session on the render farm are set by render farm administrators. Finally, an `init.py` with the {% include product %} bootstrap code is placed in a location where the Nuke session on the render farm will detect and run it, bootstrapping the `tk-nuke` engine within the session, and allowing the {% include product %} write nodes to function properly.
 
-### 1. Pre-flight submission script
+#### 1. Pre-flight submission script
 
 This approach assumes that artists are submitting farm jobs within a {% include product %}-aware session of Nuke. At submission time, the following code should run. It pulls environment information like Toolkit context, Pipeline Configuration URI, Toolkit Core API location, etc. from the current Nuke session to populate a dictionary that will be passed to the render job, where it will be used to set environment variables.
 
@@ -168,7 +164,7 @@ environment["SHOTGUN_SGTK_MODULE_PATH"] = sgtk.get_sgtk_module_path()
 
 Once you’ve gathered this information, you can pass it to your render submission tool. This process will vary depending on the render farm management system you’re using. Consult your farm management system documentation for more information on how to write render submission scripts.
 
-### 2. {% include product %} authentication
+#### 2. {% include product %} authentication
 
 The bootstrap API’s ToolkitManager requires a script user in order to initialize. In our example, we’re assuming that your site name, script user, and script key exist as environment variables on the farm machine. Typically this is managed by the render farm administrator. Here are the environment variable names our code is expecting, with sample values:
 
@@ -182,7 +178,7 @@ For more information on authentication, see our [developer documentation](http:/
 
 **A note on securing your script user:** It’s good practice to lock down the script user you use on the farm so that it doesn’t have admin-level permissions. [You can learn more about API user permissions here.](https://support.shotgunsoftware.com/hc/en-us/articles/219376228-API-user-permission-groups)
 
-### 3. The init.py script
+#### 3. The init.py script
 
 At this point, Toolkit environment data is being passed from the render submission tool, and authentication data is in environment variables on the render farm machine. The final piece to bootstrapping Toolkit within your render job is to place the following example `init.py` code in Nuke’s plugin path, so that Nuke will launch it at startup time. (See [the Foundry’s documentation on startup scripts](http://docs.thefoundry.co.uk/nuke/63/pythondevguide/startup.html) for more details.)
 
@@ -250,14 +246,14 @@ nuke_engine = mgr.bootstrap_engine("tk-nuke", entity=sg_entity)
 
 You may need to extend this if your configuration is more complex than this example or if you are passing a Python script to the command line using the `-t` flag instead of a nuke (`.nk`) script.
 
-### Deadline-specific steps
+#### Deadline-specific steps
 
 Deadline can copy Nuke scripts to a temporary location when rendering. This will cause problems with Toolkit as the files will no longer be in a disk location that it recognizes. To disable this behavior and load the scripts from their original location:
 
 1. In Deadline, navigate to Tools > Configure Plugin (In the super user mode) 
 2. Disable the 'Enable Path Mapping' option
 
-# Technical Details
+## Technical Details
 
 The following API methods are available on the App:
 

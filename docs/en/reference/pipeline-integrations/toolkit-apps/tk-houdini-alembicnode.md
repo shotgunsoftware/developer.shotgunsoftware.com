@@ -5,9 +5,11 @@ pagename: tk-houdini-alembicnode
 lang: en
 ---
 
+# Houdini Alembic Node
+
 The Houdini Alembic Node App provides a custom {% include product %} Alembic Output node which makes it easy to standardise the location where alembic files are output.  It can be configured for each environment.
 
-# General Use
+## General Use
 
 In order to use the {% include product %} Alembic Output, save your script as a Toolkit work file first and then create a new node via the TAB menu in Houdini. This will create a node which looks similar to a normal Alembic output node:
 
@@ -23,7 +25,7 @@ Rather than entering a path by hand, you just specify which output profile to us
 
 The output alembic files will be versioned and the version number will always follow the current Houdini scene file version which will be incremented automatically when you publish using Multi Publish.
 
-# Configuration
+## Configuration
 
 The Toolkit alembic node provides the ability to specify multiple output profiles for an environment configuration. Here's an example of configuring the node with multiple profiles:
 

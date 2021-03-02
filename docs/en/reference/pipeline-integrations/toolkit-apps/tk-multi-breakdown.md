@@ -5,24 +5,25 @@ pagename: tk-multi-breakdown
 lang: en
 ---
 
-The Scene breakdown shows you a list of referenced content and tells you which items are out of date. You access it from the {% include product %} Menu.
+# Breakdown
+
+The Scene Breakdown app shows you a list of referenced content and tells you which items are out of date. You access it from the {% include product %} Menu.
 
 ![Overview of the breakdown](../images/apps/multi-breakdown-breakdown.png)
 
 You can select one more more items and hit update selected. This will switch the items to use the latest version of the content.
 
-
-# Scanning the Scene
+## Scanning the Scene
 
 When the breakdown app scans the scene for references, it will call a special scanning hook. The scanning hook will return a list of nodes with file corresponding paths. For each reference it finds, it returns the file path, and tank will look at the file path and first check if it recognizes it as a publish, and if it does, see if there is a more recent version available.
 
 If the user clicks the update button that is shown for outdated versions, the app will call another hook to do the actual update work. This means that by customizing these hooks it is relatively simple to add new custom nodes to the breakdown.
 
-# Accessing {% include product %} Data
+## Accessing {% include product %} Data
 
 If you need to access {% include product %} data for the publish you are about to update to in the hook, this is straight forward; a single call to `find_publish` will retrieve metadata for all the items passed in from the app, like this:
 
-```
+```python
 class BreakdownHook(Hook):
 
     def update(self, items):
@@ -58,7 +59,7 @@ class BreakdownHook(Hook):
 
 ```
 
-# API Access
+## API Access
 
 You can access the breakdown app programatically using its API. The following methods exist:
 
