@@ -53,7 +53,7 @@ The context header is a customizable area which can display information about th
 
 The context is determined by the currently-active document. Once the context is determined by the engine, the header will update to display the context's thumbnail field detail. The field information is controlled by a hook. For information on how to customize the field display, see the **Context Fields Display Hook** section below.
 
-It should also be noted that the context switching will only be recognized in if shotgun open was used.
+It should also be noted that the context switching will only be recognized in if {% include product %} open was used.
 
 ## Favorites shelf
 
