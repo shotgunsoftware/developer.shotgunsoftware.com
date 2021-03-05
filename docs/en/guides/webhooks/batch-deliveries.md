@@ -10,11 +10,11 @@ lang: en
 ## Enabling Batch Delivery
 
 You can choose to configure your webhook so that it will make requests with a batched payload format.
-At the time the request is formed, it will batch up to 50 pending events into its payload.
+At the time the request is formed, it will batch up to 50 pending deliveries into its payload.
 
 This can help with managing the processing of large bursts of deliveries as a result of many SG events being generated in a short amount of time.
 
-![Batch Delivery Enabled](./images/config/batch_delivery_enabled.png)
+![Batch Delivery Enabled](./images/batch_delivery_enabled.png)
 
 ## Responding to deliveries
 
@@ -62,7 +62,7 @@ If you choose to use batched deliveries, we recommend that your receiving servic
 
 #### Batched-deliveries Webhook Message Body (may contain 1 to 50 deliveries)
 
-When batching is enabled, a {{deliveries}} key is always present (even if there is only 1 event in the batch). Its value is an array of individual event data, where the information provided for each event is identical to un-batched mode. 
+When batching is enabled, a `deliveries` key is always present (even if there is only 1 event in the batch). Its value is an array of individual event delivery data, where the information provided for each delivery is identical to un-batched mode. 
 
 ```json
 {
