@@ -9,8 +9,8 @@ lang: en
 
 ## Enabling Batch Delivery
 
-You can choose to configure your webhook so that it will make requests with a batched payload format.
-At the time the request is formed, it will batch up to 50 pending deliveries into its payload.
+You can choose to configure your webhook so that it will make requests with a batched payload format, by selecting the "Deliver in Batched Format" option.
+If enabled, at the time each request is formed, it will batch up to 50 pending deliveries into its payload.
 
 This can help with managing the processing of large bursts of deliveries as a result of many SG events being generated in a short amount of time.
 
