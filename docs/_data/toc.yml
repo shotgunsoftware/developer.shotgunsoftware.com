@@ -28,6 +28,7 @@
           url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002689053-Episodic-workflow-with-Nuke-Studio"
       - page: toolkit-administration
         children:
+        - page: integrations-admin-guide
         - page: disabling-auto-updates-and-offline
       - page: toolkit-development
         children:
