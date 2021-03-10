@@ -12,21 +12,21 @@ lang: en
 You can choose to configure your webhook so that it will make requests with a batched payload format, by selecting the "Deliver in Batched Format" option.
 If enabled, at the time each request is formed, it will batch up to 50 pending deliveries into its payload.
 
-This can help with managing the processing of large bursts of deliveries as a result of many SG events being generated in a short amount of time.
+This can help with managing the processing of large bursts of deliveries as a result of many SG events being generated in a short amount of time. Under typical system operation, multiple deliveries per payload will occur when subscribed events are generated more frequently than once in a 2 second period.
 
 ![Batch Delivery Enabled](./images/batch_delivery_enabled.png)
 
 ## Responding to deliveries
 
-If you choose to use batched deliveries, we recommend that your receiving service design guarantees a response much faster than 1 second per event. Otherwise, you will be at increased risk for timeouts and webhook failure when batches are large.
+If enabling batched deliveries, we recommend that your receiving service design guarantees a response much faster than 1 second per event. Otherwise, you will be at increased risk for timeouts and webhook failure when batches are large.
 
-{% include info title="Note" content="For a receiving service that takes on order of 1 second to respond to respond to a single event, the response time is the main performance factor, not delivery overhead. There will not be any significant benefit in batching." %}
+{% include info title="Note" content="For a receiving service that takes on order of 1 second to respond to a single event, the response time is the main performance factor, not delivery overhead. There will not be any significant benefit in batching." %}
 
 #### Non-batched-deliveries Webhooks
 * timeout allowance is 6 seconds per delivery. i.e. a webhook endpoint must respond to each request within 6 seconds.
 
 #### Batched-deliveries Webhooks
-* timeout allowance is the maximum of 6 seconds, or 1 second per event in the batch.
+* timeout allowance is the maximum of: 6 seconds, or, 1 second per event in the batch.
 * throttling limits still apply (1 minute of webhook endpoint response time per minute per shotgun site, across all webhooks).
 
 ## Comparison of Webhook Delivery Formats
