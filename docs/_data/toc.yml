@@ -29,6 +29,9 @@
       - page: toolkit-administration
         children:
         - page: integrations-admin-guide
+        - page: beyond-your-first-project
+        - page: community-shared-integrations
+        - page: other-integrations
         - page: disabling-auto-updates-and-offline
       - page: toolkit-development
         children:
