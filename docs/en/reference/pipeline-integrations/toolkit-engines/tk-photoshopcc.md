@@ -5,13 +5,15 @@ pagename: tk-photoshopcc
 lang: en
 ---
 
+# Photoshop
+
 The {% include product %} engine for Photoshop CC provides a platform for integrating {% include product %} into your Photoshop CC workflow. It consists of a standard {% include product %} Pipeline Toolkit engine and relies on the [tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP).
 
 Once enabled, a **{% include product %}** panel becomes available in Photoshop CC. It displays information about the current {% include product %} context as well as the commands that are registered for the apps installed in that context.
 
 ![extension](../images/engines/photoshopcc-photoshopcc_extension.png)
 
-# Interface Overview
+## Interface Overview
 
 The {% include product %} extension panel uses the same color palette and basic layout as native Photoshop CC panels. It is comprised of five components:
 
@@ -23,11 +25,11 @@ The {% include product %} extension panel uses the same color palette and basic 
 4. **Context Menu** - Additional context-related commands and debugging tools.
 5. **Logging Console** - A console overlay that displays logging output for debugging.
 
-# Installation
+## Installation
 
 Installation of the {% include product %} Engine for Photoshop CC follows the same protocol as the other {% include product %} integrations. For information on installing engines and apps, see the [Administering Toolkit](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit) article. In addition, you can reference the [default toolkit config](https://github.com/shotgunsoftware/tk-config-default2) as an example of how to configure the integration.
 
-# Enabling the extension
+## Enabling the extension
 
 Once the extension is installed, it will need to be launched via the extensions menu in Photoshop CC.
 
@@ -39,11 +41,11 @@ Once enabled, and on future launches, the extension panel will display a loading
 
 This screen typically displays for a few seconds before the current context is determined and the commands are displayed.
 
-# Interface components
+## Interface components
 
 The following sections outline the components of the {% include product %} Photoshop CC integration.
 
-## Context header
+### Context header
 
 The context header is a customizable area which can display information about the current {% include product %} context.
 
@@ -53,7 +55,7 @@ The context is determined by the currently-active document. Once the context is 
 
 It should also be noted that since Photoshop CC is a multi-document interface, the context, and therefore the {% include product %} extension, will update as you change the active document. It is important that artists understand this behavior, especially when working in multiple {% include product %} contexts simultaneously.
 
-## Favorites shelf
+### Favorites shelf
 
 The favorites shelf is similar to the menu favorites available in other {% include product %} DCC integrations such as Maya and Houdini. This section of the interface makes the most commonly used Toolkit apps readily available and easy to find just under the context header.
 
@@ -65,7 +67,7 @@ Clicking one of the buttons will trigger the callback for the registered command
 
 For details on how to specify command favorites, see the **Shelf Favorites** section below.
 
-## Command list
+### Command list
 
 The command list shows the other "regular" commands that are registered for the current context.
 
@@ -75,7 +77,7 @@ Typically, apps installed within a pipeline configuration will register one or m
 
 The command list buttons behave in a manner similar to those in the favorites shelf. The only real difference is that they display as a list with the full name to the right of their icon.
 
-## Context menu
+### Context menu
 
 Any commands registered as context menu commands will show in the {% include product %} extension panel's context menu.
 
@@ -83,7 +85,7 @@ Any commands registered as context menu commands will show in the {% include pro
 
 Like the other command areas, these commands will change along with the context. Commands such as **Jump to {% include product %}** and **Jump to Filesystem** will always be available here.
 
-## Logging console
+### Logging console
 
 The logging console shows all of the logging output from both the CEP Javascript interpreter and Toolkit's Python process.
 
@@ -91,15 +93,15 @@ The logging console shows all of the logging output from both the CEP Javascript
 
 If there are any issues with the extension that require support, the logging console output is extremely useful for helping the {% include product %} support team debug the problem.
 
-# Configuration and technical details
+## Configuration and technical details
 
 The following sections outline some of the more technical aspects of the integration to help configure the integration to the specific needs of your studio pipeline.
 
-## PySide
+### PySide
 
 The {% include product %} engine for Photoshop CC relies on PySide. Please see the official instructions for [Installing Pyside](http://pyside.readthedocs.io/en/latest/installing/index.html).
 
-## CEP extension
+### CEP extension
 
 The extension itself is bundled with the engine and the engine handles installation automatically on the first launch of Photoshop CC. The extension is installed on the artist's local machine in the standard, OS-specific CEP extension directories:
 
@@ -113,7 +115,7 @@ The extension itself is bundled with the engine and the engine handles installat
 
 Each time Photoshop CC is launched, the engine bootstrap code will check the version of the extension that is bundled with the engine against the version that is installed on the machine. This means that after an engine update, assuming a new version of the extension came with it, the installed extension will be automatically updated to the newly-bundled version.
 
-## Configuring favorites
+### Configuring favorites
 
 The **Favorites Shelf** can be configured to display any of the registered commands for your installed apps. To do this, simply add the `shelf_favorites` setting to the `tk-photoshopcc` section of your environment configuration. Here's an example:
 
@@ -127,7 +129,7 @@ shelf_favorites:
 
 The value of the setting is a list of dictionaries identifying a registered command provided by one of the installed apps in the configuration. The `app_instance` key identifies a particular installed app and the `name` key matches the command's display name registered by that app. In the example above, you can see four favorited commands: the file open and save dialogs from the `tk-multi-workfiles2` app as well as the standard Toolkit publish and snapshot dialogs. These four commands will now show in the favorites shelf.
 
-## Context fields display hook
+### Context fields display hook
 
 The engine comes with a hook to control the fields displayed in the **Context Header** section of the panel. There are two methods in the hook that can be overridden to customize what is displayed.
 
@@ -139,13 +141,13 @@ The [default hook implementation](https://github.com/shotgunsoftware/tk-photosho
 
 It should be noted that the engine will always display the entity thumbnail if one is available.
 
-## Photoshop API
+### Photoshop API
 
 The engine exposes the Javascript API for Photoshop CC to Python. The full docs for this API can be found [here](http://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf).
 
 The Photoshop API object is exposed as `engine.adobe`. The examples below show how it is possible to directly manipulate the Photoshop DOM from within Toolkit apps and hooks. The standard Toolkit apps also contain working examples of how to interact with Photoshop documents.
 
-### Examples
+#### Examples
 Load a file:
 
 ```python
@@ -197,7 +199,7 @@ for (i, layer) in enumerate(layers):
     layer.visible = original_visibility[i]
 ```
 
-## Environment variables
+### Environment variables
 
 To aid in debugging, there are a set of environment variables that change some of the engine's default values:
 
@@ -212,7 +214,7 @@ To aid in debugging, there are a set of environment variables that change some o
 Note: Additional environment variables exist in the Adobe Framework. For details, please see the
 [developer documentation](https://developer.shotgunsoftware.com/tk-framework-adobe/).
 
-## App Developer notes
+### App Developer notes
 
 * Because the python process is separate from the Photoshop CC process, there is some work done within the engine to try to make the app windows show above the Photoshop window in as clean a manner as possible. One gotcha with this setup is the default option to use native OS windows for `QFileDialog`. If you are developing an app for use with this engine, be sure
 to set the option to not use the native dialog. [See an example of this in the tk-multi-pythonconsole app](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218).

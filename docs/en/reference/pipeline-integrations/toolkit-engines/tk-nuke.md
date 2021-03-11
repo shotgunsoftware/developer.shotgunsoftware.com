@@ -5,6 +5,8 @@ pagename: tk-nuke
 lang: en
 ---
 
+# Nuke
+
 The {% include product %} engine for Nuke contains a standard platform for integrating {% include product %} Apps into Nuke, Nuke Studio, and Hiero. It is light weight and straight forward and adds a bunch of new things to Nuke.
 
 It creates a **{% include product %} Menu** in Nuke on which various items are displayed:
@@ -40,13 +42,13 @@ The "{% include product %} Current Project" favourite is added automatically for
 _Note: There is currently a bug in Nuke 8.0 running specifically on CentOS 6.5 that causes Nuke to crash when running Toolkit. Other versions of CentOS are unaffected. The Foundry is aware of this issue (bug 43766). If you are running into this, please contact us so we can try and help you workaround it until it is resolved in a future update of Nuke._
 
 
-# Information for App Developers
+## Information for App Developers
     
-## Context Tracking
+### Context Tracking
 
 The {% include product %} engine for Nuke will switch context automatically when files are loaded. Whenever a file is loaded, the engine will look at the file, try and resolve a context from it. 
 
-## Apps with custom gizmos
+### Apps with custom gizmos
 
 The {% include product %} engine for Nuke makes it easy to handle custom gizmos. If you are writing an app which uses custom gizmos, you can just drop them into a folder called **gizmos** and the engine will automatically add that location to the nuke path:
 
@@ -58,7 +60,7 @@ You can then easily access your gizmo via the create node functionality:
 
 {% include info title="Warning" content="Please note that while the use of gizmos may be convenient, it is typically NOT the right solution if you want to create nodes that persist in a scene. The reason for this is because as soon as you have put a gizmo in the scene, you have introduced a dependency between that scene and the gizmo code. Not only will you need to load the Shotgun Toolkit every time you load the scene, but you also need to carefully manage your code so that any updates to the code does not break old gizmos being used in scenes." %}
 
-## Apps Creating Nodes
+### Apps Creating Nodes
 
 Apps that create custom nuke nodes need to be carefully crafted. We recommend not using gizmos since these require a dependency between the scene and the gizmo code. Instead, save your custom nodes as a nuke file and import them into the scene:
 
@@ -94,8 +96,7 @@ except:
 
 If you make changes to the app behaviour, just keep versioning up the version number on the app callback and that way your app code can support both the new and the old behaviour.
 
-
-# Using the {% include product %} Engine for Nuke within Hiero
+## Using the {% include product %} Engine for Nuke within Hiero
 
 The {% include product %} engine for Nuke is also used for {% include product %}-aware integrations running within Hiero.
 
@@ -103,7 +104,7 @@ It allows you to place {% include product %} App actions in several places in th
 
 ![menu](../images/engines/nuke-hiero-menus.png)
 
-## How to Configure Hiero Menus
+### How to Configure Hiero Menus
 
 Because Hiero has several different menus, there are more options to configure where menu items go than in Maya or Nuke, for example. The {% include product %} engine for Nuke's Hiero workflow configuration may look like this:
 
@@ -128,8 +129,6 @@ Because Hiero has several different menus, there are more options to configure w
 
     menu_favourites:
     - {app_instance: tk-multi-workfiles, name: Shotgun File Manager...}
-
-
 ```
 
 Most engines have a `menu_favourites` option, a list where you can specify "shortcuts" which are put on the main {% include product %} menu. In addition to this, the Hiero-specific configuration has three special sections:
@@ -143,18 +142,16 @@ Most engines have a `menu_favourites` option, a list where you can specify "shor
 
 In order to add items to these menus, just make sure that the `name` field you define in the config matches what the App is displaying on its menus.
 
-
-### Apps which require the concept of a current scene
+#### Apps which require the concept of a current scene
 
 Some Toolkit Apps requires a notion of a default scene or default project. For example, the snapshot app knows how to snapshot the current scene. However, unlike Maya or Nuke, Hiero does not have a concept of a current scene. Several projects can be opened in Hiero at the same time. Therefore, you often need to add special logic in your hooks to help an app (like the snapshot app) to find out which project is being clicked on. We show how this works in the following doc sections.
 
-
-## Information for App Developers
+### Information for App Developers
 
 Because Hiero does not have the notion of a current project, we have added more powerful tools so that Apps can easily find out what is being clicked on inside of Hiero. Therefore, two methods have been added to the {% include product %} engine for Hiero:
 
 
-### get_menu_selection()
+#### get_menu_selection()
 
 Returns the list of Hiero objects selected in the most recent menu click.
 This list may contain items of various types. To see exactly what is being
@@ -172,7 +169,6 @@ Examples of objects that are being returned are:
 **Parameters & Return Value**
 
 * **Returns:** List of Hiero Objects
-
 
 **Example**
 
@@ -197,8 +193,7 @@ if project is None:
     raise TankError("Please select a Hiero Project!")
 ```
 
-
-### HieroEngine.get_menu_category()
+#### HieroEngine.get_menu_category()
 
 Returns the UI area where the last menu click took place. This command is less
 likely to be used - you may need it in cases where you have an app command that you want
@@ -215,9 +210,7 @@ Returns one of the following constants:
 - `HieroEngine.HIERO_TIMELINE_AREA`
 - `None` for unknown or undefined
 
-
-
-### How to configure your hooks to work with Hiero
+#### How to configure your hooks to work with Hiero
 
 Multi Apps configured for Hiero will typically need to find out which project was being clicked on. For example, the `tk-multi-workfiles` App needs to do a "{% include product %} Save As" of a project. We therefore add the Tank Save As command to the bin menu in Hiero so that a user can right click a project in the bin view and select the *Save As* option.
 
@@ -228,7 +221,6 @@ The engine configuration would look like this:
 ```yaml
 bin_context_menu:
 - {app_instance: tk-multi-workfiles, keep_in_menu: false, name: "{% include product %} Save As...", requires_selection: true}
-
 ```
 
 Now, in the app itself, each engine needs to configure a hook which handles scene events such as
@@ -316,9 +308,7 @@ class SceneOperation(Hook):
         return project
 ```
 
-
-
-### Using debug logging to see menu events
+#### Using debug logging to see menu events
 
 If you want to see which objects are returned by Hiero when a certain selection is clicked on,
 just turn on the engine debug mode. In the script editor you get a summary of the objects
