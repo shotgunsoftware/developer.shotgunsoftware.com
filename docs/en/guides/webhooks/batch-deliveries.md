@@ -18,7 +18,7 @@ This can help with managing the processing of large bursts of deliveries as a re
 
 ## Responding to deliveries
 
-If enabling batched deliveries, we recommend that your receiving service design guarantees a response much faster than 1 second per event. Otherwise, you will be at increased risk for timeouts and webhook failure when batches are large.
+If enabling batched deliveries, we recommend that your receiving service is designed to guarantee a response much faster than 1 second per event. Otherwise, you will be at increased risk for timeouts and webhook failure when batches are large.
 
 {% include info title="Note" content="For a receiving service that takes on order of 1 second to respond to a single event, the response time is the main performance factor, not delivery overhead. There will not be any significant benefit in batching." %}
 
