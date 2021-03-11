@@ -9,10 +9,10 @@ lang: en
 
 ## Enabling Batch Delivery
 
-You can choose to configure your webhook so that it will make requests with a batched payload format, by selecting the "Deliver in Batched Format" option.
+You can choose to configure your webhook so that it will make requests with a batched payload format by selecting the "Deliver in Batched Format" option.
 If enabled, at the time each request is formed, it will batch up to 50 pending deliveries into its payload.
 
-This can help with managing the processing of large bursts of deliveries as a result of many SG events being generated in a short amount of time. Under typical system operation, multiple deliveries per payload will occur when subscribed events are generated more frequently than once in a 2 second period.
+This can help with managing the processing of large bursts of deliveries as a result of many SG events being generated in a short amount of time. Under typical system operation, multiple deliveries per payload will occur when subscribed events are generated more frequently than once in a 2-second period.
 
 ![Batch Delivery Enabled](./images/batch_delivery_enabled.png)
 
@@ -27,7 +27,7 @@ If enabling batched deliveries, we recommend that your receiving service design 
 
 #### Batched-deliveries Webhooks
 * timeout allowance is the maximum of: 6 seconds, or, 1 second per event in the batch.
-* throttling limits still apply (1 minute of webhook endpoint response time per minute per shotgun site, across all webhooks).
+* throttling limits still apply: 1 minute of webhook endpoint response time per minute per shotgun site, across all webhooks.
 
 ## Comparison of Webhook Delivery Formats
 
@@ -60,9 +60,9 @@ If enabling batched deliveries, we recommend that your receiving service design 
 }
 ```
 
-#### Batched-deliveries Webhook Message Body (may contain 1 to 50 deliveries)
+#### Batched-Deliveries Webhook Message Body (may contain 1 to 50 deliveries)
 
-When batching is enabled, a `deliveries` key is always present (even if there is only 1 event in the batch). Its value is an array of individual event delivery data, where the information provided for each delivery is identical to un-batched mode. 
+When batching is enabled, a `deliveries` key is always present, even if there is only 1 event in the batch. Its value is an array of individual event delivery data, where the information provided for each delivery is identical to un-batched mode. 
 
 ```json
 {
