@@ -6,3 +6,134 @@ lang: en
 ---
 
 # Community Shared Integrations
+
+Here are projects that people in the Toolkit community have been gracious enough to share. They aren't written by us at {% include product %} and we can't vouch for them, but we'll definitely answer any questions we can about them. If you have a project you want added to the list, just email us at support@shotgunsoftware.com.
+
+### Engines
+
+----------
+
+
+**<img src="https://raw.githubusercontent.com/robblau/tk-katana/master/icon_64.png" alt="tk-katana" width="65"/> tk-katana**  
+    Project URL: [https://github.com/robblau/tk-katana](https://github.com/robblau/tk-katana)  
+    Project Contributor:  [Lightchaser Animation](https://github.com/LightChaserAnimationStudio)  
+    Project Maintainer:  
+    Project Description: A {% include product %} Engine for Foundry's Katana  
+  
+**<img src="https://support.shotgunsoftware.com/hc/article_attachments/360030791393/image_alpha.png" alt="image_alpha.png" width="65"/> tk-unreal**  
+    Project URL: [https://docs.unrealengine.com/en-US/Engine/Content/UsingUnrealEnginewithAutodeskShotgun/index.html](https://docs.unrealengine.com/en-US/Engine/Content/UsingUnrealEnginewithAutodeskShotgun/index.html)  
+    Project Contributor:  [Epic Games](http://epicgames.com/)  
+    Project Maintainer:  
+    Project Description: A {% include product %} Engine for  [Unreal Engine](https://www.unrealengine.com/en-US/)  
+  
+**<img alt="Substance Painter logo" src="https://support.shotgunsoftware.com/hc/article_attachments/360031346594/kisspng-substance-designer-2-18-substance-painter-2-18-all-5c0832493dc4a0.006664621544041033253.png" width=65/> tk-substancepainter**  
+    Project URL:  [https://github.com/diegogarciahuerta/tk-substancepainter](https://github.com/diegogarciahuerta/tk-substancepainter)  
+    Project Contributor:  [Factor64](https://www.factor64.com/)  
+    Project Maintainer: [Diego Garcia Huerta](https://www.linkedin.com/in/diegogh/)  
+    Project Description: A {% include product %} Engine for Adobe's Substance Painter
+  
+**<img alt="Substance Designer logo" src="https://support.shotgunsoftware.com/hc/article_attachments/360090550614/subtance_designer_transparent.png" width=65/> tk-substancedesigner**  
+    Project URL:  [https://github.com/diegogarciahuerta/tk-substancedesigner](https://github.com/diegogarciahuerta/tk-substancedesigner)  
+    Project Contributor:  [Factor64](https://www.factor64.com/)  
+    Project Maintainer: [Diego Garcia Huerta](https://www.linkedin.com/in/diegogh/)  
+    Project Description: A {% include product %} Engine for Adobe's Substance Designer  
+    More info:  [{% include product %} Community Forums](https://community.shotgunsoftware.com/t/substance-designer-shotgun-toolkit-engine-released/9944)
+  
+**<img alt="tk-modo" src="https://raw.githubusercontent.com/tremolo/tk-modo/master/icon_256.png" width="65"/> tk-modo**  
+    Project URL: [https://github.com/tremolo/tk-modo](https://github.com/tremolo/tk-modo)  
+    Project Contributor: Lutz Pälike and  [Walking The Dog](http://www.walkingthedog.be/)  
+    Project Maintainer:  
+    Project Description: A {% include product %} Engine for Foundry's Modo
+  
+**<img alt="icon_256.png" src="https://support.shotgunsoftware.com/hc/article_attachments/360025855713/icon_256.png" width="65"/> tk-clarisse**  
+    Project URL:  [https://github.com/diegogarciahuerta/tk-clarisse](https://github.com/diegogarciahuerta/tk-clarisse)  
+    Project Contributor:  [Factor64](https://www.factor64.com/)  
+    Project Maintainer:  [Diego Garcia Huerta](https://www.linkedin.com/in/diegogh/)  
+    Project Description: A {% include product %} Engine for  [Clarisse iFX](https://www.isotropix.com/products), a fully interactive CG toolset for set-dressing, look development, lighting and rendering.
+  
+**<img alt="1024px-Natron_icon.svg.png" src="https://support.shotgunsoftware.com/hc/article_attachments/360023122833/1024px-Natron_icon.svg.png" width="65"/> tk-natron**  
+    Project URL:  [https://github.com/diegogarciahuerta/tk-natron](https://github.com/diegogarciahuerta/tk-natron)  
+    Project Contributor:  [Factor64](https://www.factor64.com/)  
+    Project Maintainer:  [Diego Garcia Huerta](https://www.linkedin.com/in/diegogh/)  
+    Project Description: A {% include product %} Engine for  [Natron](https://natrongithub.github.io/), a free and open-source node-based software application.
+  
+**<img alt="icon_256.png" src="https://support.shotgunsoftware.com/hc/article_attachments/360054508054/icon_256.png" width="65"/> tk-harmony**  
+    Project URL:  [https://github.com/diegogarciahuerta/tk-harmony](https://github.com/diegogarciahuerta/tk-harmony)  
+    Project Contributor:  [Factor64](https://www.factor64.com/)  
+    Project Maintainer:  [Diego Garcia Huerta](https://www.linkedin.com/in/diegogh/)  
+    Project Description: A {% include product %} Engine for  [Toon Boom Harmony](https://www.toonboom.com/products/harmony), industry leading production animation software.
+  
+**<img alt="Cinema 4D logo" src="https://support.shotgunsoftware.com/hc/article_attachments/360057980593/kisspng-cinema-4d-3d-computer-graphics-computer-software-r-cinema-5abcb94b3d0438.6451556315223176432499.png" width="65"/> tk-cinema**  
+    Project URL:  [https://github.com/mikedatsik/tk-cinema](https://github.com/mikedatsik/tk-cinema)  
+    Project Contributor: Mykhailo Datsyk  
+    Project Maintainer: Mykhailo Datsyk  
+    Project Description: A {% include product %} Engine for  [Maxon Cinema 4D](https://www.maxon.net/en-us/products/cinema-4d/overview/), a designer-friendly toolset for modeling, animation, and rendering.  
+    More Information:  [{% include product %} Community Forums](https://community.shotgunsoftware.com/t/shotgun-toolkit-engine-for-maxon-cinema-4d/6437)
+  
+**<img alt="krita logo" src="https://support.shotgunsoftware.com/hc/article_attachments/360070593754/krita.png" width="65"/> tk-krita**  
+    Project URL:  [https://github.com/diegogarciahuerta/tk-krita](https://github.com/diegogarciahuerta/tk-krita)  
+    Project Contributor: [Factor64](https://www.factor64.com/)  
+    Project Maintainer: [Diego Garcia Huerta](https://www.linkedin.com/in/diegogh/)  
+    Project Description: A {% include product %} Engine for  [Krita](https://krita.org/en/), a free and open-source raster graphics editor designed primarily for digital painting and 2D animation.  
+    More Information: [{% include product %} Community Forums](https://community.shotgunsoftware.com/t/krita-shotgun-toolkit-engine-released/8724)
+  
+**<img alt="Blender logo" src="https://support.shotgunsoftware.com/hc/article_attachments/1500000220721/tk-blender.png" width="65"/> tk-blender**  
+    Project URL:  [https://github.com/diegogarciahuerta/tk-blender](https://github.com/diegogarciahuerta/tk-blender)  
+    Project Contributor: [Factor64](https://www.factor64.com/)  
+    Project Maintainer: [Diego Garcia Huerta](https://www.linkedin.com/in/diegogh/)  
+    Project Description: A {% include product %} Engine for  [Blender](https://www.blender.org/), a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D printed models, motion graphics, interactive 3D applications, virtual reality and computer games.  
+    More Information: [{% include product %} Community Forums](https://community.shotgunsoftware.com/t/blender-shotgun-toolkit-engine-released/10773)
+
+### Apps
+
+----------
+
+**<img alt="tk-maya-playblast" src="https://raw.githubusercontent.com/basestudio/tk-maya-playblast/master/icon_256.png" width="65"/> tk-maya-playblast**  
+    Project URL:  [https://github.com/basestudio/tk-maya-playblast](https://github.com/basestudio/tk-maya-playblast)  
+    Project Contributor: [BASE Studio](https://github.com/basestudio)  
+    Project Maintainer:  
+    Project Description: App to publish playblasts from Maya. See [https://goo.gl/5oJTv0](https://goo.gl/5oJTv0)
+  
+**<img alt="tk-multi-renderfarm" src="https://raw.githubusercontent.com/robblau/tk-multi-renderfarm/master/icon_256.png" width="65"/> tk-multi-renderfarm**  
+    Project URL: [https://github.com/baitstudio/tk-multi-renderfarm](https://github.com/baitstudio/tk-multi-renderfarm)  
+    Project Contributor: [Bait Studio](http://www.baitstudio.com/)  
+    Project Maintainer:  
+    Project Description: App to submit work to the farm. See [https://goo.gl/ew6mkD](https://goo.gl/ew6mkD)
+  
+**<img alt="tk-shotgun-publishrenders" src="https://support.shotgunsoftware.com/hc/en-us/article_attachments/114093966454/Janimation_128x128.png" width="65"/> tk-shotgun-publishrenders**  
+    Project URL: [https://github.com/janimation/tk-shotgun-publishrenders](https://github.com/janimation/tk-shotgun-publishrenders)  
+    Project Contributor:  
+    Project Maintainer:  [Dave Sisk](mailto:dave@janimation.com)  
+    Project Description: This app searches the directory structure of a project to find existing published files or file sequences, then registers them in {% include product %} as published files if the published file objects don't already exist.
+  
+**<img alt="nuke-getShotgunData" src="https://support.shotgunsoftware.com/hc/article_attachments/360046788674/getsgdata.png" width="65"/> nuke-getShotgunData**  
+    Project URL: [https://github.com/RicardoMusch/nuke-getShotgunData](https://github.com/RicardoMusch/nuke-getShotgunData)  
+    Project Contributor:  [Ricardo Musch](https://www.ricardo-musch.com/)  
+    Project Maintainer: Ricardo Musch  
+    Project Description: Getting {% include product %} data into nuke text nodes can be a bit of a pain. This node can be used to pipe that info into slates, burn-ins, or anywhere else.
+  
+**<img alt="sb-logo.png" src="https://support.shotgunsoftware.com/hc/article_attachments/360067231093/sb_logo.png" width="65"/> sb-shotgun-schema-introspection**  
+    Project URL: [https://github.com/scottb08/sb-shotgun-schema-introspection](https://github.com/scottb08/sb-shotgun-schema-introspection)  
+    Project Contributor:  [Scott Ballard](https://www.linkedin.com/in/scottballard/)  
+    Project Maintainer: Scott Ballard  
+    Project Description: This is a simple Toolkit app that allows {% include product %} and Toolkit developers to quickly navigate and inspect the {% include product %} entities, fields and the underlying schema.
+  
+**<img alt="griffith-logo.png" src="https://support.shotgunsoftware.com/hc/article_attachments/360067241613/griffith_logo.png" width="65"/> foto-multi-namingconvention**  
+    Project URL: [https://github.com/scottb08/foto-multi-namingconvention](https://github.com/scottb08/foto-multi-namingconvention)  
+    Project Contributor:  [Griffith Observatory](http://www.griffithobservatory.org/)  
+    Project Maintainer: [Scott Ballard](https://www.linkedin.com/in/scottballard/)  
+    Project Description: This is a simple Toolkit app that allows {% include product %} and Toolkit developers to quickly navigate and inspect the {% include product %} entities, fields and the underlying schema.
+  
+**<img alt="tk-cpenv" src="https://support.shotgunsoftware.com/hc/article_attachments/360077067093/cpenv.png" width="65"/> tk-cpenv**  
+    Project URL: [https://github.com/cpenv/tk-cpenv](https://github.com/cpenv/tk-cpenv)  
+    Project Contributor:  [Dan Bradham](https://github.com/danbradham)  
+    Project Maintainer: [Dan Bradham](https://github.com/danbradham)  
+    Project Description: This app adds support for  [cpenv](https://github.com/cpenv/cpenv), a tool that uses modules to manage software plugins, project dependencies and environment variables.  
+    More Information: [{% include product %} Community Forums](https://community.shotgunsoftware.com/t/rez-support/7350/7)
+  
+**<img alt="rtm-tk-hiero-shotgunDropper" src="https://support.shotgunsoftware.com/hc/article_attachments/360080105294/dropper.png" width="65"/> rtm-tk-hiero-shotgunDropper**  
+    Project URL: [https://github.com/RicardoMusch/rtm-tk-hiero-shotgunDropper](https://github.com/RicardoMusch/rtm-tk-hiero-shotgunDropper)  
+    Project Contributor:  [Ricardo Musch](https://www.ricardo-musch.com/)  
+    Project Maintainer: Ricardo Musch  
+    Project Description: This app allows you to drop Versions and playlists from {% include product %} into Hiero.  
+    More Information: [{% include product %} Community Forums](https://community.shotgunsoftware.com/t/release-shotgundropper-for-hiero/4183)
