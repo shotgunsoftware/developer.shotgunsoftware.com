@@ -173,12 +173,9 @@ We also have a more technical document that goes through the high level concepts
   
 [An introduction to the high level concepts in the {% include product %} Toolkit](https://support.shotgunsoftware.com/hc/en-us/articles/219040648)  
   
-## The pipeline Toolkit Community  
+## The Toolkit Community  
   
 A part of Toolkit is its community of pipeline engineers and TDs! We are on a mission to create a vibrant, code sharing community where we all can help evolve Toolkit together to become a powerful and flexible pipeline environment.  
   
 If you have any questions, or want to read through existing posts and conversations, please visit our  [public forums section](https://support.shotgunsoftware.com/hc/en-us/community/topics/200682428-Pipeline-Toolkit-Common-Questions-and-Answers).  
   
-## Our Support Team  
-  
-Lastly, if you have any questions, ideas or concerns, never hesitate to contact us directly! We try be be practical and hands on with support and if you for example have found a bug, we can often push a bug fix update quickly to you via our app store. Just drop us a line on  `support@shotgunsoftware.com` and we'll be happy to help!
