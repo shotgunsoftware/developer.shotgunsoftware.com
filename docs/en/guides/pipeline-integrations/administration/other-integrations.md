@@ -9,7 +9,7 @@ lang: en
 
 With {% include product %}'s API, you can integrate with a number of third party packages. However, there are a few with which {% include product %} integrates right out-of-the-box.
 
-### Cinesync
+## Cinesync
 
 Cinesync allows you to have simultaneous synced playback between multiple locations. {% include product %}'s integration allows you to create a Playlist of Versions, play it in Cinesync, and send your Notes made during the session right back into {% include product %}.
 
