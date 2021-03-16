@@ -67,7 +67,7 @@ Say you have three versions of Maya on your filesystem: Maya 2016, Maya 2017, an
 
 If these three versions of Maya are installed in the standard location on your filesystem, then this will all happen automatically. When you select a project in Desktop, it will scan the standard applications directory on the local machine, and will find the three versions. Since you already have a Maya software entity in {% include product %}, with no specific versions or paths specified, it will display all versions it finds in Desktop.
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/maya_software.png)
+![](images/Integration-admin-guide/maya_software.png)
 
 A few things to note here:
 
@@ -80,7 +80,7 @@ These will show up in Desktop as you see here: one icon for Maya, with a drop-do
 
 It’s perfectly fine to store Maya in a non-standard location in your studio. You’ll just need to create your own Software entities, and specify paths to let {% include product %} know where to find your software. Your setup may look like this:
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/maya_group_software.png)
+![](images/Integration-admin-guide/maya_group_software.png)
 
 Some notes here:
 
@@ -94,7 +94,7 @@ Some notes here:
 
 Now, say with that last example that we’re not ready to make Maya 2018 available to all users just yet. But we do want TDs, Devs, and our QA engineer, Tessa Tester, to be able to access it. We can achieve this with the  `User Restrictions`  field. Here’s an example:
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/maya_software_restrictions.png)
+![](images/Integration-admin-guide/maya_software_restrictions.png)
 
 We made a couple changes from the last example:
 
@@ -105,7 +105,7 @@ We made a couple changes from the last example:
 
 Sometimes you want to do more complex version management across projects in your studio. You may have a project in a crunch to deliver, which you want to lock off from new versions of software, while at the same time, its sequel may just be starting up and able to evaluate newer versions. In this case, you may have your Software entities set up like this:
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/maya_restrict_permissions.png)
+![](images/Integration-admin-guide/maya_restrict_permissions.png)
 
 A few important things to note:
 
@@ -208,7 +208,7 @@ If you are using Advanced Project Setup, you can add support beyond local file l
 
 Browser integration for {% include product %} Toolkit refers to access to Toolkit apps and launchers by way of right-click context menus in the {% include product %} web application. These menus, an example of which is shown above, contain actions configured for various entity types. In the case where you have multiple pipeline configurations for a project, the actions are organized by pipeline configuration. Browser integration allows you to launch content creation software like Maya or Nuke that is aware of your {% include product %} context, right from the browser.
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/browser_integration.jpg)
+![](images/Integration-admin-guide/browser_integration.jpg)
 
 ### A Brief History of Browser Integration
 
@@ -238,11 +238,11 @@ To control what actions are presented to the user for each entity type, you modi
 
 The Toolkit engine that manages Toolkit actions within the {% include product %} web app is  `tk-shotgun`, so it’s this engine’s configuration that controls what shows up in the action menus.
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/tk-shotgun_config.png)
+![](images/Integration-admin-guide/tk-shotgun_config.png)
 
 In the above example from  [tk-config-basic](https://github.com/shotgunsoftware/tk-config-basic/), there are two apps configured that will result in a number of engine commands turned into menu actions. Toolkit apps will register commands that are to be included in the action menu, including launcher commands for each software package found on the local system that correspond to the list of  [Software entities](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493#Configuring%20software%20launches)  in the {% include product %} site. The result is the list of menu actions shown here:
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/action_menu.png)
+![](images/Integration-admin-guide/action_menu.png)
 
 The browser integration code found installations of Houdini, Maya, Nuke, and Photoshop on the user's system, which resulted in menu actions for launching each of those integrations. Note that in a given environment configuration file, the  _engine_  for a Software entity needs to be present in order for that Software's launcher to show up for entities of that environment. So, in this example, the  `tk-houdini`,  `tk-maya`,  `tk-nuke`, and  `tk-photoshopcc`  engines must all be present in the file from which this snippet was taken. If you wanted to remove, for example, Maya from the list of launchers on this entity, you could just remove the  `tk-maya`  engine block from the environment config file.
 
@@ -334,7 +334,7 @@ The complex nature of communicating from a web application with the local deskto
 
 **“Open or install {% include product %} Desktop…” shown in the action menu**
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/install_desktop.png)
+![](images/Integration-admin-guide/install_desktop.png)
 
 This likely means one of three things:
 
@@ -343,13 +343,13 @@ This likely means one of three things:
 2.  Chrome or the Python websocket server has refused the connection, resulting in the {% include product %} web application being unable to communicate with {% include product %} Desktop. This situation is most likely related to the self-signed certificates that allow the connection to proceed when requested. Regenerating these certificates from scratch often resolves the issue, and can be triggered from {% include product %} Desktop, as shown below.
     
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/regenerate_certs.png)
+![](images/Integration-admin-guide/regenerate_certs.png)
 
 1.  {% include product %} Desktop’s websocket server failed to start on launch. This situation is likely limited to situations where a bad release of the websocket server has gone out to the public, which should be exceedingly rare. In this situation, logging will be present in  [tk-desktop.log](https://developer.shotgunsoftware.com/38c5c024/)  explaining the error, which can be  [sent to {% include product %}’s support team](https://support.shotgunsoftware.com/hc/en-us/requests/new).
 
 **No actions are shown in the action menu**
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/no_actions.png)
+![](images/Integration-admin-guide/no_actions.png)
 
 This is indicative of a configuration problem if actions were expected for this entity type. Some possible issues:
 
@@ -367,7 +367,7 @@ This is indicative of a configuration problem if actions were expected for this 
 
 **“Toolkit: Retrieving actions…” is never replaced with menu actions**
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/retrieving_actions.png)
+![](images/Integration-admin-guide/retrieving_actions.png)
 
 There are a few possibilities for this one:
 
@@ -489,7 +489,7 @@ _Scenario: My project is about to wrap and I would like to freeze it so that no 
 -   Anyone starting {% include product %} Desktop on the project will now always use v1.0.36. Any new users starting to work on the project will also get v1.0.36.
     
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/freeze_single_project.png)
+![](images/Integration-admin-guide/freeze_single_project.png)
 
 **Good to know**
 
@@ -515,7 +515,7 @@ _Scenario: I don’t want any updates. I want full control over what is being do
 
 -   Follow the steps in the above example, but leave the  `Project`  field blank. With no override in the  `Project`  field, this Pipeline Configuration entity will apply to all projects, including the “site” project, i.e., the site configuration that is used by Desktop outside of any project.
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/freeze_site.jpg)
+![](images/Integration-admin-guide/freeze_site.jpg)
 
 **Good to know**
 
@@ -530,7 +530,7 @@ _Scenario: I don’t want any updates. I want full control over what is being do
 
 _Scenario: I’d like to lock down all projects in our site, except for our test project, which we still want to allow to auto-update._
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/freeze_all_but_one_project.jpg)
+![](images/Integration-admin-guide/freeze_all_but_one_project.jpg)
 
 **Solution**
 
@@ -567,13 +567,13 @@ Each section below explains in detail each of the steps of the Wizard with examp
 
 #### Launching the setup wizard from Desktop
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/User-Guide/advanced_setup.png)
+![](images/Integration-admin-guide/advanced_setup.png)
 
 Once you have navigated to a project there will be an "Advanced Project Setup..." menu item in the user menu in the bottom right hand of Desktop. Click on this menu item to launch the Toolkit Setup Wizard.
 
 #### Select a configuration type
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/setup_and_configuration/wizard_select.png)
+![](images/Integration-admin-guide/wizard_select.png)
 
 When you start configuring a new project, the first thing to decide is  _which configuration template to use_. A configuration template is essentially the complete project configuration with all settings, file system templates, apps and logic needed to run the project.
 
@@ -583,7 +583,7 @@ When you start configuring a new project, the first thing to decide is  _which c
 
 #### Default configuration templates
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/setup_and_configuration/wizard_config_default.png)
+![](images/Integration-admin-guide/wizard_config_default.png)
 
 This is the place to go if you want to start from scratch. The default configuration contain all the latest apps and engines set up with a default file structure and file naming convention.
 
@@ -603,7 +603,7 @@ The configuration contains a number of different pieces:
 
 The standard config handles Assets and Shots in {% include product %}. It breaks things down per Pipeline Step. A pipeline step is similar to a department. Each pipeline step contains work and publish areas for the various supported applications. The Shot structure looks like this:
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/Admin-Guide/folder_structure.png)
+![](images/Integration-admin-guide/folder_structure.png)
 
 **Applications and workflows**
 
@@ -620,35 +620,27 @@ In addition to the apps above, you can easily install additional apps and engine
 
 #### Basing your new project on an existing project
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/setup_and_configuration/wizard_project_config.png)
+![](images/Integration-admin-guide/wizard_project_config.png)
 
 This is a quick and convenient way to get up and running with a new project with all the defaults and settings that you had in a previous project. Toolkit will simply copy across the configuration from your old setup to the new project. This is a simple and pragmatic way to evolve your configuration - each new project is based on an older project.
 
 For more ways and documentation on how to evolve and maintain your pipeline configuration, see here:
 
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/53/no_version_1207_013348/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#Inheriting%20the%20config%20from%20your%20previous%20project)
-
-[](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#Inheriting%20the%20config%20from%20your%20previous%20project)
-
-[> Managing your project configuration.](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#Inheriting%20the%20config%20from%20your%20previous%20project)
+[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/53/no_version_1207_013348/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#Inheriting%20the%20config%20from%20your%20previous%20project) [> Managing your project configuration.](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#Inheriting%20the%20config%20from%20your%20previous%20project)
 
 #### Using a configuration template from git
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/setup_and_configuration/wizard_git.png)
+![](images/Integration-admin-guide/wizard_git.png)
 
 Use this option if you want to keep your project's configuration connected to source control. Specify a url to a remote git or github repository and the setup process will clone it for you. Note that this is not just github, but works with any git repository. Just make sure that the path to the repository ends with  `.git`, and Toolkit will try to process it as a git setup. Because your project configuration is a git repository, you can commit and push any changes you make to your master repository and beyond that to other projects. Using a github based configuration makes it easy to keep multiple Toolkit projects in sync. You can read more about it here:
 
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/53/no_version_1207_013348/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#A%20studio%20configuration%20in%20git%20source%20control)
-
-[](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#A%20studio%20configuration%20in%20git%20source%20control)
-
-[> Managing your project configuration.](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#A%20studio%20configuration%20in%20git%20source%20control)
+[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/53/no_version_1207_013348/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#A%20studio%20configuration%20in%20git%20source%20control) [> Managing your project configuration.](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#A%20studio%20configuration%20in%20git%20source%20control)
 
 Please note that if you are running on Windows, you need to have git installed on your machine and accessible in your  `PATH`. On Linux and Mac OS X, it is usually installed by default.
 
 #### Browsing for a configuration template
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/setup_and_configuration/wizard_browse.png)
+![](images/Integration-admin-guide/wizard_browse.png)
 
 Use this option if you have a configuration on disk, either as a folder or zipped up as a zip file. This can be useful if someone has emailed a configuration to you or if you keep a master config on disk which you are basing all your projects on. This is usually an expert option and we recommend either using a config from another project or one of our app store default configs.
 
@@ -658,7 +650,7 @@ Each Toolkit project writes all its files and data to one or more shared storage
 
 The Toolkit Setup wizard will ask you to map each storage root required by the configuration to a local storage in {% include product %}.
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/setup_and_configuration/wizard_storage.png)
+![](images/Integration-admin-guide/wizard_storage.png)
 
 The required root is listed on the left with its description (as defined in the configuration's  `roots.yml`  file). On the right, a list of existing {% include product %} local storages is listed. You must select a storage for each required root and enter a path for the current OS if one does not already exist in {% include product %}.
 
@@ -672,13 +664,13 @@ Your primary storage location is typically something like  `/mnt/projects`  or  
 
 #### Choosing a project folder name
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/setup_and_configuration/wizard_project_name.png)
+![](images/Integration-admin-guide/wizard_project_name.png)
 
 Now it is time to choose a disk name for your project. This folder will be created in all the different storages which are needed by the configuration. You can see a quick preview in the UI - for most configurations this will only preview the primary storage, but if you are using a multi root config, additional storages will show up too. Toolkit will suggest a default project name based on the name in {% include product %}. Feel free to adjust it in order to create what is right for your setup.
 
 #### Selecting a configuration location
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/67/no_version_0120_110406/setup_and_configuration/wizard_config.png)
+![](images/Integration-admin-guide/wizard_config.png)
 
 Lastly, please decide where to put your configuration files on disk. Toolkit will suggest a location based on previous projects, so that they all end up in the same place on disk.
 
@@ -697,11 +689,7 @@ windows: \\prod\software\shotgun\golden_circle
 
 Once you are up and running with your first configuration, please navigate to our 'next steps' documentation to learn more about how to configure and adjust Toolkit to better suite your studio needs:
 
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/55/no_version_0513_171143/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219040688)
-
-[](https://support.shotgunsoftware.com/hc/en-us/articles/219040688)
-
-[> Beyond your first project](https://support.shotgunsoftware.com/hc/en-us/articles/219040688)
+[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/55/no_version_0513_171143/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219040688) [> Beyond your first project](https://support.shotgunsoftware.com/hc/en-us/articles/219040688)
 
 You can also learn more in our  [Advanced Project Setup documentation](https://support.shotgunsoftware.com/hc/en-us/articles/219039808-Index-of-Documentation).
 
