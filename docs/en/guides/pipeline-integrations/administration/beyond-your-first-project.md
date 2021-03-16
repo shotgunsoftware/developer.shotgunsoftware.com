@@ -10,7 +10,6 @@ lang: en
   
 Here, we explain where to go once you have got your first project up and running using the {% include product %} Desktop. It covers useful common questions and topics and lists useful documentation resources.    
   
-_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For details, see the  [{% include product %} Integrations User Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-User-Guide#Getting%20Started%20with%20Shotgun%20Desktop)._
   
 # Welcome to Toolkit  
   
@@ -44,9 +43,8 @@ Open this file and make the necessary changes to the paths. Once you have saved 
   
 For more information about applications, check out the following topics:  
    
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/apps/tk-multi-launchapp/v0.10.2_1029_133142/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219032968) [> The toolkit application launcher](https://support.shotgunsoftware.com/hc/en-us/articles/219032968)  
-
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/apps/tk-multi-launchapp/v0.10.2_1029_133142/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219032968#Use%20Command%20Line%20Arguments%20at%20Launch) [> Passing Command line Arguments](https://support.shotgunsoftware.com/hc/en-us/articles/219032968#Use%20Command%20Line%20Arguments%20at%20Launch)    
+- [The Toolkit Application Launcher](https://support.shotgunsoftware.com/hc/en-us/articles/219032968)  
+- [Passing Commandline Arguments](https://support.shotgunsoftware.com/hc/en-us/articles/219032968#Use%20Command%20Line%20Arguments%20at%20Launch)    
 
   
 ## {% include product %} Integration  
@@ -109,7 +107,7 @@ Hopefully at this point you now have the default {% include product %} setup wor
   
 This next section is all about what to do next -- the process of starting to take that default configuration and adjust it to work more like the rest of your studio pipeline. Toolkit is flexible and highly configurable, and we have lots of documentation. But before you get started, to see it all in action, we recommend spending a couple of minutes checking out our various walkthrough videos. These show the {% include product %} Pipeline Toolkit in action, how it works inside applications such as Maya and Nuke. It also goes through basic concepts such as publishing, version control, loading etc.  
   
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/17/no_version_0530_193825/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219040678) [> {% include product %} Pipeline Toolkit video collection](https://support.shotgunsoftware.com/hc/en-us/articles/219040678)  
+[{% include product %} Toolkit Video Collection](https://support.shotgunsoftware.com/hc/en-us/articles/219040678)  
   
 ## The anatomy of a Toolkit Project  
   
@@ -139,7 +137,7 @@ If you navigate to your project configuration, you can see a  `tank` and a  `tan
   
 For more details on what you can do with the  `tank` command, please see the in-depth technical documentation:  
   
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/11/no_version_0530_204710/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219033178) [> How to administer Toolkit.](https://support.shotgunsoftware.com/hc/en-us/articles/219033178)  
+[How to Administer Toolkit](https://support.shotgunsoftware.com/hc/en-us/articles/219033178)  
   
 ### Key Configuration Files  
   
@@ -151,15 +149,15 @@ Toolkit comes with a folder creation system which tries to automatically create 
   
 Hand in hand with this goes the Toolkit  _template system_ which makes it easy to define the various paths to files that you can configure; your publishes, work files, renders etc. This is stored in the  `templates.yml` file above.  
   
-Together, these two parts of the project configuration makes it possible to adjust the various Apps that toolkit use to write out data to locations on disk which make sense are are understood by your existing pipeline. Read more about this in our advanced documentation:  
+Together, these two parts of the project configuration makes it possible to adjust the various Apps that toolkit use to write out data to locations on disk which make sense are are understood by your existing pipeline.
 
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/11/no_version_0530_204710/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Creating%20folders%20on%20disk%20with%20Sgtk) [> Folder Configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Creating%20folders%20on%20disk%20with%20Sgtk)  
+Read more about this in our advanced documentation:  
 
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/11/no_version_0530_204710/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Configuring%20Templates) [> File system templates](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Configuring%20Templates)  
+- [Folder Configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Creating%20folders%20on%20disk%20with%20Sgtk)  
+- [Filesystem Templates](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Configuring%20Templates)  
   
 A toolkit configuration is essentially made up of a collection of configured  **apps and engines**. This configuration is located in the  `env` folder. If the file system configuration files discussed above define  _where_ resources should be located on disk, the environment configuration with its apps and engines define  _what_ the pipeline is supposed to do.  
 
-[![](https://sg-toolkit.s3.amazonaws.com/tank/zendesk_appstore/tank_logo_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219039798) [> The official Toolkit App and Engine listing.](https://support.shotgunsoftware.com/hc/en-us/articles/219039798)  
   
 ### Core API platform  
   
@@ -173,7 +171,7 @@ Tech Notes: Using a shared Toolkit Core (Click to expand)
   
 We also have a more technical document that goes through the high level concepts in the {% include product %} Pipeline Toolkit and explains 'bigger picture' things. Once you have a good grasp of what Toolkit does out of the box, we recommend that you move on to this document to get a deeper undestanding of how Toolkit could be adjusted to suit your particular studio needs.  
   
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/10/no_version_0330_043251/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219040648) [> An introduction to the high level concepts in the Shotgun Pipeline Toolkit.](https://support.shotgunsoftware.com/hc/en-us/articles/219040648)  
+[An introduction to the high level concepts in the {% include product %} Toolkit](https://support.shotgunsoftware.com/hc/en-us/articles/219040648)  
   
 ## The pipeline Toolkit Community  
   
