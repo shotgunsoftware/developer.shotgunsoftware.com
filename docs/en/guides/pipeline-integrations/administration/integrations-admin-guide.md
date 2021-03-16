@@ -27,8 +27,7 @@ You can  [see the Default Config in Github here](https://github.com/shotgunsoftw
 
 If you're familiar with the old structure of the Default Config, take a look at the  [Default Config Update FAQ](https://support.shotgunsoftware.com/hc/en-us/community/posts/115003376154-Default-Configuration-Update-FAQ).
 
-{% include info title="Note" content="**Looking for the old config structure?**  
-With the v1.1 release of Integrations, we reorganized the structure of the Default Config to help maximize efficiency and readability, and to make it match the Basic Config's structure more closely. You can  [see what's changed in the v1.1 Release Notes](https://support.shotgunsoftware.com/hc/en-us/articles/115002643854). You can still base projects on the legacy Default Config. Just choose  **"Legacy Default"**  when prompted to select a configuration in the Desktop Set Up Project Wizard." %}
+{% include info title="Note" content="Looking for the old config structure? With the v1.1 release of Integrations, we reorganized the structure of the Default Config to help maximize efficiency and readability, and to make it match the Basic Config's structure more closely You can still base projects on the legacy Default Config. Just choose 'Legacy Default' when prompted to select a configuration in the Desktop Set Up Project Wizard." %}
 
 ## The Publisher
 
