@@ -17,7 +17,9 @@ For more information, please see [http://www.cinesync.com/manual/latest](http://
 
 ## Deadline
 
-The {% include product %}+Deadline integration allows you to automatically submit rendered Versions to {% include product %} complete with thumbnail, links to frames, and other metadata. For more information, please see [http://www.thinkboxsoftware.com/deadline-5-shotgunevent](http://www.thinkboxsoftware.com/deadline-5-shotgunevent).
+The {% include product %}+Deadline integration allows you to automatically submit rendered Versions to {% include product %} complete with thumbnail, links to frames, and other metadata.
+
+For more information, please see [http://www.thinkboxsoftware.com/deadline-5-shotgunevent](http://www.thinkboxsoftware.com/deadline-5-shotgunevent).
 
 ## Rush
 
