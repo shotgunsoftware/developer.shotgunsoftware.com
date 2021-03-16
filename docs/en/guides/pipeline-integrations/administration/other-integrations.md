@@ -21,7 +21,9 @@ The {% include product %}+Deadline integration allows you to automatically submi
 
 ## Rush
 
-Much like the Deadline integration, the {% include product %}+Rush integration allows you to automatically submit rendered Versions to {% include product %} complete with thumbnail, links to frames, and other metadata. For more information, please see [http://seriss.com/rush-current/index.html](http://seriss.com/rush-current/index.html).
+Much like the Deadline integration, the {% include product %}+Rush integration allows you to automatically submit rendered Versions to {% include product %} complete with thumbnail, links to frames, and other metadata.
+
+For more information, please see [http://seriss.com/rush-current/index.html](http://seriss.com/rush-current/index.html).
 
 ## Subversion (SVN)
 
