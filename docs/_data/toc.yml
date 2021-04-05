@@ -68,6 +68,8 @@
     - text: jira-bridge-guide
       url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
     - page: shotgun-webhooks
+      children:
+      - page: webhooks-batch-deliveries
     - page: python-3-best-practices
 
 - caption: reference
