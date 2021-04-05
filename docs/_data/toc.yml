@@ -33,6 +33,8 @@
         - page: community-shared-integrations
         - page: other-integrations
         - page: disabling-auto-updates-and-offline
+        - page: toolkit-fs-config-ref
+        - page: toolkit-apps-and-engines-config-ref
       - page: toolkit-development
         children:
          - page: sgtk-developer-getting-started
@@ -147,6 +149,9 @@
         url: " https://developer.shotgunsoftware.com/tk-framework-qtwidgets/"
       - text: shotgun-utils
         url: " https://developer.shotgunsoftware.com/tk-framework-shotgunutils/"
+      - page: tk-framework-adminui
+      - page: tk-framework-desktopstartup
+      - page: tk-framework-desktopserver
     - page: toolkit-configuration
       children:
       - text: file-system-configuration
