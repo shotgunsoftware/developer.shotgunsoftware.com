@@ -1051,7 +1051,7 @@ The Paths section specifies where work will be saved. All paths consist of at le
 
 With Sequence, Shot, Step and version being keys defined in the same template file.
 
-{% include info title="Note" content="If a string key's name matches the entity type of a dynamic schema folder that has an associated Shotgun entity, then that folder name will be substituted in for the token. For example, if you are using a {Sequence} template key of type 'string' like the above snippet, and in your schema, you have a dynamic folder named "sequence", and in its corresponding  `sequence.yml`  file, it's defined to be of type  `shotgun_entity`, and is connected to the "Sequence" entity type in Shotgun. Toolkit will recognize that your template key corresponds to this dynamic folder's entity type (in that they are both Sequence). So, Toolkit will take the resulting folder name (i.e., the name of the specific sequence in question), and substitutes that in for the template key." %}
+{% include info title="Note" content="If a string key's name matches the entity type of a dynamic schema folder that has an associated Shotgun entity, then that folder name will be substituted in for the token. For example, if you are using a {Sequence} template key of type 'string' like the above snippet, and in your schema, you have a dynamic folder named 'sequence', and in its corresponding  `sequence.yml`  file, it's defined to be of type  `shotgun_entity`, and is connected to the 'Sequence' entity type in Shotgun. Toolkit will recognize that your template key corresponds to this dynamic folder's entity type (in that they are both Sequence). So, Toolkit will take the resulting folder name (i.e., the name of the specific sequence in question), and substitutes that in for the template key." %}
 
 This form is required if any optional attributes need to be defined. Currently, the only optional attribute is  `root_name`, which can be used to specify a project root for a path in a project that has multiple roots.  [Multiple roots](https://developer.shotgunsoftware.com/9ea9dd4e/)  are used when you'd like to add a new storage root to store some of your project files.
 
@@ -1106,7 +1106,7 @@ Let's say you have been working on feature animations and shorts on your {% incl
 
 ![episode_hierarchy](images/file-system-config-reference/episode_hierarchy.jpg)
 
-{% include info title="Note" content="see the  [Create with parent folder section above](https://support.shotgunsoftware.com/hc/en-us/articles/219039868#Create%20With%20Parent%20Folder)  to revisit nesting relationships in Toolkit (which is completely independent from the project hierarchy in {% include product %})." %}
+{% include info title="Note" content="see the  [Create with parent folder section above](https://support.shotgunsoftware.com/hc/en-us/articles/219039868#Create%20With%20Parent%20Folder)  to revisit nesting relationships in Toolkit (which is completely independent from the project hierarchy in Shotgun)." %}
 
 **Additional Reference:**
 
