@@ -625,7 +625,7 @@ This is a quick and convenient way to get up and running with a new project with
 
 For more ways and documentation on how to evolve and maintain your pipeline configuration, see here:
 
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/53/no_version_1207_013348/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#Inheriting%20the%20config%20from%20your%20previous%20project) [> Managing your project configuration.](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#Inheriting%20the%20config%20from%20your%20previous%20project)
+[Managing your project configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#Inheriting%20the%20config%20from%20your%20previous%20project)
 
 #### Using a configuration template from git
 
@@ -633,7 +633,7 @@ For more ways and documentation on how to evolve and maintain your pipeline conf
 
 Use this option if you want to keep your project's configuration connected to source control. Specify a url to a remote git or github repository and the setup process will clone it for you. Note that this is not just github, but works with any git repository. Just make sure that the path to the repository ends with  `.git`, and Toolkit will try to process it as a git setup. Because your project configuration is a git repository, you can commit and push any changes you make to your master repository and beyond that to other projects. Using a github based configuration makes it easy to keep multiple Toolkit projects in sync. You can read more about it here:
 
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/53/no_version_1207_013348/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#A%20studio%20configuration%20in%20git%20source%20control) [> Managing your project configuration.](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#A%20studio%20configuration%20in%20git%20source%20control)
+[Managing your project configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#A%20studio%20configuration%20in%20git%20source%20control)
 
 Please note that if you are running on Windows, you need to have git installed on your machine and accessible in your  `PATH`. On Linux and Mac OS X, it is usually installed by default.
 
@@ -688,7 +688,7 @@ windows: \\prod\software\shotgun\golden_circle
 
 Once you are up and running with your first configuration, please navigate to our 'next steps' documentation to learn more about how to configure and adjust Toolkit to better suite your studio needs:
 
-[![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/55/no_version_0513_171143/icon_256.png)](https://support.shotgunsoftware.com/hc/en-us/articles/219040688) [> Beyond your first project](https://support.shotgunsoftware.com/hc/en-us/articles/219040688)
+[Beyond your first project](https://support.shotgunsoftware.com/hc/en-us/articles/219040688)
 
 You can also learn more in our  [Advanced Project Setup documentation](https://support.shotgunsoftware.com/hc/en-us/articles/219039808-Index-of-Documentation).
 
