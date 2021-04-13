@@ -8,6 +8,7 @@ lang: en
 # Apps and Engines Configuration Reference
 
 This document contains an overview of all the different options that you can include when creating configurations for Apps, Engines and Frameworks in the {% include product %} Pipeline Toolkit. It can be useful when doing advanced configuration of Apps, and it is important when you are doing development and need to add parameters to your App Configuration Manifest.  
+
 _This document describes functionality only available if you have taken control over a Toolkit configuration. For more info, see  [{% include product %} Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493)._
 
 # Introduction
