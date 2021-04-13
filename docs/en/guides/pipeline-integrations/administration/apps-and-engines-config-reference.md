@@ -33,6 +33,7 @@ Environment files are located at  `/<sgtk_root>/software/shotgun/<project_name>/
 
 The yaml file has the following basic format:
 
+```yaml
     engines:
         tk-maya:
             location
@@ -64,6 +65,7 @@ The yaml file has the following basic format:
         tk-framework-tools:
             location
             framework settings
+```
 
 Each app and engine can be configured via settings. These settings correspond with the list of settings that the app/engine exposes in its manifest file called  `info.yml`. As of  `v0.18.x`  of Sgtk Core, settings only need to be specified if they differ from the default values specified in the manifest file. In addition to the manifest file, the configurable settings can typically be found on the app/engine page within the Toolkit App Store.
 
