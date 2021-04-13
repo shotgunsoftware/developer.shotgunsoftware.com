@@ -14,7 +14,7 @@ _This document describes functionality only available if you have taken control 
 
 This document contains specifications for the various file formats that Sgtk uses for its configuration and settings. Please note that this is a reference document which outlines all the various options and parameters available. For best practices on how to manage your configuration, please see the following document:
 
-[> Configuration Management best practices.](https://support.shotgunsoftware.com/hc/en-us/articles/219033168)
+[Configuration Management best practices.](https://support.shotgunsoftware.com/hc/en-us/articles/219033168)
 
 # {% include product %} Pipeline Toolkit Environments
 
