@@ -38,11 +38,13 @@
       - page: toolkit-development
         children:
          - page: sgtk-developer-getting-started
+         - page: sgtk-developer-guide
          - page: sgtk-developer-generating-path-and-publish
          - page: sgtk-developer-bootstrapping
          - page: sgtk-developer-app
          - page: sgtk-developer-engine
          - page: sgtk-developer-framework
+         - page: sgtk-how-to-submit-fixes
     - page: review
       children:
       - text: rv-user-manual
