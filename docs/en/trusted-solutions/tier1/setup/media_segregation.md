@@ -15,8 +15,6 @@ Media Isolation activation is a pre-requisite to enable this feature. If you hav
 
 ## Set up a VPC in your S3 bucket AWS region
 
-{% include info title="Disclaimer" content="Before starting, decide whether your S3 proxy will be privately accessible within your VPC or publicly accessible via the Internet and choose the relevant templates in the following instructions." %}
-
 You will need to deploy a VPC with the required VPC endpoint. We provide a [private VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml) CloudFormation templates as starting points. This template create the necessary VPC, subnets and VPC endpoint.
 
 * Create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home?#/stacks/create/template)
@@ -45,11 +43,11 @@ Simply add an `com.amazonaws.us-west-2.s3` Interface VPC Endpoint to your existi
 
 ### Add the VPC to your S3 bucket policy
 
-In order for the S3 proxy to communicate with your S3 bucket your bucket policy must allow access from the S3 proxy's VPC. You can find instructions on how to configure the policy in the [Fine Tuning](./tuning.md#s3-bucket-policy) step.
+In order for the S3 VPC endpoint to communicate with your S3 bucket your bucket policy must allow access from the S3 endpoint's VPC. You can find instructions on how to configure the policy in the [Fine Tuning](./tuning.md#s3-bucket-policy) step.
 
 ## Validation
 
-### Test the S3 PrivateLink
+### Test the S3 VPC endpoint
 
 Use the endpoint URL to list objects in your bucket using AWS CLI. In the following example, replace the VPC endpoint ID `vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com` and bucket name `my-bucket` with appropriate information.
 
@@ -57,12 +55,12 @@ Use the endpoint URL to list objects in your bucket using AWS CLI. In the follow
     aws s3 --endpoint-url https://bucket.vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com ls s3://my-bucket/
 ```
 
-### Configure your test site to use the S3 proxy
+### Configure your test site to use your S3 VPC endpoint
 
 * Please contact Shotgun support via the dedicated Slack channel and provide the following information:
   * Your S3 bucket name
-  * Your S3 Privatelink DNS Name
-* Shotgun will configure your test site to use your S3 privatelink.
+  * Your S3 VPC endpoint DNS Name
+* Shotgun will configure your test site to use your S3 VPC endpoint.
 * Confirm that you are still able to access existing media
 * Attempt to upload new media
 
