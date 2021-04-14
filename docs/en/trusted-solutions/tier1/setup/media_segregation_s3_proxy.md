@@ -5,7 +5,9 @@ pagename: tier1-setup-media_segregation_s3_proxy
 lang: en
 ---
 
-# Media Traffic Isolation
+{% include info title="Deprecated" content="The preferred way is to use S3 Private Link instead of a S3 proxy, see [Media Traffic Isolation](./media_segregation.md)" %}
+
+# Media Traffic Isolation using an S3 proxy (DEPRECATED)
 
 {% include info title="Disclaimer" content="This documentation is provided solely as an example. It explains how to set up your Shotgun Isolation environment so that it can be connected to Shotgun cloud infrastructure. Please adapt it to your studio security requirements as needed. As Shotgun has no visibility on your AWS Account, ensuring that this account is secure is a client responsibility." %}
 
