@@ -51,7 +51,7 @@ In order for the S3 proxy to communicate with your S3 bucket your bucket policy 
 
 ### Test the S3 PrivateLink
 
-Use the endpoint URL to list objects in your bucket using AWS CLI. In the following example, replace the VPC endpoint ID vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com and bucket name my-bucket with appropriate information.
+Use the endpoint URL to list objects in your bucket using AWS CLI. In the following example, replace the VPC endpoint ID `vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com` and bucket name `my-bucket` with appropriate information.
 
 ```
     aws s3 --endpoint-url https://bucket.vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com ls s3://my-bucket/
