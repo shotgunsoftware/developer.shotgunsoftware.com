@@ -17,11 +17,11 @@ Media Isolation activation is a pre-requisite to enable this feature. If you hav
 
 {% include info title="Disclaimer" content="Before starting, decide whether your S3 proxy will be privately accessible within your VPC or publicly accessible via the Internet and choose the relevant templates in the following instructions." %}
 
-You will need to deploy a VPC with the required VPC endpoint. We provide a [private VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-privatelink-s3.yml) CloudFormation templates as starting points. These template create the necessary VPCs, subnets and VPC endpoint.
+You will need to deploy a VPC with the required VPC endpoint. We provide a [private VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml) CloudFormation templates as starting points. This template create the necessary VPC, subnets and VPC endpoint.
 
 * Create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home?#/stacks/create/template)
 * Select Template is ready
-* Set Amazon S3 URL to [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-privatelink-s3.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-privatelink-s3.yml)
+* Set Amazon S3 URL to [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-privatelink-s3.yml)
 * Click Next
 * Set a stack name. Eg. `shotgun-vpc`
 * Choose network ranges that doesn't conflict with your studio network and set subnet CIDR values accordingly
@@ -39,26 +39,23 @@ Options provided by AWS:
 
 ## Add an S3 endpoint to your VPC
 
-{% include info title="Note" content="This step should only be performed if the CloudFormation template was *not* used when configuring [Media Isolation](./s3_bucket.md)." %}
+{% include info title="Note" content="This step should only be performed if the CloudFormation template was *not* used." %}
 
-[TODO]
+Simply add an `com.amazonaws.us-west-2.s3` Interface VPC Endpoint to your existing VPC. Make sure the associated security group allow traffic from your site network.
 
-![Add endpoint](../images/tier1-endpoint-create-1.png)
-![Add endpoint](../images/tier1-endpoint-create-2.png)
-![Add endpoint](../images/tier1-endpoint-create-3.png)
-
-### Add S3 proxy VPC to S3 bucket policy
-
-[TODO: Double Check]
+### Add the VPC to your S3 bucket policy
 
 In order for the S3 proxy to communicate with your S3 bucket your bucket policy must allow access from the S3 proxy's VPC. You can find instructions on how to configure the policy in the [Fine Tuning](./tuning.md#s3-bucket-policy) step.
 
 ## Validation
 
-### Test the S3 proxy
+### Test the S3 PrivateLink
 
-[TODO]
-Try to access your S3 proxy using the ping route. Eg. `https://s3-proxy.mystudio.com/ping`
+Use the endpoint URL to list objects in your bucket using AWS CLI. In the following example, replace the VPC endpoint ID vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com and bucket name my-bucket with appropriate information.
+
+```
+    aws s3 --endpoint-url https://bucket.vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com ls s3://my-bucket/
+```
 
 ### Configure your test site to use the S3 proxy
 
