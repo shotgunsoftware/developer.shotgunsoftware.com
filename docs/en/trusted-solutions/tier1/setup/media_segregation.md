@@ -21,7 +21,7 @@ You will need to deploy a VPC with the required VPC endpoint. We provide a [priv
 
 * Create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home?#/stacks/create/template)
 * Select Template is ready
-* Set Amazon S3 URL to [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-privatelink-s3.yml)
+* Set Amazon S3 URL to [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml)
 * Click Next
 * Set a stack name. Eg. `shotgun-vpc`
 * Choose network ranges that doesn't conflict with your studio network and set subnet CIDR values accordingly
