@@ -110,7 +110,7 @@
         - page: tier1-setup-shotgun_poc_site
         - page: tier1-setup-s3_bucket
         - page: tier1-setup-media_segregation
-        - page: tier1-setup-media_segregation_s3_private_link
+        - page: tier1-setup-media_segregation_s3_proxy
         - page: tier1-setup-traffic_segregation
         - page: tier1-setup-s3_replication
         - page: tier1-setup-tuning
