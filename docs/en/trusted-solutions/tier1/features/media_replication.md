@@ -27,7 +27,7 @@ Shotgun can be configured to read from up to two different buckets. Using the [A
 Following AWS service level agreement, S3 guarantees the replication of 99.99% of the object within 15 minutes.
 
 ### Replication Delay
-A small amount of time, typically under 15 minutes, is required before replication happens. The replication time depends on the size of the object to replicate. In order to alleviate that replication delay, Shotgun will, for a small period of time, generate links from to object in the source bucket instead of the replica. The duration of this transitional state in configurable in the Isolation Preferences.
+A small amount of time, typically under 15 minutes, is required before replication happens. The replication time depends on the size of the object to replicate. In order to alleviate that replication delay, Shotgun will, for a small period of time, generate links from to object in the source bucket instead of the replica. The duration of this transitional state is configurable in the Isolation Preferences.
 
 ## Costs
 Activating the Media Replication feature can increase your AWS costs considerabibly. Before activating, be aware that:
