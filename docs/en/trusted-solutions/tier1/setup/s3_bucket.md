@@ -59,7 +59,7 @@ At this stage, you should be able to upload and download media. The Shotgun Tran
 3. Once in the Media App, drag and drop or upload an image or a video from your computer. If you didn't created a Project yet, you may have to create one first.
 4. A version should appear, with a thumbnail, in the Media App.
 5. Validate that you can playback the media by clicking the Play button.
-6. To validate that the media has been stored in your S3 bucket, from the media viewer, click on the cog and then select or hover over view source view. The HTTPS link should contain your bucket name.
+6. To validate that the media has been stored in your S3 bucket, from the media viewer, click on the cog and then select or hover over ‘view source’. The HTTPS link should contain your bucket name.
 
 ## Next Steps
 
