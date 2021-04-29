@@ -9,7 +9,7 @@ lang: en
 
 ![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/10/no_version_0330_043251/icon_256.png)
 
-# An overview of the different Concepts in the {% include product %} Pipeline Toolkit.
+# An overview of the different concepts in the {% include product %} Pipeline Toolkit.
 
 Here, we cover the main concepts in detail: How apps and Engines work, how the toolkit is launched and manages the current context (work area), how folders are created on disk etc. We recommend that anyone involved in configuration or development start here.  
 _Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For details, see the  [{% include product %} Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493)._
