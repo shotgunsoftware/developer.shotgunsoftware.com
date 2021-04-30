@@ -2,6 +2,7 @@
 layout: default
 title: Shotgun AWS Direct Connect Onboarding
 pagename: tier1-knowledge-direct_connect_onboarding
+lang: en
 ---
 
 # {% include product %} AWS Direct Connect Onboarding
