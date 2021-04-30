@@ -33,6 +33,6 @@ This will run the wizard and return a standard QDialog Accepted or Rejected valu
 
 Initialize a SetupProjectWizard.  This is a subclass of QtGui.QWizard.
 
-```
+```python
 SetupProjectWizard()
 ```

@@ -6,6 +6,7 @@ lang: en
 ---
 
 # Toolkit Desktop Server Framework
+
 The desktopserver framework provides the functionality behind {% include product %}'s local file linking
 and Toolkit integration.  It provides a local websocket server that securely listens for
 requests from {% include product %} websites for an action that requires desktop access.
@@ -24,11 +25,8 @@ this framework provides.
 
 ### {% include product %} Desktop
 
-This framework is bundled with {% include product %} Desktop, which can be downloaded [here](https://support.shotgunsoftware.com/entries/95442748#Downloading%20Shotgun%20Desktop).
-When {% include product %} Desktop is run it will automatically start up the websocket server.  If you 
+This framework is bundled with {% include product %} Desktop, which can be downloaded [here](https://support.shotgunsoftware.com/entries/95442748#Downloading%20Shotgun%20Desktop). When {% include product %} Desktop is run it will automatically start up the websocket server.  If you 
 are already running {% include product %} Desktop then your setup process is complete.
-
-
 
 ### Configuring the server
 
@@ -87,7 +85,6 @@ port=9000
 enabled=1
 whitelist=*.shotgunstudio.com
 ```
-
 
 ## Troubleshooting
 
