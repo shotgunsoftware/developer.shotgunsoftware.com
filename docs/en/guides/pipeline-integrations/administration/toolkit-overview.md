@@ -184,6 +184,7 @@ path = publish_template_obj.apply_fields(fields)
 For more details of how you can configure and use the Templates API, see the following:
 
 [File System Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868)
+
 [Core API Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039848)
 
 # Choosing which Engines and Apps to run
@@ -234,6 +235,7 @@ If you try to configure the app using a template that has more than the context 
 For a complete reference, check the following links:
 
 [Apps and Engines Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039878)
+
 [File System Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868)
 
 ## Hooks
@@ -287,5 +289,7 @@ Toolkit is not just a collection of apps and engines. It is also a framework tha
 For an more extensive introduction to App Development, see the following documents:
 
 [An Introduction to the Toolkit App Development.](https://support.shotgunsoftware.com/hc/en-us/articles/219033158)
+
 [The Toolkit API Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039858)
+
 [Apps and Engines Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039878)

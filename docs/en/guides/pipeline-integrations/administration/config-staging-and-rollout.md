@@ -75,7 +75,7 @@ When you press ok, Toolkit will copy the configuration across and set up the clo
 
 Once you have applied the relevant updates and run any testing that you deem is necessary, you can push back your changes into the production configuration by executing the  `tank push_configuration`  command. This will transfer all the changes you have made in your staging sandbox to your Primary configuration.
 
-Please note that your current configuration is moved to a backup location when you run the`push_configuration` command. If you accidentally push or if there is a problem with the push, you can roll back simply by taking the content in the backup folder and copying into the config folder.
+Please note that your current configuration is moved to a backup location when you run the `push_configuration` command. If you accidentally push or if there is a problem with the push, you can roll back simply by taking the content in the backup folder and copying into the config folder.
 
 By default, this command will copy a collection of files into the  `config`  folder in the target pipeline configuration. If you are using unix and would like a more atomic update, you can add a  `--symlink`  flag to the  `push_configuration`  command. This will turn the  `config`  folder in the target pipeline configuration into a symbolic link which makes it easier to upgrade without running the risk of having configuration mismatches in currently running sessions.
 
