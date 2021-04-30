@@ -37,10 +37,6 @@ Remember that other users will have a wide variety of environments and variables
 
 Once you're ready, push your changes back to Github and create a pull request. Your pull request should be detailed, explain what your code does, and why the changes are required. When writing this up, think about the user who is coming into this with very little knowledge about this area of code. The public will see your pull request and other users will be happy to understand your well written description!
 
-## Drop Us a Note
-
-Just to make sure someone sees your pull request, send an email to  [support@shotgunsoftware.com](mailto:support@shotgunsoftware.com) with a link to the PR in Github. This will create a support ticket, and the Street Team will make sure your modifications get some engineering eyes on them.
-
 ## Then What?
 
 We will review your pull request when we have time in our sprint. It's very likely we'll comment and ask questions about your code or use case. We may kick back the request and ask you to make changes. Don't be offended! We love contributions but also have deep knowledge about how things will work. We are in this code every day so we don't expect everyone to submit perfect code.
@@ -48,5 +44,3 @@ We will review your pull request when we have time in our sprint. It's very like
 Once we review it, if we accept your pull request, we'll queue it for QA and then it will be merged into our repo and released at some point. The timeline can vary depending on a lot of factors. Please be patient.
 
 We may also politely turn down your pull request. Again, please don't be offended. We appreciate your efforts and contribution. There can be any number of factors that contribute to this. But if you follow the guidelines above, hopefully this won't happen.
-
-If you have any questions, please email us at [toolkitsupport@shotgunsoftware.com](mailto:toolkitsupport@shotgunsoftware.com)
