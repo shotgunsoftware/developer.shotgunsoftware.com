@@ -7,7 +7,7 @@ lang: zh_CN
 
 # 解决与 Python API 相关的 SSL: CERTIFICATE_VERIFY_FAILED 问题
 
-Python API 依赖与 API 捆绑在一起且位于计算机上的一组证书才能连接到 Shotgun 使用的各种 Web 服务。遗憾的是，证书颁发机构可能会颁发新证书，而这些证书可能未与 Python API 或操作系统捆绑在一起。
+Python API 依赖与 API 捆绑在一起且位于计算机上的一组证书才能连接到 {% include product %} 使用的各种 Web 服务。遗憾的是，证书颁发机构可能会颁发新证书，而这些证书可能未与 Python API 或操作系统捆绑在一起。
 
 虽然我们的 Python API 附带了截至 2019 年 2 月 21 日的最新证书副本，有一个错误导致 API 无法使用这些证书以向 Amazon S3 执行上传操作，即使您使用的是最新版本的 API 也是如此。有关背景信息，请参见[此 AWS 博客文章](https://aws.amazon.com/blogs/security/how-to-prepare-for-aws-move-to-its-own-certificate-authority/)。要临时解决这种状况，可以尝试以下解决方案。
 
@@ -34,7 +34,7 @@ Python API 依赖与 API 捆绑在一起且位于计算机上的一组证书才�
 
 1. 升级到 Python API **v3.0.39**
 
-2. a. 将 `SHOTGUN_API_CACERTS` 设置为 `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`
+2. a. 将 `{% include product %}_API_CACERTS` 设置为 `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`
 
    或
 
@@ -46,7 +46,7 @@ Python API 依赖与 API 捆绑在一起且位于计算机上的一组证书才�
 
 2. 从 [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) 下载最新的证书列表。
 
-3. 将 `SHOTGUN_API_CACERTS` 设置为该文件的保存位置。与 Python API 类似，Toolkit 不允许您在创建连接时指定 `ca_certs` 参数。
+3. 将 `{% include product %}_API_CACERTS` 设置为该文件的保存位置。与 Python API 类似，Toolkit 不允许您在创建连接时指定 `ca_certs` 参数。
 
 ### 如果无法更新 Python API 或 Toolkit
 

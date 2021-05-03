@@ -14,7 +14,7 @@ lang: en
 Toolkit's sgtk API is project-centric. In other words, you must import it specifically from the project you wish to use it on.
 This means that if you use sgtk API operations for multiple projects in a single Python session, then you will run into a problem, as Python only allows a module with the same name to be imported once.
 
-If you're using the [shotgun event daemon](https://github.com/shotgunsoftware/shotgunEvents), you may want to perform Toolkit actions inside of a plugin for certain events. This can be tricky since Python only imports a module once. So if your Toolkit Core API for Project A is imported the first time the plugin is run, that is the version that will remain imported for the life of the daemon. This means if the next event dispatched to the plugin is for Project B, you may get an error from Toolkit if you try and instantiate a new Toolkit object for Project B using the core API from Project A.
+If you're using the [{% include product %} event daemon](https://github.com/shotgunsoftware/shotgunEvents), you may want to perform Toolkit actions inside of a plugin for certain events. This can be tricky since Python only imports a module once. So if your Toolkit Core API for Project A is imported the first time the plugin is run, that is the version that will remain imported for the life of the daemon. This means if the next event dispatched to the plugin is for Project B, you may get an error from Toolkit if you try and instantiate a new Toolkit object for Project B using the core API from Project A.
 
 **Example of the problem using centralized configs:**
 

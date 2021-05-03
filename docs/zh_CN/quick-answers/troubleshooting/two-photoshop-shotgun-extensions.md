@@ -9,13 +9,13 @@ lang: zh_CN
 
 ## 问题是什么？
 
-在发布的 After Effects 集成中，包含一个与 Shotgun 集成的所有 Adobe 应用都可使用的通用插件。作为此更改的一部分，我们需要重命名扩展，以便可以保留与较早的 Photoshop 集成的向后兼容性，并使工作室能够顺利过渡到更新。
+在发布的 After Effects 集成中，包含一个与 {% include product %} 集成的所有 Adobe 应用都可使用的通用插件。作为此更改的一部分，我们需要重命名扩展，以便可以保留与较早的 Photoshop 集成的向后兼容性，并使工作室能够顺利过渡到更新。
 
-不幸的是，这也意味着升级的同时可能安装两种 Shotgun 扩展：
+不幸的是，这也意味着升级的同时可能安装两种 {% include product %} 扩展：
 
-![Photoshop 菜单中显示的多个 Shotgun 扩展](./images/photoshop-extension-panel.png)
+![Photoshop 菜单中显示的多个 {% include product %} 扩展](./images/photoshop-extension-panel.png)
 
-**Shotgun Adobe Panel** 为新扩展，应该在使用 `v1.7.0` 或更新版本的 Photoshop 集成时使用。
+**{% include product %} Adobe Panel** 为新扩展，应该在使用 `v1.7.0` 或更新版本的 Photoshop 集成时使用。
 
 ## 如何解决？
 
@@ -24,7 +24,7 @@ lang: zh_CN
 - OSX：`~/Library/Application Support/Adobe/CEP/extensions/com.sg.basic.ps`
 - Windows：`%AppData%\Adobe\CEP\extensions\com.sg.basic.ps`
 
-![Photoshop 菜单中显示的多个 Shotgun 扩展](./images/shotgun-desktop-console-photoshop-extension.png)
+![Photoshop 菜单中显示的多个 {% include product %} 扩展](./images/shotgun-desktop-console-photoshop-extension.png)
 
 如果退出 Photoshop 并移除该目录，则重新启动时应只有一个扩展。
 

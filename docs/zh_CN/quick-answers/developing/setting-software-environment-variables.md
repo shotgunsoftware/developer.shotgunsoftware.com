@@ -7,9 +7,9 @@ lang: zh_CN
 
 # 如何在启动软件之前设置环境变量？
 
-Shotgun Toolkit 允许您在启动过程中使用挂钩来配置环境并运行自定义代码。
+{% include product %} Toolkit 允许您在启动过程中使用挂钩来配置环境并运行自定义代码。
 
-通过 Shotgun Desktop 或浏览器集成启动软件（如 Nuke 或 Maya）时，将运行 `tk-multi-launchapp`。此应用负责启动软件并确保 Shotgun 集成按预期启动。在此过程中将通过挂钩公开两个点以允许运行自定义代码。
+通过 {% include product %} Desktop 或浏览器集成启动软件（如 Nuke 或 Maya）时，将运行 `tk-multi-launchapp`。此应用负责启动软件并确保 {% include product %} 集成按预期启动。在此过程中将通过挂钩公开两个点以允许运行自定义代码。
 
 ## before_app_launch.py
 

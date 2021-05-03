@@ -5,9 +5,9 @@ pagename: 3dsmax-crashes-on-startup
 lang: en
 ---
 
-# Why does 3ds Max crash on startup when using Shotgun Toolkit?
+# Why does 3ds Max crash on startup when using {% include product %} Toolkit?
 
-When launching 3ds Max from Shotgun Desktop or the Shotgun website, it is possible that 3ds Max will freeze, leaving you with a frozen white dialog, or the following message will appear:
+When launching 3ds Max from {% include product %} Desktop or the {% include product %} website, it is possible that 3ds Max will freeze, leaving you with a frozen white dialog, or the following message will appear:
 
     Microsoft Visual C++ Runtime Library (Not Responding)
     Runtime Error!
@@ -54,4 +54,4 @@ Now save the file.
 
 Then, open `config/env/includes/app_launchers.yml` in your pipeline configuration and find the `launch_3dsmax` entry. You should replace `hook_before_app_launch: default` to `hook_before_app_launch: '{config}/before_app_launch.py'`.
 
-You should now be able to launch 3ds Max correctly from Shotgun and Shotgun Desktop. If you still have any issues, please contact support@shotgunsoftware.com
+You should now be able to launch 3ds Max correctly from {% include product %} and {% include product %} Desktop. If you still have any issues, please contact support@shotgunsoftware.com

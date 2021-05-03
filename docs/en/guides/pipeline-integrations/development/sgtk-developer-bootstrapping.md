@@ -80,8 +80,8 @@ sgtk.LogManager().global_debug = True
 
 ## Part 3: Authentication
 
-When running a script that uses the Toolkit API outside of an environment where Shotgun Toolkit has already been started, you will always need to authenticate.
-So before you can perform the bootstrapping, you need to authenticate the Toolkit API with your Shotgun site.
+When running a script that uses the Toolkit API outside of an environment where {% include product %} Toolkit has already been started, you will always need to authenticate.
+So before you can perform the bootstrapping, you need to authenticate the Toolkit API with your {% include product %} site.
 
 You can authenticate with user credentials or with script credentials.
 
@@ -89,7 +89,7 @@ You can authenticate with user credentials or with script credentials.
 then user authentication is the best way to go, (This is how all our integrations work by default).
 - If you're writing a script to automate something and a user is not present to authenticate then you should use script credentials.
 
-Authentication is handled via the [`ShotgunAuthenticator`](https://developer.shotgunsoftware.com/tk-core/authentication.html?highlight=shotgunauthenticator#sgtk.authentication.ShotgunAuthenticator) class.
+Authentication is handled via the [`{% include product %}Authenticator`](https://developer.shotgunsoftware.com/tk-core/authentication.html?highlight=shotgunauthenticator#sgtk.authentication.ShotgunAuthenticator) class.
 Here is an example of both user and script authentication.
 
 ### User Authentication
@@ -145,7 +145,7 @@ The bootstrapping process at a high level essentially performs the following ste
 
 1. Retrieves or locates the Toolkit configuration folder.
 2. Ensures that the configuration dependencies such as the apps and engines are present in the [bundle cache](../../../quick-answers/administering/where-is-my-cache.md#bundle-cache). 
-If they are not present, and they are using cloud-based descriptors such as [`app_store`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#the-shotgun-app-store), or [`shotgun`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun) then it will download them to the bundle cache.
+If they are not present, and they are using cloud-based descriptors such as [`app_store`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#the-shotgun-app-store), or [`{% include product %}`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun) then it will download them to the bundle cache.
 3. Swaps out the current loaded sgtk core for the one appropriate to the config.
 4. Initializes the engine, apps, and frameworks.
 
@@ -185,7 +185,7 @@ For example, if you provide a `Project` entity, the engine will start up in a pr
 Likewise, you could provide a `Task` entity (where the task is linked to an `Asset`), and it will start up using the `asset_step.yml` environment.
 This is based on the default configuration behavior, [the environment that is chosen](https://developer.shotgunsoftware.com/487a9f2c/?title=Environment+Configuration+Reference#how-toolkit-determines-the-current-environment) is controlled via the core hook, [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py), and so could be changed to pick a different environment based on the context or other parameters.
 
-You need to provide the entity in the format of a Shotgun entity dictionary which must contain at least the type and id: 
+You need to provide the entity in the format of a {% include product %} entity dictionary which must contain at least the type and id: 
 
 ```python
 task = {"type": "Task", "id": 17264}
@@ -265,7 +265,7 @@ engine = mgr.bootstrap_engine("tk-shell", entity=project)
 
 Now that you have an engine instance, you're ready to start using the Toolkit API.
 
-Before covering how to launch the app, it's worth pointing out you can get hold of the [current context](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), [Sgtk instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk), and [Shotgun API instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun) via the engine.
+Before covering how to launch the app, it's worth pointing out you can get hold of the [current context](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), [Sgtk instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk), and [{% include product %} API instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun) via the engine.
 
 ```python
 engine.context

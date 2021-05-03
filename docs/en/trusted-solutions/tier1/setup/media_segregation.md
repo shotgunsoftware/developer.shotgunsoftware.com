@@ -9,7 +9,7 @@ lang: en
 
 {% include info title="Disclaimer" content="This documentation is provided solely as an example. It explains how to set up your Shotgun Isolation environment so that it can be connected to Shotgun cloud infrastructure. Please adapt it to your studio security requirements as needed. As Shotgun has no visibility on your AWS Account, ensuring that this account is secure is a client responsibility." %}
 
-The media traffic isolation feature allows your users to access media in your AWS S3 bucket privately (not transiting over the public Internet). Please note that if you have a multi-region setup and that leverages the Shotgun Transcoding service there may still be instances where media transits across the public Internet. Reach out to our support team for more details.
+The media traffic isolation feature allows your users to access media in your AWS S3 bucket privately (not transiting over the public Internet). Please note that if you have a multi-region setup and that leverages the {% include product %} Transcoding service there may still be instances where media transits across the public Internet. Reach out to our support team for more details.
 
 Media Isolation activation is a pre-requisite to enable this feature. If you haven't done so already, see [Media Isolation](./s3_bucket.md).
 
@@ -21,7 +21,7 @@ You will need to deploy a VPC with the required VPC endpoint. We provide a [priv
 * Select Template is ready
 * Set Amazon S3 URL to [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml)
 * Click Next
-* Set a stack name. Eg. `shotgun-vpc`
+* Set a stack name. Eg. `{% include product %}-vpc`
 * Choose network ranges that doesn't conflict with your studio network and set subnet CIDR values accordingly
 * Set your S3 bucket name
 * Click Next
@@ -57,10 +57,15 @@ Use the endpoint URL to list objects in your bucket using AWS CLI. In the follow
 
 ### Configure your test site to use your S3 VPC endpoint
 
+<<<<<<< HEAD
+* Navigate to the Site Preferences menu within {% include product %} and expand the Isolation section
+* Set S3 Proxy Host Address to the S3 proxy url. Eg. `https://s3-proxy.mystudio.com` then click Save changes
+=======
 * Please contact Shotgun support via the dedicated Slack channel and provide the following information:
   * Your S3 bucket name
   * Your S3 VPC endpoint DNS Name
 * Shotgun will configure your test site to use your S3 VPC endpoint.
+>>>>>>> master
 * Confirm that you are still able to access existing media
 * Attempt to upload new media
 

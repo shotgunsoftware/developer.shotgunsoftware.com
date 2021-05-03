@@ -8,7 +8,7 @@ lang: en
 # How do I work with authentication and login credentials in custom scripts?
 
 ## Error Message
-If you're seeing an error like the one below coming from your script, then it means your script is not authorized to talk to your Shotgun site.
+If you're seeing an error like the one below coming from your script, then it means your script is not authorized to talk to your {% include product %} site.
 
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'

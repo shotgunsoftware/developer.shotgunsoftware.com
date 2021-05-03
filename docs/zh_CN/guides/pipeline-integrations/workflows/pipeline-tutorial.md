@@ -9,7 +9,7 @@ lang: zh_CN
 
 本教程介绍如何为动画或视觉效果制作打造一个简化但却典型的工作流。按照本教程，您将打造一个全面的工作流，为资产的建模、视觉开发到融入制作场景提供所有必要环节。
 
-此工作流中涵盖的大部分流程通过 Shotgun 的内置集成便可实现。对于工作流中工作室更多时候会构建自定义解决方案的部分，本教程将指导您完成使用 Toolkit 平台自定义艺术家工作流的整个过程。
+此工作流中涵盖的大部分流程通过 {% include product %} 的内置集成便可实现。对于工作流中工作室更多时候会构建自定义解决方案的部分，本教程将指导您完成使用 Toolkit 平台自定义艺术家工作流的整个过程。
 
 下面是您将在本教程中构建的工作流的简要视图：
 
@@ -23,21 +23,21 @@ lang: zh_CN
 
 ## 先决条件
 
-* **参与 Shotgun 项目** - 本教程假定您有使用 Shotgun 跟踪和管理制作数据的经验。
+* **参与 {% include product %} 项目** - 本教程假定您有使用 {% include product %} 跟踪和管理制作数据的经验。
 
-* **了解 Shotgun 集成** - Shotgun 附带一些集成，这些集成提供了一些不需要任何手动配置的简单制作工作流。您应先了解这些工作流的功能和范围，然后再深入了解本教程中介绍的手动配置和自定义。有关 Shotgun 集成的详细信息，请参见[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)。
+* **了解 {% include product %} 集成** - {% include product %} 附带一些集成，这些集成提供了一些不需要任何手动配置的简单制作工作流。您应先了解这些工作流的功能和范围，然后再深入了解本教程中介绍的手动配置和自定义。有关 {% include product %} 集成的详细信息，请参见[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)。
 
-* **Maya 和 Nuke 体验** - 本教程旨在使用 Maya 和 Nuke 构建一个简单的工作流。您应该对这些软件包有基本的了解，以便自定义 Shotgun 提供的集成。
+* **Maya 和 Nuke 体验** - 本教程旨在使用 Maya 和 Nuke 构建一个简单的工作流。您应该对这些软件包有基本的了解，以便自定义 {% include product %} 提供的集成。
 
-* **Python 应用知识** - 本教程需要通过采用 Python 编写的“挂钩”修改 Shotgun 集成的功能。
+* **Python 应用知识** - 本教程需要通过采用 Python 编写的“挂钩”修改 {% include product %} 集成的功能。
 
 * **熟悉 YAML** - 您将构建的工作流的很多配置都是通过修改 YAML 文件来完成的。
 
 ## 其他资源
 
-* [Shotgun 支持站点](https://support.shotgunsoftware.com/hc/zh-cn)
+* [{% include product %} 支持站点](https://support.shotgunsoftware.com/hc/zh-cn)
 
-* [Shotgun 集成](https://www.shotgunsoftware.com/zh-cn/integrations/)
+* [{% include product %} 集成](https://www.shotgunsoftware.com/zh-cn/integrations/)
 
    * [用户手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)
 
@@ -47,7 +47,7 @@ lang: zh_CN
 
 # 项目创建和设置
 
-在本教程中，您需要在 Shotgun 中创建一个新项目，并像准备开始制作那样配置该项目。这包括确保所有必要的 Shotgun 实体都已就位并正确关联。在本教程中，资产、镜头序列、镜头和任务实体是必需的，默认情况下新项目中应提供这些实体。您将创建以下对象：
+在本教程中，您需要在 {% include product %} 中创建一个新项目，并像准备开始制作那样配置该项目。这包括确保所有必要的 {% include product %} 实体都已就位并正确关联。在本教程中，资产、镜头序列、镜头和任务实体是必需的，默认情况下新项目中应提供这些实体。您将创建以下对象：
 
 * 两个**资产**：
 
@@ -61,7 +61,7 @@ lang: zh_CN
 
 * 每个工作流工序一个**任务**
 
-下面是一些屏幕截图，显示了您在 Shotgun 中配置的项目实体：
+下面是一些屏幕截图，显示了您在 {% include product %} 中配置的项目实体：
 
 {% include figure src="./images/tutorial/image_1.png" caption="茶壶和桌子资产" %}
 
@@ -71,25 +71,25 @@ lang: zh_CN
 
 ## 软件启动器
 
-接下来，您将需要确保 Maya 和 Nuke 可在 Shotgun Desktop 中启动。在 Desktop 中，确保每个软件包都可以通过单击其图标启动。确保启动每个软件包的正确版本。
+接下来，您将需要确保 Maya 和 Nuke 可在 {% include product %} Desktop 中启动。在 Desktop 中，确保每个软件包都可以通过单击其图标启动。确保启动每个软件包的正确版本。
 
-如果任一应用程序未显示在 Desktop 中或预期版本无法启动，则可能需要在 Shotgun 中通过软件实体手动配置启动。
+如果任一应用程序未显示在 Desktop 中或预期版本无法启动，则可能需要在 {% include product %} 中通过软件实体手动配置启动。
 
 {% include figure src="./images/tutorial/image_4.png" caption="Shotgun 中定义的默认软件实体" %}
 
-软件实体用于驱动在您的制作中使用哪些 DCC 软件包。默认情况下，集成将在标准安装位置搜索这些软件包并使其可通过 Desktop 启动。如果您安装了多个版本或将它们安装在非标准位置，您可能需要在 Shotgun 中更新相应的软件实体条目以管理您的艺术家的启动体验。
+软件实体用于驱动在您的制作中使用哪些 DCC 软件包。默认情况下，集成将在标准安装位置搜索这些软件包并使其可通过 Desktop 启动。如果您安装了多个版本或将它们安装在非标准位置，您可能需要在 {% include product %} 中更新相应的软件实体条目以管理您的艺术家的启动体验。
 
 有关软件实体以及如何正确配置该实体的完整详细信息，请参见[集成管理员手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067493#Configuring%20software%20launches)。在您的 DCC 按预期启动后，可以继续阅读下一节。
 
 # 配置
 
-配置定义项目的美工人员工作流。这包括指定哪些 Shotgun 集成包含在艺术家要启动的 DCC 中，如何定义项目的文件夹结构，以及艺术家共享数据时创建的文件和文件夹的命名约定。
+配置定义项目的美工人员工作流。这包括指定哪些 {% include product %} 集成包含在艺术家要启动的 DCC 中，如何定义项目的文件夹结构，以及艺术家共享数据时创建的文件和文件夹的命名约定。
 
-默认情况下，所有新项目均配置为使用基本 [Shotgun 集成](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)，这些集成提供了使用许多现成的软件包在艺术家之间共享文件的基本工作流。以下各节概述了如何接管项目的工作流配置以及如何为您的工作室对其进行自定义。
+默认情况下，所有新项目均配置为使用基本 [{% include product %} 集成](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)，这些集成提供了使用许多现成的软件包在艺术家之间共享文件的基本工作流。以下各节概述了如何接管项目的工作流配置以及如何为您的工作室对其进行自定义。
 
 ## 接管项目配置
 
-可使用 Shotgun Desktop (Desktop) 接管项目的配置。在 Desktop 中单击鼠标右键或单击右下方的用户图标以显示弹出菜单。选择**“Advanced project setup…”**选项，然后按照向导操作在本地安装项目配置。以下各图显示了所需的操作步骤。也可以按照《集成管理员手册》的[接管工作流配置](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067493#Taking%20over%20a%20Pipeline%20Configuration) 中所述的步骤操作。
+可使用 {% include product %} Desktop (Desktop) 接管项目的配置。在 Desktop 中单击鼠标右键或单击右下方的用户图标以显示弹出菜单。选择**“Advanced project setup…”**选项，然后按照向导操作在本地安装项目配置。以下各图显示了所需的操作步骤。也可以按照《集成管理员手册》的[接管工作流配置](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067493#Taking%20over%20a%20Pipeline%20Configuration) 中所述的步骤操作。
 
 {% include figure src="./images/tutorial/image_5.png" caption="在 Desktop 弹出菜单中选择**“Advanced project setup...”**" %}
 
@@ -97,7 +97,7 @@ lang: zh_CN
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="选择**“默认”(Default)**配置" %}
 
-如果这是您第一次设置 Shotgun 项目，系统还会提示您为项目数据定义一个存储位置。否则，可以选择现有存储位置。
+如果这是您第一次设置 {% include product %} 项目，系统还会提示您为项目数据定义一个存储位置。否则，可以选择现有存储位置。
 
 {% include figure src="./images/tutorial/wizard_03.png" caption="创建新存储。" %}
 
@@ -105,7 +105,7 @@ lang: zh_CN
 
 {% include figure src="./images/tutorial/wizard_05.png" caption="设置在您要使用的操作系统上将可以访问此存储的路径。" %}
 
-您可以在**“站点偏好设置”(Site Preferences)**的**“文件管理”(File Management)**部分下查看和编辑 Shotgun 站点的存储。可以在[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219030938)了解有关这些设置的详细信息。
+您可以在**“站点偏好设置”(Site Preferences)**的**“文件管理”(File Management)**部分下查看和编辑 {% include product %} 站点的存储。可以在[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219030938)了解有关这些设置的详细信息。
 
 现在，您已选择存储位置，需要在该位置为新项目选择目录名称。
 
@@ -121,7 +121,7 @@ lang: zh_CN
 
 单击以上屏幕中的**“Run Setup”**后，Desktop 将开始下载并安装您的配置所需的所有组件。安装过程可能需要几分钟时间完成。完成后，您将具有整个项目配置的本地副本，在后面的操作步骤中您将对其进行修改。
 
-您在学习 Desktop 安装教程期间指定的配置位置记录在 Shotgun 中，位于项目的“工作流配置”(Pipeline Configurations)页面。
+您在学习 Desktop 安装教程期间指定的配置位置记录在 {% include product %} 中，位于项目的“工作流配置”(Pipeline Configurations)页面。
 
 {% include figure src="./images/tutorial/image_10.png" caption="Shotgun 中的工作流配置实体" %}
 
@@ -157,9 +157,9 @@ lang: zh_CN
 
 # 构建工作流
 
-此时，您应该可以开始构建工作流。您在 Shotgun 中设置了一个项目，可以通过 Desktop 启动 Maya 和 Nuke，并且已接管了项目配置的控制权。此外，您已对配置的结构有基本的了解，可以开始构建美工人员工作流。
+此时，您应该可以开始构建工作流。您在 {% include product %} 中设置了一个项目，可以通过 Desktop 启动 Maya 和 Nuke，并且已接管了项目配置的控制权。此外，您已对配置的结构有基本的了解，可以开始构建美工人员工作流。
 
-以下各节将介绍该工作流的每个工序，重点介绍即时可用的功能，并指导您完成自定义 Shotgun 集成的整个过程。完成相关各节的学习后，您将构建一个简单、完全可行的端到端制作工作流。您还将了解到艺术家在其制作活动中将执行的工序。
+以下各节将介绍该工作流的每个工序，重点介绍即时可用的功能，并指导您完成自定义 {% include product %} 集成的整个过程。完成相关各节的学习后，您将构建一个简单、完全可行的端到端制作工作流。您还将了解到艺术家在其制作活动中将执行的工序。
 
 {% include info title="注意" content="本教程的所有代码和配置都可以在 [**`tk-config-default2`** 库](https://github.com/shotgunsoftware/tk-config-default2/tree/pipeline_tutorial/) 的 **`pipeline_tutorial`** 分支中找到。如果您需要有关文件所在位置、代码添加位置等的提示，可以随时使用此分支。" %}
 
@@ -167,9 +167,9 @@ lang: zh_CN
 
 简单工作流的第一道工序是建模。在本节中，您将在您的项目中创建茶壶资产的第一个迭代。您要将其保存到磁盘上的项目文件夹结构中，然后将其发布。
 
-首先，从 Shotgun Desktop 启动 Maya。
+首先，从 {% include product %} Desktop 启动 Maya。
 
-Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中，您可以浏览项目中的现有 Maya 文件。此外，您还可以创建 Shotgun 集成将会识别的新文件。
+Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中，您可以浏览项目中的现有 Maya 文件。此外，您还可以创建 {% include product %} 集成将会识别的新文件。
 
 选择“资产”(Assets)选项卡，然后向下查看茶壶的建模任务。由于此任务还没有美工人员工作文件，请单击**“+ New File”**按钮。
 
@@ -183,7 +183,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include figure src="./images/tutorial/image_14.png" %}
 
-当您对自己的茶壶模型满意后，请选择**“Shotgun > File Save...”**菜单动作。此对话框将提示您使用给定名称、版本和类型保存该文件。
+当您对自己的茶壶模型满意后，请选择**“{% include product %} > File Save...”**菜单动作。此对话框将提示您使用给定名称、版本和类型保存该文件。
 
 {% include figure src="./images/tutorial/image_15.png" %}
 
@@ -201,19 +201,19 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 单击**“保存”(Save)**按钮保存该茶壶模型。
 
-此时务必要注意的一点是，您刚刚完成的步骤与艺术家在整个工作流中打开和保存工作文件时执行的步骤相同。“File Open”和“File Save”对话框属于 Workfiles 应用。此“多”应用在 Shotgun 集成支持的所有 DCC 中运行，并为所有艺术家提供一致的工作流。
+此时务必要注意的一点是，您刚刚完成的步骤与艺术家在整个工作流中打开和保存工作文件时执行的步骤相同。“File Open”和“File Save”对话框属于 Workfiles 应用。此“多”应用在 {% include product %} 集成支持的所有 DCC 中运行，并为所有艺术家提供一致的工作流。
 
 下一步是对茶壶进行一些更改。确保壶盖几何体与模型的其余部分分离开，以便以后可以对其进行装配。
 
 {% include figure src="./images/tutorial/image_16.png" %}
 
-当您对自己的作品满意后，再次运行**“Shotgun > File Save…”**菜单动作。此时，在对话框中版本号默认设置为 2。文件版本自动递增功能让艺术家可维护所完成工作的完整历史记录。单击“保存”(Save)按钮。
+当您对自己的作品满意后，再次运行**“{% include product %} > File Save…”**菜单动作。此时，在对话框中版本号默认设置为 2。文件版本自动递增功能让艺术家可维护所完成工作的完整历史记录。单击“保存”(Save)按钮。
 
 {% include figure src="./images/tutorial/image_17.png" %}
 
 将茶壶模型保存为版本 2 后，您就可以进行本教程中本节的最后一步。
 
-现在，茶壶模型已准备就绪，您需要将其发布，以便可以对其进行贴图和装配。要进行发布，请单击**“Shotgun > Publish…”**菜单动作。此时将显示发布应用对话框。
+现在，茶壶模型已准备就绪，您需要将其发布，以便可以对其进行贴图和装配。要进行发布，请单击**“{% include product %} > Publish…”**菜单动作。此时将显示发布应用对话框。
 
 {% include figure src="./images/tutorial/image_18.png" %}
 
@@ -225,7 +225,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 可单击树左侧的项了解发布应用。您将注意到，在选择要对其执行操作的项后，您可以输入要发布的内容的说明。您还可以单击右侧的摄影机图标拍摄屏幕截图以与该项关联。
 
-当您准备好时，单击右下角的**“Publish”**按钮发布当前工作文件和茶壶几何体。完成后，您可以浏览到 Shotgun 中的茶壶资产以验证发布是否已成功完成。
+当您准备好时，单击右下角的**“Publish”**按钮发布当前工作文件和茶壶几何体。完成后，您可以浏览到 {% include product %} 中的茶壶资产以验证发布是否已成功完成。
 
 {% include figure src="./images/tutorial/image_19.png" %}
 
@@ -259,15 +259,15 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 在本节中，您将基于您在建模一节中所学内容进一步学习。您将了解如何使用加载器应用加载在上一节中创建的茶壶模型。还将了解如何自定义发布应用来为茶壶发布着色器。
 
-首先，从 Desktop 启动 Maya。如果在完成上一节后 Maya 仍保持打开状态，则不需要重新启动。打开 Maya 后，使用**“Shotgun > File Open...”**菜单项打开 Workfiles 应用。与建模一节中一样，使用“资产”(Assets)选项卡向下查看茶壶资产的任务。此时，选择贴图任务，然后单击**“+ New File”**。
+首先，从 Desktop 启动 Maya。如果在完成上一节后 Maya 仍保持打开状态，则不需要重新启动。打开 Maya 后，使用**“{% include product %} > File Open...”**菜单项打开 Workfiles 应用。与建模一节中一样，使用“资产”(Assets)选项卡向下查看茶壶资产的任务。此时，选择贴图任务，然后单击**“+ New File”**。
 
 {% include figure src="./images/tutorial/image_21.png" width="450px" %}
 
-您现在已进入茶壶的贴图任务。验证您是否在正确的制作环境中的简单方法是检查 Shotgun 菜单中的第一个条目。
+您现在已进入茶壶的贴图任务。验证您是否在正确的制作环境中的简单方法是检查 {% include product %} 菜单中的第一个条目。
 
 {% include figure src="./images/tutorial/image_22.png" %}
 
-接下来，您需要将茶壶模型加载到新的贴图工作文件中。要执行此操作，请通过 Maya 中的**“Shotgun > Load...”**菜单项启动加载器应用。
+接下来，您需要将茶壶模型加载到新的贴图工作文件中。要执行此操作，请通过 Maya 中的**“{% include product %} > Load...”**菜单项启动加载器应用。
 
 {% include figure src="./images/tutorial/image_23.png" %}
 
@@ -283,7 +283,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 构建工作流时，着色器的管理可能会是一项耗时并且复杂的任务。通常在很大程度上依赖于每个工作室的具体情况。正因如此，随附的 Maya 集成未提供即时处理着色器或纹理管理的功能。
 
-可使用**“Shotgun > File Save...”**菜单动作保存当前会话，然后再继续。
+可使用**“{% include product %} > File Save...”**菜单动作保存当前会话，然后再继续。
 
 ### 自定义着色器发布
 
@@ -445,9 +445,9 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include info title="注意" content="如果在对配置进行自定义时关闭了 Maya，请不要担心。只需重新启动 Maya，并使用“File Open”对话框打开您的贴图工作文件。您可以跳过下面的重新加载步骤。" %}
 
-##### 重新加载 Shotgun 集成
+##### 重新加载 {% include product %} 集成
 
-为了试验您的自定义项，您需要在 Maya 会话中重新加载集成。为此，请单击**“Shotgun > [任务名称] > Work Area Info…”**菜单动作。
+为了试验您的自定义项，您需要在 Maya 会话中重新加载集成。为此，请单击**“{% include product %} > [任务名称] > Work Area Info…”**菜单动作。
 
 {% include figure src="./images/tutorial/image_30.png" %}
 
@@ -457,14 +457,14 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 ### 发布着色器网络
 
-现在可以查看更改项目配置的效果。从 Shotgun 菜单启动发布应用。您应该会看到收集的茶壶网格项以及附加的**“Publish Shaders”**插件：
+现在可以查看更改项目配置的效果。从 {% include product %} 菜单启动发布应用。您应该会看到收集的茶壶网格项以及附加的**“Publish Shaders”**插件：
 
 {% include figure src="./images/tutorial/image_32.png" %}
 
-输入作品说明，并截取已贴图茶壶的缩略图以与已发布的文件关联。最后，单击“Publish”将茶壶着色器导出到磁盘并在 Shotgun 中将文件注册为发布。完成后，请注意，会话发布插件已自动将您的工作文件保存为下一个可用版本。这是 Shotgun 集成支持的所有 DCC 中的默认行为。
+输入作品说明，并截取已贴图茶壶的缩略图以与已发布的文件关联。最后，单击“Publish”将茶壶着色器导出到磁盘并在 {% include product %} 中将文件注册为发布。完成后，请注意，会话发布插件已自动将您的工作文件保存为下一个可用版本。这是 {% include product %} 集成支持的所有 DCC 中的默认行为。
 
 
-现在，您可以浏览到 Shotgun 中的茶壶资产以验证是否一切都符合预期。
+现在，您可以浏览到 {% include product %} 中的茶壶资产以验证是否一切都符合预期。
 
 {% include figure src="./images/tutorial/image_33.png" %}
 
@@ -476,9 +476,9 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 ## 装配工作流
 
-此时，您应该可以非常轻松地使用 Shotgun 提供的 Workfiles 和“发布”应用打开（或创建）、保存和发布工作文件。此外，您还曾使用加载器应用加载来自上游的发布。使用所学内容完成以下任务：
+此时，您应该可以非常轻松地使用 {% include product %} 提供的 Workfiles 和“发布”应用打开（或创建）、保存和发布工作文件。此外，您还曾使用加载器应用加载来自上游的发布。使用所学内容完成以下任务：
 
-* 从 Shotgun Desktop 启动 Maya
+* 从 {% include product %} Desktop 启动 Maya
 
 * 在茶壶资产的装配工序中创建一个新工作文件
 
@@ -488,7 +488,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 * 保存和发布茶壶装配
 
-在 Shotgun 中最后的结果应与下图类似：
+在 {% include product %} 中最后的结果应与下图类似：
 
 {% include figure src="./images/tutorial/image_35.png" %}
 
@@ -496,7 +496,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include figure src="./images/tutorial/image_36.png" %}
 
-在茶壶的装配工序中重新打开工作文件（通过**“Shotgun > File Open...”**）。现在，启动**“Shotgun > Scene Breakdown...”**菜单动作。这将启动细分应用，该应用将显示您在工作文件中引用的所有上游发布。在本示例中，只有上游茶壶模型。您应当看到与下图类似的效果：
+在茶壶的装配工序中重新打开工作文件（通过**“{% include product %} > File Open...”**）。现在，启动**“{% include product %} > Scene Breakdown...”**菜单动作。这将启动细分应用，该应用将显示您在工作文件中引用的所有上游发布。在本示例中，只有上游茶壶模型。您应当看到与下图类似的效果：
 
 {% include figure src="./images/tutorial/image_37.png" width="400px" %}
 
@@ -518,7 +518,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 首先，使用在前面各节中所学内容完成以下任务：
 
-* 从 Shotgun Desktop 启动 Maya
+* 从 {% include product %} Desktop 启动 Maya
 
 * 在镜头的布局工序中创建一个新工作文件（提示：使用加载器中的“镜头”(Shots)选项卡）
 
@@ -530,7 +530,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include figure src="./images/tutorial/image_41.gif" %}
 
-当您对自己的镜头布局满意后，通过**“Shotgun > File Save...”**菜单动作保存文件。如果此时继续操作并发布，您只会看到整个 Maya 会话是一个要发布的可用项。
+当您对自己的镜头布局满意后，通过**“{% include product %} > File Save...”**菜单动作保存文件。如果此时继续操作并发布，您只会看到整个 Maya 会话是一个要发布的可用项。
 
 我们要添加一项简单自定义，这也是可为工作流带来很大灵活性的自定义，那就是将独立摄影机发布为可轻松导入其他软件包的文件格式的功能。通过此功能，您可以生成一次摄影机（通常在布局中），然后让所有其他工作流工序（如动画、照明和合成）直接使用它。
 
@@ -628,11 +628,11 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include figure src="./images/tutorial/image_45.png" %}
 
-如图中所示，收集了新摄影机项并附加了发布插件。继续操作并单击**“Publish”**将摄影机写入磁盘，然后向 Shotgun 注册该摄影机。
+如图中所示，收集了新摄影机项并附加了发布插件。继续操作并单击**“Publish”**将摄影机写入磁盘，然后向 {% include product %} 注册该摄影机。
 
 {% include info title="注意" content="与 Alembic 导出类似，摄影机发布插件需要加载 FBX 导出插件。如果您没有看到摄影机发布插件项，请确保 FBX 插件已加载，然后重新启动发布器。" %}
 
-在 Shotgun 中您应当看到与下图类似的效果：
+在 {% include product %} 中您应当看到与下图类似的效果：
 
 {% include figure src="./images/tutorial/image_46.png" %}
 
@@ -644,7 +644,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 使用在前面各节中所学内容完成以下任务。
 
-* 从 Shotgun Desktop 启动 Maya
+* 从 {% include product %} Desktop 启动 Maya
 
 * 在镜头的动画工序中创建一个新工作文件
 
@@ -662,7 +662,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 **`FBX Camera: [reference, import]`**
 
-在自定义摄影机发布插件中，Maya 中的 **`FBXExport`** MEL 命令用于将摄影机写入磁盘，用于向 Shotgun 注册文件的发布类型是 **`FBX Camera`**。您添加到设置的行告诉加载器，对于类型为 **`FBX Camera`** 的任何发布，显示 **`reference`** 和 **`import`** 动作。这些动作在加载器应用的 [tk-maya-actions.py](https://github.com/shotgunsoftware/tk-multi-loader2/blob/master/hooks/tk-maya_actions.py) 挂钩中定义。以某种方式执行这些动作以处理 Maya 可以引用或导入的任何类型的文件。自定义插件生成的 **`.fbx`** 文件属于该类别，因此，为了能够加载已发布的摄影机，这是唯一要做的更改。
+在自定义摄影机发布插件中，Maya 中的 **`FBXExport`** MEL 命令用于将摄影机写入磁盘，用于向 {% include product %} 注册文件的发布类型是 **`FBX Camera`**。您添加到设置的行告诉加载器，对于类型为 **`FBX Camera`** 的任何发布，显示 **`reference`** 和 **`import`** 动作。这些动作在加载器应用的 [tk-maya-actions.py](https://github.com/shotgunsoftware/tk-multi-loader2/blob/master/hooks/tk-maya_actions.py) 挂钩中定义。以某种方式执行这些动作以处理 Maya 可以引用或导入的任何类型的文件。自定义插件生成的 **`.fbx`** 文件属于该类别，因此，为了能够加载已发布的摄影机，这是唯一要做的更改。
 
 现在应用设置应如下所示：
 
@@ -688,7 +688,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 首先，使用在前面各节中所学内容完成以下任务。
 
-* 从 Shotgun Desktop 启动 Maya
+* 从 {% include product %} Desktop 启动 Maya
 
 * 在镜头的照明工序中创建一个新工作文件
 
@@ -783,11 +783,11 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include info title="注意" content="如您所见，茶壶和桌子资产的贴图存在问题。对于本教程而言，假定这些是有意做出的艺术效果。如果您想要解决这些问题，可以始终加载这些资产的贴图工作文件，调整着色器并重新发布它们。如果这么做，请记得更新照明工作文件中的引用并重新渲染。如果您执行这些步骤，可能会发现，在重新加载引用后，细分应用并不重新连接更新的着色器。根据您修改加载器以挂接着色器引用的经验，您应该能够更新细分应用的场景操作挂钩来添加所需的逻辑。提示：请参见[此文件](https://github.com/shotgunsoftware/tk-multi-breakdown/blob/master/hooks/tk-maya_scene_operations.py#L69) 中的 update 方法。" %}
 
-随附的 Shotgun 集成通过查看文件中定义的渲染层来收集图像序列。完成渲染后，启动发布器。您将看到渲染的序列显示为树中的一项。
+随附的 {% include product %} 集成通过查看文件中定义的渲染层来收集图像序列。完成渲染后，启动发布器。您将看到渲染的序列显示为树中的一项。
 
 {% include figure src="./images/tutorial/image_55.png" %}
 
-继续操作并发布会话和渲染的图像文件序列。在 Shotgun 中您应当看到与下图类似的效果：
+继续操作并发布会话和渲染的图像文件序列。在 {% include product %} 中您应当看到与下图类似的效果：
 
 {% include figure src="./images/tutorial/image_56.png" %}
 
@@ -795,13 +795,13 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 ## 合成工作流
 
-在本教程的最后一节中，将向您介绍 Nuke 提供的一些默认集成。除了在前面各节中提到的应用之外，您还将了解 Shotgun 可识别的写入节点和一个用于将渲染快速发送给其他人以供审核的应用。
+在本教程的最后一节中，将向您介绍 Nuke 提供的一些默认集成。除了在前面各节中提到的应用之外，您还将了解 {% include product %} 可识别的写入节点和一个用于将渲染快速发送给其他人以供审核的应用。
 
 首先，执行以下步骤来准备工作文件。
 
-* 从 Shotgun Desktop 启动 Nuke
+* 从 {% include product %} Desktop 启动 Nuke
 
-* 与在 Maya 中一样，使用“Shotgun > File Open…”菜单动作在镜头的合成工序中创建一个新工作文件。
+* 与在 Maya 中一样，使用“{% include product %} > File Open…”菜单动作在镜头的合成工序中创建一个新工作文件。
 
 
 通过加载器应用加载在上一节中渲染并发布的图像序列。
@@ -814,40 +814,40 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include figure src="./images/tutorial/image_58.png" %}
 
-当您对自己的合成满意后，使用**“Shotgun > File Save…”**菜单动作保存工作文件。
+当您对自己的合成满意后，使用**“{% include product %} > File Save…”**菜单动作保存工作文件。
 
-然后，单击 Nuke 的左侧菜单中的 Shotgun 标识。在该菜单中单击一个 Shotgun 可识别的写入节点：
+然后，单击 Nuke 的左侧菜单中的 {% include product %} 标识。在该菜单中单击一个 {% include product %} 可识别的写入节点：
 
 {% include figure src="./images/tutorial/image_59.png" width="400px" %}
 
-Shotgun 写入节点应用在内置 Nuke 写入节点之上提供了一层，它会基于当前 Shotgun 上下文自动得出输出路径。
+{% include product %} 写入节点应用在内置 Nuke 写入节点之上提供了一层，它会基于当前 {% include product %} 上下文自动得出输出路径。
 
 {% include figure src="./images/tutorial/image_60.png" %}
 
-将图像帧渲染到磁盘。您现在可以发布 Nuke 会话以将工作文件与渲染的图像关联。默认情况下，发布器将收集渲染的帧并附加一个插件以向 Shotgun 注册帧。另一个插件将通过一个在后台运行的名为审核提交的集成上传帧以供审核。此应用使用 Nuke 生成将上传并提交供审核的 QuickTime 影片。
+将图像帧渲染到磁盘。您现在可以发布 Nuke 会话以将工作文件与渲染的图像关联。默认情况下，发布器将收集渲染的帧并附加一个插件以向 {% include product %} 注册帧。另一个插件将通过一个在后台运行的名为审核提交的集成上传帧以供审核。此应用使用 Nuke 生成将上传并提交供审核的 QuickTime 影片。
 
 {% include figure src="./images/tutorial/image_61.png" %}
 
-另一个有用的集成是快速审核应用。这是一个输出节点，该节点将快速生成 QuickTime 影片并将其上传到 Shotgun 以供审核。该应用位于左侧菜单中 Shotgun 写入节点旁边。
+另一个有用的集成是快速审核应用。这是一个输出节点，该节点将快速生成 QuickTime 影片并将其上传到 {% include product %} 以供审核。该应用位于左侧菜单中 {% include product %} 写入节点旁边。
 
 {% include figure src="./images/tutorial/image_62.png" width="400px" %}
 
-创建一个快速审核节点，然后单击“上传”(Upload)按钮以将输入渲染到磁盘、生成 QuickTime 影片，并将结果上传到 Shotgun 以供审核。提交帧时，有一些标准选项可供选择。
+创建一个快速审核节点，然后单击“上传”(Upload)按钮以将输入渲染到磁盘、生成 QuickTime 影片，并将结果上传到 {% include product %} 以供审核。提交帧时，有一些标准选项可供选择。
 
 {% include figure src="./images/tutorial/image_63.png" %}
 
-在 Shotgun 中检查“媒体”(Media)选项卡以查看两个上传的 QuickTime 影片。
+在 {% include product %} 中检查“媒体”(Media)选项卡以查看两个上传的 QuickTime 影片。
 
 {% include figure src="./images/tutorial/image_64.png" %}
 
-有关在 Shotgun 中审核媒体的详细信息，请参见[官方文档](https://support.shotgunsoftware.com/hc/zh-cn/sections/204245448)。
+有关在 {% include product %} 中审核媒体的详细信息，请参见[官方文档](https://support.shotgunsoftware.com/hc/zh-cn/sections/204245448)。
 
 # 总结
 
-祝贺您，您已完成本教程！我们希望本教程能为您使用 Shotgun 集成打造自己的自定义工作流奠定良好的基础。学完本教程，您应该能够了解如何根据自己工作室的特定需求扩展默认的集成。
+祝贺您，您已完成本教程！我们希望本教程能为您使用 {% include product %} 集成打造自己的自定义工作流奠定良好的基础。学完本教程，您应该能够了解如何根据自己工作室的特定需求扩展默认的集成。
 
 在 [shotgun-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev)中提出问题，了解其他工作室如何使用 Toolkit。请订阅以查看最新的帖子！
 
 如果您认为默认的集成未涵盖某些功能或工作流，可以随时编写自己的应用。[这里是一份详实的文档](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033158)，可帮助您开始编写您的第一个应用。
 
-与以往一样，如果您对本教程或者 Shotgun 或 Toolkit 平台的一般使用有其他疑问，请随时[提交工单](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)。
+与以往一样，如果您对本教程或者 {% include product %} 或 Toolkit 平台的一般使用有其他疑问，请随时[提交工单](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)。

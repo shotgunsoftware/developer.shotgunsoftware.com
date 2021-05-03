@@ -9,7 +9,7 @@ lang: ko
 
 {% include info title="참고" content="이 문서의 내용은 [중앙 집중식 구성 설정](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)에만 적용됩니다. [분산 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)은 개별 클라이언트 시스템에 로컬로 캐시되고 툴킷에서 자동으로 관리됩니다." %}
 
-파이프라인 구성을 새 위치로 옮길 수 있는 가장 쉬운 방법은 `tank move_configuration` 명령을 사용하는 것입니다. 이렇게 하면 파일을 이동하고, Shotgun을 업데이트하고, 새 위치를 가리키도록 구성 파일을 업데이트하는 작업이 모두 이루어집니다. 
+파이프라인 구성을 새 위치로 옮길 수 있는 가장 쉬운 방법은 `tank move_configuration` 명령을 사용하는 것입니다. 이렇게 하면 파일을 이동하고, {% include product %}을 업데이트하고, 새 위치를 가리키도록 구성 파일을 업데이트하는 작업이 모두 이루어집니다. 
 
 이 명령은 단일 운영 체제의 위치만 옮기거나 이전에는 특정 운영 체제를 사용하지 않았지만 이제 운영 체제를 추가하고 싶은 경우에도 유용합니다. 이동하거나 추가해야 하는 항목과 그렇지 않은 항목은 툴킷이 감지하여 진행할 작업을 미리 보여 주기 때문에 진행하기 전에 확인할 수 있습니다.
 
@@ -27,10 +27,10 @@ lang: ko
         $ cd /sgtk/software/shotgun/scarlet
         $ ./tank move_configuration
 
-        Welcome to the Shotgun Pipeline Toolkit!
+        Welcome to the {% include product %} Pipeline Toolkit!
         For documentation, see https://toolkit.shotgunsoftware.com
         Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
-        - The path is not associated with any Shotgun object.
+        - The path is not associated with any {% include product %} object.
         - Falling back on default project settings.
         - Using configuration 'Primary' and Core v0.15.22
         - Setting the Context to Scarlet.
@@ -71,10 +71,10 @@ lang: ko
         $ cd /sgtk/software/shotgun/scarlet
         $ ./tank move_configuration "/mnt/hgfs/sgtk/software/shotgun/scarlet_new" "z:\sgtk\software\shotgun\scarlet_new" "/sgtk/software/shotgun/scarlet_new"
 
-        Welcome to the Shotgun Pipeline Toolkit!
+        Welcome to the {% include product %} Pipeline Toolkit!
         For documentation, see https://toolkit.shotgunsoftware.com
         Starting toolkit for path '/sgtk/software/shotgun/scarlet'
-        - The path is not associated with any Shotgun object.
+        - The path is not associated with any {% include product %} object.
         - Falling back on default project settings.
         - Using configuration 'Primary' and Core v0.15.22
         - Setting the Context to Scarlet.
@@ -129,7 +129,7 @@ lang: ko
         Copying /sgtk/software/shotgun/scarlet/install/frameworks...
         Copying /sgtk/software/shotgun/scarlet/install/frameworks/app_store...
         Updating cached locations in /sgtk/software/shotgun/scarlet_new/config/core/install_location.yml...
-        Updating Shotgun Configuration Record...
+        Updating {% include product %} Configuration Record...
         Deleting original configuration files...
 
         All done! Your configuration has been successfully moved.
@@ -151,7 +151,7 @@ lang: ko
 
    해당하는 모든 플랫폼에서 이 파일의 경로가 새 파이프라인 구성 위치를 가리키도록 업데이트합니다. 플랫폼을 사용하고 있지 않다면 빈 문자열 `''`을 입력합니다.
 
-        # Shotgun Pipeline Toolkit configuration file
+        # {% include product %} Pipeline Toolkit configuration file
         # This file was automatically created by setup_project
         # This file reflects the paths in the primary pipeline
 
@@ -162,9 +162,9 @@ lang: ko
 
         # End of file.
 
-3. Shotgun에서 이 프로젝트에 대한 해당 파이프라인 구성 엔티티를 찾아 Linux 경로, Mac 경로 및 Windows 경로 필드 값이 위에서 변경한 사항과 일치하도록 수정합니다.
+3. {% include product %}에서 이 프로젝트에 대한 해당 파이프라인 구성 엔티티를 찾아 Linux 경로, Mac 경로 및 Windows 경로 필드 값이 위에서 변경한 사항과 일치하도록 수정합니다.
 
-![Shotgun에서 파이프라인 구성 위치](images/new-pipeline-configuration-locations.png)
+![{% include product %}에서 파이프라인 구성 위치](images/new-pipeline-configuration-locations.png)
 
 이제 파이프라인 구성이 새 위치에서 기대한 대로 작동할 것입니다.
 

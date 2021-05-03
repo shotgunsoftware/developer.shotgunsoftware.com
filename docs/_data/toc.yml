@@ -28,15 +28,25 @@
           url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002689053-Episodic-workflow-with-Nuke-Studio"
       - page: toolkit-administration
         children:
+        - page: toolkit-overview
+        - page: integrations-admin-guide
+        - page: beyond-your-first-project
+        - page: config-staging-and-rollout
+        - page: community-shared-integrations
+        - page: other-integrations
         - page: disabling-auto-updates-and-offline
+        - page: toolkit-fs-config-ref
+        - page: toolkit-apps-and-engines-config-ref
       - page: toolkit-development
         children:
          - page: sgtk-developer-getting-started
+         - page: sgtk-developer-guide
          - page: sgtk-developer-generating-path-and-publish
          - page: sgtk-developer-bootstrapping
          - page: sgtk-developer-app
          - page: sgtk-developer-engine
          - page: sgtk-developer-framework
+         - page: sgtk-how-to-submit-fixes
     - page: review
       children:
       - text: rv-user-manual
@@ -51,10 +61,16 @@
         url: " https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
       - text: screening-room-and-shotgun-review
         url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"
+    - page: event-daemon
+      children:
+        - page: event-daemon-installation
+        - page: event-daemon-configuration
+        - page: event-daemon-plugins
+        - page: event-daemon-api
+        - page: event-daemon-technical-details
+        - page: event-daemon-example-plugins
     - text: action-menu-items
       url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
-    - text: event-triggers
-      url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
     - text: jira-bridge-guide
       url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
     - page: shotgun-webhooks
@@ -68,25 +84,83 @@
     url: " https://developer.shotgunsoftware.com/python-api/"
   - text: rest-api
     url: " https://developer.shotgunsoftware.com/rest-api/"
+  - text: core-api
+    url: " https://developer.shotgunsoftware.com/tk-core"
   - text: jira-bridge-ref
     url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
   - text: rv-technical-reference
     url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024280254-Reference-Manual"
   - page: pipeline-integrations-reference
     children:
-    - text: core-api
-      url: " https://developer.shotgunsoftware.com/tk-core"
-    - text: qt-widgets
-      url: " https://developer.shotgunsoftware.com/tk-framework-qtwidgets/"
-    - text: shotgun-utils
-      url: " https://developer.shotgunsoftware.com/tk-framework-shotgunutils/"
-    - text: publish-api
-      url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
-    - text: hiero-export-api
-      url: " https://developer.shotgunsoftware.com/tk-hiero-export"
-    - text: file-system-configuration
-      url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
-    - page: env-config-ref
+    - page: toolkit-apis
+      children:
+      - text: publish-api
+        url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
+      - text: hiero-export-api
+        url: " https://developer.shotgunsoftware.com/tk-hiero-export"
+    - page: toolkit-apps
+      children:
+      - page: tk-multi-about
+      - page: tk-multi-breakdown
+      - page: tk-multi-demo
+      - page: tk-multi-launchapp
+      - page: tk-multi-loader2
+      - page: tk-multi-publish2
+      - page: tk-multi-pythonconsole
+      - page: tk-multi-reviewsubmission
+      - page: tk-multi-screeningroom
+      - page: tk-multi-setframerange
+      - page: tk-multi-shotgunpanel
+      # No docs for the Mari project manager, but we'll keep it here
+      # for if we get to putting basic docs together for it in the
+      # future.
+      # - page: tk-multi-snapshot
+      - page: tk-multi-workfiles2
+      - page: tk-hiero-export
+      - page: tk-hiero-openinshotgun
+      - page: tk-nuke-quickreview
+      - page: tk-nuke-writenode
+      - page: tk-shotgun-folders
+      - page: tk-shotgun-launchfolder
+      - page: tk-shotgun-launchpublish
+      - page: tk-flame-export
+      - page: tk-flame-review
+      - page: tk-houdini-alembicnode
+      - page: tk-houdini-mantranode
+      # No docs for the Mari project manager, but we'll keep it here
+      # for if we get to putting basic docs together for it in the
+      # future.
+      # - page: tk-mari-projectmanager
+    - page: toolkit-engines
+      children:
+      - page: tk-3dsmax
+      - page: tk-aftereffects
+      - page: tk-alias
+      - page: tk-desktop
+      - page: tk-flame
+      - page: tk-houdini
+      - page: tk-mari
+      - page: tk-maya
+      - page: tk-motionbuilder
+      - page: tk-nuke
+      - page: tk-photoshopcc
+      - page: tk-shell
+      - page: tk-shotgun
+      - page: tk-vred
+    - page: toolkit-frameworks
+      children:
+      - text: qt-widgets
+        url: " https://developer.shotgunsoftware.com/tk-framework-qtwidgets/"
+      - text: shotgun-utils
+        url: " https://developer.shotgunsoftware.com/tk-framework-shotgunutils/"
+      - page: tk-framework-adminui
+      - page: tk-framework-desktopstartup
+      - page: tk-framework-desktopserver
+    - page: toolkit-configuration
+      children:
+      - text: file-system-configuration
+        url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
+      - page: toolkit-config-ref
 
 - caption: trusted-solutions
   children:

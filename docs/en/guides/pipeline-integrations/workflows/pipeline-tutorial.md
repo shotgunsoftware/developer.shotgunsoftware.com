@@ -9,7 +9,7 @@ lang: en
 
 This tutorial covers building a simplified, yet typical, pipeline for animation or visual effects production. By following this tutorial you will build a pipeline that provides all of the pieces necessary to push Assets from modeling through look development, and then into and through a production scene. 
 
-Much of the workflows covered in this pipeline work out-of-the-box with Shotgun's built-in integrations. For the portions of the pipeline where studios are more often building custom solutions the tutorial will walk you through the process of customizing the artists workflow using the Toolkit platform.
+Much of the workflows covered in this pipeline work out-of-the-box with {% include product %}'s built-in integrations. For the portions of the pipeline where studios are more often building custom solutions the tutorial will walk you through the process of customizing the artists workflow using the Toolkit platform.
 
 Here is a high level view of the pipeline you will build in this tutorial: 
 
@@ -23,21 +23,21 @@ For simplicity, the digital content creation (DCC) software used will be kept to
 
 ## Prerequisites
 
-* **A working Shotgun Project** - This tutorial assumes you have experience using Shotgun for tracking and managing production data. 
+* **A working {% include product %} Project** - This tutorial assumes you have experience using {% include product %} for tracking and managing production data. 
 
-* **Understanding of Shotgun Integrations** - Shotgun ships with integrations that provide some simple production workflows without requiring any manual configuration. You should understand the features and scope of these workflows before diving into the manual configuration and customizations outlined in this tutorial. More information about Shotgun Integrations can be found [here](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574). 
+* **Understanding of {% include product %} Integrations** - {% include product %} ships with integrations that provide some simple production workflows without requiring any manual configuration. You should understand the features and scope of these workflows before diving into the manual configuration and customizations outlined in this tutorial. More information about {% include product %} Integrations can be found [here](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574). 
 
-* **Maya & Nuke Experience** - This tutorial is designed to build a simple pipeline using Maya and Nuke. You should have a basic understanding of these packages in order to customize the integrations provided by Shotgun. 
+* **Maya & Nuke Experience** - This tutorial is designed to build a simple pipeline using Maya and Nuke. You should have a basic understanding of these packages in order to customize the integrations provided by {% include product %}. 
 
-* **Working knowledge of Python** - The tutorial requires modifying the functionality of Shotgun integrations via "hooks" that are written in Python. 
+* **Working knowledge of Python** - The tutorial requires modifying the functionality of {% include product %} integrations via "hooks" that are written in Python. 
 
 * **Familiarity with YAML** - Much of the configuration of the pipeline you will be building is handled by modifying YAML files. 
 
 ## Additional Resources
 
-* [Shotgun Support Site](https://support.shotgunsoftware.com)
+* [{% include product %} Support Site](https://support.shotgunsoftware.com)
 
-* [Shotgun Integrations](https://www.shotgunsoftware.com/integrations/)
+* [{% include product %} Integrations](https://www.shotgunsoftware.com/integrations/)
 
     * [User Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574)
 
@@ -47,7 +47,7 @@ For simplicity, the digital content creation (DCC) software used will be kept to
 
 # Project Creation & Setup
 
-For this Tutorial, you will need to create a new project in Shotgun and configure it as if you were preparing for production to begin. This includes ensuring all of the necessary Shotgun entities are in place and linked up properly. For this tutorial, the Asset, Sequence, Shot, and Task entities are required and should be available by default in a new project. You will create:
+For this Tutorial, you will need to create a new project in {% include product %} and configure it as if you were preparing for production to begin. This includes ensuring all of the necessary {% include product %} entities are in place and linked up properly. For this tutorial, the Asset, Sequence, Shot, and Task entities are required and should be available by default in a new project. You will create:
 
 * Two **Assets**: 
 
@@ -61,7 +61,7 @@ For this Tutorial, you will need to create a new project in Shotgun and configur
 
 * A **Task** per pipeline step
 
-Here are some screenshots of what your configured project entities should look like in Shotgun:
+Here are some screenshots of what your configured project entities should look like in {% include product %}:
 
 {% include figure src="./images/tutorial/image_1.png" caption="Teapot and Table Assets" %}
 
@@ -71,25 +71,25 @@ Here are some screenshots of what your configured project entities should look l
 
 ## Software Launchers
 
-Next, you'll need to ensure that Maya and Nuke are available to launch in Shotgun Desktop. In Desktop, make sure that each of these packages can be launched by clicking on their icon. Be sure that the proper version of each package is launched. 
+Next, you'll need to ensure that Maya and Nuke are available to launch in {% include product %} Desktop. In Desktop, make sure that each of these packages can be launched by clicking on their icon. Be sure that the proper version of each package is launched. 
 
-If either application does not show up in Desktop or the expected version does not launch, you may need to manually configure the launch in Shotgun via the Software entity. 
+If either application does not show up in Desktop or the expected version does not launch, you may need to manually configure the launch in {% include product %} via the Software entity. 
 
 {% include figure src="./images/tutorial/image_4.png" caption="The default Software entities defined in Shotgun" %}
 
-The Software entity is used to drive which DCC packages to use on your production. By default, the integrations will search for these packages in standard installation locations and make them launchable via Desktop. If you have more than one version installed or you have them installed in a non-standard location, it is possible you need to update the corresponding Software entity entry in Shotgun to curate the launch experience for your artists. 
+The Software entity is used to drive which DCC packages to use on your production. By default, the integrations will search for these packages in standard installation locations and make them launchable via Desktop. If you have more than one version installed or you have them installed in a non-standard location, it is possible you need to update the corresponding Software entity entry in {% include product %} to curate the launch experience for your artists. 
 
 For complete details on the Software entity and how to properly configure it, please see the [Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Configuring%20software%20launches). Once you have your DCCs launching the way you expect, you can continue to the next section.
 
 # Configuration
 
-The configuration (config) defines the artist workflow for your project. This includes specifying which Shotgun integrations to include within the DCCs your artists are launching, how your project's folder structure is defined, and the naming conventions for files and folders created as artists share data.  
+The configuration (config) defines the artist workflow for your project. This includes specifying which {% include product %} integrations to include within the DCCs your artists are launching, how your project's folder structure is defined, and the naming conventions for files and folders created as artists share data.  
 
-By default, all new projects are configured to use the basic [Shotgun Integrations](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574) which provide a basic workflow for sharing files between artists using many off-the-shelf software packages. The following sections outline how to take over your project's pipeline configuration (config) and customize it for your studio.
+By default, all new projects are configured to use the basic [{% include product %} Integrations](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574) which provide a basic workflow for sharing files between artists using many off-the-shelf software packages. The following sections outline how to take over your project's pipeline configuration (config) and customize it for your studio.
 
 ## Taking Over the Project Config
 
-Use Shotgun Desktop (Desktop) to take over your project's configuration. RMB click within Desktop or click the user icon in the bottom right to show the popup menu. Select the **Advanced project setup…** option and follow the wizard to locally install your project configuration. The images below show the required steps. You can also follow the steps outlined in the Integrations Admin Guide for [Taking over a Pipeline Configuration](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Taking%20over%20a%20Pipeline%20Configuration). 
+Use {% include product %} Desktop (Desktop) to take over your project's configuration. RMB click within Desktop or click the user icon in the bottom right to show the popup menu. Select the **Advanced project setup…** option and follow the wizard to locally install your project configuration. The images below show the required steps. You can also follow the steps outlined in the Integrations Admin Guide for [Taking over a Pipeline Configuration](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Taking%20over%20a%20Pipeline%20Configuration). 
 
 {% include figure src="./images/tutorial/image_5.png" caption="Select the **Advanced project setup…** in the Desktop popup menu" %}
 
@@ -97,7 +97,7 @@ Use Shotgun Desktop (Desktop) to take over your project's configuration. RMB cli
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="Choose the **Default configuration**" %}
 
-If this is your first time setting up a Shotgun project, you'll also be prompted to define a storage location for your project data.  Otherwise, you can select an existing storage location.
+If this is your first time setting up a {% include product %} project, you'll also be prompted to define a storage location for your project data.  Otherwise, you can select an existing storage location.
 
 {% include figure src="./images/tutorial/wizard_03.png" caption="Create a new storage." %}
 
@@ -105,7 +105,7 @@ If this is your first time setting up a Shotgun project, you'll also be prompted
 
 {% include figure src="./images/tutorial/wizard_05.png" caption="Set the path(s) where this storage will be accessible on the operating systems you intend to use." %}
 
-You can view and edit the storages for your shotgun site in your **Site Preferences**, under the **File Management** section.  You can learn more about these settings [here](https://support.shotgunsoftware.com/hc/en-us/articles/219030938).
+You can view and edit the storages for your {% include product %} site in your **Site Preferences**, under the **File Management** section.  You can learn more about these settings [here](https://support.shotgunsoftware.com/hc/en-us/articles/219030938).
 
 Now that you have a storage location selected, you'll choose the name of the directory in that location for your new project.
 
@@ -121,7 +121,7 @@ The folder you select on the screen above is where your configuration will be in
 
 When you click **Run Setup** on the above screen, Desktop will begin to download and install all of the required components of your configuration. The installation process could take several minutes to complete. Once complete, you will have a local copy of the entire project configuration that you will modify in the following steps.
 
-The configuration location you specified during the Desktop installation tutorial is recorded in Shotgun in the Pipeline Configurations page for your project. 
+The configuration location you specified during the Desktop installation tutorial is recorded in {% include product %} in the Pipeline Configurations page for your project. 
 
 {% include figure src="./images/tutorial/image_10.png" caption="The Pipeline Configuration entity in Shotgun" %}
 
@@ -157,9 +157,9 @@ Once the file is in your configuration's **`hooks`** folder, you will be ready t
 
 # Building the Pipeline
 
-At this point you should be ready to begin building a pipeline. You have a project set up in Shotgun, you can launch Maya & Nuke via Desktop, and you've taken control of the project's configuration. You also have a basic understanding of the structure of the config and are ready to begin fleshing out the artist workflow. 
+At this point you should be ready to begin building a pipeline. You have a project set up in {% include product %}, you can launch Maya & Nuke via Desktop, and you've taken control of the project's configuration. You also have a basic understanding of the structure of the config and are ready to begin fleshing out the artist workflow. 
 
-The following sections will walk through each step of the pipeline, highlighting the features that are available out-of-the-box and walking you through the process of customizing the Shotgun integrations. By the end of these sections, you will have a simple, fully functional, end-to-end production pipeline. You will also get a feel for the steps artists will take as they work on production.
+The following sections will walk through each step of the pipeline, highlighting the features that are available out-of-the-box and walking you through the process of customizing the {% include product %} integrations. By the end of these sections, you will have a simple, fully functional, end-to-end production pipeline. You will also get a feel for the steps artists will take as they work on production.
 
 {% include info title="Note" content="All code and configuration for this tutorial can be found on the **`pipeline_tutorial`** branch of the [**`tk-config-default2`** repository](https://github.com/shotgunsoftware/tk-config-default2/tree/pipeline_tutorial/). Feel free to use this branch if you need hints as to where files should live, where code should be added, etc." %}
 
@@ -167,9 +167,9 @@ The following sections will walk through each step of the pipeline, highlighting
 
 The first step in the simple pipeline is Modeling. In this section you will create the first iteration of the Teapot Asset in your project. You will save it to disk in your project's folder structure and then publish it. 
 
-First, launch Maya from Shotgun Desktop. 
+First, launch Maya from {% include product %} Desktop. 
 
-Once Maya has full loaded, you will see the File Open Dialog appear. This dialog allows you to browse existing Maya files within the project. It also allows you to create new files that the Shotgun integrations will be aware of. 
+Once Maya has full loaded, you will see the File Open Dialog appear. This dialog allows you to browse existing Maya files within the project. It also allows you to create new files that the {% include product %} integrations will be aware of. 
 
 Select the Assets tab and drill down into the Teapot's modeling task. Since there are no artist work files for this task yet, click the **+ New File** button. 
 
@@ -183,7 +183,7 @@ Next, model a Teapot, or [download](https://raw.githubusercontent.com/shotgunsof
 
 {% include figure src="./images/tutorial/image_14.png" %}
 
-When you're happy with your Teapot model, select the **Shotgun > File Save…** menu action. This dialog will prompt you to save the file to a given name, version, and type.
+When you're happy with your Teapot model, select the **{% include product %} > File Save…** menu action. This dialog will prompt you to save the file to a given name, version, and type.
 
 {% include figure src="./images/tutorial/image_15.png" %}
 
@@ -201,19 +201,19 @@ Also notice the preview of the file name and path to be written at the bottom of
 
 Click the **Save** button to save the teapot model. 
 
-An important thing to note at this point is that the steps you just completed will be the same steps artists take when opening and saving workfiles throughout the pipeline. The File Open and File Save dialogs are part of Workfiles App. This "multi" app runs in all of the DCCs supported by the Shotgun integrations and provides a consistent workflow for all artists. 
+An important thing to note at this point is that the steps you just completed will be the same steps artists take when opening and saving workfiles throughout the pipeline. The File Open and File Save dialogs are part of Workfiles App. This "multi" app runs in all of the DCCs supported by the {% include product %} integrations and provides a consistent workflow for all artists. 
 
 The next step is to make some changes to your teapot. Make sure the lid geometry is separate from the rest of the model so that it can be rigged later on. 
 
 {% include figure src="./images/tutorial/image_16.png" %}
 
-Once you're satisfied with your work, run the **Shotgun > File Save…** menu action again. This time the dialog will default your version number to 2. The automatic incrementing of the file version allows artists to maintain a complete history of the work they've done. Click the Save button.
+Once you're satisfied with your work, run the **{% include product %} > File Save…** menu action again. This time the dialog will default your version number to 2. The automatic incrementing of the file version allows artists to maintain a complete history of the work they've done. Click the Save button.
 
 {% include figure src="./images/tutorial/image_17.png" %}
 
 Once you have saved the Teapot model to version 2, you are ready for the last step in this section of the tutorial. 
 
-Now that your Teapot model is ready, you need to publish it so that it can be surfaced and rigged. To publish, click the **Shotgun > Publish…** menu action. You will be presented with the Publish App dialog. 
+Now that your Teapot model is ready, you need to publish it so that it can be surfaced and rigged. To publish, click the **{% include product %} > Publish…** menu action. You will be presented with the Publish App dialog. 
 
 {% include figure src="./images/tutorial/image_18.png" %}
 
@@ -225,7 +225,7 @@ On the left side of the dialog you will see an item representing the current May
 
 Explore the Publish App by clicking on the items on the left side of the tree. You'll notice that the items to be acted upon, when selected, allow you to enter a description of what is being published. You can also take a screenshot to be associated with the item by clicking the camera icon on the right. 
 
-When you are ready, click the **Publish** button in the bottom right corner to publish the current work file and the teapot geometry. Once complete, you can browse to the Teapot Asset in Shotgun to verify that the publish completed successfully. 
+When you are ready, click the **Publish** button in the bottom right corner to publish the current work file and the teapot geometry. Once complete, you can browse to the Teapot Asset in {% include product %} to verify that the publish completed successfully. 
 
 {% include figure src="./images/tutorial/image_19.png" %}
 
@@ -259,15 +259,15 @@ Next up, the surfacing workflow.
 
 In this section you will build on what you learned in the modeling section. You will learn how to load the Teapot model you created in the previous section using the Loader app. You will also learn how to customize the Publish app to publish shaders for your Teapot.
 
-Start by launching Maya from Desktop. If you still have Maya open after working through the previous section, you do not need to relaunch. Once Maya is open, use the **Shotgun > File Open…** menu item to open the Workfiles app. Just like in the Modeling section, use the Assets tab to drill down into the Teapot asset's tasks. This time, select the surfacing task and click **+ New File**.
+Start by launching Maya from Desktop. If you still have Maya open after working through the previous section, you do not need to relaunch. Once Maya is open, use the **{% include product %} > File Open…** menu item to open the Workfiles app. Just like in the Modeling section, use the Assets tab to drill down into the Teapot asset's tasks. This time, select the surfacing task and click **+ New File**.
 
 {% include figure src="./images/tutorial/image_21.png" width="450px" %}
 
-You are now working in the Teapot's surfacing task. An easy way to verify that you are in the right production context is to check the first entry in the Shotgun menu. 
+You are now working in the Teapot's surfacing task. An easy way to verify that you are in the right production context is to check the first entry in the {% include product %} menu. 
 
 {% include figure src="./images/tutorial/image_22.png" %} 
 
-Next you need to load the teapot model into your new surfacing work file. To do this, launch the Loader app via the **Shotgun > Load…** menu item in Maya.
+Next you need to load the teapot model into your new surfacing work file. To do this, launch the Loader app via the **{% include product %} > Load…** menu item in Maya.
 
 {% include figure src="./images/tutorial/image_23.png" %}
 
@@ -283,7 +283,7 @@ Next, add a simple procedural shader to the teapot.
 
 Shader management can be a time consuming and complex task when building a pipeline. It is often very specific to a studio. It is for these reasons that the shipped Maya integration does not handle shader or texture management out-of-the-box. 
 
-Use the **Shotgun > File Save…** menu action to save the current session before continuing.
+Use the **{% include product %} > File Save…** menu action to save the current session before continuing.
 
 ### Custom Shader Publish
 
@@ -445,9 +445,9 @@ That should be everything. You have overridden the Publish app's collector hook 
 
 {% include info title="Note" content="If you closed Maya while making the customizations to your configuration, do not worry. You can simply launch Maya again and use the File Open dialog to open your surfacing work file. You can skip the reloading step below." %}
 
-##### Reloading the Shotgun Integrations
+##### Reloading the {% include product %} Integrations
 
-In order to try out your customizations, you'll need to reload the integrations in your Maya session. To do this, click the **Shotgun > [Task Name] > Work Area Info…** menu action. 
+In order to try out your customizations, you'll need to reload the integrations in your Maya session. To do this, click the **{% include product %} > [Task Name] > Work Area Info…** menu action. 
 
 {% include figure src="./images/tutorial/image_30.png" %}
 
@@ -457,14 +457,14 @@ This will launch the Work Area Info app that provides information about your cur
 
 ### Publishing Shader Networks
 
-Now it is time to see the results of your changes to the project configuration. Launch the publish app from the Shotgun menu. You should see the collected teapot mesh item with a **Publish Shaders** plugin attached:
+Now it is time to see the results of your changes to the project configuration. Launch the publish app from the {% include product %} menu. You should see the collected teapot mesh item with a **Publish Shaders** plugin attached:
 
 {% include figure src="./images/tutorial/image_32.png" %}
 
-Enter a description of your work and capture a thumbnail of your surfaced Teapot to associate with the published files. Finally, click publish to export the Teapot shaders to disk and register the file as a publish in Shotgun. When finished, notice that the session publish plugin has automatically saved your work file to the next available version. This is the default behavior within all of the DCCs supported by Shotgun integrations.
+Enter a description of your work and capture a thumbnail of your surfaced Teapot to associate with the published files. Finally, click publish to export the Teapot shaders to disk and register the file as a publish in {% include product %}. When finished, notice that the session publish plugin has automatically saved your work file to the next available version. This is the default behavior within all of the DCCs supported by {% include product %} integrations.
 
 
-You can now browse to the Teapot asset in Shotgun to verify that everything worked as expected.
+You can now browse to the Teapot asset in {% include product %} to verify that everything worked as expected.
 
 {% include figure src="./images/tutorial/image_33.png" %}
 
@@ -476,9 +476,9 @@ Next up, the rigging workflow.
 
 ## Rigging Workflow
 
-At this point, you should feel pretty comfortable opening (or creating), saving, and publishing workfiles using the Workfile and Publish apps provided by Shotgun. You've also had a chance to use the Loader app to load a publish from upstream. Use what you've learned to complete the following tasks:
+At this point, you should feel pretty comfortable opening (or creating), saving, and publishing workfiles using the Workfile and Publish apps provided by {% include product %}. You've also had a chance to use the Loader app to load a publish from upstream. Use what you've learned to complete the following tasks:
 
-* Launch Maya from Shotgun Desktop
+* Launch Maya from {% include product %} Desktop
 
 * Create a new workfile in the Teapot asset's rigging step
 
@@ -488,7 +488,7 @@ At this point, you should feel pretty comfortable opening (or creating), saving,
 
 * Save and publish the Teapot rig
 
-You should end up with something like this in Shotgun:
+You should end up with something like this in {% include product %}:
 
 {% include figure src="./images/tutorial/image_35.png" %}
 
@@ -496,7 +496,7 @@ Next, let's see how artists handle upstream changes in their workflow. Open up t
 
 {% include figure src="./images/tutorial/image_36.png" %}
 
-Open the work file in the Teapot's rigging step again (via **Shotgun > File Open…**). Now launch the **Shotgun > Scene Breakdown…** menu action. This launches the Breakdown app which shows you all of the upstream publishes that you have referenced into your work file. In this case, there is only the upstream Teapot model. You should see something like this:
+Open the work file in the Teapot's rigging step again (via **{% include product %} > File Open…**). Now launch the **{% include product %} > Scene Breakdown…** menu action. This launches the Breakdown app which shows you all of the upstream publishes that you have referenced into your work file. In this case, there is only the upstream Teapot model. You should see something like this:
 
 {% include figure src="./images/tutorial/image_37.png" width="400px" %}
 
@@ -518,7 +518,7 @@ In this section, you will begin working in the Shot you created for your project
 
 Begin by using what you learned in the previous sections to complete the following tasks:
 
-* Launch Maya from Shotgun Desktop
+* Launch Maya from {% include product %} Desktop
 
 * Create a new workfile in your Shot's layout step (Hint: use the Shots tab in the Loader)
 
@@ -530,7 +530,7 @@ Now block your simple scene with the Teapot on the Table. Add a camera to your s
 
 {% include figure src="./images/tutorial/image_41.gif" %}
 
-Once you are happy with your shot layout, save the file via the **Shotgun > File Save…** menu action. If you were to go ahead and publish at this point, you would only see the entire maya session as an available item to publish. 
+Once you are happy with your shot layout, save the file via the **{% include product %} > File Save…** menu action. If you were to go ahead and publish at this point, you would only see the entire maya session as an available item to publish. 
 
 An easy customization to add, and one that provides a lot of flexibility to a pipeline, is the ability to publish stand-alone cameras to a file format that is easy to import into other packages. This makes it possible to generate the camera once, typically in layout, and then have all other pipeline steps, such as animation, lighting, and compositing, consume it directly. 
 
@@ -632,7 +632,7 @@ As you can see in the image, the new camera item is collected and the publish pl
 
 {% include info title="Note" content="Similarly to Alembic export, the camera publish plugin requires the FBX export plugin to be loaded.  If you don't see the camera publish plugin item, check to ensure that the FBX plugin is loaded, and re-launch the publisher." %}
 
-You should see something like this in Shotgun:
+You should see something like this in {% include product %}:
 
 {% include figure src="./images/tutorial/image_46.png" %} 
 
@@ -644,7 +644,7 @@ Up to this point, you've only customized the Publish app in order to write custo
 
 Use what you've learned in previous sections to complete the following tasks. 
 
-* Launch Maya from Shotgun Desktop
+* Launch Maya from {% include product %} Desktop
 
 * Create a new workfile in your Shot's animation step
 
@@ -662,7 +662,7 @@ Find the section where the app is configured for maya and add this line to the l
 
 **`FBX Camera: [reference, import]`**
 
-In the custom camera publish plugin, the **`FBXExport`** mel command in Maya was used to write the camera to disk, and the publish type used to register the file with Shotgun was **`FBX Camera`**. The line you added to the settings tells the loader to display the **`reference`** and **`import`** actions for any publishes of type **`FBX Camera`**. These actions are defined in the [tk-maya-actions.py](https://github.com/shotgunsoftware/tk-multi-loader2/blob/master/hooks/tk-maya_actions.py) hook of the Loader app. These actions are implemented in a way to handle any type of file that Maya can reference or import. The **`.fbx`** files generated by the custom plugin fall into that category so this is the only change needed to be able to load the published cameras.
+In the custom camera publish plugin, the **`FBXExport`** mel command in Maya was used to write the camera to disk, and the publish type used to register the file with {% include product %} was **`FBX Camera`**. The line you added to the settings tells the loader to display the **`reference`** and **`import`** actions for any publishes of type **`FBX Camera`**. These actions are defined in the [tk-maya-actions.py](https://github.com/shotgunsoftware/tk-multi-loader2/blob/master/hooks/tk-maya_actions.py) hook of the Loader app. These actions are implemented in a way to handle any type of file that Maya can reference or import. The **`.fbx`** files generated by the custom plugin fall into that category so this is the only change needed to be able to load the published cameras.
 
 Your app settings should now look like this:
 
@@ -688,7 +688,7 @@ In this section, you will bring together everything you published in the previou
 
 First, use what you've learned in previous sections to complete the following tasks. 
 
-* Launch Maya from Shotgun Desktop
+* Launch Maya from {% include product %} Desktop
 
 * Create a new workfile in your Shot's lighting step
 
@@ -783,11 +783,11 @@ Render your shot to disk.
 
 {% include info title="Note" content="As you can see, there are issues with the surfacing of both the Teapot and the Table asset. For the purposes of this tutorial, assume these were intentional, artistic choices. If you want to address these issues, you can always load the surfacing work files for these assets and adjust the shaders and re-publish them. If you do, remember to update the references in the lighting work file and re-render. If you go through the steps, you may find that the breakdown app does not reconnect your updated shaders after reloading the reference. Based on your experience modifying the loader to hook up shader references, you should be able to update the breakdown app's scene operations hook to add the required logic. HINT: See the update method in [this file](https://github.com/shotgunsoftware/tk-multi-breakdown/blob/master/hooks/tk-maya_scene_operations.py#L69)." %}
 
-The shipped Shotgun integrations will collect image sequences by looking at the render layers defined in the file. Once your render is complete, launch the publisher. You will see the rendered sequence as an item in the tree. 
+The shipped {% include product %} integrations will collect image sequences by looking at the render layers defined in the file. Once your render is complete, launch the publisher. You will see the rendered sequence as an item in the tree. 
 
 {% include figure src="./images/tutorial/image_55.png" %}
 
-Go ahead and publish the session and the rendered image file sequence. You should see something like this in Shotgun:
+Go ahead and publish the session and the rendered image file sequence. You should see something like this in {% include product %}:
 
 {% include figure src="./images/tutorial/image_56.png" %}
 
@@ -799,9 +799,9 @@ In this final section of the tutorial, you will be introduced to some of the def
 
 Start by following these steps to prepare your work file. 
 
-* Launch Nuke from Shotgun Desktop
+* Launch Nuke from {% include product %} Desktop
 
-* Just like in Maya, use the Shotgun > File Open… menu action to create a new work file in the Shot's compositing step. 
+* Just like in Maya, use the {% include product %} > File Open… menu action to create a new work file in the Shot's compositing step. 
 
 
 Load the image sequence you rendered and published in the previous section via the Loader app.
@@ -814,40 +814,40 @@ Make sure your Nuke Project Settings output format matches your rendered images.
 
 {% include figure src="./images/tutorial/image_58.png" %}
 
-Once you are happy with your comp, use the **Shotgun > File Save…** menu action to save your work file.
+Once you are happy with your comp, use the **{% include product %} > File Save…** menu action to save your work file.
 
-Next, click the Shotgun logo in the left hand menu in Nuke. Click on one of the Shotgun-aware write nodes in that menu:
+Next, click the {% include product %} logo in the left hand menu in Nuke. Click on one of the Shotgun-aware write nodes in that menu:
 
 {% include figure src="./images/tutorial/image_59.png" width="400px" %}
 
-The Shotgun Write Node app provides a layer on top of the built-in Nuke Write node that automatically evaluates the output path based on your current Shotgun context. 
+The {% include product %} Write Node app provides a layer on top of the built-in Nuke Write node that automatically evaluates the output path based on your current {% include product %} context. 
 
 {% include figure src="./images/tutorial/image_60.png" %}
 
-Render the image frames to disk. You can now publish your nuke session to associate the work file with the rendered images. By default, the publisher will collect the rendered frames and attach a plugin to register the frames with Shotgun. A second plugin will upload the frames for review by way of an integration that runs in the background called review submission. This app uses nuke to generate a quicktime that will be uploaded and made available for review.
+Render the image frames to disk. You can now publish your nuke session to associate the work file with the rendered images. By default, the publisher will collect the rendered frames and attach a plugin to register the frames with {% include product %}. A second plugin will upload the frames for review by way of an integration that runs in the background called review submission. This app uses nuke to generate a quicktime that will be uploaded and made available for review.
 
 {% include figure src="./images/tutorial/image_61.png" %}
 
-Another useful integration is the Quick Review app. This is an output node that will quickly generate and upload a quicktime to Shotgun for Review. The app can be found in the left hand menu next to the Shotgun Write Nodes.
+Another useful integration is the Quick Review app. This is an output node that will quickly generate and upload a quicktime to {% include product %} for Review. The app can be found in the left hand menu next to the {% include product %} Write Nodes.
 
 {% include figure src="./images/tutorial/image_62.png" width="400px" %}
 
-Create a Quick Review node, then click the Upload button to render the input to disk, generate the quicktime, and upload the result to Shotgun for review. Some standard options are provided before submitting the frames.
+Create a Quick Review node, then click the Upload button to render the input to disk, generate the quicktime, and upload the result to {% include product %} for review. Some standard options are provided before submitting the frames.
 
 {% include figure src="./images/tutorial/image_63.png" %}
 
-Check the media tab in Shotgun to see both of the uploaded quicktimes. 
+Check the media tab in {% include product %} to see both of the uploaded quicktimes. 
 
 {% include figure src="./images/tutorial/image_64.png" %}
 
-For more information on reviewing media in Shotgun, see the [official documentation](https://support.shotgunsoftware.com/hc/en-us/sections/204245448-Review-and-approval).
+For more information on reviewing media in {% include product %}, see the [official documentation](https://support.shotgunsoftware.com/hc/en-us/sections/204245448-Review-and-approval).
 
 # Conclusion
 
-Congratulations, you're done! Hopefully this tutorial has given you a starting point for building your own custom pipeline using the Shotgun integrations. You should have an understanding of how to extend the default integrations to meet the specific needs of your studio.
+Congratulations, you're done! Hopefully this tutorial has given you a starting point for building your own custom pipeline using the {% include product %} integrations. You should have an understanding of how to extend the default integrations to meet the specific needs of your studio.
 
 Ask questions and learn how other studios are using Toolkit over at the [shotgun-dev Google Group](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev).  Be sure to subscribe to stay up to date with the latest posts!
 
 If there are features or workflows that you feel are outside of the default integrations, then you can always write your own apps. [Here is an excellent document](https://support.shotgunsoftware.com/entries/95440137) to help you get started writing your first app.
 
-As always, if you have additional questions about this tutorial or about Shotgun or the Toolkit platform in general, feel free to [submit a ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new).
+As always, if you have additional questions about this tutorial or about {% include product %} or the Toolkit platform in general, feel free to [submit a ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new).

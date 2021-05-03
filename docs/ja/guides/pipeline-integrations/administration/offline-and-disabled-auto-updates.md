@@ -10,19 +10,19 @@ lang: ja
 ## Auto updates
 ### What parts auto update?
 
-By default Shotgun Desktop will automatically check for updates, and install them to the local machine if it finds any.
+By default {% include product %} Desktop will automatically check for updates, and install them to the local machine if it finds any.
 
 It checks for updates on two components:
 
-- `tk-framework-desktopstartup` - A frame work which aids the launch of Shotgun Desktop.
+- `tk-framework-desktopstartup` - A frame work which aids the launch of {% include product %} Desktop.
 - `tk-config-basic` - The default site config.
 
-The configuration acts as a manifest for the versions of the apps, engines, frameworks, and core version that should be used by Shotgun Desktop.
+The configuration acts as a manifest for the versions of the apps, engines, frameworks, and core version that should be used by {% include product %} Desktop.
 By updating the config, you are potentially updating any of these components as well.
-Any updates that are found are downloaded and stored in the user's local cache, rather than modifying the original Shotgun Desktop installed files.
+Any updates that are found are downloaded and stored in the user's local cache, rather than modifying the original {% include product %} Desktop installed files.
 
-Shotgun Create as an application has it's own update mechanism separate from Shotgun Desktop which is not covered here.
-However the integration features provided in Shotgun Create work in a similar way, and will also auto update `tk-config-basic` into the same user cache.
+{% include product %} Create as an application has it's own update mechanism separate from {% include product %} Desktop which is not covered here.
+However the integration features provided in {% include product %} Create work in a similar way, and will also auto update `tk-config-basic` into the same user cache.
 
 ### What doesn't auto update?
 
@@ -44,15 +44,15 @@ The following sections describes how to address each of these scenarios.
 ### Initial Setup
 
 If your studio has restricted internet access or no internet access then you will need to ensure that you have all the required parts cached locally.
-You will still need one machine that can connect to the internet in order to download Shotgun Create or Shotgun Desktop.
+You will still need one machine that can connect to the internet in order to download {% include product %} Create or {% include product %} Desktop.
 
-Shotgun Create and Shotgun Desktop come prepackaged with all the dependencies required to run the basic integrations.
-When you start either of them up, it will automatically try to look for updates, but if it cannot connect to the Shotgun App Store, it will simply run the most recent version that exists locally.
+{% include product %} Create and {% include product %} Desktop come prepackaged with all the dependencies required to run the basic integrations.
+When you start either of them up, it will automatically try to look for updates, but if it cannot connect to the {% include product %} App Store, it will simply run the most recent version that exists locally.
 
-It is recommended that you follow the "Managing updates" steps bellow after installing Shotgun Desktop, as the components bundled with the installer may not be the latest.
+It is recommended that you follow the "Managing updates" steps bellow after installing {% include product %} Desktop, as the components bundled with the installer may not be the latest.
 
 {% include info title="Note" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
-In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
+In this situation you can set the environment variable `shotgun_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
 
 {% include info title="Note" content="You will still need to be able to connect to your Shotgun site. When we say offline we are talking about not being able to connect to our app store to download updates." %}
 
@@ -63,7 +63,7 @@ To update the `tk-framework-desktopstartup` component, you will need to [downloa
 
 For the `tk-config-basic` component it's a bit more tricky, due to all its dependencies.
 
-1. Run Shotgun Desktop on a workstation connected to the internet. When it starts up, the latest upgrades will be automatically downloaded.
+1. Run {% include product %} Desktop on a workstation connected to the internet. When it starts up, the latest upgrades will be automatically downloaded.
 (Ensure `SHOTGUN_DISABLE_APPSTORE_ACCESS` is not set on this machine.)
 2. Copy the bundle cache to a shared location where all machines can access it.
 3. Set the `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` environment variable on offline machines to point to this location.
@@ -79,14 +79,14 @@ In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE
 ### Disabling updates for a single project
 
 1. Determine the version you want to lock your project to. You can find the integration releases [here](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations).
-2. In Shotgun, create a Pipeline Configuration entity for the project you want to lock down, with the following fields populated (In this example, we are locking down the config to use v1.0.36 of the integrations):
+2. In {% include product %}, create a Pipeline Configuration entity for the project you want to lock down, with the following fields populated (In this example, we are locking down the config to use v1.0.36 of the integrations):
     - Name: `Primary`
     - Project: The project you want to lock down
     - Plugin ids: `basic.*`
     - Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
   ![Pipeline Configuration entity with a setup for a project with disabled updates.](images/offline-and-disabled-auto-updates/freeze_single_project.png)
  
-3. Anyone starting Shotgun Desktop on the project will now always use `v1.0.36`. Any new users starting to work on the project will also get `v1.0.36`.
+3. Anyone starting {% include product %} Desktop on the project will now always use `v1.0.36`. Any new users starting to work on the project will also get `v1.0.36`.
 
 #### Good to know
 
@@ -141,7 +141,7 @@ Note that you’ve omitted the version number from the Descriptor field for the 
 Scenario: We’re locked down to v1.0.0, and we’d like to upgrade to v2.0.0, but first I want to test out the new version before deploying it to the studio.*
 Solution
 
-Duplicate the Pipeline Configuration entity in Shotgun by right-clicking on it and selecting "Duplicate Selected".
+Duplicate the Pipeline Configuration entity in {% include product %} by right-clicking on it and selecting "Duplicate Selected".
 Name the cloned config “update test”, and assign yourself to the User Restrictions field.
 You will now begin to use this Pipeline Configuration.
 Change the descriptor to point to the version you wish to test.

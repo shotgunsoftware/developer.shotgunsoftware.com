@@ -10,11 +10,11 @@ lang: ja
 
 Toolkit セットアップの管理および設定に基づくクイック アンサーのコレクションです。
 
-#### Shotgun Desktop:
-- [Shotgun Desktop を使用して Toolkit プロジェクトを再セットアップするにはどうすればいいですか?](./administering/resetup-project-with-sg-desktop.md)
-- [Windows で Shotgun Desktop をサイレント インストールするにはどうすればいいですか?](./administering/install-desktop-silent.md)
-- [Linux で Shotgun Desktop のデスクトップ/ランチャー アイコンをセットアップするにはどうすればいいですか?](./administering/create-shotgun-desktop-shortcut.md)
-- [Shotgun Desktop のブラウザ統合を無効にするにはどうすればいいですか?](./administering/disable-browser-integration.md)
+#### {% include product %} Desktop:
+- [{% include product %} Desktop を使用して Toolkit プロジェクトを再セットアップするにはどうすればいいですか?](./administering/resetup-project-with-sg-desktop.md)
+- [Windows で {% include product %} Desktop をサイレント インストールするにはどうすればいいですか?](./administering/install-desktop-silent.md)
+- [Linux で {% include product %} Desktop のデスクトップ/ランチャー アイコンをセットアップするにはどうすればいいですか?](./administering/create-shotgun-desktop-shortcut.md)
+- [{% include product %} Desktop のブラウザ統合を無効にするにはどうすればいいですか?](./administering/disable-browser-integration.md)
 
 #### 設定の管理:
 
