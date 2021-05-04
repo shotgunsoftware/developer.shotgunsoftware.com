@@ -59,6 +59,7 @@ We strongly recommend you test media access and media transcoding in your migrat
                 },
                 "StringNotEquals": {
                     "aws:sourceVpc": [
+                        "vpc-2fd62a56",
                         "your_vpc_id"
                     ]
                 }
