@@ -12,10 +12,21 @@ python:
 
 env:
   global:
-    - DOC_URL=https://developer.shotgunsoftware.com
     - DOC_PATH=""
     - S3_BUCKET=sg-devdocs
     - S3_WEB_URL=http://sg-devdocs.s3-website-us-east-1.amazonaws.com
+  jobs:
+    include:
+      # While we're deploying separately to both shotgunsoftware and
+      # shotgridsoftware gh pages, we'll need to run two travis jobs to build
+      # each site correctly.
+      - DOC_URL=https://developer.shotgunsoftware.com
+        REPO_URL=shotgunsoftware/shotgunsoftware.github.io
+      - # We only want to run the second job if the branch is master.
+        if: branch = master
+        env:
+          DOC_URL=https://developer.shotgridsoftware.com
+          REPO_URL=shotgunsoftware/shotgridsoftware.github.io
 
 cache:
   pip: true
@@ -43,7 +54,7 @@ deploy:
   # When commiting to master, auto-deploy to github-pages
   # This will copy the contents of the _build folder to gh-pages branch and push
 - provider: pages
-  repo: shotgunsoftware/shotgunsoftware.github.io
+  repo: $REPO_URL
   local-dir: ./_build
   target-branch: master
   verbose: true
