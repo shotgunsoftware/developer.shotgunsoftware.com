@@ -7,15 +7,15 @@ lang: en
 
 # How can I create publishes via the API?
 
-Our sgtk API provides a [convenience method](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.register_publish) for registering `PublishedFiles` entities in Shotgun.
+Our sgtk API provides a [convenience method](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.register_publish) for registering `PublishedFiles` entities in Shotgun.
 
-In addition we also have a Publish app, that comes with [its own API](https://developer.shotgunsoftware.com/tk-multi-publish2/). 
+In addition we also have a Publish app, that comes with [its own API](https://developer.shotgridsoftware.com/tk-multi-publish2/). 
 The Publish API ultimately uses the core sgtk API method to register the PublishedFile, but it also provides a framework around collection, validation, and publishing, which can be customized
-In addition to the the Publish API documentation, we have examples of writing your own publish plugins in our [pipeline tutorial](https://developer.shotgunsoftware.com/cb8926fc/?title=Pipeline+Tutorial).
+In addition to the the Publish API documentation, we have examples of writing your own publish plugins in our [pipeline tutorial](https://developer.shotgridsoftware.com/cb8926fc/?title=Pipeline+Tutorial).
 
 ## Using the register_publish() API method
 While it is possible to create publish records in {% include product %} using a raw {% include product %} API call, we would strongly recommend using Toolkit's convenience method.
-All toolkit apps that create publishes are using a API utility method method called [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.register_publish).
+All toolkit apps that create publishes are using a API utility method method called [`sgtk.util.register_publish()`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.register_publish).
 
 Basically, this method will create a new PublishedFile entity in {% include product %} and is trying to make that easy by using toolkit concepts. Your code would need to do something along these lines:
 
@@ -65,7 +65,7 @@ sgtk.util.register_publish(
 ```
 
 There are several options you can populate in addition to the basic ones shown above. 
-For a full list of parameters and what they do, see the [Core API documentation](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.register_publish). 
+For a full list of parameters and what they do, see the [Core API documentation](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.register_publish). 
 
 {% include info title="Tip" content="If your code is running from within a Toolkit app you can grab the sgtk instance via `self.sgtk` and the context with `self.context`.
 If it's not in an app, but will be running within software where a Toolkit integration is present, you can access the current context and sgtk instance with the following code:

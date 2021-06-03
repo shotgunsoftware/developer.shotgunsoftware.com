@@ -131,7 +131,7 @@ lang: ja
 
 ![プロジェクト フォルダ](./images/advanced_config/14_project_folder_name.png)
 
-Toolkit は、2 つのいずれかの設定で機能します。パイプライン設定が {% include product %} にアップロードされ、ユーザごとにローカルにキャッシュされる分散設定(Distributed Setup)と、ディスク上の共有場所に保管された単一の設定にユーザがアクセスする中央設定(Centralized Setup)です。この演習では分散設定を使用します。分散設定の詳細については、[こちら](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)を参照してください。
+Toolkit は、2 つのいずれかの設定で機能します。パイプライン設定が {% include product %} にアップロードされ、ユーザごとにローカルにキャッシュされる分散設定(Distributed Setup)と、ディスク上の共有場所に保管された単一の設定にユーザがアクセスする中央設定(Centralized Setup)です。この演習では分散設定を使用します。分散設定の詳細については、[こちら](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)を参照してください。
 
 最後の手順では、該当するフォルダ、ファイル、およびプロジェクトに固有の設定を作成するために必要なデータを生成します。
 
@@ -181,7 +181,7 @@ Toolkit は、2 つのいずれかの設定で機能します。パイプライ�
 
 ### パイプライン設定のクラウドへの分散
 
-このガイドでは、**中央設定**の作成方法について説明します。中央設定とは、ネットワーク上の共有場所に配置されていて、すべてのユーザがアクセスできるパイプライン設定の単一コピーのことです。従業員が複数の場所およびネットワークに分散している場合は、パイプライン設定の単一コピーを共有できないことがあります。Toolkit は**分散設定**オプションを提供することによってこのシナリオを可能にします。すなわち、パイプライン設定を {% include product %} にアップロードして、ユーザがプロジェクトにアクセスするたびに設定がダウンロードされ、ローカルにキャッシュされます。分散設定の詳細については、[Core API 開発者向けドキュメント](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)を参照してください。
+このガイドでは、**中央設定**の作成方法について説明します。中央設定とは、ネットワーク上の共有場所に配置されていて、すべてのユーザがアクセスできるパイプライン設定の単一コピーのことです。従業員が複数の場所およびネットワークに分散している場合は、パイプライン設定の単一コピーを共有できないことがあります。Toolkit は**分散設定**オプションを提供することによってこのシナリオを可能にします。すなわち、パイプライン設定を {% include product %} にアップロードして、ユーザがプロジェクトにアクセスするたびに設定がダウンロードされ、ローカルにキャッシュされます。分散設定の詳細については、[Core API 開発者向けドキュメント](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)を参照してください。
 
 ### 複数のルート フォルダを操作する
 

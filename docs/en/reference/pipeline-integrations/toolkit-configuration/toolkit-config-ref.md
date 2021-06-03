@@ -56,7 +56,7 @@ Each of these files corresponds to an environment; having separate files allows 
 
 ## How Toolkit determines the current environment
 
-Toolkit uses a core hook called [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) to determine which environment file to use at a given time based on the current [context](https://developer.shotgunsoftware.com/tk-core/core.html#context). The `pick_environment` hook’s return values correspond to environment configuration files. For example, if `pick_environment` returns `shot_step`, Toolkit will use `config/env/shot_step.yml` to configure the Toolkit environment.
+Toolkit uses a core hook called [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) to determine which environment file to use at a given time based on the current [context](https://developer.shotgridsoftware.com/tk-core/core.html#context). The `pick_environment` hook’s return values correspond to environment configuration files. For example, if `pick_environment` returns `shot_step`, Toolkit will use `config/env/shot_step.yml` to configure the Toolkit environment.
 
 ## Custom environments
 
@@ -130,7 +130,7 @@ In contrast, if you are actively developing a custom bundle&mdash;say you’re w
 
 The `dev` descriptor has different settings from the `app_store` descriptor. While it can take other settings, it can be set up simply with a `path` setting pointing to where the app lives on disk.
 
-See [the Descriptor section of the Toolkit Core API docs](https://developer.shotgunsoftware.com/tk-core/descriptor.html) for details on all available descriptor types and their settings.
+See [the Descriptor section of the Toolkit Core API docs](https://developer.shotgridsoftware.com/tk-core/descriptor.html) for details on all available descriptor types and their settings.
 
 ### The apps block
 
@@ -345,7 +345,7 @@ Note that if the settings for `tk-multi-workfiles2` were coming from an included
 * [Toolkit Basics Guide: Editing a pipeline configuration](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)
 * [Toolkit Basics Guide: Adding an app](../../guides/pipeline-integrations/getting-started/installing_app.md)
 * [Animation pipeline tutorial](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
-* [Descriptor reference documentation](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
+* [Descriptor reference documentation](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
 * [Webinar: Toolkit administration](https://youtu.be/7qZfy7KXXX0)
 * [File system configuration reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference)
 * [Default Configuration environment structure README](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

@@ -39,11 +39,11 @@ A Toolkit app can be defined as follows:
 - Apps usually have a graphical user interface with which the user can guide the app's operations, but they don't have to. An app can also be a command registered with the integrations, triggered by the user from the {% include product %} menu in the host software.
 - They can have an API/public methods in which other processes or apps could interact.
 - They can be multi-platform, and software agnostic.
-- They can be set up to be configured differently per [environment](https://developer.shotgunsoftware.com/487a9f2c/?title=Environment+Configuration+Reference#what-is-an-environment).
+- They can be set up to be configured differently per [environment](https://developer.shotgridsoftware.com/487a9f2c/?title=Environment+Configuration+Reference#what-is-an-environment).
 - They can be contextually aware. For example, an app can know the task the user is working on, and act accordingly.
 - They can only be run from a Toolkit engine.
 
-Toolkit apps are initialized by Toolkit engines. [Engines](https://developer.shotgunsoftware.com/tk-core/platform.html#engines) are designed to run within a specific software environment, where they then provide an interface from which to run Toolkit apps. The engine abstracts away the complexity of needing to handle the various software environments from the app.
+Toolkit apps are initialized by Toolkit engines. [Engines](https://developer.shotgridsoftware.com/tk-core/platform.html#engines) are designed to run within a specific software environment, where they then provide an interface from which to run Toolkit apps. The engine abstracts away the complexity of needing to handle the various software environments from the app.
 This means the app only needs to focus on providing the functionality to fulfill its purpose and doesn't need to, for example, handle window parenting, keeping track of the user's context, or providing a shortcut for launching itself.
 
 ## Creating your own app.
@@ -76,9 +76,9 @@ For example, can your app only run when you know the task the user is working on
 Knowing this will dictate which environment YAMLs and engines you need to add your app settings to.
 
 If you're not sure right now, it's a good idea to start by adding it to the `tk-shell` engine in the project environment. 
-That way you can [run it from your IDE](./sgtk-developer-bootstrapping.md) or via the command line with the tank command if you have a [centralized config](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations). This will make it quicker to develop with.
+That way you can [run it from your IDE](./sgtk-developer-bootstrapping.md) or via the command line with the tank command if you have a [centralized config](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations). This will make it quicker to develop with.
 
-To start, use a [dev descriptor](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk) for the location of your app.
+To start, use a [dev descriptor](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk) for the location of your app.
 
 ```yaml
 tk-multi-starterapp:
@@ -127,7 +127,7 @@ save_template:
     allows_empty: False
 ```
 Creating a setting for this means you don't have to hard code the template name in your app code, 
-and [can instead get the value](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting) 
+and [can instead get the value](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting) 
 from the settings defined either by default in the `info.yml` or overridden in the environment YAML file settings.
 
 ```python
@@ -135,7 +135,7 @@ template = app.get_setting("save_template")
 ```
 This means that you could configure your app to use a different template depending on the environment the app is running in.
 
-You can read more on configuration settings [in the reference documentation](https://developer.shotgunsoftware.com/tk-core/platform.html#the-configuration-section).
+You can read more on configuration settings [in the reference documentation](https://developer.shotgridsoftware.com/tk-core/platform.html#the-configuration-section).
 
 ### Frameworks
 
@@ -166,8 +166,8 @@ When the app is updated using `tank updates`, any configured frameworks not meet
 
 For more information about frameworks and how they can be useful, check out the following links:
 
-- [The Qt Widgets Framework](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/)
-- [The {% include product %} utils Framework](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/)
+- [The Qt Widgets Framework](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/)
+- [The {% include product %} utils Framework](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)
 
 ### Reloading your changes
 
@@ -206,9 +206,9 @@ Whenever the updates command is run and a new version is available, Toolkit will
 
 There are a few different options for sourcing your app releases.
 
-- [Git](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) and [GitHub](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
-- [{% include product %} Uploads](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
-- [Local paths](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
+- [Git](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) and [GitHub](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
+- [{% include product %} Uploads](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
+- [Local paths](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
 
 In your production config, you add your app and switch to using the descriptor that suits your needs.
 
@@ -229,7 +229,7 @@ Once you have created your first tag in git (eg. `v1.0.0`), you could then set u
 Then you can simply run `tank updates`, and if new tags have been created, you will be prompted if you want to upgrade. 
 The workflow is now identical to the one which happens with official app store apps.
 
-{% include warning title="Caution" content="The git descriptor works well with [centralized configs](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), where the caching of apps is usually run by an admin and is stored to a central location where all users can access it. However, if you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations), then it may not be as suitable. Your app will be downloaded per user, which means each user will need to have git installed and setup to authenticate with your repo and access the code." %}
+{% include warning title="Caution" content="The git descriptor works well with [centralized configs](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations), where the caching of apps is usually run by an admin and is stored to a central location where all users can access it. However, if you are using a [distributed config](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations), then it may not be as suitable. Your app will be downloaded per user, which means each user will need to have git installed and setup to authenticate with your repo and access the code." %}
 
 ## Modifying an existing app
 Rather than starting from an empty starter template, it is sometimes necessary to add a minor feature to an existing app, for example, one of {% include product %} Software's standard apps. 

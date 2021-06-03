@@ -144,11 +144,11 @@ Web フックの URL に送信されるペイロードには、{% include produc
 
 ##### セッション UUID
 
-{% include product %} でイベントをトリガした `session_uuid` が、イベント ペイロードの一部として提供されます。この値を [{% include product %} の Python API](https://developer.shotgunsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) に提供して、この session_uuid を持つ、開いている任意のブラウザ セッションに、この API によって生成されたイベントの最新情報を表示することができます。
+{% include product %} でイベントをトリガした `session_uuid` が、イベント ペイロードの一部として提供されます。この値を [{% include product %} の Python API](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) に提供して、この session_uuid を持つ、開いている任意のブラウザ セッションに、この API によって生成されたイベントの最新情報を表示することができます。
 
 ### 確認応答
 
-配信を更新して確認応答を含めることができます。配信時に、要求の一部としてヘッダが提供されます。これらのヘッダには、`x-sg-delivery-id` キーに格納されている配信レコードの ID が含まれます。この ID を使用すると、[{% include product %} REST API](https://developer.shotgunsoftware.com/rest-api) で配信レコードを更新し、確認応答を含めることができます。
+配信を更新して確認応答を含めることができます。配信時に、要求の一部としてヘッダが提供されます。これらのヘッダには、`x-sg-delivery-id` キーに格納されている配信レコードの ID が含まれます。この ID を使用すると、[{% include product %} REST API](https://developer.shotgridsoftware.com/rest-api) で配信レコードを更新し、確認応答を含めることができます。
 
 {% include warning title="確認応答のサイズ" content="確認応答に割り当てられた最大サイズは 4 KB です。" %}
 

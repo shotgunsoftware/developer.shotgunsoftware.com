@@ -7,7 +7,7 @@ lang: ja
 
 # パイプライン設定を新しい場所に移動するにはどうすればいいですか?
 
-{% include info title="注" content="このドキュメントのコンテンツは[一元管理設定のセットアップ](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)にのみ適用されます。[分散設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)は個々のクライアント マシンにローカルにキャッシュされ、Toolkit によって自動的に管理されます。" %}
+{% include info title="注" content="このドキュメントのコンテンツは[一元管理設定のセットアップ](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)にのみ適用されます。[分散設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)は個々のクライアント マシンにローカルにキャッシュされ、Toolkit によって自動的に管理されます。" %}
 
 パイプライン設定を新しい場所に簡単に移動するには、`tank move_configuration` コマンドを使用します。これにより、ファイルを移動したり、{% include product %} を更新したり、新しい場所を指すように設定ファイルを更新したりします。 
 

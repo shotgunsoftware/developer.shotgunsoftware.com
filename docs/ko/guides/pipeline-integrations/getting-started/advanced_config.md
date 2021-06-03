@@ -131,7 +131,7 @@ lang: ko
 
 ![프로젝트 폴더](./images/advanced_config/14_project_folder_name.png)
 
-툴킷은 파이프라인 구성이 {% include product %}에 업로드되고 각 사용자에 대해 로컬로 캐시되는 분산 설정이나 사용자가 디스크에서 공유된 위치에 있는 단일 구성에 액세스하는 중앙 집중식 설정에서도 작동할 수 있습니다. 이 연습에서는 중앙 집중식 설정을 사용하겠습니다. [분산 설정에 대한 자세한 내용은 여기서 확인할 수 있습니다](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations).
+툴킷은 파이프라인 구성이 {% include product %}에 업로드되고 각 사용자에 대해 로컬로 캐시되는 분산 설정이나 사용자가 디스크에서 공유된 위치에 있는 단일 구성에 액세스하는 중앙 집중식 설정에서도 작동할 수 있습니다. 이 연습에서는 중앙 집중식 설정을 사용하겠습니다. [분산 설정에 대한 자세한 내용은 여기서 확인할 수 있습니다](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations).
 
 마지막 단계에서는 프로젝트와 관련된 구성을 생성하기 위해 적합한 폴더, 파일 및 데이터를 생성합니다.
 
@@ -180,7 +180,7 @@ lang: ko
 
 ### 파이프라인 구성의 클라우드 배포
 
-이 안내서에서는 공유 네트워크 위치에 있으면서 모든 사용자가 액세스하게 되는 파이프라인 구성의 단일 사본인 **중앙 집중식 구성**을 생성하는 과정을 살펴봅니다. 하지만 작업 인력이 여러 위치 및 네트워크에 분산되어 있는 경우 파이프라인 구성의 단일 사본을 공유하는 것이 가능하지 않을 수 있습니다. 이 시나리오의 툴킷을 사용하면 **분산 구성** 옵션을 통해 파이프라인 구성을 {% include product %}에 업로드할 수 있으며 사용자가 프로젝트에 액세스할 때마다 구성이 다운로드되고 로컬로 캐시됩니다. [Core API 개발자 문서](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)에서 분산 구성에 대한 자세한 내용을 알아볼 수 있습니다.
+이 안내서에서는 공유 네트워크 위치에 있으면서 모든 사용자가 액세스하게 되는 파이프라인 구성의 단일 사본인 **중앙 집중식 구성**을 생성하는 과정을 살펴봅니다. 하지만 작업 인력이 여러 위치 및 네트워크에 분산되어 있는 경우 파이프라인 구성의 단일 사본을 공유하는 것이 가능하지 않을 수 있습니다. 이 시나리오의 툴킷을 사용하면 **분산 구성** 옵션을 통해 파이프라인 구성을 {% include product %}에 업로드할 수 있으며 사용자가 프로젝트에 액세스할 때마다 구성이 다운로드되고 로컬로 캐시됩니다. [Core API 개발자 문서](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)에서 분산 구성에 대한 자세한 내용을 알아볼 수 있습니다.
 
 ### 둘 이상의 루트 폴더 사용
 

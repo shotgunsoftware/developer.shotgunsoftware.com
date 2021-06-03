@@ -38,7 +38,7 @@ An engine typically handles or provides the following services:
 - The base class exposes various init and destroy methods that are executed at various points in the startup process. These can be overridden to control startup and shutdown execution.
 - Startup logic that gets called by the `tk-multi-launchapp` at launch time, as well as automatic software discovery.
 
-Engines are launched by the Toolkit platform using the [`sgtk.platform.start_engine()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.start_engine)  or the [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) methods. 
+Engines are launched by the Toolkit platform using the [`sgtk.platform.start_engine()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.start_engine)  or the [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) methods. 
 This command will read the configuration files, launch the engines, load all apps, etc.
 The goal with the engine is that once it has launched, it will provide a consistent Python/Qt interface to the apps. 
 Since all engines implement the same base class, apps can call methods on the engines, for example, to create UIs. 
@@ -112,7 +112,7 @@ The window parenting is important to provide a consistent experience and without
 ## Startup behavior
 The engine is also responsible for handling how the software is launched and its integration is started. 
 This logic will be called when the `tk-multi-launchapp` tries to launch the software with your engine.
-You can read more about how this is set up in the [core documentation](https://developer.shotgunsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software).
+You can read more about how this is set up in the [core documentation](https://developer.shotgridsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software).
 
 ## Host software wish list
 The following host software traits can be taken advantage of by Toolkit engines. 

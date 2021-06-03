@@ -40,7 +40,7 @@ To use this guide and install a Toolkit app, the following is required:
 
 Apps that are referenced in pipeline configurations can be sourced from various locations. The apps that are standard in the Default Configuration are sourced from the {% include product %} App Store. The files in a pipeline configuration specify how {% include product %} integrations access an app, kind of like asking Toolkit, “Can you look in your little black book for the address of the Python Console App?” The pipeline configuration files tell Toolkit where to find the bundles of code that are utilized for a specific app.
 
-The “addresses” for Toolkit Apps are listed in the `config/env/includes/app_locations.yml` file in the Default Configuration and specify how to find the code. These “addresses” are called [descriptors](https://developer.shotgunsoftware.com/tk-core/descriptor.html). The {% include product %} integrations need to be told not only how to find the code bundles for the app, but also in what environment(s) to use the app.
+The “addresses” for Toolkit Apps are listed in the `config/env/includes/app_locations.yml` file in the Default Configuration and specify how to find the code. These “addresses” are called [descriptors](https://developer.shotgridsoftware.com/tk-core/descriptor.html). The {% include product %} integrations need to be told not only how to find the code bundles for the app, but also in what environment(s) to use the app.
 
 Below is a conceptual overview of how to install an app and how to tell a {% include product %} integration where to use it. It outlines the steps for extending the configuration, asking Toolkit to look up a descriptor, and telling {% include product %} where to use the app. These steps are detailed in this guide:
 
@@ -149,7 +149,7 @@ apps.tk-multi-pythonconsole.location:
 
 {% include info title="Note" content="If you’re using a different configuration, you may need to add the descriptor to the file." %}
 
-All apps and engines have descriptors. You can read about how descriptors work and how to set the `type:` in the [Descriptor section of our Core API docs](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types).
+All apps and engines have descriptors. You can read about how descriptors work and how to set the `type:` in the [Descriptor section of our Core API docs](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types).
 
 ## Tell Toolkit to use the descriptor
 
@@ -234,7 +234,7 @@ settings.tk-maya.project:
  
 You will notice the **Screening Room, {% include product %} Panel, and Workfiles2** app’s location identifiers are listed in a different included file and accessed differently than the **About** app. To keep things tidy, these apps were split off to the included settings folder because they have additional settings.
 
-{% include info title="Note" content="The python console app already exists in the Default Configuration, however if you are adding an app that has never been added to your configuration before or if you have changed the version of an app, and you are using a [centralized configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), then there is an additional step you need to take. Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration’s root folder, run the following command:<br/>
+{% include info title="Note" content="The python console app already exists in the Default Configuration, however if you are adding an app that has never been added to your configuration before or if you have changed the version of an app, and you are using a [centralized configuration](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations), then there is an additional step you need to take. Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration’s root folder, run the following command:<br/>
 
 On Linux or Mac:
 

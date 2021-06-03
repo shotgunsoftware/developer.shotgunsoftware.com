@@ -292,7 +292,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include info title="注意" content="您要添加的自定义非常简单并且脆弱。更保险的解决方案可能需要将已贴图角色的其他表现形式以及使用外部图像作为纹理贴图所带来的资产管理任务考虑在内。此示例只是构建实际解决方案的基础。" %}
 
-{% include info title="注意" content="您可以在[此处](https://developer.shotgunsoftware.com/tk-multi-publish2/)查看有关如何写入发布器插件的完整详细信息。" %}
+{% include info title="注意" content="您可以在[此处](https://developer.shotgridsoftware.com/tk-multi-publish2/)查看有关如何写入发布器插件的完整详细信息。" %}
 
 #### 改写 Maya 收集器
 
@@ -334,7 +334,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 这是您将添加用于收集当前会话中发现的任何网格的新方法。此方法将创建着色器发布插件（您将在后面创建）可以对其进行操作的网格项。要传入的项是将作为网格项的父项的会话项。
 
-{% include info title="注意" content="这是一种修改现有发布插件的非常有针对性的方法。要深入了解发布器的结构及其所有移动部分，请[参见开发人员文档](http://developer.shotgunsoftware.com/tk-multi-publish2/)。" %}
+{% include info title="注意" content="这是一种修改现有发布插件的非常有针对性的方法。要深入了解发布器的结构及其所有移动部分，请[参见开发人员文档](http://developer.shotgridsoftware.com/tk-multi-publish2/)。" %}
 
 现在，将下面的新方法定义添加到文件底部：
 

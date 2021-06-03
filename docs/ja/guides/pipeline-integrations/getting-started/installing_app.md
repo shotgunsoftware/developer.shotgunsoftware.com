@@ -40,7 +40,7 @@ lang: ja
 
 パイプライン設定で参照されているアプリは、さまざまな場所から取得できます。既定の設定の標準アプリは、{% include product %} アプリ ストアから取得されています。パイプライン設定内のファイルを使って、{% include product %} 統合からアプリにアクセスする方法を指定します。これはたとえば Toolkit に、「アドレス帳にある Python コンソール アプリのアドレスを調べることはできますか」と尋ねるようなものです。パイプライン設定ファイルは Toolkit に、特定のアプリで利用されているコードのバンドルの検索場所を指示します。
 
-Toolkit アプリの「アドレス」は既定の設定の `config/env/includes/app_locations.yml` ファイルにリストされていて、コードの検索方法を指定します。これらの「アドレス」は[記述子](https://developer.shotgunsoftware.com/tk-core/descriptor.html)といいます。{% include product %} の統合には、アプリのコード バンドルの検索方法だけでなく、アプリの使用環境も指示する必要があります。
+Toolkit アプリの「アドレス」は既定の設定の `config/env/includes/app_locations.yml` ファイルにリストされていて、コードの検索方法を指定します。これらの「アドレス」は[記述子](https://developer.shotgridsoftware.com/tk-core/descriptor.html)といいます。{% include product %} の統合には、アプリのコード バンドルの検索方法だけでなく、アプリの使用環境も指示する必要があります。
 
 以下に、アプリのインストール方法と、{% include product %} の統合にアプリの使用場所を指示する方法について、概念を示します。また、設定を拡張し、記述子を検索するよう Toolkit に要求して、アプリの使用場所を {% include product %} に指示する手順についても説明します。このガイドでは、次の手順について詳細に説明します。
 
@@ -149,7 +149,7 @@ apps.tk-multi-pythonconsole.location:
 
 {% include info title="注" content="別の設定を使用している場合は、その記述子をファイルに追加しなければならいことがあります。"%}
 
-すべてのアプリおよびエンジンに記述子があります。記述子の仕組みと `type:` の設定方法の詳細については、[Core API ドキュメントの記述子に関するセクション](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types)を参照してください。
+すべてのアプリおよびエンジンに記述子があります。記述子の仕組みと `type:` の設定方法の詳細については、[Core API ドキュメントの記述子に関するセクション](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types)を参照してください。
 
 ## Toolkit に記述子を使用するよう指示する
 
@@ -234,7 +234,7 @@ settings.tk-maya.project:
 
 **Screening Room、{% include product %} Panel、および Workfiles2** アプリの場所識別子は別のインクルードされたファイルにリストされていて、**About** アプリとアクセス方法が異なります。これらのアプリには追加設定があるため、情報整理しておくために、これらのアプリはインクルードされた設定フォルダに分割して配置されています。
 
-{% include info title="注" content="python コンソール アプリは既に既定の設定に存在しますが、これまでに設定に追加したことがないアプリを追加する場合、またはアプリのバージョンを変更し、[中央設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)を使用している場合は、追加の手順が必要になります。端末を開いて、クローン作成した設定の保存場所を参照します。クローン作成した設定のルート フォルダから、次のコマンドを実行します。<br/>
+{% include info title="注" content="python コンソール アプリは既に既定の設定に存在しますが、これまでに設定に追加したことがないアプリを追加する場合、またはアプリのバージョンを変更し、[中央設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)を使用している場合は、追加の手順が必要になります。端末を開いて、クローン作成した設定の保存場所を参照します。クローン作成した設定のルート フォルダから、次のコマンドを実行します。<br/>
 
 Linux または Mac の場合:
 
