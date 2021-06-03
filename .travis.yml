@@ -25,12 +25,14 @@ jobs:
       env:
         DOC_URL=https://developer.shotgunsoftware.com
         REPO_URL=shotgunsoftware/shotgunsoftware.github.io
+        CNAME=developer.shotgunsoftware.com
     - # We only want to run the second job if we are NOT in a PR.
       if: (branch == master) AND (type != pull_request)
       name: developer.shotgridsoftware.com
       env:
         DOC_URL=https://developer.shotgridsoftware.com
         REPO_URL=shotgunsoftware/shotgridsoftware.github.io
+        CNAME=developer.shotgridsoftware.com
 
 cache:
   pip: true
@@ -64,6 +66,7 @@ deploy:
   verbose: true
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
+  fqdn: $CNAME
   on:
     # only do this when on the master branch
     branch: master
