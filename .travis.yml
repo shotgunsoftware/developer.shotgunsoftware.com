@@ -26,7 +26,7 @@ jobs:
         DOC_URL=https://developer.shotgunsoftware.com
         REPO_URL=shotgunsoftware/shotgunsoftware.github.io
     - # We only want to run the second job if we are NOT in a PR.
-      if: (branch == master) AND (type != pull_request))
+      if: (branch == master) AND (type != pull_request)
       name: developer.shotgridsoftware.com
       env:
         DOC_URL=https://developer.shotgridsoftware.com
