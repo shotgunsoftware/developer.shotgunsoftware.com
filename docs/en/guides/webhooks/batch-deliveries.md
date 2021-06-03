@@ -27,7 +27,7 @@ If enabling batched deliveries, we recommend that your receiving service is desi
 
 #### Batched-deliveries Webhooks
 * timeout allowance is the maximum of: 6 seconds, or, 1 second per event in the batch.
-* throttling limits still apply: 1 minute of webhook endpoint response time per minute per shotgun site, across all webhooks.
+* throttling limits still apply: 1 minute of webhook endpoint response time per minute per ShotGrid site, across all webhooks.
 
 ## Comparison of Webhook Delivery Formats
 

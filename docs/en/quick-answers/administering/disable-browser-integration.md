@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How can I disable Shotgun Desktop's browser integration?
+title: How can I disable ShotGrid Desktop's browser integration?
 pagename: disable-browser-integration
 lang: en
 ---

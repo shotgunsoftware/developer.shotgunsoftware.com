@@ -61,7 +61,7 @@ If you would like to use debug logging temporarily for a session instead, you ca
 
 Then, launch the Desktop through your terminal.
 
-{% include info title="Note" content="Once you close Shotgun Desktop and your terminal, debug logging is no longer turned on." %}
+{% include info title="Note" content="Once you close ShotGrid Desktop and your terminal, debug logging is no longer turned on." %}
 
 
 
@@ -97,7 +97,7 @@ engines:
 
 Save the file and relaunch Nuke in the shot step environment. You will now see the debug output in the script editor window. 
 
-{% include info title="Note" content="If debug logging is enabled via any one of the Shotgun Desktop checkbox, environment variable, or engine configuration setting, debug logging will be output. Additionally, each of these three is modified independently of the others: the checkbox value a persistent app setting, totally independent of the engine setting or environment variable. This means that while the Desktop checkbox may be unchecked, debug logging might still be enabled by way of one of the other methods." %}
+{% include info title="Note" content="If debug logging is enabled via any one of the ShotGrid Desktop checkbox, environment variable, or engine configuration setting, debug logging will be output. Additionally, each of these three is modified independently of the others: the checkbox value a persistent app setting, totally independent of the engine setting or environment variable. This means that while the Desktop checkbox may be unchecked, debug logging might still be enabled by way of one of the other methods." %}
 
 ### Turning on debug logging for the tank command
 

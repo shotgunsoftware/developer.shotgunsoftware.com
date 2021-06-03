@@ -35,7 +35,7 @@ name = "foreground"
 
 # initialize an API object. If you have used the Toolkit folder creation
 # to create the folders where the published file resides, you can use this path
-# to construct the API object. Alternatively you can create it from any Shotgun
+# to construct the API object. Alternatively you can create it from any ShotGrid
 # entity using the sgtk_from_entity() method.
 tk = sgtk.sgtk_from_path(file_to_publish)
 
@@ -46,13 +46,13 @@ tk = sgtk.sgtk_from_path(file_to_publish)
 ctx = tk.context_from_path(file_to_publish)
 
 # alternatively, if the file you are trying to publish is not in a location that is
-# recognized by toolkit, you could create a context directly from a Shotgun entity instead:
+# recognized by toolkit, you could create a context directly from a ShotGrid entity instead:
 ctx = tk.context_from_entity("Shot", 123)
 ctx = tk.context_from_entity("Task", 123)
 
 # Finally, run the publish command.
 # the third parameter (file.nk) is typically the file name, without a version number.
-# this makes grouping inside of Shotgun easy. The last parameter is the version number.
+# this makes grouping inside of ShotGrid easy. The last parameter is the version number.
 sgtk.util.register_publish(
   tk,
   ctx,

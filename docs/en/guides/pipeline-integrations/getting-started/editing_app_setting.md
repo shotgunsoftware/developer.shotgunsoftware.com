@@ -24,7 +24,7 @@ The exercises in this guide will teach you how to find what configuration settin
  
 To use this guide and perform an edit on a pipeline configuration, the following is required:
 
-1. An active [{% include product %}](https://www.shotgunsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) site.
+1. An active [{% include product %}](https://www.shotgridsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) site.
 2. A project with at least one asset. You can add an asset to the_other_side project you created in the first guide. You can review how to create an asset for a project in the [Getting started with configurations](./advanced_config.md) guide.
 3. A pipeline configuration for the identified project, or complete the [Getting started with configurations](./advanced_config.md) guide and use the configuration created in that exercise.
 4. Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
@@ -113,7 +113,7 @@ Look under the **Configuration** header to find the settings for this specific e
 
 ![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png)
 
-{% include info title="Note" content="After the setting **my_tasks_filters** is a setting **launch_at_startup**. This is important to note because it’s the default setting for the **File Open** setting in the project environment. This tells you that when Maya is launched from Shotgun Desktop, the **File Open** dialog automatically opens." %}
+{% include info title="Note" content="After the setting **my_tasks_filters** is a setting **launch_at_startup**. This is important to note because it’s the default setting for the **File Open** setting in the project environment. This tells you that when Maya is launched from ShotGrid Desktop, the **File Open** dialog automatically opens." %}
 
 Scroll down to **Setting allow_task_creation**. The default value of this setting is **True**, allowing a user to create a new task while in the Maya project environment.
 

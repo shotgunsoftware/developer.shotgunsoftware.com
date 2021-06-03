@@ -111,7 +111,7 @@ authenticator.clear_default_user()
 # information.
 user = authenticator.get_user()
 
-# Tells Toolkit which user to use for connecting to Shotgun. Note that this should
+# Tells Toolkit which user to use for connecting to ShotGrid. Note that this should
 # always take place before creating an `Sgtk` instance.
 sgtk.set_authenticated_user(user)
 ```
@@ -128,11 +128,11 @@ authenticator = sgtk.authentication.ShotgunAuthenticator()
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>",
+ api_key="4e48f....<use the key from your ShotGrid site>",
  host="https://yoursite.shotgunstudio.com"
 )
 
-# Tells Toolkit which user to use for connecting to Shotgun.
+# Tells Toolkit which user to use for connecting to ShotGrid.
 sgtk.set_authenticated_user(user)
 ```
 
@@ -242,11 +242,11 @@ authenticator = sgtk.authentication.ShotgunAuthenticator()
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>",
+ api_key="4e48f....<use the key from your ShotGrid site>",
  host="https://yoursite.shotgunstudio.com"
 )
 
-# Tells Toolkit which user to use for connecting to Shotgun.
+# Tells Toolkit which user to use for connecting to ShotGrid.
 sgtk.set_authenticated_user(user)
 
 # Bootstrap
@@ -345,11 +345,11 @@ authenticator = sgtk.authentication.ShotgunAuthenticator()
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>",
+ api_key="4e48f....<use the key from your ShotGrid site>",
  host="https://yoursite.shotgunstudio.com"
 )
 
-# Tells Toolkit which user to use for connecting to Shotgun.
+# Tells Toolkit which user to use for connecting to ShotGrid.
 sgtk.set_authenticated_user(user)
 
 # Bootstrap

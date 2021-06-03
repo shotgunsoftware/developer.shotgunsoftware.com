@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 我已从 Shotgun Desktop 启动 Nuke/Maya 等，但 Shotgun 菜单中缺少相关条目
+title: 我已从 ShotGrid Desktop 启动 Nuke/Maya 等，但 ShotGrid 菜单中缺少相关条目
 pagename: menu-entries-missing-in-launched-dcc
 lang: zh_CN
 ---

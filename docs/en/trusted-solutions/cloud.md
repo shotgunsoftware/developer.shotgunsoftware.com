@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun in the Cloud
+title: ShotGrid in the Cloud
 pagename: cloud-index
 lang: en
 ---

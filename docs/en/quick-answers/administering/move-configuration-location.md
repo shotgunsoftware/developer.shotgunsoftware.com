@@ -165,7 +165,7 @@ If you've already started moving things manually and are stuck, here's a rundown
 
 3. Locate the corresponding PipelineConfiguration entity in {% include product %} for this project and modify the Linux Path, Mac Path, and Windows Path field values to match the changes you made above.
 
-![Pipeline Configuration locations in Shotgun.](images/new-pipeline-configuration-locations.png)
+![Pipeline Configuration locations in ShotGrid.](images/new-pipeline-configuration-locations.png)
 
 Now your pipeline configuration should work as expected from the new location.
 

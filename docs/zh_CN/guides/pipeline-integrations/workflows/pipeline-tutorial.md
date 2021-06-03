@@ -19,7 +19,7 @@ lang: zh_CN
 
 为了简单起见，这里使用的数字内容创作 (DCC) 软件将尽可能最少，并且仅限于 Maya 和 Nuke。还是为了简单，工作流各个工序之间传递的数据仅限 Maya ASCII 文件、Alembic 缓存和渲染的图像序列。
 
-{% include info title="注意" content="本教程中概述的简单工作流尚未在实际制作活动中进行测试，因此应仅作为示例来讲解如何构建基于 Shotgun 的工作流。" %}
+{% include info title="注意" content="本教程中概述的简单工作流尚未在实际制作活动中进行测试，因此应仅作为示例来讲解如何构建基于 ShotGrid 的工作流。" %}
 
 ## 先决条件
 
@@ -75,7 +75,7 @@ lang: zh_CN
 
 如果任一应用程序未显示在 Desktop 中或预期版本无法启动，则可能需要在 {% include product %} 中通过软件实体手动配置启动。
 
-{% include figure src="./images/tutorial/image_4.png" caption="Shotgun 中定义的默认软件实体" %}
+{% include figure src="./images/tutorial/image_4.png" caption="ShotGrid 中定义的默认软件实体" %}
 
 软件实体用于驱动在您的制作中使用哪些 DCC 软件包。默认情况下，集成将在标准安装位置搜索这些软件包并使其可通过 Desktop 启动。如果您安装了多个版本或将它们安装在非标准位置，您可能需要在 {% include product %} 中更新相应的软件实体条目以管理您的艺术家的启动体验。
 
@@ -93,7 +93,7 @@ lang: zh_CN
 
 {% include figure src="./images/tutorial/image_5.png" caption="在 Desktop 弹出菜单中选择**“Advanced project setup...”**" %}
 
-{% include figure src="./images/tutorial/wizard_01.png" caption="选择**“Shotgun Default”**配置类型" %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="选择**“ShotGrid Default”**配置类型" %}
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="选择**“默认”(Default)**配置" %}
 
@@ -123,7 +123,7 @@ lang: zh_CN
 
 您在学习 Desktop 安装教程期间指定的配置位置记录在 {% include product %} 中，位于项目的“工作流配置”(Pipeline Configurations)页面。
 
-{% include figure src="./images/tutorial/image_10.png" caption="Shotgun 中的工作流配置实体" %}
+{% include figure src="./images/tutorial/image_10.png" caption="ShotGrid 中的工作流配置实体" %}
 
 熟悉此文件夹中的内容，以便为下一节做好准备。
 
@@ -177,7 +177,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 单击此按钮将创建一个新的空 Maya 会话，并将您的当前工作上下文设置为茶壶资产的建模任务。
 
-{%include info title="注意" content="在本教程中的任何时间，您都可以通过 Maya 或 Nuke 中的 Shotgun 菜单启动 Shotgun 面板。在此面板中，您可以查看您的项目数据，而无需离开 DCC。它将向您显示您的当前工作上下文以及该上下文中的任何最近活动。您还可以直接在该面板中为反馈添加注释。有关详细信息，请参见 [Shotgun 面板文档](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#The%20Shotgun%20Panel)。" %}
+{%include info title="注意" content="在本教程中的任何时间，您都可以通过 Maya 或 Nuke 中的 ShotGrid 菜单启动 ShotGrid 面板。在此面板中，您可以查看您的项目数据，而无需离开 DCC。它将向您显示您的当前工作上下文以及该上下文中的任何最近活动。您还可以直接在该面板中为反馈添加注释。有关详细信息，请参见 [ShotGrid 面板文档](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#The%20Shotgun%20Panel)。" %}
 
 接下来，创建一个茶壶模型，或[下载](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj) 并导入所提供的茶壶。
 
@@ -219,7 +219,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 该对话框以树的形式显示表示将发布的内容的各项。该树包含一些表示要发布的项的条目和一些表示将在发布操作过程中执行的动作的条目。
 
-在该对话框左侧，您将看到表示当前 Maya 会话的项。在它下面，您将看到**“Publish to Shotgun”**子动作。表示**“All Session Geometry”**的另一项显示为当前会话的子项。它也有**“Publish to Shotgun”**子动作。
+在该对话框左侧，您将看到表示当前 Maya 会话的项。在它下面，您将看到**“Publish to ShotGrid”**子动作。表示**“All Session Geometry”**的另一项显示为当前会话的子项。它也有**“Publish to ShotGrid”**子动作。
 
 {% include info title="注意" content="如果**“All Session Geometry”**项没有显示，请确保在 Maya 中[已启用 Alembic 导出插件](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039928#Before%20You%20Begin)。" %}
 

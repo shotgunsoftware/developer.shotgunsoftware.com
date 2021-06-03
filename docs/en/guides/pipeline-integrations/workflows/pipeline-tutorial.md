@@ -19,7 +19,7 @@ Here is a high level view of the pipeline you will build in this tutorial:
 
 For simplicity, the digital content creation (DCC) software used will be kept to a minimum and limited to Maya and Nuke. Also for the sake of simplicity, data passed between pipeline steps will be limited to Maya ascii files, Alembic caches, and rendered image sequences.
 
-{% include info title="Note" content="The simple pipeline outlined in this tutorial has not been tested on production and should only be used as an example of how a Shotgun-based pipeline could be built." %}
+{% include info title="Note" content="The simple pipeline outlined in this tutorial has not been tested on production and should only be used as an example of how a ShotGrid-based pipeline could be built." %}
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ For simplicity, the digital content creation (DCC) software used will be kept to
 
 * [{% include product %} Support Site](https://support.shotgunsoftware.com)
 
-* [{% include product %} Integrations](https://www.shotgunsoftware.com/integrations/)
+* [{% include product %} Integrations](https://www.shotgridsoftware.com/integrations/)
 
     * [User Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574)
 
@@ -75,7 +75,7 @@ Next, you'll need to ensure that Maya and Nuke are available to launch in {% inc
 
 If either application does not show up in Desktop or the expected version does not launch, you may need to manually configure the launch in {% include product %} via the Software entity. 
 
-{% include figure src="./images/tutorial/image_4.png" caption="The default Software entities defined in Shotgun" %}
+{% include figure src="./images/tutorial/image_4.png" caption="The default Software entities defined in ShotGrid" %}
 
 The Software entity is used to drive which DCC packages to use on your production. By default, the integrations will search for these packages in standard installation locations and make them launchable via Desktop. If you have more than one version installed or you have them installed in a non-standard location, it is possible you need to update the corresponding Software entity entry in {% include product %} to curate the launch experience for your artists. 
 
@@ -93,7 +93,7 @@ Use {% include product %} Desktop (Desktop) to take over your project's configur
 
 {% include figure src="./images/tutorial/image_5.png" caption="Select the **Advanced project setup…** in the Desktop popup menu" %}
 
-{% include figure src="./images/tutorial/wizard_01.png" caption="Choose the **Shotgun Default** configuration type" %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="Choose the **ShotGrid Default** configuration type" %}
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="Choose the **Default configuration**" %}
 
@@ -123,7 +123,7 @@ When you click **Run Setup** on the above screen, Desktop will begin to download
 
 The configuration location you specified during the Desktop installation tutorial is recorded in {% include product %} in the Pipeline Configurations page for your project. 
 
-{% include figure src="./images/tutorial/image_10.png" caption="The Pipeline Configuration entity in Shotgun" %}
+{% include figure src="./images/tutorial/image_10.png" caption="The Pipeline Configuration entity in ShotGrid" %}
 
 Familiarize yourself with the contents of this folder in preparation for the next section.
 
@@ -177,7 +177,7 @@ Select the Assets tab and drill down into the Teapot's modeling task. Since ther
 
 Clicking this button will create a new, empty Maya session and set your current working context to the Teapot Asset's Model task. 
 
-{%include info title="Note" content="At any time during this tutorial you can launch the Shotgun Panel via the Shotgun menu in Maya or Nuke. This panel provides a view into your project data without leaving your DCC. It will show you your current working context and any recent activity within that context. You can also add notes for feedback directly into the panel. See the [Shotgun Panel documentation](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#The%20Shotgun%20Panel) for more info." %}
+{%include info title="Note" content="At any time during this tutorial you can launch the ShotGrid Panel via the ShotGrid menu in Maya or Nuke. This panel provides a view into your project data without leaving your DCC. It will show you your current working context and any recent activity within that context. You can also add notes for feedback directly into the panel. See the [ShotGrid Panel documentation](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#The%20Shotgun%20Panel) for more info." %}
 
 Next, model a Teapot, or [download](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj) and import the provided Teapot.
 
@@ -219,7 +219,7 @@ Now that your Teapot model is ready, you need to publish it so that it can be su
 
 The dialog shows a tree of items representing what will be published. The tree includes some entries that represent the items to be published and some entries represent the actions that will be performed during the publish operation. 
 
-On the left side of the dialog you will see an item representing the current Maya session. Underneath it, you will see a **Publish to Shotgun** child action. An additional item representing **All Session Geometry** is shown as a child item of the current session. It also has a **Publish to Shotgun** child action.  
+On the left side of the dialog you will see an item representing the current Maya session. Underneath it, you will see a **Publish to ShotGrid** child action. An additional item representing **All Session Geometry** is shown as a child item of the current session. It also has a **Publish to ShotGrid** child action.  
 
 {% include info title="Note" content="If the **All Session Geometry** item doesn't show up, ensure that the [Alembic export plugin is enabled](https://support.shotgunsoftware.com/hc/en-us/articles/219039928-Publishing-Alembic-From-Maya#Before%20You%20Begin) in Maya." %}
 
@@ -628,7 +628,7 @@ At this point, you should be ready to publish your camera with the new plugin. U
 
 {% include figure src="./images/tutorial/image_45.png" %}
 
-As you can see in the image, the new camera item is collected and the publish plugin is attached. Go ahead and click **Publish** to write the camera to disk and register it with Shotgun.
+As you can see in the image, the new camera item is collected and the publish plugin is attached. Go ahead and click **Publish** to write the camera to disk and register it with ShotGrid.
 
 {% include info title="Note" content="Similarly to Alembic export, the camera publish plugin requires the FBX export plugin to be loaded.  If you don't see the camera publish plugin item, check to ensure that the FBX plugin is loaded, and re-launch the publisher." %}
 
@@ -795,7 +795,7 @@ Next up, compositing!
 
 ## Compositing Workflow
 
-In this final section of the tutorial, you will be introduced to some of the default integrations provided by Nuke. In addition to the app's you have seen in previous sections, you will learn about the Shotgun-aware Write node and an app that allows you to quickly send your renders to others for review.
+In this final section of the tutorial, you will be introduced to some of the default integrations provided by Nuke. In addition to the app's you have seen in previous sections, you will learn about the ShotGrid-aware Write node and an app that allows you to quickly send your renders to others for review.
 
 Start by following these steps to prepare your work file. 
 
@@ -816,7 +816,7 @@ Make sure your Nuke Project Settings output format matches your rendered images.
 
 Once you are happy with your comp, use the **{% include product %} > File Save…** menu action to save your work file.
 
-Next, click the {% include product %} logo in the left hand menu in Nuke. Click on one of the Shotgun-aware write nodes in that menu:
+Next, click the {% include product %} logo in the left hand menu in Nuke. Click on one of the ShotGrid-aware write nodes in that menu:
 
 {% include figure src="./images/tutorial/image_59.png" width="400px" %}
 

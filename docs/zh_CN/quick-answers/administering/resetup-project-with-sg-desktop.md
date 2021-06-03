@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 如何使用 Shotgun Desktop 来重新设置 Toolkit 项目？
+title: 如何使用 ShotGrid Desktop 来重新设置 Toolkit 项目？
 pagename: resetup-project-with-sg-desktop
 lang: zh_CN
 ---

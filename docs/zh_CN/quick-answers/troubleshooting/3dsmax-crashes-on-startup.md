@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 使用 Shotgun Toolkit 时，为什么启动时 3ds Max 发生崩溃？
+title: 使用 ShotGrid Toolkit 时，为什么启动时 3ds Max 发生崩溃？
 pagename: 3dsmax-crashes-on-startup
 lang: zh_CN
 ---

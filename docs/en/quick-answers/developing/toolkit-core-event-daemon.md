@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How can I load different Toolkit Core modules using the Shotgun Event Daemon?
+title: How can I load different Toolkit Core modules using the ShotGrid Event Daemon?
 pagename: toolkit-core-event-daemon
 lang: en
 ---

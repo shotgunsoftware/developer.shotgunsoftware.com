@@ -113,7 +113,7 @@ tk = current_engine.sgtk
 
 A lot of what happens in Toolkit revolves around context, in other words knowing what you are working on and being able to act accordingly.
 With the Toolkit API, you will need to be able to store important details about the entities you are working with, and share them with apps or other processes so they can operate in a contextually aware way.
-For example, when Toolkit knows what task you're working on, it can automatically link your published files to that task in Shotgun.
+For example, when Toolkit knows what task you're working on, it can automatically link your published files to that task in ShotGrid.
 
 The [`Context` class](https://developer.shotgridsoftware.com/tk-core/core.html#context) acts as a container for this information.
 You can store the `Task`, `Step`, `entity` (such as a `Shot` or `Asset`), `Project`, and current `HumanUser` within an instance of the class, among a few other things.
@@ -503,4 +503,4 @@ sgtk.util.register_publish(tk,
 This guide has hopefully left you with a foundational understanding of how to get started with the Toolkit API.
 There are of course many other uses for the API, so we recommend reading through the [tk-core API](https://developer.shotgridsoftware.com/tk-core/index.html) for more information.
 
-Also our [forums](https://community.shotgunsoftware.com/c/pipeline/6) are an excellent place to discuss API questions and get answers, and even leave feedback for us about the this guide.
+Also our [forums](https://community.shotgridsoftware.com/c/pipeline/6) are an excellent place to discuss API questions and get answers, and even leave feedback for us about the this guide.

@@ -23,7 +23,7 @@ This guide assumes the user:
  
 To use this guide and create a customizable configuration for your project, the following is required:
 
-1. An active {% include product %} site. You can [register for {% include product %} here](https://www.shotgunsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) and get a 30-day trial to begin exploring. 
+1. An active {% include product %} site. You can [register for {% include product %} here](https://www.shotgridsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) and get a 30-day trial to begin exploring. 
 2. {% include product %} Desktop. If Desktop is not installed, you can [begin by following this link.]( https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) 
 3. Access to a filesystem where you can store project files and a pipeline configuration. On the filesystem, create a folder called `Shotgun`, with two folders, `projects` and `configs`, within it.
 

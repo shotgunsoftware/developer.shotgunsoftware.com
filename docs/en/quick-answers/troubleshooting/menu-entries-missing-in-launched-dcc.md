@@ -1,6 +1,6 @@
 ---
 layout: default
-title: I've launched Nuke/Maya/etc. from Shotgun Desktop, but the Shotgun menu is missing entries
+title: I've launched Nuke/Maya/etc. from ShotGrid Desktop, but the ShotGrid menu is missing entries
 pagename: menu-entries-missing-in-launched-dcc
 lang: en
 ---

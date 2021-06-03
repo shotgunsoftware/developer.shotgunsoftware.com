@@ -26,7 +26,7 @@ This guide utilizes the pipeline configuration we created in the [Editing a Pipe
  
 To use this guide and install a Toolkit app, the following is required:
 
-1. An active [{% include product %}](https://www.shotgunsoftware.com/signup/) site.
+1. An active [{% include product %}](https://www.shotgridsoftware.com/signup/) site.
 2. A pipeline configuration for the identified project, or complete the [Getting Started with Configurations guide](./advanced_config.md) and use the configuration created in that exercise.
 3. Read and write permissions set appropriately for the filesystem where the pipeline configuration is stored.
 4. {% include product %} Desktop installed on your system.
@@ -115,7 +115,7 @@ Wait while {% include product %} copies all of the files and folders in the conf
 
 When completed, the Configuration List will be updated with information about the cloned configuration and there will be a new configuration added to your local config folder.
 
-{% include info title="Note" content="Under **User Restrictions** your user name was added. Shotgun automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way Shotgun allows for flexibility and control." %}
+{% include info title="Note" content="Under **User Restrictions** your user name was added. ShotGrid automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way ShotGrid allows for flexibility and control." %}
 
 ## Associate the cloned configuration with the project
 
@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 There will be a list of the available pipeline configurations that the cloned configuration can be pushed to. Enter the ID of the primary pipeline configuration for the project you are updating the configuration for.
 
-{% include info title="Note" content="You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in Shotgun that we viewed in **Step 3** of this guide. To find the project ID, go to the Configuration List and add the ID column." %}
+{% include info title="Note" content="You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in ShotGrid that we viewed in **Step 3** of this guide. To find the project ID, go to the Configuration List and add the ID column." %}
 
 ![ID column](./images/installing_app/17_id_column.png)
 
@@ -362,7 +362,7 @@ The Python Console app was added to the Project environment for the chosen proje
 
 ### The {% include product %} developer community
 
-One of the wonderful things about Toolkit is that anyone can create a Toolkit app. Apps can be kept proprietary, or they can be shared within the [{% include product %} community](https://support.shotgunsoftware.com/hc/en-us/articles/219039828), adding to the {% include product %} arsenal. If you’ve created a really stellar app you want share on the {% include product %} community page, email us at [support@shotgunsoftware.com](mailto:support@shotgunsoftware.com).
+One of the wonderful things about Toolkit is that anyone can create a Toolkit app. Apps can be kept proprietary, or they can be shared within the [{% include product %} community](https://support.shotgunsoftware.com/hc/en-us/articles/219039828), adding to the {% include product %} arsenal. If you’ve created a really stellar app you want share on the {% include product %} community page, please visit our [support site](https://support.shotgunsoftware.com) for help.
 
 Standard Toolkit apps and apps created by the loving {% include product %} community are actively discussed in the **[{% include product %}-dev Google group](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)**. The knowledge and tool base continues to grow as the {% include product %} community adds their contributions.
 
@@ -410,8 +410,8 @@ apps.tk-multi-pythonconsole.location:
 
 Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines).
 
-You can add any app to any appropriate software integration that Shotgun supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page. 
+You can add any app to any appropriate software integration that ShotGrid supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page. 
 
-If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other Shotgun users will need the same function and sharing new apps is one way to give back to the Shotgun community. 
+If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other ShotGrid users will need the same function and sharing new apps is one way to give back to the ShotGrid community. 
 
 In the next guide, you will learn how to customize your production folder structure to reflect how your facility is structured](./dynamic_filesystem_configuration.md). 

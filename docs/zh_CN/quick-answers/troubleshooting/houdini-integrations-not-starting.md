@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 为什么我的 Houdini Shotgun 集成没有启动？
+title: 为什么我的 Houdini ShotGrid 集成没有启动？
 pagename: houdini-integrations-not-starting
 lang: zh_CN
 ---
@@ -27,7 +27,7 @@ Houdini 从 {% include product %} 启动时，启动应用逻辑会将 {% includ
 
 这允许 {% include product %} 将值设置为在 Houdini 启动时继续存在。
 
-{% include warning title="注意" content="在 Windows 上我们已经看到是 `$HOUDINI_PATH` 导致问题。有时会尝试引导 Shotgun 集成多次，导致生成如下所示的错误：
+{% include warning title="注意" content="在 Windows 上我们已经看到是 `$HOUDINI_PATH` 导致问题。有时会尝试引导 ShotGrid 集成多次，导致生成如下所示的错误：
 
     Toolkit bootstrap is missing a required variable : TANK_CONTEXT
 

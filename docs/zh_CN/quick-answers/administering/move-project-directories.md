@@ -7,7 +7,7 @@ lang: zh_CN
 
 # 如何将我的项目目录移动到新的本地存储根目录？
 
-{% include warning title="注意" content="在项目进行中移动项目可能带来很多影响，甚至会超出 Shotgun Toolkit。切勿草率。" %}
+{% include warning title="注意" content="在项目进行中移动项目可能带来很多影响，甚至会超出 ShotGrid Toolkit。切勿草率。" %}
 
 有时，需要将项目文件（场景文件、渲染等）移动到新的根存储位置（例如，从 `/mnt/smalldrive` 移动到 `/mnt/bigdrive/foo`）。无论您使用的单存储配置还是多存储配置，都可以执行此操作。例如，假设要移动名为**“asset_storage”**的存储：
 

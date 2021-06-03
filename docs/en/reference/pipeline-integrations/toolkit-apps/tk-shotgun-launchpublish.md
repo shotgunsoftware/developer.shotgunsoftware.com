@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Shotgun Launch Publish
+title: ShotGrid Launch Publish
 pagename: tk-shotgun-launchpublish
 lang: en
 ---
 
-# Shotgun Launch Publish
+# ShotGrid Launch Publish
 
 This app adds an "Open in Associated Application" action to the Published File entity in {% include product %}. This makes it easy to open up an already published file: Just navigate to that file, right click on it and select the action.
 

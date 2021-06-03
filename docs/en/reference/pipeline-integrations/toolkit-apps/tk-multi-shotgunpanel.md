@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Shotgun Panel
+title: ShotGrid Panel
 pagename: tk-multi-shotgunpanel
 lang: en
 ---
 
-# Shotgun Panel
+# ShotGrid Panel
 
 This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [{% include product %} Integrations User Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-User-Guide#The%20Shotgun%20Panel) for details.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How do I re-setup a Toolkit project using Shotgun Desktop?
+title: How do I re-setup a Toolkit project using ShotGrid Desktop?
 pagename: resetup-project-with-sg-desktop
 lang: en
 ---

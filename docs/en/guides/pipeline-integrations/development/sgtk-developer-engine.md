@@ -56,7 +56,7 @@ We may also be able to connect you to other users who are interested in or have 
 If you can, open a channel of communication with a technical contact or developer of the software you are looking to integrate Toolkit into. 
 This helps gain insight into what the possibilities and/or roadblocks are for getting something going. 
 Once you establish a contact and talk through the basics of what you are trying to do, you can bring us into the conversation and set up a meeting with all of us to talk through some of the specifics of the engine.
-Also, you can engage directly with the Toolkit community in the [{% include product %} community forum](https://community.shotgunsoftware.com/c/pipeline). 
+Also, you can engage directly with the Toolkit community in the [{% include product %} community forum](https://community.shotgridsoftware.com/c/pipeline). 
 
 We love to see new integrations, and are always eternally grateful for people's generous contributions to the Toolkit Community!
 

@@ -58,7 +58,7 @@ You can then easily access your gizmo via the create node functionality:
 
 * `nuke.createNode("WriteTank")`
 
-{% include info title="Warning" content="Please note that while the use of gizmos may be convenient, it is typically NOT the right solution if you want to create nodes that persist in a scene. The reason for this is because as soon as you have put a gizmo in the scene, you have introduced a dependency between that scene and the gizmo code. Not only will you need to load the Shotgun Toolkit every time you load the scene, but you also need to carefully manage your code so that any updates to the code does not break old gizmos being used in scenes." %}
+{% include info title="Warning" content="Please note that while the use of gizmos may be convenient, it is typically NOT the right solution if you want to create nodes that persist in a scene. The reason for this is because as soon as you have put a gizmo in the scene, you have introduced a dependency between that scene and the gizmo code. Not only will you need to load the ShotGrid Toolkit every time you load the scene, but you also need to carefully manage your code so that any updates to the code does not break old gizmos being used in scenes." %}
 
 ### Apps Creating Nodes
 

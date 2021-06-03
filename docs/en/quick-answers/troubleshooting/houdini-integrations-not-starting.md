@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Why are my Houdini Shotgun integrations not starting?
+title: Why are my Houdini ShotGrid integrations not starting?
 pagename: houdini-integrations-not-starting
 lang: en
 ---

@@ -31,7 +31,7 @@ During the onboarding process, you'll have direct access to Autodesk and AWS Lea
 
 ## Onboarding Resources
 
-**{% include product %} Community:** The [{% include product %} Isolation Community](https://community.shotgunsoftware.com/c/trusted-solutions/isolation/34) forum can be used to ask questions that can be answered by either {% include product %} Experts or other isolation features users. This should be your first stop when asking general questions about isolation features, during setup and beyond.
+**{% include product %} Community:** The [{% include product %} Isolation Community](https://community.shotgridsoftware.com/c/trusted-solutions/isolation/34) forum can be used to ask questions that can be answered by either {% include product %} Experts or other isolation features users. This should be your first stop when asking general questions about isolation features, during setup and beyond.
 
 **Private Slack Channel:** During the onboarding, you will be given access to a dedicated Autodesk Slack Channel. Your {% include product %} and AWS Leaders will be available for quick feedback, answers, and ad-hoc meetings to help you progress as fast as possible with your {% include product %} Isolation setup. This channel will be available only for the onboarding period.
 

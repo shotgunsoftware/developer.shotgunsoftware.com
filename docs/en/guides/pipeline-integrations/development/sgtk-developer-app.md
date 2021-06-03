@@ -257,4 +257,4 @@ We love pull requests! If you feel you have made a change that can benefit other
 We may then fold it back into the main version of the app.
 Alternatively, add a suggestion for a new idea on our [roadmap page](https://www.shotgunsoftware.com/roadmap/).
 
-If you've made an entire app that your willing to share with the community, let us all know on the [forums](https://community.shotgunsoftware.com/)!
+If you've made an entire app that your willing to share with the community, let us all know on the [forums](https://community.shotgridsoftware.com/)!
