@@ -362,7 +362,7 @@ The Python Console app was added to the Project environment for the chosen proje
 
 ### The {% include product %} developer community
 
-One of the wonderful things about Toolkit is that anyone can create a Toolkit app. Apps can be kept proprietary, or they can be shared within the [{% include product %} community](https://support.shotgunsoftware.com/hc/en-us/articles/219039828), adding to the {% include product %} arsenal. If you’ve created a really stellar app you want share on the {% include product %} community page, please visit our [support site](https://support.shotgunsoftware.com) for help.
+One of the wonderful things about Toolkit is that anyone can create a Toolkit app. Apps can be kept proprietary, or they can be shared within the [{% include product %} community](https://support.shotgunsoftware.com/hc/en-us/articles/219039828), adding to the {% include product %} arsenal. If you’ve created a really stellar app you want share on the {% include product %} community page, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
 Standard Toolkit apps and apps created by the loving {% include product %} community are actively discussed in the **[{% include product %}-dev Google group](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)**. The knowledge and tool base continues to grow as the {% include product %} community adds their contributions.
 

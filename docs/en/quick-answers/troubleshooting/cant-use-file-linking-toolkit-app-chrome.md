@@ -60,7 +60,7 @@ After confirming that you want to regenerate the certificates, a series of dialo
 
 Once {% include product %} Desktop is back up and running, we recommend you restart Chrome by typing [chrome://restart](chrome://restart/) in the address bar to ensure that Chrome is completely shut down and that its certificate cache is cleared.
 
-If your computer is not connected to the Internet and can’t download the updates, please visit our [support site](https://support.shotgunsoftware.com) for help.
+If your computer is not connected to the Internet and can’t download the updates, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
 ## Fixing NET::ERR_CERT_AUTHORITY_INVALID on Windows
 

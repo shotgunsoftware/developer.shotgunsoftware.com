@@ -7,7 +7,7 @@ lang: en
 
 # Community Shared Integrations
 
-Here are projects that people in the Toolkit community have been gracious enough to share. They aren't written by us at {% include product %} and we can't vouch for them, but we'll definitely answer any questions we can about them. If you have a project you want added to the list, please visit our [support site](https://support.shotgunsoftware.com) for help.
+Here are projects that people in the Toolkit community have been gracious enough to share. They aren't written by us at {% include product %} and we can't vouch for them, but we'll definitely answer any questions we can about them. If you have a project you want added to the list, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
 ### Engines
 

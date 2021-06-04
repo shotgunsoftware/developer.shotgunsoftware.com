@@ -144,7 +144,7 @@ It should be noted that log rotation is a feature of the {% include product %} d
 <a id="Common_Errors"></a>
 ## Common Errors
 
-The following are a few of the common errors that you can run into and how to resolve them. If you get really stuck, please visit our [support site](https://support.shotgunsoftware.com) for help.
+The following are a few of the common errors that you can run into and how to resolve them. If you get really stuck, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
 ### Invalid path: $PLUGIN_PATHS$
 

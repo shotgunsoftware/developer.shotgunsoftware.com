@@ -54,4 +54,4 @@ Now save the file.
 
 Then, open `config/env/includes/app_launchers.yml` in your pipeline configuration and find the `launch_3dsmax` entry. You should replace `hook_before_app_launch: default` to `hook_before_app_launch: '{config}/before_app_launch.py'`.
 
-You should now be able to launch 3ds Max correctly from {% include product %} and {% include product %} Desktop. If you still have any issues, please visit our [support site](https://support.shotgunsoftware.com) for help.
+You should now be able to launch 3ds Max correctly from {% include product %} and {% include product %} Desktop. If you still have any issues, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
