@@ -60,7 +60,7 @@ the Flame engine documentation where we also have some video content that demons
 
 LINKBOX_ENGINE:{% include product %}software/tk-flame:The Flame Engine
 
-As always, if you have question regarding integration or customization, don't hesitate to reach out to our Support: toolkitsupport@shotgunsoftware.com
+As always, if you have question regarding integration or customization, don't hesitate to visit our [support site](https://knowledge.autodesk.com/contact-support).
 
 # Advanced Topics
 

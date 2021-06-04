@@ -51,7 +51,7 @@ There are also [engines that Toolkit Community members have built and shared bac
 
 If you have the time and resources, we encourage you to help the Toolkit Community (and yourselves) in writing a missing engine you would like to use!
 
-Before embarking on writing code, [talk to us!](toolkitsupport@shotgunsoftware.com) We can't promise anything, but we will be happy to discuss your plans with you. 
+Before embarking on writing code, [talk to us!](https://knowledge.autodesk.com/contact-support) We can't promise anything, but we will be happy to discuss your plans with you. 
 We may also be able to connect you to other users who are interested in or have done work on the same engine.
 If you can, open a channel of communication with a technical contact or developer of the software you are looking to integrate Toolkit into. 
 This helps gain insight into what the possibilities and/or roadblocks are for getting something going. 

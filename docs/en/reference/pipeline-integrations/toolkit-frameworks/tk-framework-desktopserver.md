@@ -90,7 +90,7 @@ whitelist=*.shotgunstudio.com
 
 On Linux the server introduces a dependency on libffi.  If Desktop crashes on startup and you see a message about libffi not found in your logs, then you need to install this package.
 
-Email support@shotgunsoftware.com with any issues or questions during setup.  If there is a problem
+Visit our [support site](https://knowledge.autodesk.com/contact-support) if you have any issues or questions during setup.  If there is a problem
 running the server, please set **debug** to **1** in the **config.ini** file and include Desktop's log
 file.
 
