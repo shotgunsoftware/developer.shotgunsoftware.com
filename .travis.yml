@@ -10,29 +10,21 @@ language: python
 python:
     - "3.8"
 
+########################### !!!!! DO NOT MERGE !!!!! ###########################
+#  This is a hack to force deployment on this branch to developer.shotgridsoftware.com
+#  It should be deleted after deployment is complete and NOT MERGED.
+
 env:
   global:
     - DOC_PATH=""
     - S3_BUCKET=sg-devdocs
     - S3_WEB_URL=http://sg-devdocs.s3-website-us-east-1.amazonaws.com
-
-jobs:
-  include:
-    # While we're deploying separately to both shotgunsoftware and
-    # shotgridsoftware gh pages, we'll need to run two travis jobs to build
-    # each site correctly.
-    - name: developer.shotgunsoftware.com
-      env:
-        DOC_URL=https://developer.shotgunsoftware.com
-        REPO_URL=shotgunsoftware/shotgunsoftware.github.io
-        CNAME=developer.shotgunsoftware.com
-    - # We only want to run the second job if we are NOT in a PR.
-      if: (branch == master) AND (type != pull_request)
-      name: developer.shotgridsoftware.com
-      env:
-        DOC_URL=https://developer.shotgridsoftware.com
-        REPO_URL=shotgunsoftware/shotgridsoftware.github.io
-        CNAME=developer.shotgridsoftware.com
+    - DOC_URL=https://developer.shotgridsoftware.com
+    - REPO_URL=shotgunsoftware/shotgridsoftware.github.io
+    - CNAME=developer.shotgridsoftware.com
+    # Simulate a merge to master to force publish
+    - TRAVIS_PULL_REQUEST=false
+    - TRAVIS_BRANCH=master
 
 cache:
   pip: true
@@ -67,6 +59,3 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   fqdn: $CNAME
-  on:
-    # only do this when on the master branch
-    branch: master
