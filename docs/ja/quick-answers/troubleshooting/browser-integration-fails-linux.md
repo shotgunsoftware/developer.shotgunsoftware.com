@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Linux で Shotgun Desktop/ブラウザ統合の起動に失敗する
+title: Linux で ShotGrid Desktop/ブラウザ統合の起動に失敗する
 pagename: browser-integration-fails-linux
 lang: ja
 ---

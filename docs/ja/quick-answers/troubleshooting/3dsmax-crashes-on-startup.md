@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun Toolkit を使用する場合、3ds Max が起動時にクラッシュするのはなぜですか?
+title: ShotGrid Toolkit を使用する場合、3ds Max が起動時にクラッシュするのはなぜですか?
 pagename: 3dsmax-crashes-on-startup
 lang: ja
 ---

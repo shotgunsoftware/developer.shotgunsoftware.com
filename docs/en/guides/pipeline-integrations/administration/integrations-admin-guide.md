@@ -372,7 +372,7 @@ There are a few possibilities for this one:
 
 1.  The websocket server has not yet finished caching actions. If this is the first time actions are being retrieved after a significant update to the project’s config, the process can take some time to complete. Wait longer, and observe the contents of  `tk-desktop.log`  to see if processing is still occurring.
     
-2.  The websocket server has failed to respond and never will. This situation should be rare, but if it becomes obvious that there is no additional processing occurring as a result of the request for actions, as seen in  `tk-desktop.log`,  [contact Shotgun support](https://support.shotgunsoftware.com/hc/en-us/requests/new), providing relevant log data.
+2.  The websocket server has failed to respond and never will. This situation should be rare, but if it becomes obvious that there is no additional processing occurring as a result of the request for actions, as seen in  `tk-desktop.log`,  [contact ShotGrid support](https://support.shotgunsoftware.com/hc/en-us/requests/new), providing relevant log data.
     
 3.  The user is working in more than one {% include product %} site. With {% include product %} Desktop authenticated against a single site, requesting menu actions from a second {% include product %} site results in the user being queried about restarting {% include product %} Desktop and logging into the new site. If that request is ignored, the second site will never receive a list of menu actions.
     

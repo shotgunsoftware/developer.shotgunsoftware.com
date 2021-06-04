@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun Desktop は Ubuntu のような Debian システムで動作しますか?
+title: ShotGrid Desktop は Ubuntu のような Debian システムで動作しますか?
 pagename: sg-desktop-run-on-ubuntu
 lang: ja
 ---

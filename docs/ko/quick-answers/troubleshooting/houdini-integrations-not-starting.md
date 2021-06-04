@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Houdini Shotgun 통합이 시작되지 않는 이유는 무엇일까요?
+title: Houdini ShotGrid 통합이 시작되지 않는 이유는 무엇일까요?
 pagename: houdini-integrations-not-starting
 lang: ko
 ---
@@ -27,7 +27,7 @@ lang: ko
 
 그러면 Houdini가 시작될 때 {% include product %} 설정 값을 유지할 수 있습니다.
 
-{% include warning title="주의" content="Windows에서 `$HOUDINI_PATH`에 문제가 발생하는 경우가 있습니다. 간혹 Shotgun 통합을 여러 번 부트스트랩하며 다음과 같은 오류가 발생합니다.
+{% include warning title="주의" content="Windows에서 `$HOUDINI_PATH`에 문제가 발생하는 경우가 있습니다. 간혹 ShotGrid 통합을 여러 번 부트스트랩하며 다음과 같은 오류가 발생합니다.
 
     툴킷 부트스트랩에 필요한 변수가 누락되어 있음: TANK_CONTEXT
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 어떻게 하면 Shotgun 이벤트 데몬을 사용하여 다른 Toolkit Core 모듈을 로드할 수 있습니까?
+title: 어떻게 하면 ShotGrid 이벤트 데몬을 사용하여 다른 Toolkit Core 모듈을 로드할 수 있습니까?
 pagename: toolkit-core-event-daemon
 lang: ko
 ---

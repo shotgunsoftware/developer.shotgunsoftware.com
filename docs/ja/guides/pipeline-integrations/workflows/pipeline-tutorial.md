@@ -19,7 +19,7 @@ lang: ja
 
 分かりやすくするため、使用するデジタル コンテンツ作成(DCC)ソフトウェアは最小構成で Maya と Nuke に限定しています。また、パイプラインの工程で渡されるデータは、Maya ASCII ファイル、Alembic キャッシュ、およびレンダリング イメージ シーケンスに限定されます。
 
-{% include info title="注" content="このチュートリアルで使用される単純なパイプラインはプロダクションのテストを受けていません。Shotgun ベースのパイプラインの作成例としてのみ使用してください。" %}
+{% include info title="注" content="このチュートリアルで使用される単純なパイプラインはプロダクションのテストを受けていません。ShotGrid ベースのパイプラインの作成例としてのみ使用してください。" %}
 
 ## 前提条件
 
@@ -75,7 +75,7 @@ lang: ja
 
 Desktop にアプリケーションが表示されない場合、または予期したバージョンが起動しない場合は、ソフトウェア エンティティを使用して {% include product %} で起動を手動で設定しなければならない可能性があります。
 
-{% include figure src="./images/tutorial/image_4.png" caption="Shotgun で定義された規定のソフトウェア エンティティ" %}
+{% include figure src="./images/tutorial/image_4.png" caption="ShotGrid で定義された規定のソフトウェア エンティティ" %}
 
 ソフトウェア エンティティは、プロダクションで使用する DCC パッケージを操作する場合に使用されます。既定では、標準のインストール場所でこれらのパッケージが検索され、Desktop を使用して起動できるようになります。複数のバージョンがインストールされている場合、または標準以外の場所にインストールされている場合は、{% include product %} の対応するソフトウェア エンティティのエントリを更新して、アーティストの起動環境を整理しなければならない可能性があります。
 
@@ -93,7 +93,7 @@ Desktop にアプリケーションが表示されない場合、または予期
 
 {% include figure src="./images/tutorial/image_5.png" caption="Desktop のポップアップ メニューで**[Advanced project setup...]**を選択する" %}
 
-{% include figure src="./images/tutorial/wizard_01.png" caption="**[Shotgun Default]（Shotgun の既定値）**設定タイプを選択する" %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="**[ShotGrid Default]（ShotGrid の既定値）**設定タイプを選択する" %}
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="**[Default configuration]（既定の設定）**を選択する" %}
 
@@ -123,7 +123,7 @@ Desktop にアプリケーションが表示されない場合、または予期
 
 Desktop インストールのチュートリアルで指定された設定場所は、{% include product %} のプロジェクトの[パイプラインの設定]（Pipeline Configurations）ページに記録されています。
 
-{% include figure src="./images/tutorial/image_10.png" caption="Shotgun のパイプラインの設定エンティティ" %}
+{% include figure src="./images/tutorial/image_10.png" caption="ShotGrid のパイプラインの設定エンティティ" %}
 
 次のセクションに備えて、このフォルダの内容を理解しておいてください。
 
@@ -177,7 +177,7 @@ Maya が完全にロードされると、[ファイルを開く]（File Open）�
 
 このボタンをクリックすると、新しい空の Maya セッションが作成されて、現在の作業コンテキストがティーポット アセットのモデル タスクに設定されます。
 
-{%include info title="注" content="このチュートリアルを使用している場合はいつでも、Maya または Nuke の Shotgun メニューを介して Shotgun Panel を起動することができます。このパネルでは、DCC を終了しなくても、プロジェクト データを表示できます。現在の作業コンテキスト、およびこのコンテキスト内の最近のアクティビティが表示されます。フィードバック用のノートをパネルに直接追加することもできます。詳細については、「[Shotgun Panel](https://support.shotgunsoftware.com/hc/ja/articles/115000068574#The%20Shotgun%20Panel)」を参照してください。" %}
+{%include info title="注" content="このチュートリアルを使用している場合はいつでも、Maya または Nuke の ShotGrid メニューを介して ShotGrid Panel を起動することができます。このパネルでは、DCC を終了しなくても、プロジェクト データを表示できます。現在の作業コンテキスト、およびこのコンテキスト内の最近のアクティビティが表示されます。フィードバック用のノートをパネルに直接追加することもできます。詳細については、「[ShotGrid Panel](https://support.shotgunsoftware.com/hc/ja/articles/115000068574#The%20Shotgun%20Panel)」を参照してください。" %}
 
 次に、ティーポットをモデリングするか、指定されたディーポットを[ダウンロード](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj)して読み込みます。
 
@@ -219,7 +219,7 @@ Maya が完全にロードされると、[ファイルを開く]（File Open）�
 
 このダイアログ ボックスには、パブリッシュされる内容を表す項目がツリー表示されます。ツリーには、パブリッシュ対象の項目を表すいくつかのエントリと、パブリッシュ操作中に実行されるアクションを表すいくつかのエントリが含まれています。
 
-ダイアログ ボックスの左側には、現在の Maya セッションを表す項目が表示されます。その下に、**[Publish to Shotgun]**子アクションが表示されます。 **すべてのセッション ジオメトリ**を表す追加項目が、現在のセッションの子項目として表示されます。**[Publish to Shotgun]**子アクションも表示されます。
+ダイアログ ボックスの左側には、現在の Maya セッションを表す項目が表示されます。その下に、**[Publish to ShotGriid]**子アクションが表示されます。 **すべてのセッション ジオメトリ**を表す追加項目が、現在のセッションの子項目として表示されます。**[Publish to ShotGrid]**子アクションも表示されます。
 
 {% include info title="注" content="**[すべてのセッション ジオメトリ]（All Session Geometry）**項目が表示されない場合は、Maya で[Alembic 書き出しプラグインが有効になっていること](https://support.shotgunsoftware.com/hc/ja/articles/219039928-Publishing-Alembic-From-Maya#Before%20You%20Begin)を確認してください。" %}
 

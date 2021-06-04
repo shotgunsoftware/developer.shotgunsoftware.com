@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Windows에서 Shotgun 데스크톱을 자동으로 설치하려면 어떻게 해야 합니까?
+title: Windows에서 ShotGrid 데스크톱을 자동으로 설치하려면 어떻게 해야 합니까?
 pagename: install-desktop-silent
 lang: ko
 ---

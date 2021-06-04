@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun 데스크톱/브라우저 통합을 Linux에서 실행할 수 없습니다
+title: ShotGrid 데스크톱/브라우저 통합을 Linux에서 실행할 수 없습니다
 pagename: browser-integration-fails-linux
 lang: ko
 ---

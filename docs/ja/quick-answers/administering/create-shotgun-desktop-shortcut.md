@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Linux で Shotgun Desktop のデスクトップ/ランチャー アイコンをセットアップするにはどうすればいいですか?
+title: Linux で ShotGrid Desktop のデスクトップ/ランチャー アイコンをセットアップするにはどうすればいいですか?
 pagename: create-shotgun-desktop-shortcut
 lang: ja
 ---

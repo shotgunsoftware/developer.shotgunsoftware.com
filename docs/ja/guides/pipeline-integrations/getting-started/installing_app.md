@@ -115,7 +115,7 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 完了すると、クローンが作成された設定の情報を使用して[パイプライン設定リスト]が更新され、ローカルな config フォルダに新しい設定が追加されます。
 
-{% include info title="注" content="**[ユーザ制限]（User Restrictions）**の下にユーザ名が追加されています。Shotgun は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、Shotgun の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
+{% include info title="注" content="**[ユーザ制限]（User Restrictions）**の下にユーザ名が追加されています。ShotGrid は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、ShotGrid の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
 
 ## クローン作成された設定にプロジェクトを関連付ける
 
@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 クローン作成した設定のプッシュ先に指定できるパイプライン設定のリストが表示されます。設定を更新しているプロジェクトのプライマリ パイプライン設定の ID を入力します。
 
-{% include info title="注" content="このガイドの「**手順 3**」に示した Shotgun の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
+{% include info title="注" content="このガイドの「**手順 3**」に示した ShotGrid の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 
@@ -410,9 +410,9 @@ apps.tk-multi-pythonconsole.location:
 
 すべてのアプリ、エンジン、およびフレームワークに、特定のバンドルのアクセス場所を Toolkit に指示するための場所の記述子が設定されています。多くのアプリ記述子が `app_locations.yml` ファイルに含まれていますが、Python コンソール アプリで確認したように、これらの記述子が必要な場所で参照されていない可能性があります。すべての標準アプリおよびエンジンは、「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページにリストされています。
 
-任意のアプリを Shotgun でサポートされている適切なソフトウェア統合に追加したり、独自のアプリケーションを Toolkit ツールに追加したりできます。サポートされているすべてのソフトウェア アプリケーションは、統合の「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページにもリストされています。
+任意のアプリを ShotGrid でサポートされている適切なソフトウェア統合に追加したり、独自のアプリケーションを Toolkit ツールに追加したりできます。サポートされているすべてのソフトウェア アプリケーションは、統合の「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページにもリストされています。
 
-探しているアプリが見つからない場合は、自分で作成できます。これを機会に、他の Shotgun ユーザにこの機能の必要性が広まる可能性があります。また、新しいアプリを共有することで、Shotgun コミュニティに恩返しができます。
+探しているアプリが見つからない場合は、自分で作成できます。これを機会に、他の ShotGrid ユーザにこの機能の必要性が広まる可能性があります。また、新しいアプリを共有することで、ShotGrid コミュニティに恩返しができます。
 
 次のガイドでは、[会社の構成方法に合わせて制作用フォルダの構成をカスタマイズする方法について学習します](./dynamic_filesystem_configuration.md)。
 

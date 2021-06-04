@@ -25,4 +25,4 @@ lang: ja
 
 ユーザのキャッシュの場所をオーバーライドするように [`{% include product %}_HOME` 環境変数](http://developer.shotgridsoftware.com/tk-core/utils.html#localfilestoragemanager)を設定している場合、ログ ファイルは次の場所にあります。`$SHOTGUN_HOME/logs`
 
-{% include info title="注" content="Shotgun Desktop からこのディレクトリにアクセスすることもできます。プロジェクトを選択し、プロジェクト名の右側にある下矢印ボタンをクリックして、**[Open Log Folder]**を選択します。"%}
+{% include info title="注" content="ShotGrid Desktop からこのディレクトリにアクセスすることもできます。プロジェクトを選択し、プロジェクト名の右側にある下矢印ボタンをクリックして、**[Open Log Folder]**を選択します。"%}

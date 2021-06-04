@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun 툴킷 사용 시 3ds Max를 시작하면 충돌 오류가 발생하는 이유는 무엇입니까?
+title: ShotGrid 툴킷 사용 시 3ds Max를 시작하면 충돌 오류가 발생하는 이유는 무엇입니까?
 pagename: 3dsmax-crashes-on-startup
 lang: ko
 ---

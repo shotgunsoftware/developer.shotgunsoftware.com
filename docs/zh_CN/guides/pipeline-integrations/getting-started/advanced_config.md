@@ -23,7 +23,7 @@ lang: zh_CN
 
 要使用本手册并为项目创建可自定义的配置，需要以下内容：
 
-1. 有效的 {% include product %} 站点。您可以[在此处注册 Shotgun](https://www.shotgunsoftware.com/zh-cn/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 并获取 30 天试用版以开始探索。
+1. 有效的 {% include product %} 站点。您可以[在此处注册 ShotGrid](https://www.shotgunsoftware.com/zh-cn/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 并获取 30 天试用版以开始探索。
 2. {% include product %} Desktop。如果未安装 Desktop，则可以[单击此链接开始。](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#Installation%20of%20Desktop)
 3. 可用于存储项目文件和工作流配置的文件系统的访问权限。在该文件系统上，创建一个名为 `Shotgun` 的文件夹，其中包含两个文件夹 `projects` 和 `configs`。
 
