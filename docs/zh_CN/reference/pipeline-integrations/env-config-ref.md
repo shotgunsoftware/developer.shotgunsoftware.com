@@ -54,7 +54,7 @@ shot_step.yml
 
 ## Toolkit 确定当前环境的方式
 
-Toolkit 使用称为 [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) 的核心挂钩来根据当前[上下文](https://developer.shotgunsoftware.com/tk-core/core.html#context)确定要在给定时间使用的环境文件。`pick_environment` 挂钩的返回值对应于环境配置文件。例如，如果 `pick_environment` 返回 `shot_step`，则 Toolkit 将使用 `config/env/shot_step.yml` 配置 Toolkit 环境。
+Toolkit 使用称为 [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) 的核心挂钩来根据当前[上下文](https://developer.shotgridsoftware.com/tk-core/core.html#context)确定要在给定时间使用的环境文件。`pick_environment` 挂钩的返回值对应于环境配置文件。例如，如果 `pick_environment` 返回 `shot_step`，则 Toolkit 将使用 `config/env/shot_step.yml` 配置 Toolkit 环境。
 
 ## 自定义环境
 
@@ -128,7 +128,7 @@ engines:
 
 `dev` 描述符的设置与 `app_store` 描述符的设置不同。虽然它可以采用其他设置，但可以直接为其设置指向应用所在磁盘位置的 `path` 设置。
 
-有关所有可用描述符类型及其设置的详细信息，请参见 [Toolkit 核心 API 文档的“描述符”部分](https://developer.shotgunsoftware.com/tk-core/descriptor.html)。
+有关所有可用描述符类型及其设置的详细信息，请参见 [Toolkit 核心 API 文档的“描述符”部分](https://developer.shotgridsoftware.com/tk-core/descriptor.html)。
 
 ### 应用块
 
@@ -343,7 +343,7 @@ engines:
 * [Toolkit 基础知识手册：编辑工作流配置](./learning-resources/guides/editing_app_setting.md)
 * [Toolkit 基础知识手册：添加应用](./learning-resources/guides/installing_app.md)
 * [动画工作流教程](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
-* [描述符参考文档](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
+* [描述符参考文档](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
 * [网络讲座：Toolkit 管理](https://youtu.be/7qZfy7KXXX0)
 * [文件系统配置参考](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868)
 * [默认配置环境结构自述文件](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

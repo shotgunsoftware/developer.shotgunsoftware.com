@@ -103,7 +103,7 @@ True
 
 发送到 Webhook URL 的有效负载包含描述在 {% include product %} 中发生的事件及其触发者的信息。它以 JSON 格式提供。
 
-{% include warning title="有效负载大小" content="交付的有效负载最大为 1 MB。Shotgun 中触发的任何导致有效负载超过 1 MB 的事件都将移除其 `new_value` 和 `old_value` 键，并添加一个 `warning` 键，其中包含消息，说明发生了什么、为什么以及如何从 Shotgun 检索完整事件日志条目。" %}
+{% include warning title="有效负载大小" content="交付的有效负载最大为 1 MB。ShotGrid 中触发的任何导致有效负载超过 1 MB 的事件都将移除其 `new_value` 和 `old_value` 键，并添加一个 `warning` 键，其中包含消息，说明发生了什么、为什么以及如何从 ShotGrid 检索完整事件日志条目。" %}
 
 ##### 有效负载示例
 
@@ -144,11 +144,11 @@ True
 
 ##### 会话 UUID
 
-事件有效负载的一部分是在 {% include product %} 中触发事件的 `session_uuid`。此值可以提供给 [{% include product %} 的 Python API](https://developer.shotgunsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)，这将导致具有该 session_uuid 的任何已打开浏览器会话为 API 生成的事件显示更新。
+事件有效负载的一部分是在 {% include product %} 中触发事件的 `session_uuid`。此值可以提供给 [{% include product %} 的 Python API](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)，这将导致具有该 session_uuid 的任何已打开浏览器会话为 API 生成的事件显示更新。
 
 ### 确认
 
-可以更新交付，使其包含确认。进行交付后，标题将作为请求的一部分提供。标题中包含交付记录的 ID（存储在 `x-sg-delivery-id` 键中）。此 ID 可以用于更新交付记录，以使用 [{% include product %} REST API](https://developer.shotgunsoftware.com/rest-api) 包含确认。
+可以更新交付，使其包含确认。进行交付后，标题将作为请求的一部分提供。标题中包含交付记录的 ID（存储在 `x-sg-delivery-id` 键中）。此 ID 可以用于更新交付记录，以使用 [{% include product %} REST API](https://developer.shotgridsoftware.com/rest-api) 包含确认。
 
 {% include warning title="确认大小" content="确认的最大允许大小为 4 KB。" %}
 

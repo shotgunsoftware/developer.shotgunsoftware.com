@@ -40,7 +40,7 @@ lang: ja
 
 パイプライン設定で参照されているアプリは、さまざまな場所から取得できます。既定の設定の標準アプリは、{% include product %} アプリ ストアから取得されています。パイプライン設定内のファイルを使って、{% include product %} 統合からアプリにアクセスする方法を指定します。これはたとえば Toolkit に、「アドレス帳にある Python コンソール アプリのアドレスを調べることはできますか」と尋ねるようなものです。パイプライン設定ファイルは Toolkit に、特定のアプリで利用されているコードのバンドルの検索場所を指示します。
 
-Toolkit アプリの「アドレス」は既定の設定の `config/env/includes/app_locations.yml` ファイルにリストされていて、コードの検索方法を指定します。これらの「アドレス」は[記述子](https://developer.shotgunsoftware.com/tk-core/descriptor.html)といいます。{% include product %} の統合には、アプリのコード バンドルの検索方法だけでなく、アプリの使用環境も指示する必要があります。
+Toolkit アプリの「アドレス」は既定の設定の `config/env/includes/app_locations.yml` ファイルにリストされていて、コードの検索方法を指定します。これらの「アドレス」は[記述子](https://developer.shotgridsoftware.com/tk-core/descriptor.html)といいます。{% include product %} の統合には、アプリのコード バンドルの検索方法だけでなく、アプリの使用環境も指示する必要があります。
 
 以下に、アプリのインストール方法と、{% include product %} の統合にアプリの使用場所を指示する方法について、概念を示します。また、設定を拡張し、記述子を検索するよう Toolkit に要求して、アプリの使用場所を {% include product %} に指示する手順についても説明します。このガイドでは、次の手順について詳細に説明します。
 
@@ -115,7 +115,7 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 完了すると、クローンが作成された設定の情報を使用して[パイプライン設定リスト]が更新され、ローカルな config フォルダに新しい設定が追加されます。
 
-{% include info title="注" content="**[ユーザ制限]（User Restrictions）**の下にユーザ名が追加されています。Shotgun は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、Shotgun の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
+{% include info title="注" content="**[ユーザ制限]（User Restrictions）**の下にユーザ名が追加されています。ShotGrid は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、ShotGrid の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
 
 ## クローン作成された設定にプロジェクトを関連付ける
 
@@ -149,7 +149,7 @@ apps.tk-multi-pythonconsole.location:
 
 {% include info title="注" content="別の設定を使用している場合は、その記述子をファイルに追加しなければならいことがあります。"%}
 
-すべてのアプリおよびエンジンに記述子があります。記述子の仕組みと `type:` の設定方法の詳細については、[Core API ドキュメントの記述子に関するセクション](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types)を参照してください。
+すべてのアプリおよびエンジンに記述子があります。記述子の仕組みと `type:` の設定方法の詳細については、[Core API ドキュメントの記述子に関するセクション](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types)を参照してください。
 
 ## Toolkit に記述子を使用するよう指示する
 
@@ -234,7 +234,7 @@ settings.tk-maya.project:
 
 **Screening Room、{% include product %} Panel、および Workfiles2** アプリの場所識別子は別のインクルードされたファイルにリストされていて、**About** アプリとアクセス方法が異なります。これらのアプリには追加設定があるため、情報整理しておくために、これらのアプリはインクルードされた設定フォルダに分割して配置されています。
 
-{% include info title="注" content="python コンソール アプリは既に既定の設定に存在しますが、これまでに設定に追加したことがないアプリを追加する場合、またはアプリのバージョンを変更し、[中央設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)を使用している場合は、追加の手順が必要になります。端末を開いて、クローン作成した設定の保存場所を参照します。クローン作成した設定のルート フォルダから、次のコマンドを実行します。<br/>
+{% include info title="注" content="python コンソール アプリは既に既定の設定に存在しますが、これまでに設定に追加したことがないアプリを追加する場合、またはアプリのバージョンを変更し、[中央設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)を使用している場合は、追加の手順が必要になります。端末を開いて、クローン作成した設定の保存場所を参照します。クローン作成した設定のルート フォルダから、次のコマンドを実行します。<br/>
 
 Linux または Mac の場合:
 
@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 クローン作成した設定のプッシュ先に指定できるパイプライン設定のリストが表示されます。設定を更新しているプロジェクトのプライマリ パイプライン設定の ID を入力します。
 
-{% include info title="注" content="このガイドの「**手順 3**」に示した Shotgun の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
+{% include info title="注" content="このガイドの「**手順 3**」に示した ShotGrid の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 
@@ -410,9 +410,9 @@ apps.tk-multi-pythonconsole.location:
 
 すべてのアプリ、エンジン、およびフレームワークに、特定のバンドルのアクセス場所を Toolkit に指示するための場所の記述子が設定されています。多くのアプリ記述子が `app_locations.yml` ファイルに含まれていますが、Python コンソール アプリで確認したように、これらの記述子が必要な場所で参照されていない可能性があります。すべての標準アプリおよびエンジンは、「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページにリストされています。
 
-任意のアプリを Shotgun でサポートされている適切なソフトウェア統合に追加したり、独自のアプリケーションを Toolkit ツールに追加したりできます。サポートされているすべてのソフトウェア アプリケーションは、統合の「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページにもリストされています。
+任意のアプリを ShotGrid でサポートされている適切なソフトウェア統合に追加したり、独自のアプリケーションを Toolkit ツールに追加したりできます。サポートされているすべてのソフトウェア アプリケーションは、統合の「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページにもリストされています。
 
-探しているアプリが見つからない場合は、自分で作成できます。これを機会に、他の Shotgun ユーザにこの機能の必要性が広まる可能性があります。また、新しいアプリを共有することで、Shotgun コミュニティに恩返しができます。
+探しているアプリが見つからない場合は、自分で作成できます。これを機会に、他の ShotGrid ユーザにこの機能の必要性が広まる可能性があります。また、新しいアプリを共有することで、ShotGrid コミュニティに恩返しができます。
 
 次のガイドでは、[会社の構成方法に合わせて制作用フォルダの構成をカスタマイズする方法について学習します](./dynamic_filesystem_configuration.md)。
 

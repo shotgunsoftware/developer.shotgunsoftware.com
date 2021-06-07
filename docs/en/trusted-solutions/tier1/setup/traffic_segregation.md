@@ -9,7 +9,7 @@ lang: en
 
 The goal is to set up an AWS PrivateLink to privately access your {% include product %} site.
 
-## Set up PrivateLink to Shotgun
+## Set up PrivateLink to ShotGrid
 
   * Ask {% include product %} support to provide you with the {% include product %} PrivateLink service name for your AWS region.
 

@@ -23,7 +23,7 @@ When you click on a command, that background python process is responsible for l
 
 ## Registering custom panels
 
-Toolkit apps which have [panel based UI](http://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel) will be automatically docked in tabs inside of Desktop when they execute. 
+Toolkit apps which have [panel based UI](http://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel) will be automatically docked in tabs inside of Desktop when they execute. 
 
 If you have a panel based app such as the {% include product %} Panel, and want it to appear as a tab in {% include product %} Desktop, just configure it to run at startup. When Desktop starts up in its site context mode (where it displays all projects), it will launch all items registered to auto start. If any of these items are panels, these will get docked. Items will be processed in the order they are defined in the configuration and this will dictate the tab order.
 

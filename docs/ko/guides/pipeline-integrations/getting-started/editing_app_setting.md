@@ -113,7 +113,7 @@ Maya와 {% include product %}이 완전히 로드되면 **파일 열기**(File O
 
 ![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png)
 
-{% include info title="참고" content="**my_tasks_filters** 설정 다음이 **launch_at_startup** 설정입니다. 프로젝트 환경에서 **파일 열기**(File Open) 설정의 기본 설정이므로 유의해야 합니다. 이는 Shotgun 데스크톱에서 Maya가 실행되면 **파일 열기**(File Open) 대화상자가 자동으로 열린다는 의미입니다." %}
+{% include info title="참고" content="**my_tasks_filters** 설정 다음이 **launch_at_startup** 설정입니다. 프로젝트 환경에서 **파일 열기**(File Open) 설정의 기본 설정이므로 유의해야 합니다. 이는 ShotGrid 데스크톱에서 Maya가 실행되면 **파일 열기**(File Open) 대화상자가 자동으로 열린다는 의미입니다." %}
 
 설정 **allow_task_creation**까지 아래로 스크롤합니다. 이 설정의 기본값은 **True**이므로 사용자가 Maya 프로젝트 환경에 있는 동안 새 태스크를 생성할 수 있습니다.
 

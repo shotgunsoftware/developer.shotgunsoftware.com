@@ -29,7 +29,7 @@ As part of our example, we’ll also edit the filenaming templates for the proje
  
 To use this guide, the following is required:
 
-1. An active [{% include product %}](https://www.shotgunsoftware.com/signup/) site. You should have a project with at least one Asset created. The asset should have a Model task. 
+1. An active [{% include product %}](https://www.shotgridsoftware.com/signup/) site. You should have a project with at least one Asset created. The asset should have a Model task. 
 2. A basic understanding of how a {% include product %} site is used to manage assets
 3. [{% include product %} Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) installed on your system.
 4. A cloned pipeline configuration for the identified project, or complete the [Getting started with configurations](./advanced_config.md) guide and clone the configuration created in that exercise.
@@ -48,7 +48,7 @@ The Toolkit platform allows you to build your folder structure dynamically by us
 
 **Templates** allow you to dynamically name and save files as they’re created using {% include product %} data and information from the schema structure. The Default Configuration provides a set of starter templates that you can edit to meet the needs of your pipeline. 
 
-{% include info title="Note" content="The Basic setup for Shotgun integrations doesn’t include filesystem management. In order to configure filesystem management for your project, your project will need an Advanced setup. The first guide, [Getting started with configurations](./advanced_config.md) goes through the Advanced setup process" %}
+{% include info title="Note" content="The Basic setup for ShotGrid integrations doesn’t include filesystem management. In order to configure filesystem management for your project, your project will need an Advanced setup. The first guide, [Getting started with configurations](./advanced_config.md) goes through the Advanced setup process" %}
 
 ## Begin exercise
 

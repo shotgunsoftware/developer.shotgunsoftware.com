@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Windows で Shotgun Desktop をサイレント インストールするにはどうすればいいですか?
+title: Windows で ShotGrid Desktop をサイレント インストールするにはどうすればいいですか?
 pagename: install-desktop-silent
 lang: ja
 ---

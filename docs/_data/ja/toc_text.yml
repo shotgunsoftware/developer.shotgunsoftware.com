@@ -1,11 +1,11 @@
 # Translated text strings used by the table of contents
 # 
-# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
+# For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/toc/
 #
 
 rv: RV
 toolkit: Toolkit
-shotgun: Shotgun
+shotgun: ShotGrid
 quick-answers: クイック アンサー
 
 python-api: Python API
@@ -18,7 +18,7 @@ webinars: ウェビナーの録画
 
 core-api: Core API
 qt-widgets: QT ウィジェット
-shotgun-utils: Shotgun ユーティリティ
+shotgun-utils: ShotGrid ユーティリティ
 publish-api: パブリッシュ API
 app-development: アプリケーション開発
 
@@ -29,13 +29,13 @@ forums: フォーラム
 
 maya: Maya
 nuke: Nuke
-shotgun: Shotgun
-screening-room: Screening Room と Shotgun Review
+shotgun: ShotGrid
+screening-room: Screening Room と ShotGrid Review
 troubleshooting: トラブルシューティング
 extending-rv: RV の拡張
 
 other: その他
 
-shotgun-support: Shotgun サポート
+shotgun-support: ShotGrid サポート
 service-status: サービス ステータス
 new-support-request: 新しいサポート リクエスト

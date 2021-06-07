@@ -29,7 +29,7 @@ class BeforeAppLaunch(tank.Hook):
             os.environ["MY_CUSTOM_MAYA_ENV_VAR"] = "Some Maya specific setting"
 ```
 
-{% include warning title="警告" content="Shotgun で設定された環境変数を完全に再定義しないよう注意してください。
+{% include warning title="警告" content="ShotGrid で設定された環境変数を完全に再定義しないよう注意してください。
 たとえば、`NUKE_PATH` (Nuke の場合)、または `PYTHONPATH` (Maya の場合)にパスを追加する必要がある場合は、既存の値を置き換えるのではなく、そこにパスを追加するようにしてください。このための便利な方法が提供されています。
 
 ```python
@@ -41,4 +41,4 @@ tank.util.append_path_to_env_var(\"NUKE_PATH\", \"/my/custom/path\")
 
 スタジオによっては、環境変数の設定とソフトウェアの起動を処理するカスタム ラッパーが用意されている場合があります。このようなカスタム コードを使用する場合は、`Software` エンティティの[パス フィールド](https://support.shotgunsoftware.com/hc/ja/articles/115000067493-Integrations-Admin-Guide#Example:%20Add%20your%20own%20Software)が実行可能なラッパーを示すように指定すると、`tk-multi-launchapp` が代わりに実行されます。
 
-{% include warning title="警告" content="この方法を使用する場合は、Shotgun で設定された環境変数を保持するよう注意してください。そうしないと、統合が起動しなくなります。" %}
+{% include warning title="警告" content="この方法を使用する場合は、ShotGrid で設定された環境変数を保持するよう注意してください。そうしないと、統合が起動しなくなります。" %}

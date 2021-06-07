@@ -30,7 +30,7 @@ The purpose of this guide is to walk through a basic example of how you can use 
 ## Part 1: Importing sgtk
 
 The Toolkit API is contained in a python package called `sgtk`. 
-Each Toolkit configuration has its own copy of the API, which comes as part of [`tk-core`](https://developer.shotgunsoftware.com/tk-core/overview.html).
+Each Toolkit configuration has its own copy of the API, which comes as part of [`tk-core`](https://developer.shotgridsoftware.com/tk-core/overview.html).
 To use the API on a project's configuration, you must import the `sgtk` package from the configuration you wish to work with; importing it from a different configuration will lead to errors.
 
 {% include info title="Note" content="You may sometimes come across references to a `tank` package. This is the legacy name for the same thing. While both work `sgtk` is the correct name to use going forward." %}
@@ -58,9 +58,9 @@ import sgtk
 
 ## Part 2: Getting an Sgtk instance
 
-In order to start using the Toolkit API, you'll need to create an instance of the [`Sgtk`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk) class.
+In order to start using the Toolkit API, you'll need to create an instance of the [`Sgtk`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk) class.
 
-[`Sgtk`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk) is a class in the `sgtk` package that acts as the main interface to the API.
+[`Sgtk`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk) is a class in the `sgtk` package that acts as the main interface to the API.
 Once you create an instance of `Sgtk`, you will be able to do things like get a context, create folders, or access the templates.
 
 As the API documentation states, you don't create an instance of `Sgtk` directly. Here are some options for getting an `Sgtk` instance.
@@ -77,16 +77,16 @@ As the API documentation states, you don't create an instance of `Sgtk` directly
     tk = current_engine.sgtk
     ```
 
-    You can access the `Sgtk` instance through the [`Engine.sgtk`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) property.
+    You can access the `Sgtk` instance through the [`Engine.sgtk`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) property.
     
     *Note: The `Engine.sgtk` property should not be confused with or considered the same as the `sgtk` package that you imported in part 1.*
 
-2. [`sgtk.sgtk_from_entity()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity) - 
+2. [`sgtk.sgtk_from_entity()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity) - 
     If you are running in an environment where an engine hasn't already been started, you can use this method to get an `Sgtk` instance based upon an entity id.
     The entity whose id you are supplying must belong to the project that the `sgtk` API was imported from.
     *This doesn't work with distributed configs, please see the [bootstrapping guide](sgtk-developer-bootstrapping.md) for more details.*
  
-3. [`sgtk.sgtk_from_path()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path) -
+3. [`sgtk.sgtk_from_path()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path) -
     much like the `sgtk_from_entity()` except this will accept a path to a configuration or a path to or inside the project root folder, for example, a work file or shot folder.
     *This doesn't work with distributed configs, please see the [bootstrapping guide](sgtk-developer-bootstrapping.md) for more details.*
 
@@ -113,9 +113,9 @@ tk = current_engine.sgtk
 
 A lot of what happens in Toolkit revolves around context, in other words knowing what you are working on and being able to act accordingly.
 With the Toolkit API, you will need to be able to store important details about the entities you are working with, and share them with apps or other processes so they can operate in a contextually aware way.
-For example, when Toolkit knows what task you're working on, it can automatically link your published files to that task in Shotgun.
+For example, when Toolkit knows what task you're working on, it can automatically link your published files to that task in ShotGrid.
 
-The [`Context` class](https://developer.shotgunsoftware.com/tk-core/core.html#context) acts as a container for this information.
+The [`Context` class](https://developer.shotgridsoftware.com/tk-core/core.html#context) acts as a container for this information.
 You can store the `Task`, `Step`, `entity` (such as a `Shot` or `Asset`), `Project`, and current `HumanUser` within an instance of the class, among a few other things.
 
 You can create as many different context objects as you like in a given session. However, when there is an engine present, there is a concept of a single current context, which the engine keeps track of.
@@ -130,7 +130,7 @@ You access these methods through the `Sgtk` instance you created in the previous
 
 {% include info title="Note" content="To get a context from a path, you must have already created folders, which is covered in the next step of this guide." %}
 
-Instead of creating a new context however, you could [grab the current context from the engine](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), that you gathered in [part 2](#part-2-getting-an-sgtk-instance), like this:
+Instead of creating a new context however, you could [grab the current context from the engine](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), that you gathered in [part 2](#part-2-getting-an-sgtk-instance), like this:
 
 ```python
 context = current_engine.context
@@ -190,7 +190,7 @@ This fulfills two purposes.
 2. It allows Toolkit to programmatically understand your structure, derive context from it, and know where to place files.
 
 You need to ensure that the folders exist on disk so that you can resolve the path in a later step.
-You will use the [Sgtk.create_filesystem_structure()](https://developer.shotgunsoftware.com/tk-core/core.html?#sgtk.Sgtk.create_filesystem_structure) method to achieve this:
+You will use the [Sgtk.create_filesystem_structure()](https://developer.shotgridsoftware.com/tk-core/core.html?#sgtk.Sgtk.create_filesystem_structure) method to achieve this:
 
 ```python
 tk.create_filesystem_structure("Task", context.task["id"])
@@ -223,11 +223,11 @@ You've now completed all the preparation steps and are ready to move onto genera
 
 Whenever you need to know where a file should be placed or found in Toolkit you can use the templates to resolve an absolute path on disk.
 
-[Templates](https://developer.shotgunsoftware.com/tk-core/core.html#templates) are essentially tokenized strings that when you apply the context and other data to, can be resolved into filesystem paths.
+[Templates](https://developer.shotgridsoftware.com/tk-core/core.html#templates) are essentially tokenized strings that when you apply the context and other data to, can be resolved into filesystem paths.
 They are customizable via your [project's pipeline configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates), and their purpose is to provide a standardized method for working out where files should be stored. 
 
 The first thing you need to do is get a template instance for the path you wish to generate.
-Using the `Sgtk` instance you created, you can access the desired `Template` instance via the `Sgtk.templates` attribute, which is a dictionary where the keys are the template names, and the values are [`Template`](https://developer.shotgunsoftware.com/tk-core/core.html#template) instances.
+Using the `Sgtk` instance you created, you can access the desired `Template` instance via the `Sgtk.templates` attribute, which is a dictionary where the keys are the template names, and the values are [`Template`](https://developer.shotgridsoftware.com/tk-core/core.html#template) instances.
 
 ```python
 template = tk.templates["maya_shot_publish"]
@@ -248,7 +248,7 @@ fields = context.as_template_fields(template)
 
 >> {'Sequence': 'seq01_chase', 'Shot': 'shot01_running_away', 'Step': 'comp'}
 ```
-The [`Context.as_template_fields()`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk.Context.as_template_fields) method gives you a dictionary with the correct values to resolve the template keys. 
+The [`Context.as_template_fields()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Context.as_template_fields) method gives you a dictionary with the correct values to resolve the template keys. 
 However, it hasn't provided values for all the keys. The `name`, `version` and `maya_extension` are still missing.
 
 The `maya_extension` key [defines a default value](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.8/core/templates.yml#L139) in the template keys section so you don't need to provide a value for that, although you could if you wanted a value other than the default.
@@ -261,7 +261,7 @@ fields["name"] = "myscene"
 fields["version"] = 1
 ```
 
-Now you have all the fields, you're ready to resolve the template into an absolute path using [`Template.apply_fields()`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk.Template.apply_fields):
+Now you have all the fields, you're ready to resolve the template into an absolute path using [`Template.apply_fields()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Template.apply_fields):
 
 ```python
 publish_path = template.apply_fields(fields)
@@ -275,9 +275,9 @@ Although you ran the folder creation method earlier you may need to perform an a
 This can be required if, for example, your template defines folders that are not present in the schema, and so were not created in the original `create_filesystem_structure()` call.
 
 There are a couple of convenience methods you can use to do this.
-If, your code is running in a Toolkit app or hook you can use the [`Application.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) method.
-If, there is an engine present you can use [`Engine.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.ensure_folder_exists) method.
-Or if you're running code outside of an engine, there's [`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists).
+If, your code is running in a Toolkit app or hook you can use the [`Application.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) method.
+If, there is an engine present you can use [`Engine.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.ensure_folder_exists) method.
+Or if you're running code outside of an engine, there's [`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists).
 Make sure to only create the folders for the directory and not the full file path.
 You can import the [`os`](https://docs.python.org/3/library/os.html) module and run [`os.path.dirname(publish_path)`](https://docs.python.org/3/library/os.path.html#os.path.dirname) to extract the folder portion of the full file path.
 
@@ -285,7 +285,7 @@ You can import the [`os`](https://docs.python.org/3/library/os.html) module and 
 At this point you have a path, and you could use this, for example, to tell Maya to save a file there, or perhaps copy the file from a different location. 
 It's not important for the sake of this guide that you implement any behavior that actually creates a file on disk in that location.
 You can still publish the path even if there is no file there. 
-However, you can use [`sgtk.util.filesystem.touch_file()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file) to get Toolkit to create an empty file on disk.
+However, you can use [`sgtk.util.filesystem.touch_file()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file) to get Toolkit to create an empty file on disk.
 
 
 ### Bringing it all together so far
@@ -332,7 +332,7 @@ The next step is to dynamically work out the next version number rather than har
 
 There two methods you could use here. 
 
-1. Since in this particular example you are resolving a publish file, you could use the [{% include product %} API](https://developer.shotgunsoftware.com/python-api/) to query for the next available version number on `PublishedFile` entities.
+1. Since in this particular example you are resolving a publish file, you could use the [{% include product %} API](https://developer.shotgridsoftware.com/python-api/) to query for the next available version number on `PublishedFile` entities.
 2. You can scan the files on disk and work out what versions already exist, and extract the next version number. 
 This is helpful if the files you're working with aren't tracked in {% include product %} (such as work files).
 
@@ -340,7 +340,7 @@ While the first option would probably be most suitable for the example in this g
 
 ### Querying {% include product %} for the next version number.
 
-Using the {% include product %} API and the [`summarize()` method](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize) you can get the highest version number amongst the `PublishedFile` entities, that share the same name and task, and then add 1.
+Using the {% include product %} API and the [`summarize()` method](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize) you can get the highest version number amongst the `PublishedFile` entities, that share the same name and task, and then add 1.
 
 ```python
 r = sg.summarize(entity_type="PublishedFile",
@@ -388,16 +388,16 @@ def get_next_version_number(tk, template_name, fields):
 fields["version"] = get_next_version_number(tk, "maya_shot_work", fields)
 ```
 
-The [`sgtk.paths_from_template()`](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=paths_from_template#sgtk.Sgtk.paths_from_template) method will gather all the files on disk that match the provided template and fields.
+The [`sgtk.paths_from_template()`](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=paths_from_template#sgtk.Sgtk.paths_from_template) method will gather all the files on disk that match the provided template and fields.
 This is method is also useful for scenarios where you want to find and display a list of files to the user.
 
 You can chose to use either option, but the guide will use the code from option one however to keep it simple.
 
 ## Part 7: Registering a published file
 
-Now that you have a path you're ready to publish it. To do this you can use the utility method [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish).
+Now that you have a path you're ready to publish it. To do this you can use the utility method [`sgtk.util.register_publish()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.register_publish).
 
-It is possible to use the {% include product %} API's [`{% include product %}.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) method to create a `PublishedFile` entity as well, but we strongly recommend using the Toolkit API for this as it will ensure all the required fields are provided and filled in correctly.
+It is possible to use the {% include product %} API's [`{% include product %}.create()`](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) method to create a `PublishedFile` entity as well, but we strongly recommend using the Toolkit API for this as it will ensure all the required fields are provided and filled in correctly.
 
 ```python
 # So as to match the Publish app's default behavior, we are adding the extension to the end of the publish name.
@@ -414,8 +414,8 @@ sgtk.util.register_publish(tk,
                            published_file_type = "Maya Scene")
 ```
 
-At this point, it's also worth noting that our [Publish app](https://support.shotgunsoftware.com/hc/en-us/articles/115000097513-Publishing-your-work) also comes with [its own API](https://developer.shotgunsoftware.com/tk-multi-publish2/) as well.
-Although that is still essentially using this same [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) method, it builds upon the publishing process by providing a framework to handle collection, validation, and publishing.
+At this point, it's also worth noting that our [Publish app](https://support.shotgunsoftware.com/hc/en-us/articles/115000097513-Publishing-your-work) also comes with [its own API](https://developer.shotgridsoftware.com/tk-multi-publish2/) as well.
+Although that is still essentially using this same [`sgtk.util.register_publish()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) method, it builds upon the publishing process by providing a framework to handle collection, validation, and publishing.
 
 ## Part 8: The complete script
 
@@ -501,6 +501,6 @@ sgtk.util.register_publish(tk,
 ### Final Thoughts
 
 This guide has hopefully left you with a foundational understanding of how to get started with the Toolkit API.
-There are of course many other uses for the API, so we recommend reading through the [tk-core API](https://developer.shotgunsoftware.com/tk-core/index.html) for more information.
+There are of course many other uses for the API, so we recommend reading through the [tk-core API](https://developer.shotgridsoftware.com/tk-core/index.html) for more information.
 
-Also our [forums](https://community.shotgunsoftware.com/c/pipeline/6) are an excellent place to discuss API questions and get answers, and even leave feedback for us about the this guide.
+Also our [forums](https://community.shotgridsoftware.com/c/pipeline/6) are an excellent place to discuss API questions and get answers, and even leave feedback for us about the this guide.

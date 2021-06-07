@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun 데스크톱의 브라우저 통합을 어떻게 비활성화할 수 있습니까?
+title: ShotGrid 데스크톱의 브라우저 통합을 어떻게 비활성화할 수 있습니까?
 pagename: disable-browser-integration
 lang: ko
 ---

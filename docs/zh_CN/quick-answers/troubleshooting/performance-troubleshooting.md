@@ -14,7 +14,7 @@ lang: zh_CN
 - 确保您的应用、插件、框架、核心和 {% include product %} Desktop [都是最新的](#keeping-up-to-date)。
 - 确保在常规使用期间没有启用[调试日志记录](./turn-debug-logging-on.md)。
 - 仅[创建所需的文件夹](#folder-creation-is-slow)并限制文件夹，以便仅在确实需要这些文件夹时才创建它们。在数据结构中添加太多文件夹会降低速度。
-- 将用户缓存存储在服务器上可能会很慢。通过将 [`{% include product %}_HOME` 环境变量](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables)设置为指向本地驱动器上的位置，来重定向用户的 {% include product %} 缓存。
+- 将用户缓存存储在服务器上可能会很慢。通过将 [`{% include product %}_HOME` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)设置为指向本地驱动器上的位置，来重定向用户的 {% include product %} 缓存。
 - [配置 Workfiles 和加载器应用](#file-open-file-save-or-the-loader-app-is-slow)以过滤出美工人员不需要的内容。考虑按状态进行过滤，这有助于保持实体列表简短且与美工人员的当前任务相关。
 - 检查您是否有任何自定义挂钩，并且它们不会增加额外开销。
 
@@ -42,7 +42,7 @@ lang: zh_CN
 
 {% include product %} Toolkit [将数据缓存到用户的主目录](../administering/where-is-my-cache.md)。此缓存可以包括许多不同的 SQLite 数据库以及缓存的应用和配置。通常，用户的主目录存储在计算机的本地硬盘驱动器上，但是工作室将它们重定向到网络存储是相当常见的。这样做会影响性能，尤其是 SQLite 数据库，这些数据库用于浏览器集成和文件夹创建/查找等。
 
-如果您的用户目录存储在服务器位置，我们建议使用 [`{% include product %}_HOME` 环境变量](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables)重新指定 {% include product %} Toolkit 缓存的路径。`{% include product %}_HOME` 环境变量用于设置 Toolkit 缓存各种数据的位置，例如包缓存、缩略图、用于快速查找数据和其他内容的 SQLite 数据库。
+如果您的用户目录存储在服务器位置，我们建议使用 [`{% include product %}_HOME` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)重新指定 {% include product %} Toolkit 缓存的路径。`{% include product %}_HOME` 环境变量用于设置 Toolkit 缓存各种数据的位置，例如包缓存、缩略图、用于快速查找数据和其他内容的 SQLite 数据库。
 
 ### 调试
 
@@ -56,7 +56,7 @@ lang: zh_CN
 
 ### 集中式配置与分布式配置
 
-可以采用两种不同的方法设置高级 Toolkit 配置：[集中式和分布式](https://developer.shotgunsoftware.com/tk-core/initializing.html#the-toolkit-startup)。主要区别是，集中式配置通常位于工作室的网络存储中，所有用户都可以访问这些配置，分布式配置通常存储在相关服务中，并按用户在本地缓存。
+可以采用两种不同的方法设置高级 Toolkit 配置：[集中式和分布式](https://developer.shotgridsoftware.com/tk-core/initializing.html#the-toolkit-startup)。主要区别是，集中式配置通常位于工作室的网络存储中，所有用户都可以访问这些配置，分布式配置通常存储在相关服务中，并按用户在本地缓存。
 
 虽然这两种方法之间的差异超出了性能范围，但它们都会在性能方面带来一些优点和缺点。下表仅从性能角度展示了利弊。
 
@@ -72,7 +72,7 @@ lang: zh_CN
 
 {% include info title="注意" content="如果您对分布式配置感兴趣，但担心按计算机下载依赖项，则可以仅集中包缓存，以便在所有用户之间共享。" %}
 
-当使用分布式配置时，用户只需在缓存中找不到相关内容时才下载它，一旦某个用户已下载它，其他用户也能够利用它。为此，您可以在每台计算机上设置 [`{% include product %}_BUNDLE_CACHE_PATH` 环境变量](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables) 以指向共享位置。
+当使用分布式配置时，用户只需在缓存中找不到相关内容时才下载它，一旦某个用户已下载它，其他用户也能够利用它。为此，您可以在每台计算机上设置 [`{% include product %}_BUNDLE_CACHE_PATH` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables) 以指向共享位置。
 
 ## 启动软件时速度很慢
 
@@ -174,7 +174,7 @@ lang: zh_CN
 {% include info title="注意" content="工序数据结构文件夹的设置默认为 True。" %}
 
 #### 延迟创建
-[`defer_creation` 设置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Workspaces%20and%20Deferred%20Folder%20Creation)允许您将文件夹的创建限制为仅在特定插件运行时才创建文件夹，从而进一步细化何时应创建文件夹。您甚至可以使用自定义名称，然后使用 [sgtk API](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure) 触发它们的创建。
+[`defer_creation` 设置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Workspaces%20and%20Deferred%20Folder%20Creation)允许您将文件夹的创建限制为仅在特定插件运行时才创建文件夹，从而进一步细化何时应创建文件夹。您甚至可以使用自定义名称，然后使用 [sgtk API](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure) 触发它们的创建。
 
 **示例**
 

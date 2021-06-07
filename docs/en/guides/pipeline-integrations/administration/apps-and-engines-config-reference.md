@@ -83,7 +83,7 @@ Toolkit currently supports app installation and management using the following l
 -   A **dev** descriptor represents a developer sandbox
 -   A **manual** descriptor that is used for custom deployment and rollout
 
-For documentation on how to use the different descriptors, please see the [Toolkit reference documentation](http://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types).
+For documentation on how to use the different descriptors, please see the [Toolkit reference documentation](http://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types).
 
 ## Disabling Apps and Engines
 
@@ -103,4 +103,4 @@ Possible values for the  _deny_platforms_  parameter are `windows`, `linux`, and
 
 ## Settings and parameters
 
-Each app, engine or framework explicitly defines a number of settings which you can override in the configuration file. These settings are strongly typed into strings, integers, lists, etc. For details, see the [Toolkit reference documentation](http://developer.shotgunsoftware.com/tk-core/platform.html#configuration-and-info-yml-manifest).
+Each app, engine or framework explicitly defines a number of settings which you can override in the configuration file. These settings are strongly typed into strings, integers, lists, etc. For details, see the [Toolkit reference documentation](http://developer.shotgridsoftware.com/tk-core/platform.html#configuration-and-info-yml-manifest).

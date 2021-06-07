@@ -100,7 +100,7 @@ def import_sgtk(project):
 
 ## 分布式配置
 
-上述示例假设您使用的是[集中式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)，但是，如果您使用的是[分布式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)，情况可能略有不同。要为分布式配置导入 sgtk API，您需要使用[引导 API](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api)。使用引导 API 时，您通常应首先导入不以项目为中心的 sgtk API，然后使用此 sgtk API 为指定项目引导插件。引导过程将换出 sgtk 模块，以便在引导过程结束后具有插件对象。如果在引导后导入 sgtk，它将导入适合您的项目的相关 sgtk 模块。在上面的示例中，需要为多个项目加载 sgtk，因此需要针对多个项目进行引导。有一个小问题是您一次只能运行一个插件，因此您在加载其他插件之前必须将其破坏。
+上述示例假设您使用的是[集中式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)，但是，如果您使用的是[分布式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)，情况可能略有不同。要为分布式配置导入 sgtk API，您需要使用[引导 API](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api)。使用引导 API 时，您通常应首先导入不以项目为中心的 sgtk API，然后使用此 sgtk API 为指定项目引导插件。引导过程将换出 sgtk 模块，以便在引导过程结束后具有插件对象。如果在引导后导入 sgtk，它将导入适合您的项目的相关 sgtk 模块。在上面的示例中，需要为多个项目加载 sgtk，因此需要针对多个项目进行引导。有一个小问题是您一次只能运行一个插件，因此您在加载其他插件之前必须将其破坏。
 
 {% include warning title="警告" content="引导配置可能会很慢，因为此过程需要确保在本地缓存配置并且将下载所有依存关系。在事件进程插件中引导可能会严重影响性能。一种可能的方法是，针对每次项目引导添加单独 Python 实例，以便从插件进行通信和发送命令。这将避免在每次需要项目时必须重新引导它。" %}
 

@@ -23,7 +23,7 @@ So where do you go from here? Toolkit offers a lot of flexibility in terms of it
   
 # Basic Configuration  
   
-This section contains a collection of tweaks and useful things to configure. If you have just set up your very first Toolkit project, there are most likely a number of little tweaks and adjustments you need to do to get everything up and running properly. This section tries to explain these various steps. Please note that some of these things involve editing configuration files and going "under the hood" at the moment. If you have any questions about anything, don't heistate to reach out to our support on  `support@shotgunsoftware.com`!  
+This section contains a collection of tweaks and useful things to configure. If you have just set up your very first Toolkit project, there are most likely a number of little tweaks and adjustments you need to do to get everything up and running properly. This section tries to explain these various steps. Please note that some of these things involve editing configuration files and going "under the hood" at the moment. If you have any questions about anything, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
   
 ## Setting up Application Paths  
   
@@ -99,7 +99,7 @@ If the files are blank, this indicates that you are using an older version of th
   
 If you rather have installed the {% include product %} Desktop in a non-standard location or intend to use a custom python location, please ensure that the paths in the files point to a valid Python installation. It needs to be v2.6 or above (but not Python 3!). If you want to execute UI based applications and tools, please make sure that the Python you specify has either PyQt or PySide installed and is linked up to a QT v4.6 or higher.  
   
-Please also note that in order to run Toolkit on multiple operating systems, you need to specify the paths to all your desired platforms when you are running the project setup wizard. If you haven't done this, and want to add an additional operating system to a storage path or configuration location, just drop us a line on  `support@shotgunsoftware.com` and we'll be happy to walk through the steps.  
+Please also note that in order to run Toolkit on multiple operating systems, you need to specify the paths to all your desired platforms when you are running the project setup wizard. If you haven't done this, and want to add an additional operating system to a storage path or configuration location, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
   
 # Next Steps  
   

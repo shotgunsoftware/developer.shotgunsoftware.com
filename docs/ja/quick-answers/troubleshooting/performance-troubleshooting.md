@@ -14,7 +14,7 @@ Toolkit の使用速度が低下することがあります。速度が低下す
 - アプリ、エンジン、フレームワーク、コア、{% include product %} Desktop が[最新](#keeping-up-to-date)であることを確認します。
 - 一般的な用途のときに[デバッグ ログ](./turn-debug-logging-on.md)が無効になっていることを確認します。
 - [必要なフォルダのみを作成](#folder-creation-is-slow)し、フォルダ数を制限して、実際に必要な場合に限りフォルダが作成されるようにします。スキーマにフォルダを追加しすぎると、速度が低下します。
-- サーバにユーザ キャッシュを保存する、速度が低下することがあります。ユーザの {% include product %} キャッシュをリダイレクトするには、ローカル ドライブ上の場所を指定するように [ `{% include product %}_HOME`環境変数](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables)を設定します。
+- サーバにユーザ キャッシュを保存する、速度が低下することがあります。ユーザの {% include product %} キャッシュをリダイレクトするには、ローカル ドライブ上の場所を指定するように [ `{% include product %}_HOME`環境変数](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)を設定します。
 - アーティストが必要としていないコンテンツを除外するように、[作業ファイルおよびローダー アプリを設定](#file-open-file-save-or-the-loader-app-is-slow)します。ステータスを基準とするフィルタを実行して、エンティティ リストを短くし、アーティストの現在のタスクに関連するエントリが表示されるようにします。
 - カスタム フックの有無を調べて、追加のオーバーヘッドがないか確認します。
 
@@ -42,7 +42,7 @@ Toolkit の使用速度が低下することがあります。速度が低下す
 
 {% include product %} Toolkit は[データをユーザのホーム ディレクトリにキャッシュします](../administering/where-is-my-cache.md)。このキャッシュには、さまざまな SQLite データベース、およびキャッシュされたアプリと設定を含めることができます。通常、ユーザのホーム ディレクトリはマシンのローカル ハード ドライブに保存されますが、スタジオでは、ネットワーク上のストレージにこれらをリダイレクトすることが一般的に行われています。この方法の場合、パフォーマンスが低下することがあります。特に大きな影響を受けるのが、ブラウザの統合やフォルダの作成/検索に使用される SQLite データベースです。
 
-ユーザ ディレクトリがサーバ上の場所に保存されている場合は、[ `{% include product %}_HOME`環境変数](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables)を使用して、{% include product %} Toolkit のキャッシュのパスを再設定することをお勧めします。`{% include product %}_HOME` 環境変数は、データおよびその他の項目の高速検索に使用されるバンドル キャッシュ、サムネイル、SQLite データベースなど、Toolkit がさまざまなデータをキャッシュする場所を設定する際に使用されます。
+ユーザ ディレクトリがサーバ上の場所に保存されている場合は、[ `{% include product %}_HOME`環境変数](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)を使用して、{% include product %} Toolkit のキャッシュのパスを再設定することをお勧めします。`{% include product %}_HOME` 環境変数は、データおよびその他の項目の高速検索に使用されるバンドル キャッシュ、サムネイル、SQLite データベースなど、Toolkit がさまざまなデータをキャッシュする場所を設定する際に使用されます。
 
 ### デバッグ
 
@@ -56,7 +56,7 @@ Toolkit の使用速度が低下することがあります。速度が低下す
 
 ### 一元管理設定と分散設定
 
-Toolkit の詳細設定は、[一元管理設定と分散設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#the-toolkit-startup)の 2 つの方法で行うことができます。主な違いは、一元管理設定は通常、スタジオのネットワーク ストレージに配置されていて、すべてのユーザがアクセスできることです。一方、分散設定は一般にクラウド内に保存されていて、ユーザ単位でローカルにキャッシュされます。
+Toolkit の詳細設定は、[一元管理設定と分散設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#the-toolkit-startup)の 2 つの方法で行うことができます。主な違いは、一元管理設定は通常、スタジオのネットワーク ストレージに配置されていて、すべてのユーザがアクセスできることです。一方、分散設定は一般にクラウド内に保存されていて、ユーザ単位でローカルにキャッシュされます。
 
 この 2 つの方法の違いはパフォーマンス以外にもありますが、パフォーマンスに関しては長所と短所の両面があります。次の表に、純粋にパフォーマンスの観点から見た長所と短所を示します。
 
@@ -72,7 +72,7 @@ Toolkit の詳細設定は、[一元管理設定と分散設定](https://develop
 
 {% include info title="注" content="分散設定に興味はあっても、マシンごとに依存関係をダウンロードすることについて懸念を抱いている場合は、バンドル キャッシュのみを一元管理して、すべてのユーザで共有することができます。" %}
 
-分散設定を使用している場合、ユーザはキャッシュ内にまだ保存されていないデータのみダウンロードする必要があります。ユーザがデータをダウンロードすると、他のユーザもそのデータを利用できるようになります。このようにするには、共有場所を指定するように各マシンの [ `{% include product %}_BUNDLE_CACHE_PATH`環境変数](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables)を設定します。
+分散設定を使用している場合、ユーザはキャッシュ内にまだ保存されていないデータのみダウンロードする必要があります。ユーザがデータをダウンロードすると、他のユーザもそのデータを利用できるようになります。このようにするには、共有場所を指定するように各マシンの [ `{% include product %}_BUNDLE_CACHE_PATH`環境変数](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)を設定します。
 
 ## ソフトウェアの起動速度が遅い
 
@@ -173,7 +173,7 @@ Maya、Nuke、Houdini などのソフトウェアを起動するときに、{% i
 {% include info title="注" content="ステップ スキーマ フォルダの設定は、既定で true になっています。" %}
 
 #### 作成の遅延
-[ `defer_creation`設定](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Workspaces%20and%20Deferred%20Folder%20Creation)により、特定のエンジンが実行されている場合に限ってフォルダが作成されるように制限することで、フォルダの作成時期を調整することができます。カスタム名を使用し、[sgtk API](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure) を使用してこの名前のフォルダが作成されるようにすることもできます。
+[ `defer_creation`設定](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Workspaces%20and%20Deferred%20Folder%20Creation)により、特定のエンジンが実行されている場合に限ってフォルダが作成されるように制限することで、フォルダの作成時期を調整することができます。カスタム名を使用し、[sgtk API](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure) を使用してこの名前のフォルダが作成されるようにすることもできます。
 
 **例**
 

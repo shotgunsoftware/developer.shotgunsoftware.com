@@ -3,9 +3,9 @@
 
 
 
-# [developer.shotgunsoftware.com](http://developer.shotgunsoftware.com/)
+# [developer.shotgridsoftware.com](http://developer.shotgridsoftware.com/)
 
-Welcome to the source repository for [developer.shotgunsoftware.com](http://developer.shotgunsoftware.com/). This repository holds the markdown source and configuration used to generate the {% include product %} developer site.
+Welcome to the source repository for [developer.shotgridsoftware.com](http://developer.shotgridsoftware.com/). This repository holds the markdown source and configuration used to generate the {% include product %} developer site.
 
 ## How does it work?
 
@@ -23,7 +23,7 @@ For documentation on syntax and formatting guidelines, please see
 the **style guide** that comes 
 with the documentation generation system.
 
-- [tk-doc-generator style guide](https://developer.shotgunsoftware.com/tk-doc-generator/19bd79d8/?title=Introduction)
+- [tk-doc-generator style guide](https://developer.shotgridsoftware.com/tk-doc-generator/19bd79d8/?title=Introduction)
 
 ## Adding content
 

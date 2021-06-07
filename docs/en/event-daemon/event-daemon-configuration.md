@@ -144,7 +144,7 @@ It should be noted that log rotation is a feature of the {% include product %} d
 <a id="Common_Errors"></a>
 ## Common Errors
 
-The following are a few of the common errors that you can run into and how to resolve them. If you get really stuck, feel free to contact the {% include product %} Software team (support@shotgunsoftware.com) and we'll help you out.
+The following are a few of the common errors that you can run into and how to resolve them. If you get really stuck, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
 ### Invalid path: $PLUGIN_PATHS$
 
@@ -286,7 +286,7 @@ The URL for the {% include product %} server to connect to.
 server: %(SG_ED_SITE_URL)s
 ```
 
-{% include info title="Note" content="There is no default value here. Set the `SG_ED_SITE_URL` environment variable to the URL for your Shotgun server (ie. https://awesome.shotgunstudio.com)" %}
+{% include info title="Note" content="There is no default value here. Set the `SG_ED_SITE_URL` environment variable to the URL for your ShotGrid server (ie. https://awesome.shotgunstudio.com)" %}
 
 **name**
 
@@ -296,7 +296,7 @@ The {% include product %} Script name the {% include product %}EventDaemon shoul
 name: %(SG_ED_SCRIPT_NAME)s
 ```
         
-{% include info title="Note" content="There is no default value here. Set the `SG_ED_SCRIPT_NAME` environment variable to the Script name for your Shotgun server (ie. `shotgunEventDaemon`)" %}
+{% include info title="Note" content="There is no default value here. Set the `SG_ED_SCRIPT_NAME` environment variable to the Script name for your ShotGrid server (ie. `shotgunEventDaemon`)" %}
 
 **key**
 
@@ -319,7 +319,7 @@ use_session_uuid: True
 - {% include product %} server v2.3+ is required for this feature.
 - {% include product %} API v3.0.5+ is required for this feature.
 
-{% include info title="Note" content="The Shotgun UI will *only* show updates live for the browser session that spawned the original event. Other browser windows with the same page open will not see updates live." %}
+{% include info title="Note" content="The ShotGrid UI will *only* show updates live for the browser session that spawned the original event. Other browser windows with the same page open will not see updates live." %}
 
 <a id="Plugin_Settings_details"></a>
 ### Plugin Settings

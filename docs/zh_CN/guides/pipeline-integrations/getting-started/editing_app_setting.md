@@ -113,7 +113,7 @@ Toolkit 工作流配置用于自定义环境以满足您的工作流需求。工
 
 ![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png)
 
-{% include info title="注意" content="在设置 **my_tasks_filters** 之后是设置 **launch_at_startup**。这一点很重要，因为它是项目环境中**“File Open”**设置的默认设置。这告诉您，当从 Shotgun Desktop 启动 Maya 时，会自动打开**“File Open”**对话框。" %}
+{% include info title="注意" content="在设置 **my_tasks_filters** 之后是设置 **launch_at_startup**。这一点很重要，因为它是项目环境中**“File Open”**设置的默认设置。这告诉您，当从 ShotGrid Desktop 启动 Maya 时，会自动打开**“File Open”**对话框。" %}
 
 向下滚动到 **Setting allow_task_creation**。此设置的默认值为 **True**，使用户能够在处于 Maya 项目环境中时创建新任务。
 
@@ -135,7 +135,7 @@ Toolkit 工作流配置用于自定义环境以满足您的工作流需求。工
 
 **步骤 12：**显示 Maya 主窗口。
 
-**步骤 13：**在 Maya 窗口的右上角找到**“Shotgun”**菜单项。
+**步骤 13：**在 Maya 窗口的右上角找到**“ShotGrid”**菜单项。
 
 ![Maya {% include product %} 2](./images/editing_app_setting/12_Maya_Shotgun2.png)
 

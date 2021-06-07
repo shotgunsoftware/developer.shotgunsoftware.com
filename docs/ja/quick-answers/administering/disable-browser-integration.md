@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun Desktop のブラウザ統合を無効にするにはどうすればいいですか?
+title: ShotGrid Desktop のブラウザ統合を無効にするにはどうすればいいですか?
 pagename: disable-browser-integration
 lang: ja
 ---

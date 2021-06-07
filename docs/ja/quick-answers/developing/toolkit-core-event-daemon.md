@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun Event デーモンを使用してさまざまな Toolkit コア モジュールをロードするにはどうすればいいですか?
+title: ShotGrid Event デーモンを使用してさまざまな Toolkit コア モジュールをロードするにはどうすればいいですか?
 pagename: toolkit-core-event-daemon
 lang: ja
 ---
@@ -100,7 +100,7 @@ def import_sgtk(project):
 
 ## 分散設定
 
-上の例では、[一元管理設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)を使用していると想定しており、[分散設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)を使用している場合は、状況が多少異なります。分散設定用の sgtk API を読み込むには、[ブートストラップ API](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api)を使用する必要があります。ブートストラップ API を使用する場合は、通常プロジェクト中心ではない sgtk API を読み込むことから始め、それを使用して特定のプロジェクトのエンジンをブートストラップします。ブートストラップ プロセスは sgtk モジュールのスワップ アウトを処理するので、ブートストラップ プロセスの最後にはエンジン オブジェクトがあります。ブートストラップの後に sgtk を読み込むと、プロジェクトに適した適切な sgtk モジュールが読み込まれます。上記の例のように複数のプロジェクトに対して sgtk をロードする必要がある場合は、代わりに複数のプロジェクトに対してブートストラップする必要があります。ここで少し問題になるのは、一度に実行できるエンジンは 1 つであるため、別のエンジンをロードする前に現在のエンジンを破棄する必要があることです。
+上の例では、[一元管理設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)を使用していると想定しており、[分散設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)を使用している場合は、状況が多少異なります。分散設定用の sgtk API を読み込むには、[ブートストラップ API](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api)を使用する必要があります。ブートストラップ API を使用する場合は、通常プロジェクト中心ではない sgtk API を読み込むことから始め、それを使用して特定のプロジェクトのエンジンをブートストラップします。ブートストラップ プロセスは sgtk モジュールのスワップ アウトを処理するので、ブートストラップ プロセスの最後にはエンジン オブジェクトがあります。ブートストラップの後に sgtk を読み込むと、プロジェクトに適した適切な sgtk モジュールが読み込まれます。上記の例のように複数のプロジェクトに対して sgtk をロードする必要がある場合は、代わりに複数のプロジェクトに対してブートストラップする必要があります。ここで少し問題になるのは、一度に実行できるエンジンは 1 つであるため、別のエンジンをロードする前に現在のエンジンを破棄する必要があることです。
 
 {% include warning title="警告" content="設定をブートストラップする場合、設定をローカルにキャッシュし、すべての依存関係をダウンロードする必要があるため、処理が遅くなる可能性があります。Event デーモン プラグインのブートストラップはパフォーマンスに深刻な影響を与える可能性があります。考えられるアプローチの 1 つは、プロジェクトのブートストラップごとに別々の Python インスタンスを生成し、プラグインからの通信によりコマンドを送信することです。これにより、必要になるたびにプロジェクトをブートストラップし直す必要がなくなります。"%}
 

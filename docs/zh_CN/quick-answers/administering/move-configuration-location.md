@@ -7,7 +7,7 @@ lang: zh_CN
 
 # 如何将我的工作流配置移动到新位置？
 
-{% include info title="注意" content="本文档的内容仅适用于[集中式配置设置](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)。[分布式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)在本地缓存到各个客户端计算机，并由 Toolkit 自动管理。" %}
+{% include info title="注意" content="本文档的内容仅适用于[集中式配置设置](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)。[分布式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)在本地缓存到各个客户端计算机，并由 Toolkit 自动管理。" %}
 
 要将工作流配置移动到新位置，最简单的方法是使用 `tank move_configuration` 命令。该命令将移动文件，更新 {% include product %}，并更新配置文件以指向新位置。
 

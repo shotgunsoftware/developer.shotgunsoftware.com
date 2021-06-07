@@ -212,7 +212,7 @@ To aid in debugging, there are a set of environment variables that change some o
 `SHOTGUN_ADOBE_PYTHON` - The path to the Python executable to use when launching the engine. If not set, the system Python is used. If Photoshop is launched from a Python process, like {% include product %} Desktop or via the tk-shell engine, the Python used by that process will be used by the Photoshop integration.
 
 Note: Additional environment variables exist in the Adobe Framework. For details, please see the
-[developer documentation](https://developer.shotgunsoftware.com/tk-framework-adobe/).
+[developer documentation](https://developer.shotgridsoftware.com/tk-framework-adobe/).
 
 ### App Developer notes
 

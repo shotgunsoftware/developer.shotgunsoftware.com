@@ -14,7 +14,7 @@ Here is a quick list of things to check which we cover in further detail below:
 - Make sure your apps, engines, frameworks, core, and {% include product %} Desktop [are up to date](#keeping-up-to-date).
 - Ensure [debug logging](./turn-debug-logging-on.md) is not enabled during general use.
 - Only [create the folders that you need to](#folder-creation-is-slow), and limit folders so they are only created when they are actually needed. Adding too many folders to your schema will slow things down.
-- Storing your user caches on a server can be slow. You can redirect the user’s {% include product %} cache by setting the [`{% include product %}_HOME` environment variable](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables) to point to a location on your local drive.
+- Storing your user caches on a server can be slow. You can redirect the user’s {% include product %} cache by setting the [`{% include product %}_HOME` environment variable](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables) to point to a location on your local drive.
 - [Configure the workfiles and loader apps](#file-open-file-save-or-the-loader-app-is-slow) to filter out content that is not needed by the artist. Consider filtering by statuses to help keep the list of entities short and relevant to the artist’s current tasks.
 - Check to see if you have any custom hooks and that they are not adding additional overhead.
 
@@ -42,7 +42,7 @@ Table of Contents:
 
 {% include product %} Toolkit [caches data to the user’s home directory](../administering/where-is-my-cache.md). This cache can include a number of different SQLite databases as well as cached apps and configs. Normally the user’s home directory is stored on the machine’s local hard drives, but it's fairly common for studios to redirect them to network storage. Doing this can impact performance—most notably to the SQLite databases, which are used for browser integration and folder creation/lookup among other things. 
 
-If your user directories are stored on a server location, we recommend repathing the {% include product %} Toolkit cache using the [`{% include product %}_HOME` environment variable](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables). The `{% include product %}_HOME` environment variable is used to set the location where Toolkit caches various data, such as the bundle cache, thumbnails, SQLite databases used for fast lookup of data and other things.
+If your user directories are stored on a server location, we recommend repathing the {% include product %} Toolkit cache using the [`{% include product %}_HOME` environment variable](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables). The `{% include product %}_HOME` environment variable is used to set the location where Toolkit caches various data, such as the bundle cache, thumbnails, SQLite databases used for fast lookup of data and other things.
 
 ### Debugging
 
@@ -56,7 +56,7 @@ If you’re encountering performance issues, check that your core, apps, engines
 
 ### Centralized configs vs distributed configs
 
-There are two different ways of setting up advanced Toolkit configurations: [centralized and distributed](https://developer.shotgunsoftware.com/tk-core/initializing.html#the-toolkit-startup). The key differences are that the centralized configs typically live on your studio’s network storage where they can be accessed by all users, and the distributed configs are usually stored in the cloud and get cached locally per user. 
+There are two different ways of setting up advanced Toolkit configurations: [centralized and distributed](https://developer.shotgridsoftware.com/tk-core/initializing.html#the-toolkit-startup). The key differences are that the centralized configs typically live on your studio’s network storage where they can be accessed by all users, and the distributed configs are usually stored in the cloud and get cached locally per user. 
 
 Whilst the differences between these two methods extend beyond performance, they can both bring performance benefits and disadvantages. Here is a table showing the pros and cons, purely from a performance standpoint.
 
@@ -72,7 +72,7 @@ In summary, if you have slow storage but a reasonable internet connection, then 
 
 {% include info title="Note" content="If you are interested in the distributed configs but are concerned about downloading the dependencies per machine, it is possible to centralize just your bundle cache so that it is shared among all users." %}
 
-When using distributed configs, a user will only have to download something if it is not already found in the cache, and once one user has downloaded it, others will be able to benefit from it as well. To achieve this you can set the [`{% include product %}_BUNDLE_CACHE_PATH` environment variable](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables) on each machine to point to the shared location.
+When using distributed configs, a user will only have to download something if it is not already found in the cache, and once one user has downloaded it, others will be able to benefit from it as well. To achieve this you can set the [`{% include product %}_BUNDLE_CACHE_PATH` environment variable](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables) on each machine to point to the shared location.
 
 ## Launching software is slow
 
@@ -176,7 +176,7 @@ Whilst this might be convenient in some situations, it is causing a lot more fol
 {% include info title="Note" content="The setting for step schema folders defaults to true." %}
 
 #### Defer creation
-The [`defer_creation` setting](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Workspaces%20and%20Deferred%20Folder%20Creation) allows you to further refine when folders should be created by restricting the creation of folders to only happen when a certain engine is running. You can even use custom names, and then trigger the creation of them using the [sgtk API](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure).
+The [`defer_creation` setting](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Workspaces%20and%20Deferred%20Folder%20Creation) allows you to further refine when folders should be created by restricting the creation of folders to only happen when a certain engine is running. You can even use custom names, and then trigger the creation of them using the [sgtk API](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure).
 
 **Example**
 

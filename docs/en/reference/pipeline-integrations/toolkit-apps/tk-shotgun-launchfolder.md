@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Shotgun Launch Folder
+title: ShotGrid Launch Folder
 pagename: tk-shotgun-launchfolder
 lang: en
 ---
 
-# Shotgun Launch Folder
+# ShotGrid Launch Folder
 
 The Launch Folder App is a {% include product %} utility which allows you to jump from {% include product %} into the File System.
 

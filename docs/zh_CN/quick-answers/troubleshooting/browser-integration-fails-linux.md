@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 无法在 Linux 上启动 Shotgun Desktop/浏览器集成
+title: 无法在 Linux 上启动 ShotGrid Desktop/浏览器集成
 pagename: browser-integration-fails-linux
 lang: zh_CN
 ---

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 如何禁用 Shotgun Desktop 的浏览器集成？
+title: 如何禁用 ShotGrid Desktop 的浏览器集成？
 pagename: disable-browser-integration
 lang: zh_CN
 ---

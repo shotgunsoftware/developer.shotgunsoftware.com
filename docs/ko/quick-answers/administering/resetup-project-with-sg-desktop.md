@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun 데스크톱을 사용하여 툴킷 프로젝트를 다시 설정하는 방법은 무엇입니까?
+title: ShotGrid 데스크톱을 사용하여 툴킷 프로젝트를 다시 설정하는 방법은 무엇입니까?
 pagename: resetup-project-with-sg-desktop
 lang: ko
 ---

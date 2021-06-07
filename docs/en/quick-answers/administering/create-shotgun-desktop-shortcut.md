@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How do I set up a desktop/launcher icon for Shotgun Desktop on Linux?
+title: How do I set up a desktop/launcher icon for ShotGrid Desktop on Linux?
 pagename: create-shotgun-desktop-shortcut
 lang: en
 ---

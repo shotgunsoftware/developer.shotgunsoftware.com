@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SG Desktop から Nuke や Maya などを起動したが Shotgun のメニューにエントリが表示されない
+title: SG Desktop から Nuke や Maya などを起動したが ShotGrid のメニューにエントリが表示されない
 pagename: menu-entries-missing-in-launched-dcc
 lang: ja
 ---

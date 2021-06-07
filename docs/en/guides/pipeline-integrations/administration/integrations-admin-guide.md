@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun Integrations Admin Guide
+title: ShotGrid Integrations Admin Guide
 pagename: integrations-admin-guide
 lang: en
 ---
@@ -196,7 +196,7 @@ All of the following setups would handle this:
 
 ### Advanced configuration
 
-For information on the underlying method that performs the resolution of PublishedFile paths, take a look at our  [developer reference docs](http://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path).
+For information on the underlying method that performs the resolution of PublishedFile paths, take a look at our  [developer reference docs](http://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path).
 
 If you are using Advanced Project Setup, you can add support beyond local file links and  `file://`  URLs by customizing the  `resolve_publish`  core hook. Possible customizations include:
 
@@ -325,7 +325,7 @@ A  `browser_integration.py`  hook is included in  `tk-framework-desktopserver`, 
 
 ### Logs
 
-Logs for browser integration can be found in Toolkit’s  [standard log location](https://developer.shotgunsoftware.com/38c5c024/). The relevant log files are  `tk-desktop.log`  and  `tk-shotgun.log`. In addition, if you are using Google Chrome, some relevant log output is sometimes available in the developer console within the browser.
+Logs for browser integration can be found in Toolkit’s  [standard log location](https://developer.shotgridsoftware.com/38c5c024/). The relevant log files are  `tk-desktop.log`  and  `tk-shotgun.log`. In addition, if you are using Google Chrome, some relevant log output is sometimes available in the developer console within the browser.
 
 ### Troubleshooting
 
@@ -344,7 +344,7 @@ This likely means one of three things:
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1.  {% include product %} Desktop’s websocket server failed to start on launch. This situation is likely limited to situations where a bad release of the websocket server has gone out to the public, which should be exceedingly rare. In this situation, logging will be present in  [tk-desktop.log](https://developer.shotgunsoftware.com/38c5c024/)  explaining the error, which can be  [sent to {% include product %}’s support team](https://support.shotgunsoftware.com/hc/en-us/requests/new).
+1.  {% include product %} Desktop’s websocket server failed to start on launch. This situation is likely limited to situations where a bad release of the websocket server has gone out to the public, which should be exceedingly rare. In this situation, logging will be present in  [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)  explaining the error, which can be  [sent to {% include product %}’s support team](https://support.shotgunsoftware.com/hc/en-us/requests/new).
 
 **No actions are shown in the action menu**
 
@@ -354,7 +354,7 @@ This is indicative of a configuration problem if actions were expected for this 
 
 1.  The  `tk-shotgun`  engine is configured in the correct environment YAML file, but there are no apps present in that configuration. In this case, it’s likely that the intention was for no actions to be present for this entity type.
     
-2.  The  `tk-shotgun`  engine is configured in the correct environment YML file, and apps are present, but actions still do not appear in the menu. This is likely due to apps failing to initialize. In this case, there will be information in  [tk-shotgun.log and tk-desktop.log](https://developer.shotgunsoftware.com/38c5c024/)  describing the problems.
+2.  The  `tk-shotgun`  engine is configured in the correct environment YML file, and apps are present, but actions still do not appear in the menu. This is likely due to apps failing to initialize. In this case, there will be information in  [tk-shotgun.log and tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)  describing the problems.
     
 3.  The environment that corresponds to this entity type does not contain configuration for  `tk-shotgun`. The end result here is the same as #1 on this list. In this case, you can look at the pipeline configuration’s  `pick_environment`  hook to determine which environment is being loaded for this entity type, and the configuration of  `tk-shotgun`  can be verified there.
     
@@ -372,7 +372,7 @@ There are a few possibilities for this one:
 
 1.  The websocket server has not yet finished caching actions. If this is the first time actions are being retrieved after a significant update to the project’s config, the process can take some time to complete. Wait longer, and observe the contents of  `tk-desktop.log`  to see if processing is still occurring.
     
-2.  The websocket server has failed to respond and never will. This situation should be rare, but if it becomes obvious that there is no additional processing occurring as a result of the request for actions, as seen in  `tk-desktop.log`,  [contact Shotgun support](https://support.shotgunsoftware.com/hc/en-us/requests/new), providing relevant log data.
+2.  The websocket server has failed to respond and never will. This situation should be rare, but if it becomes obvious that there is no additional processing occurring as a result of the request for actions, as seen in  `tk-desktop.log`,  [contact ShotGrid support](https://support.shotgunsoftware.com/hc/en-us/requests/new), providing relevant log data.
     
 3.  The user is working in more than one {% include product %} site. With {% include product %} Desktop authenticated against a single site, requesting menu actions from a second {% include product %} site results in the user being queried about restarting {% include product %} Desktop and logging into the new site. If that request is ignored, the second site will never receive a list of menu actions.
     
@@ -415,7 +415,7 @@ If your studio is accessing the internet through a proxy, you’ll need to tell 
 
 **Running {% include product %} Desktop with a locally hosted site**
 
-If your {% include product %} site URL does not end with  `shotgunstudio.com`, it means that you are running a local {% include product %} site. In this case, it is possible that your site has not yet been fully prepared for {% include product %} integrations and the {% include product %} team may need to go in and do some small adjustments before you can get going! In this case,  [please submit a ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new)  and we'll help sort you out.
+If your {% include product %} site URL does not end with  `shotgunstudio.com` or `shotgrid.autodesk.com`, it means that you are running a local {% include product %} site. In this case, it is possible that your site has not yet been fully prepared for {% include product %} integrations and the {% include product %} team may need to go in and do some small adjustments before you can get going! In this case,  [please submit a ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new)  and we'll help sort you out.
 
 **Connecting to the app store with a locally hosted site**
 
@@ -423,7 +423,7 @@ If you are using a local {% include product %} site with access to the Internet 
 
 `app_store_http_proxy: <proxy_server_address>`
 
-where  `<proxy_server_address>`  is a string that follows the convention documented  [in our developer docs.](http://developer.shotgunsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
+where  `<proxy_server_address>`  is a string that follows the convention documented  [in our developer docs.](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
 
 If you need to override this setting on a per-project basis, you can do so in  `config/core/shotgun.yml`  in your project’s Pipeline Configuration.
 
@@ -457,7 +457,7 @@ _Scenario: Our artist workstations are disconnected from the internet, so we can
 
 -   Run {% include product %} Desktop on a workstation connected to the internet. When it starts up, the latest upgrades are automatically downloaded at launch time.
 -   Option 1: Shared Desktop bundle
--   Copy the  [bundle cache](https://developer.shotgunsoftware.com/7c9867c0/)  to a shared location where all machines can access it.
+-   Copy the  [bundle cache](https://developer.shotgridsoftware.com/7c9867c0/)  to a shared location where all machines can access it.
 -   Set the  `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS`  environment variable on offline machines to point to this location.
 -   When Desktop starts up on offline machines, they will pick up the latest upgrades that are available in the bundle cache.
 -   Option 2: Local deployment

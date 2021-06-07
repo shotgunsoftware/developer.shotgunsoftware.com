@@ -23,7 +23,7 @@ lang: zh_CN
 
 要使用本手册并为项目创建可自定义的配置，需要以下内容：
 
-1. 有效的 {% include product %} 站点。您可以[在此处注册 Shotgun](https://www.shotgunsoftware.com/zh-cn/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 并获取 30 天试用版以开始探索。
+1. 有效的 {% include product %} 站点。您可以[在此处注册 ShotGrid](https://www.shotgunsoftware.com/zh-cn/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 并获取 30 天试用版以开始探索。
 2. {% include product %} Desktop。如果未安装 Desktop，则可以[单击此链接开始。](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#Installation%20of%20Desktop)
 3. 可用于存储项目文件和工作流配置的文件系统的访问权限。在该文件系统上，创建一个名为 `Shotgun` 的文件夹，其中包含两个文件夹 `projects` 和 `configs`。
 
@@ -131,7 +131,7 @@ Desktop 在加载项目页面时，自动下载和配置基本配置，并自动
 
 ![项目文件夹](./images/advanced_config/14_project_folder_name.png)
 
-Toolkit 既适用于分布式设置，又适用于集中式设置。在分布式设置中，工作流配置上传到 {% include product %} 并在本地为每个用户缓存；在集中式设置中，用户可以在磁盘上的共享位置访问单个配置。对于本练习，我们将使用集中式设置。您可以[在此处了解有关分布式设置的详细信息](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)。
+Toolkit 既适用于分布式设置，又适用于集中式设置。在分布式设置中，工作流配置上传到 {% include product %} 并在本地为每个用户缓存；在集中式设置中，用户可以在磁盘上的共享位置访问单个配置。对于本练习，我们将使用集中式设置。您可以[在此处了解有关分布式设置的详细信息](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)。
 
 最后一步生成创建特定于项目的配置所需的相应文件夹、文件和数据。
 
@@ -180,7 +180,7 @@ Toolkit 既适用于分布式设置，又适用于集中式设置。在分布式
 
 ### 工作流配置的在线分布
 
-本手册将逐步创建一个**集中式配置**：位于共享网络位置的单个工作流配置副本，供所有用户访问。但是，如果您的员工分布在不同地点和网络，则共享工作流配置的单个副本可能不太可行。Toolkit 允许这种情况，方法是提供**分布式配置**选项，即工作流配置上传到 {% include product %}，并且每次用户访问项目时，配置都会在本地下载并缓存。您可以在我们的[核心 API 开发人员文档](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)中了解有关分布式配置的详细信息。
+本手册将逐步创建一个**集中式配置**：位于共享网络位置的单个工作流配置副本，供所有用户访问。但是，如果您的员工分布在不同地点和网络，则共享工作流配置的单个副本可能不太可行。Toolkit 允许这种情况，方法是提供**分布式配置**选项，即工作流配置上传到 {% include product %}，并且每次用户访问项目时，配置都会在本地下载并缓存。您可以在我们的[核心 API 开发人员文档](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)中了解有关分布式配置的详细信息。
 
 ### 使用多个根文件夹
 

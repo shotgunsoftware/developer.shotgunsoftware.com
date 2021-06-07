@@ -5,14 +5,14 @@
 # this software in either electronic or hard copy form.
 #
 #
-# jekyll configuration file for Shotgun Developer Site Environment
+# jekyll configuration file for ShotGrid Developer Site Environment
 #
-# For more information, see https://developer.shotgunsoftware.com/tk-doc-generator/
+# For more information, see https://developer.shotgridsoftware.com/tk-doc-generator/
 
 
 # Site settings
 title: SG Developer
-description: Resources for Shotgun Developers.
+description: Resources for ShotGrid Developers.
 
 # i18n configuration for all languages shotgun supports
 languages: ["en", "ko", "ja", "zh_CN"]
@@ -31,10 +31,10 @@ google_custom_search_id: "015683694229584726942:8l32_vorpny"
 additional_head_html: |
   <meta property="og:image:height" content="1257">
   <meta property="og:image:width" content="2400">
-  <meta property="og:title" content="Shotgun Developer">
-  <meta property="og:description" content="This site contains detailed technical reference for all of the ways you can interact with Shotgun programmatically, as well as tutorials, guides, and other educational resources for learning how to make the best use of all of Shotgun's integration points.">
-  <meta property="og:url" content="https://developer.shotgunsoftware.com">
-  <meta property="og:image" content="https://developer.shotgunsoftware.com/site-metadata/og-image.jpg">
+  <meta property="og:title" content="ShotGrid Developer">
+  <meta property="og:description" content="This site contains detailed technical reference for all of the ways you can interact with ShotGrid programmatically, as well as tutorials, guides, and other educational resources for learning how to make the best use of all of ShotGrid's integration points.">
+  <meta property="og:url" content="https://developer.shotgridsoftware.com">
+  <meta property="og:image" content="https://developer.shotgridsoftware.com/site-metadata/og-image.jpg">
   <link rel="apple-touch-icon" sizes="180x180" href="/site-metadata/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/site-metadata/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/site-metadata/favicon-16x16.png">

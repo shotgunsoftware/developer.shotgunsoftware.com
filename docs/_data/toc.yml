@@ -1,6 +1,6 @@
 # This file holds the table of contents for the site
 #
-# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
+# For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/toc/
 #
 #
 # NOTE: All external links pointing at the developer site (for example to sphinx docs)
@@ -72,7 +72,7 @@
     - text: action-menu-items
       url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
     - text: jira-bridge-guide
-      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
+      url: " https://developer.shotgridsoftware.com/sg-jira-bridge/index.html"
     - page: shotgun-webhooks
       children:
       - page: webhooks-batch-deliveries
@@ -81,13 +81,13 @@
 - caption: reference
   children:
   - text: python-api
-    url: " https://developer.shotgunsoftware.com/python-api/"
+    url: " https://developer.shotgridsoftware.com/python-api/"
   - text: rest-api
-    url: " https://developer.shotgunsoftware.com/rest-api/"
+    url: " https://developer.shotgridsoftware.com/rest-api/"
   - text: core-api
-    url: " https://developer.shotgunsoftware.com/tk-core"
+    url: " https://developer.shotgridsoftware.com/tk-core"
   - text: jira-bridge-ref
-    url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
+    url: " https://developer.shotgridsoftware.com/sg-jira-bridge/developer.html"
   - text: rv-technical-reference
     url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024280254-Reference-Manual"
   - page: pipeline-integrations-reference
@@ -95,9 +95,9 @@
     - page: toolkit-apis
       children:
       - text: publish-api
-        url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
+        url: " https://developer.shotgridsoftware.com/tk-multi-publish2/"
       - text: hiero-export-api
-        url: " https://developer.shotgunsoftware.com/tk-hiero-export"
+        url: " https://developer.shotgridsoftware.com/tk-hiero-export"
     - page: toolkit-apps
       children:
       - page: tk-multi-about
@@ -150,9 +150,9 @@
     - page: toolkit-frameworks
       children:
       - text: qt-widgets
-        url: " https://developer.shotgunsoftware.com/tk-framework-qtwidgets/"
+        url: " https://developer.shotgridsoftware.com/tk-framework-qtwidgets/"
       - text: shotgun-utils
-        url: " https://developer.shotgunsoftware.com/tk-framework-shotgunutils/"
+        url: " https://developer.shotgridsoftware.com/tk-framework-shotgunutils/"
       - page: tk-framework-adminui
       - page: tk-framework-desktopstartup
       - page: tk-framework-desktopserver
@@ -219,11 +219,11 @@
 - caption: other
   children:
   - text: community
-    url: " https://community.shotgunsoftware.com/"
+    url: " https://community.shotgridsoftware.com/"
   - page: contribution-index
   - text: shotgun-support
     url: " https://support.shotgunsoftware.com/"
   - text: service-status
-    url: " https://status.shotgunsoftware.com/"
+    url: " https://status.shotgridsoftware.com/"
   - text: new-support-request
     url: " https://support.shotgunsoftware.com/hc/requests/new"

@@ -1,9 +1,9 @@
 # This file holds translated text strings for the site landing page. 
 # 
-# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/landing-page/
+# For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/landing-page/
 #
 
-title: 欢迎访问 Shotgun 开发人员文档。此站点包含通过编程方式与 Shotgun 进行交互的所有方法的详细技术参考，以及教程、手册和其他教育资源，以便您学习如何充分利用 Shotgun 的所有集成点。
-shotgun: 使用 Shotgun 的 API 可以直接连接到您的数据、自动执行重复任务并添加用户与 Shotgun 进行交互的新方法。
+title: 欢迎访问 ShotGrid 开发人员文档。此站点包含通过编程方式与 ShotGrid 进行交互的所有方法的详细技术参考，以及教程、手册和其他教育资源，以便您学习如何充分利用 ShotGrid 的所有集成点。
+shotgun: 使用 ShotGrid 的 API 可以直接连接到您的数据、自动执行重复任务并添加用户与 ShotGrid 进行交互的新方法。
 toolkit: Toolkit 是一个可扩展的平台，它通过许多常用应用程序中的即时可用工作流集成美工人员应用程序和工具。
 rv: RV 是一个既强大又可高度配置的桌面审核工具，使美工人员和主管能够播放和比较媒体。

@@ -103,7 +103,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 웹후크 URL로 전송한 페이로드에는 {% include product %}에서 발생한 이벤트 및 이벤트를 트리거한 사용자에 대한 정보가 포함됩니다. JSON 형식으로 제공됩니다.
 
-{% include warning title="페이로드 크기" content="전달 페이로드의 최대 크기는 1MB입니다. Shotgun에서 트리거된 이벤트의 페이로드 크기가 1MB보다 크면 `new_value` 및 `old_value` 키가 제거되고 발생 이벤트, 원인 및 Shotgun에서 전체 이벤트 로그 항목을 검색하는 방법을 설명하는 메시지가 포함된 `warning` 키가 추가됩니다." %}
+{% include warning title="페이로드 크기" content="전달 페이로드의 최대 크기는 1MB입니다. ShotGrid에서 트리거된 이벤트의 페이로드 크기가 1MB보다 크면 `new_value` 및 `old_value` 키가 제거되고 발생 이벤트, 원인 및 ShotGrid에서 전체 이벤트 로그 항목을 검색하는 방법을 설명하는 메시지가 포함된 `warning` 키가 추가됩니다." %}
 
 ##### 페이로드 예시
 
@@ -144,11 +144,11 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 ##### 세션 UUID
 
-{% include product %}에서 이벤트를 트리거한 `session_uuid`가 이벤트 페이로드의 일부로 제공됩니다. 이 값은 [{% include product %}의 Python API](https://developer.shotgunsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)에 제공될 수 있으며, 그러면 이 session_uuid를 사용하여 열려 있는 모든 브라우저 세션에 API에서 생성한 이벤트에 대한 업데이트가 표시됩니다.
+{% include product %}에서 이벤트를 트리거한 `session_uuid`가 이벤트 페이로드의 일부로 제공됩니다. 이 값은 [{% include product %}의 Python API](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)에 제공될 수 있으며, 그러면 이 session_uuid를 사용하여 열려 있는 모든 브라우저 세션에 API에서 생성한 이벤트에 대한 업데이트가 표시됩니다.
 
 ### 확인 응답
 
-확인 응답을 포함하도록 전달을 업데이트할 수 있습니다. 전달이 만들어지면 요청의 일부로 헤더가 제공됩니다. 이러한 헤더에는 `x-sg-delivery-id` 키에 저장된 전달 레코드의 ID가 포함됩니다. 이 ID는 [{% include product %} REST API](https://developer.shotgunsoftware.com/rest-api)를 사용하여 확인 응답이 포함되도록 전달 레코드를 업데이트하는 데 사용할 수 있습니다.
+확인 응답을 포함하도록 전달을 업데이트할 수 있습니다. 전달이 만들어지면 요청의 일부로 헤더가 제공됩니다. 이러한 헤더에는 `x-sg-delivery-id` 키에 저장된 전달 레코드의 ID가 포함됩니다. 이 ID는 [{% include product %} REST API](https://developer.shotgridsoftware.com/rest-api)를 사용하여 확인 응답이 포함되도록 전달 레코드를 업데이트하는 데 사용할 수 있습니다.
 
 {% include warning title="확인 응답 크기" content="확인 응답에 허용되는 최대 크기는 4KB입니다." %}
 

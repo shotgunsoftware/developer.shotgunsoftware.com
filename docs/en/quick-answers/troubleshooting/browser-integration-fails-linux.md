@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun Desktop / browser integration fails to launch on Linux
+title: ShotGrid Desktop / browser integration fails to launch on Linux
 pagename: browser-integration-fails-linux
 lang: en
 ---
@@ -8,7 +8,7 @@ lang: en
 # {% include product %} Desktop / browser integration fails to launch on Linux
 
 When running the {% include product %} Desktop on Linux for the first time, you may experience one of these error messages. If so, please follow the steps below for your specific error to see if that resolves things.
-If you're still stuck, please don't hesitate to contact support@shotgunsoftware.com.
+If you're still stuck, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
 ###Contents
 - [OPENSSL_1.0.1_EC or HTTPSConnection related issues](#openssl_101_ec-or-httpsconnection-related-issues)
@@ -71,7 +71,7 @@ certutil: function failed: SEC_ERROR_BAD_DATABASE: security library: bad databas
 
 **Solution** 
 
-If you have Google Chrome installed on your computer, launch it and then relaunch the {% include product %} Desktop. If you still have the issue, please contact support@shotgunsoftware.com.
+If you have Google Chrome installed on your computer, launch it and then relaunch the {% include product %} Desktop. If you still have the issue, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
 If you don't have Chrome, open a terminal and run the following command:
 

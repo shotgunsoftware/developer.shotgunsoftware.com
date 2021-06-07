@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SG 데스크톱에서 Nuke/Maya 등을 실행했는데 Shotgun 메뉴에 해당 항목이 없습니다
+title: SG 데스크톱에서 Nuke/Maya 등을 실행했는데 ShotGrid 메뉴에 해당 항목이 없습니다
 pagename: menu-entries-missing-in-launched-dcc
 lang: ko
 ---

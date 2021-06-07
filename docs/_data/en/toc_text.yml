@@ -1,6 +1,6 @@
 # Translated text strings used by the table of contents
 # 
-# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
+# For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/toc/
 #
 
 reference: Reference
@@ -9,7 +9,7 @@ trusted-solutions: Trusted Solutions
 
 rv: RV
 toolkit: Toolkit
-shotgun: Shotgun
+shotgun: ShotGrid
 review: Review
 quick-answers: Quick Answers
 pipeline-integrations: Pipeline Integrations
@@ -18,7 +18,7 @@ python-api: Python API
 rest-api: REST API
 event-triggers: Writing Event-Driven Triggers
 action-menu-items: Creating custom Action Menu Items
-jira-bridge-guide: Sync Data Between Jira and Shotgun
+jira-bridge-guide: Sync Data Between Jira and ShotGrid
 jira-bridge-ref: Jira Bridge Dev Resources
 examples: Examples
 webinars: Webinar Recordings
@@ -27,7 +27,7 @@ episodic-pipeline-tutorial: Episodic Pipeline Tutorial
 
 core-api: Toolkit Core API
 qt-widgets: QT Widgets
-shotgun-utils: Shotgun Utils
+shotgun-utils: ShotGrid Utils
 publish-api: Publish API
 hiero-export-api: Hiero Export API
 development: Development
@@ -43,21 +43,21 @@ forums: Forums
 
 rv-maya-integration: RV Maya Integration
 rv-nuke-integration: RV Nuke Integration
-rv-shotgun-integration: RV Shotgun Integration
+rv-shotgun-integration: RV ShotGrid Integration
 maya: Maya
 nuke: Nuke
-shotgun: Shotgun
-screening-room-and-shotgun-review: Screening Room and Shotgun Review
+shotgun: ShotGrid
+screening-room-and-shotgun-review: Screening Room and ShotGrid Review
 troubleshooting: Troubleshooting
 extending-rv: Extending RV
 
 videos: Videos
-siggraph-shotgun-day: SIGGRAPH Shotgun Day
+siggraph-shotgun-day: SIGGRAPH ShotGrid Day
 developer-training: Developer Training
 toolkit-webinars: Toolkit Webinars
 
 other: Other
 community: Community
-shotgun-support: Shotgun Support
+shotgun-support: ShotGrid Support
 service-status: Service Status
 new-support-request: New Support Request

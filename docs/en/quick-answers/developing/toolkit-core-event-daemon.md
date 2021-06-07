@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How can I load different Toolkit Core modules using the Shotgun Event Daemon?
+title: How can I load different Toolkit Core modules using the ShotGrid Event Daemon?
 pagename: toolkit-core-event-daemon
 lang: en
 ---
@@ -101,7 +101,7 @@ def import_sgtk(project):
 
 ## Distributed Configs
 
-The above example is assuming you are using a [centralized config](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), however, things are a bit different if you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations). Importing the sgtk API for a distributed config requires you to use the [bootstrap API](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api). When using the bootstrap API, you usually start by importing a non-project centric sgtk API and then use that to bootstrap an engine for a given project. 
+The above example is assuming you are using a [centralized config](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations), however, things are a bit different if you are using a [distributed config](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations). Importing the sgtk API for a distributed config requires you to use the [bootstrap API](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api). When using the bootstrap API, you usually start by importing a non-project centric sgtk API and then use that to bootstrap an engine for a given project. 
 The bootstrap process handles the swapping out of the sgtk modules so that at the end of the bootstrap process you have an engine object. If you import sgtk after bootstrap, it will import the relevant sgtk module appropriate to your project. Given the example above of needing to load sgtk for multiple projects, you would need to bootstrap for multiple projects instead. The small catch here is that you can only have one engine running at a time, so you must destroy it before you load another.
 
 {% include warning title="Warning" content="Bootstrapping a config can be slow, as the process needs to ensure the config is cached locally and all the dependencies are downloaded. Bootstrapping in an Event Daemon plugin could severely affect performance. One potential approach would be to spawn off separate Python instances for each project bootstrap to communicate and send commands from the plugins. This will avoid needing to re-bootstrap a project each time it is needed." %}

@@ -38,7 +38,7 @@ Python API 依赖与 API 捆绑在一起且位于计算机上的一组证书才�
 
    或
 
-   b. 在实例化 `Shotgun` 对象时更新脚本并设置 `ca_certs=/path/to/shotgun_api3/lib/httplib2/cacerts.txt`。
+   b. 在实例化 `ShotGrid` 对象时更新脚本并设置 `ca_certs=/path/to/shotgun_api3/lib/httplib2/cacerts.txt`。
 
 ### 如果使用 Toolkit
 

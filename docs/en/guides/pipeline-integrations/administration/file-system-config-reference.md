@@ -16,7 +16,7 @@ This document explains how to configure the part of Toolkit's configuration rela
 
 1.  **Folder Creation:**  After an object has been created in {% include product %}, folders on disk need to be created before work can begin. This can be as simple as having a folder on disk representing the Shot, or can be more complex-for example setting up a user specific work sandbox so that each user that works on the shot will work in a separate area on disk.
     
-    -   Toolkit automates folder creation when you launch an application (for example you launch Maya for shot BECH_0010), Toolkit ensures that folders exist prior to launching Maya. If folders do not exist, they are created on the fly. Folders can also be created using API methods, using the  [tank command in the shell](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#Useful%20tank%20commands)  and via the  [Create Folders menu in Shotgun](https://support.shotgunsoftware.com/hc/en-us/articles/219040688-Beyond-your-first-project#Shotgun%20Integration). A special set of configuration files drives this folder creation process and this is outlined in  [Part 1](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)  of the document below.
+    -   Toolkit automates folder creation when you launch an application (for example you launch Maya for shot BECH_0010), Toolkit ensures that folders exist prior to launching Maya. If folders do not exist, they are created on the fly. Folders can also be created using API methods, using the  [tank command in the shell](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#Useful%20tank%20commands)  and via the  [Create Folders menu in ShotGrid](https://support.shotgunsoftware.com/hc/en-us/articles/219040688-Beyond-your-first-project#Shotgun%20Integration). A special set of configuration files drives this folder creation process and this is outlined in  [Part 1](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)  of the document below.
 2.  **Opening and Saving Work:**  While working, files need to be opened from and saved into standardized locations on disk. These file locations typically exist within the folder structure created prior to work beginning.
     
     -   Once a folder structure has been established, we can use that structure to identify key locations on disk. These locations are called  [Templates](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates). For example, you can define a template called  `maya_shot_publish`  to refer to published Maya files for Shots.  [Toolkit apps](https://support.shotgunsoftware.com/hc/en-us/articles/219039798)  will then use this template-a publish app may use it to control where it should be writing its files, while a  [Workfiles App](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files)  may use the template to understand where to open files from. Inside Toolkit's environment configuration, you can control which templates each app uses. All the key file locations used by Toolkit are therefore defined in a single template file and are easy to overview.
@@ -27,7 +27,7 @@ The folder configuration maps entities in {% include product %} to locations on 
 
 ![configuration](./images/file-system-config-reference/core_config.png)
 
-The above image shows a schema configuration. When you run the Toolkit folder creation, a connection is established between an entity in {% include product %} and a folder on disk. Toolkit uses this folder schema configuration to generate a series of folders on disk and each of these folders are registered as a  [`Filesystem Location`](https://developer.shotgunsoftware.com/cbbf99a4/)  entity in {% include product %}. One way to think about this is that {% include product %} data (e.g., Shot and Asset names) and the configuration is "baked" out into actual folders on disk and in {% include product %}. Configurations always start with a folder named "project". This will always represent the connected project in {% include product %} and will be replaced with the Toolkit name for the project. Below this level are static folders. The folder creator will automatically create the  **sequences**folder, for example.
+The above image shows a schema configuration. When you run the Toolkit folder creation, a connection is established between an entity in {% include product %} and a folder on disk. Toolkit uses this folder schema configuration to generate a series of folders on disk and each of these folders are registered as a  [`Filesystem Location`](https://developer.shotgridsoftware.com/cbbf99a4/)  entity in {% include product %}. One way to think about this is that {% include product %} data (e.g., Shot and Asset names) and the configuration is "baked" out into actual folders on disk and in {% include product %}. Configurations always start with a folder named "project". This will always represent the connected project in {% include product %} and will be replaced with the Toolkit name for the project. Below this level are static folders. The folder creator will automatically create the  **sequences**folder, for example.
 
 Digging further inside the sequences folder, there is a  **sequence**  folder and a  **sequence.yml**  file. Whenever Toolkit detects a YAML file with the same name as a folder, it will read the contents of the YAML file and add the desired dynamic behavior. In this case, the  **sequence.yml**  file contains the structure underneath the project folder, which consists of three types of items:
 
@@ -83,7 +83,7 @@ For a dynamic folder which corresponds to a {% include product %} query, use the
     -   You can use a single field, like in the example above (e.g.,  `name: code`).
     -   You can use multiple fields in brackets (e.g.,  `name:`  `"{asset_type}_{code}"`).
     -   If you want to include fields from other linked entities, you can use the standard {% include product %} dot syntax (e.g.,  `name: "{sg_sequence.Sequence.code}_{code}"`).
--   The  **filters**  field is a {% include product %} Query. It follows the  [{% include product %} API syntax](http://developer.shotgunsoftware.com/python-api/reference.html)  relatively closely. It is a list of dictionaries, and each dictionary needs to have the keys  _path_,  _relation_, and  _values_. Valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy). For {% include product %} entity links, you can use the $syntax (e.g.,  `{ "path": "project", "relation": "is", "values": [ "$project" ] }`) to refer to a parent folder in the configuration-this is explained more in depth in the  [examples below](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Examples).
+-   The  **filters**  field is a {% include product %} Query. It follows the  [{% include product %} API syntax](http://developer.shotgridsoftware.com/python-api/reference.html)  relatively closely. It is a list of dictionaries, and each dictionary needs to have the keys  _path_,  _relation_, and  _values_. Valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy). For {% include product %} entity links, you can use the $syntax (e.g.,  `{ "path": "project", "relation": "is", "values": [ "$project" ] }`) to refer to a parent folder in the configuration-this is explained more in depth in the  [examples below](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Examples).
     
 
 ## Multiple folders
@@ -126,7 +126,7 @@ In {% include product %}, there is nesting within {% include product %} data str
 
 ![create_with_parent_folder](images/file-system-config-reference/create_with_parent_folder_02_DS.png)
 
-{% include info title="Note" content="This filesystem nesting relationship is independent from the  [Shotgun Hierarchy](https://support.shotgunsoftware.com/hc/en-us/articles/219030828), and there is no connection between the two. They are configured completely independently." %}
+{% include info title="Note" content="This filesystem nesting relationship is independent from the  [ShotGrid Hierarchy](https://support.shotgunsoftware.com/hc/en-us/articles/219030828), and there is no connection between the two. They are configured completely independently." %}
 
 A shotgun_entity type folder supports an optional flag to control whether the folder creation process tries to recurse down into it when a parent is created, so that the child will also be created. Flags are settings that can only have certain fixed values, in this case "true" or "false". To add this flag, use this example:
 
@@ -268,7 +268,7 @@ The Pipeline Step folder represents a  [Pipeline Step](https://support.shotgunso
 
 You can use name expressions here, just like you can with the  [{% include product %} entity described above](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-File-System-Reference#Shotgun%20List%20Field%20Folders). The node will look at its parent, grandparent, etc., until a {% include product %} entity folder configuration is found. This entity folder will be associated with the Step and the type of the entity will be used to determine which Steps to create.
 
-{% include info title="Note" content="If you want to create a top level folder with Pipeline Steps, just use the Shotgun entity node and set the associated type to step." %}
+{% include info title="Note" content="If you want to create a top level folder with Pipeline Steps, just use the ShotGrid entity node and set the associated type to step." %}
 
 By default, the Step folder will try to create all the relevant Steps for a particular entity automatically. For example, if the folder creation is triggered for a shot which has five Steps (Layout, Animation, FX, Lighting, Compositing), Step folders will automatically be created for those five Steps (Layout, Animation, FX, Lighting, Compositing).
 
@@ -874,7 +874,7 @@ In addition to specifying the type, you can also specify additional options. The
 -   `subset`  and  `subset_format`  - Extracts a subset of the given input string and makes that the key value, allowing you to create for example an initials key from a full username or a key that holds the three first letters of every shot name.
     
 
-For technical details about template keys, see the  [API reference](http://developer.shotgunsoftware.com/tk-core/core.html#template-system).
+For technical details about template keys, see the  [API reference](http://developer.shotgridsoftware.com/tk-core/core.html#template-system).
 
 ### Example - An alphanumeric name
 
@@ -1051,9 +1051,9 @@ The Paths section specifies where work will be saved. All paths consist of at le
 
 With Sequence, Shot, Step and version being keys defined in the same template file.
 
-{% include info title="Note" content="If a string key's name matches the entity type of a dynamic schema folder that has an associated Shotgun entity, then that folder name will be substituted in for the token. For example, if you are using a {Sequence} template key of type 'string' like the above snippet, and in your schema, you have a dynamic folder named 'sequence', and in its corresponding  `sequence.yml`  file, it's defined to be of type  `shotgun_entity`, and is connected to the 'Sequence' entity type in Shotgun. Toolkit will recognize that your template key corresponds to this dynamic folder's entity type (in that they are both Sequence). So, Toolkit will take the resulting folder name (i.e., the name of the specific sequence in question), and substitutes that in for the template key." %}
+{% include info title="Note" content="If a string key's name matches the entity type of a dynamic schema folder that has an associated ShotGrid entity, then that folder name will be substituted in for the token. For example, if you are using a {Sequence} template key of type 'string' like the above snippet, and in your schema, you have a dynamic folder named 'sequence', and in its corresponding  `sequence.yml`  file, it's defined to be of type  `shotgun_entity`, and is connected to the 'Sequence' entity type in ShotGrid. Toolkit will recognize that your template key corresponds to this dynamic folder's entity type (in that they are both Sequence). So, Toolkit will take the resulting folder name (i.e., the name of the specific sequence in question), and substitutes that in for the template key." %}
 
-This form is required if any optional attributes need to be defined. Currently, the only optional attribute is  `root_name`, which can be used to specify a project root for a path in a project that has multiple roots.  [Multiple roots](https://developer.shotgunsoftware.com/9ea9dd4e/)  are used when you'd like to add a new storage root to store some of your project files.
+This form is required if any optional attributes need to be defined. Currently, the only optional attribute is  `root_name`, which can be used to specify a project root for a path in a project that has multiple roots.  [Multiple roots](https://developer.shotgridsoftware.com/9ea9dd4e/)  are used when you'd like to add a new storage root to store some of your project files.
 
 `root_name: name_of_project_root`
 
@@ -1106,7 +1106,7 @@ Let's say you have been working on feature animations and shorts on your {% incl
 
 ![episode_hierarchy](images/file-system-config-reference/episode_hierarchy.jpg)
 
-{% include info title="Note" content="see the  [Create with parent folder section above](https://support.shotgunsoftware.com/hc/en-us/articles/219039868#Create%20With%20Parent%20Folder)  to revisit nesting relationships in Toolkit (which is completely independent from the project hierarchy in Shotgun)." %}
+{% include info title="Note" content="see the  [Create with parent folder section above](https://support.shotgunsoftware.com/hc/en-us/articles/219039868#Create%20With%20Parent%20Folder)  to revisit nesting relationships in Toolkit (which is completely independent from the project hierarchy in ShotGrid)." %}
 
 **Additional Reference:**
 

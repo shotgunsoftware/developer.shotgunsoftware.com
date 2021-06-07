@@ -141,7 +141,7 @@ This approach assumes that artists are submitting farm jobs within a {% include 
 
 ```python
 # Populating environment variables from running Nuke:
-# http://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.create_engine_launcher
+# http://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.create_engine_launcher
 current_engine = sgtk.platform.current_engine()
 launcher = sgtk.platform.create_engine_launcher(
      current_engine.sgtk,
@@ -174,7 +174,7 @@ SHOTGUN_FARM_SCRIPT_USER = “sg_api_user”
 SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx”
 ```
 
-For more information on authentication, see our [developer documentation](http://developer.shotgunsoftware.com/tk-core/authentication.html).
+For more information on authentication, see our [developer documentation](http://developer.shotgridsoftware.com/tk-core/authentication.html).
 
 **A note on securing your script user:** It’s good practice to lock down the script user you use on the farm so that it doesn’t have admin-level permissions. [You can learn more about API user permissions here.](https://support.shotgunsoftware.com/hc/en-us/articles/219376228-API-user-permission-groups)
 
@@ -185,7 +185,7 @@ At this point, Toolkit environment data is being passed from the render submissi
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap
 # Toolkit in Nuke on the render farm.
-# http://developer.shotgunsoftware.com/tk-core/bootstrap.html#bootstrapping-toolkit
+# http://developer.shotgridsoftware.com/tk-core/bootstrap.html#bootstrapping-toolkit
 
 import sys
 import os
@@ -200,7 +200,7 @@ if TK_CORE_PATH not in sys.path:
 # If your render nodes don’t have access to the Toolkit Core API in the same filesystem location as artist workstations, you have to make sure that it is available in the PYTHONPATH, so that render nodes can import it. An easy way 
 # to install tk-core in a centralized location is with pip. You can read more 
 # about it here:
-# http://developer.shotgunsoftware.com/tk-core/bootstrap.html#installing-the-sgtk-module-using-pip
+# http://developer.shotgridsoftware.com/tk-core/bootstrap.html#installing-the-sgtk-module-using-pip
 
 import sgtk
 

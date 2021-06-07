@@ -140,7 +140,7 @@ To aid in debugging, there are a set of environment variables that change some o
 - `SGTK_PHOTOSHOP_NETWORK_DEBUG` is also respected if set.
 - `SHOTGUN_ADOBE_PYTHON` - The path to the Python executable to use when launching the engine. If not set, the system Python is used. If Photoshop is launched from a Python process, like {% include product %} Desktop or via the tk-shell engine, the Python used by that process will be used by the Photoshop integration.
 
-Note: Additional environment variables exist in the Adobe Framework. For details, please see the [developer documentation](https://developer.shotgunsoftware.com/tk-framework-adobe/).
+Note: Additional environment variables exist in the Adobe Framework. For details, please see the [developer documentation](https://developer.shotgridsoftware.com/tk-framework-adobe/).
 
 
 ## Context fields display hook
@@ -163,6 +163,6 @@ The [default hook implementation](https://github.com/shotgunsoftware/tk-aftereff
 
 ## After Effects API
 
-Please see the [developer documentation](https://developer.shotgunsoftware.com/tk-aftereffects) for details on the After Effects API.
+Please see the [developer documentation](https://developer.shotgridsoftware.com/tk-aftereffects) for details on the After Effects API.
 
 
