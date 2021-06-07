@@ -18,20 +18,13 @@ env:
 
 jobs:
   include:
-    # While we're deploying separately to both shotgunsoftware and
-    # shotgridsoftware gh pages, we'll need to run two travis jobs to build
-    # each site correctly.
-    - name: developer.shotgunsoftware.com
-      env:
-        DOC_URL=https://developer.shotgunsoftware.com
-        REPO_URL=shotgunsoftware/shotgunsoftware.github.io
-        CNAME=developer.shotgunsoftware.com
-    - # We only want to run the second job if we are NOT in a PR.
-      if: (branch == master) AND (type != pull_request)
-      name: developer.shotgridsoftware.com
+    # Because the org name is still shotgunsoftware, we deploy to
+    # shotgunsoftware.github.io, but target developer.shotgridsoftware.com since
+    # that will be our new custom domain.
+    - name: developer.shotgridsoftware.com
       env:
         DOC_URL=https://developer.shotgridsoftware.com
-        REPO_URL=shotgunsoftware/shotgridsoftware.github.io
+        REPO_URL=shotgunsoftware/shotgunsoftware.github.io
         CNAME=developer.shotgridsoftware.com
 
 cache:
