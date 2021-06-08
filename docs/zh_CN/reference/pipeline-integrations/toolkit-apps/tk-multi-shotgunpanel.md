@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Shotgun 面板
+title: ShotGrid 面板
 pagename: tk-multi-shotgunpanel
 lang: zh_CN
 ---
 
-# Shotgun 面板
+# ShotGrid 面板
 
 本文档介绍仅当控制 Toolkit 配置时可用的功能。有关详细信息，请参见 [{% include product %} 集成用户手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#The%20Shotgun%20Panel)。
 

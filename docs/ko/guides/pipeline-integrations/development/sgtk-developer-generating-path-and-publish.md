@@ -7,7 +7,7 @@ lang: ko
 
 # 경로 생성 및 게시
 
-이 안내서에서는 파이프라인 통합을 빌드하는 Shotgun 툴킷 Python API를 시작하는 방법 대해 설명합니다.
+이 안내서에서는 파이프라인 통합을 빌드하는 ShotGrid 툴킷 Python API를 시작하는 방법 대해 설명합니다.
 
 이 안내서를 통해 API를 사용하는 방법에 대한 기본적인 예제를 살펴보십시오. 학습을 모두 마치면 툴킷 API를 가져와 경로를 생성하고 게시할 수 있게 될 것입니다.
 
@@ -36,16 +36,16 @@ lang: ko
 {% include info title="참고" content="경우에 따라 `tank` 패키지에 대한 참조가 있을 수 있습니다. 이는 동일한 작업에 대한 이전 이름입니다. 앞으로 계속 사용할 수 있는 올바른 이름은 `sgtk`입니다." %}
 
 API를 가져오려면 [코어의 python 폴더](https://github.com/shotgunsoftware/tk-core/tree/v0.18.167/python)에 대한 경로가 [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path)에 있는지 확인해야 합니다.
-그러나 이 예의 경우 Shotgun 데스크톱의 Python 콘솔에서 이 코드를 실행하는 것이 좋습니다.
+그러나 이 예의 경우 ShotGrid 데스크톱의 Python 콘솔에서 이 코드를 실행하는 것이 좋습니다.
 이 경우 올바른 `sgtk` 패키지 경로가 `sys.path`에 이미 추가되어 있습니다.
-마찬가지로, Shotgun 통합이 이미 실행 중인 소프트웨어 내에서 이 코드를 실행하는 경우에는 경로를 추가할 필요가 없습니다.
+마찬가지로, ShotGrid 통합이 이미 실행 중인 소프트웨어 내에서 이 코드를 실행하는 경우에는 경로를 추가할 필요가 없습니다.
 
-Shotgun이 이미 시작된 환경에서 코드를 실행하는 경우 다음과 같이 간단한 방식으로 API를 가져올 수 있습니다.
+ShotGrid이 이미 시작된 환경에서 코드를 실행하는 경우 다음과 같이 간단한 방식으로 API를 가져올 수 있습니다.
 
 ```python
 import sgtk
 ```
-Shotgun 통합 외부에서 API를 사용하려면(예: 즐겨 사용하는 IDE에서 테스트하는 경우) 먼저 API에 대한 경로를 설정해야 합니다.
+ShotGrid 통합 외부에서 API를 사용하려면(예: 즐겨 사용하는 IDE에서 테스트하는 경우) 먼저 API에 대한 경로를 설정해야 합니다.
 
 ```python
 import sys
@@ -65,7 +65,7 @@ import sgtk
 
 API 설명서에 언급된 것처럼 `Sgtk` 인스턴스를 직접 만들지는 않습니다. 다음은 `Sgtk` 인스턴스를 가져오기 위한 몇 가지 옵션입니다.
 
-1. Shotgun 통합이 이미 실행 중인 환경(예: Maya가 Shotgun에서 시작된 경우 Maya Python 콘솔)에서 Python 코드를 실행하는 경우 현재 엔진에서 `Sgtk` 인스턴스를 가져올 수 있습니다.
+1. ShotGrid 통합이 이미 실행 중인 환경(예: Maya가 ShotGrid에서 시작된 경우 Maya Python 콘솔)에서 Python 코드를 실행하는 경우 현재 엔진에서 `Sgtk` 인스턴스를 가져올 수 있습니다.
    `Engine.sgtk` 특성은 엔진의 `Sgtk` 인스턴스를 유지합니다.
    따라서 Maya와 같은 응용프로그램에서 다음을 실행할 수 있습니다.
 
@@ -90,7 +90,7 @@ API 설명서에 언급된 것처럼 `Sgtk` 인스턴스를 직접 만들지는 
 
 이 안내서에서는 엔진이 이미 시작된 환경에서 이 코드를 실행한다고 가정하므로 옵션 1을 사용합니다.
 또한 `Sgtk` 클래스 인스턴스를 `tk`라는 변수에 저장합니다.
-Shotgun Python 콘솔을 사용 중인 경우 `tk` 변수가 이미 전역 변수로 미리 정의되어 있습니다.
+ShotGrid Python 콘솔을 사용 중인 경우 `tk` 변수가 이미 전역 변수로 미리 정의되어 있습니다.
 
 이제 `Sgtk` 인스턴스가 있으므로 API를 사용할 준비가 되었습니다.
 이제 게시 스크립트는 다음과 같습니다.
@@ -111,7 +111,7 @@ tk = current_engine.sgtk
 
 툴킷에서 발생하는 많은 작업은 컨텍스트를 중심으로 이루어집니다. 즉, 사용자가 무슨 작업 중인지 인지하고 이에 맞게 진행한다는 의미입니다.
 툴킷 API를 사용하여 작업 중인 엔티티에 대한 중요한 상세 정보를 저장하고 앱 또는 다른 프로세스와 공유할 수 있어야, 이렇게 컨텍스트를 인식한 작동이 가능합니다.
-예를 들어 툴킷에서 작업 중인 태스크를 인식할 경우 게시된 파일을 Shotgun에서 해당하는 태스크에 자동으로 링크할 수 있습니다.
+예를 들어 툴킷에서 작업 중인 태스크를 인식할 경우 게시된 파일을 ShotGrid에서 해당하는 태스크에 자동으로 링크할 수 있습니다.
 
 [`Context` 클래스](https://developer.shotgunsoftware.com/tk-core/core.html#context)는 이러한 정보의 컨테이너로 사용됩니다.
 클래스 인스턴스 내에 몇 가지 항목 중 `Task`, `Step`, `entity`(예: `Shot` 또는 `Asset`), `Project` 및 현재 `HumanUser`를 저장할 수 있습니다.
@@ -330,15 +330,15 @@ sgtk.util.filesystem.touch_file(publish_path)
 
 여기에서 사용할 수 있는 두 가지 방법이 있습니다.
 
-1. 이 특별한 예제에서는 게시 파일을 해석하므로 [Shotgun API](https://developer.shotgunsoftware.com/python-api/)를 사용하여 `PublishedFile` 엔티티에 대해 다음으로 사용 가능한 버전 번호를 쿼리할 수 있습니다.
+1. 이 특별한 예제에서는 게시 파일을 해석하므로 [ShotGrid API](https://developer.shotgunsoftware.com/python-api/)를 사용하여 `PublishedFile` 엔티티에 대해 다음으로 사용 가능한 버전 번호를 쿼리할 수 있습니다.
 2. 디스크의 파일을 스캔하고 이미 있는 버전을 확인한 후 다음 버전 번호를 추출할 수도 있습니다.
-   이 옵션은 작업 중인 파일이 Shotgun에서 트래킹되지 않는 경우(예: 작업 파일)에 유용합니다.
+   이 옵션은 작업 중인 파일이 ShotGrid에서 트래킹되지 않는 경우(예: 작업 파일)에 유용합니다.
 
 첫 번째 옵션이 이 안내서의 예에 가장 적합하지만 두 방법 모두 각자 용도가 있으므로 사용되므로 둘 다 설명하겠습니다.
 
-### Shotgun에 다음 버전 번호 쿼리
+### ShotGrid에 다음 버전 번호 쿼리
 
-Shotgun API와 [`summarize()` 방식](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)을 사용하여 동일한 이름과 태스크를 공유하는 `PublishedFile` 엔티티 중에서 가장 높은 버전 번호를 가져온 다음 1을 추가하면 됩니다.
+ShotGrid API와 [`summarize()` 방식](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)을 사용하여 동일한 이름과 태스크를 공유하는 `PublishedFile` 엔티티 중에서 가장 높은 버전 번호를 가져온 다음 1을 추가하면 됩니다.
 
 ```python
 r = sg.summarize(entity_type="PublishedFile",
@@ -395,7 +395,7 @@ fields["version"] = get_next_version_number(tk, "maya_shot_work", fields)
 
 이제 경로가 생성되고 게시할 준비가 되었습니다. 유틸리티 방식 [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish)를 사용하여 이 작업을 수행할 수 있습니다.
 
-Shotgun API의 [`Shotgun.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) 방식을 사용하여 `PublishedFile` 엔티티를 만들 수도 있지만 필요한 모든 필드가 제공되고 올바르게 입력되기 때문에 툴킷 API를 사용하는 것이 가장 좋습니다.
+ShotGrid API의 [`Shotgun.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) 방식을 사용하여 `PublishedFile` 엔티티를 만들 수도 있지만 필요한 모든 필드가 제공되고 올바르게 입력되기 때문에 툴킷 API를 사용하는 것이 가장 좋습니다.
 
 ```python
 # So as to match the Publish app's default behavior, we are adding the extension to the end of the publish name.

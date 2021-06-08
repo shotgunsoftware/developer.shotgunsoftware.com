@@ -12,7 +12,7 @@ lang: ja
 
 目次:
 - [Toolkit のフレームワークとは何か?](#what-is-a-toolkit-framework)
-- [既製の Shotgun フレームワーク](#pre-made-shotgun-frameworks)
+- [既製の ShotGrid フレームワーク](#pre-made-shotgun-frameworks)
 - [フレームワークを作成する](#creating-a-framework)
 - [フックからフレームワークを使用する](#using-frameworks-from-hooks)
 
@@ -20,9 +20,9 @@ lang: ja
 
 Toolkit の[フレームワーク](https://developer.shotgunsoftware.com/tk-core/platform.html?highlight=hide_tk_title_bar#frameworks)は Toolkit アプリと非常によく似ています。主な違いは、フレームワークは単独で実行するものではなく、アプリまたはエンジンに読み込んで実行するものであるということです。このため、再利用可能なロジックを分離したまま、複数のエンジンおよびアプリで使用することができます。フレームワークの例として、再利用可能な UI コンポーネントのライブラリがあります。このライブラリに、プレイリスト ピッカー コンポーネントが含まれることがあります。アプリ内でこのフレームワークを読み込み、メイン アプリ UI にプレイリスト ピッカー コンポーネントを接続することができます。
 
-## 既製の Shotgun フレームワーク
+## 既製の ShotGrid フレームワーク
 
-Shotgun には、独自のアプリを作成するときに役立つことがある、既製の[フレームワーク](https://support.shotgunsoftware.com/hc/ja/articles/219039798#frameworks)がいくつか用意されています。[Qt ウィジェット](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/)と [Shotgun ユーティリティ](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/)のフレームワークは、アプリ開発時に特に役立ちます。
+ShotGrid には、独自のアプリを作成するときに役立つことがある、既製の[フレームワーク](https://support.shotgunsoftware.com/hc/ja/articles/219039798#frameworks)がいくつか用意されています。[Qt ウィジェット](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/)と [ShotGrid ユーティリティ](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/)のフレームワークは、アプリ開発時に特に役立ちます。
 
 ## フレームワークを作成する
 

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Shotgun Folders
+title: ShotGrid Folders
 pagename: tk-shotgun-folders
 lang: ko
 ---
 
-# Shotgun Folders
+# ShotGrid Folders
 
 {% include product %} Toolkit에는 구성을 기반으로 표준화된 디렉토리 구조를 만드는 시스템이 내장되어 있습니다. 따라서 여러 샷에 대해 일관된 파일 시스템 레이아웃을 쉽고 빠르게 생성할 수 있습니다.
 

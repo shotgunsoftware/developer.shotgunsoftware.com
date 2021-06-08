@@ -16,7 +16,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 
 1. **创建文件夹：**在 {% include product %} 中创建对象后，我们需要先在磁盘上创建文件夹，然后才能开始工作。这个过程可以很简单，比如在磁盘上创建一个文件夹来代表镜头；也可以更复杂，比如设置一个特定于用户的工作沙盒，让每个处理镜头的用户在单独的磁盘区域工作。
 
-   - Toolkit 会在您启动应用程序（例如为镜头 BECH_0010 启动 Maya）时自动创建文件夹，并确保在启动 Maya 前文件夹已存在。如果文件夹不存在，则会即时创建这些文件夹。除此以外，也可以使用 API 方法、[Shell 中的 tank 命令](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178#Useful%20tank%20commands)以及通过 [Shotgun 中的“创建文件夹”(Create Folders)菜单](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040688#Shotgun%20Integration)来创建文件夹。此文件夹创建过程由一组特殊的配置文件来控制，下面我们在文档的[第 1 部分](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Part%201%20-%20Folder%20Creation%20Syntax)中对此进行介绍。
+   - Toolkit 会在您启动应用程序（例如为镜头 BECH_0010 启动 Maya）时自动创建文件夹，并确保在启动 Maya 前文件夹已存在。如果文件夹不存在，则会即时创建这些文件夹。除此以外，也可以使用 API 方法、[Shell 中的 tank 命令](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178#Useful%20tank%20commands)以及通过 [ShotGrid 中的“创建文件夹”(Create Folders)菜单](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040688#Shotgun%20Integration)来创建文件夹。此文件夹创建过程由一组特殊的配置文件来控制，下面我们在文档的[第 1 部分](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Part%201%20-%20Folder%20Creation%20Syntax)中对此进行介绍。
 2. **打开和保存工作：**在工作时，我们需要在磁盘的标准位置打开和保存文件。 这些文件位置通常位于我们在开始工作前创建的文件夹结构之中。
 
    - 文件夹结构建立后，我们可以使用该结构来确定关键的磁盘位置。这些位置称为[模板](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Part%202%20-%20Configuring%20File%20System%20Templates)。例如，您可以定义一个 `maya_shot_publish` 模板来表示为镜头发布的 Maya 文件。[Toolkit 应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798)随后会使用此模板 - 发布应用可使用它控制应将文件写入何处，而 [Workfiles 应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)可使用此模板了解从何处打开文件。在 Toolkit 的环境配置内，您可以控制每个应用使用哪些模板。因此，Toolkit 使用的所有关键文件位置都定义在一个模板文件中，并且易于查看。
@@ -126,7 +126,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 
 ![create_with_parent_folder](images/file-system-config-reference/create_with_parent_folder_02_DS.png)
 
-{% include info title="注意" content="这种文件系统嵌套关系不涉及 [Shotgun 层次结构](https://support.shotgunsoftware.com/hc/zh-cn/articles/219030828)，两者之间并无关联。它们的配置是完全独立的。" %}
+{% include info title="注意" content="这种文件系统嵌套关系不涉及 [ShotGrid 层次结构](https://support.shotgunsoftware.com/hc/zh-cn/articles/219030828)，两者之间并无关联。它们的配置是完全独立的。" %}
 
 shotgun_entity 类型的文件夹支持一个可选标志，该标志可控制文件夹创建过程在创建父文件夹后是否尝试向下递归到该文件夹中，如果是的话，还将创建子文件夹。标志作为一种设置，只能有某些固定值，在本例中为“true”或“false”。要添加此标志，请参考下面这个示例：
 
@@ -268,7 +268,7 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
 
 您可以在此使用名称表达式，就像[上面介绍的 {% include product %} 实体](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Shotgun%20List%20Field%20Folders)一样。节点会查找其父节点、祖父节点等，直至找到 {% include product %} 实体文件夹配置。此实体文件夹将与工序关联，并且实体的类型将用来确定要创建哪些工序文件夹。
 
-{% include info title="注意" content="如果您想使用工作流工序创建顶层文件夹，只需使用 Shotgun 实体节点并将关联的类型设置为“工序”(Step)即可。" %}
+{% include info title="注意" content="如果您想使用工作流工序创建顶层文件夹，只需使用 ShotGrid 实体节点并将关联的类型设置为“工序”(Step)即可。" %}
 
 默认情况下，会尝试自动为特定实体的所有相关工序创建工序文件夹。例如，如果一个包含 5 个工序（布局、动画、特效、照明、合成）的镜头触发了文件夹创建操作，将自动为这 5 个工序（布局、动画、特效、照明、合成）创建工序文件夹。
 
@@ -462,7 +462,7 @@ _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通�
     additional_param1: abc
     additional_param2: def
 
-如果 target 参数包含 `$EntityType` 标记，如 `$Asset`、`$Shot` 或 `$Project`，系统将尝试以代表该实体（资产、镜头、项目等）的文件夹的名称来解析这些标记。 Toolkit 将在 Shotgun 管理的文件系统树中查找这些值，如果树的上层未定义这些值，将报告错误。
+如果 target 参数包含 `$EntityType` 标记，如 `$Asset`、`$Shot` 或 `$Project`，系统将尝试以代表该实体（资产、镜头、项目等）的文件夹的名称来解析这些标记。 Toolkit 将在 ShotGrid 管理的文件系统树中查找这些值，如果树的上层未定义这些值，将报告错误。
 
 列表字段（如资产的资产类型）采用包含实体类型的某种语法进行表示，例如 `$Asset.sg_asset_type`。 例如：
 
@@ -1051,7 +1051,7 @@ Toolkit 应用在填充所有上下文字段时（通过 `context.as_template_fi
 
 其中 Sequence、Shot、Step 和 version 是同一模板文件中定义的键。
 
-{% include info title="注意" content="如果一个 string 键的名称与一个关联了 Shotgun 实体的动态数据结构文件夹的实体类型一致，将使用该文件夹名称来代替令牌。例如，假设您像上面的代码段那样正在使用一个“string”类型的 {Sequence} 模板键，同时您的数据结构中有一个名为“sequence”的动态文件夹，并且在对应的 `sequence.yml` 文件中，它被定义为 `shotgun_entity` 类型，并连接到 Shotgun 中的“场”(Sequence)实体类型。这种情况下，Toolkit 会认为您的模板键对应于这个动态文件夹的实体类型（示例中二者均为“镜头序列”(Sequence)）。因此，Toolkit 会提取生成的文件夹名称（即所涉及的具体场的名称），并使用它替换模板键。" %}
+{% include info title="注意" content="如果一个 string 键的名称与一个关联了 ShotGrid 实体的动态数据结构文件夹的实体类型一致，将使用该文件夹名称来代替令牌。例如，假设您像上面的代码段那样正在使用一个“string”类型的 {Sequence} 模板键，同时您的数据结构中有一个名为“sequence”的动态文件夹，并且在对应的 `sequence.yml` 文件中，它被定义为 `shotgun_entity` 类型，并连接到 ShotGrid 中的“场”(Sequence)实体类型。这种情况下，Toolkit 会认为您的模板键对应于这个动态文件夹的实体类型（示例中二者均为“镜头序列”(Sequence)）。因此，Toolkit 会提取生成的文件夹名称（即所涉及的具体场的名称），并使用它替换模板键。" %}
 
 如果需要定义任何可选属性，必须使用这种格式。目前，只有 `root_name` 这一个可选属性，在有多个根目录的项目中，可以用它来指定路径的项目根目录。  当您想添加新的存储根目录来存储某些项目文件时，会用到[多个根目录](https://developer.shotgunsoftware.com/9ea9dd4e/)。
 
@@ -1106,7 +1106,7 @@ Toolkit 应用在填充所有上下文字段时（通过 `context.as_template_fi
 
 ![episode_hierarchy](images/file-system-config-reference/episode_hierarchy.jpg)
 
-{% include info title="注意" content="请参见[上文中的“随父文件夹一起创建的文件夹”部分](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Create%20With%20Parent%20Folder)，回顾 Toolkit 中的嵌套关系（这与 Shotgun 中的项目层次结构完全无关）。" %}
+{% include info title="注意" content="请参见[上文中的“随父文件夹一起创建的文件夹”部分](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Create%20With%20Parent%20Folder)，回顾 Toolkit 中的嵌套关系（这与 ShotGrid 中的项目层次结构完全无关）。" %}
 
 **其他参考：**
 

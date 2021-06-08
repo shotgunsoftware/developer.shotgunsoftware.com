@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Shotgun Launch Folder
+title: ShotGrid Launch Folder
 pagename: tk-shotgun-launchfolder
 lang: ja
 ---
 
-# Shotgun Launch Folder
+# ShotGrid Launch Folder
 
 Launch Folder アプリは {% include product %} ユーティリティです。{% include product %} からファイル システムにジャンプできるようにします。
 

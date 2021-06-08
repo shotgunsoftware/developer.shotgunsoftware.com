@@ -16,7 +16,7 @@ _이 문서에서는 툴킷 구성에 대한 제어 권한이 있는 경우에�
 
 1. **폴더 생성:** {% include product %}에서 객체를 만든 후에는 작업이 시작될 수 있도록 디스크에 폴더를 만들어야 합니다. 이 작업은 디스크에 샷을 나타내는 폴더를 만드는 것처럼 간단할 수도 있고, 샷에 대해 작업하는 각 사용자가 디스크의 개별 영역에서 작업할 수 있도록 사용자별 작업 샌드박스를 설정하는 것처럼 복잡할 수 있습니다.
 
-   - 툴킷은 응용프로그램을 시작할 때(예: 샷 BECH_0010을 위해 Maya를 시작할 때) 폴더 생성을 자동화하며 Maya를 시작하기 전에 폴더가 있는지 확인합니다. 폴더가 없으면 즉시 만들어집니다. 폴더는 [셸에서의 tank 명령](https://support.shotgunsoftware.com/hc/ko/articles/219033178-Administering-Toolkit#Useful%20tank%20commands) 및 [Shotgun의 폴더 만들기](https://support.shotgunsoftware.com/hc/ko/articles/219040688-Beyond-your-first-project#Shotgun%20Integration)(Create Folders) 메뉴를 통해 API 방식을 사용하여 만들 수도 있습니다. 이 폴더 생성 프로세스는 특별한 구성 파일 세트를 통해 진행됩니다. 자세한 정보는 아래 문서의 [1부](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)를 참조하십시오.
+   - 툴킷은 응용프로그램을 시작할 때(예: 샷 BECH_0010을 위해 Maya를 시작할 때) 폴더 생성을 자동화하며 Maya를 시작하기 전에 폴더가 있는지 확인합니다. 폴더가 없으면 즉시 만들어집니다. 폴더는 [셸에서의 tank 명령](https://support.shotgunsoftware.com/hc/ko/articles/219033178-Administering-Toolkit#Useful%20tank%20commands) 및 [ShotGrid의 폴더 만들기](https://support.shotgunsoftware.com/hc/ko/articles/219040688-Beyond-your-first-project#Shotgun%20Integration)(Create Folders) 메뉴를 통해 API 방식을 사용하여 만들 수도 있습니다. 이 폴더 생성 프로세스는 특별한 구성 파일 세트를 통해 진행됩니다. 자세한 정보는 아래 문서의 [1부](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)를 참조하십시오.
 2. **작업 열기 및 저장:** 작업하는 동안 디스크의 표준화된 위치에서 파일을 열고 저장해야 합니다. 이러한 파일 위치는 일반적으로 작업 시작 전에 만들어진 폴더 구조 내에 있습니다.
 
    - 폴더 구조가 설정되면 해당 구조를 사용하여 디스크의 주요 위치를 식별할 수 있습니다. 이러한 위치를 [템플릿](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)이라고 합니다. 예를 들어 `maya_shot_publish`라는 템플릿을 정의하여 샷을 위해 게시된 Maya 파일을 참조할 수 있습니다.  [툴킷 앱](https://support.shotgunsoftware.com/hc/ko/articles/219039798)은 이 템플릿을 사용합니다. Publish 앱은 이 템플릿을 사용하여 파일을 작성해야 할 위치를 제어할 수 있으며 [Workfiles 앱](https://support.shotgunsoftware.com/hc/ko/articles/219033088-Your-Work-Files)은 템플릿을 사용하여 파일을 열 위치를 확인할 수 있습니다. 툴킷의 환경 구성 내에서 각 앱이 사용하는 템플릿을 제어할 수 있습니다. 툴킷에서 사용되는 모든 주요 파일 위치는 단일 템플릿 파일에 정의되므로 쉽게 확인할 수 있습니다.
@@ -126,7 +126,7 @@ sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있
 
 ![create_with_parent_folder](images/file-system-config-reference/create_with_parent_folder_02_DS.png)
 
-{% include info title="참고" content="이 파일 시스템 중첩 관계는 [Shotgun 계층](https://support.shotgunsoftware.com/hc/ko/articles/219030828)과는 별개이며 서로 연결되어 있지 않습니다. 이들은 완전히 독립적으로 구성됩니다." %}
+{% include info title="참고" content="이 파일 시스템 중첩 관계는 [ShotGrid 계층](https://support.shotgunsoftware.com/hc/ko/articles/219030828)과는 별개이며 서로 연결되어 있지 않습니다. 이들은 완전히 독립적으로 구성됩니다." %}
 
 shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목을 만들 때 하위 항목도 만들어지도록 반복할지 여부를 제어하는 선택적 플래그를 지원합니다. 플래그는 특정 고정 값(이 경우 "true" 또는 "false")만을 지정할 수 있는 설정입니다. 이 플래그를 추가하려면 다음 예를 사용합니다.
 
@@ -268,7 +268,7 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 여기에서는 [위에서 설명한 {% include product %} 엔티티](https://support.shotgunsoftware.com/hc/ko/articles/219039868-File-System-Reference#Shotgun%20List%20Field%20Folders)와 같은 방식으로 이름 표현식을 사용할 수 있습니다. 노드는 {% include product %} 엔티티 폴더 구성을 찾을 때까지 상위, 최상위 항목을 검색합니다. 이 엔티티 폴더는 단계와 연관되며 엔티티의 유형은 작성할 단계를 결정하는 데 사용됩니다.
 
-{% include info title="참고" content="파이프라인 단계가 있는 최상위 폴더를 만들려면 Shotgun 엔티티 노드를 사용하여 관련 유형을 단계로 설정합니다." %}
+{% include info title="참고" content="파이프라인 단계가 있는 최상위 폴더를 만들려면 ShotGrid 엔티티 노드를 사용하여 관련 유형을 단계로 설정합니다." %}
 
 기본적으로 단계 폴더는 특정 엔티티에 대한 모든 관련 단계를 자동으로 만들려고 합니다. 예를 들어 5단계(레이아웃, 애니메이션, FX, 조명, 합성)가 있는 샷에 대해 폴더 생성이 트리거되면 5단계(레이아웃, 애니메이션, FX, 조명, 합성)에 대한 단계 폴더가 자동으로 만들어집니다.
 
@@ -1051,7 +1051,7 @@ UTC 시간으로 기본 설정되는 YYYY.MM.DD 형식의 타임스탬프입니�
 
 시퀀스, 샷, 단계 및 버전은 동일한 템플릿 파일에 정의된 키입니다.
 
-{% include info title="참고" content="문자열 키의 이름이 연관된 Shotgun 엔티티가 있는 동적 스키마 폴더의 엔티티 유형과 일치하면 해당 폴더 이름이 토큰으로 대체됩니다. 예를 들어 위의 코드 조각과 같이 'string' 유형의 {Sequence} 템플릿 키를 사용하고 스키마에서 'sequence'라는 동적 폴더가 있는 경우 해당 `sequence.yml` 파일에서 `shotgun_entity` 유형으로 정의되며 Shotgun의 "Sequence" 엔티티 유형에 연결됩니다. 툴킷은 템플릿 키가 이 동적 폴더의 엔티티 유형이라는 것을 인식합니다(여기서는 둘 다 Sequence임). 따라서 툴킷은 폴더 이름(즉, 특정 시퀀스의 이름)을 가져와서 템플릿 키로 대체합니다." %}
+{% include info title="참고" content="문자열 키의 이름이 연관된 ShotGrid 엔티티가 있는 동적 스키마 폴더의 엔티티 유형과 일치하면 해당 폴더 이름이 토큰으로 대체됩니다. 예를 들어 위의 코드 조각과 같이 'string' 유형의 {Sequence} 템플릿 키를 사용하고 스키마에서 'sequence'라는 동적 폴더가 있는 경우 해당 `sequence.yml` 파일에서 `shotgun_entity` 유형으로 정의되며 ShotGrid의 "Sequence" 엔티티 유형에 연결됩니다. 툴킷은 템플릿 키가 이 동적 폴더의 엔티티 유형이라는 것을 인식합니다(여기서는 둘 다 Sequence임). 따라서 툴킷은 폴더 이름(즉, 특정 시퀀스의 이름)을 가져와서 템플릿 키로 대체합니다." %}
 
 선택적 속성을 정의해야 하는 경우 이 양식이 필요합니다. 현재 유일한 선택적 속성은 `root_name`이며 이 속성은 다중 루트가 있는 프로젝트의 경로에 대한 프로젝트 루트를 지정하는 데 사용할 수 있습니다.  [다중 루트](https://developer.shotgunsoftware.com/9ea9dd4e/)는 새로운 저장소 루트를 추가하여 일부 프로젝트 파일을 저장할 때 사용됩니다.
 
@@ -1106,7 +1106,7 @@ name과 version은 동일한 파일에 정의된 키 이름입니다.
 
 ![episode_hierarchy](images/file-system-config-reference/episode_hierarchy.jpg)
 
-{% include info title="참고" content="[위의 상위 폴더를 사용하여 만들기 섹션](https://support.shotgunsoftware.com/hc/ko/articles/219039868#Create%20With%20Parent%20Folder)을 참조하여 툴킷의 중첩 관계를 다시 확인합니다(Shotgun의 프로젝트 계층과는 완전히 독립적임)." %}
+{% include info title="참고" content="[위의 상위 폴더를 사용하여 만들기 섹션](https://support.shotgunsoftware.com/hc/ko/articles/219039868#Create%20With%20Parent%20Folder)을 참조하여 툴킷의 중첩 관계를 다시 확인합니다(ShotGrid의 프로젝트 계층과는 완전히 독립적임)." %}
 
 **추가 참조:**
 

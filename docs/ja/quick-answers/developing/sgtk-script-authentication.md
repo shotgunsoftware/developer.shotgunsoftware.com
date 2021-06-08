@@ -8,7 +8,7 @@ lang: ja
 # カスタム スクリプトで認証とログイン資格情報を使用するにはどうすればよいですか?
 
 ## エラー メッセージ
-スクリプトで次のようなエラーが表示された場合は、スクリプトと Shotgun サイトの通信が許可されていないことを意味します。
+スクリプトで次のようなエラーが表示された場合は、スクリプトと ShotGrid サイトの通信が許可されていないことを意味します。
 
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'

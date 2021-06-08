@@ -7,9 +7,9 @@ lang: en
 
 # Media Traffic Isolation
 
-{% include info title="Disclaimer" content="This documentation is provided solely as an example. It explains how to set up your Shotgun Isolation environment so that it can be connected to Shotgun cloud infrastructure. Please adapt it to your studio security requirements as needed. As Shotgun has no visibility on your AWS Account, ensuring that this account is secure is a client responsibility." %}
+{% include info title="Disclaimer" content="This documentation is provided solely as an example. It explains how to set up your ShotGrid Isolation environment so that it can be connected to ShotGrid cloud infrastructure. Please adapt it to your studio security requirements as needed. As ShotGrid has no visibility on your AWS Account, ensuring that this account is secure is a client responsibility." %}
 
-The media traffic isolation feature allows your users to access media in your AWS S3 bucket privately (not transiting over the public Internet). Please note that if you have a multi-region setup and that leverages the Shotgun Transcoding service there may still be instances where media transits across the public Internet. Reach out to our support team for more details.
+The media traffic isolation feature allows your users to access media in your AWS S3 bucket privately (not transiting over the public Internet). Please note that if you have a multi-region setup and that leverages the ShotGrid Transcoding service there may still be instances where media transits across the public Internet. Reach out to our support team for more details.
 
 Media Isolation activation is a pre-requisite to enable this feature. If you haven't done so already, see [Media Isolation](./s3_bucket.md).
 
@@ -87,7 +87,7 @@ Create a new stack in AWS Console using either the [private](https://sg-shotguns
 
 ### Configure HTTPS
 
-Shotgun requires that the S3 proxy be accessed via HTTPS, therefore the AWS ALB handling requests for your newly created S3 proxy stack must be configured to accept HTTPS requests.
+ShotGrid requires that the S3 proxy be accessed via HTTPS, therefore the AWS ALB handling requests for your newly created S3 proxy stack must be configured to accept HTTPS requests.
 
 * Create a DNS entry pointing to your S3 proxy, depending upon whether public or private
   * Private S3 proxy (default):
@@ -121,7 +121,7 @@ Try to access your S3 proxy using the ping route. Eg. `https://s3-proxy.mystudio
 
 ### Configure your test site to use the S3 proxy
 
-* Navigate to the Site Preferences menu within Shotgun and expand the Isolation section
+* Navigate to the Site Preferences menu within ShotGrid and expand the Isolation section
 * Set S3 Proxy Host Address to the S3 proxy url. Eg. `https://s3-proxy.mystudio.com` then click Save changes
 * Confirm that you are still able to access existing media
 * Attempt to upload new media

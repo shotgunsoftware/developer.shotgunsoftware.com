@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Shotgun 启动发布
+title: ShotGrid 启动发布
 pagename: tk-shotgun-launchpublish
 lang: zh_CN
 ---
 
-# Shotgun 启动发布
+# ShotGrid 启动发布
 
 此应用向 {% include product %} 中的“已发布的文件”(Published File)实体添加一个“在关联应用程序中打开”(Open in Associated Application)动作。这让您可以轻松打开已发布的文件：只需导航到该文件，在文件上单击鼠标右键，然后选择动作即可。
 

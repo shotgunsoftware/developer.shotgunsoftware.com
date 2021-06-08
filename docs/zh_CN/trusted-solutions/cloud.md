@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Shotgun in the Cloud
+title: ShotGrid in the Cloud
 pagename: cloud-index
 lang: en
 ---
 
-# Shotgun in the Cloud
+# ShotGrid in the Cloud
 
-## What is Shotgun in the Cloud?
+## What is ShotGrid in the Cloud?
 
-Shotgun Cloud is our default offering, hosted on AWS and built on top of Autodesk's Cloud technology platform. Shotgun Cloud is the latest generation of our hosted service and is completely cloud based.
+ShotGrid Cloud is our default offering, hosted on AWS and built on top of Autodesk's Cloud technology platform. ShotGrid Cloud is the latest generation of our hosted service and is completely cloud based.
 
 ## Further Reading
 

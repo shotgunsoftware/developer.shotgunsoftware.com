@@ -68,7 +68,7 @@ sgtk.LogManager().global_debug = True
 
 ## パート 3: 認証
 
-Shotgun Toolkit が既に起動されている環境の外部で Toolkit API を使用するスクリプトを実行する場合は、常に認証する必要があります。したがって、ブートストラップを実行する前に、Shotgun サイトで Toolkit API を認証する必要があります。
+ShotGrid Toolkit が既に起動されている環境の外部で Toolkit API を使用するスクリプトを実行する場合は、常に認証する必要があります。したがって、ブートストラップを実行する前に、ShotGrid サイトで Toolkit API を認証する必要があります。
 
 認証には、ユーザの資格情報またはスクリプトの資格情報を使用できます。
 
@@ -161,7 +161,7 @@ Maya や Nuke などのソフトウェアの外部にあるスタンドアロン
 #### エンティティ
 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) メソッドの `entity` パラメータを使用する目的は、[コンテキスト](https://developer.shotgunsoftware.com/tk-core/core.html#context)、つまり、起動したエンジンの[環境](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)を設定することです。エンティティには、環境設定が機能する任意のエンティティ タイプを指定できます。たとえば、`Project` エンティティを指定した場合、エンジンはプロジェクトの環境設定を使用してプロジェクト コンテキスト内で起動します。同様に、(タスクが `Asset` にリンクされている) `Task` エンティティを指定して、エンジンが `asset_step.yml` 環境を使用して起動するように設定できます。この動作は既定の設定動作に基づいて決まり、[選択した環境](https://developer.shotgunsoftware.com/ja/487a9f2c/#toolkit-%E3%81%8C%E7%8F%BE%E5%9C%A8%E3%81%AE%E7%92%B0%E5%A2%83%E3%82%92%E5%88%A4%E6%96%AD%E3%81%99%E3%82%8B%E4%BB%95%E7%B5%84%E3%81%BF)はコア フック [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py) によってコントロールされます。したがって、コンテキストやその他のパラメータに基づいて異なる環境を選択するよう変更することができます。
 
-エンティティは、タイプと ID が最低限必要となる Shotgun エンティティ ディクショナリの形式で指定する必要があります。
+エンティティは、タイプと ID が最低限必要となる ShotGrid エンティティ ディクショナリの形式で指定する必要があります。
 
 ```python
 task = {"type": "Task", "id": 17264}
@@ -236,7 +236,7 @@ engine = mgr.bootstrap_engine("tk-shell", entity=project)
 
 エンジン インスタンスが作成されたので、Toolkit API を使用することができます。
 
-アプリの起動方法について説明する前に、エンジンを介して[現在のコンテキスト](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context)、[sgtk インスタンス](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk)、および [Shotgun API インスタンス](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun)を管理できることにご注意ください。
+アプリの起動方法について説明する前に、エンジンを介して[現在のコンテキスト](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context)、[sgtk インスタンス](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk)、および [ShotGrid API インスタンス](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun)を管理できることにご注意ください。
 
 ```python
 engine.context

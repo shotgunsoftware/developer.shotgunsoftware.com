@@ -12,7 +12,7 @@ lang: ko
 
 목차:
 - [툴킷 프레임워크란?](#what-is-a-toolkit-framework)
-- [사전 작성된 Shotgun 프레임워크](#pre-made-shotgun-frameworks)
+- [사전 작성된 ShotGrid 프레임워크](#pre-made-shotgun-frameworks)
 - [프레임워크 작성](#creating-a-framework)
 - [후크에서 프레임워크 사용](#using-frameworks-from-hooks)
 
@@ -24,10 +24,10 @@ lang: ko
 재사용 가능한 UI 구성요소 라이브러리를 프레임워크의 예로 들 수 있습니다. 여기에는 재생 목록 선택기 구성요소가 포함될 수 있습니다.
 그런 다음 앱에서 해당 프레임워크를 가져오고 재생 목록 선택기 구성 요소를 메인 앱 UI에 연결할 수 있습니다.
 
-## 사전 작성된 Shotgun 프레임워크
+## 사전 작성된 ShotGrid 프레임워크
 
-Shotgun은 자체 앱을 제작할 때 유용한 몇 가지 사전 작성 [프레임워크](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines#frameworks)를 제공합니다.
-[Qt Widgets](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/) 및 [Shotgun 유틸리티](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/) 프레임워크는 앱 개발 시 특히 유용합니다.
+ShotGrid은 자체 앱을 제작할 때 유용한 몇 가지 사전 작성 [프레임워크](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines#frameworks)를 제공합니다.
+[Qt Widgets](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/) 및 [ShotGrid 유틸리티](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/) 프레임워크는 앱 개발 시 특히 유용합니다.
 
 ## 프레임워크 작성
 

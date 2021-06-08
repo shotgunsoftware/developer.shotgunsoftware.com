@@ -16,7 +16,7 @@ _このドキュメントは、Toolkit の設定を管理するユーザのみ�
 
 1. **フォルダの作成:**{% include product %} でオブジェクトを作成したら、作業開始前にディスク上にフォルダを作成する必要があります。これは、ショットを表すディスク上にフォルダを作成するという簡単な作業であることも、ショットで作業する各ユーザがディスク上の個別の領域で作業できるようにユーザ固有の作業サンドボックスなどをセットアップするという複雑な作業であることもあります。
 
-   - Toolkit はアプリケーションの起動時にフォルダを自動的に作成し(ショット BECH_0010 の Maya を起動する場合など)、Maya の起動前にフォルダが作成されるようにします。フォルダが存在しない場合はすぐに作成されます。また、フォルダは、API メソッド、[シェルの tank コマンド](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Useful%20tank%20commands)、[Shotgun の Create Folders](https://support.shotgunsoftware.com/hc/ja/articles/219040688#Shotgun%20Integration) を使用して作成することもできます。一連の特別な設定ファイルによってこのフォルダ作成プロセスが制御されます。これについては、次のセクションの「[パート 1](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)」で説明します。
+   - Toolkit はアプリケーションの起動時にフォルダを自動的に作成し(ショット BECH_0010 の Maya を起動する場合など)、Maya の起動前にフォルダが作成されるようにします。フォルダが存在しない場合はすぐに作成されます。また、フォルダは、API メソッド、[シェルの tank コマンド](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Useful%20tank%20commands)、[ShotGrid の Create Folders](https://support.shotgunsoftware.com/hc/ja/articles/219040688#Shotgun%20Integration) を使用して作成することもできます。一連の特別な設定ファイルによってこのフォルダ作成プロセスが制御されます。これについては、次のセクションの「[パート 1](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)」で説明します。
 2. **作業の表示と保存:** 作業中、ディスク上の標準的な場所からファイルを開いてそこに保存する必要があります。通常、このファイルの場所は作業開始前に作成されたフォルダ構造内になります。
 
    - フォルダ構造を作成すると、この構造を使用してディスク上の主要な場所を特定できます。これらの場所は「[テンプレート](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)」と呼ばれます。たとえば、ショットのパブリッシュした Maya ファイルを参照するように `maya_shot_publish` と呼ばれるテンプレートを定義します。次に、[Toolkit アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219039798)でこのテンプレートを使用します。パブリッシュ アプリがこのテンプレートを使用してファイルの書き込み場所を制御し、[作業ファイル アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)がこのテンプレートを使用して開くファイルの場所を把握できます。Toolkit の環境設定内では、各アプリが使用するテンプレートを制御できます。Toolkit で使用される主なファイルの場所はすべて 1 つのテンプレート ファイルで定義されるため、概要を簡単に表示できます。
@@ -126,7 +126,7 @@ yaml ファイルで表される動的な設定セットアップは次のモー
 
 ![create_with_parent_folder](images/file-system-config-reference/create_with_parent_folder_02_DS.png)
 
-{% include info title="注" content="このファイルシステムのネスト関係は [Shotgun 階層](https://support.shotgunsoftware.com/hc/ja/articles/219030828)とは無関係で、この 2 つの間は接続されていません。それぞれまったく個別に設定されています。" %}
+{% include info title="注" content="このファイルシステムのネスト関係は [ShotGrid 階層](https://support.shotgunsoftware.com/hc/ja/articles/219030828)とは無関係で、この 2 つの間は接続されていません。それぞれまったく個別に設定されています。" %}
 
 shotgun_entity タイプ フォルダは、親が作成されるとフォルダ作成プロセスが再帰的な処理を行って子も作成されるようにするかどうかを制御するためのオプション フラグをサポートします。フラグは特定の固定値のみを指定できる設定で、この場合は「true」または「false」です。このフラグを追加するには、次の例を使用します。
 
@@ -265,9 +265,9 @@ Toolkit では、正規表現を使用して、{% include product %} フィー�
     <a name="the {% include product %} field to use for the folder name. This field needs to come from a step entity."></a>
     # the {% include product %} field to use for the folder name. このフィールドは、ステップ エンティティから取得する必要があります。name: "short_name"
 
-ここで、[{% include product %}前述の Shotgun エンティティ](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Shotgun%20List%20Field%20Folders)で使用したように名前の式を使用できます。{% include product %} エンティティ フォルダ設定が検出されるまで、ノードは親や祖親などを探します。このエンティティ フォルダはステップに関連付けられ、エンティティのタイプを使用して作成するステップが決定されます。
+ここで、[{% include product %}前述の ShotGrid エンティティ](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Shotgun%20List%20Field%20Folders)で使用したように名前の式を使用できます。{% include product %} エンティティ フォルダ設定が検出されるまで、ノードは親や祖親などを探します。このエンティティ フォルダはステップに関連付けられ、エンティティのタイプを使用して作成するステップが決定されます。
 
-{% include info title="注" content="パイプライン ステップの上位フォルダを作成する場合は、単純に Shotgun エンティティ ノードを使用して関連するタイプをステップに設定します。" %}
+{% include info title="注" content="パイプライン ステップの上位フォルダを作成する場合は、単純に ShotGrid エンティティ ノードを使用して関連するタイプをステップに設定します。" %}
 
 既定では、ステップ フォルダは特定のエンティティに関連するすべてのステップを自動的に作成します。たとえば、5 つのステップ(レイアウト、アニメーション、エフェクト、ライティング、コンポジット)が指定されたショットのフォルダ作成がトリガされると、この 5 つのステップのステップ フォルダ(レイアウト、アニメーション、エフェクト、ライティング、コンポジット)が自動的に作成されます。
 
@@ -1050,7 +1050,7 @@ assets フォルダが単なる別のシーケンスではないことを Toolki
 
 キーであるシーケンス、ショット、ステップ、およびバージョンは、同じテンプレート ファイルに定義されます。
 
-{% include info title="注" content="文字列キーの名前が、関連する Shotgun エンティティが格納された動的なスキーマ フォルダのエンティティ タイプと一致する場合は、このフォルダ名はトークンで置き換えられます。たとえば、{Sequence} テンプレート キーのタイプが上記のスニペットのように「string」で、スキーマで「sequence」という名前の動的フォルダを使用し、それに対応した `sequence.yml` ファイルでタイプが `shotgun_entity` になるように定義し、Shotgun の「Sequence」エンティティ タイプに接続するとします。Toolkit は、テンプレート キーがこの動的フォルダのエンティティ タイプに対応することを認識します(両方ともシーケンスであるため)。そのため、Toolkit は生成されたフォルダ名(つまり問題となっている固有のシーケンスの名前)を取得し、テンプレート キーに置き換えます。" %}
+{% include info title="注" content="文字列キーの名前が、関連する ShotGrid エンティティが格納された動的なスキーマ フォルダのエンティティ タイプと一致する場合は、このフォルダ名はトークンで置き換えられます。たとえば、{Sequence} テンプレート キーのタイプが上記のスニペットのように「string」で、スキーマで「sequence」という名前の動的フォルダを使用し、それに対応した `sequence.yml` ファイルでタイプが `shotgun_entity` になるように定義し、ShotGrid の「Sequence」エンティティ タイプに接続するとします。Toolkit は、テンプレート キーがこの動的フォルダのエンティティ タイプに対応することを認識します(両方ともシーケンスであるため)。そのため、Toolkit は生成されたフォルダ名(つまり問題となっている固有のシーケンスの名前)を取得し、テンプレート キーに置き換えます。" %}
 
 この形式は任意のアトリビュートを定義する必要がある場合に必要です。現在、唯一のオプション属性は `root_name` で、複数のルートを持つプロジェクトでパスのプロジェクト ルートを指定するために使用されます。[複数のルート](https://developer.shotgunsoftware.com/ja/9ea9dd4e/)は、いくつかのプロジェクト ファイルを保存するために新しいストレージ ルートを追加する場合に使用されます。
 
@@ -1105,7 +1105,7 @@ assets フォルダが単なる別のシーケンスではないことを Toolki
 
 ![episode_hierarchy](images/file-system-config-reference/episode_hierarchy.jpg)
 
-{% include info title="注" content="Toolkit でネスト関係を再確認するには(Shotgun のプロジェクト階層から完全に独立)、「[上記の親フォルダを使用して作成する](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Create%20With%20Parent%20Folder)」を参照してください。" %}
+{% include info title="注" content="Toolkit でネスト関係を再確認するには(ShotGrid のプロジェクト階層から完全に独立)、「[上記の親フォルダを使用して作成する](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Create%20With%20Parent%20Folder)」を参照してください。" %}
 
 **追加の参考資料:**
 

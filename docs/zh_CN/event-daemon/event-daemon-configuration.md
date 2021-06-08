@@ -286,7 +286,7 @@ fetch_interval = 5
 server: %(SG_ED_SITE_URL)s
 ```
 
-{% include info title="注意" content="此处没有默认值。将 `SG_ED_SITE_URL` 环境变量设置为 Shotgun 服务器的 URL（即 https://awesome.shotgunstudio.com）" %}
+{% include info title="注意" content="此处没有默认值。将 `SG_ED_SITE_URL` 环境变量设置为 ShotGrid 服务器的 URL（即 https://awesome.shotgunstudio.com）" %}
 
 **name**
 
@@ -296,7 +296,7 @@ server: %(SG_ED_SITE_URL)s
 name: %(SG_ED_SCRIPT_NAME)s
 ```
 
-{% include info title="注意" content="此处没有默认值。将 `SG_ED_SCRIPT_NAME` 环境变量设置为 Shotgun 服务器的脚本名称（即 `shotgunEventDaemon`）" %}
+{% include info title="注意" content="此处没有默认值。将 `SG_ED_SCRIPT_NAME` 环境变量设置为 ShotGrid 服务器的脚本名称（即 `shotgunEventDaemon`）" %}
 
 **key**
 
@@ -319,7 +319,7 @@ use_session_uuid: True
 - 此功能需要 {% include product %} 服务器 v2.3+。
 - 此功能需要 {% include product %} API v3.0.5+。
 
-{% include info title="注意" content="Shotgun UI 将*仅*显示繁殖原始事件的浏览器会话的实时更新。其他打开相同页面的浏览器窗口不会看到实时更新。" %}
+{% include info title="注意" content="ShotGrid UI 将*仅*显示繁殖原始事件的浏览器会话的实时更新。其他打开相同页面的浏览器窗口不会看到实时更新。" %}
 
 <a id="Plugin_Settings_details"></a>
 ### 插件设置

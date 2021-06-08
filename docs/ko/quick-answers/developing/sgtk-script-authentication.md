@@ -8,7 +8,7 @@ lang: ko
 # 커스텀 스크립트에서 인증 및 로그인 자격 증명 관련 작업은 어떻게 진행합니까?
 
 ## 오류 메시지
-스크립트에서 아래와 같은 오류가 표시되는 경우 Shotgun 사이트에 액세스할 권한이 없음을 의미합니다.
+스크립트에서 아래와 같은 오류가 표시되는 경우 ShotGrid 사이트에 액세스할 권한이 없음을 의미합니다.
 
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'

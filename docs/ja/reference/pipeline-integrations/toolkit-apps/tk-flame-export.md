@@ -15,7 +15,7 @@ Flame で最初のコンフォームを作成したら、ショット書き出�
 
 ## {% include product %} にコンフォームを送信する
 
-Flame でシーケンスのコンフォームをセットアップし、タイムラインのすべてのセグメントに**ショット名を割り当て**たら、シーケンスを選択し、右クリックして[{% include product %} ショット書き出し](Shotgun Shot Export)オプションを選択します。
+Flame でシーケンスのコンフォームをセットアップし、タイムラインのすべてのセグメントに**ショット名を割り当て**たら、シーケンスを選択し、右クリックして[{% include product %} ショット書き出し](ShotGrid Shot Export)オプションを選択します。
 
 ![メニュー](../images/apps/flame-export-menu.png)
 

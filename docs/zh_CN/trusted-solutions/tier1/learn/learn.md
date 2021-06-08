@@ -5,6 +5,6 @@ pagename: tier1-learn
 lang: en
 ---
 
-# Shotgun Isolation - Learn
+# ShotGrid Isolation - Learn
 
-This section will host a learning curriculum for Shotgun Isolation features n the near future.
+This section will host a learning curriculum for ShotGrid Isolation features n the near future.

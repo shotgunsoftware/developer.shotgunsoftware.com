@@ -286,7 +286,7 @@ fetch_interval = 5
 server: %(SG_ED_SITE_URL)s
 ```
 
-{% include info title="참고" content="여기에는 기본값이 없습니다. `SG_ED_SITE_URL` 환경 변수를 Shotgun 서버의 URL(예: https://awesome.shotgunstudio.com)로 설정하십시오." %}
+{% include info title="참고" content="여기에는 기본값이 없습니다. `SG_ED_SITE_URL` 환경 변수를 ShotGrid 서버의 URL(예: https://awesome.shotgunstudio.com)로 설정하십시오." %}
 
 **name**
 
@@ -296,7 +296,7 @@ server: %(SG_ED_SITE_URL)s
 name: %(SG_ED_SCRIPT_NAME)s
 ```
 
-{% include info title="참고" content="여기에는 기본값이 없습니다. `SG_ED_SCRIPT_NAME` 환경 변수를 Shotgun 서버의 스크립트 이름(예: `shotgunEventDaemon`)으로 설정하십시오." %}
+{% include info title="참고" content="여기에는 기본값이 없습니다. `SG_ED_SCRIPT_NAME` 환경 변수를 ShotGrid 서버의 스크립트 이름(예: `shotgunEventDaemon`)으로 설정하십시오." %}
 
 **key**
 
@@ -319,7 +319,7 @@ use_session_uuid: True
 - 이 기능을 사용하려면 {% include product %} server v2.3 이상이 필요합니다.
 - 이 기능을 사용하려면 {% include product %} API v3.0.5 이상이 필요합니다.
 
-{% include info title="참고" content="Shotgun UI는 원래 이벤트를 생성한 브라우저 세션에 *대해서만* 업데이트를 실시간으로 표시합니다. 동일한 페이지가 열려 있는 다른 브라우저 창에는 실시간 업데이트가 표시되지 않습니다." %}
+{% include info title="참고" content="ShotGrid UI는 원래 이벤트를 생성한 브라우저 세션에 *대해서만* 업데이트를 실시간으로 표시합니다. 동일한 페이지가 열려 있는 다른 브라우저 창에는 실시간 업데이트가 표시되지 않습니다." %}
 
 <a id="Plugin_Settings_details"></a>
 ### 플러그인 설정

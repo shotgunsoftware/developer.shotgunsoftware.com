@@ -27,7 +27,7 @@ lang: zh_CN
 
 #### 批量交付 Webhook
 * 允许的超时上限为每个批 6 秒或批中每个事件 1 秒（以最大值为准）。
-* 仍存在以下限制：所有 Webhook 中每个 Shotgun 站点 Webhook 端点响应时间为 1 分钟。
+* 仍存在以下限制：所有 Webhook 中每个 ShotGrid 站点 Webhook 端点响应时间为 1 分钟。
 
 ## Webhook 交付格式比较
 

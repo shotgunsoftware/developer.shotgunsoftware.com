@@ -286,7 +286,7 @@ fetch_interval = 5
 server: %(SG_ED_SITE_URL)s
 ```
 
-{% include info title="注" content="既定値はありません。環境変数 `SG_ED_SITE_URL` を Shotgun サーバの URL (https://awesome.shotgunstudio.com)に設定します" %}
+{% include info title="注" content="既定値はありません。環境変数 `SG_ED_SITE_URL` を ShotGrid サーバの URL (https://awesome.shotgunstudio.com)に設定します" %}
 
 **name**
 
@@ -296,7 +296,7 @@ server: %(SG_ED_SITE_URL)s
 name: %(SG_ED_SCRIPT_NAME)s
 ```
 
-{% include info title="注" content="既定値はありません。環境変数 `SG_ED_SCRIPT_NAME` を Shotgun サーバのスクリプト名(`shotgunEventDaemon`)に設定します" %}
+{% include info title="注" content="既定値はありません。環境変数 `SG_ED_SCRIPT_NAME` を ShotGrid サーバのスクリプト名(`shotgunEventDaemon`)に設定します" %}
 
 **key**
 
@@ -319,7 +319,7 @@ use_session_uuid: True
 - {% include product %} この機能には、サーバ v2.3+ が必要です。
 - {% include product %} この機能には、API v3.0.5+ が必要です。
 
-{% include info title="注" content="Shotgun UI は、元のイベントを生成したブラウザ セッションの更新*のみ*をライブで表示します。同じページを開いている他のブラウザ ウィンドウでは、更新がライブで表示されません。"%}
+{% include info title="注" content="ShotGrid UI は、元のイベントを生成したブラウザ セッションの更新*のみ*をライブで表示します。同じページを開いている他のブラウザ ウィンドウでは、更新がライブで表示されません。"%}
 
 <a id="Plugin_Settings_details"></a>
 ### プラグイン設定

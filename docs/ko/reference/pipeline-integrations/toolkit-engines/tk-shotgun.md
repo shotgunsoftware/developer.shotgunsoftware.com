@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun
+title: ShotGrid
 pagename: tk-shotgun
 lang: ko
 ---

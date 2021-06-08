@@ -79,8 +79,8 @@ sgtk.LogManager().global_debug = True
 
 ## 第 3 部分：身份认证
 
-在已启动 Shotgun Toolkit 的环境之外运行使用 Toolkit API 的脚本时，始终需要进行身份认证。
-因此，要执行引导，需要向 Shotgun 站点认证 Toolkit API 的身份。
+在已启动 ShotGrid Toolkit 的环境之外运行使用 Toolkit API 的脚本时，始终需要进行身份认证。
+因此，要执行引导，需要向 ShotGrid 站点认证 Toolkit API 的身份。
 
 您可以使用用户凭据或脚本凭据进行身份认证。
 
@@ -182,7 +182,7 @@ mgr.plugin_id = "basic.shell"
 同样，您可以提供 `Task` 实体（即任务链接到 `Asset`），则它将使用 `asset_step.yml` 环境启动。
 这取决于默认配置行为，[选择的环境](https://developer.shotgunsoftware.com/zh_CN/487a9f2c/#toolkit-%E7%A1%AE%E5%AE%9A%E5%BD%93%E5%89%8D%E7%8E%AF%E5%A2%83%E7%9A%84%E6%96%B9%E5%BC%8F)通过核心挂钩 [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py) 进行控制，因此可以更改为根据上下文或其他参数选取不同的环境。
 
-您需要以 Shotgun 实体词典的格式提供实体，必须至少包含类型和 ID：
+您需要以 ShotGrid 实体词典的格式提供实体，必须至少包含类型和 ID：
 
 ```python
 task = {"type": "Task", "id": 17264}
@@ -262,7 +262,7 @@ engine = mgr.bootstrap_engine("tk-shell", entity=project)
 
 现在，您已经有了插件实例，接下来就可以开始使用 Toolkit API。
 
-在介绍如何启动应用之前，需要指出的是，您可以通过插件获取[当前上下文](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context)、[Sgtk 实例](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk)和 [Shotgun API 实例](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun)。
+在介绍如何启动应用之前，需要指出的是，您可以通过插件获取[当前上下文](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context)、[Sgtk 实例](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk)和 [ShotGrid API 实例](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun)。
 
 ```python
 engine.context

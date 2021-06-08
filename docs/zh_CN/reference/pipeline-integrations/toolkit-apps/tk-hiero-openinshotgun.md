@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 在 Shotgun 中打开 Hiero/Nuke Studio
+title: 在 ShotGrid 中打开 Hiero/Nuke Studio
 pagename: tk-hiero-openinshotgun
 lang: zh_CN
 ---

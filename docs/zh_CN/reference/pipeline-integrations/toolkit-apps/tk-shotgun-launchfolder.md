@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Shotgun 启动文件夹
+title: ShotGrid 启动文件夹
 pagename: tk-shotgun-launchfolder
 lang: zh_CN
 ---
 
-# Shotgun 启动文件夹
+# ShotGrid 启动文件夹
 
 启动文件夹应用是一个 {% include product %} 实用工具，它让您可以从 {% include product %} 跳转到文件系统中。
 

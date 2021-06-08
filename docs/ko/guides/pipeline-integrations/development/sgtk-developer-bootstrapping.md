@@ -79,8 +79,8 @@ sgtk.LogManager().global_debug = True
 
 ## 3부: 인증
 
-Shotgun 툴킷이 이미 시작된 환경 외부에서 툴킷 API를 사용하는 스크립트를 실행하는 경우 항상 인증을 거쳐야 합니다.
-따라서 부트스트랩(Bootstrapping)을 수행하려면 먼저 Shotgun 사이트에서 툴킷 API를 인증받아야 합니다.
+ShotGrid 툴킷이 이미 시작된 환경 외부에서 툴킷 API를 사용하는 스크립트를 실행하는 경우 항상 인증을 거쳐야 합니다.
+따라서 부트스트랩(Bootstrapping)을 수행하려면 먼저 ShotGrid 사이트에서 툴킷 API를 인증받아야 합니다.
 
 사용자 자격 증명 또는 스크립트 자격 증명으로 인증받을 수 있습니다.
 
@@ -183,7 +183,7 @@ Maya 또는 Nuke와 같은 소프트웨어 외의 독립 실행형 Python 환경
 마찬가지로, 태스크가 `Asset`에 링크되어 있는 `Task` 엔티티를 제공할 수 있으며, 이 엔티티는 `asset_step.yml` 환경을 사용하여 시작됩니다.
 이는 기본 구성 동작을 기반으로 하며, [선택한 환경](https://developer.shotgunsoftware.com/ko/487a9f2c/#%ED%88%B4%ED%82%B7%EC%9D%B4-%ED%98%84%EC%9E%AC-%ED%99%98%EA%B2%BD%EC%9D%84-%EA%B2%B0%EC%A0%95%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D)은 코어 후크, [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py)를 통해 제어되므로 컨텍스트 또는 기타 매개변수를 기반으로 다른 환경을 선택하도록 변경할 수 있습니다.
 
-유형과 ID를 하나 이상 포함해야 하는 Shotgun 엔티티 사전(dictionary) 형식으로 엔티티를 제공해야 합니다.
+유형과 ID를 하나 이상 포함해야 하는 ShotGrid 엔티티 사전(dictionary) 형식으로 엔티티를 제공해야 합니다.
 
 ```python
 task = {"type": "Task", "id": 17264}
@@ -263,7 +263,7 @@ engine = mgr.bootstrap_engine("tk-shell", entity=project)
 
 이제 엔진 인스턴스가 있으므로 툴킷 API를 사용할 준비가 되었습니다.
 
-앱을 시작하는 방법을 설명하기 전에 엔진을 통해 [현재 컨텍스트](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), [Sgtk 인스턴스](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) 및 [Shotgun API 인스턴스](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun)를 확인할 수 있습니다.
+앱을 시작하는 방법을 설명하기 전에 엔진을 통해 [현재 컨텍스트](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), [Sgtk 인스턴스](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) 및 [ShotGrid API 인스턴스](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun)를 확인할 수 있습니다.
 
 ```python
 engine.context

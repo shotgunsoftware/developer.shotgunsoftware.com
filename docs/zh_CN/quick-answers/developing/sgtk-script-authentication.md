@@ -8,7 +8,7 @@ lang: zh_CN
 # 如何在自定义脚本中处理身份认证和登录凭据？
 
 ## 错误消息
-如果出现类似以下来自脚本的错误，则意味着脚本无权与 Shotgun 站点进行通信。
+如果出现类似以下来自脚本的错误，则意味着脚本无权与 ShotGrid 站点进行通信。
 
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'

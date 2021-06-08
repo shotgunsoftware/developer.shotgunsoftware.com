@@ -31,7 +31,7 @@ lang: ko
 그러면 다양한 엔진이 내부 복잡성에 따라 이 기본 클래스의 여러 요소를 다시 구현합니다.
 엔진은 일반적으로 다음과 같은 서비스를 처리 또는 제공합니다.
 
-- 메뉴 관리. 엔진 시작 시 앱이 로드되고 나면 엔진은 해당 Shotgun 메뉴를 생성하고, 여러 앱을 이 메뉴에 추가합니다.
+- 메뉴 관리. 엔진 시작 시 앱이 로드되고 나면 엔진은 해당 ShotGrid 메뉴를 생성하고, 여러 앱을 이 메뉴에 추가합니다.
 - 일반적으로 로깅 방식은 소프트웨어의 로그/콘솔에 기록하도록 재정의됩니다.
 - UI 대화상자 및 창을 표시하는 방식. 엔진이 QT를 처리하는 방식이 기본적인 기본 클래스 동작과 다를 경우 이 방식은 툴킷 앱 및 기본 호스트 소프트웨어 창 관리 설정에서 시작한 창을 원활하게 통합할 수 있도록 재정의됩니다.
 - 앱에 의해 등록된 모든 명령 객체를 포함하는 `commands` 사전(dictionary) 제공. 보통 메뉴 항목이 생성될 때 이 사전에 액세스합니다.
@@ -46,7 +46,7 @@ lang: ko
 
 ## 시작하기 전에 알아야 할 사항
 
-Shotgun 팀에서는 가장 일반적으로 사용되는 컨텐츠 생성 소프트웨어에 대한 [통합](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)을 제공합니다.
+ShotGrid 팀에서는 가장 일반적으로 사용되는 컨텐츠 생성 소프트웨어에 대한 [통합](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)을 제공합니다.
 [툴킷 커뮤니티 멤버가 빌드하고 공유한](https://support.shotgunsoftware.com/hc/ko/articles/219039828-Community-Shared-Integrations) 엔진도 있습니다. 하지만 툴킷 엔진이 없는 소프트웨어에 대한 파이프라인 통합이 필요한 경우도 있습니다.
 
 시간과 리소스가 있다면 누락된 엔진 중 사용하고 싶은 엔진을 직접 작성하여 툴킷 커뮤니티(그리고 여러분 자신)를 지원해 주시기 바랍니다!
@@ -56,7 +56,7 @@ Shotgun 팀에서는 가장 일반적으로 사용되는 컨텐츠 생성 소프
 가능한 경우 툴킷을 통합하려는 소프트웨어의 기술 담당자나 개발자와의 커뮤니케이션 채널을 열어 두면
 가능성이나 장애물에 대한 정보를 파악할 수 있어 작업을 진행하는 데 도움이 될 것입니다.
 커뮤니케이션 채널을 설정하고 생각하고 있는 기본적인 사항에 대한 이야기를 나눈 후에는 저희 팀을 대화에 초대해 함께 미팅을 진행하면서 엔진의 특정 요소에 대한 대화를 나눌 수 있습니다.
-[Shotgun 커뮤니티 포럼](https://community.shotgunsoftware.com/c/pipeline)에서 툴킷 커뮤니티에 참여할 수도 있습니다.
+[ShotGrid 커뮤니티 포럼](https://community.shotgunsoftware.com/c/pipeline)에서 툴킷 커뮤니티에 참여할 수도 있습니다.
 
 더욱 발전할 새로운 통합을 기대합니다! 툴킷 커뮤니티에 열성적으로 참여해 주시는 여러분의 노력에 늘 감사드립니다.
 
@@ -70,7 +70,7 @@ Shotgun 팀에서는 가장 일반적으로 사용되는 컨텐츠 생성 소프
 
 ### Qt , PyQt/PySide 및 Python이 포함되는 호스트 소프트웨어
 이 방식이 최선의 툴킷 설정입니다. 엔진을 Qt, Python 및 PySide를 지원하는 호스트 소프트웨어에 구현하는 작업은 매우 직관적입니다.
-[Nuke 엔진](https://github.com/shotgunsoftware/tk-nuke) 또는 [Maya 엔진](https://github.com/shotgunsoftware/tk-maya)이 좋은 예입니다. 통합은 단지 일부 로그 파일 관리를 연결하고, 코드를 작성하여 Shotgun 메뉴를 설정하는 것에 불과합니다.
+[Nuke 엔진](https://github.com/shotgunsoftware/tk-nuke) 또는 [Maya 엔진](https://github.com/shotgunsoftware/tk-maya)이 좋은 예입니다. 통합은 단지 일부 로그 파일 관리를 연결하고, 코드를 작성하여 ShotGrid 메뉴를 설정하는 것에 불과합니다.
 
 
 ### Qt 및 Python은 포함되지만 PySide/PyQt는 포함되지 않는 호스트 소프트웨어
@@ -96,7 +96,7 @@ Python 스크립팅이 없지만 C++ 플러그인을 생성할 수 있습니다.
 보조 프로세스가 실행되고 나면 IPC 레이어를 사용하여 명령이 양방향으로 전송됩니다.
 이 호스트 소프트웨어 유형의 경우 적절한 엔진 솔루션을 얻기 위해서는 상당한 작업이 필요합니다.
 
-{% include info title="팁" content="Shotgun 팀에서는 Photoshop 및 After Effects 엔진을 사용하여 실제로 [Adobe 플러그인을 처리하는 프레임워크](https://github.com/shotgunsoftware/tk-framework-adobe)를 만들었습니다.
+{% include info title="팁" content="ShotGrid 팀에서는 Photoshop 및 After Effects 엔진을 사용하여 실제로 [Adobe 플러그인을 처리하는 프레임워크](https://github.com/shotgunsoftware/tk-framework-adobe)를 만들었습니다.
 두 엔진 모두 프레임워크를 사용해 호스트 소프트웨어와 커뮤니케이션하고 나머지 Adobe 제품군에 대한 엔진을 더 쉽게 빌드할 수 있습니다." %}
 
 

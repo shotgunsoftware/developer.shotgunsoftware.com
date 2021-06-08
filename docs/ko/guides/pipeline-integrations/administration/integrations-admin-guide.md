@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun 통합 관리자 안내서
+title: ShotGrid 통합 관리자 안내서
 pagename: integrations-admin-guide
 lang: ko
 ---
@@ -331,7 +331,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 웹 응용프로그램과 로컬 데스크톱 사이의 통신은 복잡하기 때문에 그 과정에서 장애가 발생할 수도 있습니다. 다음은 그러한 몇 가지 상황과 장애 발생 시 취해야 하는 첫 번째 단계의 제안 사항입니다.
 
-**액션 메뉴에 "{% include product %} 데스크톱을 열거나 설치...(Open or install Shotgun Desktop...)"가 표시됨**
+**액션 메뉴에 "{% include product %} 데스크톱을 열거나 설치...(Open or install ShotGrid Desktop...)"가 표시됨**
 
 ![](images/Integration-admin-guide/install_desktop.png)
 
@@ -372,7 +372,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. Websocket 서버가 아직 캐싱 액션을 완료하지 않았습니다. 이번이 프로젝트 구성에 대한 중요한 업데이트 후 검색하는 첫 번째 액션인 경우 프로세스를 완료하는 데 시간이 약간 걸릴 수 있습니다. 조금 더 기다리다가 아직 진행 중인지 확인하려면 `tk-desktop.log`의 내용을 살펴봅니다.
 
-2. Websocket 서버가 계속 응답하지 않습니다. 이런 상황은 드물게 나타나지만 `tk-desktop.log`를 살펴보았을 때 액션 요청의 결과로 발생하는 추가 프로세스가 없는 것이 확실하다면, [Shotgun 지원 팀에 문의](https://support.shotgunsoftware.com/hc/en-us/requests/new)하고 관련 로그 데이터를 제공합니다.
+2. Websocket 서버가 계속 응답하지 않습니다. 이런 상황은 드물게 나타나지만 `tk-desktop.log`를 살펴보았을 때 액션 요청의 결과로 발생하는 추가 프로세스가 없는 것이 확실하다면, [ShotGrid 지원 팀에 문의](https://support.shotgunsoftware.com/hc/en-us/requests/new)하고 관련 로그 데이터를 제공합니다.
 
 3. 사용자가 두 개 이상의 {% include product %} 사이트에서 작업 중입니다. 단일 사이트에서 {% include product %} 데스크톱을 인증한 상태에서 두 번째 {% include product %} 사이트에서 메뉴 액션을 요청하면 사용자에게 {% include product %} 데스크톱을 다시 시작하여 새 사이트에 로그인하라는 메시지가 표시됩니다. 해당 요청을 무시하면 두 번째 사이트는 메뉴 액션 목록을 받을 수 없습니다.
 

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Shotgun 文件夹
+title: ShotGrid 文件夹
 pagename: tk-shotgun-folders
 lang: zh_CN
 ---
 
-# Shotgun 文件夹
+# ShotGrid 文件夹
 
 {% include product %} Toolkit 有一个内置系统，负责基于配置创建标准目录结构。利用这个系统，我们很容易就能快速为多个镜头创建一致的文件系统布局。
 

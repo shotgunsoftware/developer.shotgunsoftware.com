@@ -35,7 +35,7 @@ Toolkit と Hiero を既に使用している場合は、以降の説明をお�
 
 ダイアログの上部には、シーケンスの書き出し後に {% include product %} でショットを作成または更新する方法を制御する UI が追加されています。
 
-![Shotgun UI](../images/apps/hiero-shotgun_ui.png)
+![ShotGrid UI](../images/apps/hiero-shotgun_ui.png)
 
 ### タグ
 ドロップダウンを調整すると、さまざまな Hiero タグを {% include product %} ショット ステータスとショット タスクのテンプレートにマッピングできます。そのため、Hiero のタグ設定ワークフローを実行して、{% include product %} ショットを処理中に設定したり、グリーン スクリーンや CG などの任意の目的に合うようにショットのタスクを設定したりできます。この UI はフックを介して統合されるため、追加機能として簡単に設定できます。

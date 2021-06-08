@@ -31,7 +31,7 @@ lang: zh_CN
 不同的插件根据内部的复杂性，重新执行此基类的各个方面。
 插件通常处理或提供下列服务：
 
-- 菜单管理。插件启动时，待应用加载完毕后，插件需要创建其 Shotgun 菜单，并将各种应用添加到此菜单中。
+- 菜单管理。插件启动时，待应用加载完毕后，插件需要创建其 ShotGrid 菜单，并将各种应用添加到此菜单中。
 - 日志记录方法通常会被改写，以便向软件的日志/控制台写入数据。
 - 用于显示 UI 对话框和窗口的方法。如果插件处理 Qt 的方式与默认基类行为不同，通常会改写这些方法，以确保无缝集成 Toolkit 应用启动的窗口和基本宿主软件窗口管理设置。
 - 提供一个 `commands` 词典，其中包含应用注册的所有命令对象。创建菜单项时通常会访问此词典。
@@ -55,7 +55,7 @@ lang: zh_CN
 如果可以，请与要集成 Toolkit 的软件的技术联系人或开发人员建立沟通渠道。
 这将有助于您深入了解开发过程中存在的各种可能性和/或障碍。
 在建立联系并向他们说明您的基本构想后，您可以让我们也加入讨论，安排会议共同讨论插件的一些具体细节。
-此外，您还可以通过 [Shotgun 社区论坛](https://community.shotgunsoftware.com/c/pipeline)直接加入 Toolkit 社区讨论。
+此外，您还可以通过 [ShotGrid 社区论坛](https://community.shotgunsoftware.com/c/pipeline)直接加入 Toolkit 社区讨论。
 
 我们期待看到新的集成，对于大家为 Toolkit 社区所做的慷慨贡献感激不尽！
 
@@ -69,7 +69,7 @@ lang: zh_CN
 
 ### 宿主软件包含 Qt、PyQt/PySide 和 Python
 这是 Toolkit 的最佳设置，在支持 Qt、Python 和 PySide 的宿主软件之上执行插件，操作起来非常简单。
-[Nuke 插件](https://github.com/shotgunsoftware/tk-nuke)或 [Maya 插件](https://github.com/shotgunsoftware/tk-maya)就是一个很好的例子。集成操作只是连接一些日志文件管理和编写代码设置 Shotgun 菜单而已。
+[Nuke 插件](https://github.com/shotgunsoftware/tk-nuke)或 [Maya 插件](https://github.com/shotgunsoftware/tk-maya)就是一个很好的例子。集成操作只是连接一些日志文件管理和编写代码设置 ShotGrid 菜单而已。
 
 
 ### 宿主软件包含 Qt 和 Python 但不包含 PySide/PyQt

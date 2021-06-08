@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun 集成管理员手册
+title: ShotGrid 集成管理员手册
 pagename: integrations-admin-guide
 lang: zh_CN
 ---
@@ -372,7 +372,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. websocket 服务器尚未完成动作缓存。如果这是对项目的配置进行重大更新后第一次检索动作，该过程可能需要一些时间才能完成。多等待一段时间，然后观察 `tk-desktop.log` 的内容看看是否仍在处理。
 
-2. websocket 服务器无法响应且永远不会响应。这种情况应该很少出现，但如果在请求动作后很明显没有其他处理操作正在进行（如 `tk-desktop.log` 中所示），那应该就是出现了这种情况，此时请[联系 Shotgun 支持](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)并提供相关日志数据。
+2. websocket 服务器无法响应且永远不会响应。这种情况应该很少出现，但如果在请求动作后很明显没有其他处理操作正在进行（如 `tk-desktop.log` 中所示），那应该就是出现了这种情况，此时请[联系 ShotGrid 支持](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)并提供相关日志数据。
 
 3. 用户在多个 {% include product %} 站点上工作。在单个站点上对 {% include product %} Desktop 进行身份认证后，从另一个 {% include product %} 站点请求菜单动作会导致系统询问用户是否重新启动 {% include product %} Desktop 并登录新站点。如果忽略该请求，则另一个站点将永远不会收到菜单动作列表。
 

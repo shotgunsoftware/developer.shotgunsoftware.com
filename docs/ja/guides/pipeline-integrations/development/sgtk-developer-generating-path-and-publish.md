@@ -7,7 +7,7 @@ lang: ja
 
 # パスを生成してパブリッシュする
 
-このガイドでは、パイプライン統合を構築する際に使用される Shotgun Toolkit Python API の使用方法について説明します。
+このガイドでは、パイプライン統合を構築する際に使用される ShotGrid Toolkit Python API の使用方法について説明します。
 
 このガイドの目的は、API の使用方法の基本的な例を紹介することです。このガイドを読み終えると、Toolkit API の読み込みや、パスの生成およびパブリッシュを実行できるようになります。
 
@@ -33,14 +33,14 @@ Toolkit API は `sgtk` という Python パッケージに含まれています�
 
 {% include info title="注" content="場合によっては、`tank` パッケージが参照されることがあります。このパッケージ名は、同じ内容に対する従来の名前です。いずれの名前でも機能しますが、今後使用する正しい名前は `sgtk` です。"%}
 
-API を読み込むには、[コアの Python フォルダ](https://github.com/shotgunsoftware/tk-core/tree/v0.18.167/python)のパスが [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path) 内に存在することを確認する必要があります。ただし、この例では、Shotgun Desktop の Python コンソールでこのコードを実行することをお勧めします。これは、`sgtk` パッケージの正しいパスが `sys.path` に既に追加されていることを意味します。同様に、Shotgun の統合が既に実行されているソフトウェア内でこのコードを実行する場合は、パスを追加する必要はありません。
+API を読み込むには、[コアの Python フォルダ](https://github.com/shotgunsoftware/tk-core/tree/v0.18.167/python)のパスが [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path) 内に存在することを確認する必要があります。ただし、この例では、ShotGrid Desktop の Python コンソールでこのコードを実行することをお勧めします。これは、`sgtk` パッケージの正しいパスが `sys.path` に既に追加されていることを意味します。同様に、ShotGrid の統合が既に実行されているソフトウェア内でこのコードを実行する場合は、パスを追加する必要はありません。
 
-Shotgun が既に起動されている環境でコードを実行する場合は、次のように記述するだけで API を読み込むことができます。
+ShotGrid が既に起動されている環境でコードを実行する場合は、次のように記述するだけで API を読み込むことができます。
 
 ```python
 import sgtk
 ```
-お気に入りの IDE でテストしている場合のように、Shotgun の統合の外部で API を使用する場合は、最初に API のパスを設定する必要があります。
+お気に入りの IDE でテストしている場合のように、ShotGrid の統合の外部で API を使用する場合は、最初に API のパスを設定する必要があります。
 
 ```python
 import sys
@@ -59,7 +59,7 @@ Toolkit API を使用するには、[`Sgtk`](https://developer.shotgunsoftware.c
 
 API ドキュメントに示されているように、`Sgtk` のインスタンスを直接作成することはしないでください。次に、`Sgtk` インスタンスを取得するためのオプションをいくつか示します。
 
-1. Shotgun 統合が既に実行されている環境内で(Shotgun から Maya を起動した場合は、Maya Python コンソールなどで) Python コードを実行している場合は、現在のエンジンから `Sgtk` インスタンスを取得できます。`Engine.sgtk` プロパティにはエンジンの `Sgtk` インスタンスが保持されます。したがって、Maya などで次のコマンドを実行できます。
+1. ShotGrid 統合が既に実行されている環境内で(ShotGrid から Maya を起動した場合は、Maya Python コンソールなどで) Python コードを実行している場合は、現在のエンジンから `Sgtk` インスタンスを取得できます。`Engine.sgtk` プロパティにはエンジンの `Sgtk` インスタンスが保持されます。したがって、Maya などで次のコマンドを実行できます。
 
    ```python
    # Get the engine that is currently running.
@@ -77,7 +77,7 @@ API ドキュメントに示されているように、`Sgtk` のインスタン
 
 3. [`sgtk.sgtk_from_path()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path): `sgtk_from_entity()` と同様ですが、環境設定のパス、またはプロジェクトのルート フォルダのパスやその内部(作業ファイルやショット フォルダなど)を使用することができます。*このメソッドは、分散環境設定では機能しません。詳細については、[ブートストラップ ガイド](sgtk-developer-bootstrapping.md)を参照してください。*
 
-このガイドでは、エンジンが既に起動されている環境でこのコードを実行していることが前提となっているため、オプション 1 を使用します。また、`tk` という名前の変数に `Sgtk` クラス インスタンスを格納します。Shotgun Python コンソールを使用している場合、`tk` 変数はグローバル変数として既に定義されています。
+このガイドでは、エンジンが既に起動されている環境でこのコードを実行していることが前提となっているため、オプション 1 を使用します。また、`tk` という名前の変数に `Sgtk` クラス インスタンスを格納します。ShotGrid Python コンソールを使用している場合、`tk` 変数はグローバル変数として既に定義されています。
 
 これで、`Sgtk` インスタンスが作成され、API を使用する準備が整いました。パブリッシュ スクリプトは次のようになります。
 
@@ -95,7 +95,7 @@ tk = current_engine.sgtk
 
 ### コンテキストとは何か、なぜ必要なのか?
 
-Toolkit の多くの機能は、コンテキストに関するものです。つまり、自分が作業している対象を認識し、それに応じた対応を可能にします。Toolkit API を使用している場合に、コンテキストに対応する動作を実現するには、使用しているエンティティに関する重要な情報を保存する機能や、アプリまたは他のプロセスでこれらの情報を共有する機能が必要になります。たとえば、ユーザが作業しているタスクを Toolkit が認識している場合、Toolkit はユーザがパブリッシュしたファイルを Shotgun 内のこのタスクに自動的にリンクすることができます。
+Toolkit の多くの機能は、コンテキストに関するものです。つまり、自分が作業している対象を認識し、それに応じた対応を可能にします。Toolkit API を使用している場合に、コンテキストに対応する動作を実現するには、使用しているエンティティに関する重要な情報を保存する機能や、アプリまたは他のプロセスでこれらの情報を共有する機能が必要になります。たとえば、ユーザが作業しているタスクを Toolkit が認識している場合、Toolkit はユーザがパブリッシュしたファイルを ShotGrid 内のこのタスクに自動的にリンクすることができます。
 
 [`Context` クラス](https://developer.shotgunsoftware.com/tk-core/core.html#context)は、この情報のコンテナとして機能します。特に、`Task`、`Step`、`entity` (`Shot` または `Asset` など)、`Project`、および現在の `HumanUser` をクラスのインスタンス内に保存することができます。
 
@@ -293,14 +293,14 @@ sgtk.util.filesystem.touch_file(publish_path)
 
 ここで使用できるメソッドは 2 つあります。
 
-1. この特定の例ではパブリッシュ ファイルを解決しているため、[Shotgun API](https://developer.shotgunsoftware.com/python-api/) を使用して、`PublishedFile` エンティティで使用可能な次のバージョン番号をクエリーすることができます。
-2. ディスク上のファイルをスキャンして、既に存在するバージョンを調べ、次のバージョン番号を抽出することができます。これは、作業しているファイルが Shotgun でトラックされていない場合(作業ファイルなどの場合)に役立ちます。
+1. この特定の例ではパブリッシュ ファイルを解決しているため、[ShotGrid API](https://developer.shotgunsoftware.com/python-api/) を使用して、`PublishedFile` エンティティで使用可能な次のバージョン番号をクエリーすることができます。
+2. ディスク上のファイルをスキャンして、既に存在するバージョンを調べ、次のバージョン番号を抽出することができます。これは、作業しているファイルが ShotGrid でトラックされていない場合(作業ファイルなどの場合)に役立ちます。
 
 最初の方法はこのガイドの例として最適ですが、どちらの方法にも使い道があるため、両方について説明します。
 
-### Shotgun に次のバージョン番号を照会します。
+### ShotGrid に次のバージョン番号を照会します。
 
-Shotgun API と [`summarize()` メソッド](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)を使用すると、同じ名前およびタスクを共有する `PublishedFile` エンティティの中で最大のバージョン番号を取得して、1 を追加することができます。
+ShotGrid API と [`summarize()` メソッド](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)を使用すると、同じ名前およびタスクを共有する `PublishedFile` エンティティの中で最大のバージョン番号を取得して、1 を追加することができます。
 
 ```python
 r = sg.summarize(entity_type="PublishedFile",
@@ -355,7 +355,7 @@ fields["version"] = get_next_version_number(tk, "maya_shot_work", fields)
 
 パスが作成されたので、パブリッシュすることができます。この操作を行うには、ユーティリティ メソッド [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) を使用します。
 
-Shotgun API の [`Shotgun.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) メソッドを使用して `PublishedFile` エンティティを作成することもできますが、Toolkit API を使用する方法を強くお勧めします。Toolkit API を使用すると、すべての必須フィールドが正しく指定および入力されていることを確認できます。
+ShotGrid API の [`Shotgun.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) メソッドを使用して `PublishedFile` エンティティを作成することもできますが、Toolkit API を使用する方法を強くお勧めします。Toolkit API を使用すると、すべての必須フィールドが正しく指定および入力されていることを確認できます。
 
 ```python
 # So as to match the Publish app's default behavior, we are adding the extension to the end of the publish name.

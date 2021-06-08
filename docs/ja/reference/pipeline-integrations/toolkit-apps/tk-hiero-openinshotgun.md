@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun で Hiero/Nuke Studio を開く
+title: ShotGrid で Hiero/Nuke Studio を開く
 pagename: tk-hiero-openinshotgun
 lang: ja
 ---
@@ -9,7 +9,7 @@ lang: ja
 
 このアプリによって、Hiero のスプレッドシートとタイムラインにコンテキスト メニューが追加されるため、任意のトラック項目にショットがある場合に、{% include product %} でこの項目を表示することができます。
 
-![Shotgun で開く](../images/apps/hiero-open_in_shotgun.png)
+![ShotGrid で開く](../images/apps/hiero-open_in_shotgun.png)
 
 通常、このアプリを設定する場合は、{% include product %} Engine for Nuke の環境設定に次のコードを追加すると、Hiero のタイムラインとスプレッドシートのメニューにアプリが表示されます。
 

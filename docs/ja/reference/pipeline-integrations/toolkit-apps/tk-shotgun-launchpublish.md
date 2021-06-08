@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Shotgun Launch Publish
+title: ShotGrid Launch Publish
 pagename: tk-shotgun-launchpublish
 lang: ja
 ---
 
-# Shotgun Launch Publish
+# ShotGrid Launch Publish
 
 このアプリにより、{% include product %} のパブリッシュされたファイルのエンティティで、[関連アプリケーションで開く](Open in Associated Application)アクションを実行できるようになります。これにより、既にパブリッシュされたファイルを簡単に開くことができます。ファイルに移動して右クリックし、アクションを選択するだけです。
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun 統合管理者ガイド
+title: ShotGrid 統合管理者ガイド
 pagename: integrations-admin-guide
 lang: ja
 ---
@@ -372,7 +372,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 1. Websocket サーバがまだキャッシング アクションを完了していない。プロジェクトの環境設定が大幅に更新された後に初めてアクションが取得される場合、プロセスの完了に時間がかかることがあります。時間を置いてから、`tk-desktop.log` の内容を確認して、処理がまだ行われているかどうかを確認してください。
 
-2. Websocket サーバが応答に失敗し、その後も応答しない。このような状況はまれですが、`tk-desktop.log` を確認してアクションの要求の結果として追加の処理が行われていないことが明らかになった場合は、[Shotgun サポートに連絡して](https://support.shotgunsoftware.com/hc/ja/requests/new)関連するログ データを提供してください。
+2. Websocket サーバが応答に失敗し、その後も応答しない。このような状況はまれですが、`tk-desktop.log` を確認してアクションの要求の結果として追加の処理が行われていないことが明らかになった場合は、[ShotGrid サポートに連絡して](https://support.shotgunsoftware.com/hc/ja/requests/new)関連するログ データを提供してください。
 
 3. ユーザが複数の {% include product %} サイトで作業している。{% include product %} Desktop が 1 つのサイトに対して認証されているときに、2 番目の {% include product %} サイトからメニュー アクションを要求すると、{% include product %} Desktop を再起動して新しいサイトにログインするかどうかを尋ねられます。この要求が無視されると、2 番目のサイトはメニュー アクションのリストを受け取らなくなります。
 
@@ -441,7 +441,7 @@ _シナリオ: {% include product %} の統合を実行したいと考えてい�
 
 **ソリューション**
 
-- 一時的にインターネットに接続できる場合は、{% include product %} Desktop をダウンロードします。Shotgun Desktop には一連の[統合](https://support.shotgunsoftware.com/hc/ja/articles/115000068574#Introduction)があらかじめパッケージ化されており、サポートされているすべての DCC 向けの {% include product %} の統合に必要なアプリとエンジンがあらかじめすべてバンドルされています。Shotgun Desktop を起動すると自動的にアップグレードが検索されますが、{% include product %} App Store に接続できない場合は、ローカルに存在する最新のバージョンが実行されます。
+- 一時的にインターネットに接続できる場合は、{% include product %} Desktop をダウンロードします。ShotGrid Desktop には一連の[統合](https://support.shotgunsoftware.com/hc/ja/articles/115000068574#Introduction)があらかじめパッケージ化されており、サポートされているすべての DCC 向けの {% include product %} の統合に必要なアプリとエンジンがあらかじめすべてバンドルされています。ShotGrid Desktop を起動すると自動的にアップグレードが検索されますが、{% include product %} App Store に接続できない場合は、ローカルに存在する最新のバージョンが実行されます。
 
 **知っておきたい情報**
 

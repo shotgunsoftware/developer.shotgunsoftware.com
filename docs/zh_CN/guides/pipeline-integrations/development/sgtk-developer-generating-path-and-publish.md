@@ -7,7 +7,7 @@ lang: zh_CN
 
 # 生成路径并发布
 
-本手册介绍了 Shotgun Toolkit Python API 快速入门相关信息，我们的工作流集成基于此 API 构建而成。
+本手册介绍了 ShotGrid Toolkit Python API 快速入门相关信息，我们的工作流集成基于此 API 构建而成。
 
 本手册旨在介绍如何使用此 API 的基本示例，最后，您将能够导入 Toolkit API 并生成和发布路径。
 
@@ -36,16 +36,16 @@ Toolkit API 包含在名为 `sgtk` 的 Python 软件包中。
 {% include info title="注意" content="有时，您可能会遇到 `tank` 软件包。这是旧名称，但内容相同。尽管这两个名称均适用，但 `sgtk` 是今后会采用的正确名称。" %}
 
 要导入 API，您需要确保 [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path) 中存在指向[核心 python 文件夹](https://github.com/shotgunsoftware/tk-core/tree/v0.18.167/python)的路径。
-但是，对于此示例，我们建议您在 Shotgun Desktop 的 Python 控制台中运行此代码。
+但是，对于此示例，我们建议您在 ShotGrid Desktop 的 Python 控制台中运行此代码。
 这意味着，正确的 `sgtk` 软件包路径已添加到 `sys.path` 中。
-同样，如果您在已在运行 Shotgun 集成的软件中运行此代码，则无需添加路径。
+同样，如果您在已在运行 ShotGrid 集成的软件中运行此代码，则无需添加路径。
 
-在 Shotgun 已启动的环境中运行代码时，只需编写以下内容即可导入 API：
+在 ShotGrid 已启动的环境中运行代码时，只需编写以下内容即可导入 API：
 
 ```python
 import sgtk
 ```
-如果要在 Shotgun 集成之外使用 API（例如，如果在您常用的 IDE 中对其进行测试），则需要先设置 API 的路径：
+如果要在 ShotGrid 集成之外使用 API（例如，如果在您常用的 IDE 中对其进行测试），则需要先设置 API 的路径：
 
 ```python
 import sys
@@ -65,7 +65,7 @@ import sgtk
 
 如 API 文档所述，您不会直接创建 `Sgtk` 实例。下面提供了一些用于获取 `Sgtk` 实例的选项。
 
-1. 如果在已在运行 Shotgun 集成的环境中运行 Python 代码（例如，已从 Shotgun 启动 Maya 情况下的 Maya Python 控制台），则可以从当前插件获取 `Sgtk` 实例。
+1. 如果在已在运行 ShotGrid 集成的环境中运行 Python 代码（例如，已从 ShotGrid 启动 Maya 情况下的 Maya Python 控制台），则可以从当前插件获取 `Sgtk` 实例。
    `Engine.sgtk` 属性保留插件的 `Sgtk` 实例。例如，在 Maya 中，可以运行以下命令：
 
    ```python
@@ -87,7 +87,7 @@ import sgtk
 
 在本手册中，我们假定您在插件已启动的环境中运行此代码，因此我们将使用选项 1。
 此外，将 `Sgtk` 类实例存储在名为 `tk` 的变量中。
-如果您使用的是 Shotgun Python 控制台，则 `tk` 变量已预定义为全局变量。
+如果您使用的是 ShotGrid Python 控制台，则 `tk` 变量已预定义为全局变量。
 
 现在，您拥有了一个 `Sgtk` 实例，可以开始使用 API。
 现在，发布脚本应如下所示：
@@ -108,7 +108,7 @@ tk = current_engine.sgtk
 
 Toolkit 中执行的大量操作均围绕上下文展开，也就是说，知道您正在处理什么并能够相应地采取行动。
 对于 Toolkit API，您将需要能够存储有关所处理实体的重要详细信息，并与应用或其他进程共享，以便它们能够以上下文感知的方式进行操作。
-例如，如果 Toolkit 知道您正在处理什么任务，它将可以自动将您发布的文件链接到 Shotgun 中对应的任务。
+例如，如果 Toolkit 知道您正在处理什么任务，它将可以自动将您发布的文件链接到 ShotGrid 中对应的任务。
 
 [`Context` 类](https://developer.shotgunsoftware.com/tk-core/core.html#context)充当此信息的容器。您可以将 `Task`、`Step`、`entity`（如 `Shot` 或 `Asset`）、`Project` 和当前 `HumanUser` 等存储在此类的实例中。
 
@@ -323,15 +323,15 @@ sgtk.util.filesystem.touch_file(publish_path)
 
 在这里，您可以使用两种方法。
 
-1. 由于在此特定示例中，您要解析发布文件，因此可以使用 [Shotgun API](https://developer.shotgunsoftware.com/python-api/) 在 `PublishedFile` 实体上查询下一个可用版本号。
+1. 由于在此特定示例中，您要解析发布文件，因此可以使用 [ShotGrid API](https://developer.shotgunsoftware.com/python-api/) 在 `PublishedFile` 实体上查询下一个可用版本号。
 2. 您可以扫描磁盘上的文件并确定已存在的版本，然后提取下一个版本号。
-   如果您使用的文件未在 Shotgun 中进行跟踪（如工作文件），这将非常有用。
+   如果您使用的文件未在 ShotGrid 中进行跟踪（如工作文件），这将非常有用。
 
 尽管第一个选项可能更适合本手册中的示例，但这两种方法均有其各自的用途，因此我们都会进行介绍。
 
-### 在 Shotgun 中查询下一个版本号。
+### 在 ShotGrid 中查询下一个版本号。
 
-利用 Shotgun API 和 [`summarize()` 方法](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)，可以在 `PublishedFile` 实体（这些实体共享相同的名称和任务）中获取最高版本号，然后加 1。
+利用 ShotGrid API 和 [`summarize()` 方法](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)，可以在 `PublishedFile` 实体（这些实体共享相同的名称和任务）中获取最高版本号，然后加 1。
 
 ```python
 r = sg.summarize(entity_type="PublishedFile",
@@ -388,7 +388,7 @@ fields["version"] = get_next_version_number(tk, "maya_shot_work", fields)
 
 现在，您已拥有一个路径，可以进行发布。要执行此操作，可以使用实用程序方法 [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish)。
 
-也可以使用 Shotgun API 的 [`Shotgun.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) 方法来创建 `PublishedFile` 实体，但我们强烈建议在此处使用 Toolkit API，因为它可确保提供并正确填写所有必填字段。
+也可以使用 ShotGrid API 的 [`Shotgun.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) 方法来创建 `PublishedFile` 实体，但我们强烈建议在此处使用 Toolkit API，因为它可确保提供并正确填写所有必填字段。
 
 ```python
 # So as to match the Publish app's default behavior, we are adding the extension to the end of the publish name.
