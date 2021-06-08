@@ -13,7 +13,7 @@ lang: ko
 예를 들어 렌더 팜에서 실행되는 처리 스크립트가 있을 수 있고 툴킷 API를 활용하여 경로 및 컨텍스트를 처리해야 할 수 있습니다.
 또는 즐겨찾는 IDE에서 툴킷 앱을 실행할 수도 있습니다.
 
-{% include info title="참고" content="[분산 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)을 사용하는 경우 툴킷 엔진은 툴킷 API 방식을 실행하기 전에 초기화되어야 합니다. [중앙 집중식 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)을 사용하는 경우 엔진을 부트스트랩(Bootstrapping)하지 않고 [팩토리 방식](https://developer.shotgunsoftware.com/tk-core/initializing.html#factory-methods)을 사용하여 API를 사용할 수 있지만 `sgtk` 가져올 때 프로젝트에 맞는 올바른 Core API의 경로를 수동으로 찾아야 합니다." %}
+{% include info title="참고" content="[분산 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)을 사용하는 경우 툴킷 엔진은 툴킷 API 방식을 실행하기 전에 초기화되어야 합니다. [중앙 집중식 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)을 사용하는 경우 엔진을 부트스트랩(Bootstrapping)하지 않고 [팩토리 방식](https://developer.shotgridsoftware.com/tk-core/initializing.html#factory-methods)을 사용하여 API를 사용할 수 있지만 `sgtk` 가져올 때 프로젝트에 맞는 올바른 Core API의 경로를 수동으로 찾아야 합니다." %}
 
 
 ### 요구사항
@@ -61,10 +61,10 @@ import sgtk
 ## 2부: 로깅
 
 IDE 또는 셸을 통해 이 스크립트를 실행 중인 경우 대부분은 로깅을 활성화하여 출력되게 할 수 있습니다.
-이렇게 하려면 [`LogManager().initialize_custom_handler()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.log.LogManager.initialize_custom_handler)를 실행해야 합니다.
+이렇게 하려면 [`LogManager().initialize_custom_handler()`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.log.LogManager.initialize_custom_handler)를 실행해야 합니다.
 이 작업을 위해 커스텀 처리기를 제공할 필요는 없습니다. 커스텀 처리기를 제공하지 않으면 표준 스트림 기반의 로깅 처리기가 설정됩니다.
 
-필요한 경우 [`LogManager().global_debug = True`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.log.LogManager.global_debug)를 설정하여 보다 상세하게 출력을 표시할 수도 있습니다.
+필요한 경우 [`LogManager().global_debug = True`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.log.LogManager.global_debug)를 설정하여 보다 상세하게 출력을 표시할 수도 있습니다.
 이렇게 설정하면 코드에서 `logger.debug()` 호출 시 출력이 수행됩니다.
 로깅은 성능에 영향을 줄 수 있으므로 개발 시에만 디버그 로깅을 활성화하고 정상 작동 중에 가시성을 높이는 것이 중요한 영역에 대한 `logger.info()` 방식 호출의 양을 제한해야 합니다.
 
@@ -87,7 +87,7 @@ ShotGrid 툴킷이 이미 시작된 환경 외부에서 툴킷 API를 사용하�
 - 앱 시작 또는 사용자 입력이 필요한 일부 코드를 실행하는 등 사용자 대상 프로세스를 부트스트랩(Bootstrapping)하는 것이 목적이라면 사용자 인증을 진행하는 것이 가장 좋습니다(모든 통합의 기본적인 작동 방식임).
 - 스크립트를 작성하여 자동화하려고 할 때 사용자가 아직 인증되지 않은 경우 스크립트 자격 증명을 사용해야 합니다.
 
-인증은 [`ShotgunAuthenticator`](https://developer.shotgunsoftware.com/tk-core/authentication.html?highlight=shotgunauthenticator#sgtk.authentication.ShotgunAuthenticator) 클래스를 통해 처리됩니다.
+인증은 [`ShotgunAuthenticator`](https://developer.shotgridsoftware.com/tk-core/authentication.html?highlight=shotgunauthenticator#sgtk.authentication.ShotgunAuthenticator) 클래스를 통해 처리됩니다.
 다음은 사용자 인증과 스크립트 인증을 모두 보여 주는 예입니다.
 
 ### 사용자 인증
@@ -137,13 +137,13 @@ sgtk.set_authenticated_user(user)
 ## 4부: 엔진 부트스트랩(Bootstrapping)
 
 이제 세션을 위해 툴킷 API를 인증받았으므로 부트스트랩(Bootstrapping) 프로세스를 시작할 수 있습니다.
-[참조 문서](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api)에서 부트스트랩(Bootstrap) API에 관한 많은 정보를 확인할 수 있습니다.
+[참조 문서](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api)에서 부트스트랩(Bootstrap) API에 관한 많은 정보를 확인할 수 있습니다.
 
 부트스트랩(Bootstrapping) 프로세스는 기본적으로 다음과 같은 단계를 수행합니다.
 
 1. 툴킷 구성 폴더를 검색하거나 찾습니다.
 2. 앱 및 엔진과 같은 구성 종속 요소가 [번들 캐시](../../../quick-answers/administering/where-is-my-cache.md#bundle-cache)에 있는지 확인합니다.
-   구성 종속 요소가 없고 [`app_store`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#the-shotgun-app-store) 또는 [`shotgun`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)과 같은 클라우드 기반 디스크립터를 사용하는 경우 번들 캐시에 이러한 디스크립터를 다운로드합니다.
+   구성 종속 요소가 없고 [`app_store`](https://developer.shotgridsoftware.com/tk-core/descriptor.html#the-shotgun-app-store) 또는 [`shotgun`](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)과 같은 클라우드 기반 디스크립터를 사용하는 경우 번들 캐시에 이러한 디스크립터를 다운로드합니다.
 3. 현재 로드된 Sgtk Core를 구성에 적합한 Sgtk Core로 교체합니다.
 4. 엔진, 앱 및 프레임워크를 초기화합니다.
 
@@ -153,14 +153,14 @@ sgtk.set_authenticated_user(user)
 
 
 ### 부트스트랩(Bootstrap) 준비
-부트스트랩(Bootstrap)하려면 먼저 [`ToolkitManager`](https://developer.shotgunsoftware.com/tk-core/initializing.html#toolkitmanager) 인스턴스를 작성해야 합니다.
+부트스트랩(Bootstrap)하려면 먼저 [`ToolkitManager`](https://developer.shotgridsoftware.com/tk-core/initializing.html#toolkitmanager) 인스턴스를 작성해야 합니다.
 
 ```python
 mgr = sgtk.bootstrap.ToolkitManager()
 ```
 
 툴킷을 부트스트랩(Bootstrapping)하려면 최소한 엔티티, 플러그인 ID 및 엔진에 대해 알아야 합니다.
-이 안내서에서는 사용 가능한 모든 매개변수와 옵션 중 일부만을 설명합니다. 전체 내용은 [참조 문서](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api)에서 참조하십시오.
+이 안내서에서는 사용 가능한 모든 매개변수와 옵션 중 일부만을 설명합니다. 전체 내용은 [참조 문서](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api)에서 참조하십시오.
 
 #### 플러그인 ID
 
@@ -174,14 +174,14 @@ mgr.plugin_id = "basic.shell"
 Maya 또는 Nuke와 같은 소프트웨어 외의 독립 실행형 Python 환경에서 앱을 시작하거나 툴킷 코드를 실행하는 것이 목표인 경우 `tk-shell`이 부트스트랩(Bootstrapping)할 엔진입니다.
 
 지원되는 소프트웨어 내에서 툴킷 앱을 실행하려는 경우 적절한 엔진(예: `tk-maya` 또는 `tk-nuke`)을 선택해야 합니다.
-이 매개변수는 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식에 직접 전달됩니다. 아래 [엔티티 섹션](#entity)의 예를 참조하십시오.
+이 매개변수는 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식에 직접 전달됩니다. 아래 [엔티티 섹션](#entity)의 예를 참조하십시오.
 
 #### 엔티티
-[`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식 `entity` 매개변수는 시작한 엔진에 대해 [컨텍스트](https://developer.shotgunsoftware.com/tk-core/core.html#context) 및 [환경](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)을 설정하는 데 사용됩니다.
+[`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식 `entity` 매개변수는 시작한 엔진에 대해 [컨텍스트](https://developer.shotgridsoftware.com/tk-core/core.html#context) 및 [환경](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)을 설정하는 데 사용됩니다.
 이 엔티티는 구성이 작동하도록 설정된 엔티티 유형 중 하나일 수 있습니다.
 예를 들어 `Project` 엔티티를 제공하는 경우 엔진은 프로젝트 환경 설정을 사용하여 프로젝트 컨텍스트에서 시작됩니다.
 마찬가지로, 태스크가 `Asset`에 링크되어 있는 `Task` 엔티티를 제공할 수 있으며, 이 엔티티는 `asset_step.yml` 환경을 사용하여 시작됩니다.
-이는 기본 구성 동작을 기반으로 하며, [선택한 환경](https://developer.shotgunsoftware.com/ko/487a9f2c/#%ED%88%B4%ED%82%B7%EC%9D%B4-%ED%98%84%EC%9E%AC-%ED%99%98%EA%B2%BD%EC%9D%84-%EA%B2%B0%EC%A0%95%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D)은 코어 후크, [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py)를 통해 제어되므로 컨텍스트 또는 기타 매개변수를 기반으로 다른 환경을 선택하도록 변경할 수 있습니다.
+이는 기본 구성 동작을 기반으로 하며, [선택한 환경](https://developer.shotgridsoftware.com/ko/487a9f2c/#%ED%88%B4%ED%82%B7%EC%9D%B4-%ED%98%84%EC%9E%AC-%ED%99%98%EA%B2%BD%EC%9D%84-%EA%B2%B0%EC%A0%95%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D)은 코어 후크, [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py)를 통해 제어되므로 컨텍스트 또는 기타 매개변수를 기반으로 다른 환경을 선택하도록 변경할 수 있습니다.
 
 유형과 ID를 하나 이상 포함해야 하는 ShotGrid 엔티티 사전(dictionary) 형식으로 엔티티를 제공해야 합니다.
 
@@ -190,9 +190,9 @@ task = {"type": "Task", "id": 17264}
 engine = mgr.bootstrap_engine("tk-shell", entity=task)
 ```
 
-`Project` 외의 다른 엔티티 유형으로 부트스트랩(Bootstrapping)하는 경우 [경로 캐시](https://developer.shotgunsoftware.com/ko/cbbf99a4/)가 동기화되어 있는지 확인해야 할 수 있습니다. 그렇지 않으면 템플릿을 해석하려고 시도하는 등의 경우에 환경을 로드할 수 없을 수 있습니다.
+`Project` 외의 다른 엔티티 유형으로 부트스트랩(Bootstrapping)하는 경우 [경로 캐시](https://developer.shotgridsoftware.com/ko/cbbf99a4/)가 동기화되어 있는지 확인해야 할 수 있습니다. 그렇지 않으면 템플릿을 해석하려고 시도하는 등의 경우에 환경을 로드할 수 없을 수 있습니다.
 부트스트랩하기 전에는 `Sgtk` 인스턴스가 없으므로 부트스트랩(Bootstrapping) 프로세스가 `Sgtk` 인스턴스를 생성한 후, 엔진을 시작하기 전에 동기화하도록 해야 합니다.
-이 작업은 [`ToolkitManager.pre_engine_start_callback`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.pre_engine_start_callback) 특성을 커스텀 방식을 가리키도록 설정하여 수행할 수 있습니다.
+이 작업은 [`ToolkitManager.pre_engine_start_callback`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.pre_engine_start_callback) 특성을 커스텀 방식을 가리키도록 설정하여 수행할 수 있습니다.
 그런 다음 해당 방식으로 동기화를 실행할 수 있습니다.
 
 ```python
@@ -212,13 +212,13 @@ mgr.pre_engine_start_callback = pre_engine_start_callback
 
 #### 구성 선택
 
-부트스트랩할 구성을 명시적으로 정의할 수도 있고 부트스트랩(Bootstrapping) 로직이 [적절한 구성을 자동 감지](https://developer.shotgunsoftware.com/tk-core/initializing.html#managing-distributed-configurations)하도록 할 수도 있습니다.
+부트스트랩할 구성을 명시적으로 정의할 수도 있고 부트스트랩(Bootstrapping) 로직이 [적절한 구성을 자동 감지](https://developer.shotgridsoftware.com/tk-core/initializing.html#managing-distributed-configurations)하도록 할 수도 있습니다.
 적절한 구성이 자동으로 감지되지 않는 경우 폴백 구성을 설정할 수도 있습니다.
 이 안내서에서는 프로젝트에 이미 구성이 설정되어 있고 자동으로 검색된다고 가정합니다.
 
 ### 부트스트랩(Bootstrapping)
 
-모든 [`ToolkitManager`](https://developer.shotgunsoftware.com/tk-core/initializing.html#toolkitmanager) 매개변수가 설정된 경우 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식을 호출하면 엔진이 시작되고 엔진 인스턴스로 포인터가 반환됩니다.
+모든 [`ToolkitManager`](https://developer.shotgridsoftware.com/tk-core/initializing.html#toolkitmanager) 매개변수가 설정된 경우 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식을 호출하면 엔진이 시작되고 엔진 인스턴스로 포인터가 반환됩니다.
 
 다음은 지금까지 코드의 요약입니다.
 
@@ -263,7 +263,7 @@ engine = mgr.bootstrap_engine("tk-shell", entity=project)
 
 이제 엔진 인스턴스가 있으므로 툴킷 API를 사용할 준비가 되었습니다.
 
-앱을 시작하는 방법을 설명하기 전에 엔진을 통해 [현재 컨텍스트](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), [Sgtk 인스턴스](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) 및 [ShotGrid API 인스턴스](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun)를 확인할 수 있습니다.
+앱을 시작하는 방법을 설명하기 전에 엔진을 통해 [현재 컨텍스트](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), [Sgtk 인스턴스](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) 및 [ShotGrid API 인스턴스](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun)를 확인할 수 있습니다.
 
 ```python
 engine.context
@@ -278,7 +278,7 @@ engine.shotgun
 앱이 차례로 엔진에 명령을 등록하며, Maya와 같은 소프트웨어에서 실행하는 경우 엔진은 대개 이 명령을 메뉴에 액션으로 표시합니다.
 
 #### 명령 찾기
-등록된 명령을 먼저 확인하려면 [`Engine.commands`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.commands) 특성을 출력하면 됩니다.
+등록된 명령을 먼저 확인하려면 [`Engine.commands`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.commands) 특성을 출력하면 됩니다.
 
 ```python
 # use pprint to give us a nicely formatted output.

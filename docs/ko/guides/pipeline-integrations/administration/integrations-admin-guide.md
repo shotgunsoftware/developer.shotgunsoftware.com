@@ -196,7 +196,7 @@ Loader는 `file://` URL 해석도 지원합니다. 게시할 때 게시 중인 �
 
 ### 고급 구성
 
-PublishedFile 경로 해석을 수행하는 기본 방법에 대한 자세한 정보는 [개발자 참조 문서](http://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)를 참조하십시오.
+PublishedFile 경로 해석을 수행하는 기본 방법에 대한 자세한 정보는 [개발자 참조 문서](http://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)를 참조하십시오.
 
 고급 프로젝트 설정을 사용하는 경우 `resolve_publish` 코어 후크를 커스터마이즈하는 방식으로 로컬 파일 링크 및 `file://` URL 이상의 지원을 추가할 수 있습니다. 가능한 커스터마이즈 항목은 다음과 같습니다.
 
@@ -325,7 +325,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ### 로그
 
-브라우저 통합 로그는 툴킷의 [표준 로그 위치](https://developer.shotgunsoftware.com/38c5c024/)에서 확인할 수 있습니다. 관련 로그 파일은 `tk-desktop.log` 및 `tk-shotgun.log`입니다. 또한 Google Chrome을 사용하는 경우 브라우저의 개발자 콘솔에서 몇 가지 관련 로그 출력을 사용할 수도 있습니다.
+브라우저 통합 로그는 툴킷의 [표준 로그 위치](https://developer.shotgridsoftware.com/38c5c024/)에서 확인할 수 있습니다. 관련 로그 파일은 `tk-desktop.log` 및 `tk-shotgun.log`입니다. 또한 Google Chrome을 사용하는 경우 브라우저의 개발자 콘솔에서 몇 가지 관련 로그 출력을 사용할 수도 있습니다.
 
 ### 문제 해결
 
@@ -344,7 +344,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1. 시작 시 {% include product %} 데스크톱의 Websocket 서버를 시작하지 못했습니다. 이 상황은 잘못된 Websocket 서버 릴리즈가 사용자에게 공개된 경우에만 해당되며 거의 발생하지 않습니다. 이 상황에서, 로깅은 오류에 대해 설명하는 [tk-desktop.log](https://developer.shotgunsoftware.com/38c5c024/)에 표시되며 이 내용은 [{% include product %}의 지원 팀으로 전송](https://support.shotgunsoftware.com/hc/en-us/requests/new)될 수 있습니다.
+1. 시작 시 {% include product %} 데스크톱의 Websocket 서버를 시작하지 못했습니다. 이 상황은 잘못된 Websocket 서버 릴리즈가 사용자에게 공개된 경우에만 해당되며 거의 발생하지 않습니다. 이 상황에서, 로깅은 오류에 대해 설명하는 [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)에 표시되며 이 내용은 [{% include product %}의 지원 팀으로 전송](https://support.shotgunsoftware.com/hc/en-us/requests/new)될 수 있습니다.
 
 **액션 메뉴에 표시되는 액션이 없음**
 
@@ -354,7 +354,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. `tk-shotgun` 엔진이 올바른 환경 YAML 파일에서 구성되었지만 해당 구성에 앱이 없습니다. 이 경우, 이 엔티티 유형에 대한 액션이 없는 것이 의도된 것일 수 있습니다.
 
-2. `tk-shotgun` 엔진이 올바른 환경 YAML 파일에서 구성되었고 앱도 있지만 메뉴에 여전히 액션이 표시되지 않습니다. 앱을 초기화하지 못한 것이 원인일 가능성이 높습니다. 이 경우 [tk-shotgun.log and tk-desktop.log](https://developer.shotgunsoftware.com/38c5c024/)에 해당 문제를 설명하는 정보가 있을 것입니다.
+2. `tk-shotgun` 엔진이 올바른 환경 YAML 파일에서 구성되었고 앱도 있지만 메뉴에 여전히 액션이 표시되지 않습니다. 앱을 초기화하지 못한 것이 원인일 가능성이 높습니다. 이 경우 [tk-shotgun.log and tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)에 해당 문제를 설명하는 정보가 있을 것입니다.
 
 3. 이 엔티티 유형에 해당하는 환경에 `tk-shotgun`에 대한 구성이 포함되어 있지 않습니다. 최종 결과는 이 목록에 있는 1번과 동일합니다. 이 경우, 파이프라인 구성의 `pick_environment` 후크를 살펴보고 이 엔티티 유형에 대해 로드되고 있는 환경을 살펴본 후에 거기에서 `tk-shotgun`의 구성을 검증하면 됩니다.
 
@@ -423,7 +423,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 `app_store_http_proxy: <proxy_server_address>`
 
-여기서 `<proxy_server_address>`는 [개발자 문서](http://developer.shotgunsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)에 설명된 규칙을 따르는 문자열입니다.
+여기서 `<proxy_server_address>`는 [개발자 문서](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)에 설명된 규칙을 따르는 문자열입니다.
 
 프로젝트에 따라 이 설정을 재지정해야 하는 경우 프로젝트의 파이프라인 구성에 있는 `config/core/shotgun.yml`에서 수행할 수 있습니다.
 
@@ -457,7 +457,7 @@ _시나리오: 아티스트의 워크스테이션이 인터넷에 연결되어 �
 
 - 인터넷에 연결된 워크스테이션에서 {% include product %} 데스크톱을 실행합니다. 시작할 때 최신 업그레이드가 자동으로 다운로드됩니다.
 - 옵션 1: 공유 데스크톱 번들
-- [번들 캐시](https://developer.shotgunsoftware.com/7c9867c0/)를 모든 컴퓨터가 액세스할 수 있는 공유 위치에 복사합니다.
+- [번들 캐시](https://developer.shotgridsoftware.com/7c9867c0/)를 모든 컴퓨터가 액세스할 수 있는 공유 위치에 복사합니다.
 - 오프라인 컴퓨터에서 `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` 환경 변수가 이 위치를 가리키도록 설정합니다.
 - 오프라인 컴퓨터에서 데스크톱을 시작하면 번들 캐시에서 사용할 수 있는 최신 업그레이드를 선택합니다.
 - 옵션 2: 로컬 배포

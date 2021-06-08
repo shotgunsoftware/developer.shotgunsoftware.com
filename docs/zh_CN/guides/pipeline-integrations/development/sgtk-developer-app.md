@@ -38,11 +38,11 @@ Toolkit 应用可定义如下：
 - 这些应用通常具有图形用户界面，用户可以使用该界面来指导应用的操作，但这不是必需的。应用也可以是向集成注册的命令，由用户从宿主软件中的 ShotGrid 菜单触发。
 - 它们可以包含 API/公共方法，其他流程或应用可以通过这些方法进行交互。
 - 它们可以支持多平台且与软件无关。
-- 可以将它们设置为根据[环境](https://developer.shotgunsoftware.com/zh_CN/487a9f2c/#%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%AF%E5%A2%83)进行不同配置。
+- 可以将它们设置为根据[环境](https://developer.shotgridsoftware.com/zh_CN/487a9f2c/#%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%AF%E5%A2%83)进行不同配置。
 - 它们可以支持上下文感知。例如，应用可以识别用户正在处理的任务，并执行相应的动作。
 - 只能从 Toolkit 插件运行它们。
 
-Toolkit 应用由 Toolkit 插件初始化。[插件](https://developer.shotgunsoftware.com/tk-core/platform.html#engines)设计为在特定软件环境中运行，它们在其中提供用于运行 Toolkit 应用的界面。插件消除了需要从应用处理各种软件环境的复杂性。这意味着，应用只需专注于提供实现其用途的功能，无需考虑其他方面，例如，处理窗口父子关系、跟踪用户的上下文或提供用于启动本身的快捷方式。
+Toolkit 应用由 Toolkit 插件初始化。[插件](https://developer.shotgridsoftware.com/tk-core/platform.html#engines)设计为在特定软件环境中运行，它们在其中提供用于运行 Toolkit 应用的界面。插件消除了需要从应用处理各种软件环境的复杂性。这意味着，应用只需专注于提供实现其用途的功能，无需考虑其他方面，例如，处理窗口父子关系、跟踪用户的上下文或提供用于启动本身的快捷方式。
 
 ## 创建自己的应用。
 ShotGrid Software 维护和发布的应用和插件全部开源，可从 [GitHub](https://github.com/shotgunsoftware) 获取它们。
@@ -71,9 +71,9 @@ ShotGrid Software 维护和发布的应用和插件全部开源，可从 [GitHub
 了解这一点将决定需要向哪些环境 YAML 和插件添加应用设置。
 
 如果您现在不确定，建议先将其添加到项目环境中的 `tk-shell` 插件。
-这样，您就可以[从 IDE 运行它](./sgtk-developer-bootstrapping.md)，或者通过命令行使用 tank 命令运行它（如果您有[集中式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)）。从而可以更快地进行开发。
+这样，您就可以[从 IDE 运行它](./sgtk-developer-bootstrapping.md)，或者通过命令行使用 tank 命令运行它（如果您有[集中式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)）。从而可以更快地进行开发。
 
-首先，使用 [dev 描述符](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)设置应用位置。
+首先，使用 [dev 描述符](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)设置应用位置。
 
 ```yaml
 tk-multi-starterapp:
@@ -118,14 +118,14 @@ save_template:
     description: The template to use when building the path to save the file into
     allows_empty: False
 ```
-为此创建设置意味着您不必在应用代码中对模板名称进行硬编码，而是可以从 `info.yml` 中默认定义或环境 YAML 文件设置中的覆盖定义的设置[获取值](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting)。
+为此创建设置意味着您不必在应用代码中对模板名称进行硬编码，而是可以从 `info.yml` 中默认定义或环境 YAML 文件设置中的覆盖定义的设置[获取值](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting)。
 
 ```python
 template = app.get_setting("save_template")
 ```
 这意味着您可以将应用配置为根据应用的运行环境使用不同的模板。
 
-有关配置设置的详细信息，请参见[参考文档](https://developer.shotgunsoftware.com/tk-core/platform.html#the-configuration-section)。
+有关配置设置的详细信息，请参见[参考文档](https://developer.shotgridsoftware.com/tk-core/platform.html#the-configuration-section)。
 
 ### 框架
 
@@ -156,8 +156,8 @@ frameworks:
 
 有关框架及其用途的详细信息，请参见以下链接：
 
-- [Qt 控件框架](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/)
-- [ShotGrid 实用程序框架](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/)
+- [Qt 控件框架](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/)
+- [ShotGrid 实用程序框架](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)
 
 ### 重新加载更改
 
@@ -192,9 +192,9 @@ location:
 
 有几个不同的选项可用于为应用版本提供来源。
 
-- [Git](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) 和 [GitHub](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
-- [ShotGrid 上传](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
-- [本地路径](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
+- [Git](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) 和 [GitHub](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
+- [ShotGrid 上传](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
+- [本地路径](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
 
 在您的制作配置中，可以添加应用，并转为使用符合您的需求的描述符。
 
@@ -213,7 +213,7 @@ Toolkit 支持即时使用 Git (http://git-scm.com/)，在对配置运行 `tank 
 当您在 Git 中创建好第一个标记后（例如 `v1.0.0`），就可以将配置设置为使用指向您的标记的 Git 描述符。然后，您就可以直接运行 `tank updates`，如果已创建新标记，程序将提示您是否要升级。
 此时，整个工作流便与官方应用商店的流程完全相同。
 
-{% include warning title="注意" content="Git 描述符适用于[集中式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)，采用这种配置时，通常由管理员对应用运行缓存，并且缓存的应用会存储到所有用户均可访问的中心位置。但是，如果您使用的是[分布式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)，那么这种描述符可能不适合。您的应用将按用户下载，这意味着每个用户都需要安装并设置 Git 才能向您的库认证身份并访问代码。" %}
+{% include warning title="注意" content="Git 描述符适用于[集中式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)，采用这种配置时，通常由管理员对应用运行缓存，并且缓存的应用会存储到所有用户均可访问的中心位置。但是，如果您使用的是[分布式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)，那么这种描述符可能不适合。您的应用将按用户下载，这意味着每个用户都需要安装并设置 Git 才能向您的库认证身份并访问代码。" %}
 
 ## 修改现有应用
 有时，我们并不会使用空白的入门模板从头创建应用，而是需要为现有应用（例如 ShotGrid Software 的某个标准应用）添加一项小功能。

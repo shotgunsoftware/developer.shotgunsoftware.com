@@ -23,9 +23,9 @@ lang: ko
 이러한 작업을 수행하려면 툴킷 API를 사용하는 방법을 이해하는 것이 중요합니다.
 
 ShotGrid에는 전체적으로 세 가지 주요 API가 있습니다.
-- [ShotGrid Python API](https://developer.shotgunsoftware.com/python-api)
-- [ShotGrid REST API](https://developer.shotgunsoftware.com/rest-api/)
-- [ShotGrid 툴킷 API](https://developer.shotgunsoftware.com/tk-core)
+- [ShotGrid Python API](https://developer.shotgridsoftware.com/python-api)
+- [ShotGrid REST API](https://developer.shotgridsoftware.com/rest-api/)
+- [ShotGrid 툴킷 API](https://developer.shotgridsoftware.com/tk-core)
 
 툴킷 API는 ShotGrid Python API 또는 REST API와 함께 사용하도록 설계된 Python API이며 대체용 API가 아닙니다.
 툴킷 API에 몇 가지 래퍼 방식이 있지만 일반적으로 ShotGrid 사이트에서 데이터에 액세스해야 할 때는 ShotGrid Python API 또는 REST API를 사용합니다.

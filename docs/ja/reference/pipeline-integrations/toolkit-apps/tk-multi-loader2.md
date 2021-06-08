@@ -94,7 +94,7 @@ def execute_multiple_actions(self, actions)
 
 詳細については、アプリに付属するフック ファイルを参照してください。フックは継承も活用します。つまり、フック内のすべての項目をオーバーライドすることなく、さまざまな方法で既定のフックを簡単に拡張または強化して簡単にフックを管理できます。
 
-`v1.12.0` よりも前のバージョンでは、アプリケーションがアクションを実行するには `execute_action` フックを起動していました。新しいバージョンでは `execute_multiple_actions` フックを起動します。既存のフックとの下位互換性を提供するために、`execute_multiple_actions` フックは提供される各アクションの `execute_action` を実際に起動します。アプリケーションを `v1.12.0` 以降にアップグレードした後に `execute_multiple_actions` フックが定義されていないと報告される場合は、環境の `actions_hook` 設定が組み込みフック `{self}/{engine_name}_actions.py` から正しく継承されるようにします。組み込みフックからカスタム フックを取得する方法については、[Toolkit リファレンス ドキュメント](http://developer.shotgunsoftware.com/tk-core/core.html#hook)を参照してください。
+`v1.12.0` よりも前のバージョンでは、アプリケーションがアクションを実行するには `execute_action` フックを起動していました。新しいバージョンでは `execute_multiple_actions` フックを起動します。既存のフックとの下位互換性を提供するために、`execute_multiple_actions` フックは提供される各アクションの `execute_action` を実際に起動します。アプリケーションを `v1.12.0` 以降にアップグレードした後に `execute_multiple_actions` フックが定義されていないと報告される場合は、環境の `actions_hook` 設定が組み込みフック `{self}/{engine_name}_actions.py` から正しく継承されるようにします。組み込みフックからカスタム フックを取得する方法については、[Toolkit リファレンス ドキュメント](http://developer.shotgridsoftware.com/tk-core/core.html#hook)を参照してください。
 
 LINKBOX_DOC:5#The%20hook%20data%20type:こちらで、第 2 世代のフック形式を確認してください。
 

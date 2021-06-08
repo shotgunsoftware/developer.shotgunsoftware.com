@@ -27,7 +27,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 
 ![配置](../images/file-system-config-reference/core_config.png)
 
-上图显示了一个数据结构配置。当您执行 Toolkit 文件夹创建操作时，会在 {% include product %} 中的实体与磁盘上的文件夹之间建立联系。Toolkit 使用此文件夹数据结构配置在磁盘上生成一系列文件夹，每个文件夹在 {% include product %} 中注册为一个 [`Filesystem Location`](https://developer.shotgunsoftware.com/cbbf99a4/) 实体。我们可以将这看成是 {% include product %} 数据（例如镜头和资产名称）和配置被“转化”成磁盘上和 {% include product %} 中的实际文件夹。配置总是以一个名为“project”的文件夹开头。此文件夹始终表示 {% include product %} 中连接的项目，并将被替换为项目的 Toolkit 名称。这层下面是静态文件夹。例如，文件夹创建器将自动创建 **sequences** 文件夹。
+上图显示了一个数据结构配置。当您执行 Toolkit 文件夹创建操作时，会在 {% include product %} 中的实体与磁盘上的文件夹之间建立联系。Toolkit 使用此文件夹数据结构配置在磁盘上生成一系列文件夹，每个文件夹在 {% include product %} 中注册为一个 [`Filesystem Location`](https://developer.shotgridsoftware.com/cbbf99a4/) 实体。我们可以将这看成是 {% include product %} 数据（例如镜头和资产名称）和配置被“转化”成磁盘上和 {% include product %} 中的实际文件夹。配置总是以一个名为“project”的文件夹开头。此文件夹始终表示 {% include product %} 中连接的项目，并将被替换为项目的 Toolkit 名称。这层下面是静态文件夹。例如，文件夹创建器将自动创建 **sequences** 文件夹。
 
 进一步深入 sequences 文件夹，有一个 **sequence** 文件夹和一个 **sequence.yml** 文件。 每当 Toolkit 检测到与文件夹同名的 YAML 文件时，便会读取该 YAML 文件的内容，并添加需要的动态行为。在本例中，**sequence.yml** 文件包含 project 文件夹下的结构，由三种内容组成：
 
@@ -83,7 +83,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
    - 您可以像上面的示例中那样，只使用一个字段（例如 `name: code`）。
    - 也可以在大括号内使用多个字段（例如 `name:` `"{asset_type}_{code}"`）。
    - 如果想包含来自其他链接实体的字段，可使用标准 {% include product %} 语法（例如 `name: "{sg_sequence.Sequence.code}_{code}"`）。
-- **filters** 字段是一个 {% include product %} 查询。该字段相对严格遵循 [{% include product %} API 语法](http://developer.shotgunsoftware.com/python-api/reference.html)。它是一个词典列表，并且每个词典需要有 _path_、_relation_ 和 _values_ 键。 $ 语法的有效值是任何包含对应 {% include product %} 实体的根文件夹（例如，对于项目来说是 `"$project"`，而如果上层目录层次结构存在 sequence.yml，也可以是 `"$sequence"`）。对于 {% include product %} 实体链接，您可以使用 $ 语法（例如 `{ "path": "project", "relation": "is", "values": [ "$project" ] }`）指代配置中的父文件夹 - [下面的示例](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Examples)对此做出了更深入的解释。
+- **filters** 字段是一个 {% include product %} 查询。该字段相对严格遵循 [{% include product %} API 语法](http://developer.shotgridsoftware.com/python-api/reference.html)。它是一个词典列表，并且每个词典需要有 _path_、_relation_ 和 _values_ 键。 $ 语法的有效值是任何包含对应 {% include product %} 实体的根文件夹（例如，对于项目来说是 `"$project"`，而如果上层目录层次结构存在 sequence.yml，也可以是 `"$sequence"`）。对于 {% include product %} 实体链接，您可以使用 $ 语法（例如 `{ "path": "project", "relation": "is", "values": [ "$project" ] }`）指代配置中的父文件夹 - [下面的示例](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Examples)对此做出了更深入的解释。
 
 
 ## 多个文件夹
@@ -874,7 +874,7 @@ Toolkit 的模板文件是 Toolkit 配置的一个中枢。每个项目都会有
 - `subset`  和 `subset_format` - 提取给定输入字符串的一部分并将它设为键值。这样，便可根据完整的用户名创建用户名首字母缩写键，或创建可容纳每个镜头名称前三个字母的键。
 
 
-有关模板键的技术细节，请参见 [API 参考](http://developer.shotgunsoftware.com/tk-core/core.html#template-system)。
+有关模板键的技术细节，请参见 [API 参考](http://developer.shotgridsoftware.com/tk-core/core.html#template-system)。
 
 ### 示例 - 字母数字名称
 
@@ -1053,7 +1053,7 @@ Toolkit 应用在填充所有上下文字段时（通过 `context.as_template_fi
 
 {% include info title="注意" content="如果一个 string 键的名称与一个关联了 ShotGrid 实体的动态数据结构文件夹的实体类型一致，将使用该文件夹名称来代替令牌。例如，假设您像上面的代码段那样正在使用一个“string”类型的 {Sequence} 模板键，同时您的数据结构中有一个名为“sequence”的动态文件夹，并且在对应的 `sequence.yml` 文件中，它被定义为 `shotgun_entity` 类型，并连接到 ShotGrid 中的“场”(Sequence)实体类型。这种情况下，Toolkit 会认为您的模板键对应于这个动态文件夹的实体类型（示例中二者均为“镜头序列”(Sequence)）。因此，Toolkit 会提取生成的文件夹名称（即所涉及的具体场的名称），并使用它替换模板键。" %}
 
-如果需要定义任何可选属性，必须使用这种格式。目前，只有 `root_name` 这一个可选属性，在有多个根目录的项目中，可以用它来指定路径的项目根目录。  当您想添加新的存储根目录来存储某些项目文件时，会用到[多个根目录](https://developer.shotgunsoftware.com/9ea9dd4e/)。
+如果需要定义任何可选属性，必须使用这种格式。目前，只有 `root_name` 这一个可选属性，在有多个根目录的项目中，可以用它来指定路径的项目根目录。  当您想添加新的存储根目录来存储某些项目文件时，会用到[多个根目录](https://developer.shotgridsoftware.com/9ea9dd4e/)。
 
 `root_name: name_of_project_root`
 

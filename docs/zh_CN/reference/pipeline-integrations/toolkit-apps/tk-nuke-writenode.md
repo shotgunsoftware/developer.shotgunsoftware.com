@@ -142,7 +142,7 @@ Nuke 将运行在其插件路径中找到的任何 `init.py` 脚本。此方式�
 
 ```python
 # Populating environment variables from running Nuke:
-# http://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.create_engine_launcher
+# http://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.create_engine_launcher
 current_engine = sgtk.platform.current_engine()
 launcher = sgtk.platform.create_engine_launcher(
      current_engine.sgtk,
@@ -175,7 +175,7 @@ SHOTGUN_FARM_SCRIPT_USER = “sg_api_user”
 SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx”
 ```
 
-有关身份认证的详细信息，请参见[开发人员文档](http://developer.shotgunsoftware.com/tk-core/authentication.html)。
+有关身份认证的详细信息，请参见[开发人员文档](http://developer.shotgridsoftware.com/tk-core/authentication.html)。
 
 **有关保护脚本用户安全的注意事项：**建议锁定您在农场中使用的脚本用户，以使其没有管理员级别的权限。[您可在此处详细了解 API 用户权限。](https://support.shotgunsoftware.com/hc/zh-cn/articles/219376228)
 
@@ -186,7 +186,7 @@ SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap
 # Toolkit in Nuke on the render farm.
-# http://developer.shotgunsoftware.com/tk-core/bootstrap.html#bootstrapping-toolkit
+# http://developer.shotgridsoftware.com/tk-core/bootstrap.html#bootstrapping-toolkit
 
 import sys
 import os
@@ -201,7 +201,7 @@ if TK_CORE_PATH not in sys.path:
 # If your render nodes don’t have access to the Toolkit Core API in the same filesystem location as artist workstations, you have to make sure that it is available in the PYTHONPATH, so that render nodes can import it. An easy way
 # to install tk-core in a centralized location is with pip. You can read more
 # about it here:
-# http://developer.shotgunsoftware.com/tk-core/bootstrap.html#installing-the-sgtk-module-using-pip
+# http://developer.shotgridsoftware.com/tk-core/bootstrap.html#installing-the-sgtk-module-using-pip
 
 import sgtk
 

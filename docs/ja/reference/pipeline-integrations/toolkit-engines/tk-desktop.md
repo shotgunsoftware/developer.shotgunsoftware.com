@@ -23,7 +23,7 @@ Toolkit の基本原則の 1 つは、プロジェクト同士を完全に分離
 
 ## カスタム パネルを登録する
 
-[パネル ベースの UI](http://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel) がある Toolkit アプリは、実行時に Desktop の内側のタブに自動的にドッキングされます。
+[パネル ベースの UI](http://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel) がある Toolkit アプリは、実行時に Desktop の内側のタブに自動的にドッキングされます。
 
 {% include product %} Panel などのパネル ベースのアプリを {% include product %} Desktop でタブとして表示したい場合は、起動時に実行されるように設定します。Desktop がサイト コンテキスト モード(すべてのプロジェクトが表示される)で起動すると、自動起動するよう登録されたすべての項目が起動します。これらの項目にパネルが含まれる場合、ドッキングされます。項目は、設定で定義された順序で処理され、これによりタブの順序が決まります。
 

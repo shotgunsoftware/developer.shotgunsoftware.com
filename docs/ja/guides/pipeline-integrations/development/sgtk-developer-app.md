@@ -38,11 +38,11 @@ Toolkit アプリは、次のように定義されます。
 - 通常、アプリにはユーザの操作をガイドするためのグラフィカル ユーザ インタフェースが備わっているが、必ずしも必要なわけではない。統合に登録されたコマンドとして使用可能なアプリもあり、ホスト ソフトウェアの ShotGrid メニューからトリガできる。
 - 他のプロセスやアプリと相互作用できる API/パブリック メソッドが含まれることがある。
 - 複数のプラットフォームに対応することが可能で、ソフトウェアに依存しない。
-- [環境](https://developer.shotgunsoftware.com/ja/487a9f2c/#%E7%92%B0%E5%A2%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)に応じて異なる設定にすることができる。
+- [環境](https://developer.shotgridsoftware.com/ja/487a9f2c/#%E7%92%B0%E5%A2%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)に応じて異なる設定にすることができる。
 - コンテキスト対応にすることができる。たとえば、ユーザが作業しているタスクをアプリが認識し、それに応じて動作するように設定できる。
 - Toolkit エンジンからのみ実行できる。
 
-Toolkit アプリは Toolkit エンジンによって初期化されます。[エンジン](https://developer.shotgunsoftware.com/tk-core/platform.html#engines)は特定のソフトウェア環境内で実行するように設計されていて、この環境から Toolkit アプリを実行するインタフェースが提供されます。エンジンを使用すると、アプリでさまざまなソフトウェア環境を処理するという複雑な作業が不要になります。つまり、アプリに必要なことは目的を達成するための機能を提供することであり、ウィンドウのペアレント化の処理、ユーザのコンテキストのトラッキング、自分自身を起動するためのショートカットなどを提供する必要はありません。
+Toolkit アプリは Toolkit エンジンによって初期化されます。[エンジン](https://developer.shotgridsoftware.com/tk-core/platform.html#engines)は特定のソフトウェア環境内で実行するように設計されていて、この環境から Toolkit アプリを実行するインタフェースが提供されます。エンジンを使用すると、アプリでさまざまなソフトウェア環境を処理するという複雑な作業が不要になります。つまり、アプリに必要なことは目的を達成するための機能を提供することであり、ウィンドウのペアレント化の処理、ユーザのコンテキストのトラッキング、自分自身を起動するためのショートカットなどを提供する必要はありません。
 
 ## 独自のアプリを作成する
 ShotGrid Software によって維持およびリリースされるすべてのアプリとエンジンはオープン ソースであり、[GitHub](https://github.com/shotgunsoftware) から入手できます。
@@ -67,9 +67,9 @@ ShotGrid Software によって維持およびリリースされるすべての�
 
 アプリを環境設定に追加する場合は、アプリの使用場所を考慮する必要があります。たとえば、Nuke だけで使用する場合、複数の異なるソフトウェアで使用する場合、または ShotGrid Desktop からスタンドアロンで使用する場合があります。アプリが依存するコンテキストについても考慮する必要があります。たとえば、ユーザが作業しているタスクがわかっている場合に限ってアプリを実行できるのか、または既知のプロジェクトに限定してアプリを実行できるのかを検討します。この情報がわかれば、アプリの設定を追加する必要がある YAML 環境ファイルおよびエンジンが決まります。
 
-現時点で不明な場合は、まず、プロジェクト環境の `tk-shell` エンジンにアプリの設定を追加することをお勧めします。このようにすると、[IDE から実行](./sgtk-developer-bootstrapping.md)したり、[一元管理設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)がある場合に tank コマンドを使用してコマンド ラインから実行したりできます。これにより、開発にかかる時間が短縮されます。
+現時点で不明な場合は、まず、プロジェクト環境の `tk-shell` エンジンにアプリの設定を追加することをお勧めします。このようにすると、[IDE から実行](./sgtk-developer-bootstrapping.md)したり、[一元管理設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)がある場合に tank コマンドを使用してコマンド ラインから実行したりできます。これにより、開発にかかる時間が短縮されます。
 
-最初は、アプリの場所として[開発記述子](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)を使用します。
+最初は、アプリの場所として[開発記述子](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)を使用します。
 
 ```yaml
 tk-multi-starterapp:
@@ -115,14 +115,14 @@ save_template:
     description: The template to use when building the path to save the file into
     allows_empty: False
 ```
-この設定を作成すると、アプリ コード内にテンプレート名をハード コード化する必要がなくなり、代わりに `info.yml` 内で既定で定義された設定、または YAML 環境ファイルの設定でオーバーライドされた設定から[値を取得](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting)できるようになります。
+この設定を作成すると、アプリ コード内にテンプレート名をハード コード化する必要がなくなり、代わりに `info.yml` 内で既定で定義された設定、または YAML 環境ファイルの設定でオーバーライドされた設定から[値を取得](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting)できるようになります。
 
 ```python
 template = app.get_setting("save_template")
 ```
 つまり、アプリが実行されている環境に応じて、異なるテンプレートを使用するようにアプリを設定できます。
 
-環境設定の詳細については、[リファレンス ドキュメント](https://developer.shotgunsoftware.com/tk-core/platform.html#the-configuration-section)を参照してください。
+環境設定の詳細については、[リファレンス ドキュメント](https://developer.shotgridsoftware.com/tk-core/platform.html#the-configuration-section)を参照してください。
 
 ### フレームワーク
 
@@ -153,8 +153,8 @@ frameworks:
 
 フレームワークとその効果的な利用の方法については、次のリンクを確認してください:
 
-- [Qt ウィジェット フレームワーク](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/)
-- [ShotGrid ユーティリティ フレームワーク](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/)
+- [Qt ウィジェット フレームワーク](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/)
+- [ShotGrid ユーティリティ フレームワーク](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)
 
 ### 変更を再ロードする
 
@@ -189,9 +189,9 @@ location:
 
 アプリのリリースを取得するオプションがいくつか用意されています。
 
-- [git](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) および [GitHub](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
-- [ShotGrid のアップロード](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
-- [ローカル パス](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
+- [git](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) および [GitHub](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
+- [ShotGrid のアップロード](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
+- [ローカル パス](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
 
 プロダクション設定内でアプリを追加し、必要に応じて記述子を使用するように切り替えます。
 
@@ -210,7 +210,7 @@ Toolkit では、git (http://git-scm.com/)をそのまま使用できます。�
 git で最初のタグ(例: `v1.0.0`)を作成した後で、タグを指す git 記述子を使用するように環境を設定できます。その後、`tank updates` を実行します。新しいタグが作成されると、アップグレードするかを尋ねるメッセージが表示されます。
 これで、ワークフローは公式の App Store アプリで実行されるワークフローと同じになります。
 
-{% include warning title="注意" content="git 記述子は[中央設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)で適切に機能します。中央設定では、通常、管理者がアプリのキャッシュを実行して、すべてのユーザがアクセスできる中央の場所に格納します。ただし、[分散設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)を使用している場合は、適切に機能しない可能性があります。アプリはユーザごとにダウンロードされるため、それぞれのユーザが git をインストールするとともに、リポジトリを使用して認証し、コードにアクセスするように設定する必要があります。"%}
+{% include warning title="注意" content="git 記述子は[中央設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)で適切に機能します。中央設定では、通常、管理者がアプリのキャッシュを実行して、すべてのユーザがアクセスできる中央の場所に格納します。ただし、[分散設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)を使用している場合は、適切に機能しない可能性があります。アプリはユーザごとにダウンロードされるため、それぞれのユーザが git をインストールするとともに、リポジトリを使用して認証し、コードにアクセスするように設定する必要があります。"%}
 
 ## 既存のアプリを変更する
 場合によっては、空のスターター テンプレートから開始するのではなく、ShotGrid Software の標準アプリの 1 つなどの既存のアプリに、マイナー機能を追加する必要があります。

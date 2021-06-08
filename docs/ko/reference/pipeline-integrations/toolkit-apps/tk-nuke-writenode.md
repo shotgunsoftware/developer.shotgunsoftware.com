@@ -141,7 +141,7 @@ Nuke는 플러그인 경로에 있는 `init.py` 스크립트를 실행합니다.
 
 ```python
 # Populating environment variables from running Nuke:
-# http://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.create_engine_launcher
+# http://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.create_engine_launcher
 current_engine = sgtk.platform.current_engine()
 launcher = sgtk.platform.create_engine_launcher(
      current_engine.sgtk,
@@ -174,7 +174,7 @@ SHOTGUN_FARM_SCRIPT_USER = “sg_api_user”
 SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx”
 ```
 
-인증에 대한 자세한 정보는 [개발자 문서](http://developer.shotgunsoftware.com/tk-core/authentication.html)를 참조하십시오.
+인증에 대한 자세한 정보는 [개발자 문서](http://developer.shotgridsoftware.com/tk-core/authentication.html)를 참조하십시오.
 
 **스크립트 사용자 보안에 대한 참고 사항:** 관리자(Admin) 레벨의 권한을 갖지 않도록 팜에서 사용하는 스크립트 사용자를 잠그는 것이 좋습니다. [API 사용자 권한에 대한 자세한 정보는 여기를 참조하십시오.](https://support.shotgunsoftware.com/hc/ko/articles/219376228-API-user-permission-groups)
 
@@ -185,7 +185,7 @@ SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap
 # Toolkit in Nuke on the render farm.
-# http://developer.shotgunsoftware.com/tk-core/bootstrap.html#bootstrapping-toolkit
+# http://developer.shotgridsoftware.com/tk-core/bootstrap.html#bootstrapping-toolkit
 
 import sys
 import os
@@ -200,7 +200,7 @@ if TK_CORE_PATH not in sys.path:
 # If your render nodes don’t have access to the Toolkit Core API in the same filesystem location as artist workstations, you have to make sure that it is available in the PYTHONPATH, so that render nodes can import it. An easy way
 # to install tk-core in a centralized location is with pip. You can read more
 # about it here:
-# http://developer.shotgunsoftware.com/tk-core/bootstrap.html#installing-the-sgtk-module-using-pip
+# http://developer.shotgridsoftware.com/tk-core/bootstrap.html#installing-the-sgtk-module-using-pip
 
 import sgtk
 

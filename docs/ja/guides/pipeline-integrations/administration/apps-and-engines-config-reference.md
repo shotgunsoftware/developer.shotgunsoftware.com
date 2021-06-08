@@ -83,7 +83,7 @@ yaml ファイルの基本的な形式は次のとおりです。
 - 記述子 **dev** は開発者用サンドボックスを表します
 - 記述子 **manual** はカスタムの展開とロールアウトに使用します
 
-さまざまな記述子の使用方法については、[Toolkit リファレンス ドキュメント](http://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types)を参照してください。
+さまざまな記述子の使用方法については、[Toolkit リファレンス ドキュメント](http://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types)を参照してください。
 
 ## アプリとエンジンを無効にする
 
@@ -103,4 +103,4 @@ _deny_platforms_ の有効値は、`windows`、`linux`、および `mac` です�
 
 ## 設定とパラメータ
 
-各アプリ、エンジン、またはフレームワークは、設定ファイルをオーバーライドできる数多くの設定を明示的に定義します。この設定は、文字列、整数、リストなどのタイプに分類されます。詳細については、[Toolkit リファレンス ドキュメント](http://developer.shotgunsoftware.com/tk-core/platform.html#configuration-and-info-yml-manifest)を参照してください。
+各アプリ、エンジン、またはフレームワークは、設定ファイルをオーバーライドできる数多くの設定を明示的に定義します。この設定は、文字列、整数、リストなどのタイプに分類されます。詳細については、[Toolkit リファレンス ドキュメント](http://developer.shotgridsoftware.com/tk-core/platform.html#configuration-and-info-yml-manifest)を参照してください。

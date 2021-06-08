@@ -189,7 +189,7 @@ action_mappings:
 
 パブリッシュ用に項目をアーティストに表示する方法やそれらの項目を処理する方法を制御するフックにより、Publish アプリを高度にカスタマイズすることができます。
 
-Publish アプリの開発者を対象とした完全なドキュメントは、[Toolkit 開発者サイト](http://developer.shotgunsoftware.com/tk-multi-publish2)で入手できます。
+Publish アプリの開発者を対象とした完全なドキュメントは、[Toolkit 開発者サイト](http://developer.shotgridsoftware.com/tk-multi-publish2)で入手できます。
 
 Publish アプリの使用方法の詳細については、[ユーザ ガイド](https://support.shotgunsoftware.com/hc/ja/articles/115000067513-Integrations-Developer-Guide#User_guide_link)を参照してください。第 1 世代の Publisher の詳細については、[従来型の Publisher に関するドキュメント](https://support.shotgunsoftware.com/hc/ja/articles/115000067513-Integrations-Developer-Guide#classic_publisher_link)を参照してください。
 

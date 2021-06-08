@@ -29,7 +29,7 @@ lang: ja
 
 ## パート 1: sgtk を読み込む
 
-Toolkit API は `sgtk` という Python パッケージに含まれています。各 Toolkit の設定には、[`tk-core`](https://developer.shotgunsoftware.com/tk-core/overview.html) の一部として提供される API の独自のコピーが含まれています。プロジェクトの設定で API を使用するには、使用する設定から `sgtk` パッケージを読み込む必要があります。別の設定から読み込むと、エラーが発生します。
+Toolkit API は `sgtk` という Python パッケージに含まれています。各 Toolkit の設定には、[`tk-core`](https://developer.shotgridsoftware.com/tk-core/overview.html) の一部として提供される API の独自のコピーが含まれています。プロジェクトの設定で API を使用するには、使用する設定から `sgtk` パッケージを読み込む必要があります。別の設定から読み込むと、エラーが発生します。
 
 {% include info title="注" content="場合によっては、`tank` パッケージが参照されることがあります。このパッケージ名は、同じ内容に対する従来の名前です。いずれの名前でも機能しますが、今後使用する正しい名前は `sgtk` です。"%}
 
@@ -53,9 +53,9 @@ import sgtk
 
 ## パート 2: sgtk インスタンスを取得する
 
-Toolkit API を使用するには、[`Sgtk`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk) クラスのインスタンスを作成する必要があります。
+Toolkit API を使用するには、[`Sgtk`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk) クラスのインスタンスを作成する必要があります。
 
-[`Sgtk`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk) は、API のメイン インタフェースとして機能する `sgtk` パッケージ内のクラスです。`Sgtk` のインスタンスを作成すると、コンテキストの取得、フォルダの作成、テンプレートへのアクセスなどを実行できるようになります。
+[`Sgtk`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk) は、API のメイン インタフェースとして機能する `sgtk` パッケージ内のクラスです。`Sgtk` のインスタンスを作成すると、コンテキストの取得、フォルダの作成、テンプレートへのアクセスなどを実行できるようになります。
 
 API ドキュメントに示されているように、`Sgtk` のインスタンスを直接作成することはしないでください。次に、`Sgtk` インスタンスを取得するためのオプションをいくつか示します。
 
@@ -69,13 +69,13 @@ API ドキュメントに示されているように、`Sgtk` のインスタン
    tk = current_engine.sgtk
    ```
 
-   `Sgtk` インスタンスには、[`Engine.sgtk`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) プロパティを通してアクセスできます。
+   `Sgtk` インスタンスには、[`Engine.sgtk`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) プロパティを通してアクセスできます。
 
    *注: `Engine.sgtk` プロパティを、パート 1 で読み込んだ `sgtk` パッケージと混同したり、同じであるとみなしたりしないでください。*
 
-2. [`sgtk.sgtk_from_entity()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity): エンジンがまだ起動されていない環境で実行している場合は、このメソッドを使用して、エンティティ ID に基づいて `Sgtk` インスタンスを取得することができます。指定した ID を持つエンティティは、`sgtk` API の読み込み元のプロジェクトに属している必要があります。*このメソッドは、分散環境設定では機能しません。詳細については、[ブートストラップ ガイド](sgtk-developer-bootstrapping.md)を参照してください。*
+2. [`sgtk.sgtk_from_entity()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity): エンジンがまだ起動されていない環境で実行している場合は、このメソッドを使用して、エンティティ ID に基づいて `Sgtk` インスタンスを取得することができます。指定した ID を持つエンティティは、`sgtk` API の読み込み元のプロジェクトに属している必要があります。*このメソッドは、分散環境設定では機能しません。詳細については、[ブートストラップ ガイド](sgtk-developer-bootstrapping.md)を参照してください。*
 
-3. [`sgtk.sgtk_from_path()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path): `sgtk_from_entity()` と同様ですが、環境設定のパス、またはプロジェクトのルート フォルダのパスやその内部(作業ファイルやショット フォルダなど)を使用することができます。*このメソッドは、分散環境設定では機能しません。詳細については、[ブートストラップ ガイド](sgtk-developer-bootstrapping.md)を参照してください。*
+3. [`sgtk.sgtk_from_path()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path): `sgtk_from_entity()` と同様ですが、環境設定のパス、またはプロジェクトのルート フォルダのパスやその内部(作業ファイルやショット フォルダなど)を使用することができます。*このメソッドは、分散環境設定では機能しません。詳細については、[ブートストラップ ガイド](sgtk-developer-bootstrapping.md)を参照してください。*
 
 このガイドでは、エンジンが既に起動されている環境でこのコードを実行していることが前提となっているため、オプション 1 を使用します。また、`tk` という名前の変数に `Sgtk` クラス インスタンスを格納します。ShotGrid Python コンソールを使用している場合、`tk` 変数はグローバル変数として既に定義されています。
 
@@ -97,7 +97,7 @@ tk = current_engine.sgtk
 
 Toolkit の多くの機能は、コンテキストに関するものです。つまり、自分が作業している対象を認識し、それに応じた対応を可能にします。Toolkit API を使用している場合に、コンテキストに対応する動作を実現するには、使用しているエンティティに関する重要な情報を保存する機能や、アプリまたは他のプロセスでこれらの情報を共有する機能が必要になります。たとえば、ユーザが作業しているタスクを Toolkit が認識している場合、Toolkit はユーザがパブリッシュしたファイルを ShotGrid 内のこのタスクに自動的にリンクすることができます。
 
-[`Context` クラス](https://developer.shotgunsoftware.com/tk-core/core.html#context)は、この情報のコンテナとして機能します。特に、`Task`、`Step`、`entity` (`Shot` または `Asset` など)、`Project`、および現在の `HumanUser` をクラスのインスタンス内に保存することができます。
+[`Context` クラス](https://developer.shotgridsoftware.com/tk-core/core.html#context)は、この情報のコンテナとして機能します。特に、`Task`、`Step`、`entity` (`Shot` または `Asset` など)、`Project`、および現在の `HumanUser` をクラスのインスタンス内に保存することができます。
 
 特定のセッションで、さまざまなコンテキスト オブジェクトを必要なだけ作成できます。ただし、エンジンがある場合は、現在の単一コンテキストという概念が存在し、エンジンはこのコンテキストを継続的にトラックします。このコンテキストは、ユーザが現在作業しているコンテキストです。アプリは、このコンテキストを使用する必要があります。
 
@@ -109,7 +109,7 @@ Toolkit の多くの機能は、コンテキストに関するものです。つ
 
 {% include info title="注" content="パスのコンテキストを取得するには、フォルダを作成しておく必要があります。これについては、このガイドの次の手順で説明します。"%}
 
-ただし、新しいコンテキストを作成する代わりに、次のように、[パート 2](#part-2-getting-an-sgtk-instance) で収集した[現在のコンテキストをエンジンから取得する](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context)ことができます。
+ただし、新しいコンテキストを作成する代わりに、次のように、[パート 2](#part-2-getting-an-sgtk-instance) で収集した[現在のコンテキストをエンジンから取得する](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context)ことができます。
 
 ```python
 context = current_engine.context
@@ -166,7 +166,7 @@ Toolkit は、プロジェクト エンティティに基づいて、ディス�
 1. ディスク上に整理された構造が作成され、そこにファイルを配置することができます。
 2. これにより、Toolkit は構造の把握、構造からのコンテキストの派生、およびファイルの配置場所の認識をプログラムを通して実行できるようになります。
 
-後の手順でパスを解決できるように、フォルダがディスク上に存在することを確認する必要があります。このためには、[Sgtk.create_filesystem_structure()](https://developer.shotgunsoftware.com/tk-core/core.html?#sgtk.Sgtk.create_filesystem_structure) メソッドを使用します。
+後の手順でパスを解決できるように、フォルダがディスク上に存在することを確認する必要があります。このためには、[Sgtk.create_filesystem_structure()](https://developer.shotgridsoftware.com/tk-core/core.html?#sgtk.Sgtk.create_filesystem_structure) メソッドを使用します。
 
 ```python
 tk.create_filesystem_structure("Task", context.task["id"])
@@ -199,9 +199,9 @@ tk.create_filesystem_structure("Task", context.task["id"])
 
 Toolkit 内のファイルの配置場所や検索場所を把握する必要がある場合は、テンプレートを使用してディスク上の絶対パスを解決できます。
 
-[テンプレート](https://developer.shotgunsoftware.com/tk-core/core.html#templates)とは、コンテキストおよびその他のデータを適用した場合にファイルシステムのパスに解決できる、本質的にトークン化された文字列のことです。テンプレートは、[プロジェクトのパイプライン設定](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)を使用してカスタマイズできます。テンプレートの目的は、ファイルの保存場所を解決するための標準化された方法を提供することです。
+[テンプレート](https://developer.shotgridsoftware.com/tk-core/core.html#templates)とは、コンテキストおよびその他のデータを適用した場合にファイルシステムのパスに解決できる、本質的にトークン化された文字列のことです。テンプレートは、[プロジェクトのパイプライン設定](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)を使用してカスタマイズできます。テンプレートの目的は、ファイルの保存場所を解決するための標準化された方法を提供することです。
 
-最初に、生成するパスのテンプレート インスタンスを取得する必要があります。作成した `Sgtk` インスタンスを使用すると、`Sgtk.templates` アトリビュートを介して目的の `Template` インスタンスにアクセスできます。このアトリビュートは、キーがテンプレート名、値が [`Template`](https://developer.shotgunsoftware.com/tk-core/core.html#template) インスタンスであるディクショナリです。
+最初に、生成するパスのテンプレート インスタンスを取得する必要があります。作成した `Sgtk` インスタンスを使用すると、`Sgtk.templates` アトリビュートを介して目的の `Template` インスタンスにアクセスできます。このアトリビュートは、キーがテンプレート名、値が [`Template`](https://developer.shotgridsoftware.com/tk-core/core.html#template) インスタンスであるディクショナリです。
 
 ```python
 template = tk.templates["maya_shot_publish"]
@@ -220,7 +220,7 @@ fields = context.as_template_fields(template)
 
 >> {'Sequence': 'seq01_chase', 'Shot': 'shot01_running_away', 'Step': 'comp'}
 ```
-[`Context.as_template_fields()`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk.Context.as_template_fields) メソッドは、テンプレート キーを解決するための正しい値を含むディクショナリを提供します。ただし、すべてのキーの値が提供されるわけではありません。`name`、`version`、および `maya_extension` は含まれていません。
+[`Context.as_template_fields()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Context.as_template_fields) メソッドは、テンプレート キーを解決するための正しい値を含むディクショナリを提供します。ただし、すべてのキーの値が提供されるわけではありません。`name`、`version`、および `maya_extension` は含まれていません。
 
 `maya_extension` キーは、テンプレート キー セクションで[既定値を定義](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.8/core/templates.yml#L139)します。そのため、この値を指定する必要はありませんが、既定値以外の値が必要な場合は指定することができます。
 
@@ -231,7 +231,7 @@ fields["name"] = "myscene"
 fields["version"] = 1
 ```
 
-これですべてのフィールドが設定されたので、[`Template.apply_fields()`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk.Template.apply_fields) を使用してテンプレートを絶対パスに解決することができます。
+これですべてのフィールドが設定されたので、[`Template.apply_fields()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Template.apply_fields) を使用してテンプレートを絶対パスに解決することができます。
 
 ```python
 publish_path = template.apply_fields(fields)
@@ -243,10 +243,10 @@ publish_path = template.apply_fields(fields)
 
 フォルダの作成方法は以前に実行しましたが、場合によっては、すべてのフォルダが存在することを確認するための追加手順を実行する必要があります。たとえば、スキーマ内に存在しないフォルダがテンプレートによって定義されていて、元の `create_filesystem_structure()` 呼び出しで作成されなかった場合は、この追加手順が必要になることがあります。
 
-これを行うための便利なメソッドがいくつかあります。コードが Toolkit アプリまたはフックで実行されている場合は、[`Application.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) メソッドを使用できます。エンジンが存在する場合は、[`Engine.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.ensure_folder_exists) メソッドを使用できます。エンジンの外部でコードを実行している場合は、[`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists) を使用できます。フォルダを作成する場合は、ファイルのフル パスではなく、フォルダのみを指定してください。[`os`](https://docs.python.org/3/library/os.html) モジュールを読み込んで、[`os.path.dirname(publish_path)`](https://docs.python.org/3/library/os.path.html#os.path.dirname) を実行し、ファイルのフル パスのフォルダ部分を抽出することができます。
+これを行うための便利なメソッドがいくつかあります。コードが Toolkit アプリまたはフックで実行されている場合は、[`Application.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) メソッドを使用できます。エンジンが存在する場合は、[`Engine.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.ensure_folder_exists) メソッドを使用できます。エンジンの外部でコードを実行している場合は、[`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists) を使用できます。フォルダを作成する場合は、ファイルのフル パスではなく、フォルダのみを指定してください。[`os`](https://docs.python.org/3/library/os.html) モジュールを読み込んで、[`os.path.dirname(publish_path)`](https://docs.python.org/3/library/os.path.html#os.path.dirname) を実行し、ファイルのフル パスのフォルダ部分を抽出することができます。
 
 ### パスを使用してファイルを作成またはコピーする
-この時点でパスが存在するため、このパスを使用して、このパスにファイルを保存するよう Maya に指示したり、別の場所からファイルをコピーしたりできます。このガイドにおいて、ディスク上のこの場所にファイルを実際に作成する動作を実行することは、重要ではありません。ファイルがパス上にない場合でも、パスをパブリッシュすることはできます。ただし、[`sgtk.util.filesystem.touch_file()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file) を使用して、ディスク上に空のファイルを作成するよう Toolkit に指示することができます。
+この時点でパスが存在するため、このパスを使用して、このパスにファイルを保存するよう Maya に指示したり、別の場所からファイルをコピーしたりできます。このガイドにおいて、ディスク上のこの場所にファイルを実際に作成する動作を実行することは、重要ではありません。ファイルがパス上にない場合でも、パスをパブリッシュすることはできます。ただし、[`sgtk.util.filesystem.touch_file()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file) を使用して、ディスク上に空のファイルを作成するよう Toolkit に指示することができます。
 
 
 ### 作業を統合する
@@ -293,14 +293,14 @@ sgtk.util.filesystem.touch_file(publish_path)
 
 ここで使用できるメソッドは 2 つあります。
 
-1. この特定の例ではパブリッシュ ファイルを解決しているため、[ShotGrid API](https://developer.shotgunsoftware.com/python-api/) を使用して、`PublishedFile` エンティティで使用可能な次のバージョン番号をクエリーすることができます。
+1. この特定の例ではパブリッシュ ファイルを解決しているため、[ShotGrid API](https://developer.shotgridsoftware.com/python-api/) を使用して、`PublishedFile` エンティティで使用可能な次のバージョン番号をクエリーすることができます。
 2. ディスク上のファイルをスキャンして、既に存在するバージョンを調べ、次のバージョン番号を抽出することができます。これは、作業しているファイルが ShotGrid でトラックされていない場合(作業ファイルなどの場合)に役立ちます。
 
 最初の方法はこのガイドの例として最適ですが、どちらの方法にも使い道があるため、両方について説明します。
 
 ### ShotGrid に次のバージョン番号を照会します。
 
-ShotGrid API と [`summarize()` メソッド](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)を使用すると、同じ名前およびタスクを共有する `PublishedFile` エンティティの中で最大のバージョン番号を取得して、1 を追加することができます。
+ShotGrid API と [`summarize()` メソッド](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)を使用すると、同じ名前およびタスクを共有する `PublishedFile` エンティティの中で最大のバージョン番号を取得して、1 を追加することができます。
 
 ```python
 r = sg.summarize(entity_type="PublishedFile",
@@ -347,15 +347,15 @@ def get_next_version_number(tk, template_name, fields):
 fields["version"] = get_next_version_number(tk, "maya_shot_work", fields)
 ```
 
-[`sgtk.paths_from_template()`](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=paths_from_template#sgtk.Sgtk.paths_from_template) メソッドは、指定したテンプレートおよびフィールドと一致するディスク上のすべてのファイルを収集します。このメソッドは、ファイルのリストを検索して、ユーザに表示する場合にも便利です。
+[`sgtk.paths_from_template()`](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=paths_from_template#sgtk.Sgtk.paths_from_template) メソッドは、指定したテンプレートおよびフィールドと一致するディスク上のすべてのファイルを収集します。このメソッドは、ファイルのリストを検索して、ユーザに表示する場合にも便利です。
 
 いずれのオプションも使用できますが、シンプルさを維持するために、このガイドでは方法 1 のコードを使用します。
 
 ## パート 7: パブリッシュされたファイルを登録する
 
-パスが作成されたので、パブリッシュすることができます。この操作を行うには、ユーティリティ メソッド [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) を使用します。
+パスが作成されたので、パブリッシュすることができます。この操作を行うには、ユーティリティ メソッド [`sgtk.util.register_publish()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) を使用します。
 
-ShotGrid API の [`Shotgun.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) メソッドを使用して `PublishedFile` エンティティを作成することもできますが、Toolkit API を使用する方法を強くお勧めします。Toolkit API を使用すると、すべての必須フィールドが正しく指定および入力されていることを確認できます。
+ShotGrid API の [`Shotgun.create()`](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) メソッドを使用して `PublishedFile` エンティティを作成することもできますが、Toolkit API を使用する方法を強くお勧めします。Toolkit API を使用すると、すべての必須フィールドが正しく指定および入力されていることを確認できます。
 
 ```python
 # So as to match the Publish app's default behavior, we are adding the extension to the end of the publish name.
@@ -372,7 +372,7 @@ sgtk.util.register_publish(tk,
                            published_file_type = "Maya Scene")
 ```
 
-この時点で、[Publish アプリ](https://support.shotgunsoftware.com/hc/ja/articles/115000097513) にも[独自の API](https://developer.shotgunsoftware.com/tk-multi-publish2/) が提供されることに注目してください。このアプリは基本的に同じ [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) メソッドを使用していますが、コレクション、検証、およびパブリッシュを処理するフレームワークを提供することで、パブリッシュ プロセスに基づいて動作します。
+この時点で、[Publish アプリ](https://support.shotgunsoftware.com/hc/ja/articles/115000097513) にも[独自の API](https://developer.shotgridsoftware.com/tk-multi-publish2/) が提供されることに注目してください。このアプリは基本的に同じ [`sgtk.util.register_publish()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) メソッドを使用していますが、コレクション、検証、およびパブリッシュを処理するフレームワークを提供することで、パブリッシュ プロセスに基づいて動作します。
 
 ## パート 8: 完全なスクリプト
 
@@ -457,6 +457,6 @@ sgtk.util.register_publish(tk,
 
 ### 終わりに
 
-このガイドを参照するには、Toolkit API の使用方法の基本について理解しておくことをお勧めします。API には他にも多くの用途があります。詳細については、[tk-core API](https://developer.shotgunsoftware.com/tk-core/index.html) を参照してください。
+このガイドを参照するには、Toolkit API の使用方法の基本について理解しておくことをお勧めします。API には他にも多くの用途があります。詳細については、[tk-core API](https://developer.shotgridsoftware.com/tk-core/index.html) を参照してください。
 
 また、オートデスクの[フォーラム](https://community.shotgunsoftware.com/c/pipeline/6)で、API に関する疑問点についてディスカッションし、回答を得ることができます。このガイドに関するフィードバックを送信することもできます。

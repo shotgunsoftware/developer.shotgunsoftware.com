@@ -56,7 +56,7 @@ shot_step.yml
 
 ## Toolkit が現在の環境を判断する仕組み
 
-Toolkitは [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) というコア フックを使用し、現在の[コンテキスト](https://developer.shotgunsoftware.com/tk-core/core.html#context)に基づいて特定の時点で使用する環境ファイルを決定します。`pick_environment` フックの戻り値は環境設定ファイルに対応しています。たとえば、`pick_environment` が `shot_step` を返した場合、Toolkit は `config/env/shot_step.yml` を使用して Toolkit 環境を設定します。
+Toolkitは [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) というコア フックを使用し、現在の[コンテキスト](https://developer.shotgridsoftware.com/tk-core/core.html#context)に基づいて特定の時点で使用する環境ファイルを決定します。`pick_environment` フックの戻り値は環境設定ファイルに対応しています。たとえば、`pick_environment` が `shot_step` を返した場合、Toolkit は `config/env/shot_step.yml` を使用して Toolkit 環境を設定します。
 
 ## カスタム環境
 
@@ -130,7 +130,7 @@ engines:
 
 `dev` ディスクリプタは `app_store` ディスクリプタとは設定が異なります。他の設定を使用することもできますが、ディスク上のアプリの場所を参照する `path` 設定を使用して簡単にセットアップすることができます。
 
-利用可能なすべてのディスクリプタ タイプとその設定に関する詳細は、[Toolkit Core API ドキュメントの「ディスクリプタ」セクション](https://developer.shotgunsoftware.com/tk-core/descriptor.html)を参照してください。
+利用可能なすべてのディスクリプタ タイプとその設定に関する詳細は、[Toolkit Core API ドキュメントの「ディスクリプタ」セクション](https://developer.shotgridsoftware.com/tk-core/descriptor.html)を参照してください。
 
 ### アプリ ブロック
 
@@ -345,7 +345,7 @@ engines:
 * [Toolkit の基本ガイド: パイプライン設定を編集する](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)
 * [Toolkit の基本ガイド: アプリを追加する](../../guides/pipeline-integrations/getting-started/installing_app.md)
 * [アニメーション パイプラインのチュートリアル](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
-* [ディスクリプタのリファレンス ドキュメント](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
+* [ディスクリプタのリファレンス ドキュメント](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
 * [ウェビナー: Toolkit の管理](https://youtu.be/7qZfy7KXXX0)
 * [ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference)
 * [既定の設定の環境構成に関する README](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

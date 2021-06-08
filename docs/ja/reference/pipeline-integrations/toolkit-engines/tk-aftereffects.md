@@ -140,7 +140,7 @@ shelf_favorites:
 - `SGTK_PHOTOSHOP_NETWORK_DEBUG` が優先されます。
 - `SHOTGUN_ADOBE_PYTHON`: エンジンの起動時に使用する Python の実行可能ファイルへのパス。設定しない場合は、システムの Python が使用されます。Photoshop が {% include product %} Desktop や tk-shell エンジンなどの Python プロセスから起動される場合、このプロセスで使用する Python は Photoshop との統合で使用されます。
 
-注: 追加の環境変数が Adobe のフレームワークに存在します。詳細については、[開発者用ドキュメント](https://developer.shotgunsoftware.com/tk-framework-adobe/)を参照してください。
+注: 追加の環境変数が Adobe のフレームワークに存在します。詳細については、[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-framework-adobe/)を参照してください。
 
 
 ## コンテキスト フィールド表示フック
@@ -163,6 +163,6 @@ shelf_favorites:
 
 ## After Effects の API
 
-After Effects の API に関する詳細については、[開発者用ドキュメント](https://developer.shotgunsoftware.com/tk-aftereffects)を参照してください。
+After Effects の API に関する詳細については、[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-aftereffects)を参照してください。
 
 

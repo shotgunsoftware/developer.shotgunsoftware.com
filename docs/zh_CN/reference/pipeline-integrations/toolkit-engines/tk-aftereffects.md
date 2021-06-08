@@ -140,7 +140,7 @@ shelf_favorites:
 - 如果设置，也会考虑 `SGTK_PHOTOSHOP_NETWORK_DEBUG`。
 - `SHOTGUN_ADOBE_PYTHON` - 启动插件时使用的 Python 可执行文件的路径。如果不设置，将使用系统的 Python。如果 Photoshop 是从某个 Python 进程启动（如 {% include product %} Desktop 或通过 tk-shell 插件），则 Photoshop 集成将使用该进程使用的 Python。
 
-注意：其他环境变量存在于 Adobe 框架中。有关详细信息，请参见[开发人员文档](https://developer.shotgunsoftware.com/tk-framework-adobe/)。
+注意：其他环境变量存在于 Adobe 框架中。有关详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-framework-adobe/)。
 
 
 ## 上下文字段显示挂钩
@@ -163,6 +163,6 @@ shelf_favorites:
 
 ## After Effects API
 
-有关 After Effects API 的详细信息，请参见[开发人员文档](https://developer.shotgunsoftware.com/tk-aftereffects)。
+有关 After Effects API 的详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-aftereffects)。
 
 

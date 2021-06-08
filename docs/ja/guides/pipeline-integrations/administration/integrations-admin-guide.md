@@ -196,7 +196,7 @@ Linux で `/projects/some/file.txt` というファイルをパブリッシュ�
 
 ### 高度な設定
 
-PublishedFile パスの解決を実行する基本的なメソッドの詳細については、[開発者参照ドキュメント](http://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)を参照してください。
+PublishedFile パスの解決を実行する基本的なメソッドの詳細については、[開発者参照ドキュメント](http://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)を参照してください。
 
 高度なプロジェクト セットアップを使用している場合は、`resolve_publish` コア フックをカスタマイズして、ローカル ファイル リンクと `file://` URL 以外のサポートを追加できます。有効なカスタマイズは次のとおりです。
 
@@ -325,7 +325,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ### ログ
 
-ブラウザ統合のログは、Toolkit の[標準のログ格納場所](https://developer.shotgunsoftware.com/38c5c024/)にあります。関連するログ ファイルは `tk-desktop.log` と `tk-shotgun.log` です。また、Google Chrome を使用している場合は、ブラウザの開発者コンソールで関連するログ出力を利用できることがあります。
+ブラウザ統合のログは、Toolkit の[標準のログ格納場所](https://developer.shotgridsoftware.com/38c5c024/)にあります。関連するログ ファイルは `tk-desktop.log` と `tk-shotgun.log` です。また、Google Chrome を使用している場合は、ブラウザの開発者コンソールで関連するログ出力を利用できることがあります。
 
 ### トラブルシューティング
 
@@ -344,7 +344,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1. {% include product %} Desktop の Websocket サーバが起動に失敗した。この状況は、Websocket サーバの問題のあるリリースが一般に公開された場合にほぼ限定され、非常にまれです。この場合、[tk-desktop.log](https://developer.shotgunsoftware.com/38c5c024/) にエラーを説明するログが表示されます。このログを [{% include product %} のサポート チーム](https://support.shotgunsoftware.com/hc/ja/requests/new)に送信してください。
+1. {% include product %} Desktop の Websocket サーバが起動に失敗した。この状況は、Websocket サーバの問題のあるリリースが一般に公開された場合にほぼ限定され、非常にまれです。この場合、[tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) にエラーを説明するログが表示されます。このログを [{% include product %} のサポート チーム](https://support.shotgunsoftware.com/hc/ja/requests/new)に送信してください。
 
 **アクション メニューにアクションが表示されない**
 
@@ -354,7 +354,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 1. `tk-shotgun` エンジンは正しい YAML 環境ファイルで設定されているものの、その環境設定内にアプリが存在しない。この場合、このエンティティ タイプに対してアクションが存在しないことが意図されている可能性があります。
 
-2. `tk-shotgun` エンジンが正しい YML 環境ファイルで設定されていて、アプリが存在するにもかかわらず、アクションがメニューに表示されない。これは、アプリが初期化に失敗したことが原因の可能性があります。この場合、問題に関する説明が [tk-shotgun.log and tk-desktop.log](https://developer.shotgunsoftware.com/38c5c024/) に記録されています。
+2. `tk-shotgun` エンジンが正しい YML 環境ファイルで設定されていて、アプリが存在するにもかかわらず、アクションがメニューに表示されない。これは、アプリが初期化に失敗したことが原因の可能性があります。この場合、問題に関する説明が [tk-shotgun.log and tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) に記録されています。
 
 3. このエンティティ タイプに対応する環境に、`tk-shotgun` の環境設定が含まれていない。この場合の最終的な結果は、このリストの 1 番と同じです。この場合、パイプライン設定の `pick_environment` フックを確認することでこのエンティティ タイプに対してどの環境がロードされているかを判断でき、そこで `tk-shotgun` の環境設定を確認できます。
 
@@ -423,7 +423,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 `app_store_http_proxy: <proxy_server_address>`
 
-この `<proxy_server_address>` は[開発者ドキュメント](http://developer.shotgunsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)に記載された命名規則に従った文字列です。
+この `<proxy_server_address>` は[開発者ドキュメント](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)に記載された命名規則に従った文字列です。
 
 プロジェクトごとにこの設定を上書きする必要がある場合は、プロジェクトのパイプライン設定の `config/core/shotgun.yml` に上書きします。
 
@@ -457,7 +457,7 @@ _シナリオ: アーティストのワークステーションがインター�
 
 - インターネットに接続されたワークステーションで {% include product %} Desktop を実行します。起動時に、最新のアップグレードが自動的にダウンロードされます。
 - オプション 1: 共有 Desktop バンドル
-- [バンドル キャッシュ](https://developer.shotgunsoftware.com/7c9867c0/)を、すべてのマシンがアクセスできる共有場所にコピーします。
+- [バンドル キャッシュ](https://developer.shotgridsoftware.com/7c9867c0/)を、すべてのマシンがアクセスできる共有場所にコピーします。
 - オフライン マシンの `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` 環境変数がこの場所を指すように設定します。
 - オフライン マシンで Desktop が起動すると、バンドル キャッシュにある利用可能な最新のアップグレードが取得されます。
 - オプション 2: ローカル配置

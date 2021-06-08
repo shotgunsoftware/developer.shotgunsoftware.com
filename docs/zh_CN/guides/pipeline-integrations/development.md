@@ -22,9 +22,9 @@ Toolkit 是用于支持我们的工作流集成的平台。例如，如果您在
 无论采用哪种方式，了解如何使用 Toolkit API 都非常重要。
 
 ShotGrid 整体包含三个主要 API
-- [ShotGrid Python API](https://developer.shotgunsoftware.com/python-api)
-- [ShotGrid REST API](https://developer.shotgunsoftware.com/rest-api/)
-- [ShotGrid Toolkit API](https://developer.shotgunsoftware.com/tk-core)
+- [ShotGrid Python API](https://developer.shotgridsoftware.com/python-api)
+- [ShotGrid REST API](https://developer.shotgridsoftware.com/rest-api/)
+- [ShotGrid Toolkit API](https://developer.shotgridsoftware.com/tk-core)
 
 Toolkit API 是一种 Python API，它设计为与 ShotGrid Python API 或 REST API 一起使用，并不是用于替代它们。尽管 Toolkit API 确实有一些封装器方法，但通常情况下，只要您需要从 ShotGrid 站点访问数据，就要改用 ShotGrid Python 或 REST API。
 

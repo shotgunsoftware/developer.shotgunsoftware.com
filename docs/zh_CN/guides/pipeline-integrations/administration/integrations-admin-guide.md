@@ -196,7 +196,7 @@ lang: zh_CN
 
 ### 高级配置
 
-有关执行已发布的文件路径解析的基本方法的信息，请查看[开发人员参考文档](http://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)。
+有关执行已发布的文件路径解析的基本方法的信息，请查看[开发人员参考文档](http://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)。
 
 如果您要使用“Advanced Project Setup”，可以通过自定义 `resolve_publish` 核心挂钩添加超出本地文件链接和 `file://` URL 的支持。 可以进行以下自定义：
 
@@ -325,7 +325,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ### 日志
 
-浏览器集成的日志位于 Toolkit 的[标准日志位置](https://developer.shotgunsoftware.com/38c5c024/)。相关日志文件是 `tk-desktop.log` 和 `tk-shotgun.log`。 此外，如果使用的是 Google Chrome，有时部分相关日志输出会保存在该浏览器的开发人员控制台中。
+浏览器集成的日志位于 Toolkit 的[标准日志位置](https://developer.shotgridsoftware.com/38c5c024/)。相关日志文件是 `tk-desktop.log` 和 `tk-shotgun.log`。 此外，如果使用的是 Google Chrome，有时部分相关日志输出会保存在该浏览器的开发人员控制台中。
 
 ### 疑难解答
 
@@ -344,7 +344,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1. {% include product %} Desktop 的 websocket 服务器无法在启动时启动。可能仅在公开发布的 websocket 服务器版本错误时出现此情况，这应该极少发生。在这种情况下，日志记录将位于 [tk-desktop.log](https://developer.shotgunsoftware.com/38c5c024/) 中，用于说明该错误，可以将其[发送到 {% include product %} 的支持团队](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)。
+1. {% include product %} Desktop 的 websocket 服务器无法在启动时启动。可能仅在公开发布的 websocket 服务器版本错误时出现此情况，这应该极少发生。在这种情况下，日志记录将位于 [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) 中，用于说明该错误，可以将其[发送到 {% include product %} 的支持团队](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)。
 
 **动作菜单中未显示任何动作**
 
@@ -354,7 +354,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. 在正确的环境 YAML 文件中配置了 `tk-shotgun` 插件，但该配置中没有应用。 在此情况下，可能是有意设计此实体类型没有动作。
 
-2. 在正确的环境 YML 文件中配置了 `tk-shotgun` 插件，且存在应用，但菜单中仍未显示动作。 这可能是由于应用无法初始化。在此情况下，可以在 [tk-shotgun.log 和 tk-desktop.log](https://developer.shotgunsoftware.com/38c5c024/) 中找到描述相关问题的信息。
+2. 在正确的环境 YML 文件中配置了 `tk-shotgun` 插件，且存在应用，但菜单中仍未显示动作。 这可能是由于应用无法初始化。在此情况下，可以在 [tk-shotgun.log 和 tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) 中找到描述相关问题的信息。
 
 3. 对应于此实体类型的环境不包含 `tk-shotgun` 的配置。 此处的最终结果与此列表中的第一种情况相同。在此情况下，您可以查看工作流配置的 `pick_environment` 挂钩来确定正在为此实体类型加载哪个环境，可以在那里验证 `tk-shotgun` 的配置。
 
@@ -423,7 +423,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 `app_store_http_proxy: <proxy_server_address>`
 
-其中 `<proxy_server_address>` 是一个遵循[开发人员文档](http://developer.shotgunsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)中所述约定的字符串。
+其中 `<proxy_server_address>` 是一个遵循[开发人员文档](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)中所述约定的字符串。
 
 如果您需要按每个项目覆盖此设置，可以在项目工作流配置的 `config/core/shotgun.yml` 中完成此操作。
 
@@ -457,7 +457,7 @@ _情况：我们的美工人员工作站已断开 Internet 连接，因此无法
 
 - 在连接到 Internet 的工作站上运行 {% include product %} Desktop。该工作站启动后，在 Desktop 启动时将自动下载最新升级。
 - 选项 1：共享 Desktop 包
-- 将[缓存](https://developer.shotgunsoftware.com/7c9867c0/)复制到所有计算机都可以访问的共享位置。
+- 将[缓存](https://developer.shotgridsoftware.com/7c9867c0/)复制到所有计算机都可以访问的共享位置。
 - 在脱机计算机上设置 `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` 环境变量以指向此位置。
 - 在脱机计算机上启动 Desktop 后，它们将选取缓存中可用的最新升级。
 - 选项 2：本地部署

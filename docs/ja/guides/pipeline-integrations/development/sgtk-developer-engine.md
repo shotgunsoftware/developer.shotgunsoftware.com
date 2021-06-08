@@ -37,7 +37,7 @@ lang: ja
 - 基本クラスは各種の初期化および破棄メソッドを公開します。これらのメソッドは、起動プロセスのさまざまなポイントで実行されます。メソッドをオーバーライドして、起動とシャットダウンの実行を制御できます。
 - 起動時に `tk-multi-launchapp` によって、および自動ソフトウェア検出によって呼び出される起動ロジックです。
 
-エンジンは、[`sgtk.platform.start_engine()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.start_engine) または [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) メソッドを使用して、Toolkit プラットフォームにょって起動されます。
+エンジンは、[`sgtk.platform.start_engine()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.start_engine) または [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) メソッドを使用して、Toolkit プラットフォームにょって起動されます。
 このコマンドは、設定ファイルの読み込み、エンジンの起動、すべてのアプリのロードなどを実行します。エンジンの目的は、起動された後、アプリとの一貫した Python/Qt インタフェースを提供することです。すべてのエンジンは同じ基本クラスを実装するので、アプリは、エンジン上で UI を作成するメソッドなどを呼び出すことができます。
 これらのメソッドを実装して、ホスト ソフトウェア内で正常に動作するようにすることは、各エンジンの役割です。
 
@@ -98,7 +98,7 @@ lang: ja
 ウィンドウのペアレント化は、一貫性のあるエクスペリエンスを提供するために重要です。実装されていないと、Toolkit アプリ ウィンドウがメイン ウィンドウに隠れてしまい、非常に見にくくなることがあります。
 
 ## 起動動作
-エンジンは、ソフトウェアの起動方法や統合の開始方法の処理も行います。このロジックは、`tk-multi-launchapp` がエンジンを使用してソフトウェアを起動するときに呼び出されます。この設定方法の詳細については、[コア ドキュメント](https://developer.shotgunsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software)を参照してください。
+エンジンは、ソフトウェアの起動方法や統合の開始方法の処理も行います。このロジックは、`tk-multi-launchapp` がエンジンを使用してソフトウェアを起動するときに呼び出されます。この設定方法の詳細については、[コア ドキュメント](https://developer.shotgridsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software)を参照してください。
 
 ## ホスト ソフトウェアの推奨機能リスト
 Toolkit エンジンは、次のようなホスト ソフトウェアの特性を活用できます。

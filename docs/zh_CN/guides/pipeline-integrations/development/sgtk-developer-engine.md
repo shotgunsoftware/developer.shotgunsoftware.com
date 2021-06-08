@@ -38,7 +38,7 @@ lang: zh_CN
 - 基类公开各种 init 和 destroy 方法，这些方法将在启动过程的不同时间点执行。用户可改写这些方法来控制启动和关闭的执行。
 - 启动时由 `tk-multi-launchapp` 调用的启动逻辑以及自动发现软件。
 
-插件由 Toolkit 平台使用 [`sgtk.platform.start_engine()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.start_engine) 或 [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 方法启动。
+插件由 Toolkit 平台使用 [`sgtk.platform.start_engine()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.start_engine) 或 [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 方法启动。
 此命令会读取配置文件、启动插件并加载所有应用等。
 插件的目的在于，一旦启动，它将为各种应用提供一个统一的 Python/Qt 界面。由于所有插件执行的是同一个基类，因此应用可调用插件上的方法来执行各种操作，例如创建 UI。
 每个插件自己决定如何执行这些方法，以便它们能在宿主软件内部良好运行。
@@ -111,7 +111,7 @@ lang: zh_CN
 ## 启动行为
 插件还负责处理软件及其集成的启动方式。
 当 `tk-multi-launchapp` 尝试使用插件启动软件时，将调用此逻辑。
-有关如何设置此项的详细信息，请参见[核心文档](https://developer.shotgunsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software)。
+有关如何设置此项的详细信息，请参见[核心文档](https://developer.shotgridsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software)。
 
 ## 宿主软件期望具备的特性列表
 Toolkit 插件可利用宿主软件的以下特性 (Trait)。
