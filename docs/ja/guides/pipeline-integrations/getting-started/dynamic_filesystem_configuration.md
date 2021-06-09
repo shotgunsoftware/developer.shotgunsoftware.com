@@ -307,7 +307,7 @@ Toolkit がファイルを読み書きする場所はテンプレートが定義
 
 次に、Maya のアセット ステップで作業ファイルのテンプレートを変更し、ファイル名にそのセットも含めるようにします。既定の設定では、該当のテンプレートは `maya_asset_work` で、ここから開始します。
 
-{% include info title="注" content="Maya でアセットベースのワークファイルに `maya_asset_work` というテンプレートを使用するのは、既定の設定の規約です。これが正しいテンプレートであることを確認するには、`asset_step` 環境で、`tk-maya` エンジンの `tk-multi-workfiles2` の `template_work` 設定の値を確認します(Github](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217) にあります)[。%}
+{% include info title="注" content="Maya でアセットベースのワークファイルに `maya_asset_work` というテンプレートを使用するのは、既定の設定の規約です。これが正しいテンプレートであることを確認するには、`asset_step` 環境で、`tk-maya` エンジンの `tk-multi-workfiles2` の `template_work` 設定の値を確認します(Github](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217) にあります)[。" %}
 
 **手順 15:** `templates.yml` を開いて、`maya_asset_work` を検索します。
 
