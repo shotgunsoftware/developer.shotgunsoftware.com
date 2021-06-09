@@ -1,7 +1,6 @@
 ---
 layout: landing_page
-title: ¸ÅÊö
+title: æ¦‚è¿°
 pagename: index
 lang: zh_CN
 ---
-
