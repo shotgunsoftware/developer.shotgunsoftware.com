@@ -12,11 +12,11 @@ lang: ja
 
 ## Shotgun でローカル ストレージを追加する
 
-- Shotgun で、**[管理者]（Admin）> [サイト基本設定]（Site Preferences）**ページに移動します
-- **[ファイル管理]（File Management）**セクションを開きます
-- **[[+] ローカル ファイル ストレージを追加]（[+] Add Local File Storage）**をクリックします
+- Shotgun で、**[管理者] (Admin)> [サイト基本設定](Site Preferences)**ページに移動します
+- **[ファイル管理](File Management)**セクションを開きます
+- **[[+] ローカル ファイル ストレージを追加]([+] Add Local File Storage)**をクリックします
 - 名前(「secondary」)と関連するすべてのプラットフォーム上のストレージ ルートへのパスを入力します。*特定のプラットフォームを使用していない場合は、空白のままにすることができます。*
-- ページの上部または下部にある**[ページを保存]（Save Page）**ボタンをクリックします
+- ページの上部または下部にある**[ページを保存](Save Page)**ボタンをクリックします
 
 ![Shotgun ファイル管理の基本設定](images/shotgun-pref-file-management.png)
 

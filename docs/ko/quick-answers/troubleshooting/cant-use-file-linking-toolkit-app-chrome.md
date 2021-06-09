@@ -13,7 +13,7 @@ lang: ko
 
 - [문제 진단](#diagnosing-the-issue)
 - [인증서 문제를 빠르게 해결하는 방법](#how-to-quickly-fix-certificate-issues)
-- [모든 플랫폼에서 ERR_CERT_COMMON_NAME_INVALID 또는 ERR_SSL_SERVER_CERT_BAD_FORMAT 해결](#fixing-neterr_cert_common_name_invalid-and-err_ssl_server_cert_bad_format-on-all-platforms)
+- [모든 플랫폼에서 ERR_CERT_COMMON_NAME_INVALID 또는 ERR_SSL_SERVER_CERT_BAD_FORMAT 해결](fixing-neterr_cert_common_name_invalid-and-err_ssl_server_cert_bad_format-on-all-platforms)
 - [Windows에서 ERR_CERT_AUTHORITY_INVALID 해결](#fixing-neterr_cert_authority_invalid-on-windows)
 
 ## 문제 진단
@@ -24,7 +24,7 @@ lang: ko
 
 ### Shotgun 데스크톱을 시작한 후에 Chrome을 다시 시작했습니까?
 
-Shotgun 데스크톱이 인증서를 등록(Shotgun 데스크톱을 처음 실행할 때에만 등록하면 되고, 이후부터는 문제 없음)하기 전에 Chrome을 실행했다면 Chrome이 오래된 인증서 사본을 사용하면서 Shotgun 데스크톱 연결을 거부합니다. 모든 탭을 닫는다고 해서 Chrome이 닫히는 것은 아니므로 주소 표시줄에 [chrome://restart](chrome://restart/)를 입력하고 Enter 키를 누르는 것이 좋습니다. 이렇게 하면 모든 Chrome 관련 프로세스가 종료되고, Chrome이 다시 시작됩니다.
+Shotgun 데스크톱이 인증서를 등록(Shotgun 데스크톱을 처음 실행할 때에만 등록하면 되고, 이후부터는 문제 없음)하기 전에 Chrome을 실행했다면 Chrome이 오래된 인증서 사본을 사용하면서 Shotgun 데스크톱 연결을 거부합니다. 모든 탭을 닫는다고 해서 Chrome까지 닫히는 것은 아니므로 주소 표시줄에 [chrome://restart](chrome://restart/)를 입력하고 Enter 키를 누르는 것이 좋습니다. 이렇게 하면 모든 Chrome 관련 프로세스가 종료되고, Chrome이 다시 시작됩니다.
 
 ### 방화벽 소프트웨어를 사용 중입니까?
 
@@ -66,7 +66,7 @@ Shotgun 데스크톱이 다시 시작되어 실행되면 주소 표시줄에 [ch
 
 경우에 따라 Windows가 인증서를 성공적으로 가져왔다고 보고하는데 인증서가 필요한 응용프로그램에 이를 사용할 수 없을 때가 있습니다. 이는 Windows에서 인증서 대화상자로 이동하여 확인할 수 있습니다. 대화상자에 액세스하려면 Windows 키를 누르고 **인터넷 옵션**을 입력합니다. **인터넷 속성** 대화상자에서 **내용** 탭으로 이동한 다음 **인증서** 버튼을 클릭합니다. 마지막으로 **신뢰할 수 있는 루트 인증 기관**을 클릭하고 **localhost**를 찾습니다.
 
-![Windows 인터넷 옵션 검색](images/windows-search-internet-options.png)
+![Windows에서 인터넷 옵션 검색](images/windows-search-internet-options.png)
 
 ![인터넷 속성의 내용 탭](images/windows-internet-properties.png)
 

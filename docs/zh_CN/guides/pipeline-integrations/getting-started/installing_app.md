@@ -20,15 +20,15 @@ lang: zh_CN
 
 我们要添加的应用是 Shotgun Python 控制台应用。Maya 具有其自己的 Python 控制台，但是 Toolkit 应用中有一些功能在 Maya 控制台中不存在。
 
-本手册利用我们在[编辑工作流配置](./editing_app_setting.md)手册中创建的工作流配置。 如果您尚未完成此手册，则可以使用现有的工作流配置，并在其中添加该应用。
+本手册利用我们在[编辑工作流配置](./editing_app_setting.md)手册中创建的工作流配置。如果您尚未完成此手册，则可以使用现有的工作流配置，并在其中添加该应用。
 
 ## 使用本文档
 
 要使用本手册并安装 Toolkit 应用，需要以下内容：
 
 1. 有效的 [Shotgun](https://www.shotgunsoftware.com/zh-cn/signup/) 站点。
-2. 已标识项目的工作流配置，或完成[配置快速入门手册](./advanced_config.md)并使用该练习中创建的配置。
-3. 为存储工作流配置的文件系统设置适当的读取和写入权限。
+2. 用于已标识项目的工作流配置，或完成[配置快速入门](./advanced_config.md)手册，并使用在该练习中创建的配置。
+3. 为存储工作流配置的 Shotgun 管理的文件系统设置适当的读取和写入权限。
 4. 在系统上安装 Shotgun Desktop。
 5. Maya 的有效固定期限的使用许可。在[此处](https://www.autodesk.com.cn/products/maya/free-trial) 获取 Maya 的 30 天试用版。
 
@@ -63,7 +63,7 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 ![Python 应用信息](./images/installing_app/2_python_app_info.png)
 
-**系统名称**是主标识符：`tk-multi-pythonconsole`。您还需要**最新版本**：v1.1.2。
+**应用插件名称**是主标识符：`tk-multi-pythonconsole`。您还需要**最新版本**：v1.1.2。
 
 ### 确认在 Maya 的项目环境中没有 Python 控制台应用
 

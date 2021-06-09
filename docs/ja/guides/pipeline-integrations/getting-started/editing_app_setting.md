@@ -14,7 +14,7 @@ lang: ja
 
 ## このガイドについて
 
-このガイドでは、プロジェクト パイプラインの要求に応じて、既存のパイプライン設定内の設定を編集する方法について説明します。最初のガイドの『**[設定の基本操作](./advanced_config.md)**』では、パイプライン設定を編集するための準備方法について説明しました。プロジェクトに対して編集可能な設定を作成する方法を理解していない場合は、「**設定の基本操作**」を参照してから、先へ進んでください。
+このガイドでは、プロジェクト パイプラインの要求に応じて、既存のパイプライン設定内の設定を編集する方法について説明します。最初のガイドの「**設定の基本操作[](./advanced_config.md)**」では、パイプライン設定を編集するための準備方法について説明しました。プロジェクトに対して編集可能な設定を作成する方法を理解していない場合は、「**設定の基本操作**」を参照してから、先へ進んでください。
 
 Shotgun Toolkit では、既定の設定を拡張することにより、パイプラインのワークフロー内のタスクをカスタマイズできます。カスタマイズの例としては、ユーザが Toolkit の機能を操作する方法を変更するために、いくつかのソフトウェア パッケージに含まれている Toolkit アプリのボタンを有効または無効に切り替えるだけという簡単なものがあります。Toolkit には独自の設定を行う機能があるため、カスタム ワークフローの作成、反復タスクや日常的なタスクの自動化、フックの変更、および Toolkit プラットフォーム上に構築されたカスタム ツールの追加といった作業を、スマートに、かつ短時間で行うことができます。ただし、Toolkit にアクセスするには Shotgun ソフトウェアの統合が必要であり、衣服を洗うなどの日常的なタスク向けのリリースはまだ実現していません。
 
@@ -26,7 +26,7 @@ Shotgun Toolkit では、既定の設定を拡張することにより、パイ�
 
 1. アクティブな [Shotgun](https://www.shotgunsoftware.com/jp/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) サイト。
 2. 1 つ以上のアセットを含むプロジェクト。最初のガイドで作成した the_other_side プロジェクトにアセットを追加できます。プロジェクトのアセットを作成する方法については、「[設定の基本操作](./advanced_config.md)」ガイドを確認してください。
-3. 指定したプロジェクトのパイプライン設定。この設定がない場合は、「[設定の基本操作](./advanced_config.md)」ガイドを参照し、その演習で作成した設定を使用します。
+3. 指定したプロジェクトのパイプライン設定、または「[設定の基本操作](./advanced_config.md)」ガイドを参照して、この演習で作成された設定を使用します。
 4. パイプライン設定を保存するファイルシステムに最適になるように設定された読み取りおよび書き込み権限。
 5. システムにインストールされた Shotgun Desktop。
 6. Maya の有効なサブスクリプション。Maya の 30 日間無償体験版は[こちら](https://www.autodesk.co.jp/products/maya/free-trial)から取得してください。
@@ -45,21 +45,21 @@ Workfiles アプリは、Shotgun ソフトウェア統合のファイル管理�
 
 **手順 1:** この演習で使用するプロジェクトを管理している **Shotgun サイト**を開きます。
 
-**手順 2:** **Shotgun サイト**の **[プロジェクト]（Projects）ページ**でプロジェクトを選択して、Shotgun サイトのプロジェクトにアクセスします。
+**手順 2:** **Shotgun サイト**の **[プロジェクト] (Projects)ページ**でプロジェクトを選択して、Shotgun サイトのプロジェクトにアクセスします。
 
 ![Shotgun プロジェクト](./images/editing_app_setting/1_shotgun_project.png)
 
-**手順 3:** 右上にある**アバター**を選択して、**[管理者]（ADMIN）**メニューを表示し、下にスクロールして**[既定のレイアウト]（Default Layouts）> [パイプラインの設定]（Pipeline Configuration）> [パイプライン設定リスト]（Pipeline Configuration List）**を選択します。
+**手順 3:** 右上にある**アバター**を選択して、**[管理者] (ADMIN)**メニューを表示し、下にスクロールして**[既定のレイアウト](Default Layouts)> [パイプラインの設定](Pipeline Configuration)> [パイプライン設定リスト](Pipeline Configuration List)**を選択します。
 
 ![パイプラインの設定](./images/editing_app_setting/2_pipeline_configuration.png)
 
-**手順 4:** **[パイプライン設定リスト]（Pipeline Configuration List）**が表示されたら、列見出しの右端にある**[+]**記号を選択して、列をもう 1 つ追加します。ドロップダウン リストで、オペレーティング システムに該当するパスを選択します。
+**手順 4:** **[パイプライン設定リスト](Pipeline Configuration List)**が表示されたら、列見出しの右端にある**[+]**記号を選択して、列をもう 1 つ追加します。ドロップダウン リストで、オペレーティング システムに該当するパスを選択します。
 
 ![OS のパス](./images/editing_app_setting/3_mac_path.png)
 
 新しいフィールドにパスが表示されます。
 
-![ OS パス 2 ](./images/editing_app_setting/4_mac_path2.png)
+![OS パス 2](./images/editing_app_setting/4_mac_path2.png)
 
 **手順 5:** 端末またはファイル マネージャで、プロジェクトのパイプライン設定が保存されているフォルダを参照して、開きます。
 
@@ -141,9 +141,9 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 **ヒント:** メニューが表示されない場合は、一部のメニュー項目が非表示になっていることを示す**[>>]**が表示されています。**[>>]**を選択して Shotgun メニューを表示するか、Maya ウィンドウの幅を広げます。
 
-**手順 14:** **メニューの右上にある[Shotgun] > プロジェクト the_other_side > [Work Area Info...]**を選択します。
+**手順 14:** メニューの右上にある**[Shotgun] > [Project the_other_side] > [Work Area Info...]**を選択します。
 
-![Work Area Info](./images/editing_app_setting/13_work_area_info.png)
+![Work area info](./images/editing_app_setting/13_work_area_info.png)
 
 **[Work Area Info]**ダイアログ ボックスには、現在の作業領域の内容と詳細が表示されます。この情報には、ユーザが作業している環境、および設定が配置されてい環境設定ファイルのパスが含まれています。
 
@@ -350,11 +350,11 @@ Workfiles アプリのシステム名は `tk-multi-workfiles2` です。名前�
 
 ### カスタム環境を作成する
 
-既定の設定には、`project`、`sequence`、`shot`、`shot_step`、`asset`、および `asset_step` という、パイプラインに関する一連の定義済みの手順が付属しています。ただし、スタジオによっては、パイプラインのステージごとに異なる構成設定が必要な場合があります(`asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` など)。Toolkit はカスタム環境をサポートしています。詳しくは、[『環境設定リファレンス』の「カスタム環境」セクション](../../../toolkit/env_config_ref.md#custom-environments)を参照してください。
+既定の設定には、`project`、`sequence`、`shot`、`shot_step`、`asset`、および `asset_step` という、パイプラインに関する一連の定義済みの手順が付属しています。ただし、スタジオによっては、パイプラインのステージごとに異なる構成設定が必要な場合があります(`asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` など)。Toolkit はカスタム環境をサポートしています。詳細については、[『環境設定リファレンス』の「カスタム環境」セクション](../../../reference/pipeline-integrations/env-config-ref.md#custom-environments)を参照してください。
 
 ### ビデオのリソース
 
 * [Toolkit 設定の概要](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)(SIGGRAPH 2018 Developer Day で収録)
 * [既定の設定の概要ウェビナー](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
-アプリの構成設定の変更に関する学習は以上です。次は、[Toolkit の構成にアプリを追加](./installing_app.md)してみましょう。
+アプリの構成設定の変更に関する学習は以上です。次は、[Toolkit の構成にアプリを追加](installing_app.md)してみましょう。

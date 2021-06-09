@@ -32,7 +32,7 @@ lang: ja
 1. アクティブな [Shotgun](https://www.shotgunsoftware.com/jp/signup/) サイト。 少なくとも 1 つのアセットが作成されたプロジェクトが必要です。アセットにはモデル タスクが必要です。
 2. Shotgun サイトを使用してアセットを管理する方法の基本的な理解。
 3. システムにインストールされた[Shotgun Desktop](https://support.shotgunsoftware.com/hc/ja/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop)。
-4. 指定したプロジェクトのクローン作成されたパイプライン設定。この設定がない場合は、「[設定の基本操作](./advanced_config.md)」ガイドを参照し、その演習で作成した設定のクローンを作成します。
+4. 指定したプロジェクトのクローン作成されたパイプライン設定、または「[設定の基本操作](./advanced_config.md)」ガイドを参照して、この演習で作成された設定のクローンを作成します。
 5. YAML の基本的な知識。
 6. パイプライン設定を保存するファイルシステムに最適になるように設定された読み取りおよび書き込み権限。
 7. Toolkit がプロダクション ファイル システムに対して読み取りおよび書き込みを行えるように適切に設定された読み取りおよび書き込み権限。
@@ -48,7 +48,7 @@ Toolkit プラットフォームでは**スキーマ**を使用してフォル�
 
 **テンプレート**を使用すると、Shotgun データとスキーマ構造の情報を使用して作成したファイルに動的に名前を付けて保存することができます。既定の設定には、パイプラインのニーズに合わせて編集できる一連のスタータ テンプレートが用意されています。
 
-{% include info title="注" content="Shotgun 統合の基本セットアップにはファイルシステム管理は含まれていません。プロジェクトのファイルシステム管理を設定するには、プロジェクトに高度な設定が必要です。最初のガイドの『[設定の基本操作](./advanced_config.md)』で、高度なセットアップ プロセスについて説明しています。" %}
+{% include info title="注" content="Shotgun 統合の基本セットアップにはファイルシステム管理は含まれていません。プロジェクトのファイルシステム管理を設定するには、プロジェクトに高度な設定が必要です。最初のガイドの「[設定の基本操作](./advanced_config.md)」で、高度なセットアップ プロセスについて説明しています。" %}
 
 ## 実習を開始
 
@@ -56,7 +56,7 @@ Toolkit プラットフォームでは**スキーマ**を使用してフォル�
 
 ### カスタム エンティティを有効にする
 
-**手順 1:** ブラウザで Shotgun サイトを開きます。アバターをクリックして、[管理者]（ADMIN）> [サイト基本設定]（Site Preferences）の順にクリックします。結果のページで**[エンティティ]（Entities）**セクションを展開します。
+**手順 1:** ブラウザで Shotgun サイトを開きます。アバターをクリックして、[管理者] (ADMIN)> [サイト基本設定](Site Preferences)の順にクリックします。結果のページで**[エンティティ] (Entities)**セクションを展開します。
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/1_site_preferences.png)
 
@@ -66,7 +66,7 @@ Shotgun で利用可能なエンティティのタイプのリストが表示さ
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/2_custom_entity.png)
 
-**手順 2:** 矢印を選択してグレー表示の無効なカスタム エンティティの設定を開きます。**[はい、カスタム エンティティを使用します...]（Yes, use Custom Entity...）**の横のラジオ ボタンをオンにし、**[表示名]（Display name）**を **Set** に変更し、ウィンドウの上部にスクロールして[変更を保存]（Save Changes）を選択します。
+**手順 2:** 矢印を選択してグレー表示の無効なカスタム エンティティの設定を開きます。**[はい、カスタム エンティティを使用します...](Yes, use Custom Entity...)**の横のラジオ ボタンをオンにし、**[表示名](Display name)**を **Set** に変更し、ウィンドウの上部にスクロールして[変更を保存](Save Changes)を選択します。
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/4_enable_entity.png)
 
@@ -78,9 +78,9 @@ Shotgun で利用可能なエンティティのタイプのリストが表示さ
 
 アセット エンティティにデータ フィールドを追加すると、アセットを新しいエンティティにリンクできます。アーティストがダイニング ルーム用に作成したアセットは、**Dining Room** セット エンティティに関連付けられます。
 
-**手順 3:** ページ上部の**[プロジェクト]（Projects）**ドロップダウンを選択して、この実習に使用するプロジェクトを開きます。
+**手順 3:** ページ上部の**[プロジェクト] (Projects)**ドロップダウンを選択して、この実習に使用するプロジェクトを開きます。
 
-**手順 4:** プロジェクト メニュー バーで**[アセット]（Assets）**を選択し、[アセット]（Assets）ページに移動します。[アセット]（Assets）メニューで、**[フィールド]（Fields）> [アセット フィールドの管理...]（Manage Asset Fields...）**を選択します。
+**手順 4:** プロジェクト メニュー バーで**[アセット] (Assets)**を選択し、[アセット] (Assets)ページに移動します。[アセット] (Assets)メニューで、**[フィールド] (Fields)> [アセット フィールドの管理...](Manage Asset Fields...)**を選択します。
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/5_manage_asset_fields.png)
 
@@ -88,23 +88,23 @@ Shotgun で利用可能なエンティティのタイプのリストが表示さ
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/6_manage_asset_fields.png)
 
-**[+ 新しいフィールドを追加]（+ Add a new field）**を選択します。
+**[+ 新しいフィールドを追加](+ Add a new field)**を選択します。
 
 新しいフィールドのパラメータを選択します。
 
-**[新しいフィールド名]（New Field Name）**に「Set」と入力します。**[一般]（GENERAL）**メニューの**フィールド タイプ（Field Type）**で、**エンティティ（Entity）**を選択し、**[タイプを制限]（Restrict the type）**までスクロールダウンして、**Set** を選択します。**[次へ]（Next）**を選択します。
+**[新しいフィールド名](New Field Name)**に「Set」と入力します。**[一般] (GENERAL)**メニューの**[フィールド タイプ](Field Type)**で、**[エンティティ] (Entity)**を選択し、**[タイプを制限](Restrict the type)**までスクロールダウンして、**Set** を選択します。**[次へ] (Next)**を選択します。
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/7_field_parameters.png)
 
-このガイドでは、**[現在のプロジェクトのみ]（Only the current project）**に適用し、**[フィールドを作成]（Create Field）**を選択します。
+このガイドでは、**[現在のプロジェクトのみ](Only the current project)**に適用し、**[フィールドを作成](Create Field)**を選択します。
 
 Shotgun は新しいフィールドを設定します。
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/8_only_current_project.png)
 
-変更が適用されたら、**[完了]（Done）**を選択します。
+変更が適用されたら、**[完了] (Done)**を選択します。
 
-### **[ダイニング ルーム]（Dining Room）**の Set エンティティを作成する
+### **[ダイニング ルーム](Dining Room)**の Set エンティティを作成する
 
 **手順 5:** アセットの新しい **Set** フィールドを選択して、「Dining Room」と入力します。すると、「**一致するものが見つかりません。「Dining Room」を作成**」というメッセージが表示されます。
 
@@ -114,7 +114,7 @@ Shotgun は新しいフィールドを設定します。
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/12_dining_room_set.png)
 
-**[セットを作成]（Create Set）**を選択します。
+**[セットを作成](Create Set)**を選択します。
 
 アセットの Set フィールドに **Dining Room** と追加したことにより、Dining Room セット エンティティとの[関連付け](https://support.shotgunsoftware.com/hc/ja/articles/115000010973-Linking-a-custom-entity)が生成されます。
 
@@ -186,7 +186,7 @@ YAML ファイルは、`CustomEntity01` フォルダに付ける名前を Toolki
 
 **手順 10:** `asset_type/` と `asset_type.yml` を `CustomEntity01` フォルダに移動します。
 
-フォルダ構造を `Dining-Room/Prop/filet` のようにしたいので、`asset_type` フォルダは階層内の `CustomEntity01` フォルダよりも*下に *にする必要があります。`asset_type/` と `asset_type.yml` を `CustomEntity01` フォルダに移動します。
+フォルダ構造を `Dining-Room/Prop/filet` のようにしたいので、`asset_type` フォルダは階層内の `CustomEntity01` フォルダよりも*下に*にする必要があります。`asset_type/` と `asset_type.yml` を `CustomEntity01` フォルダに移動します。
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/17_schema.png)
 
@@ -215,7 +215,7 @@ assets/Classroom/Prop/spoon
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
-    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity04" ] }
+    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity01" ] }
 ```
 
 
@@ -226,7 +226,7 @@ filters:
 フォルダは、Toolkit パイプライン ワークフローのいくつかの時点で作成されます。
 
 * **アプリケーション ランチャー**： ユーザがタスクの DCC を起動するたびに、Toolkit はそのタスクのディレクトリを作成します(まだ作成されていない場合)。Toolkit ではまず最初に DCC の起動を行う傾向があるので、通常はこの方法でディレクトリが作成されます。これは、Shotgun の右クリック メニュー、または Shotgun Desktop あるいは Create アプリで実行できます。
-* **Shotgun メニュー**: タスク用のフォルダを作成する最も直接的な方法は、Shotgun で右クリックして[フォルダを作成]（Create Folders）メニュー項目を選択することです。
+* **Shotgun メニュー**: タスク用のフォルダを作成する最も直接的な方法は、Shotgun で右クリックして[フォルダを作成](Create Folders)メニュー項目を選択することです。
 * **Toolkit API**: Toolkit API を介して直接ディレクトリ作成ロジックを起動できます。この方法によって、Toolkit をカスタム ランチャーにプラグインしたり、Shotgun で作成される Shot のディレクトリを自動的に作成するためのワークフローのイベント トリガとして使用することができます。
 * **tank コマンド**: Shotgun のメニュー項目と同様、`tank folders` 端末コマンドからもタスク用のフォルダを作成できます。
 
@@ -307,7 +307,7 @@ Toolkit がファイルを読み書きする場所はテンプレートが定義
 
 次に、Maya のアセット ステップで作業ファイルのテンプレートを変更し、ファイル名にそのセットも含めるようにします。既定の設定では、該当のテンプレートは `maya_asset_work` で、ここから開始します。
 
-{% include info title="注" content="Maya でアセットベースのワークファイルに `maya_asset_work` というテンプレートを使用するのは、既定の設定の規約です。これが正しいテンプレートであることを確認するには、`asset_step` 環境で、`tk-maya` エンジンの `tk-multi-workfiles2` の `template_work` 設定の値を確認します(Github にあります)[(https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217)]。" %}
+{% include info title="注" content="Maya でアセットベースのワークファイルに `maya_asset_work` というテンプレートを使用するのは、既定の設定の規約です。これが正しいテンプレートであることを確認するには、`asset_step` 環境で、`tk-maya` エンジンの `tk-multi-workfiles2` の `template_work` 設定の値を確認します(Github](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217) にあります)[。%}
 
 **手順 15:** `templates.yml` を開いて、`maya_asset_work` を検索します。
 
@@ -361,19 +361,19 @@ Toolkit がファイルを読み書きする場所はテンプレートが定義
 
 ![Python アプリ](images/dynamic_filesystem_configuration/23_test_file_creation.png)
 
-Maya で、**[Shotgun] > [File Open]（ファイルを開く）**に移動し、表示されるダイアログで、Shotgun で Set を指定したアセットのタスクを選択します。
+Maya で、**[Shotgun] > [ファイルを開く](File Open)**に移動し、表示されるダイアログで、Shotgun で Set を指定したアセットのタスクを選択します。
 
 ![Python アプリ](images/dynamic_filesystem_configuration/24_test_new_file.png)
 
-**[+ 新しいファイル]（+New File）**を選択します。
+**[+ 新しいファイル](+New File)**を選択します。
 
-単純な 3D オブジェクトを作成するか、**[Shotgun] > [Save File]（ファイルを保存）**を使用してファイルを保存することができます。
+単純な 3D オブジェクトを作成するか、**[Shotgun] > [ファイルを保存](Save File)**を使用してファイルを保存することができます。
 
 ![Python アプリ](images/dynamic_filesystem_configuration/file_save.png)
 
 成功しました!
 
-テンプレートの新しい設定を使用して、**[File Save]**ダイアログボックスに**プレビュー：Dining-Room_scene.v001.ma **が表示されていることに注意してください。
+テンプレートの新しい設定を使用して、**[File Save]**ダイアログボックスに**プレビュー：Dining-Room_scene.v001.ma**が表示されていることに注意してください。
 
 **Work Area**: Workfiles がファイルを保存するパスとして **.../Shotgun/projects/the_other_side/assets/Dining-Room/Prop/Filet/model/work/maya** を表示します。
 
@@ -385,7 +385,7 @@ Maya で、**[Shotgun] > [File Open]（ファイルを開く）**に移動し、
 
 ### パス キャッシュ
 
-フォルダ作成時に、ディスク上のフォルダと Shotgun エンティティの間にマッピングが作成されます。これらのマッピングは Shotgun の FilesystemLocation エンティティとして保存され、ユーザのマシンの SQLite データベースにキャッシュされます。パス キャッシュの仕組みと、その使用方法の詳細については、[このドキュメント](../../../quick-answers/administering/what-is-path-cache.md)を参照してください。
+フォルダ作成時に、ディスク上のフォルダと Shotgun エンティティの間にマッピングが作成されます。これらのマッピングは Shotgun の FilesystemLocation エンティティとして保存され、ユーザのマシンの SQLite データベースにキャッシュされます。パス キャッシュの機能とその使用方法の詳細については、[このドキュメント](../../../quick-answers/administering/what-is-path-cache.md)を参照してください。
 
 
 ### その他のリソース

@@ -29,7 +29,7 @@ lang: ko
 3. 식별된 프로젝트에 대한 파이프라인 구성이나 [구성 시작하기](./advanced_config.md) 안내서를 완료하고 해당 연습에서 생성한 구성을 사용합니다.
 4. 파이프라인 구성이 저장된 파일 시스템에 대해 읽기 및 쓰기 권한을 적절하게 설정합니다.
 5. Shotgun 데스크톱이 시스템에 설치되어 있어야 합니다.
-6. 활성 상태의 Maya 멤버쉽. Maya의 30일 체험판은 [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 구할 수 있습니다.
+6. 활성 상태의 Maya 서브스크립션. Maya의 30일 체험판은 [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 구할 수 있습니다.
 
 {% include info title="참고" content="이 안내서는 `tk-config-default2` 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다." %}
 
@@ -350,7 +350,7 @@ Workfiles 앱의 시스템 이름은 `tk-multi-workfiles2`이고 여기서 `mult
 
 ### 커스텀 환경 생성
 
-기본 구성은 일련의 미리 정의된 파이프라인 단계(`project`, `sequence`, `shot`, `shot_step`, `asset` 및 `asset_step`)와 함께 제공됩니다. 그러나 스튜디오에서는 파이프라인 단계(`asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light` 등)마다 다른 구성 설정을 원할 수 있습니다. 툴킷은 커스텀 환경을 지원합니다. 자세한 내용은 [환경 구성 참조의 "커스텀 환경" 섹션](../../../toolkit/env_config_ref.md#custom-environments)을 참조하십시오.
+기본 구성은 일련의 미리 정의된 파이프라인 단계(`project`, `sequence`, `shot`, `shot_step`, `asset` 및 `asset_step`)와 함께 제공됩니다. 그러나 스튜디오에서는 파이프라인 단계(`asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light` 등)마다 다른 구성 설정을 원할 수 있습니다. 툴킷은 커스텀 환경을 지원합니다. 자세한 내용은 [환경 구성 참조의 "커스텀 환경" 섹션](../../../reference/pipeline-integrations/env-config-ref.md#custom-environments)을 참조하십시오.
 
 ### 비디오 리소스
 

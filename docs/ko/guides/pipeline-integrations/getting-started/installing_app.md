@@ -20,17 +20,17 @@ lang: ko
 
 여기서 추가할 앱은 Shotgun Python 콘솔 앱입니다. Maya에는 자체 Python 콘솔이 있지만 이 툴킷 앱에는 Maya 콘솔에 없는 일부 기능이 있습니다.
 
-이 안내서에서는 [파이프라인 구성 편집](./editing_app_setting.md)안내서에서 생성한 파이프라인 구성을 활용합니다. 이 안내서를 완료하지 않았다면 기존 파이프라인 구성을 사용하여 앱을 추가할 수 있습니다.
+이 안내서에서는 [파이프라인 구성 편집](./editing_app_setting.md) 안내서에서 생성한 파이프라인 구성을 활용합니다. 이 안내서를 완료하지 않았다면 기존 파이프라인 구성을 사용하여 앱을 추가할 수 있습니다.
 
 ## 이 문서 사용
 
 이 안내서를 사용하고 툴킷 앱을 설치하려면 다음이 필요합니다.
 
 1. 유효한 [Shotgun](https://www.shotgunsoftware.com/kr/signup/) 사이트.
-2. 지정한 프로젝트에 대한 파이프라인 구성. 또는 [구성 시작하기 안내서](./advanced_config.md)의 연습에서 생성한 구성을 사용하십시오.
+2. 식별된 프로젝트에 대한 파이프라인 구성이나 [구성 시작하기 안내서](./advanced_config.md)를 완료하고 해당 연습에서 생성한 구성을 사용합니다.
 3. 파이프라인 구성이 저장된 파일 시스템에 대해 읽기 및 쓰기 권한을 적절하게 설정합니다.
 4. Shotgun 데스크톱이 시스템에 설치되어 있어야 합니다.
-5. 활성 상태의 Maya 멤버쉽. [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 Maya 30일 체험판을 다운로드하십시오.
+5. 활성 상태의 Maya 서브스크립션. [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 Maya 30일 체험판을 다운로드하십시오.
 
 {% include info title="참고" content="이 안내서는 tk-config-default2 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다." %}
 
@@ -40,20 +40,20 @@ lang: ko
 
 파이프라인 구성에서 참조하는 앱은 다양한 위치에서 가져온 것일 수 있습니다. 기본 구성에서 표준인 앱은 Shotgun 앱 스토어에서 가져온 것입니다. 파이프라인 구성의 파일은 툴킷에 "주소록에서 Python 콘솔 앱의 주소를 찾아줄래?"라고 묻는 것처럼 Shotgun 통합이 앱에 액세스하는 방법을 지정합니다. 파이프라인 구성 파일은 툴킷에 특정 앱에 활용되는 코드의 번들을 찾는 위치를 알려줍니다.
 
-기본 구성에서 툴킷 앱의 "주소"는 `config/env/includes/app_locations.yml` 파일에 나열되어 있으며 코드를 찾는 위치를 지정합니다. 이러한 "주소"를 [설명자](https://developer.shotgunsoftware.com/tk-core/descriptor.html)라고 합니다. Shotgun 통합은 앱에 대한 코드 번들을 찾는 위치뿐 아니라 앱을 사용하는 환경도 알아야 합니다.
+기본 구성에서 툴킷 앱의 "주소"는 `config/env/includes/app_locations.yml` 파일에 나열되어 있으며 코드를 찾는 위치를 지정합니다. 이러한 "주소"를 [디스크립터](https://developer.shotgunsoftware.com/tk-core/descriptor.html)라고 합니다. Shotgun 통합은 앱에 대한 코드 번들을 찾는 위치뿐 아니라 앱을 사용하는 환경도 알아야 합니다.
 
-다음은 앱 설치 방법과 Shotgun 통합에 앱을 사용하는 위치를 알리는 방법에 대한 개념적인 개요입니다. 여기서는 구성을 확장하고 툴킷에 설명자를 조회하도록 요청하고 Shotgun에 앱을 사용하는 위치를 알리는 단계를 간략하게 설명합니다. 이 안내서에서는 다음 단계를 자세히 살펴봅니다.
+다음은 앱 설치 방법과 Shotgun 통합에 앱을 사용하는 위치를 알리는 방법에 대한 개념적인 개요입니다. 여기서는 구성을 확장하고 툴킷에 디스크립터를 조회하도록 요청하고 Shotgun에 앱을 사용하는 위치를 알리는 단계를 간략하게 설명합니다. 이 안내서에서는 다음 단계를 자세히 살펴봅니다.
 
-1. 추가하려는 앱의 설명자를 결정합니다.
-2. 앱 설명자를 추가하려는 활성 파이프라인 구성의 복사본을 생성합니다.
-3. 앱의 설명자가 구성에 존재하는지 확인하고, 존재하지 않는 경우 추가합니다.
+1. 추가하려는 앱의 디스크립터를 결정합니다.
+2. 앱 디스크립터를 추가하려는 활성 파이프라인 구성의 복사본을 생성합니다.
+3. 앱의 디스크립터가 구성에 존재하는지 확인하고, 존재하지 않는 경우 추가합니다.
 4. 들여쓰기에 탭이 아니라 공백을 사용하여 YAML 파일의 서식을 올바르게 지정합니다.
 5. 앱이 사용되는 환경을 결정합니다.
 6. 이러한 환경 내에서 Shotgun이 앱을 사용할 수 있도록 허용하는 설정을 추가합니다.
 7. 새 구성을 테스트합니다.
 8. 확장된 구성을 라이브로 적용합니다.
 
-### Python 콘솔 앱에 대한 위치 설명자 찾기
+### Python 콘솔 앱에 대한 위치 디스크립터 찾기
 
 **1단계:** [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya)를 열고 Maya에서 Shotgun Python 콘솔에 대한 정보를 찾습니다. 제목을 선택합니다.
 
@@ -131,13 +131,13 @@ Shotgun 데스크톱이 이제 이 프로젝트에 대해 복제된 구성을 �
 
 ![복제 앱 위치](./images/installing_app/12_clone_app_locations.png)
 
-`app_locations.yml` 파일이 기본 구성의 주소록이며 앱의 설명자가 이 파일에 나열되어 있습니다. 이 파일에 앱의 위치가 지정되며 이 파일을 사용하여 앱에 대한 설정을 생성할 수 있습니다.
+`app_locations.yml` 파일이 기본 구성의 주소록이며 앱의 디스크립터가 이 파일에 나열되어 있습니다. 이 파일에 앱의 위치가 지정되며 이 파일을 사용하여 앱에 대한 설정을 생성할 수 있습니다.
 
 사용하려는 앱이 이 주소록에서 참조되지 않을 경우 툴킷에 앱을 찾을 위치를 알려야 합니다.
 
 ## 툴킷에 앱을 찾을 위치 알리기
 
-**10단계:** 파일에서 `pythonconsole`을 검색합니다. 프로젝트에 기본 구성을 사용한 경우 Python 콘솔 앱에 대한 설명자가 이 파일에 나열되어 있는 것을 볼 수 있습니다. 이 설명자는 이 과정을 시작할 때 살펴본 Maya 앱의 [목록](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 있는 설명과 일치해야 합니다. 버전이 Maya 앱 목록에서 확인한 항목과 일치하는지 확인합니다.
+**10단계:** 파일에서 `pythonconsole`을 검색합니다. 프로젝트에 기본 구성을 사용한 경우 Python 콘솔 앱에 대한 디스크립터가 이 파일에 나열되어 있는 것을 볼 수 있습니다. 이 디스크립터는 이 과정을 시작할 때 살펴본 Maya 앱의 [목록](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 있는 설명과 일치해야 합니다. 버전이 Maya 앱 목록에서 확인한 항목과 일치하는지 확인합니다.
 
 ```yaml
 apps.tk-multi-pythonconsole.location:
@@ -147,13 +147,13 @@ apps.tk-multi-pythonconsole.location:
 
 ```
 
-{% include info title="참고" content="다른 구성을 사용하는 경우 파일에 설명자를 추가해야 할 수 있습니다." %}
+{% include info title="참고" content="다른 구성을 사용하는 경우 파일에 디스크립터를 추가해야 할 수 있습니다." %}
 
-모든 앱과 엔진에는 설명자가 있습니다. [Core API 문서의 설명자 섹션](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types)에서 설명자의 작동 방식과 `type:`을 설정하는 방법을 확인할 수 있습니다.
+모든 앱과 엔진에는 디스크립터가 있습니다. [Core API 문서의 디스크립터 섹션](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types)에서 디스크립터의 작동 방식과 `type:`을 설정하는 방법을 확인할 수 있습니다.
 
-## 툴킷에 설명자를 사용하도록 지시
+## 툴킷에 디스크립터를 사용하도록 지시
 
-이제 Maya의 프로젝트 환경에 있는 동안 툴킷에 설명자를 사용하여 Python 콘솔 앱을 찾아 사용하도록 지시해야 합니다.
+이제 Maya의 프로젝트 환경에 있는 동안 툴킷에 디스크립터를 사용하여 Python 콘솔 앱을 찾아 사용하도록 지시해야 합니다.
 
 **11단계:** 복제된 구성에서 `config/env/project.yml` 파일을 열고 `tk-maya` 엔진에 대한 설정을 찾습니다.
 
@@ -208,14 +208,14 @@ Shotgun 통합의 코드는 앱, 엔진 및 프레임워크에 대한 번들로 
 
 ![tk-maya](./images/installing_app/13_tk-maya.png)
 
-**15단계:** 다음 아래에 위치 설명자를 추가합니다.
+**15단계:** 다음 아래에 위치 디스크립터를 추가합니다.
 
 ```yaml
 settings.tk-maya.project:
   apps:
 ```
 
-위치 설명자를 추가하는 방법에 대한 가이드로 `about` 앱인 `tk-multi-about:`을 사용한 후 파일을 저장합니다.
+위치 디스크립터를 추가하는 방법에 대한 가이드로 `about` 앱인 `tk-multi-about:`을 사용한 후 파일을 저장합니다.
 
 {% include info title="참고" content="[YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) 파일의 서식이 탭이 아니라 공백을 사용하여 올바르게 지정되었는지 확인하십시오." %}
 
@@ -356,7 +356,7 @@ Push Complete!
 
 ![Maya 내 앱](./images/installing_app/19_app_in_maya.png)
 
-Python 콘솔 앱이 선택한 프로젝트의 프로젝트 환경에 추가되었습니다. 두 번째 안내서인 "[구성 편집](./editing_app_setting.md)"에서 각 환경은 서로 독립적이고, 프로젝트마다 전용 구성이 있으며, 프로젝트가 로드될 때 소프트웨어 통합이 파이프라인 구성에서 설정을 수집한다는 것을 살펴봤습니다. 환경에서 Python 콘솔을 사용할 수 있으려면 `app_locations.yml` 파일에서 위치 설명자를 찾는 지침이 환경에 제공되어야 합니다. 이 점을 고려해 볼 때 파이프라인에서 Python 콘솔 앱을 사용할 수 있게 할 위치에 "여기서 Python 콘솔 앱 사용"과 같은 설정을 지정해야 합니다.
+Python 콘솔 앱이 선택한 프로젝트의 프로젝트 환경에 추가되었습니다. 두 번째 안내서인 “[구성 편집](./editing_app_setting.md)"에서 각 환경은 서로 독립적이고, 프로젝트마다 전용 구성이 있으며, 프로젝트가 로드될 때 소프트웨어 통합이 파이프라인 구성에서 설정을 수집한다는 것을 살펴봤습니다. 환경에서 Python 콘솔을 사용할 수 있으려면 `app_locations.yml` 파일에서 위치 디스크립터를 찾는 지침이 환경에 제공되어야 합니다. 이 점을 고려해 볼 때 파이프라인에서 Python 콘솔 앱을 사용할 수 있게 할 위치에 "여기서 Python 콘솔 앱 사용"과 같은 설정을 지정해야 합니다.
 
 ## 고급 항목
 
@@ -372,7 +372,7 @@ Python 콘솔 앱이 선택한 프로젝트의 프로젝트 환경에 추가되�
 
 ![데스크톱 Python 콘솔](./images/installing_app/20_desktop_python_console.png)
 
-파이프라인 구성에 추가하려는 앱을 사용하고 있는 환경이 있다면 간단한 탐색 작업을 거쳐 앱을 구성에 추가하는 데 필요한 정보를 찾을 수 있습니다. 환경의 구성 파일에서 앱이 사용되는 위치를 파악하면 앱 위치 설명자와 설정을 추가하는 방법을 확인할 수 있습니다.
+파이프라인 구성에 추가하려는 앱을 사용하고 있는 환경이 있다면 간단한 탐색 작업을 거쳐 앱을 구성에 추가하는 데 필요한 정보를 찾을 수 있습니다. 환경의 구성 파일에서 앱이 사용되는 위치를 파악하면 앱 위치 디스크립터와 설정을 추가하는 방법을 확인할 수 있습니다.
 
 데스크톱 앱은 프로젝트 환경에서 열리므로 `project.yml` 파일에서 `tk-desktop`을 찾습니다.
 
@@ -388,7 +388,7 @@ engines:
   tk-desktop: "@settings.tk-desktop.project"
 ```
 
-includes:의 경로를 따라 `config/env/includes/settings/tk-desktop.yml`을 열고 `settings.tk-desktop.project` 블록을 찾습니다. 해당 블록에서 다음을 확인할 수 있습니다.<br/><br/>
+include의 경로를 따라 `config/env/includes/settings/tk-desktop.yml`을 열고 `settings.tk-desktop.project` 블록을 찾습니다. 해당 블록에서 다음을 확인할 수 있습니다.<br/><br/>
 
 ```yaml
 apps:
@@ -398,7 +398,7 @@ apps:
 
 이러한 블록은 프로젝트 단계에서 Python 콘솔 앱을 데스크톱 엔진에 추가합니다.
 
-includes의 경로를 `../includes/app_locations.yml`까지 따라가 `apps.tk-multi-pythonconsole.location`을 검색하여 다음을 확인합니다.<br/><br/>
+include의 경로를 `../includes/app_locations.yml`까지 따라가 `apps.tk-multi-pythonconsole.location`을 검색하여 다음을 확인합니다.<br/><br/>
 
 ```yaml
 # pythonconsole

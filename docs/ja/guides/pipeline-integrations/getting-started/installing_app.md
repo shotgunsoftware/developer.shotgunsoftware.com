@@ -20,14 +20,14 @@ lang: ja
 
 ここで追加するアプリは、Shotgun Python コンソール アプリです。Maya には独自の Python コンソールがありますが、Toolkit アプリには Maya コンソールにない機能がいくつか用意されています。
 
-このガイドでは、「[パイプライン設定を編集する](./editing_app_setting.md)」ガイドで作成したパイプライン設定を利用します。 このガイドをまだ完了していない場合は、既存のパイプライン設定を使用してアプリを追加してください。
+このガイドでは、「[パイプライン設定を編集する](./editing_app_setting.md)」ガイドで作成したパイプライン設定を利用します。このガイドをまだ完了していない場合は、既存のパイプライン設定を使用してアプリを追加してください。
 
 ## このドキュメントの使い方
 
 このガイドを使用して Toolkit アプリをインストールするには、以下が必要です。
 
 1. アクティブな [Shotgun](https://www.shotgunsoftware.com/jp/signup/) サイト。
-2. 指定したプロジェクトのパイプライン設定。この設定がない場合は、「[設定の基本操作](./advanced_config.md)」ガイドの手順を完了し、その演習で作成した設定を使用します。
+2. 指定したプロジェクトのパイプライン設定、または「[設定の基本操作](./advanced_config.md)」ガイドを参照して、この演習で作成された設定を使用します。
 3. パイプライン設定の保存先のファイルシステムに最適になるように設定された読み取りおよび書き込み権限。
 4. システムにインストールされた Shotgun Desktop。
 5. Maya の有効なサブスクリプション。Maya の 30 日間無償体験版は[こちら](https://www.autodesk.co.jp/products/maya/free-trial)から取得してください。
@@ -63,11 +63,11 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ![Python アプリの情報](./images/installing_app/2_python_app_info.png)
 
-**[System Name]**は主要な識別子です(`tk-multi-pythonconsole`)。**[Latest Version:]**も必要です( v1.1.2)。
+**システム名**は主要な識別子です(`tk-multi-pythonconsole`)。**最新バージョン**も必要です( v1.1.2)。
 
 ### Maya のプロジェクト環境内に Python コンソール アプリが含まれていないことを確認する
 
-**手順 2:** Maya を起動し、Shotgun メニューを選択して(**[Shotgun] > プロジェクト the_other_side**)、プロジェクト環境内にある、このプロジェクトで使用可能なアプリのリストを表示します。
+**手順 2:** Maya を起動し、Shotgun メニューを選択して(**[Shotgun] > [プロジェクト the_other_side](Project the_other_side)**)、プロジェクト環境内にある、このプロジェクトで使用可能なアプリのリストを表示します。
 
 ![アプリのリスト](./images/installing_app/3_list_of_apps.png)
 
@@ -79,21 +79,21 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ## アプリを追加するパイプライン設定のクローンを作成する
 
-### [パイプラインの設定]（Pipeline Configuration）リストに移動します。
+### [パイプラインの設定](Pipeline Configuration)リストに移動します。
 
-**手順 3**: Shotgun を開き、右上にある**[管理者]（Admin）メニュー（アバター） > [既定のレイアウト]（Default Layouts） > [パイプラインの設定]（Pipeline Configuration） > [パイプライン設定リスト]（Pipeline Configuration List）**を選択します。
+**手順 3**: Shotgun を開き、右上にある**[管理者] (Admin)メニュー(アバター) > [既定のレイアウト](Default Layouts) > [パイプラインの設定](Pipeline Configuration) > [パイプライン設定リスト](Pipeline Configuration List)**を選択します。
 
 ![パイプライン設定リスト](./images/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
 この操作を行うと、Shotgun サイトのすべてのパイプライン設定の詳細なリストが表示されます。
 
-**手順 4:** [パイプライン設定リスト]（Pipeline Configuration List）が表示されたら、列見出しの右端にある**[+]**記号を選択して、**[プロジェクト]（Projects）**列を追加します。
+**手順 4:** [パイプライン設定リスト](Pipeline Configuration List)が表示されたら、列見出しの右端にある**[+]**記号を選択して、**[プロジェクト] (Projects)**列を追加します。
 
 ![プロジェクト列を追加](./images/installing_app/5_add_project_column.png)
 
 ### プロジェクトの設定の配置場所を確認する
 
-**手順 5:** オペレーティング システムに該当する**[パス]（Path）**フィールドを追加します。
+**手順 5:** オペレーティング システムに該当する**[パス] (Path)**フィールドを追加します。
 
 ![設定のパス](./images/installing_app/6_path_to_config.png)
 
@@ -101,11 +101,11 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ![設定のパス 2](./images/installing_app/7_path_to_config2.png)
 
-**手順 6:** **[プライマリ]（Primary）**行項目の横にある空のスペース内で**右クリック**して、コンテキスト メニューから**[この設定のクローンを作成...]（Clone this Configuration…）**を選択します。
+**手順 6:** **[プライマリ] (Primary)**行項目の横にある空のスペース内で**右クリック**して、コンテキスト メニューから**[この設定のクローンを作成...](Clone this Configuration…)**を選択します。
 
 ![クローン作成完了](./images/installing_app/8_clone_complete.png)
 
-**手順 7:** [パイプライン設定リスト]（Pipeline Configuration List）内の設定およびディレクトリ内のファイルに、それぞれ「Primary Clone Config 2」および「the_other_side_clone2」という名前を付けます。**[OK]**をクリックします。
+**手順 7:** [パイプライン設定リスト](Pipeline Configuration List)内の設定およびディレクトリ内のファイルに、それぞれ「Primary Clone Config 2」および「the_other_side_clone2」という名前を付けます。**[OK]**をクリックします。
 
 ![クローンに名前を付ける](./images/installing_app/9_name_clone.png)
 
@@ -115,7 +115,7 @@ Shotgun によって設定内のすべてのファイルおよびフォルダが
 
 完了すると、クローンが作成された設定の情報を使用して[パイプライン設定リスト]が更新され、ローカルな config フォルダに新しい設定が追加されます。
 
-{% include info title="注" content="**[ユーザ制限]（User Restrictions）**の下にユーザ名が追加されています。Shotgun は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、Shotgun の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
+{% include info title="注" content="**[ユーザ制限](User Restrictions)**の下にユーザ名が追加されています。Shotgun は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、Shotgun の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
 
 ## クローン作成された設定にプロジェクトを関連付ける
 
@@ -256,7 +256,7 @@ Windows の場合:
 
 ![Maya のクローン作成された設定](./images/installing_app/14_maya_cloned_config.png)
 
-**手順 17:** Desktop から Maya を起動して、メニュー **[Shotgun] > [プロジェクト]（Project） > […]**を選択します。
+**手順 17:** Desktop から Maya を起動して、メニュー **[Shotgun] > [プロジェクト] (Project) > […]**を選択します。
 
 次の場合:
 
@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 クローン作成した設定のプッシュ先に指定できるパイプライン設定のリストが表示されます。設定を更新しているプロジェクトのプライマリ パイプライン設定の ID を入力します。
 
-{% include info title="注" content="このガイドの「**手順 3**」に示した Shotgun の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
+{% include info title="注" content="このガイドの「**手順 3**」に示した Shotgun の[パイプラインの設定](Pipeline Configuration)ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 
@@ -352,7 +352,7 @@ Push Complete!
 
 ![Maya の設定の変更](./images/installing_app/18_change_config_maya.png)
 
-**手順 20:** Desktop から Maya を起動して、メニュー**[Shotgun] > [プロジェクト]（Project） > […]**を参照して、Shotgun Python コンソールを検索します。
+**手順 20:** Desktop から Maya を起動して、メニュー**[Shotgun] > [プロジェクト] (Project) > […]**を参照して、Shotgun Python コンソールを検索します。
 
 ![Maya のアプリ](./images/installing_app/19_app_in_maya.png)
 

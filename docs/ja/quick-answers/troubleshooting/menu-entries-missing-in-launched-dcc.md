@@ -23,4 +23,5 @@ Shotgun メニューに表示されるアクションはコンテキストに応
 
 ![Shotgun メニューのプロジェクト アクション](images/shotgun-menu-asset-step-actions.png)
 
-環境が正しいにもかかわらずアクションが表示されない場合は、関連する[ログ](where-are-my-log-files.md)を調べ、エラーがないかどうかを確認します。完全な出力を取得するには、[デバッグ ログを有効に](turn-debug-logging-on.md)しなければならない可能性があります。
+環境が正しいにもかかわらずアクションが表示されない場合は、関連する[ログ](where-are-my-log-files.md)を調べ、エラーがないかどうかを確認します。
+完全な出力を取得するには、[デバッグ ログを有効に](turn-debug-logging-on.md)しなければならない可能性があります。
