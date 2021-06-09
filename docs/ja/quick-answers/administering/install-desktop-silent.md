@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Windows で ShotGrid Desktop をサイレント インストールするにはどうすればいいですか?
+title: Windows で Shotgun Desktop をサイレント インストールするにはどうすればいいですか?
 pagename: install-desktop-silent
 lang: ja
 ---
 
-# Windows で {% include product %} Desktop をサイレント インストールするにはどうすればいいですか?
+# Windows で Shotgun Desktop をサイレント インストールするにはどうすればいいですか?
 
-{% include product %} Desktop インストーラをサイレントで実行するには、次の方法で {% include product %} Desktop インストーラを起動します。
+Shotgun Desktop インストーラをサイレントで実行するには、次の方法で Shotgun Desktop インストーラを起動します。
 
 `ShotgunInstaller_Current.exe /S`
 

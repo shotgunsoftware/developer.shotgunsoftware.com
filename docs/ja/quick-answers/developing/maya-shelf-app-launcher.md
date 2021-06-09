@@ -26,7 +26,7 @@ try:
     # get the current engine (e.g. tk-maya)
     current_engine = sgtk.platform.current_engine()
     if not current_engine:
-        cmds.error("ShotGrid integration is not available!")
+        cmds.error("Shotgun integration is not available!")
 
     # find the current instance of the app.
     # You can print current_engine.commands to list all available commands.

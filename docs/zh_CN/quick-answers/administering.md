@@ -10,11 +10,11 @@ lang: zh_CN
 
 一组与管理和配置 Toolkit 设置相关的快速解答。
 
-#### {% include product %} Desktop：
-- [如何使用 {% include product %} Desktop 来重新设置 Toolkit 项目？](./administering/resetup-project-with-sg-desktop.md)
-- [如何在 Windows 上静默安装 {% include product %} Desktop？](./administering/install-desktop-silent.md)
-- [如何在 Linux 上为 {% include product %} Desktop 设置桌面/启动程序图标？](./administering/create-shotgun-desktop-shortcut.md)
-- [如何禁用 {% include product %} Desktop 的浏览器集成？](./administering/disable-browser-integration.md)
+#### Shotgun Desktop：
+- [如何使用 Shotgun Desktop 来重新设置 Toolkit 项目？](./administering/resetup-project-with-sg-desktop.md)
+- [如何在 Windows 上静默安装 Shotgun Desktop？](./administering/install-desktop-silent.md)
+- [如何在 Linux 上为 Shotgun Desktop 设置桌面/启动程序图标？](./administering/create-shotgun-desktop-shortcut.md)
+- [如何禁用 Shotgun Desktop 的浏览器集成？](./administering/disable-browser-integration.md)
 
 #### 管理您的配置：
 

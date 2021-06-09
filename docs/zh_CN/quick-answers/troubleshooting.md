@@ -19,14 +19,14 @@ lang: zh_CN
 - [解决与 Python API 相关的 SSL: CERTIFICATE_VERIFY_FAILED 问题](./troubleshooting/fix-ssl-certificate-verify-failed.md)
 
 #### 软件集成。
-- [为什么我的 Houdini {% include product %} 集成没有启动？](./troubleshooting/houdini-integrations-not-starting.md)
-- [我已从 {% include product %} Desktop 启动 Nuke/Maya 等，但 {% include product %} 菜单中缺少相关条目](./troubleshooting/menu-entries-missing-in-launched-dcc.md)
+- [为什么我的 Houdini Shotgun 集成没有启动？](./troubleshooting/houdini-integrations-not-starting.md)
+- [我已从 Shotgun Desktop 启动 Nuke/Maya 等，但 Shotgun 菜单中缺少相关条目](./troubleshooting/menu-entries-missing-in-launched-dcc.md)
 - [当我设置 NUKE_PATH 环境变量时为什么 Nuke 集成无法启动？](./troubleshooting/nuke-path-environment-variable.md)
 - [安装两种扩展时的 Photoshop 集成疑难解答](./troubleshooting/two-photoshop-shotgun-extensions.md)
-- [使用 {% include product %} Toolkit 时，为什么启动时 3ds Max 发生崩溃？](./troubleshooting/3dsmax-crashes-on-startup.md)
+- [使用 Shotgun Toolkit 时，为什么启动时 3ds Max 发生崩溃？](./troubleshooting/3dsmax-crashes-on-startup.md)
 
 #### 浏览器集成
 - [我无法通过 Chrome 使用本地文件链接和启动 Toolkit 应用程序](./troubleshooting/cant-use-file-linking-toolkit-app-chrome.md)
 - [我无法通过 Firefox 使用本地文件链接和启动 Toolkit 应用程序](./troubleshooting/cant-use-file-linking-toolkit-app-firefox.md)
-- [无法在 Linux 上启动 {% include product %} Desktop/浏览器集成](./troubleshooting/browser-integration-fails-linux.md)
+- [无法在 Linux 上启动 Shotgun Desktop/浏览器集成](./troubleshooting/browser-integration-fails-linux.md)
 

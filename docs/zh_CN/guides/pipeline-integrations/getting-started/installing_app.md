@@ -16,46 +16,46 @@ lang: zh_CN
 
 ## 关于本手册
 
-本手册将演示如何将 {% include product %} Toolkit 应用添加到现有的工作流配置。您将很快熟悉配置管理工具。
+本手册将演示如何将 Shotgun Toolkit 应用添加到现有的工作流配置。您将很快熟悉配置管理工具。
 
-我们要添加的应用是 {% include product %} Python 控制台应用。Maya 具有其自己的 Python 控制台，但是 Toolkit 应用中有一些功能在 Maya 控制台中不存在。
+我们要添加的应用是 Shotgun Python 控制台应用。Maya 具有其自己的 Python 控制台，但是 Toolkit 应用中有一些功能在 Maya 控制台中不存在。
 
-本手册利用我们在[编辑工作流配置](./editing_app_setting.md)手册中创建的工作流配置。 如果您尚未完成此手册，则可以使用现有的工作流配置，并在其中添加该应用。
+本手册利用我们在[编辑工作流配置](./editing_app_setting.md)手册中创建的工作流配置。如果您尚未完成此手册，则可以使用现有的工作流配置，并在其中添加该应用。
 
 ## 使用本文档
 
 要使用本手册并安装 Toolkit 应用，需要以下内容：
 
-1. 有效的 [{% include product %}](https://www.shotgunsoftware.com/zh-cn/signup/) 站点。
-2. 已标识项目的工作流配置，或完成[配置快速入门手册](./advanced_config.md)并使用该练习中创建的配置。
-3. 为存储工作流配置的文件系统设置适当的读取和写入权限。
-4. 在系统上安装 {% include product %} Desktop。
+1. 有效的 [Shotgun](https://www.shotgunsoftware.com/zh-cn/signup/) 站点。
+2. 用于已标识项目的工作流配置，或完成[配置快速入门](./advanced_config.md)手册，并使用在该练习中创建的配置。
+3. 为存储工作流配置的 Shotgun 管理的文件系统设置适当的读取和写入权限。
+4. 在系统上安装 Shotgun Desktop。
 5. Maya 的有效固定期限的使用许可。在[此处](https://www.autodesk.com.cn/products/maya/free-trial) 获取 Maya 的 30 天试用版。
 
 {% include info title="注意" content="本手册基于 tk-config-default2 工作流配置。如果您的配置文件已修改，则文件和文件夹的位置、YAML 设置的区块可能就与此处描述的不同。"%}
 
-## 关于 {% include product %} Toolkit 应用
+## 关于 Shotgun Toolkit 应用
 
 ### Toolkit 应用工作方式
 
-工作流配置中引用的应用可以来自不同的位置。默认配置中的标准应用来自 {% include product %} App Store。工作流配置中的文件指定 {% include product %} 集成如何访问应用，有点像询问 Toolkit，“您能在小黑本中查找 Python 控制台应用的地址吗？”工作流配置文件告知 Toolkit 在何处可以找到用于特定应用的代码包。
+工作流配置中引用的应用可以来自不同的位置。默认配置中的标准应用来自 Shotgun App Store。工作流配置中的文件指定 Shotgun 集成如何访问应用，有点像询问 Toolkit，“您能在小黑本中查找 Python 控制台应用的地址吗？”工作流配置文件告知 Toolkit 在何处可以找到用于特定应用的代码包。
 
-Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_locations.yml` 文件中，并指定如何查找代码。这些“地址”称为[描述符](https://developer.shotgridsoftware.com/tk-core/descriptor.html)。不仅需要告诉 {% include product %} 集成如何查找应用的代码包，还需要告诉它在哪些环境中使用该应用。
+Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_locations.yml` 文件中，并指定如何查找代码。这些“地址”称为[描述符](https://developer.shotgunsoftware.com/tk-core/descriptor.html)。不仅需要告诉 Shotgun 集成如何查找应用的代码包，还需要告诉它在哪些环境中使用该应用。
 
-下面概念性概述了如何安装应用以及如何告知 {% include product %} 集成在何处使用它。它概述了扩展配置的步骤，要求 Toolkit 查找描述符，并告知 {% include product %} 在何处使用该应用。本手册详细介绍了这些步骤：
+下面概念性概述了如何安装应用以及如何告知 Shotgun 集成在何处使用它。它概述了扩展配置的步骤，要求 Toolkit 查找描述符，并告知 Shotgun 在何处使用该应用。本手册详细介绍了这些步骤：
 
 1. 确定要添加的应用的描述符。
 2. 复制要将应用描述符添加到的活动工作流配置。
 3. 确定该应用的描述符在配置中是否存在，如果不存在，则添加它。
 4. 使用空格而不是制表符进行缩进，从而正确设置 YAML 文件的格式。
 5. 确定要在哪些环境中使用该应用。
-6. 在这些环境中，添加允许 {% include product %} 使用该应用的设置。
+6. 在这些环境中，添加允许 Shotgun 使用该应用的设置。
 7. 测试新配置。
 8. 使扩展配置生效。
 
 ### 查找 Python 控制台应用的位置描述符
 
-**步骤 1：**打开[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798#tk-maya)，并在 Maya 下查找 {% include product %} Python 控制台的信息。选择标题。
+**步骤 1：**打开[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798#tk-maya)，并在 Maya 下查找 Shotgun Python 控制台的信息。选择标题。
 
 ![Python 应用](./images/installing_app/1_python_app.png)
 
@@ -63,11 +63,11 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 ![Python 应用信息](./images/installing_app/2_python_app_info.png)
 
-**系统名称**是主标识符：`tk-multi-pythonconsole`。您还需要**最新版本**：v1.1.2。
+**应用插件名称**是主标识符：`tk-multi-pythonconsole`。您还需要**最新版本**：v1.1.2。
 
 ### 确认在 Maya 的项目环境中没有 Python 控制台应用
 
-**步骤 2：**启动 Maya 并选择 {% include product %} 菜单**“{% include product %} > 项目 the_other_side”({% include product %} > Project the_other_side)**，您会看到可用于项目环境中该项目的应用列表。
+**步骤 2：**启动 Maya 并选择 Shotgun 菜单**“Shotgun > 项目 the_other_side”(Shotgun > Project the_other_side)**，您会看到可用于项目环境中该项目的应用列表。
 
 ![应用列表](./images/installing_app/3_list_of_apps.png)
 
@@ -81,11 +81,11 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 ### 转到工作流配置列表。
 
-**步骤 3：**打开 {% include product %}，在右上角选择**“管理”(Admin)菜单（您的头像）>“默认布局 > 工作流配置 > 工作流配置列表”(Default Layouts > Pipeline Configuration > Pipeline Configuration List)**。
+**步骤 3：**打开 Shotgun，在右上角选择**“管理”(Admin)菜单（您的头像）>“默认布局 > 工作流配置 > 工作流配置列表”(Default Layouts > Pipeline Configuration > Pipeline Configuration List)**。
 
 ![工作流配置列表](./images/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
-此动作将显示 {% include product %} 站点的所有工作流配置的详细列表。
+此动作将显示 Shotgun 站点的所有工作流配置的详细列表。
 
 **步骤 4：**显示“工作流配置列表”(Pipeline Configuration List)后，选择列标题最右侧的 **+** 号，然后添加**“项目”(Projects)**列。
 
@@ -109,21 +109,21 @@ Toolkit 应用的“地址”列在默认配置的 `config/env/includes/app_loca
 
 ![命名克隆](./images/installing_app/9_name_clone.png)
 
-等待 {% include product %} 复制配置中的所有文件和文件夹，并为应用创建缓存。现在就可以使用应用，让您可以一边喝着香浓咖啡，一边享用羊角面包。
+等待 Shotgun 复制配置中的所有文件和文件夹，并为应用创建缓存。现在就可以使用应用，让您可以一边喝着香浓咖啡，一边享用羊角面包。
 
 ![克隆完成](./images/installing_app/10_clone_complete.png)
 
 完成后，将使用有关克隆配置的信息更新配置列表，并且将在本地 config 文件夹中添加新配置。
 
-{% include info title="注意" content="在**“用户限制”(User Restrictions)**下，添加了您的用户名。ShotGrid 自动将对新配置的访问权限限制为仅创建配置的人员。您可以添加要编辑、测试并最终使用此配置的人员。另一方面，ShotGrid 可实现灵活性和可控性。" %}
+{% include info title="注意" content="在**“用户限制”(User Restrictions)**下，添加了您的用户名。Shotgun 自动将对新配置的访问权限限制为仅创建配置的人员。您可以添加要编辑、测试并最终使用此配置的人员。另一方面，Shotgun 可实现灵活性和可控性。" %}
 
 ## 将克隆的配置与项目相关联
 
-**步骤 8：**打开 {% include product %} Desktop，并选择您为其创建克隆配置的项目。选择右上角的**向下箭头**以显示与此项目关联的配置，然后选择刚创建的 **Primary Clone Config 2**。
+**步骤 8：**打开 Shotgun Desktop，并选择您为其创建克隆配置的项目。选择右上角的**向下箭头**以显示与此项目关联的配置，然后选择刚创建的 **Primary Clone Config 2**。
 
 ![选择克隆](./images/installing_app/11_select_clone.png)
 
-{% include product %} Desktop 现在正在使用此项目的克隆配置。
+Shotgun Desktop 现在正在使用此项目的克隆配置。
 
 ## 编辑工作流配置
 
@@ -149,7 +149,7 @@ apps.tk-multi-pythonconsole.location:
 
 {% include info title="注意" content="如果您使用的是其他配置，则可能需要将描述符添加到文件中。" %}
 
-所有应用和插件都有描述符。您可以在[核心 API 文档的“描述符”部分](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types)中阅读有关描述符工作方式以及如何设置 `type:` 的内容。
+所有应用和插件都有描述符。您可以在[核心 API 文档的“描述符”部分](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types)中阅读有关描述符工作方式以及如何设置 `type:` 的内容。
 
 ## 告知 Toolkit 使用描述符
 
@@ -181,7 +181,7 @@ engines:
 
 ### YAML 文件
 
-{% include product %} Toolkit 工作流配置使用 [YAML](https://yaml.org/spec/1.2/spec.html) 文件中的简单术语来标识应用和插件的位置及其设置。
+Shotgun Toolkit 工作流配置使用 [YAML](https://yaml.org/spec/1.2/spec.html) 文件中的简单术语来标识应用和插件的位置及其设置。
 
 对于此特定块：
 
@@ -190,11 +190,11 @@ engines:
 * `tk-maya` 是 Toolkit 的 Maya 插件的标识符
 * `@` 是 Toolkit 术语，用于表示设置值来自包含文件
 
-YAML 文件是 {% include product %} 集成的窗口，可以更轻松地配置满足您的工作流需求的工作环境。
+YAML 文件是 Shotgun 集成的窗口，可以更轻松地配置满足您的工作流需求的工作环境。
 
 ### 配置如何引用 Toolkit 包
 
-{% include product %} 集成的代码被组织成应用、插件和框架的包。在 Toolkit 的 YAML 文件中使用 `tk-maya`、`tk-multi-pythonconsole` 等标识符对这些包进行引用。每个包的相应 YAML 块都包含用于控制如何访问和使用所标识包的设置。
+Shotgun 集成的代码被组织成应用、插件和框架的包。在 Toolkit 的 YAML 文件中使用 `tk-maya`、`tk-multi-pythonconsole` 等标识符对这些包进行引用。每个包的相应 YAML 块都包含用于控制如何访问和使用所标识包的设置。
 
 ## 在何处放置 Python 控制台的设置
 
@@ -232,9 +232,9 @@ settings.tk-maya.project:
     tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"
 ```
 
-您会注意到，**审片室、{% include product %} 面板和 Workfiles 2** 应用的位置标识符列在不同的包含文件中，并且以不同于**关于**应用的方式进行访问。为了保持整洁，这些应用被拆分到包含的 settings 文件夹，因为它们具有其他设置。
+您会注意到，**审片室、Shotgun 面板和 Workfiles 2** 应用的位置标识符列在不同的包含文件中，并且以不同于**关于**应用的方式进行访问。为了保持整洁，这些应用被拆分到包含的 settings 文件夹，因为它们具有其他设置。
 
-{% include info title="注意" content="Python 控制台应用已经存在于默认配置中，但是如果您添加的应用以前从未添加到配置中，或者您已更改应用的版本，并且使用的是[集中式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)，则需要额外执行一个步骤。打开终端，并浏览到存储克隆配置的位置。从克隆配置的根文件夹中，运行以下命令：<br/>
+{% include info title="注意" content="Python 控制台应用已经存在于默认配置中，但是如果您添加的应用以前从未添加到配置中，或者您已更改应用的版本，并且使用的是[集中式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)，则需要额外执行一个步骤。打开终端，并浏览到存储克隆配置的位置。从克隆配置的根文件夹中，运行以下命令：<br/>
 
 在 Linux 或 Mac 上：
 
@@ -248,7 +248,7 @@ settings.tk-maya.project:
 
 ## 查看 Maya 中的更改
 
-**步骤 16：**打开 {% include product %} Desktop，选择正在处理的项目，并确认您使用的是克隆配置。
+**步骤 16：**打开 Shotgun Desktop，选择正在处理的项目，并确认您使用的是克隆配置。
 
 在项目名称下，将出现一个蓝色条，其中包含您创建的克隆的名称。
 
@@ -256,7 +256,7 @@ settings.tk-maya.project:
 
 ![Maya 克隆配置](./images/installing_app/14_maya_cloned_config.png)
 
-**步骤 17：**从 Desktop 启动 Maya，然后选择菜单**“{% include product %} > 项目 > …”({% include product %} > Project > …)**
+**步骤 17：**从 Desktop 启动 Maya，然后选择菜单**“Shotgun > 项目 > …”(Shotgun > Project > …)**
 
 如果：
 
@@ -264,7 +264,7 @@ settings.tk-maya.project:
 * 克隆配置已正确扩展
 * 您保存了扩展文件
 * 您选择将项目与克隆配置相关联
-* 您从 {% include product %} Desktop 重新启动了 Maya
+* 您从 Shotgun Desktop 重新启动了 Maya
 
 Python 控制台应用将在 Maya 中可用。
 
@@ -324,11 +324,11 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 将出现一个可以将克隆配置推送到的可用工作流配置的列表。输入您要为其更新配置的项目的主要工作流配置的 ID。
 
-{% include info title="注意" content="您也可以在本手册的**“步骤 3”**中查看的 ShotGrid 中的“工作流配置”(Pipeline Configuration)页面上找到工作流配置的 ID。要查找项目 ID，请转到“配置列表”(Configuration List)，并添加“ID”列。" %}
+{% include info title="注意" content="您也可以在本手册的**“步骤 3”**中查看的 Shotgun 中的“工作流配置”(Pipeline Configuration)页面上找到工作流配置的 ID。要查找项目 ID，请转到“配置列表”(Configuration List)，并添加“ID”列。" %}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 
-输入 ID 后，{% include product %} 将：
+输入 ID 后，Shotgun 将：
 
 * 备份主要配置
 * 复制克隆配置
@@ -348,11 +348,11 @@ Push Complete!
 
 ## 查看在主要配置中所做的更改
 
-**步骤 19：**在 {% include product %} Desktop 中，单击右上角的箭头，并在**“配置”(CONFIGURATION)**列表中选择**“主要”(Primary)**。
+**步骤 19：**在 Shotgun Desktop 中，单击右上角的箭头，并在**“配置”(CONFIGURATION)**列表中选择**“主要”(Primary)**。
 
 ![更改配置 maya](./images/installing_app/18_change_config_maya.png)
 
-**步骤 20：**从 Desktop 启动 Maya，并查看菜单**“{% include product %} > 项目 > …”({% include product %} > Project > …)**以查找“{% include product %} Python 控制台...”({% include product %} Python Console...)
+**步骤 20：**从 Desktop 启动 Maya，并查看菜单**“Shotgun > 项目 > …”(Shotgun > Project > …)**以查找“Shotgun Python 控制台...”(Shotgun Python Console...)
 
 ![Maya 中的应用](./images/installing_app/19_app_in_maya.png)
 
@@ -360,15 +360,15 @@ Python 控制台应用已添加到所选项目的项目环境中。我们在第�
 
 ## 高级主题
 
-### {% include product %} 开发人员社区
+### Shotgun 开发人员社区
 
-Toolkit 的一个奇妙之处在于，任何人都可以创建 Toolkit 应用。应用可以保持专有，也可以在 [{% include product %} 社区](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039828) 中分享，并添加到 {% include product %} 库。如果您创建了一个非常出色的应用，并且想在 {% include product %} 社区页面中分享，请发送电子邮件至 [support@shotgunsoftware.com](mailto:support@shotgunsoftware.com)。
+Toolkit 的一个奇妙之处在于，任何人都可以创建 Toolkit 应用。应用可以保持专有，也可以在 [Shotgun 社区](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039828) 中分享，并添加到 Shotgun 库。如果您创建了一个非常出色的应用，并且想在 Shotgun 社区页面中分享，请发送电子邮件至 [support@shotgunsoftware.com](mailto:support@shotgunsoftware.com)。
 
-在 **[{% include product %}-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=zh-CN#!forum/shotgun-dev)** 中对标准 Toolkit 应用和由充满爱心的 {% include product %} 社区创建的应用进行了热烈的讨论。随着 {% include product %} 社区内容日益丰富，知识和工具库将不断壮大。
+在 **[shotgun-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=zh-CN#!forum/shotgun-dev)** 中对标准 Toolkit 应用和由充满爱心的 Shotgun 社区创建的应用进行了热烈的讨论。随着 Shotgun 社区内容日益丰富，知识和工具库将不断壮大。
 
 ### 研究如何扩展配置
 
-您可能已经注意到，当我们选择要用于项目的配置时，{% include product %} Desktop 下拉菜单中提供了 Python 控制台应用。
+您可能已经注意到，当我们选择要用于项目的配置时，Shotgun Desktop 下拉菜单中提供了 Python 控制台应用。
 
 ![Desktop Python 控制台](./images/installing_app/20_desktop_python_console.png)
 

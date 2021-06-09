@@ -7,13 +7,13 @@ lang: ja
 
 # パイプライン設定を新しい場所に移動するにはどうすればいいですか?
 
-{% include info title="注" content="このドキュメントのコンテンツは[一元管理設定のセットアップ](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)にのみ適用されます。[分散設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)は個々のクライアント マシンにローカルにキャッシュされ、Toolkit によって自動的に管理されます。" %}
+{% include info title="注" content="このドキュメントのコンテンツは[一元管理設定のセットアップ](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)にのみ適用されます。[分散設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)は個々のクライアント マシンにローカルにキャッシュされ、Toolkit によって自動的に管理されます。" %}
 
-パイプライン設定を新しい場所に簡単に移動するには、`tank move_configuration` コマンドを使用します。これにより、ファイルを移動したり、{% include product %} を更新したり、新しい場所を指すように設定ファイルを更新したりします。 
+パイプライン設定を新しい場所に簡単に移動するには、`tank move_configuration` コマンドを使用します。これにより、ファイルを移動したり、Shotgun を更新したり、新しい場所を指すように設定ファイルを更新したりします。 
 
 またこのコマンドは、1 つのオペレーティング システムで場所を移動するだけの場合や、以前は特定のオペレーティング システムを使用していなかったがこれから追加する場合などにも役立ちます。Toolkit は、移動する項目、追加する項目、またはそれ以外の項目を検出し、適用前に確認できるように実行内容が表示されます。
 
-- [タンク move_configuration コマンドを使用](#using-the-tank-move_configuration-command)
+- [tank move_configuration コマンドを使用](#using-the-tank-move_configuration-command)
 - [パイプライン設定を手動で移動する](#manually-moving-your-pipeline-configuration)
 
 {% include warning title="注意" content="ローカライズされたコアを持つ設定を移動していて、このパイプライン設定に埋め込まれた Toolkit コアを使用する他のプロジェクトがある場合(つまり、他の設定がこれを共有コアとして使用している場合)は、このパイプライン設定の新しい場所を指すようにこのプロジェクトの設定ファイルを手動で更新する必要があります。このファイルは次の場所に格納されています。
@@ -27,10 +27,10 @@ lang: ja
         $ cd /sgtk/software/shotgun/scarlet
         $ ./tank move_configuration
 
-        Welcome to the {% include product %} Pipeline Toolkit!
+        Welcome to the Shotgun Pipeline Toolkit!
         For documentation, see https://toolkit.shotgunsoftware.com
         Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
-        - The path is not associated with any {% include product %} object.
+        - The path is not associated with any Shotgun object.
         - Falling back on default project settings.
         - Using configuration 'Primary' and Core v0.15.22
         - Setting the Context to Scarlet.
@@ -71,10 +71,10 @@ lang: ja
         $ cd /sgtk/software/shotgun/scarlet
         $ ./tank move_configuration "/mnt/hgfs/sgtk/software/shotgun/scarlet_new" "z:\sgtk\software\shotgun\scarlet_new" "/sgtk/software/shotgun/scarlet_new"
 
-        Welcome to the {% include product %} Pipeline Toolkit!
+        Welcome to the Shotgun Pipeline Toolkit!
         For documentation, see https://toolkit.shotgunsoftware.com
         Starting toolkit for path '/sgtk/software/shotgun/scarlet'
-        - The path is not associated with any {% include product %} object.
+        - The path is not associated with any Shotgun object.
         - Falling back on default project settings.
         - Using configuration 'Primary' and Core v0.15.22
         - Setting the Context to Scarlet.
@@ -129,7 +129,7 @@ lang: ja
         Copying /sgtk/software/shotgun/scarlet/install/frameworks...
         Copying /sgtk/software/shotgun/scarlet/install/frameworks/app_store...
         Updating cached locations in /sgtk/software/shotgun/scarlet_new/config/core/install_location.yml...
-        Updating {% include product %} Configuration Record...
+        Updating Shotgun Configuration Record...
         Deleting original configuration files...
 
         All done! Your configuration has been successfully moved.
@@ -137,7 +137,7 @@ lang: ja
 
 ## パイプライン設定を手動で移動する
 
-{% include warning title="重要" content="パイプライン設定をまだ移動していない場合は、上記の[組み込み tank コマンド](#using-the-tank-move_configuration-command)を使用して自動的に移動することを強くお勧めします。"%}
+{% include warning title="重要" content="パイプライン設定をまだ移動していない場合は、上記の [組み込み tank コマンド](#using-the-tank-move_configuration-command)を使用して自動的に移動することを強くお勧めします。" %}
 
 既に手動で移動を開始したが正しく動作しない場合は、新しい場所に移動されたパイプライン設定で Toolkit が引き続き動作するようにするために、変更が必要な内容を以下に示します。
 
@@ -151,7 +151,7 @@ lang: ja
 
    適用可能なプラットフォームすべてで、パイプライン設定の新しい場所を示すようにこのファイル内のパスを更新します。プラットフォームを使用していない場合は、空の文字列 `''` を入力します。
 
-        # {% include product %} Pipeline Toolkit configuration file
+        # Shotgun Pipeline Toolkit configuration file
         # This file was automatically created by setup_project
         # This file reflects the paths in the primary pipeline
 
@@ -162,9 +162,9 @@ lang: ja
 
         # End of file.
 
-3. {% include product %} でこのプロジェクトに対応する PipelineConfiguration エンティティを特定し、上記の変更と一致するように、[Mac のパス]（Mac Path）、[Windows のパス]（Windows Path）、[Linux のパス]（Linux Path）の各フィールドの値を修正します。
+3. Shotgun でこのプロジェクトに対応する PipelineConfiguration エンティティを特定し、上記の変更と一致するように、[Mac のパス](Mac Path)、[Windows のパス](Windows Path)、[Linux のパス](Linux Path)の各フィールドの値を修正します。
 
-![{% include product %} のパイプライン設定の場所。](images/new-pipeline-configuration-locations.png)
+![Shotgun のパイプライン設定の場所。](images/new-pipeline-configuration-locations.png)
 
 これでパイプライン設定が新しい場所から予想どおりに機能するようになりました。
 
