@@ -1,6 +1,6 @@
 ---
 layout: landing_page
-title: ¸ÅÒª
+title: æ¦‚è¦
 pagename: index
 lang: ja
 ---
