@@ -5,9 +5,59 @@ pagename: integrations-user-guide
 lang: en
 ---
 
+<!-- omit in toc -->
 # Integrations user guide
 
-{% toc %}
+In this guide:
+- [Introduction](#introduction)
+- [Getting started with {% include product %} Desktop](#getting-started-with--include-product--desktop)
+  - [Installation of Desktop](#installation-of-desktop)
+  - [Logging in](#logging-in)
+    - [Authentication and browser integration](#authentication-and-browser-integration)
+  - [The system tray](#the-system-tray)
+  - [The project browser](#the-project-browser)
+  - [The command launcher](#the-command-launcher)
+  - [The console](#the-console)
+- [Launching applications](#launching-applications)
+- [The {% include product %} Panel](#the--include-product--panel)
+  - [Overview](#overview)
+  - [UI details](#ui-details)
+    - [The activity stream](#the-activity-stream)
+    - [Creating and replying to Notes](#creating-and-replying-to-notes)
+    - [Notes, Versions, Publishes, and Tasks](#notes-versions-publishes-and-tasks)
+    - [The info tab](#the-info-tab)
+    - [Searching](#searching)
+    - [Actions](#actions)
+    - [The current work area and the me area](#the-current-work-area-and-the-me-area)
+    - [Current Work Area](#current-work-area)
+- [The Publisher](#the-publisher)
+  - [Overview](#overview-1)
+  - [Interface components and concepts](#interface-components-and-concepts)
+  - [Basic workflow](#basic-workflow)
+    - [Publishing within content creation software](#publishing-within-content-creation-software)
+    - [Publish items and tasks](#publish-items-and-tasks)
+      - [Context](#context)
+      - [Validation](#validation)
+      - [Multi-document workflows](#multi-document-workflows)
+    - [Stand-alone publishing](#stand-alone-publishing)
+    - [Publish types](#publish-types)
+      - [Standalone](#standalone)
+      - [3ds Max](#3ds-max)
+      - [Houdini](#houdini)
+      - [Maya](#maya)
+      - [Nuke](#nuke)
+      - [Nuke Studio](#nuke-studio)
+      - [Photoshop CC](#photoshop-cc)
+- [The Loader](#the-loader)
+  - [Overview](#overview-2)
+  - [The tree view](#the-tree-view)
+  - [Navigation](#navigation)
+  - [Looking at publishes](#looking-at-publishes)
+  - [Bringing one or multiple publishes into your scene](#bringing-one-or-multiple-publishes-into-your-scene)
+  - [Working with older publishes](#working-with-older-publishes)
+  - [Associated review](#associated-review)
+- [Advanced functionality](#advanced-functionality)
+- [Acknowledgments](#acknowledgments)
 
 ## Introduction
 
