@@ -4,6 +4,10 @@ jobs:
   Generate-Preview:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
       - name: install pandoc
         run: sudo apt-get install -y pandoc
       - name: install jekyll dependencies
