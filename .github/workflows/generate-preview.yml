@@ -4,13 +4,13 @@ jobs:
   Generate-Preview:
     runs-on: ubuntu-latest
     env:
-      - DOC_PATH:
-      - S3_BUCKET: sg-devdocs
-      - S3_WEB_URL: http://sg-devdocs.s3-website-us-east-1.amazonaws.com
-      - DOC_URL: https://developer.shotgridsoftware.com
-      - REPO_URL: shotgunsoftware/shotgunsoftware.github.io
-      - CNAME: developer.shotgridsoftware.com
-      - PR_NUMBER: ${{ github.event.number }}
+      DOC_PATH:
+      S3_BUCKET: sg-devdocs
+      S3_WEB_URL: http://sg-devdocs.s3-website-us-east-1.amazonaws.com
+      DOC_URL: https://developer.shotgridsoftware.com
+      REPO_URL: shotgunsoftware/shotgunsoftware.github.io
+      CNAME: developer.shotgridsoftware.com
+      PR_NUMBER: ${{ github.event.number }}
     steps:
       - uses: actions/checkout@v2
         with:
