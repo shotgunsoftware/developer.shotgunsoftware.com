@@ -3,6 +3,7 @@ on: [pull_request]
 jobs:
   Generate-Preview:
     runs-on: ubuntu-latest
+    environment: docs-build
     env:
       DOC_PATH:
       S3_BUCKET: sg-devdocs
@@ -27,5 +28,5 @@ jobs:
         run: pip install -r ./tk-doc-generator/requirements.txt
       - name: Echo PR_NUMBER
         run: echo $PR_NUMBER
-      # - name: Generate and publish preview
-      #   run: echo "Test"
+      - name: Generate and publish preview
+        run: python ./tk-doc-generator/actions-generate-docs.py
