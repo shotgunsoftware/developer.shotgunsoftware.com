@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          # we need to checkout tk-doc-generator submodule as well.
+          submodules: 'true'
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
