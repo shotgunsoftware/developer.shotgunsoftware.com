@@ -3,6 +3,14 @@ on: [pull_request]
 jobs:
   Generate-Preview:
     runs-on: ubuntu-latest
+    env:
+      - DOC_PATH:
+      - S3_BUCKET: sg-devdocs
+      - S3_WEB_URL: http://sg-devdocs.s3-website-us-east-1.amazonaws.com
+      - DOC_URL: https://developer.shotgridsoftware.com
+      - REPO_URL: shotgunsoftware/shotgunsoftware.github.io
+      - CNAME: developer.shotgridsoftware.com
+      - PR_NUMBER: ${{ github.event.number }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -11,11 +19,13 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
-      - name: install pandoc
+      - name: Install pandoc
         run: sudo apt-get install -y pandoc
-      - name: install jekyll dependencies
+      - name: Install jekyll dependencies
         run: bundle install --gemfile=./tk-doc-generator/Gemfile --deployment
-      - name: install tk-doc-generator requirements
+      - name: Install tk-doc-generator requirements
         run: pip install -r ./tk-doc-generator/requirements.txt
-      - name: generate and publish preview
-        run: echo "Test"
+      - name: Echo PR_NUMBER
+        run: echo $PR_NUMBER
+      # - name: Generate and publish preview
+      #   run: echo "Test"
