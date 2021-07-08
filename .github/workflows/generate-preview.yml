@@ -1,0 +1,14 @@
+name: Generate Preview
+on: [pull_request]
+jobs:
+  Generate-Preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install pandoc
+        run: sudo apt-get install -y pandoc
+      - name: install jekyll dependencies
+        run: bundle install --gemfile=./tk-doc-generator/Gemfile --deployment
+      - name: install tk-doc-generator requirements
+        run: pip install -r ./tk-doc-generator/requirements.txt
+      - name: generate and publish preview
+        run: echo "Test"
