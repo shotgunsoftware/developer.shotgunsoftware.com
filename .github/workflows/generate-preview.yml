@@ -29,4 +29,5 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
           AWS_S3_ACCESS_KEY: ${{ secrets.AWS_S3_ACCESS_KEY }}
           AWS_S3_ACCESS_TOKEN: ${{ secrets.AWS_S3_ACCESS_TOKEN }}
+          TK_GITHUB_TOKEN: ${{ secrets.TK_GITHUB_TOKEN }}
         run: python ./tk-doc-generator/actions-generate-docs.py
