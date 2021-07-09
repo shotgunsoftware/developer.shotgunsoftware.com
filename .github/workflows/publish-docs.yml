@@ -1,4 +1,9 @@
-name: Generate Preview
+name: Publish Developer Docs.
+# TODO for now run on PR commits
+# on:
+#   push:
+#     branches:
+#       - master
 on: [pull_request]
 jobs:
   Generate-Preview:
@@ -20,7 +25,7 @@ jobs:
         run: bundle install --gemfile=./tk-doc-generator/Gemfile --deployment
       - name: Install tk-doc-generator requirements
         run: pip install -r ./tk-doc-generator/requirements.txt
-      - name: Generate and publish preview
+      - name: Generate HTML
         env:
           DOC_PATH:
           S3_BUCKET: sg-devdocs
@@ -33,3 +38,15 @@ jobs:
           AWS_S3_ACCESS_TOKEN: ${{ secrets.AWS_S3_ACCESS_TOKEN }}
           TK_GITHUB_TOKEN: ${{ secrets.TK_GITHUB_TOKEN }}
         run: python ./tk-doc-generator/actions-generate-docs.py
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: master
+          folder: ./_build
+          token: ${{ secrets.TK_GITHUB_TOKEN }}
+          repository-name: shotgunsoftware/shotgunsoftware.github.io
+          single-commit: true
+          # TODO remove this, it's for testing only
+          dry-run: true
+          clean: true
+          clean-exclude: CNAME
