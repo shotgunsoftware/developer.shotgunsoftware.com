@@ -97,7 +97,7 @@ If you go through a proxy, you will have to do some additional configuration. Se
 
 #### Authentication and browser integration
 
-Desktop provides services that allow the {% include product %} web application to interact with your computer. This enables features like [local file linking](topicid=SG_Administrator_ar_data_management_ar_linking_local_files_html) and software launching. For security reasons, you must be logged into Desktop as the same user on the same {% include product %} site as you are in the browser. If you are logged in as a different user or on a different site, Desktop will prompt you to switch accounts and if you do it will restart and prompt for the appropriate credentials.
+Desktop provides services that allow the {% include product %} web application to interact with your computer. This enables features like [local file linking](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html) and software launching. For security reasons, you must be logged into Desktop as the same user on the same {% include product %} site as you are in the browser. If you are logged in as a different user or on a different site, Desktop will prompt you to switch accounts and if you do it will restart and prompt for the appropriate credentials.
 
 ### The system tray
 
