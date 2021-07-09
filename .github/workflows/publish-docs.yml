@@ -44,7 +44,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          branch: master
+          branch: gh-pages
           folder: ./_build
           token: ${{ secrets.TK_GITHUB_TOKEN }}
           repository-name: shotgunsoftware/shotgunsoftware.github.io
