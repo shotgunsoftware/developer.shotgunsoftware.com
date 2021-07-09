@@ -15,6 +15,7 @@
   children:
     - page: toolkit-pipeline-integrations
       children:
+      - page: integrations-user-guide
       - page: toolkit-getting-started
         children:
         - page: toolkit-guides-advanced-config
