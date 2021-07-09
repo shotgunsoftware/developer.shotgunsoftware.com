@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/shotgunsoftware/developer.shotgunsoftware.com.svg?branch=master)](http://travis-ci.org/shotgunsoftware/developer.shotgunsoftware.com)
+[![Build Status](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/actions/workflows/publish-docs.yml)
 [![Doc Generator](https://img.shields.io/badge/Built%20With-SG%20Doc%20Generator-blue.svg)](http://github.com/shotgunsoftware/tk-doc-generator)
 
 
