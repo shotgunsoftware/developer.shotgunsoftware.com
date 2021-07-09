@@ -1,12 +1,10 @@
-name: Publish Developer Docs.
-# TODO for now run on PR commits
-# on:
-#   push:
-#     branches:
-#       - master
-on: [pull_request]
+name: Publish Developer Docs
+on:
+  push:
+    branches:
+      - master
 jobs:
-  Generate-Preview:
+  Publish-Docs:
     runs-on: ubuntu-latest
     environment: docs-build
     steps:
@@ -46,7 +44,5 @@ jobs:
           token: ${{ secrets.TK_GITHUB_TOKEN }}
           repository-name: shotgunsoftware/shotgunsoftware.github.io
           single-commit: true
-          # TODO remove this, it's for testing only
-          dry-run: true
           clean: true
           clean-exclude: CNAME
