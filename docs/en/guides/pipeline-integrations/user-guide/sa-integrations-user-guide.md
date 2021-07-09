@@ -59,7 +59,7 @@ In this guide:
 - [Advanced functionality](#advanced-functionality)
 - [Acknowledgments](#acknowledgments)
 
-## Introduction
+## Introduction 
 
 {% include product %} integrations bring {% include product %} into your content creation tools. When you use {% include product %}'s integrations, you'll be able to easily launch your software, use the Panel to track notes and data {% include product %} has about your tasks, and use the Publisher and Loader to track files and bring them into your scene. Artists will have access to all the {% include product %} data about their Tasks, and all Tasks on their Project, from right within the app. They can reply to Notes, playback Versions, publish files, and load in their colleagues’ published files.
 
