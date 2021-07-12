@@ -44,11 +44,6 @@ jobs:
       #   run: python ./tk-doc-generator/actions-generate-docs.py
       
       - name: Check for broken links
-        uses: victoriadrake/link-snitch@v1.0.0
-        env:
-          URL: http://sg-devdocs.s3-website-us-east-1.amazonaws.com/tk-doc-generator/${{ github.sha }}/
-          FILENAME: ./link_report.yaml
-      - uses: actions/upload-artifact@v2
+        uses: filiph/linkcheck@v2.0.15+1
         with:
-          name: link-report
-          path: ./link_report.yaml
+          arguments: http://sg-devdocs.s3-website-us-east-1.amazonaws.com/tk-doc-generator/${{ github.sha }}/
