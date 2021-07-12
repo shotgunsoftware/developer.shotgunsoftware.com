@@ -46,4 +46,4 @@ jobs:
       - name: Check for broken links
         uses: filiph/linkcheck@v2.0.15+1
         with:
-          arguments: http://sg-devdocs.s3-website-us-east-1.amazonaws.com/tk-doc-generator/${{ github.sha }}/
+          arguments: http://sg-devdocs.s3-website-us-east-1.amazonaws.com/tk-doc-generator/fac5c220b799ca61e5e504c9532aa5bab645f8be/
