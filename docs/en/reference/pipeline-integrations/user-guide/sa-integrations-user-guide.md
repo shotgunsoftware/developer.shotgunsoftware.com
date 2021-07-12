@@ -10,7 +10,7 @@ lang: en
 
 In this guide:
 - [Introduction](#introduction)
-- [Getting started with {% include product %} Desktop](#getting-started-with--include-product--desktop)
+- [Getting started with Desktop](#getting-started-with-desktop)
   - [Installation of Desktop](#installation-of-desktop)
   - [Logging in](#logging-in)
     - [Authentication and browser integration](#authentication-and-browser-integration)
@@ -19,7 +19,7 @@ In this guide:
   - [The command launcher](#the-command-launcher)
   - [The console](#the-console)
 - [Launching applications](#launching-applications)
-- [The {% include product %} Panel](#the--include-product--panel)
+- [The Panel](#the-panel)
   - [Overview](#overview)
   - [UI details](#ui-details)
     - [The activity stream](#the-activity-stream)
@@ -65,7 +65,7 @@ In this guide:
 
 For the latest updates to {% include product %} integrations, please subscribe to the [release notes](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes) .
 
-## Getting started with {% include product %} Desktop
+## Getting started with Desktop
 
 The **{% include product %} Desktop** app sits at the heart of our integrations. It is a software application that extends the {% include product %} experience onto your local machine, and makes it easy to access {% include product %} data, launch applications, and run pipeline integration tools directly from your machine.
 
@@ -147,7 +147,7 @@ It’s normal for a studio to need additional configuration other than what come
 
 If you're not seeing an app you expect to see, take a look at the [Configuring the software in {% include product %} Desktop section of our Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide) .
 
-## The {% include product %} Panel
+## The Panel
 
 ### Overview
 
