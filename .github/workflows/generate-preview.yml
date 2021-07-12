@@ -12,15 +12,19 @@ jobs:
     runs-on: ubuntu-latest
     environment: docs-build
     steps:
+      - name: Checkout repo and submodules
+        uses: actions/checkout@v2
+        with:
+          # we need to checkout tk-doc-generator submodule as well.
+          submodules: 'true'
+      - name: Lint markdown
+        uses: avto-dev/markdown-lint@v1.5.0
+        with:
+          args: './docs/**/*.md'
       # TODO re-enable!
       # Temp disable this since it's been generated once and we're not
       # interested in the work associated with regenerating -- we can test off
       # the hosted site for now.
-      # - name: Checkout repo and submodules
-      #   uses: actions/checkout@v2
-      #   with:
-      #     # we need to checkout tk-doc-generator submodule as well.
-      #     submodules: 'true'
       # - name: Setup Ruby
       #   uses: ruby/setup-ruby@v1
       #   with:
