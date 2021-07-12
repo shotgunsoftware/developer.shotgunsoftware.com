@@ -38,3 +38,8 @@ jobs:
           DOC_PATH:
           PR_NUMBER: ${{ github.event.number }}
         run: python ./tk-doc-generator/actions-generate-docs.py
+      - name: Check for broken links
+        uses: victoriadrake/link-snitch@v1.0.0
+        env:
+          URL: http://sg-devdocs.s3-website-us-east-1.amazonaws.com/tk-doc-generator/${{ GITHUB_SHA }}/
+          FILENAME: ./link_report.yaml
