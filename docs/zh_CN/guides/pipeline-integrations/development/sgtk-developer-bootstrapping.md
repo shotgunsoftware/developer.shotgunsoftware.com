@@ -15,7 +15,6 @@ lang: zh_CN
 
 {% include info title="注意" content="如果您使用的是[分布式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)，则必须先初始化 Toolkit 插件，然后再运行 Toolkit API 方法。如果使用的是[集中式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)，可以在不引导插件的情况下使用 API（这时使用[工厂方法](https://developer.shotgridsoftware.com/tk-core/initializing.html#factory-methods)），但是，在导入 `sgtk` 时，需要手动查找用于项目的正确核心 API 的路径。" %}
 
-
 ### 要求
 
 - 了解 Python 编程基础知识。
@@ -147,12 +146,11 @@ sgtk.set_authenticated_user(user)
 3. 将当前加载的 sgtk 核心换为适合配置的核心。
 4. 初始化插件、应用和框架。
 
-
 {% include info title="注意" content="通常情况下，引导应处理相应插件成功运行所需的所有事项。
 但是，在某些情况下，插件可能会有不属于引导过程的特定设置要求，必须单独处理。" %}
 
-
 ### 引导准备
+
 要进行引导，必须先创建 [`ToolkitManager`](https://developer.shotgridsoftware.com/tk-core/initializing.html#toolkitmanager) 实例。
 
 ```python
@@ -166,17 +164,20 @@ mgr = sgtk.bootstrap.ToolkitManager()
 
 在调用引导方法之前，可以通过向 `ToolkitManager.plugin_id` 参数传递字符串来定义插件 ID。
 在本手册中，您将引导 `tk-shell` 插件，因此应按照参考文档中所述的约定提供合适的插件 ID 名称。
+
 ```python
 mgr.plugin_id = "basic.shell"
 ```
 
 #### 插件
+
 如果您的目标是在 Maya 或 Nuke 等软件之外的独立 Python 环境中启动应用或运行 Toolkit 代码，则要引导到 `tk-shell` 插件。
 
 如果您想在支持的软件中运行 Toolkit 应用，则需要选取合适的插件，如 `tk-maya` 或 `tk-nuke`。
 此参数将直接传递给 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 方法。请参见下面的[“实体”部分](#entity)中的示例。
 
 #### 实体
+
 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 方法 `entity` 参数用于为启动的插件设置[上下文](https://developer.shotgridsoftware.com/tk-core/core.html#context)以及[环境](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)。该实体可以是将配置设置为与其一起使用的任何实体类型。
 例如，如果提供 `Project` 实体，则插件将在项目上下文中启动，并使用项目环境设置。
 同样，您可以提供 `Task` 实体（即任务链接到 `Asset`），则它将使用 `asset_step.yml` 环境启动。
@@ -207,7 +208,6 @@ def pre_engine_start_callback(ctx):
 
 mgr.pre_engine_start_callback = pre_engine_start_callback
 ```
-
 
 #### 配置选择
 
@@ -269,6 +269,7 @@ engine.context
 engine.sgtk
 engine.shotgun
 ```
+
 虽然本手册的最终目标是介绍如何启动应用，但您可以在此基础之上，利用上述属性并测试一些代码段，或者运行一些利用 Toolkit API 的自动操作。
 
 ### 启动应用
@@ -277,6 +278,7 @@ engine.shotgun
 这些应用进而向插件注册命令，而且插件通常会将这些命令作为动作显示在菜单中（如果在 Maya 等软件中运行）。
 
 #### 查找命令
+
 要先查看已注册的命令，可以输出 [`Engine.commands`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.commands) 属性：
 
 ```python

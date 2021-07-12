@@ -35,6 +35,7 @@ tk-multi-setframerange_handles:
   sg_out_frame_field: sg_handle_out
   location: "@apps.tk-multi-setframerange.location"
 ```
+
 These should then appear as separate options in the {% include product %} menu:
 
 ![Multiple instances](../images/apps/multi-setframerange-multiple_instances.png)

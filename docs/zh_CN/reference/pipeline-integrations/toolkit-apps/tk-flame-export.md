@@ -39,7 +39,6 @@ lang: zh_CN
 
 - 生成 QuickTime 影片并上传至 {% include product %} 进行审看。
 
-
 ## 发送批处理渲染进行审看
 
 为镜头发布了 Flame 批处理文件后，您可以直接从该镜头启动 Flare，打开预填充了渲染和输出设置的批处理文件。要渲染出新的版本，只需单击“Render Range”按钮即可。
@@ -66,11 +65,12 @@ LINKBOX_ENGINE：{% include product %}software/tk-flame：Flame 插件
 
 ## 使用导出预设
 
-导出器在其配置中使用了“导出预设”的概念。**当您在 Flame 内启动导出用户界面时，将看到一个下拉列表，其中包含可用的导出预设。每个预设都是一个配置选项，通过它可配置将文件写入磁盘和上传至 {% include product %} 的方式。诸如文件在磁盘上的位置等高级设置直接在环境配置中进行控制，以易于调整默认的配置选项来适合您的工作流。
+导出器在其配置中使用了“导出预设”的概念。\*\*当您在 Flame 内启动导出用户界面时，将看到一个下拉列表，其中包含可用的导出预设。每个预设都是一个配置选项，通过它可配置将文件写入磁盘和上传至 {% include product %} 的方式。诸如文件在磁盘上的位置等高级设置直接在环境配置中进行控制，以易于调整默认的配置选项来适合您的工作流。
 
 更高级的设置，以及为控制 Flame 而对传递给 Flame 的实际导出 XML 内容施加的控制，则由一个挂钩进行处理，其中定义了每个预设的行为。在该挂钩中，您可以完全控制导出器生成媒体的方式。
 
 ## 绕过 {% include product %} 服务器端转码
+
 默认情况下，我们通过设置 `Version.sg_uploaded_movie` 字段，将 QuickTime 影片上传至 {% include product %} 进行审看。这进而会触发 {% include product %} 服务器端转码；上传的 QuickTime 影片会进一步转换为专为在浏览器中和移动设备上播放而定制的 `mp4` 和 `webm` 格式。有时，绕过这种服务器端转码可能会有好处。我们可以通过设置 `bypass_shotgun_transcoding` 配置设置来做到这一点。当此设置为 True 时，集成会直接上传至 {% include product %} 中的 `Version.sg_uploaded_movie_mp4` 字段，从而绕过服务器端转码。这种情况下，不会生成 `webm` 版本，因此在 Firefox 中无法进行审看播放。
 
 有关详细信息，请参见 https://support.shotgunsoftware.com/hc/zh-cn/articles/219030418。
@@ -139,4 +139,3 @@ def get_ffmpeg_quicktime_encode_parameters(self):
 def get_local_quicktime_ffmpeg_encode_parameters(self):
     return "-vcodec libx264 -pix_fmt yuv420p -g 30 -b:v 6000k -vprofile high -bf 0"
 ```
-

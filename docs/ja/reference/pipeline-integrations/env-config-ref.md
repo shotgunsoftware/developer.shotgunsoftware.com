@@ -9,7 +9,7 @@ lang: ja
 
 ## はじめに
 
-Toolkit パイプラインの中心にあるのは環境設定です。Toolkit パイプライン設定内の環境構成ファイルでは、さまざまな DCC 内で使用可能な Toolkit アプリを定義し、それぞれの設定をカスタマイズできます。このドキュメントは環境設定ファイルの構造と機能についての完全なリファレンスです。ここでは、プロジェクト内のさまざまなワークフローを設定するための Toolkit の**「環境」の概念、環境設定の構成、ファイル参照、そしてどのようなカスタマイズが行えるかを確認する方法について説明します。
+Toolkit パイプラインの中心にあるのは環境設定です。Toolkit パイプライン設定内の環境構成ファイルでは、さまざまな DCC 内で使用可能な Toolkit アプリを定義し、それぞれの設定をカスタマイズできます。このドキュメントは環境設定ファイルの構造と機能についての完全なリファレンスです。ここでは、プロジェクト内のさまざまなワークフローを設定するための Toolkit の\*\*「環境」の概念、環境設定の構成、ファイル参照、そしてどのようなカスタマイズが行えるかを確認する方法について説明します。
 
 {% include info title="注" content="このドキュメントは環境設定ファイルのリファレンスとして使用しますが、『[パイプライン設定の編集に関する Toolkit の基本ガイド](./learning-resources/guides/editing_app_setting.md)』には、構成設定を編集するステップバイステップの手順が例として記載されています。" %}
 
@@ -54,7 +54,7 @@ shot_step.yml
 
 ## Toolkit が現在の環境を判断する仕組み
 
-Toolkitは [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) というコア フックを使用し、現在の[コンテキスト](https://developer.shotgridsoftware.com/tk-core/core.html#context)に基づいて特定の時点で使用する環境ファイルを決定します。`pick_environment` フックの戻り値は環境設定ファイルに対応しています。たとえば、`pick_environment` が `shot_step` を返した場合、Toolkit は `config/env/shot_step.yml` を使用して Toolkit 環境を設定します。
+Toolkit は [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) というコア フックを使用し、現在の[コンテキスト](https://developer.shotgridsoftware.com/tk-core/core.html#context)に基づいて特定の時点で使用する環境ファイルを決定します。`pick_environment` フックの戻り値は環境設定ファイルに対応しています。たとえば、`pick_environment` が `shot_step` を返した場合、Toolkit は `config/env/shot_step.yml` を使用して Toolkit 環境を設定します。
 
 ## カスタム環境
 
@@ -71,7 +71,7 @@ bundle_name:
   setting1: value
   setting2: value
   complex_setting:
-    sub_setting1: value  
+    sub_setting1: value
     Sub_setting2: value
   location:
     type: descriptor_type
@@ -91,9 +91,9 @@ engines:
           name: tk-multi-workfiles2
           version: v0.11.8
     location:
-        type: app_store
-        name: tk-maya
-        version: v0.9.4
+      type: app_store
+      name: tk-maya
+      version: v0.9.4
 ```
 
 ### エンジン ブロック
@@ -104,16 +104,15 @@ engines:
 
 `location` はすべてのバンドルに必要な特別な設定です。`apps` 設定はエンジンに定義されたすべてのアプリのリストで、それぞれ独自の設定があります。この場合、エンジンに対して定義されるアプリは 1 つのみです(`tk-multi-workfiles2`)。
 
-
 ### ロケーション ディスクリプタ
 
-すべての Toolkit バンドルには `location` 設定があり、これをバンドルの**「ディスクリプタ」と呼びます。ディスクリプタは、特定のバンドルの入手元、およびそのタイプに応じて直接アクセスするかローカルにキャッシュするかを Toolkit に指示します。Toolkit バンドルを入手できる場所の例としては、{% include product %} App Store、GIT リポジトリ、ディスク上のパス、または {% include product %} サイトにアップロードされた zip ファイルなどがあります。これらには、それぞれ対応するディスクリプタ タイプがあり、そのタイプに固有の設定があります。以下に、上記の例の `tk-maya` エンジンのディスクリプタをもう一度示します。
+すべての Toolkit バンドルには `location` 設定があり、これをバンドルの\*\*「ディスクリプタ」と呼びます。ディスクリプタは、特定のバンドルの入手元、およびそのタイプに応じて直接アクセスするかローカルにキャッシュするかを Toolkit に指示します。Toolkit バンドルを入手できる場所の例としては、{% include product %} App Store、GIT リポジトリ、ディスク上のパス、または {% include product %} サイトにアップロードされた zip ファイルなどがあります。これらには、それぞれ対応するディスクリプタ タイプがあり、そのタイプに固有の設定があります。以下に、上記の例の `tk-maya` エンジンのディスクリプタをもう一度示します。
 
 ```yaml
-    location:
-        type: app_store
-        name: tk-maya
-        version: v0.9.4
+location:
+  type: app_store
+  name: tk-maya
+  version: v0.9.4
 ```
 
 これはタイプ `app_store` のディスクリプタで、指定されたバンドルを {% include product %} App Store から入手するよう Toolkit に指示します。タイプ `app_store` のディスクリプタの設定は `name` と `version` です。
@@ -121,9 +120,9 @@ engines:
 対照的に、スタジオでカスタム バンドルをアクティブに開発している場合、たとえば特定のワークフロー用の Toolkit アプリを作成している場合は、ディスク上のパスから直接入手することができます。この場合、以下に示すようにタイプ `dev` のディスクリプタを使用します。
 
 ```yaml
-    location:
-        type: dev
-        path: /path/to/app
+location:
+  type: dev
+  path: /path/to/app
 ```
 
 `dev` ディスクリプタは `app_store` ディスクリプタとは設定が異なります。他の設定を使用することもできますが、ディスク上のアプリの場所を参照する `path` 設定を使用して簡単にセットアップすることができます。
@@ -171,16 +170,16 @@ engines:
           name: tk-multi-workfiles2
           version: v0.11.8
     location:
-        type: app_store
-        name: tk-maya
-        version: v0.9.4
+      type: app_store
+      name: tk-maya
+      version: v0.9.4
 ```
 
 ここでは、いくつかの重要な注意事項があります。
 
-* 既定の設定ではバンドルがアルファベット順にリストされ、この例ではその規則に従います。
-* ファイルが長くなり始めていますが、構成設定はまだ追加していません。
-* 他のエンジンや他の環境でこれらと同じアプリを使用していることが想像できます。たとえば、Panel、About アプリ、Workfiles アプリの 3 つのすべてのアプリが、異なるエンジン(Houdini、Nuke、Photoshop など)および異なる環境(`asset_step` や `shot_step`)で実行されている可能性があります。設定内の異なる場所で共通のアプリ設定を定義することは、変更が必要なときに、それぞれの場所で変更が必要になることを意味します。
+- 既定の設定ではバンドルがアルファベット順にリストされ、この例ではその規則に従います。
+- ファイルが長くなり始めていますが、構成設定はまだ追加していません。
+- 他のエンジンや他の環境でこれらと同じアプリを使用していることが想像できます。たとえば、Panel、About アプリ、Workfiles アプリの 3 つのすべてのアプリが、異なるエンジン(Houdini、Nuke、Photoshop など)および異なる環境(`asset_step` や `shot_step`)で実行されている可能性があります。設定内の異なる場所で共通のアプリ設定を定義することは、変更が必要なときに、それぞれの場所で変更が必要になることを意味します。
 
 最後の 2 つの問題を軽減するために、Toolkit 設定は*インクルード*をサポートします。
 
@@ -190,8 +189,8 @@ engines:
 
 インクルードは次の 2 つの部分で構成されます。
 
-* `includes` リスト: キーが `includes` で、インクルードするすべてのファイルのリストを値に持つ YAML 辞書。
-* 構成設定内のリファレンス。`@` 記号で始まり、インクルード ファイルから参照するセクションの名前をポイントする名前が付けられています。
+- `includes` リスト: キーが `includes` で、インクルードするすべてのファイルのリストを値に持つ YAML 辞書。
+- 構成設定内のリファレンス。`@` 記号で始まり、インクルード ファイルから参照するセクションの名前をポイントする名前が付けられています。
 
 上記の例を具体化するために、すべてのエンジンのロケーション ディスクリプタを保持する単一のファイルを作成しているとします。そのファイルを `includes` サブフォルダに置き、`engine_locations.yml` という名前を付けます。
 
@@ -209,8 +208,6 @@ engines.tk-nuke.location:
   type: app_store
   name: tk-nuke
   version: v0.11.5
-
-...
 ```
 
 このファイルはすべてのエンジンの場所に対する単一のソースとして機能し、すべての環境設定から参照することができます。このインクルード ファイルを使用した場合、この例は次のようになります。
@@ -269,7 +266,6 @@ apps.tk-multi-workfiles2.location:
   version: v0.11.8
 ```
 
-
 `config/env/project.yml`:
 
 ```yaml
@@ -293,10 +289,9 @@ engines:
 
 {% include info title="注" content="既定の設定では、この例では示されていない 2 番目のネスト レベルを使用しています。単なるディスクリプタ以上の設定を持つすべてのアプリまたはエンジンは、`includes/settings` に設定ファイルがあります(例: `includes/settings/tk-maya.yml`、`includes/settings/tk-multi-workfiles2.yml`)。エンジン設定ファイルには、アプリ設定ファイルからのアプリ設定が含まれ、環境設定ファイルにはエンジン設定ファイルからの設定が含まれています。既定の設定の構造の詳細については、[README ファイル](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)を参照してください。構成設定の変更に関する詳細な手順については、『[構成設定の編集に関する Toolkit の基本ガイド](./learning-resources/guides/editing_app_setting.md)』を参照してください。" %}
 
-
 ## スパース構成
 
-すべての Toolkit バンドルには、使用可能な構成設定のセットがあり、それぞれの設定に既定値があります。Toolkit は**「スパース構成」を許可します: 構成設定が環境設定ファイル(またはそこに含まれるファイル)で明示的に指定されていない場合、バンドルの既定値が使用されます。
+すべての Toolkit バンドルには、使用可能な構成設定のセットがあり、それぞれの設定に既定値があります。Toolkit は\*\*「スパース構成」を許可します: 構成設定が環境設定ファイル(またはそこに含まれるファイル)で明示的に指定されていない場合、バンドルの既定値が使用されます。
 
 この例では、`location` 以外にアプリの設定を指定していません。したがって、設定の現在の状態では、3 つのアプリはすべての設定に既定値を使用します。それでは、どの構成設定が利用可能であるかを知るにはどうすれば良いでしょうか。
 
@@ -306,8 +301,8 @@ engines:
 
 スパース構成では、単に設定ファイルを見ただけでは、どの構成設定がアプリに使用できるかをすぐに判断することはできません。アプリで利用可能な構成設定を確認する場合、2 つの選択肢があります。
 
-* **アプリのドキュメント**: 各アプリには独自のドキュメント ページがあり、それぞれのページに「設定オプション」セクションがあります。このセクションでは、アプリで使用可能なすべての構成設定が、それぞれの説明と既定値と共に一覧表示されています。たとえば、[Workfiles ドキュメント ページ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)を参照することができます。[アプリとエンジンのページ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)には、すべてのアプリとエンジンのドキュメント ページが一覧表示されています。
-* **マニフェスト:** すべての Toolkit バンドルは、そのルート ディレクトリに `info.yml` というファイルを含んでいます。このファイルをバンドルの**「マニフェスト」と呼び、バンドルで利用可能なすべての設定を、それぞれの説明と既定値と共に定義します。マニフェストは、バンドルの独自のキャッシュ(パイプライン設定内の `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml` など)、または Github ([ここでは Workfiles の場合の例を示します](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml))にあります。
+- **アプリのドキュメント**: 各アプリには独自のドキュメント ページがあり、それぞれのページに「設定オプション」セクションがあります。このセクションでは、アプリで使用可能なすべての構成設定が、それぞれの説明と既定値と共に一覧表示されています。たとえば、[Workfiles ドキュメント ページ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)を参照することができます。[アプリとエンジンのページ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)には、すべてのアプリとエンジンのドキュメント ページが一覧表示されています。
+- **マニフェスト:** すべての Toolkit バンドルは、そのルート ディレクトリに `info.yml` というファイルを含んでいます。このファイルをバンドルの\*\*「マニフェスト」と呼び、バンドルで利用可能なすべての設定を、それぞれの説明と既定値と共に定義します。マニフェストは、バンドルの独自のキャッシュ(パイプライン設定内の `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml` など)、または Github ([ここでは Workfiles の場合の例を示します](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml))にあります。
 
 ## 構成設定を修正する
 
@@ -337,13 +332,12 @@ engines:
 
 `tk-multi-workfiles2` の設定がインクルード ファイルからのものである場合は、そのファイルでこの変更を行います。
 
-
 ## その他の参考情報
 
-* [Toolkit の基本ガイド: パイプライン設定を編集する](./learning-resources/guides/editing_app_setting.md)
-* [Toolkit の基本ガイド: アプリを追加する](./learning-resources/guides/installing_app.md)
-* [アニメーション パイプラインのチュートリアル](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
-* [ディスクリプタのリファレンス ドキュメント](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
-* [ウェビナー: Toolkit の管理](https://youtu.be/7qZfy7KXXX0)
-* [ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference)
-* [既定の設定の環境構成に関する README](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)
+- [Toolkit の基本ガイド: パイプライン設定を編集する](./learning-resources/guides/editing_app_setting.md)
+- [Toolkit の基本ガイド: アプリを追加する](./learning-resources/guides/installing_app.md)
+- [アニメーション パイプラインのチュートリアル](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
+- [ディスクリプタのリファレンス ドキュメント](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
+- [ウェビナー: Toolkit の管理](https://youtu.be/7qZfy7KXXX0)
+- [ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference)
+- [既定の設定の環境構成に関する README](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

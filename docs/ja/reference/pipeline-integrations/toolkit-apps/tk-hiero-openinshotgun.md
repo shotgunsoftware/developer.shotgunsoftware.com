@@ -14,11 +14,18 @@ lang: ja
 通常、このアプリを設定する場合は、{% include product %} Engine for Nuke の環境設定に次のコードを追加すると、Hiero のタイムラインとスプレッドシートのメニューにアプリが表示されます。
 
 ```yaml
-    timeline_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: "Open in {% include product %}", requires_selection: true}
-    spreadsheet_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: "Open in {% include product %}", requires_selection: true}
+timeline_context_menu:
+  - {
+      app_instance: tk-hiero-openinshotgun,
+      keep_in_menu: false,
+      name: "Open in {% include product %}",
+      requires_selection: true,
+    }
+spreadsheet_context_menu:
+  - {
+      app_instance: tk-hiero-openinshotgun,
+      keep_in_menu: false,
+      name: "Open in {% include product %}",
+      requires_selection: true,
+    }
 ```
-
-
-

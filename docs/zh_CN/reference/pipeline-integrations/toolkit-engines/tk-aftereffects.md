@@ -121,10 +121,10 @@ lang: zh_CN
 
 ```yaml
 shelf_favorites:
-    - {app_instance: tk-multi-workfiles2, name: File Save...}
-    - {app_instance: tk-multi-workfiles2, name: File Open...}
-    - {app_instance: tk-multi-publish, name: Publish...}
-    - {app_instance: tk-multi-snapshot, name: Snapshot...}
+  - { app_instance: tk-multi-workfiles2, name: File Save... }
+  - { app_instance: tk-multi-workfiles2, name: File Open... }
+  - { app_instance: tk-multi-publish, name: Publish... }
+  - { app_instance: tk-multi-snapshot, name: Snapshot... }
 ```
 
 设置的值是一个词典列表，每个词典指定了配置中安装的一个应用提供的一个注册命令。`app_instance` 键标识了一个特定的已安装应用，`name` 键则与该应用注册的命令的显示名称一致。在上面的示例中，您可以看到四个收藏的命令：`tk-multi-workfiles2` 应用的“File Open”和“File Save”对话框，以及 Toolkit 的“发布”(Publish)和“Snapshot”标准对话框。这四个命令现在将显示在收藏工具架中。
@@ -141,7 +141,6 @@ shelf_favorites:
 - `SHOTGUN_ADOBE_PYTHON` - 启动插件时使用的 Python 可执行文件的路径。如果不设置，将使用系统的 Python。如果 Photoshop 是从某个 Python 进程启动（如 {% include product %} Desktop 或通过 tk-shell 插件），则 Photoshop 集成将使用该进程使用的 Python。
 
 注意：其他环境变量存在于 Adobe 框架中。有关详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-framework-adobe/)。
-
 
 ## 上下文字段显示挂钩
 
@@ -164,5 +163,3 @@ shelf_favorites:
 ## After Effects API
 
 有关 After Effects API 的详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-aftereffects)。
-
-

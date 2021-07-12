@@ -5,23 +5,24 @@ pagename: event-daemon-installation
 lang: zh_CN
 ---
 
-
 # 安装
 
 以下手册将帮助您为您的工作室设置 {% include product %}Events。
 
 <a id="System_Requirements"></a>
+
 ## 系统要求
 
 进程可以在已安装 Python 且对 {% include product %} 服务器具有网络访问权限的任何计算机上运行。它**不**需要在 {% include product %} 服务器本身上运行。实际上，如果您使用的是 {% include product %} 的托管版本，这不是可用选项。但是，您可以根据需要在 {% include product %} 服务器上运行它。否则，您可以使用任何服务器。
 
-* Python v2.6、v2.7 或 3.7
-* [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)
-   * 对于 Python v2.6 或 v2.7，应使用 v3.0.37 或更高版本，对Python 3.7，则应使用 v3.1.0 或更高版本。
-   * 无论是哪种情况，我们都强烈建议使用[最新版本的 Python API](https://github.com/shotgunsoftware/python-api/releases)，并随时更新此依存项。
-* 对 {% include product %} 服务器的网络访问权限
+- Python v2.6、v2.7 或 3.7
+- [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)
+  - 对于 Python v2.6 或 v2.7，应使用 v3.0.37 或更高版本，对 Python 3.7，则应使用 v3.1.0 或更高版本。
+  - 无论是哪种情况，我们都强烈建议使用[最新版本的 Python API](https://github.com/shotgunsoftware/python-api/releases)，并随时更新此依存项。
+- 对 {% include product %} 服务器的网络访问权限
 
 <a id="Installing_Shotgun_API"></a>
+
 ## 安装 {% include product %} API
 
 假设您的计算机上已安装 Python，现在需要安装 {% include product %} Python API，以便 {% include product %} Event 进程可以使用它来连接您的 {% include product %} 服务器。您可以通过多种方式完成此操作：
@@ -45,6 +46,7 @@ ImportError: No module named shotgun_api3
 ```
 
 <a id="Installing_shotgunEvents"></a>
+
 ## 安装 {% include product %}Events
 
 {% include product %}Events 的安装位置完全由您决定。同样，只要计算机上安装了 Python 和 {% include product %} API，并且计算机具有 {% include product %} 服务器的网络访问权限，就可以从任意位置运行。但是，如果安装位置能够为工作室提供方便，那自然是再好不过了，比如说 `/usr/local/shotgun/shotgunEvents` 就很方便。因此，下面我们就以此为例进行介绍。
@@ -54,6 +56,7 @@ ImportError: No module named shotgun_api3
 {% include info title="注意" content="**对于 Windows：**如果有 Windows 服务器，那么您可以使用 `C:\shotgun\shotgunEvents`，但是，在本文档中，我们使用的是 Linux 路径。" %}
 
 <a id="Cloning_Source"></a>
+
 ### 克隆源
 
 如果已在计算机上安装 `git`，那么抓取源时最简单方法就是克隆项目。这样，您还可以轻松获取所有已承诺的更新，以确保您随时获取错误修复和新功能。
@@ -66,6 +69,7 @@ $ git clone git://github.com/shotgunsoftware/shotgunEvents.git
 {% include info title="警告" content="请务必确保先备份您的配置、插件和对 shotgunEvents 所做的任何修改，然后再通过 GitHub 引入更新，以免数据丢失。或者，您也可以自己 Fork 项目，以便保留自己的更改存储库。:)" %}
 
 <a id="Downloading_Archive"></a>
+
 ### 下载归档
 
 如果您的计算机上没有 `git`，或者您只是想下载源的归档，则可以按照以下步骤进行操作。
@@ -108,6 +112,7 @@ drwxr-xr-x  6 kp  wheel   204 Sep  1 17:46 src
 ```
 
 <a id="Installing Requirements"></a>
+
 ### 安装要求
 
 在库的根目录下提供了一个 `requirements.txt` 文件。您应使用此文件来安装所需的软件包。
@@ -116,14 +121,14 @@ drwxr-xr-x  6 kp  wheel   204 Sep  1 17:46 src
 $ pip install -r /path/to/requirements.txt
 ```
 
-
 <a id="Windows_Specifics"></a>
+
 ### Windows 特定注意事项
 
 Windows 系统上需要具有以下其中一项：
 
-* 已安装 [PyWin32](http://sourceforge.net/projects/pywin32/) 的 Python
-* [Active Python](http://www.activestate.com/activepython)
+- 已安装 [PyWin32](http://sourceforge.net/projects/pywin32/) 的 Python
+- [Active Python](http://www.activestate.com/activepython)
 
 Active Python 附带 PyWin32 模块，在集成 {% include product %} Event 进程和 Windows 服务架构时，需要用到此模块。
 

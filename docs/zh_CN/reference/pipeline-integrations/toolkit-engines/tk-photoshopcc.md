@@ -121,10 +121,10 @@ lang: zh_CN
 
 ```yaml
 shelf_favorites:
-    - {app_instance: tk-multi-workfiles2, name: File Save...}
-    - {app_instance: tk-multi-workfiles2, name: File Open...}
-    - {app_instance: tk-multi-publish, name: Publish...}
-    - {app_instance: tk-multi-snapshot, name: Snapshot...}
+  - { app_instance: tk-multi-workfiles2, name: File Save... }
+  - { app_instance: tk-multi-workfiles2, name: File Open... }
+  - { app_instance: tk-multi-publish, name: Publish... }
+  - { app_instance: tk-multi-snapshot, name: Snapshot... }
 ```
 
 设置的值是一个词典列表，每个词典指定了配置中安装的一个应用提供的一个注册命令。`app_instance` 键标识了一个特定的已安装应用，`name` 键则与该应用注册的命令的显示名称一致。在上面的示例中，您可以看到四个收藏的命令：`tk-multi-workfiles2` 应用的“File Open”和“File Save”对话框，以及 Toolkit 的“发布”(Publish)和“Snapshot”标准对话框。这四个命令现在将显示在收藏工具架中。
@@ -148,6 +148,7 @@ shelf_favorites:
 Photoshop API 对象被公开为 `engine.adobe`。下面的示例说明怎样才能从 Toolkit 应用和挂钩内直接操纵 Photoshop DOM。标准 Toolkit 应用还包含有关如何与 Photoshop 文档进行交互的可行示例。
 
 #### 示例
+
 加载文件：
 
 ```python
@@ -215,4 +216,4 @@ for (i, layer) in enumerate(layers):
 
 ### 应用开发人员须知
 
-* 因为 Python 进程与 Photoshop CC 进程彼此分离，所以插件内部会进行一些处理，让应用窗口以尽可能整洁的方式显示在 Photoshop 窗口之上。此项设置需要注意的一点是，默认选项是为 `QFileDialog` 使用原生操作系统窗口。如果您开发的是与此插件一起使用的应用，要确保将此选项设置为不使用原生对话框。 [请参见 tk-multi-pythonconsole 应用中关于此选项的示例](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218)。
+- 因为 Python 进程与 Photoshop CC 进程彼此分离，所以插件内部会进行一些处理，让应用窗口以尽可能整洁的方式显示在 Photoshop 窗口之上。此项设置需要注意的一点是，默认选项是为 `QFileDialog` 使用原生操作系统窗口。如果您开发的是与此插件一起使用的应用，要确保将此选项设置为不使用原生对话框。 [请参见 tk-multi-pythonconsole 应用中关于此选项的示例](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218)。

@@ -6,11 +6,12 @@ lang: zh_CN
 ---
 
 # 编辑工作流配置
+
 完成本手册后，您将掌握以下基础知识：
 
-* 查找特定 Toolkit 应用的配置设置
-* 编辑设置
-* 探索配置设置可以扩展的其他功能。
+- 查找特定 Toolkit 应用的配置设置
+- 编辑设置
+- 探索配置设置可以扩展的其他功能。
 
 ## 关于本手册
 
@@ -121,13 +122,13 @@ Toolkit 工作流配置用于自定义环境以满足您的工作流需求。工
 
 当搜索设置时，要考虑以下几点：
 
-* 您正在运行的软件应用程序。
-* 您正在处理的文件以及使用的工作环境。可以在应用的参考框中找到这些信息。
-* 特定设置的名称。可以在应用的参考框或[“应用和插件”页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798)上找到这些信息。
-* 要扩展的 YAML 文件。YAML 文件中详细说明了标识符和路线图，以将您指引到设置所在的位置。
-* YAML 文件中要扩展的特定块。这在路线图中进行标识。
-* YAML 文件中使用的标识符和符号。
-* 最重要的是，当前项目的配置存储位置。
+- 您正在运行的软件应用程序。
+- 您正在处理的文件以及使用的工作环境。可以在应用的参考框中找到这些信息。
+- 特定设置的名称。可以在应用的参考框或[“应用和插件”页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798)上找到这些信息。
+- 要扩展的 YAML 文件。YAML 文件中详细说明了标识符和路线图，以将您指引到设置所在的位置。
+- YAML 文件中要扩展的特定块。这在路线图中进行标识。
+- YAML 文件中使用的标识符和符号。
+- 最重要的是，当前项目的配置存储位置。
 
 可以在工作流配置内的多个位置使用一个设置。决定在哪个位置使用该设置的因素是：您希望影响的软件集成，以及您希望在工作流中的哪个阶段影响更改。
 
@@ -163,18 +164,18 @@ description: Apps and Engines when launching with a project only context.
 ################################################################################
 
 includes:
-- ./includes/frameworks.yml
-- ./includes/settings/tk-3dsmaxplus.yml
-- ./includes/settings/tk-desktop.yml
-- ./includes/settings/tk-flame.yml
-- ./includes/settings/tk-houdini.yml
-- ./includes/settings/tk-mari.yml
-- ./includes/settings/tk-maya.yml
-- ./includes/settings/tk-motionbuilder.yml
-- ./includes/settings/tk-nuke.yml
-- ./includes/settings/tk-photoshopcc.yml
-- ./includes/settings/tk-shell.yml
-- ./includes/settings/tk-shotgun.yml
+  - ./includes/frameworks.yml
+  - ./includes/settings/tk-3dsmaxplus.yml
+  - ./includes/settings/tk-desktop.yml
+  - ./includes/settings/tk-flame.yml
+  - ./includes/settings/tk-houdini.yml
+  - ./includes/settings/tk-mari.yml
+  - ./includes/settings/tk-maya.yml
+  - ./includes/settings/tk-motionbuilder.yml
+  - ./includes/settings/tk-nuke.yml
+  - ./includes/settings/tk-photoshopcc.yml
+  - ./includes/settings/tk-shell.yml
+  - ./includes/settings/tk-shotgun.yml
 
 ################################################################################
 # configuration for all engines to load in a project context
@@ -198,7 +199,6 @@ engines:
 # reference all of the common frameworks
 
 frameworks: "@frameworks"
-
 ```
 
 <!--![Project yml env](./images/editing_app_setting/15_project_yml_env.png)-->
@@ -239,7 +239,7 @@ settings.tk-maya.project:
     tk-multi-shotgunpanel: "@settings.tk-multi-shotgunpanel"
     tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"
   menu_favourites:
-  - {app_instance: tk-multi-workfiles2, name: File Open...}
+    - { app_instance: tk-multi-workfiles2, name: File Open... }
   location: "@engines.tk-maya.location"
 ```
 
@@ -253,7 +253,7 @@ settings.tk-maya.project:
 
 ```yaml
 includes:
-...
+---
 - ./tk-multi-workfiles2.yml
 ```
 
@@ -354,7 +354,7 @@ Workfiles 应用的系统名称是 `tk-multi-workfiles2`，名称中的 `multi` 
 
 ### 视频资源
 
-* [Toolkit 配置简介](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)（来源：SIGGRAPH 2018 Developer Day）
-* [揭秘默认配置网络讲座](https://www.youtube.com/watch?v=eKHaC1dZCeE)
+- [Toolkit 配置简介](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)（来源：SIGGRAPH 2018 Developer Day）
+- [揭秘默认配置网络讲座](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
 现在您已了解如何修改应用配置设置，请尝试[将应用添加到 Toolkit 配置](./installing_app.md)。

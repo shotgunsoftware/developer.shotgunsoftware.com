@@ -9,7 +9,7 @@ lang: en
 
 ## Panels
 
-See [https://github.com/shotgunsoftware/tk-multi-shotgunpanel/tree/master/hooks](https://github.com/shotgunsoftware/tk-multi-shotgunpanel/tree/master/hooks)  for examples of panel actions.
+See [https://github.com/shotgunsoftware/tk-multi-shotgunpanel/tree/master/hooks](https://github.com/shotgunsoftware/tk-multi-shotgunpanel/tree/master/hooks) for examples of panel actions.
 
 ### Configuring what is being displayed
 
@@ -21,11 +21,9 @@ The hook supports a simple templating language, allowing for great flexibility. 
 
 The template language works in the following way:
 
--   {% include product %} values are enclosed in `{brackets}`, for example `<b>Description:</b> {description}`. When this template is rendered, the `{description}` part will be replaced with the description field value.
-    
--   If you want an optional pre- or post-fix for a value which is only shown if the value is not empty, you can use the syntax `{[Prefix]sg_field[suffix]}`. The template `{[Start: ]start_date} {[End: ]end_date}` will render `Start: 12 July 2009 End: 14 July 2012` if both values are populated but `Start: 12 July 2009` if end date isn't set.
-    
--   You can define fallbacks in the case some values are not set. For {% include product %} Versions, the `artist` fields takes precedence over the `created_by` field in order to support a workflow where a producer submits versions on behalf of an artist. In this case, the Version will be created by the producer but the `artist` field will be set to the artist. This, however, is not always the case - in some cases, artist is left blank in pipelines where artists submit their own work. When displaying versions, it is therefore useful to be able to check the `artist` field first, and in case this isn't set, fall back on the `created_by` field. This is done using the `{field1|field2}` syntax, for example: `Created By: {artist|created_by}`. You can combine this with optional fields too, e.g. `{[Created By: ]artist|created_by}`.
+- {% include product %} values are enclosed in `{brackets}`, for example `<b>Description:</b> {description}`. When this template is rendered, the `{description}` part will be replaced with the description field value.
+- If you want an optional pre- or post-fix for a value which is only shown if the value is not empty, you can use the syntax `{[Prefix]sg_field[suffix]}`. The template `{[Start: ]start_date} {[End: ]end_date}` will render `Start: 12 July 2009 End: 14 July 2012` if both values are populated but `Start: 12 July 2009` if end date isn't set.
+- You can define fallbacks in the case some values are not set. For {% include product %} Versions, the `artist` fields takes precedence over the `created_by` field in order to support a workflow where a producer submits versions on behalf of an artist. In this case, the Version will be created by the producer but the `artist` field will be set to the artist. This, however, is not always the case - in some cases, artist is left blank in pipelines where artists submit their own work. When displaying versions, it is therefore useful to be able to check the `artist` field first, and in case this isn't set, fall back on the `created_by` field. This is done using the `{field1|field2}` syntax, for example: `Created By: {artist|created_by}`. You can combine this with optional fields too, e.g. `{[Created By: ]artist|created_by}`.
 
 This hook contains the following methods:
 
@@ -60,25 +58,25 @@ The `get_all_fields()` methods returns a list of fields to display for a given e
 
 Actions are little snippets of code that operate on a piece of {% include product %} data. Examples include:
 
--   An action that launches RV for a given {% include product %} Version
--   An action that allows a user to assign herself to a given Task
--   An action that loads a {% include product %} publish into Maya as a Maya reference.
+- An action that launches RV for a given {% include product %} Version
+- An action that allows a user to assign herself to a given Task
+- An action that loads a {% include product %} publish into Maya as a Maya reference.
 
-The actual payload of an action is defined in an  _action hook_. Once you have defined the action logic, you can then map that action to {% include product %} objects in the app configuration. These action mappings may for example look like this:
+The actual payload of an action is defined in an _action hook_. Once you have defined the action logic, you can then map that action to {% include product %} objects in the app configuration. These action mappings may for example look like this:
 
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import]
-    filters: {published_file_type: Maya Scene}
-  - actions: [texture_node]
-    filters: {published_file_type: Rendered Image}
+    - actions: [reference, import]
+      filters: { published_file_type: Maya Scene }
+    - actions: [texture_node]
+      filters: { published_file_type: Rendered Image }
   Task:
-  - actions: [assign_task]
-    filters: {}
+    - actions: [assign_task]
+      filters: {}
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 In the above example, we use the actions `reference`, `import`, `texture_node`, `assign_task` and `play_in_rv`. We then map the actions to various {% include product %} objects and conditions. For example, we are requesting the `import` action to appear for all publishes of type Maya Scene.
@@ -92,7 +90,7 @@ For each application that the panel supports, there is an actions hook which imp
 The panel uses Toolkit's second generation hooks interface, allowing for greater flexibility. This hook format uses an improved syntax. You can see this in the default configuration settings, looking something like this:
 
 ```yaml
-actions_hook: '{self}/tk-maya_actions.py'
+actions_hook: "{self}/tk-maya_actions.py"
 ```
 
 The `{self}` keyword tells Toolkit to look in the app's `hooks` folder for the hook. If you are overriding this hook with your implementation, change the value to `{config}/panel/maya_actions.py`. This will tell Toolkit to use a hook called `hooks/panel/maya_actions.py` in your configuration folder.
@@ -116,7 +114,7 @@ class MyActions(HookBaseClass):
     def generate_actions(self, sg_data, actions, ui_area):
         """
  Returns a list of action instances for a particular object.
- The data returned from this hook will be used to populate the 
+ The data returned from this hook will be used to populate the
  actions menu.
 
  The mapping between {% include product %} objects and actions are kept in a different place
@@ -126,12 +124,12 @@ class MyActions(HookBaseClass):
  This method needs to return detailed data for those actions, in the form of a list
  of dictionaries, each with name, params, caption and description keys.
 
- Because you are operating on a particular object, you may tailor the output 
+ Because you are operating on a particular object, you may tailor the output
  (caption, tooltip etc) to contain custom information suitable for this publish.
 
- The ui_area parameter is a string and indicates where the publish is to be shown. 
+ The ui_area parameter is a string and indicates where the publish is to be shown.
 
- - If it will be shown in the main browsing area, "main" is passed. 
+ - If it will be shown in the main browsing area, "main" is passed.
  - If it will be shown in the details area, "details" is passed.
 
  :param sg_data: {% include product %} data dictionary with all the standard publish fields.
@@ -175,11 +173,11 @@ We could then bind this new action to a set of publish types in the configuratio
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import, my_new_action]
-    filters: {published_file_type: Maya Scene}
+    - actions: [reference, import, my_new_action]
+      filters: { published_file_type: Maya Scene }
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 By deriving from the hook as shown above, the custom hook code only need to contain the actual added business logic which makes it easier to maintain and update.
@@ -188,7 +186,7 @@ By deriving from the hook as shown above, the custom hook code only need to cont
 
 The Publish app is highly customizable by way of hooks that control how items are presented to artists for publishing and how those items are then processed.
 
-The full developer documentation for the publisher app can now be found on the  [Toolkit Developer Site](http://developer.shotgridsoftware.com/tk-multi-publish2).
+The full developer documentation for the publisher app can now be found on the [Toolkit Developer Site](http://developer.shotgridsoftware.com/tk-multi-publish2).
 
 For more information on how to use the Publish app, see the [User Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067513-Integrations-Developer-Guide#User_guide_link). If you are looking for more information about the first generation Publisher, please visit the [classic Publisher docs](https://support.shotgunsoftware.com/hc/en-us/articles/115000067513-Integrations-Developer-Guide#classic_publisher_link).
 

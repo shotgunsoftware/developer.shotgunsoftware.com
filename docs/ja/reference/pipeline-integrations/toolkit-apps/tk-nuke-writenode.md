@@ -15,7 +15,7 @@ Nuke Write Node アプリは、イメージのレンダリング先を簡単に�
 
 ![Write Node](../images/apps/nuke-writenode-write_node_creation.png)
 
-手動でパスを入力するのではなく、出力名を指定するだけで、Toolkit が残りのパスを自動的に計算してくれます。計算されたパスが UI に表示されます。*Show in File System* ボタンをクリックすると、ディスク上の該当する場所が開きます。レンダリングの書き込み先は Toolkit の設定に応じて異なります。
+手動でパスを入力するのではなく、出力名を指定するだけで、Toolkit が残りのパスを自動的に計算してくれます。計算されたパスが UI に表示されます。_Show in File System_ ボタンをクリックすると、ディスク上の該当する場所が開きます。レンダリングの書き込み先は Toolkit の設定に応じて異なります。
 
 レンダリングはバージョンで管理され、バージョン番号は、Multi Publish を使用してパブリッシュする場合に自動的に増分される現在の Nuke スクリプト バージョンに常に準拠します。
 
@@ -72,7 +72,7 @@ tk-nuke-writenode:
 
 ![新規追加](../images/apps/nuke-writenode-write_node_add_new.png)
 
-__注:__ 新しいテンプレート(nuke_shot_render_mono_tif など)はプロジェクト設定(`<configuration root>/config/core/templates.yml`)内の `templates.yml` ファイルに必ず追加してください。
+**注:** 新しいテンプレート(nuke_shot_render_mono_tif など)はプロジェクト設定(`<configuration root>/config/core/templates.yml`)内の `templates.yml` ファイルに必ず追加してください。
 
 別の例として、圧縮を 0.5、サブサンプリングを 4:2:2 に設定した JPEG に出力する {% include product %} Write Node を追加する方法を以下に示します。また、このプロファイルは JPEG 品質ノブをギズモのユーザ インタフェースにまでプロモートする「promote_write_knobs」オプションも使用します。これにより、プロファイルの品質に既定の値が設定され、この設定自体を変更するためのスライダもユーザに表示されます。
 
@@ -85,7 +85,7 @@ tk-nuke-writenode:
       render_template: nuke_shot_render_jpeg
       proxy_publish_template: null
       proxy_render_template: null
-      settings: {_jpeg_quality: 0.5, _jpeg_sub_sampling: "4:2:2"}
+      settings: { _jpeg_quality: 0.5, _jpeg_sub_sampling: "4:2:2" }
       tank_type: Rendered Image
       tile_color: []
       promote_write_knobs: [_jpeg_quality]
@@ -265,7 +265,7 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* **戻り値: **`list` - シーン内で見つかった Toolkit 書き込みノードのリスト
+- **戻り値: **`list` - シーン内で見つかった Toolkit 書き込みノードのリスト
 
 **例**
 
@@ -284,10 +284,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `string` - ノードの名前
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `string` - ノードの名前
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -304,10 +305,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `string` - 設定で定義されたこの書き込みノードのプロファイル名
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `string` - 設定で定義されたこの書き込みノードのプロファイル名
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -324,10 +326,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `string` - このノードのレンダリング パス
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `string` - このノードのレンダリング パス
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -344,10 +347,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `list` - この書き込みノードでレンダリングされるイメージ ファイルのリスト
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `list` - この書き込みノードでレンダリングされるイメージ ファイルのリスト
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -364,10 +368,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `template` - このノードが使用するように設定されているレンダリング テンプレート
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `template` - このノードが使用するように設定されているレンダリング テンプレート
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -384,10 +389,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `template` - このノードが使用するように設定されているパブリッシュ テンプレート
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `template` - このノードが使用するように設定されているパブリッシュ テンプレート
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -404,10 +410,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `string` - このノードのプロキシ レンダリング パス
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `string` - このノードのプロキシ レンダリング パス
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -424,10 +431,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `list` - この書き込みノードでレンダリングされるプロキシ イメージ ファイルのリスト
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `list` - この書き込みノードでレンダリングされるプロキシ イメージ ファイルのリスト
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -446,10 +454,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `template` - このノードが使用するように設定されているプロキシ レンダリング テンプレート
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `template` - このノードが使用するように設定されているプロキシ レンダリング テンプレート
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -468,10 +477,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `template` - このノードが使用するように設定されているプロキシ パブリッシュ テンプレート
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `template` - このノードが使用するように設定されているプロキシ パブリッシュ テンプレート
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -488,10 +498,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `string` - このノードが使用するように設定されているパブリッシュ ファイル タイプ
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `string` - このノードが使用するように設定されているパブリッシュ ファイル タイプ
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -508,10 +519,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `string` - ディスク上にあるレンダリングされたサムネイル イメージのパス
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `string` - ディスク上にあるレンダリングされたサムネイル イメージのパス
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -528,10 +540,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `None` - 値は何も返されません。
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `None` - 値は何も返されません。
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -548,10 +561,11 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* `node` **ノード**: クエリーする書き込みノード
-* **戻り値:** `bool` - レンダリング パスがロックされている場合は True で、それ以外の場合は False です
+- `node` **ノード**: クエリーする書き込みノード
+- **戻り値:** `bool` - レンダリング パスがロックされている場合は True で、それ以外の場合は False です
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -562,11 +576,12 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 ### convert_to_write_nodes()
 
-現在のスクリプトで見つかったすべての {% include product %} 書き込みノードを標準の Nuke 書き込みノードに変換します。追加の Toolkit 情報は「tk_*」という名前のユーザ ノブに保存されます。
+現在のスクリプトで見つかったすべての {% include product %} 書き込みノードを標準の Nuke 書き込みノードに変換します。追加の Toolkit 情報は「tk\_\*」という名前のユーザ ノブに保存されます。
 
 `None` convert_to_write_nodes()
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -581,6 +596,7 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 `None` convert_from_write_nodes()
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -595,6 +611,7 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 `None` process_placeholder_nodes()
 
 **例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()

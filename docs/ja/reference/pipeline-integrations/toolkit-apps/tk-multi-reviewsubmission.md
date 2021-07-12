@@ -47,16 +47,16 @@ if review_submission_app:
 
 `render_and_submit_version` に渡す必要のある引数は次のとおりです。
 
-* `template`: パブリッシュするファイルが格納される場所を定義するテンプレート
-* `fields`: テンプレートの入力に使用されるフィールド
-* `first_frame`: 処理するイメージ シーケンスの最初のフレーム
-* `last_frame`: 処理するイメージ シーケンスの最後のフレーム
-* `sg_publishes`: バージョンのリンク先の {% include product %} パブリッシュ ファイル オブジェクトのリスト
-* `sg_task`: バージョンのリンク先の {% include product %} タスク リンク ディクショナリ
-* `comment`: バージョンの説明に追加するテキスト。
-* `thumbnail_path`: ムービーが {% include product %} にアップロードされていない場合にバージョンで使用するサムネイルのパス(設定ファイルで指定)
-* `progress_cb`: 進行状況を一緒に報告するコールバック。`callback(percent, message)` のような形式になります。
-* `color_space`: 入力フレームのカラースペース。Nuke では、書き込みノードに使用するカラースペース ノブの列挙値のいずれかになります。
+- `template`: パブリッシュするファイルが格納される場所を定義するテンプレート
+- `fields`: テンプレートの入力に使用されるフィールド
+- `first_frame`: 処理するイメージ シーケンスの最初のフレーム
+- `last_frame`: 処理するイメージ シーケンスの最後のフレーム
+- `sg_publishes`: バージョンのリンク先の {% include product %} パブリッシュ ファイル オブジェクトのリスト
+- `sg_task`: バージョンのリンク先の {% include product %} タスク リンク ディクショナリ
+- `comment`: バージョンの説明に追加するテキスト。
+- `thumbnail_path`: ムービーが {% include product %} にアップロードされていない場合にバージョンで使用するサムネイルのパス(設定ファイルで指定)
+- `progress_cb`: 進行状況を一緒に報告するコールバック。`callback(percent, message)` のような形式になります。
+- `color_space`: 入力フレームのカラースペース。Nuke では、書き込みノードに使用するカラースペース ノブの列挙値のいずれかになります。
 
 ### メニュー項目として使用する場合
 
@@ -65,17 +65,18 @@ if review_submission_app:
 また、現在のビューポートのクイック スナップショットを作成して、バージョンのドラフトとして {% include product %} Create に送信します。これにより、{% include product %} Create 内で注釈、文字、比較のメモを追加できるため、詳しいレビューを提出できます。
 
 この機能をコンテキストに追加するには、次の操作を行う必要があります。
-* `display_name` フィールドがメニュー項目に含まれるように設定します。
-* `render_media_hook` フィールドを、DCC でのメディアのレンダリング方法を指示するフックに設定します(tk-photoshopcc と tk-maya で既定の実装は異なります)。
-* `submitter_hook` フィールドを `{self}/submitter_create.py` に設定します。
+
+- `display_name` フィールドがメニュー項目に含まれるように設定します。
+- `render_media_hook` フィールドを、DCC でのメディアのレンダリング方法を指示するフックに設定します(tk-photoshopcc と tk-maya で既定の実装は異なります)。
+- `submitter_hook` フィールドを `{self}/submitter_create.py` に設定します。
 
 例:
 
 ```yaml
 tk-multi-reviewsubmission:
   display_name: Send for review
-  render_media_hook: '{self}/render_media.py:{self}/{engine_name}/render_media.py'
-  submitter_hook: '{self}/submitter_create.py'
+  render_media_hook: "{self}/render_media.py:{self}/{engine_name}/render_media.py"
+  submitter_hook: "{self}/submitter_create.py"
   location:
     type: app_store
     name: tk-multi-reviewsubmission

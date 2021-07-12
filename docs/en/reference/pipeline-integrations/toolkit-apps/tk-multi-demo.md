@@ -7,15 +7,15 @@ lang: en
 
 # Demo
 
-The Demo App provides live demonstrations of {% include product %}'s native developer platform components including the {% include product %} Utilities framework, the Qt Widgets frameworks and Toolkit core. 
+The Demo App provides live demonstrations of {% include product %}'s native developer platform components including the {% include product %} Utilities framework, the Qt Widgets frameworks and Toolkit core.
 
 ![Demo App](../images/apps/multi-demo-demo_app.png)
 
-Each demo displayed in the app includes a working, interactive UI that shows how to use one or more components of the native platform. In addition, the code that is running is readily available to copy and paste into your own app. 
+Each demo displayed in the app includes a working, interactive UI that shows how to use one or more components of the native platform. In addition, the code that is running is readily available to copy and paste into your own app.
 
 ![Demo Basics](../images/apps/multi-demo-help_demo.png)
 
-The app is simple to use. Just select a demo from the list on the left and then interact with the components on the right. Some demos are as simple as displaying a single widget from the Qt Widgets framework. Other demos provide examples of how {% include product %} platform components are commonly wired up for use in production apps. 
+The app is simple to use. Just select a demo from the list on the left and then interact with the components on the right. Some demos are as simple as displaying a single widget from the Qt Widgets framework. Other demos provide examples of how {% include product %} platform components are commonly wired up for use in production apps.
 
 ![Example Demo](../images/apps/multi-demo-delegate_demo.png)
 

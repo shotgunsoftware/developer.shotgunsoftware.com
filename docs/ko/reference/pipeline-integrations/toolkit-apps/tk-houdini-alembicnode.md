@@ -7,7 +7,7 @@ lang: ko
 
 # Houdini Alembic Node
 
-Houdini Alembic Node 앱은 alembic 파일이 출력되는 위치를 쉽게 표준화할 수 있는 커스텀 {% include product %} Alembic Output 노드를 제공합니다.  각 환경에 맞게 구성할 수 있습니다.
+Houdini Alembic Node 앱은 alembic 파일이 출력되는 위치를 쉽게 표준화할 수 있는 커스텀 {% include product %} Alembic Output 노드를 제공합니다. 각 환경에 맞게 구성할 수 있습니다.
 
 ## 일반적인 사용
 

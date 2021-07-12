@@ -19,16 +19,16 @@ lang: ko
 
 현재 지원되는 응용프로그램 및 엔진은 다음과 같습니다.
 
-* 3DSMax
-* Hiero
-* Maya
-* MotionBuilder
-* Nuke
-* Photoshop
-* Mari
-* Houdini
-* Softimage
-* Flame
+- 3DSMax
+- Hiero
+- Maya
+- MotionBuilder
+- Nuke
+- Photoshop
+- Mari
+- Houdini
+- Softimage
+- Flame
 
 ### 시작 시 명령행 인수 사용
 
@@ -43,15 +43,16 @@ launch_nuke:
   extra: {}
   hook_app_launch: default
   hook_before_app_launch: default
-  linux_args: '--nukex'
-  linux_path: '@nuke_linux'
-  location: {name: tk-multi-launchapp, type: app_store, version: v0.2.15}
-  mac_args: '--nukex'
-  mac_path: '@nuke_mac'
+  linux_args: "--nukex"
+  linux_path: "@nuke_linux"
+  location: { name: tk-multi-launchapp, type: app_store, version: v0.2.15 }
+  mac_args: "--nukex"
+  mac_path: "@nuke_mac"
   menu_name: Launch Nuke
-  windows_args: '--nukex'
-  windows_path: '@nuke_windows'
+  windows_args: "--nukex"
+  windows_path: "@nuke_windows"
 ```
+
 ---접기---
 
 ### 시작 시 환경 변수 설정 및 동작 자동화
@@ -66,7 +67,7 @@ launch_nuke:
 ```python
 def execute(self, **kwargs):
     """
-    The execute functon of the hook will be called to start the required application        
+    The execute functon of the hook will be called to start the required application
     """
 
     # Example to show how to set env vars on Maya launch
@@ -79,6 +80,7 @@ def execute(self, **kwargs):
     # with $PYTHONPATH if already defined in your pipeline
     os.environ["XBMLANGPATH"] = "~/Library/zync/zync-maya"
 ```
+
 ---접기---
 
 'before_app_launch'를 사용하여 {% include product %} 업데이트를 비롯한 다른 동작을 자동화할 수도 있습니다. 예를 들어 다음과 같이 시작 앱이 실행될 때마다 태스크 상태를 업데이트하도록(이 경우 "진행 중"으로) 구성할 수 있습니다(태스크에서 시작하는 경우).
@@ -89,7 +91,7 @@ def execute(self, **kwargs):
 ```python
 def execute(self, **kwargs):
     """
-    The execute functon of the hook will be called to start the required application        
+    The execute functon of the hook will be called to start the required application
     """
 
     # If there is a Task in the context, set its status to 'ip'
@@ -101,6 +103,7 @@ def execute(self, **kwargs):
         }
         self.parent.shotgun.update("Task", task_id, data)
 ```
+
 ---접기---
 
 상상할 수 있듯이 여기에는 많은 가능성이 있으며, 시작 앱은 파이프라인에 필요한 유연성을 제공하는 것을 목표로 합니다.

@@ -45,16 +45,16 @@ The output area displays the results of the executed python. Echoing the source 
 
 ### Output
 
-* **Clear** - Clear the contents of the output browser.
-* **Echo** - Toggle echoing the executed commands in the output browser.
+- **Clear** - Clear the contents of the output browser.
+- **Echo** - Toggle echoing the executed commands in the output browser.
 
 ### Editor
 
-* **Execute** - Execute the contents of the editor
-* **Save** - Save the current contents of the editor to a file.
-* **Open** - Open a file in the editor.
-* **Clear** - Clear the contents of the editor.
-* **Lines** - Toggle line numbers for the current tab
+- **Execute** - Execute the contents of the editor
+- **Save** - Save the current contents of the editor to a file.
+- **Open** - Open a file in the editor.
+- **Clear** - Clear the contents of the editor.
+- **Lines** - Toggle line numbers for the current tab
 
 ## Globals
 
@@ -62,10 +62,10 @@ The output area displays the results of the executed python. Echoing the source 
 
 Some {% include product %}/Toolkit globals are pre-defined in the console, similar to what is available in the [{% include product %} Engine for the shell](https://support.shotgunsoftware.com/entries/95441287).
 
- * Tk API handle is available via the `tk` variable
- * {% include product %} API handle is available via the `shotgun` variable
- * The current context is stored in the `context` variable
- * The shell engine can be accessed via the `engine` variable
+- Tk API handle is available via the `tk` variable
+- {% include product %} API handle is available via the `shotgun` variable
+- The current context is stored in the `context` variable
+- The shell engine can be accessed via the `engine` variable
 
 ## External sources
 
@@ -75,13 +75,13 @@ The app comes with a hook that can be implemented to load python source from an 
 
 ## Hotkeys
 
-* Execute selected with `Ctrl + Enter`
-* Create a new tab with `Ctrl + T`
-* Navigate tabs with `Ctrl + Shift + [` or `Ctrl + Shift + ]`
-* Resize input/output font via `Ctrl + Wheel`
+- Execute selected with `Ctrl + Enter`
+- Create a new tab with `Ctrl + T`
+- Navigate tabs with `Ctrl + Shift + [` or `Ctrl + Shift + ]`
+- Resize input/output font via `Ctrl + Wheel`
 
 **NOTE:** These hotkeys may not be available in all DCCs.
 
 ## Other notes
 
-* In some older versions of DCCs, leaving the python console open when closing the session may cause a crash. We believe this may be a bug in some older versions of PySide. More recent versions of DCCs, bundled with newer versions of PySide, do not appear to crash on exit. If you encounter this issue with a recent DCC release, please [submit a ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new) so that we can investigate further.
+- In some older versions of DCCs, leaving the python console open when closing the session may cause a crash. We believe this may be a bug in some older versions of PySide. More recent versions of DCCs, bundled with newer versions of PySide, do not appear to crash on exit. If you encounter this issue with a recent DCC release, please [submit a ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new) so that we can investigate further.

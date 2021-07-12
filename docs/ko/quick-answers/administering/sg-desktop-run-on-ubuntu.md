@@ -15,5 +15,3 @@ Python 자체가 많은 시스템 레벨 라이브러리 위에 위치하기 때
 지금으로서는 Debian 지원에 대한 공식적인 계획이 없습니다. Ubuntu를 위한 빌드에는 문제가 있지만 한편으로는 결코 사소하다고 할 수 없는 변화를 구현하다 보면 추가 운영 체제를 QA 및 지원해야 할 필요도 있습니다.
 
 {% include product %} 데스크톱 없이 툴킷을 수동으로 실행 및 활성화하려는 경우([여기 문서에서 설명](https://support.shotgunsoftware.com/hc/ko/articles/219033208#Step%208.%20Run%20the%20activation%20script)) - 설명서 페이지에서 `activate_shotgun_pipeline_toolkit.py` 스크립트를 다운로드하십시오. 이 안내서의 8단계에 있으며, "다운로드하려면 클릭..."(click to download...) 헤더를 클릭하면 됩니다.
-
-

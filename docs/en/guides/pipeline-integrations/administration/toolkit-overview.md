@@ -11,9 +11,9 @@ lang: en
 
 # An overview of the different concepts in the {% include product %} Pipeline Toolkit.
 
-Here, we cover the main concepts in detail: How apps and Engines work, how Toolkit is launched and manages the current context (work area), how folders are created on disk, etc. We recommend that anyone involved in configuration or development start here.  
+Here, we cover the main concepts in detail: How apps and Engines work, how Toolkit is launched and manages the current context (work area), how folders are created on disk, etc. We recommend that anyone involved in configuration or development start here.
 
-_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For details, see the  [{% include product %} Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493)._
+_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For details, see the [{% include product %} Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493)._
 
 # Introduction
 
@@ -23,10 +23,10 @@ This document explains some of the key features in more depth. With explanations
 
 Below is a brief description of Toolkit (SGTK):
 
--   Toolkit is a  _Pipeline Toolkit_  based on the {% include product %} platform - it makes it easier to write and install tools for a studio.
--   Toolkit is filesystem based - it helps you organize where things are stored on disk so that what you have on disk is nicely structured.
--   Toolkit is an assistant - it does not try to take over or abstract the data in your pipeline, but rather is there to provide artists with compelling tools to make finding information easier and avoid making mistakes.
--   Toolkit is helping you to share work by storing all of its publishes in {% include product %}. Toolkit makes it easy to share updates and work that is going on across a production.
+- Toolkit is a _Pipeline Toolkit_ based on the {% include product %} platform - it makes it easier to write and install tools for a studio.
+- Toolkit is filesystem based - it helps you organize where things are stored on disk so that what you have on disk is nicely structured.
+- Toolkit is an assistant - it does not try to take over or abstract the data in your pipeline, but rather is there to provide artists with compelling tools to make finding information easier and avoid making mistakes.
+- Toolkit is helping you to share work by storing all of its publishes in {% include product %}. Toolkit makes it easy to share updates and work that is going on across a production.
 
 In the following sections, we will be looking in depth at the Toolkit and how it works.
 
@@ -38,9 +38,9 @@ In Toolkit, everything is project centric. A project typically starts its lifecy
 
 When you set up a new project, you use a _template configuration_. This is a predefined config containing engines and apps, filesystem configuration, and other settings. If you are just starting with Toolkit, you can use our example configuration as a starting point for your exploration. If you have already been using Toolkit on another project, we suggest that you take that configuration and use that as the starting point for your new project. That way, you will be evolving a studio configuration and it will be refined with each new project. Of course, you can also maintain a studio configuration separately and use this as a template for all new projects.
 
-Each configuration defines a number of _storage points_. For the standard sample configuration, `tk-config-default`, we define a single storage point called  _primary_. This means that all your production data will be under a single filesystem project root. You can also set up configs with more than a single file system root. We call these _multi-root configurations_. Examples of when you might need multi-root configurations include having a separate storage for renders, a separate storage for editorial, etc. Each of these storage points need to exist as a _Local File Storage_ in {% include product %}, which can be set up in the Site Preferences, under the _File Management_ tab.
+Each configuration defines a number of _storage points_. For the standard sample configuration, `tk-config-default`, we define a single storage point called _primary_. This means that all your production data will be under a single filesystem project root. You can also set up configs with more than a single file system root. We call these _multi-root configurations_. Examples of when you might need multi-root configurations include having a separate storage for renders, a separate storage for editorial, etc. Each of these storage points need to exist as a _Local File Storage_ in {% include product %}, which can be set up in the Site Preferences, under the _File Management_ tab.
 
-Toolkit will install the actual project configuration in any location you like. Typically this will go into a  _software install_ area on disk and not into the project data area itself.
+Toolkit will install the actual project configuration in any location you like. Typically this will go into a _software install_ area on disk and not into the project data area itself.
 
 ## Let your studio configuration evolve
 
@@ -68,7 +68,7 @@ Example:
 
 Similar to other App stores out there, the Toolkit app store constantly gets new versions for apps and engines. These new versions may contain important bug fixes or interesting new features. Upgrading your apps and engines is completely optional. It is normally a quick process and the upgrade scripts will always prompt you before making any changes. Likewise, it is straightforward to roll back should you have accidentally installed an unsatisfactory version.
 
-A single command handles the upgrade process. Simply run the  `tank`  command located in your project configuration folder and add an  `updates`  parameter:
+A single command handles the upgrade process. Simply run the `tank` command located in your project configuration folder and add an `updates` parameter:
 
 ```shell
 /software/shotgun/bug_buck_bunny/tank updates
@@ -85,12 +85,13 @@ tank updates [environment_name] [engine_name] [app_name]
 The special keyword `ALL` can be used to denote all items in a category.
 
 Examples:
--   Check everything:  `tank updates`
--   Check the Shot environment:  `tank updates Shot`
--   Check all maya apps in all environments:  `tank updates ALL tk-maya`
--   Check all maya apps in the Shot environment:  `tank updates Shot tk-maya`
--   Make sure the loader app is up to date everywhere:  `tank updates ALL ALL tk-multi-loader`
--   Make sure the loader app is up to date in maya:  `tank updates ALL tk-maya tk-multi-loader`
+
+- Check everything: `tank updates`
+- Check the Shot environment: `tank updates Shot`
+- Check all maya apps in all environments: `tank updates ALL tk-maya`
+- Check all maya apps in the Shot environment: `tank updates Shot tk-maya`
+- Make sure the loader app is up to date everywhere: `tank updates ALL ALL tk-multi-loader`
+- Make sure the loader app is up to date in maya: `tank updates ALL tk-maya tk-multi-loader`
 
 In addition to checking the app store, this script checks all other registered locations too, so it may query your local git, a GitHub repository, a file on disk and the app store, depending on where you have deployed your apps.
 
@@ -126,10 +127,10 @@ The context can be created either from a {% include product %} object, such as a
 
 The Toolkit Core contains a system for handling file paths. It is called the _Templates System_. Since Toolkit is filesystem based, apps will need to resolve file paths whenever they need to read or write data from disk. Apps are filesystem-structure agnostic, meaning that they don't know how the filesystem is organized. The template system handles all this for them.
 
-At the heart of the template system, there is a _Templates Configuration File_. This file contains all the important filesystem locations for a project. A  _Template_ looks something like this:
+At the heart of the template system, there is a _Templates Configuration File_. This file contains all the important filesystem locations for a project. A _Template_ looks something like this:
 
 ```yaml
-maya_shot_publish: 'shots/{Shot}/{Step}/pub/{name}.v{version}.ma'
+maya_shot_publish: "shots/{Shot}/{Step}/pub/{name}.v{version}.ma"
 ```
 
 It defines a path which contains certain dynamic fields. Each field can be configured with validation and typing, so that, for example, you can define that the `{version}` field in the template above is an integer padded with three zeros (e.g. `001`, `012`, `132`). Whenever and app needs to write or read something from disk, a template is added to the templates file to describe that location. Since apps often are set up to form a pipeline, the output template of one app (e.g. a publishing app) is often the input template of another app (e.g. a loading app). This is why all of the filesystem locations are kept in a single file.
@@ -161,7 +162,7 @@ When we develop an app that does publishing, we obviously don't want to have a s
 
 ![](images/toolkit-overview/templates.png)
 
-This is where the _Toolkit Context_ comes into play. The Toolkit Context allows us to split the template fields into two distinct groups: the Context fields (`Shot`, `Step`, `Asset`, etc) are fields that we want to ensure are resolved outside of the app in such a way that the app's logic will not have to have code that specifically handles concepts such as Shots and Assets. Instead, the app should only populate the fields that are directly associated with the particular  _business logic_ of the app. In our example of a publish app, the business logic consists of the `name` and the `version` fields. As the figure above illustrates, Toolkit therefore splits the field resolution into two distinct phases: some fields are populated by the context and some fields are populated by the business logic inside the app. This way, apps can be designed that are not tied to a particular filesystem layout. We believe this is an important aspect of building good pipeline tools.
+This is where the _Toolkit Context_ comes into play. The Toolkit Context allows us to split the template fields into two distinct groups: the Context fields (`Shot`, `Step`, `Asset`, etc) are fields that we want to ensure are resolved outside of the app in such a way that the app's logic will not have to have code that specifically handles concepts such as Shots and Assets. Instead, the app should only populate the fields that are directly associated with the particular _business logic_ of the app. In our example of a publish app, the business logic consists of the `name` and the `version` fields. As the figure above illustrates, Toolkit therefore splits the field resolution into two distinct phases: some fields are populated by the context and some fields are populated by the business logic inside the app. This way, apps can be designed that are not tied to a particular filesystem layout. We believe this is an important aspect of building good pipeline tools.
 
 The App Code that would deal with the path resolve would typically look something like this:
 
@@ -181,6 +182,7 @@ fields["version"] = 234
 # order to save out the file
 path = publish_template_obj.apply_fields(fields)
 ```
+
 For more details of how you can configure and use the Templates API, see the following:
 
 [File System Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868)
@@ -203,18 +205,18 @@ This makes it possible to configure separate collections of apps for different p
 
 To give you a practical example of how environments work and can be structured, let's take a look at the environments that come with the default configuration:
 
--   `project.yml` - Apps and Engines to run when the context only contains a project.
--   `shot_and_asset.yml` - Apps and Engines to run when the context contains a shot or an asset.
--   `shot_step.yml` - Apps ane Engines when the context contains a Shot and a Pipeline Step.
--   `asset_step.yml` - Apps and Engines when the context contains an Asset and a Pipeline Step.
+- `project.yml` - Apps and Engines to run when the context only contains a project.
+- `shot_and_asset.yml` - Apps and Engines to run when the context contains a shot or an asset.
+- `shot_step.yml` - Apps ane Engines when the context contains a Shot and a Pipeline Step.
+- `asset_step.yml` - Apps and Engines when the context contains an Asset and a Pipeline Step.
 
 The default config has organized its filesystem based on pipeline steps. This means that under a Shot location, you can find folders for modeling, rigging, etc. Essentially, there is one folder for each pipeline step you work on. Each of these folders have its own work and publish areas on disk. This means that a publish template may look like this:
 
 ```yaml
-maya_shot_publish: 'sequences/{Sequence}/{Shot}/{Step}/pub/{name}.v{version}.ma'
+maya_shot_publish: "sequences/{Sequence}/{Shot}/{Step}/pub/{name}.v{version}.ma"
 ```
 
-In order to use this template, the context needs to contain both an entity and a Pipeline Step. For Shot `1122`, parented under Sequence `ABC` and pipeline step `Modeling`, the above template would resolve to  `sequences/ABC/1122/Modeling/...`. This means that a context that contains a Shot but not a Pipeline Step is not enough to populate the above template. You cannot launch Maya for a Shot-only context and use the above template. In order for it to be functional, a Step is required.
+In order to use this template, the context needs to contain both an entity and a Pipeline Step. For Shot `1122`, parented under Sequence `ABC` and pipeline step `Modeling`, the above template would resolve to `sequences/ABC/1122/Modeling/...`. This means that a context that contains a Shot but not a Pipeline Step is not enough to populate the above template. You cannot launch Maya for a Shot-only context and use the above template. In order for it to be functional, a Step is required.
 
 This leads us to the environment breakdown shown above. Because the filesystem structure defined in the default configuration is centered around steps, all the main apps need to run in a context which has a step defined. We define two such environments in the default config: the `asset_step.yml` file and the `shot_step.yml` file. Each of these files contain engines for a number of DCCs, such as Maya, Nuke, 3dsmax, Motionbuilder, and Photoshop to mention a few. When you launch Maya from a Task inside of {% include product %}, the pick environment hook will choose the `shot_step` environment, start Maya and load up the Maya app configuration.
 
@@ -254,10 +256,10 @@ This situation is handled in Toolkit using a _hook_. The hook is a customizable 
 
 Once Toolkit is installed, you can access it from several primary entry points:
 
--   {% include product %} Actions will appear on the right-click menus inside of {% include product %}
--   Launch icons will appear for the project in the {% include product %} Desktop app
--   You can use the `tank` command in a console.
--   The Toolkit Python API is available both inside applications and in the shell.
+- {% include product %} Actions will appear on the right-click menus inside of {% include product %}
+- Launch icons will appear for the project in the {% include product %} Desktop app
+- You can use the `tank` command in a console.
+- The Toolkit Python API is available both inside applications and in the shell.
 
 Running the Toolkit from within {% include product %} is a common way of starting applications and carrying out tasks. {% include product %} will use {% include product %} Desktop to communicate with the Toolkit install that is local on your machine and use a local Python to execute a Toolkit command. This means that you can run local operations such as folder creation right from inside of {% include product %}.
 
@@ -281,10 +283,10 @@ As a starting point, however, we recommend our Publish App:
 
 Toolkit is not just a collection of apps and engines. It is also a framework that you can use to develop your own tools and technologies! We have included a lot of features to make Toolkit a rich studio development platform. With Toolkit as a foundation, you can focus on the problems at hand rather than building the underlying platform yourself. We have tried to make it easy for developers to build, evaluate and release software without accidentally breaking the pipeline for artists.
 
--   The engines ensure that apps can be written in Python and Qt (PySide/PySide2) regardless of the underlying foundation. This means that some engines are very simple, while some engines are more complex depending on their provided APIs. This means that there is a straightforward, consistent way to develop tools for the studio. In our experience, Python and Qt is often found being the development environment studios use and many TDs are familiar with it. 
--   The engine layer also means that apps can be written once and then be deployed in multiple environments. We have developed the standard app suite as _Multi Apps_, meaning that the same app is used in all engines. There will inevitably be specific code that needs to be tailored to work with the specific API that each DCC application exposes, but this is typically contained in one or more hooks, making it easy to reuse an app. Another consequence of being able to create multi apps like this is that when a new engine is being developed, all the standard apps can be easily configured to work with that new engine.
--   Via Pipeline Configurations and Cloning, it is easy to create a development sandbox, allowing developers to do work on a production without interfering with the day-to-day production activity. Once the tools are ready to be deployed, the main project configuration can be easily updated and the tool is rolled out to all artists.
--   Since apps run inside an engine, it is easy to reload them. Instead of having to restart Nuke or Maya every time you want to test a new code change, simply hit the reload button in Toolkit and the latest code is loaded in.
+- The engines ensure that apps can be written in Python and Qt (PySide/PySide2) regardless of the underlying foundation. This means that some engines are very simple, while some engines are more complex depending on their provided APIs. This means that there is a straightforward, consistent way to develop tools for the studio. In our experience, Python and Qt is often found being the development environment studios use and many TDs are familiar with it.
+- The engine layer also means that apps can be written once and then be deployed in multiple environments. We have developed the standard app suite as _Multi Apps_, meaning that the same app is used in all engines. There will inevitably be specific code that needs to be tailored to work with the specific API that each DCC application exposes, but this is typically contained in one or more hooks, making it easy to reuse an app. Another consequence of being able to create multi apps like this is that when a new engine is being developed, all the standard apps can be easily configured to work with that new engine.
+- Via Pipeline Configurations and Cloning, it is easy to create a development sandbox, allowing developers to do work on a production without interfering with the day-to-day production activity. Once the tools are ready to be deployed, the main project configuration can be easily updated and the tool is rolled out to all artists.
+- Since apps run inside an engine, it is easy to reload them. Instead of having to restart Nuke or Maya every time you want to test a new code change, simply hit the reload button in Toolkit and the latest code is loaded in.
 
 For an more extensive introduction to App Development, see the following documents:
 

@@ -6,6 +6,7 @@ lang: zh_CN
 ---
 
 # Toolkit 桌面启动框架
+
 桌面启动框架用于执行 {% include product %} Desktop 的启动逻辑。它的主要功能包括：
 
 1. 初始化浏览器集成

@@ -17,6 +17,7 @@ _このドキュメントは、Toolkit の設定を管理するユーザのみ�
 1. **フォルダの作成:**{% include product %} でオブジェクトを作成したら、作業開始前にディスク上にフォルダを作成する必要があります。これは、ショットを表すディスク上にフォルダを作成するという簡単な作業であることも、ショットで作業する各ユーザがディスク上の個別の領域で作業できるようにユーザ固有の作業サンドボックスなどをセットアップするという複雑な作業であることもあります。
 
    - Toolkit はアプリケーションの起動時にフォルダを自動的に作成し(ショット BECH_0010 の Maya を起動する場合など)、Maya の起動前にフォルダが作成されるようにします。フォルダが存在しない場合はすぐに作成されます。また、フォルダは、API メソッド、[シェルの tank コマンド](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Useful%20tank%20commands)、[ShotGrid の Create Folders](https://support.shotgunsoftware.com/hc/ja/articles/219040688#Shotgun%20Integration) を使用して作成することもできます。一連の特別な設定ファイルによってこのフォルダ作成プロセスが制御されます。これについては、次のセクションの「[パート 1](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)」で説明します。
+
 2. **作業の表示と保存:** 作業中、ディスク上の標準的な場所からファイルを開いてそこに保存する必要があります。通常、このファイルの場所は作業開始前に作成されたフォルダ構造内になります。
 
    - フォルダ構造を作成すると、この構造を使用してディスク上の主要な場所を特定できます。これらの場所は「[テンプレート](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)」と呼ばれます。たとえば、ショットのパブリッシュした Maya ファイルを参照するように `maya_shot_publish` と呼ばれるテンプレートを定義します。次に、[Toolkit アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219039798)でこのテンプレートを使用します。パブリッシュ アプリがこのテンプレートを使用してファイルの書き込み場所を制御し、[作業ファイル アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)がこのテンプレートを使用して開くファイルの場所を把握できます。Toolkit の環境設定内では、各アプリが使用するテンプレートを制御できます。Toolkit で使用される主なファイルの場所はすべて 1 つのテンプレート ファイルで定義されるため、概要を簡単に表示できます。
@@ -44,7 +45,6 @@ yaml ファイルで表される動的な設定セットアップは次のモー
 - **[遅延フォルダ:](#workspaces-and-deferred-folder-creation)** 2 つ目のフォルダ作成パスが Toolkit API の create folders メソッドを介して要求された場合にのみ実行されます。通常はアプリケーション(Maya など)を起動した場合です。通常、このメソッドはアプリケーションの起動直前に Toolkit のさまざまなアプリケーション ランチャーによって実行されます。
 
 - **[現在のユーザ フォルダ:](#current-user-folder)**現在のユーザを表す特別なフォルダ。
-
 
 ここで各モードの詳細を見ていきましょう。
 
@@ -80,11 +80,11 @@ yaml ファイルで表される動的な設定セットアップは次のモー
 - **entity_type** フィールドは、データの取得元の {% include product %} エンティティ(「Asset」、「Shot」、「Sequence」、「CustomEntity02」など)に設定する必要があります。
 - **name** フィールドは、{% include product %} のデータに基づいて各フォルダに付与される名前です。
 
-   - 上記の例のように(`name: code` など)、1 つのフィールドを使用できます。
-   - 括弧内に複数のフィールド(`name:``"{asset_type}_{code}"` など)を使用できます。
-   - 他にリンクされたエンティティのフィールドを追加する場合は、標準の {% include product %} ドット シンタックス(`name: "{sg_sequence.Sequence.code}_{code}"` など)を使用できます。
-- **filters** フィールドは {% include product %} クエリーです。これは [{% include product %} API 構文](http://developer.shotgridsoftware.com/python-api/reference.html)に比較的近くなります。ディクショナリのリストで、各ディクショナリには、_path_、_relation_、および _values_ の各キーを指定する必要があります。$syntax の有効値は、{% include product %} エンティティ(ディレクトリ階層上位に sequence.yml がある場合はプロジェクトの `"$project"` と `"$sequence"` など)に対応した親フォルダです。{% include product %} エンティティ リンクの場合、$syntax (`{ "path": "project", "relation": "is", "values": [ "$project" ] }` など)を使用すると、環境設定内の親フォルダを参照できます。この詳細については、[以下の例](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Examples)で説明します。
+  - 上記の例のように(`name: code` など)、1 つのフィールドを使用できます。
+  - 括弧内に複数のフィールド(` name:``"{asset_type}_{code}" ` など)を使用できます。
+  - 他にリンクされたエンティティのフィールドを追加する場合は、標準の {% include product %} ドット シンタックス(`name: "{sg_sequence.Sequence.code}_{code}"` など)を使用できます。
 
+- **filters** フィールドは {% include product %} クエリーです。これは [{% include product %} API 構文](http://developer.shotgridsoftware.com/python-api/reference.html)に比較的近くなります。ディクショナリのリストで、各ディクショナリには、_path_、_relation_、および _values_ の各キーを指定する必要があります。$syntax の有効値は、{% include product %} エンティティ(ディレクトリ階層上位に sequence.yml がある場合はプロジェクトの `"$project"`と`"$sequence"` など)に対応した親フォルダです。{% include product %} エンティティ リンクの場合、$syntax (`{ "path": "project", "relation": "is", "values": [ "$project" ] }` など)を使用すると、環境設定内の親フォルダを参照できます。この詳細については、[以下の例](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Examples)で説明します。
 
 ## 複数のフォルダ
 
@@ -114,7 +114,7 @@ yaml ファイルで表される動的な設定セットアップは次のモー
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
-この種類のパスのファイル システム テンプレートを作成する場合(詳細については、このドキュメントのパート 2 を参照)、_last_folder は {% include product %} のエンティティを表します。上の例は、たとえば、次のテンプレートを使用して表すことができます。
+この種類のパスのファイル システム テンプレートを作成する場合(詳細については、このドキュメントのパート 2 を参照)、\_last_folder は {% include product %} のエンティティを表します。上の例は、たとえば、次のテンプレートを使用して表すことができます。
 
     asset_step_folder: assets/{asset_type}/{Asset}/{Step}
 
@@ -250,7 +250,6 @@ Toolkit では、正規表現を使用して、{% include product %} フィー�
 - オプションの `skip_unused` パラメータを指定すると、使用しないリスト タイプ フィールドの値に対してディレクトリが作成されなくなります(上記の「[オプション フィールド](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Optional%20fields)」セクションで説明)。{% include info title="注" content="これを True に設定すると、フォルダ作成のパフォーマンスに悪影響を与える可能性があります。また、現在のカリング アルゴリズムは不完全なため、関連するエンティティに複雑なフィルタが適用されている場合には機能しません。"%}
 
 - オプションの `create_with_parent` パラメータを指定すると、子エンティティ レベル ノードを現在処理していなくても、list_field ノードを強制的に作成します(上記の「[親フォルダを使用して作成する](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Create%20With%20Parent%20Folder)」セクションを参照)。
-
 
 ## パイプライン ステップ フォルダ
 
@@ -495,7 +494,7 @@ symlink の作成は(すべての入力/出力(I/O)のように)フックを処�
     .git                # no git temp files to be copied across at folder creation time
     .DS_Store           # no mac temp files to be copied across at folder creation time
 
-また、ワイルドカードを使用することもできます。たとえば、拡張子が TMP のすべてのファイルを除外する必要がある場合は、ファイルに *.tmp の行を追加するだけです。
+また、ワイルドカードを使用することもできます。たとえば、拡張子が TMP のすべてのファイルを除外する必要がある場合は、ファイルに \*.tmp の行を追加するだけです。
 
     <a name="This is a good example of a standard ignore_files file"></a>
     # This is a good example of a standard ignore_files file
@@ -700,7 +699,6 @@ Toolkit で必要になるさまざまな設定指示とは別に、スキーマ
      'metadata': {'studio_permissions_level': 'admin', 'type': 'static'},
      'path': '/mnt/projects/chasing_the_light/assets'},
 
-
 任意の複雑なデータはこの方法で YAML 設定ファイルからフックに渡すことができます。
 
 ## フォルダの作成方法の簡単なカスタマイズ
@@ -823,7 +821,7 @@ Toolkit テンプレート ファイルは Toolkit 設定のハブの 1 つで�
 
 ![configuration](images/file-system-config-reference/templates_file.png)
 
-このファイルには「テンプレート」の定義とその「キー」が含まれます。____
+このファイルには「テンプレート」の定義とその「キー」が含まれます。\_\_\_\_
 
 **キー**は定義された動的フィールドです。これには、名前、バージョン番号、スクリーン解像度、ショット名などを指定できます。キーには型が設定されるため、キーに文字列または整数などを定義できます。また、キーにはフォーマットを設定することもできるため、文字列に含められるのは英数字のみと定義したり、すべての整数にゼロを 8 個追加する必要があると定義したりできます。
 
@@ -860,7 +858,7 @@ Toolkit テンプレート ファイルは Toolkit 設定のハブの 1 つで�
 
 - `filter_by: '^[0-9]{4}_[a-z]{3}$'` : キーのタイプが文字列の場合にのみ動作します。検証マスクとして正規表現を定義できます。上記の例で 4 桁のキーを指定する必要がある場合などは、アンダースコアとその後に 3 つの小文字を指定します。
 
-- `format_spec: "04"` : キーのタイプが int または sequence の場合、int または sequence の番号にはゼロまたはスペースが追加されます。例のように「04」を指定すると、ゼロが追加されて長さが 4 桁になります(例: 0003)。「03」を指定すると、ゼロが追加されて長さが 3 桁になります(例: 042)。「3」を指定すると、スペースが追加されて長さが 3 桁になります(例: 「__3」)。キーのタイプがタイムスタンプの場合、format_spec は [strftime と strptime の規則](https://docs.python.org/2/library/datetime.html#strftime-strptime-behavior) に従います。
+- `format_spec: "04"` : キーのタイプが int または sequence の場合、int または sequence の番号にはゼロまたはスペースが追加されます。例のように「04」を指定すると、ゼロが追加されて長さが 4 桁になります(例: 0003)。「03」を指定すると、ゼロが追加されて長さが 3 桁になります(例: 042)。「3」を指定すると、スペースが追加されて長さが 3 桁になります(例: 「\_\_3」)。キーのタイプがタイムスタンプの場合、format_spec は [strftime と strptime の規則](https://docs.python.org/2/library/datetime.html#strftime-strptime-behavior) に従います。
 
 - `strict_matching: true` : キーのタイプが整数の場合にのみ動作します。この設定は、フィールドが正しくフォーマット化された番号のみに一致することを表しています。たとえば、「003」と指定して strict_matching を true に設定すると、「002」、「12345」、および「042」は一致しますが、「00003」または「2」は一致しません。一致の厳密性を緩めるには、strict_matching を false に設定します。既定の動作は厳密な一致を採用します。
 
@@ -871,7 +869,6 @@ Toolkit テンプレート ファイルは Toolkit 設定のハブの 1 つで�
 - `abstract` : フィールドが抽象的であることを示します。抽象フィールドは、パターンでイメージ シーケンス(%04d)または立体視(%V)などのパスを定義する必要がある場合に使用されます。抽象フィールドには既定値が必要です。
 
 - `subset` と `subset_format`: 指定した入力文字列のサブセットを抽出し、完全なユーザ名からイニシャルのキーを作成したり、すべてのショット名の最初の 3 文字を保持するキーを作成したりできるキーの値を作成します。
-
 
 テンプレート キーの技術的詳細については、「[API リファレンス](http://developer.shotgridsoftware.com/tk-core/core.html#template-system)」を参照してください。
 
@@ -1112,7 +1109,6 @@ assets フォルダが単なる別のシーケンスではないことを Toolki
 - [エピソード エンティティはどのように動作するのですか?](https://support.shotgunsoftware.com/hc/ja/articles/115000019414)
 - [エンティティの階層をカスタマイズする](https://support.shotgunsoftware.com/hc/ja/articles/219030828)
 
-
 ### 「エピソード > シーケンス > ショット」の階層に必要な {% include product %} フィールド
 
 [ `Episode` ([サイト基本設定](Site Preferences) > [エンティティ] (Entities))のカスタム エンティティ](https://support.shotgunsoftware.com/hc/ja/articles/114094182834)を使用したり、{% include product %} [7.0.7.0](https://support.shotgunsoftware.com/hc/en-us/articles/220062367-7-0-Release-Notes#7_0_7_0) で利用可能な正式なエピソード エンティティを使用したりできます。{% include product %} 7.0.7.0 以前(2017 より前)に登録している場合、「TV Show」テンプレートはエピソードに `CustomEntity02` を使用します。`CustomEntity02` または正式なエピソード エンティティではない別のエンティティを使用する場合も心配しないでください。{% include product %} と Toolkit には柔軟性があります。両方の場合について説明します。
@@ -1264,7 +1260,6 @@ b) **カスタム エンティティを使用する:** `CustomEntity02` は、�
 
 `config/core/schema/project/shots/episode/sequence` フォルダで、次のコンテンツと同じディレクトリ内に対応する `shot.yml` ファイルを含む `shot` という名前のフォルダを作成します。
 
-
     <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
@@ -1343,11 +1338,10 @@ b) **カスタム エンティティを使用する:** `CustomEntity02` は、�
 
 - スキーマでこの新しいアセット タイプ vehicle の新しいブランチを作成します。
 - `asset/` と `asset.yml` と同じレベルで、`asset_vehicle/` フォルダと `asset_vehicle.yml` を追加します。
-- この YAML ファイルにもフィルタ設定があります。vehicle 以外のすべてのアセットに適用されるように `asset.yml` 内のフィルタを修正してから、__タイプ vehicle のアセットのみに適用されるように `asset_vehicle.yml` を修正します。__[ここでは、このフィルタの例を示します](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Different%20file%20system%20layouts%20for%20different%20pipeline%20steps)。
+- この YAML ファイルにもフィルタ設定があります。vehicle 以外のすべてのアセットに適用されるように `asset.yml` 内のフィルタを修正してから、**タイプ vehicle のアセットのみに適用されるように `asset_vehicle.yml` を修正します。**[ここでは、このフィルタの例を示します](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Different%20file%20system%20layouts%20for%20different%20pipeline%20steps)。
 - これで `asset` と `asset_vehicles` を表す 2 つのフォルダが作成されました。アセット(`geoprep` や `lookdev` など)に対して作成するすべてのフォルダを `asset_vehicle` の下に追加します。
 
 - このアセットのファイルを保存およびパブリッシュする場合は、`core/templates.yml` 内に保存およびパブリッシュしたファイルのファイル パスを定義するテンプレートを作成します。たとえば、[`maya_asset_work`](https://github.com/shotgunsoftware/tk-config-default/blob/v0.17.3/core/templates.yml#L480) とは別に、`maya_asset_work_vehicle` と呼ばれるテンプレートを作成すると、その定義は vehicle アセットの Maya 作業ファイルを保存するテンプレート化したパスになります。
-
 
 **手順 2: 新しい環境ファイルを作成する**
 

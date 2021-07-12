@@ -7,7 +7,7 @@ lang: ja
 
 # {% include product %}
 
-{% include product %} Engine は {% include product %} 内から起動できるアプリを管理します。この Toolkit アプリをアクション**として参照することもあります。通常、このアプリは {% include product %} 内のメニュー項目として表示されます。
+{% include product %} Engine は {% include product %} 内から起動できるアプリを管理します。この Toolkit アプリをアクション\*\*として参照することもあります。通常、このアプリは {% include product %} 内のメニュー項目として表示されます。
 
 ## {% include product %} Pipeline Toolkit アクションを使用する
 
@@ -27,8 +27,8 @@ lang: ja
 
 Core v0.13 以降では、{% include product %} Engine ですべてのマルチ アプリを使用できます。技術的には、{% include product %} Engine と他のエンジンの違いはほとんどありません。ただし、微妙な違いがあります。
 
-* {% include product %} Engine で QT ベースのアプリを実行する場合は、標準的な Python 環境に PySide や PyQt を手動でインストールする必要があります。
-* {% include product %} Engine では、ユーザが属する権限グループに応じてアクションを表示することができます。これは、{% include product %} アクション メニューにコマンドを追加して、このコマンドを管理者にのみ表示する場合などに便利です。
+- {% include product %} Engine で QT ベースのアプリを実行する場合は、標準的な Python 環境に PySide や PyQt を手動でインストールする必要があります。
+- {% include product %} Engine では、ユーザが属する権限グループに応じてアクションを表示することができます。これは、{% include product %} アクション メニューにコマンドを追加して、このコマンドを管理者にのみ表示する場合などに便利です。
 
 {% include product %} アプリで、管理者にのみ「Hello, World!」と表示する場合は、次のように記述します。
 
@@ -40,7 +40,7 @@ class LaunchPublish(Application):
     def init_app(self):
         """
         Register menu items with {% include product %}
-        """        
+        """
         params = {
             "title": "Hello, World!",
             "deny_permissions": ["Artist"],
@@ -51,6 +51,5 @@ class LaunchPublish(Application):
 
     def do_stuff(self, entity_type, entity_ids):
         # this message will be displayed to the user
-        self.engine.log_info("Hello, World!")    
+        self.engine.log_info("Hello, World!")
 ```
-

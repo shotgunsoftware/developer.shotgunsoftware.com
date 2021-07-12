@@ -29,9 +29,9 @@ Make sure you add detailed comments about what it is you're doing any why you're
 
 Remember that other users will have a wide variety of environments and variables in play that may not match what you have at your studio. Toolkit tries to minimize the impact of these types of things for users but there are always things that could be different in other users' environments. Some examples:
 
--   Will your code work the same on OS X, Windows, and Linux?
--   Will it work in all supported versions of a Software?
--   Will it work the same whether the user launches from a terminal, SG Desktop, {% include product %}, or perhaps their own custom app?
+- Will your code work the same on OS X, Windows, and Linux?
+- Will it work in all supported versions of a Software?
+- Will it work the same whether the user launches from a terminal, SG Desktop, {% include product %}, or perhaps their own custom app?
 
 ## Create a Pull Request
 

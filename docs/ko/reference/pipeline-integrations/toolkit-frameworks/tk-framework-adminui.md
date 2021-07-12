@@ -15,7 +15,7 @@ lang: ko
 
 ![](images/setup_project_wizard.png)
 
-이 API는 툴킷용 {% include product %} 인스턴스를 통해 프로젝트를 설정하는 단계를 보여 주는 QWizard 구현입니다.  이 마법사를 사용하려면 (표준 {% include product %} API 엔티티 사전으로) 설정할 프로젝트와 부모로 지정할 창을 전달하는 클래스 인스턴스를 생성하기만 하면 됩니다.
+이 API는 툴킷용 {% include product %} 인스턴스를 통해 프로젝트를 설정하는 단계를 보여 주는 QWizard 구현입니다. 이 마법사를 사용하려면 (표준 {% include product %} API 엔티티 사전으로) 설정할 프로젝트와 부모로 지정할 창을 전달하는 클래스 인스턴스를 생성하기만 하면 됩니다.
 
 ```python
 adminui = sgtk.platform.import_framework("tk-framework-adminui", "setup_project")

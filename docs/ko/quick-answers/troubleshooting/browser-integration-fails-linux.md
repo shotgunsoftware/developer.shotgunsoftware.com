@@ -11,6 +11,7 @@ Linux에서 {% include product %} 데스크톱을 처음 실행하면 다음 오
 여전히 해결되지 않으면 support@shotgunsoftware.com으로 문의하시기 바랍니다.
 
 ### 목차
+
 - [OPENSSL_1.0.1_EC 또는 HTTPSConnection 관련 문제](#openssl_101_ec-or-httpsconnection-related-issues)
 - [libffi.so.5 관련 문제](#libffiso5-related-issues)
 - [인증서 유효성 확인 실패 관련 문제](#certificate-validation-failed-related-issues)
@@ -91,6 +92,7 @@ ls -al $HOME/.pki/nssdb
 $ mkdir --parents ~/.pki/nssdb
 $ certutil -N -d "sql:$HOME/.pki/nssdb"
 ```
+
 암호를 입력하지 마십시오.
 
 {% include product %} 데스크톱을 실행하면 이제 올바로 작동할 것입니다.

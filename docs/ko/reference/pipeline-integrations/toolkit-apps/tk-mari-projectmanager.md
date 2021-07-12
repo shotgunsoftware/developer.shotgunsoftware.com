@@ -6,4 +6,3 @@ lang: ko
 ---
 
 # Mari Project Manager
-

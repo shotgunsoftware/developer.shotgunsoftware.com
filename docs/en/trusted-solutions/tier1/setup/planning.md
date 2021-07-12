@@ -12,10 +12,11 @@ lang: en
 ## Pick your options
 
 Pick which features you want to activate
-  * Media Isolation
-  * Media Traffic Isolation
-  * Web Traffic Isolation
-  * Media Replication
+
+- Media Isolation
+- Media Traffic Isolation
+- Web Traffic Isolation
+- Media Replication
 
 ## AWS Account Creation
 
@@ -33,17 +34,16 @@ Plan your AWS VPC and subnets IP ranges.
 
 ### IP Range Example
 
-| Region | VPC | Subnet 1 | Subnet 2 | Subnet 3 | 
-|--------|-----|----------|----------|----------|
+| Region         | VPC         | Subnet 1    | Subnet 2    | Subnet 3    |
+| -------------- | ----------- | ----------- | ----------- | ----------- |
 | ap-southeast-2 | 10.1.0.0/16 | 10.1.0.0/24 | 10.1.1.0/24 | 10.1.2.0/24 |
-
 
 ### Plan how you will privately access your AWS VPC
 
 If you plan to activate any of the Traffic Isolation feature, you will need a way to connect your AWS VPC and your network infrastructure. The main options are:
 
-  * AWS Direct Connect
-  * Other VPN solution
+- AWS Direct Connect
+- Other VPN solution
 
 We highly recommand you to leverage Direct Connect. Direct Connect guarantees the lowest latency possible to the {% include product %} services, a consistent network experience, and allow you to leverage the optimization AWS is relying on to guarantee an optimal performance across the globe.
 

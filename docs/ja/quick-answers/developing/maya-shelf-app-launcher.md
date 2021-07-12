@@ -11,7 +11,7 @@ Maya で Toolkit アプリを起動するシェルフ ボタンを Maya に追�
 
 {% include info title="注" content="これは、Toolkit が現在の Maya セッションで有効であることが前提です。このコード例では Toolkit をブートストラップしません。"%}
 
-Maya でスクリプト エディタを開き、次の Python コードを貼り付けます。 
+Maya でスクリプト エディタを開き、次の Python コードを貼り付けます。
 
 ```python
 import maya.cmds as cmds

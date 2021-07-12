@@ -11,6 +11,7 @@ lang: zh_CN
 如果问题仍存在，请随时发送电子邮件到 support@shotgunsoftware.com 以联系我们。
 
 ### 目录
+
 - [OPENSSL_1.0.1_EC 或 HTTPSConnection 相关问题](#openssl_101_ec-or-httpsconnection-related-issues)
 - [libffi.so.5 相关问题](#libffiso5-related-issues)
 - [与证书验证失败相关的问题](#certificate-validation-failed-related-issues)
@@ -91,6 +92,7 @@ ls -al $HOME/.pki/nssdb
 $ mkdir --parents ~/.pki/nssdb
 $ certutil -N -d "sql:$HOME/.pki/nssdb"
 ```
+
 不要输入任何密码。
 
 {% include product %} Desktop 现在应该能够正常启动。

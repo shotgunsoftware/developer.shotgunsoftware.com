@@ -9,11 +9,12 @@ lang: en
 
 Our sgtk API provides a [convenience method](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.register_publish) for registering `PublishedFiles` entities in ShotGrid.
 
-In addition we also have a Publish app, that comes with [its own API](https://developer.shotgridsoftware.com/tk-multi-publish2/). 
+In addition we also have a Publish app, that comes with [its own API](https://developer.shotgridsoftware.com/tk-multi-publish2/).
 The Publish API ultimately uses the core sgtk API method to register the PublishedFile, but it also provides a framework around collection, validation, and publishing, which can be customized
 In addition to the the Publish API documentation, we have examples of writing your own publish plugins in our [pipeline tutorial](https://developer.shotgridsoftware.com/cb8926fc/?title=Pipeline+Tutorial).
 
 ## Using the register_publish() API method
+
 While it is possible to create publish records in {% include product %} using a raw {% include product %} API call, we would strongly recommend using Toolkit's convenience method.
 All toolkit apps that create publishes are using a API utility method method called [`sgtk.util.register_publish()`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.register_publish).
 
@@ -34,7 +35,7 @@ file_to_publish = "/mnt/projects/proj/seq_abc/shot_123/comp/foreground.v034.nk"
 # without any version number or extension
 name = "foreground"
 
-# initialize an API object. If you have used the Toolkit folder creation 
+# initialize an API object. If you have used the Toolkit folder creation
 # to create the folders where the published file resides, you can use this path
 # to construct the API object. Alternatively you can create it from any ShotGrid
 # entity using the sgtk_from_entity() method.
@@ -55,17 +56,17 @@ ctx = tk.context_from_entity("Task", 123)
 # the third parameter (file.nk) is typically the file name, without a version number.
 # this makes grouping inside of ShotGrid easy. The last parameter is the version number.
 sgtk.util.register_publish(
-  tk, 
-  ctx, 
-  file_to_publish, 
-  name, 
+  tk,
+  ctx,
+  file_to_publish,
+  name,
   published_file_type="Nuke Script",
   version_number=34
 )
 ```
 
-There are several options you can populate in addition to the basic ones shown above. 
-For a full list of parameters and what they do, see the [Core API documentation](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.register_publish). 
+There are several options you can populate in addition to the basic ones shown above.
+For a full list of parameters and what they do, see the [Core API documentation](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.register_publish).
 
 {% include info title="Tip" content="If your code is running from within a Toolkit app you can grab the sgtk instance via `self.sgtk` and the context with `self.context`.
 If it's not in an app, but will be running within software where a Toolkit integration is present, you can access the current context and sgtk instance with the following code:
@@ -76,4 +77,5 @@ currentEngine = sgtk.platform.current_engine()
 tk = currentEngine.sgtk
 ctx = currentEngine.context
 ```
+
 " %}

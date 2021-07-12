@@ -121,10 +121,10 @@ After Effects が起動するたびに、エンジン ブートストラップ �
 
 ```yaml
 shelf_favorites:
-    - {app_instance: tk-multi-workfiles2, name: File Save...}
-    - {app_instance: tk-multi-workfiles2, name: File Open...}
-    - {app_instance: tk-multi-publish, name: Publish...}
-    - {app_instance: tk-multi-snapshot, name: Snapshot...}
+  - { app_instance: tk-multi-workfiles2, name: File Save... }
+  - { app_instance: tk-multi-workfiles2, name: File Open... }
+  - { app_instance: tk-multi-publish, name: Publish... }
+  - { app_instance: tk-multi-snapshot, name: Snapshot... }
 ```
 
 設定の値は、環境設定にインストールされたアプリの 1 つで提供される、登録済みコマンドを識別するディクショナリのリストです。`app_instance` キーは特定のインストール済みアプリを識別し、`name` キーはこのアプリによって登録されたコマンドの表示名に一致します。上記の例では、4 つのお気に入りコマンドが表示されています。`tk-multi-workfiles2` アプリのファイルの表示と保存のダイアログと、標準の Toolkit のパブリッシュとスナップショットのダイアログです。これら 4 つのコマンドはお気に入りシェルフに表示されます。
@@ -141,7 +141,6 @@ shelf_favorites:
 - `SHOTGUN_ADOBE_PYTHON`: エンジンの起動時に使用する Python の実行可能ファイルへのパス。設定しない場合は、システムの Python が使用されます。Photoshop が {% include product %} Desktop や tk-shell エンジンなどの Python プロセスから起動される場合、このプロセスで使用する Python は Photoshop との統合で使用されます。
 
 注: 追加の環境変数が Adobe のフレームワークに存在します。詳細については、[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-framework-adobe/)を参照してください。
-
 
 ## コンテキスト フィールド表示フック
 
@@ -164,5 +163,3 @@ shelf_favorites:
 ## After Effects の API
 
 After Effects の API に関する詳細については、[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-aftereffects)を参照してください。
-
-

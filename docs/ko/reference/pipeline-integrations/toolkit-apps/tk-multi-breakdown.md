@@ -128,7 +128,6 @@ for item in breakdown_items:
    path = item["template"].apply_fields(item["fields"])
 ```
 
-
 ### 항목의 가장 높은 버전 계산
 
 ```
@@ -139,7 +138,6 @@ highest_version = app_object.compute_highest_version(template, fields)
 
 이렇게 하면 디스크에서 스캔을 수행하여 가장 높은 버전을 확인합니다. 방식은 디스크에서 발견된 가장 높은 버전 번호를 반환합니다. 자세한 정보는 아래의 사용 예를 참조하십시오.
 
-
 ### 씬 항목 업데이트
 
 ```
@@ -149,9 +147,6 @@ app_object.update_item(node_type, node_name, template, fields)
 항목을 업데이트하려면 `update_item(node_type, node_name, template, fields)` 방식을 사용하면 됩니다. `template` 및 `fields` 매개변수는 업데이트해야 할 경로를 나타냅니다. `node_name` 및 `node_type` 매개변수는 수정해야 할 씬의 노드를 식별하는 데 사용됩니다. 일반적으로 이러한 값은 `analyze_scene()` 방식의 출력에서 찾을 수 있습니다.
 
 이 방식은 Breakdown UI에서 업데이트를 실행하는 것과 비슷합니다. 실제 업데이트 호출은 DCC 특정 로직을 처리하는 후크에 디스패치됩니다. 자세한 정보는 아래의 사용 예를 참조하십시오.
-
-
-
 
 ### Breakdown API 예
 

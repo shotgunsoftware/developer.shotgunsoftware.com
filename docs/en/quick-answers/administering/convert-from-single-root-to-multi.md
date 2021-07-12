@@ -15,7 +15,7 @@ Let’s say you want to add another root named “secondary”. Here are the ste
 - In {% include product %}, navigate to the **Admin > Site Preferences** page
 - Open up the **File Management** section
 - Click on **[+] Add Local File Storage**
-- Fill out the name ("secondary") and the paths to the storage root on all of the relevant platforms. *If you're not using a particular platform, you can simply leave it blank.*
+- Fill out the name ("secondary") and the paths to the storage root on all of the relevant platforms. _If you're not using a particular platform, you can simply leave it blank._
 - Click on the **Save Page** button on the top or the bottom of the page
 
 ![{% include product %} file management prefs](images/shotgun-pref-file-management.png)
@@ -25,13 +25,13 @@ Let’s say you want to add another root named “secondary”. Here are the ste
 Toolkit caches information about the local storages used in a pipeline configuration in the `config/core/roots.yml` file. Edit this file to add the new **secondary** storage root you just created in {% include product %}:
 
     primary: {
-        linux_path: /mnt/hgfs/sgtk/projects, 
-        mac_path: /sgtk/projects, 
+        linux_path: /mnt/hgfs/sgtk/projects,
+        mac_path: /sgtk/projects,
         windows_path: 'z:\sgtk\projects'
     }
     secondary: {
-        linux_path: /mnt/hgfs/sgtk/secondaries, 
-        mac_path: /sgtk/secondaries, 
+        linux_path: /mnt/hgfs/sgtk/secondaries,
+        mac_path: /sgtk/secondaries,
         windows_path: 'z:\sgtk\secondaries'
     }
 
@@ -39,8 +39,8 @@ Toolkit caches information about the local storages used in a pipeline configura
 Example:
 
     secondary: {
-        linux_path: /mnt/hgfs/sgtk/secondaries, 
-        mac_path: /sgtk/secondaries, 
+        linux_path: /mnt/hgfs/sgtk/secondaries,
+        mac_path: /sgtk/secondaries,
         windows_path: 'z:\sgtk\secondaries'
         shotgun_storage_id: 123
     }
@@ -90,4 +90,4 @@ You should follow this same pattern for each template path in your `config/core/
 
 {% include info title="Note" content="You do not need to specify a `root_name` for templates that use the default storage root. The default root is indicated by specifying `default: true` in the `roots.yml` file. If a default is not explicitly defined in `roots.yml`, the root named **primary** will be considered the default." %}
 
-<sup>1</sup> *It is worth noting that updating the paths might not be ideal, since any old files that were created using the previous value will not be accessible by Toolkit once the new value is set (e.g. old work files won't be found by Toolkit after changing their template path). If this is a concern, you may then create a new template (e.g. houdini_shot_publish_v2) with the new location and upgrade your apps to use that new version. Not all apps handle a fallback concept like this, but this will allow some apps to recognize the old files. This does not affect publishes, as these are always linked to their publish in {% include product %}.*
+<sup>1</sup> _It is worth noting that updating the paths might not be ideal, since any old files that were created using the previous value will not be accessible by Toolkit once the new value is set (e.g. old work files won't be found by Toolkit after changing their template path). If this is a concern, you may then create a new template (e.g. houdini_shot_publish_v2) with the new location and upgrade your apps to use that new version. Not all apps handle a fallback concept like this, but this will allow some apps to recognize the old files. This does not affect publishes, as these are always linked to their publish in {% include product %}._

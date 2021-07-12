@@ -74,12 +74,12 @@ True
 
 ![“创建 Webhook”(Create Webhook)对话框](./images/webhooks/webhook_selected_status.png)
 
-| 状态 | 示例 | 说明 |
-|--------|:-------:|:-----------:|
-| 活动 | ![活动](./images/webhooks/webhook_status_active.png) | Webhook 运行稳定。在过去 24 小时内，对此 Webhook 进行的交付都已到达其目的地。 |
-| 不稳定 | ![不稳定](./images/webhooks/webhook_status_unstable.png) | Webhook 运行不稳定。在过去 24 小时内，某些交付未能到达其目的地，但不足以导致 {% include product %} 将 Webhook 视为终止。 |
-| 失败 | ![失败](./images/webhooks/webhook_status_failed.png) | Webhook 被视为终止，且不会再尝试交付。这是因为在短时间内出现太多交付失败，且系统已确定不应再将 Webhook 视为可行。**如果在过去 24 小时内出现 10 次交付失败，Webhook 将被视为失败**。 |
-| 禁用 | ![禁用](./images/webhooks/webhook_status_disabled.png) | Webhook 处于禁用状态，并且在重新启用之前，不会再尝试进行任何交付。 |
+| 状态   |                           示例                           |                                                                                        说明                                                                                         |
+| ------ | :------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| 活动   |   ![活动](./images/webhooks/webhook_status_active.png)   |                                                    Webhook 运行稳定。在过去 24 小时内，对此 Webhook 进行的交付都已到达其目的地。                                                    |
+| 不稳定 | ![不稳定](./images/webhooks/webhook_status_unstable.png) |                              Webhook 运行不稳定。在过去 24 小时内，某些交付未能到达其目的地，但不足以导致 {% include product %} 将 Webhook 视为终止。                               |
+| 失败   |   ![失败](./images/webhooks/webhook_status_failed.png)   | Webhook 被视为终止，且不会再尝试交付。这是因为在短时间内出现太多交付失败，且系统已确定不应再将 Webhook 视为可行。**如果在过去 24 小时内出现 10 次交付失败，Webhook 将被视为失败**。 |
+| 禁用   |  ![禁用](./images/webhooks/webhook_status_disabled.png)  |                                                         Webhook 处于禁用状态，并且在重新启用之前，不会再尝试进行任何交付。                                                          |
 
 ## 交付
 
@@ -191,9 +191,8 @@ webhook.site 服务存在严格的速率限制。这意味着，最后很容易�
 
 #### 状态代码
 
-| 状态 | 代码 | 说明 |
-|--------|:----:|:-----------:|
-| 成功 | < 400 | 交付已接收并成功处理。 |
-| 错误 | >= 400 | 交付已接收，但未成功处理。 |
-| 重定向 | 3xx | 交付已接收，但应重定向到其他 URL。 |
-
+| 状态   |  代码  |                说明                |
+| ------ | :----: | :--------------------------------: |
+| 成功   | < 400  |       交付已接收并成功处理。       |
+| 错误   | >= 400 |     交付已接收，但未成功处理。     |
+| 重定向 |  3xx   | 交付已接收，但应重定向到其他 URL。 |

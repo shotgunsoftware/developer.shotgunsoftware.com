@@ -7,7 +7,7 @@ lang: en
 
 # Houdini Mantra Node
 
-The Houdini Mantra Node App provides a custom {% include product %} Mantra Output node which makes it easy to standardise the location where render files are output.  It can be configured for each environment.
+The Houdini Mantra Node App provides a custom {% include product %} Mantra Output node which makes it easy to standardise the location where render files are output. It can be configured for each environment.
 
 ## General Use
 
@@ -19,7 +19,7 @@ The node can be configured with multiple output profiles, each using a different
 
 ![Mantra Node](../images/apps/houdini-mantranode-output_profile.png)
 
-Rather than entering a path by hand, you just specify which configuration to use and the node will compute the rest of the path automatically. You can see the computed path in the UI. 
+Rather than entering a path by hand, you just specify which configuration to use and the node will compute the rest of the path automatically. You can see the computed path in the UI.
 
 ![Mantra Node](../images/apps/houdini-mantranode-computed_path.png)
 

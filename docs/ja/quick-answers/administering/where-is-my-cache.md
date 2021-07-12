@@ -7,7 +7,6 @@ lang: ja
 
 # キャッシュの場所
 
-
 ## ルート キャッシュの場所
 
 Toolkit は、{% include product %} サーバに対する不要な呼び出しを防止するために、一部のデータをローカル キャッシュに保存します。ローカル キャッシュには[パス キャッシュ](./what-is-path-cache.md)、バンドル キャッシュ、およびサムネイルが含まれます。ほとんどのユーザは既定の場所を使用しますが、変更の必要がある場合は、[cache_location コア フック](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/cache_location.py)を使用して設定可能です。

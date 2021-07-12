@@ -13,7 +13,6 @@ lang: ja
 
 {% include info title="注" content="[分散設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)を使用している場合は、Toolkit エンジンを初期化してから、Toolkit API メソッドを実行する必要があります。[中央設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)を使用している場合は、エンジンをブートストラップしなくても API を使用できます。ただし、[ファクトリ メソッド](https://developer.shotgridsoftware.com/tk-core/initializing.html#factory-methods)を使用している場合は、`sgtk` を読み込むときに、プロジェクトに適した Core API のパスを手動で特定する必要があります。"%}
 
-
 ### 要件
 
 - Python プログラミングの基礎についての理解。
@@ -133,11 +132,10 @@ sgtk.set_authenticated_user(user)
 3. 現在ロードされている sgtk コアを、環境設定に適したコアに入れ替えます。
 4. エンジン、アプリ、およびフレームワークを初期化します。
 
-
 {% include info title="注" content="通常は、ブートストラップする際に、このエンジンを正常に実行するために必要なあらゆる要件に注意する必要があります。ただし、場合によっては、ブートストラップ プロセスに含まれない特定の設定要件があり、個別に処理しなければならないことがあります。"%}
 
-
 ### ブートストラップの準備
+
 ブートストラップを実行するには、まず [`ToolkitManager`](https://developer.shotgridsoftware.com/tk-core/initializing.html#toolkitmanager) インスタンスを作成する必要があります。
 
 ```python
@@ -149,16 +147,19 @@ Toolkit でブートストラップを行うには、少なくともエンティ
 #### プラグイン ID
 
 プラグイン ID を定義するには、ブートストラップ メソッドを呼び出す前に文字列を `ToolkitManager.plugin_id` パラメータに渡します。このガイドでは、`tk-shell` エンジンをブートストラップするため、リファレンス ドキュメントに記載されている規則に従って、適切なプラグイン ID 名を指定する必要があります。
+
 ```python
 mgr.plugin_id = "basic.shell"
 ```
 
 #### エンジン
+
 Maya や Nuke などのソフトウェアの外部にあるスタンドアロン Python 環境でアプリを起動したり、Toolkit コードを実行したりする場合は、`tk-shell` がブートストラップ先のエンジンになります。
 
 サポート対象ソフトウェア内で Toolkit アプリを実行する場合は、`tk-maya` または `tk-nuke`などの適切なエンジンを選択します。このパラメータは、[`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) メソッドに直接渡されます。以下の[エンティティ セクション](#entity)の例を参照してください。
 
 #### エンティティ
+
 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) メソッドの `entity` パラメータを使用する目的は、[コンテキスト](https://developer.shotgridsoftware.com/tk-core/core.html#context)、つまり、起動したエンジンの[環境](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)を設定することです。エンティティには、環境設定が機能する任意のエンティティ タイプを指定できます。たとえば、`Project` エンティティを指定した場合、エンジンはプロジェクトの環境設定を使用してプロジェクト コンテキスト内で起動します。同様に、(タスクが `Asset` にリンクされている) `Task` エンティティを指定して、エンジンが `asset_step.yml` 環境を使用して起動するように設定できます。この動作は既定の設定動作に基づいて決まり、[選択した環境](https://developer.shotgridsoftware.com/ja/487a9f2c/#toolkit-%E3%81%8C%E7%8F%BE%E5%9C%A8%E3%81%AE%E7%92%B0%E5%A2%83%E3%82%92%E5%88%A4%E6%96%AD%E3%81%99%E3%82%8B%E4%BB%95%E7%B5%84%E3%81%BF)はコア フック [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py) によってコントロールされます。したがって、コンテキストやその他のパラメータに基づいて異なる環境を選択するよう変更することができます。
 
 エンティティは、タイプと ID が最低限必要となる ShotGrid エンティティ ディクショナリの形式で指定する必要があります。
@@ -183,7 +184,6 @@ def pre_engine_start_callback(ctx):
 
 mgr.pre_engine_start_callback = pre_engine_start_callback
 ```
-
 
 #### 設定の選択
 
@@ -243,6 +243,7 @@ engine.context
 engine.sgtk
 engine.shotgun
 ```
+
 このガイドの最終的な目標はアプリの起動方法を示すことですが、この時点で上記のアトリビュートを利用して、コード スニペットをテストしたり、Toolkit API を利用するする自動化を行ったりできます。
 
 ### アプリを起動する
@@ -250,6 +251,7 @@ engine.shotgun
 エンジンが起動すると、環境用に定義されたすべてのアプリが初期化されます。次に、アプリによってエンジンにコマンドが登録されます。Maya などのソフトウェア内で実行されているコマンドは、通常、メニューにアクションとして表示されます。
 
 #### コマンドを検索する
+
 登録されたコマンドを最初に確認するには、[`Engine.commands`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.commands) プロパティを出力します。
 
 ```python

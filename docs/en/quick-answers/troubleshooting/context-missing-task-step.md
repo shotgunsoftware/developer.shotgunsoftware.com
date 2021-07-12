@@ -17,10 +17,10 @@ Take the default schema structure below; `Asset` and `Step` folders will be regi
 
 ![Default Asset schema](./images/asset-schema.png)
 
-If you generated a file path using a template like this: 
+If you generated a file path using a template like this:
 
     assets/{sg_asset_type}/{Asset}/{Step}/work/maya/{task_name}_{name}.v{version}.{maya_extension}`
-    
+
 And then attempted to figure out the context from that generated path, it would only be able to establish the `Asset` and the `Step` and **not** the `Task` despite the task's name being in the file path.
 
 **Solution**

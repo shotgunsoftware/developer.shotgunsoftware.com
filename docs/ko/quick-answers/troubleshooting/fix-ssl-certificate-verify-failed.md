@@ -17,16 +17,16 @@ Python API는 최신 인증서 사본을 제공하지만 2019년 2월 21일부�
 
 필요한 CA 인증서를 Windows 인증서 저장소에 추가합니다. Windows 7 사용자가 이 솔루션을 사용하려면 먼저 [PowerShell 3.0으로 업그레이드](https://docs.microsoft.com/ko/office365/enterprise/powershell/manage-office-365-with-office-365-powershell)하거나 [certutil](https://docs.microsoft.com/ko/windows-server/administration/windows-commands/certutil)을 사용하여 [필요한 인증서](https://www.amazontrust.com/repository/SFSRootCAG2.cer)를 추가해야 할 수 있습니다.
 
-1. **시작**을 마우스 오른쪽 버튼으로 클릭한 다음 **Windows PowerShell(관리자)** 항목을 마우스 왼쪽 버튼으로 클릭하여 승격된 PowerShell을 시작합니다.
+1.  **시작**을 마우스 오른쪽 버튼으로 클릭한 다음 **Windows PowerShell(관리자)** 항목을 마우스 왼쪽 버튼으로 클릭하여 승격된 PowerShell을 시작합니다.
 
-2. PowerShell 창에 다음 명령을 붙여넣은 후 Return 키를 눌러 실행합니다.
+2.  PowerShell 창에 다음 명령을 붙여넣은 후 Return 키를 눌러 실행합니다.
 
         $cert_url = "https://www.amazontrust.com/repository/SFSRootCAG2.cer"
         $cert_file = New-TemporaryFile
         Invoke-WebRequest -Uri $cert_url -UseBasicParsing -OutFile $cert_file.FullName
         Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalMachine\Root
 
-3. 추가된 인증서에 포함된 자세한 지문 `925A8F8D2C6D04E0665F596AFF22D863E8256F3F`가 표시되면 작업이 완료된 것이며 PowerShell을 닫을 수 있습니다.
+3.  추가된 인증서에 포함된 자세한 지문 `925A8F8D2C6D04E0665F596AFF22D863E8256F3F`가 표시되면 작업이 완료된 것이며 PowerShell을 닫을 수 있습니다.
 
 ## 대체 솔루션
 

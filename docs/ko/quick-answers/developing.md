@@ -5,8 +5,7 @@ pagename: quick-answers-developing
 lang: ko
 ---
 
-개발
-===
+# 개발
 
 툴킷을 사용한 개발을 기반으로 한 빠른 답변 모음입니다.
 

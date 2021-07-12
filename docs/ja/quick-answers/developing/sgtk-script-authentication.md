@@ -8,14 +8,17 @@ lang: ja
 # カスタム スクリプトで認証とログイン資格情報を使用するにはどうすればよいですか?
 
 ## エラー メッセージ
+
 スクリプトで次のようなエラーが表示された場合は、スクリプトと ShotGrid サイトの通信が許可されていないことを意味します。
 
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'
 ```
+
 ユーザ認証またはスクリプト認証が事前に行われていない場合、Toolkit は環境設定の `shotgun.yml` ファイルで定義された資格情報を確認するためにフォールバックします。`shotgun.yml` ファイル内で資格情報を定義することは、旧式の認証処理方法です。資格情報を `shotgun.yml` ファイル内で定義しないで、次に示すいずれかの方法を使用してください。
 
 ## ユーザ向けスクリプト
+
 スクリプトがユーザ向けの場合は、`Sgtk` インスタンスを作成する前に、先頭に以下を追加します。
 
 ```python
@@ -67,7 +70,8 @@ authenticator.clear_default_user()
 ![](./images/sign_in_window.png)
 
 {% include info title="注" content="ダウンロードした Toolkit API (`sgtk` パッケージ)を使用して別の環境設定にブートストラップする場合のように、環境設定に関連付けられていない Toolkit API を読み込む場合は、`CoreDefaultsManager` を作成しないでください。代わりに、既定のマネージャを渡さずに、`ShotgunAuthenticator()` のインスタンスを作成します。
-```python
+
+````python
 authenticator = ShotgunAuthenticator()
 ```" %}
 
@@ -100,7 +104,7 @@ user = authenticator.create_script_user(
 
 # Tells Toolkit which user to use for connecting to Shotgun.
 sgtk.set_authenticated_user(user)
-```
+````
 
 {% include info title="注" content="[ユーザ向けのスクリプト](#user-facing-scripts)のセクションの末尾で示したように、読み込んだ `sgtk` パッケージがスタンドアロンである場合や、環境設定から取得したものでない場合は、既定のマネージャを作成しないでください。また、`create_script_user()` メソッドに `host` kwarg を指定する必要があります。
 
@@ -111,4 +115,5 @@ user = authenticator.create_script_user(
     api_key=\"4e48f....<use the key from your Shotgun site>\"
 )
 ```
+
 " %}

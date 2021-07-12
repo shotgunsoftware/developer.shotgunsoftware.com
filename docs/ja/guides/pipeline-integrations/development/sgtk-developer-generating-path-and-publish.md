@@ -40,6 +40,7 @@ ShotGrid が既に起動されている環境でコードを実行する場合�
 ```python
 import sgtk
 ```
+
 お気に入りの IDE でテストしている場合のように、ShotGrid の統合の外部で API を使用する場合は、最初に API のパスを設定する必要があります。
 
 ```python
@@ -71,11 +72,11 @@ API ドキュメントに示されているように、`Sgtk` のインスタン
 
    `Sgtk` インスタンスには、[`Engine.sgtk`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) プロパティを通してアクセスできます。
 
-   *注: `Engine.sgtk` プロパティを、パート 1 で読み込んだ `sgtk` パッケージと混同したり、同じであるとみなしたりしないでください。*
+   _注: `Engine.sgtk` プロパティを、パート 1 で読み込んだ `sgtk` パッケージと混同したり、同じであるとみなしたりしないでください。_
 
-2. [`sgtk.sgtk_from_entity()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity): エンジンがまだ起動されていない環境で実行している場合は、このメソッドを使用して、エンティティ ID に基づいて `Sgtk` インスタンスを取得することができます。指定した ID を持つエンティティは、`sgtk` API の読み込み元のプロジェクトに属している必要があります。*このメソッドは、分散環境設定では機能しません。詳細については、[ブートストラップ ガイド](sgtk-developer-bootstrapping.md)を参照してください。*
+2. [`sgtk.sgtk_from_entity()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity): エンジンがまだ起動されていない環境で実行している場合は、このメソッドを使用して、エンティティ ID に基づいて `Sgtk` インスタンスを取得することができます。指定した ID を持つエンティティは、`sgtk` API の読み込み元のプロジェクトに属している必要があります。_このメソッドは、分散環境設定では機能しません。詳細については、[ブートストラップ ガイド](sgtk-developer-bootstrapping.md)を参照してください。_
 
-3. [`sgtk.sgtk_from_path()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path): `sgtk_from_entity()` と同様ですが、環境設定のパス、またはプロジェクトのルート フォルダのパスやその内部(作業ファイルやショット フォルダなど)を使用することができます。*このメソッドは、分散環境設定では機能しません。詳細については、[ブートストラップ ガイド](sgtk-developer-bootstrapping.md)を参照してください。*
+3. [`sgtk.sgtk_from_path()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path): `sgtk_from_entity()` と同様ですが、環境設定のパス、またはプロジェクトのルート フォルダのパスやその内部(作業ファイルやショット フォルダなど)を使用することができます。_このメソッドは、分散環境設定では機能しません。詳細については、[ブートストラップ ガイド](sgtk-developer-bootstrapping.md)を参照してください。_
 
 このガイドでは、エンジンが既に起動されている環境でこのコードを実行していることが前提となっているため、オプション 1 を使用します。また、`tk` という名前の変数に `Sgtk` クラス インスタンスを格納します。ShotGrid Python コンソールを使用している場合、`tk` 変数はグローバル変数として既に定義されています。
 
@@ -114,6 +115,7 @@ Toolkit の多くの機能は、コンテキストに関するものです。つ
 ```python
 context = current_engine.context
 ```
+
 後の手順では、このコンテキストを使用してショット上にあるタスクのファイル パスを解決するため、コンテキストに関連情報が含まれていることを確認する必要があります。
 
 コードが Toolkit アプリの一部として実行されていて、アプリが shot_step 環境でのみ実行されるよう設定されている場合は、現在のコンテキストが適切に取得されると想定しても安全面で問題はありません。ただし、このガイドからあいまいさを排除するために、`Sgtk.context_from_entity()` を使用して、`Task` (`Shot` に属している必要がある)からコンテキストを明示的に作成します。
@@ -171,6 +173,7 @@ Toolkit は、プロジェクト エンティティに基づいて、ディス�
 ```python
 tk.create_filesystem_structure("Task", context.task["id"])
 ```
+
 コンテキスト オブジェクトを使用して、フォルダを生成するタスクの ID を取得できます。
 
 これで、コードは次のようになります。
@@ -210,7 +213,7 @@ template = tk.templates["maya_shot_publish"]
 この例では、`maya_shot_publish` テンプレートを使用します。[既定の設定](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.12/core/templates.yml#L305-L306)では、未解決のテンプレート パスは次のようになります。
 
 ```yaml
-'sequences/{Sequence}/{Shot}/{Step}/work/maya/{name}.v{version}.{maya_extension}'
+"sequences/{Sequence}/{Shot}/{Step}/work/maya/{name}.v{version}.{maya_extension}"
 ```
 
 テンプレートは、実際の値に解決する必要があるキーで構成されています。コンテキストには、大部分のキーに関する十分な情報が含まれているため、これを使用して値を抽出することができます。
@@ -220,6 +223,7 @@ fields = context.as_template_fields(template)
 
 >> {'Sequence': 'seq01_chase', 'Shot': 'shot01_running_away', 'Step': 'comp'}
 ```
+
 [`Context.as_template_fields()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Context.as_template_fields) メソッドは、テンプレート キーを解決するための正しい値を含むディクショナリを提供します。ただし、すべてのキーの値が提供されるわけではありません。`name`、`version`、および `maya_extension` は含まれていません。
 
 `maya_extension` キーは、テンプレート キー セクションで[既定値を定義](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.8/core/templates.yml#L139)します。そのため、この値を指定する必要はありませんが、既定値以外の値が必要な場合は指定することができます。
@@ -246,8 +250,8 @@ publish_path = template.apply_fields(fields)
 これを行うための便利なメソッドがいくつかあります。コードが Toolkit アプリまたはフックで実行されている場合は、[`Application.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) メソッドを使用できます。エンジンが存在する場合は、[`Engine.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.ensure_folder_exists) メソッドを使用できます。エンジンの外部でコードを実行している場合は、[`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists) を使用できます。フォルダを作成する場合は、ファイルのフル パスではなく、フォルダのみを指定してください。[`os`](https://docs.python.org/3/library/os.html) モジュールを読み込んで、[`os.path.dirname(publish_path)`](https://docs.python.org/3/library/os.path.html#os.path.dirname) を実行し、ファイルのフル パスのフォルダ部分を抽出することができます。
 
 ### パスを使用してファイルを作成またはコピーする
-この時点でパスが存在するため、このパスを使用して、このパスにファイルを保存するよう Maya に指示したり、別の場所からファイルをコピーしたりできます。このガイドにおいて、ディスク上のこの場所にファイルを実際に作成する動作を実行することは、重要ではありません。ファイルがパス上にない場合でも、パスをパブリッシュすることはできます。ただし、[`sgtk.util.filesystem.touch_file()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file) を使用して、ディスク上に空のファイルを作成するよう Toolkit に指示することができます。
 
+この時点でパスが存在するため、このパスを使用して、このパスにファイルを保存するよう Maya に指示したり、別の場所からファイルをコピーしたりできます。このガイドにおいて、ディスク上のこの場所にファイルを実際に作成する動作を実行することは、重要ではありません。ファイルがパス上にない場合でも、パスをパブリッシュすることはできます。ただし、[`sgtk.util.filesystem.touch_file()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file) を使用して、ディスク上に空のファイルを作成するよう Toolkit に指示することができます。
 
 ### 作業を統合する
 

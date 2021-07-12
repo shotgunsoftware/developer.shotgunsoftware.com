@@ -34,6 +34,7 @@ class BeforeAppLaunch(tank.Hook):
 ```python
 tank.util.append_path_to_env_var(\"NUKE_PATH\", \"/my/custom/path\")
 ```
+
 " %}
 
 ## 自定义封装器

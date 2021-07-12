@@ -65,7 +65,6 @@ lang: zh_CN
 
         > tank move_configuration "" "p:\configs\my_config" ""
 
-
 ### 示例：
 
         $ cd /sgtk/software/shotgun/scarlet
@@ -134,35 +133,34 @@ lang: zh_CN
 
         All done! Your configuration has been successfully moved.
 
-
 ## 手动移动工作流配置
 
 {% include warning title="重要信息" content="如果尚未移动工作流配置，我们强烈建议使用上述[内置的 tank 命令](#using-the-tank-move_configuration-command)来自动执行此操作。" %}
 
 如果您已经开始手动移动数据，但遇到了困难，请按照以下说明，了解您需要更改的内容，以确保 Toolkit 此时继续在新位置使用您的工作流配置。
 
-1. 将您的工作流配置文件移动到新位置
+1.  将您的工作流配置文件移动到新位置
 
         $ mv /sgtk/software/shotgun/scarlet /mnt/newserver/sgtk/software/shotgun/scarlet_new
 
-2. 编辑 `install_location.yml`，以帮助 Toolkit 找到工作流配置所在的位置：
+2.  编辑 `install_location.yml`，以帮助 Toolkit 找到工作流配置所在的位置：
 
-        $ vi /mnt/newserver/sgtk/software/shotgun/scarlet_new/config/core/install_location.yml
+         $ vi /mnt/newserver/sgtk/software/shotgun/scarlet_new/config/core/install_location.yml
 
-   更新此文件中的路径，以指向工作流配置在所有适用平台上的新位置。如果您未使用平台，请输入空字符串 `''`
+    更新此文件中的路径，以指向工作流配置在所有适用平台上的新位置。如果您未使用平台，请输入空字符串 `''`
 
-        # {% include product %} Pipeline Toolkit configuration file
-        # This file was automatically created by setup_project
-        # This file reflects the paths in the primary pipeline
+         # {% include product %} Pipeline Toolkit configuration file
+         # This file was automatically created by setup_project
+         # This file reflects the paths in the primary pipeline
 
-        # configuration defined for this project.
-        Windows: 'Y:\sgtk\software\shotgun\scarlet_new'
-        Darwin: '/mnt/newserver/sgtk/software/shotgun/scarlet_new'
-        Linux: ''
+         # configuration defined for this project.
+         Windows: 'Y:\sgtk\software\shotgun\scarlet_new'
+         Darwin: '/mnt/newserver/sgtk/software/shotgun/scarlet_new'
+         Linux: ''
 
-        # End of file.
+         # End of file.
 
-3. 在 {% include product %} 中找到与此项目对应的 PipelineConfiguration 实体，并修改“Linux 路径”(Linux Path)、“Mac 路径”(Mac Path)和“Windows 路径”(Windows Path)字段值，以匹配您在上面所做的更改。
+3.  在 {% include product %} 中找到与此项目对应的 PipelineConfiguration 实体，并修改“Linux 路径”(Linux Path)、“Mac 路径”(Mac Path)和“Windows 路径”(Windows Path)字段值，以匹配您在上面所做的更改。
 
 ![{% include product %} 中的工作流配置位置。](images/new-pipeline-configuration-locations.png)
 

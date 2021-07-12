@@ -11,6 +11,7 @@ When running the {% include product %} Desktop on Linux for the first time, you 
 If you're still stuck, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
 ###Contents
+
 - [OPENSSL_1.0.1_EC or HTTPSConnection related issues](#openssl_101_ec-or-httpsconnection-related-issues)
 - [libffi.so.5 related issues](#libffiso5-related-issues)
 - [Certificate validation failed related issues](#certificate-validation-failed-related-issues)
@@ -57,7 +58,7 @@ If you've installed libffi and it still doesn't work, try creating the following
 sudo ln -s /usr/lib64/libffi.so.6.0.1 /usr/lib64/libffi.so.5
 ```
 
-Some users have reported success with the above. Others still have issues. The latest version of {% include product %} Desktop added some additional dependencies with the web socket server which we're currently looking into. 
+Some users have reported success with the above. Others still have issues. The latest version of {% include product %} Desktop added some additional dependencies with the web socket server which we're currently looking into.
 
 ## Certificate validation failed related issues
 
@@ -65,11 +66,11 @@ Some users have reported success with the above. Others still have issues. The l
 
 ```
 Browser Integration failed to start. It will not be available if you continue.
-Error: There was a problem validating if the certificate was installed. 
+Error: There was a problem validating if the certificate was installed.
 certutil: function failed: SEC_ERROR_BAD_DATABASE: security library: bad database.
 ```
 
-**Solution** 
+**Solution**
 
 If you have Google Chrome installed on your computer, launch it and then relaunch the {% include product %} Desktop. If you still have the issue, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
@@ -91,6 +92,7 @@ If the search did come up empty, then type the following:
 $ mkdir --parents ~/.pki/nssdb
 $ certutil -N -d "sql:$HOME/.pki/nssdb"
 ```
+
 Do not enter any password.
 
 Launching the {% include product %} Desktop should now work correctly.

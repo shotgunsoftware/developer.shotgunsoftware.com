@@ -8,16 +8,17 @@ lang: en
 # API
 
 <a id="registerCallbacks"></a>
+
 ## registerCallbacks
 
 A global level function in all plugins that is used to tell the framework about event processing entry points in the plugin.
 
 **registerCallbacks(reg)**
 
-* reg: The [`Registrar`](#Registrar) you will interact with to tell the framework which functions to call.
-
+- reg: The [`Registrar`](#Registrar) you will interact with to tell the framework which functions to call.
 
 <a id="Registrar"></a>
+
 ## Registrar
 
 The Registrar is the object used to tell the framework how to interact with a plugin. It is passed to the [`registerCallbacks`](#registerCallbacks) function.
@@ -36,9 +37,7 @@ See [`getLogger`](#getLogger).
 
 Get the python Logger object used to log messages from within the plugin.
 
-
-
-__setEmails(*emails)__
+**setEmails(\*emails)**
 
 Set the emails that should receive error and critical notices when something bad happens in this plugin or any of its callbacks.
 
@@ -71,12 +70,12 @@ reg.setEmails('user1@domain.com', 'user2@domain.com')
 
 Register a callback into the engine for this plugin.
 
-* `sgScriptName`: The name of the script taken from the {% include product %}  scripts page.
-* `sgScriptKey`: The application key for the script taken from a {% include product %}  script page.
-* `callback`: A function or an object with a `__call__` method. See [`exampleCallback`](#exampleCallback).
-* `matchEvents`: A filter of events you want to have passed to your callback.
-* `args`: Any object you want the framework to pass back into your callback.
-* `stopOnError`: Boolean, should an exception in this callback halt processing of events by all callbacks in this plugin. Default is `True`.
+- `sgScriptName`: The name of the script taken from the {% include product %} scripts page.
+- `sgScriptKey`: The application key for the script taken from a {% include product %} script page.
+- `callback`: A function or an object with a `__call__` method. See [`exampleCallback`](#exampleCallback).
+- `matchEvents`: A filter of events you want to have passed to your callback.
+- `args`: Any object you want the framework to pass back into your callback.
+- `stopOnError`: Boolean, should an exception in this callback halt processing of events by all callbacks in this plugin. Default is `True`.
 
 The `sgScriptName` is used to identify the plugin to {% include product %}. Any name can be shared across any number of callbacks or be unique for a single callback.
 
@@ -125,7 +124,7 @@ matchEvents = {
 }
 ```
 
-When matching against non field specific event types such as "_New" or "_Retirement", you don't provide a list, instead you pass `None` as the value.
+When matching against non field specific event types such as "\_New" or "\_Retirement", you don't provide a list, instead you pass `None` as the value.
 
 ```python
 matchEvents = {
@@ -142,6 +141,7 @@ Another use of the `args` argument could be to pass in a common mutable, a `dict
 The `stopOnError` argument tells the system if an exception in this callback can cause event processing to stop for all callbacks in the plugin. By default this is `True` but can be switched to `False`. You will still get mail notifications of errors should there be any but processing of events will not stop. Being a per callback setting you can have some critical callbacks for whom this is `True` but others for whom this is `False`.
 
 <a id="Callback"></a>
+
 ## Callback
 
 Any plugin entry point registered by [`Registrar.registerCallback`](#registerCallback) is generally a global level function that looks like this:
@@ -149,9 +149,9 @@ Any plugin entry point registered by [`Registrar.registerCallback`](#registerCal
 <a id="exampleCallback"></a>
 **exampleCallback(sg, logger, event, args)**
 
-* `sg`: A {% include product %} connection instance.
-* `logger`: A Python logging.Logger object preconfigured for you.
-* `event`: A {% include product %} event to process.
-* `args`: The args argument specified at callback registration time.
+- `sg`: A {% include product %} connection instance.
+- `logger`: A Python logging.Logger object preconfigured for you.
+- `event`: A {% include product %} event to process.
+- `args`: The args argument specified at callback registration time.
 
 {% include info title="Note" content="Implementing a callback as a `__call__` method on an object instance is possible but left as an exercise for the user." %}

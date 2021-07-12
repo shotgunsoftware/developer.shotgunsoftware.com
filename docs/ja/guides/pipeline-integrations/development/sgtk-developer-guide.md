@@ -64,21 +64,21 @@ lang: ja
 - 任意のタスクに自分に割り当てることができるアクション
 - Maya リファレンスとして Maya に {% include product %} パブリッシュをロードするアクション
 
-アクションの実際のペイロードはアクション フック__で定義されます。アクションのロジックを定義したら、アプリ設定の {% include product %} オブジェクトにこのアクションをマップすることができます。次に、このアクション マッピングの例を示します。
+アクションの実際のペイロードはアクション フック\_\_で定義されます。アクションのロジックを定義したら、アプリ設定の {% include product %} オブジェクトにこのアクションをマップすることができます。次に、このアクション マッピングの例を示します。
 
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import]
-    filters: {published_file_type: Maya Scene}
-  - actions: [texture_node]
-    filters: {published_file_type: Rendered Image}
+    - actions: [reference, import]
+      filters: { published_file_type: Maya Scene }
+    - actions: [texture_node]
+      filters: { published_file_type: Rendered Image }
   Task:
-  - actions: [assign_task]
-    filters: {}
+    - actions: [assign_task]
+      filters: {}
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 上記の例では、`reference`、`import`、`texture_node`、`assign_task`、および `play_in_rv` といったアクションを使用します。次に、さまざまな {% include product %} のオブジェクトと条件にこのアクションをマップします。たとえば `import` アクションは、タイプが「Maya Scene」であるすべてのパブリッシュに表示されるよう要求しています。
@@ -92,11 +92,11 @@ action_mappings:
 パネルは Toolkit の第 2 世代のフック インタフェースを使用するため、柔軟性に優れています。このフックの形式は改善された構文を使用します。これは既定の構成設定で次のように表示されます。
 
 ```yaml
-actions_hook: '{self}/tk-maya_actions.py'
+actions_hook: "{self}/tk-maya_actions.py"
 ```
 
 キーワード `{self}` は、フックのアプリの `hooks` フォルダを確認するように Toolkit に指示します。
- このフックをユーザが設定した実装でオーバーライドする場合は、値を `{config}/panel/maya_actions.py` に変更します。これにより、設定フォルダ内の `hooks/panel/maya_actions.py` と呼ばれるフックを使用するように Toolkit に指示します。
+このフックをユーザが設定した実装でオーバーライドする場合は、値を `{config}/panel/maya_actions.py` に変更します。これにより、設定フォルダ内の `hooks/panel/maya_actions.py` と呼ばれるフックを使用するように Toolkit に指示します。
 
 詳細については、アプリに付属するフック ファイルを参照してください。フックは継承も活用します。つまり、フック内のすべての項目をオーバーライドすることなく、さまざまな方法で既定のフックを簡単に拡張または強化して簡単にフックを管理できます。
 
@@ -176,11 +176,11 @@ class MyActions(HookBaseClass):
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import, my_new_action]
-    filters: {published_file_type: Maya Scene}
+    - actions: [reference, import, my_new_action]
+      filters: { published_file_type: Maya Scene }
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 上記のようにフックの派生を利用すれば、カスタム フック コードには、管理と更新を簡単にするために実際追加するビジネス ロジックを含めるだけで構いません。

@@ -24,7 +24,7 @@ lang: zh_CN
 您可以使用 `favourite_directories` 设置，基于当前环境中的模板路径添加自己的快捷方式。该设置应为词典列表，每个列表项表示一个新的收藏夹目录。下面是一个可使用的格式示例：（也可以不指定图标，方法是提供 "" 值。）
 
 ```yaml
-  favourite_directories:
+favourite_directories:
   - display_name: "Shot Publish Path"
     template_directory: "shot_publish_area_nuke"
     icon: "icons/custom_publish_icon.png"
@@ -35,12 +35,9 @@ lang: zh_CN
 
 对于定义的每个根目录，会自动添加一个“{% include product %} Current Project”收藏夹。您可以使用 `project_favourite_name` 设置来自定义名称，也可以将此值设置为空字符串 `''`，禁用这些收藏夹。
 
-
-
-***
+---
 
 _注意：目前，Nuke 8.0 在 CentOS 6.5 这个特定版本上运行时存在一个错误，会导致 Nuke 在运行 Toolkit 时发生崩溃。其他版本的 CentOS 不受影响。The Foundry 已知晓此问题（错误号 43766）。如果您遇到此问题，请联系我们，我们可以尝试帮助您以变通方法暂时绕过此问题，直到 Nuke 在以后的更新中修复它。_
-
 
 ## 应用开发人员须知
 
@@ -56,7 +53,7 @@ _注意：目前，Nuke 8.0 在 CentOS 6.5 这个特定版本上运行时存在�
 
 然后，您可以通过“创建节点”功能轻松访问小控件：
 
-* `nuke.createNode("WriteTank")`
+- `nuke.createNode("WriteTank")`
 
 {% include info title="警告" content="请注意，虽然小控件用起来可能很方便，但如果您想在场景中创建持久性节点，小控件通常不是正确的做法。这是因为一旦将小控件放入场景，就在该场景与小控件代码之间建立了依赖关系。这样，不仅需要在每次加载场景时都加载 ShotGrid Toolkit，还需要小心管理代码，确保代码的任何更新都不会影响场景中使用的旧的小控件。" %}
 
@@ -109,26 +106,60 @@ except:
 由于 Hiero 有多种不同的菜单，因此，用于配置菜单项放置位置的选项要比诸如 Maya 或 Nuke 等应用程序中更多。{% include product %} Nuke 插件的 Hiero 工作流配置可能如下所示：
 
 ```yaml
+tk-hiero:
+  location: { name: tk-nuke, type: app_store, version: v0.6.9 }
+  debug_logging: false
 
-  tk-hiero:
-    location: {name: tk-nuke, type: app_store, version: v0.6.9}
-    debug_logging: false
+  timeline_context_menu:
+    - {
+        app_instance: tk-hiero-openinshotgun,
+        keep_in_menu: false,
+        name: Open in Shotgun,
+        requires_selection: true,
+      }
 
-    timeline_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: Open in Shotgun, requires_selection: true}
+  spreadsheet_context_menu:
+    - {
+        app_instance: tk-hiero-openinshotgun,
+        keep_in_menu: false,
+        name: Open in Shotgun,
+        requires_selection: true,
+      }
 
-    spreadsheet_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: Open in Shotgun, requires_selection: true}
+  bin_context_menu:
+    - {
+        app_instance: tk-multi-workfiles,
+        keep_in_menu: false,
+        name: "{% include product %} Save As...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-workfiles,
+        keep_in_menu: false,
+        name: "Version up Current Scene...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-snapshot,
+        keep_in_menu: false,
+        name: "Snapshot...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-snapshot,
+        keep_in_menu: false,
+        name: "Snapshot History...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-publish,
+        keep_in_menu: false,
+        name: "Publish Project...",
+        requires_selection: true,
+      }
 
-    bin_context_menu:
-    - {app_instance: tk-multi-workfiles, keep_in_menu: false, name: "{% include product %} Save As...", requires_selection: true}
-    - {app_instance: tk-multi-workfiles, keep_in_menu: false, name: "Version up Current Scene...", requires_selection: true}
-    - {app_instance: tk-multi-snapshot, keep_in_menu: false, name: "Snapshot...", requires_selection: true}
-    - {app_instance: tk-multi-snapshot, keep_in_menu: false, name: "Snapshot History...", requires_selection: true}
-    - {app_instance: tk-multi-publish, keep_in_menu: false, name: "Publish Project...", requires_selection: true}
-
-    menu_favourites:
-    - {app_instance: tk-multi-workfiles, name: Shotgun File Manager...}
+  menu_favourites:
+    - { app_instance: tk-multi-workfiles, name: Shotgun File Manager... }
 ```
 
 大多数插件都有一个 `menu_favourites` 选项，这是一个列表，您可以在这里指定要放在 {% include product %} 主菜单上的“快捷方式”。除此以外，特定于 Hiero 的配置还有三个特殊部分：
@@ -147,7 +178,6 @@ except:
 
 因为 Hiero 没有当前项目的概念，我们加入了更强大的工具，让应用很容易就能识别用户在 Hiero 内单击了什么对象。{% include product %} Hiero 插件为此加入了两个方法：
 
-
 #### get_menu_selection()
 
 返回最近一次单击菜单操作选中的 Hiero 对象的列表。
@@ -163,7 +193,7 @@ except:
 
 **参数和返回值**
 
-* **返回值：**Hiero 对象列表
+- **返回值：**Hiero 对象列表
 
 **示例**
 
@@ -202,7 +232,7 @@ if project is None:
 
 #### 如何配置挂钩以支持 Hiero
 
-为 Hiero 配置的多用应用通常需要判断用户单击的是哪个项目。例如，`tk-multi-workfiles` 应用需要对项目执行“{% include product %} 另存为”操作。因此，我们向 Hiero 中的 bin 菜单添加了 Tank Save As 命令，这样用户便可在 bin 视图中的项目上单击鼠标右键并选择“另存为”(Save As)**选项。
+为 Hiero 配置的多用应用通常需要判断用户单击的是哪个项目。例如，`tk-multi-workfiles` 应用需要对项目执行“{% include product %} 另存为”操作。因此，我们向 Hiero 中的 bin 菜单添加了 Tank Save As 命令，这样用户便可在 bin 视图中的项目上单击鼠标右键并选择“另存为”(Save As)\*\*选项。
 
 ![菜单](../images/engines/nuke-hiero-bin_menu.png)
 
@@ -210,7 +240,12 @@ if project is None:
 
 ```yaml
 bin_context_menu:
-- {app_instance: tk-multi-workfiles, keep_in_menu: false, name: "{% include product %} Save As...", requires_selection: true}
+  - {
+      app_instance: tk-multi-workfiles,
+      keep_in_menu: false,
+      name: "{% include product %} Save As...",
+      requires_selection: true,
+    }
 ```
 
 现在，在应用本身中，每个插件需要配置一个挂钩，用来处理诸如保存和加载这样的场景事件。 对于 Maya 或 Nuke 这样的应用程序，通常只要进行保存、加载等操作即可。
@@ -301,4 +336,3 @@ class SceneOperation(Hook):
 如果您想知道单击某个选择项时 Hiero 返回哪些对象，只需开启插件调试模式即可。 在脚本编辑器中，可以看到每次单击操作选择的对象的摘要信息：
 
 ![菜单](../images/engines/nuke-hiero-engine_debug.png)
-

@@ -26,7 +26,6 @@ lang: zh_CN
 当 VRED 打开时，{% include product %} 菜单（VRED 插件）会添加到菜单栏中。
 ![](https://help.autodesk.com/cloudhelp/2020/CHS/VRED-Shotgun/images/ShotgunMenuVRED.png)
 
-
 ### 文件打开和保存
 
 使用“我的任务”(My Tasks)和“零部件”(Assets)选项卡可以查看您的所有已分配任务，并浏览零部件。在右侧，使用这些选项卡可以查看所有文件、与左侧选定内容关联的工作文件或已发布文件。
@@ -34,22 +33,23 @@ lang: zh_CN
 
 ![](https://help.autodesk.com/cloudhelp/2020/CHS/VRED-Shotgun/images/ShotgunFileSaveVRED.png)
 
-
 ### 快照
+
 快照(Snapshot)：打开“快照”(Snapshot)对话框以创建当前场景的快速备份。
 ![](https://help.autodesk.com/cloudhelp/2020/CHS/VRED-Shotgun/images/ShotgunSnapshotVRED.png)
 
-
 ### 发布
+
 发布(Publish)：打开“发布”(Publish)对话框以将文件发布到 {% include product %}，然后供下游艺术家使用。有关 VRED 发布的详细信息，[请参见此处](https://github.com/shotgunsoftware/tk-vred/wiki/Publishing)
 ![](https://help.autodesk.com/cloudhelp/2020/CHS/VRED-Shotgun/images/ShotgunPublishVRED.png)
 
-
 ### 加载器
+
 加载(Load)：打开内容加载器应用，并附有解释其工作原理的教学幻灯片。
 要查看有关 VRED 加载的详细信息，[请参见此处](https://github.com/shotgunsoftware/tk-vred/wiki/Loading)
 ![](https://help.autodesk.com/cloudhelp/2020/CHS/VRED-Shotgun/images/ShotgunLoaderVRED.png)
 
 ### 场景细分
+
 场景“细分”(Breakdown)：打开“细分”(Breakdown)对话框，其中显示“已参考”文件（及其链接）的列表，以及场景中过时的内容。选择一个或多个项目，然后单击“更新选定项”(Update Selected)以切换并使用最新版本的内容。
 ![](https://help.autodesk.com/cloudhelp/2020/CHS/VRED-Shotgun/images/ShotgunBreakdownVRED.png)

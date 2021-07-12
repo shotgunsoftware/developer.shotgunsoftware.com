@@ -5,12 +5,11 @@ pagename: event-daemon
 lang: ja
 ---
 
-
 # {% include product %} イベント フレームワーク
+
 このソフトウェアは、[Rodeo Fx](http://rodeofx.com) と Oblique のサポートを受けて [Patrick Boucher](http://www.patrickboucher.com) により開発されました。これは現在、[{% include product %}ソフトウェア](http://www.shotgunsoftware.com)の[オープン ソース イニシアチブ](https://github.com/shotgunsoftware)の一部になっています。
 
 このソフトウェアは、LICENSE ファイルまたは[オープン ソース イニシアチブ](http://www.opensource.org/licenses/mit-license.php)の Web サイトにある MIT ライセンスの下で提供されます。
-
 
 ## 概要
 
@@ -40,9 +39,7 @@ lang: ja
 - 任意の数のコールバックをフレームワークに登録する。
 - フレームワークによって提供された 1 つのイベントを処理する。
 
-
 ## フレームワークの利点
 
 - スクリプトごとに 1 つではなく、すべてのスクリプトに対して単一の監視メカニズムのみを扱います。
 - ネットワークおよびデータベースのロードを最小限に抑えます(多くのイベント処理プラグインにイベントを提供するただ 1 つのモニタ)。
-

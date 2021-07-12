@@ -27,7 +27,6 @@ lang: ko
 [`.../env/includes/settings/tk-maya.yml L47`](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-maya.yml#L47)<br/>메뉴 즐겨찾기에 이를 추가하는 줄도 있습니다.<br/>
 [`.../env/includes/settings/tk-maya.yml L56`](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-maya.yml#L56)
 
-
 다음으로 샷 단계 설정에 다음 줄을 반복합니다.<br/>
 [`.../env/includes/settings/tk-maya.yml L106`](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-maya.yml#L106)<br/>
 [`.../env/includes/settings/tk-maya.yml L115`](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-maya.yml#L115)

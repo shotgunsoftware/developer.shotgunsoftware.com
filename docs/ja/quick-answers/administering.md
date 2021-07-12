@@ -5,12 +5,12 @@ pagename: quick-answers-administering
 lang: ja
 ---
 
-管理
-=====
+# 管理
 
 Toolkit セットアップの管理および設定に基づくクイック アンサーのコレクションです。
 
 #### {% include product %} Desktop:
+
 - [{% include product %} Desktop を使用して Toolkit プロジェクトを再セットアップするにはどうすればいいですか?](./administering/resetup-project-with-sg-desktop.md)
 - [Windows で {% include product %} Desktop をサイレント インストールするにはどうすればいいですか?](./administering/install-desktop-silent.md)
 - [Linux で {% include product %} Desktop のデスクトップ/ランチャー アイコンをセットアップするにはどうすればいいですか?](./administering/create-shotgun-desktop-shortcut.md)

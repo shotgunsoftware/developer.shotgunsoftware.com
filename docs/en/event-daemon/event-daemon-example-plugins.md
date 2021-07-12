@@ -7,13 +7,16 @@ lang: en
 
 # Example Plugins
 
-There is a [folder of example plugins](https://github.com/shotgunsoftware/shotgunEvents/tree/master/src/examplePlugins) in the source code. 
+There is a [folder of example plugins](https://github.com/shotgunsoftware/shotgunEvents/tree/master/src/examplePlugins) in the source code.
 
 This page includes a few more simple examples, for anyone looking to get started. You can copy/paste this code and it should run(Note: you'll have to update the `script_name`, and `script_key` values to something specific for your installation)
 
 First, here's a template upon which all SG event code should be written
+
 ## 1. Code Template
+
 ### Copy / Paste this to get started on new plugins
+
 ```python
 """
 Necessary Documentation of the code
@@ -51,11 +54,15 @@ def registerCallbacks(reg):
 #              }
 def entry_function_call(sg, logger, event, args):
     # Now do stuff
-    pass   
+    pass
 ```
+
 ## 2. Note Subject Renaming
+
 ### Working with `New` Entity Events
-This is a great one to start with  because it's simple, but it also deals with a rather tricky aspect of catching `Shotgun_Entity_New` events...
+
+This is a great one to start with because it's simple, but it also deals with a rather tricky aspect of catching `Shotgun_Entity_New` events...
+
 ```python
 import time
 from pprint import pprint
@@ -69,7 +76,7 @@ def registerCallbacks(reg):
 
 
 def Function_Name(sg, logger, event, args):
-    # Waiting here should allow the entity to be fully created 
+    # Waiting here should allow the entity to be fully created
             #     and all the necessary attributes to be added to the NOTE entity
     time.sleep(1)
     current_date = time.strftime("%Y-%m %b-%d")
@@ -98,14 +105,18 @@ def Function_Name(sg, logger, event, args):
         logger.info('Dates are not prepended for notes in project id 116 - Software Development')
         return
 ```
+
 Note the `sleep` call as the very first line of the function body. The reason for this deals with the way that `new` events are handled.
+
 1. When a NEW entity is created in SG, it is still rather unformed - meaning that it doesn't possess all the attributes needed to fully define that entity as you're used to it. In fact, in this example, I can't even guarantee that the `subject` attribute will be on the Note entity when SG emits the `Shotgun_Note_New` event.
 2. In order to add all of the necessary attributes, SG then publishes a series of `Shotgun_Note_Change` events wherein SG will add every single attribute to the entity and update the values of those attributes - if required.
 3. This means that a multiplicity of events are created, which means that if you need two different attributes to be present and you didn't write a `sleep` aspect to your code, then you'd have to sift through ALL of the `Shotgun_Note_Change` events and the internal metadata looking for only those that have new attributes added and values set... This is a cumbersome process and will process many `Shotgun_Note_Change` events looking for - effectively - just one per note at time of creation.
 4. The solution as I've found it is to rely on `Shotgun_Entity_New` and let the script sleep for a short period. At the end of the sleep, SG will have updated all the attributes required for the entity and then you can re-query that same entity for any of the fields you need
 
 ## 2. Field Deletion Warning
+
 ### Generating Notes, Working with Fields as Entities, and Entity Retirement Events
+
 ```python
 
 """
@@ -202,4 +213,5 @@ def trashedFieldWarning(sg, logger, event, args):
 
     CreateNote(sg, logger, event)
 ```
+
 This is a very simple script. There is no special logic in checking for deleted fields. If a field is deleted, then a note is created and sent to a group of people that need to know. In my department, we have the group id set to the 'programmers' group, and the project id of the note set to the 'development' project.

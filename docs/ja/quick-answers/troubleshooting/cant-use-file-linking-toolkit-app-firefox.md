@@ -16,7 +16,7 @@ lang: ja
 
 ### {% include product %} Desktop は動作していますか?
 
-もちろん、そうだと思います。 既に確認済みだと思いますが、 念のためお尋ねしました。 
+もちろん、そうだと思います。 既に確認済みだと思いますが、 念のためお尋ねしました。
 
 ### ファイアウォール ソフトウェアを使用していますか?
 
@@ -40,7 +40,7 @@ Firefox が証明書を受け入れていることを確認するには、https:
 
 ![Firefox に例外を追加](images/add-exception-firefox.png)
 
-****[証明書を取得]（Get Certificate）**、**[セキュリティ例外を承認]（Confirm Security Exception）の順にクリックします。 証明書を信頼できないというメッセージは無視します。証明書は認証局ではなく {% include product %} Desktop によって生成されているため、問題ありません。
+\***\*[証明書を取得]（Get Certificate）**、\*\*[セキュリティ例外を承認]（Confirm Security Exception）の順にクリックします。 証明書を信頼できないというメッセージは無視します。証明書は認証局ではなく {% include product %} Desktop によって生成されているため、問題ありません。
 
 これで {% include product %} サイトからローカル ファイル リンクにアクセスし、Toolkit アプリケーションを起動できるようになるはずです。 例外を追加しても問題が解決しない場合は、support@shotgunsoftware.com までご連絡ください。
 
@@ -52,7 +52,7 @@ Firefox が証明書を受け入れていることを確認するには、https:
 
 ![Firefox ビューの証明書](images/firefox-view-certificates.png)
 
-**[サーバー証明書]（Servers）**セクションで項目をクリックし、`localhost` と入力するか、または単に **localhost:9000** という名前のエントリが表示されるまでスクロールします。このエントリを削除します。次に、**[認証局証明書]（Authorities）**タブに移動して `localhost` と再び入力します。もう一度、**localhost** エントリを持つ **Autodesk** セクションが表示されるまでスクロールします。**localhost** エントリを削除します。これが完了したら、**[OK]** をクリックして Firefox を再起動します。 Firefox の再起動が完了したら、**https://localhost:9000** にアクセスします。次のメッセージが表示されます。
+**[サーバー証明書]（Servers）**セクションで項目をクリックし、`localhost` と入力するか、または単に **localhost:9000** という名前のエントリが表示されるまでスクロールします。このエントリを削除します。次に、**[認証局証明書]（Authorities）**タブに移動して `localhost` と再び入力します。もう一度、**localhost** エントリを持つ **Autodesk** セクションが表示されるまでスクロールします。**localhost** エントリを削除します。これが完了したら、**[OK]**  をクリックして Firefox を再起動します。 Firefox の再起動が完了したら、**https://localhost:9000** にアクセスします。次のメッセージが表示されます。
 
 ![接続は安全なメッセージではありません](images/connection-is-not-secure.png)
 

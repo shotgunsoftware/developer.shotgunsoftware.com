@@ -17,9 +17,10 @@ _이 문서에서는 툴킷 구성에 대한 제어 권한이 있는 경우에�
 1. **폴더 생성:** {% include product %}에서 객체를 만든 후에는 작업이 시작될 수 있도록 디스크에 폴더를 만들어야 합니다. 이 작업은 디스크에 샷을 나타내는 폴더를 만드는 것처럼 간단할 수도 있고, 샷에 대해 작업하는 각 사용자가 디스크의 개별 영역에서 작업할 수 있도록 사용자별 작업 샌드박스를 설정하는 것처럼 복잡할 수 있습니다.
 
    - 툴킷은 응용프로그램을 시작할 때(예: 샷 BECH_0010을 위해 Maya를 시작할 때) 폴더 생성을 자동화하며 Maya를 시작하기 전에 폴더가 있는지 확인합니다. 폴더가 없으면 즉시 만들어집니다. 폴더는 [셸에서의 tank 명령](https://support.shotgunsoftware.com/hc/ko/articles/219033178-Administering-Toolkit#Useful%20tank%20commands) 및 [ShotGrid의 폴더 만들기](https://support.shotgunsoftware.com/hc/ko/articles/219040688-Beyond-your-first-project#Shotgun%20Integration)(Create Folders) 메뉴를 통해 API 방식을 사용하여 만들 수도 있습니다. 이 폴더 생성 프로세스는 특별한 구성 파일 세트를 통해 진행됩니다. 자세한 정보는 아래 문서의 [1부](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)를 참조하십시오.
+
 2. **작업 열기 및 저장:** 작업하는 동안 디스크의 표준화된 위치에서 파일을 열고 저장해야 합니다. 이러한 파일 위치는 일반적으로 작업 시작 전에 만들어진 폴더 구조 내에 있습니다.
 
-   - 폴더 구조가 설정되면 해당 구조를 사용하여 디스크의 주요 위치를 식별할 수 있습니다. 이러한 위치를 [템플릿](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)이라고 합니다. 예를 들어 `maya_shot_publish`라는 템플릿을 정의하여 샷을 위해 게시된 Maya 파일을 참조할 수 있습니다.  [툴킷 앱](https://support.shotgunsoftware.com/hc/ko/articles/219039798)은 이 템플릿을 사용합니다. Publish 앱은 이 템플릿을 사용하여 파일을 작성해야 할 위치를 제어할 수 있으며 [Workfiles 앱](https://support.shotgunsoftware.com/hc/ko/articles/219033088-Your-Work-Files)은 템플릿을 사용하여 파일을 열 위치를 확인할 수 있습니다. 툴킷의 환경 구성 내에서 각 앱이 사용하는 템플릿을 제어할 수 있습니다. 툴킷에서 사용되는 모든 주요 파일 위치는 단일 템플릿 파일에 정의되므로 쉽게 확인할 수 있습니다.
+   - 폴더 구조가 설정되면 해당 구조를 사용하여 디스크의 주요 위치를 식별할 수 있습니다. 이러한 위치를 [템플릿](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)이라고 합니다. 예를 들어 `maya_shot_publish`라는 템플릿을 정의하여 샷을 위해 게시된 Maya 파일을 참조할 수 있습니다. [툴킷 앱](https://support.shotgunsoftware.com/hc/ko/articles/219039798)은 이 템플릿을 사용합니다. Publish 앱은 이 템플릿을 사용하여 파일을 작성해야 할 위치를 제어할 수 있으며 [Workfiles 앱](https://support.shotgunsoftware.com/hc/ko/articles/219033088-Your-Work-Files)은 템플릿을 사용하여 파일을 열 위치를 확인할 수 있습니다. 툴킷의 환경 구성 내에서 각 앱이 사용하는 템플릿을 제어할 수 있습니다. 툴킷에서 사용되는 모든 주요 파일 위치는 단일 템플릿 파일에 정의되므로 쉽게 확인할 수 있습니다.
 
 # 1부 - 폴더 생성 구문
 
@@ -27,24 +28,23 @@ _이 문서에서는 툴킷 구성에 대한 제어 권한이 있는 경우에�
 
 ![구성](./images/file-system-config-reference/core_config.png)
 
-위의 이미지는 스키마 구성을 보여 줍니다. 툴킷 폴더 생성을 실행하면 {% include product %}의 엔티티와 디스크의 폴더 간에 연결이 설정됩니다.  툴킷은 이 폴더 스키마 구성을 사용하여 디스크에 일련의 폴더를 생성하고 각 폴더는 {% include product %}에 [`Filesystem Location`](https://developer.shotgridsoftware.com/cbbf99a4/) 엔티티로 등록됩니다. 즉, {% include product %} 데이터(예: 샷 및 에셋 이름) 및 구성이 디스크 및 {% include product %}의 실제 폴더에 "지정"된다고 생각할 수 있습니다. 구성은 항상 "project"라는 폴더에서 시작됩니다. 이 폴더는 항상 {% include product %}의 연결된 프로젝트를 나타내며 프로젝트의 툴킷 이름으로 대체됩니다. 이 레벨 아래에는 정적 폴더가 있습니다. 폴더 작성자는 자동으로 **sequences**와 같은 폴더를 만듭니다.
+위의 이미지는 스키마 구성을 보여 줍니다. 툴킷 폴더 생성을 실행하면 {% include product %}의 엔티티와 디스크의 폴더 간에 연결이 설정됩니다. 툴킷은 이 폴더 스키마 구성을 사용하여 디스크에 일련의 폴더를 생성하고 각 폴더는 {% include product %}에 [`Filesystem Location`](https://developer.shotgridsoftware.com/cbbf99a4/) 엔티티로 등록됩니다. 즉, {% include product %} 데이터(예: 샷 및 에셋 이름) 및 구성이 디스크 및 {% include product %}의 실제 폴더에 "지정"된다고 생각할 수 있습니다. 구성은 항상 "project"라는 폴더에서 시작됩니다. 이 폴더는 항상 {% include product %}의 연결된 프로젝트를 나타내며 프로젝트의 툴킷 이름으로 대체됩니다. 이 레벨 아래에는 정적 폴더가 있습니다. 폴더 작성자는 자동으로 **sequences**와 같은 폴더를 만듭니다.
 
 sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있습니다. 툴킷은 폴더와 같은 이름을 가진 YAML 파일을 발견할 때마다 YAML 파일의 컨텐츠를 읽고 원하는 동적 동작을 추가합니다. 이 경우, **sequence.yml** 파일에는 project 폴더 아래 세 가지 유형의 항목으로 구성된 구조가 있습니다.
 
 1. **일반 폴더 및 파일:** 대상 위치로 간단히 복사됩니다.
 2. **YAML 파일이 있는 폴더**(폴더와 같은 이름): 동적 컨텐츠를 나타냅니다. 예를 들어, **shot** 및 **shot.yml**이 있을 수 있으며 폴더가 만들어질 때 이 **shot** 폴더는 여러 폴더(샷당 하나의 폴더)를 생성하는 데 사용되는 템플릿입니다.
-3. **name.symlink.yml 파일**은 폴더가 처리될 때 기호 링크를 생성합니다.  [기호 링크는 이 문서](https://support.shotgunsoftware.com/hc/ko/articles/219039868-File-System-Reference#Symbolic%20Links)의 뒷부분에서 설명합니다.
+3. **name.symlink.yml 파일**은 폴더가 처리될 때 기호 링크를 생성합니다. [기호 링크는 이 문서](https://support.shotgunsoftware.com/hc/ko/articles/219039868-File-System-Reference#Symbolic%20Links)의 뒷부분에서 설명합니다.
 
 현재 YAML 파일에 표시된 동적 구성 설정은 다음 모드를 지원합니다.
 
 - **[{% include product %} 쿼리 폴더:](#shotgun-query-folders)** {% include product %} 데이터베이스 쿼리를 기반으로 하는 동적 폴더. 예를 들어 이 모드는 프로젝트의 모든 샷에 대한 폴더를 만드는 데 사용할 수 있습니다.
 
-- **[{% include product %} 목록 필드 폴더: ](#shotgun-list-field-folders)**  {% include product %} 목록 필드를 기반으로 하는 동적 폴더 이름입니다. 예를 들어 이 모드는 {% include product %}의 에셋 엔티티에 있는 {% include product %} 목록 필드 "Asset Type"의 모든 값에 대한 폴더를 만드는 데 사용할 수 있습니다.
+- **[{% include product %} 목록 필드 폴더: ](#shotgun-list-field-folders)** {% include product %} 목록 필드를 기반으로 하는 동적 폴더 이름입니다. 예를 들어 이 모드는 {% include product %}의 에셋 엔티티에 있는 {% include product %} 목록 필드 "Asset Type"의 모든 값에 대한 폴더를 만드는 데 사용할 수 있습니다.
 
 - **[유예된 폴더:](#workspaces-and-deferred-folder-creation)** 툴킷 API의 폴더 생성 방식을 통해 두 번째 폴더 생성 패스가 요청될 때(일반적으로 Maya와 같은 응용프로그램이 시작될 때)만 실행됩니다. 일반적으로 이 방식은 응용프로그램을 시작하기 직전에 툴킷의 다양한 응용프로그램 시작 관리자에 의해 실행됩니다.
 
-- **[현재 사용자 폴더:](#current-user-folder)**  현재 사용자를 나타내는 특수 폴더입니다.
-
+- **[현재 사용자 폴더:](#current-user-folder)** 현재 사용자를 나타내는 특수 폴더입니다.
 
 이러한 모드에 대해 자세히 살펴보겠습니다.
 
@@ -80,11 +80,11 @@ sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있
 - **entity_type** 필드는 데이터를 가져올 {% include product %} 엔티티(예: "에셋", "샷", "시퀀스", "CustomEntity02" 등)로 설정해야 합니다.
 - **name** 필드는 {% include product %}의 데이터를 기반으로 각 폴더에 지정해야 하는 이름입니다.
 
-   - 위의 예와 같이 단일 필드를 사용할 수 있습니다(예: `name: code`).
-   - 여러 필드를 괄호로 묶어 사용할 수 있습니다(예: `name:``"{asset_type}_{code}"`).
-   - 링크된 다른 엔티티의 필드를 포함하려면 표준 `name: "{sg_sequence.Sequence.code}_{code}"` 도트 구문을 사용할 수 있습니다(예: {% include product %}).
-- **filters** 필드는 {% include product %} 쿼리이며 [{% include product %} API 구문](http://developer.shotgridsoftware.com/python-api/reference.html)을 비슷하게 따릅니다. 이는 사전 목록이며 각 사전에는 _path_, _relation_ 및 _values_ 키가 있어야 합니다. 유효한 $syntax 값은 상응하는 {% include product %} 엔티티(예: 프로젝트의 경우 `"$project"`, sequence.yml이 상위 디렉토리 계층에 있는 경우 `"$sequence"`)가 있는 모든 상위 폴더입니다. {% include product %} 엔티티 링크의 경우 $syntax(예: `{ "path": "project", "relation": "is", "values": [ "$project" ] }`)를 사용하여 구성에서 상위 폴더를 참조할 수 있습니다. [아래 예](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Examples)에서 자세히 설명합니다.
+  - 위의 예와 같이 단일 필드를 사용할 수 있습니다(예: `name: code`).
+  - 여러 필드를 괄호로 묶어 사용할 수 있습니다(예: ` name:``"{asset_type}_{code}" `).
+  - 링크된 다른 엔티티의 필드를 포함하려면 표준 `name: "{sg_sequence.Sequence.code}_{code}"` 도트 구문을 사용할 수 있습니다(예: {% include product %}).
 
+- **filters** 필드는 {% include product %} 쿼리이며 [{% include product %} API 구문](http://developer.shotgridsoftware.com/python-api/reference.html)을 비슷하게 따릅니다. 이는 사전 목록이며 각 사전에는 _path_, _relation_ 및 _values_ 키가 있어야 합니다. 유효한 $syntax 값은 상응하는 {% include product %} 엔티티(예: 프로젝트의 경우 `"$project"`, sequence.yml이 상위 디렉토리 계층에 있는 경우 `"$sequence"`)가 있는 모든 상위 폴더입니다. {% include product %} 엔티티 링크의 경우 $syntax(예: `{ "path": "project", "relation": "is", "values": [ "$project" ] }`)를 사용하여 구성에서 상위 폴더를 참조할 수 있습니다. [아래 예](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Examples)에서 자세히 설명합니다.
 
 ## 다중 폴더
 
@@ -118,7 +118,7 @@ sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있
 
     asset_step_folder: assets/{asset_type}/{Asset}/{Step}
 
-`{asset_type}`  및 `{Asset}`은 모두 문자열 템플릿 키로 정의되며 `{Asset}` 토큰은 지정된 경로의 컨텍스트를 결정할 때 컨텍스트 계산에서 사용합니다.
+`{asset_type}` 및 `{Asset}`은 모두 문자열 템플릿 키로 정의되며 `{Asset}` 토큰은 지정된 경로의 컨텍스트를 결정할 때 컨텍스트 계산에서 사용합니다.
 
 ## 상위 폴더를 사용하여 만들기
 
@@ -182,7 +182,7 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
-구문은 템플릿 시스템의 `subset` 토큰과 유사합니다. {% include product %} 필드 이름 다음에 콜론에 이어서 일반 표현식을 추가하기만 하면 됩니다. 정규식으로 정의된 모든 그룹(예: `()`로 둘러싸인 섹션)은 값을 추출하는 데 사용됩니다. 정규식에 여러 그룹이 있는 경우 이 그룹이 함께 연결됩니다. 예를 들어 다음 표현식은 객체를 만든 사용자의 이니셜을 추출합니다.  `{created_by.HumanUser.code:^([A-Z])[a-z]* ([A-Z])[a-z]*}`
+구문은 템플릿 시스템의 `subset` 토큰과 유사합니다. {% include product %} 필드 이름 다음에 콜론에 이어서 일반 표현식을 추가하기만 하면 됩니다. 정규식으로 정의된 모든 그룹(예: `()`로 둘러싸인 섹션)은 값을 추출하는 데 사용됩니다. 정규식에 여러 그룹이 있는 경우 이 그룹이 함께 연결됩니다. 예를 들어 다음 표현식은 객체를 만든 사용자의 이니셜을 추출합니다. `{created_by.HumanUser.code:^([A-Z])[a-z]* ([A-Z])[a-z]*}`
 
 ## 예
 
@@ -245,12 +245,11 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 - 동적 컨텐츠 **type** 필드의 값을 `shotgun_list_field`로 설정합니다.
 - `entity_type` 필드는 데이터를 가져올 {% include product %} 엔티티(예: "에셋", "시퀀스", "샷" 등)로 설정해야 합니다.
-- `field_name` 필드는 데이터를 가져온 {% include product %} 필드로 설정해야 하며 [목록 유형 필드](https://support.shotgunsoftware.com/hc/ko/articles/219031008)여야 합니다. 표현식을 사용하여 정적 텍스트를 동적 컨텐츠와 함께 추가할 수 있습니다.`field_name: "{sg_asset_type}_type"`  이 표현식 예는 텍스트와 템플릿 키를 포함합니다.
+- `field_name` 필드는 데이터를 가져온 {% include product %} 필드로 설정해야 하며 [목록 유형 필드](https://support.shotgunsoftware.com/hc/ko/articles/219031008)여야 합니다. 표현식을 사용하여 정적 텍스트를 동적 컨텐츠와 함께 추가할 수 있습니다.`field_name: "{sg_asset_type}_type"` 이 표현식 예는 텍스트와 템플릿 키를 포함합니다.
 
-- 선택적 `skip_unused` 매개변수는 사용되지 않는 목록 유형 필드 값에 대해 디렉토리가 생성되는 것을 방지합니다(위의 [선택 필드](https://support.shotgunsoftware.com/hc/ko/articles/219039868-File-System-Reference#Optional%20fields) 섹션 참조).  {% include info title="참고" content="이 값을 True로 설정하면 폴더 생성 성능에 부정적인 영향을 줄 수 있습니다. 또한, 컬링 알고리즘은 현재 완전하지 않아 관련 엔티티에 복잡한 필터가 적용된 시나리오에서는 작동하지 않습니다." %}
+- 선택적 `skip_unused` 매개변수는 사용되지 않는 목록 유형 필드 값에 대해 디렉토리가 생성되는 것을 방지합니다(위의 [선택 필드](https://support.shotgunsoftware.com/hc/ko/articles/219039868-File-System-Reference#Optional%20fields) 섹션 참조). {% include info title="참고" content="이 값을 True로 설정하면 폴더 생성 성능에 부정적인 영향을 줄 수 있습니다. 또한, 컬링 알고리즘은 현재 완전하지 않아 관련 엔티티에 복잡한 필터가 적용된 시나리오에서는 작동하지 않습니다." %}
 
 - 선택적 `create_with_parent` 매개변수는 현재 처리 중인 하위 엔티티 레벨 노드가 없는 경우에도 list_field 노드를 강제로 만듭니다(위의 [상위 폴더를 사용하여 만들기](https://support.shotgunsoftware.com/hc/ko/articles/219039868-File-System-Reference#Create%20With%20Parent%20Folder) 섹션 참조).
-
 
 ## 파이프라인 단계 폴더
 
@@ -400,7 +399,7 @@ _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적�
 
 ## 정적 폴더
 
-정적 폴더(및 파일)는 가장 간단한 유형입니다. 폴더를 구성 구조에 놓을 수 있으며 폴더 생성 프로세스가 실행될 때 자동으로 복사됩니다.  [다음은 정적 폴더의 몇 가지 예](https://github.com/shotgunsoftware/tk-config-default/tree/master/core/schema/project)(https://github.com/shotgunsoftware/tk-config-default/tree/master/core/schema/project)이며 이는 기본 구성에 있습니다(정적 폴더에는 해당 YAML 파일이 없음).
+정적 폴더(및 파일)는 가장 간단한 유형입니다. 폴더를 구성 구조에 놓을 수 있으며 폴더 생성 프로세스가 실행될 때 자동으로 복사됩니다. [다음은 정적 폴더의 몇 가지 예](https://github.com/shotgunsoftware/tk-config-default/tree/master/core/schema/project)(https://github.com/shotgunsoftware/tk-config-default/tree/master/core/schema/project)이며 이는 기본 구성에 있습니다(정적 폴더에는 해당 YAML 파일이 없음).
 
 대개 정적 폴더에서는 이 작업 이외에 수행해야 할 작업이 없지만, 툴킷은 정적 폴더에 대한 몇 가지 고급 기능을 지원합니다. 동적 조건을 정의하여 정적 폴더를 만들지 여부를 결정할 수 있습니다. 예를 들어 편집 유형의 파이프라인 단계에 대해서만 생성되는 특별한 정적 폴더가 필요할 수 있습니다. 이 경우 정적 폴더 옆에 YAML 구성 파일을 추가하고 동일한 이름(확장자는 "yml")을 지정해야 합니다. 이제 다음 구문을 사용합니다.
 
@@ -496,7 +495,7 @@ _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적�
     .git                # no git temp files to be copied across at folder creation time
     .DS_Store           # no mac temp files to be copied across at folder creation time
 
-와일드카드를 사용할 수도 있습니다. 예를 들어 TMP 익스텐션이 있는 모든 파일을 제외해야 하는 경우 *.tmp 줄을 파일에 추가하기만 하면 됩니다.
+와일드카드를 사용할 수도 있습니다. 예를 들어 TMP 익스텐션이 있는 모든 파일을 제외해야 하는 경우 \*.tmp 줄을 파일에 추가하기만 하면 됩니다.
 
     <a name="This is a good example of a standard ignore_files file"></a>
     # This is a good example of a standard ignore_files file
@@ -701,7 +700,6 @@ _동적 토큰 `$sequence`는 런타임에 실제 객체로 해석되었습니�
      'metadata': {'studio_permissions_level': 'admin', 'type': 'static'},
      'path': '/mnt/projects/chasing_the_light/assets'},
 
-
 다시 말하지만, 임의로 복잡한 데이터는 YAML 구성 파일에서 이런 방법으로 후크에 전달될 수 있습니다.
 
 ## 간단한 폴더 생성 방법 커스터마이즈
@@ -824,7 +822,7 @@ _동적 토큰 `$sequence`는 런타임에 실제 객체로 해석되었습니�
 
 ![configuration](images/file-system-config-reference/templates_file.png)
 
-이 파일에는 _템플릿_과 해당 _키_에 대한 정의가 있습니다.
+이 파일에는 *템플릿*과 해당 *키*에 대한 정의가 있습니다.
 
 **키**는 정의된 동적 필드로서 이름, 버전 번호, 화면 해상도, 샷 이름 등이 될 수 있습니다. 키는 유형으로 구성되므로 예를 들어 키를 문자열 또는 정수로 정의할 수 있습니다. 또한 형식화되어 있기 때문에 문자열에 영숫자만 포함하거나 모든 정수를 8개의 0으로 채우도록 정의할 수 있습니다.
 
@@ -845,34 +843,33 @@ _동적 토큰 `$sequence`는 런타임에 실제 객체로 해석되었습니�
 
 유형을 지정하는 것 외에도 추가 옵션을 지정할 수 있습니다. 다음과 같은 옵션이 있습니다.
 
-- `default: default_value`  - 값이 제공되지 않은 경우 사용되는 값입니다. 예를 들어 툴킷 API를 사용하는 중 필드 값 세트를 경로로 해석하려고 하는 경우 발생할 수 있습니다.
+- `default: default_value` - 값이 제공되지 않은 경우 사용되는 값입니다. 예를 들어 툴킷 API를 사용하는 중 필드 값 세트를 경로로 해석하려고 하는 경우 발생할 수 있습니다.
 
-- `choices: [choice1, choice2, etc]`  - 이 키에 사용할 수 있는 값의 열거입니다.
+- `choices: [choice1, choice2, etc]` - 이 키에 사용할 수 있는 값의 열거입니다.
 
-- `exclusions: [bad1, bad2, etc]`  - 이 키에 사용할 수 없는 값의 열거입니다. 키가 sequence 유형인 경우, 이 설정으로 프레임 사양 값을 무효화할 수 없습니다.
+- `exclusions: [bad1, bad2, etc]` - 이 키에 사용할 수 없는 값의 열거입니다. 키가 sequence 유형인 경우, 이 설정으로 프레임 사양 값을 무효화할 수 없습니다.
 
-- `length: 12`  - 이 키는 정확한 길이여야 합니다.
+- `length: 12` - 이 키는 정확한 길이여야 합니다.
 
-- `alias: new_name`  - key_name 대신 이 키를 사용하여 템플릿에서 사용할 이름을 제공합니다. 예를 들어 버전 번호에 대한 두 가지 개념이 있는 경우 하나는 클라이언트가 원하는 방식대로 4개의 0으로 채워지고, 다른 하나는 내부적으로 처리되는 방식대로 3개의 0으로 채워집니다. 이 경우 키 이름은 고유해야 하므로 두 키의 이름을 "version"으로 지정하는 것은 실제 가능하지 않습니다. 이 경우 별칭을 만들 수 있습니다. 자세한 정보는 아래 예 중 하나를 참조하십시오.
+- `alias: new_name` - key_name 대신 이 키를 사용하여 템플릿에서 사용할 이름을 제공합니다. 예를 들어 버전 번호에 대한 두 가지 개념이 있는 경우 하나는 클라이언트가 원하는 방식대로 4개의 0으로 채워지고, 다른 하나는 내부적으로 처리되는 방식대로 3개의 0으로 채워집니다. 이 경우 키 이름은 고유해야 하므로 두 키의 이름을 "version"으로 지정하는 것은 실제 가능하지 않습니다. 이 경우 별칭을 만들 수 있습니다. 자세한 정보는 아래 예 중 하나를 참조하십시오.
 
-- `filter_by: alphanumeric`  - string 유형의 키에만 작동합니다. 이 옵션을 지정하면 영숫자 값(일반적으로 ASCII 문자열의 경우 a-z, A-Z 및 0-9이지만 입력 데이터가 유니코드인 경우 다른 문자를 포함할 수 있음)을 포함하는 문자열만 유효한 값으로 간주됩니다.
+- `filter_by: alphanumeric` - string 유형의 키에만 작동합니다. 이 옵션을 지정하면 영숫자 값(일반적으로 ASCII 문자열의 경우 a-z, A-Z 및 0-9이지만 입력 데이터가 유니코드인 경우 다른 문자를 포함할 수 있음)을 포함하는 문자열만 유효한 값으로 간주됩니다.
 
-- `filter_by: alpha`  - string 유형의 키에만 작동합니다. 이 옵션을 지정하면 영문자 값(일반적으로 ASCII 문자열의 경우 a-z 및 A-Z이지만 입력 데이터가 유니코드인 경우 다른 문자를 포함할 수 있음)을 포함하는 문자열만 유효한 값으로 간주됩니다.
+- `filter_by: alpha` - string 유형의 키에만 작동합니다. 이 옵션을 지정하면 영문자 값(일반적으로 ASCII 문자열의 경우 a-z 및 A-Z이지만 입력 데이터가 유니코드인 경우 다른 문자를 포함할 수 있음)을 포함하는 문자열만 유효한 값으로 간주됩니다.
 
-- `filter_by: '^[0-9]{4}_[a-z]{3}$'`  - string 유형의 키에만 작동합니다. 정규식을 유효성 확인 마스크로 정의할 수 있습니다. 예를 들어, 위의 예에서는 키에 4자리 숫자, 밑줄 및 3개의 소문자가 필요합니다.
+- `filter_by: '^[0-9]{4}_[a-z]{3}$'` - string 유형의 키에만 작동합니다. 정규식을 유효성 확인 마스크로 정의할 수 있습니다. 예를 들어, 위의 예에서는 키에 4자리 숫자, 밑줄 및 3개의 소문자가 필요합니다.
 
-- `format_spec: "04"`  - int 및 sequence 유형의 키의 경우 이 설정은 int 또는 sequence 숫자가 0이거나 공백으로 채워짐을 의미합니다. 이 예에서와 같이 "04"를 지정하면 0으로 채워진 4자리 숫자(예: 0003)가 됩니다. "03"을 지정하면 0으로 채워진 3자리 숫자(예: 042)가 됩니다. "3"을 지정하면 공백으로 채워진 3자리 숫자(예: " 3")가 됩니다. timestamp 유형 키의 경우 format_spec은 [strftime 및 strptime 규칙](https://docs.python.org/2/library/datetime.html#strftime-strptime-behavior)을 따릅니다.
+- `format_spec: "04"` - int 및 sequence 유형의 키의 경우 이 설정은 int 또는 sequence 숫자가 0이거나 공백으로 채워짐을 의미합니다. 이 예에서와 같이 "04"를 지정하면 0으로 채워진 4자리 숫자(예: 0003)가 됩니다. "03"을 지정하면 0으로 채워진 3자리 숫자(예: 042)가 됩니다. "3"을 지정하면 공백으로 채워진 3자리 숫자(예: " 3")가 됩니다. timestamp 유형 키의 경우 format_spec은 [strftime 및 strptime 규칙](https://docs.python.org/2/library/datetime.html#strftime-strptime-behavior)을 따릅니다.
 
-- `strict_matching: true`  - int 유형의 키에서만 작동합니다. 이 설정은 해당 필드가 적절한 형식의 숫자일 때만 일치함을 의미합니다. 예를 들어 strict_matching이 true로 설정된 경우 "003"을 지정하면 "002", "12345" 및 "042"는 일치하지만 "00003" 또는 "2"는 일치하지 않습니다. 엄격하게 일치하도록 해야 하면 strict_matching을 false로 설정합니다. 기본 동작은 엄격하게 일치하는 것입니다.
+- `strict_matching: true` - int 유형의 키에서만 작동합니다. 이 설정은 해당 필드가 적절한 형식의 숫자일 때만 일치함을 의미합니다. 예를 들어 strict_matching이 true로 설정된 경우 "003"을 지정하면 "002", "12345" 및 "042"는 일치하지만 "00003" 또는 "2"는 일치하지 않습니다. 엄격하게 일치하도록 해야 하면 strict_matching을 false로 설정합니다. 기본 동작은 엄격하게 일치하는 것입니다.
 
-- `shotgun_entity_type`  - `shotgun_field_name` 옵션과 함께 사용하면 {% include product %}에 값을 직접 쿼리할 수 있습니다. 이렇게 하면 폴더 구조에 없는 필드의 값을 파일 이름에 사용할 수 있습니다.
+- `shotgun_entity_type` - `shotgun_field_name` 옵션과 함께 사용하면 {% include product %}에 값을 직접 쿼리할 수 있습니다. 이렇게 하면 폴더 구조에 없는 필드의 값을 파일 이름에 사용할 수 있습니다.
 
-- `shotgun_field_name`  - `shotgun_entity_type`과 함께 사용해야 합니다.
+- `shotgun_field_name` - `shotgun_entity_type`과 함께 사용해야 합니다.
 
-- `abstract`  - 추상 필드임을 나타냅니다. 추상 필드는 이미지 시퀀스(%04d) 또는 스테레오(%V)와 같이 경로를 설명하는 데 패턴이 필요한 경우 사용됩니다. 추상 필드에는 기본값이 필요합니다.
+- `abstract` - 추상 필드임을 나타냅니다. 추상 필드는 이미지 시퀀스(%04d) 또는 스테레오(%V)와 같이 경로를 설명하는 데 패턴이 필요한 경우 사용됩니다. 추상 필드에는 기본값이 필요합니다.
 
-- `subset`  및 `subset_format` - 지정된 입력 문자열의 하위 집합을 추출하여 키 값으로 만듭니다. 예를 들어 사용자 이름 전체에서 이니셜 키를 만들거나 모든 샷 이름의 첫 세 글자를 포함하는 키를 만들 수 있습니다.
-
+- `subset` 및 `subset_format` - 지정된 입력 문자열의 하위 집합을 추출하여 키 값으로 만듭니다. 예를 들어 사용자 이름 전체에서 이니셜 키를 만들거나 모든 샷 이름의 첫 세 글자를 포함하는 키를 만들 수 있습니다.
 
 템플릿 키에 대한 기술적인 상세 정보는 [API 참조](http://developer.shotgridsoftware.com/tk-core/core.html#template-system)를 참조하십시오.
 
@@ -1053,7 +1050,7 @@ UTC 시간으로 기본 설정되는 YYYY.MM.DD 형식의 타임스탬프입니�
 
 {% include info title="참고" content="문자열 키의 이름이 연관된 ShotGrid 엔티티가 있는 동적 스키마 폴더의 엔티티 유형과 일치하면 해당 폴더 이름이 토큰으로 대체됩니다. 예를 들어 위의 코드 조각과 같이 'string' 유형의 {Sequence} 템플릿 키를 사용하고 스키마에서 'sequence'라는 동적 폴더가 있는 경우 해당 `sequence.yml` 파일에서 `shotgun_entity` 유형으로 정의되며 ShotGrid의 'Sequence' 엔티티 유형에 연결됩니다. 툴킷은 템플릿 키가 이 동적 폴더의 엔티티 유형이라는 것을 인식합니다(여기서는 둘 다 Sequence임). 따라서 툴킷은 폴더 이름(즉, 특정 시퀀스의 이름)을 가져와서 템플릿 키로 대체합니다." %}
 
-선택적 속성을 정의해야 하는 경우 이 양식이 필요합니다. 현재 유일한 선택적 속성은 `root_name`이며 이 속성은 다중 루트가 있는 프로젝트의 경로에 대한 프로젝트 루트를 지정하는 데 사용할 수 있습니다.  [다중 루트](https://developer.shotgridsoftware.com/9ea9dd4e/)는 새로운 저장소 루트를 추가하여 일부 프로젝트 파일을 저장할 때 사용됩니다.
+선택적 속성을 정의해야 하는 경우 이 양식이 필요합니다. 현재 유일한 선택적 속성은 `root_name`이며 이 속성은 다중 루트가 있는 프로젝트의 경로에 대한 프로젝트 루트를 지정하는 데 사용할 수 있습니다. [다중 루트](https://developer.shotgridsoftware.com/9ea9dd4e/)는 새로운 저장소 루트를 추가하여 일부 프로젝트 파일을 저장할 때 사용됩니다.
 
 `root_name: name_of_project_root`
 
@@ -1113,7 +1110,6 @@ name과 version은 동일한 파일에 정의된 키 이름입니다.
 - [에피소드 엔티티는 어떻게 작동합니까?](https://support.shotgunsoftware.com/hc/ko/articles/115000019414)
 - [엔티티의 계층 커스터마이즈](https://support.shotgunsoftware.com/hc/ko/articles/219030828)
 
-
 ### 에피소드 > 시퀀스 > 샷 계층에 필요한 {% include product %} 필드
 
 [`Episode`용 커스텀 엔티티](https://support.shotgunsoftware.com/hc/ko/articles/114094182834)(사이트 기본 설정(Site Preferences) > 엔티티(Entities))를 사용하도록 선택하거나 {% include product %} [7.0.7.0](https://support.shotgunsoftware.com/hc/ko/articles/220062367-7-0-Release-Notes#7_0_7_0)에서 제공된 공식 에피소드 엔티티를 사용할 수 있습니다. 7.0.7.0 이전의 {% include product %}(2017년 이전)에 가입했다면 "TV Show" 템플릿에서 에피소드용 `CustomEntity02`를 사용합니다. `CustomEntity02` 또는 공식 에피소드 엔티티가 아닌 다른 엔티티를 사용하는 경우에는 신경쓸 필요가 없습니다. {% include product %} 및 툴킷은 유연합니다. 두 경우를 모두 살펴보겠습니다.
@@ -1128,7 +1124,7 @@ a) **공식 에피소드 엔티티 사용:** "에피소드" 엔티티는 프로�
 
 **또는**
 
-b) **커스텀 엔티티 사용:** `CustomEntity02`는 프로젝트 템플릿에서 TV Show 프로젝트를 만들 때 사용되는 커스텀 엔티티일 수 있습니다.  _앞에서 언급했듯이, 다른 커스텀 엔티티를 활성화하고 `CustomEntity02` 대신 사용할 수 있습니다. 모든 `CustomEntity02`를 사용자가 활성화한 특정 엔티티로 바꿔야 합니다._
+b) **커스텀 엔티티 사용:** `CustomEntity02`는 프로젝트 템플릿에서 TV Show 프로젝트를 만들 때 사용되는 커스텀 엔티티일 수 있습니다. _앞에서 언급했듯이, 다른 커스텀 엔티티를 활성화하고 `CustomEntity02` 대신 사용할 수 있습니다. 모든 `CustomEntity02`를 사용자가 활성화한 특정 엔티티로 바꿔야 합니다._
 
 ![episode_custom_entity](images/file-system-config-reference/episode_custom_entity.png)
 
@@ -1265,7 +1261,6 @@ b) **커스텀 엔티티 사용:** `CustomEntity02`는 프로젝트 템플릿에
 
 `config/core/schema/project/shots/episode/sequence` 폴더에서 `shot`라는 이름의 폴더를 다음 컨텐츠와 동일한 디렉토리에 해당 `shot.yml` 파일과 함께 만듭니다.
 
-
     <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
@@ -1344,11 +1339,10 @@ b) **커스텀 엔티티 사용:** `CustomEntity02`는 프로젝트 템플릿에
 
 - 스키마에서 새로운 에셋 유형인 차량에 대한 새 분기를 만들어 시작합니다.
 - `asset/` 및 `asset.yml`과 같은 레벨에서 `asset_vehicle/` 폴더 및 `asset_vehicle.yml`을 추가합니다.
-- 이러한 YAML 파일에도 필터 설정이 있습니다. `asset.yml`의 필터를 수정하여 차량을 _제외_한 모든 에셋에 적용한 다음 `asset_vehicle.yml`을 수정하여 차량 유형의 에셋에_만_ 적용합니다.  [여기 예에서 필터를 보여 줍니다](https://support.shotgunsoftware.com/hc/ko/articles/219039868-File-System-Configuration-Reference#Different%20file%20system%20layouts%20for%20different%20pipeline%20steps).
+- 이러한 YAML 파일에도 필터 설정이 있습니다. `asset.yml`의 필터를 수정하여 차량을 *제외*한 모든 에셋에 적용한 다음 `asset_vehicle.yml`을 수정하여 차량 유형의 에셋에*만* 적용합니다. [여기 예에서 필터를 보여 줍니다](https://support.shotgunsoftware.com/hc/ko/articles/219039868-File-System-Configuration-Reference#Different%20file%20system%20layouts%20for%20different%20pipeline%20steps).
 - `asset` 및 `asset_vehicles`를 나타내는 두 개의 폴더가 있으므로 해당 에셋(예: `geoprep`, `lookdev` 등)에 대해 만들 `asset_vehicle` 아래에 모든 폴더를 추가합니다.
 
 - 이러한 에셋에 대한 파일을 저장하고 게시하는 경우 `core/templates.yml`에서 저장되고 게시된 파일에 대한 파일 경로를 설명하는 템플릿을 만듭니다. 예를 들어 [`maya_asset_work`](https://github.com/shotgunsoftware/tk-config-default/blob/v0.17.3/core/templates.yml#L480) 외에도 `maya_asset_work_vehicle`이라는 템플릿을 만들 수 있으며, 그 정의는 차량 에셋에 Maya 작업 파일을 저장하려는 템플릿 경로가 됩니다.
-
 
 **2단계: 새 환경 파일 만들기**
 
@@ -1359,7 +1353,7 @@ b) **커스텀 엔티티 사용:** `CustomEntity02`는 프로젝트 템플릿에
 
 ## 커스텀 엔티티를 사용하여 커스텀 파이프라인 단계를 만드는 방법
 
-{% include product %} 7.0.6.0에서는 [관리자 메뉴를 통한 파이프라인 단계 관리](https://support.shotgunsoftware.com/hc/ko/articles/222766227#managing_pipeline_steps)가 도입되었습니다. 이 기능을 사용하면 파이프라인 단계에 커스텀 필드를 쉽게 추가할 수 있습니다.  **전문가 팁: 대부분의 경우 파이프라인 단계에서 커스텀 필드를 사용하면 해당 파이프라인 단계를 관리할 커스텀 엔티티를 만드는 것보다 체계적으로 파이프라인을 유지할 수 있습니다.**
+{% include product %} 7.0.6.0에서는 [관리자 메뉴를 통한 파이프라인 단계 관리](https://support.shotgunsoftware.com/hc/ko/articles/222766227#managing_pipeline_steps)가 도입되었습니다. 이 기능을 사용하면 파이프라인 단계에 커스텀 필드를 쉽게 추가할 수 있습니다. **전문가 팁: 대부분의 경우 파이프라인 단계에서 커스텀 필드를 사용하면 해당 파이프라인 단계를 관리할 커스텀 엔티티를 만드는 것보다 체계적으로 파이프라인을 유지할 수 있습니다.**
 
 그러나 고급 사례에서는 대체 파이프라인 단계가 유용할 수 있습니다. 예를 들어 파이프라인 단계 영역에서 프로덕션과 파이프라인에 대한 다양한 명명 규칙 및 구조의 유연성과, 독립적으로 이름을 지정하고 구조화할 수 있는 유연성을 가질 수 있습니다. 일반적으로 {% include product %}에서 기본 제공하는 파이프라인 단계는 일정 계획 목적으로 사용되지만 다른 [커스텀 엔티티](https://support.shotgunsoftware.com/hc/ko/articles/114094182834)를 사용하여 파일 시스템을 구성하고 파이프라인에서 개별 태스크를 그룹으로 지정할 수 있습니다. 태스크에서 커스텀 엔티티로 커스텀 링크 필드를 만들어 이 작업을 수행할 수 있습니다. 그런 다음 시스템에서 단계 노드를 통해 태스크를 함께 그룹으로 지정하는 데 사용됩니다.
 

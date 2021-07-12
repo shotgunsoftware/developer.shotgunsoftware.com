@@ -23,11 +23,13 @@ lang: zh_CN
 {% include info title="注意" content="对于需要大约 1 秒来响应单个事件的接收服务，响应时间是主要性能因素，而不是交付开销。批处理不会有任何显著优势。" %}
 
 #### 非批量交付 Webhook
-* 允许的超时上限为每个交付 6 秒。即 Webhook 端点必须在 6 秒内响应每个请求。
+
+- 允许的超时上限为每个交付 6 秒。即 Webhook 端点必须在 6 秒内响应每个请求。
 
 #### 批量交付 Webhook
-* 允许的超时上限为每个批 6 秒或批中每个事件 1 秒（以最大值为准）。
-* 仍存在以下限制：所有 Webhook 中每个 ShotGrid 站点 Webhook 端点响应时间为 1 分钟。
+
+- 允许的超时上限为每个批 6 秒或批中每个事件 1 秒（以最大值为准）。
+- 仍存在以下限制：所有 Webhook 中每个 ShotGrid 站点 Webhook 端点响应时间为 1 分钟。
 
 ## Webhook 交付格式比较
 
@@ -35,28 +37,28 @@ lang: zh_CN
 
 ```json
 {
-  "data":{
-    "id":"119.110.0",
-    "event_log_entry_id":479004,
-    "event_type":"Shotgun_Asset_Change",
-    "operation":"update",
-    "user":{"type":"HumanUser","id":24},
-    "entity":{"type":"Asset","id":1419},
-    "project":{"type":"Project","id":127},
-    "meta":{
-      "type":"attribute_change",
-      "attribute_name":"code",
-      "entity_type":"Asset",
-      "entity_id":1419,
-      "field_data_type":"text",
-      "old_value":"Cypress test asset for Webhooks deliveries",
-      "new_value":"Revised test asset for Webhooks deliveries"
+  "data": {
+    "id": "119.110.0",
+    "event_log_entry_id": 479004,
+    "event_type": "Shotgun_Asset_Change",
+    "operation": "update",
+    "user": { "type": "HumanUser", "id": 24 },
+    "entity": { "type": "Asset", "id": 1419 },
+    "project": { "type": "Project", "id": 127 },
+    "meta": {
+      "type": "attribute_change",
+      "attribute_name": "code",
+      "entity_type": "Asset",
+      "entity_id": 1419,
+      "field_data_type": "text",
+      "old_value": "Cypress test asset for Webhooks deliveries",
+      "new_value": "Revised test asset for Webhooks deliveries"
     },
-    "created_at":"2021-02-22 17:40:23.202136",
-    "attribute_name":"code",
-    "session_uuid":null,
+    "created_at": "2021-02-22 17:40:23.202136",
+    "attribute_name": "code",
+    "session_uuid": null
   },
-  "timestamp":"2021-02-22T17:40:27Z"
+  "timestamp": "2021-02-22T17:40:27Z"
 }
 ```
 
@@ -66,51 +68,51 @@ lang: zh_CN
 
 ```json
 {
-  "timestamp":"2021-02-22T18:04:40.140Z",
-  "data":{
-    "deliveries":[
+  "timestamp": "2021-02-22T18:04:40.140Z",
+  "data": {
+    "deliveries": [
       {
-        "id":"170.141.0",
-        "event_log_entry_id":480850,
-        "event_type":"Shotgun_Asset_Change",
-        "operation":"update",
-        "user":{"type":"HumanUser","id":24},
-        "entity":{"type":"Asset","id":1424},
-        "project":{"type":"Project","id":132},
-        "meta":{
-          "type":"attribute_change",
-          "attribute_name":"code",
-          "entity_type":"Asset",
-          "entity_id":1424,
-          "field_data_type":"text",
-          "old_value":"Cypress test asset for Webhooks deliveries",
-          "new_value":"Revised test asset for Webhooks deliveries"
+        "id": "170.141.0",
+        "event_log_entry_id": 480850,
+        "event_type": "Shotgun_Asset_Change",
+        "operation": "update",
+        "user": { "type": "HumanUser", "id": 24 },
+        "entity": { "type": "Asset", "id": 1424 },
+        "project": { "type": "Project", "id": 132 },
+        "meta": {
+          "type": "attribute_change",
+          "attribute_name": "code",
+          "entity_type": "Asset",
+          "entity_id": 1424,
+          "field_data_type": "text",
+          "old_value": "Cypress test asset for Webhooks deliveries",
+          "new_value": "Revised test asset for Webhooks deliveries"
         },
-        "created_at":"2021-02-22 18:04:39.198641",
-        "attribute_name":"code",
-        "session_uuid":null,
+        "created_at": "2021-02-22 18:04:39.198641",
+        "attribute_name": "code",
+        "session_uuid": null
       },
       {
-        "id":"170.141.1",
-        "event_log_entry_id":480851,
-        "event_type":"Shotgun_Asset_Change",
-        "operation":"update",
-        "user":{"type":"HumanUser","id":24},
-        "entity":{"type":"Asset","id":1424},
-        "project":{"type":"Project","id":132},
-        "meta":{
-          "type":"attribute_change",
-          "attribute_name":"description",
-          "entity_type":"Asset",
-          "entity_id":1424,
-          "field_data_type":"text",
-          "old_value":null,
-          "new_value":"Some other *description*"
+        "id": "170.141.1",
+        "event_log_entry_id": 480851,
+        "event_type": "Shotgun_Asset_Change",
+        "operation": "update",
+        "user": { "type": "HumanUser", "id": 24 },
+        "entity": { "type": "Asset", "id": 1424 },
+        "project": { "type": "Project", "id": 132 },
+        "meta": {
+          "type": "attribute_change",
+          "attribute_name": "description",
+          "entity_type": "Asset",
+          "entity_id": 1424,
+          "field_data_type": "text",
+          "old_value": null,
+          "new_value": "Some other *description*"
         },
-        "created_at":"2021-02-22 18:04:39.212032",
-        "attribute_name":"description",
-        "session_uuid":null,
-      },
+        "created_at": "2021-02-22 18:04:39.212032",
+        "attribute_name": "description",
+        "session_uuid": null
+      }
     ]
   }
 }

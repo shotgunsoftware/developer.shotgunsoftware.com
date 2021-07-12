@@ -128,7 +128,6 @@ for item in breakdown_items:
    path = item["template"].apply_fields(item["fields"])
 ```
 
-
 ### 項目の最新バージョンを計算する
 
 ```
@@ -139,7 +138,6 @@ highest_version = app_object.compute_highest_version(template, fields)
 
 これにより、ディスクをスキャンして最新バージョンを判断します。このメソッドはディスク上の最新バージョン番号を返します。詳細については、次の使用例を参照してください。
 
-
 ### シーン項目を更新する
 
 ```
@@ -149,9 +147,6 @@ app_object.update_item(node_type, node_name, template, fields)
 項目を更新するには `update_item(node_type, node_name, template, fields)` メソッドを使用します。パラメータ `template` と `fields` は更新する必要のあるパスを表します。パラメータ `node_name` と `node_type` を使用すると、修正する必要のあるシーン内のノードを特定できます。通常、この値は `analyze_scene()` メソッドの出力から取得します。
 
 これは、Breakdown の UI で更新を実行する場合に似ています。実際の更新の呼び出しは、DCC 固有のロジックを処理するフックにディスパッチされます。詳細については、次の使用例を参照してください。
-
-
-
 
 ### Breakdown の API の例
 

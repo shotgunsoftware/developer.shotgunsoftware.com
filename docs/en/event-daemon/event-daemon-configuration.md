@@ -14,11 +14,12 @@ Most of the configuration for {% include product %}Events is controlled by the `
 {% include info title="Note" content="**For Windows:** Windows users will need to change all the paths in the configuration file for Windows equivalents. We suggest keeping all paths, including logging, under one single location for the sake of simplicity. This documentation tends to refer to `C:\shotgun\shotgunEvents` when mentioning Windows paths." %}
 
 <a id="Edit_shotgunEventDaemon_conf"></a>
+
 ## Edit shotgunEventDaemon.conf
 
-Once you have installed {% include product %}Events, the next step is to open the `shotgunEventDaemon.conf` file in a text editor and modify the settings to match your studio's needs. The defaults will be fine for most studios, however, there are some settings that have no defaults that will need to be provided by you before you can run the daemon. 
+Once you have installed {% include product %}Events, the next step is to open the `shotgunEventDaemon.conf` file in a text editor and modify the settings to match your studio's needs. The defaults will be fine for most studios, however, there are some settings that have no defaults that will need to be provided by you before you can run the daemon.
 
-The items you *must* provide are:
+The items you _must_ provide are:
 
 - your {% include product %} server URL
 - the Script name and Application key for connecting to {% include product %}
@@ -29,6 +30,7 @@ Optionally, you can also specify an SMTP server and email-specific settings in o
 There is also a section for an optional timing log which can help with troubleshooting if you ever encounter performance issues with your daemon. Enabling timing logging will populate its own separate log file with the timing information.
 
 <a id="Shotgun_Settings"></a>
+
 ### {% include product %} Settings
 
 Underneath the `[{% include product %}]` section, replace the default tokens with the correct values for `server`, `name`, and `key`. These should be the same values you'd provide to a standard API script connecting to {% include product %}.
@@ -42,9 +44,10 @@ key: e37d855e4824216573472846e0cb3e49c7f6f7b1
 ```
 
 <a id="Plugin_Settings"></a>
+
 ### Plugin Settings
 
-You will need to tell the {% include product %}EventDaemon where to look for plugins to run. Under the `[plugins]` section replace the default token with the correct  value for `paths`.
+You will need to tell the {% include product %}EventDaemon where to look for plugins to run. Under the `[plugins]` section replace the default token with the correct value for `paths`.
 
 You can specify multiple locations (which may be useful if you have multiple departments or repositories using the daemon). The value here must be a full path to a readable existing directory.
 
@@ -57,6 +60,7 @@ paths: /usr/local/shotgun/{% include product %}Events/plugins
 When you're first getting started, a good plugin to test with is the `logArgs.py` plugin located in the `/usr/local/shotgun/{% include product %}Events/src/examplePlugins` directory. Copy that into the plugins folder you specified and we'll use that for testing things.
 
 <a id="Location_of_shotgunEventDaemon_conf"></a>
+
 ### Location of shotgunEventDaemon.conf
 
 By default, the daemon will look for the shotgunEventDaemon.conf file in the same directory that {% include product %}EventDaemon.py is in, and in the `/etc` directory. If you need to put the conf file in another directory, it's recommended you create a symlink to it from the current directory.
@@ -66,6 +70,7 @@ By default, the daemon will look for the shotgunEventDaemon.conf file in the sam
 {% include info title="Note" content="**For Windows** The `/etc` doesn't exist on Windows so the configuration file should be put in the same directory as the Python files." %}
 
 <a id="Testing_the_Daemon"></a>
+
 ## Testing the Daemon
 
 Daemons can be difficult to test since they run in the background. There isn't always an obvious way to see what they're doing. Lucky for us, the {% include product %}EventDaemon has an option to run it as a foreground process. Now that we have done the minimum required setup, let's go ahead and test the daemon and see how things go.
@@ -81,11 +86,11 @@ INFO:engine:Last event id (248429) from the {% include product %} database.
 
 You should see the lines above when you start the script (some of the details may differ obviously). If you get any errors, the script will terminate since we opted to run it in the foreground we'll see that happen. Some common errors are displayed below if you get stuck.
 
-The `logArgs.py` plugin simply takes the event that occurred in {% include product %} and passes it to the logger. Not very exciting but it's a simple way to ensure that the script is running and the plugin is working. If you're at a busy studio, you may have already noticed a rapid stream of messages flowing by. If not, login to your {% include product %} server in your web browser and change some values or create something. You should see log statements printed out to your terminal window corresponding to the type of event you generated with your changes. 
+The `logArgs.py` plugin simply takes the event that occurred in {% include product %} and passes it to the logger. Not very exciting but it's a simple way to ensure that the script is running and the plugin is working. If you're at a busy studio, you may have already noticed a rapid stream of messages flowing by. If not, login to your {% include product %} server in your web browser and change some values or create something. You should see log statements printed out to your terminal window corresponding to the type of event you generated with your changes.
 
 {% include info title="Note" content="There are variables in the logArgs.py file that need to be filled in with appropriate values. '$DEMO_SCRIPT_NAMES$' and '$DEMO_API_KEY$' must be edited to contain the same values that were used in the shotgunEventDaemon.conf file in order for the logging to function correctly." %}
 
-If you don't see anything logged to the log file, check your log-related settings in {% include product %}EventDaemon.conf to ensure that the ``logging`` value is set to log INFO level messages
+If you don't see anything logged to the log file, check your log-related settings in {% include product %}EventDaemon.conf to ensure that the `logging` value is set to log INFO level messages
 
 ```
 logging: 20
@@ -100,6 +105,7 @@ reg.logger.setLevel(logging.INFO)
 Assuming all looks good, to stop the {% include product %}EventDaemon process, simply type `<ctrl>-c` in the terminal and you should see the script terminate.
 
 <a id="Running_the_Daemon"></a>
+
 ## Running the daemon
 
 Assuming all went well with your testing, we can now run the daemon as intended, in the background.
@@ -116,7 +122,7 @@ kp              4029   0.0  0.0  2435492    192 s001  R+    9:37AM   0:00.00 gre
 root            4020   0.0  0.1  2443824   4876   ??  S     9:36AM   0:00.02 /usr/bin/python ./{% include product %}EventDaemon.py start
 ```
 
-We can see by the second line returned that the daemon is running. The first line is matching the command we just ran. So we know it's running, but to ensure that it's *working* and the plugins are doing what they're supposed to, we can look at the log files and see if there's any output there.
+We can see by the second line returned that the daemon is running. The first line is matching the command we just ran. So we know it's running, but to ensure that it's _working_ and the plugins are doing what they're supposed to, we can look at the log files and see if there's any output there.
 
 ```
 $ sudo tail -f /var/log/shotgunEventDaemon/shotgunEventDaemon
@@ -134,14 +140,16 @@ Go back to your web browser and make some changes to an entity. Then head back t
 2011-09-09 09:45:31,228 - plugin.logArgs.logArgs - INFO - {'attribute_name': 'sg_status_list', 'event_type': 'Shotgun_Shot_Change', 'entity': {'type': 'Shot', 'name': 'bunny_010_0010', 'id': 860}, 'project': {'type': 'Project', 'name': 'Big Buck Bunny', 'id': 65}, 'meta': {'entity_id': 860, 'attribute_name': 'sg_status_list', 'entity_type': 'Shot', 'old_value': 'omt', 'new_value': 'ip', 'type': 'attribute_change'}, 'user': {'type': 'HumanUser', 'name': 'Kevin Porterfield', 'id': 35}, 'session_uuid': '450e4da2-dafa-11e0-9ba7-0023dffffeab', 'type': 'EventLogEntry', 'id': 276560}
 ```
 
-The exact details of your output will differ, but what you should see is that the plugin has done what it is supposed to do, that is, log the event to the logfile. Again, if you don't see anything logged to the log file, check your log-related settings in {% include product %}EventDaemon.conf to ensure that the ``logging``value is set to log INFO level messages and your logArgs plugin is also configured to show INFO level messages.
+The exact details of your output will differ, but what you should see is that the plugin has done what it is supposed to do, that is, log the event to the logfile. Again, if you don't see anything logged to the log file, check your log-related settings in {% include product %}EventDaemon.conf to ensure that the `logging`value is set to log INFO level messages and your logArgs plugin is also configured to show INFO level messages.
 
 <a id="A_Note_About_Logging"></a>
+
 ### A Note About Logging
 
 It should be noted that log rotation is a feature of the {% include product %} daemon. Logs are rotated at midnight every night and ten daily files are kept per plugin.
 
 <a id="Common_Errors"></a>
+
 ## Common Errors
 
 The following are a few of the common errors that you can run into and how to resolve them. If you get really stuck, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
@@ -160,12 +168,14 @@ You may need to run the daemon with `sudo` or as a user that has permissions to 
 
 The {% include product %} API is not installed. Make sure it is either located in the current directory or it is in a directory in your `PYTHONPATH`.
 
-If you have to run as sudo and you think you have the `PYTHONPATH` setup correctly, remember that sudo resets the environment variables. You can edit the sudoers  file to preserve the `PYTHONPATH` or run sudo -e(?)
+If you have to run as sudo and you think you have the `PYTHONPATH` setup correctly, remember that sudo resets the environment variables. You can edit the sudoers file to preserve the `PYTHONPATH` or run sudo -e(?)
 
 <a id="List_of_Configuration_File_Settings"></a>
+
 ## List of Configuration File Settings
 
 <a id="Daemon_Settings"></a>
+
 ### Daemon Settings
 
 The following are general daemon operational settings.
@@ -182,9 +192,9 @@ pidFile: /var/log/shotgunEventDaemon.pid
 
 **eventIdFile**
 
-The eventIdFile points to the location where the daemon will store the id of the last processed {% include product %} event. This will allow the daemon to pick up where it left off when it was last shutdown, thus it won't miss any events. If you want to ignore any events since the last daemon shutdown, remove this file before starting up the daemon and the daemon will process only new events created after startup. 
+The eventIdFile points to the location where the daemon will store the id of the last processed {% include product %} event. This will allow the daemon to pick up where it left off when it was last shutdown, thus it won't miss any events. If you want to ignore any events since the last daemon shutdown, remove this file before starting up the daemon and the daemon will process only new events created after startup.
 
-This file keeps track of the last event id for *each* plugin and stores this information in pickle format.
+This file keeps track of the last event id for _each_ plugin and stores this information in pickle format.
 
 ```
 eventIdFile: /var/log/shotgunEventDaemon.id
@@ -205,7 +215,7 @@ logMode: 1
 
 **logPath**
 
-The path where to put log files (both for the main engine and plugin log files). The name of the main log file is controlled by the ``logFile``setting below.
+The path where to put log files (both for the main engine and plugin log files). The name of the main log file is controlled by the `logFile`setting below.
 
 ```
 logPath: /var/log/shotgunEventDaemon
@@ -215,7 +225,7 @@ logPath: /var/log/shotgunEventDaemon
 
 **logFile**
 
-The name of the main daemon log file. Logging is configured to store up to  10 log files that rotate every night at midnight.
+The name of the main daemon log file. Logging is configured to store up to 10 log files that rotate every night at midnight.
 
 ```
 logFile: shotgunEventDaemon
@@ -224,6 +234,7 @@ logFile: shotgunEventDaemon
 **logging**
 
 The threshold level for log messages sent to the log files. This value is the default for the main dispatching engine and can be overridden on a per plugin basis. This value is simply passed to the Python logging module. The most common values are:
+
 - **10:** Debug
 - **20:** Info
 - **30:** Warnings
@@ -259,7 +270,7 @@ conn_retry_sleep = 60
 
 **max_conn_retries**
 
-Number of times to retry the connection before logging an error level message(which potentially sends an email if email notification is configured below). 
+Number of times to retry the connection before logging an error level message(which potentially sends an email if email notification is configured below).
 
 ```
 max_conn_retries = 5
@@ -274,6 +285,7 @@ fetch_interval = 5
 ```
 
 <a id="Shotgun_Settings"></a>
+
 ### {% include product %} Settings
 
 The following are settings related to your {% include product %} instance.
@@ -295,7 +307,7 @@ The {% include product %} Script name the {% include product %}EventDaemon shoul
 ```
 name: %(SG_ED_SCRIPT_NAME)s
 ```
-        
+
 {% include info title="Note" content="There is no default value here. Set the `SG_ED_SCRIPT_NAME` environment variable to the Script name for your ShotGrid server (ie. `shotgunEventDaemon`)" %}
 
 **key**
@@ -305,7 +317,7 @@ The {% include product %} Application Key for the Script name specified above.
 ```
 key: %(SG_ED_API_KEY)s
 ```
-        
+
 {% include info title="Note" content="There is no default value here. Set the `SG_ED_API_KEY` environment variable to the Application Key for your Script name above (ie:`0123456789abcdef0123456789abcdef01234567`)" %}
 
 **use_session_uuid**
@@ -322,6 +334,7 @@ use_session_uuid: True
 {% include info title="Note" content="The ShotGrid UI will *only* show updates live for the browser session that spawned the original event. Other browser windows with the same page open will not see updates live." %}
 
 <a id="Plugin_Settings_details"></a>
+
 ### Plugin Settings
 
 **paths**
@@ -335,6 +348,7 @@ paths: /usr/local/shotgun/plugins
 {% include info title="Note" content="There is no default value here. You must set the value to the location(s) of your plugin files (ie:`/usr/local/shotgun/shotgunEvents/plugins` or `C:\shotgun\shotgunEvents\plugins` on Windows)" %}
 
 <a id="Email_Settings"></a>
+
 ### Email Settings
 
 These are used for error reporting because we figured you wouldn't constantly be tailing the log and would rather have an active notification system.
@@ -350,7 +364,7 @@ The server that should be used for SMTP connections. The username and password v
 ```
 server: smtp.yourdomain.com
 ```
-        
+
 {% include info title="Note" content="There is no default value here. You must replace the smtp.yourdomain.com token with the address of your SMTP server (ie. `smtp.mystudio.com`)." %}
 
 **username**

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: I can't use local file linking and launch Toolkit applications from Firefox
-pagename: cant-use-file-linking-toolkit-app-firefox 
+pagename: cant-use-file-linking-toolkit-app-firefox
 lang: en
 ---
 

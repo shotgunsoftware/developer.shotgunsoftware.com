@@ -23,6 +23,7 @@ lang: ko
 이러한 작업을 수행하려면 툴킷 API를 사용하는 방법을 이해하는 것이 중요합니다.
 
 ShotGrid에는 전체적으로 세 가지 주요 API가 있습니다.
+
 - [ShotGrid Python API](https://developer.shotgridsoftware.com/python-api)
 - [ShotGrid REST API](https://developer.shotgridsoftware.com/rest-api/)
 - [ShotGrid 툴킷 API](https://developer.shotgridsoftware.com/tk-core)

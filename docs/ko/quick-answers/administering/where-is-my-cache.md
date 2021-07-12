@@ -7,7 +7,6 @@ lang: ko
 
 # 내 캐시는 어디에 있습니까?
 
-
 ## 루트 캐시 위치
 
 툴킷은 일부 데이터를 로컬 캐시에 저장하여 {% include product %} 서버에 대한 불필요한 호출을 방지합니다. 여기에는 [경로 캐시](./what-is-path-cache.md), 번들 캐시 및 썸네일이 포함됩니다. 대부분의 사용자는 기본 위치로도 문제 없지만 이를 변경해야 한다면 [cache_location 코어 후크](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/cache_location.py)를 사용하여 구성할 수 있습니다.

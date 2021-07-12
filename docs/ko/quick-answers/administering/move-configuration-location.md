@@ -9,7 +9,7 @@ lang: ko
 
 {% include info title="참고" content="이 문서의 내용은 [중앙 집중식 구성 설정](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)에만 적용됩니다. [분산 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)은 개별 클라이언트 시스템에 로컬로 캐시되고 툴킷에서 자동으로 관리됩니다." %}
 
-파이프라인 구성을 새 위치로 옮길 수 있는 가장 쉬운 방법은 `tank move_configuration` 명령을 사용하는 것입니다. 이렇게 하면 파일을 이동하고, {% include product %}을 업데이트하고, 새 위치를 가리키도록 구성 파일을 업데이트하는 작업이 모두 이루어집니다. 
+파이프라인 구성을 새 위치로 옮길 수 있는 가장 쉬운 방법은 `tank move_configuration` 명령을 사용하는 것입니다. 이렇게 하면 파일을 이동하고, {% include product %}을 업데이트하고, 새 위치를 가리키도록 구성 파일을 업데이트하는 작업이 모두 이루어집니다.
 
 이 명령은 단일 운영 체제의 위치만 옮기거나 이전에는 특정 운영 체제를 사용하지 않았지만 이제 운영 체제를 추가하고 싶은 경우에도 유용합니다. 이동하거나 추가해야 하는 항목과 그렇지 않은 항목은 툴킷이 감지하여 진행할 작업을 미리 보여 주기 때문에 진행하기 전에 확인할 수 있습니다.
 
@@ -64,7 +64,6 @@ lang: ko
         you want a configuration which only works on windows, do like this:
 
         > tank move_configuration "" "p:\configs\my_config" ""
-
 
 ### 예시:
 
@@ -134,35 +133,34 @@ lang: ko
 
         All done! Your configuration has been successfully moved.
 
-
 ## 수동으로 파이프라인 구성 이동
 
 {% include warning title="중요" content="아직 파이프라인 구성을 옮기지 않았다면 위의 [기본 제공 tank 명령](#using-the-tank-move_configuration-command)을 사용하여 이를 자동으로 처리하는 것이 가장 좋습니다." %}
 
 이미 수동 이동을 시작했는데 중간에 막혀 버렸다면 툴킷이 이제 새 위치에 있는 파이프라인 구성을 통해 계속 작동하도록 하기 위해 변경해야 하는 사항들이 있습니다.
 
-1. 파이프라인 구성 파일을 새 위치로 이동
+1.  파이프라인 구성 파일을 새 위치로 이동
 
         $ mv /sgtk/software/shotgun/scarlet /mnt/newserver/sgtk/software/shotgun/scarlet_new
 
-2. 툴킷이 파이프라인 구성의 위치를 파악하는 데 도움을 주도록 `install_location.yml`을 편집:
+2.  툴킷이 파이프라인 구성의 위치를 파악하는 데 도움을 주도록 `install_location.yml`을 편집:
 
-        $ vi /mnt/newserver/sgtk/software/shotgun/scarlet_new/config/core/install_location.yml
+         $ vi /mnt/newserver/sgtk/software/shotgun/scarlet_new/config/core/install_location.yml
 
-   해당하는 모든 플랫폼에서 이 파일의 경로가 새 파이프라인 구성 위치를 가리키도록 업데이트합니다. 플랫폼을 사용하고 있지 않다면 빈 문자열 `''`을 입력합니다.
+    해당하는 모든 플랫폼에서 이 파일의 경로가 새 파이프라인 구성 위치를 가리키도록 업데이트합니다. 플랫폼을 사용하고 있지 않다면 빈 문자열 `''`을 입력합니다.
 
-        # {% include product %} Pipeline Toolkit configuration file
-        # This file was automatically created by setup_project
-        # This file reflects the paths in the primary pipeline
+         # {% include product %} Pipeline Toolkit configuration file
+         # This file was automatically created by setup_project
+         # This file reflects the paths in the primary pipeline
 
-        # configuration defined for this project.
-        Windows: 'Y:\sgtk\software\shotgun\scarlet_new'
-        Darwin: '/mnt/newserver/sgtk/software/shotgun/scarlet_new'
-        Linux: ''
+         # configuration defined for this project.
+         Windows: 'Y:\sgtk\software\shotgun\scarlet_new'
+         Darwin: '/mnt/newserver/sgtk/software/shotgun/scarlet_new'
+         Linux: ''
 
-        # End of file.
+         # End of file.
 
-3. {% include product %}에서 이 프로젝트에 대한 해당 파이프라인 구성 엔티티를 찾아 Linux 경로, Mac 경로 및 Windows 경로 필드 값이 위에서 변경한 사항과 일치하도록 수정합니다.
+3.  {% include product %}에서 이 프로젝트에 대한 해당 파이프라인 구성 엔티티를 찾아 Linux 경로, Mac 경로 및 Windows 경로 필드 값이 위에서 변경한 사항과 일치하도록 수정합니다.
 
 ![{% include product %}에서 파이프라인 구성 위치](images/new-pipeline-configuration-locations.png)
 

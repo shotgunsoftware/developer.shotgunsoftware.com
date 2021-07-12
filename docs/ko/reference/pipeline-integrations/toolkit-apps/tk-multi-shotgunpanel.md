@@ -29,7 +29,6 @@ lang: ko
 
 - 일부 값이 설정되지 않은 경우에는 폴백을 정의할 수 있습니다. {% include product %} 버전의 경우 제작자가 아티스트 대신 버전을 제출하는 워크플로우를 지원하기 위해 `artist` 필드가 `created_by` 필드보다 우선권을 가집니다. 이 경우, 버전은 제작자에 의해 생성되지만 `artist` 필드는 아티스트로 설정됩니다. 그러나 항상 그렇지는 않습니다. 아티스트가 자신의 작업을 제출하는 파이프라인에 아티스트를 비워 두는 경우도 있습니다. 따라서 버전을 표시할 때에는 `artist` 필드를 먼저 확인하고, 이 필드가 설정되어 있지 않은 경우에는 `created_by` 필드로 폴백할 수 있도록 하는 것이 좋습니다. 이 작업은 `{field1|field2}` 구문을 사용하여 수행할 수 있습니다(예: `Created By: {artist|created_by}`). 이 구문을 선택적 필드(예: `{[Created By: ]artist|created_by}`)와 결합할 수도 있습니다.
 
-
 이 후크에는 다음 방식이 포함됩니다.
 
 **목록에 표시되는 항목 제어**
@@ -72,16 +71,16 @@ lang: ko
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import]
-    filters: {published_file_type: Maya Scene}
-  - actions: [texture_node]
-    filters: {published_file_type: Rendered Image}
+    - actions: [reference, import]
+      filters: { published_file_type: Maya Scene }
+    - actions: [texture_node]
+      filters: { published_file_type: Rendered Image }
   Task:
-  - actions: [assign_task]
-    filters: {}
+    - actions: [assign_task]
+      filters: {}
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 위의 예에서는 `reference`, `import`, `texture_node`, `assign_task` 및 `play_in_rv` 액션을 사용합니다. 다음으로 다양한 {% include product %} 객체 및 조건에 액션을 매핑합니다. 예를 들어 모든 Maya 씬 게시 유형에 `import` 액션을 표시하려고 합니다.
@@ -95,7 +94,7 @@ action_mappings:
 패널은 툴킷의 2세대 후크 인터페이스를 사용하기 때문에 그 유연성이 뛰어납니다. 이 후크 형식은 향상된 구문을 사용합니다. 기본 구성 설정에서 다음과 같은 형식을 볼 수 있습니다.
 
 ```yaml
-actions_hook: '{self}/tk-maya_actions.py'
+actions_hook: "{self}/tk-maya_actions.py"
 ```
 
 `{self}` 키워드를 통해 툴킷은 앱의 `hooks` 폴더에서 후크를 찾을 수 있습니다. 이 후크를 사용자 구현으로 재지정하려면 값을 `{config}/panel/maya_actions.py`로 변경합니다. 이렇게 하면 툴킷이 구성 폴더에 있는 `hooks/panel/maya_actions.py`라는 후크를 사용하게 됩니다.
@@ -182,12 +181,11 @@ class MyActions(HookBaseClass):
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import, my_new_action]
-    filters: {published_file_type: Maya Scene}
+    - actions: [reference, import, my_new_action]
+      filters: { published_file_type: Maya Scene }
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 위의 그림과 같이 후크에서 파생된 커스텀 후크 코드는 유지 관리 및 업데이트가 보다 쉽도록 실제 추가된 비즈니스 로직만 포함하면 됩니다.
-

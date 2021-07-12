@@ -5,8 +5,7 @@ pagename: quick-answers-developing
 lang: zh_CN
 ---
 
-开发
-===
+# 开发
 
 一组与使用 Toolkit 进行开发有关的快速解答。
 

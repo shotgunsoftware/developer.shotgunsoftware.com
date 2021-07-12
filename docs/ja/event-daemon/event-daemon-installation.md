@@ -5,23 +5,24 @@ pagename: event-daemon-installation
 lang: ja
 ---
 
-
 # インストール
 
 以下のガイドは、スタジオの {% include product %}Events をセットアップする場合に役に立ちます。
 
 <a id="System_Requirements"></a>
+
 ## 動作環境
 
 デーモンは、Python がインストールされ、{% include product %} サーバにネットワーク アクセスできる任意のマシン上で実行できます。** サーバ上で実行する必要は**ありません{% include product %}。実際、ホストされているバージョンの {% include product %} を使用している場合、これはオプションではありません。ただし、必要に応じて {% include product %} サーバ上で実行することもできます。そうでなければ、任意のサーバで実行できます。
 
-* Python v2.6、v2.7 または 3.7
-* [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)
-   * Python v2.6 または v2.7 には v3.0.37 以降を使用し、Python 3.7 には v3.1.0 以降を使用します。
-   * いずれの場合も、[最新の Python API バージョン](https://github.com/shotgunsoftware/python-api/releases)を使用し、この依存関係を継続して更新することを強くお勧めします。
-* {% include product %} サーバへのネットワーク アクセス
+- Python v2.6、v2.7 または 3.7
+- [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)
+  - Python v2.6 または v2.7 には v3.0.37 以降を使用し、Python 3.7 には v3.1.0 以降を使用します。
+  - いずれの場合も、[最新の Python API バージョン](https://github.com/shotgunsoftware/python-api/releases)を使用し、この依存関係を継続して更新することを強くお勧めします。
+- {% include product %} サーバへのネットワーク アクセス
 
 <a id="Installing_Shotgun_API"></a>
+
 ## {% include product %} API のインストール
 
 Python が既にマシンにインストールされている場合は、{% include product %} Python API をインストールして、{% include product %} イベント デーモンが {% include product %} サーバに接続するために使用できるようにする必要があります。これを実行するにはいくつかの方法があります。
@@ -45,6 +46,7 @@ ImportError: No module named shotgun_api3
 ```
 
 <a id="Installing_shotgunEvents"></a>
+
 ## {% include product %}Events のインストール
 
 {% include product %}Events のインストール先は、ユーザが自由に選択できます。ここでも、Python と {% include product %} API がコンピュータにインストールされ、{% include product %} サーバへのネットワーク アクセス権がある限り、任意の場所から実行することができます。ただし、スタジオにとって論理的な場所にインストールすることが自然です。`/usr/local/shotgun/shotgunEvents` などは論理的であるため、ここからは、これを例として使用します。
@@ -54,6 +56,7 @@ ImportError: No module named shotgun_api3
 {% include info title="注" content="**Windows の場合:** Windows サーバを使用している場合は `C:\shotgun\shotgunEvents` を使用できますが、このドキュメントでは Linux パスを使用します。" %}
 
 <a id="Cloning_Source"></a>
+
 ### ソースのクローンの作成
 
 `git` がコンピュータにインストールされている場合にソースを取得する最も簡単な方法は、プロジェクトのクローンを作成することです。この方法では、コミットされた更新を簡単に取り込んで、常に最新のバグ修正と新機能を手に入れることができます。
@@ -66,6 +69,7 @@ $ git clone git://github.com/shotgunsoftware/shotgunEvents.git
 {% include info title="警告" content="GitHub から更新を取得する前に、構成、プラグイン、および shotgunEvents に加えた変更を必ずバックアップして、何も失われないようにしてください。または、自分でプロジェクトをフォークして、自分自身で変更のリポジトリを維持することもできます。" %}
 
 <a id="Downloading_Archive"></a>
+
 ### アーカイブのダウンロード
 
 コンピュータに `git` がない場合、またはソースのアーカイブをダウンロードするだけの場合は、次の手順を実行します。
@@ -108,6 +112,7 @@ drwxr-xr-x  6 kp  wheel   204 Sep  1 17:46 src
 ```
 
 <a id="Installing Requirements"></a>
+
 ### インストール要件
 
 `requirements.txt` ファイルはリポジトリのルートに配置されています。必要なパッケージをインストールするには、これを使用する必要があります
@@ -116,14 +121,14 @@ drwxr-xr-x  6 kp  wheel   204 Sep  1 17:46 src
 $ pip install -r /path/to/requirements.txt
 ```
 
-
 <a id="Windows_Specifics"></a>
+
 ### Windows の場合
 
 Windows システムでは、次のいずれかが必要です。
 
-* [PyWin32](http://sourceforge.net/projects/pywin32/) がインストールされた Python
-* [Active Python](http://www.activestate.com/activepython)
+- [PyWin32](http://sourceforge.net/projects/pywin32/) がインストールされた Python
+- [Active Python](http://www.activestate.com/activepython)
 
 Active Python には {% include product %} イベント デーモンと Windows のサービス アーキテクチャを統合するために必要な PyWin32 モジュールが付属しています。
 

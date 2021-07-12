@@ -14,5 +14,3 @@ Python 自体が多くのシステム レベル ライブラリの最上部に�
 現在、Debian をサポートする正式な予定はありません。Ubuntu 向けの開発を行うのには問題があります。変更ごとに追加オペレーティング システムの QA とサポートを更新する必要があり、これが大きな負担になります。
 
 {% include product %} Desktop を使用せずに Toolkit を手動で実行して有効にする場合([このドキュメントの説明を参照](https://support.shotgunsoftware.com/hc/ja-jp/articles/219033208#Step%208.%20Run%20the%20activation%20script)) - そのドキュメントのページから `activate_shotgun_pipeline_toolkit.py` スクリプトをダウンロードしてください。ガイドの手順 8 にある「クリックして {% include product %} Pipeline Toolkit アクティベーション パッケージをダウンロード」という見出しをクリックします。
-
-

@@ -9,9 +9,9 @@ lang: en
 
 {% include info title="Note" content="The contents of this doc only apply to [centralized configuration setups](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations). [Distributed configurations](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations) are cached locally to the individual client machines and are managed automatically by Toolkit." %}
 
-The easiest way to move your pipeline configuration to a new location is by using the `tank move_configuration` command. This will take care of moving your files, updating {% include product %}, and updating your config files to point to the new location. 
+The easiest way to move your pipeline configuration to a new location is by using the `tank move_configuration` command. This will take care of moving your files, updating {% include product %}, and updating your config files to point to the new location.
 
-This command is also useful if you are only moving the location for a single operating system, or were not previously using a certain operating system but would like to add it now. Toolkit will detect what needs to be moved or added and what doesn’t, and will show you what it is about to do to allow you to confirm before progressing. 
+This command is also useful if you are only moving the location for a single operating system, or were not previously using a certain operating system but would like to add it now. Toolkit will detect what needs to be moved or added and what doesn’t, and will show you what it is about to do to allow you to confirm before progressing.
 
 - [Using the tank move_configuration command](#using-the-tank-move_configuration-command)
 - [Manually moving your pipeline configuration](#manually-moving-your-pipeline-configuration)
@@ -24,7 +24,7 @@ This command is also useful if you are only moving the location for a single ope
 
 ## Using the tank move_configuration command:
 
-        $ cd /sgtk/software/shotgun/scarlet 
+        $ cd /sgtk/software/shotgun/scarlet
         $ ./tank move_configuration
 
         Welcome to the {% include product %} Pipeline Toolkit!
@@ -64,11 +64,10 @@ This command is also useful if you are only moving the location for a single ope
         you want a configuration which only works on windows, do like this:
 
         > tank move_configuration "" "p:\configs\my_config" ""
- 
 
 ### Example:
 
-        $ cd /sgtk/software/shotgun/scarlet 
+        $ cd /sgtk/software/shotgun/scarlet
         $ ./tank move_configuration "/mnt/hgfs/sgtk/software/shotgun/scarlet_new" "z:\sgtk\software\shotgun\scarlet_new" "/sgtk/software/shotgun/scarlet_new"
 
         Welcome to the {% include product %} Pipeline Toolkit!
@@ -133,8 +132,6 @@ This command is also useful if you are only moving the location for a single ope
         Deleting original configuration files...
 
         All done! Your configuration has been successfully moved.
- 
-
 
 ## Manually moving your pipeline configuration
 
@@ -142,11 +139,11 @@ This command is also useful if you are only moving the location for a single ope
 
 If you've already started moving things manually and are stuck, here's a rundown of what you need to change to ensure Toolkit continues to work with your pipeline configuration now in a new location.
 
-1. Move your pipeline configuration files to their new location
+1.  Move your pipeline configuration files to their new location
 
         $ mv /sgtk/software/shotgun/scarlet /mnt/newserver/sgtk/software/shotgun/scarlet_new
 
-2. Edit your `install_location.yml`, which helps Toolkit find where the pipeline configuration is located:
+2.  Edit your `install_location.yml`, which helps Toolkit find where the pipeline configuration is located:
 
         $ vi /mnt/newserver/sgtk/software/shotgun/scarlet_new/config/core/install_location.yml
 
@@ -163,7 +160,7 @@ If you've already started moving things manually and are stuck, here's a rundown
 
         # End of file.
 
-3. Locate the corresponding PipelineConfiguration entity in {% include product %} for this project and modify the Linux Path, Mac Path, and Windows Path field values to match the changes you made above.
+3.  Locate the corresponding PipelineConfiguration entity in {% include product %} for this project and modify the Linux Path, Mac Path, and Windows Path field values to match the changes you made above.
 
 ![Pipeline Configuration locations in ShotGrid.](images/new-pipeline-configuration-locations.png)
 

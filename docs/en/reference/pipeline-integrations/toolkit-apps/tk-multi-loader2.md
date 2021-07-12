@@ -55,11 +55,11 @@ filters:
 
 ### Filtering publishes
 
-It is possible to apply a {% include product %} filter to the publish query that the loader carries out when it loads publish data from {% include product %}. This is controlled via the `publish_filters` parameter and can be used for example to hide publishes that have not been approved or where their associated review version has not been approved.  
+It is possible to apply a {% include product %} filter to the publish query that the loader carries out when it loads publish data from {% include product %}. This is controlled via the `publish_filters` parameter and can be used for example to hide publishes that have not been approved or where their associated review version has not been approved.
 
 ### Help, no actions are showing up!
 
-The loader comes with a number of different *actions* for each engine. For example, in the case of Nuke, there are two actions: "import script" and "create read node". Actions are defined in hooks, meaning that you can modify their behaviour or add additional actions if you wanted to. Then, in the configuration for the loader, you can bind these actions to certain *publish types* you have. Binding an action to a publish type basically means that the action will appear on the actions menu for all items of that type inside the loader.
+The loader comes with a number of different _actions_ for each engine. For example, in the case of Nuke, there are two actions: "import script" and "create read node". Actions are defined in hooks, meaning that you can modify their behaviour or add additional actions if you wanted to. Then, in the configuration for the loader, you can bind these actions to certain _publish types_ you have. Binding an action to a publish type basically means that the action will appear on the actions menu for all items of that type inside the loader.
 
 As an example, by default, the mappings for Nuke are set up like this:
 
@@ -75,7 +75,7 @@ If you are finding that no action menus are showing up, it may be because you ha
 
 For each application that the loader supports, there is an actions hook which implements the actions that are supported for that application. For example, with something like Maya, the default hook will implement the `reference`, `import` and `texture_node` actions, each carrying out specific Maya commands to bring content into the current Maya scene. As with all hooks, it is perfectly possible to override and change these, and it is also possible to create a hook that derives from the built in hook, making it easy to add additional actions to a built-in hook without having to duplicate lots of code.
 
-Once you have defined a list of actions in your actions hook, you can then bind these actions to Publish File types. For example, if you have a Publish File type in your pipeline named "Maya Scene" you can bind this in the configuration to the `reference` and `import` actions that are defined in the hook. By doing this, Toolkit will add a reference and an import action to each Maya Scene publish that is being shown. Separating the Publish Types from the actual hook like this makes it easier to reconfigure the loader for use with a different publish type setup than the one that comes with the default configuration.  
+Once you have defined a list of actions in your actions hook, you can then bind these actions to Publish File types. For example, if you have a Publish File type in your pipeline named "Maya Scene" you can bind this in the configuration to the `reference` and `import` actions that are defined in the hook. By doing this, Toolkit will add a reference and an import action to each Maya Scene publish that is being shown. Separating the Publish Types from the actual hook like this makes it easier to reconfigure the loader for use with a different publish type setup than the one that comes with the default configuration.
 
 The loader uses Toolkit's second generation hooks interface, allowing for greater flexibility. This hook format uses an improved syntax. You can see this in the default configuration settings that are installed for the loader, looking something like this:
 
@@ -199,15 +199,17 @@ By deriving from the hook as shown above, the custom hook code only need to cont
 The following methods are available on the app instance.
 
 ### open_publish()
-Presents an 'Open File' style version of the Loader that allows the user to select a publish.  The selected publish is then returned.  The normal actions configured for the app are not permitted when run in this mode.
+
+Presents an 'Open File' style version of the Loader that allows the user to select a publish. The selected publish is then returned. The normal actions configured for the app are not permitted when run in this mode.
 
 app.open_publish( `str` **title**, `str` **action**, `list` **publish_types** )
 
 **Parameters and Return Value**
-* `str` **title** - The title to be displayed in the open publish dialog.
-* `str` **action** - The name of the action to be used for the 'open' button.
-* `list` **publish_types** - A list of publish types to use to filter the available list of publishes.  If this is empty/None then all publishes will be shown.
-* **Returns:** A list of {% include product %} entity dictionaries that were selected by the user.
+
+- `str` **title** - The title to be displayed in the open publish dialog.
+- `str` **action** - The name of the action to be used for the 'open' button.
+- `list` **publish_types** - A list of publish types to use to filter the available list of publishes. If this is empty/None then all publishes will be shown.
+- **Returns:** A list of {% include product %} entity dictionaries that were selected by the user.
 
 **Example**
 

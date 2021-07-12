@@ -128,7 +128,6 @@ for item in breakdown_items:
    path = item["template"].apply_fields(item["fields"])
 ```
 
-
 ### 计算内容项的最高版本
 
 ```
@@ -139,7 +138,6 @@ highest_version = app_object.compute_highest_version(template, fields)
 
 这将执行磁盘扫描，以确定最高版本。此方法会返回在磁盘上找到的最高版本号。请参见下面的用法示例了解更多详细信息。
 
-
 ### 更新场景的内容项
 
 ```
@@ -149,9 +147,6 @@ app_object.update_item(node_type, node_name, template, fields)
 要更新内容项，您可以使用 `update_item(node_type, node_name, template, fields)` 方法。`template` 和 `fields` 参数表示应更新至的路径。`node_name` 和 `node_type` 参数用于确定场景中的哪个节点需要修改。通常，这些值抓取自 `analyze_scene()` 方法的输出。
 
 这样做类似于在细分用户界面中运行更新。实际的更新调用将分派给处理 DCC 特定逻辑的挂钩。请参见下面的用法示例了解更多详细信息。
-
-
-
 
 ### 细分 API 示例
 

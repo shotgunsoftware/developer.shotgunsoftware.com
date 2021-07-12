@@ -45,6 +45,7 @@ Toolkit API 包含在名为 `sgtk` 的 Python 软件包中。
 ```python
 import sgtk
 ```
+
 如果要在 ShotGrid 集成之外使用 API（例如，如果在您常用的 IDE 中对其进行测试），则需要先设置 API 的路径：
 
 ```python
@@ -78,12 +79,12 @@ import sgtk
 
    您可以通过 [`Engine.sgtk`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) 属性访问 `Sgtk` 实例。
 
-   *注意：`Engine.sgtk` 属性不应与第 1 部分中导入的 `sgtk` 软件包相混淆或视为相同。*
+   _注意：`Engine.sgtk` 属性不应与第 1 部分中导入的 `sgtk` 软件包相混淆或视为相同。_
 
 2. [`sgtk.sgtk_from_entity()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity) - 如果您在插件尚未启动的环境中运行，则可以使用此方法根据实体 ID 获取 `Sgtk` 实例。您提供其 ID 的实体必须属于从中导入 `sgtk` API 的项目。
-   *这不适用于分布式配置，请参见[引导手册](sgtk-developer-bootstrapping.md)以了解更多详细信息。*
+   _这不适用于分布式配置，请参见[引导手册](sgtk-developer-bootstrapping.md)以了解更多详细信息。_
 
-3. [`sgtk.sgtk_from_path()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path) - 与 `sgtk_from_entity()` 非常相似，只是它将接受配置路径、指向项目根文件夹或其内部的路径，例如，工作文件或镜头文件夹。*这不适用于分布式配置，请参见[引导手册](sgtk-developer-bootstrapping.md)以了解更多详细信息。*
+3. [`sgtk.sgtk_from_path()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path) - 与 `sgtk_from_entity()` 非常相似，只是它将接受配置路径、指向项目根文件夹或其内部的路径，例如，工作文件或镜头文件夹。_这不适用于分布式配置，请参见[引导手册](sgtk-developer-bootstrapping.md)以了解更多详细信息。_
 
 在本手册中，我们假定您在插件已启动的环境中运行此代码，因此我们将使用选项 1。
 此外，将 `Sgtk` 类实例存储在名为 `tk` 的变量中。
@@ -129,6 +130,7 @@ Toolkit 中执行的大量操作均围绕上下文展开，也就是说，知道
 ```python
 context = current_engine.context
 ```
+
 由于您将在后面的步骤中使用上下文来帮助解析镜头任务的文件路径，因此需要确定上下文中包含相关信息。
 
 如果您的代码作为 Toolkit 应用的一部分运行，且您的应用已配置为仅在 shot_step 环境中运行，则可以放心地假定您可以获取适当的当前上下文。
@@ -189,6 +191,7 @@ Toolkit 可以根据项目实体在磁盘上动态生成文件夹结构。
 ```python
 tk.create_filesystem_structure("Task", context.task["id"])
 ```
+
 您可以使用上下文对象获取任务 ID 以生成文件夹。
 
 现在，代码应如下所示：
@@ -229,7 +232,7 @@ template = tk.templates["maya_shot_publish"]
 在此示例中，您将使用 `maya_shot_publish` 模板。在[默认配置](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.12/core/templates.yml#L305-L306)中，未解析的模板路径如下所示：
 
 ```yaml
-'sequences/{Sequence}/{Shot}/{Step}/work/maya/{name}.v{version}.{maya_extension}'
+"sequences/{Sequence}/{Shot}/{Step}/work/maya/{name}.v{version}.{maya_extension}"
 ```
 
 模板由键组成，您需要将这些键解析为实际值。
@@ -240,6 +243,7 @@ fields = context.as_template_fields(template)
 
 >> {'Sequence': 'seq01_chase', 'Shot': 'shot01_running_away', 'Step': 'comp'}
 ```
+
 [`Context.as_template_fields()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Context.as_template_fields) 方法可提供一个包含正确值的词典以解析模板键。但是，它并未提供所有键对应的值。`name`、`version` 和 `maya_extension` 仍缺失。
 
 在模板键部分中，`maya_extension` 键[定义默认值](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.8/core/templates.yml#L139)，因此无需为此键提供值，但是如果需要默认值以外的值，也可以提供值。
@@ -273,11 +277,11 @@ publish_path = template.apply_fields(fields)
 您可以导入 [`os`](https://docs.python.org/3/library/os.html) 模块并运行 [`os.path.dirname(publish_path)`](https://docs.python.org/3/library/os.path.html#os.path.dirname) 以提取完整文件路径的文件夹部分。
 
 ### 使用路径创建或复制文件
+
 此时，您已拥有路径，可以使用此路径执行诸多操作，例如，告知 Maya 将文件保存到此路径，或从其他位置将文件复制到此路径。
 针对本手册，您并不一定要执行任何行为以在磁盘的相应位置上实际创建文件。
 即使没有文件，您仍可发布路径。
 不过，您可以使用 [`sgtk.util.filesystem.touch_file()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file) 让 Toolkit 在磁盘上创建空文件。
-
 
 ### 将到目前为止的所有代码整合到一起
 

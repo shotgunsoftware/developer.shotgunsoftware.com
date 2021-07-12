@@ -33,4 +33,3 @@ Quickreview アプリを使用すると、Nuke でレンダリングしたファ
 ## カスタマイズ
 
 レビュー提出のほとんどの要素は、フックを使用して調整できます。詳細な説明については、[こちら](http://developer.shotgridsoftware.com/tk-nuke-quickreview)を参照してください。
-

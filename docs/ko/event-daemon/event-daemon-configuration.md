@@ -14,11 +14,12 @@ lang: ko
 {% include info title="참고" content="**Windows:** Windows 사용자는 Windows에서 해당하는 구성 파일의 모든 경로를 변경해야 합니다. 로깅을 포함한 모든 경로를 단일 위치로 유지해 단순하게 관리하는 것이 좋습니다. 이 문서에서는 Windows 경로를 설명할 때 `C:\shotgun\shotgunEvents`를 주로 사용합니다." %}
 
 <a id="Edit_shotgunEventDaemon_conf"></a>
+
 ## Edit shotgunEventDaemon.conf
 
 {% include product %}Events를 설치했다면 다음 단계는 텍스트 편집기에서 `shotgunEventDaemon.conf` 파일을 열고 스튜디오의 요구사항에 맞게 설정을 수정하는 것입니다. 대부분의 스튜디오에는 기본값이 적합하지만, 데몬을 실행하기 위해서 반드시 제공해야 할 기본값이 없는 설정도 일부 있습니다.
 
-*반드시* 제공해야 하는 항목은 다음과 같습니다.
+_반드시_ 제공해야 하는 항목은 다음과 같습니다.
 
 - {% include product %} 서버 URL
 - {% include product %}에 연결하기 위한 스크립트 이름 및 응용프로그램 키
@@ -29,6 +30,7 @@ lang: ko
 데몬에서 성능 문제가 발생한 경우 문제 해결에 도움이 될 수 있는 선택적 타이밍 로그에 대한 섹션도 있습니다. 타이밍 로깅을 활성화하면 자체 개별 로그 파일에 타이밍 정보가 입력됩니다.
 
 <a id="Shotgun_Settings"></a>
+
 ### {% include product %} 설정
 
 `[{% include product %}]` 섹션 아래에서 기본 토큰을 `server`, `name` 및 `key`에 대한 올바른 값으로 변경합니다. 이러한 값은 {% include product %}에 연결하는 표준 API 스크립트에 제공한 값과 같아야 합니다.
@@ -42,6 +44,7 @@ key: e37d855e4824216573472846e0cb3e49c7f6f7b1
 ```
 
 <a id="Plugin_Settings"></a>
+
 ### 플러그인 설정
 
 실행할 플러그인을 찾을 위치를 {% include product %}EventDaemon에 알려야 합니다. `[plugins]` 섹션 아래에서 기본 토큰을 `paths`에 대한 올바른 값으로 변경합니다.
@@ -57,6 +60,7 @@ paths: /usr/local/shotgun/{% include product %}Events/plugins
 처음 시작할 때 테스트하기에 적절한 플러그인은 `logArgs.py` 디렉토리에 있는 `/usr/local/shotgun/{% include product %}Events/src/examplePlugins` 플러그인입니다. 이를 지정한 플러그인 폴더로 복사하고 이 폴더를 사용하여 테스트를 진행합니다.
 
 <a id="Location_of_shotgunEventDaemon_conf"></a>
+
 ### shotgunEventDaemon.conf의 위치
 
 기본적으로 데몬은 {% include product %}EventDaemon.py가 있는 디렉토리와 `/etc` 디렉토리에서 shotgunEventDaemon.conf 파일을 찾습니다. conf 파일을 다른 디렉토리에 저장해야 하는 경우 현재 디렉토리에서 해당 위치에 대한 심볼릭 링크를 생성하는 것이 좋습니다.
@@ -66,6 +70,7 @@ paths: /usr/local/shotgun/{% include product %}Events/plugins
 {% include info title="참고" content="**Windows의 경우** Windows에 `/etc`가 존재하지 않으므로 구성 파일은 Python 파일과 동일한 디렉터리에 있어야 합니다." %}
 
 <a id="Testing_the_Daemon"></a>
+
 ## 데몬 테스트
 
 데몬은 백그라운드에서 실행되기 때문에 테스트하기가 어려울 수 있습니다. 항상 어떻게 작동하고 있는지 확인할 수 있는 명확한 방법이 없습니다. 다행스럽게도 {% include product %}EventDaemon에는 이를 포그라운드 프로세스로 실행할 수 있는 옵션이 있습니다. 이제 최소 필수 설정을 완료했으므로 데몬을 테스트하고 어떻게 되는지 확인해 보겠습니다.
@@ -85,7 +90,7 @@ INFO:engine:Last event id (248429) from the {% include product %} database.
 
 {% include info title="참고" content="logArgs.py 파일에는 적절한 값을 입력해야 하는 변수가 있습니다. 로깅이 올바르게 작동하려면 shotgunEventDaemon.conf 파일에 사용된 것과 동일한 값을 포함하도록 '$DEMO_SCRIPT_NAMES$' 및 '$DEMO_API_KEY$'를 편집해야 합니다." %}
 
-로그 파일에 로깅된 내용이 보이지 않는 경우 {% include product %}EventDaemon.conf에서 로그 관련 설정을 확인하여 ``logging`` 값이 로그 INFO 수준 메시지로 설정되어 있고
+로그 파일에 로깅된 내용이 보이지 않는 경우 {% include product %}EventDaemon.conf에서 로그 관련 설정을 확인하여 `logging` 값이 로그 INFO 수준 메시지로 설정되어 있고
 
 ```
 logging: 20
@@ -100,6 +105,7 @@ reg.logger.setLevel(logging.INFO)
 모두 올바르게 표시된다고 가정하면, {% include product %}EventDaemon 프로세스를 중지하려는 경우 터미널에 `<ctrl>-c`을 입력하면 스크립트가 종료되는 것을 확인할 수 있습니다.
 
 <a id="Running_the_Daemon"></a>
+
 ## 데몬 실행
 
 테스트 시 모든 것이 순조로웠다고 가정하면, 이제 의도대로 백그라운드에서 데몬을 실행할 수 있습니다.
@@ -116,7 +122,7 @@ kp              4029   0.0  0.0  2435492    192 s001  R+    9:37AM   0:00.00 gre
 root            4020   0.0  0.1  2443824   4876   ??  S     9:36AM   0:00.02 /usr/bin/python ./{% include product %}EventDaemon.py start
 ```
 
-반환된 두 번째 행에서 데몬이 실행 중임을 알 수 있습니다. 첫 번째 행은 방금 실행한 명령과 일치합니다. 따라서 실행되고 있음을 알 수는 있지만 플러그인이 *제대로* 작동하고 있으며 의도된 역할을 수행하고 있는지 확인하기 위해 로그 파일을 확인해 출력된 내용이 있는지 알아볼 수 있습니다.
+반환된 두 번째 행에서 데몬이 실행 중임을 알 수 있습니다. 첫 번째 행은 방금 실행한 명령과 일치합니다. 따라서 실행되고 있음을 알 수는 있지만 플러그인이 _제대로_ 작동하고 있으며 의도된 역할을 수행하고 있는지 확인하기 위해 로그 파일을 확인해 출력된 내용이 있는지 알아볼 수 있습니다.
 
 ```
 $ sudo tail -f /var/log/shotgunEventDaemon/shotgunEventDaemon
@@ -134,14 +140,16 @@ $ sudo tail -f /var/log/shotgunEventDaemon/shotgunEventDaemon
 2011-09-09 09:45:31,228 - plugin.logArgs.logArgs - INFO - {'attribute_name': 'sg_status_list', 'event_type': 'Shotgun_Shot_Change', 'entity': {'type': 'Shot', 'name': 'bunny_010_0010', 'id': 860}, 'project': {'type': 'Project', 'name': 'Big Buck Bunny', 'id': 65}, 'meta': {'entity_id': 860, 'attribute_name': 'sg_status_list', 'entity_type': 'Shot', 'old_value': 'omt', 'new_value': 'ip', 'type': 'attribute_change'}, 'user': {'type': 'HumanUser', 'name': 'Kevin Porterfield', 'id': 35}, 'session_uuid': '450e4da2-dafa-11e0-9ba7-0023dffffeab', 'type': 'EventLogEntry', 'id': 276560}
 ```
 
-출력의 정확한 세부 정보는 다를 수 있지만, 플러그인이 의도된 작업을 수행해 이벤트가 로그 파일에 로깅된 것이 확인되어야 합니다. 로그 파일에 로깅된 내역이 보이지 않을 경우, ``logging`` 값이 INFO 수준 메시지를 로깅하도록 설정되어 있고 logArgs 플러그인도 INFO 수준 메시지를 표시하도록 구성되어 있는지 확인하기 위해 {% include product %}EventDaemon.conf에서 로그 관련 설정을 확인하십시오.
+출력의 정확한 세부 정보는 다를 수 있지만, 플러그인이 의도된 작업을 수행해 이벤트가 로그 파일에 로깅된 것이 확인되어야 합니다. 로그 파일에 로깅된 내역이 보이지 않을 경우, `logging` 값이 INFO 수준 메시지를 로깅하도록 설정되어 있고 logArgs 플러그인도 INFO 수준 메시지를 표시하도록 구성되어 있는지 확인하기 위해 {% include product %}EventDaemon.conf에서 로그 관련 설정을 확인하십시오.
 
 <a id="A_Note_About_Logging"></a>
+
 ### 로깅에 대한 참고 사항
 
 로그 회전은 {% include product %} 데몬의 기능이라는 점에 유의하십시오. 로그는 매일 밤 자정에 회전되며 플러그인당 10개의 일일 파일이 보관됩니다.
 
 <a id="Common_Errors"></a>
+
 ## 일반적인 오류
 
 다음은 직면할 수 있는 몇몇 일반적인 오류와 그 해결 방법에 대한 몇 가지 설명입니다. 문제가 해결되지 않을 경우 언제든지 {% include product %} 소프트웨어 팀(support@shotgunsoftware.com)으로 문의해 주십시오. 저희가 도와드리겠습니다.
@@ -163,9 +171,11 @@ shotgunEventDaemon.conf 파일에서 플러그인 경로를 지정해야 합니�
 sudo로 실행해야 하는데 `PYTHONPATH`가 올바르게 설정되어 있는 경우, sudo가 환경 변수를 재설정한다는 점을 기억하십시오. `PYTHONPATH`를 유지하거나 sudo -e(?)를 실행하도록 sudoers 파일을 편집할 수 있습니다.
 
 <a id="List_of_Configuration_File_Settings"></a>
+
 ## 구성 파일 설정 리스트
 
 <a id="Daemon_Settings"></a>
+
 ### 데몬 설정
 
 다음은 일반적인 데몬 작동 설정입니다.
@@ -184,7 +194,7 @@ pidFile: /var/log/shotgunEventDaemon.pid
 
 eventIdFile은 데몬이 마지막으로 처리된 {% include product %} 이벤트의 ID를 저장할 위치를 나타냅니다. 이를 통해 데몬은 마지막 종료 시 중지된 지점으로 복귀할 수 있으므로 이벤트가 누락되지 않습니다. 데몬이 마지막으로 종료된 이후의 이벤트를 무시하려면 데몬을 시작하기 전에 이 파일을 제거해 시작된 후 새로 생성된 이벤트만 데몬이 처리하게 합니다.
 
-이 파일은 *각* 플러그인에 대한 마지막 이벤트 ID를 추적하여 이 정보를 pickle 형식으로 저장합니다.
+이 파일은 _각_ 플러그인에 대한 마지막 이벤트 ID를 추적하여 이 정보를 pickle 형식으로 저장합니다.
 
 ```
 eventIdFile: /var/log/shotgunEventDaemon.id
@@ -205,7 +215,7 @@ logMode: 1
 
 **logPath**
 
-로그 파일을 저장할 경로(기본 엔진 및 플러그인 로그 파일 모두) 기본 로그 파일의 이름은 아래의 ``logFile`` 설정에 의해 제어됩니다.
+로그 파일을 저장할 경로(기본 엔진 및 플러그인 로그 파일 모두) 기본 로그 파일의 이름은 아래의 `logFile` 설정에 의해 제어됩니다.
 
 ```
 logPath: /var/log/shotgunEventDaemon
@@ -224,6 +234,7 @@ logFile: shotgunEventDaemon
 **logging**
 
 로그 파일로 전송된 로그 메시지의 임계값 수준입니다. 이 값은 기본 디스패치 엔진의 기본값이며 플러그인별 기준으로 재정의될 수 있습니다. 이 값은 Python 로깅 모듈로 전달됩니다. 가장 일반적인 값은 다음과 같습니다.
+
 - **10:** 디버그
 - **20:** 정보
 - **30:** 경고
@@ -274,6 +285,7 @@ fetch_interval = 5
 ```
 
 <a id="Shotgun_Settings"></a>
+
 ### {% include product %} 설정
 
 다음은 {% include product %} 인스턴스와 관련된 설정입니다.
@@ -322,6 +334,7 @@ use_session_uuid: True
 {% include info title="참고" content="ShotGrid UI는 원래 이벤트를 생성한 브라우저 세션에 *대해서만* 업데이트를 실시간으로 표시합니다. 동일한 페이지가 열려 있는 다른 브라우저 창에는 실시간 업데이트가 표시되지 않습니다." %}
 
 <a id="Plugin_Settings_details"></a>
+
 ### 플러그인 설정
 
 **paths**
@@ -335,6 +348,7 @@ paths: /usr/local/shotgun/plugins
 {% include info title="참고" content="여기에는 기본값이 없습니다. 플러그인 파일(예: Windows의 경우 `/usr/local/shotgun/shotgunEvents/plugins` 또는 `C:\shotgun\shotgunEvents\plugins`)의 위치로 값을 설정해야 합니다." %}
 
 <a id="Email_Settings"></a>
+
 ### 이메일 설정
 
 로그를 지속적으로 추적하기보다는 활성 알림 시스템을 가지고 있을 것이라는 점을 알고 있으므로 이 방식이 오류 보고에 사용됩니다.

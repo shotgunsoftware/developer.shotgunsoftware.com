@@ -17,16 +17,16 @@ Python API 依赖与 API 捆绑在一起且位于计算机上的一组证书才�
 
 将所需的 CA 证书添加到 Windows 证书存储中。Windows 7 用户可能必须先[升级到 PowerShell 3.0](https://docs.microsoft.com/zh-cn/office365/enterprise/powershell/manage-office-365-with-office-365-powershell) 才能使用此解决方案，也可使用 [certutil](https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/certutil) 添加[所需的证书](https://www.amazontrust.com/repository/SFSRootCAG2.cer)。
 
-1. 通过右键单击**开始**，然后单击 **Windows PowerShell (管理员)**，启动提升权限的 PowerShell。
+1.  通过右键单击**开始**，然后单击 **Windows PowerShell (管理员)**，启动提升权限的 PowerShell。
 
-2. 将以下命令粘贴到 PowerShell 窗口中，然后按回车键以执行：
+2.  将以下命令粘贴到 PowerShell 窗口中，然后按回车键以执行：
 
         $cert_url = "https://www.amazontrust.com/repository/SFSRootCAG2.cer"
         $cert_file = New-TemporaryFile
         Invoke-WebRequest -Uri $cert_url -UseBasicParsing -OutFile $cert_file.FullName
         Import-Certificate -FilePath $cert_file.FullName -CertStoreLocation Cert:\LocalMachine\Root
 
-3. 如果显示带 Thumbprint `925A8F8D2C6D04E0665F596AFF22D863E8256F3F` 的已添加证书详细信息，则表示操作已完成，可以关闭 PowerShell。
+3.  如果显示带 Thumbprint `925A8F8D2C6D04E0665F596AFF22D863E8256F3F` 的已添加证书详细信息，则表示操作已完成，可以关闭 PowerShell。
 
 ## 替代解决方案
 

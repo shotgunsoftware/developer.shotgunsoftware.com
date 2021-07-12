@@ -243,7 +243,7 @@ Websocket 서버의 RPC API를 이용한 두 번째 반복은 툴킷 액션을 �
 
 ![](images/Integration-admin-guide/action_menu.png)
 
-브라우저 통합 코드는 사용자의 시스템에 Houdini, Maya, Nuke 및 Photoshop을 설치할 때 찾을 수 있으며 이러한 각 통합을 시작하기 위한 메뉴 액션이 됩니다. 특정 환경 구성 파일에서 해당 소프트웨어의 시작 관리자가 해당 환경의 엔티티를 표시하도록 하려면 소프트웨어 엔티티의 _엔진_이 있어야 합니다. 따라서 이 예에서는 이 코드 조각을 가져온 파일에 `tk-houdini`, `tk-maya`, `tk-nuke` 및 `tk-photoshopcc` 엔진이 모두 있어야 합니다. 예를 들어, 이 엔티티에 있는 시작 관리자 목록에서 Maya를 제거하려면 환경 구성 파일에서 `tk-maya` 엔진 블록만 제거하면 됩니다.
+브라우저 통합 코드는 사용자의 시스템에 Houdini, Maya, Nuke 및 Photoshop을 설치할 때 찾을 수 있으며 이러한 각 통합을 시작하기 위한 메뉴 액션이 됩니다. 특정 환경 구성 파일에서 해당 소프트웨어의 시작 관리자가 해당 환경의 엔티티를 표시하도록 하려면 소프트웨어 엔티티의 *엔진*이 있어야 합니다. 따라서 이 예에서는 이 코드 조각을 가져온 파일에 `tk-houdini`, `tk-maya`, `tk-nuke` 및 `tk-photoshopcc` 엔진이 모두 있어야 합니다. 예를 들어, 이 엔티티에 있는 시작 관리자 목록에서 Maya를 제거하려면 환경 구성 파일에서 `tk-maya` 엔진 블록만 제거하면 됩니다.
 
 이러한 시작 관리자뿐만 아니라 Publish 앱의 "게시...(Publish...)" 명령도 메뉴에 포함됩니다.
 
@@ -264,6 +264,7 @@ tk-config-default2를 사용하면 업데이트를 config/env/includes/settings/
 먼저 [`config/env/asset.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.1.10/env/asset.yml#L47)로 이동하여 `tk-shotgun` 엔진 블록이 어떻게 [`@settings.tk-shotgun.asset`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.1.10/env/asset.yml#L47)을 가리키는지 확인합니다. `@` 기호는 구성 값이 포함된 파일에서 제공된 것임을 나타냅니다. 즉, 업데이트하려면 [env/includes/settings/`tk-shotgun.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.1.10/env/includes/settings/tk-shotgun.yml)로 이동해야 합니다.
 
 `env/includes/settings/tk-shotgun.yml`에서 각 블록이 엔티티에 대해 어떻게 되는지 확인하십시오. 예를 들어 에셋은 먼저 다음과 같이 됩니다.
+
 ```
 <a name="asset"></a>
 # asset
@@ -341,7 +342,6 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 2. Chrome 또는 Python Websocket 서버가 연결을 거부했기 때문에 {% include product %} 웹 응용프로그램에서 {% include product %} 데스크톱과 통신할 수 없습니다. 이 상황은 대부분 자체 서명된 인증서와 관련되어 있으며 요청 시 연결을 설정할 수 있습니다. 이러한 인증서를 처음부터 다시 생성하면 문제가 해결되기도 하며 다음과 같이 {% include product %} 데스크톱에서 트리거할 수 있습니다.
 
-
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
 1. 시작 시 {% include product %} 데스크톱의 Websocket 서버를 시작하지 못했습니다. 이 상황은 잘못된 Websocket 서버 릴리즈가 사용자에게 공개된 경우에만 해당되며 거의 발생하지 않습니다. 이 상황에서, 로깅은 오류에 대해 설명하는 [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)에 표시되며 이 내용은 [{% include product %}의 지원 팀으로 전송](https://support.shotgunsoftware.com/hc/en-us/requests/new)될 수 있습니다.
@@ -376,7 +376,6 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 3. 사용자가 두 개 이상의 {% include product %} 사이트에서 작업 중입니다. 단일 사이트에서 {% include product %} 데스크톱을 인증한 상태에서 두 번째 {% include product %} 사이트에서 메뉴 액션을 요청하면 사용자에게 {% include product %} 데스크톱을 다시 시작하여 새 사이트에 로그인하라는 메시지가 표시됩니다. 해당 요청을 무시하면 두 번째 사이트는 메뉴 액션 목록을 받을 수 없습니다.
 
-
 ## 툴킷 구성 파일
 
 스튜디오에서 프록시 서버를 사용하는 경우, 초기 로그인 화면에 몇 가지 값을 미리 입력해 두려는 경우 또는 브라우저 기반 응용프로그램 시작 관리자가 {% include product %} 데스크톱과 상호 작용하는 방식을 변경하려는 경우에 사용할 수 있는 `toolkit.ini`라는 특수 구성 파일이 있습니다. {% include product %} 데스크톱을 실행하는 데는 이 파일이 필요하지 않으며 데스크톱의 동작을 구성해야 하는 경우에만 필요합니다. 툴킷은 다음과 같은 순서로 여러 위치에서 이 파일을 찾습니다.
@@ -394,8 +393,6 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 이 예제 파일은 `config.ini`라고 하지만 `toolkit.ini`로 이름을 바꿀 수도 있습니다.
 
 또한 이 파일에서 환경 변수는 물론 하드 코딩된 값도 사용할 수 있습니다. 예를 들면, Windows에 있는 USERNAME 변수를 통해 사용자에게 제안할 기본 사용자 이름을 선택할 수 있습니다.
-
-
 
 **레거시 위치(더 이상 사용되지 않음)**
 
@@ -487,7 +484,6 @@ _시나리오: 프로젝트가 거의 마무리 단계인데 {% include product 
 
 - 이제 프로젝트에서 {% include product %} 데스크톱을 시작하는 모든 사람은 항상 v1.0.36을 사용하게 됩니다. 프로젝트에서 작업을 시작하는 새 사용자도 v1.0.36을 받게 됩니다.
 
-
 ![](images/Integration-admin-guide/freeze_single_project.png)
 
 **유용한 정보**
@@ -546,7 +542,7 @@ _시나리오: 자동 업데이트를 계속 허용할 테스트 프로젝트를
 
 ### 잠긴 사이트 안전하게 업그레이드
 
-- 시나리오: 현재 v1.0.0으로 잠근 상태인데 v2.0.0으로 업그레이드하려고 합니다. 하지만 스튜디오로 배포하기 전에 먼저 새 버전을 테스트하려고 합니다.*
+- 시나리오: 현재 v1.0.0으로 잠근 상태인데 v2.0.0으로 업그레이드하려고 합니다. 하지만 스튜디오로 배포하기 전에 먼저 새 버전을 테스트하려고 합니다.\*
 
 **솔루션**
 
@@ -574,7 +570,7 @@ _시나리오: 자동 업데이트를 계속 허용할 테스트 프로젝트를
 
 ![](images/Integration-admin-guide/wizard_select.png)
 
-새 프로젝트 구성을 시작할 때 가장 먼저 결정해야 할 사항은 _사용할 구성 템플릿_입니다. 구성 템플릿은 기본적으로 프로젝트를 실행하는 데 필요한 모든 설정, 파일 시스템 템플릿, 앱 및 로직이 포함된 완전한 프로젝트 구성입니다.
+새 프로젝트 구성을 시작할 때 가장 먼저 결정해야 할 사항은 *사용할 구성 템플릿*입니다. 구성 템플릿은 기본적으로 프로젝트를 실행하는 데 필요한 모든 설정, 파일 시스템 템플릿, 앱 및 로직이 포함된 완전한 프로젝트 구성입니다.
 
 - 프로젝트를 처음 사용하는 경우 {% include product %} 기본값으로 시작하는 것이 좋습니다.
 - 이전 프로젝트에서 이미 프로젝트 및 구성을 구성한 경험이 있는 경우 기존 프로젝트를 기반으로 새 프로젝트를 만들면 이러한 항목을 쉽게 다시 사용할 수 있습니다.
@@ -657,7 +653,7 @@ Windows에서 실행 중인 경우 컴퓨터에 git를 설치하고 `PATH`에서
 
 저장소 선택 목록 끝에 있는 `+New` 항목을 선택하여 마법사에서 새 로컬 저장소를 만들 수도 있습니다. 현재 OS의 로컬 저장소 이름과 경로를 묻는 메시지가 나타납니다.
 
-프로젝트가 설정되면 툴킷에서 각 저장소 위치에 각 새 프로젝트에 대한 폴더를 생성합니다. 예를 들어, 기본 저장소 위치가 `/mnt/projects`인 경우 _The Edwardian Cry_라는 프로젝트는 `/mnt/projects/the_edwardian_cry`에 생성됩니다. 그리고 구성에서 기본 저장소 외에 더 많은 저장소를 사용하는 경우 각 저장소는 `the_edwardian_cry` 폴더에 생성됩니다.
+프로젝트가 설정되면 툴킷에서 각 저장소 위치에 각 새 프로젝트에 대한 폴더를 생성합니다. 예를 들어, 기본 저장소 위치가 `/mnt/projects`인 경우 *The Edwardian Cry*라는 프로젝트는 `/mnt/projects/the_edwardian_cry`에 생성됩니다. 그리고 구성에서 기본 저장소 외에 더 많은 저장소를 사용하는 경우 각 저장소는 `the_edwardian_cry` 폴더에 생성됩니다.
 
 기본 저장소 위치는 일반적으로 `/mnt/projects` 또는 `\\studio\projects`와 유사한 형태이며 보통 이미 프로젝트 데이터를 프로젝트별로 그룹 지정하여 저장하고 있는 위치입니다. 이 위치는 거의 항상 공유 네트워크 저장소입니다.
 
@@ -677,7 +673,8 @@ Windows에서 실행 중인 경우 컴퓨터에 git를 설치하고 `PATH`에서
 
 이번이 첫 번째 프로젝트라면 대개의 경우 향후 모든 파이프라인 구성을 저장할 디스크의 공유 영역을 확인해야 할 것입니다. 일반적으로 이 위치는 스튜디오 전체에서 공유하는 소프트웨어 또는 소프트웨어 설정을 저장하는 위치입니다. 형식은 `/mnt/software/shotgun`과 비슷할 수 있으며, 스튜디오 네트워크 및 파일 명명 규칙에 따라 다를 수 있습니다.
 
-첫 번째 구성을 설정할 때는 스튜디오에서 사용하는 모든 플랫폼에 대한 경로로 설정합니다. 이렇게 하면 나중에 모든 컴퓨터에서 액세스할 수 있는 환경을 쉽게 생성할 수 있습니다. 예를 들면, 프로젝트 이름이 _Golden Circle_인 경우 다음 세 경로를 입력할 수 있습니다.
+첫 번째 구성을 설정할 때는 스튜디오에서 사용하는 모든 플랫폼에 대한 경로로 설정합니다. 이렇게 하면 나중에 모든 컴퓨터에서 액세스할 수 있는 환경을 쉽게 생성할 수 있습니다. 예를 들면, 프로젝트 이름이 *Golden Circle*인 경우 다음 세 경로를 입력할 수 있습니다.
+
 ```
 linux:   /mnt/software/shotgun/golden_circle
 macosx:  /servers/production/software/shotgun/golden_circle

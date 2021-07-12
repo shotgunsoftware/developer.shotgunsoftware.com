@@ -7,7 +7,6 @@ lang: ko
 
 # Houdini {% include product %} 통합이 시작되지 않는 이유는 무엇일까요?
 
-
 여기서는 Houdini에서 {% include product %} 통합을 시작할 수 없는 가장 일반적인 원인을 살펴봅니다. 이 경우, Houdini는 {% include product %} 데스크톱, {% include product %} 웹 사이트 또는 tank 명령으로 오류 없이 시작됩니다. 하지만 Houdini가 시작된 후에 {% include product %} 메뉴 또는 쉘프가 나타나지 않습니다.
 
 원인은 {% include product %}이 재정의된 `HOUDINI_PATH` 환경 변수를 사용하여 시작 스크립트 경로를 전달하기 때문인 경우가 많습니다.

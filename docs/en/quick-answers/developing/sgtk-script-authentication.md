@@ -8,16 +8,19 @@ lang: en
 # How do I work with authentication and login credentials in custom scripts?
 
 ## Error Message
+
 If you're seeing an error like the one below coming from your script, then it means your script is not authorized to talk to your {% include product %} site.
 
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'
 ```
+
 If user authentication or script authentication is not provided up front, then Toolkit falls back to checking credentials have been defined in the config's `shotgun.yml` file.
 Defining credentials in your `shotgun.yml` file is the old method of handling authentication.
 You should avoid defining them in the `shotgun.yml` file, and instead use one of the approaches detailed below:
 
 ## User-facing scripts
+
 If the script is user-facing, you can add this at the beginning, before creating a `Sgtk` instance:
 
 ```python
@@ -69,7 +72,8 @@ If `QApplication` is available, you'll get something akin to this:
 ![](./images/sign_in_window.png)
 
 {% include info title="Note" content="If you are importing a Toolkit API (`sgtk` package) that isn't associated with a configuration, for example one that you have downloaded to use to bootstrap into a different configuration, then you shouldn't attempt to create a `CoreDefaultsManager`. Instead, create a `ShotgunAuthenticator()` instance without passing a defaults manager.
-```python
+
+````python
 authenticator = ShotgunAuthenticator()
 ```" %}
 
@@ -102,7 +106,7 @@ user = authenticator.create_script_user(
 
 # Tells Toolkit which user to use for connecting to ShotGrid.
 sgtk.set_authenticated_user(user)
-```
+````
 
 {% include info title="Note" content="As noted at the end of the [user facing scripts](#user-facing-scripts) section, you shouldn't create a defaults manager if the `sgtk` package you imported is standalone/isn't from a configuration. Also you should provide the `host` kwarg to the `create_script_user()` method:
 
@@ -113,4 +117,5 @@ user = authenticator.create_script_user(
     api_key=\"4e48f....<use the key from your Shotgun site>\"
 )
 ```
-   " %}
+
+" %}

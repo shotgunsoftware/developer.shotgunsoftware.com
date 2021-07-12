@@ -121,10 +121,10 @@ Photoshop CC を起動すると、エンジン ブートストラップ コー�
 
 ```yaml
 shelf_favorites:
-    - {app_instance: tk-multi-workfiles2, name: File Save...}
-    - {app_instance: tk-multi-workfiles2, name: File Open...}
-    - {app_instance: tk-multi-publish, name: Publish...}
-    - {app_instance: tk-multi-snapshot, name: Snapshot...}
+  - { app_instance: tk-multi-workfiles2, name: File Save... }
+  - { app_instance: tk-multi-workfiles2, name: File Open... }
+  - { app_instance: tk-multi-publish, name: Publish... }
+  - { app_instance: tk-multi-snapshot, name: Snapshot... }
 ```
 
 設定の値は、環境設定にインストールされたアプリの 1 つで提供される、登録済みコマンドを識別するディクショナリのリストです。`app_instance` キーは特定のインストール済みアプリを識別し、`name` キーはこのアプリによって登録されたコマンドの表示名に一致します。上記の例では、4 つのお気に入りコマンドが表示されています。`tk-multi-workfiles2` アプリのファイルの表示と保存のダイアログと、標準の Toolkit のパブリッシュとスナップショットのダイアログです。これら 4 つのコマンドはお気に入りシェルフに表示されます。
@@ -148,6 +148,7 @@ shelf_favorites:
 Photoshop API オブジェクトは `engine.adobe` として公開されます。次の例では、Toolkit のアプリやフック内から Photoshop DOM を直接操作する方法を示します。標準的な Toolkit アプリには、Photoshop マニュアルの操作方法に関する作業例が含まれています。
 
 #### 例
+
 ファイルをロードする。
 
 ```python
@@ -215,4 +216,4 @@ for (i, layer) in enumerate(layers):
 
 ### アプリ開発者メモ
 
-* Python プロセスは Photoshop CC プロセスから独立しているため、アプリ ウィンドウで上記の Photoshop ウィンドウをできるだけ整理して表示するには、エンジン内でいくつかの作業を行います。このセットアップの注意点の 1 つに、`QFileDialog` にネイティブ OS Windows を使用する既定のオプションがあります。このエンジンを使用してアプリを開発する場合は、ネイティブのダイアログを使用しないオプションを設定してください。[tk-multi-pythonconsole アプリでの例を参照してください](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218)。
+- Python プロセスは Photoshop CC プロセスから独立しているため、アプリ ウィンドウで上記の Photoshop ウィンドウをできるだけ整理して表示するには、エンジン内でいくつかの作業を行います。このセットアップの注意点の 1 つに、`QFileDialog` にネイティブ OS Windows を使用する既定のオプションがあります。このエンジンを使用してアプリを開発する場合は、ネイティブのダイアログを使用しないオプションを設定してください。[tk-multi-pythonconsole アプリでの例を参照してください](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218)。

@@ -5,16 +5,15 @@ pagename: event-daemon
 lang: en
 ---
 
+# {% include product %} Event Framework
 
-# {% include product %}  Event Framework
-This software was originaly developed by [Patrick Boucher](http://www.patrickboucher.com) with support from [Rodeo Fx](http://rodeofx.com) and Oblique. It is now part of [{% include product %}  Software](http://www.shotgridsoftware.com)'s [open source initiative](https://github.com/shotgunsoftware).
+This software was originaly developed by [Patrick Boucher](http://www.patrickboucher.com) with support from [Rodeo Fx](http://rodeofx.com) and Oblique. It is now part of [{% include product %} Software](http://www.shotgridsoftware.com)'s [open source initiative](https://github.com/shotgunsoftware).
 
 This software is provided under the MIT License that can be found in the LICENSE file or at the [Open Source Initiative](http://www.opensource.org/licenses/mit-license.php) website.
 
-
 ## Overview
 
-When you want to access the {% include product %}  event stream, the preferred way to do so it to monitor the events table, get any new events, process them and repeat.
+When you want to access the {% include product %} event stream, the preferred way to do so it to monitor the events table, get any new events, process them and repeat.
 
 A lot of stuff is required for this process to work successfully, stuff that may not have any direct bearing on the business rules that need to be applied.
 
@@ -27,12 +26,12 @@ The daemon handles:
 - Registering plugins from one or more specified paths.
 - Deactivate any crashing plugins.
 - Reloading plugins when they change on disk.
-- Monitoring the {% include product %}  event stream.
+- Monitoring the {% include product %} event stream.
 - Remembering the last processed event id and any backlog.
 - Starting from the last processed event id on daemon startup.
 - Catching any connection errors.
 - Logging information to stdout, file or email as required.
-- Creating a connection to {% include product %}  that will be used by the callback.
+- Creating a connection to {% include product %} that will be used by the callback.
 - Handing off events to registered callbacks.
 
 A plugin handles:
@@ -40,11 +39,9 @@ A plugin handles:
 - Registering any number of callbacks into the framework.
 - Processing a single event when one is provided by the framework.
 
-
 ## Advantages of the framework
 
 - Only deal with a single monitoring mechanism for all scripts, not one per
   script.
 - Minimize network and database load (only one monitor that supplies event to
   many event processing plugins).
-  

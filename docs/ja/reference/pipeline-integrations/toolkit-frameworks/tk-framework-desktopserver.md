@@ -44,7 +44,6 @@ lang: ja
 ![](images/windows_warning_1.jpg)
 ![](images/windows_warning_2.jpg)
 
-
 {% include product %} Desktop を使用する場合、生成された証明書は次の場所に保存されます。
 
 **OS X**: ~/Library/Caches/Shotgun/desktop/config/certificates<br/>
@@ -56,7 +55,7 @@ lang: ja
 既定では、Websocket サーバはポート 9000 でホストされる {% include product %} サイトをリッスンするようにセットアップされます。
 ローカルで {% include product %} サーバを実行する場合、Websocket サーバからの接続を許可するように、{% include product %} サーバの設定を更新する必要があります。
 
-{% include product %} Desktop を実行する場合は、{% include product %} のバイナリ ファイルを含む ```config.ini``` ファイルを設定する必要があります。このファイルの格納場所の詳細については、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219040668#Advanced%20Installation%20Topics)を参照してください。
+{% include product %} Desktop を実行する場合は、{% include product %} のバイナリ ファイルを含む `config.ini` ファイルを設定する必要があります。このファイルの格納場所の詳細については、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219040668#Advanced%20Installation%20Topics)を参照してください。
 
 このファイル内に Websocket サーバの機能を制御するセクションがあります。
 一般的な設定は次のようになります。

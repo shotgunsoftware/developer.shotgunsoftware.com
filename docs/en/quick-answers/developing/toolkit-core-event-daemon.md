@@ -41,7 +41,7 @@ Example of how to import the correct sgtk core code in a script where
 a different instance of the module may have already been imported. The
 original import is unloaded and removed from memory in Python so the new
 instance of the module can be imported and used successfully.
-    
+
 Thanks to Benoit Leveau @ Milk VFX for sharing this.
 """
 
@@ -60,7 +60,7 @@ def import_sgtk(project):
     """
     # where all our pipeline configurations are located
     shotgun_base = os.getenv("SHOTGUN_BASE", "/mnt/sgtk/configs")
-    
+
     # delete existing core modules in the environment
     for mod in filter(lambda mod: mod.startswith("tank") or mod.startswith("sgtk"), sys.modules):
         sys.modules.pop(mod)
@@ -88,7 +88,7 @@ def import_sgtk(project):
     # tweak sys.path to add the core API to the beginning so it will be picked up
     if sys.path[0] != "":
         sys.path.pop(0)
-    sys.path = [core_python_path] + sys.path 
+    sys.path = [core_python_path] + sys.path
 
     # Remove the TANK_CURRENT_PC env variable so that it can be populated by the new import
     if "TANK_CURRENT_PC" in os.environ:
@@ -101,13 +101,12 @@ def import_sgtk(project):
 
 ## Distributed Configs
 
-The above example is assuming you are using a [centralized config](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations), however, things are a bit different if you are using a [distributed config](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations). Importing the sgtk API for a distributed config requires you to use the [bootstrap API](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api). When using the bootstrap API, you usually start by importing a non-project centric sgtk API and then use that to bootstrap an engine for a given project. 
+The above example is assuming you are using a [centralized config](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations), however, things are a bit different if you are using a [distributed config](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations). Importing the sgtk API for a distributed config requires you to use the [bootstrap API](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api). When using the bootstrap API, you usually start by importing a non-project centric sgtk API and then use that to bootstrap an engine for a given project.
 The bootstrap process handles the swapping out of the sgtk modules so that at the end of the bootstrap process you have an engine object. If you import sgtk after bootstrap, it will import the relevant sgtk module appropriate to your project. Given the example above of needing to load sgtk for multiple projects, you would need to bootstrap for multiple projects instead. The small catch here is that you can only have one engine running at a time, so you must destroy it before you load another.
 
 {% include warning title="Warning" content="Bootstrapping a config can be slow, as the process needs to ensure the config is cached locally and all the dependencies are downloaded. Bootstrapping in an Event Daemon plugin could severely affect performance. One potential approach would be to spawn off separate Python instances for each project bootstrap to communicate and send commands from the plugins. This will avoid needing to re-bootstrap a project each time it is needed." %}
 
-
-Here is an example: 
+Here is an example:
 
 ```python
 # insert the path to the non project centric sgtk API

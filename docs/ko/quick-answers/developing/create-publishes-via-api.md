@@ -13,6 +13,7 @@ sgtk API는 {% include product %}에서 `PublishedFiles` 엔티티를 등록할 
 Publish API는 궁극적으로 Core sgtk API 메서드를 사용하여 PublishedFile을 등록하지만 사용자 지정 가능한 컬렉션, 유효성 확인 및 게시 관련 프레임워크도 제공합니다. 이와 관련하여 Publish API 설명서와 함께 [파이프라인 튜토리얼](https://developer.shotgridsoftware.com/ko/cb8926fc/)에 자체 게시 플러그인 작성 예제도 제공합니다.
 
 ## register_publish() API 메서드 사용
+
 로우 {% include product %} API 호출을 사용하여 {% include product %}에서 게시 레코드를 생성하는 것도 가능하지만 툴킷의 편의 메서드를 이용하는 것이 훨씬 좋습니다.
 게시를 생성하는 모든 툴킷 앱은 [`sgtk.util.register_publish()`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.register_publish)라는 API 유틸리티 메서드를 사용 중입니다.
 
@@ -75,4 +76,5 @@ currentEngine = sgtk.platform.current_engine()
 tk = currentEngine.sgtk
 ctx = currentEngine.context
 ```
+
 " %}

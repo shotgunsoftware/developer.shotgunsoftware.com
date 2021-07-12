@@ -24,7 +24,7 @@ Nuke に **{% include product %} ノード メニュー**が作成され、さ�
 `favourite_directories` 設定を使用すると、現在の環境のテンプレート パスに基づいて独自のショートカットを追加できます。この設定は、リスト内の各項目が新しいお気に入りのディレクトリを表す、ディクショナリのリストを必要とします。次に、使用するフォーマットの例を示します(値として「""」と指定すると、アイコンを未指定のまま残すこともできます)。
 
 ```yaml
-  favourite_directories:
+favourite_directories:
   - display_name: "Shot Publish Path"
     template_directory: "shot_publish_area_nuke"
     icon: "icons/custom_publish_icon.png"
@@ -35,12 +35,9 @@ Nuke に **{% include product %} ノード メニュー**が作成され、さ�
 
 [{% include product %} の現在のプロジェクト](ShotGrid Current Project)というお気に入りが、定義済みの各ルートに自動的に追加されます。`project_favourite_name` 設定を使用して名前をカスタマイズするか、値を空の文字列 `''` に設定してお気に入りを無効にします。
 
-
-
-***
+---
 
 _注: 現在、CentOS 6.5 上で実行される Nuke 8.0 に限り、バグによって Toolkit の実行時に Nuke がクラッシュしてしまいます。他のバージョンの CentOS には影響ありません。Foundry はこの問題を認識しています(バグ 43766)。この問題が発生した場合は、当社までお問い合わせください。Nuke の今後の更新で解決されるまで、問題の回避をお手伝いします。_
-
 
 ## アプリ開発者向けの情報
 
@@ -56,7 +53,7 @@ _注: 現在、CentOS 6.5 上で実行される Nuke 8.0 に限り、バグに�
 
 これでノード作成機能からギズモに簡単にアクセスできます。
 
-* `nuke.createNode("WriteTank")`
+- `nuke.createNode("WriteTank")`
 
 {% include info title="警告" content="ギズモを使用すると便利ですが、ノードを作成してシーン内で保持する場合、一般的には適切な方法ではありません。その理由は、シーン内にギズモを配置するとすぐに、このシーンとギズモ コードの間に依存関係が生まれるためです。シーンのロードのたびに ShotGrid Toolkit をロードする必要があるだけでなく、コードを更新するときにシーン内で使用されている古いギズモが分割されないように慎重に管理する必要もあります。"%}
 
@@ -109,26 +106,60 @@ except:
 Hiero にはいくつかの異なるメニューがあるため、Maya や Nuke などよりも、メニュー項目の配置先を設定するオプションがたくさんあります。{% include product %} Engine for Nuke の Hiero ワークフロー設定は次のようになります。
 
 ```yaml
+tk-hiero:
+  location: { name: tk-nuke, type: app_store, version: v0.6.9 }
+  debug_logging: false
 
-  tk-hiero:
-    location: {name: tk-nuke, type: app_store, version: v0.6.9}
-    debug_logging: false
+  timeline_context_menu:
+    - {
+        app_instance: tk-hiero-openinshotgun,
+        keep_in_menu: false,
+        name: Open in Shotgun,
+        requires_selection: true,
+      }
 
-    timeline_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: Open in Shotgun, requires_selection: true}
+  spreadsheet_context_menu:
+    - {
+        app_instance: tk-hiero-openinshotgun,
+        keep_in_menu: false,
+        name: Open in Shotgun,
+        requires_selection: true,
+      }
 
-    spreadsheet_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: Open in Shotgun, requires_selection: true}
+  bin_context_menu:
+    - {
+        app_instance: tk-multi-workfiles,
+        keep_in_menu: false,
+        name: "{% include product %} Save As...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-workfiles,
+        keep_in_menu: false,
+        name: "Version up Current Scene...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-snapshot,
+        keep_in_menu: false,
+        name: "Snapshot...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-snapshot,
+        keep_in_menu: false,
+        name: "Snapshot History...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-publish,
+        keep_in_menu: false,
+        name: "Publish Project...",
+        requires_selection: true,
+      }
 
-    bin_context_menu:
-    - {app_instance: tk-multi-workfiles, keep_in_menu: false, name: "{% include product %} Save As...", requires_selection: true}
-    - {app_instance: tk-multi-workfiles, keep_in_menu: false, name: "Version up Current Scene...", requires_selection: true}
-    - {app_instance: tk-multi-snapshot, keep_in_menu: false, name: "Snapshot...", requires_selection: true}
-    - {app_instance: tk-multi-snapshot, keep_in_menu: false, name: "Snapshot History...", requires_selection: true}
-    - {app_instance: tk-multi-publish, keep_in_menu: false, name: "Publish Project...", requires_selection: true}
-
-    menu_favourites:
-    - {app_instance: tk-multi-workfiles, name: Shotgun File Manager...}
+  menu_favourites:
+    - { app_instance: tk-multi-workfiles, name: Shotgun File Manager... }
 ```
 
 ほとんどのエンジンには `menu_favourites` オプションがあります。これは、{% include product %} のメイン メニューに登録する「ショートカット」を指定するリストです。これとは別に、Hiero 固有の設定には次の 3 つの特別なセクションがあります。
@@ -147,7 +178,6 @@ Hiero にはいくつかの異なるメニューがあるため、Maya や Nuke 
 
 Hiero には現在のプロジェクトという概念がないため、アプリが Hiero 内でクリックされた内容を簡単に確認できるようにするため、たくさんの強力なツールが追加されています。{% include product %} Engine for Hiero には、次の 2 つのメソッドが追加されています。
 
-
 #### get_menu_selection()
 
 最後にクリックしたメニューで選択された Hiero オブジェクトのリストを返します。
@@ -163,7 +193,7 @@ Hiero には現在のプロジェクトという概念がないため、アプ�
 
 **パラメータと戻り値**
 
-* **戻り値:** Hiero オブジェクトのリスト
+- **戻り値:** Hiero オブジェクトのリスト
 
 **例**
 
@@ -210,7 +240,12 @@ if project is None:
 
 ```yaml
 bin_context_menu:
-- {app_instance: tk-multi-workfiles, keep_in_menu: false, name: "{% include product %} Save As...", requires_selection: true}
+  - {
+      app_instance: tk-multi-workfiles,
+      keep_in_menu: false,
+      name: "{% include product %} Save As...",
+      requires_selection: true,
+    }
 ```
 
 ここでは、アプリ自体の各エンジンで保存やロードなどのシーン イベントを処理するフックを設定する必要があります。Maya や Nuke などのアプリケーションの場合、通常は保存やロードなどを実行するだけです。
@@ -301,4 +336,3 @@ class SceneOperation(Hook):
 特定の選択項目がクリックされた場合に Hiero から返されるオブジェクトを確認するには、エンジン デバッグ モードをオンにするだけです。スクリプト エディタで、各クリックで選択したオブジェクトの概要を取得します。
 
 ![メニュー](../images/engines/nuke-hiero-engine_debug.png)
-

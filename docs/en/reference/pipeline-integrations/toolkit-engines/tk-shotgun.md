@@ -7,7 +7,7 @@ lang: en
 
 # {% include product %}
 
-The {% include product %} engine manages apps that can be launched from within {% include product %}. Sometimes we refer to these Toolkit Apps as *Actions*. They typically appear as items on menus inside of {% include product %}.
+The {% include product %} engine manages apps that can be launched from within {% include product %}. Sometimes we refer to these Toolkit Apps as _Actions_. They typically appear as items on menus inside of {% include product %}.
 
 ## Using {% include product %} Pipeline Toolkit Actions
 
@@ -28,10 +28,10 @@ Developing apps that run inside of {% include product %} is easy! If you are not
 
 As of Core v0.13, you can use all the multi apps with the {% include product %} Engine. Technically speaking there is little difference between the {% include product %} engine and other engines. There are, however, some subtle differences:
 
-* You will need to manually install PySide or PyQt into your standard python environment if you want to 
+- You will need to manually install PySide or PyQt into your standard python environment if you want to
   execute QT based apps in the {% include product %} Engine.
-* It is possible in the {% include product %} engine to make an action visible to a user depending on which 
-  permissions group they belong to. This is useful if you want example want to add a command to 
+- It is possible in the {% include product %} engine to make an action visible to a user depending on which
+  permissions group they belong to. This is useful if you want example want to add a command to
   the {% include product %} Action menu and you only want admins to see it.
 
 A hello-world style {% include product %} App, only visible to admins, would look something like this:
@@ -40,21 +40,20 @@ A hello-world style {% include product %} App, only visible to admins, would loo
 from tank.platform import Application
 
 class LaunchPublish(Application):
-    
+
     def init_app(self):
         """
         Register menu items with {% include product %}
-        """        
+        """
         params = {
             "title": "Hello, World!",
             "deny_permissions": ["Artist"],
         }
-        
+
         self.engine.register_command("hello_world_cmd", self.do_stuff, params)
-        
+
 
     def do_stuff(self, entity_type, entity_ids):
         # this message will be displayed to the user
-        self.engine.log_info("Hello, World!")    
+        self.engine.log_info("Hello, World!")
 ```
-

@@ -7,7 +7,7 @@ lang: zh_CN
 
 # Nuke 写入节点
 
-Nuke 写入节点应用提供一个自定义的 {% include product %} 写入节点，让您可轻松设置标准化的图像渲染位置。您可以为每个环境配置它。  除了路径以外，配置还将决定要使用的渲染格式。
+Nuke 写入节点应用提供一个自定义的 {% include product %} 写入节点，让您可轻松设置标准化的图像渲染位置。您可以为每个环境配置它。 除了路径以外，配置还将决定要使用的渲染格式。
 
 ## 一般用法
 
@@ -15,13 +15,13 @@ Nuke 写入节点应用提供一个自定义的 {% include product %} 写入节�
 
 ![写入节点](../images/apps/nuke-writenode-write_node_creation.png)
 
-您不用输入路径，只需指定输出名称，Toolkit 便会自动计算路径的其余部分。您可以在用户界面中查看计算得到的路径，并可单击“Show in File System”**按钮打开磁盘上的位置。渲染内容的写入位置取决于 Toolkit 的配置。
+您不用输入路径，只需指定输出名称，Toolkit 便会自动计算路径的其余部分。您可以在用户界面中查看计算得到的路径，并可单击“Show in File System”\*\*按钮打开磁盘上的位置。渲染内容的写入位置取决于 Toolkit 的配置。
 
 渲染内容将实施版本控制，版本号始终遵循当前的 Nuke 脚本版本，会在您使用多发布进行发布时自动递增。
 
 ## 重置渲染路径
 
-写入节点会缓存当前路径，以便文件在 Toolkit 工作区外部打开时，路径仍然有效。  有时，这意味着路径可能会变得不同步和被“锁定”。  如果渲染路径被锁定，将无法发布使用此写入节点创建的渲染内容。
+写入节点会缓存当前路径，以便文件在 Toolkit 工作区外部打开时，路径仍然有效。 有时，这意味着路径可能会变得不同步和被“锁定”。 如果渲染路径被锁定，将无法发布使用此写入节点创建的渲染内容。
 
 要重置渲染路径，请使用工作文件应用的“升级场景版本”命令升级场景的版本，或单独选择写入节点，然后在属性中单击**“Reset Path”**：
 
@@ -45,7 +45,7 @@ Write {
 }
 ```
 
-上面的文本显示了您需要的参数名称和值各是什么。在本例中为 `datatype` 和 `compression`。接下来，转到环境配置（例如：`/path/to/pipeline/config/env/shot_step.yml`）并找到配置 `tk-nuke-writenode` 应用的部分。  在 `settings` 部分使用这两个参数添加另一个写入节点：
+上面的文本显示了您需要的参数名称和值各是什么。在本例中为 `datatype` 和 `compression`。接下来，转到环境配置（例如：`/path/to/pipeline/config/env/shot_step.yml`）并找到配置 `tk-nuke-writenode` 应用的部分。 在 `settings` 部分使用这两个参数添加另一个写入节点：
 
 ```yaml
 tk-nuke-writenode:
@@ -73,7 +73,7 @@ tk-nuke-writenode:
 
 ![添加新节点](../images/apps/nuke-writenode-write_node_add_new.png)
 
-__注意：__请务必将任何新模板（例如 nuke_shot_render_mono_tif）添加到 `templates.yml` 文件中，该文件可在项目配置中找到 (`<configuration root>/config/core/templates.yml`)。
+**注意：**请务必将任何新模板（例如 nuke_shot_render_mono_tif）添加到 `templates.yml` 文件中，该文件可在项目配置中找到 (`<configuration root>/config/core/templates.yml`)。
 
 下面是另一个示例，显示了如何添加一个以 0.5 的压缩率和 4:2:2 的子采样率输出 JPEG 的 {% include product %} 写入节点。此配置文件还使用了“promote_write_knobs”选项将 JPEG 质量旋钮提升到小控件的用户界面。这样，配置文件便可以设置图片质量的默认值，同时还能为用户提供滑块控件以自己更改该设置：
 
@@ -86,7 +86,7 @@ tk-nuke-writenode:
       render_template: nuke_shot_render_jpeg
       proxy_publish_template: null
       proxy_render_template: null
-      settings: {_jpeg_quality: 0.5, _jpeg_sub_sampling: "4:2:2"}
+      settings: { _jpeg_quality: 0.5, _jpeg_sub_sampling: "4:2:2" }
       tank_type: Rendered Image
       tile_color: []
       promote_write_knobs: [_jpeg_quality]
@@ -266,7 +266,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* **返回值：**`list` - 在场景中找到的 Toolkit 写入节点的列表。
+- **返回值：**`list` - 在场景中找到的 Toolkit 写入节点的列表。
 
 **示例**
 
@@ -285,10 +285,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`string` - 节点名称。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`string` - 节点名称。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -305,10 +306,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`string` - 配置为此写入节点定义的配置文件名称。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`string` - 配置为此写入节点定义的配置文件名称。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -325,10 +327,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`string` - 此节点的渲染路径。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`string` - 此节点的渲染路径。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -345,10 +348,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`list` - 此写入节点渲染的图像文件的列表。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`list` - 此写入节点渲染的图像文件的列表。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -365,10 +369,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`template` - 此节点配置使用的渲染模板。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`template` - 此节点配置使用的渲染模板。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -385,10 +390,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`template` - 此节点配置使用的发布模板。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`template` - 此节点配置使用的发布模板。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -405,10 +411,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`string` - 此节点的代理渲染路径。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`string` - 此节点的代理渲染路径。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -425,10 +432,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`list` - 此写入节点渲染的代理图像文件的列表。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`list` - 此写入节点渲染的代理图像文件的列表。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -447,10 +455,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`template` - 此节点配置使用的代理渲染模板。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`template` - 此节点配置使用的代理渲染模板。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -469,10 +478,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`template` - 此节点配置使用的代理发布模板。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`template` - 此节点配置使用的代理发布模板。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -489,10 +499,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`string` - 此节点配置使用的发布文件类型。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`string` - 此节点配置使用的发布文件类型。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -503,16 +514,17 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 ### generate_node_thumbnail()
 
-为指定的写入节点生成缩略图。  此方法会将镜头序列中间的一帧渲染到一个临时文件 (.png)，最大尺寸为 800x800 像素。  当不再需要此文件时，调用程序负责清理此文件。
+为指定的写入节点生成缩略图。 此方法会将镜头序列中间的一帧渲染到一个临时文件 (.png)，最大尺寸为 800x800 像素。 当不再需要此文件时，调用程序负责清理此文件。
 
 `string` generate_node_thumbnail(`node` 节点)
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`string` - 渲染的缩略图图像在磁盘上的路径。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`string` - 渲染的缩略图图像在磁盘上的路径。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -529,10 +541,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`None` - 不返回任何值。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`None` - 不返回任何值。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -549,10 +562,11 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 **参数和返回值**
 
-* `node` **node** - 要查询的写入节点。
-* **返回值：**`bool` - 渲染路径锁定时返回 True，否则返回 False。
+- `node` **node** - 要查询的写入节点。
+- **返回值：**`bool` - 渲染路径锁定时返回 True，否则返回 False。
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -563,11 +577,12 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 ### convert_to_write_nodes()
 
-将在当前脚本中找到的所有 {% include product %} 写入节点转换为常规 Nuke 写入节点。其他 Toolkit 信息将存储在名为“tk_*”的用户旋钮上。
+将在当前脚本中找到的所有 {% include product %} 写入节点转换为常规 Nuke 写入节点。其他 Toolkit 信息将存储在名为“tk\_\*”的用户旋钮上。
 
 `None` convert_to_write_nodes()
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -582,6 +597,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 `None` convert_from_write_nodes()
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -596,6 +612,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 `None` process_placeholder_nodes()
 
 **示例**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()

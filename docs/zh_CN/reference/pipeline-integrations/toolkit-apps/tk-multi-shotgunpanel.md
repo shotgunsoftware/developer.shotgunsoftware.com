@@ -29,7 +29,6 @@ lang: zh_CN
 
 - 您可以定义回退机制，在某些值未设置的情况下进行回退。对于 {% include product %} 版本而言，`artist` 字段优先于 `created_by` 字段，这是为了支持由制片代表艺术家提交版本的工作流。在这种情况下，版本将由制作人员创建，但 `artist` 字段会设置为美工人员。不过，情况并非总是如此。有时，在由美工人员自己提交工作的工作流中，artist 字段会留空。因此，在显示版本时，能够首先检查 `artist` 字段是一项有用的功能，如果发现此字段未设置，则回退到 `created_by` 字段。我们使用 `{field1|field2}` 语法实现这个机制，例如：`Created By: {artist|created_by}`。您可以将此语法与可选字段结合使用，例如 `{[Created By: ]artist|created_by}`。
 
-
 此挂钩包含以下方法：
 
 **控制列表中显示的列表项**
@@ -67,21 +66,21 @@ lang: zh_CN
 - 一个让用户可指派自己执行给定任务的动作
 - 一个将 {% include product %} 发布加载到 Maya 中作为 Maya 参考的动作。
 
-动作的实际负载在“动作挂钩”中定义。**定义动作逻辑后，您可以在应用配置中将该动作映射到 {% include product %} 对象。这些动作的映射关系可能类似如下：
+动作的实际负载在“动作挂钩”中定义。\*\*定义动作逻辑后，您可以在应用配置中将该动作映射到 {% include product %} 对象。这些动作的映射关系可能类似如下：
 
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import]
-    filters: {published_file_type: Maya Scene}
-  - actions: [texture_node]
-    filters: {published_file_type: Rendered Image}
+    - actions: [reference, import]
+      filters: { published_file_type: Maya Scene }
+    - actions: [texture_node]
+      filters: { published_file_type: Rendered Image }
   Task:
-  - actions: [assign_task]
-    filters: {}
+    - actions: [assign_task]
+      filters: {}
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 在上面的示例中，我们使用了 `reference`、`import`、`texture_node`、`assign_task` 和 `play_in_rv` 动作。然后，我们将这些动作映射到各种 {% include product %} 对象和条件。例如，我们让所有 Maya 场景类型的发布都显示 `import` 动作。
@@ -95,7 +94,7 @@ action_mappings:
 面板使用 Toolkit 第二代挂钩界面，具有更强的灵活性。此挂钩的格式采用经过改进的语法。您可以在默认配置设置中查看，语法类似如下：
 
 ```yaml
-actions_hook: '{self}/tk-maya_actions.py'
+actions_hook: "{self}/tk-maya_actions.py"
 ```
 
 `{self}` 关键字指示 Toolkit 在应用的 `hooks` 文件夹中查找挂钩。如果您要使用自己的执行改写此挂钩，请将值更改为 `{config}/panel/maya_actions.py`。这将指示 Toolkit 使用您的配置文件夹中称为 `hooks/panel/maya_actions.py` 的挂钩。
@@ -182,12 +181,11 @@ class MyActions(HookBaseClass):
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import, my_new_action]
-    filters: {published_file_type: Maya Scene}
+    - actions: [reference, import, my_new_action]
+      filters: { published_file_type: Maya Scene }
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 按上面所示从挂钩派生的自定义挂钩代码只需要包含实际添加的业务逻辑，因此维护和更新起来更加简单。
-

@@ -11,18 +11,17 @@ The goal is to set up an AWS PrivateLink to privately access your ShotGrid site.
 
 ## Set up PrivateLink to ShotGrid
 
-  * Ask ShotGrid support to provide you with the ShotGrid PrivateLink service name for your AWS region.
+- Ask ShotGrid support to provide you with the ShotGrid PrivateLink service name for your AWS region.
 
-  * Update the private VPC CloudFormation stack you created earlier and set ShotGridPrivateServiceName parameter.
+- Update the private VPC CloudFormation stack you created earlier and set ShotGridPrivateServiceName parameter.
 
 ### Manual steps if needed
 
-  * Add a new VPC Endpoint in your VPC
+- Add a new VPC Endpoint in your VPC
 
-  * For the security group, ShotGrid service only requires the inbound port tcp/443 to be open.
+- For the security group, ShotGrid service only requires the inbound port tcp/443 to be open.
 
 ![Create endpoint](../images/tier1-endpoint-create_privatelink.png)
-
 
 ## DNS Configuration
 

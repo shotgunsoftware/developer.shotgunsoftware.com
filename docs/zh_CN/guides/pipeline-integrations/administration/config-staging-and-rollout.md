@@ -20,7 +20,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 - 安全地升级 Toolkit 核心 API。
 - 升级应用和插件。
 - 使用各种方法管理多个项目的配置。
-- 使用 Toolkit 的“克隆”和“推送”功能____，在不中断生产的情况下安全地测试升级和更改。
+- 使用 Toolkit 的“克隆”和“推送”功能\_\_\_\_，在不中断生产的情况下安全地测试升级和更改。
 - 使用 `git` 源代码管理系统和 Toolkit。
 
 # 配置管理的基础知识
@@ -33,9 +33,9 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 
 在项目期间，经常需要更改配置。您可能会调整配置，也可能需要添加另外的应用或插件。我们也会经常发布新的应用版本，并建议您尽可能使用最新版本。
 
-尽管可以直接升级项目的_主_配置，但这样做可能会有风险：因为参与项目的每个人都使用此配置，一旦出现问题，就会影响所有人。更好的做法是创建一个孤立的配置版本，让指定的一组人员可以访问它。在这个安全的环境中，无论进行升级、配置更改还是开发，都不会影响其余的生产环境。更改通过测试后，便可以安全放心地将它们推送到主配置。
+尽管可以直接升级项目的*主*配置，但这样做可能会有风险：因为参与项目的每个人都使用此配置，一旦出现问题，就会影响所有人。更好的做法是创建一个孤立的配置版本，让指定的一组人员可以访问它。在这个安全的环境中，无论进行升级、配置更改还是开发，都不会影响其余的生产环境。更改通过测试后，便可以安全放心地将它们推送到主配置。
 
-我们将这个过程称为“克隆”__，它相当于为主配置创建一个只有您自己（以及您邀请的其他人）才能访问的个人副本。 在这个副本中，您可以安全地进行更改，直到满意为止，然后可以将这些更改推送回主配置。
+我们将这个过程称为“克隆”\_\_，它相当于为主配置创建一个只有您自己（以及您邀请的其他人）才能访问的个人副本。 在这个副本中，您可以安全地进行更改，直到满意为止，然后可以将这些更改推送回主配置。
 
 ## 克隆您的配置
 
@@ -47,7 +47,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 
 除此以外，每个项目还有一个配置文件夹。此文件夹包含该项目的所有设置。此外，它还包含一个专门用来操作此配置的 `tank` 命令（和一个 Python API）。使用此 `tank` 命令或 API 代码时，只能操作此配置。
 
-设置新项目后，会创建一个主配置。__ 这是 Toolkit 默认将为项目使用的配置。除了主配置以外，您还可以为项目创建另外的配置。这些配置可以并存，并且当您想单独测试某些修改、升级某些应用或在不影响整个团队的情况下进行开发时，这些配置会很有用。除主配置以外的其他配置由一个称为“克隆”的过程创建，__这个过程会将配置复制到一个新位置。
+设置新项目后，会创建一个主配置。** 这是 Toolkit 默认将为项目使用的配置。除了主配置以外，您还可以为项目创建另外的配置。这些配置可以并存，并且当您想单独测试某些修改、升级某些应用或在不影响整个团队的情况下进行开发时，这些配置会很有用。除主配置以外的其他配置由一个称为“克隆”的过程创建，**这个过程会将配置复制到一个新位置。
 
 克隆完配置后，您的设置看起来可能如下所示：
 
@@ -82,6 +82,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 ### 刷新旧的克隆配置
 
 如果您有一个旧的开发沙盒或过时的临时沙盒设置，现在需要将它的内容与最新的生产配置同步，可以为主配置运行 `push_configuration` 命令来进行同步。
+
 ```shell
 tank push_configuration
 
@@ -112,7 +113,8 @@ Push Complete!
 Your old configuration has been backed up into the following folder:
 /my/staging/sandbox/config.bak.20140108_093218
 ```
-请注意我们如何从项目主配置向临时沙盒推送内容。我们的做法是运行主配置的 __`tank` 命令。 如果您有多个沙盒设置，也可以在这些沙盒之间推送数据。
+
+请注意我们如何从项目主配置向临时沙盒推送内容。我们的做法是运行主配置的 \_\_`tank` 命令。 如果您有多个沙盒设置，也可以在这些沙盒之间推送数据。
 
 ### 删除克隆配置
 
@@ -161,6 +163,7 @@ Make sure the loader app is up to date everywhere:
 Make sure the loader app is up to date in maya:
 > tank updates ALL tk-maya tk-multi-loader
 ```
+
 ## 升级 Toolkit 核心 API
 
 本节介绍可以怎样使用克隆临时沙盒配置来安全地升级 Toolkit 核心 API。如果您还没有准备好临时沙盒，只要按照上节的说明操作即可！
@@ -168,6 +171,7 @@ Make sure the loader app is up to date in maya:
 如果您的临时沙盒克隆自某个使用[共享工作室核心 API](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040448) 的工作流配置，您需要升级沙盒，让它使用自己独有的核心 API 代码。我们将这个过程称为对核心进行“本地化”，您可以导航到您的临时沙盒并运行 `tank localize` 来执行此操作。 此命令会将工作室安装中的核心 API 复制到您的沙盒，以便稍后可以运行和测试不同版本的核心 API。
 
 _Toolkit 的默认行为是默认对核心进行本地化。如果您之前未显式创建过共享的工作室核心，可以有把握地认为您的核心已经本地化。_
+
 ```shell
 cd /my/staging/sandbox
 ./tank localize
@@ -199,11 +203,14 @@ Localize complete! This pipeline configuration now has an independent API.
 If you upgrade the API for this configuration (using the 'tank core' command),
 no other configurations or projects will be affected.
 ```
+
 此时，我们已不再共享工作室位置的核心 API，而是运行我们自己的独立版本。接下来，我们可以继续再次使用本地 tank 命令执行标准的核心 API 升级：
+
 ```shell
 cd /my/staging/sandbox
 ./tank core
 ```
+
 Toolkit 将检查是否有新版本可用，并让您下载并安装它。
 
 更新核心 API 之后，请务必对安装进行测试。使用沙盒中的 `tank` 命令或使用 {% include product %} 中专门的菜单项启动一些应用。从头至尾对您的工作流进行基本调试，并执行您认为必要的测试。
@@ -233,6 +240,7 @@ Toolkit 将检查是否有新版本可用，并让您下载并安装它。
 这是让配置随时间逐步发展的一个非常简单的方法。所做的更改和改进将即时在项目之间传播。第一次运行 `setup_project` 命令时，只需在设置过程提示您选择要使用的配置时按 Enter 即可。这将下载并安装默认配置。
 
 设置第二个项目时，您将看到之前项目的配置路径列表。选择其中一个路径，当设置过程提示输入配置时，输入此路径。这会将相应的配置复制到新项目：
+
 ```
 Welcome to the {% include product %} Pipeline Toolkit!
 For documentation, see https://support.shotgunsoftware.com
@@ -272,6 +280,7 @@ clone this repository and base the config on its content.
 
 [tk-config-default]: /mnt/software/shotgun/first_project/config
 ```
+
 ## 在 Git 源代码管理系统中创建工作室配置
 
 第一种方法有一定的局限性，其中一点是项目实际上不是彼此相连。假设您有 10 个项目，当发布了某个重大错误修复时，您需要更新所有项目，这时必须手动操作每个项目并运行 `tank updates` 命令。
@@ -291,16 +300,21 @@ clone this repository and base the config on its content.
 首先，您需要转至您的 Git 服务器并创建一个库。此过程可能会因您的设置而异。如果您使用的是类似 GitHub 的站点，需要启动 Web 浏览器并导航至 github.com。如果您有权访问服务器，可以执行类似 `git init --bare` 这样的操作。 在我们的示例中，假设您创建的 Git 库称为 `username@someserver.com:/studio_config.git`。
 
 接下来，将用来为库提供种子的项目的 `config` 文件夹复制到一个 `config.bak` 位置：
+
 ```shell
 cd /project_configs/studio_config
 mv config config.bak
 ```
+
 将经过初始化的 Git 库克隆到工作室配置要基于的项目的 `config` 位置。 运行克隆命令后，将得到一个同样是 Git 库的空白 `config folder`：
+
 ```shell
 cd /project_configs/studio_config
 git clone username@someserver.com:/studio_config.git config
 ```
+
 将 `config.bak` 位置的所有文件复制到 `config` 文件夹。复制完毕后，可以删除空的 `config.bak` 文件夹。这时，您的配置文件已位于 Git 库内，我们需要添加、提交并将它们推送至服务器。但是在执行这些操作前，我们还要做些扫尾工作，正确处理一些 Toolkit 系统文件。在 `config` 文件夹中，创建一个 `.gitignore` 文件，并向其中添加以下几行内容：
+
 ```shell
 install_location.yml
 pipeline_configuration.yml
@@ -313,6 +327,7 @@ git add --all
 git commit -am "initial commit of our studio config!"
 git push
 ```
+
 ### 从 Git 创建新项目
 
 当您创建新项目时，只需在设置过程提示您输入要使用的配置的路径时，指定一个有效的 Git URL 即可。按照上面的示例，我们将输入 `username@someserver.com:/studio_config.git`。作为项目设置过程的一部分，Toolkit 会将此库克隆到您的新项目配置的 `config` 文件夹。这意味着，稍后您可以转到此 config 文件夹运行 Git 命令。请注意，任何克隆的工作流配置也会克隆该 Git 库，并将无缝工作。
@@ -323,7 +338,7 @@ git push
 
 ### 更新项目以获取最新版本
 
-另外，如果您使用一些更改更新过您的工作室级配置，现在想将这些更改下载到项目中，只需转到 `config` 文件夹并运行 `git pull` 即可。  **重要提示**：请注意，完成此操作后务必运行 `tank cache_apps`，以确保系统中存在您更改的配置所需的所有应用版本！
+另外，如果您使用一些更改更新过您的工作室级配置，现在想将这些更改下载到项目中，只需转到 `config` 文件夹并运行 `git pull` 即可。 **重要提示**：请注意，完成此操作后务必运行 `tank cache_apps`，以确保系统中存在您更改的配置所需的所有应用版本！
 
 ### Git 高级用法：分支
 
@@ -342,6 +357,7 @@ Toolkit 通过工作流配置实体保留了 {% include product %} 站点所有�
 ![](images/config-staging-and-rollout/include_config.png)
 
 使用 `@include` 语法可将多个文件串联在一起。 例如，如果您有一个 `/tmp/stuff.yml` 文件，其中包含以下内容：
+
 ```
 # paths to maya
 maya_windows: 'C:\Program  Files\Autodesk\Maya2012\bin\maya.exe'
@@ -369,7 +385,9 @@ file_manager:
   template_work: null
   template_work_area: null
 ```
+
 如上所述，您可以在几个不同级别创建包含定义 - 在上面的例子中，我们有一个应用定义和三个字符串值。接下来，我们可以从一个环境文件引用这些对象：
+
 ```
 includes: ['/tmp/stuff.yml']
 
@@ -398,7 +416,9 @@ engines:
     template_project: null
     use_sgtk_as_menu_name: false
 ```
+
 此外，您可以逐个读入几个包含文件。如果两个不同的文件中存在相同的包含定义，将优先使用最新读取的文件。我们可以扩展上面的示例环境：
+
 ```
 includes:
 
@@ -412,13 +432,14 @@ includes:
 
 engines:
 
-  tk-maya:    
+  tk-maya:
     apps:
         tk-multi-workfiles: '@file_manager'
 
     location: {name: tk-maya, type: app_store, version: v0.4.1}
     use_sgtk_as_menu_name: false
 ```
+
 使用刚刚介绍的方法，可以得到一组工作室默认值，这些默认值可被项目类型默认值改写，而后者又可以被特定的项目设置改写。您既可以如上面示例中所示，在应用一级使用此功能，也可以如下节中所示，在插件一级使用此功能。
 
 ### 设置全局配置的最佳实践
@@ -426,6 +447,7 @@ engines:
 设置全局配置的方法有多种。我们建议的最佳做法是按插件对配置进行细分。每个环境文件完全空白，并引用在单独的文件中定义的插件（和应用）。这样便于逐个插件地调整和重新配置设置。
 
 每个包含文件均采用标准形式，以插件的名称命名。例如，如果您有一个 Maya 插件，包含文件将只包含该插件和它的应用。其顶层项直接命名为 `maya`：
+
 ```yaml
 maya:
     apps:
@@ -468,25 +490,28 @@ frameworks:
   tk-framework-shotgunutils_v1.x.x:
     location: {name: tk-framework-shotgunutils, type: app_store, version: v1.0.8}
 ```
+
 在您的工作室中，您很可能并不只有一套 Maya 设置，而是会为不同部门和不同类型的工作准备多套不同的设置。我们建议您为每套设置分别建立一个 maya 包含文件，并按文件层次结构进行组织。这其中的每个文件都像上面的文件一样，在顶层具有一个 `maya` 项。
 
 ![](images/config-staging-and-rollout/maya_include.png)
 
 现在，每个项目都将包含一些环境。每个环境文件都将是一个插件包含文件的列表，将这个特定环境链接到一组插件和应用设置。您可以为自己的工作室设置一个（或几个）默认的项目配置，都包含这样的包含文件，以确保实际的应用和插件负载完全包含在包含文件内，从而实现全局性。如果您更改全局包含文件，所有项目都将受到影响。使用这种设置，您的环境文件看起来将如下所示：
+
 ```yaml
-includes:     
-    - '/studio/configurations/maya/asset.yml'
-    - '/studio/configurations/nuke/asset.yml'
-    - '/studio/configurations/houdini/generic.yml'
+includes:
+  - "/studio/configurations/maya/asset.yml"
+  - "/studio/configurations/nuke/asset.yml"
+  - "/studio/configurations/houdini/generic.yml"
 
 engines:
-  tk-maya: '@maya'
-  tk-nuke: '@nuke'
-  tk-houdini: '@houdini'
+  tk-maya: "@maya"
+  tk-nuke: "@nuke"
+  tk-houdini: "@houdini"
 
 # we don't need any frameworks here because there are no apps or engines defined
 frameworks: null
 ```
+
 如果您想打破上面的设置，定义一些特定于项目的条目，可以在环境文件本身中直接将 `@maya` 替换为一系列应用和插件定义。
 
 ### 管理全局配置

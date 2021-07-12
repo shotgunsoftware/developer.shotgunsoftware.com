@@ -5,8 +5,7 @@ pagename: quick-answers-developing
 lang: en
 ---
 
-Developing
-===
+# Developing
 
 A collection of quick answers based around development with Toolkit.
 

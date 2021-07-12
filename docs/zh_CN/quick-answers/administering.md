@@ -5,12 +5,12 @@ pagename: quick-answers-administering
 lang: zh_CN
 ---
 
-管理
-=====
+# 管理
 
 一组与管理和配置 Toolkit 设置相关的快速解答。
 
 #### {% include product %} Desktop：
+
 - [如何使用 {% include product %} Desktop 来重新设置 Toolkit 项目？](./administering/resetup-project-with-sg-desktop.md)
 - [如何在 Windows 上静默安装 {% include product %} Desktop？](./administering/install-desktop-silent.md)
 - [如何在 Linux 上为 {% include product %} Desktop 设置桌面/启动程序图标？](./administering/create-shotgun-desktop-shortcut.md)

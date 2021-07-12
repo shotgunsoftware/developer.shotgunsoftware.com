@@ -121,10 +121,10 @@ The **Favorites Shelf** can be configured to display any of the registered comma
 
 ```yaml
 shelf_favorites:
-    - {app_instance: tk-multi-workfiles2, name: File Save...}
-    - {app_instance: tk-multi-workfiles2, name: File Open...}
-    - {app_instance: tk-multi-publish, name: Publish...}
-    - {app_instance: tk-multi-snapshot, name: Snapshot...}
+  - { app_instance: tk-multi-workfiles2, name: File Save... }
+  - { app_instance: tk-multi-workfiles2, name: File Open... }
+  - { app_instance: tk-multi-publish, name: Publish... }
+  - { app_instance: tk-multi-snapshot, name: Snapshot... }
 ```
 
 The value of the setting is a list of dictionaries identifying a registered command provided by one of the installed apps in the configuration. The `app_instance` key identifies a particular installed app and the `name` key matches the command's display name registered by that app. In the example above, you can see four favorited commands: the file open and save dialogs from the `tk-multi-workfiles2` app as well as the standard Toolkit publish and snapshot dialogs. These four commands will now show in the favorites shelf.
@@ -141,7 +141,6 @@ To aid in debugging, there are a set of environment variables that change some o
 - `SHOTGUN_ADOBE_PYTHON` - The path to the Python executable to use when launching the engine. If not set, the system Python is used. If Photoshop is launched from a Python process, like {% include product %} Desktop or via the tk-shell engine, the Python used by that process will be used by the Photoshop integration.
 
 Note: Additional environment variables exist in the Adobe Framework. For details, please see the [developer documentation](https://developer.shotgridsoftware.com/tk-framework-adobe/).
-
 
 ## Context fields display hook
 
@@ -164,5 +163,3 @@ The [default hook implementation](https://github.com/shotgunsoftware/tk-aftereff
 ## After Effects API
 
 Please see the [developer documentation](https://developer.shotgridsoftware.com/tk-aftereffects) for details on the After Effects API.
-
-

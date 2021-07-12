@@ -18,6 +18,7 @@ lang: zh_CN
 ## 设置环境变量
 
 ### 永久启用调试日志记录
+
 `TK_DEBUG=1`首先，您需要设置新的环境变量：
 
 {% include info title="注意" content="我们建议您与工作室的技术专家讨论如何设置环境变量，因为具体说明特定于平台。但是，以下示例介绍了在 Windows 7 计算机上设置环境变量。" %}
@@ -27,7 +28,6 @@ lang: zh_CN
 - 您可以永久启用调试日志记录，方法是导航到 **Windows 图标 >“控制面板 > 系统 > 高级系统设置 > 环境变量… > 新建…”**
 
 ![设置 Windows 环境变量](images/windows-setting-environment-variable.png)
-
 
 - **变量名称**：`TK_DEBUG`
 - **变量值**：`1`

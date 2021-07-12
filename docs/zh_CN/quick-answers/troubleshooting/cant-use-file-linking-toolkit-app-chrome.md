@@ -36,7 +36,7 @@ lang: zh_CN
 
 ![Autobahn Python 消息](images/autobahn-python.png)
 
-另一方面，如果您看到下列消息之一，则表示证书注册过程有问题： 
+另一方面，如果您看到下列消息之一，则表示证书注册过程有问题：
 
 ![您的连接不是私人消息](images/your-connection-is-not-private-chrome.png)
 

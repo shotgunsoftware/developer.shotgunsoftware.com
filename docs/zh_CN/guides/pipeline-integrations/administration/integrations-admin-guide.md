@@ -86,7 +86,7 @@ lang: zh_CN
 - 与在自动检测模式下不同，此处，每个版本的给定软件包对应一个软件实体。
 - 为了将它们分组在一起，请使用 `Group` 和 `Group Default` 字段。 `Group` 值相同的软件实体将被分组在 Desktop 中单个图标下的下拉菜单中，该图标使用 `Group` 值作为其名称。
 - 单击该图标本身时，将启动 `Group Default` 处于选中状态的组中的软件。
-- **在软件实体上为“Linux 路径”(Linux Path)、“Mac 路径”(Mac Path)或“Windows 路径”(Windows Path)中任何一个__指定值时，该实体将转为手动模式。**  与自动检测模式（路径字段为空时，软件会__显示在 Desktop 中）不同，在手动模式下，仅当为软件指定了路径且在指定路径中存在文件时，软件包才会__在给定操作系统上显示。
+- **在软件实体上为“Linux 路径”(Linux Path)、“Mac 路径”(Mac Path)或“Windows 路径”(Windows Path)中任何一个\_\_指定值时，该实体将转为手动模式。** 与自动检测模式（路径字段为空时，软件会**显示在 Desktop 中）不同，在手动模式下，仅当为软件指定了路径且在指定路径中存在文件时，软件包才会**在给定操作系统上显示。
 - 在此示例中，由于未指定 `Windows Path`，因此三个 Maya 版本均不会显示在 Windows 上的 Desktop 中。
 
 ### 示例：按用户或组限制
@@ -111,7 +111,7 @@ lang: zh_CN
 - 此处我们删除了 `Group` 和 `Group Default` 值，因为在给定环境中总是只有一个 Maya 版本将显示在 Desktop 中。
 - 我们将所有三个版本的 `Software Name` 均设置为“Maya”。 这样，在每个项目中，用户均将看到一个名称相同的图标，但根据此处配置的内容，它将指向不同的版本。
 - 我们将 Maya 2016 的 `Status` 字段设置为 `Disabled`。 我们不再在工作室中使用此版本，且此字段切换在所有项目中的全局可见性。
-- 我们针对 Maya 2017 和 Maya 2018 指定了 `Projects` 值。 此 `Projects` 字段用作限制。 Maya 2017 将仅__显示在 Chicken Planet 项目中，而 Maya 2018 将仅显示在 Chicken Planet II 中。
+- 我们针对 Maya 2017 和 Maya 2018 指定了 `Projects` 值。 此 `Projects` 字段用作限制。 Maya 2017 将仅\_\_显示在 Chicken Planet 项目中，而 Maya 2018 将仅显示在 Chicken Planet II 中。
 - 请注意，一旦指定了某个软件实体的 `Projects` 值，该软件将仅显示在指定的项目中。 因此，如果您的工作室中除了 Chicken Planet 系列外还有其他项目，您需要为它们明确指定软件。
 
 ### 示例：添加自己的软件
@@ -137,9 +137,9 @@ lang: zh_CN
 如果未针对您当前使用的操作系统定义本地存储的路径，您可以使用环境变量指定本地存储根。环境变量的名称应采用 `SHOTGUN_PATH_<WINDOWS|MAC|LINUX>_<STORAGENAME>` 形式。 因此，如果您要为名为“Renders”的存储根定义 Mac 上的路径，可以创建 `SHOTGUN_PATH_MAC_RENDERS` 环境变量。 下面我们使用该示例进行更深入的讨论：
 
 - 假设您的 {% include product %} 站点有一个名为“Renders”的存储根，并指定了以下路径：
-- Linux 路径：  `/studio/renders/`
-- Windows 路径：  `S:\renders\`
-- Mac 路径：  `<blank>`
+- Linux 路径： `/studio/renders/`
+- Windows 路径： `S:\renders\`
+- Mac 路径： `<blank>`
 
 - 您在使用 Mac。
 
@@ -181,13 +181,13 @@ lang: zh_CN
 
 - 一个名为“Projects”的 {% include product %} 本地存储，进行以下设置：
 
-- Linux 路径：  `/projects`
-- Windows 路径：  `Q:\projects`
-- Mac 路径：  `/projects`
+- Linux 路径： `/projects`
+- Windows 路径： `Q:\projects`
+- Mac 路径： `/projects`
 
 - 一个名为“Projects”的 {% include product %} 本地存储，使用一个环境变量予以增强：
 
-- Linux 路径：  `/projects`
+- Linux 路径： `/projects`
 - `Windows 路径：``
 - `Mac Path:`/projects`
 - `SHOTGUN_PATH_WINDOWS_PROJECTS=Q:\projects`
@@ -243,7 +243,7 @@ websocket 服务器的 RPC API 的第二次实施更改了用于获取、缓存�
 
 ![](images/Integration-admin-guide/action_menu.png)
 
-浏览器集成代码找到用户系统上安装的 Houdini、Maya、Nuke 和 Photoshop，从而产生用于启动其中每个集成的菜单动作。请注意，在给定的环境配置文件中，必须存在软件实体的插件，才会针对该环境的实体显示软件的启动器。__ 因此，在此示例中，从中获取此代码片段的文件中必须存在 `tk-houdini`、`tk-maya`、`tk-nuke` 和 `tk-photoshopcc` 所有这些插件。 如果要从此实体的启动器列表中移除某项（例如 Maya），只需从环境配置文件中移除 `tk-maya` 插件块。
+浏览器集成代码找到用户系统上安装的 Houdini、Maya、Nuke 和 Photoshop，从而产生用于启动其中每个集成的菜单动作。请注意，在给定的环境配置文件中，必须存在软件实体的插件，才会针对该环境的实体显示软件的启动器。\_\_ 因此，在此示例中，从中获取此代码片段的文件中必须存在 `tk-houdini`、`tk-maya`、`tk-nuke` 和 `tk-photoshopcc` 所有这些插件。 如果要从此实体的启动器列表中移除某项（例如 Maya），只需从环境配置文件中移除 `tk-maya` 插件块。
 
 除了这些启动器外，发布应用的“发布...”(Publish…)命令也包含在菜单中。
 
@@ -264,6 +264,7 @@ websocket 服务器的 RPC API 的第二次实施更改了用于获取、缓存�
 首先，导航至 [`config/env/asset.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.1.10/env/asset.yml#L47) 并注意 `tk-shotgun` 插件块如何指向 [`@settings.tk-shotgun.asset`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.1.10/env/asset.yml#L47)。`@` 符号表示配置值来自包含的文件。 这意味着您需要转到 [env/includes/settings/`tk-shotgun.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.1.10/env/includes/settings/tk-shotgun.yml) 进行更新。
 
 在 `env/includes/settings/tk-shotgun.yml` 中，注意每个实体的每个块。 例如，资产为：
+
 ```
 <a name="asset"></a>
 # asset
@@ -341,7 +342,6 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 2. Chrome 或 Python websocket 服务器已拒绝连接，从而导致 {% include product %} Web 应用程序无法与 {% include product %} Desktop 通信。这种情况很可能与用于在请求时允许连接继续的自签名证书有关。从头开始重新生成这些证书通常可以解决该问题，可以从 {% include product %} Desktop 触发此操作，如下所示。
 
-
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
 1. {% include product %} Desktop 的 websocket 服务器无法在启动时启动。可能仅在公开发布的 websocket 服务器版本错误时出现此情况，这应该极少发生。在这种情况下，日志记录将位于 [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) 中，用于说明该错误，可以将其[发送到 {% include product %} 的支持团队](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)。
@@ -360,8 +360,8 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 4. 有一个缓存在磁盘上的空菜单动作列表。要强制重新生成缓存，可使用以下几种选项：
 
-   - 在项目的配置中更新 YAML 文件的修改时间。这样，{% include product %} 下一次请求菜单动作时，将触发重新缓存这些菜单动作。值得注意的是，这将触发参与项目的所有用户进行重新缓存。__
-   - 在 {% include product %} 站点中更新任何软件实体中的字段值。该行为与上述涉及 YAML 文件修改时间的选项相同，但将使 {% include product %} 站点上_所有_项目中所有用户的缓存数据无效。软件实体是非项目实体，这意味着它们在所有项目之间共享。如果更改了任何软件实体中的数据，则会影响所有项目。
+   - 在项目的配置中更新 YAML 文件的修改时间。这样，{% include product %} 下一次请求菜单动作时，将触发重新缓存这些菜单动作。值得注意的是，这将触发参与项目的所有用户进行重新缓存。\_\_
+   - 在 {% include product %} 站点中更新任何软件实体中的字段值。该行为与上述涉及 YAML 文件修改时间的选项相同，但将使 {% include product %} 站点上*所有*项目中所有用户的缓存数据无效。软件实体是非项目实体，这意味着它们在所有项目之间共享。如果更改了任何软件实体中的数据，则会影响所有项目。
    - 可以在出现问题的主机上删除缓存文件。移除缓存通常没有问题，因为缓存存储在每个主机本地，这仅会导致在相应系统上从头开始重新缓存数据。缓存存储在 {% include product %} 缓存位置中的以下 SQLite 文件中：`<site-name>/site.basic.desktop/tk-desktop/shotgun_engine_commands_v1.sqlite`
 
 **“Toolkit: 正在检索动作...”(Toolkit: Retrieving actions…)始终不替换为菜单动作**
@@ -376,26 +376,23 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 3. 用户在多个 {% include product %} 站点上工作。在单个站点上对 {% include product %} Desktop 进行身份认证后，从另一个 {% include product %} 站点请求菜单动作会导致系统询问用户是否重新启动 {% include product %} Desktop 并登录新站点。如果忽略该请求，则另一个站点将永远不会收到菜单动作列表。
 
-
 ## Toolkit 配置文件
 
 如果您的工作室使用代理服务器，如果您要在初始登录屏幕中预填充某些值，或者如果您要调整基于浏览器的应用程序启动器与 {% include product %} Desktop 的集成方式，有一个名为 `toolkit.ini` 的特殊配置文件。{% include product %} Desktop 无需此文件即可运行；仅当您需要配置其行为时才需要它。Toolkit 按以下顺序在多个位置查找该文件：
 
 1. 指向文件路径的名为 `SGTK_PREFERENCES_LOCATION` 的环境变量。
 2. 在 {% include product %} Toolkit 首选项文件夹中：（请注意，默认情况下这些位置不存在此文件；您必须创建此文件。）
-   - Windows：  `%APPDATA%\Shotgun\Preferences\toolkit.ini`
-   - macOS：  `~/Library/Preferences/Shotgun/toolkit.ini`
-   - Linux：  `~/.shotgun/preferences/toolkit.ini`
+   - Windows： `%APPDATA%\Shotgun\Preferences\toolkit.ini`
+   - macOS： `~/Library/Preferences/Shotgun/toolkit.ini`
+   - Linux： `~/.shotgun/preferences/toolkit.ini`
 
-通过 `SGTK_PREFERENCES_LOCATION` 环境变量选项，您可以将您的配置文件存储在计算机或网络上的其他位置。 请注意，`toolkit.ini` 为当前标准文件名。 如果您使用的是 `config.ini`，请参见下面的“旧位置”部分。__
+通过 `SGTK_PREFERENCES_LOCATION` 环境变量选项，您可以将您的配置文件存储在计算机或网络上的其他位置。 请注意，`toolkit.ini` 为当前标准文件名。 如果您使用的是 `config.ini`，请参见下面的“旧位置”部分。\_\_
 
 您可以参见[此处](https://raw.githubusercontent.com/shotgunsoftware/tk-framework-desktopstartup/master/config.ini.example)一个记录的配置文件示例。
 
-请注意，此示例文件名为 `config.ini`，但可以重命名为  `toolkit.ini`
+请注意，此示例文件名为 `config.ini`，但可以重命名为 `toolkit.ini`
 
 另请注意，您可以在此文件中使用环境变量以及硬编码值，以便您可以执行一些操作，例如，通过 Windows 上存在的 USERNAME 变量提取默认的用户名作为建议提供给用户。
-
-
 
 **旧位置（已弃用）**
 
@@ -403,8 +400,8 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. 指向文件的名为 `SGTK_DESKTOP_CONFIG_LOCATION` 的环境变量。
 2. 在以下路径中：
-   - Windows：  `%APPDATA%\Shotgun\desktop\config\config.ini`
-   - macOS：  `~/Library/Caches/Shotgun/desktop/config/config.ini`
+   - Windows： `%APPDATA%\Shotgun\desktop\config\config.ini`
+   - macOS： `~/Library/Caches/Shotgun/desktop/config/config.ini`
    - `~/shotgun/desktop/config/config.ini`Linux：
 
 **代理配置**
@@ -478,15 +475,14 @@ _情况：我的项目将要打包，我希望将其冻结，以便不会自动�
 
 **解决方案**
 
-- 确定要将项目锁定到的版本。  [可以在此查找集成版本。](https://support.shotgunsoftware.com/hc/zh-cn/sections/115000020494)
+- 确定要将项目锁定到的版本。 [可以在此查找集成版本。](https://support.shotgunsoftware.com/hc/zh-cn/sections/115000020494)
 - 在 {% include product %} 中，为要锁定的项目创建工作流配置实体，并填充以下字段（在此示例中，我们将配置锁定为使用集成 v1.0.36）：
-- 配置名称(Config Name)：  `Primary`
+- 配置名称(Config Name)： `Primary`
 - 项目(Project)：要锁定的项目
-- 插件 ID(Plugin ids)：  `basic.*`
-- 描述符(Descriptor)：  `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
+- 插件 ID(Plugin ids)： `basic.*`
+- 描述符(Descriptor)： `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
 
 - 现在，在该项目上启动 {% include product %} Desktop 的任何人都将始终使用 v1.0.36。开始处理该项目的任何新用户也将获取 v1.0.36。
-
 
 ![](images/Integration-admin-guide/freeze_single_project.png)
 
@@ -494,17 +490,17 @@ _情况：我的项目将要打包，我希望将其冻结，以便不会自动�
 
 - 更新下载到本地计算机。
 - 用户下次在连接到 Internet 的情况下启动 Desktop 时，基本配置 `v1.0.36` 及其所有相关代码将下载到他们的计算机。
-- `basic.*`  表示基本配置中的所有插件都将选取此覆盖。 例如，如果您想要仅冻结 Nuke 和 Maya 集成，可以指定 `basic.maya, basic.nuke`。
+- `basic.*` 表示基本配置中的所有插件都将选取此覆盖。 例如，如果您想要仅冻结 Nuke 和 Maya 集成，可以指定 `basic.maya, basic.nuke`。
 - 要进行测试，您可以创建此工作流配置实体的副本，并将您的用户名添加到 `User Restrictions` 字段中。 这将限制该实体，使其仅可供您使用，而不会影响其他用户。然后，您可以从此配置副本启动 Maya 或某些其他软件，并确认它运行的是预期的集成版本。
 
 **已知问题**
 
 - Flame 集成的命名空间为 `basic.flame`，从表面上看应该包含在 `basic.*` 中。 但实际上 Flame 集成并不包含在基本配置中。因此，如果您在某个项目中使用 Flame，然后执行此覆盖，则 Flame 集成将停止工作。
 - 解决方案是专门为 Flame 创建另一个工作流配置覆盖：
-- 配置名称(Config Name)：  `Primary`
+- 配置名称(Config Name)： `Primary`
 - 项目(Project)：要锁定的项目（如果要锁定所有项目，则为空）
-- 插件 ID(Plugin ids)：  `basic.flame`
-- 描述符(Descriptor)：  `sgtk:descriptor:app_store?name=tk-config-flameplugin`
+- 插件 ID(Plugin ids)： `basic.flame`
+- 描述符(Descriptor)： `sgtk:descriptor:app_store?name=tk-config-flameplugin`
 
 ### 针对站点冻结更新
 
@@ -535,10 +531,10 @@ _情况：我想要锁定站点中除测试项目以外的其他所有项目，�
 
 - 按上述部分中所述，针对站点冻结更新。
 - 使用以下字段值配置例外项目的工作流配置实体：
-- 配置名称(Config Name)：  `Primary`
-- 项目(Project)：不希望锁定的项目__
-- 插件 ID(Plugin ids)：  `basic.*`
-- 描述符(Descriptor)：  `sgtk:descriptor:app_store?name=tk-config-basic`
+- 配置名称(Config Name)： `Primary`
+- 项目(Project)：不希望锁定的项目\_\_
+- 插件 ID(Plugin ids)： `basic.*`
+- 描述符(Descriptor)： `sgtk:descriptor:app_store?name=tk-config-basic`
 
 **补充知识**
 
@@ -546,7 +542,7 @@ _情况：我想要锁定站点中除测试项目以外的其他所有项目，�
 
 ### 安全升级锁定的站点
 
-- 情况：我们已锁定到 v1.0.0，并希望升级到 v2.0.0，但我想在将新版本部署到工作室之前先对其进行测试。*
+- 情况：我们已锁定到 v1.0.0，并希望升级到 v2.0.0，但我想在将新版本部署到工作室之前先对其进行测试。\*
 
 **解决方案**
 
@@ -574,7 +570,7 @@ _情况：我想要锁定站点中除测试项目以外的其他所有项目，�
 
 ![](images/Integration-admin-guide/wizard_select.png)
 
-开始配置新项目时，首先要确定使用哪个配置模板__。 配置模板基本上是完整的项目配置，包含运行项目所需的所有设置、文件系统模板、应用和逻辑。
+开始配置新项目时，首先要确定使用哪个配置模板\_\_。 配置模板基本上是完整的项目配置，包含运行项目所需的所有设置、文件系统模板、应用和逻辑。
 
 - 如果这是您的第一个项目，请使用 {% include product %} 默认值以便快速入门。
 - 如果您已配置过项目且有以前项目的配置，则可以基于现有项目创建新项目来轻松重用这些配置。
@@ -645,7 +641,7 @@ _情况：我想要锁定站点中除测试项目以外的其他所有项目，�
 
 #### 设置存储
 
-每个 Toolkit 项目均会将其所有文件和数据写入到磁盘上的一个或多个共享存储位置。例如，某个配置可能需要一个存储用来存放纹理，一个用来存放渲染，以及一个用来存储场景文件。通常，在 {% include product %} 的“站点偏好设置”(Site Preferences)中的_“文件管理”(File Management)_选项卡下控制这些存储。
+每个 Toolkit 项目均会将其所有文件和数据写入到磁盘上的一个或多个共享存储位置。例如，某个配置可能需要一个存储用来存放纹理，一个用来存放渲染，以及一个用来存储场景文件。通常，在 {% include product %} 的“站点偏好设置”(Site Preferences)中的*“文件管理”(File Management)*选项卡下控制这些存储。
 
 Toolkit 设置向导将要求您将配置所需的每个存储根映射到 {% include product %} 中的一个本地存储。
 
@@ -678,6 +674,7 @@ Toolkit 设置向导将要求您将配置所需的每个存储根映射到 {% in
 如果这是您的第一个项目，您通常要确定磁盘上一个用于存储您的所有将来工作流配置的共享区域。这通常是存储整个工作室共享的软件或软件设置的位置。该位置可能类似于 `/mnt/software/shotgun`。 根据您的工作室网络和文件命名约定，该位置可能会有所不同。
 
 在设置第一个配置时，请在配置中为您的工作室中使用的所有平台设置路径。从而，将来能够轻松创建可从所有计算机访问的环境。假设您的项目名称为 _Golden Circle_，您可以键入以下三个路径：
+
 ```
 linux:   /mnt/software/shotgun/golden_circle
 macosx:  /servers/production/software/shotgun/golden_circle

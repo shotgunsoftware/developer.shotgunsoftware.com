@@ -13,8 +13,6 @@ lang: ko
 
 {% include info title="참고" content="이 문서는 환경 구성 파일에 대한 참조 자료로 사용될 수 있으며 [툴킷 기본 사항 안내서의 파이프라인 구성 편집](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)에서는 구성 설정 편집에 대한 단계별 예제를 확인할 수 있습니다." %}
 
-
-
 ## 환경이란?
 
 {% include product %} 툴킷 플랫폼은 스튜디오 파이프라인을 구축하는 데 일반적으로 사용되는 컨텐츠 작성 소프트웨어를 위해 완전히 커스터마이즈 가능한 통합 세트를 제공합니다. 프로젝트 구성 내에서 통합이 있는 소프트웨어 패키지, 각각 사용 가능한 툴킷 앱, 각 앱에 대한 옵션을 지정하여 스튜디오의 요구 사항에 맞게 아티스트 워크플로우를 구축할 수 있습니다.
@@ -73,7 +71,7 @@ bundle_name:
   setting1: value
   setting2: value
   complex_setting:
-    sub_setting1: value  
+    sub_setting1: value
     Sub_setting2: value
   location:
     type: descriptor_type
@@ -93,9 +91,9 @@ engines:
           name: tk-multi-workfiles2
           version: v0.11.8
     location:
-        type: app_store
-        name: tk-maya
-        version: v0.9.4
+      type: app_store
+      name: tk-maya
+      version: v0.9.4
 ```
 
 ### 엔진 블록
@@ -106,16 +104,15 @@ engines:
 
 `location`은 모든 번들에 필요한 특수한 설정입니다. `apps` 설정은 엔진에 대해 정의된 모든 앱의 목록으로, 각 앱에는 자체 설정이 있습니다. 이 예에서는 엔진에 대해 하나의 앱, `tk-multi-workfiles2`만 정의되어 있습니다.
 
-
 ### 위치 디스크립터
 
 모든 툴킷 번들에는 번들의 *디스크립터*라고 불리는 `location` 설정이 있습니다. 디스크립터를 통해 툴킷은 지정된 번들의 위치를 파악하고 해당 유형에 따라 직접 액세스할지 아니면 로컬로 캐시할지 여부를 파악합니다. 툴킷 번들을 가져올 수 있는 위치는 {% include product %} 앱 스토어, git 리포지토리, 디스크의 경로 또는 {% include product %} 사이트에 업로드된 ZIP 파일 등입니다. 이러한 각 위치에 해당하는 디스크립터 유형이 있으며 여기에는 해당 유형과 관련된 설정이 포함됩니다. 위 예제의 `tk-maya` 엔진에 대한 디스크립터는 다음과 같습니다.
 
 ```yaml
-    location:
-        type: app_store
-        name: tk-maya
-        version: v0.9.4
+location:
+  type: app_store
+  name: tk-maya
+  version: v0.9.4
 ```
 
 이 예는 `app_store` 유형의 디스크립터로, 툴킷이 {% include product %} 앱 스토어에서 지정된 번들을 가져오도록 합니다. `app_store` 유형의 디스크립터에는 `name` 및 `version` 설정이 있습니다.
@@ -123,9 +120,9 @@ engines:
 한편, 커스텀 번들을 개발 중이고 스튜디오의 특정 워크플로우에 대한 툴킷 앱을 작성 중인 경우 디스크의 경로에서 직접 가져오고 싶을 수 있습니다. 이 경우 다음과 같이 `dev` 유형의 디스크립터를 사용합니다.
 
 ```yaml
-    location:
-        type: dev
-        path: /path/to/app
+location:
+  type: dev
+  path: /path/to/app
 ```
 
 `dev` 디스크립터에는 `app_store` 디스크립터와 다른 설정이 있습니다. 다른 설정을 가져올 수 있지만 디스크에 있는 앱 위치를 가리키는 `path` 설정으로 간단하게 설정할 수 있습니다.
@@ -173,16 +170,16 @@ engines:
           name: tk-multi-workfiles2
           version: v0.11.8
     location:
-        type: app_store
-        name: tk-maya
-        version: v0.9.4
+      type: app_store
+      name: tk-maya
+      version: v0.9.4
 ```
 
 이때 다음과 같은 몇 가지 중요 사항에 유의해야 합니다.
 
-* 기본 구성에는 번들이 알파벳순으로 나열되며 이 예에서는 해당 규칙을 따릅니다.
-* 파일이 길어지기 시작하고 있지만 아직 어떤 구성 설정도 추가하지 않은 상태입니다.
-* 다른 엔진 및 다른 환경에서도 이와 동일한 앱을 사용할 수 있습니다. 예를 들어 다른 엔진(예: Houdini, Nuke 또는 Photoshop) 및 다른 환경(예: `asset_step` 또는 `shot_step`)에도 이 세 개의 앱(Panel 앱, About 앱, Workfiles 앱)이 모두 있을 수 있습니다. 구성에서 여러 곳에 공통 앱 설정을 정의하면 변경 시에도 여러 곳에서 수정해야 합니다.
+- 기본 구성에는 번들이 알파벳순으로 나열되며 이 예에서는 해당 규칙을 따릅니다.
+- 파일이 길어지기 시작하고 있지만 아직 어떤 구성 설정도 추가하지 않은 상태입니다.
+- 다른 엔진 및 다른 환경에서도 이와 동일한 앱을 사용할 수 있습니다. 예를 들어 다른 엔진(예: Houdini, Nuke 또는 Photoshop) 및 다른 환경(예: `asset_step` 또는 `shot_step`)에도 이 세 개의 앱(Panel 앱, About 앱, Workfiles 앱)이 모두 있을 수 있습니다. 구성에서 여러 곳에 공통 앱 설정을 정의하면 변경 시에도 여러 곳에서 수정해야 합니다.
 
 마지막 두 가지 문제점을 해결하기 위해 툴킷 구성은 *includes*를 지원합니다.
 
@@ -192,8 +189,8 @@ engines:
 
 includes는 두 부분으로 구성됩니다.
 
-* `includes` 목록: 키가 `includes`인 YAML 사전이며 값은 포함할 모든 파일의 목록입니다.
-* 구성 설정 내의 참조: 앞에 `@` 기호가 붙고, 포함된 파일에서 참조할 섹션의 이름을 가리키도록 명명됩니다.
+- `includes` 목록: 키가 `includes`인 YAML 사전이며 값은 포함할 모든 파일의 목록입니다.
+- 구성 설정 내의 참조: 앞에 `@` 기호가 붙고, 포함된 파일에서 참조할 섹션의 이름을 가리키도록 명명됩니다.
 
 위의 예제를 구체화하기 위해 모든 엔진에 대한 위치 디스크립터가 있는 단일 파일이 있다고 가정합니다. 이 파일을 `includes` 하위 폴더에 넣고 `engine_locations.yml`로 지정하겠습니다.
 
@@ -211,8 +208,6 @@ engines.tk-nuke.location:
   type: app_store
   name: tk-nuke
   version: v0.11.5
-
-...
 ```
 
 이 파일은 모든 엔진 위치에 대한 단일 소스 역할을 하며 모든 환경 구성에서 참조할 수 있습니다. 이 포함 파일을 사용할 경우 예제는 이제 다음과 같이 표시됩니다.
@@ -271,7 +266,6 @@ apps.tk-multi-workfiles2.location:
   version: v0.11.8
 ```
 
-
 `config/env/project.yml`:
 
 ```yaml
@@ -295,10 +289,9 @@ engines:
 
 {% include info title="참고" content="기본 구성은 여기에 설명되지 않은 두 번째 중첩 수준을 사용합니다. 디스크립터 외에도 설정이 있는 모든 앱 또는 엔진에 `includes/settings`의 설정 파일(예: `includes/settings/tk-maya.yml`, `includes/settings/tk-multi-workfiles2.yml`)이 있습니다. 엔진 설정 파일에는 앱 설정 파일의 앱 설정이 포함되고 환경 구성 파일에는 엔진 설정 파일의 설정이 포함됩니다. 기본 구성의 구조에 대한 자세한 내용은 [읽어보기 파일](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)을 참조하십시오. 구성 설정 수정에 대한 자세한 내용은 [툴킷 기본 사항 안내서의 파이프라인 구성 편집](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)을 참조하십시오." %}
 
-
 ## 스파스 구성
 
-모든 툴킷 번들에는 각 기본값이 포함된 일련의 구성 설정이 있습니다. 툴킷은 *스파스* 구성을 허용하므로 환경 구성 파일(및/또는 포함 파일)에 구성 설정이 명시적으로 지정되지 않은 경우에는 번들의 기본값이 사용됩니다.
+모든 툴킷 번들에는 각 기본값이 포함된 일련의 구성 설정이 있습니다. 툴킷은 _스파스_ 구성을 허용하므로 환경 구성 파일(및/또는 포함 파일)에 구성 설정이 명시적으로 지정되지 않은 경우에는 번들의 기본값이 사용됩니다.
 
 이 예에서는 `location`을 제외하고 앱에 대한 어떤 설정도 지정하지 않았습니다. 따라서 구성의 현재 상태에서 세 개의 앱은 모든 설정에 대해 기본값을 사용합니다. 그렇다면 어떤 구성 설정을 사용할 수 있는지 어떻게 알 수 있을까요?
 
@@ -308,8 +301,8 @@ engines:
 
 스파스 구성의 경우 단순히 구성 파일을 보는 것만으로는 앱에 대해 사용할 수 있는 구성 설정을 바로 확인할 수 없습니다. 사용 가능한 앱 구성 설정을 확인하려면 두 가지 방법이 있습니다.
 
-* **앱 설명서:** 각 앱에는 고유의 설명서 페이지가 있으며 이 각 페이지마다 "구성 옵션" 섹션이 있습니다. 이 섹션에는 각각의 설명 및 기본값을 포함하여 사용 가능한 모든 앱 구성 설정이 나와 있습니다. 예를 들어 [Workfiles 설명서 페이지를 참조](https://support.shotgunsoftware.com/hc/ko/articles/219033088)할 수 있습니다. [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219033088)에는 모든 앱 및 엔진에 대한 문서 페이지가 나열되어 있습니다.
-* **매니페스트:** 모든 툴킷 번들에는 루트 디렉토리에 `info.yml` 파일이 포함되어 있습니다. 이 파일을 번들의 *매니페스트*라고 하며 각각의 설명 및 기본값을 포함하여 번들에 대해 사용 가능한 모든 구성 설정을 정의합니다. 매니페스트는 번들의 자체 캐시(예: 파이프라인 구성 내의 `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml`) 또는 GitHub([Workfiles용](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml))에서 찾을 수 있습니다.
+- **앱 설명서:** 각 앱에는 고유의 설명서 페이지가 있으며 이 각 페이지마다 "구성 옵션" 섹션이 있습니다. 이 섹션에는 각각의 설명 및 기본값을 포함하여 사용 가능한 모든 앱 구성 설정이 나와 있습니다. 예를 들어 [Workfiles 설명서 페이지를 참조](https://support.shotgunsoftware.com/hc/ko/articles/219033088)할 수 있습니다. [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219033088)에는 모든 앱 및 엔진에 대한 문서 페이지가 나열되어 있습니다.
+- **매니페스트:** 모든 툴킷 번들에는 루트 디렉토리에 `info.yml` 파일이 포함되어 있습니다. 이 파일을 번들의 *매니페스트*라고 하며 각각의 설명 및 기본값을 포함하여 번들에 대해 사용 가능한 모든 구성 설정을 정의합니다. 매니페스트는 번들의 자체 캐시(예: 파이프라인 구성 내의 `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml`) 또는 GitHub([Workfiles용](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml))에서 찾을 수 있습니다.
 
 ## 구성 설정 수정
 
@@ -339,13 +332,12 @@ engines:
 
 `tk-multi-workfiles2`에 대한 설정을 포함 파일에서 가져온 경우 해당 파일에서 설정을 변경해야 합니다.
 
-
 ## 추가 리소스
 
-* [툴킷 기본 사항 안내서: 파이프라인 구성 편집](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)
-* [툴킷 기본 사항 안내서: 앱 추가](../../guides/pipeline-integrations/getting-started/installing_app.md)
-* [애니메이션 파이프라인 튜토리얼](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
-* [디스크립터 참조 설명서](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
-* [웨비나: 툴킷 관리](https://youtu.be/7qZfy7KXXX0)
-* [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference)
-* [기본 구성 환경 구조 읽어보기](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)
+- [툴킷 기본 사항 안내서: 파이프라인 구성 편집](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)
+- [툴킷 기본 사항 안내서: 앱 추가](../../guides/pipeline-integrations/getting-started/installing_app.md)
+- [애니메이션 파이프라인 튜토리얼](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
+- [디스크립터 참조 설명서](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
+- [웨비나: 툴킷 관리](https://youtu.be/7qZfy7KXXX0)
+- [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference)
+- [기본 구성 환경 구조 읽어보기](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

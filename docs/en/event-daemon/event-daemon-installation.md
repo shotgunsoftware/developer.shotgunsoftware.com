@@ -5,23 +5,24 @@ pagename: event-daemon-installation
 lang: en
 ---
 
-
 # Installation
 
 The following guide will help you setup {% include product %}Events for your studio.
 
 <a id="System_Requirements"></a>
+
 ## System Requirements
 
 The daemon can run on any machine that has Python installed and has network access to your {% include product %} server. It does **not** need to run on the {% include product %} server itself. In fact, if you are using the hosted version of {% include product %}, this isn't an option. However, you may run it on your {% include product %} server if you like. Otherwise, any server will do.
 
-* Python v2.6, v2.7 or 3.7
-* [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)
-  * Use v3.0.37 or higher for Python v2.6 or v2.7 and use v3.1.0 or more for Python 3.7.
-  * In either case, we strongly suggest using [the most up to date Python API version](https://github.com/shotgunsoftware/python-api/releases) and keeping this dependency updated over time.
-* Network access to your {% include product %} server
+- Python v2.6, v2.7 or 3.7
+- [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)
+  - Use v3.0.37 or higher for Python v2.6 or v2.7 and use v3.1.0 or more for Python 3.7.
+  - In either case, we strongly suggest using [the most up to date Python API version](https://github.com/shotgunsoftware/python-api/releases) and keeping this dependency updated over time.
+- Network access to your {% include product %} server
 
 <a id="Installing_Shotgun_API"></a>
+
 ## Installing the {% include product %} API
 
 Assuming Python is already installed on your machine, you now need to install the {% include product %} Python API so that the {% include product %} Event Daemon can use it to connect to your {% include product %} server. You can do this in a couple of ways:
@@ -45,6 +46,7 @@ ImportError: No module named shotgun_api3
 ```
 
 <a id="Installing_shotgunEvents"></a>
+
 ## Installing {% include product %}Events
 
 The location you choose to install {% include product %}Events is really up to you. Again, as long as Python and the {% include product %} API are installed on the machine, and it has network access to your {% include product %} server, it can run from anywhere. However, it makes sense to install it somehwere that is logical to your studio, something like `/usr/local/shotgun/shotgunEvents` seems logical so we'll use that as the example from here on out.
@@ -54,6 +56,7 @@ The source and archives are available on GitHub at [https://github.com/shotgunso
 {% include info title="Note" content="**For Windows:** You could use `C:\shotgun\shotgunEvents` if you have a Windows server but for this documentation we will be using the Linux path." %}
 
 <a id="Cloning_Source"></a>
+
 ### Cloning the source
 
 The easiest way to grab the source if you have `git` installed on the machine is to simply clone the project. This way you can also easily pull in any updates that are committed to ensure you stay up to date with bug fixes and new features.
@@ -66,6 +69,7 @@ $ git clone git://github.com/shotgunsoftware/shotgunEvents.git
 {% include info title="Warning" content="Always make sure you backup your configuration, plugins, and any modifications you make to shotgunEvents before pulling in updates from GitHub so you don't lose anything. Or, fork the project yourself so you can maintain your own repository of changes :)" %}
 
 <a id="Downloading_Archive"></a>
+
 ### Downloading the archive
 
 If you don't have `git` on your machine or you simply would rather download an archive of the source, you can get things rolling following these steps.
@@ -108,6 +112,7 @@ drwxr-xr-x  6 kp  wheel   204 Sep  1 17:46 src
 ```
 
 <a id="Installing Requirements"></a>
+
 ### Installing Requirements
 
 A `requirements.txt` file is provided at the root of the repository. You should use this to install the required packages
@@ -116,14 +121,14 @@ A `requirements.txt` file is provided at the root of the repository. You should 
 $ pip install -r /path/to/requirements.txt
 ```
 
-
 <a id="Windows_Specifics"></a>
+
 ### Windows specifics
 
 You will need one of the following on your Windows system:
 
-* Python with [PyWin32](http://sourceforge.net/projects/pywin32/) installed
-* [Active Python](http://www.activestate.com/activepython)
+- Python with [PyWin32](http://sourceforge.net/projects/pywin32/) installed
+- [Active Python](http://www.activestate.com/activepython)
 
 Active Python ships with the PyWin32 module which is required for integrating the {% include product %} Event Daemon with Windows' Service architecture.
 

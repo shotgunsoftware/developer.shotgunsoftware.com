@@ -23,43 +23,43 @@ lang: zh_CN
 
 ## 先决条件
 
-* **参与 {% include product %} 项目** - 本教程假定您有使用 {% include product %} 跟踪和管理制作数据的经验。
+- **参与 {% include product %} 项目** - 本教程假定您有使用 {% include product %} 跟踪和管理制作数据的经验。
 
-* **了解 {% include product %} 集成** - {% include product %} 附带一些集成，这些集成提供了一些不需要任何手动配置的简单制作工作流。您应先了解这些工作流的功能和范围，然后再深入了解本教程中介绍的手动配置和自定义。有关 {% include product %} 集成的详细信息，请参见[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)。
+- **了解 {% include product %} 集成** - {% include product %} 附带一些集成，这些集成提供了一些不需要任何手动配置的简单制作工作流。您应先了解这些工作流的功能和范围，然后再深入了解本教程中介绍的手动配置和自定义。有关 {% include product %} 集成的详细信息，请参见[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)。
 
-* **Maya 和 Nuke 体验** - 本教程旨在使用 Maya 和 Nuke 构建一个简单的工作流。您应该对这些软件包有基本的了解，以便自定义 {% include product %} 提供的集成。
+- **Maya 和 Nuke 体验** - 本教程旨在使用 Maya 和 Nuke 构建一个简单的工作流。您应该对这些软件包有基本的了解，以便自定义 {% include product %} 提供的集成。
 
-* **Python 应用知识** - 本教程需要通过采用 Python 编写的“挂钩”修改 {% include product %} 集成的功能。
+- **Python 应用知识** - 本教程需要通过采用 Python 编写的“挂钩”修改 {% include product %} 集成的功能。
 
-* **熟悉 YAML** - 您将构建的工作流的很多配置都是通过修改 YAML 文件来完成的。
+- **熟悉 YAML** - 您将构建的工作流的很多配置都是通过修改 YAML 文件来完成的。
 
 ## 其他资源
 
-* [{% include product %} 支持站点](https://support.shotgunsoftware.com/hc/zh-cn)
+- [{% include product %} 支持站点](https://support.shotgunsoftware.com/hc/zh-cn)
 
-* [{% include product %} 集成](https://www.shotgunsoftware.com/zh-cn/integrations/)
+- [{% include product %} 集成](https://www.shotgunsoftware.com/zh-cn/integrations/)
 
-   * [用户手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)
+  - [用户手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)
 
-   * [管理员手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067493)
+  - [管理员手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067493)
 
-   * [开发人员手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067513)
+  - [开发人员手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067513)
 
 # 项目创建和设置
 
 在本教程中，您需要在 {% include product %} 中创建一个新项目，并像准备开始制作那样配置该项目。这包括确保所有必要的 {% include product %} 实体都已就位并正确关联。在本教程中，资产、镜头序列、镜头和任务实体是必需的，默认情况下新项目中应提供这些实体。您将创建以下对象：
 
-* 两个**资产**：
+- 两个**资产**：
 
-   * **_茶壶_**角色
+  - **_茶壶_**角色
 
-   * **_桌子_**道具
+  - **_桌子_**道具
 
-* 一个**镜头序列**
+- 一个**镜头序列**
 
-* 一个链接至您创建的**镜头序列**的**镜头**
+- 一个链接至您创建的**镜头序列**的**镜头**
 
-* 每个工作流工序一个**任务**
+- 每个工作流工序一个**任务**
 
 下面是一些屏幕截图，显示了您在 {% include product %} 中配置的项目实体：
 
@@ -289,7 +289,6 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 就此简单工作流而言，您将对发布器应用进行自定义，在贴图工序将 Maya 着色器网络导出为其他发布项。在本教程的后面，您将设计一个快速但不完善的解决方案，让着色器在被下游引用时可重新连接至 Alembic 几何体缓存。
 
-
 {% include info title="注意" content="您要添加的自定义非常简单并且脆弱。更保险的解决方案可能需要将已贴图角色的其他表现形式以及使用外部图像作为纹理贴图所带来的资产管理任务考虑在内。此示例只是构建实际解决方案的基础。" %}
 
 {% include info title="注意" content="您可以在[此处](https://developer.shotgridsoftware.com/tk-multi-publish2/)查看有关如何写入发布器插件的完整详细信息。" %}
@@ -424,7 +423,6 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
        return plugin_settings
 ```
 
-
 此方法定义插件的配置界面。为了告诉插件将着色器网络写入磁盘的什么位置，需要使用**“Publish Template”**设置。将新发布插件添加到发布器配置并包含模板设置。这是之前在接管收集器时修改的同一配置块。它在此文件中定义：
 
 **`env/includes/settings/tk-multi-publish2.yml`**
@@ -463,7 +461,6 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 输入作品说明，并截取已贴图茶壶的缩略图以与已发布的文件关联。最后，单击“Publish”将茶壶着色器导出到磁盘并在 {% include product %} 中将文件注册为发布。完成后，请注意，会话发布插件已自动将您的工作文件保存为下一个可用版本。这是 {% include product %} 集成支持的所有 DCC 中的默认行为。
 
-
 现在，您可以浏览到 {% include product %} 中的茶壶资产以验证是否一切都符合预期。
 
 {% include figure src="./images/tutorial/image_33.png" %}
@@ -478,15 +475,15 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 此时，您应该可以非常轻松地使用 {% include product %} 提供的 Workfiles 和“发布”应用打开（或创建）、保存和发布工作文件。此外，您还曾使用加载器应用加载来自上游的发布。使用所学内容完成以下任务：
 
-* 从 {% include product %} Desktop 启动 Maya
+- 从 {% include product %} Desktop 启动 Maya
 
-* 在茶壶资产的装配工序中创建一个新工作文件
+- 在茶壶资产的装配工序中创建一个新工作文件
 
-* 加载（引用）来自建模工序的茶壶 Alembic 缓存发布
+- 加载（引用）来自建模工序的茶壶 Alembic 缓存发布
 
-* 对茶壶的壶盖进行装配以打开与合上（力求简单）
+- 对茶壶的壶盖进行装配以打开与合上（力求简单）
 
-* 保存和发布茶壶装配
+- 保存和发布茶壶装配
 
 在 {% include product %} 中最后的结果应与下图类似：
 
@@ -518,13 +515,13 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 首先，使用在前面各节中所学内容完成以下任务：
 
-* 从 {% include product %} Desktop 启动 Maya
+- 从 {% include product %} Desktop 启动 Maya
 
-* 在镜头的布局工序中创建一个新工作文件（提示：使用加载器中的“镜头”(Shots)选项卡）
+- 在镜头的布局工序中创建一个新工作文件（提示：使用加载器中的“镜头”(Shots)选项卡）
 
-* 加载（引用）来自茶壶的装配工序的茶壶发布
+- 加载（引用）来自茶壶的装配工序的茶壶发布
 
-* 加载（引用）来自桌子的建模工序的桌子发布
+- 加载（引用）来自桌子的建模工序的桌子发布
 
 现在，设计一个简单的场景，将茶壶放在桌子上。向场景中添加一个称为 **camMain** 的摄影机，然后对一些帧添加动画效果以创建镜头的摄影机移动。
 
@@ -644,11 +641,11 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 使用在前面各节中所学内容完成以下任务。
 
-* 从 {% include product %} Desktop 启动 Maya
+- 从 {% include product %} Desktop 启动 Maya
 
-* 在镜头的动画工序中创建一个新工作文件
+- 在镜头的动画工序中创建一个新工作文件
 
-* 加载（引用）来自镜头的布局工序的 Maya 会话发布
+- 加载（引用）来自镜头的布局工序的 Maya 会话发布
 
 {% include info title="注意" content="您将注意到摄影机已包含在布局会话发布文件中。在强大的工作流中，摄影机可能会明确隐藏或从会话发布中排除，以便单独的摄影机发布文件可以作为一个真实的摄影机定义。继续操作，删除或隐藏通过引用包含进来的摄影机。" %}
 
@@ -688,13 +685,13 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 首先，使用在前面各节中所学内容完成以下任务。
 
-* 从 {% include product %} Desktop 启动 Maya
+- 从 {% include product %} Desktop 启动 Maya
 
-* 在镜头的照明工序中创建一个新工作文件
+- 在镜头的照明工序中创建一个新工作文件
 
-* 加载（引用）来自镜头的动画工序的 Maya 会话发布
+- 加载（引用）来自镜头的动画工序的 Maya 会话发布
 
-* 加载（引用）来自镜头的布局工序的摄影机发布
+- 加载（引用）来自镜头的布局工序的摄影机发布
 
 ### 自定义着色器加载器动作
 
@@ -740,14 +737,12 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
                    cmds.hyperShade(assign=shader)
 ```
 
-
 现在，在 **`_create_reference`** 方法结尾处添加以下两行，用于调用着色器挂接逻辑：
 
 ```python
     reference_node = cmds.referenceQuery(path, referenceNode=True)
     _hookup_shaders(reference_node)</td>
 ```
-
 
 每当创建新引用时都会运行该代码，因此，如果文件中已存在着色器，则它应在引用新几何体时指定着色器。同样，如果几何体已存在，则它应在引用着色器时指定几何体。
 
@@ -799,10 +794,9 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 首先，执行以下步骤来准备工作文件。
 
-* 从 {% include product %} Desktop 启动 Nuke
+- 从 {% include product %} Desktop 启动 Nuke
 
-* 与在 Maya 中一样，使用“{% include product %} > File Open…”菜单动作在镜头的合成工序中创建一个新工作文件。
-
+- 与在 Maya 中一样，使用“{% include product %} > File Open…”菜单动作在镜头的合成工序中创建一个新工作文件。
 
 通过加载器应用加载在上一节中渲染并发布的图像序列。
 
