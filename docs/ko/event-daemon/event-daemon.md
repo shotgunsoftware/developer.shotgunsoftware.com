@@ -5,12 +5,11 @@ pagename: event-daemon
 lang: ko
 ---
 
-
 # {% include product %} 이벤트 프레임워크
+
 이 소프트웨어는 [Rodeo Fx](http://rodeofx.com) 및 Oblique의 지원을 받아 [Patrick Boucher](http://www.patrickboucher.com)에서 처음 개발했습니다. 이제 [{% include product %} 소프트웨어](http://www.shotgunsoftware.com) [오픈 소스 이니셔티브](https://github.com/shotgunsoftware)의 일부가 되었습니다.
 
 이 소프트웨어는 라이선스 파일 또는 [오픈 소스 이니셔티브](http://www.opensource.org/licenses/mit-license.php) 웹 사이트에서 찾을 수 있는 MIT 라이선스로 제공됩니다.
-
 
 ## 개요
 
@@ -40,9 +39,7 @@ lang: ko
 - 콜백의 번호를 프레임워크에 등록
 - 프레임워크에서 이벤트를 제공하는 경우 단일 이벤트 처리
 
-
 ## 프레임워크의 이점
 
 - 스크립트당이 아니라 모든 스크립트에 대해 하나의 모니터링 메커니즘만 처리합니다.
 - 네트워크 및 데이터베이스 로드를 최소화합니다(단일 모니터만으로 여러 이벤트 처리 플러그인에 이벤트 공급).
-

@@ -8,16 +8,17 @@ lang: zh_CN
 # API
 
 <a id="registerCallbacks"></a>
+
 ## registerCallbacks
 
 所有插件中的全局级别函数，用于告知框架有关插件中事件处理入口点的信息。
 
 **registerCallbacks(reg)**
 
-* reg：您将与之进行交互，以告知框架要调用哪些函数的 [`Registrar`](#Registrar)。
-
+- reg：您将与之进行交互，以告知框架要调用哪些函数的 [`Registrar`](#Registrar)。
 
 <a id="Registrar"></a>
+
 ## Registrar
 
 Registrar 是用于告知框架如何与插件交互的对象。它将传递到 [`registerCallbacks`](#registerCallbacks) 函数。
@@ -36,9 +37,7 @@ Registrar 是用于告知框架如何与插件交互的对象。它将传递到 
 
 获取用于从插件中记录消息的 Python Logger 对象。
 
-
-
-__setEmails(*emails)__
+**setEmails(\*emails)**
 
 设置当此插件或其任何回调中发生错误时应接收错误和重要通知的电子邮件。
 
@@ -71,12 +70,12 @@ reg.setEmails('user1@domain.com', 'user2@domain.com')
 
 将回调注册到此插件的插件。
 
-* `sgScriptName`：从 {% include product %} 脚本页面获取的脚本的名称。
-* `sgScriptKey`：从 {% include product %} 脚本页面获取的脚本的应用程序密钥。
-* `callback`：具有 `__call__` 方法的函数或对象。请参见 [`exampleCallback`](#exampleCallback)。
-* `matchEvents`：要传递到回调的事件的过滤器。
-* `args`：希望框架重新传递到回调的任何对象。
-* `stopOnError`：布尔值，此回调中出现异常会导致此插件中的所有回调停止处理事件。默认值为 `True`。
+- `sgScriptName`：从 {% include product %} 脚本页面获取的脚本的名称。
+- `sgScriptKey`：从 {% include product %} 脚本页面获取的脚本的应用程序密钥。
+- `callback`：具有 `__call__` 方法的函数或对象。请参见 [`exampleCallback`](#exampleCallback)。
+- `matchEvents`：要传递到回调的事件的过滤器。
+- `args`：希望框架重新传递到回调的任何对象。
+- `stopOnError`：布尔值，此回调中出现异常会导致此插件中的所有回调停止处理事件。默认值为 `True`。
 
 `sgScriptName` 用于标识 {% include product %} 的插件。任何名称都可以在任意数量的回调之间共享，也可以是单个回调的唯一名称。
 
@@ -125,7 +124,7 @@ matchEvents = {
 }
 ```
 
-与非特定于字段的事件类型（如“_New”或“_Retirement”）进行匹配时，不提供列表，而是将 `None` 作为值进行传递。
+与非特定于字段的事件类型（如“\_New”或“\_Retirement”）进行匹配时，不提供列表，而是将 `None` 作为值进行传递。
 
 ```python
 matchEvents = {
@@ -142,6 +141,7 @@ matchEvents = {
 `stopOnError` 参数会告知系统此回调中的异常是否会导致插件中所有回调的事件处理停止。默认情况下，此参数为 `True`，但可以切换为 `False`。如果存在任何错误但事件处理不停止，您仍会收到错误通知邮件。根据回调设置，您可以具有一些关键回调，对于这些回调，此参数为 `True`，对于其他回调则为 `False`。
 
 <a id="Callback"></a>
+
 ## 回调
 
 [`Registrar.registerCallback`](#registerCallback) 注册的任何插件入口点通常为如下所示的全局级别函数：
@@ -149,9 +149,9 @@ matchEvents = {
 <a id="exampleCallback"></a>
 **exampleCallback(sg, logger, event, args)**
 
-* `sg`：{% include product %} 连接实例。
-* `logger`：为您预先配置的 Python logging.Logger 对象。
-* `event`：要处理的 {% include product %} 事件。
-* `args`：在回调注册时指定的 args 参数。
+- `sg`：{% include product %} 连接实例。
+- `logger`：为您预先配置的 Python logging.Logger 对象。
+- `event`：要处理的 {% include product %} 事件。
+- `args`：在回调注册时指定的 args 参数。
 
 {% include info title="注意" content="可以在对象实例上将回调作为 `__call__` 方法实施，我们将此留给用户做练习。" %}

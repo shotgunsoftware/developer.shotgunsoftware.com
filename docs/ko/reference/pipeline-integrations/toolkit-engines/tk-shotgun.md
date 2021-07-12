@@ -27,8 +27,8 @@ lang: ko
 
 Core v0.13부터는 {% include product %} 엔진에서 모든 다중 앱을 사용할 수 있습니다. 기술적으로 {% include product %} 엔진과 다른 엔진 사이에는 차이가 거의 없습니다. 그러나 다음과 같이 약간의 미묘한 차이가 있습니다.
 
-* {% include product %} 엔진에서 QT 기반 앱을 실행하려면 PySide 또는 PyQt를 표준 Python 환경에 수동으로 설치해야 합니다.
-* {% include product %} 엔진에서는 사용자가 속한 권한 그룹에 따라 사용자에게 액션을 표시할 수 있습니다. {% include product %} 액션(Action) 메뉴에 명령을 추가하고 관리자(Admin)만 볼 수 있게 하려는 경우에 유용합니다.
+- {% include product %} 엔진에서 QT 기반 앱을 실행하려면 PySide 또는 PyQt를 표준 Python 환경에 수동으로 설치해야 합니다.
+- {% include product %} 엔진에서는 사용자가 속한 권한 그룹에 따라 사용자에게 액션을 표시할 수 있습니다. {% include product %} 액션(Action) 메뉴에 명령을 추가하고 관리자(Admin)만 볼 수 있게 하려는 경우에 유용합니다.
 
 관리자(Admin)에게만 표시되는 hello-world 스타일의 {% include product %} 앱은 다음과 같습니다.
 
@@ -40,7 +40,7 @@ class LaunchPublish(Application):
     def init_app(self):
         """
         Register menu items with {% include product %}
-        """        
+        """
         params = {
             "title": "Hello, World!",
             "deny_permissions": ["Artist"],
@@ -51,6 +51,5 @@ class LaunchPublish(Application):
 
     def do_stuff(self, entity_type, entity_ids):
         # this message will be displayed to the user
-        self.engine.log_info("Hello, World!")    
+        self.engine.log_info("Hello, World!")
 ```
-

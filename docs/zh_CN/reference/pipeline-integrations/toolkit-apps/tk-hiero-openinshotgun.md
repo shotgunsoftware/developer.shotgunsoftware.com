@@ -14,11 +14,18 @@ lang: zh_CN
 通常，在配置此应用时，要通过向 {% include product %} Nuke 插件配置中添加以下内容，将它添加到 Hiero 中的时间线和电子表格菜单：
 
 ```yaml
-    timeline_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: "Open in {% include product %}", requires_selection: true}
-    spreadsheet_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: "Open in {% include product %}", requires_selection: true}
+timeline_context_menu:
+  - {
+      app_instance: tk-hiero-openinshotgun,
+      keep_in_menu: false,
+      name: "Open in {% include product %}",
+      requires_selection: true,
+    }
+spreadsheet_context_menu:
+  - {
+      app_instance: tk-hiero-openinshotgun,
+      keep_in_menu: false,
+      name: "Open in {% include product %}",
+      requires_selection: true,
+    }
 ```
-
-
-

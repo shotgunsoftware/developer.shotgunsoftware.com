@@ -8,16 +8,17 @@ lang: ja
 # API
 
 <a id="registerCallbacks"></a>
+
 ## registerCallbacks
 
 プラグインのイベント処理エントリ ポイントをフレームワークに伝えるために使用する、すべてのプラグインのグローバル レベル関数。
 
 **registerCallbacks(reg)**
 
-* reg: 呼び出す関数をフレームワークに伝えるために使用する [`Registrar`](#Registrar)。
-
+- reg: 呼び出す関数をフレームワークに伝えるために使用する [`Registrar`](#Registrar)。
 
 <a id="Registrar"></a>
+
 ## Registrar
 
 Registrar はプラグインの操作方法をフレームワークに伝えるために使用するオブジェクトです。これは、[`registerCallbacks`](#registerCallbacks) 関数に渡されます。
@@ -36,9 +37,7 @@ Registrar はプラグインの操作方法をフレームワークに伝える�
 
 プラグイン内からメッセージをログに記録するために使用する python Logger オブジェクトを取得します。
 
-
-
-__setEmails(*emails)__
+**setEmails(\*emails)**
 
 このプラグインまたはそのコールバックのいずれかで問題が発生した場合に、エラーや重要な通知を受け取る電子メールを設定します。
 
@@ -71,12 +70,12 @@ reg.setEmails('user1@domain.com', 'user2@domain.com')
 
 このプラグインのエンジンにコールバックを登録します。
 
-* `sgScriptName`: {% include product %} スクリプト ページから取得したスクリプトの名前。
-* `sgScriptKey`: {% include product %} スクリプト ページから取得したスクリプトのアプリケーション キー。
-* `callback`: `__call__` メソッドを使用する関数またはオブジェクト。「[`exampleCallback`](#exampleCallback)」を参照してください。
-* `matchEvents`: コールバックに渡すイベントのフィルタ。
-* `args`: フレームワークをコールバックに戻す任意のオブジェクト。
-* `stopOnError`: ブール型。このコールバックの例外は、このプラグイン内のすべてのコールバックによるイベントの処理を停止します。既定値は `True` です。
+- `sgScriptName`: {% include product %} スクリプト ページから取得したスクリプトの名前。
+- `sgScriptKey`: {% include product %} スクリプト ページから取得したスクリプトのアプリケーション キー。
+- `callback`: `__call__` メソッドを使用する関数またはオブジェクト。「[`exampleCallback`](#exampleCallback)」を参照してください。
+- `matchEvents`: コールバックに渡すイベントのフィルタ。
+- `args`: フレームワークをコールバックに戻す任意のオブジェクト。
+- `stopOnError`: ブール型。このコールバックの例外は、このプラグイン内のすべてのコールバックによるイベントの処理を停止します。既定値は `True` です。
 
 `sgScriptName` は、{% include product %} のプラグインを特定するために使用します。任意の名前を任意の数のコールバックで共有することも、1 つののコールバックに 1 つのみにすることもできます。
 
@@ -125,7 +124,7 @@ matchEvents = {
 }
 ```
 
-「_New」や「_Retirement」などのフィールド固有でないイベント タイプと照合する場合には、リストを指定するのではなく、`None` という値を渡します。
+「\_New」や「\_Retirement」などのフィールド固有でないイベント タイプと照合する場合には、リストを指定するのではなく、`None` という値を渡します。
 
 ```python
 matchEvents = {
@@ -142,6 +141,7 @@ matchEvents = {
 `stopOnError` 引数は、このコールバックの例外によってプラグインのすべてのコールバックのイベント処理を停止するかどうかを伝えます。既定では `True` ですが、`False` に切り替えることもできます。イベントの処理を停止しない場合でも、エラーの通知メールが送信されます。コールバックごとに設定するため、重要なコールバックをユーザによって `True` または `False` にすることができます。
 
 <a id="Callback"></a>
+
 ## コールバック
 
 [`Registrar.registerCallback`](#registerCallback) によって登録するプラグイン エントリ ポイントは通常、次のようなグローバル レベル関数です。
@@ -149,9 +149,9 @@ matchEvents = {
 <a id="exampleCallback"></a>
 **exampleCallback(sg, logger, event, args)**
 
-* `sg`: {% include product %} の接続インスタンス。
-* `logger`: Python logging.Logger オブジェクトがあらかじめ設定されています。
-* `event`: 処理する {% include product %} イベント。
-* `args`: コールバックの登録時に指定する args 引数。
+- `sg`: {% include product %} の接続インスタンス。
+- `logger`: Python logging.Logger オブジェクトがあらかじめ設定されています。
+- `event`: 処理する {% include product %} イベント。
+- `args`: コールバックの登録時に指定する args 引数。
 
 {% include info title="注" content="オブジェクト インスタンスで `__call__` メソッドとしてコールバックを使用できますが、ユーザの演習のみに使用するものとしておきます。"%}

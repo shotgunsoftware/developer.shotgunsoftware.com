@@ -6,6 +6,7 @@ lang: ko
 ---
 
 # 툴킷 Desktop Startup Framework
+
 Desktop Startup Framework는 {% include product %} 데스크톱의 시작 로직을 구현합니다. 주요 기능은 다음과 같습니다.
 
 1. 브라우저 통합 초기화

@@ -14,6 +14,7 @@ lang: zh_CN
 {% include info title="注意" content="**对于 Windows：**Windows 用户需要将配置文件中的所有路径更改为等效的 Windows 路径。为了简化起见，我们建议将所有路径（包括日志记录）保留在一个位置。在提及 Windows 路径时，本文档往往是指 `C:\shotgun\shotgunEvents`。" %}
 
 <a id="Edit_shotgunEventDaemon_conf"></a>
+
 ## 编辑 shotgunEventDaemon.conf
 
 安装 {% include product %}Events 后，下一步是在文本编辑器中打开 `shotgunEventDaemon.conf` 文件，然后修改设置以符合您工作室的需求。默认值适用于大多数工作室，但某些设置没有默认值，您需要提供值才能运行进程。
@@ -29,6 +30,7 @@ lang: zh_CN
 还有一个可选的计时日志部分，如果进程遇到性能问题，该日志有助于进行疑难解答。启用计时日志记录将使用计时信息填充自己单独的日志文件。
 
 <a id="Shotgun_Settings"></a>
+
 ### {% include product %} 设置
 
 在 `[{% include product %}]` 部分下，将默认令牌替换为 `server`、`name` 和 `key` 的正确值。这些值应与您为连接到 {% include product %} 的标准 API 脚本提供的值相同。
@@ -42,6 +44,7 @@ key: e37d855e4824216573472846e0cb3e49c7f6f7b1
 ```
 
 <a id="Plugin_Settings"></a>
+
 ### 插件设置
 
 您需要告知 {% include product %}EventDaemon 在何处查找要运行的插件。在 `[plugins]` 部分下，将默认令牌替换为 `paths` 的正确值。
@@ -57,6 +60,7 @@ paths: /usr/local/shotgun/{% include product %}Events/plugins
 首次启动时，一个很好的测试插件是位于 `/usr/local/shotgun/{% include product %}Events/src/examplePlugins` 目录中的 `logArgs.py` 插件。将其复制到您指定的插件文件夹，然后我们将使用它进行测试。
 
 <a id="Location_of_shotgunEventDaemon_conf"></a>
+
 ### shotgunEventDaemon.conf 的位置
 
 默认情况下，进程将在 {% include product %}EventDaemon.py 所在的目录和 `/etc` 目录中查找 shotgunEventDaemon.conf 文件。如果需要将 conf 文件放置在其他目录中，建议您从当前目录创建它的符号链接。
@@ -66,6 +70,7 @@ paths: /usr/local/shotgun/{% include product %}Events/plugins
 {% include info title="注意" content="**对于 Windows：**`/etc` 在 Windows 上不存在，因此配置文件应放在与 Python 文件相同的目录中。" %}
 
 <a id="Testing_the_Daemon"></a>
+
 ## 测试进程
 
 进程可能很难测试，因为它们在后台运行。并非始终有明显的方法来查看它们正在执行的操作。幸运的是，对于我们而言，{% include product %}EventDaemon 有一个选项可以将其作为前台进程运行。现在我们已完成最低要求的设置，接下来我们来测试进程并查看具体情况。
@@ -85,7 +90,7 @@ INFO:engine:Last event id (248429) from the {% include product %} database.
 
 {% include info title="注意" content="logArgs.py 文件中包含需要用适当值填充的变量。必须对“$DEMO_SCRIPT_NAMES$”和“$DEMO_API_KEY$”进行编辑，以包含在 shotgunEventDaemon.conf 文件中使用的相同值，以便日志记录能够正常运行。" %}
 
-如果没有任何内容记录到日志文件中，请在 {% include product %}EventDaemon.conf 中检查与日志相关的设置，确保将 ``logging`` 值设置为记录 INFO 级别的消息，
+如果没有任何内容记录到日志文件中，请在 {% include product %}EventDaemon.conf 中检查与日志相关的设置，确保将 `logging` 值设置为记录 INFO 级别的消息，
 
 ```
 logging: 20
@@ -100,6 +105,7 @@ reg.logger.setLevel(logging.INFO)
 假设所有内容看起来都正常，要停止 {% include product %}EventDaemon 进程，只需在终端中键入 `<ctrl>-c`，您应该会看到脚本终止。
 
 <a id="Running_the_Daemon"></a>
+
 ## 运行进程
 
 假设测试进展顺利，我们现在可以在后台按预期运行进程。
@@ -134,14 +140,16 @@ $ sudo tail -f /var/log/shotgunEventDaemon/shotgunEventDaemon
 2011-09-09 09:45:31,228 - plugin.logArgs.logArgs - INFO - {'attribute_name': 'sg_status_list', 'event_type': 'Shotgun_Shot_Change', 'entity': {'type': 'Shot', 'name': 'bunny_010_0010', 'id': 860}, 'project': {'type': 'Project', 'name': 'Big Buck Bunny', 'id': 65}, 'meta': {'entity_id': 860, 'attribute_name': 'sg_status_list', 'entity_type': 'Shot', 'old_value': 'omt', 'new_value': 'ip', 'type': 'attribute_change'}, 'user': {'type': 'HumanUser', 'name': 'Kevin Porterfield', 'id': 35}, 'session_uuid': '450e4da2-dafa-11e0-9ba7-0023dffffeab', 'type': 'EventLogEntry', 'id': 276560}
 ```
 
-输出的确切详细信息将有所不同，但您应看到插件已执行预期的操作，即，将事件记录到日志文件中。同样，如果未看到任何内容记录到日志文件中，请在 {% include product %}EventDaemon.conf 中检查与日志相关的设置，确保 ``logging`` 值设置为记录 INFO 级别的消息，且 logArgs 插件也配置为显示 INFO 级别的消息。
+输出的确切详细信息将有所不同，但您应看到插件已执行预期的操作，即，将事件记录到日志文件中。同样，如果未看到任何内容记录到日志文件中，请在 {% include product %}EventDaemon.conf 中检查与日志相关的设置，确保 `logging` 值设置为记录 INFO 级别的消息，且 logArgs 插件也配置为显示 INFO 级别的消息。
 
 <a id="A_Note_About_Logging"></a>
+
 ### 关于日志记录的注释
 
 应该注意的是，日志轮换是 {% include product %} 进程的一项功能。日志每晚在午夜轮换，每个插件保留十个每日文件。
 
 <a id="Common_Errors"></a>
+
 ## 常见错误
 
 下面介绍可能遇到的一些常见错误以及如何解决这些错误。如果您感觉非常困难，请随时联系 {% include product %} 软件团队 (support@shotgunsoftware.com)，我们将帮助您解决问题。
@@ -163,9 +171,11 @@ $ sudo tail -f /var/log/shotgunEventDaemon/shotgunEventDaemon
 如果必须以 sudo 身份运行，并且您认为 `PYTHONPATH` 设置正确，请记住 sudo 会重置环境变量。您可以编辑 sudoers 文件以保留 `PYTHONPATH` 或运行 sudo -e(?)
 
 <a id="List_of_Configuration_File_Settings"></a>
+
 ## 配置文件设置列表
 
 <a id="Daemon_Settings"></a>
+
 ### 进程设置
 
 以下是常规进程操作设置。
@@ -205,7 +215,7 @@ logMode: 1
 
 **logPath**
 
-放置日志文件的路径（主插件和插件日志文件）。主日志文件的名称由下面的 ``logFile`` 设置控制。
+放置日志文件的路径（主插件和插件日志文件）。主日志文件的名称由下面的 `logFile` 设置控制。
 
 ```
 logPath: /var/log/shotgunEventDaemon
@@ -224,6 +234,7 @@ logFile: shotgunEventDaemon
 **日志记录**
 
 发送到日志文件的日志消息的阈值级别。此值是主分派插件的默认值，可以基于每个插件覆盖该值。此值将传递到 Python 日志记录模块。最常用的值为：
+
 - **10：**调试
 - **20：**信息
 - **30：**警告
@@ -274,6 +285,7 @@ fetch_interval = 5
 ```
 
 <a id="Shotgun_Settings"></a>
+
 ### {% include product %} 设置
 
 以下是与 {% include product %} 实例相关的设置。
@@ -322,6 +334,7 @@ use_session_uuid: True
 {% include info title="注意" content="ShotGrid UI 将*仅*显示繁殖原始事件的浏览器会话的实时更新。其他打开相同页面的浏览器窗口不会看到实时更新。" %}
 
 <a id="Plugin_Settings_details"></a>
+
 ### 插件设置
 
 **路径**
@@ -335,6 +348,7 @@ paths: /usr/local/shotgun/plugins
 {% include info title="注意" content="此处没有默认值。您必须将该值设置为插件文件的位置（即：`/usr/local/shotgun/shotgunEvents/plugins` 或 `C:\shotgun\shotgunEvents\plugins`（在 Windows 上））" %}
 
 <a id="Email_Settings"></a>
+
 ### 电子邮件设置
 
 这些参数用于错误报告，因为我们发现您不会一直在跟踪日志，而是会有一个活动的通知系统。

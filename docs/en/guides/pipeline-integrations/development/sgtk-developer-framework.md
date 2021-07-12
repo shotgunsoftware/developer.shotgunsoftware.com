@@ -8,9 +8,11 @@ lang: en
 # Developing your own framework
 
 ## Introduction
+
 This document outlines some of the technical details relating to Toolkit framework development.
 
 Table of Contents:
+
 - [What is a Toolkit framework?](#what-is-a-toolkit-framework)
 - [Pre-made {% include product %} frameworks](#pre-made-shotgun-frameworks)
 - [Creating a Framework](#creating-a-framework)
@@ -18,11 +20,11 @@ Table of Contents:
 
 ## What is a Toolkit framework?
 
-Toolkit [frameworks](https://developer.shotgridsoftware.com/tk-core/platform.html?highlight=hide_tk_title_bar#frameworks) are very similar to Toolkit apps. 
+Toolkit [frameworks](https://developer.shotgridsoftware.com/tk-core/platform.html?highlight=hide_tk_title_bar#frameworks) are very similar to Toolkit apps.
 The main difference is that a framework is not something you would run on its own.
 Instead, you would import a framework into your app or engine. It allows you to keep reusable logic separate so that it can be used in multiple engines and apps.
 An example of a framework would be a library of reusable UI components, that might contain a playlist picker component.
-You could then import that framework in your app, and plug in the playlist picker component to your main app UI.  
+You could then import that framework in your app, and plug in the playlist picker component to your main app UI.
 
 ## Pre-made {% include product %} frameworks
 
@@ -42,6 +44,7 @@ To access them, you would import the framework, and then use the [`import_module
 The API docs contain examples on how to [import frameworks](https://developer.shotgridsoftware.com/tk-core/platform.html?highlight=hide_tk_title_bar#frameworks).
 
 ## Using Frameworks from hooks
+
 It can be useful to create a framework so that you can share some common logic across hooks.
 A framework can be used in an app, or other framework hooks, even if the app/framework doesn't explicitly require it in the manifest file, via the
 [`Hook.load_framework()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Hook.load_framework) method. Note frameworks can't be used in core hooks even with this method.

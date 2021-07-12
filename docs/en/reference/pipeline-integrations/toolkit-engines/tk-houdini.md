@@ -11,7 +11,6 @@ The {% include product %} Engine for Houdini contains a standard platform for in
 
 ![{% include product %} Engine for Houdini](../images/engines/houdini_engine.png)
 
-
 # Information for App Developers
 
 ## Supported platforms
@@ -26,7 +25,7 @@ For older versions of Houdini (13 and older) an external build of PySide is requ
 
 ![{% include product %} menu](../images/engines/houdini_menu.png)
 
-A dynamic menu system was introduced by Side Effects as of Houdini 15, so the engine now supports rebuilding of the {% include product %} menu on context switches. 
+A dynamic menu system was introduced by Side Effects as of Houdini 15, so the engine now supports rebuilding of the {% include product %} menu on context switches.
 
 In Houdini 14 and older, the {% include product %} menu in Houdini is generated before Houdini starts and is static throughout the session. Due to this, the toolkit commands registered in the menu will not update on context changes.
 
@@ -47,27 +46,27 @@ tk-houdini:
   apps:
     # ... other app definitions
     tk-multi-workfiles:
-       # ... other app settings
-       sg_entity_types: [Shot, Asset] # allow context switching to Shots or Assets
-       # ... other app settings
+      # ... other app settings
+      sg_entity_types: [Shot, Asset] # allow context switching to Shots or Assets
+      # ... other app settings
   enable_sg_shelf: true
   enable_sg_menu: false
   # ... other engine settings
 ```
 
-Once you've enabled the {% include product %} shelf, you need to manually add it to a shelf set inside houdini. 
+Once you've enabled the {% include product %} shelf, you need to manually add it to a shelf set inside houdini.
 
 ![Add the {% include product %} shelf](../images/engines/add_shelf.png)
 
-Once added to a shelf set the {% include product %} shelf will remain there between houdini sessions and will update dynamically as your {% include product %} context changes. 
+Once added to a shelf set the {% include product %} shelf will remain there between houdini sessions and will update dynamically as your {% include product %} context changes.
 
 ## Panels
 
 As of **v0.2.8** the engine adds support for embedded toolkit panels.
 
-The panel support currently requires Houdini version **15.0.272** or later for proper embedded panels. Registered panels will show up as panes in the pane  menu for supported versions of Houdini.
+The panel support currently requires Houdini version **15.0.272** or later for proper embedded panels. Registered panels will show up as panes in the pane menu for supported versions of Houdini.
 
-Older versions of Houdini will display the registered panels as dialogs. SESI may backport some bug fixes to newer builds of Houdini 14. If and when that happens, we will make embedded panels work for those versions as well. 
+Older versions of Houdini will display the registered panels as dialogs. SESI may backport some bug fixes to newer builds of Houdini 14. If and when that happens, we will make embedded panels work for those versions as well.
 
 ## Apps with OTLs
 
@@ -94,24 +93,24 @@ Next, you can make a copy of the `tk-multi-launchapp` app's `app_launch` hook in
 
 ```yaml
 launch_houdini:
-  defer_keyword: ''
+  defer_keyword: ""
   engine: tk-houdini
   extra: {}
-  hook_app_launch: app_launch    # <----- use a custom app_launch hook
+  hook_app_launch: app_launch # <----- use a custom app_launch hook
   hook_before_app_launch: default
-  icon: '{target_engine}/icon_256.png'
-  linux_args: ''
-  linux_path: '@houdini_linux'
-  location: {name: tk-multi-launchapp, type: app_store, version: v0.6.6}
-  mac_args: ''
-  mac_path: '@houdini_mac'
+  icon: "{target_engine}/icon_256.png"
+  linux_args: ""
+  linux_path: "@houdini_linux"
+  location: { name: tk-multi-launchapp, type: app_store, version: v0.6.6 }
+  mac_args: ""
+  mac_path: "@houdini_mac"
   menu_name: Launch Houdini
   versions: []
-  windows_args: ''
-  windows_path: '@houdini_windows'
+  windows_args: ""
+  windows_path: "@houdini_windows"
 ```
 
-Then all you have to do is modify the launch logic to launch the executable directly. As an example, you could keep the old behavior for directories (application bundles) and otherwise execute the command directly. Here's an example: 
+Then all you have to do is modify the launch logic to launch the executable directly. As an example, you could keep the old behavior for directories (application bundles) and otherwise execute the command directly. Here's an example:
 
 ```python
         elif system == "darwin":

@@ -65,12 +65,12 @@ With the new file save dialog, it is possible to pick the extension of the file 
 
 ```yaml
 maya_extension:
-    type: str
-    choices:
-        ma: Maya Ascii (.ma)
-        mb: Maya Binary (.mb)
-    default: ma
-    alias: extension
+  type: str
+  choices:
+    ma: Maya Ascii (.ma)
+    mb: Maya Binary (.mb)
+  default: ma
+  alias: extension
 ```
 
 `maya_extension` is the token's name. `choices` is a dictionary of file types that will be displayed in the dropdown. The keys (`ma` and `mb`) are the possible values that this template token can have. The values (`Maya Ascii (.ma)` and `Maya Binary (.mb)`) are UI friendly descriptions that can be used by a Toolkit application. The `alias` is an hint that is required by the workfiles application. It tells the application that this token is an extension and should be displayed in the dropdown widget.
@@ -79,8 +79,8 @@ Then, this token can be added to any Maya specific template.
 
 ```yaml
 maya_shot_work:
-    definition: '@shot_root/work/maya/{name}.v{version}.{maya_extension}'
-    root_name: 'primary'
+  definition: "@shot_root/work/maya/{name}.v{version}.{maya_extension}"
+  root_name: "primary"
 ```
 
 ## Context Change dialog
@@ -100,18 +100,18 @@ The list of Steps displayed in a tab is controlled with the `step_filter_on` set
 The example below defines two tabs, respectively displaying Tasks for Assets and Shots:
 
 ```yaml
-  - caption: Assets Tasks
-    entity_type: Task
-    step_filter_on: Asset
-    filters:
+- caption: Assets Tasks
+  entity_type: Task
+  step_filter_on: Asset
+  filters:
     - [entity, type_is, Asset]
-    hierarchy: [entity.Asset.sg_asset_type, entity, step, content]
-  - caption: Shots Tasks
-    entity_type: Task
-    step_filter_on: Shot
-    filters:
+  hierarchy: [entity.Asset.sg_asset_type, entity, step, content]
+- caption: Shots Tasks
+  entity_type: Task
+  step_filter_on: Shot
+  filters:
     - [entity, type_is, Shot]
-    hierarchy: [entity.Shot.sg_sequence, entity, step, content]
+  hierarchy: [entity.Shot.sg_sequence, entity, step, content]
 ```
 
 ![step filter](../images/apps/multi-workfiles2-step_filter.png)
@@ -119,13 +119,14 @@ The example below defines two tabs, respectively displaying Tasks for Assets and
 ## Deferred queries
 
 For better performances, building the Entities tree can be broken into two step queries:
+
 - A first query is used to retrieve records from {% include product %} and populate the top of the tree.
 - A second query is used to retrieve children as the user expand the tree.
 
 With the following settings, Assets and Shots would be retrieved from {% include product %} when the app is started. And then Tasks linked to a particular Asset or Shot would only be retrieved when this Asset or Shot is selected or expanded in the tree view.
 
 ```yaml
-  entities:
+entities:
   - caption: Assets
     entity_type: Asset
     hierarchy: [sg_asset_type, code]

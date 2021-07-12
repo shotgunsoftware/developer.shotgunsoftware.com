@@ -8,9 +8,11 @@ lang: ko
 # 자체 프레임워크 개발
 
 ## 소개
+
 이 문서에서는 Toolkit 프레임워크 개발에 관한 몇 가지 기술적인 정보를 간략히 소개합니다.
 
 목차:
+
 - [툴킷 프레임워크란?](#what-is-a-toolkit-framework)
 - [사전 작성된 ShotGrid 프레임워크](#pre-made-shotgun-frameworks)
 - [프레임워크 작성](#creating-a-framework)
@@ -42,5 +44,6 @@ ShotGrid은 자체 앱을 제작할 때 유용한 몇 가지 사전 작성 [프�
 API 문서에는 [프레임워크를 가져오는 방법](https://developer.shotgridsoftware.com/tk-core/platform.html?highlight=hide_tk_title_bar#frameworks)에 대한 예가 있습니다.
 
 ## 후크에서 프레임워크 사용
+
 후크를 통해 몇 가지 공통 로직을 공유하도록 프레임워크를 생성하는 것이 유용할 수 있습니다.
 [`Hook.load_framework()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Hook.load_framework) 방식을 이용하면 앱/프레임워크에서 매니페스트 파일에 명시적으로 요구하지 않는 경우에도 앱 또는 기타 프레임워크 후크에서 프레임워크를 사용할 수 있습니다. 코어 후크에서는 이 방식을 사용하더라도 프레임워크를 사용할 수 없습니다.

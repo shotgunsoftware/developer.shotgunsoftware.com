@@ -31,7 +31,7 @@ Webhooks and the [{% include product %} event daemon](https://github.com/shotgun
 
 ## Creating a webhook
 
-To get started creating a webhook, go to a Webhooks page, then navigate to the button above the webhooks list. Access to webhooks is controlled by the "Advanced -> Show Webhooks" permission. It is enabled for default Admin and Manager roles. 
+To get started creating a webhook, go to a Webhooks page, then navigate to the button above the webhooks list. Access to webhooks is controlled by the "Advanced -> Show Webhooks" permission. It is enabled for default Admin and Manager roles.
 
 ![Create Webhook Button](./images/webhooks/create_webhook_button.png)
 
@@ -74,12 +74,12 @@ A webhook can have one of several different statuses, indicating its health and 
 
 ![Create Webhook Dialog](./images/webhooks/webhook_selected_status.png)
 
-| Status | Example | Description |
-|--------|:-------:|:-----------:|
-| Active | ![Active](./images/webhooks/webhook_status_active.png) | The webhook is operating in a stable fashion. No deliveries to this webhook's consumer URL have failed to reach their destination in the past 24 hours. |
-| Unstable | ![Unstable](./images/webhooks/webhook_status_unstable.png) | The webhook is operating in an unstable fashion. Some deliveries have failed to reach their destination in the past 24 hours, but not enough to cause {% include product %} to consider the webhook to be dead. |
-| Failed | ![Failed](./images/webhooks/webhook_status_failed.png) | The webhook is considered to be dead, and no further deliveries will be attempted. This is a result of too many delivery failures in a short period of time, and the system has determined that the webhook should no longer be considered viable. **A webhook is considered failed if it has 10 failed deliveries in the past 24 hours**. |
-| Disabled | ![Disabled](./images/webhooks/webhook_status_disabled.png) | The webhook is in a disabled state, and no further deliveries will be attempted until it is re-enabled. |
+| Status   |                          Example                           |                                                                                                                                                                Description                                                                                                                                                                 |
+| -------- | :--------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Active   |   ![Active](./images/webhooks/webhook_status_active.png)   |                                                                                          The webhook is operating in a stable fashion. No deliveries to this webhook's consumer URL have failed to reach their destination in the past 24 hours.                                                                                           |
+| Unstable | ![Unstable](./images/webhooks/webhook_status_unstable.png) |                                                              The webhook is operating in an unstable fashion. Some deliveries have failed to reach their destination in the past 24 hours, but not enough to cause {% include product %} to consider the webhook to be dead.                                                               |
+| Failed   |   ![Failed](./images/webhooks/webhook_status_failed.png)   | The webhook is considered to be dead, and no further deliveries will be attempted. This is a result of too many delivery failures in a short period of time, and the system has determined that the webhook should no longer be considered viable. **A webhook is considered failed if it has 10 failed deliveries in the past 24 hours**. |
+| Disabled | ![Disabled](./images/webhooks/webhook_status_disabled.png) |                                                                                                                  The webhook is in a disabled state, and no further deliveries will be attempted until it is re-enabled.                                                                                                                   |
 
 ## Deliveries
 
@@ -152,7 +152,7 @@ A webhook consumer service must respond to deliveries in order for the system to
 
 {% include warning title="Response timeouts" content="A response must be received within six seconds of delivery to a webhook’s URL, after which the connection will be closed. Failure to respond in time will result in a failed delivery." %}
 
-Process time is recorded for each delivery and can be viewed in the Response details tab. 
+Process time is recorded for each delivery and can be viewed in the Response details tab.
 
 #### Throttling
 
@@ -160,17 +160,18 @@ Your consumer response times to deliveries will impact webhooks throughput for y
 Each site is allowed 1 minute of response time per minute. So if all configured consumer endpoints for a site take the full 6 seconds to respond, webhooks deliveries for that site will be throttled to 10 per a minute.
 
 Where a high rate of overall throughput is needed, then consumer endpoints should be designed according to the following model:
- 1. Receive the request
- 2. Spawn another process/thread to handle it the way you want
- 3. Answer an acknowledging 200 immediately
+
+1.  Receive the request
+2.  Spawn another process/thread to handle it the way you want
+3.  Answer an acknowledging 200 immediately
 
 #### Status codes
 
-| Status | Code | Description |
-|--------|:----:|:-----------:|
-| Success | < 400 | The delivery was received and processed successfully. |
-| Error | >= 400 | The delivery was received but was not processed successfully. |
-| Redirect | 3xx | The delivery was received, but should be redirected to another URL. |
+| Status   |  Code  |                             Description                             |
+| -------- | :----: | :-----------------------------------------------------------------: |
+| Success  | < 400  |        The delivery was received and processed successfully.        |
+| Error    | >= 400 |    The delivery was received but was not processed successfully.    |
+| Redirect |  3xx   | The delivery was received, but should be redirected to another URL. |
 
 ### Acknowledgements
 

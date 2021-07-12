@@ -18,7 +18,7 @@ caption: Asset Library
 hierarchy: [project, sg_asset_type, code]
 entity_type: Asset
 filters:
-- [project, is, {'type': 'Project', 'id': 207}]
+  - [project, is, { "type": "Project", "id": 207 }]
 ```
 
 将 `207` 替换为库项目的 ID。

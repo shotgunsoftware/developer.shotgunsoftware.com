@@ -6,11 +6,12 @@ lang: ja
 ---
 
 # パイプライン設定を編集する
+
 このガイドを読み終えると、以下に関する基本的な知識を習得できます。
 
-* 特定の Toolkit アプリの構成設定を見つける
-* 設定を編集する
-* 構成設定によって拡張できるその他の機能を調べる
+- 特定の Toolkit アプリの構成設定を見つける
+- 設定を編集する
+- 構成設定によって拡張できるその他の機能を調べる
 
 ## このガイドについて
 
@@ -121,13 +122,13 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 設定を検索する際に、考慮すべき点がいくつかあります。
 
-* 実行しているソフトウェア アプリケーション。
-* 作業を行っているファイル、および作業している環境。これはアプリの参照ボックスに表示されています。
-* 特定の設定の名前。これはアプリの参照ボックス、または「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページに表示されています。
-* 拡張する YAML ファイル。設定の配置場所を示す識別子およびロードマップの詳細は、YAML ファイルに記述されています。
-* YAML ファイル内の拡張する特定のブロック。これはロードマップで識別されています。
-* YAML ファイル内で使用されている識別子および記号、
-* および現在のプロジェクトの設定の保存場所(これが最も重要)。
+- 実行しているソフトウェア アプリケーション。
+- 作業を行っているファイル、および作業している環境。これはアプリの参照ボックスに表示されています。
+- 特定の設定の名前。これはアプリの参照ボックス、または「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページに表示されています。
+- 拡張する YAML ファイル。設定の配置場所を示す識別子およびロードマップの詳細は、YAML ファイルに記述されています。
+- YAML ファイル内の拡張する特定のブロック。これはロードマップで識別されています。
+- YAML ファイル内で使用されている識別子および記号、
+- および現在のプロジェクトの設定の保存場所(これが最も重要)。
 
 設定は、パイプライン設定内の複数の場所で利用できます。配置場所を判別するには、設定を反映させるソフトウェア統合、および変更を反映させるパイプライン プロセス内の場所を考慮します。
 
@@ -163,18 +164,18 @@ description: Apps and Engines when launching with a project only context.
 ################################################################################
 
 includes:
-- ./includes/frameworks.yml
-- ./includes/settings/tk-3dsmaxplus.yml
-- ./includes/settings/tk-desktop.yml
-- ./includes/settings/tk-flame.yml
-- ./includes/settings/tk-houdini.yml
-- ./includes/settings/tk-mari.yml
-- ./includes/settings/tk-maya.yml
-- ./includes/settings/tk-motionbuilder.yml
-- ./includes/settings/tk-nuke.yml
-- ./includes/settings/tk-photoshopcc.yml
-- ./includes/settings/tk-shell.yml
-- ./includes/settings/tk-shotgun.yml
+  - ./includes/frameworks.yml
+  - ./includes/settings/tk-3dsmaxplus.yml
+  - ./includes/settings/tk-desktop.yml
+  - ./includes/settings/tk-flame.yml
+  - ./includes/settings/tk-houdini.yml
+  - ./includes/settings/tk-mari.yml
+  - ./includes/settings/tk-maya.yml
+  - ./includes/settings/tk-motionbuilder.yml
+  - ./includes/settings/tk-nuke.yml
+  - ./includes/settings/tk-photoshopcc.yml
+  - ./includes/settings/tk-shell.yml
+  - ./includes/settings/tk-shotgun.yml
 
 ################################################################################
 # configuration for all engines to load in a project context
@@ -198,7 +199,6 @@ engines:
 # reference all of the common frameworks
 
 frameworks: "@frameworks"
-
 ```
 
 <!--![Project yml env](./images/editing_app_setting/15_project_yml_env.png)-->
@@ -239,7 +239,7 @@ settings.tk-maya.project:
     tk-multi-shotgunpanel: "@settings.tk-multi-shotgunpanel"
     tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"
   menu_favourites:
-  - {app_instance: tk-multi-workfiles2, name: File Open...}
+    - { app_instance: tk-multi-workfiles2, name: File Open... }
   location: "@engines.tk-maya.location"
 ```
 
@@ -253,7 +253,7 @@ settings.tk-maya.project:
 
 ```yaml
 includes:
-...
+---
 - ./tk-multi-workfiles2.yml
 ```
 
@@ -304,7 +304,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 **[+New Task]**ボタンが表示されないことに注目してください。
 
-これで、Workfiles アプリの構成設定を変更して、プロジェクト環境内のボタンの動作を変更できました。この設定はプロジェクト環境内で変更しただけなので、別の環境で作業を開始した場合は、**[+New Task]**ボタンの設定は引き続き有効になります。実際のプロダクションでも同様の変更を行うには、ここで行った変更をすべての環境に反映する必要があります。**
+これで、Workfiles アプリの構成設定を変更して、プロジェクト環境内のボタンの動作を変更できました。この設定はプロジェクト環境内で変更しただけなので、別の環境で作業を開始した場合は、**[+New Task]**ボタンの設定は引き続き有効になります。実際のプロダクションでも同様の変更を行うには、ここで行った変更をすべての環境に反映する必要があります。\*\*
 
 ## 環境を変更する
 
@@ -354,7 +354,7 @@ Workfiles アプリのシステム名は `tk-multi-workfiles2` です。名前�
 
 ### ビデオのリソース
 
-* [Toolkit 設定の概要](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)(SIGGRAPH 2018 Developer Day で収録)
-* [既定の設定の概要ウェビナー](https://www.youtube.com/watch?v=eKHaC1dZCeE)
+- [Toolkit 設定の概要](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)(SIGGRAPH 2018 Developer Day で収録)
+- [既定の設定の概要ウェビナー](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
 アプリの構成設定の変更に関する学習は以上です。次は、[Toolkit の構成にアプリを追加](./installing_app.md)してみましょう。

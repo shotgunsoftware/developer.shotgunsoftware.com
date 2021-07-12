@@ -12,8 +12,8 @@ This app gives a graphical breakdown of the current work area and all the apps r
 ![screenshot](../images/apps/multi-about-menu.png)
 
 ## Reload all apps
-There is a handy button this app that reloads the entire environment. This is useful if you are doing development and have made some code changes you want to try out! No need to restart Maya or Nuke, just hit the reload button!
 
+There is a handy button this app that reloads the entire environment. This is useful if you are doing development and have made some code changes you want to try out! No need to restart Maya or Nuke, just hit the reload button!
 
 In addition to the reload feature, this apps shows a breakdown of your current work area and all the apps that are currently loaded.
 
@@ -30,7 +30,6 @@ This shows the current Shot or Asset, the current Task etc. If you double click 
 ![screenshot](../images/apps/multi-about-about2.png)
 
 A view of all the currently running apps, along with their version and description. Double clicking an app will launch the documentation page for that app.
-
 
 ## Current Environment
 

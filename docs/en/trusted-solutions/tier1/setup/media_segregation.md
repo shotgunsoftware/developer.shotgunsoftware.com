@@ -17,21 +17,22 @@ Media Isolation activation is a pre-requisite to enable this feature. If you hav
 
 You will need to deploy a VPC with the required VPC endpoint. We provide a [private VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml) CloudFormation templates as starting points. This template create the necessary VPC, subnets and VPC endpoint.
 
-* Create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home?#/stacks/create/template)
-* Select Template is ready
-* Set Amazon S3 URL to [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml)
-* Click Next
-* Set a stack name. Eg. `{% include product %}-vpc`
-* Choose network ranges that doesn't conflict with your studio network and set subnet CIDR values accordingly
-* Set your S3 bucket name
-* Click Next
-* Click Next
+- Create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home?#/stacks/create/template)
+- Select Template is ready
+- Set Amazon S3 URL to [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc-s3-privatelink.yml)
+- Click Next
+- Set a stack name. Eg. `{% include product %}-vpc`
+- Choose network ranges that doesn't conflict with your studio network and set subnet CIDR values accordingly
+- Set your S3 bucket name
+- Click Next
+- Click Next
 
 ## Set up access from your site network to your AWS VPC
 
 Options provided by AWS:
-* [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html)
-* [AWS Direct Connect](https://aws.amazon.com/directconnect/)
+
+- [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html)
+- [AWS Direct Connect](https://aws.amazon.com/directconnect/)
 
 {% include info title="Note" content="If Direct Connect is chosen, we recommend testing with a simpler / faster solution in the meantime to validate your Isolation setup. You can then replace that solution with Direct Connect once it is available." %}
 
@@ -57,10 +58,10 @@ Use the endpoint URL to list objects in your bucket using AWS CLI. In the follow
 
 ### Configure your test site to use your S3 VPC endpoint
 
-* Navigate to the Site Preferences menu within {% include product %} and expand the Isolation section
-* Set S3 Proxy Host Address to the S3 proxy url. Eg. `https://s3-proxy.mystudio.com` then click Save changes
-* Confirm that you are still able to access existing media
-* Attempt to upload new media
+- Navigate to the Site Preferences menu within {% include product %} and expand the Isolation section
+- Set S3 Proxy Host Address to the S3 proxy url. Eg. `https://s3-proxy.mystudio.com` then click Save changes
+- Confirm that you are still able to access existing media
+- Attempt to upload new media
 
 ## Next Steps
 

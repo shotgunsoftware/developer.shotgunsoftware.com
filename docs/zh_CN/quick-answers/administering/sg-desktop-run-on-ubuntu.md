@@ -15,5 +15,3 @@ lang: zh_CN
 目前我们还没有正式的 Debian 支持计划。Ubuntu 构建存在问题，但在更改时需要进行 QA 并支持额外的操作系统，这并不是一件简单的事情。
 
 如果要手动运行并激活 Toolkit 而不使用 {% include product %} Desktop（[如此处文档所述](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033208#Step%208.%20Run%20the%20activation%20script)），请从该文档页面下载 `activate_shotgun_pipeline_toolkit.py` 脚本 - 即手册的第 8 步，单击“单击以下载...”标题。
-
-

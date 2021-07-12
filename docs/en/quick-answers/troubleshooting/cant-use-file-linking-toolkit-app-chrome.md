@@ -1,7 +1,7 @@
 ---
 layout: default
 title: I can't use local file linking and launch Toolkit applications from Chrome
-pagename: cant-use-file-linking-toolkit-app-chrome 
+pagename: cant-use-file-linking-toolkit-app-chrome
 lang: en
 ---
 
@@ -36,7 +36,7 @@ You can verify that Chrome accepts the certificate by browsing to https://localh
 
 ![Autobahn Python message](images/autobahn-python.png)
 
-On the other hand, if you are greeted by one of these messages, it means there was a problem with the certificate registration process: 
+On the other hand, if you are greeted by one of these messages, it means there was a problem with the certificate registration process:
 
 ![Your connection is not private message](images/your-connection-is-not-private-chrome.png)
 
@@ -44,7 +44,7 @@ On the other hand, if you are greeted by one of these messages, it means there w
 
 ## How to quickly fix certificate issues
 
-The easiest way to circumvent those issues is to click **ADVANCED** and **Proceed to localhost (unsafe)**. This will let Chrome know that you are accepting the certificate nonetheless and will allow the {% include product %} website to communicate with {% include product %} Desktop. 
+The easiest way to circumvent those issues is to click **ADVANCED** and **Proceed to localhost (unsafe)**. This will let Chrome know that you are accepting the certificate nonetheless and will allow the {% include product %} website to communicate with {% include product %} Desktop.
 
 {% include info title="Note" content="This only enables the connection between your web browser and ShotGrid Desktop. The trust setting lets traffic flow between these two applications, **it does not imply trust of any other server on the internet**. Unfortunately, this process needs to be repeated on every single computer with the problem. If this doesn't solve the issue or you feel it would be too complicated to deploy to all your users, we recommend you take a look at the following steps." %}
 
@@ -54,7 +54,7 @@ The easiest way to circumvent those issues is to click **ADVANCED** and **Procee
 
 Chrome regularly upgrades its security around self-signed certificates and our browser integration is sometimes broken by these updates. Unfortunately, these sorts of issues can only be remediated by regenerating the certificate’s certificate_path.
 
-To regenerate the certificates, you can pick the **Regenerate Certificates** option under the **Advanced** section of {% include product %} Desktop's user menu. (If you don't see this option, please make sure you update the `tk-desktop` engine to unlock it.) 
+To regenerate the certificates, you can pick the **Regenerate Certificates** option under the **Advanced** section of {% include product %} Desktop's user menu. (If you don't see this option, please make sure you update the `tk-desktop` engine to unlock it.)
 
 After confirming that you want to regenerate the certificates, a series of dialogs will pop-up just like the first time you've generated the certificates. On Windows and macOS, you will be prompted to update the Windows Certificate Store or the macOS keychain twice: once to remove the old certificate and once to register the new one. On Linux, the registration is done silently. Once this is done, let {% include product %} Desktop restart.
 

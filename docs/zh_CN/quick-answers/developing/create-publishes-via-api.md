@@ -13,6 +13,7 @@ lang: zh_CN
 发布 API 最终使用核心 sgtk API 方法来注册 PublishedFile，但它还会围绕集合、验证和发布提供一个可自定义的框架。除了发布 API 文档外，我们还在[工作流教程](https://developer.shotgridsoftware.com/zh_CN/cb8926fc/)中举例说明了如何编写自己的发布插件。
 
 ## 使用 register_publish() API 方法
+
 虽然可以使用原始 {% include product %} API 调用在 {% include product %} 中创建发布记录，但是我们强烈建议使用 Toolkit 的便捷方法。
 创建发布的所有 Toolkit 应用都使用称为 [`sgtk.util.register_publish()`](http://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.register_publish) 的 API 实用程序方法。
 
@@ -75,4 +76,5 @@ currentEngine = sgtk.platform.current_engine()
 tk = currentEngine.sgtk
 ctx = currentEngine.context
 ```
+
 " %}

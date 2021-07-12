@@ -7,13 +7,12 @@ lang: en
 
 # Why are my Houdini {% include product %} integrations not starting?
 
-
 This covers the most common reason we’ve seen for the {% include product %} integrations not starting in Houdini. In this case,
 Houdini launches without error from {% include product %} Desktop, your {% include product %} website, or the tank command. However, once Houdini
 is launched, the {% include product %} menu or shelf does not appear.
 
 Often the reason for this is that the `HOUDINI_PATH` environment variable has been overridden, and {% include product %} relies on that
- for passing the startup script path.
+for passing the startup script path.
 
 When Houdini is launched from {% include product %}, the launch app logic adds the {% include product %} bootstrap script path to the `HOUDINI_PATH`
 environment variable. However, the problem can arise when Houdini has a
@@ -34,7 +33,7 @@ Then you should add `$HOUDINI_PATH;` to the end of the path defined in the file 
 
 This will allow the {% include product %} set value to persist when Houdini launches.
 
-{% include warning title="Caution" content="On Windows we've seen `$HOUDINI_PATH` causing issues. It sometimes tries to bootstrap the Shotgun integration multiple times generating an error like this: 
+{% include warning title="Caution" content="On Windows we've seen `$HOUDINI_PATH` causing issues. It sometimes tries to bootstrap the Shotgun integration multiple times generating an error like this:
 
     Toolkit bootstrap is missing a required variable : TANK_CONTEXT
 

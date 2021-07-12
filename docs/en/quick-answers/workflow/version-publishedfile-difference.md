@@ -14,4 +14,3 @@ A **"Version"** (the `Version` entity in ShotGrid) is the visual representation 
 The ultimate idea is that when you publish, you may generate a collection of files — sometimes different file formats but effectively the same content (a Maya file, an obj, an alembic, etc.) — and these are all different representations of the same thing. They are then associated with a single review `Version` for previewing the publish data and taking notes.
 
 This idea becomes a little bit redundant when the published data is an image sequence. Effectively the image sequence is both the thing you want to review and the thing that will be sent down the pipe. In this case you may have to "double up" and create both a publish and a `Version`. This allows you to load the published data (e.g. via the Loader app) that represents the `Version`.
-

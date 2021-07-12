@@ -121,10 +121,10 @@ Photoshop CC를 시작할 때마다 엔진 부트스트랩(Bootstrapping) 코드
 
 ```yaml
 shelf_favorites:
-    - {app_instance: tk-multi-workfiles2, name: File Save...}
-    - {app_instance: tk-multi-workfiles2, name: File Open...}
-    - {app_instance: tk-multi-publish, name: Publish...}
-    - {app_instance: tk-multi-snapshot, name: Snapshot...}
+  - { app_instance: tk-multi-workfiles2, name: File Save... }
+  - { app_instance: tk-multi-workfiles2, name: File Open... }
+  - { app_instance: tk-multi-publish, name: Publish... }
+  - { app_instance: tk-multi-snapshot, name: Snapshot... }
 ```
 
 설정의 값은 구성에 설치된 앱 중 하나에서 제공하는 등록된 명령을 식별하는 사전 목록입니다. `app_instance` 키는 설치된 특정 앱을 식별하고 `name` 키는 해당 앱에서 등록된 명령의 표시 이름과 일치합니다. 위의 예에서 즐겨찾는 네 가지 명령, `tk-multi-workfiles2` 앱의 파일 열기 및 저장 대화상자와 표준 툴킷 게시 및 스냅샷 대화상자를 볼 수 있습니다. 이제 이 네 가지 명령이 즐겨찾기 쉘프에 표시됩니다.
@@ -148,6 +148,7 @@ shelf_favorites:
 Photoshop API 객체는 `engine.adobe`로 노출됩니다. 아래 예는 툴킷 앱과 후크 내에서 Photoshop DOM을 직접 조작하는 방법을 보여 줍니다. 표준 툴킷 앱에는 Photoshop 문서와 상호 작용하는 방법에 대한 작업 예가 포함되어 있습니다.
 
 #### 예
+
 파일 로드:
 
 ```python
@@ -215,4 +216,4 @@ for (i, layer) in enumerate(layers):
 
 ### 앱 개발자 노트
 
-* Python 프로세스는 Photoshop CC 프로세스와 별개이므로 가능한 깔끔한 방식으로 Photoshop 창 위에 표시되는 앱 창을 만들기 위해 엔진 내에서 일부 작업이 수행됩니다. 이 설정의 한 가지 문제는 `QFileDialog`의 경우 기본 OS 창을 사용하도록 하는 기본 옵션입니다. 이 엔진과 함께 사용할 앱을 개발하는 경우 기본 대화상자를 사용하지 않도록 옵션을 설정해야 합니다. [tk-multi-pythonconsole 앱에서 이 예를 참조하십시오.](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218).
+- Python 프로세스는 Photoshop CC 프로세스와 별개이므로 가능한 깔끔한 방식으로 Photoshop 창 위에 표시되는 앱 창을 만들기 위해 엔진 내에서 일부 작업이 수행됩니다. 이 설정의 한 가지 문제는 `QFileDialog`의 경우 기본 OS 창을 사용하도록 하는 기본 옵션입니다. 이 엔진과 함께 사용할 앱을 개발하는 경우 기본 대화상자를 사용하지 않도록 옵션을 설정해야 합니다. [tk-multi-pythonconsole 앱에서 이 예를 참조하십시오.](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218).

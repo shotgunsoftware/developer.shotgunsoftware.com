@@ -36,7 +36,7 @@ Chrome が証明書を受け入れていることを確認するには、https:/
 
 ![Autobahn Python メッセージ](images/autobahn-python.png)
 
-または、次のいずれかのメッセージが表示された場合は、証明書の登録プロセスに問題があったことを示しています。 
+または、次のいずれかのメッセージが表示された場合は、証明書の登録プロセスに問題があったことを示しています。
 
 ![接続はプライベート メッセージではありません](images/your-connection-is-not-private-chrome.png)
 

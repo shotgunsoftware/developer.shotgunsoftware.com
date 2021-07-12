@@ -9,10 +9,10 @@ lang: zh_CN
 
 通过完成本手册，您将很快熟悉 Toolkit 中的配置管理工具，并学会如何：
 
-* 安全地创建使用中的工作流配置的副本
-* 将应用添加到配置
-* 添加在特定环境中使用该应用所需的设置
-* 将更改同步回使用中的工作流配置
+- 安全地创建使用中的工作流配置的副本
+- 将应用添加到配置
+- 添加在特定环境中使用该应用所需的设置
+- 将更改同步回使用中的工作流配置
 
 ## 关于本手册
 
@@ -174,7 +174,6 @@ engines:
   tk-photoshopcc: "@settings.tk-photoshopcc.project"
   tk-shell: "@settings.tk-shell.project"
   tk-shotgun: "@settings.tk-shotgun.project"
-
 ```
 
 使用 `@settings` 的 `tk-maya: “@settings.tk-maya.project”` 行表明这些设置位于包含文件中。`tk-maya` 标识 Maya 插件，`project` 标识环境。
@@ -185,10 +184,10 @@ engines:
 
 对于此特定块：
 
-* `settings` 是为默认配置选择的作为对 settings 文件夹的引用的字符串
-* `project` 是为默认配置选择的作为对项目环境的引用的字符串
-* `tk-maya` 是 Toolkit 的 Maya 插件的标识符
-* `@` 是 Toolkit 术语，用于表示设置值来自包含文件
+- `settings` 是为默认配置选择的作为对 settings 文件夹的引用的字符串
+- `project` 是为默认配置选择的作为对项目环境的引用的字符串
+- `tk-maya` 是 Toolkit 的 Maya 插件的标识符
+- `@` 是 Toolkit 术语，用于表示设置值来自包含文件
 
 YAML 文件是 {% include product %} 集成的窗口，可以更轻松地配置满足您的工作流需求的工作环境。
 
@@ -260,11 +259,11 @@ settings.tk-maya.project:
 
 如果：
 
-* 您使用的是刚编辑的克隆配置
-* 克隆配置已正确扩展
-* 您保存了扩展文件
-* 您选择将项目与克隆配置相关联
-* 您从 {% include product %} Desktop 重新启动了 Maya
+- 您使用的是刚编辑的克隆配置
+- 克隆配置已正确扩展
+- 您保存了扩展文件
+- 您选择将项目与克隆配置相关联
+- 您从 {% include product %} Desktop 重新启动了 Maya
 
 Python 控制台应用将在 Maya 中可用。
 
@@ -330,11 +329,11 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 输入 ID 后，{% include product %} 将：
 
-* 备份主要配置
-* 复制克隆配置
-* 将复制的克隆配置与项目相关联，使克隆保持不变
-* 显示保存主要配置的位置
-* 检查是否有任何需要下载和缓存的应用
+- 备份主要配置
+- 复制克隆配置
+- 将复制的克隆配置与项目相关联，使克隆保持不变
+- 显示保存主要配置的位置
+- 检查是否有任何需要下载和缓存的应用
 
 ```
 Please type in the id of the configuration to push to (ENTER to exit): 1
@@ -400,7 +399,7 @@ apps:
 
 在此之后，进一步包含 `../includes/app_locations.yml`，并搜索 `apps.tk-multi-pythonconsole.location` 以查找以下内容：<br/><br/>
 
-```yaml
+````yaml
 # pythonconsole
 apps.tk-multi-pythonconsole.location:
   type: app_store
@@ -417,3 +416,4 @@ apps.tk-multi-pythonconsole.location:
 在下一个手册中，您将了解[如何自定义 production 文件夹结构，以呈现您的设施的构造方式](./dynamic_filesystem_configuration.md)。
 
 
+````

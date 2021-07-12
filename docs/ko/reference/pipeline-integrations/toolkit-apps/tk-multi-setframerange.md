@@ -35,6 +35,7 @@ tk-multi-setframerange_handles:
   sg_out_frame_field: sg_handle_out
   location: "@apps.tk-multi-setframerange.location"
 ```
+
 그러면 각 항목이 {% include product %} 메뉴에 별도의 옵션으로 표시됩니다.
 
 ![여러 인스턴스](../images/apps/multi-setframerange-multiple_instances.png)

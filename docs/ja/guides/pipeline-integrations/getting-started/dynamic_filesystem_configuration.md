@@ -21,9 +21,9 @@ lang: ja
 
 ### このガイドの次の 3 つの手順
 
-* {% include product %} で、「Set」とよばれる**カスタム エンティティ**を作成します。これは、アーティストが作成しているダイニング ルームの要素と関連付けるために使用します。
-* フォルダの**スキーマ**を編集します。これによって、Toolkit はフォルダ構造内の現在のセットに基づいて動的に名前が付けられたフォルダを含めることができます。
-* アセット ワーク ファイルの命名に使用される**テンプレート**を編集します。これによって、Toolkit はファイル名に関連付けられたセットの名前を含めることができます。
+- {% include product %} で、「Set」とよばれる**カスタム エンティティ**を作成します。これは、アーティストが作成しているダイニング ルームの要素と関連付けるために使用します。
+- フォルダの**スキーマ**を編集します。これによって、Toolkit はフォルダ構造内の現在のセットに基づいて動的に名前が付けられたフォルダを含めることができます。
+- アセット ワーク ファイルの命名に使用される**テンプレート**を編集します。これによって、Toolkit はファイル名に関連付けられたセットの名前を含めることができます。
 
 ### 前提条件
 
@@ -70,7 +70,7 @@ Toolkit プラットフォームでは**スキーマ**を使用してフォル�
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/4_enable_entity.png)
 
-これによって、カスタム エンティティが {% include product %} でアクティブになり、表示名が *Set* になります。エンティティのシステム名は `CustomEntity01` のままなので、基本的にここではカスタム エンティティの別名を作成していることになります。この例では、`CustomEntity01` を使用していますが、別のカスタム エンティティを使用することもできます。
+これによって、カスタム エンティティが {% include product %} でアクティブになり、表示名が _Set_ になります。エンティティのシステム名は `CustomEntity01` のままなので、基本的にここではカスタム エンティティの別名を作成していることになります。この例では、`CustomEntity01` を使用していますが、別のカスタム エンティティを使用することもできます。
 
 {% include info title="注" content="選択したカスタム エンティティのシステム名はメモしておきます。" %}
 
@@ -166,7 +166,6 @@ Set エンティティは `CustomEntity01` として表されます。{% include
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/16_custom_entity_folder.png)
 
-
 **手順 9:** 以下の内容で、`CustomEntity01` フォルダの隣に `CustomEntity01.yml` という名前のファイルを作成します。
 
 ```yaml
@@ -177,7 +176,7 @@ name: "code"
 entity_type: "CustomEntity01"
 
 filters:
-    - { "path": "project", "relation": "is", "values": [ "$project" ] }
+  - { "path": "project", "relation": "is", "values": ["$project"] }
 ```
 
 YAML ファイルは、`CustomEntity01` フォルダに付ける名前を Toolkit に指示します。この場合は、タイプ `{% include product %}_entity` のフォルダを作成しています。これは、{% include product %} クエリに対応していることを意味します。`entity_type` フィールドは {% include product %} の `CustomEntity01` エンティティをクエリするように指示し、`name` フィールドはエンティティのどの*フィールド*をクエリするのかを指示します。この場合は `CustomEntity01` から `code` フィールドを取得します。
@@ -196,28 +195,28 @@ YAML ファイルは、`CustomEntity01` フォルダに付ける名前を Toolki
 
 ```yaml
 filters:
-    - { "path": "project", "relation": "is", "values": [ "$project" ] }
-    - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
+  - { "path": "project", "relation": "is", "values": ["$project"] }
+  - { "path": "sg_asset_type", "relation": "is", "values": ["$asset_type"] }
 ```
 
-アセットのフォルダを作成するときは、正しいプロジェクト フォルダと正しいasset_type フォルダが選択されていることを確認する必要があります。セットのフォルダを追加したので、3 番目のフィルタを追加します。追加しないと、次のようなフォルダとなり、これはもちろん正しくありません。
+アセットのフォルダを作成するときは、正しいプロジェクト フォルダと正しい asset_type フォルダが選択されていることを確認する必要があります。セットのフォルダを追加したので、3 番目のフィルタを追加します。追加しないと、次のようなフォルダとなり、これはもちろん正しくありません。
 
 ```
 assets/Dining-Room/Prop/spoon
 assets/Garage/Prop/spoon
 assets/Classroom/Prop/spoon
 ```
+
 これを防ぐために、3 番目のフィルタを追加します。これにより、アセットのフォルダは正しいセットのフォルダにのみ作成されるようになります。
 
 **手順 11:** `asset.yml` の `filters` フィールドを次のように変更します。
 
 ```yaml
 filters:
-    - { "path": "project", "relation": "is", "values": [ "$project" ] }
-    - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
-    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity04" ] }
+  - { "path": "project", "relation": "is", "values": ["$project"] }
+  - { "path": "sg_asset_type", "relation": "is", "values": ["$asset_type"] }
+  - { "path": "sg_set", "relation": "is", "values": ["$CustomEntity04"] }
 ```
-
 
 ## フォルダ作成のテスト
 
@@ -225,10 +224,10 @@ filters:
 
 フォルダは、Toolkit パイプライン ワークフローのいくつかの時点で作成されます。
 
-* **アプリケーション ランチャー**： ユーザがタスクの DCC を起動するたびに、Toolkit はそのタスクのディレクトリを作成します(まだ作成されていない場合)。Toolkit ではまず最初に DCC の起動を行う傾向があるので、通常はこの方法でディレクトリが作成されます。これは、{% include product %} の右クリック メニュー、または {% include product %} Desktop あるいは Create アプリで実行できます。
-* **{% include product %} メニュー**: タスク用のフォルダを作成する最も直接的な方法は、{% include product %} で右クリックして[フォルダを作成]（Create Folders）メニュー項目を選択することです。
-* **Toolkit API**: Toolkit API を介して直接ディレクトリ作成ロジックを起動できます。この方法によって、Toolkit をカスタム ランチャーにプラグインしたり、{% include product %} で作成される Shot のディレクトリを自動的に作成するためのワークフローのイベント トリガとして使用することができます。
-* **tank コマンド**: {% include product %} のメニュー項目と同様、`tank folders` 端末コマンドからもタスク用のフォルダを作成できます。
+- **アプリケーション ランチャー**： ユーザがタスクの DCC を起動するたびに、Toolkit はそのタスクのディレクトリを作成します(まだ作成されていない場合)。Toolkit ではまず最初に DCC の起動を行う傾向があるので、通常はこの方法でディレクトリが作成されます。これは、{% include product %} の右クリック メニュー、または {% include product %} Desktop あるいは Create アプリで実行できます。
+- **{% include product %} メニュー**: タスク用のフォルダを作成する最も直接的な方法は、{% include product %} で右クリックして[フォルダを作成]（Create Folders）メニュー項目を選択することです。
+- **Toolkit API**: Toolkit API を介して直接ディレクトリ作成ロジックを起動できます。この方法によって、Toolkit をカスタム ランチャーにプラグインしたり、{% include product %} で作成される Shot のディレクトリを自動的に作成するためのワークフローのイベント トリガとして使用することができます。
+- **tank コマンド**: {% include product %} のメニュー項目と同様、`tank folders` 端末コマンドからもタスク用のフォルダを作成できます。
 
 `tank` コマンドでテストします。
 
@@ -265,7 +264,6 @@ In total, 23 folders were processed.
 
 `/the_other_side/assets/Dining-Room/Prop/Filet/model`
 
-
 ![Python アプリ](./images/dynamic_filesystem_configuration/folders_done.png)
 
 ### ファイルを読み書きするための Toolkit テンプレート
@@ -274,7 +272,7 @@ In total, 23 folders were processed.
 
 ### Toolkit アプリがテンプレートを使用する方法
 
-まず、{% include product %} でアセットをセットに関連付ける方法を作成しました。すなわち CustomEntity01 がセットを表すようにして、Asset エンティティにアセットとセットの間のリンクを表すリンク フィールドを追加しました。アセットとセット間の関係を確立したら、その関連付けを使用するようにフォルダ スキーマを設定し、すべてのアセットの*フォルダ*をその関連付けられたセットのフォルダ内に配置します。次に、*ファイル*に動的に名前を付ける方法を作成し、Toolkitアプリ でファイルを自動的に管理できるようにします。
+まず、{% include product %} でアセットをセットに関連付ける方法を作成しました。すなわち CustomEntity01 がセットを表すようにして、Asset エンティティにアセットとセットの間のリンクを表すリンク フィールドを追加しました。アセットとセット間の関係を確立したら、その関連付けを使用するようにフォルダ スキーマを設定し、すべてのアセットの*フォルダ*をその関連付けられたセットのフォルダ内に配置します。次に、*ファイル*に動的に名前を付ける方法を作成し、Toolkit アプリ でファイルを自動的に管理できるようにします。
 
 アーティストがプロジェクト内のタスクを実行し始めると、必要なフォルダ構造が生成されます。その後、Workfiles アプリの**[File Save]**アクションを開始すると、ファイルに自動的に名前が付けられます。Toolkit の Workfiles アプリを通じてアクセスされるテンプレートは、そのファイルに名前を付けるために使用されます。Nuke Write ノードや Houdini Mantra ノードなどのレンダリング アプリは、パブリッシュ ファイル用のパブリッシャー アプリと同様に、テンプレートを使用してレンダリングされたファイルに名前を付けて保存します。
 
@@ -286,9 +284,9 @@ Workfiles の**[File Open]**アクションを使用してファイルにアク�
 
 このファイルは 3 つのセクションに分かれています。
 
-* **キー:** トークンのセット(`{version}`、`{Asset}` など)。テンプレートを構築するために使用されます。テンプレートが使用されると、実際の値に置き換えられます。各キーには、必須の名前とタイプ、およびオプションのパラメータがあります。
-* **パス:** キーを使用してディスク上のフォルダおよびファイルへのパスを表す名前付き文字列。`paths` セクションのテンプレートは検証済みで、実際にディスク上に存在する必要があります。
-* **文字列:** パス セクションと似ていますが、これらは任意のテキストのテンプレートです。パス セクションの項目は検証済みで、ディスク上の実際のパスと対応している必要がありますが、Toolkit ワークフローで参照するテキスト データを格納するために文字列を使用できます。
+- **キー:** トークンのセット(`{version}`、`{Asset}` など)。テンプレートを構築するために使用されます。テンプレートが使用されると、実際の値に置き換えられます。各キーには、必須の名前とタイプ、およびオプションのパラメータがあります。
+- **パス:** キーを使用してディスク上のフォルダおよびファイルへのパスを表す名前付き文字列。`paths` セクションのテンプレートは検証済みで、実際にディスク上に存在する必要があります。
+- **文字列:** パス セクションと似ていますが、これらは任意のテキストのテンプレートです。パス セクションの項目は検証済みで、ディスク上の実際のパスと対応している必要がありますが、Toolkit ワークフローで参照するテキスト データを格納するために文字列を使用できます。
 
 ### Set エンティティのテンプレート キーを追加する
 
@@ -297,8 +295,8 @@ Workfiles の**[File Open]**アクションを使用してファイルにアク�
 **手順 14:** 適切なインデントを使用し、`templates.yml` の `keys` セクションに次の行を追加します。
 
 ```yaml
-       CustomEntity01:
-           type: str
+CustomEntity01:
+  type: str
 ```
 
 ### テンプレートを修正する
@@ -312,8 +310,8 @@ Toolkit がファイルを読み書きする場所はテンプレートが定義
 **手順 15:** `templates.yml` を開いて、`maya_asset_work` を検索します。
 
 ```yaml
-   maya_asset_work:
-        definition: '@asset_root/work/maya/{name}.v{version}.{maya_extension}'
+maya_asset_work:
+  definition: "@asset_root/work/maya/{name}.v{version}.{maya_extension}"
 ```
 
 `maya_asset_work` の `definition` 値は `@asset_root` で始まります。`@` 記号は、`@asset_root` の値が他の場所で定義されていることを意味します。
@@ -347,8 +345,8 @@ Toolkit がファイルを読み書きする場所はテンプレートが定義
 **手順 17:** `maya_asset_work`テンプレート定義を次のように変更します。
 
 ```yaml
-    maya_asset_work:
-        definition: '@asset_root/work/maya/{CustomEntity01}_{Asset}.v{version}.{maya_extension}'
+maya_asset_work:
+  definition: "@asset_root/work/maya/{CustomEntity01}_{Asset}.v{version}.{maya_extension}"
 ```
 
 このアクションにより、ファイル名に Dining-Room エンティティの適切な名前を使用できます。結果は次のようになります。`Dining-Room_Filet.v1.mb`
@@ -381,15 +379,13 @@ Maya で、**[{% include product %}] > [File Open]（ファイルを開く）**�
 
 ### 例を拡張する
 
-この例では 1 つのテンプレートを変更しましたが、ファイルシステムの設定については他にもさまざまな操作を実行できます。現実の例では、*すべての*アセット関連のファイルを同じファイル命名規則に従うように変更します。他のエンティティ(Season、Episode、Level など)に基づいて変更を加えたり、ユーザ フォルダを作成したり、正規表現で操作した {% include product %} のデータに基づいてフォルダに名前を付けたりすることができます。Toolkit のすべてのフォルダおよびスキーマ オプションについては、『[ファイル システム設定リファレンス]( https://support.shotgunsoftware.com/hc/ja/articles/219039868 )』を参照してください。
+この例では 1 つのテンプレートを変更しましたが、ファイルシステムの設定については他にもさまざまな操作を実行できます。現実の例では、*すべての*アセット関連のファイルを同じファイル命名規則に従うように変更します。他のエンティティ(Season、Episode、Level など)に基づいて変更を加えたり、ユーザ フォルダを作成したり、正規表現で操作した {% include product %} のデータに基づいてフォルダに名前を付けたりすることができます。Toolkit のすべてのフォルダおよびスキーマ オプションについては、『[ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868)』を参照してください。
 
 ### パス キャッシュ
 
 フォルダ作成時に、ディスク上のフォルダと {% include product %} エンティティの間にマッピングが作成されます。これらのマッピングは {% include product %} の FilesystemLocation エンティティとして保存され、ユーザのマシンの SQLite データベースにキャッシュされます。パス キャッシュの仕組みと、その使用方法の詳細については、[このドキュメント](../../../quick-answers/administering/what-is-path-cache.md)を参照してください。
 
-
 ### その他のリソース
 
-* 『[ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868)』
-* [Toolkit 設定紹介のウェビナー ビデオ](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)
-
+- 『[ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868)』
+- [Toolkit 設定紹介のウェビナー ビデオ](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)

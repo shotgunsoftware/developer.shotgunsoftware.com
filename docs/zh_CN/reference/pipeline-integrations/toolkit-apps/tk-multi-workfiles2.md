@@ -65,12 +65,12 @@ lang: zh_CN
 
 ```yaml
 maya_extension:
-    type: str
-    choices:
-        ma: Maya Ascii (.ma)
-        mb: Maya Binary (.mb)
-    default: ma
-    alias: extension
+  type: str
+  choices:
+    ma: Maya Ascii (.ma)
+    mb: Maya Binary (.mb)
+  default: ma
+  alias: extension
 ```
 
 `maya_extension` 是令牌的名称。`choices` 是下拉列表中将会显示的文件类型的词典。键（`ma` 和 `mb`）是此模板令牌可以具有的值。值（`Maya Ascii (.ma)` 和 `Maya Binary (.mb)`） 是可供 Toolkit 应用程序使用的用户界面友好的说明。`alias` 是工作文件应用程序需要的提示。它将告诉应用程序此令牌是一个扩展名，应显示在下拉列表控件中。
@@ -79,8 +79,8 @@ maya_extension:
 
 ```yaml
 maya_shot_work:
-    definition: '@shot_root/work/maya/{name}.v{version}.{maya_extension}'
-    root_name: 'primary'
+  definition: "@shot_root/work/maya/{name}.v{version}.{maya_extension}"
+  root_name: "primary"
 ```
 
 ## “Change Context”对话框
@@ -100,18 +100,18 @@ maya_shot_work:
 以下示例定义两个选项卡，分别显示资产的任务和镜头的任务：
 
 ```yaml
-  - caption: Assets Tasks
-    entity_type: Task
-    step_filter_on: Asset
-    filters:
+- caption: Assets Tasks
+  entity_type: Task
+  step_filter_on: Asset
+  filters:
     - [entity, type_is, Asset]
-    hierarchy: [entity.Asset.sg_asset_type, entity, step, content]
-  - caption: Shots Tasks
-    entity_type: Task
-    step_filter_on: Shot
-    filters:
+  hierarchy: [entity.Asset.sg_asset_type, entity, step, content]
+- caption: Shots Tasks
+  entity_type: Task
+  step_filter_on: Shot
+  filters:
     - [entity, type_is, Shot]
-    hierarchy: [entity.Shot.sg_sequence, entity, step, content]
+  hierarchy: [entity.Shot.sg_sequence, entity, step, content]
 ```
 
 ![工序过滤器](../images/apps/multi-workfiles2-step_filter.png)
@@ -119,13 +119,14 @@ maya_shot_work:
 ## 延迟查询
 
 为了获得更好的性能，构建实体树可以分为两个工序查询：
+
 - 第一个查询用于从 {% include product %} 检索记录并填充树的顶部。
 - 第二个查询用于在用户展开树时检索子项。
 
 在使用以下设置的情况下，将在启动应用时从 {% include product %} 检索资产和镜头。然后，在树视图中选择或展开特定资产或镜头时，将仅检索链接到此资产或镜头的任务。
 
 ```yaml
-  entities:
+entities:
   - caption: Assets
     entity_type: Asset
     hierarchy: [sg_asset_type, code]

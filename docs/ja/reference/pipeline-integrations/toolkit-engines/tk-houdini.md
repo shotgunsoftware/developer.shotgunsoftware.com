@@ -11,7 +11,6 @@ lang: ja
 
 ![{% include product %} Engine for Houdini](../images/engines/houdini_engine.png)
 
-
 # アプリ開発者向けの情報
 
 ## サポート対象プラットフォーム
@@ -47,9 +46,9 @@ tk-houdini:
   apps:
     # ... other app definitions
     tk-multi-workfiles:
-       # ... other app settings
-       sg_entity_types: [Shot, Asset] # allow context switching to Shots or Assets
-       # ... other app settings
+      # ... other app settings
+      sg_entity_types: [Shot, Asset] # allow context switching to Shots or Assets
+      # ... other app settings
   enable_sg_shelf: true
   enable_sg_menu: false
   # ... other engine settings
@@ -94,21 +93,21 @@ houdini_mac: /Applications/Houdini\ 15.0.272/Houdini\ Apprentice.app/Contents/Ma
 
 ```yaml
 launch_houdini:
-  defer_keyword: ''
+  defer_keyword: ""
   engine: tk-houdini
   extra: {}
-  hook_app_launch: app_launch    # <----- use a custom app_launch hook
+  hook_app_launch: app_launch # <----- use a custom app_launch hook
   hook_before_app_launch: default
-  icon: '{target_engine}/icon_256.png'
-  linux_args: ''
-  linux_path: '@houdini_linux'
-  location: {name: tk-multi-launchapp, type: app_store, version: v0.6.6}
-  mac_args: ''
-  mac_path: '@houdini_mac'
+  icon: "{target_engine}/icon_256.png"
+  linux_args: ""
+  linux_path: "@houdini_linux"
+  location: { name: tk-multi-launchapp, type: app_store, version: v0.6.6 }
+  mac_args: ""
+  mac_path: "@houdini_mac"
   menu_name: Launch Houdini
   versions: []
-  windows_args: ''
-  windows_path: '@houdini_windows'
+  windows_args: ""
+  windows_path: "@houdini_windows"
 ```
 
 その後は実行可能ファイルを直接起動するように起動ロジックを修正するだけです。たとえば、ディレクトリの古い動作(アプリケーション バンドル)を維持し、それ以外のコマンドを直接実行するとします。次に例を示します。

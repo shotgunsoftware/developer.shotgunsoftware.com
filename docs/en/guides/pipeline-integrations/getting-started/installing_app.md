@@ -6,31 +6,31 @@ lang: en
 ---
 
 # Adding an app
- 
+
 By completing this guide, you will quickly become acquainted with the configuration management tools in Toolkit and learn how to:
 
-* Safely create a copy of an active pipeline configuration
-* Add an app to a configuration
-* Add the settings necessary to use that app in specific environments
-* Push your changes back to the active configuration
+- Safely create a copy of an active pipeline configuration
+- Add an app to a configuration
+- Add the settings necessary to use that app in specific environments
+- Push your changes back to the active configuration
 
 ## About the guide
 
-This guide will demonstrate how to add a {% include product %} Toolkit app to an existing pipeline configuration. You will quickly become acquainted with the configuration management tools. 
+This guide will demonstrate how to add a {% include product %} Toolkit app to an existing pipeline configuration. You will quickly become acquainted with the configuration management tools.
 
-The app we will be adding is the {% include product %} Python Console app. Maya has its own Python console, but there are some features in the Toolkit app that don’t exist in the Maya console. 
+The app we will be adding is the {% include product %} Python Console app. Maya has its own Python console, but there are some features in the Toolkit app that don’t exist in the Maya console.
 
 This guide utilizes the pipeline configuration we created in the [Editing a Pipeline Configuration](./editing_app_setting.md) guide. If you haven’t completed this guide, you can use an existing pipeline configuration and add the app there.
 
 ## Using this document
- 
+
 To use this guide and install a Toolkit app, the following is required:
 
 1. An active [{% include product %}](https://www.shotgridsoftware.com/signup/) site.
 2. A pipeline configuration for the identified project, or complete the [Getting Started with Configurations guide](./advanced_config.md) and use the configuration created in that exercise.
 3. Read and write permissions set appropriately for the filesystem where the pipeline configuration is stored.
 4. {% include product %} Desktop installed on your system.
-5. An active subscription for Maya. Get a 30 day trial of Maya [here](https://www.autodesk.com/products/maya/free-trial-dts). 
+5. An active subscription for Maya. Get a 30 day trial of Maya [here](https://www.autodesk.com/products/maya/free-trial-dts).
 
 {% include info title="Note" content="This guide is based on the tk-config-default2 pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here." %}
 
@@ -79,7 +79,7 @@ Cloning a pipeline configuration automates the process of creating a copy, build
 
 ## Clone the Pipeline Configuration you want to add an app to
 
-### Go to the Pipeline Configuration list. 
+### Go to the Pipeline Configuration list.
 
 **Step 3:** Open {% include product %} and in the upper right, select the **Admin Menu (your avatar) > Default Layouts > Pipeline Configuration > Pipeline Configuration List**.
 
@@ -93,7 +93,7 @@ This action displays a detailed list of all of your {% include product %} site's
 
 ### Review where the project’s configuration is located
 
-**Step 5:**  Additionally, add the the appropriate **Path** field for your operating system.
+**Step 5:** Additionally, add the the appropriate **Path** field for your operating system.
 
 ![Path to_config](./images/installing_app/6_path_to_config.png)
 
@@ -105,7 +105,7 @@ This displays the paths to the configuration files.
 
 ![Clone_complete](./images/installing_app/8_clone_complete.png)
 
-**Step 7:** Name the configuration in the Configuration List and name the file in the directory: "Primary Clone Config 2" and “the_other_side_clone2,” respectively. Select **OK**. 
+**Step 7:** Name the configuration in the Configuration List and name the file in the directory: "Primary Clone Config 2" and “the_other_side_clone2,” respectively. Select **OK**.
 
 ![Name clone](./images/installing_app/9_name_clone.png)
 
@@ -137,7 +137,7 @@ If an app that you want to use isn’t referenced in the little black book, you 
 
 ## Tell Toolkit where to find the app
 
-**Step 10:** Search the file for `pythonconsole`. If you used the Default Configuration for the project, you will find that the descriptor for the Python Console app is listed in this file. It should match the description we found in the [list](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) of Maya apps we looked at when we started on our journey. Check to make sure the version matches what we looked at in the list of Maya apps. 
+**Step 10:** Search the file for `pythonconsole`. If you used the Default Configuration for the project, you will find that the descriptor for the Python Console app is listed in this file. It should match the description we found in the [list](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) of Maya apps we looked at when we started on our journey. Check to make sure the version matches what we looked at in the list of Maya apps.
 
 ```yaml
 apps.tk-multi-pythonconsole.location:
@@ -174,10 +174,9 @@ engines:
   tk-photoshopcc: "@settings.tk-photoshopcc.project"
   tk-shell: "@settings.tk-shell.project"
   tk-shotgun: "@settings.tk-shotgun.project"
-
 ```
 
-The `tk-maya: “@settings.tk-maya.project”` line using the `@settings` tells you that the settings are in an included file. The `tk-maya` identifies the Maya engine and the `project` identifies the environment. 
+The `tk-maya: “@settings.tk-maya.project”` line using the `@settings` tells you that the settings are in an included file. The `tk-maya` identifies the Maya engine and the `project` identifies the environment.
 
 ### YAML files
 
@@ -185,12 +184,12 @@ The {% include product %} Toolkit pipeline configuration uses simple terms in [Y
 
 For this specific block:
 
-* `settings` is what was chosen for the Default Configuration as a reference for the settings folder
-* `project` is what was chosen for the Default Configuration as a reference for the project environment
-* `tk-maya` is the identifier for Toolkit's engine for Maya
-* `@` is a Toolkit term used to denote that a setting value is coming from an included file  
+- `settings` is what was chosen for the Default Configuration as a reference for the settings folder
+- `project` is what was chosen for the Default Configuration as a reference for the project environment
+- `tk-maya` is the identifier for Toolkit's engine for Maya
+- `@` is a Toolkit term used to denote that a setting value is coming from an included file
 
-The YAML files are the windows into {% include product %}’s integrations and make it easier to configure working environments that meet the needs of your pipeline. 
+The YAML files are the windows into {% include product %}’s integrations and make it easier to configure working environments that meet the needs of your pipeline.
 
 ### How the configuration references Toolkit bundles
 
@@ -204,18 +203,18 @@ For this specific block in the Default Configuration, ‘tk-maya.project’ is t
 
 `./includes/settings/tk-maya.yml`
 
-**Step 14:** In your cloned configuration, open `config/env/includes/settings/tk-maya.yml` in a text editor, and search for `settings.tk-maya.project`. 
+**Step 14:** In your cloned configuration, open `config/env/includes/settings/tk-maya.yml` in a text editor, and search for `settings.tk-maya.project`.
 
 ![tk-maya](./images/installing_app/13_tk-maya.png)
 
-**Step 15:** Add the location descriptor under 
+**Step 15:** Add the location descriptor under
 
 ```yaml
 settings.tk-maya.project:
   apps:
 ```
 
-Use the `about` app, `tk-multi-about:`, as a guide for how to add the location descriptor, then save the file. 
+Use the `about` app, `tk-multi-about:`, as a guide for how to add the location descriptor, then save the file.
 
 {% include info title="Note" content="Make sure your [YAML](https://www.tutorialspoint.com/yaml/yaml_indentation_and_separation.htm) files are formatted correctly using spaces and not tabs." %}
 
@@ -231,7 +230,7 @@ settings.tk-maya.project:
     tk-multi-shotgunpanel: "@settings.tk-multi-shotgunpanel"
     tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"
 ```
- 
+
 You will notice the **Screening Room, {% include product %} Panel, and Workfiles2** app’s location identifiers are listed in a different included file and accessed differently than the **About** app. To keep things tidy, these apps were split off to the included settings folder because they have additional settings.
 
 {% include info title="Note" content="The python console app already exists in the Default Configuration, however if you are adding an app that has never been added to your configuration before or if you have changed the version of an app, and you are using a [centralized configuration](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations), then there is an additional step you need to take. Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration’s root folder, run the following command:<br/>
@@ -248,9 +247,9 @@ This will scan your configuration for apps, engines and frameworks and ensure th
 
 ## View the changes in Maya
 
-**Step 16:** Open {% include product %} Desktop, select the project you were working with, and confirm you are using the cloned configuration. 
+**Step 16:** Open {% include product %} Desktop, select the project you were working with, and confirm you are using the cloned configuration.
 
-There will be a blue bar with the name of the clone that you created under the name of the project. 
+There will be a blue bar with the name of the clone that you created under the name of the project.
 
 {% include info title="Note" content="If you’re using the primary, there will be no blue bar and the configuration name won’t be visible." %}
 
@@ -260,11 +259,11 @@ There will be a blue bar with the name of the clone that you created under the n
 
 If:
 
-* You’re using the cloned configuration that you just edited
-* The cloned configuration was extended correctly
-* You saved the extended files
-* You chose to associate the project with the cloned configuration
-* You relaunched Maya from {% include product %} Desktop
+- You’re using the cloned configuration that you just edited
+- The cloned configuration was extended correctly
+- You saved the extended files
+- You chose to associate the project with the cloned configuration
+- You relaunched Maya from {% include product %} Desktop
 
 The Python Console app will be available in Maya.
 
@@ -274,7 +273,7 @@ The Python Console app will be available in Maya.
 
 After confirming you added the Python Console app correctly, you’re ready to push the changes live.
 
-**Step 18:** Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration's root folder, run the following command: 
+**Step 18:** Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration's root folder, run the following command:
 
 On Linux or Mac:
 
@@ -284,7 +283,7 @@ On Windows:
 
 `tank.bat push_configuration`
 
-Follow the prompts and type in the ID for your project’s Primary configuration, the configuration you want to push the changes to. 
+Follow the prompts and type in the ID for your project’s Primary configuration, the configuration you want to push the changes to.
 
 ```
 
@@ -318,7 +317,7 @@ Your existing configuration will be backed up.
 The following pipeline configurations are available to push to:
  - [1] Primary (/Users/michelle/Documents/Shotgun/configs/the_other_side)
 
-Please type in the id of the configuration to push to (ENTER to exit): 
+Please type in the id of the configuration to push to (ENTER to exit):
 
 ```
 
@@ -330,11 +329,11 @@ There will be a list of the available pipeline configurations that the cloned co
 
 After you enter the ID, {% include product %} will:
 
-* Backup the Primary configuration
-* Copy the cloned configuration
-* Associate the copied cloned configuration with the project leaving the clone intact
-* Displaying where the Primary config was saved 
-* Check to see if there are any apps that need to be downloaded and cached
+- Backup the Primary configuration
+- Copy the cloned configuration
+- Associate the copied cloned configuration with the project leaving the clone intact
+- Displaying where the Primary config was saved
+- Check to see if there are any apps that need to be downloaded and cached
 
 ```
 Please type in the id of the configuration to push to (ENTER to exit): 1
@@ -346,7 +345,7 @@ Checking if there are any apps that need downloading…
 Push Complete!
 ```
 
-## View the changes you made in the primary configuration 
+## View the changes you made in the primary configuration
 
 **Step 19:** In {% include product %} Desktop, click on the arrow in the upper right and choose **Primary** in the **CONFIGURATION** list.
 
@@ -356,7 +355,7 @@ Push Complete!
 
 ![App in Maya](./images/installing_app/19_app_in_maya.png)
 
-The Python Console app was added to the Project environment for the chosen project. We discussed in the second guide, “[Editing a configuration](./editing_app_setting.md), that each environment is independent, a project has a dedicated configuration, and the software integrations gather settings from the pipeline configuration when a project is loaded. For the Python Console to be available in an environment, that environment will need instructions to look in the `app_locations.yml` file for the location descriptor. Given this, at any point in the pipeline where you want the Python Console app to be available will need the settings that say, “use the Python Console app here.” 
+The Python Console app was added to the Project environment for the chosen project. We discussed in the second guide, “[Editing a configuration](./editing_app_setting.md), that each environment is independent, a project has a dedicated configuration, and the software integrations gather settings from the pipeline configuration when a project is loaded. For the Python Console to be available in an environment, that environment will need instructions to look in the `app_locations.yml` file for the location descriptor. Given this, at any point in the pipeline where you want the Python Console app to be available will need the settings that say, “use the Python Console app here.”
 
 ## Advanced topics
 
@@ -368,7 +367,7 @@ Standard Toolkit apps and apps created by the loving {% include product %} commu
 
 ### Investigate how to extend a configuration
 
-You may have noticed when we were selecting which configuration to use for the project, the Python Console App was available in the {% include product %} Desktop dropdown. 
+You may have noticed when we were selecting which configuration to use for the project, the Python Console App was available in the {% include product %} Desktop dropdown.
 
 ![Desktop python console](./images/installing_app/20_desktop_python_console.png)
 
@@ -376,7 +375,7 @@ If there’s an environment that is using an app you want to add to your pipelin
 
 The Desktop app opens in the project environment, so find `tk-desktop` in the `project.yml` file.
 
-Open `config/env/project.yml`. 
+Open `config/env/project.yml`.
 
 {% include info title="Note" content='In the engine block, `tk-desktop` points to included content:
 
@@ -396,11 +395,11 @@ apps:
   location: "@apps.tk-multi-pythonconsole.location"
 ```
 
-These blocks add the Python Console app to the Desktop engine in the project step. 
+These blocks add the Python Console app to the Desktop engine in the project step.
 
 Follow that include further to `../includes/app_locations.yml` and search for `apps.tk-multi-pythonconsole.location` to find the following:<br/><br/>
 
-```yaml
+````yaml
 # pythonconsole
 apps.tk-multi-pythonconsole.location:
   type: app_store
@@ -410,8 +409,9 @@ apps.tk-multi-pythonconsole.location:
 
 Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines).
 
-You can add any app to any appropriate software integration that ShotGrid supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page. 
+You can add any app to any appropriate software integration that ShotGrid supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page.
 
-If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other ShotGrid users will need the same function and sharing new apps is one way to give back to the ShotGrid community. 
+If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other ShotGrid users will need the same function and sharing new apps is one way to give back to the ShotGrid community.
 
-In the next guide, you will learn how to customize your production folder structure to reflect how your facility is structured](./dynamic_filesystem_configuration.md). 
+In the next guide, you will learn how to customize your production folder structure to reflect how your facility is structured](./dynamic_filesystem_configuration.md).
+````

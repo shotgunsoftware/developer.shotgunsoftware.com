@@ -5,12 +5,11 @@ pagename: event-daemon
 lang: zh_CN
 ---
 
-
 # {% include product %} 事件框架
+
 该软件最初由 [Patrick Boucher](http://www.patrickboucher.com) 开发，[Rodeo Fx](http://rodeofx.com) 和 Oblique 提供支持。该软件现已加入 [{% include product %} Software](http://www.shotgunsoftware.com) 的[开源计划](https://github.com/shotgunsoftware)。
 
 该软件根据 MIT 许可提供；如需获取该许可，请访问 LICENSE 文件或[开源计划](http://www.opensource.org/licenses/mit-license.php)网站。
-
 
 ## 概述
 
@@ -40,9 +39,7 @@ lang: zh_CN
 - 将任意数量的回调注册到框架。
 - 每当框架提供一个事件时，便处理该事件。
 
-
 ## 框架的优点
 
 - 为所有脚本使用一个监视机制，而不是为每个脚本使用一个。
 - 可最大限度地减轻网络和数据库负载（仅使用一个监视器向多个事件处理插件提供事件）。
-

@@ -13,7 +13,7 @@ Sometimes it's necessary to move your project files (scene files, renders, etc.)
 
 - Copy (or move) your project files from the old location to the new location.
 - In {% include product %}, navigate to the **Admin > Site Preferences** page and open the **File Management** section.
-    ![{% include product %} storage roots section in the site preferences.](./images/shotgun-storage-roots.png)
+  ![{% include product %} storage roots section in the site preferences.](./images/shotgun-storage-roots.png)
 - Update the Local File Storage named "primary" with the paths for each platform to the new storage for your project files. If you're not using a specific platform, leave it blank.
 - Click on the **"Save Changes"** button on the top or bottom of the page.
 - Update your `config/core/roots.yml` file in your project configuration to match the new path values you just saved in {% include product %}.
@@ -26,7 +26,7 @@ With the new storage root definition, the path is now expanded like this:
 
     [asset-storage]/assets/Character/betty => /mnt/bigdrive/foo/assets/Character/betty
 
-and we don't need to worry about updating any other publish information in {% include product %} or Toolkit! 
+and we don't need to worry about updating any other publish information in {% include product %} or Toolkit!
 
 {% include warning title="Warning" content="The above steps assume that you are re-pathing the existing storage root. If instead you trash the existing one or create a new one then you will need to re-register all your folders and re-publish your `PublishedFiles` entities." %}
 

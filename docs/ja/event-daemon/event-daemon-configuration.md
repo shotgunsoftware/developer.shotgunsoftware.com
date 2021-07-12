@@ -14,6 +14,7 @@ lang: ja
 {% include info title="注" content="**Windows の場合:** Windows ユーザは、環境設定ファイル内のすべてのパスを Windows 用に変更する必要があります。ログを含むすべてのパスを、単純化のために 1 つの場所に保持することをお勧めします。このドキュメントでは、Windows のパスについて説明する際に、`C:\shotgun\shotgunEvents` を参照する傾向があります。"%}
 
 <a id="Edit_shotgunEventDaemon_conf"></a>
+
 ## shotgunEventDaemon.conf を編集する
 
 {% include product %}Events をインストールしたら、次に `shotgunEventDaemon.conf` ファイルをテキスト エディタで開き、スタジオのニーズに合わせて設定を変更します。ほとんどのスタジオでは既定値をそのまま使用できますが、一部の設定には既定値がなく、デーモンを実行する前にユーザが設定する必要があります。
@@ -29,6 +30,7 @@ lang: ja
 また、デーモンでパフォーマンスの問題が発生した場合のトラブルシューティングに役立つオプションのタイミング ログのセクションもあります。タイミング ログを有効にすると、個別のログ ファイルにタイミング情報が入力されます。
 
 <a id="Shotgun_Settings"></a>
+
 ### {% include product %} 設定
 
 `[{% include product %}]` セクションの下で、既定のトークンを `server`、`name`、および `key` の正しい値に置き換えます。これらは、{% include product %} に接続する標準 API スクリプトに指定した値と同じである必要があります。
@@ -42,6 +44,7 @@ key: e37d855e4824216573472846e0cb3e49c7f6f7b1
 ```
 
 <a id="Plugin_Settings"></a>
+
 ### プラグイン設定
 
 実行するプラグインを検索する場所を {% include product %}EventDaemon に指示する必要があります。`[plugins]` セクションで、既定のトークンを `paths` の正しい値に置き換えます。
@@ -57,6 +60,7 @@ paths: /usr/local/shotgun/{% include product %}Events/plugins
 初めて起動する場合、`/usr/local/shotgun/{% include product %}Events/src/examplePlugins` ディレクトリにある `logArgs.py` プラグインを使用してテストを行うことをお勧めします。これを指定したプラグイン フォルダにコピーし、テストに使用します。
 
 <a id="Location_of_shotgunEventDaemon_conf"></a>
+
 ### shotgunEventDaemon.conf の場所
 
 既定では、デーモンは {% include product %}EventDaemon.py と同じディレクトリおよび `/etc` ディレクトリで shotgunEventDaemon.conf ファイルを検索します。conf ファイルを別のディレクトリに配置する必要がある場合は、現在のディレクトリから別のディレクトリへの symlink を作成することをお勧めします。
@@ -66,6 +70,7 @@ paths: /usr/local/shotgun/{% include product %}Events/plugins
 {% include info title="注" content="**Windows の場合**`/etc`は Windows に存在しないため、環境設定ファイルは Python ファイルと同じディレクトリに配置する必要があります。"%}
 
 <a id="Testing_the_Daemon"></a>
+
 ## デーモンをテストする
 
 デーモンはバックグラウンドで実行されるためテストが困難な場合があります。デーモンの動作を確認するための明確な方法はありません。幸い、{% include product %}EventDaemon には、デーモンをフォアグラウンド プロセスとして実行するオプションがあります。最低限必要な設定が完了したので、次にデーモンをテストして、どのように動作するかを確認します。
@@ -85,7 +90,7 @@ INFO:engine:Last event id (248429) from the {% include product %} database.
 
 {% include info title="注" content="logArgs.py ファイルには、適切な値を入力する必要のある変数があります。ログを正しく機能させるには、shotgunEventDaemon.conf ファイルで使用された値と同じ値が含まれるように '$DEMO_SCRIPT_NAMES$' および '$DEMO_API_KEY$' を編集する必要があります。"%}
 
-ログ ファイルに何も記録されていない場合は、{% include product %}EventDaemon.conf のログ関連設定を調べて、``logging`` 値が情報レベルのメッセージを記録するように設定されていること、
+ログ ファイルに何も記録されていない場合は、{% include product %}EventDaemon.conf のログ関連設定を調べて、`logging` 値が情報レベルのメッセージを記録するように設定されていること、
 
 ```
 logging: 20
@@ -100,6 +105,7 @@ reg.logger.setLevel(logging.INFO)
 すべてが正常だと仮定し、{% include product %}EventDaemon プロセスを停止するには、ターミナルに `<ctrl>-c` と入力し、スクリプトの終了を確認します。
 
 <a id="Running_the_Daemon"></a>
+
 ## デーモンを実行する
 
 テストがすべて成功したと仮定し、バックグラウンドで目的どおりにデーモンを実行できるようになりました。
@@ -134,14 +140,16 @@ Web ブラウザに戻り、エンティティに変更を加えます。次に�
 2011-09-09 09:45:31,228 - plugin.logArgs.logArgs - INFO - {'attribute_name': 'sg_status_list', 'event_type': 'Shotgun_Shot_Change', 'entity': {'type': 'Shot', 'name': 'bunny_010_0010', 'id': 860}, 'project': {'type': 'Project', 'name': 'Big Buck Bunny', 'id': 65}, 'meta': {'entity_id': 860, 'attribute_name': 'sg_status_list', 'entity_type': 'Shot', 'old_value': 'omt', 'new_value': 'ip', 'type': 'attribute_change'}, 'user': {'type': 'HumanUser', 'name': 'Kevin Porterfield', 'id': 35}, 'session_uuid': '450e4da2-dafa-11e0-9ba7-0023dffffeab', 'type': 'EventLogEntry', 'id': 276560}
 ```
 
-出力の正確な詳細は実際とは異なりますが、プラグインが想定した通り、イベントをログ ファイルに記録したことが分かります。ここでも、ログ ファイルに何も記録されていない場合は、{% include product %}EventDaemon.conf のログ関連設定を調べて、``logging`` 値が情報レベルのメッセージを記録するように設定されていること、また、logArgs プラグインも情報レベルのメッセージを表示するように設定されていることを確認します。
+出力の正確な詳細は実際とは異なりますが、プラグインが想定した通り、イベントをログ ファイルに記録したことが分かります。ここでも、ログ ファイルに何も記録されていない場合は、{% include product %}EventDaemon.conf のログ関連設定を調べて、`logging` 値が情報レベルのメッセージを記録するように設定されていること、また、logArgs プラグインも情報レベルのメッセージを表示するように設定されていることを確認します。
 
 <a id="A_Note_About_Logging"></a>
+
 ### ログの記録に関する注意事項
 
 ログ ローテーションは {% include product %} デーモンの機能であることに注意してください。ログは毎日深夜にローテーションされ、プラグインごとに 10 個のファイルが毎日保持されます。
 
 <a id="Common_Errors"></a>
+
 ## 一般的なエラー
 
 次に、発生する一般的なエラーとその解決方法をいくつか示します。完全に行き詰ってしまった場合は、{% include product %} ソフトウェア チーム (support@shotgunsoftware.com) までお気軽にお問い合わせください。弊社がサポートいたします。
@@ -163,9 +171,11 @@ shotgunEventDaemon.conf ファイル内のプラグインへのパスを指定�
 sudo として実行する必要があり、`PYTHONPATH` が正しく設定されている場合は、sudo によって環境変数がリセットされることに注意してください。sudoers ファイルを編集して `PYTHONPATH` を保持するか、sudo -e(?) を実行することができます
 
 <a id="List_of_Configuration_File_Settings"></a>
+
 ## 環境設定ファイルの設定のリスト
 
 <a id="Daemon_Settings"></a>
+
 ### デーモンの設定
 
 次に、一般的なデーモンの操作設定を示します。
@@ -184,7 +194,7 @@ pidFile: /var/log/shotgunEventDaemon.pid
 
 eventIdFile は、デーモンが最後に処理された {% include product %} イベントの ID を保存する場所を参照します。これにより、デーモンは最後にシャットダウンされたときに停止した場所を取得できるため、イベントが見逃されることはありません。最後のデーモンのシャットダウン以降のイベントを無視する場合は、デーモンを開始する前にこのファイルを削除します。これにより、デーモンは起動時に作成された新しいイベントのみを処理します。
 
-このファイルは、* の各 * プラグインの最後のイベント ID を記録し、この情報を pickle 形式で保存します。
+このファイルは、_ の各 _ プラグインの最後のイベント ID を記録し、この情報を pickle 形式で保存します。
 
 ```
 eventIdFile: /var/log/shotgunEventDaemon.id
@@ -205,7 +215,7 @@ logMode: 1
 
 **logPath**
 
-ログ ファイルを配置するパス(メイン エンジンとプラグインの両方のログ ファイル)。メイン ログ ファイルの名前は、以下の ``logFile`` 設定によってコントロールされます。
+ログ ファイルを配置するパス(メイン エンジンとプラグインの両方のログ ファイル)。メイン ログ ファイルの名前は、以下の `logFile` 設定によってコントロールされます。
 
 ```
 logPath: /var/log/shotgunEventDaemon
@@ -224,6 +234,7 @@ logFile: shotgunEventDaemon
 **logging**
 
 ログ ファイルに送信されるログ メッセージのしきい値レベル。この値はメインのディスパッチ エンジンの既定値で、プラグインごとにオーバーライドできます。この値は、単に Python のロギング モジュールに渡されます。よく使われる値は次のとおりです。
+
 - **10:** デバッグ
 - **20:** 情報
 - **30:** 警告
@@ -274,6 +285,7 @@ fetch_interval = 5
 ```
 
 <a id="Shotgun_Settings"></a>
+
 ### {% include product %} 設定
 
 {% include product %} インスタンスに関連する設定は次のとおりです。
@@ -322,6 +334,7 @@ use_session_uuid: True
 {% include info title="注" content="ShotGrid UI は、元のイベントを生成したブラウザ セッションの更新*のみ*をライブで表示します。同じページを開いている他のブラウザ ウィンドウでは、更新がライブで表示されません。"%}
 
 <a id="Plugin_Settings_details"></a>
+
 ### プラグイン設定
 
 **paths**
@@ -335,6 +348,7 @@ paths: /usr/local/shotgun/plugins
 {% include info title="注" content="既定値はありません。値をプラグイン ファイルの場所(Windows では `/usr/local/shotgun/shotgunEvents/plugins` または `C:\shotgun\shotgunEvents\plugins`)に設定する必要があります" %}
 
 <a id="Email_Settings"></a>
+
 ### 電子メール設定
 
 ユーザが常にログをテーリングすることはなく、アクティブな通知システムを使用することがわかっているので、これらはエラー報告に使用されます。

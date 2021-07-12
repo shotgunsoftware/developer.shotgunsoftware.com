@@ -8,16 +8,19 @@ lang: zh_CN
 # 如何在自定义脚本中处理身份认证和登录凭据？
 
 ## 错误消息
+
 如果出现类似以下来自脚本的错误，则意味着脚本无权与 ShotGrid 站点进行通信。
 
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'
 ```
+
 如果未预先提供用户身份认证或脚本身份认证，则 Toolkit 会回退到检查是否已在配置的 `shotgun.yml` 文件中定义凭据。
 在 `shotgun.yml` 文件中定义凭据是处理身份认证的旧方法。
 您应避免在 `shotgun.yml` 文件中定义凭据，而改用下面详细介绍的方法之一：
 
 ## 面向用户的脚本
+
 如果脚本面向用户，您可以在创建 `Sgtk` 实例前，在脚本开头添加以下内容：
 
 ```python
@@ -69,7 +72,8 @@ authenticator.clear_default_user()
 ![](./images/sign_in_window.png)
 
 {% include info title="注意" content="如果导入的 Toolkit API（`sgtk` 软件包）未与配置关联，例如您已下载用于引导到其他配置的 Toolkit API，则不应尝试创建 `CoreDefaultsManager`。应改为创建 `ShotgunAuthenticator()` 实例，而不传递默认管理器。
-```python
+
+````python
 authenticator = ShotgunAuthenticator()
 ```" %}
 
@@ -102,7 +106,7 @@ user = authenticator.create_script_user(
 
 # Tells Toolkit which user to use for connecting to Shotgun.
 sgtk.set_authenticated_user(user)
-```
+````
 
 {% include info title="注意" content="如[面向用户的脚本](#user-facing-scripts)部分末尾所述，如果您导入的 `sgtk` 软件包是独立的/不是来自于配置，则不应创建默认管理器。此外，还应为 `create_script_user()` 方法提供 `host` kwarg：
 
@@ -113,4 +117,5 @@ user = authenticator.create_script_user(
     api_key=\"4e48f....<use the key from your Shotgun site>\"
 )
 ```
+
 " %}

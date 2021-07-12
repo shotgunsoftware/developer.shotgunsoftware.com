@@ -8,6 +8,7 @@ lang: en
 # How do I update my Toolkit config programmatically with the API?
 
 ## Updating apps, engines, and frameworks
+
 If you want to programmatically update all of the engines, apps, and frameworks to their latest versions, you can do so using the following code:
 
 ```python
@@ -20,9 +21,9 @@ tk = sgtk.sgtk_from_entity('Project', 161)
 c=tk.get_command("updates")
 
 # setup authentication
-if hasattr(sgtk, "set_authenticated_user"): 
+if hasattr(sgtk, "set_authenticated_user"):
      from tank_vendor.shotgun_authentication import ShotgunAuthenticator
-     user = ShotgunAuthenticator(sgtk.util.CoreDefaultsManager()).get_default_user() 
+     user = ShotgunAuthenticator(sgtk.util.CoreDefaultsManager()).get_default_user()
      sgtk.set_authenticated_user(user)
 
 # finally, execute the command
@@ -45,9 +46,9 @@ tk = sgtk.sgtk_from_entity('Project', 161)
 c=tk.get_command("core")
 
 # setup authentication
-if hasattr(sgtk, "set_authenticated_user"): 
+if hasattr(sgtk, "set_authenticated_user"):
     from tank_vendor.shotgun_authentication import ShotgunAuthenticator
-    user = ShotgunAuthenticator(sgtk.util.CoreDefaultsManager()).get_default_user() 
+    user = ShotgunAuthenticator(sgtk.util.CoreDefaultsManager()).get_default_user()
     sgtk.set_authenticated_user(user)
 
 # finally, execute the command

@@ -102,10 +102,10 @@ Here is an example of what a dictionary in the return data typically looks like:
             'version': 1,
             'width': 2048},
  'template': <Sgtk TemplatePath nuke_shot_render_pub_mono_dpx>,
- 
+
  'node_name': 'Read2',
  'node_type': 'Read',
- 
+
  'sg_data': {'code': 'aaa_00010_test_output_v001.%04d.dpx',
              'entity': {'id': 1660, 'name': 'aaa_00010', 'type': 'Shot'},
              'id': 1424,
@@ -128,7 +128,6 @@ for item in breakdown_items:
    path = item["template"].apply_fields(item["fields"])
 ```
 
-
 ### Computing the highest version for an item
 
 ```
@@ -139,19 +138,15 @@ In order to figure out the highest version for an item, use the `compute_highest
 
 This will perform a scan on disk to determine the highest version. The method returns the highest version number found on disk. See the usage example below for more details.
 
-
 ### Updating a scene item
 
 ```
 app_object.update_item(node_type, node_name, template, fields)
 ```
 
-In order to update an item, you can use the `update_item(node_type, node_name, template, fields)` method. The `template` and `fields` parameters represent a path that should be updated to. The `node_name` and `node_type` parameters are used to identify which node in the scene should be modified. Typically, these  values are grabbed from the output of the `analyze_scene()` method.
+In order to update an item, you can use the `update_item(node_type, node_name, template, fields)` method. The `template` and `fields` parameters represent a path that should be updated to. The `node_name` and `node_type` parameters are used to identify which node in the scene should be modified. Typically, these values are grabbed from the output of the `analyze_scene()` method.
 
 This is similar to running the update in the breakdown UI. The actual update call will be dispatched to a hook which handles the DCC specific logic. See the usage example below for more details.
-        
-
-
 
 ### Breakdown API example
 
@@ -171,15 +166,15 @@ for item in items:
 
     # get the latest version on disk
     latest_version = breakdown_app.compute_highest_version(item["template"], item["fields"])
-    
+
     # if our current version is out of date, update it!
     current_version = item["fields"]["version"]
     if latest_version > current_version:
-        
+
         # make a fields dictionary representing the latest version
         latest_fields = copy.copy(item["fields"])
         latest_fields["version"] = latest_version
-        
+
         # request that the breakdown updates to the latest version
         breakdown_app.update_item(item["node_type"], item["node_name"], item["template"], latest_fields)
 

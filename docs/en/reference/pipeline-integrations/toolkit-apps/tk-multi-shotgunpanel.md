@@ -29,7 +29,6 @@ The hook supports a simple templating language, allowing for great flexibility. 
 
 - You can define fallbacks in the case some values are not set. For {% include product %} Versions, the `artist` fields takes precedence over the `created_by` field in order to support a workflow where a producer submits versions on behalf of an artist. In this case, the Version will be created by the producer but the `artist` field will be set to the artist. This, however, is not always the case - in some cases, artist is left blank in pipelines where artists submit their own work. When displaying versions, it is therefore useful to be able to check the `artist` field first, and in case this isn't set, fall back on the `created_by` field. This is done using the `{field1|field2}` syntax, for example: `Created By: {artist|created_by}`. You can combine this with optional fields too, e.g. `{[Created By: ]artist|created_by}`
 
-
 This hook contains the following methods:
 
 **Controlling items appearing in lists**
@@ -41,7 +40,7 @@ The `get_list_item_definition()` method returns a dictionary that controls the a
  "top_left": "<big>{code}</big>",
  "top_right": "{updated_at}",
  "body": "By: {created_by}<br>Description: {description}"
-} 
+}
 ```
 
 **Controlling the top detail area**
@@ -52,7 +51,7 @@ The `get_main_view_definition()` method returns a dictionary with the keys `titl
 {
  "title": "{type} {code}",
  "body": "By: {created_by}<br>Description: {description}"
-} 
+}
 ```
 
 **Controlling the fields shown in the Info tab**
@@ -67,21 +66,21 @@ Actions are little snippets of code that operate on a piece of {% include produc
 - An action that allows a user to assign herself to a given Task
 - An action that loads a {% include product %} publish into Maya as a Maya reference.
 
-The actual payload of an action is defined in an *action hook*. Once you have defined the action logic, you can then map that action to {% include product %} objects in the app configuration. These action mappings may for example look like this:
+The actual payload of an action is defined in an _action hook_. Once you have defined the action logic, you can then map that action to {% include product %} objects in the app configuration. These action mappings may for example look like this:
 
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import]
-    filters: {published_file_type: Maya Scene}
-  - actions: [texture_node]
-    filters: {published_file_type: Rendered Image}
+    - actions: [reference, import]
+      filters: { published_file_type: Maya Scene }
+    - actions: [texture_node]
+      filters: { published_file_type: Rendered Image }
   Task:
-  - actions: [assign_task]
-    filters: {}
+    - actions: [assign_task]
+      filters: {}
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 In the above example, we use the actions `reference`, `import`, `texture_node`, `assign_task` and `play_in_rv`. We then map the actions to various {% include product %} objects and conditions. For example, we are requesting the `import` action to appear for all publishes of type Maya Scene.
@@ -95,7 +94,7 @@ For each application that the panel supports, there is an actions hook which imp
 The panel uses Toolkit's second generation hooks interface, allowing for greater flexibility. This hook format uses an improved syntax. You can see this in the default configuration settings, looking something like this:
 
 ```yaml
-actions_hook: '{self}/tk-maya_actions.py'
+actions_hook: "{self}/tk-maya_actions.py"
 ```
 
 The `{self}` keyword tells Toolkit to look in the app's `hooks` folder for the hook. If you are overriding this hook with your implementation, change the value to `{config}/panel/maya_actions.py`. This will tell Toolkit to use a hook called `hooks/panel/maya_actions.py` in your configuration folder.
@@ -119,24 +118,24 @@ class MyActions(HookBaseClass):
     def generate_actions(self, sg_data, actions, ui_area):
         """
         Returns a list of action instances for a particular object.
-        The data returned from this hook will be used to populate the 
+        The data returned from this hook will be used to populate the
         actions menu.
-    
+
         The mapping between {% include product %} objects and actions are kept in a different place
         (in the configuration) so at the point when this hook is called, the app
         has already established *which* actions are appropriate for this object.
-        
+
         This method needs to return detailed data for those actions, in the form of a list
         of dictionaries, each with name, params, caption and description keys.
-        
-        Because you are operating on a particular object, you may tailor the output 
+
+        Because you are operating on a particular object, you may tailor the output
         (caption, tooltip etc) to contain custom information suitable for this publish.
-        
-        The ui_area parameter is a string and indicates where the publish is to be shown. 
-        
-        - If it will be shown in the main browsing area, "main" is passed. 
+
+        The ui_area parameter is a string and indicates where the publish is to be shown.
+
+        - If it will be shown in the main browsing area, "main" is passed.
         - If it will be shown in the details area, "details" is passed.
-                
+
         :param sg_data: {% include product %} data dictionary with all the standard publish fields.
         :param actions: List of action strings which have been defined in the app configuration.
         :param ui_area: String denoting the UI Area (see above).
@@ -160,7 +159,7 @@ class MyActions(HookBaseClass):
         """
         Execute a given action. The data sent to this be method will
         represent one of the actions enumerated by the generate_actions method.
-        
+
         :param name: Action name string representing one of the items returned by generate_actions.
         :param params: Params data, as specified by generate_actions.
         :param sg_data: {% include product %} data dictionary with all the standard publish fields.
@@ -182,13 +181,12 @@ We could then bind this new action to a set of publish types in the configuratio
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import, my_new_action]
-    filters: {published_file_type: Maya Scene}
+    - actions: [reference, import, my_new_action]
+      filters: { published_file_type: Maya Scene }
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 By deriving from the hook as shown above, the custom hook code only need to contain the actual added
 business logic which makes it easier to maintain and update.
-

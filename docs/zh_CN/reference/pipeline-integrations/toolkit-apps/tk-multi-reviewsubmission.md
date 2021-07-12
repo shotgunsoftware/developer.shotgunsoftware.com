@@ -47,16 +47,16 @@ if review_submission_app:
 
 您需要传递给 `render_and_submit_version` 的参数如下所示：
 
-* `template`：一个模板，用于定义要发布的文件的所在位置
-* `fields`：用来填写模板的字段
-* `first_frame`：要处理的图像序列的第一帧
-* `last_frame`：要处理的图像序列的最后一帧
-* `sg_publishes`：要与版本链接的 {% include product %} 已发布文件对象的列表。
-* `sg_task`：要与版本链接的 {% include product %} 任务链接词典。
-* `comment`：要添加到版本说明中的文字。
-* `thumbnail_path`：影片未上传至 {% include product %} 时为版本使用的缩略图的路径（在配置中设置）。
-* `progress_cb`：一个用于报告进度的回调。  此值的格式应为：`callback(percent, message)`
-* `color_space`：输入帧所在的颜色空间。  在 Nuke 中，这是写入节点的颜色空间按钮的其中一个枚举值。
+- `template`：一个模板，用于定义要发布的文件的所在位置
+- `fields`：用来填写模板的字段
+- `first_frame`：要处理的图像序列的第一帧
+- `last_frame`：要处理的图像序列的最后一帧
+- `sg_publishes`：要与版本链接的 {% include product %} 已发布文件对象的列表。
+- `sg_task`：要与版本链接的 {% include product %} 任务链接词典。
+- `comment`：要添加到版本说明中的文字。
+- `thumbnail_path`：影片未上传至 {% include product %} 时为版本使用的缩略图的路径（在配置中设置）。
+- `progress_cb`：一个用于报告进度的回调。 此值的格式应为：`callback(percent, message)`
+- `color_space`：输入帧所在的颜色空间。 在 Nuke 中，这是写入节点的颜色空间按钮的其中一个枚举值。
 
 ### 作为菜单项
 
@@ -65,17 +65,18 @@ if review_submission_app:
 此模式创建当前视口的快照，并将其作为版本草稿发送到 {% include product %} Create。然后，用户可以通过添加标注、文字或比较注释，在 {% include product %} Create 内扩展审核提交。
 
 要将此功能添加到上下文，您需要：
-* 设置 `display_name` 字段，使其显示在菜单项中。
-* 将 `render_media_hook` 字段设置为挂钩，告知如何在 DCC 中渲染媒体（tk-photoshopcc 和 tk-maya 具有默认执行）
-* 将 `submitter_hook` 字段设置为 `{self}/submitter_create.py`
+
+- 设置 `display_name` 字段，使其显示在菜单项中。
+- 将 `render_media_hook` 字段设置为挂钩，告知如何在 DCC 中渲染媒体（tk-photoshopcc 和 tk-maya 具有默认执行）
+- 将 `submitter_hook` 字段设置为 `{self}/submitter_create.py`
 
 如下所示：
 
 ```yaml
 tk-multi-reviewsubmission:
   display_name: Send for review
-  render_media_hook: '{self}/render_media.py:{self}/{engine_name}/render_media.py'
-  submitter_hook: '{self}/submitter_create.py'
+  render_media_hook: "{self}/render_media.py:{self}/{engine_name}/render_media.py"
+  submitter_hook: "{self}/submitter_create.py"
   location:
     type: app_store
     name: tk-multi-reviewsubmission

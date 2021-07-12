@@ -7,7 +7,6 @@ lang: ja
 
 # Houdini {% include product %} 統合が起動しないのはなぜですか。
 
-
 ここでは、{% include product %} の統合で Houdini が起動しない場合に見られる、最も一般的な理由について説明します。この場合、Houdini は {% include product %} Desktop、{% include product %} の Web サイト、または tank コマンドからエラーなしで起動します。 ただし、Houdini が起動すると、{% include product %} メニューまたはシェルフが表示されなくなります。
 
 この問題は、`HOUDINI_PATH` 環境変数がオーバーライドされていて、{% include product %} がその環境変数に基づいて起動スクリプト パスを渡そうとしているために発生することがよくあります。

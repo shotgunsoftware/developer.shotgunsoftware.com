@@ -8,6 +8,7 @@ lang: en
 # Technical Overview
 
 <a id="Event_Types"></a>
+
 ## Event Types
 
 The event types your triggers can register to be notified of are generally respect the following form `Shotgun_[entity_type]_[New|Change|Retirement|Revival]`. Here are a few examples of this pattern:
@@ -22,7 +23,7 @@ The event types your triggers can register to be notified of are generally respe
 Some notable departures from this pattern are used for events that aren't related to entity record activity but rather key points in application behavior.
 
     CRS_PlaylistShare_Create
-    CRS_PlaylistShare_Revoke 
+    CRS_PlaylistShare_Revoke
     SG_RV_Session_Validate_Success
     Shotgun_Attachment_View
     Shotgun_Big_Query
@@ -34,45 +35,53 @@ Some notable departures from this pattern are used for events that aren't relate
     Toolkit_Desktop_ProjectLaunch
     Toolkit_Desktop_AppLaunch
     Toolkit_Folders_Create
-    Toolkit_Folders_Delete    
+    Toolkit_Folders_Delete
 
 This list is not exhaustive but is a good place to start. If you wish to know more about the activity and event types on your {% include product %} site, please consult a page of EventLogEntries where you can filter and search through like any other grid page of any other entity type.
 
 ### Event Log Entries for Thumbnails
-When a new thumbnail is uploaded for an entity, an Event Log entry is created with ``` `Type` == `Shotgun_<Entity_Type>_Change` ``` (e.g. `Shotgun_Shot_Change`). 
-1. The ```‘is_transient’``` field value is set to true:
+
+When a new thumbnail is uploaded for an entity, an Event Log entry is created with `` `Type` == `Shotgun_<Entity_Type>_Change` `` (e.g. `Shotgun_Shot_Change`).
+
+1. The `‘is_transient’` field value is set to true:
+
 ```
 { "type": "attribute_change","attribute_name": "image",
  "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image",
- "old_value": null, "new_value": 11656, 
- "is_transient": true 
+ "old_value": null, "new_value": 11656,
+ "is_transient": true
 }
 ```
-2. When the thumbnail becomes available, a new Event Log entry is created with the ```‘is_transient’``` field value now set to false:
+
+2. When the thumbnail becomes available, a new Event Log entry is created with the `‘is_transient’` field value now set to false:
+
 ```
 { "type": "attribute_change", "attribute_name": "image",
  "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image",
  "old_value": null, "new_value": 11656,
- "is_transient": false 
+ "is_transient": false
 }
 ```
+
 3. If we update the thumbnail again, we get these new Event Log entries:
+
 ```
 { "type": "attribute_change", "attribute_name": "image",
- "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image", 
- "old_value": 11656, "new_value": 11657, 
- "is_transient": true 
+ "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image",
+ "old_value": 11656, "new_value": 11657,
+ "is_transient": true
 }
-{ "type": "attribute_change", "attribute_name": "image", 
- "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image", 
- "old_value": null, "new_value": 11657, 
- "is_transient": false 
+{ "type": "attribute_change", "attribute_name": "image",
+ "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image",
+ "old_value": null, "new_value": 11657,
+ "is_transient": false
 }
 ```
-4. Notice the ```‘old_value’``` field is set to null when the attachment’s thumbnail is the placeholder thumbnail. 
 
+4. Notice the `‘old_value’` field is set to null when the attachment’s thumbnail is the placeholder thumbnail.
 
 <a id="Plugin_Processing_Order"></a>
+
 ## Plugin Processing Order
 
 Each event is always processed in the same predictable order so that if any plugins or callbacks are co-dependant, you can safely organize their processing.
@@ -88,6 +97,7 @@ Finally, each callback registered by a plugin is called in registration order. F
 We suggested keeping any functionality that needs to share state somehow in the same plugin as one or multiple callbacks.
 
 <a id="Sharing_State"></a>
+
 ## Sharing state
 
 Many options exist for multiple callbacks that need to share state.
@@ -97,8 +107,8 @@ Many options exist for multiple callbacks that need to share state.
 - A mutable passed in the `args` argument when calling [`Registrar.registerCallback`](API#wiki-registerCallback). A state object of your design or something as simple as a `dict`. Preferred.
 - Implement callbacks such as `__call__` on object instances and provide some shared state object at callback object initialization. Most powerful yet most convoluted method. May be redundant compared to the args argument method above.
 
-
 <a id="Event_Backlogs"></a>
+
 ## Event Backlogs
 
 The framework is designed to have every plugin process every single event they are interested in exactly once, without exception. To make sure this happens, the framework stores a backlog of unprocessed events for each plugin and remembers the last event each plugin was provided. Here is a description of situations in which a backlog may occur.

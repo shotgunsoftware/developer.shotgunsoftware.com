@@ -9,18 +9,20 @@ lang: en
 
 Isolation the isolation features are independent of each other, and can be activated independently of each other. Media replication have as pre-requisite for Media Isolation to be implemented.
 
-The setup process will depend on which feature you want to activate for your site. 
+The setup process will depend on which feature you want to activate for your site.
 
 ## In This Section
+
 <!-- When updating this, also update tier1.md -->
-* [Planning your Setup](./planning.md)
-* [Migration Test Site](./shotgun_poc_site.md)
-* [Media Isolation](./s3_bucket.md)
-* [Media Traffic Isolation](./media_segregation.md)
-* [Web Traffic Isolation](./traffic_segregation.md)
-* [Media Replication](./s3_replication.md)
-* [Isolation Fine Tuning](./tuning.md)
-* [Migration](./migration.md)
+
+- [Planning your Setup](./planning.md)
+- [Migration Test Site](./shotgun_poc_site.md)
+- [Media Isolation](./s3_bucket.md)
+- [Media Traffic Isolation](./media_segregation.md)
+- [Web Traffic Isolation](./traffic_segregation.md)
+- [Media Replication](./s3_replication.md)
+- [Isolation Fine Tuning](./tuning.md)
+- [Migration](./migration.md)
 
 # Setup Overview
 

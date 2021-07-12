@@ -35,7 +35,7 @@ _이 문서에서는 툴킷 구성에 대한 제어 권한을 갖고 있는 경�
 
 _기본_ 프로젝트 구성을 즉시 업그레이드할 수는 있지만 위험할 수 있습니다. 이 구성은 프로젝트의 모든 사람이 사용하므로 문제가 발생할 경우 모든 사람에게 영향을 미칩니다. 그러므로 해당 그룹의 작업자가 액세스할 수 있는 격리된 버전의 구성을 만드는 것이 좋습니다. 이렇게 설정된 안전한 환경에서는 업그레이드, 구성 변경 및 개발 시에 다른 프로덕션에 영향을 주지 않습니다. 변경 사항을 테스트한 후에 안전하고 확실하게 기본 구성으로 푸시할 수 있습니다.
 
-이 프로세스를 _복제_라고 하며, 해당 사용자(및 해당 사용자가 초대한 다른 사용자)만 복제본에 액세스할 수 있도록 기본 구성의 개인 복사본을 만드는 것을 의미합니다. 이 환경에서 안전하게 변경할 수 있으며, 성공적으로 변경한 후 기본 구성으로 변경 사항을 다시 푸시할 수 있습니다.
+이 프로세스를 *복제*라고 하며, 해당 사용자(및 해당 사용자가 초대한 다른 사용자)만 복제본에 액세스할 수 있도록 기본 구성의 개인 복사본을 만드는 것을 의미합니다. 이 환경에서 안전하게 변경할 수 있으며, 성공적으로 변경한 후 기본 구성으로 변경 사항을 다시 푸시할 수 있습니다.
 
 ## 구성 복제
 
@@ -81,7 +81,8 @@ _스튜디오_ 설치에는 모든 프로젝트의 Core API가 포함되어 있�
 
 ### 이전 복제 구성 새로 고침
 
-이전 dev  또는 스테이징 샌드박스 설정이 있고 컨텐츠를 최신 프로덕션 구성과 동기화해야 하는 경우에는 기본 구성에 대해 `push_configuration` 명령을 실행합니다.
+이전 dev 또는 스테이징 샌드박스 설정이 있고 컨텐츠를 최신 프로덕션 구성과 동기화해야 하는 경우에는 기본 구성에 대해 `push_configuration` 명령을 실행합니다.
+
 ```shell
 tank push_configuration
 
@@ -112,6 +113,7 @@ Push Complete!
 Your old configuration has been backed up into the following folder:
 /my/staging/sandbox/config.bak.20140108_093218
 ```
+
 기본 프로젝트 구성에서 스테이징 샌드박스로 푸시하는 방법을 확인하십시오. _기본_ 구성의 `tank` 명령을 실행하여 이 작업을 수행합니다. 여러 샌드박스가 설정된 경우 해당 샌드박스 간에 데이터를 푸시할 수도 있습니다.
 
 ### 복제한 구성 삭제
@@ -161,6 +163,7 @@ Make sure the loader app is up to date everywhere:
 Make sure the loader app is up to date in maya:
 > tank updates ALL tk-maya tk-multi-loader
 ```
+
 ## Toolkit Core API 업그레이드
 
 이 섹션에서는 복제 스테이징 샌드박스 구성을 사용하여 Toolkit Core API를 안전하게 업그레이드하는 방법에 대해 설명합니다. 스테이징 샌드박스가 아직 준비되지 않았다면 이전 섹션의 지침을 따르십시오.
@@ -168,6 +171,7 @@ Make sure the loader app is up to date in maya:
 스테이징 샌드박스가 [공유 스튜디오 Core API](https://support.shotgunsoftware.com/hc/ko/articles/219040448)를 사용하는 파이프라인 구성에서 복제된 경우 고유한 Core API 코드를 사용하도록 샌드박스를 업데이트합니다. 이러한 작업을 일컬어 코어를 "현지화"한다고 하며 스테이징 샌드박스로 이동한 다음 `tank localize`를 실행하여 수행할 수 있습니다. 이 명령은 스튜디오 설치에서 Core API를 샌드박스에 복사하며 나중에 다른 버전의 Core API를 실행하고 테스트할 수 있습니다.
 
 _툴킷의 기본 동작은 기본적으로 코어를 현지화하는 것입니다. 이전에 공유 스튜디오 코어를 명시적으로 만들지 않은 경우 코어가 이미 현지화되어 있다고 가정하는 것이 안전합니다._
+
 ```shell
 cd /my/staging/sandbox
 ./tank localize
@@ -199,14 +203,17 @@ Localize complete! This pipeline configuration now has an independent API.
 If you upgrade the API for this configuration (using the 'tank core' command),
 no other configurations or projects will be affected.
 ```
+
 이제 더 이상 Core API를 스튜디오 위치에서 공유하지 않고 자체 독립적인 버전을 실행합니다. 그런 다음 로컬 tank 명령을 다시 사용하여 표준 Core API 업그레이드를 수행할 수 있습니다.
+
 ```shell
 cd /my/staging/sandbox
 ./tank core
 ```
+
 툴킷을 통해 사용 가능한 새 버전이 있는지 확인하여 다운로드하고 설치합니다.
 
-Core API를 업데이트했으면 설치를 테스트해야 합니다. 샌드박스의 `tank` 명령을 사용하거나 {% include product %}의 특수 메뉴 항목을 사용하여 일부 앱을 실행합니다.  파이프라인에 대한 기본적인 연습을 수행하고 필요에 따라 테스트를 수행합니다.
+Core API를 업데이트했으면 설치를 테스트해야 합니다. 샌드박스의 `tank` 명령을 사용하거나 {% include product %}의 특수 메뉴 항목을 사용하여 일부 앱을 실행합니다. 파이프라인에 대한 기본적인 연습을 수행하고 필요에 따라 테스트를 수행합니다.
 
 결과에 만족한 경우 Core API의 스튜디오 버전 업데이트를 진행할 수 있습니다. 일반적인 툴킷 설정에서는 모든 프로젝트 간에 Core API가 공유되므로 스튜디오 위치 `tank` 명령에서의 `tank core` 명령을 실행하여 모든 프로젝트의 Core API를 업데이트합니다.
 
@@ -233,6 +240,7 @@ Core API를 업데이트했으면 설치를 테스트해야 합니다. 샌드박
 이 간단한 방법으로 시간이 지남에 따라 구성을 점차 개선시킬 수 있습니다. 변경과 개선 사항은 프로젝트 간에 필요에 따라 전달됩니다. `setup_project` 명령을 처음 실행하려면 설정 프로세스에서 사용할 구성을 묻는 메시지가 나타날 때 Enter 키를 누릅니다. 이렇게 하면 기본 구성이 다운로드되어 설치됩니다.
 
 두 번째 프로젝트의 경우 이전 프로젝트 구성에 대한 경로 목록이 제공됩니다. 이러한 경로 중 하나를 선택하여 설정 프로세스에서 구성을 묻는 메시지가 표시될 때 입력합니다. 이렇게 하면 해당 구성이 새 프로젝트에 복사됩니다.
+
 ```
 Welcome to the {% include product %} Pipeline Toolkit!
 For documentation, see https://support.shotgunsoftware.com
@@ -272,6 +280,7 @@ clone this repository and base the config on its content.
 
 [tk-config-default]: /mnt/software/shotgun/first_project/config
 ```
+
 ## git 소스 제어의 스튜디오 구성
 
 첫 번째 접근 방식에는 프로젝트가 서로 연결되지 않는다는 제한이 있습니다. 10개의 프로젝트가 있고 중요한 버그 수정이 릴리즈되어 업데이트해야 하는 경우 각 프로젝트를 수동으로 확인하고 `tank updates` 명령을 실행해야 합니다.
@@ -291,16 +300,21 @@ clone this repository and base the config on its content.
 먼저 git 서버로 가서 리포지토리를 만들어야 합니다. 이 프로세스는 설정에 따라 달라질 수 있습니다. GitHub 등을 사용하는 경우에는 웹 브라우저를 시작하고 github.com로 이동합니다. 서버에 액세스할 수 있으면 `git init --bare` 등을 수행할 수 있습니다. 위의 예에서 만든 git 리포지토리를 `username@someserver.com:/studio_config.git`라고 가정합니다.
 
 이제 리포지토리를 시드하는 데 사용하려는 프로젝트의 `config` 폴더를 `config.bak` 위치로 이동합니다.
+
 ```shell
 cd /project_configs/studio_config
 mv config config.bak
 ```
+
 초기화된 git 리포지토리를 스튜디오 구성을 기반으로 할 프로젝트의 `config` 위치에 복제합니다. clone 명령을 실행하면 git 리포지토리인 빈 `config folder` 폴더가 생성됩니다.
+
 ```shell
 cd /project_configs/studio_config
 git clone username@someserver.com:/studio_config.git config
 ```
+
 `config.bak` 위치의 모든 파일을 `config` 폴더로 다시 복사합니다. 그러면 빈 `config.bak` 폴더를 삭제할 수 있습니다. 구성 파일은 이제 git 리포지토리 내에 있습니다. 이 파일을 추가하고 커밋한 다음 서버로 푸시해야 합니다. 하지만 먼저 일부 툴킷 시스템 파일을 올바르게 처리하도록 정리해야 합니다. `config` 폴더에서 `.gitignore` 파일을 만들어 다음 줄을 추가합니다.
+
 ```shell
 install_location.yml
 pipeline_configuration.yml
@@ -313,6 +327,7 @@ git add --all
 git commit -am "initial commit of our studio config!"
 git push
 ```
+
 ### git에서 새 프로젝트 만들기
 
 새 프로젝트를 만들 때 설치 프로세스에서 사용할 구성의 경로를 입력하라는 메시지가 표시되면 유효한 git URL을 지정하기만 하면 됩니다. 위의 예시에 따라 `username@someserver.com:/studio_config.git`를 입력합니다. 프로젝트 설정 프로세스의 일부로 툴킷이 이 리포지토리를 새 프로젝트 구성의 `config` 폴더에 복제합니다. 이는 나중에 이 구성 폴더로 가서 git 명령을 실행할 수 있음을 의미합니다. 복제된 파이프라인 구성도 git 리포지토리를 복제하므로 완벽하게 작동합니다.
@@ -323,7 +338,7 @@ git push
 
 ### 프로젝트를 최신 버전으로 업데이트
 
-또한 일부를 변경하여 스튜디오 레벨 구성을 업데이트하여 프로젝트로 가져오려는 경우 `config` 폴더에서 `git pull`을 실행합니다.  **중요**: 이 작업을 완료한 후에는 `tank cache_apps`를 실행하여 변경된 구성에 필요한 모든 앱 버전이 시스템에 있는지 확인하십시오.
+또한 일부를 변경하여 스튜디오 레벨 구성을 업데이트하여 프로젝트로 가져오려는 경우 `config` 폴더에서 `git pull`을 실행합니다. **중요**: 이 작업을 완료한 후에는 `tank cache_apps`를 실행하여 변경된 구성에 필요한 모든 앱 버전이 시스템에 있는지 확인하십시오.
 
 ### 고급 git 사용: 분기
 
@@ -342,6 +357,7 @@ git push
 ![](images/config-staging-and-rollout/include_config.png)
 
 `@include` 구문을 사용하면 여러 파일을 함께 연결할 수 있습니다. 예를 들어 다음 컨텐츠가 포함된 `/tmp/stuff.yml` 파일이 있는 경우 다음과 같습니다.
+
 ```
 # paths to maya
 maya_windows: 'C:\Program  Files\Autodesk\Maya2012\bin\maya.exe'
@@ -369,7 +385,9 @@ file_manager:
   template_work: null
   template_work_area: null
 ```
+
 위에서 볼 수 있듯이 서로 다른 여러 레벨에서 include 정의를 만들 수 있습니다. 위의 경우에는 앱 정의와 세 개의 문자열 값이 있습니다. 그런 다음 환경 파일에서 이를 참조할 수 있습니다.
+
 ```
 includes: ['/tmp/stuff.yml']
 
@@ -398,7 +416,9 @@ engines:
     template_project: null
     use_sgtk_as_menu_name: false
 ```
+
 또한 여러 include 파일을 차례로 읽을 수 있습니다. 두 개의 다른 파일에 동일한 include 정의가 존재하면 가장 최근에 읽은 파일이 우선합니다. 위 예시 환경을 확장할 수 있습니다.
+
 ```
 includes:
 
@@ -412,13 +432,14 @@ includes:
 
 engines:
 
-  tk-maya:    
+  tk-maya:
     apps:
         tk-multi-workfiles: '@file_manager'
 
     location: {name: tk-maya, type: app_store, version: v0.4.1}
     use_sgtk_as_menu_name: false
 ```
+
 방금 설명한 방법으로 프로젝트 유형 기본값에 의해 재정의될 수 있는 스튜디오 기본값을 설정할 수 있으며 이 기본값은 특정 프로젝트 설정에 의해 재정의될 수 있습니다. 위의 예와 같이 앱 레벨에서 수행하거나 다음 섹션에서와 같이 엔진 레벨에서 수행할 수 있습니다.
 
 ### 전역 구성 설정 모범 사례
@@ -426,6 +447,7 @@ engines:
 전역 구성을 설정하는 몇 가지 방법이 있습니다. 이를 설정하기 위한 모범 사례 접근 방식으로서 구성을 엔진별로 세분화하는 것이 좋습니다. 각 환경 파일은 완전히 비어 있으며 별도의 파일에 정의된 엔진(및 앱)을 참조합니다. 따라서 한 번에 엔진 하나씩 쉽게 조정하고 재구성할 수 있습니다.
 
 이러한 각 include 파일은 표준 형식으로 되어 있으며 엔진 이름을 따서 명명됩니다. 예를 들어, Maya 엔진을 사용하는 경우 include 파일에는 엔진과 해당 앱만 포함됩니다. 최상위 항목의 이름은 간단히 `maya`로 지정됩니다.
+
 ```yaml
 maya:
     apps:
@@ -468,25 +490,28 @@ frameworks:
   tk-framework-shotgunutils_v1.x.x:
     location: {name: tk-framework-shotgunutils, type: app_store, version: v1.0.8}
 ```
+
 스튜디오에서는 대부분 단일 Maya 설정이 없지만 다양한 부서 및 유형에 따라 수많은 다른 Maya 설정이 있을 수 있습니다. 파일 계층 구조로 구성된 각각에 대해 Maya include 파일을 설정하는 것이 좋습니다. 이 파일에는 위의 파일과 같이 최상위 `maya` 항목이 있습니다.
 
 ![](images/config-staging-and-rollout/maya_include.png)
 
 이제 각 프로젝트에 여러 환경이 포함됩니다. 이러한 각 환경 파일은 특정 환경을 엔진 및 앱 설정 컬렉션에 연결하는 엔진 include 목록입니다. 스튜디오(이와 같은 include를 포함하는 모든 파일)에 대해 하나 이상의 기본 프로젝트 구성을 설정할 수 있으며, 이를 통해 이 실제 앱 및 엔진 페이로드가 include 파일 내에 완전히 포함되어 전역적으로 됩니다. 전역 include 파일을 변경하면 모든 프로젝트가 영향을 받습니다. 이 설정을 사용하면 환경 파일의 형식이 다음과 같이 됩니다.
+
 ```yaml
-includes:     
-    - '/studio/configurations/maya/asset.yml'
-    - '/studio/configurations/nuke/asset.yml'
-    - '/studio/configurations/houdini/generic.yml'
+includes:
+  - "/studio/configurations/maya/asset.yml"
+  - "/studio/configurations/nuke/asset.yml"
+  - "/studio/configurations/houdini/generic.yml"
 
 engines:
-  tk-maya: '@maya'
-  tk-nuke: '@nuke'
-  tk-houdini: '@houdini'
+  tk-maya: "@maya"
+  tk-nuke: "@nuke"
+  tk-houdini: "@houdini"
 
 # we don't need any frameworks here because there are no apps or engines defined
 frameworks: null
 ```
+
 위의 설정을 세분화하여 일부 프로젝트 관련 항목을 정의하기 시작하려면 `@maya`를 환경 파일 자체에 있는 일련의 앱 및 엔진 정의로 간단하게 대체합니다.
 
 ### 전역 구성 관리

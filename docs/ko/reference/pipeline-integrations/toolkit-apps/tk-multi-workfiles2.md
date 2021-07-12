@@ -65,12 +65,12 @@ lang: ko
 
 ```yaml
 maya_extension:
-    type: str
-    choices:
-        ma: Maya Ascii (.ma)
-        mb: Maya Binary (.mb)
-    default: ma
-    alias: extension
+  type: str
+  choices:
+    ma: Maya Ascii (.ma)
+    mb: Maya Binary (.mb)
+  default: ma
+  alias: extension
 ```
 
 `maya_extension`은 토큰의 이름입니다. `choices`는 드롭다운에 표시될 파일 형식 사전입니다. 키(`ma` 및 `mb`)는 이 템플릿 토큰이 가질 수 있는 가능한 값입니다. 값(`Maya Ascii (.ma)` 및 `Maya Binary (.mb)`)은 툴킷 응용프로그램에서 사용할 수 있는 UI 설명입니다. `alias`는 작업 파일 응용프로그램에 필요한 힌트입니다. 응용프로그램에 이 토큰은 확장자이며 드롭다운 위젯에 표시되어야 함을 알려 줍니다.
@@ -79,8 +79,8 @@ maya_extension:
 
 ```yaml
 maya_shot_work:
-    definition: '@shot_root/work/maya/{name}.v{version}.{maya_extension}'
-    root_name: 'primary'
+  definition: "@shot_root/work/maya/{name}.v{version}.{maya_extension}"
+  root_name: "primary"
 ```
 
 ## 컨텍스트 변경 대화상자
@@ -100,18 +100,18 @@ maya_shot_work:
 아래 예는 에셋 및 샷에 대한 태스크를 각각 표시하는 두 개의 탭을 정의합니다.
 
 ```yaml
-  - caption: Assets Tasks
-    entity_type: Task
-    step_filter_on: Asset
-    filters:
+- caption: Assets Tasks
+  entity_type: Task
+  step_filter_on: Asset
+  filters:
     - [entity, type_is, Asset]
-    hierarchy: [entity.Asset.sg_asset_type, entity, step, content]
-  - caption: Shots Tasks
-    entity_type: Task
-    step_filter_on: Shot
-    filters:
+  hierarchy: [entity.Asset.sg_asset_type, entity, step, content]
+- caption: Shots Tasks
+  entity_type: Task
+  step_filter_on: Shot
+  filters:
     - [entity, type_is, Shot]
-    hierarchy: [entity.Shot.sg_sequence, entity, step, content]
+  hierarchy: [entity.Shot.sg_sequence, entity, step, content]
 ```
 
 ![단계 필터](../images/apps/multi-workfiles2-step_filter.png)
@@ -119,13 +119,14 @@ maya_shot_work:
 ## 유예 쿼리
 
 성능 향상을 위해 엔티티 트리를 빌드하는 과정을 두 단계의 쿼리로 나눌 수 있습니다.
+
 - 첫 번째 쿼리는 {% include product %}에서 레코드를 검색하여 트리 상단을 채우는 데 사용됩니다.
 - 두 번째 쿼리를 사용하여 사용자가 트리를 확장할 때 하위를 검색합니다.
 
 다음 설정을 사용하면 앱이 시작될 때 {% include product %}에서 에셋 및 샷이 검색됩니다. 특정 에셋 또는 샷에 링크된 태스크는 트리 뷰에서 이 에셋 또는 샷을 선택하거나 확장한 경우에만 검색됩니다.
 
 ```yaml
-  entities:
+entities:
   - caption: Assets
     entity_type: Asset
     hierarchy: [sg_asset_type, code]

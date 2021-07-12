@@ -16,7 +16,7 @@ lang: ja
     An Application has made an attempt to load the C runtime library incorrectly.
     Please contact the application's support team for more information.
 
-通常、これは、パス内の `msvcr90.dll` のバージョンと 3ds Max にバンドルされている Python のバージョンの競合が原因です。 
+通常、これは、パス内の `msvcr90.dll` のバージョンと 3ds Max にバンドルされている Python のバージョンの競合が原因です。
 
 ## 解決策
 

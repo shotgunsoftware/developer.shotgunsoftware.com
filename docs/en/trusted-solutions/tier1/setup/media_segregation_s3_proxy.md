@@ -21,25 +21,26 @@ Media Isolation activation is a pre-requisite to enable this feature. If you hav
 
 You will need to deploy a VPC with the required VPC endpoints. We provide both [private VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) and [public VPC](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml) CloudFormation templates as starting points. These template create the necessary VPCs, subnets and VPC endpoints.
 
-* Create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home?#/stacks/create/template)
-* Select Template is ready
-* Set Amazon S3 URL depending upon your desired configuration
-  * Private VPC (default):
+- Create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home?#/stacks/create/template)
+- Select Template is ready
+- Set Amazon S3 URL depending upon your desired configuration
+  - Private VPC (default):
     [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-vpc.yml)
-  * Public VPC:
+  - Public VPC:
     [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-public-vpc.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-public-vpc.yml)
-* Click Next
-* Set a stack name. Eg. `shotgun-vpc`
-* Choose network ranges that doesn't conflict with your studio network and set subnet CIDR values accordingly
-* Set your S3 bucket name
-* Click Next
-* Click Next
+- Click Next
+- Set a stack name. Eg. `shotgun-vpc`
+- Choose network ranges that doesn't conflict with your studio network and set subnet CIDR values accordingly
+- Set your S3 bucket name
+- Click Next
+- Click Next
 
 ## Set up access from your site network to your AWS VPC
 
 Options provided by AWS:
-* [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html)
-* [AWS Direct Connect](https://aws.amazon.com/directconnect/)
+
+- [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html)
+- [AWS Direct Connect](https://aws.amazon.com/directconnect/)
 
 {% include info title="Note" content="If Direct Connect is chosen, we recommend testing with a simpler / faster solution in the meantime to validate your Isolation setup. You can then replace that solution with Direct Connect once it is available." %}
 
@@ -57,12 +58,12 @@ You will need to deploy an S3 proxy in your VPC to forward traffic to the S3 VPC
 
 ### Make the Docker image available from a private AWS ECR repository
 
-* Create a [new Elastic Container Registry (ECR) repository](https://console.aws.amazon.com/ecr/create-repository)
-* Name the repository `s3-proxy`
-* Upload the s3-proxy Docker image to the newly created ECR repository
-  * [Install Docker](https://docs.docker.com/get-docker/) on your workstation
-  * Follow the `docker login` instructions shown by clicking the *View push commands* button
-  * Run the following commands, substituting the ECR endpoint in the example for yours:
+- Create a [new Elastic Container Registry (ECR) repository](https://console.aws.amazon.com/ecr/create-repository)
+- Name the repository `s3-proxy`
+- Upload the s3-proxy Docker image to the newly created ECR repository
+  - [Install Docker](https://docs.docker.com/get-docker/) on your workstation
+  - Follow the `docker login` instructions shown by clicking the _View push commands_ button
+  - Run the following commands, substituting the ECR endpoint in the example for yours:
     ```
     docker pull quay.io/shotgun/s3-proxy:1.0.6
     docker tag quay.io/shotgun/s3-proxy:1.0.6 627791357434.dkr.ecr.us-west-2.amazonaws.com/s3-proxy:1.0.6
@@ -73,43 +74,43 @@ You will need to deploy an S3 proxy in your VPC to forward traffic to the S3 VPC
 
 Create a new stack in AWS Console using either the [private](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml) or [public](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml) CloudFormation template.
 
-* Create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home?#/stacks/create/template)
-* Select Template is ready
-* Set Amazon S3 URL depending upon your desired configuration
-  * Private S3 proxy (default):
+- Create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home?#/stacks/create/template)
+- Select Template is ready
+- Set Amazon S3 URL depending upon your desired configuration
+  - Private S3 proxy (default):
     [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy.yml)
-  * Public S3 proxy:
+  - Public S3 proxy:
     [`https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml`](https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-s3-proxy-public.yml)
-* Click Next
-* Set a stack name up to 32 characters in length. Eg. `shotgun-s3-proxy`
-* Set the parameters that do not have default values with those used when creating the ECR repository, VPC and S3 bucket previously
-* Click Next
-* Accept `I acknowledge that AWS CloudFormation might create IAM resources`
-* Click Next
+- Click Next
+- Set a stack name up to 32 characters in length. Eg. `shotgun-s3-proxy`
+- Set the parameters that do not have default values with those used when creating the ECR repository, VPC and S3 bucket previously
+- Click Next
+- Accept `I acknowledge that AWS CloudFormation might create IAM resources`
+- Click Next
 
 ### Configure HTTPS
 
 ShotGrid requires that the S3 proxy be accessed via HTTPS, therefore the AWS ALB handling requests for your newly created S3 proxy stack must be configured to accept HTTPS requests.
 
-* Create a DNS entry pointing to your S3 proxy, depending upon whether public or private
-  * Private S3 proxy (default):
-    * Go to the [EC2 Load Balancers dashboard](https://console.aws.amazon.com/ec2/home?#LoadBalancers), select your S3 proxy's ALB and make a note of the DNS name
-    * Add a DNS CNAME record pointing to the DNS name of the ALB
+- Create a DNS entry pointing to your S3 proxy, depending upon whether public or private
+  - Private S3 proxy (default):
+    - Go to the [EC2 Load Balancers dashboard](https://console.aws.amazon.com/ec2/home?#LoadBalancers), select your S3 proxy's ALB and make a note of the DNS name
+    - Add a DNS CNAME record pointing to the DNS name of the ALB
       Eg. `s3-proxy.mystudio.com. 300 IN CNAME s3proxy-12R1MXX0MFFAV-2025360147.us-east-1.elb.amazonaws.com.`
-  * Public S3 proxy:
-    * Go to the [AWS Global Accelerator dashboard](https://console.aws.amazon.com/ec2/v2/home?#GlobalAcceleratorDashboard:) and make a note of the DNS name associated with your S3 proxy's accelerator
-    * Add a DNS CNAME record pointing to the DNS name of the Global Accelerator
+  - Public S3 proxy:
+    - Go to the [AWS Global Accelerator dashboard](https://console.aws.amazon.com/ec2/v2/home?#GlobalAcceleratorDashboard:) and make a note of the DNS name associated with your S3 proxy's accelerator
+    - Add a DNS CNAME record pointing to the DNS name of the Global Accelerator
       Eg. `s3-proxy.mystudio.com. 300 IN CNAME a48a2a8de7cfd28d3.awsglobalaccelerator.com.`
-* Obtain an SSL certificate for your chosen URL, we recommend using [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) for this
-* Configure HTTPS for the S3 proxy by adding a new HTTPS listener to the AWS ALB
-  * Go to the [EC2 Load Balancers dashboard](https://console.aws.amazon.com/ec2/home?#LoadBalancers), select your S3 proxy's ALB and click on the Listeners tab
-  * Click Add listener
-  * Select HTTPS from the Protocol dropdown menu
-  * Click Add action -> Forward to...
-  * Select your S3 proxy's target group from the Target group dropdown menu
-  * Select the Security policy you'd like to use. Eg. `TLS-1-2-Ext-2018-06` (See [AWS documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies) for more information)
-  * Select the SSL certificate you'd like to use from ACM or import a new certificate
-  * Click Save
+- Obtain an SSL certificate for your chosen URL, we recommend using [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) for this
+- Configure HTTPS for the S3 proxy by adding a new HTTPS listener to the AWS ALB
+  - Go to the [EC2 Load Balancers dashboard](https://console.aws.amazon.com/ec2/home?#LoadBalancers), select your S3 proxy's ALB and click on the Listeners tab
+  - Click Add listener
+  - Select HTTPS from the Protocol dropdown menu
+  - Click Add action -> Forward to...
+  - Select your S3 proxy's target group from the Target group dropdown menu
+  - Select the Security policy you'd like to use. Eg. `TLS-1-2-Ext-2018-06` (See [AWS documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies) for more information)
+  - Select the SSL certificate you'd like to use from ACM or import a new certificate
+  - Click Save
 
 ### Add S3 proxy VPC to S3 bucket policy
 
@@ -123,10 +124,10 @@ Try to access your S3 proxy using the ping route. Eg. `https://s3-proxy.mystudio
 
 ### Configure your test site to use the S3 proxy
 
-* Navigate to the Site Preferences menu within ShotGrid and expand the Isolation section
-* Set S3 Proxy Host Address to the S3 proxy url. Eg. `https://s3-proxy.mystudio.com` then click Save changes
-* Confirm that you are still able to access existing media
-* Attempt to upload new media
+- Navigate to the Site Preferences menu within ShotGrid and expand the Isolation section
+- Set S3 Proxy Host Address to the S3 proxy url. Eg. `https://s3-proxy.mystudio.com` then click Save changes
+- Confirm that you are still able to access existing media
+- Attempt to upload new media
 
 ## Next Steps
 

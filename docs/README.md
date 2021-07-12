@@ -11,7 +11,7 @@ The following folders exist:
 - `zh_CN` - Chinese translated content.
 - `all_langs` - Content which is intended for all languages (usually in english) should go here.
 - `images` - All images should be located in the images subfolder structure.
-- `_data/en`, `_data/ja`, ... - Site metadata (e.g. landing page content), organized by language. 
+- `_data/en`, `_data/ja`, ... - Site metadata (e.g. landing page content), organized by language.
 
 ## Content Authoring
 

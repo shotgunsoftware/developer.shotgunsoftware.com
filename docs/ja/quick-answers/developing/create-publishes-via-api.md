@@ -13,10 +13,11 @@ lang: ja
 Publish API は最終的にコア sgtk API メソッドを使用して PublishedFile を登録しますが、カスマイズ可能な、コレクション、検証、およびパブリッシュに関するフレームワークも用意されています。Publish API ドキュメントだけでなく、[パイプライン チュートリアル](https://developer.shotgridsoftware.com/ja/cb8926fc/)にも、独自のパブリッシュ プラグインを記述する例が記載されています。
 
 ## register_publish() API メソッドを使用する
+
 未処理の {% include product %} API 呼び出しを使用して {% include product %} でパブリッシュ レコードを作成することは可能ですが、Toolkit の便利なメソッドを使用することをお勧めします。
 パブリッシュを作成する Toolkit アプリはすべて、[`sgtk.util.register_publish()`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.register_publish)と呼ばれる API ユーティリティ メソッドを使用しています。
 
-基本的に、このメソッドは {% include product %} で新しい PublishedFile エンティティを作成し、ツールキットの概念を使用してその作業を容易にするよう試行します。 以下の行に従ってコードを実行する必要があります。
+基本的に、このメソッドは {% include product %} で新しい PublishedFile エンティティを作成し、ツールキットの概念を使用してその作業を容易にするよう試行します。  以下の行に従ってコードを実行する必要があります。
 
 ```python
 # Get access to the Toolkit API
@@ -74,4 +75,5 @@ currentEngine = sgtk.platform.current_engine()
 tk = currentEngine.sgtk
 ctx = currentEngine.context
 ```
+
 " %}

@@ -9,10 +9,10 @@ lang: ko
 
 이 안내서를 마치면 툴킷의 구성 관리 도구를 간단히 익히고 다음과 같은 작업을 수행하는 방법을 익힐 수 있습니다.
 
-* 활성 파이프라인 구성의 복사본을 안전하게 생성
-* 앱을 구성에 추가
-* 특정 환경에서 앱을 사용하는 데 필요한 설정 추가
-* 활성 구성에 변경 사항 다시 적용
+- 활성 파이프라인 구성의 복사본을 안전하게 생성
+- 앱을 구성에 추가
+- 특정 환경에서 앱을 사용하는 데 필요한 설정 추가
+- 활성 구성에 변경 사항 다시 적용
 
 ## 안내서 정보
 
@@ -174,7 +174,6 @@ engines:
   tk-photoshopcc: "@settings.tk-photoshopcc.project"
   tk-shell: "@settings.tk-shell.project"
   tk-shotgun: "@settings.tk-shotgun.project"
-
 ```
 
 `@settings`를 사용하는 `tk-maya: “@settings.tk-maya.project”` 행은 설정이 포함된 파일에 있음을 나타냅니다. `tk-maya`는 Maya 엔진을 나타내고 `project`는 환경을 나타냅니다.
@@ -185,10 +184,10 @@ engines:
 
 이 블록에서
 
-* `settings`는 기본 구성에 대해 설정 폴더의 참조로 선택된 항목입니다.
-* `project`는 기본 구성에 대해 프로젝트 환경의 참조로 선택된 항목입니다.
-* `tk-maya`는 Maya에 대한 툴킷 엔진의 식별자입니다.
-* `@`은 설정 값을 포함된 파일에서 가져온다는 것을 나타내는 데 사용되는 툴킷 용어입니다.
+- `settings`는 기본 구성에 대해 설정 폴더의 참조로 선택된 항목입니다.
+- `project`는 기본 구성에 대해 프로젝트 환경의 참조로 선택된 항목입니다.
+- `tk-maya`는 Maya에 대한 툴킷 엔진의 식별자입니다.
+- `@`은 설정 값을 포함된 파일에서 가져온다는 것을 나타내는 데 사용되는 툴킷 용어입니다.
 
 YAML 파일은 {% include product %} 통합으로 통하는 창입니다. 이 파일을 사용하면 파이프라인의 요구사항을 충족하는 작업 환경을 더욱 손쉽게 구성할 수 있습니다.
 
@@ -260,11 +259,11 @@ Windows:
 
 다음에 해당하는 경우:
 
-* 방금 편집한 복제된 구성을 사용합니다.
-* 복제된 구성이 올바르게 확장되었습니다.
-* 확장된 파일을 저장했습니다.
-* 복제된 구성과 프로젝트를 연결했습니다.
-* {% include product %} 데스크톱에서 Maya를 다시 실행했습니다.
+- 방금 편집한 복제된 구성을 사용합니다.
+- 복제된 구성이 올바르게 확장되었습니다.
+- 확장된 파일을 저장했습니다.
+- 복제된 구성과 프로젝트를 연결했습니다.
+- {% include product %} 데스크톱에서 Maya를 다시 실행했습니다.
 
 Python 콘솔 앱을 Maya에서 사용할 수 있습니다.
 
@@ -330,11 +329,11 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 ID를 입력하면 {% include product %}에서 다음 작업을 수행합니다.
 
-* 기본 구성 백업
-* 복제된 구성 복사
-* 복제본을 그대로 둔 상태로 복제된 구성의 복사본을 프로젝트와 연결
-* 기본 구성이 저장된 위치 표시
-* 다운로드하고 캐시해야 할 앱이 있는지 여부 확인
+- 기본 구성 백업
+- 복제된 구성 복사
+- 복제본을 그대로 둔 상태로 복제된 구성의 복사본을 프로젝트와 연결
+- 기본 구성이 저장된 위치 표시
+- 다운로드하고 캐시해야 할 앱이 있는지 여부 확인
 
 ```
 Please type in the id of the configuration to push to (ENTER to exit): 1
@@ -400,7 +399,7 @@ apps:
 
 includes의 경로를 `../includes/app_locations.yml`까지 따라가 `apps.tk-multi-pythonconsole.location`을 검색하여 다음을 확인합니다.<br/><br/>
 
-```yaml
+````yaml
 # pythonconsole
 apps.tk-multi-pythonconsole.location:
   type: app_store
@@ -410,10 +409,11 @@ apps.tk-multi-pythonconsole.location:
 
 모든 앱, 엔진 및 프레임워크에는 툴킷에 특정 번들에 액세스하는 위치를 알리는 데 사용되는 위치 설명자가 있습니다. 대부분의 앱 설명자는 `app_locations.yml` 파일에 있지만, Python 콘솔 앱에서 확인한 것처럼 원하는 위치에서 참조되지 않을 수도 있습니다. 모든 표준 앱 및 엔진이 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 정리되어 있습니다.
 
-Shotgun에서 지원하는 적합한 소프트웨어 통합에 앱을 추가할 수도 있고, 자신만의 전용 응용프로그램을 자체 툴킷 도구에 추가할 수도 있습니다. 지원되는 모든 소프트웨어 응용프로그램도 통합의 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 정리되어 있습니다. 
+Shotgun에서 지원하는 적합한 소프트웨어 통합에 앱을 추가할 수도 있고, 자신만의 전용 응용프로그램을 자체 툴킷 도구에 추가할 수도 있습니다. 지원되는 모든 소프트웨어 응용프로그램도 통합의 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에 정리되어 있습니다.
 
-원하는 앱을 찾을 수 없는 경우 직접 작성할 수 있습니다. 다른 Shotgun 사용자도 동일한 기능을 필요로 할 수 있으므로 새로 만든 앱을 공유하는 것도 Shotgun 커뮤니티에 기여하는 한 가지 방법입니다. 
+원하는 앱을 찾을 수 없는 경우 직접 작성할 수 있습니다. 다른 Shotgun 사용자도 동일한 기능을 필요로 할 수 있으므로 새로 만든 앱을 공유하는 것도 Shotgun 커뮤니티에 기여하는 한 가지 방법입니다.
 
 다음 안내서에서는 스튜디오의 [구조에 따라 프로덕션 폴더 구조를 커스터마이즈하는 방법을 알아봅니다](./dynamic_filesystem_configuration.md).
 
 
+````

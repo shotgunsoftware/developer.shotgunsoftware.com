@@ -23,43 +23,43 @@ lang: ko
 
 ## 필수 요건
 
-* **작업 중인 {% include product %} 프로젝트** - 이 튜토리얼에서는 프로덕션 데이터 트래킹 및 관리를 위해 {% include product %}을 사용하는 환경이라고 가정합니다.
+- **작업 중인 {% include product %} 프로젝트** - 이 튜토리얼에서는 프로덕션 데이터 트래킹 및 관리를 위해 {% include product %}을 사용하는 환경이라고 가정합니다.
 
-* **{% include product %} 통합 이해** - {% include product %}은 통합 기능을 통해 수동 구성이 필요 없는 몇 가지 간단한 프로덕션 워크플로우를 제공합니다. 이 튜토리얼에 설명된 수동 구성 및 커스터마이제이션에 대해 자세히 알아보기 전에 이러한 워크플로우의 기능 및 범위를 이해해야 합니다. {% include product %} 통합에 대한 자세한 정보는 [여기](https://support.shotgunsoftware.com/hc/ko/articles/115000068574)를 참조하십시오.
+- **{% include product %} 통합 이해** - {% include product %}은 통합 기능을 통해 수동 구성이 필요 없는 몇 가지 간단한 프로덕션 워크플로우를 제공합니다. 이 튜토리얼에 설명된 수동 구성 및 커스터마이제이션에 대해 자세히 알아보기 전에 이러한 워크플로우의 기능 및 범위를 이해해야 합니다. {% include product %} 통합에 대한 자세한 정보는 [여기](https://support.shotgunsoftware.com/hc/ko/articles/115000068574)를 참조하십시오.
 
-* **Maya 및 Nuke 환경** - 이 튜토리얼은 Nuke와 Maya를 사용하여 간단한 파이프라인을 빌드하도록 설계되었습니다. {% include product %}에서 제공하는 통합을 커스터마이즈하기 위해서는 이러한 패키지를 기본적으로 이해하고 있어야 합니다.
+- **Maya 및 Nuke 환경** - 이 튜토리얼은 Nuke와 Maya를 사용하여 간단한 파이프라인을 빌드하도록 설계되었습니다. {% include product %}에서 제공하는 통합을 커스터마이즈하기 위해서는 이러한 패키지를 기본적으로 이해하고 있어야 합니다.
 
-* **Python 실무 지식** - 이 튜토리얼에서는 Python으로 작성된 "후크"를 통해 {% include product %} 통합 기능을 수정해야 합니다.
+- **Python 실무 지식** - 이 튜토리얼에서는 Python으로 작성된 "후크"를 통해 {% include product %} 통합 기능을 수정해야 합니다.
 
-* **YAML 사용 경험** - 빌드할 파이프라인의 대부분의 구성은 YAML 파일을 수정하여 처리됩니다.
+- **YAML 사용 경험** - 빌드할 파이프라인의 대부분의 구성은 YAML 파일을 수정하여 처리됩니다.
 
 ## 추가 리소스
 
-* [{% include product %} 지원 사이트](https://support.shotgunsoftware.com/hc/ko)
+- [{% include product %} 지원 사이트](https://support.shotgunsoftware.com/hc/ko)
 
-* [{% include product %} 통합](https://www.shotgunsoftware.com/kr/integrations/)
+- [{% include product %} 통합](https://www.shotgunsoftware.com/kr/integrations/)
 
-   * [사용자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000068574)
+  - [사용자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000068574)
 
-   * [관리자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000067493)
+  - [관리자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000067493)
 
-   * [개발자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000067513)
+  - [개발자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000067513)
 
 # 프로젝트 작성 및 설정
 
 이 튜토리얼에서는 {% include product %}에 새 프로젝트를 만들고 프로덕션을 위해 시작할 준비가 된 것처럼 구성해야 합니다. 여기에는 필요한 모든 {% include product %} 엔티티가 제대로 배치되고 링크되어 있는지 확인하는 것도 포함됩니다. 이 튜토리얼에서는 에셋, 시퀀스, 샷 및 태스크 엔티티가 필요하며 새 프로젝트에서 기본값으로 사용할 수 있어야 합니다. 다음을 만듭니다.
 
-* 두 개의 **에셋**:
+- 두 개의 **에셋**:
 
-   * **_주전자_** 캐릭터
+  - **_주전자_** 캐릭터
 
-   * **_테이블_** 소품
+  - **_테이블_** 소품
 
-* 하나의 **시퀀스**
+- 하나의 **시퀀스**
 
-* 만든 **시퀀스**에 링크된 하나의 **샷**
+- 만든 **시퀀스**에 링크된 하나의 **샷**
 
-* 파이프라인 단계별 **태스크**
+- 파이프라인 단계별 **태스크**
 
 다음은 구성된 프로젝트 엔티티가 {% include product %}에서 어떻게 표시되는지 보여 주는 일부 스크린샷입니다.
 
@@ -97,7 +97,7 @@ lang: ko
 
 {% include figure src="./images/tutorial/wizard_02.png" caption="**기본값 구성**(Default configuration)을 선택합니다." %}
 
-이번에 처음으로 {% include product %} 프로젝트를 설정하는 경우 프로젝트 데이터의 저장소 위치를 정의하라는 메시지가 표시될 수도 있습니다.  아니면 기존 저장소 위치를 선택할 수 있습니다.
+이번에 처음으로 {% include product %} 프로젝트를 설정하는 경우 프로젝트 데이터의 저장소 위치를 정의하라는 메시지가 표시될 수도 있습니다. 아니면 기존 저장소 위치를 선택할 수 있습니다.
 
 {% include figure src="./images/tutorial/wizard_03.png" caption="새 저장소를 만듭니다." %}
 
@@ -105,13 +105,13 @@ lang: ko
 
 {% include figure src="./images/tutorial/wizard_05.png" caption="사용할 운영 체제에서 이 저장소에 액세스할 수 있는 경로를 설정합니다." %}
 
-**사이트 기본 설정**(Site Preferences)의 **파일 관리**(File Management) 섹션에서 {% include product %} 사이트에 대한 저장소를 보고 편집할 수 있습니다.  이러한 설정에 대한 자세한 내용은 [여기](https://support.shotgunsoftware.com/hc/ko/articles/219030938)에서 확인할 수 있습니다.
+**사이트 기본 설정**(Site Preferences)의 **파일 관리**(File Management) 섹션에서 {% include product %} 사이트에 대한 저장소를 보고 편집할 수 있습니다. 이러한 설정에 대한 자세한 내용은 [여기](https://support.shotgunsoftware.com/hc/ko/articles/219030938)에서 확인할 수 있습니다.
 
 저장소 위치를 선택했으므로 이제 해당 위치에서 새 프로젝트에 대한 디렉토리 이름을 선택합니다.
 
 {% include figure src="./images/tutorial/wizard_06.png" caption="프로젝트의 파일을 저장할 폴더 이름을 입력합니다." %}
 
-이 튜토리얼에서는 중앙 집중식 구성을 사용합니다.  **분산 설정**(Distributed Setup) 옵션은 다른 혜택을 제공할 수 있는 대체 옵션을 제공하며 빠른 공유 저장소가 없는 스튜디오의 경우 자주 사용하는 옵션이 될 수 있습니다.  다른 구성 설정의 장단점에 대한 자세한 내용은 [툴킷 관리](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2) 프리젠테이션에서 확인할 수 있습니다.
+이 튜토리얼에서는 중앙 집중식 구성을 사용합니다. **분산 설정**(Distributed Setup) 옵션은 다른 혜택을 제공할 수 있는 대체 옵션을 제공하며 빠른 공유 저장소가 없는 스튜디오의 경우 자주 사용하는 옵션이 될 수 있습니다. 다른 구성 설정의 장단점에 대한 자세한 내용은 [툴킷 관리](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2) 프리젠테이션에서 확인할 수 있습니다.
 
 사이트 전체 수준의 저장소와 달리 구성은 프로젝트별로 다르므로 여기서 선택하는 디렉토리는 구성을 저장하는 데 직접 사용됩니다.
 
@@ -289,7 +289,6 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 이 간단한 파이프라인의 목적에 맞게 게시자 앱을 커스터마이즈하여 서페이스 처리 단계에서 추가 게시 항목으로 Maya 셰이더 네트워크를 내보냅니다. 튜토리얼 후반에서 다운스트림 참조 시 셰이더를 Alembic 지오메트리 캐시에 다시 연결할 수 있는 빠르고 간편한 솔루션을 만듭니다.
 
-
 {% include info title="참고" content="추가할 커스터마이즈는 확실히 매우 간단하고 쉽습니다. 보다 강력한 솔루션을 위해 외부 이미지를 텍스처 맵으로 사용하는 에셋 관리 측면뿐만 아니라 서페이스 처리된 캐릭터의 대체 표현을 고려해야 할 수 있습니다. 이 예제는 실제 솔루션을 빌드하기 위한 시작점만 제공합니다." %}
 
 {% include info title="참고" content="게시자 플러그인을 작성하는 방법에 대한 전체 상세 정보는 [여기](https://developer.shotgridsoftware.com/tk-multi-publish2/)에서 확인할 수 있습니다." %}
@@ -424,7 +423,6 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
        return plugin_settings
 ```
 
-
 이 메서드는 플러그인에 대한 구성 인터페이스를 정의합니다. **"게시 템플릿(Publish Template)"** 설정에는 디스크에 셰이더 네트워크를 작성하는 플러그인이 필요합니다. 새 게시 플러그인을 게시자 구성에 추가하고 템플릿 설정을 포함합니다. 이는 컬렉터를 인계받기 전에 수정한 구성 블록과 동일합니다. 해당 내용은 다음 파일에 정의되어 있습니다.
 
 **`env/includes/settings/tk-multi-publish2.yml`**
@@ -463,7 +461,6 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 작업 설명을 입력하고 게시된 파일과 연결할 서페이스 처리된 주전자의 썸네일을 캡처합니다. 마지막으로, 게시(Publish)를 클릭하여 주전자 셰이더를 디스크로 내보내고 파일을 {% include product %}의 게시로 등록합니다. 완료되면 세션 게시 플러그인이 자동으로 작업 파일을 다음 사용 가능한 버전으로 저장했는지 확인합니다. 지금까지가 {% include product %} 통합에서 지원되는 모든 DCC 내의 기본 동작입니다.
 
-
 이제 {% include product %}에서 주전자 에셋을 검색하여 모두 예상대로 작동되는지 확인할 수 있습니다.
 
 {% include figure src="./images/tutorial/image_33.png" %}
@@ -478,15 +475,15 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 이제는 {% include product %}에서 제공하는 Workfile 및 Publish 앱을 사용하여 작업 파일을 열거나 만들고 저장하고 게시하는 것이 어렵지 않을 것입니다. 또한 Loader 앱을 사용하여 업스트림에서 게시를 로드하기도 했습니다. 학습한 내용을 활용하여 다음 태스크를 완료합니다.
 
-* {% include product %} 데스크톱에서 Maya 시작
+- {% include product %} 데스크톱에서 Maya 시작
 
-* 주전자 에셋의 리깅 단계에서 새 작업 파일 만들기
+- 주전자 에셋의 리깅 단계에서 새 작업 파일 만들기
 
-* 모델링 단계에서 주전자 alembic 캐시 게시 로드(참조)
+- 모델링 단계에서 주전자 alembic 캐시 게시 로드(참조)
 
-* 주전자 뚜껑을 리깅하여 열고 닫기(간단하게 유지)
+- 주전자 뚜껑을 리깅하여 열고 닫기(간단하게 유지)
 
-* 주전자 리그 저장 및 게시
+- 주전자 리그 저장 및 게시
 
 {% include product %}에 다음과 같이 나타납니다.
 
@@ -518,13 +515,13 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 이전 섹션에서 학습한 내용을 활용하여 다음 태스크를 완료합니다.
 
-* {% include product %} 데스크톱에서 Maya 시작
+- {% include product %} 데스크톱에서 Maya 시작
 
-* 샷의 레이아웃 단계에서 새 작업 파일 만들기(힌트: Loader에서 샷(Shots) 탭 사용)
+- 샷의 레이아웃 단계에서 새 작업 파일 만들기(힌트: Loader에서 샷(Shots) 탭 사용)
 
-* 주전자의 리깅 단계에서 주전자 게시 로드(참조)
+- 주전자의 리깅 단계에서 주전자 게시 로드(참조)
 
-* 테이블의 모델 단계에서 테이블 게시 로드(참조)
+- 테이블의 모델 단계에서 테이블 게시 로드(참조)
 
 이제 테이블에 주전자가 있는 간단한 씬을 실행합니다. 씬에 **camMain**이라는 카메라를 추가하고 몇 프레임에 애니메이션을 적용하여 샷의 카메라 이동을 만듭니다.
 
@@ -644,11 +641,11 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 이전 섹션에서 학습한 내용을 활용하여 다음 태스크를 완료합니다.
 
-* {% include product %} 데스크톱에서 Maya 시작
+- {% include product %} 데스크톱에서 Maya 시작
 
-* 샷의 애니메이션 단계에서 새 작업 파일 만들기
+- 샷의 애니메이션 단계에서 새 작업 파일 만들기
 
-* 샷의 레이아웃 단계에서 Maya 세션 게시 로드(참조)
+- 샷의 레이아웃 단계에서 Maya 세션 게시 로드(참조)
 
 {% include info title="참고" content="레이아웃 세션 게시 파일에 카메라가 포함되었음을 확인할 수 있습니다. 강력한 파이프라인에서 별도의 카메라 게시 파일이 하나의 실제 카메라 정의가 될 수 있도록 세션 게시에서 카메라를 명시적으로 숨기거나 제외할 수 있습니다. 계속 진행하여 참조로 포함된 카메라를 삭제하거나 숨깁니다." %}
 
@@ -688,13 +685,13 @@ Maya에 대해 앱이 구성된 섹션을 찾고 **`action_mappings`** 설정의
 
 먼저, 이전 섹션에서 학습한 내용을 활용하여 다음 태스크를 완료합니다.
 
-* {% include product %} 데스크톱에서 Maya 시작
+- {% include product %} 데스크톱에서 Maya 시작
 
-* 샷의 조명 단계에서 새 작업 파일 만들기
+- 샷의 조명 단계에서 새 작업 파일 만들기
 
-* 샷의 애니메이션 단계에서 Maya 세션 게시 로드(참조)
+- 샷의 애니메이션 단계에서 Maya 세션 게시 로드(참조)
 
-* 샷의 레이아웃 단계에서 카메라 게시 로드(참조)
+- 샷의 레이아웃 단계에서 카메라 게시 로드(참조)
 
 ### 커스텀 셰이더 로더 액션
 
@@ -740,14 +737,12 @@ Maya에 대해 앱이 구성된 섹션을 찾고 **`action_mappings`** 설정의
                    cmds.hyperShade(assign=shader)
 ```
 
-
 이제 셰이더 연결 로직을 호출하기 위해 **`_create_reference`** 메서드 마지막에 다음 두 줄을 추가합니다.
 
 ```python
     reference_node = cmds.referenceQuery(path, referenceNode=True)
     _hookup_shaders(reference_node)</td>
 ```
-
 
 코드는 새 참조가 만들어질 때마다 실행되므로 셰이더가 이미 파일에 있는 경우 새 지오메트리 참조 시 셰이더를 할당해야 합니다. 마찬가지로, 셰이더를 참조하고 지오메트리가 이미 존재할 때 작동합니다.
 
@@ -799,10 +794,9 @@ Maya에 대해 앱이 구성된 섹션을 찾고 **`action_mappings`** 설정의
 
 다음 단계를 수행하여 작업 파일을 준비합니다.
 
-* {% include product %} 데스크톱에서 Nuke를 시작합니다.
+- {% include product %} 데스크톱에서 Nuke를 시작합니다.
 
-* Maya에서와 마찬가지로, {% include product %} > 파일 열기...(File Open…) 메뉴 액션을 사용하여 샷의 합성 단계에서 새 작업 파일을 만듭니다.
-
+- Maya에서와 마찬가지로, {% include product %} > 파일 열기...(File Open…) 메뉴 액션을 사용하여 샷의 합성 단계에서 새 작업 파일을 만듭니다.
 
 Loader 앱을 통해 이전 섹션에서 렌더링 및 게시된 이미지 시퀀스를 로드합니다.
 
@@ -846,7 +840,7 @@ Nuke 프로젝트 설정 출력 형식이 렌더링된 이미지와 일치하는
 
 축하합니다. 모두 완료했습니다. 이 튜토리얼이 {% include product %} 통합을 사용하여 고유한 커스텀 파이프라인을 빌드하는 시작점이 되었기를 바랍니다. 기본 통합을 확장하여 스튜디오의 특정 요구 사항을 충족하는 방법을 이해할 수 있어야 합니다.
 
-[shotgun-dev Google 그룹](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev)에서 다른 스튜디오에서는 툴킷을 어떻게 사용하는지 질문하고 배울 수 있습니다.  최신 게시물을 보려면 등록하십시오.
+[shotgun-dev Google 그룹](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev)에서 다른 스튜디오에서는 툴킷을 어떻게 사용하는지 질문하고 배울 수 있습니다. 최신 게시물을 보려면 등록하십시오.
 
 기본 통합에서 제공되지 않는 기능이나 워크플로우가 있으면 언제든 자체 앱을 작성할 수 있습니다. 첫 번째 앱 작성을 시작하려면 [이 문서](https://support.shotgunsoftware.com/hc/ko/articles/219033158)를 참조하십시오.
 

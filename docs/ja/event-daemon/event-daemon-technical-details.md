@@ -8,6 +8,7 @@ lang: ja
 # 技術的な概要
 
 <a id="Event_Types"></a>
+
 ## イベント タイプ
 
 トリガを登録して通知するイベント タイプは、通常、次の `Shotgun_[entity_type]_[New|Change|Retirement|Revival]` 形式を使用します。以下に、この形式の例をいくつか示します。
@@ -34,13 +35,16 @@ lang: ja
     Toolkit_Desktop_ProjectLaunch
     Toolkit_Desktop_AppLaunch
     Toolkit_Folders_Create
-    Toolkit_Folders_Delete    
+    Toolkit_Folders_Delete
 
 このリストはすべてを網羅しているわけではありませんが、糸口にしてください。{% include product %} サイトのアクティビティやイベントのタイプに関する詳細を確認したい場合は、他のエンティティ タイプの他のグリッド ページのようにフィルタや検索が可能な EventLogEntries のページを参照してください。
 
 ### サムネイルのイベント ログ エントリ
-エンティティの新しいサムネイルをアップロードすると、``` `Type` == `Shotgun_<Entity_Type>_Change` ``` でイベント ログ エントリが作成されます(例: `Shotgun_Shot_Change`)。
-1. ```‘is_transient’``` フィールドの値は true に設定されています。
+
+エンティティの新しいサムネイルをアップロードすると、`` `Type` == `Shotgun_<Entity_Type>_Change` `` でイベント ログ エントリが作成されます(例: `Shotgun_Shot_Change`)。
+
+1. `‘is_transient’` フィールドの値は true に設定されています。
+
 ```
 { "type": "attribute_change","attribute_name": "image",
  "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image",
@@ -48,7 +52,9 @@ lang: ja
  "is_transient": true
 }
 ```
-2. サムネイルが使用できるようになると、```‘is_transient’``` フィールドの値が false に設定された新しいイベント ログ エントリが作成されます。
+
+2. サムネイルが使用できるようになると、`‘is_transient’` フィールドの値が false に設定された新しいイベント ログ エントリが作成されます。
+
 ```
 { "type": "attribute_change", "attribute_name": "image",
  "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image",
@@ -56,7 +62,9 @@ lang: ja
  "is_transient": false
 }
 ```
+
 3. サムネイルをもう一度更新すると、次のような新しいイベント ログ エントリが取得されます。
+
 ```
 { "type": "attribute_change", "attribute_name": "image",
  "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image",
@@ -69,10 +77,11 @@ lang: ja
  "is_transient": false
 }
 ```
-4. 添付ファイルのサムネイルがプレースホルダのサムネイルである場合、```‘old_value’``` フィールドは null に設定されることに注意してください。
 
+4. 添付ファイルのサムネイルがプレースホルダのサムネイルである場合、`‘old_value’` フィールドは null に設定されることに注意してください。
 
 <a id="Plugin_Processing_Order"></a>
+
 ## プラグインの処理順序
 
 各イベントは常に同じ予測可能な順序で処理されるため、プラグインやコールバックが共依存している場合は、処理を支障なく整理することができます。
@@ -88,6 +97,7 @@ lang: ja
 1 つまたは複数のコールバックと同じプラグインで状態を共有する必要がある機能を保持することをお勧めします。
 
 <a id="Sharing_State"></a>
+
 ## 状態を共有する
 
 状態を共有する必要がある複数のコールバックに設定できる多くのオプションがあります。
@@ -97,8 +107,8 @@ lang: ja
 - [`Registrar.registerCallback`](API#wiki-registerCallback) を呼び出すときに `args` 引数で渡される可変値。設計の状態オブジェクト、または `dict` のような単純な関数。推奨します。
 - オブジェクト インスタンスで `__call__` などのコールバックを使用して、コールバック オブジェクトの初期化時に共有状態オブジェクトをいくつか指定します。最も強力な方法ですが、最も複雑な方法でもあります。上記の args 引数メソッドと比較すると、煩雑になる場合があります。
 
-
 <a id="Event_Backlogs"></a>
+
 ## イベント バックログ
 
 フレームワークの仕様により、すべてのプラグインは、対象のすべてのイベントそれぞれを例外なく 1 回のみ処理します。必ずこのように処理されるように、フレームワークは各プラグインの未処理イベントのバックログを保存し、各プラグインが提供された最後のイベントを記憶します。バックログが発生する可能性のある状況は、以下のとおりです。

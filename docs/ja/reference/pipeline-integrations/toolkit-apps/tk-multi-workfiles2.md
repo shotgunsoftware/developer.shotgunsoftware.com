@@ -65,12 +65,12 @@ lang: ja
 
 ```yaml
 maya_extension:
-    type: str
-    choices:
-        ma: Maya Ascii (.ma)
-        mb: Maya Binary (.mb)
-    default: ma
-    alias: extension
+  type: str
+  choices:
+    ma: Maya Ascii (.ma)
+    mb: Maya Binary (.mb)
+  default: ma
+  alias: extension
 ```
 
 `maya_extension` はトークン名です。`choices` は、ドロップダウンに表示されるファイル タイプのディクショナリです。キー(`ma` と `mb`)は、このテンプレート トークンに指定できる有効な値です。値(`Maya Ascii (.ma)` と `Maya Binary (.mb)`)は、Toolkit アプリケーションで使用できる UI に適した説明です。`alias` は作業ファイル アプリケーションで必要なヒントです。このトークンが拡張子であり、ドロップダウン ウィジェットに表示されるということがアプリケーションに通知されます。
@@ -79,8 +79,8 @@ maya_extension:
 
 ```yaml
 maya_shot_work:
-    definition: '@shot_root/work/maya/{name}.v{version}.{maya_extension}'
-    root_name: 'primary'
+  definition: "@shot_root/work/maya/{name}.v{version}.{maya_extension}"
+  root_name: "primary"
 ```
 
 ## [コンテキスト変更](Context Change)ダイアログ
@@ -100,18 +100,18 @@ maya_shot_work:
 次の例では、アセットおよびショットのタスクをそれぞれ表示する 2 つのタブを定義します。
 
 ```yaml
-  - caption: Assets Tasks
-    entity_type: Task
-    step_filter_on: Asset
-    filters:
+- caption: Assets Tasks
+  entity_type: Task
+  step_filter_on: Asset
+  filters:
     - [entity, type_is, Asset]
-    hierarchy: [entity.Asset.sg_asset_type, entity, step, content]
-  - caption: Shots Tasks
-    entity_type: Task
-    step_filter_on: Shot
-    filters:
+  hierarchy: [entity.Asset.sg_asset_type, entity, step, content]
+- caption: Shots Tasks
+  entity_type: Task
+  step_filter_on: Shot
+  filters:
     - [entity, type_is, Shot]
-    hierarchy: [entity.Shot.sg_sequence, entity, step, content]
+  hierarchy: [entity.Shot.sg_sequence, entity, step, content]
 ```
 
 ![ステップのフィルタ](../images/apps/multi-workfiles2-step_filter.png)
@@ -119,13 +119,14 @@ maya_shot_work:
 ## 遅延クエリー
 
 エンティティ ツリーを次のように 2 つのステップ クエリーに分割して構築すると、パフォーマンスを向上させることができます。
+
 - 最初のクエリーは、{% include product %} からレコードを取得し、ツリーの上部に入力するために使用します。
 - 2 番目のクエリーは、ツリーを展開するときに子を取得するために使用します。
 
 次の設定では、アプリを起動するときに {% include product %} からアセットおよびショットを取得します。特定のアセットまたはショットを選択した場合、またはツリー ビューで展開した場合は、このアセットまたはショットにリンクされたタスクのみが取得されます。
 
 ```yaml
-  entities:
+entities:
   - caption: Assets
     entity_type: Asset
     hierarchy: [sg_asset_type, code]

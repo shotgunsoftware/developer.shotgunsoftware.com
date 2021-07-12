@@ -15,7 +15,7 @@ It's possible to add S3 replication between two S3 buckets in different regions 
 
 ## Features
 
- * Support one replica bucket in another region leveraging the [AWS S3 replication feature](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html)
+- Support one replica bucket in another region leveraging the [AWS S3 replication feature](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html)
 
 ## How it works
 
@@ -23,30 +23,30 @@ When S3 bucket replication is activated, users will be able download media files
 
 For each user, the S3 replication is activated by the `Use S3 Replication` field.
 
-| Value| Behavior | 
-|------|----------------------------------------------|
-|`no`  | Never use replica S3 bucket (default)|
-|`yes` | Use replica S3 bucket when delay is over|
-|`auto`| Use replica S3 bucket when delay is over and the client IP is in `IP Adresses for S3 replication` range|
+| Value  | Behavior                                                                                                |
+| ------ | ------------------------------------------------------------------------------------------------------- |
+| `no`   | Never use replica S3 bucket (default)                                                                   |
+| `yes`  | Use replica S3 bucket when delay is over                                                                |
+| `auto` | Use replica S3 bucket when delay is over and the client IP is in `IP Adresses for S3 replication` range |
 
 The `IP Adresses for S3 replication` preference can be edited in Site Preferences under the Isolation category.
 
 ## Limitations
 
- * Only one replica S3 bucket can be configured
- * Only downloading from the replica bucket is supported
- * Configurable delay for new media to be replicated before being made available to users
+- Only one replica S3 bucket can be configured
+- Only downloading from the replica bucket is supported
+- Configurable delay for new media to be replicated before being made available to users
 
 # Setup steps
 
-  * Create the replica S3 bucket in a new AWS region. See [Media Isolation](./s3_bucket.md)
-  * Update your existing ShotGrid role policy to allow ShotGrid to also access the replica bucket
-  * Setup the replication rules on the primary S3 bucket. See [How do I add a replication rule to an S3 bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-replication.html#enable-replication-add-rule)
-  * Setup a VPC + Direct Connect + S3 proxy in the new AWS region. See [Media Traffic Isolation](./media_segregation.md)
-  * Contact ShotGrid Support to configure your site to use the new S3 replica bucket, providing the following information:
-    * Replica Bucket Name
-    * Replica Bucket Region
-    * Replica S3 proxy URL
+- Create the replica S3 bucket in a new AWS region. See [Media Isolation](./s3_bucket.md)
+- Update your existing ShotGrid role policy to allow ShotGrid to also access the replica bucket
+- Setup the replication rules on the primary S3 bucket. See [How do I add a replication rule to an S3 bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-replication.html#enable-replication-add-rule)
+- Setup a VPC + Direct Connect + S3 proxy in the new AWS region. See [Media Traffic Isolation](./media_segregation.md)
+- Contact ShotGrid Support to configure your site to use the new S3 replica bucket, providing the following information:
+  - Replica Bucket Name
+  - Replica Bucket Region
+  - Replica S3 proxy URL
 
 ## FAQ
 

@@ -35,6 +35,7 @@ tk-multi-setframerange_handles:
   sg_out_frame_field: sg_handle_out
   location: "@apps.tk-multi-setframerange.location"
 ```
+
 {% include product %} メニューには、別個のオプションとして表示されます。
 
 ![複数インスタンス](../images/apps/multi-setframerange-multiple_instances.png)

@@ -29,9 +29,8 @@ Once you press the Upload button, a quicktime will be generated in nuke and then
 By default, the app will generate a Quicktime with a slate and burn-ins:
 
 ![Slate Example](../images/apps/nuke-quickreview-slate.png)
-![Burnins Example](../images/apps/nuke-quickreview-burnins.png) 
+![Burnins Example](../images/apps/nuke-quickreview-burnins.png)
 
 ## Customization
 
 Most aspects of the review submission can be adjusted using hooks. Documentation can be found [here](http://developer.shotgridsoftware.com/tk-nuke-quickreview).
-

@@ -5,11 +5,9 @@ pagename: beyond-your-first-project
 lang: ko
 ---
 
-
 # 첫 번째 프로젝트 실행 이후 작업
 
 이제 {% include product %} 데스크톱을 사용하여 첫 번째 프로젝트를 실행한 후의 작업에 대해 설명하겠습니다. 여기서는 공통 질문 및 주제를 다루고 유용한 문서 리소스를 소개합니다.
-
 
 # 툴킷 소개
 
@@ -46,7 +44,6 @@ lang: ko
 - [툴킷 응용프로그램 시작 관리자](https://support.shotgunsoftware.com/hc/ko/articles/219032968)
 - [명령행 인수 전달](https://support.shotgunsoftware.com/hc/ko/articles/219032968#Use%20Command%20Line%20Arguments%20at%20Launch)
 
-
 ## {% include product %} 통합
 
 툴킷은 {% include product %}와 통합되며 UI의 다양한 부분에 특별한 툴킷 액션 메뉴 항목을 추가하여 기존 인터페이스를 확장합니다.
@@ -57,7 +54,7 @@ lang: ko
 
 ## {% include product %} UI에 게시 추가
 
-툴킷을 설치한 후에는 일반적으로 {% include product %} UI 레이아웃을 약간 조정하는 것이 좋습니다. {% include product %} Pipeline Toolkit은 파일을 게시할 때 _게시 엔티티_를 만들므로 에셋 및 샷과 같은 주요 에셋에 _게시(Publishes) 탭_을 추가하기에 편리합니다. 이렇게 하려면 관리자(admin)로 로그인해야 합니다. 에셋 또는 샷으로 이동하고 _디자인 모드_를 시작합니다.
+툴킷을 설치한 후에는 일반적으로 {% include product %} UI 레이아웃을 약간 조정하는 것이 좋습니다. {% include product %} Pipeline Toolkit은 파일을 게시할 때 *게시 엔티티*를 만들므로 에셋 및 샷과 같은 주요 에셋에 *게시(Publishes) 탭*을 추가하기에 편리합니다. 이렇게 하려면 관리자(admin)로 로그인해야 합니다. 에셋 또는 샷으로 이동하고 *디자인 모드*를 시작합니다.
 
 ![](images/Beyond-your-first-project/design_mode.png)
 
@@ -65,7 +62,7 @@ lang: ko
 
 ![](images/Beyond-your-first-project/create_tab.png)
 
-이제 _저장(Save)_을 클릭하여 변경 사항을 저장합니다. 설정이 끝났습니다.
+이제 *저장(Save)*을 클릭하여 변경 사항을 저장합니다. 설정이 끝났습니다.
 
 참고: 사용자가 새 탭을 만들 때 {% include product %}는 몇 개의 기본 필드를 선택하여 가져옵니다. 게시할 필드를 몇 개 더 추가할 수 있습니다. 새 게시 탭에서 볼 수 있는 스프레드시트의 오른쪽 상단에 있는 작은 더하기 버튼을 클릭하면 됩니다. 다음 필드를 추가하는 것이 좋습니다.
 
@@ -147,7 +144,7 @@ Python 경로는 수동으로 편집할 수 있는 구성 파일에 저장됩니
 
 응용프로그램을 시작할 때 필요한 모든 구조가 디스크상에 있고 사전에 준비되도록 하기 위해 디스크에 폴더를 자동으로 만드는 폴더 생성 시스템이 툴킷과 함께 제공됩니다. 이에 대한 구성은 위에 표시된 `schema` 폴더에서 찾을 수 있습니다.
 
-또한 툴킷 _템플릿 시스템_을 함께 사용하면 게시, 작업 파일, 렌더링 등 구성할 수 있는 파일에 대한 다양한 경로를 쉽게 정의할 수 있습니다. 이 항목은 위의 `templates.yml` 파일에 저장됩니다.
+또한 툴킷 *템플릿 시스템*을 함께 사용하면 게시, 작업 파일, 렌더링 등 구성할 수 있는 파일에 대한 다양한 경로를 쉽게 정의할 수 있습니다. 이 항목은 위의 `templates.yml` 파일에 저장됩니다.
 
 프로젝트 구성의 이 두 부분을 함께 사용하면 툴킷이 기존 파이프라인에서 이해할 수 있도록 디스크의 위치에 데이터를 기록하는 데 사용되는 다양한 앱을 조정할 수 있습니다.
 
@@ -156,8 +153,7 @@ Python 경로는 수동으로 편집할 수 있는 구성 파일에 저장됩니
 - [폴더 구성](https://support.shotgunsoftware.com/hc/ko/articles/219033178#Creating%20folders%20on%20disk%20with%20Sgtk)
 - [파일 시스템 템플릿](https://support.shotgunsoftware.com/hc/ko/articles/219033178#Configuring%20Templates)
 
-기본적으로 툴킷은 구성된 **앱 및 엔진**의 모음으로 구성됩니다. 이 구성은 `env` 폴더에 있습니다. 위에 설명된 파일 시스템 구성 파일이 디스크상에서의 리소스 _위치_를 정의하면 해당 앱 및 엔진이 있는 환경 구성이 파이프라인이 수행해야 할 _작업_을 정의합니다.
-
+기본적으로 툴킷은 구성된 **앱 및 엔진**의 모음으로 구성됩니다. 이 구성은 `env` 폴더에 있습니다. 위에 설명된 파일 시스템 구성 파일이 디스크상에서의 리소스 *위치*를 정의하면 해당 앱 및 엔진이 있는 환경 구성이 파이프라인이 수행해야 할 *작업*을 정의합니다.
 
 ### Core API 플랫폼
 
@@ -178,4 +174,3 @@ Python 경로는 수동으로 편집할 수 있는 구성 파일에 저장됩니
 TD 및 파이프라인 엔지니어의 커뮤니티는 툴킷의 한 부분을 구성합니다. 우리는 강력하고 유연한 파이프라인 환경으로 툴킷을 함께 개선할 수 있는 역동적인 코드 공유 커뮤니티를 만드는 데 주력하고 있습니다.
 
 궁금한 점이 있거나 기존 게시물 및 논의를 살펴보고 싶다면 [공개 포럼 섹션](https://support.shotgunsoftware.com/hc/en-us/community/topics/200682428-Pipeline-Toolkit-Common-Questions-and-Answers)을 방문하십시오.
-

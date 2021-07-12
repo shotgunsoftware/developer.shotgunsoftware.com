@@ -17,9 +17,9 @@ lang: zh_CN
 
 ## Alias 项目管理
 
-{% include product %} Alias 插件在每次启动时，都会将 Alias 项目设置为指向此插件的设置中定义的位置。这意味着，当您打开新文件时，项目也可能会发生变化。设置ShotGrid Alias 项目的详细信息，可以使用模板系统，在配置文件中配置。
+{% include product %} Alias 插件在每次启动时，都会将 Alias 项目设置为指向此插件的设置中定义的位置。这意味着，当您打开新文件时，项目也可能会发生变化。设置 ShotGrid Alias 项目的详细信息，可以使用模板系统，在配置文件中配置。
 
-***
+---
 
 # 使用 tk-alias
 
@@ -29,7 +29,6 @@ lang: zh_CN
 
 ![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunOtherApps.png)
 
-
 ### 文件打开和保存
 
 使用“我的任务”(My Tasks)和“零部件”(Assets)选项卡可以查看您的所有已分配任务，并浏览零部件。在右侧，使用这些选项卡可以查看所有文件、与左侧选定内容关联的工作文件或已发布文件。
@@ -38,20 +37,17 @@ lang: zh_CN
 
 ![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunFileSave.png)
 
-
 ### 快照
 
 打开“快照”(Snapshot)对话框以创建当前场景的快速备份。
 
 ![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunSnapshot.png)
 
-
 ### 发布
 
 打开“发布”(Publish)对话框以将文件发布到 {% include product %}，然后供下游艺术家使用。有关详细信息，请参见[在 Alias 中发布](https://github.com/shotgunsoftware/tk-alias/wiki/Publishing)。
 
 ![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunPublish.png)
-
 
 ### 加载器
 
@@ -64,4 +60,3 @@ lang: zh_CN
 打开“细分”(Breakdown)对话框，其中显示已参考（WREF 参考）内容的列表，以及场景中过时的内容。选择一个或多个项目，然后单击“更新选定项”(Update Selected)以切换并使用最新版本的内容。 有关详细信息，请参见 [Alias 中的场景细分](https://github.com/shotgunsoftware/tk-alias/wiki/Scene-Breakdown)
 
 ![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunBreakdown.png)
-

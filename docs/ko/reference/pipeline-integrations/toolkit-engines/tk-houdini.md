@@ -11,7 +11,6 @@ Houdini용 {% include product %} 엔진에는 {% include product %} 앱을 Houdi
 
 ![Houdini용 {% include product %} 엔진](../images/engines/houdini_engine.png)
 
-
 # 앱 개발자를 위한 정보
 
 ## 지원되는 플랫폼
@@ -47,9 +46,9 @@ tk-houdini:
   apps:
     # ... other app definitions
     tk-multi-workfiles:
-       # ... other app settings
-       sg_entity_types: [Shot, Asset] # allow context switching to Shots or Assets
-       # ... other app settings
+      # ... other app settings
+      sg_entity_types: [Shot, Asset] # allow context switching to Shots or Assets
+      # ... other app settings
   enable_sg_shelf: true
   enable_sg_menu: false
   # ... other engine settings
@@ -94,21 +93,21 @@ houdini_mac: /Applications/Houdini\ 15.0.272/Houdini\ Apprentice.app/Contents/Ma
 
 ```yaml
 launch_houdini:
-  defer_keyword: ''
+  defer_keyword: ""
   engine: tk-houdini
   extra: {}
-  hook_app_launch: app_launch    # <----- use a custom app_launch hook
+  hook_app_launch: app_launch # <----- use a custom app_launch hook
   hook_before_app_launch: default
-  icon: '{target_engine}/icon_256.png'
-  linux_args: ''
-  linux_path: '@houdini_linux'
-  location: {name: tk-multi-launchapp, type: app_store, version: v0.6.6}
-  mac_args: ''
-  mac_path: '@houdini_mac'
+  icon: "{target_engine}/icon_256.png"
+  linux_args: ""
+  linux_path: "@houdini_linux"
+  location: { name: tk-multi-launchapp, type: app_store, version: v0.6.6 }
+  mac_args: ""
+  mac_path: "@houdini_mac"
   menu_name: Launch Houdini
   versions: []
-  windows_args: ''
-  windows_path: '@houdini_windows'
+  windows_args: ""
+  windows_path: "@houdini_windows"
 ```
 
 그런 다음 실행 파일을 직접 시작하도록 시작 로직을 수정하기만 하면 됩니다. 예를 들어 디렉토리(응용프로그램 번들)에 대한 이전 동작을 유지하고 명령을 직접 실행할 수 있습니다. 다음은 예입니다.

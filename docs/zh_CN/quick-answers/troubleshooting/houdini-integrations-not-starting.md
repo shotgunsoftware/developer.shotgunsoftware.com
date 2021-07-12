@@ -7,7 +7,6 @@ lang: zh_CN
 
 # 为什么我的 Houdini {% include product %} 集成没有启动？
 
-
 本文介绍了 {% include product %} 集成在 Houdini 中无法启动的常见原因。在这种情况下，Houdini 从 {% include product %} Desktop、{% include product %} 网站或 tank 令启动且无错误。 但是，Houdini 启动后，{% include product %} 菜单或工具架将不会出现。
 
 通常导致这种情况的原因是，`HOUDINI_PATH` 环境变量已被覆盖，而 {% include product %} 依赖于该变量来传递启动脚本路径。

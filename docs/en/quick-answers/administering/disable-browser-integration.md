@@ -9,13 +9,13 @@ lang: en
 
 To disable browser integration, follow these two simple steps.
 
-1. Create or open the text file at:
+1.  Create or open the text file at:
 
         Windows: %APPDATA%\{% include product %}\preferences\toolkit.ini
         Macosx: ~/Library/Preferences/{% include product %}/toolkit.ini
         Linux: ~/.{% include product %}/preferences/toolkit.ini
 
-2. Add the following section:
+2.  Add the following section:
 
         [BrowserIntegration]
         enabled=0

@@ -7,7 +7,7 @@ lang: ko
 
 # Nuke Write Node
 
-Nuke Write Node 앱은 이미지를 렌더링할 위치를 쉽게 표준화할 수 있는 커스텀 {% include product %} Write node를 제공합니다.  각 환경에 맞게 구성할 수 있습니다. 경로 외에도 구성에 따라 사용할 렌더 형식이 결정됩니다.
+Nuke Write Node 앱은 이미지를 렌더링할 위치를 쉽게 표준화할 수 있는 커스텀 {% include product %} Write node를 제공합니다. 각 환경에 맞게 구성할 수 있습니다. 경로 외에도 구성에 따라 사용할 렌더 형식이 결정됩니다.
 
 ## 일반적인 사용
 
@@ -15,7 +15,7 @@ Nuke Write Node 앱은 이미지를 렌더링할 위치를 쉽게 표준화할 �
 
 ![Write Node](../images/apps/nuke-writenode-write_node_creation.png)
 
-직접 경로를 입력하는 대신 출력 이름을 지정하면 툴킷이 나머지 경로를 자동으로 계산합니다. UI에서 계산된 경로를 보고 *파일 시스템에 표시(Show in File System)* 버튼을 클릭하여 디스크의 위치를 열 수 있습니다. 렌더가 작성되는 위치는 툴킷 구성에 따라 다릅니다.
+직접 경로를 입력하는 대신 출력 이름을 지정하면 툴킷이 나머지 경로를 자동으로 계산합니다. UI에서 계산된 경로를 보고 _파일 시스템에 표시(Show in File System)_ 버튼을 클릭하여 디스크의 위치를 열 수 있습니다. 렌더가 작성되는 위치는 툴킷 구성에 따라 다릅니다.
 
 렌더 버전이 지정되고 버전 번호의 경우 항상 Multi Publish를 사용하여 게시할 때 자동으로 증가되는 현재 Nuke 스크립트 버전을 따릅니다.
 
@@ -29,7 +29,7 @@ Write Node는 현재 경로를 캐시하므로 파일이 툴킷 작업 영역 �
 
 ## 다른 Write Node 프로파일 추가
 
-{% include product %} Write Node는 Nuke의 기본 제공 쓰기 노드를 래핑하므로 Nuke에서 지원하는 모든 형식을 앱에서 사용할 수 있으며 구성을 통해 노드를 더 추가할 수 있습니다.  가장 간단한 시작 방법은 원하는 매개변수로 간단한 Nuke Write node를 설정하는 것입니다. 예를 들어 LZW 압축을 사용하는 16비트 tif를 작성한다고 가정해 보겠습니다. 텍스트 편집기에서 Nuke 스크립트를 보면 쓰기 노드는 다음과 같습니다.
+{% include product %} Write Node는 Nuke의 기본 제공 쓰기 노드를 래핑하므로 Nuke에서 지원하는 모든 형식을 앱에서 사용할 수 있으며 구성을 통해 노드를 더 추가할 수 있습니다. 가장 간단한 시작 방법은 원하는 매개변수로 간단한 Nuke Write node를 설정하는 것입니다. 예를 들어 LZW 압축을 사용하는 16비트 tif를 작성한다고 가정해 보겠습니다. 텍스트 편집기에서 Nuke 스크립트를 보면 쓰기 노드는 다음과 같습니다.
 
 ```
 Write {
@@ -72,7 +72,7 @@ tk-nuke-writenode:
 
 ![새로 추가](../images/apps/nuke-writenode-write_node_add_new.png)
 
-__참고:__ 프로젝트 구성에서 찾을 수 있는 `templates.yml` 파일(`<configuration root>/config/core/templates.yml`)에 새 템플릿(예: nuke_shot_render_mono_tif)을 추가해야 합니다.
+**참고:** 프로젝트 구성에서 찾을 수 있는 `templates.yml` 파일(`<configuration root>/config/core/templates.yml`)에 새 템플릿(예: nuke_shot_render_mono_tif)을 추가해야 합니다.
 
 0.5 압축 및 4:2:2 하위 샘플링을 사용하여 JPEG로 출력하는 {% include product %} Write Node를 추가하는 방법을 보여 주는 또 다른 예가 아래에 나와 있습니다. 이 프로파일은 또한 "promote_write_knobs" 옵션을 사용하여 jpeg 품질 노브를 기즈모의 사용자 인터페이스로 승격합니다. 이렇게 하면 프로파일이 품질의 기본값을 설정할 수 있지만 사용자에게 직접 설정을 변경할 수 있는 슬라이더도 제공합니다.
 
@@ -85,7 +85,7 @@ tk-nuke-writenode:
       render_template: nuke_shot_render_jpeg
       proxy_publish_template: null
       proxy_render_template: null
-      settings: {_jpeg_quality: 0.5, _jpeg_sub_sampling: "4:2:2"}
+      settings: { _jpeg_quality: 0.5, _jpeg_sub_sampling: "4:2:2" }
       tank_type: Rendered Image
       tile_color: []
       promote_write_knobs: [_jpeg_quality]
@@ -105,7 +105,7 @@ tk-nuke-writenode:
 
 #### 변환 메뉴 옵션 활성화
 
-환경 yml 파일에는 앱 설정에 추가할 수 있는 `show_convert_actions`라는 구성 옵션이 있습니다. `show_convert_actions: True` 설정을 추가할 경우 *SG Write Node를 Write Node로 변환..*(Convert SG Write Nodes to Write Nodes...) 및 *Write Node를 다시 SG 형식으로 변환...*(Convert Write Nodes back to SG format...) 메뉴 옵션을 사용할 수 있습니다.
+환경 yml 파일에는 앱 설정에 추가할 수 있는 `show_convert_actions`라는 구성 옵션이 있습니다. `show_convert_actions: True` 설정을 추가할 경우 _SG Write Node를 Write Node로 변환.._(Convert SG Write Nodes to Write Nodes...) 및 _Write Node를 다시 SG 형식으로 변환..._(Convert Write Nodes back to SG format...) 메뉴 옵션을 사용할 수 있습니다.
 
 ![write node 변환 메뉴 옵션](../images/apps/nuke-writenode-write_node_convert_menu_options.png)
 
@@ -265,7 +265,7 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* **반환값:** `list` - 씬에서 발견되는 툴킷 쓰기 노드 목록입니다.
+- **반환값:** `list` - 씬에서 발견되는 툴킷 쓰기 노드 목록입니다.
 
 **예**
 
@@ -284,10 +284,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `string` - 노드의 이름입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `string` - 노드의 이름입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -304,10 +305,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `string` - 구성에 정의된 대로 이 쓰기 노드에 대한 프로파일 이름입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `string` - 구성에 정의된 대로 이 쓰기 노드에 대한 프로파일 이름입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -324,10 +326,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `string` - 이 노드의 렌더 경로입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `string` - 이 노드의 렌더 경로입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -344,10 +347,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:**`list` - 이 쓰기 노드에 의해 렌더링된 이미지 파일의 목록입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:**`list` - 이 쓰기 노드에 의해 렌더링된 이미지 파일의 목록입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -364,10 +368,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `template` - 이 노드를 사용하도록 구성된 렌더 템플릿입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `template` - 이 노드를 사용하도록 구성된 렌더 템플릿입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -384,10 +389,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `template` - 이 노드를 사용하도록 구성된 게시 템플릿입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `template` - 이 노드를 사용하도록 구성된 게시 템플릿입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -404,10 +410,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `string` - 이 노드의 프록시 렌더 경로입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `string` - 이 노드의 프록시 렌더 경로입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -424,10 +431,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `list` - 이 쓰기 노드에 의해 렌더링된 프록시 이미지 파일의 목록입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `list` - 이 쓰기 노드에 의해 렌더링된 프록시 이미지 파일의 목록입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -446,10 +454,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `template` - 이 노드를 사용하도록 구성된 프록시 렌더 템플릿입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `template` - 이 노드를 사용하도록 구성된 프록시 렌더 템플릿입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -468,10 +477,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `template` - 이 노드를 사용하도록 구성된 프록시 게시 템플릿입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `template` - 이 노드를 사용하도록 구성된 프록시 게시 템플릿입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -488,10 +498,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `string` - 이 노드를 사용하도록 구성된 게시된 파일 형식입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `string` - 이 노드를 사용하도록 구성된 게시된 파일 형식입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -508,10 +519,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `string` - 디스크상의 렌더링된 썸네일 이미지에 대한 경로입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `string` - 디스크상의 렌더링된 썸네일 이미지에 대한 경로입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -528,10 +540,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `None` - 값이 반환되지 않습니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `None` - 값이 반환되지 않습니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -548,10 +561,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 **매개변수 및 반환값**
 
-* `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `bool` - 렌더 경로가 잠겨 있으면 True이고, 그렇지 않으면 False입니다.
+- `node` **노드** - 쿼리할 쓰기 노드입니다.
+- **반환값:** `bool` - 렌더 경로가 잠겨 있으면 True이고, 그렇지 않으면 False입니다.
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -562,11 +576,12 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 ### convert_to_write_nodes()
 
-현재 스크립트에 있는 모든 {% include product %} Write node를 일반 Nuke Write node로 변환합니다.  추가 툴킷 정보는 'tk_*'라는 사용자 노브에 저장됩니다.
+현재 스크립트에 있는 모든 {% include product %} Write node를 일반 Nuke Write node로 변환합니다. 추가 툴킷 정보는 'tk\_\*'라는 사용자 노브에 저장됩니다.
 
 `None` convert_to_write_nodes()
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -581,6 +596,7 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 `None` convert_from_write_nodes()
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -590,11 +606,12 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 ### process_placeholder_nodes()
 
-모든 자리 표시자 노드를 전체 {% include product %} Write node로 변환합니다.  이 방식은 주로 Nuke에서 스크립트를 처음 열 때 Hiero 툴킷 스크립트 내보내기로 만든 자리 표시자 노드를 변환하는 데 사용됩니다.
+모든 자리 표시자 노드를 전체 {% include product %} Write node로 변환합니다. 이 방식은 주로 Nuke에서 스크립트를 처음 열 때 Hiero 툴킷 스크립트 내보내기로 만든 자리 표시자 노드를 변환하는 데 사용됩니다.
 
 `None` process_placeholder_nodes()
 
 **예**
+
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()

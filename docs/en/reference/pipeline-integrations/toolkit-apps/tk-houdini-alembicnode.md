@@ -7,7 +7,7 @@ lang: en
 
 # Houdini Alembic Node
 
-The Houdini Alembic Node App provides a custom {% include product %} Alembic Output node which makes it easy to standardise the location where alembic files are output.  It can be configured for each environment.
+The Houdini Alembic Node App provides a custom {% include product %} Alembic Output node which makes it easy to standardise the location where alembic files are output. It can be configured for each environment.
 
 ## General Use
 
@@ -15,11 +15,11 @@ In order to use the {% include product %} Alembic Output, save your script as a 
 
 ![Alembic Node](../images/apps/houdini-alembicnode-create_node.png)
 
-The node can be configured with multiple output profiles, each using a different template path for where the alembic cache should be written to disk. 
+The node can be configured with multiple output profiles, each using a different template path for where the alembic cache should be written to disk.
 
 ![Alembic Node](../images/apps/houdini-alembicnode-output_profile.png)
 
-Rather than entering a path by hand, you just specify which output profile to use and the node will compute the rest of the path automatically. You can see the computed path in the UI. 
+Rather than entering a path by hand, you just specify which output profile to use and the node will compute the rest of the path automatically. You can see the computed path in the UI.
 
 ![Alembic Node](../images/apps/houdini-alembicnode-computed_path.png)
 
@@ -50,4 +50,4 @@ The Toolkit alembic node provides the ability to specify multiple output profile
             output_cache_template: houdini_shot_local_alembic_cache
 </pre>
 
-You can use the output profiles to alter the look of the node via the `color` field, and you can adjust individual parms on the underlying Alembic node by supplying key/value pairs matching those parms in the `settings` field. Finally, the `output_cache_template` field drives the output path for the alembic cache written to disk. 
+You can use the output profiles to alter the look of the node via the `color` field, and you can adjust individual parms on the underlying Alembic node by supplying key/value pairs matching those parms in the `settings` field. Finally, the `output_cache_template` field drives the output path for the alembic cache written to disk.

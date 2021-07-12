@@ -19,16 +19,16 @@ lang: ja
 
 現在サポートされているアプリケーションとエンジンは次のとおりです。
 
-* 3DSMax
-* Hiero
-* Maya
-* MotionBuilder
-* Nuke
-* Photoshop
-* Mari
-* Houdini
-* Softimage
-* Flame
+- 3DSMax
+- Hiero
+- Maya
+- MotionBuilder
+- Nuke
+- Photoshop
+- Mari
+- Houdini
+- Softimage
+- Flame
 
 ### 起動時にコマンド ライン引数を使用する
 
@@ -43,15 +43,16 @@ launch_nuke:
   extra: {}
   hook_app_launch: default
   hook_before_app_launch: default
-  linux_args: '--nukex'
-  linux_path: '@nuke_linux'
-  location: {name: tk-multi-launchapp, type: app_store, version: v0.2.15}
-  mac_args: '--nukex'
-  mac_path: '@nuke_mac'
+  linux_args: "--nukex"
+  linux_path: "@nuke_linux"
+  location: { name: tk-multi-launchapp, type: app_store, version: v0.2.15 }
+  mac_args: "--nukex"
+  mac_path: "@nuke_mac"
   menu_name: Launch Nuke
-  windows_args: '--nukex'
-  windows_path: '@nuke_windows'
+  windows_args: "--nukex"
+  windows_path: "@nuke_windows"
 ```
+
 ---FOLD---
 
 ### 環境変数を設定して起動時に動作を自動化する
@@ -66,7 +67,7 @@ launch_nuke:
 ```python
 def execute(self, **kwargs):
     """
-    The execute functon of the hook will be called to start the required application        
+    The execute functon of the hook will be called to start the required application
     """
 
     # Example to show how to set env vars on Maya launch
@@ -79,6 +80,7 @@ def execute(self, **kwargs):
     # with $PYTHONPATH if already defined in your pipeline
     os.environ["XBMLANGPATH"] = "~/Library/zync/zync-maya"
 ```
+
 ---FOLD---
 
 「before_app_launch」を使用すると、{% include product %} の更新など、他の動作を自動化することもできます。たとえば、起動アプリが実行されるたびに(タスクからの起動のみ)タスク ステータスが更新されるように起動アプリを設定できます。次の例では「in progress」に更新するよう設定しています。
@@ -89,7 +91,7 @@ def execute(self, **kwargs):
 ```python
 def execute(self, **kwargs):
     """
-    The execute functon of the hook will be called to start the required application        
+    The execute functon of the hook will be called to start the required application
     """
 
     # If there is a Task in the context, set its status to 'ip'
@@ -101,6 +103,7 @@ def execute(self, **kwargs):
         }
         self.parent.shotgun.update("Task", task_id, data)
 ```
+
 ---FOLD---
 
 ご想像のとおり、多くの選択肢があります。起動アプリの目的は、パイプラインのニーズに合わせた柔軟性を提供することです。
@@ -166,7 +169,7 @@ Photoshop が起動すると、次のプロセスが実行されます。
 
 #### 追加の設定
 
-このアプリを使用して Photoshop を起動する場合、追加の__セクションで 4 つの設定値を指定する必要があります。次に、システムとインストールの場所に合わせた調整が必要な設定および適切な既定値を示します。
+このアプリを使用して Photoshop を起動する場合、追加の\_\_セクションで 4 つの設定値を指定する必要があります。次に、システムとインストールの場所に合わせた調整が必要な設定および適切な既定値を示します。
 
 ```yaml
 mac_python_path: "/usr/bin/python"

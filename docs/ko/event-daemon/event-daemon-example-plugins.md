@@ -12,8 +12,11 @@ lang: ko
 이 페이지에는 누구나 시작할 수 있는 몇 가지 간단한 예제가 나와 있습니다. 이 코드를 복사해서 붙여넣으면 실행됩니다(참고: `script_name` 및 `script_key` 값을 설치에 해당되는 값으로 업데이트해야 함).
 
 먼저, 다음은 SG 이벤트 코드를 기록해야 하는 템플릿입니다.
+
 ## 1. 코드 템플릿
+
 ### 이를 복사하여 붙여넣으면 새 플러그인을 시작할 수 있습니다.
+
 ```python
 """
 Necessary Documentation of the code
@@ -51,11 +54,15 @@ def registerCallbacks(reg):
 #              }
 def entry_function_call(sg, logger, event, args):
     # Now do stuff
-    pass   
+    pass
 ```
+
 ## 2. 노트 제목 이름 바꾸기
+
 ### `New` 엔티티 이벤트 작업
+
 이 작업은 간단해서 시작하기 좋지만 `Shotgun_Entity_New` 이벤트를 포착하는 것은 매우 까다로운 측면이기도 합니다.
+
 ```python
 import time
 from pprint import pprint
@@ -98,14 +105,18 @@ def Function_Name(sg, logger, event, args):
         logger.info('Dates are not prepended for notes in project id 116 - Software Development')
         return
 ```
+
 함수 본문의 첫 번째 줄인 `sleep` 호출에 주목합니다. `new` 이벤트가 처리되는 방식을 다루기 때문입니다.
+
 1. SG에서 새 엔티티가 생성될 때는 완전한 형태를 갖추지 않습니다. 즉, 엔티티를 사용할 때 해당 엔티티를 완전히 정의하는 데 필요한 모든 속성이 포함되어 있지 않습니다. 실제로 이 예제에서는 SG가 `subject` 이벤트를 내보내는 경우 `Shotgun_Note_New` 속성이 노트 엔티티에 있음을 보장할 수 없습니다.
 2. 필요한 모든 속성을 추가하기 위해 SG는 필요한 경우 SG가 모든 단일 속성을 엔티티에 추가하고 해당 속성의 값을 업데이트하는 일련의 `Shotgun_Note_Change` 이벤트를 게시합니다.
 3. 이렇게 하면 여러 개의 이벤트가 생성됩니다. 즉, 서로 다른 두 개의 속성이 있어야 하고 `sleep` 요소를 코드에 기록하지 않은 경우에는, 새로운 속성이 추가되고 값이 설정된 이벤트만 검색하는 내부 메타데이터 및 `Shotgun_Note_Change` 이벤트를 모두 거쳐야 합니다. 이 작업은 복잡한 프로세스이며 많은 `Shotgun_Note_Change` 이벤트 검색을 효과적으로 처리합니다(생성 시 노트별로 하나씩만).
 4. 적합한 솔루션은 `Shotgun_Entity_New`를 사용하고 짧은 기간 동안 스크립트가 절전 모드로 전환되도록 하는 것입니다. 절전 모드가 끝나면 SG는 해당 엔티티에 필요한 모든 속성을 업데이트한 다음 필요한 필드에 대해 동일한 엔티티를 다시 쿼리할 수 있습니다.
 
 ## 2. 필드 삭제 경고
+
 ### 노트 생성, 필드를 엔티티로 사용, 엔티티 삭제 이벤트
+
 ```python
 
 """
@@ -202,4 +213,5 @@ def trashedFieldWarning(sg, logger, event, args):
 
     CreateNote(sg, logger, event)
 ```
+
 매우 간단한 스크립트입니다. 삭제된 필드를 확인하는 특별한 로직이 없습니다. 필드가 삭제된 경우 노트가 생성되어 해당 정보를 알아야 하는 사용자 그룹으로 전송됩니다. 내 부서에서 그룹 ID를 'programmers' 그룹으로 설정하고 노트의 프로젝트 ID는 'development' 프로젝트로 설정했습니다.

@@ -8,6 +8,7 @@ lang: ko
 # 기술 개요
 
 <a id="Event_Types"></a>
+
 ## 이벤트 유형
 
 알림을 받을 수 있게 트리거를 등록할 수 있는 이벤트 유형은 일반적으로 다음 양식을 따릅니다. `Shotgun_[entity_type]_[New|Change|Retirement|Revival]`. 다음은 이 패턴의 몇 가지 예입니다.
@@ -34,13 +35,16 @@ lang: ko
     Toolkit_Desktop_ProjectLaunch
     Toolkit_Desktop_AppLaunch
     Toolkit_Folders_Create
-    Toolkit_Folders_Delete    
+    Toolkit_Folders_Delete
 
 이 목록은 완벽하지는 않지만 시작하기에 적합합니다. {% include product %} 사이트의 활동 및 이벤트 유형에 대해 자세히 알아보려면 다른 엔티티 유형의 다른 그리드 페이지를 통해 필터링하고 검색할 수 있는 EventLogEntries 페이지를 참조하십시오.
 
 ### 썸네일의 이벤트 로그 항목
-엔티티에 대한 새 썸네일이 업로드되면 ``` `Type` == `Shotgun_<Entity_Type>_Change` ```인 이벤트 로그 항목이 생성됩니다(예: `Shotgun_Shot_Change`).
-1. ```‘is_transient’``` 필드 값은 true로 설정됩니다.
+
+엔티티에 대한 새 썸네일이 업로드되면 `` `Type` == `Shotgun_<Entity_Type>_Change` ``인 이벤트 로그 항목이 생성됩니다(예: `Shotgun_Shot_Change`).
+
+1. `‘is_transient’` 필드 값은 true로 설정됩니다.
+
 ```
 { "type": "attribute_change","attribute_name": "image",
  "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image",
@@ -48,7 +52,9 @@ lang: ko
  "is_transient": true
 }
 ```
-2. 썸네일을 사용할 수 있게 되면 이제 ```‘is_transient’``` 필드 값을 false로 설정하여 새 이벤트 로그 항목이 생성됩니다.
+
+2. 썸네일을 사용할 수 있게 되면 이제 `‘is_transient’` 필드 값을 false로 설정하여 새 이벤트 로그 항목이 생성됩니다.
+
 ```
 { "type": "attribute_change", "attribute_name": "image",
  "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image",
@@ -56,7 +62,9 @@ lang: ko
  "is_transient": false
 }
 ```
+
 3. 썸네일을 다시 업데이트하면 다음 새 이벤트 로그 항목이 표시됩니다.
+
 ```
 { "type": "attribute_change", "attribute_name": "image",
  "entity_type": "Shot", "entity_id": 1286, "field_data_type": "image",
@@ -69,10 +77,11 @@ lang: ko
  "is_transient": false
 }
 ```
-4. 첨부 파일의 썸네일이 자리 표시자 썸네일인 경우 ```‘old_value’``` 필드는 null로 설정됩니다.
 
+4. 첨부 파일의 썸네일이 자리 표시자 썸네일인 경우 `‘old_value’` 필드는 null로 설정됩니다.
 
 <a id="Plugin_Processing_Order"></a>
+
 ## 플러그인 처리 순서
 
 각 이벤트는 항상 동일한 예측 가능한 순서로 처리되므로 플러그인이나 콜백이 상호 종속적인 경우 처리를 안전하게 구성할 수 있습니다.
@@ -88,6 +97,7 @@ lang: ko
 하나 이상의 콜백과 같은 플러그인에서 상태를 공유해야 하는 기능을 유지하는 것이 좋습니다.
 
 <a id="Sharing_State"></a>
+
 ## 상태 공유
 
 여러 콜백에 대해 상태를 공유해야 하는 여러 옵션이 있습니다.
@@ -97,8 +107,8 @@ lang: ko
 - `args`[`Registrar.registerCallback`API#wiki-registerCallback](을 호출할 때 ) 인수로 전달된 변경 가능한 것. 설계의 상태 객체 또는 `dict`처럼 간단한 것. 선호.
 - 객체 인스턴스에 대해 `__call__`과 같은 콜백을 구현하고 콜백 객체 초기화 시 일부 공유 상태 객체를 제공합니다. 가장 강력하면서도 가장 어려운 방법입니다. 위의 args 인수 방법에 비해 중복될 수 있습니다.
 
-
 <a id="Event_Backlogs"></a>
+
 ## 이벤트 백로그
 
 이 프레임워크는 모든 플러그인이 관심 있는 모든 단일 이벤트를 예외 없이 정확히 한 번만 처리하도록 설계되었습니다. 이를 위해, 프레임워크는 각 플러그인에 대해 처리되지 않은 이벤트의 백로그를 저장하고 각 플러그인이 제공된 마지막 이벤트를 기억합니다. 다음은 백로그가 발생할 수 있는 상황에 대한 설명입니다.

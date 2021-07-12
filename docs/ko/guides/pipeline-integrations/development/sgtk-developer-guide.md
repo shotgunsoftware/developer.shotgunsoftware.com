@@ -64,21 +64,21 @@ lang: ko
 - 사용자가 지정된 태스크에 자신을 할당할 수 있는 액션
 - Maya에 {% include product %} 게시를 Maya 참조로 로드하는 액션
 
-액션의 실제 페이로드는 _액션 후크_에 정의됩니다. 액션 로직을 정의한 후에는 앱 구성에서 해당 액션을 {% include product %} 객체에 매핑할 수 있습니다. 이 액션 매핑은 다음 예와 같은 모습입니다.
+액션의 실제 페이로드는 *액션 후크*에 정의됩니다. 액션 로직을 정의한 후에는 앱 구성에서 해당 액션을 {% include product %} 객체에 매핑할 수 있습니다. 이 액션 매핑은 다음 예와 같은 모습입니다.
 
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import]
-    filters: {published_file_type: Maya Scene}
-  - actions: [texture_node]
-    filters: {published_file_type: Rendered Image}
+    - actions: [reference, import]
+      filters: { published_file_type: Maya Scene }
+    - actions: [texture_node]
+      filters: { published_file_type: Rendered Image }
   Task:
-  - actions: [assign_task]
-    filters: {}
+    - actions: [assign_task]
+      filters: {}
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 위의 예에서는 `reference`, `import`, `texture_node`, `assign_task` 및 `play_in_rv` 액션을 사용합니다. 다음으로 다양한 {% include product %} 객체 및 조건에 액션을 매핑합니다. 예를 들어 모든 Maya 씬 게시 유형에 `import` 액션을 표시하려고 합니다.
@@ -92,7 +92,7 @@ action_mappings:
 패널은 툴킷의 2세대 후크 인터페이스를 사용하기 때문에 그 유연성이 뛰어납니다. 이 후크 형식은 향상된 구문을 사용합니다. 기본 구성 설정에서 다음과 같은 형식을 볼 수 있습니다.
 
 ```yaml
-actions_hook: '{self}/tk-maya_actions.py'
+actions_hook: "{self}/tk-maya_actions.py"
 ```
 
 `{self}` 키워드를 통해 툴킷은 앱의 `hooks` 폴더에서 후크를 찾을 수 있습니다. 이 후크를 사용자 구현으로 재지정하려면 값을 `{config}/panel/maya_actions.py`로 변경합니다. 이렇게 하면 툴킷이 구성 폴더에 있는 `hooks/panel/maya_actions.py`라는 후크를 사용하게 됩니다.
@@ -175,11 +175,11 @@ class MyActions(HookBaseClass):
 ```yaml
 action_mappings:
   PublishedFile:
-  - actions: [reference, import, my_new_action]
-    filters: {published_file_type: Maya Scene}
+    - actions: [reference, import, my_new_action]
+      filters: { published_file_type: Maya Scene }
   Version:
-  - actions: [play_in_rv]
-    filters: {}
+    - actions: [play_in_rv]
+      filters: {}
 ```
 
 위의 그림과 같이 후크에서 파생된 커스텀 후크 코드는 유지 관리 및 업데이트가 보다 쉽도록 실제 추가된 비즈니스 로직만 포함하면 됩니다.

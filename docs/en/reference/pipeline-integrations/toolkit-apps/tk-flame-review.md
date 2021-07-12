@@ -43,4 +43,3 @@ The Flame Review app can be customized in a couple of different ways:
 - You can customize which tasks the app should automatically add to new items created in {% include product %}. This is done via a task template setting and allows you to standardize the structure that's created.
 
 - Via a hook, you get complete control over the xml preset that the app uses to generate a quicktime out of Flame.
-

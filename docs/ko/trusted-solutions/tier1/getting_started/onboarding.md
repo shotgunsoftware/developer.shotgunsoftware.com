@@ -19,13 +19,13 @@ To start the on-boarding process for any of the Isolation features, please open 
 
 During the onboarding process, you'll have direct access to Autodesk and AWS Leaders who will support you during the implementation.
 
-**Tech Briefing:**  Overview meeting of all of our offerings, where we underline the advantages and disadvantages of each.
+**Tech Briefing:** Overview meeting of all of our offerings, where we underline the advantages and disadvantages of each.
 
-**Tech Deep Dive:**  OPTIONAL. Deeper technical dive into isolation features. This meeting can be combined with the Tech Briefing.
+**Tech Deep Dive:** OPTIONAL. Deeper technical dive into isolation features. This meeting can be combined with the Tech Briefing.
 
-**Kickoff Meeting:**	AWS and ShotGrid Leaders review the setup process with the you.
+**Kickoff Meeting:** AWS and ShotGrid Leaders review the setup process with the you.
 
-**Setup / Test / Validation:**	Iterative installation process where you connect your AWS resources to ShotGrid, and activate the isolation features.
+**Setup / Test / Validation:** Iterative installation process where you connect your AWS resources to ShotGrid, and activate the isolation features.
 
 **Training:** OPTIONAL. Help sessions, if needed, as you ramp up on the AWS/ShotGrid technologies required to securely set-up the isolation features for your site.
 

@@ -27,7 +27,7 @@ dialog_result = setup.exec_()
 
 ### SetupProjectWizard 构造函数
 
-初始化 SetupProjectWizard。  这是 QtGui.QWizard 的一个子类。
+初始化 SetupProjectWizard。 这是 QtGui.QWizard 的一个子类。
 
 ```python
 SetupProjectWizard()

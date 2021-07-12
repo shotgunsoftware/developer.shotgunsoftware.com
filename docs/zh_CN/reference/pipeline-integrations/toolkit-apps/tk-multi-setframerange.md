@@ -35,6 +35,7 @@ tk-multi-setframerange_handles:
   sg_out_frame_field: sg_handle_out
   location: "@apps.tk-multi-setframerange.location"
 ```
+
 这些内容应该在 {% include product %} 菜单中显示为单独的选项：
 
 ![多个实例](../images/apps/multi-setframerange-multiple_instances.png)

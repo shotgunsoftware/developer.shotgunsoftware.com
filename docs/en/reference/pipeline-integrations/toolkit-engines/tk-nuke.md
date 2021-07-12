@@ -23,8 +23,8 @@ It adds {% include product %} shortcuts to the file dialogs which makes it easy 
 
 You can add your own shortcuts based on template paths in your current environment with the `favourite_directories` setting. The setting expects a list of dictionaries, with each item in the list representing a new favourite directory. Here is an example of the format you would use: (the icon can also be left unspecified by providing "" as the value.)
 
-``` yaml
-  favourite_directories:
+```yaml
+favourite_directories:
   - display_name: "Shot Publish Path"
     template_directory: "shot_publish_area_nuke"
     icon: "icons/custom_publish_icon.png"
@@ -35,18 +35,15 @@ You can add your own shortcuts based on template paths in your current environme
 
 The "{% include product %} Current Project" favourite is added automatically for each root defined. You can customize the name with the `project_favourite_name` setting, or disable these favourites by setting the value to an empty string `''`
 
-
-
-***
+---
 
 _Note: There is currently a bug in Nuke 8.0 running specifically on CentOS 6.5 that causes Nuke to crash when running Toolkit. Other versions of CentOS are unaffected. The Foundry is aware of this issue (bug 43766). If you are running into this, please contact us so we can try and help you workaround it until it is resolved in a future update of Nuke._
 
-
 ## Information for App Developers
-    
+
 ### Context Tracking
 
-The {% include product %} engine for Nuke will switch context automatically when files are loaded. Whenever a file is loaded, the engine will look at the file, try and resolve a context from it. 
+The {% include product %} engine for Nuke will switch context automatically when files are loaded. Whenever a file is loaded, the engine will look at the file, try and resolve a context from it.
 
 ### Apps with custom gizmos
 
@@ -56,7 +53,7 @@ The {% include product %} engine for Nuke makes it easy to handle custom gizmos.
 
 You can then easily access your gizmo via the create node functionality:
 
-* `nuke.createNode("WriteTank")`
+- `nuke.createNode("WriteTank")`
 
 {% include info title="Warning" content="Please note that while the use of gizmos may be convenient, it is typically NOT the right solution if you want to create nodes that persist in a scene. The reason for this is because as soon as you have put a gizmo in the scene, you have introduced a dependency between that scene and the gizmo code. Not only will you need to load the ShotGrid Toolkit every time you load the scene, but you also need to carefully manage your code so that any updates to the code does not break old gizmos being used in scenes." %}
 
@@ -84,7 +81,7 @@ At app startup, register app handle as part of the nuke namespace:
 If you for example have a button on your group node and want to call some {% include product %} app code, try to gracefully fail if the {% include product %} Toolkit cannot be found. The below code is code that is associated with a python button knob that belongs to the group node that the app can create:
 
 ```python
-# have to gracefully support the case when 
+# have to gracefully support the case when
 # sgtk is not in the system at all!
 import nuke
 try:
@@ -109,26 +106,60 @@ It allows you to place {% include product %} App actions in several places in th
 Because Hiero has several different menus, there are more options to configure where menu items go than in Maya or Nuke, for example. The {% include product %} engine for Nuke's Hiero workflow configuration may look like this:
 
 ```yaml
+tk-hiero:
+  location: { name: tk-nuke, type: app_store, version: v0.6.9 }
+  debug_logging: false
 
-  tk-hiero:
-    location: {name: tk-nuke, type: app_store, version: v0.6.9}
-    debug_logging: false
+  timeline_context_menu:
+    - {
+        app_instance: tk-hiero-openinshotgun,
+        keep_in_menu: false,
+        name: Open in Shotgun,
+        requires_selection: true,
+      }
 
-    timeline_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: Open in Shotgun, requires_selection: true}
+  spreadsheet_context_menu:
+    - {
+        app_instance: tk-hiero-openinshotgun,
+        keep_in_menu: false,
+        name: Open in Shotgun,
+        requires_selection: true,
+      }
 
-    spreadsheet_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: Open in Shotgun, requires_selection: true}
+  bin_context_menu:
+    - {
+        app_instance: tk-multi-workfiles,
+        keep_in_menu: false,
+        name: "{% include product %} Save As...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-workfiles,
+        keep_in_menu: false,
+        name: "Version up Current Scene...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-snapshot,
+        keep_in_menu: false,
+        name: "Snapshot...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-snapshot,
+        keep_in_menu: false,
+        name: "Snapshot History...",
+        requires_selection: true,
+      }
+    - {
+        app_instance: tk-multi-publish,
+        keep_in_menu: false,
+        name: "Publish Project...",
+        requires_selection: true,
+      }
 
-    bin_context_menu:
-    - {app_instance: tk-multi-workfiles, keep_in_menu: false, name: "{% include product %} Save As...", requires_selection: true}
-    - {app_instance: tk-multi-workfiles, keep_in_menu: false, name: "Version up Current Scene...", requires_selection: true}
-    - {app_instance: tk-multi-snapshot, keep_in_menu: false, name: "Snapshot...", requires_selection: true}
-    - {app_instance: tk-multi-snapshot, keep_in_menu: false, name: "Snapshot History...", requires_selection: true}
-    - {app_instance: tk-multi-publish, keep_in_menu: false, name: "Publish Project...", requires_selection: true}
-
-    menu_favourites:
-    - {app_instance: tk-multi-workfiles, name: Shotgun File Manager...}
+  menu_favourites:
+    - { app_instance: tk-multi-workfiles, name: Shotgun File Manager... }
 ```
 
 Most engines have a `menu_favourites` option, a list where you can specify "shortcuts" which are put on the main {% include product %} menu. In addition to this, the Hiero-specific configuration has three special sections:
@@ -150,7 +181,6 @@ Some Toolkit Apps requires a notion of a default scene or default project. For e
 
 Because Hiero does not have the notion of a current project, we have added more powerful tools so that Apps can easily find out what is being clicked on inside of Hiero. Therefore, two methods have been added to the {% include product %} engine for Hiero:
 
-
 #### get_menu_selection()
 
 Returns the list of Hiero objects selected in the most recent menu click.
@@ -168,7 +198,7 @@ Examples of objects that are being returned are:
 
 **Parameters & Return Value**
 
-* **Returns:** List of Hiero Objects
+- **Returns:** List of Hiero Objects
 
 **Example**
 
@@ -212,7 +242,7 @@ Returns one of the following constants:
 
 #### How to configure your hooks to work with Hiero
 
-Multi Apps configured for Hiero will typically need to find out which project was being clicked on. For example, the `tk-multi-workfiles` App needs to do a "{% include product %} Save As" of a project. We therefore add the Tank Save As command to the bin menu in Hiero so that a user can right click a project in the bin view and select the *Save As* option.
+Multi Apps configured for Hiero will typically need to find out which project was being clicked on. For example, the `tk-multi-workfiles` App needs to do a "{% include product %} Save As" of a project. We therefore add the Tank Save As command to the bin menu in Hiero so that a user can right click a project in the bin view and select the _Save As_ option.
 
 ![menu](../images/engines/nuke-hiero-bin_menu.png)
 
@@ -220,7 +250,12 @@ The engine configuration would look like this:
 
 ```yaml
 bin_context_menu:
-- {app_instance: tk-multi-workfiles, keep_in_menu: false, name: "{% include product %} Save As...", requires_selection: true}
+  - {
+      app_instance: tk-multi-workfiles,
+      keep_in_menu: false,
+      name: "{% include product %} Save As...",
+      requires_selection: true,
+    }
 ```
 
 Now, in the app itself, each engine needs to configure a hook which handles scene events such as
@@ -315,4 +350,3 @@ just turn on the engine debug mode. In the script editor you get a summary of th
 that are selected with each click:
 
 ![menu](../images/engines/nuke-hiero-engine_debug.png)
-

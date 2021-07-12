@@ -32,8 +32,9 @@ lang: ko
 {% include product %} 데스크톱의 고급 프로젝트 설정(Advanced Project Setup) 마법사는 기본 구성을 기반으로 파이프라인 구성을 생성합니다. 기본 구성을 사용하면 탄탄한 기초를 토대로 파이프라인 프로세스를 지원하는 커스터마이즈 가능한 설정, 앱 및 UI 요소를 작성할 수 있습니다. 이 마법사를 통해 생성되는 구성은 프로젝트의 파이프라인 요구사항을 충족하도록 편집 및 확장할 수 있습니다.
 
 기본 구성에는 다음이 포함됩니다.
-* 디스크에서 파일이 저장되는 위치를 결정하는 기본 파일 시스템 스키마 및 템플릿
-* 사용자의 소프트웨어 응용프로그램에서 바로 {% include product %} 및 파이프라인 기능과 상호 작용할 수 있게 해 주는, 모든 지원되는 [소프트웨어 통합](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)
+
+- 디스크에서 파일이 저장되는 위치를 결정하는 기본 파일 시스템 스키마 및 템플릿
+- 사용자의 소프트웨어 응용프로그램에서 바로 {% include product %} 및 파이프라인 기능과 상호 작용할 수 있게 해 주는, 모든 지원되는 [소프트웨어 통합](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)
 
 커스터마이즈 수준은 상상력과 기발함, 그리고 프로그래밍 지식 또는 {% include product %} 커뮤니티의 다른 사용자가 만든 것을 가져다 쓸 수 있는 능력 등에 따라 달라질 수 있습니다.
 
@@ -41,17 +42,16 @@ lang: ko
 
 모든 프로젝트에는 구성이 필요합니다. {% include product %} 데스크톱을 통해 프로젝트에 처음 액세스하면 기초 구성이 다운로드되고 설정됩니다. 이 기초 구성에서는 사용자의 시스템에서 지원되는 컨텐츠 생성 소프트웨어를 자동으로 탐지하고 구성을 프로젝트와 연결합니다. 지원되는 소프트웨어 응용프로그램 내 통합은 파이프라인 구성의 설정에 의해 제어됩니다. [Panel](https://support.shotgunsoftware.com/hc/ko/articles/219033098-Shotgun-Panel) 앱에는 {% include product %}의 프로젝트 정보가 표시되므로 아티스트가 작업 세션을 떠나지 않고도 노트에 회신하고 버전을 볼 수 있습니다. [Publisher](https://support.shotgunsoftware.com/hc/ko/articles/219032998-Publishing-your-work) 앱에서는 자신의 작업물을 팀의 다른 작업자와 공유할 수 있으며 [Loader](https://support.shotgunsoftware.com/hc/ko/articles/219033078-Load-Published-Files-) 앱을 통해서는 팀원이 게시한 파일을 로드할 수 있습니다. 기초 구성에는 파일 시스템 관리 설정이나 파일 및 디렉토리의 디스크 내 명명 방식을 템플릿 개발 등이 포함되지 않습니다. 또한, 기본 구성이 설정될 때 추가되는 다양한 앱도 포함되지 않습니다. 기초 구성은 구성 파일을 직접 편집하지 않고도 툴킷을 바로 실행할 수 있게 해주는 단순한 구성입니다. 이 마법사는 기초 구성을 기본 구성으로 변환합니다. 또한, 사용자의 작업을 지원하기 위해 추가적인 앱과 소프트웨어 통합을 제공합니다. 기초 구성도 편집 가능하기는 하지만, 고급 설정을 통해 프로젝트를 커스터마이즈할 수 있도록 설정할 때까지는 편집할 수 없습니다.
 
-
 ### 기초 구성과 기본 구성의 차이점
 
-| 기능 | 기초 구성 | 기본 구성 |
-| ------- | ------------------- | --------------------- |
-| 다운로드 | 프로젝트에 액세스하면 자동으로 다운로드됨 | 고급 설정 마법사를 통해 생성됨 |
-| 접근성 | 시스템 위치에 저장됨 | 수동으로 편집 가능한 파일 |
-| 업데이트 | 자동으로 업데이트됨 | 수동으로 업데이트됨 |
-| 파일 시스템 지원 | 파일 시스템 스키마 지원 안 함 | 폴더 구조와 파일 명명 표준을 지원하는 도구 포함 |
-| 소프트웨어 통합 | 3ds Max, Houdini, Maya, Nuke, Photoshop, Flame | Basic + Hiero, Motionbulder, Mari |
-| 툴킷 앱 | {% include product %} Panel, Publisher, Loader | Basic + Workfiles, Snap Shot, Scene Breakdown, Nuke Write Node, Houdini Mantra Node 등 |
+| 기능             | 기초 구성                                      | 기본 구성                                                                              |
+| ---------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------- |
+| 다운로드         | 프로젝트에 액세스하면 자동으로 다운로드됨      | 고급 설정 마법사를 통해 생성됨                                                         |
+| 접근성           | 시스템 위치에 저장됨                           | 수동으로 편집 가능한 파일                                                              |
+| 업데이트         | 자동으로 업데이트됨                            | 수동으로 업데이트됨                                                                    |
+| 파일 시스템 지원 | 파일 시스템 스키마 지원 안 함                  | 폴더 구조와 파일 명명 표준을 지원하는 도구 포함                                        |
+| 소프트웨어 통합  | 3ds Max, Houdini, Maya, Nuke, Photoshop, Flame | Basic + Hiero, Motionbulder, Mari                                                      |
+| 툴킷 앱          | {% include product %} Panel, Publisher, Loader | Basic + Workfiles, Snap Shot, Scene Breakdown, Nuke Write Node, Houdini Mantra Node 등 |
 
 이 안내서에서는 {% include product %} 데스크톱의 마법사를 사용하여 기본 구성을 기반으로 프로젝트의 파이프라인 구성을 생성합니다. 이 구성을 생성하면 자체 프로덕션 파이프라인을 지원하는 데 필요한 커스터마이즈를 수행할 수 있게 됩니다.
 

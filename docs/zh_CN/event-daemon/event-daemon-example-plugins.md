@@ -12,8 +12,11 @@ lang: zh_CN
 此页面包含几个简单的示例，可供任何人入门使用。您可以复制/粘贴此代码，它应该可以正常运行（注意：您需要将 `script_name` 和 `script_key` 值更新为特定于您的安装的内容）
 
 首先，这里有一个模板，所有 SG 事件代码都应基于此模板编写
+
 ## 1. 代码模板
+
 ### 复制/粘贴此代码以在新插件上使用
+
 ```python
 """
 Necessary Documentation of the code
@@ -51,11 +54,15 @@ def registerCallbacks(reg):
 #              }
 def entry_function_call(sg, logger, event, args):
     # Now do stuff
-    pass   
+    pass
 ```
+
 ## 2. 注释主题重命名
+
 ### 使用 `New` 实体事件
+
 这是一个很好的起点，因为它很简单，而且还能处理捕捉 `Shotgun_Entity_New` 事件的棘手方面...
+
 ```python
 import time
 from pprint import pprint
@@ -98,14 +105,18 @@ def Function_Name(sg, logger, event, args):
         logger.info('Dates are not prepended for notes in project id 116 - Software Development')
         return
 ```
+
 请注意函数主体第一行的 `sleep` 调用。这与 `new` 事件的处理方式有关。
+
 1. 在 SG 中创建新实体时，它仍然是非成形的 - 这意味着它不具备完全定义该实体所需的所有习惯属性。实际上，在本示例中，我甚至无法保证在 SG 发出 `Shotgun_Note_New` 事件时，`subject` 属性将位于注释实体上。
 2. 为了添加所有必需的属性，SG 将发布一系列 `Shotgun_Note_Change` 事件，其中 SG 会将每个属性添加到实体并更新这些属性的值（如果需要）。
 3. 这表示将创建多种事件，这意味着如果您需要存在两个不同的属性，而您未在代码中写入 `sleep` 内容，则必须对所有 `Shotgun_Note_Change` 事件和内部元数据进行筛选，以便仅查找那些添加了新属性并设置了值的事件。这是一个繁琐的过程，并且将处理许多 `Shotgun_Note_Change` 事件，从而在创建时有效查找每个注释的一个事件。
 4. 我发现的解决方案是依赖 `Shotgun_Entity_New`，让脚本休眠一小段时间。在休眠结束时，SG 应该已更新实体所需的所有属性，然后您可以针对所需的任何字段重新查询同一实体
 
 ## 2. 字段删除警告
+
 ### 生成注释、将字段作为实体使用以及实体停用事件
+
 ```python
 
 """
@@ -202,4 +213,5 @@ def trashedFieldWarning(sg, logger, event, args):
 
     CreateNote(sg, logger, event)
 ```
+
 这是一个非常简单的脚本。检查已删除的字段时没有特殊逻辑。如果删除了某个字段，则会创建一个注释并将其发送给需要了解的一组人员。在我的部门，我们将组 ID 设置为“程序员”组，并将注释的项目 ID 设置为“开发”项目。

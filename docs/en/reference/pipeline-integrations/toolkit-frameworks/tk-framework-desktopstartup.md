@@ -6,6 +6,7 @@ lang: en
 ---
 
 # Toolkit Desktop Startup Framework
+
 The Desktop Startup framework implements the startup logic of the {% include product %} Desktop. Its main function is to:
 
 1. initialize the browser integration
@@ -21,7 +22,7 @@ The Desktop Startup framework implements the startup logic of the {% include pro
 
 > Note, this requires the {% include product %} Desktop app version `1.3.4`. If you are unsure of your application version, launch the {% include product %} Desktop. Once you are logged in, click on the user icon at the bottom right and click `About...`. The `App Version` should be `1.3.4` or greater.
 
-By default, {% include product %} Desktop downloads `tk-framework-desktopstartup` updates locally on the user's machine and uses it during the launch sequence of the application. When you launch the application, Toolkit automatically checks for updates to the framework. If an update is available, it will also download and install it automatically. 
+By default, {% include product %} Desktop downloads `tk-framework-desktopstartup` updates locally on the user's machine and uses it during the launch sequence of the application. When you launch the application, Toolkit automatically checks for updates to the framework. If an update is available, it will also download and install it automatically.
 
 Alternately, you can configure the {% include product %} Desktop to use a specific copy of the framework instead of using the local copy. This will disable the auto-update function and you will now be responsible for updating your the startup logic. In order to be kept up to date with updates, we suggest you subscribe to [this page](https://support.shotgunsoftware.com/entries/97454918).
 

@@ -20,7 +20,7 @@ _このドキュメントは、Toolkit の設定を管理するユーザのみ�
 - Toolkit Core API の安全なアップグレード方法
 - アプリとエンジンの更新方法
 - 複数のプロジェクト間で設定を管理するためのさまざまな方法
-- プロダクションを中断せずにアップグレードと変更を安全にテストできるように、Toolkit の_クローン_機能と_プッシュ_機能にアクセスする方法
+- プロダクションを中断せずにアップグレードと変更を安全にテストできるように、Toolkit の*クローン*機能と*プッシュ*機能にアクセスする方法
 - `git` ソース コントロールと Toolkit の連携方法
 
 # 設定管理の基本
@@ -35,7 +35,7 @@ _このドキュメントは、Toolkit の設定を管理するユーザのみ�
 
 _primary_ プロジェクト設定は簡単にアップグレードできますが、これにはリスクがあります。この設定はプロジェクトのすべてのユーザが使用するため、問題が発生すると、すべてのユーザに影響を与えてしまいます。ある特定のグループのユーザだけがアクセスできるように、個別のバージョンの設定を作成するのが最適です。この安全な環境では、残りの制作環境に影響を与えることなく、アップグレード、設定変更、および開発を行うことができます。変更のテストが完了したら、安全かつ確実に変更をプライマリ環境設定に適用できます。
 
-このプロセスは「クローン作成」__と呼ばれます。自分(および招待したその他のユーザ)のみがクローンにアクセスできるようにプライマリ環境設定のコピーを個別に作成するという操作です。ここでは、安全に変更を追加し、特に問題がなければ、この変更をプライマリ環境設定に適用することができます。
+このプロセスは「クローン作成」\_\_と呼ばれます。自分(および招待したその他のユーザ)のみがクローンにアクセスできるようにプライマリ環境設定のコピーを個別に作成するという操作です。ここでは、安全に変更を追加し、特に問題がなければ、この変更をプライマリ環境設定に適用することができます。
 
 ## 環境設定のクローンを作成する
 
@@ -47,7 +47,7 @@ _studio_ インストールにはすべてのプロジェクトの Core API が�
 
 これに加え、各プロジェクトの設定フォルダもあります。このフォルダには当該プロジェクトのすべての設定が含まれます。この設定で特別に動作する `tank` コマンド(および Python API)も含まれます。この `tank` コマンドまたは API コードを使用している場合は、この設定のみを操作できます。
 
-新しいプロジェクトをセットアップすると、「プライマリ環境設定」__が作成されます。これは Toolkit がプロジェクトに既定で使用する環境設定です。このプライマリ環境設定に加えて、プロジェクトに追加の環境設定を作成できます。これらの環境設定は共存でき、チーム全体に影響を与えずに、変更のテスト、アプリのアップグレード、または開発などを少しずつ個別に行う場合に役立ちます。追加の環境設定は、クローン作成と呼ばれる設定を新しい場所にコピーするプロセスによって作成されます。__
+新しいプロジェクトをセットアップすると、「プライマリ環境設定」**が作成されます。これは Toolkit がプロジェクトに既定で使用する環境設定です。このプライマリ環境設定に加えて、プロジェクトに追加の環境設定を作成できます。これらの環境設定は共存でき、チーム全体に影響を与えずに、変更のテスト、アプリのアップグレード、または開発などを少しずつ個別に行う場合に役立ちます。追加の環境設定は、クローン作成と呼ばれる設定を新しい場所にコピーするプロセスによって作成されます。**
 
 環境設定のクローンが作成されると、セットアップは次のように表示されます。
 
@@ -82,6 +82,7 @@ _studio_ インストールにはすべてのプロジェクトの Core API が�
 ### クローン作成した古い環境設定を更新する
 
 以前の開発サンドボックスまたはステージング サンドボックスをセットアップしているが、それが古いためそのコンテンツと最新のプロダクション環境を同期する必要がある場合は、プライマリ環境設定で `push_configuration` コマンドを実行します。
+
 ```shell
 tank push_configuration
 
@@ -112,7 +113,8 @@ Push Complete!
 Your old configuration has been backed up into the following folder:
 /my/staging/sandbox/config.bak.20140108_093218
 ```
-プライマリ プロジェクト設定からステージング サンドボックスに適用する方法にご注目ください。プライマリ環境設定の__ `tank` コマンドを実行しています。複数のサンドボックスをセットアップしている場合は、サンドボックス間にデータを適用することもできます。
+
+プライマリ プロジェクト設定からステージング サンドボックスに適用する方法にご注目ください。プライマリ環境設定の\_\_ `tank` コマンドを実行しています。複数のサンドボックスをセットアップしている場合は、サンドボックス間にデータを適用することもできます。
 
 ### クローン作成した環境設定を削除する
 
@@ -161,6 +163,7 @@ Make sure the loader app is up to date everywhere:
 Make sure the loader app is up to date in maya:
 > tank updates ALL tk-maya tk-multi-loader
 ```
+
 ## Toolkit Core API をアップグレードする
 
 このセクションでは、クローンのステージング サンドボックス設定を使用して Toolkit Core API を安全にアップグレードする方法について説明します。ステージング サンドボックスをまだ準備していない場合は、前のセクションの手順に従ってください。
@@ -168,6 +171,7 @@ Make sure the loader app is up to date in maya:
 ステージング サンドボックスのクローンが[共有スタジオ Core API](https://support.shotgunsoftware.com/hc/ja/articles/219040448) を使用してパイプライン設定から作成された場合、固有の Core API コードを使用できるようにサンドボックスを更新します。これはコアの「ローカライズ」と呼ばれ、ステージング サンドボックスにアクセスして `tank localize` を実行します。このコマンドにより、スタジオ インストールからサンドボックスに Core API がコピーされるため、後で Core API の別のバージョンを実行およびテストすることができます。
 
 Toolkit の既定の動作は、コアを既定でローカライズすることです。_事前に共有スタジオ コアを明示的に作成していない場合は、コアが既にローカライズされていると見なした方が間違いありません。_
+
 ```shell
 cd /my/staging/sandbox
 ./tank localize
@@ -199,11 +203,14 @@ Localize complete! This pipeline configuration now has an independent API.
 If you upgrade the API for this configuration (using the 'tank core' command),
 no other configurations or projects will be affected.
 ```
+
 Core API をスタジオの場所で共有しなくなりますが、独自のバージョンを実行しています。ここで、ローカルの Tank コマンドを再び使用して、標準的な Core API アップグレードを実行することができます。
+
 ```shell
 cd /my/staging/sandbox
 ./tank core
 ```
+
 Toolkit は新しいバージョンが利用可能かどうかを確認して、ダウンロードとインストールを通知します。
 
 Core API を更新したら、このインストールを必ずテストしてください。サンドボックスで `tank` コマンドを使用するか、{% include product %} の特別なメニュー項目を使用して、いくつかのアプリを起動します。パイプラインの概要を確認し、必要に応じてテストを実行します。
@@ -233,6 +240,7 @@ Core API を更新したら、このインストールを必ずテストして�
 これは、時間の経過とともに環境設定を徐々に発展させることができる、非常に簡単な方法です。変更と改良は、その場その場でプロジェクトからプロジェクトへと受け継がれていきます。初めて `setup_project` コマンドを実行したとき、セットアップ プロセスで使用する環境設定の指定を求められたら[Enter]キーを押します。これで既定の環境設定のダウンロードおよびインストールが行われます。
 
 2 つ目のプロジェクトの場合、以前のプロジェクトの環境設定へのパスのリストが表示されます。これらのいずれかのパスを選択し、セットアップ プロセスで環境設定の指定を求められたら[Enter]キーを押します。これで新しいプロジェクトにこの環境設定がコピーされます。
+
 ```
 Welcome to the {% include product %} Pipeline Toolkit!
 For documentation, see https://support.shotgunsoftware.com
@@ -272,6 +280,7 @@ clone this repository and base the config on its content.
 
 [tk-config-default]: /mnt/software/shotgun/first_project/config
 ```
+
 ## git ソース コントロールでのスタジオ設定
 
 最初の方法には制限事項があります。プロジェクト同士の接続は行われません。10 個のプロジェクトがあり、重要なバグ修正がリリースされたためすべてを更新する必要がある場合、各プロジェクトに手動でアクセスして `tank updates` コマンドを実行する必要があります。
@@ -291,16 +300,21 @@ clone this repository and base the config on its content.
 最初に git サーバにアクセスしてリポジトリを作成します。このプロセスは、設定によって異なる場合があります。GitHub などを使用している場合は、Web ブラウザを起動して github.com にアクセスします。サーバにアクセスできる場合は、`git init --bare` のようなコードを実行できます。ここで作成する git リポジトリは `username@someserver.com:/studio_config.git`と呼ばれます。
 
 これで、リポジトリのシード設定に使用するプロジェクトの `config` フォルダを `config.bak` の場所に移動します。
+
 ```shell
 cd /project_configs/studio_config
 mv config config.bak
 ```
+
 スタジオ設定のベースにするプロジェクトの `config` の場所に初期化した git リポジトリのクローンを作成します。クローン作成コマンドを実行したら、git リポジトリにもなる空の `config folder` が作成されます。
+
 ```shell
 cd /project_configs/studio_config
 git clone username@someserver.com:/studio_config.git config
 ```
+
 `config.bak` の場所から `config` フォルダにすべてのファイルをコピーします。完了したら、空の `config.bak` フォルダは削除できます。設定ファイルが git リポジトリ内に格納されるため、サーバに対してそのファイルの追加、コミット、および適用を実行する必要があります。その前に、Toolkit のいくつかのシステム ファイルを正しく処理するために下準備を実行する必要があります。`config` フォルダで `.gitignore` ファイルを作成し、以下の行を追加します。
+
 ```shell
 install_location.yml
 pipeline_configuration.yml
@@ -313,6 +327,7 @@ git add --all
 git commit -am "initial commit of our studio config!"
 git push
 ```
+
 ### git で新しいプロジェクトを作成する
 
 新しいプロジェクトを作成する場合は、セットアップ プロセスで使用する環境設定のパスの入力を求めるプロンプトが表示されたときに有効な git URL を指定するだけです。上記の例では、`username@someserver.com:/studio_config.git` と入力します。プロジェクト セットアップ プロセスの一環として、Toolkit は新しいプロジェクト設定の `config` フォルダにこのリポジトリのクローンを作成します。つまり、後でこの設定フォルダにアクセスし、git コマンドを実行できるということです。クローン作成されたパイプライン設定も git リポジトリのクローンを作成し、シームレスに動作します。
@@ -342,6 +357,7 @@ Toolkit はパイプライン設定エンティティを介して {% include pro
 ![](images/config-staging-and-rollout/include_config.png)
 
 `@include` 構文を使用すると、複数のファイルを 1 つに連結できます。たとえば、ファイル `/tmp/stuff.yml` を使用する場合は、次のコンテンツが含まれます。
+
 ```
 # paths to maya
 maya_windows: 'C:\Program  Files\Autodesk\Maya2012\bin\maya.exe'
@@ -369,7 +385,9 @@ file_manager:
   template_work: null
   template_work_area: null
 ```
+
 上記のとおり、複数の異なるレベルでインクルードの定義を作成できます。上の例ではアプリの定義を 1 つと文字列の値を 3 つ設定しています。これらは環境ファイルから参照できます。
+
 ```
 includes: ['/tmp/stuff.yml']
 
@@ -398,7 +416,9 @@ engines:
     template_project: null
     use_sgtk_as_menu_name: false
 ```
+
 さらに、複数のインクルード ファイルを相互に読み取ることができます。同じインクルード定義が 2 つの異なるファイルに存在する場合は、最新の読み込みファイルが優先されます。上記の環境例は、次のように拡張できます。
+
 ```
 includes:
 
@@ -412,21 +432,23 @@ includes:
 
 engines:
 
-  tk-maya:    
+  tk-maya:
     apps:
         tk-multi-workfiles: '@file_manager'
 
     location: {name: tk-maya, type: app_store, version: v0.4.1}
     use_sgtk_as_menu_name: false
 ```
+
 上記の方法を使用すると、スタジオの既定値セットを指定し、それをプロジェクト タイプの既定値によってオーバーライドして、さらにそれを特定のプロジェクト設定でオーバーライドできます。
- 上記の例で示すようにアプリ レベルで実行したり、または次のセクションに示すようにエンジン レベルで実行したりできます。
+上記の例で示すようにアプリ レベルで実行したり、または次のセクションに示すようにエンジン レベルで実行したりできます。
 
 ### グローバル設定のセットアップ時のベスト プラクティス
 
 グローバル設定にはいくつかのセットアップ方法があります。セットアップの推奨ベスト プラクティスでは、エンジンごとに環境設定を分割します。各環境ファイルは完全に空で、個別のファイルで定義されるエンジン(およびアプリ)を参照します。これにより、エンジンを 1 つずつ簡単に調整および再設定できます。
 
 このインクルード ファイルは標準的な形式で、エンジンに基づいた名前がそれぞれのファイルに付けられます。たとえば、Maya エンジンを使用する場合、インクルード ファイルにはエンジンとそのアプリのみが含まれます。その上位エントリには `maya` という名前だけが付けられます。
+
 ```yaml
 maya:
     apps:
@@ -469,25 +491,28 @@ frameworks:
   tk-framework-shotgunutils_v1.x.x:
     location: {name: tk-framework-shotgunutils, type: app_store, version: v1.0.8}
 ```
+
 スタジオで Maya のみをセットアップすることはほとんどなく、さまざまな部門やタイプで異なるアプリを多数使用しているかと思います。それぞれに対して Maya インクルード ファイルをセットアップして、ファイル階層で整理することをお勧めします。これらの各ファイルでは、上記のファイルのように上位エントリとして `maya` が指定されます。
 
 ![](images/config-staging-and-rollout/maya_include.png)
 
 各プロジェクトには数多くの環境ファイルが含まれています。この環境ファイルはそれぞれエンジンのインクルードのリストで、この特定の環境とエンジンやアプリの一連のセットアップを関連付けています。スタジオで 1 つ(または複数)の既定のプロジェクト設定をセットアップすると、すべてにインクルードがこのように含まれるため、実際のアプリとエンジンのペイロードがインクルード ファイル内に完全に含まれ、グローバル ファイル内にも含まれます。グローバル インクルード ファイルに変更を加えると、すべてのプロジェクトに影響します。このセットアップを使用すると、環境ファイルは次のような形式になります。
+
 ```yaml
-includes:     
-    - '/studio/configurations/maya/asset.yml'
-    - '/studio/configurations/nuke/asset.yml'
-    - '/studio/configurations/houdini/generic.yml'
+includes:
+  - "/studio/configurations/maya/asset.yml"
+  - "/studio/configurations/nuke/asset.yml"
+  - "/studio/configurations/houdini/generic.yml"
 
 engines:
-  tk-maya: '@maya'
-  tk-nuke: '@nuke'
-  tk-houdini: '@houdini'
+  tk-maya: "@maya"
+  tk-nuke: "@nuke"
+  tk-houdini: "@houdini"
 
 # we don't need any frameworks here because there are no apps or engines defined
 frameworks: null
 ```
+
 上記のセットアップを分割し、いくつかのプロジェクト固有のエントリを定義する場合は、環境ファイル自身で `@maya` をアプリとエンジンの一連の定義で置き換えるだけです。
 
 ### グローバル設定を管理する

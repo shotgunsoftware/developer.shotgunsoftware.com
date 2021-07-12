@@ -6,11 +6,12 @@ lang: ko
 ---
 
 # 파이프라인 구성 편집
+
 이 안내서를 통해 다음과 같은 기본 사항을 익힐 수 있습니다.
 
-* 특정 툴킷 앱의 구성 설정 찾기
-* 설정 편집
-* 구성 설정에서 확장할 수 있는 다른 기능 살펴보기
+- 특정 툴킷 앱의 구성 설정 찾기
+- 설정 편집
+- 구성 설정에서 확장할 수 있는 다른 기능 살펴보기
 
 ## 안내서 정보
 
@@ -121,13 +122,13 @@ Maya와 {% include product %}이 완전히 로드되면 **파일 열기**(File O
 
 설정을 검색할 때 다음 사항을 고려해야 합니다.
 
-* 실행 중인 소프트웨어 응용프로그램
-* 작업 중인 파일과 환경. 이 부분은 앱의 참조 상자에서 확인할 수 있습니다.
-* 호출되는 설정. 이 부분은 앱의 참조 상자 또는 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에서 확인할 수 있습니다.
-* 확장할 YAML 파일. YAML 파일에 자세히 나와 있는 식별자와 로드맵으로 설정이 있는 위치를 확인할 수 있습니다.
-* 확장할 YAML 파일 내의 특정 블록. 이는 로드맵에서 확인할 수 있습니다.
-* YAML 파일에서 사용되는 식별자 및 기호.
-* 현재 프로젝트의 구성이 저장된 위치(가장 중요).
+- 실행 중인 소프트웨어 응용프로그램
+- 작업 중인 파일과 환경. 이 부분은 앱의 참조 상자에서 확인할 수 있습니다.
+- 호출되는 설정. 이 부분은 앱의 참조 상자 또는 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에서 확인할 수 있습니다.
+- 확장할 YAML 파일. YAML 파일에 자세히 나와 있는 식별자와 로드맵으로 설정이 있는 위치를 확인할 수 있습니다.
+- 확장할 YAML 파일 내의 특정 블록. 이는 로드맵에서 확인할 수 있습니다.
+- YAML 파일에서 사용되는 식별자 및 기호.
+- 현재 프로젝트의 구성이 저장된 위치(가장 중요).
 
 설정은 파이프라인 구성 내의 여러 곳에서 활용될 수 있습니다. 적용할 소프트웨어 통합 및 변경할 파이프라인 프로세스에 따라 활용 방법이 결정됩니다.
 
@@ -163,18 +164,18 @@ description: Apps and Engines when launching with a project only context.
 ################################################################################
 
 includes:
-- ./includes/frameworks.yml
-- ./includes/settings/tk-3dsmaxplus.yml
-- ./includes/settings/tk-desktop.yml
-- ./includes/settings/tk-flame.yml
-- ./includes/settings/tk-houdini.yml
-- ./includes/settings/tk-mari.yml
-- ./includes/settings/tk-maya.yml
-- ./includes/settings/tk-motionbuilder.yml
-- ./includes/settings/tk-nuke.yml
-- ./includes/settings/tk-photoshopcc.yml
-- ./includes/settings/tk-shell.yml
-- ./includes/settings/tk-shotgun.yml
+  - ./includes/frameworks.yml
+  - ./includes/settings/tk-3dsmaxplus.yml
+  - ./includes/settings/tk-desktop.yml
+  - ./includes/settings/tk-flame.yml
+  - ./includes/settings/tk-houdini.yml
+  - ./includes/settings/tk-mari.yml
+  - ./includes/settings/tk-maya.yml
+  - ./includes/settings/tk-motionbuilder.yml
+  - ./includes/settings/tk-nuke.yml
+  - ./includes/settings/tk-photoshopcc.yml
+  - ./includes/settings/tk-shell.yml
+  - ./includes/settings/tk-shotgun.yml
 
 ################################################################################
 # configuration for all engines to load in a project context
@@ -198,7 +199,6 @@ engines:
 # reference all of the common frameworks
 
 frameworks: "@frameworks"
-
 ```
 
 <!--![Project yml env](./images/editing_app_setting/15_project_yml_env.png)-->
@@ -239,7 +239,7 @@ settings.tk-maya.project:
     tk-multi-shotgunpanel: "@settings.tk-multi-shotgunpanel"
     tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"
   menu_favourites:
-  - {app_instance: tk-multi-workfiles2, name: File Open...}
+    - { app_instance: tk-multi-workfiles2, name: File Open... }
   location: "@engines.tk-maya.location"
 ```
 
@@ -253,7 +253,7 @@ settings.tk-maya.project:
 
 ```yaml
 includes:
-...
+---
 - ./tk-multi-workfiles2.yml
 ```
 
@@ -354,7 +354,7 @@ Workfiles 앱의 시스템 이름은 `tk-multi-workfiles2`이고 여기서 `mult
 
 ### 비디오 리소스
 
-* SIGGRAPH 2018 Developer Day의 [툴킷 구성 소개](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)
-* [기본 구성 이해 웨비나](https://www.youtube.com/watch?v=eKHaC1dZCeE)
+- SIGGRAPH 2018 Developer Day의 [툴킷 구성 소개](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)
+- [기본 구성 이해 웨비나](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
 앱 구성 설정을 수정하는 방법에 대해 알아보았습니다. 이제 [툴킷 구성에 앱을 추가](installing_app.md)해 보십시오.

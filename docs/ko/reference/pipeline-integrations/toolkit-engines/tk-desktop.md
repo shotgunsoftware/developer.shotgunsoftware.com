@@ -38,9 +38,8 @@ tk-desktop:
       location: ...
   location: ...
   run_at_startup:
-  - {app_instance: '', name: Apps}
-  - {app_instance: tk-multi-shotgunpanel, name: ''}
+    - { app_instance: "", name: Apps }
+    - { app_instance: tk-multi-shotgunpanel, name: "" }
 ```
 
 `Apps` 항목은 탭 순서대로 기본 `Apps` 탭이 표시되는 위치를 제어합니다.
-

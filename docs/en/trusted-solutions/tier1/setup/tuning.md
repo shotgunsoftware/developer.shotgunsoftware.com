@@ -75,8 +75,8 @@ We recommend setting a VPC endpoint policy on your S3 endpoint to allow access t
 
 ## Application Load Balancer
 
-  * We recommend you [enable deletion protection](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#deletion-protection) on the S3 proxy load balancer to prevent accidental deletion.
-  * We recommend you [enable access logging](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) on the S3 proxy load balancer to aid in traffic analysis and identification of security issues.
+- We recommend you [enable deletion protection](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#deletion-protection) on the S3 proxy load balancer to prevent accidental deletion.
+- We recommend you [enable access logging](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) on the S3 proxy load balancer to aid in traffic analysis and identification of security issues.
 
 ## Next Steps
 

@@ -38,10 +38,12 @@ lang: zh_CN
 ![shotgun_ui](../images/apps/hiero-shotgun_ui.png)
 
 ### 标记(Tags)
+
 通过调整下拉列表，您可以将各种 Hiero 标记映射到 {% include product %} 镜头状态和镜头任务模板。这样，通过 Hiero 的标记工作流，您可以将某个 {% include product %} 镜头设置为正在进行中，或者为镜头设置绿屏、CG 额外奖励或任何对您的配置有意义的任务。此用户界面通过一个挂钩填充，并且很容易配置额外奖励功能。
 
 ### 整理
-应用还提供选项，控制如何对照 Hiero 的内置逻辑将轨道项整理在一起。  如果您的一个镜头由多个项构成（无论是重叠、在不同轨道上还是在多个轨道上具有相同的镜头名称），应开启这些选项。这样，{% include product %} Toolkit 镜头更新程序会将匹配的整理项视为一个镜头。
+
+应用还提供选项，控制如何对照 Hiero 的内置逻辑将轨道项整理在一起。 如果您的一个镜头由多个项构成（无论是重叠、在不同轨道上还是在多个轨道上具有相同的镜头名称），应开启这些选项。这样，{% include product %} Toolkit 镜头更新程序会将匹配的整理项视为一个镜头。
 
 ![整理](../images/apps/hiero-collate.png)
 
@@ -50,13 +52,15 @@ lang: zh_CN
 ![collate_ext](../images/apps/hiero-collate_ex.png)
 
 ### 路径
-在 {% include product %} 用户界面下面，是标准路径对话框。默认情况下，会通过 Hiero 向镜头添加三项内容，包括一个默认的 Nuke 脚本、一个默认的 Nuke 写入位置和一个默认的图版转码位置。  这些项的位置由应用的配置决定，并可完全使用模板系统：
+
+在 {% include product %} 用户界面下面，是标准路径对话框。默认情况下，会通过 Hiero 向镜头添加三项内容，包括一个默认的 Nuke 脚本、一个默认的 Nuke 写入位置和一个默认的图版转码位置。 这些项的位置由应用的配置决定，并可完全使用模板系统：
 
 ![路径](../images/apps/hiero-paths.png)
 
 此应用会向 Hiero 添加一个 `{tk_version}` 令牌，它将被替换为版本字符串，并采用 {% include product %} Toolkit 要求的正确格式。
 
 ### 自定义模板字段
+
 您在 `custom_template_fields` 设置中定义的由 `resolve_custom_strings` 挂钩解析的任何令牌都将自动添加到 Hiero 的有效替换令牌列表中，并被视为 Toolkit 模板路径中的有效替换项。
 
 例如，在 Toolkit 的 `templates.yml` 文件中，假设您使用以下内容定义一个键：
@@ -64,7 +68,7 @@ lang: zh_CN
 ```
     resolution:
         type: str
-        filter_by: alphanumeric  
+        filter_by: alphanumeric
 ```
 
 在 `tk-hiero-export` 的 `project.yml` 设置中，有以下设置：
@@ -143,14 +147,16 @@ class HieroResolveCustomStrings(Hook):
     hiero_plate_path: "sequences/{Sequence}/{Shot}/hiero_plates/{resolution}/v{version}/{project}_{Shot}.mov"
 ```
 
-
 ### {% include product %} 任务
+
 注册的新任务类型有两个。
 
 ##### {% include product %} 转码图像
+
 这是标准 Hiero 转码任务的一个子类，它会在 {% include product %} 中将转码结果注册为发布。另外，还将选择性地在 {% include product %} 中创建一个版本。如果创建了版本，还会创建一个 QuickTime 影片，并将它上传为审片室媒体。
 
 ##### {% include product %} Nuke 项目文件
+
 这是标准 Hiero Nuke 脚本导出器的一个子类，它会在 {% include product %} 中将生成的 Nuke 脚本注册为与镜头链接的已发布文件。这些设置让您可指定导出时在文件中包含哪些支持 Toolkit 的写入节点。
 
 ![nuke_project_file_settings](../images/apps/hiero-nuke_project_file_settings.png)
@@ -168,14 +174,16 @@ class HieroResolveCustomStrings(Hook):
 ![查找器](../images/apps/hiero-finder.png)
 
 ### {% include product %} 中的场和镜头更新
-应用将使用 Hiero 镜头序列的名称作为镜头序列名称，并且会在镜头中填入它们的剪辑镜头信息（剪辑镜头顺序、剪辑序列开头入点、剪辑镜头入点、剪辑镜头出点、剪辑序列结尾出点、剪辑镜头时长和剪辑序列时长）。  此外，如果选择了构成镜头的镜头序列或内容项中的某些帧作为海报帧，还会上传它们作为镜头的缩略图。
+
+应用将使用 Hiero 镜头序列的名称作为镜头序列名称，并且会在镜头中填入它们的剪辑镜头信息（剪辑镜头顺序、剪辑序列开头入点、剪辑镜头入点、剪辑镜头出点、剪辑序列结尾出点、剪辑镜头时长和剪辑序列时长）。 此外，如果选择了构成镜头的镜头序列或内容项中的某些帧作为海报帧，还会上传它们作为镜头的缩略图。
 
 如果您的工作流使用不同于**“镜头序列”(Sequence)**的其他实体作为镜头的父对象（比如**“集”(Episode)**），可以改写 `hook_get_shot` 挂钩中的 `get_shot_parent` 方法。 默认的执行会创建（如果有必要）并返回一个**“镜头序列”(Sequence)**实体。
 
 ### 剪辑镜头数据结构支持
+
 如果您的 {% include product %} 站点支持剪辑镜头数据结构（v7.0.0 或更高版本），此应用会自动在 {% include product %} 中生成一个具有对应**“剪辑镜头项”(CutItem)**的**“剪辑镜头”(Cut)**。**“剪辑镜头”(Cut)**实体对应 Hiero 镜头序列，**“剪辑镜头项”(CutItem)**实体对应镜头序列中的项。 **“剪辑镜头”(Cut)**实体将链接到 `hook_get_shot` 挂钩中的 `get_shot_parent` 方法返回的父实体（默认为**“镜头序列”(Sequence)**）。 **“剪辑镜头项”(CutItem)**将与一个**“镜头”(Shot)**实体关联，并链接到导出期间创建的可审看的**“版本”(Version)**实体。 导出后，将可以在 {% include product %} 的**“媒体”(Media)**选项卡和 **RV** 中播放该**“剪辑镜头”(Cut)**。
 
-所有与**“剪辑镜头”(Cut)**和**“剪辑镜头项”(CutItem)**实体关联的元数据均从 Hiero 推算得出，但“Cut Type”**字段除外，此字段可在导出用户界面中指定。
+所有与**“剪辑镜头”(Cut)**和**“剪辑镜头项”(CutItem)**实体关联的元数据均从 Hiero 推算得出，但“Cut Type”\*\*字段除外，此字段可在导出用户界面中指定。
 
 ![cut_type](../images/apps/hiero-cut_type.png)
 
@@ -186,4 +194,5 @@ class HieroResolveCustomStrings(Hook):
 此外，剪辑镜头数据结构并不处理重定时的视频片段。导出重定时的视频片段时，会记录一条调试警告消息。
 
 ### 交替镜头层次结构
+
 对于不采用标准“镜头序列 > 镜头”层次结构、可能会使用“集”和/或“场景”的工作室，有一个 `hiero_get_shot` 挂钩可用来配置应用，使其支持您的工作室当前使用的任何镜头层次结构。

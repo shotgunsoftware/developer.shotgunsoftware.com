@@ -14,11 +14,18 @@ lang: ko
 일반적으로 Nuke용 {% include product %} 엔진 구성에 다음을 추가함으로써 Hiero의 타임라인 및 스프레드시트 메뉴에 추가하여 이 앱을 구성합니다.
 
 ```yaml
-    timeline_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: "Open in {% include product %}", requires_selection: true}
-    spreadsheet_context_menu:
-    - {app_instance: tk-hiero-openinshotgun, keep_in_menu: false, name: "Open in {% include product %}", requires_selection: true}
+timeline_context_menu:
+  - {
+      app_instance: tk-hiero-openinshotgun,
+      keep_in_menu: false,
+      name: "Open in {% include product %}",
+      requires_selection: true,
+    }
+spreadsheet_context_menu:
+  - {
+      app_instance: tk-hiero-openinshotgun,
+      keep_in_menu: false,
+      name: "Open in {% include product %}",
+      requires_selection: true,
+    }
 ```
-
-
-

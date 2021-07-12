@@ -11,7 +11,7 @@ Maya에서 툴킷 앱을 실행하기 위한 선반 버튼을 Maya에 추가하�
 
 {% include info title="참고" content="이 예는 툴킷이 현재 Maya 세션에서 활성화되어 있다고 가정한 것입니다. 이 예제 코드는 툴킷을 부트스트랩하지 않습니다." %}
 
-Maya에서 스크립트 편집기를 열고 다음 Python 코드를 붙여 넣습니다. 
+Maya에서 스크립트 편집기를 열고 다음 Python 코드를 붙여 넣습니다.
 
 ```python
 import maya.cmds as cmds

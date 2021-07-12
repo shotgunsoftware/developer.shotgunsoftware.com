@@ -17,6 +17,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 1. **创建文件夹：**在 {% include product %} 中创建对象后，我们需要先在磁盘上创建文件夹，然后才能开始工作。这个过程可以很简单，比如在磁盘上创建一个文件夹来代表镜头；也可以更复杂，比如设置一个特定于用户的工作沙盒，让每个处理镜头的用户在单独的磁盘区域工作。
 
    - Toolkit 会在您启动应用程序（例如为镜头 BECH_0010 启动 Maya）时自动创建文件夹，并确保在启动 Maya 前文件夹已存在。如果文件夹不存在，则会即时创建这些文件夹。除此以外，也可以使用 API 方法、[Shell 中的 tank 命令](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178#Useful%20tank%20commands)以及通过 [ShotGrid 中的“创建文件夹”(Create Folders)菜单](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040688#Shotgun%20Integration)来创建文件夹。此文件夹创建过程由一组特殊的配置文件来控制，下面我们在文档的[第 1 部分](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Part%201%20-%20Folder%20Creation%20Syntax)中对此进行介绍。
+
 2. **打开和保存工作：**在工作时，我们需要在磁盘的标准位置打开和保存文件。 这些文件位置通常位于我们在开始工作前创建的文件夹结构之中。
 
    - 文件夹结构建立后，我们可以使用该结构来确定关键的磁盘位置。这些位置称为[模板](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Part%202%20-%20Configuring%20File%20System%20Templates)。例如，您可以定义一个 `maya_shot_publish` 模板来表示为镜头发布的 Maya 文件。[Toolkit 应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798)随后会使用此模板 - 发布应用可使用它控制应将文件写入何处，而 [Workfiles 应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)可使用此模板了解从何处打开文件。在 Toolkit 的环境配置内，您可以控制每个应用使用哪些模板。因此，Toolkit 使用的所有关键文件位置都定义在一个模板文件中，并且易于查看。
@@ -33,7 +34,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 
 1. **普通文件夹和文件：**这些内容将直接被复制到目标位置。
 2. **含有 YAML 文件的文件夹**（文件与文件夹同名）：这代表动态内容。 例如，假设有一个 **shot** 文件夹和一个 **shot.yml**，当创建文件夹时，这个 **shot** 文件夹就是生成一系列文件夹所采用的模板 - 每个镜头一个文件夹。
-3. **名为 name.symlink.yml 的文件：**此文件将在处理文件夹时生成符号链接。  [本文档稍后将对符号链接](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Symbolic%20Links)进行介绍。
+3. **名为 name.symlink.yml 的文件：**此文件将在处理文件夹时生成符号链接。 [本文档稍后将对符号链接](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Symbolic%20Links)进行介绍。
 
 目前，以 YAML 文件形式表示的动态配置设置支持以下模式：
 
@@ -44,7 +45,6 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 - **[延迟文件夹：](#workspaces-and-deferred-folder-creation)**仅当通过 Toolkit API 的创建文件夹方法请求第二次文件夹创建操作时（通常是启动应用程序（如 Maya）时），才会执行此操作。通常，Toolkit 的各种应用程序启动器会在启动应用程序前执行此方法。
 
 - **[当前用户文件夹：](#current-user-folder)**一个特殊文件夹，表示当前用户。
-
 
 下面我们来更深入地了解这些模式。
 
@@ -80,11 +80,11 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 - **entity_type** 字段应设置为要从中提取数据的 {% include product %} 实体（“资产”(Asset)、“镜头”(Shot)、“场”(Sequence)、“自定义实体 02”(CustomEntity02)等）。
 - **name** 字段是根据 {% include product %} 中的数据应指定给每个文件夹的名称。
 
-   - 您可以像上面的示例中那样，只使用一个字段（例如 `name: code`）。
-   - 也可以在大括号内使用多个字段（例如 `name:` `"{asset_type}_{code}"`）。
-   - 如果想包含来自其他链接实体的字段，可使用标准 {% include product %} 语法（例如 `name: "{sg_sequence.Sequence.code}_{code}"`）。
-- **filters** 字段是一个 {% include product %} 查询。该字段相对严格遵循 [{% include product %} API 语法](http://developer.shotgridsoftware.com/python-api/reference.html)。它是一个词典列表，并且每个词典需要有 _path_、_relation_ 和 _values_ 键。 $ 语法的有效值是任何包含对应 {% include product %} 实体的根文件夹（例如，对于项目来说是 `"$project"`，而如果上层目录层次结构存在 sequence.yml，也可以是 `"$sequence"`）。对于 {% include product %} 实体链接，您可以使用 $ 语法（例如 `{ "path": "project", "relation": "is", "values": [ "$project" ] }`）指代配置中的父文件夹 - [下面的示例](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Examples)对此做出了更深入的解释。
+  - 您可以像上面的示例中那样，只使用一个字段（例如 `name: code`）。
+  - 也可以在大括号内使用多个字段（例如 `name:` `"{asset_type}_{code}"`）。
+  - 如果想包含来自其他链接实体的字段，可使用标准 {% include product %} 语法（例如 `name: "{sg_sequence.Sequence.code}_{code}"`）。
 
+- **filters** 字段是一个 {% include product %} 查询。该字段相对严格遵循 [{% include product %} API 语法](http://developer.shotgridsoftware.com/python-api/reference.html)。它是一个词典列表，并且每个词典需要有 _path_、_relation_ 和 _values_ 键。 $ 语法的有效值是任何包含对应 {% include product %} 实体的根文件夹（例如，对于项目来说是 `"$project"`，而如果上层目录层次结构存在 sequence.yml，也可以是 `"$sequence"`）。对于 {% include product %} 实体链接，您可以使用 $ 语法（例如 `{ "path": "project", "relation": "is", "values": [ "$project" ] }`）指代配置中的父文件夹 - [下面的示例](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Examples)对此做出了更深入的解释。
 
 ## 多个文件夹
 
@@ -118,7 +118,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 
     asset_step_folder: assets/{asset_type}/{Asset}/{Step}
 
-`{asset_type}`  和 `{Asset}` 都定义为字符串模板键，`{Asset}` 令牌将在确定给定路径的上下文时在上下文计算中使用。
+`{asset_type}` 和 `{Asset}` 都定义为字符串模板键，`{Asset}` 令牌将在确定给定路径的上下文时在上下文计算中使用。
 
 ## 随父文件夹一起创建的文件夹
 
@@ -182,7 +182,7 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
-该语法类似于模板系统中的 `subset` 令牌；只需在 {% include product %} 字段名称后面添加一个冒号，后跟一个正则表达式。正则表达式中定义的任何组（例如，`()` 括起来的部分）将用于提取值。 如果正则表达式中有多个组，它们将会连接在一起。例如，以下表达式将提取创建对象的用户的首字母：  `{created_by.HumanUser.code:^([A-Z])[a-z]* ([A-Z])[a-z]*}`
+该语法类似于模板系统中的 `subset` 令牌；只需在 {% include product %} 字段名称后面添加一个冒号，后跟一个正则表达式。正则表达式中定义的任何组（例如，`()` 括起来的部分）将用于提取值。 如果正则表达式中有多个组，它们将会连接在一起。例如，以下表达式将提取创建对象的用户的首字母： `{created_by.HumanUser.code:^([A-Z])[a-z]* ([A-Z])[a-z]*}`
 
 ## 示例
 
@@ -245,12 +245,11 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
 
 - 将动态内容 **type** 字段的值设置为 `shotgun_list_field`。
 - `entity_type` 字段应设置为想要从中提取数据的 {% include product %} 实体（例如“资产”(Asset)、“场”(Sequence)、“镜头”(Shot)等）。
-- `field_name` 字段应设置为从中提取数据的 {% include product %} 字段，并且必须是[列表类型字段](https://support.shotgunsoftware.com/hc/zh-cn/articles/219031008)。如果想随动态内容一起添加静态文本，可以使用表达式。`field_name: "{sg_asset_type}_type"`  此示例表达式包含文本和一个模板键。
+- `field_name` 字段应设置为从中提取数据的 {% include product %} 字段，并且必须是[列表类型字段](https://support.shotgunsoftware.com/hc/zh-cn/articles/219031008)。如果想随动态内容一起添加静态文本，可以使用表达式。`field_name: "{sg_asset_type}_type"` 此示例表达式包含文本和一个模板键。
 
 - 可选参数 `skip_unused` 可防止为未使用的列表类型字段值创建目录（如上面的[可选字段](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Optional%20fields)部分所述）。{% include info title="注意" content="将此设置为 True 可能会对文件夹创建性能产生负面影响。另外，剔除算法目前还很简陋，不支持关联实体应用了复杂过滤器的情况。" %}
 
 - 可选参数 `create_with_parent` 可强制创建 list_field 节点，即使当前没有正在接受处理的子实体级节点（请参见上面的[随父文件夹一起创建的文件夹](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Create%20With%20Parent%20Folder)部分）。
-
 
 ## 工作流工序文件夹
 
@@ -400,7 +399,7 @@ _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通�
 
 ## 静态文件夹
 
-静态文件夹（和文件）是最简单的类型。您可以将它们放入配置结构，当执行文件夹创建过程时，会自动复制它们。  [这里有一些默认配置的静态文件夹示例](https://github.com/shotgunsoftware/tk-config-default/tree/master/core/schema/project) (https://github.com/shotgunsoftware/tk-config-default/tree/master/core/schema/project)（请注意，静态文件夹没有对应的 YAML 文件）。
+静态文件夹（和文件）是最简单的类型。您可以将它们放入配置结构，当执行文件夹创建过程时，会自动复制它们。 [这里有一些默认配置的静态文件夹示例](https://github.com/shotgunsoftware/tk-config-default/tree/master/core/schema/project) (https://github.com/shotgunsoftware/tk-config-default/tree/master/core/schema/project)（请注意，静态文件夹没有对应的 YAML 文件）。
 
 通常，静态文件夹的使用不会超出这些示例介绍的范围；但是，Toolkit 确实支持一些更高级的静态文件夹功能。我们可以定义动态条件来决定是否应创建某个静态文件夹。例如，您可能会需要只有剪辑类型的工作流工序才会创建的特殊静态文件夹。在这种情况下，需要在静态文件夹的同一层添加一个 YAML 配置文件，并为它指定相同的名称，文件扩展名为“yml”。然后，使用以下语法：
 
@@ -496,7 +495,7 @@ _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通�
     .git                # no git temp files to be copied across at folder creation time
     .DS_Store           # no mac temp files to be copied across at folder creation time
 
-您也可以使用通配符。例如，如果需要排除所有带 TMP 扩展名的文件，只需向文件中添加一行 *.tmp 即可。
+您也可以使用通配符。例如，如果需要排除所有带 TMP 扩展名的文件，只需向文件中添加一行 \*.tmp 即可。
 
     <a name="This is a good example of a standard ignore_files file"></a>
     # This is a good example of a standard ignore_files file
@@ -701,7 +700,6 @@ _请注意，动态令牌 `$sequence` 在运行时已被解析为实际对象。
      'metadata': {'studio_permissions_level': 'admin', 'type': 'static'},
      'path': '/mnt/projects/chasing_the_light/assets'},
 
-
 同样，可以用这种方式将任意复杂度的数据从 YAML 配置文件传递给挂钩。
 
 ## 文件夹创建方式的简单自定义
@@ -824,7 +822,7 @@ Toolkit 的模板文件是 Toolkit 配置的一个中枢。每个项目都会有
 
 ![配置](images/file-system-config-reference/templates_file.png)
 
-此文件包含模板及其键的定义____。
+此文件包含模板及其键的定义\_\_\_\_。
 
 **键**是我们定义的动态字段。 它可以是名称、版本号、屏幕分辨率、镜头名称等。我们会为键配置类型，这样便可定义一个键应该是字符串还是整数。键还具有格式，这样便可定义一个字符串应仅包含字母数字字符，还是所有整数都填充八个零。
 
@@ -845,34 +843,33 @@ Toolkit 的模板文件是 Toolkit 配置的一个中枢。每个项目都会有
 
 除了指定类型以外，您还可以指定其他选项。存在以下选项：
 
-- `default: default_value`  - 在未提供值的情况下使用的值。 例如，当您使用 Toolkit API 尝试将一组字段值解析为一个路径时，可能会发生这种情况。
+- `default: default_value` - 在未提供值的情况下使用的值。 例如，当您使用 Toolkit API 尝试将一组字段值解析为一个路径时，可能会发生这种情况。
 
-- `choices: [choice1, choice2, etc]`  - 对此键的各个可能值的枚举。
+- `choices: [choice1, choice2, etc]` - 对此键的各个可能值的枚举。
 
-- `exclusions: [bad1, bad2, etc]`  - 对此键的各个禁止值的枚举。 如果键的类型为 sequence，使用此设置时，将无法让帧规格值无效。
+- `exclusions: [bad1, bad2, etc]` - 对此键的各个禁止值的枚举。 如果键的类型为 sequence，使用此设置时，将无法让帧规格值无效。
 
-- `length: 12`  - 此键需要有具体长度。
+- `length: 12` - 此键需要有具体长度。
 
-- `alias: new_name`  - 提供一个供使用此键而非 key_name 键的模板使用的名称。 例如，如果您有两种关于版本号的设想，一种是按照客户的希望填充四个零，另一种是根据内部处理方式填充三个零 - 在这种情况下，您其实想将两个键都命名为“version”，但实际上这是不可能的，因为键名称需要具有唯一性。这时，您可以创建一个别名。请参见下面的示例了解详细信息。
+- `alias: new_name` - 提供一个供使用此键而非 key_name 键的模板使用的名称。 例如，如果您有两种关于版本号的设想，一种是按照客户的希望填充四个零，另一种是根据内部处理方式填充三个零 - 在这种情况下，您其实想将两个键都命名为“version”，但实际上这是不可能的，因为键名称需要具有唯一性。这时，您可以创建一个别名。请参见下面的示例了解详细信息。
 
-- `filter_by: alphanumeric`  - 仅适用于 string 类型的键。 如果指定了此选项，只有包含字母数字值（对于 Ascii 字符串来说通常为 a-z、A-Z 和 0-9，但如果输入数据为 Unicode，也可能包含其他字符）的字符串才会被视为有效值。
+- `filter_by: alphanumeric` - 仅适用于 string 类型的键。 如果指定了此选项，只有包含字母数字值（对于 Ascii 字符串来说通常为 a-z、A-Z 和 0-9，但如果输入数据为 Unicode，也可能包含其他字符）的字符串才会被视为有效值。
 
-- `filter_by: alpha`  - 仅适用于 string 类型的键。 如果指定了此选项，只有包含字母值（对于 Ascii 字符串来说通常为 a-z 和 A-Z，但如果输入数据为 Unicode，也可能包含其他字符）的字符串才会被视为有效值。
+- `filter_by: alpha` - 仅适用于 string 类型的键。 如果指定了此选项，只有包含字母值（对于 Ascii 字符串来说通常为 a-z 和 A-Z，但如果输入数据为 Unicode，也可能包含其他字符）的字符串才会被视为有效值。
 
-- `filter_by: '^[0-9]{4}_[a-z]{3}$'`  - 仅适用于 string 类型的键。 您可以定义正则表达式来作为验证掩码。例如，上面的示例需要键有四位数字，后跟一个下划线，最后是三个小写字母。
+- `filter_by: '^[0-9]{4}_[a-z]{3}$'` - 仅适用于 string 类型的键。 您可以定义正则表达式来作为验证掩码。例如，上面的示例需要键有四位数字，后跟一个下划线，最后是三个小写字母。
 
-- `format_spec: "04"`  - 对于 int 和 sequence 类型的键，此设置意味着 int 或 sequence 的数字将填充零或空格。 像示例中这样指定“04”，将得到一个长度为四位数、填充了零的数字（例如 0003）。指定“03”将得到长度为三位数、填充了零的数字（例如 042），等等。指定“3”将得到长度为三位数、填充了空格的数字（例如“ 3”）。对于 timestamp 类型的键，format_spec 遵循 [strftime 和 strptime 约定](https://docs.python.org/2/library/datetime.html#strftime-strptime-behavior)。
+- `format_spec: "04"` - 对于 int 和 sequence 类型的键，此设置意味着 int 或 sequence 的数字将填充零或空格。 像示例中这样指定“04”，将得到一个长度为四位数、填充了零的数字（例如 0003）。指定“03”将得到长度为三位数、填充了零的数字（例如 042），等等。指定“3”将得到长度为三位数、填充了空格的数字（例如“ 3”）。对于 timestamp 类型的键，format_spec 遵循 [strftime 和 strptime 约定](https://docs.python.org/2/library/datetime.html#strftime-strptime-behavior)。
 
-- `strict_matching: true`  - 仅适用于 int 类型的键。 此设置意味着字段只会匹配格式设置正确的数字。例如，给定值为“003”，strict_matching 设置为 True，我们将匹配“002”、“12345”和“042”，但不匹配“00003”或“2”。如果您需要匹配不那么严格，请将 strict_matching 设置为 False。默认行为是严格匹配。
+- `strict_matching: true` - 仅适用于 int 类型的键。 此设置意味着字段只会匹配格式设置正确的数字。例如，给定值为“003”，strict_matching 设置为 True，我们将匹配“002”、“12345”和“042”，但不匹配“00003”或“2”。如果您需要匹配不那么严格，请将 strict_matching 设置为 False。默认行为是严格匹配。
 
 - `shotgun_entity_type` - 与 `shotgun_field_name` 选项一起使用时，上下文将直接向 {% include product %} 查询值。这样，将可以在文件名中使用文件夹结构中不可见的字段的值。
 
-- `shotgun_field_name`  - 仅与 `shotgun_entity_type` 一起使用。
+- `shotgun_field_name` - 仅与 `shotgun_entity_type` 一起使用。
 
-- `abstract`  - 表示字段是抽象字段。 当需要以模式来描述路径时（例如图像序列 (%04d) 或立体声 (%V)），会用到抽象字段。抽象字段需要具有默认值。
+- `abstract` - 表示字段是抽象字段。 当需要以模式来描述路径时（例如图像序列 (%04d) 或立体声 (%V)），会用到抽象字段。抽象字段需要具有默认值。
 
-- `subset`  和 `subset_format` - 提取给定输入字符串的一部分并将它设为键值。这样，便可根据完整的用户名创建用户名首字母缩写键，或创建可容纳每个镜头名称前三个字母的键。
-
+- `subset` 和 `subset_format` - 提取给定输入字符串的一部分并将它设为键值。这样，便可根据完整的用户名创建用户名首字母缩写键，或创建可容纳每个镜头名称前三个字母的键。
 
 有关模板键的技术细节，请参见 [API 参考](http://developer.shotgridsoftware.com/tk-core/core.html#template-system)。
 
@@ -1053,7 +1050,7 @@ Toolkit 应用在填充所有上下文字段时（通过 `context.as_template_fi
 
 {% include info title="注意" content="如果一个 string 键的名称与一个关联了 ShotGrid 实体的动态数据结构文件夹的实体类型一致，将使用该文件夹名称来代替令牌。例如，假设您像上面的代码段那样正在使用一个“string”类型的 {Sequence} 模板键，同时您的数据结构中有一个名为“sequence”的动态文件夹，并且在对应的 `sequence.yml` 文件中，它被定义为 `shotgun_entity` 类型，并连接到 ShotGrid 中的“场”(Sequence)实体类型。这种情况下，Toolkit 会认为您的模板键对应于这个动态文件夹的实体类型（示例中二者均为“镜头序列”(Sequence)）。因此，Toolkit 会提取生成的文件夹名称（即所涉及的具体场的名称），并使用它替换模板键。" %}
 
-如果需要定义任何可选属性，必须使用这种格式。目前，只有 `root_name` 这一个可选属性，在有多个根目录的项目中，可以用它来指定路径的项目根目录。  当您想添加新的存储根目录来存储某些项目文件时，会用到[多个根目录](https://developer.shotgridsoftware.com/9ea9dd4e/)。
+如果需要定义任何可选属性，必须使用这种格式。目前，只有 `root_name` 这一个可选属性，在有多个根目录的项目中，可以用它来指定路径的项目根目录。 当您想添加新的存储根目录来存储某些项目文件时，会用到[多个根目录](https://developer.shotgridsoftware.com/9ea9dd4e/)。
 
 `root_name: name_of_project_root`
 
@@ -1113,7 +1110,6 @@ Toolkit 应用在填充所有上下文字段时（通过 `context.as_template_fi
 - [“剧集”(Episode)实体如何工作？](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000019414)
 - [自定义实体层次结构](https://support.shotgunsoftware.com/hc/zh-cn/articles/219030828)
 
-
 ### “剧集 > 场 > 镜头”层次结构需要的 {% include product %} 字段
 
 [您可以选择使用任何自定义实体](https://support.shotgunsoftware.com/hc/zh-cn/articles/114094182834)作为 `Episode`（“站点偏好设置 > 实体”(Site Preferences > Entities)），也可以使用 {% include product %} [7.0.7.0](https://support.shotgunsoftware.com/hc/en-us/articles/220062367-7-0-Release-Notes#7_0_7_0) 中提供的官方“剧集”(Episode)实体。如果您注册使用的是 {% include product %} 7.0.7.0 之前的版本（在 2017 之前），“TV Show”模板会使用 `CustomEntity02` 作为剧集。如果您决定使用非 `CustomEntity02` 的其他实体或官方“剧集”(Episode)实体，没问题！{% include product %} 和 Toolkit 具有很高的灵活度。下面我们就来同时介绍这两种情况。
@@ -1128,7 +1124,7 @@ a) **使用官方“剧集”(Episode)实体：**“剧集”(Episode)实体可�
 
 **或者**
 
-b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板创建电视节目类项目时使用的自定义实体。  _如前所述，您可以再启用一个自定义实体，使用它来代替 `CustomEntity02` - 只要确保将所有的 `CustomEntity02` 都替换成您启用的具体实体即可。_
+b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板创建电视节目类项目时使用的自定义实体。 _如前所述，您可以再启用一个自定义实体，使用它来代替 `CustomEntity02` - 只要确保将所有的 `CustomEntity02` 都替换成您启用的具体实体即可。_
 
 ![episode_custom_entity](images/file-system-config-reference/episode_custom_entity.png)
 
@@ -1140,7 +1136,7 @@ b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板�
 
 <iframe class="wistia_embed" title="Wistia 视频播放器" src="https://fast.wistia.net/embed/iframe/n9q0fx1q9p" name="wistia_embed" width="640" height="400" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
 
-**使用  `CustomEntity02`**
+**使用 `CustomEntity02`**
 
 <iframe class="wistia_embed" title="Wistia 视频播放器" src="https://fast.wistia.net/embed/iframe/r3xetbj4ff" name="wistia_embed" width="640" height="400" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
 
@@ -1152,7 +1148,7 @@ b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板�
 
 <iframe class="wistia_embed" title="Wistia 视频播放器" src="https://fast.wistia.net/embed/iframe/qcsrn3sy0a" name="wistia_embed" width="640" height="400" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
 
-**使用  `CustomEntity02`**
+**使用 `CustomEntity02`**
 
 <iframe class="wistia_embed" title="Wistia 视频播放器" src="https://fast.wistia.net/embed/iframe/juebp6yjn8" name="wistia_embed" width="640" height="400" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
 
@@ -1203,7 +1199,7 @@ b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板�
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
-**使用  `CustomEntity02`**
+**使用 `CustomEntity02`**
 
     <a name="the type of dynamic content"></a>
     # the type of dynamic content
@@ -1265,7 +1261,6 @@ b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板�
 
 在您的 `config/core/schema/project/shots/episode/sequence` 文件夹中，创建一个名为 `shot` 的文件夹，并在同一目录创建一个对应的 `shot.yml` 文件，文件内容如下：
 
-
     <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
@@ -1315,7 +1310,7 @@ b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板�
             shot_root: shots/{Episode}/{Sequence}/{Shot}/{Step}
             …
 
-**使用  `CustomEntity02`**
+**使用 `CustomEntity02`**
 
     keys:
         ...
@@ -1344,11 +1339,10 @@ b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板�
 
 - 先在数据结构中为这个新的资产类型创建一个新的分支：vehicle。
 - 在与 `asset/` 和 `asset.yml` 同一级目录中，添加一个 `asset_vehicle/` 文件夹和一个 `asset_vehicle.yml`。
-- 这些 YAML 文件中还有一项过滤器设置。修改 `asset.yml` 中的过滤器，让它应用于除车辆以外的所有资产，__然后修改 `asset_vehicle.yml`，使其仅应用于__车辆类型的资产。  [此处举例说明了这种过滤器的具体形式](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Different%20file%20system%20layouts%20for%20different%20pipeline%20steps)。
+- 这些 YAML 文件中还有一项过滤器设置。修改 `asset.yml` 中的过滤器，让它应用于除车辆以外的所有资产，**然后修改 `asset_vehicle.yml`，使其仅应用于**车辆类型的资产。 [此处举例说明了这种过滤器的具体形式](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Different%20file%20system%20layouts%20for%20different%20pipeline%20steps)。
 - 现在，您已有了两个文件夹来表示 `asset` 和 `asset_vehicles`，在 `asset_vehicle` 下添加您希望为这些资产创建的所有文件夹（例如 `geoprep`、`lookdev` 等）。
 
 - 如果您要为这些资产保存和发布文件，需要在 `core/templates.yml` 中创建模板，描述保存的和发布的文件的文件路径。 例如，除了 [`maya_asset_work`](https://github.com/shotgunsoftware/tk-config-default/blob/v0.17.3/core/templates.yml#L480) 之外，您还可以创建一个名为 `maya_asset_work_vehicle` 的模板，然后将该模板定义为一个您用来为车辆资产保存 Maya 工作文件的模板化路径。
-
 
 **第 2 步：创建新的环境文件**
 
@@ -1359,7 +1353,7 @@ b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板�
 
 ## 如何使用自定义实体创建自定义工作流工序？
 
-{% include product %} 7.0.6.0 引入了[通过“管理”(Admin)菜单管理工作流工序](https://support.shotgunsoftware.com/hc/zh-cn/articles/222766227#managing_pipeline_steps)的功能。使用此功能，您可以轻松向工作流工序中添加自定义字段。  **高级技巧：大多数情况下，与创建自定义实体来管理工作流工序相比，在工作流工序中使用自定义字段有助于工作流条理更加清楚。**
+{% include product %} 7.0.6.0 引入了[通过“管理”(Admin)菜单管理工作流工序](https://support.shotgunsoftware.com/hc/zh-cn/articles/222766227#managing_pipeline_steps)的功能。使用此功能，您可以轻松向工作流工序中添加自定义字段。 **高级技巧：大多数情况下，与创建自定义实体来管理工作流工序相比，在工作流工序中使用自定义字段有助于工作流条理更加清楚。**
 
 但是，对于要求更高的情况，创建备选的工作流工序可能会有所帮助。例如，在工作流工序方面，您可能会希望能够灵活地为生产和工作流使用不同的命名约定和结构，以及灵活地独立为它们命名和设置结构。{% include product %} 内置的工作流工序通常用来安排计划，但您可能会想使用其他[自定义实体](https://support.shotgunsoftware.com/hc/zh-cn/articles/114094182834)来构建文件系统结构，并将工作流中的单个任务合并成组。通过创建从任务到自定义实体的自定义链接字段，可以实现这个目的。随后，系统可使用此链接字段，通过工序节点将任务合并成组。
 

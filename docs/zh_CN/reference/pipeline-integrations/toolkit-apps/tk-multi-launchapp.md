@@ -19,20 +19,20 @@ lang: zh_CN
 
 目前支持的应用程序和插件包括：
 
-* 3DSMax
-* Hiero
-* Maya
-* MotionBuilder
-* Nuke
-* Photoshop
-* Mari
-* Houdini
-* Softimage
-* Flame
+- 3DSMax
+- Hiero
+- Maya
+- MotionBuilder
+- Nuke
+- Photoshop
+- Mari
+- Houdini
+- Softimage
+- Flame
 
 ### 启动时使用命令行参数
 
-许多应用程序具有可调用的命令行选项，用于选择不同的应用程序版本（例如 Nuke 与 NukeX）或指定其他各种用法。  启动器应用针对每个操作系统有一个可进行这种配置的“args”设置。  例如，如果您在此设置中加入“--nukex”，启动器会将它添加到命令行启动，并运行 NukeX 而不是常规的 Nuke：
+许多应用程序具有可调用的命令行选项，用于选择不同的应用程序版本（例如 Nuke 与 NukeX）或指定其他各种用法。 启动器应用针对每个操作系统有一个可进行这种配置的“args”设置。 例如，如果您在此设置中加入“--nukex”，启动器会将它添加到命令行启动，并运行 NukeX 而不是常规的 Nuke：
 
 ---FOLD---
 启动 NukeX 示例
@@ -43,15 +43,16 @@ launch_nuke:
   extra: {}
   hook_app_launch: default
   hook_before_app_launch: default
-  linux_args: '--nukex'
-  linux_path: '@nuke_linux'
-  location: {name: tk-multi-launchapp, type: app_store, version: v0.2.15}
-  mac_args: '--nukex'
-  mac_path: '@nuke_mac'
+  linux_args: "--nukex"
+  linux_path: "@nuke_linux"
+  location: { name: tk-multi-launchapp, type: app_store, version: v0.2.15 }
+  mac_args: "--nukex"
+  mac_path: "@nuke_mac"
   menu_name: Launch Nuke
-  windows_args: '--nukex'
-  windows_path: '@nuke_windows'
+  windows_args: "--nukex"
+  windows_path: "@nuke_windows"
 ```
+
 ---FOLD---
 
 ### 设置环境变量并自动化启动时的行为
@@ -66,7 +67,7 @@ launch_nuke:
 ```python
 def execute(self, **kwargs):
     """
-    The execute functon of the hook will be called to start the required application        
+    The execute functon of the hook will be called to start the required application
     """
 
     # Example to show how to set env vars on Maya launch
@@ -79,6 +80,7 @@ def execute(self, **kwargs):
     # with $PYTHONPATH if already defined in your pipeline
     os.environ["XBMLANGPATH"] = "~/Library/zync/zync-maya"
 ```
+
 ---FOLD---
 
 您还可以使用“before_app_launch”自动化其他行为，包括 {% include product %} 更新。例如，您可以按如下所示，配置启动器应用在每次启动时（当然前提是从任务进行启动）更新任务状态（在本例中更新为“正在进行”）：
@@ -89,7 +91,7 @@ def execute(self, **kwargs):
 ```python
 def execute(self, **kwargs):
     """
-    The execute functon of the hook will be called to start the required application        
+    The execute functon of the hook will be called to start the required application
     """
 
     # If there is a Task in the context, set its status to 'ip'
@@ -101,6 +103,7 @@ def execute(self, **kwargs):
         }
         self.parent.shotgun.update("Task", task_id, data)
 ```
+
 ---FOLD---
 
 您可以想象到，这其中有许多可能性，而启动器应用的目的在于提供工作流所需的灵活性。
@@ -166,7 +169,7 @@ Photoshop 引导时，会发生以下情况：
 
 #### 额外配置
 
-如果您想使用此应用启动 Photoshop，需要在“extra”__部分提供四个配置值。下面是需要根据您的系统和安装位置做出调整的配置和合理的默认值：
+如果您想使用此应用启动 Photoshop，需要在“extra”\_\_部分提供四个配置值。下面是需要根据您的系统和安装位置做出调整的配置和合理的默认值：
 
 ```yaml
 mac_python_path: "/usr/bin/python"

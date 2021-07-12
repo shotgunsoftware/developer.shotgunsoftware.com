@@ -9,13 +9,13 @@ lang: ja
 
 ブラウザの統合を無効にするには、次の簡単な 2 つの手順を実行します。
 
-1. 次のテキスト ファイルを作成または開く
+1.  次のテキスト ファイルを作成または開く
 
         Windows: %APPDATA%\{% include product %}\preferences\toolkit.ini
         Macosx: ~/Library/Preferences/{% include product %}/toolkit.ini
         Linux: ~/.{% include product %}/preferences/toolkit.ini
 
-2. 次のセクションを追加する
+2.  次のセクションを追加する
 
         [BrowserIntegration]
         enabled=0

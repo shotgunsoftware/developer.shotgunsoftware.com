@@ -21,9 +21,9 @@ lang: ko
 
 ### 이 안내서는 다음과 같이 세 부분으로 구성됩니다.
 
-* {% include product %}에서 "Set"라는 **커스텀 엔티티** 만들기. 아티스트가 만드는 다이닝룸 요소와 연결하는 데 사용됩니다.
-* **스키마** 폴더 편집. 툴킷이 폴더 구조에서 현재 세트를 기반으로 동적으로 이름이 지정된 폴더를 포함할 수 있게 합니다.
-* 에셋 작업 파일 이름 지정에 사용되는 **템플릿** 편집. 툴킷이 파일 이름에 연관된 세트 이름을 포함할 수 있게 합니다.
+- {% include product %}에서 "Set"라는 **커스텀 엔티티** 만들기. 아티스트가 만드는 다이닝룸 요소와 연결하는 데 사용됩니다.
+- **스키마** 폴더 편집. 툴킷이 폴더 구조에서 현재 세트를 기반으로 동적으로 이름이 지정된 폴더를 포함할 수 있게 합니다.
+- 에셋 작업 파일 이름 지정에 사용되는 **템플릿** 편집. 툴킷이 파일 이름에 연관된 세트 이름을 포함할 수 있게 합니다.
 
 ### 필수 요건
 
@@ -166,7 +166,6 @@ Set 엔티티는 `CustomEntity01`로 표시됩니다. {% include product %}에�
 
 ![Python 앱](./images/dynamic_filesystem_configuration/16_custom_entity_folder.png)
 
-
 **9단계:** 다음 내용으로 `CustomEntity01` 폴더 옆에 `CustomEntity01.yml` 파일을 만듭니다.
 
 ```yaml
@@ -177,7 +176,7 @@ name: "code"
 entity_type: "CustomEntity01"
 
 filters:
-    - { "path": "project", "relation": "is", "values": [ "$project" ] }
+  - { "path": "project", "relation": "is", "values": ["$project"] }
 ```
 
 YAML 파일은 툴킷에서 `CustomEntity01` 폴더 이름을 무엇으로 지정할지에 대한 지침을 제공합니다. 여기서는 유형이 `{% include product %}_entity`인 폴더를 만들고 있으며 이는 {% include product %} 쿼리에 해당함을 의미합니다. `entity_type` 필드는 {% include product %}에서 `CustomEntity01` 엔티티를 쿼리함을 나타내고 `name` 필드는 쿼리할 엔티티에 대한 *필드*를 나타내며 여기서는 `CustomEntity01`에서 `code` 필드를 가져옵니다.
@@ -196,8 +195,8 @@ YAML 파일은 툴킷에서 `CustomEntity01` 폴더 이름을 무엇으로 지�
 
 ```yaml
 filters:
-    - { "path": "project", "relation": "is", "values": [ "$project" ] }
-    - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
+  - { "path": "project", "relation": "is", "values": ["$project"] }
+  - { "path": "sg_asset_type", "relation": "is", "values": ["$asset_type"] }
 ```
 
 에셋에 대한 폴더를 만들기로 결정할 때 올바른 프로젝트 폴더에 있는지 올바른 asset_type 폴더에 있는지 확인하고 싶습니다. 이제 세트 폴더를 추가했으며 세 번째 필터를 추가하려고 합니다. 이 작업을 하지 않고 다음과 같은 폴더로 끝내면 잘못됩니다.
@@ -207,17 +206,17 @@ assets/Dining-Room/Prop/spoon
 assets/Garage/Prop/spoon
 assets/Classroom/Prop/spoon
 ```
+
 그렇게 되지 않도록 세 번째 필터를 추가하면 에셋의 폴더가 올바른 세트의 폴더에만 생성됩니다.
 
 **11단계:** `asset.yml`에서 `filters` 필드를 다음과 같이 수정합니다.
 
 ```yaml
 filters:
-    - { "path": "project", "relation": "is", "values": [ "$project" ] }
-    - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
-    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity04" ] }
+  - { "path": "project", "relation": "is", "values": ["$project"] }
+  - { "path": "sg_asset_type", "relation": "is", "values": ["$asset_type"] }
+  - { "path": "sg_set", "relation": "is", "values": ["$CustomEntity04"] }
 ```
-
 
 ## 폴더 생성 테스트
 
@@ -225,10 +224,10 @@ filters:
 
 폴더는 툴킷 파이프라인 워크플로우의 몇 지점에서 생성됩니다.
 
-* **응용프로그램 시작 관리자**: 사용자가 태스크에 대한 DCC를 시작할 때마다 툴킷은 해당 태스크에 대한 디렉토리를 만듭니다(아직 없는 경우). 툴킷을 사용하여 수행하는 첫 번째 작업이 보통 DCC를 시작하는 것이기 때문에 이 방법이 디렉토리를 생성하는 가장 일반적인 방법입니다. 이 작업은 {% include product %} 또는 {% include product %} 데스크톱이나 Create 앱에서 마우스 오른쪽 버튼 클릭 메뉴를 통해 수행할 수 있습니다.
-* **{% include product %} 메뉴**: 태스크에 대해 폴더를 만드는 가장 직접적인 방법은 {% include product %}에서 태스크를 마우스 오른쪽 버튼으로 클릭하고 "폴더 만들기"(Create Folders) 메뉴 항목을 선택하는 것입니다.
-* **툴킷 API**: 툴킷 API를 통해 직접 디렉토리 생성 로직을 트리거할 수 있습니다. 툴킷 API는 커스텀 시작 관리자에 툴킷을 연결하거나, {% include product %}에서 샷이 생성될 때 샷에 대한 디렉토리를 자동으로 만들려는 워크플로우의 이벤트 트리거 등에 사용할 수 있습니다.
-* **tank 명령**: {% include product %}의 메뉴 항목과 유사하며 `tank folders` 터미널 명령도 태스크에 대한 폴더를 만듭니다.
+- **응용프로그램 시작 관리자**: 사용자가 태스크에 대한 DCC를 시작할 때마다 툴킷은 해당 태스크에 대한 디렉토리를 만듭니다(아직 없는 경우). 툴킷을 사용하여 수행하는 첫 번째 작업이 보통 DCC를 시작하는 것이기 때문에 이 방법이 디렉토리를 생성하는 가장 일반적인 방법입니다. 이 작업은 {% include product %} 또는 {% include product %} 데스크톱이나 Create 앱에서 마우스 오른쪽 버튼 클릭 메뉴를 통해 수행할 수 있습니다.
+- **{% include product %} 메뉴**: 태스크에 대해 폴더를 만드는 가장 직접적인 방법은 {% include product %}에서 태스크를 마우스 오른쪽 버튼으로 클릭하고 "폴더 만들기"(Create Folders) 메뉴 항목을 선택하는 것입니다.
+- **툴킷 API**: 툴킷 API를 통해 직접 디렉토리 생성 로직을 트리거할 수 있습니다. 툴킷 API는 커스텀 시작 관리자에 툴킷을 연결하거나, {% include product %}에서 샷이 생성될 때 샷에 대한 디렉토리를 자동으로 만들려는 워크플로우의 이벤트 트리거 등에 사용할 수 있습니다.
+- **tank 명령**: {% include product %}의 메뉴 항목과 유사하며 `tank folders` 터미널 명령도 태스크에 대한 폴더를 만듭니다.
 
 `tank` 명령을 사용하여 테스트하겠습니다.
 
@@ -265,7 +264,6 @@ In total, 23 folders were processed.
 
 `/the_other_side/assets/Dining-Room/Prop/Filet/model`
 
-
 ![Python 앱](./images/dynamic_filesystem_configuration/folders_done.png)
 
 ### 파일을 읽고 쓰기 위한 툴킷 템플릿
@@ -286,9 +284,9 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 
 이 파일은 다음 세 개의 섹션으로 나뉩니다.
 
-* **키:** 템플릿 작성에 사용할 토큰 세트입니다(예: `{version}`, `{Asset}`, 등). 템플릿이 실제로 사용될 때 실제 값으로 대체됩니다. 각 키에는 필요한 이름과 유형 및 기타 선택적 매개변수가 있습니다.
-* **경로:** 키를 사용하여 디스크의 폴더 및 파일에 대한 경로를 나타내는 명명된 문자열입니다. `paths` 섹션의 템플릿은 유효성이 검사되고 디스크에 실제로 존재해야 합니다.
-* **문자열:** 경로 섹션과 유사하지만 임의 텍스트에 대한 템플릿입니다. 경로 섹션의 항목은 유효성이 검사되고 디스크의 실제 경로와 일치해야 하며 문자열은 툴킷 워크플로우에서 참조하려는 텍스트 데이터를 저장하는 데 사용할 수 있습니다.
+- **키:** 템플릿 작성에 사용할 토큰 세트입니다(예: `{version}`, `{Asset}`, 등). 템플릿이 실제로 사용될 때 실제 값으로 대체됩니다. 각 키에는 필요한 이름과 유형 및 기타 선택적 매개변수가 있습니다.
+- **경로:** 키를 사용하여 디스크의 폴더 및 파일에 대한 경로를 나타내는 명명된 문자열입니다. `paths` 섹션의 템플릿은 유효성이 검사되고 디스크에 실제로 존재해야 합니다.
+- **문자열:** 경로 섹션과 유사하지만 임의 텍스트에 대한 템플릿입니다. 경로 섹션의 항목은 유효성이 검사되고 디스크의 실제 경로와 일치해야 하며 문자열은 툴킷 워크플로우에서 참조하려는 텍스트 데이터를 저장하는 데 사용할 수 있습니다.
 
 ### Set 엔티티에 대한 템플릿 키 추가
 
@@ -297,8 +295,8 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 **14단계:** 들여쓰기에 유의하여 `templates.yml`의 `keys` 섹션에 다음 줄을 추가합니다.
 
 ```yaml
-       CustomEntity01:
-           type: str
+CustomEntity01:
+  type: str
 ```
 
 ### 템플릿 수정
@@ -312,8 +310,8 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 **15단계:** `templates.yml`을 열고 `maya_asset_work`를 찾습니다.
 
 ```yaml
-   maya_asset_work:
-        definition: '@asset_root/work/maya/{name}.v{version}.{maya_extension}'
+maya_asset_work:
+  definition: "@asset_root/work/maya/{name}.v{version}.{maya_extension}"
 ```
 
 `maya_asset_work`의 `definition` 값은 `@asset_root`로 시작합니다. `@` 기호는 `@asset_root` 값이 다른 곳에서 정의된 것임을 나타냅니다.
@@ -347,8 +345,8 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 **17단계:** `maya_asset_work` 템플릿 정의를 다음과 같이 수정합니다.
 
 ```yaml
-    maya_asset_work:
-        definition: '@asset_root/work/maya/{CustomEntity01}_{Asset}.v{version}.{maya_extension}'
+maya_asset_work:
+  definition: "@asset_root/work/maya/{CustomEntity01}_{Asset}.v{version}.{maya_extension}"
 ```
 
 이 액션을 통해 파일 이름에 Dining-Room 엔티티의 적절한 이름을 사용할 수 있습니다. 결과는 `Dining-Room_Filet.v1.mb`와 같이 지정됩니다.
@@ -381,15 +379,13 @@ Maya에서 **{% include product %} > 파일 열기(File Open)**로 이동하여 
 
 ### 예제 확장
 
-이 예제에서는 단일 템플릿을 수정했지만 파일 시스템 구성을 사용하여 수행할 수 있는 작업은 훨씬 많습니다. 실제 사례에서는 동일한 파일 명명 규칙을 갖도록 *모든* 에셋 관련 파일을 변경합니다. 다른 엔티티(시즌, 에피소드, 레벨 등)를 기반으로 수정하고, 사용자 폴더를 만들고, 정규 표현식으로 조작된 {% include product %} 데이터를 기반으로 폴더 이름을 지정하는 등 많은 작업을 수행할 수 있습니다. 툴킷의 모든 폴더 및 스키마 옵션에 대한 자세한 내용은 [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868)를 참조하십시오.
+이 예제에서는 단일 템플릿을 수정했지만 파일 시스템 구성을 사용하여 수행할 수 있는 작업은 훨씬 많습니다. 실제 사례에서는 동일한 파일 명명 규칙을 갖도록 _모든_ 에셋 관련 파일을 변경합니다. 다른 엔티티(시즌, 에피소드, 레벨 등)를 기반으로 수정하고, 사용자 폴더를 만들고, 정규 표현식으로 조작된 {% include product %} 데이터를 기반으로 폴더 이름을 지정하는 등 많은 작업을 수행할 수 있습니다. 툴킷의 모든 폴더 및 스키마 옵션에 대한 자세한 내용은 [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868)를 참조하십시오.
 
 ### 경로 캐시
 
 폴더가 생성될 때 디스크의 폴더와 {% include product %} 엔티티 간에 매핑이 만들어집니다. 이러한 매핑은 {% include product %}에 FilesystemLocation 엔티티로 저장되고 사용자 컴퓨터의 SQLite 데이터베이스에서 캐시됩니다. 경로 캐시 작동 방식과 이를 사용한 작업 방법에 대한 자세한 내용은 [이 문서](../../../quick-answers/administering/what-is-path-cache.md)를 참조하십시오.
 
-
 ### 추가 리소스
 
-* [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868)
-* [툴킷 구성 소개 웨비나 동영상](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)
-
+- [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868)
+- [툴킷 구성 소개 웨비나 동영상](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)

@@ -39,7 +39,6 @@ Submit 버튼을 클릭하면 다음과 같이 여러 작업이 즉시 수행됩
 
 - Quicktime이 생성되고 리뷰를 위해 {% include product %}에 업로드됩니다.
 
-
 ## Review로 배치(Batch) 렌더 보내기
 
 샷에 대한 Flame 배치(Batch) 파일을 게시하면 해당 샷에서 직접 Flare를 시작하여 렌더 및 출력 설정이 미리 입력된 상태로 배치(Batch) 파일을 열 수 있습니다. 새 버전을 렌더링하려면 Render Range 버튼을 클릭하기만 하면 됩니다.
@@ -66,11 +65,12 @@ LINKBOX_ENGINE:{% include product %}software/tk-flame: Flame 엔진
 
 ## 내보내기 사전 설정 사용
 
-내보내기는 해당 구성의 *내보내기 사전 설정* 개요를 사용합니다. Flame 내에서 내보내기 UI를 시작하면 사용 가능한 내보내기 사전 설정이 있는 드롭다운이 표시됩니다. 각 사전 설정은 파일을 디스크에 기록하고 {% include product %}에 업로드하는 방법을 구성할 수 있는 구성 옵션입니다. 디스크의 파일 위치와 같은 높은 수준의 설정은 환경 구성에서 직접 제어되므로 파이프라인에서 작동하도록 기본 구성 옵션을 쉽게 조정할 수 있습니다.
+내보내기는 해당 구성의 _내보내기 사전 설정_ 개요를 사용합니다. Flame 내에서 내보내기 UI를 시작하면 사용 가능한 내보내기 사전 설정이 있는 드롭다운이 표시됩니다. 각 사전 설정은 파일을 디스크에 기록하고 {% include product %}에 업로드하는 방법을 구성할 수 있는 구성 옵션입니다. 디스크의 파일 위치와 같은 높은 수준의 설정은 환경 구성에서 직접 제어되므로 파이프라인에서 작동하도록 기본 구성 옵션을 쉽게 조정할 수 있습니다.
 
 Flame을 제어하기 위해 Flame에 전달되는 실제 내보내기 xml 컨텐츠에 대한 고급 설정 및 제어는 각 사전 설정에 대해 동작이 정의된 후크에 의해 처리됩니다. 후크에서, 내보내기로 미디어를 생성하는 방법을 완벽하게 제어할 수 있습니다.
 
 ## {% include product %} 서버 측 트랜스코딩 건너뛰기
+
 기본적으로 Quicktime은 `Version.sg_uploaded_movie` 필드를 설정하는 방법으로 {% include product %} Review에 업로드됩니다. 그러면 {% include product %} 서버 측 트랜스코딩이 트리거되고 업로드된 Quicktime은 브라우저 및 모바일에서 재생하기에 적합한 `mp4` 및 `webm` 표현으로 변환됩니다. 경우에 따라 이 서버 측 트랜스코딩을 건너뛰는 것이 유익할 수 있습니다. `bypass_shotgun_transcoding` 구성 설정을 설정하면 건너뛸 수 있습니다. true로 설정하면 통합에서 {% include product %}의 `Version.sg_uploaded_movie_mp4` 필드로 직접 업로드하여 서버 측 트랜스코딩을 건너뜁니다. 이 경우 `webm` 버전이 생성되지 않으므로 Firefox에서 리뷰를 재생할 수 없습니다.
 
 자세한 정보는 https://support.shotgunsoftware.com/hc/ko/articles/219030418을 참조하십시오.
@@ -139,4 +139,3 @@ def get_ffmpeg_quicktime_encode_parameters(self):
 def get_local_quicktime_ffmpeg_encode_parameters(self):
     return "-vcodec libx264 -pix_fmt yuv420p -g 30 -b:v 6000k -vprofile high -bf 0"
 ```
-

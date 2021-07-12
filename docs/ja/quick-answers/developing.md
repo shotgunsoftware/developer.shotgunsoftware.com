@@ -5,8 +5,7 @@ pagename: quick-answers-developing
 lang: ja
 ---
 
-開発
-===
+# 開発
 
 Toolkit を使用した開発に基づくクイック アンサーのコレクションです。
 

@@ -11,7 +11,7 @@ lang: zh_CN
 
 {% include info title="注意" content="假设 Toolkit 当前在 Maya 会话中处于启用状态。此示例代码不会引导 Toolkit。" %}
 
-在 Maya 中打开脚本编辑器并粘贴以下 Python 代码： 
+在 Maya 中打开脚本编辑器并粘贴以下 Python 代码：
 
 ```python
 import maya.cmds as cmds

@@ -20,15 +20,15 @@ It's possible to start from the [Private S3 bucket AWS CloudFormation template](
 
 {% include info title="Disclaimer" content="This template is provided as an example only. It is your responsibility to validate that running the template will result in the [configuration/policy/security settings your studio requires](https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/)." %}
 
-  * Go the CloudFormation service in AWS Console
-  * Select Template is ready
-  * Set Amazon S3 URL to https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-s3-bucket.yml
-  * Next
-  * Set a stack name like {% include product %}-s3-bucket
-  * Set your S3 bucket name and your {% include product %} site name
-  * Next
-  * Accept `I acknowledge that AWS CloudFormation might create IAM resources`
-  * Next
+- Go the CloudFormation service in AWS Console
+- Select Template is ready
+- Set Amazon S3 URL to https://sg-shotgunsoftware.s3-us-west-2.amazonaws.com/tier1/cloudformation_templates/sg-private-s3-bucket.yml
+- Next
+- Set a stack name like {% include product %}-s3-bucket
+- Set your S3 bucket name and your {% include product %} site name
+- Next
+- Accept `I acknowledge that AWS CloudFormation might create IAM resources`
+- Next
 
 ### CORS Configuration
 
@@ -38,15 +38,16 @@ CORS policy on your S3 bucket will be minimally configured, allowing only the re
 
 The template will create an AWS Role with the following permissions on your bucket:
 
-* Allow {% include product %} to access your S3 bucket.
-* Allow the {% include product %} account to assume the role by setting the role Trust Relationship.
+- Allow {% include product %} to access your S3 bucket.
+- Allow the {% include product %} account to assume the role by setting the role Trust Relationship.
 
 ## Media Isolation Activation
 
 Please contact {% include product %} support via the dedicated Slack channel and provide the following information:
-  * S3 bucket name
-  * AWS Region
-  * {% include product %} Role ARN
+
+- S3 bucket name
+- AWS Region
+- {% include product %} Role ARN
 
 {% include product %} will configure your test site to use your own S3 bucket.
 
@@ -70,4 +71,3 @@ See [Web Traffic Isolation](./traffic_segregation.md) to activate the Web Traffi
 See [Media Replication](./s3_replication.md) to activate the Web Traffic Isolation feature.
 
 Go to [Setup](./setup.md) for an overview of the possible next steps.
-

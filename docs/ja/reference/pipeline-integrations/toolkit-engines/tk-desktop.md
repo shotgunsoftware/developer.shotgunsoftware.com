@@ -38,9 +38,8 @@ tk-desktop:
       location: ...
   location: ...
   run_at_startup:
-  - {app_instance: '', name: Apps}
-  - {app_instance: tk-multi-shotgunpanel, name: ''}
+    - { app_instance: "", name: Apps }
+    - { app_instance: tk-multi-shotgunpanel, name: "" }
 ```
 
 `Apps` エントリは特別であり、既定の `Apps` タブが表示される場所(タブの順序)をコントロールすることに注意してください。
-

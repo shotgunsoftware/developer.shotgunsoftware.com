@@ -16,7 +16,7 @@ When launching 3ds Max from {% include product %} Desktop or the {% include prod
     An Application has made an attempt to load the C runtime library incorrectly.
     Please contact the application's support team for more information.
 
-This is generally due to a version of `msvcr90.dll` in your path that conflicts with the version of Python that is bundled with 3ds Max. 
+This is generally due to a version of `msvcr90.dll` in your path that conflicts with the version of Python that is bundled with 3ds Max.
 
 ## Solution
 

@@ -45,6 +45,7 @@ ShotGrid이 이미 시작된 환경에서 코드를 실행하는 경우 다음�
 ```python
 import sgtk
 ```
+
 ShotGrid 통합 외부에서 API를 사용하려면(예: 즐겨 사용하는 IDE에서 테스트하는 경우) 먼저 API에 대한 경로를 설정해야 합니다.
 
 ```python
@@ -79,14 +80,14 @@ API 설명서에 언급된 것처럼 `Sgtk` 인스턴스를 직접 만들지는 
 
    [`Engine.sgtk`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) 특성을 통해 `Sgtk` 인스턴스에 액세스할 수 있습니다.
 
-   *참고: `Engine.sgtk` 특성을 1부에서 가져온 `sgtk` 패키지와 혼동하거나 동일하게 간주해서는 안 됩니다.*
+   _참고: `Engine.sgtk` 특성을 1부에서 가져온 `sgtk` 패키지와 혼동하거나 동일하게 간주해서는 안 됩니다._
 
 2. [`sgtk.sgtk_from_entity()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity) - 엔진이 아직 시작되지 않은 환경에서 실행 중인 경우 이 방식을 사용하여 엔티티 ID에 맞게 `Sgtk` 인스턴스를 가져올 수 있습니다.
    ID를 제공하는 엔티티는 `sgtk` API를 가져온 프로젝트에 속해야 합니다.
-   *이 방식은 분산 구성에서 작동하지 않습니다. 자세한 내용은 [부트스트랩 안내서](sgtk-developer-bootstrapping.md)를 참조하십시오.*
+   _이 방식은 분산 구성에서 작동하지 않습니다. 자세한 내용은 [부트스트랩 안내서](sgtk-developer-bootstrapping.md)를 참조하십시오._
 
 3. [`sgtk.sgtk_from_path()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path) - 구성 경로나 프로젝트 루트 폴더 내부 또는 이에 대한 경로(예: 작업 파일 또는 샷 폴더)를 허용하는 경우를 제외하고 `sgtk_from_entity()`와 비슷합니다.
-   *이 방식은 분산 구성에서 작동하지 않습니다. 자세한 내용은 [부트스트랩 안내서](sgtk-developer-bootstrapping.md)를 참조하십시오.*
+   _이 방식은 분산 구성에서 작동하지 않습니다. 자세한 내용은 [부트스트랩 안내서](sgtk-developer-bootstrapping.md)를 참조하십시오._
 
 이 안내서에서는 엔진이 이미 시작된 환경에서 이 코드를 실행한다고 가정하므로 옵션 1을 사용합니다.
 또한 `Sgtk` 클래스 인스턴스를 `tk`라는 변수에 저장합니다.
@@ -133,6 +134,7 @@ tk = current_engine.sgtk
 ```python
 context = current_engine.context
 ```
+
 이후 단계에서 샷의 태스크 파일 경로를 해석하는 데 컨텍스트를 사용하므로 관련 정보가 컨텍스트에 포함되어 있어야 합니다.
 
 코드가 툴킷 앱의 일부로 실행되고 앱이 shot_step 환경에서만 실행되도록 구성된 경우에는 적합한 현재 컨텍스트를 가져온다고 충분히 가정할 수 있습니다.
@@ -193,6 +195,7 @@ context = tk.context_from_entity("Task", 13155)
 ```python
 tk.create_filesystem_structure("Task", context.task["id"])
 ```
+
 컨텍스트 객체를 사용하여 태스크 ID를 가져와 폴더를 생성할 수 있습니다.
 
 이제 코드는 다음과 같아야 합니다.
@@ -235,7 +238,7 @@ template = tk.templates["maya_shot_publish"]
 [기본 구성](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.12/core/templates.yml#L305-L306)에서 해석되지 않은 템플릿 경로는 다음과 같습니다.
 
 ```yaml
-'sequences/{Sequence}/{Shot}/{Step}/work/maya/{name}.v{version}.{maya_extension}'
+"sequences/{Sequence}/{Shot}/{Step}/work/maya/{name}.v{version}.{maya_extension}"
 ```
 
 템플릿은 실제 값으로 해석되어야 하는 키로 구성됩니다.
@@ -246,6 +249,7 @@ fields = context.as_template_fields(template)
 
 >> {'Sequence': 'seq01_chase', 'Shot': 'shot01_running_away', 'Step': 'comp'}
 ```
+
 [`Context.as_template_fields()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Context.as_template_fields) 방식을 사용하면 템플릿 키를 올바르게 해석하기 위한 값을 포함하는 사전(dictionary)이 제공됩니다.
 그러나 모든 키에 대해 값이 제공되지는 않습니다. `name`, `version` 및 `maya_extension`은 여전히 누락된 상태입니다.
 
@@ -280,11 +284,11 @@ publish_path = template.apply_fields(fields)
 [`os`](https://docs.python.org/3/library/os.html) 모듈을 가져오고 [`os.path.dirname(publish_path)`](https://docs.python.org/3/library/os.path.html#os.path.dirname)를 실행하여 폴더의 전체 파일 경로를 추출할 수 있습니다.
 
 ### 경로를 사용하여 파일 생성 또는 복사
+
 이 시점에는 경로가 있으며, 이 경로를 사용하여 Maya에 파일을 저장하거나 다른 위치에서 파일을 복사하도록 지시할 수 있습니다.
 이 안내서에서는 해당 위치에서 디스크에 파일을 실제로 생성하는 동작을 구현하는 것은 중요하게 다루지 않습니다.
 해당 위치에 파일이 없더라도 경로를 게시할 수 있습니다.
 그러나 [`sgtk.util.filesystem.touch_file()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file)을 사용하여 툴킷이 디스크에 빈 파일을 생성하도록 할 수 있습니다.
-
 
 ### 최종 결과
 

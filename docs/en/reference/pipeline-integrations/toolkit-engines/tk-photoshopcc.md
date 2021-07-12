@@ -121,10 +121,10 @@ The **Favorites Shelf** can be configured to display any of the registered comma
 
 ```yaml
 shelf_favorites:
-    - {app_instance: tk-multi-workfiles2, name: File Save...}
-    - {app_instance: tk-multi-workfiles2, name: File Open...}
-    - {app_instance: tk-multi-publish, name: Publish...}
-    - {app_instance: tk-multi-snapshot, name: Snapshot...}
+  - { app_instance: tk-multi-workfiles2, name: File Save... }
+  - { app_instance: tk-multi-workfiles2, name: File Open... }
+  - { app_instance: tk-multi-publish, name: Publish... }
+  - { app_instance: tk-multi-snapshot, name: Snapshot... }
 ```
 
 The value of the setting is a list of dictionaries identifying a registered command provided by one of the installed apps in the configuration. The `app_instance` key identifies a particular installed app and the `name` key matches the command's display name registered by that app. In the example above, you can see four favorited commands: the file open and save dialogs from the `tk-multi-workfiles2` app as well as the standard Toolkit publish and snapshot dialogs. These four commands will now show in the favorites shelf.
@@ -148,6 +148,7 @@ The engine exposes the Javascript API for Photoshop CC to Python. The full docs 
 The Photoshop API object is exposed as `engine.adobe`. The examples below show how it is possible to directly manipulate the Photoshop DOM from within Toolkit apps and hooks. The standard Toolkit apps also contain working examples of how to interact with Photoshop documents.
 
 #### Examples
+
 Load a file:
 
 ```python
@@ -216,5 +217,5 @@ Note: Additional environment variables exist in the Adobe Framework. For details
 
 ### App Developer notes
 
-* Because the python process is separate from the Photoshop CC process, there is some work done within the engine to try to make the app windows show above the Photoshop window in as clean a manner as possible. One gotcha with this setup is the default option to use native OS windows for `QFileDialog`. If you are developing an app for use with this engine, be sure
-to set the option to not use the native dialog. [See an example of this in the tk-multi-pythonconsole app](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218).
+- Because the python process is separate from the Photoshop CC process, there is some work done within the engine to try to make the app windows show above the Photoshop window in as clean a manner as possible. One gotcha with this setup is the default option to use native OS windows for `QFileDialog`. If you are developing an app for use with this engine, be sure
+  to set the option to not use the native dialog. [See an example of this in the tk-multi-pythonconsole app](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218).

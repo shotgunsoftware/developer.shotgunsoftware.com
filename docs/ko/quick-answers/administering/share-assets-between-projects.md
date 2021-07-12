@@ -18,7 +18,7 @@ caption: Asset Library
 hierarchy: [project, sg_asset_type, code]
 entity_type: Asset
 filters:
-- [project, is, {'type': 'Project', 'id': 207}]
+  - [project, is, { "type": "Project", "id": 207 }]
 ```
 
 `207`을 라이브러리 프로젝트의 ID로 바꿉니다.

@@ -16,7 +16,7 @@ lang: ko
     An Application has made an attempt to load the C runtime library incorrectly.
     Please contact the application's support team for more information.
 
-이는 보통 경로의 `msvcr90.dll` 버전이 3ds Max와 번들로 제공되는 Python 버전과 충돌하기 때문입니다. 
+이는 보통 경로의 `msvcr90.dll` 버전이 3ds Max와 번들로 제공되는 Python 버전과 충돌하기 때문입니다.
 
 ## 솔루션
 

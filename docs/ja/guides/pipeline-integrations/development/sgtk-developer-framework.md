@@ -8,9 +8,11 @@ lang: ja
 # 独自のフレームワークを開発する
 
 ## はじめに
+
 このドキュメントでは、Toolkit のフレームワークの開発に関するいくつかの技術的詳細について簡単に説明します。
 
 目次:
+
 - [Toolkit のフレームワークとは何か?](#what-is-a-toolkit-framework)
 - [既製の ShotGrid フレームワーク](#pre-made-shotgun-frameworks)
 - [フレームワークを作成する](#creating-a-framework)
@@ -35,4 +37,5 @@ ShotGrid には、独自のアプリを作成するときに役立つことが�
 API ドキュメントには、[フレームワークの読み込み](https://developer.shotgridsoftware.com/tk-core/platform.html?highlight=hide_tk_title_bar#frameworks)方法の例が示されています。
 
 ## フックからフレームワークを使用する
+
 これは、フック間で共通のロジックをいくつか共有できるようにするためのフレームワークを作成する場合に便利です。アプリ/フレームワークがマニフェスト ファイル内で明示的に要求していない場合でも、[`Hook.load_framework()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Hook.load_framework) メソッドを介して、アプリやその他のフレームワークのフックでフレームを使用することができます。このメソッドを使用しても、コア フック内でフレームワークを使用することはできません。

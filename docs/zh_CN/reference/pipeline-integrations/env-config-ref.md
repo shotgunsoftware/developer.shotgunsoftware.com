@@ -9,7 +9,7 @@ lang: zh_CN
 
 ## 简介
 
-Toolkit 工作流的核心是环境配置。在 Toolkit 工作流配置中，环境配置文件用于定义在不同的 DCC 中哪些 Toolkit 应用可用，以及为每个应用自定义相应设置。本文档提供了有关环境配置文件的结构和功能的完整参考，并涵盖了用于在一个项目中配置不同工作流的 Toolkit 环境**概念、配置结构、文件引用以及可用自定义项确定方式。
+Toolkit 工作流的核心是环境配置。在 Toolkit 工作流配置中，环境配置文件用于定义在不同的 DCC 中哪些 Toolkit 应用可用，以及为每个应用自定义相应设置。本文档提供了有关环境配置文件的结构和功能的完整参考，并涵盖了用于在一个项目中配置不同工作流的 Toolkit 环境\*\*概念、配置结构、文件引用以及可用自定义项确定方式。
 
 {% include info title="注意" content="本文档提供了有关环境配置文件的参考，而[有关“编辑工作流配置”的 Toolkit 基础知识手册](./learning-resources/guides/editing_app_setting.md)提供了有关编辑配置设置的分步示例。" %}
 
@@ -71,7 +71,7 @@ bundle_name:
   setting1: value
   setting2: value
   complex_setting:
-    sub_setting1: value  
+    sub_setting1: value
     Sub_setting2: value
   location:
     type: descriptor_type
@@ -91,9 +91,9 @@ engines:
           name: tk-multi-workfiles2
           version: v0.11.8
     location:
-        type: app_store
-        name: tk-maya
-        version: v0.9.4
+      type: app_store
+      name: tk-maya
+      version: v0.9.4
 ```
 
 ### 插件块
@@ -104,16 +104,15 @@ engines:
 
 `location` 是每个包都需要的特殊设置。`apps` 设置是为插件定义的所有应用列表，每个应用都有自己的设置。在此示例中，只为插件定义了一个应用：`tk-multi-workfiles2`。
 
-
 ### 位置描述符
 
-每个 Toolkit 包都有一个 `location` 设置，我们将其称为包的描述符**。描述符告知 Toolkit 在何处查找给定包，以及根据其类型，是直接访问它还是在本地缓存它。Toolkit 包可以来自多个位置，例如，{% include product %} App Store、git 库、磁盘上的路径或上传到 {% include product %} 站点的 zip 文件。其中每个位置都有一个对应的描述符类型，相应类型具有特定设置。下面是上述示例中 `tk-maya` 插件的描述符：
+每个 Toolkit 包都有一个 `location` 设置，我们将其称为包的描述符\*\*。描述符告知 Toolkit 在何处查找给定包，以及根据其类型，是直接访问它还是在本地缓存它。Toolkit 包可以来自多个位置，例如，{% include product %} App Store、git 库、磁盘上的路径或上传到 {% include product %} 站点的 zip 文件。其中每个位置都有一个对应的描述符类型，相应类型具有特定设置。下面是上述示例中 `tk-maya` 插件的描述符：
 
 ```yaml
-    location:
-        type: app_store
-        name: tk-maya
-        version: v0.9.4
+location:
+  type: app_store
+  name: tk-maya
+  version: v0.9.4
 ```
 
 这是类型为 `app_store` 的描 符，此描述符告知 Toolkit 从 {% include product %} App Store 获取给定包。类型为 `app_store` 的描述符具有设置 `name` 和 `version`。
@@ -121,9 +120,9 @@ engines:
 相反，如果您正在开发自定义包 - 即您正在为工作室中的一个特定工作流编写一个 Toolkit 应用，您可能希望直接从磁盘上的路径获取它。在此示例中，将使用类型为 `dev` 的描述符，它可能如下所示：
 
 ```yaml
-    location:
-        type: dev
-        path: /path/to/app
+location:
+  type: dev
+  path: /path/to/app
 ```
 
 `dev` 描述符的设置与 `app_store` 描述符的设置不同。虽然它可以采用其他设置，但可以直接为其设置指向应用所在磁盘位置的 `path` 设置。
@@ -171,27 +170,27 @@ engines:
           name: tk-multi-workfiles2
           version: v0.11.8
     location:
-        type: app_store
-        name: tk-maya
-        version: v0.9.4
+      type: app_store
+      name: tk-maya
+      version: v0.9.4
 ```
 
 现在要注意几个重要事项：
 
-* 默认配置按字母顺序列出包，此示例遵循此惯例。
-* 文件会开始变长，即使尚未添加任何配置设置也是如此。
-* 您可以设想将在其他插件和其他环境中使用这些应用。例如，您可能将在不同的插件（如 Houdini、Nuke 或 Photoshop）和不同的环境（如 `asset_step` 或 `shot_step`）中使用所有这三个应用（Panel、About 应用以及 Workfiles 应用）。在配置中的多个位置定义常用应用设置，这意味着进行更改时，必须在多个位置进行修改。
+- 默认配置按字母顺序列出包，此示例遵循此惯例。
+- 文件会开始变长，即使尚未添加任何配置设置也是如此。
+- 您可以设想将在其他插件和其他环境中使用这些应用。例如，您可能将在不同的插件（如 Houdini、Nuke 或 Photoshop）和不同的环境（如 `asset_step` 或 `shot_step`）中使用所有这三个应用（Panel、About 应用以及 Workfiles 应用）。在配置中的多个位置定义常用应用设置，这意味着进行更改时，必须在多个位置进行修改。
 
-为了解决最后两个问题，Toolkit 支持 includes**。
+为了解决最后两个问题，Toolkit 支持 includes\*\*。
 
 ### includes
 
-通过 *includes*，可以在配置中的一个文件中引用其他文件的一部分。通过使用 includes，可以在一个位置设置一个配置设置，但在多个环境中使用它。
+通过 _includes_，可以在配置中的一个文件中引用其他文件的一部分。通过使用 includes，可以在一个位置设置一个配置设置，但在多个环境中使用它。
 
 includes 包括两个部分：
 
-* `includes` 列表：YAML 词典，其键为 `includes`，其值为我们要从其包含的所有文件列表。
-* 配置设置中的引用，带有 `@` 符号前缀，并命名为指向要从包含的文件引用的部分的名称。
+- `includes` 列表：YAML 词典，其键为 `includes`，其值为我们要从其包含的所有文件列表。
+- 配置设置中的引用，带有 `@` 符号前缀，并命名为指向要从包含的文件引用的部分的名称。
 
 为了充实上述示例，可以使用一个文件存放所有插件的位置描述符。我们将该文件放在 `includes` 子文件夹中，并将其命名为 `engine_locations.yml`。
 
@@ -209,8 +208,6 @@ engines.tk-nuke.location:
   type: app_store
   name: tk-nuke
   version: v0.11.5
-
-...
 ```
 
 此文件可以用作所有插件位置的单个源，而且所有环境配置都可以引用它。使用此包含文件后，我们的示例现在如下所示：
@@ -269,7 +266,6 @@ apps.tk-multi-workfiles2.location:
   version: v0.11.8
 ```
 
-
 `config/env/project.yml`:
 
 ```yaml
@@ -293,10 +289,9 @@ engines:
 
 {% include info title="注意" content="默认配置使用一个第二层嵌套（未在此处说明）。还具有描述符以外的设置的每个应用或插件在 `includes/settings` 中都有一个设置文件（如 `includes/settings/tk-maya.yml` 和 `includes/settings/tk-multi-workfiles2.yml`）。插件设置文件包含应用设置文件中的应用设置，环境配置文件包含插件设置文件中的插件设置。有关默认配置结构的详细信息，请参见[其自述文件](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)。有关修改配置设置的详细介绍，请参见[有关“编辑配置设置”的 Toolkit 基础知识手册](./learning-resources/guides/editing_app_setting.md)。" %}
 
-
 ## 稀疏配置
 
-每个 Toolkit 包都有一组可用的配置设置，每个设置都有默认值。Toolkit 允许使用稀疏**配置：如果未在环境配置文件（和/或其包含的文件）中明确指定配置设置，则将使用包中的默认值。
+每个 Toolkit 包都有一组可用的配置设置，每个设置都有默认值。Toolkit 允许使用稀疏\*\*配置：如果未在环境配置文件（和/或其包含的文件）中明确指定配置设置，则将使用包中的默认值。
 
 在我们的示例中，除了 `location` 外，我们没有为应用指定任何设置。因此，在配置的当前状态中，三个应用的所有设置都将使用默认值。那么，我们如何知道哪些配置设置可用？
 
@@ -306,8 +301,8 @@ engines:
 
 使用稀疏配置时，难以直接通过查看配置文件确定哪些配置设置可用于应用。要确定应用有哪些配置设置可用，可以采用两种方式：
 
-* **应用文档：**每个应用都有其自己的文档页面，每个页面都有“配置选项”部分。此部分列出相应应用的所有可用配置设置，每个设置都有说明和默认值。例如，您可以[查看 Workfiles 文档页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)。[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)列出了所有应用和插件的文档页面。
-* **清单文件：**每个 Toolkit 包的根目录中都包含一个名为 `info.yml` 的文件。我们将此文件称为包的清单文件**，此文件定义相应包的所有可用配置设置，每个设置都有说明和默认值。您可以在自己的包缓存中查找清单文件（例如工作流配置中的 `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml`），也可以在 Github 中查找清单文件（[例如，此处是 Workfiles 的清单文件](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml)）。
+- **应用文档：**每个应用都有其自己的文档页面，每个页面都有“配置选项”部分。此部分列出相应应用的所有可用配置设置，每个设置都有说明和默认值。例如，您可以[查看 Workfiles 文档页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)。[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)列出了所有应用和插件的文档页面。
+- **清单文件：**每个 Toolkit 包的根目录中都包含一个名为 `info.yml` 的文件。我们将此文件称为包的清单文件\*\*，此文件定义相应包的所有可用配置设置，每个设置都有说明和默认值。您可以在自己的包缓存中查找清单文件（例如工作流配置中的 `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml`），也可以在 Github 中查找清单文件（[例如，此处是 Workfiles 的清单文件](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml)）。
 
 ## 修改配置设置
 
@@ -337,13 +332,12 @@ engines:
 
 请注意，如果 `tk-multi-workfiles2` 的设置来自一个包含的文件，我们将在该文件中进行此更改。
 
-
 ## 其他资源
 
-* [Toolkit 基础知识手册：编辑工作流配置](./learning-resources/guides/editing_app_setting.md)
-* [Toolkit 基础知识手册：添加应用](./learning-resources/guides/installing_app.md)
-* [动画工作流教程](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
-* [描述符参考文档](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
-* [网络讲座：Toolkit 管理](https://youtu.be/7qZfy7KXXX0)
-* [文件系统配置参考](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868)
-* [默认配置环境结构自述文件](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)
+- [Toolkit 基础知识手册：编辑工作流配置](./learning-resources/guides/editing_app_setting.md)
+- [Toolkit 基础知识手册：添加应用](./learning-resources/guides/installing_app.md)
+- [动画工作流教程](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
+- [描述符参考文档](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
+- [网络讲座：Toolkit 管理](https://youtu.be/7qZfy7KXXX0)
+- [文件系统配置参考](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868)
+- [默认配置环境结构自述文件](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

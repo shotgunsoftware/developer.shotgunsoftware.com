@@ -9,13 +9,13 @@ lang: ko
 
 브라우저 통합을 비활성화하려면 다음의 간단한 두 단계를 수행하십시오.
 
-1. 다음 위치에서 텍스트 파일을 생성하거나 엽니다.
+1.  다음 위치에서 텍스트 파일을 생성하거나 엽니다.
 
         Windows: %APPDATA%\{% include product %}\preferences\toolkit.ini
         Macosx: ~/Library/Preferences/{% include product %}/toolkit.ini
         Linux: ~/.{% include product %}/preferences/toolkit.ini
 
-2. 다음 섹션을 추가합니다.
+2.  다음 섹션을 추가합니다.
 
         [BrowserIntegration]
         enabled=0

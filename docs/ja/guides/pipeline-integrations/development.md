@@ -22,6 +22,7 @@ Toolkit を使用して開発する場合は、複数の方法を使用できま
 これらのいずれかの操作を行うには、Toolkit API の使用方法を理解することが重要です。
 
 ShotGrid 全体には、3 つの主な API があります
+
 - [ShotGrid Python API](https://developer.shotgridsoftware.com/python-api)
 - [ShotGrid REST API](https://developer.shotgridsoftware.com/rest-api/)
 - [ShotGrid Toolkit API](https://developer.shotgridsoftware.com/tk-core)

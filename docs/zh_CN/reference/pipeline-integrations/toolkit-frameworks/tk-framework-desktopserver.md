@@ -45,7 +45,6 @@ lang: zh_CN
 ![](images/windows_warning_1.jpg)
 ![](images/windows_warning_2.jpg)
 
-
 使用 {% include product %} Desktop 时，生成的证书存储在以下位置：
 
 **OS X**：~/Library/Caches/Shotgun/desktop/config/certificates<br/>
@@ -57,7 +56,7 @@ lang: zh_CN
 默认情况下，Websocket 服务器设置为在端口 9000 上侦听托管的 {% include product %} 站点。
 如果您运行的是本地 {% include product %} 服务器，需要更新 {% include product %} 服务器的配置，以便可以从您的 Websocket 服务器进行连接。
 
-运行 {% include product %} Desktop 时，您需要设置一个 ```config.ini``` 文件，该文件与 {% include product %} 二进制文件位于同一个位置。有关此文件需要位于何处的详细说明，请参见[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040668#Advanced%20Installation%20Topics)。
+运行 {% include product %} Desktop 时，您需要设置一个 `config.ini` 文件，该文件与 {% include product %} 二进制文件位于同一个位置。有关此文件需要位于何处的详细说明，请参见[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040668#Advanced%20Installation%20Topics)。
 
 此文件内有一个部分用来控制 Websocket 服务器的功能。
 典型的配置如下所示：
@@ -72,9 +71,9 @@ whitelist=*.shotgunstudio.com
 
 ## 疑难解答
 
-在 Linux 平台上，该服务器增加了对 libffi 的依赖。  如果 Desktop 在启动时崩溃，并且日志中包含未找到 libffi 的消息，您需要安装此软件包。
+在 Linux 平台上，该服务器增加了对 libffi 的依赖。 如果 Desktop 在启动时崩溃，并且日志中包含未找到 libffi 的消息，您需要安装此软件包。
 
-如果您在设置过程中遇到任何问题或有任何疑问，请发送电子邮件至 support@shotgunsoftware.com。  如果运行服务器时遇到问题，请在 **config.ini** 文件中将 **debug** 设置为 **1**，并包含 Desktop 的日志文件。
+如果您在设置过程中遇到任何问题或有任何疑问，请发送电子邮件至 support@shotgunsoftware.com。 如果运行服务器时遇到问题，请在 **config.ini** 文件中将 **debug** 设置为 **1**，并包含 Desktop 的日志文件。
 
 日志文件可在以下位置找到：
 

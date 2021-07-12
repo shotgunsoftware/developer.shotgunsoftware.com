@@ -21,11 +21,11 @@ _本文档介绍仅当控制 Toolkit 配置时可用的功能。有关详细信�
 
 Toolkit 有三个主要组件：
 
-- __插件 - 在宿主应用程序（如 Maya 或 Nuke）与 Sgtk 应用之间提供转换层或适配器。应用通常使用 Python 和 PySide，而插件负责以标准化方式呈现宿主应用程序，例如如果 Pyside 尚不存在的话，会在宿主应用程序之上添加 Pyside。
-- __应用 - 提供一段业务逻辑，本质上是具有某种用途的工具。我们可以手动编写应用，让它们只在特定的宿主应用程序中工作，也可以将它们设计成可在多个宿主应用程序中运行。
-- __框架 - 一个可供插件、应用或其他框架使用的库。利用框架，可以更轻松地管理多个应用之间共享的代码或行为。
+- \_\_插件 - 在宿主应用程序（如 Maya 或 Nuke）与 Sgtk 应用之间提供转换层或适配器。应用通常使用 Python 和 PySide，而插件负责以标准化方式呈现宿主应用程序，例如如果 Pyside 尚不存在的话，会在宿主应用程序之上添加 Pyside。
+- \_\_应用 - 提供一段业务逻辑，本质上是具有某种用途的工具。我们可以手动编写应用，让它们只在特定的宿主应用程序中工作，也可以将它们设计成可在多个宿主应用程序中运行。
+- \_\_框架 - 一个可供插件、应用或其他框架使用的库。利用框架，可以更轻松地管理多个应用之间共享的代码或行为。
 
-__环境文件包含一套插件、应用和框架的配置设置。这样一套内容称为一个环境。Sgtk 会为不同文件或不同人员启动不同的环境。例如，您可以为镜头制作和装配分别准备一个环境。每个环境各有一个 yaml 文件。
+\_\_环境文件包含一套插件、应用和框架的配置设置。这样一套内容称为一个环境。Sgtk 会为不同文件或不同人员启动不同的环境。例如，您可以为镜头制作和装配分别准备一个环境。每个环境各有一个 yaml 文件。
 
 环境文件位于：`/<sgtk_root>/software/shotgun/<project_name>/config/env`
 
@@ -73,7 +73,7 @@ yaml 文件的基本格式如下：
 
 环境文件中定义的每个应用、插件或框架各有一个 `location` 参数，用来定义要运行哪个版本的应用以及从哪里下载它。大多数情况下，这是由 `tank updates` 和 `tank install` 命令自动处理的。但是，如果您是手动编辑配置，则可使用各种选项帮助您部署 Toolkit 和设置结构：
 
-Toolkit 目前支持使用以下位置描述符来安装和管理应用：__
+Toolkit 目前支持使用以下位置描述符来安装和管理应用：\_\_
 
 - **app_store** 描述符表示 Toolkit 应用商店中的内容
 - **{% include product %}** 描述符表示 {% include product %} 中存储的内容
@@ -90,13 +90,25 @@ Toolkit 目前支持使用以下位置描述符来安装和管理应用：__
 有时，临时禁用应用或插件可能会对您有所帮助。建议的做法是，向用来指定应用或插件加载位置的位置词典中添加一个 `disabled: true` 参数。各种位置类型都支持此语法。该语法的格式如下所示：
 
 ```yaml
-location: {"type": "app_store", "name": "tk-nukepublish", "version": "v0.5.0", "disabled": true}
+location:
+  {
+    "type": "app_store",
+    "name": "tk-nukepublish",
+    "version": "v0.5.0",
+    "disabled": true,
+  }
 ```
 
 另外，如果您想让应用只在某些平台上运行，可以使用特殊设置 `deny_platforms` 加以指定：
 
 ```yaml
-location: {"type": "app_store", "name": "tk-nukepublish", "version": "v0.5.0", "deny_platforms": [windows, linux]}
+location:
+  {
+    "type": "app_store",
+    "name": "tk-nukepublish",
+    "version": "v0.5.0",
+    "deny_platforms": [windows, linux],
+  }
 ```
 
 _deny_platforms_ 参数的值可以是 `windows`、`linux` 和 `mac`。

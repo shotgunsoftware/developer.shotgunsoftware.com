@@ -7,7 +7,7 @@ lang: en
 
 # How do I turn on debug logging?
 
-Sometimes you want to see more logging data than Toolkit tools output by default. You can enable **debug logging** to get more verbose log output, and there are a few methods to do so. 
+Sometimes you want to see more logging data than Toolkit tools output by default. You can enable **debug logging** to get more verbose log output, and there are a few methods to do so.
 
 {% include info title="Note" content="Not sure where to find your log files? Take a look at our [Where are my log files?](./where-are-my-log-files.md) doc." %}
 
@@ -22,6 +22,7 @@ It should also be noted that when this is toggled on, apps launched from {% incl
 ## Setting up an environment variable
 
 ### Permanently turning on debug logging
+
 First, you will need to set up a new environment variable: `TK_DEBUG=1`
 
 {% include info title="Note" content="We suggest discussing how to set up environment variables with a technical expert at your studio since instructions are platform specific. However, the example below includes setting up an environment variable on a Windows 7 machine." %}
@@ -31,7 +32,6 @@ First, you will need to set up a new environment variable: `TK_DEBUG=1`
 - You can permanently turn on debug logging by navigating to the **Windows icon > Control Panel > System > Advanced system settings > Environment Variables… > New…**
 
 ![Setting Windows environment variables](images/windows-setting-environment-variable.png)
-
 
 - **Variable name**: `TK_DEBUG`
 - **Variable value**: `1`
@@ -63,8 +63,6 @@ Then, launch the Desktop through your terminal.
 
 {% include info title="Note" content="Once you close ShotGrid Desktop and your terminal, debug logging is no longer turned on." %}
 
-
-
 ## Advanced configuration debug logging options
 
 If you are in an advanced setup, there are a few more options for you. This functionality is only available if you have taken control over a Toolkit configuration.
@@ -80,7 +78,7 @@ As an example, to turn on debugging output for the Nuke engine in the shot step 
 Edit `config/env/shot_step.yml`.
 
 ```yaml
-engines: 
+engines:
   ...
   ...
   tk-nuke:
@@ -95,7 +93,7 @@ engines:
    ...
 ```
 
-Save the file and relaunch Nuke in the shot step environment. You will now see the debug output in the script editor window. 
+Save the file and relaunch Nuke in the shot step environment. You will now see the debug output in the script editor window.
 
 {% include info title="Note" content="If debug logging is enabled via any one of the ShotGrid Desktop checkbox, environment variable, or engine configuration setting, debug logging will be output. Additionally, each of these three is modified independently of the others: the checkbox value a persistent app setting, totally independent of the engine setting or environment variable. This means that while the Desktop checkbox may be unchecked, debug logging might still be enabled by way of one of the other methods." %}
 
@@ -129,7 +127,7 @@ If you’re running the tank command and want to see debug output in your termin
     /sgtk/software/shotgun/scarlet
     DEBUG [10:11:38 620.270967484]: Location of this script (__file__):
     /sgtk/software/shotgun/scarlet/install/core/scripts/tank_cmd.py
-    
+
     Welcome to the Shotgun Pipeline Toolkit!
     For documentation, see https://toolkit.shotgunsoftware.com
     Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
@@ -144,27 +142,26 @@ If you’re running the tank command and want to see debug output in your termin
     DEBUG [10:11:39 129.276990891]: No need to load up the engine for this
     command.
     - Running command core...
-    
-    
+
+
     ----------------------------------------------------------------------
     Command: Core
     ----------------------------------------------------------------------
-    
-    
+
+
     Welcome to the {% include product %} Pipeline Toolkit update checker!
     This script will check if the Toolkit Core API installed
     in /sgtk/software/shotgun/scarlet
     is up to date.
-    
-    
+
+
     Please note that when you upgrade the core API, you typically affect more than
     one project. If you want to test a Core API upgrade in isolation prior to
     rolling it out to multiple projects, we recommend creating a special
     *localized* pipeline configuration. For more information about this, please
     see the Toolkit documentation.
-    
-    
+
+
     You are currently running version v0.15.18 of the Shotgun Pipeline Toolkit
     No need to update the Toolkit Core API at this time!
     DEBUG [10:11:39 981.74405098]: Exiting with exit code None
-
