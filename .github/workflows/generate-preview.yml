@@ -12,25 +12,25 @@ jobs:
     runs-on: ubuntu-latest
     environment: docs-build
     steps:
-      - name: Checkout repo and submodules
-        uses: actions/checkout@v2
-        with:
-          # we need to checkout tk-doc-generator submodule as well.
-          submodules: 'true'
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.6
-      - name: Install Pandoc
-        run: sudo apt-get install -y pandoc
-      - name: Install Jekyll dependencies
-        run: bundle install --gemfile=./tk-doc-generator/Gemfile --deployment
-      - name: Install tk-doc-generator requirements
-        run: pip install -r ./tk-doc-generator/requirements.txt
-
       # TODO re-enable!
       # Temp disable this since it's been generated once and we're not
-      # interested in this step
+      # interested in the work associated with regenerating -- we can test off
+      # the hosted site for now.
+      # - name: Checkout repo and submodules
+      #   uses: actions/checkout@v2
+      #   with:
+      #     # we need to checkout tk-doc-generator submodule as well.
+      #     submodules: 'true'
+      # - name: Setup Ruby
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: 2.6
+      # - name: Install Pandoc
+      #   run: sudo apt-get install -y pandoc
+      # - name: Install Jekyll dependencies
+      #   run: bundle install --gemfile=./tk-doc-generator/Gemfile --deployment
+      # - name: Install tk-doc-generator requirements
+      #   run: pip install -r ./tk-doc-generator/requirements.txt
       # - name: Generate and publish preview
       #   env:
       #     AWS_S3_ACCESS_KEY: ${{ secrets.AWS_S3_ACCESS_KEY }}
