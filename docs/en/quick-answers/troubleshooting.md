@@ -42,7 +42,7 @@ A collection of quick answers aimed at troubleshooting issues.
 - [[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate](https://community.shotgridsoftware.com/t/certificate-verify-failed-error-on-windows/8860)
 - [sgtk:descriptor:path?linux_path=None&mac_path=None&windows_path=D\Program%Files\{% include product %}\Configurations does not point to a valid bundle on disk!](https://community.shotgridsoftware.com/t/first-time-setting-up-shotgun-and-i-have-this-error/9384)
 - [TankInitError: You are loading the Toolkit platform from the pipeline configuration located in](https://community.shotgridsoftware.com/t/tankiniterror-loading-toolkit-platform-from-a-different-project/9342)
-- [[ ERROR] [PROXY] Error calling __commands::unreal_engine](https://community.shotgridsoftware.com/t/error-launching-ue4-from-shotgun/8938)
+- [[ERROR] [PROXY] Error calling __commands::unreal_engine](https://community.shotgridsoftware.com/t/error-launching-ue4-from-shotgun/8938)
 - [[ERROR publish_creation] <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:726)>](https://community.shotgridsoftware.com/t/ssl-certificate-error-on-sgtk-util-regiter-publish/3291)
 - [Error: {% include product %} tk-maya: An exception was raised from Toolkit](https://community.shotgridsoftware.com/t/custom-app-args/8893)
 - [Tk-desktop console silently ignoring errors](https://community.shotgridsoftware.com/t/tk-desktop-console-silently-ignoring-errors/8570)
@@ -53,7 +53,7 @@ A collection of quick answers aimed at troubleshooting issues.
 - [ERROR 18:13:28.365:Hiero(34236): Error! Task type](https://community.shotgridsoftware.com/t/cant-get-shotgun-toolkit-to-work-with-nuke-studio-config-default2/4586)
 - [Cannot find procedure "MTsetToggleMenuItem"](https://community.shotgridsoftware.com/t/tk-maya-cannot-find-procedure-mtsettogglemenuitem/4629)
 - [Could not resolve row id for path!](https://community.shotgridsoftware.com/t/how-to-troubleshoot-folder-creation-errors/3578)
-- [Database concurrency problems: The path <PATH> is already associated with {% include product %} entity <ENTITY>](https://community.shotgridsoftware.com/t/how-to-troubleshoot-folder-creation-errors/3578)
+- [Database concurrency problems: The path `<PATH>` is already associated with {% include product %} entity `<ENTITY>`](https://community.shotgridsoftware.com/t/how-to-troubleshoot-folder-creation-errors/3578)
 - [ERROR: Database concurrency problems](https://community.shotgridsoftware.com/t/how-to-troubleshoot-folder-creation-errors/3578/2)
 - [Failed to create folders: Folder creation aborded](https://community.shotgridsoftware.com/t/error-in-toolkit-after-renaming-asset/4108)
 
