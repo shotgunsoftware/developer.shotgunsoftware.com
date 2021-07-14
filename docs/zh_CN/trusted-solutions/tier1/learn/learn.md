@@ -2,9 +2,9 @@
 layout: default
 title: Learn
 pagename: tier1-learn
-lang: en
+lang: zh_CN
 ---
 
-# ShotGrid Isolation - Learn
+# {% include product %} Isolation - Learn
 
-This section will host a learning curriculum for ShotGrid Isolation features n the near future.
+This section will host a learning curriculum for {% include product %} Isolation features n the near future.
