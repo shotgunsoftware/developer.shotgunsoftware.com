@@ -57,8 +57,10 @@ Use the endpoint URL to list objects in your bucket using AWS CLI. In the follow
 
 ### Configure your test site to use your S3 VPC endpoint
 
-* Navigate to the Site Preferences menu within {% include product %} and expand the Isolation section
-* Set S3 Proxy Host Address to the S3 proxy url. Eg. `https://s3-proxy.mystudio.com` then click Save changes
+* Please contact {% include product %} support via the dedicated Slack channel and provide the following information:
+  * Your S3 bucket name
+  * Your S3 VPC endpoint DNS Name
+* Autodesk will configure your test site to use your S3 VPC endpoint
 * Confirm that you are still able to access existing media
 * Attempt to upload new media
 
