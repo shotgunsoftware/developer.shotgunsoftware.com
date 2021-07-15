@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Troubleshooting
+title: Troubleshooting Guide
 pagename: quick-answers-troubleshooting
 lang: en
 ---
@@ -46,16 +46,16 @@ A collection of quick answers aimed at troubleshooting issues.
 - [The Frame Server has encountered an error.](https://community.shotgridsoftware.com/t/the-frame-server-has-encountered-an-error/11192)
 - [ModuleNotFoundError](https://community.shotgridsoftware.com/t/bootstrap-sgtk-modulenotfounderror/11708)
 - [In Maya, when I print context.task, it is empty “None”](https://community.shotgridsoftware.com/t/context-task-none/3705)
+- [sgtk:descriptor:path?linux_path=None&mac_path=None&windows_path=D\Program%Files\{% include product %}\Configurations does not point to a valid bundle on disk!](https://community.shotgridsoftware.com/t/first-time-setting-up-shotgun-and-i-have-this-error/9384)
 - [Fixing the SSL: CERTIFICATE_VERIFY_FAILED issues with the Python API](./troubleshooting/fix-ssl-certificate-verify-failed.md)
 - [SSLError: [Errno 8] _ssl.c:504: EOF occurred in violation of protocol](https://community.shotgridsoftware.com/t/sslerror-in-nuke-10-5/9299)
 - [[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate](https://community.shotgridsoftware.com/t/certificate-verify-failed-error-on-windows/8860)
-- [sgtk:descriptor:path?linux_path=None&mac_path=None&windows_path=D\Program%Files\{% include product %}\Configurations does not point to a valid bundle on disk!](https://community.shotgridsoftware.com/t/first-time-setting-up-shotgun-and-i-have-this-error/9384)
+- [SSLHandshakeError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:727)](https://community.shotgridsoftware.com/t/using-shotgun-desktop-behind-an-firewall-with-ssl-introspection/11434)
 - [TankInitError: You are loading the Toolkit platform from the pipeline configuration located in](https://community.shotgridsoftware.com/t/tankiniterror-loading-toolkit-platform-from-a-different-project/9342)
 - [TankError: Cannot resolve template data for context](https://community.shotgridsoftware.com/t/tank-folder-creation/8674)
 - [TankError: Tried to resolve a path from the template](https://community.shotgridsoftware.com/t/unable-to-save-file-in-a-specific-task/9686)
 - [TankError: Tried to resolve a path from the template](https://community.shotgridsoftware.com/t/error-when-resolving-path-from-template-at-new-file-open-missing-fields/6468)
 - [Tk-desktop console silently ignoring errors](https://community.shotgridsoftware.com/t/tk-desktop-console-silently-ignoring-errors/8570)
-- [SSLHandshakeError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:727)](https://community.shotgridsoftware.com/t/using-shotgun-desktop-behind-an-firewall-with-ssl-introspection/11434)
 - [TankError: Could not create folders on disk. Error reported: Critical! Could not update {% include product %} with folder data.](https://community.shotgridsoftware.com/t/adding-an-operating-system-for-existing-project/10129)
 - [[WARNING] Storage root primary could not be mapped to a SG local storage](https://community.shotgridsoftware.com/t/use-google-drive-as-primary-storage/11185)
 
