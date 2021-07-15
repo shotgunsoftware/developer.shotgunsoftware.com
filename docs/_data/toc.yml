@@ -48,6 +48,7 @@
          - page: sgtk-developer-engine
          - page: sgtk-developer-framework
          - page: sgtk-how-to-submit-fixes
+      - page: quick-answers-troubleshooting
     - page: review
       children:
       - text: rv-user-manual
@@ -204,7 +205,6 @@
 - caption: quick-answers
   children:
   - page: quick-answers-administering
-  - page: quick-answers-troubleshooting
   - page: quick-answers-developing
   - page: quick-answers-workflow
 
