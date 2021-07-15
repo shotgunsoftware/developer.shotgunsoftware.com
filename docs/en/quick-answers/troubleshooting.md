@@ -5,7 +5,7 @@ pagename: quick-answers-troubleshooting
 lang: en
 ---
 
-Troubleshooting
+Troubleshooting Guide
 ===
 
 A collection of quick answers aimed at troubleshooting issues.
