@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Troubleshooting Guide
+title: Troubleshooting
 pagename: quick-answers-troubleshooting
 lang: en
 ---
