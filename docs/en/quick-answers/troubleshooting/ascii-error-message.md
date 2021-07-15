@@ -5,7 +5,7 @@ pagename: ascii-error-message
 lang: en
 ---
 
-# ‘ascii’ codec can’t decode byte 0x97 in position 10: ordinal not in range
+# ascii codec can’t decode byte 0x97 in position 10: ordinal not in range
 
 ## Related error messages:
 While cloning a configuration
