@@ -206,7 +206,7 @@
   children:
   - page: quick-answers-administering
   - text: quick-answers-troubleshooting
-    url: " https://developer.shotgridsoftware.com/7ef5be1d/?title=Troubleshooting"
+    url: " https://developer.shotgridsoftware.com/7ef5be1d/?title=title=Troubleshooting+Guide"
   - page: quick-answers-developing
   - page: quick-answers-workflow
 
