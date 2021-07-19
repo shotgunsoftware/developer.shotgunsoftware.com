@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Offline usage and disabling auto updates
-pagename: disabling-auto-updates-and-offline
+title: Offline usage and turning off auto updates
+pagename: turn-off-auto-updates-and-offline
 lang: en
 ---
 
-# Offline usage and disabling auto updates
+# Offline usage and turning off auto updates
 
 - [Auto updates](#auto-updates)
     - [What parts auto update?](#what-parts-auto-update)
@@ -13,9 +13,9 @@ lang: en
 - [Running the integrations offline](#running-the-integrations-offline)
     - [Initial Setup](#initial-setup)
     - [Managing updates](#managing-updates)
-- [Disabling auto updates](#disabling-auto-updates)
-    - [Disabling updates at a project or site level](#disabling-updates-at-a-project-or-site-level)
-    - [Disabling updates for all but one project](#disabling-updates-for-all-but-one-project)
+- [Turning off auto updates](#turning-off-auto-updates)
+    - [Turning off updates at a project or site level](#turning-off-updates-at-a-project-or-site-level)
+    - [Turning off updates for all but one project](#turning-off-updates-for-all-but-one-project)
     - [Upgrading](#upgrading)
 
 ## Auto updates
@@ -37,7 +37,7 @@ However the integration features provided in {% include product %} Create work i
 
 ### What doesn't auto update?
 
-- If you have taken over a site configuration, then it won't check for newer `tk-config-basic` updates but more on that [further down](#disabling-updates-at-a-project-or-site-level).
+- If you have taken over a site configuration, then it won't check for newer `tk-config-basic` updates but more on that [further down](#turning-off-updates-at-a-project-or-site-level).
 
 - Any projects that aren't using the default site configuration (I.e. a project where the Toolkit advanced setup wizard has been run on it.), will not have their configuration auto updated.
 
@@ -79,23 +79,23 @@ For the `tk-config-basic` component it's a bit more tricky, due to all its depen
 {% include info title="Warning" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
 In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
 
-## Disabling auto updates
+## Turning off auto updates
 
-### Disabling updates at a project or site level
+### Turning off updates at a project or site level
 
 {% include info title="Note" content="If possible we recommend that you continue to allow auto updates to avoid missing out on new features and bug fixes." %}
 
-Follow these steps to disable automatic updates for the integrations.
+Follow these steps to turn off automatic updates for the integrations.
 
 1. Determine the version you want to stay at. You can find the integration releases [here](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations).
 2. In {% include product %}, create a Pipeline Configuration entity either on a project or on a global page, with the following fields populated (In this example, we are locking down the config to use v1.0.36 of the integrations):
 
    1. Name: `Primary`
-   2. Project: Leave empty if you want updates disabled for all projects, or pick a specific project if you only want to lock down a single project.
+   2. Project: Leave empty if you want updates turned off for all projects, or pick a specific project if you only want to lock down a single project.
    3. Plugin ids: `basic.*`
    4. Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
    
-   ![Pipeline Configuration entity with a setup for a project with disabled updates.](images/offline-and-disabled-auto-updates/freeze-all-projects.jpg)
+   ![Pipeline Configuration entity with a setup for a project with turned off updates.](images/offline-and-disabled-auto-updates/freeze-all-projects.jpg)
 3. Start {% include product %} Desktop, and if you left the project field empty then {% include product %} Desktop will have switched over to using this version if it wasn't already doing so.
 
     ![{% include product %} Desktop About](images/offline-and-disabled-auto-updates/shotgun-desktop-about.png)
@@ -122,18 +122,18 @@ The solution would be to create an additional Pipeline Configuration override sp
     - Plugin ids: `basic.flame`
     - Descriptor: `sgtk:descriptor:app_store?name=tk-config-flameplugin`
 
-### Disabling updates for all but one project
+### Turning off updates for all but one project
 
-If you have disabled updates on all projects as mentioned in the example above, but would like to enable updates on a specific project
+If you have turned off updates on all projects as mentioned in the example above, but would like to enable updates on a specific project
 You can
 
-1. Disabling updates for your site as described in the above section.
+1. Turning off updates for your site as described in the above section.
 2. Configure the exception project’s Pipeline Configuration entity to have the following field values:
     - Name: `Primary`
     - Project: The project you want not to lock down
     - Plugin ids: `basic.*`
     - Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic`
-    ![Two Pipeline Configurations, one disabling updates to the whole site, and the other enabling updates on a single project](images/offline-and-disabled-auto-updates/freeze-all-but-one-project.jpg)
+    ![Two Pipeline Configurations, one turning off updates to the whole site, and the other enabling updates on a single project](images/offline-and-disabled-auto-updates/freeze-all-but-one-project.jpg)
     With the version number omitted from the Descriptor field, the project is now tracking the latest release of the basic config.
 
 ### Upgrading
