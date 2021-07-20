@@ -79,6 +79,7 @@ When using distributed configs, a user will only have to download something if i
 You may notice that when launching software such as Maya, Nuke, Houdini, or others, they take longer to start up than without {% include product %}. It is normal that they may take a short while longer than without {% include product %}, but sometimes these times can increase to unacceptable levels, (normally depending on the software we would expect them to startup in under a minute). This can be one of the more tricky areas to diagnose as there are many processes involved in launching the software.
 
 ### Diagnosis
+
 The first thing you should do is figure out under what conditions this is happening.
 
 1. **Is it slow when launching without {% include product %}?** - This might seem obvious, but it’s worth checking that the issue only occurs when launching with {% include product %}.
@@ -176,6 +177,7 @@ Whilst this might be convenient in some situations, it is causing a lot more fol
 {% include info title="Note" content="The setting for step schema folders defaults to true." %}
 
 #### Defer creation
+
 The [`defer_creation` setting](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Workspaces%20and%20Deferred%20Folder%20Creation) allows you to further refine when folders should be created by restricting the creation of folders to only happen when a certain engine is running. You can even use custom names, and then trigger the creation of them using the [sgtk API](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure).
 
 **Example**
@@ -211,6 +213,7 @@ During the folder creation process the folders are [registered](../administering
 The local [path cache](../administering/what-is-path-cache.md) uses an SQLite database to store the data. The performance of reading and writing to the database can be severely impacted if the database is stored on network storage.
 
 #### Initial synchronization
+
 There can be situations where a local cache needs to be generated from scratch for a project (such as when a new user joins an already in progress project) that has a lot of folders registered. This process can take noticeably longer, but the good news here is that this should only happen once for that project. 
 
 Subsequent syncs will only pull the differences between the local cache and the site registry. If the user infrequently works on the project and a lot of folders get created between sessions, then they may experience a noticeable wait whilst everything caches.

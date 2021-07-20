@@ -25,7 +25,7 @@ A collection of quick answers aimed at troubleshooting issues.
 - [How can I unregister folders when using a distributed config?](https://community.shotgridsoftware.com/t/how-can-i-unregister-folders-when-using-a-distributed-config)
 
 #### Error message guidance
-- [‘ascii’ codec can’t decode byte 0x97 in position 10: ordinal not in range](https://community.shotgridsoftware.com/t/ascii-problem/7688)
+- [‘ASCII’ codec can’t decode byte 0x97 in position 10: ordinal not in range](https://community.shotgridsoftware.com/t/ascii-problem/7688)
 - [Cannot find procedure "MTsetToggleMenuItem"](https://community.shotgridsoftware.com/t/tk-maya-cannot-find-procedure-mtsettogglemenuitem/4629)
 - [Could not resolve row id for path!](https://community.shotgridsoftware.com/t/how-to-troubleshoot-folder-creation-errors/3578)
 - [data_handler_cache error message: ERROR sgtk.env.project.tk-nuke.tk-multi-workfiles2 Failed to create File Open dialog!](https://community.shotgridsoftware.com/t/data-handler-cache-error/10955)
@@ -46,6 +46,7 @@ A collection of quick answers aimed at troubleshooting issues.
 - [ModuleNotFoundError](https://community.shotgridsoftware.com/t/bootstrap-sgtk-modulenotfounderror/11708)
 - [In Maya, when I print context.task, it is empty “None”](https://community.shotgridsoftware.com/t/context-task-none/3705)
 - [Fixing the SSL: CERTIFICATE_VERIFY_FAILED issues with the Python API](./troubleshooting/fix-ssl-certificate-verify-failed.md)
+- [Getting CERTIFICATE_VERIFY_FAILED when using {% include product %} Desktop on a local {% include product %} site](./certificate-fail-local-error-message.md)
 - [SSLError: [Errno 8] _ssl.c:504: EOF occurred in violation of protocol](https://community.shotgridsoftware.com/t/sslerror-in-nuke-10-5/9299)
 - [Getting CERTIFICATE_VERIFY_FAILED when using {% include product %} Desktop on a local {% include product %} site](https://community.shotgridsoftware.com/t/getting-certificate-verify-failed-when-using-shotgun-desktop-on-a-local-shotgun-site/10466)
 - [[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate](https://community.shotgridsoftware.com/t/certificate-verify-failed-error-on-windows/8860)
