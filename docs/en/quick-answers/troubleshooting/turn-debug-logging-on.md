@@ -22,6 +22,7 @@ It should also be noted that when this is toggled on, apps launched from {% incl
 ## Setting up an environment variable
 
 ### Permanently turning on debug logging
+
 First, you will need to set up a new environment variable: `TK_DEBUG=1`
 
 {% include info title="Note" content="We suggest discussing how to set up environment variables with a technical expert at your studio since instructions are platform specific. However, the example below includes setting up an environment variable on a Windows 7 machine." %}

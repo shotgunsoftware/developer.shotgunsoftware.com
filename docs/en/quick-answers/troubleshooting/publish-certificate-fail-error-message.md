@@ -64,10 +64,12 @@ ShotgunPublishError: Unable to complete publishing because of the following erro
 ```
 
 ## What’s causing the error?
+
 Missing `cacert.pem` and the required environment variable `SHOTGUN_API_CACERTS` pointing to that location.
 
 ## How to fix
-Add tje `cacert.pem` and environment variable `SHOTGUN_API_CACERTS` pointing to the location.
+
+Add the `cacert.pem` and environment variable `SHOTGUN_API_CACERTS` pointing to the location.
 
 [See the full thread in the community](https://community.shotgridsoftware.com/t/ssl-certificate-error-on-sgtk-util-regiter-publish/3291).
 

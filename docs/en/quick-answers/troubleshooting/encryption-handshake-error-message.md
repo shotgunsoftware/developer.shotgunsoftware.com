@@ -36,7 +36,7 @@ Right-clicking on a project tells me that {% include product %} is retrieving ac
 [   DEBUG] Reason received for connection loss: [Failure instance: Traceback (failure with no frames): : Connection to the other side was lost in a non-clean fashion: Connection lost.
 ```
 
-Opening a project in shotgun produces the following log output:
+Opening a project in {% include product %} produces the following log output:
 
 ```
 [    INFO] Connection accepted.
@@ -50,9 +50,11 @@ Opening a project in shotgun produces the following log output:
 ```
 
 ## How to fix:
+
 Add `shotgunlocalhost.com` to the proxy bypass list. 
 
 ## Example of what's causing this error: 
+
 Proxy configuration.
 
 [See the full thread in the community](https://community.shotgridsoftware.com/t/shotgun-desktop-browser-integration/3574).

@@ -25,7 +25,7 @@ A collection of quick answers aimed at troubleshooting issues.
 - [How can I unregister folders when using a distributed config?](https://community.shotgridsoftware.com/t/how-can-i-unregister-folders-when-using-a-distributed-config)
 
 #### Error message guidance
-- [‘ascii’ codec can’t decode byte 0x97 in position 10: ordinal not in range](https://community.shotgridsoftware.com/t/ascii-problem/7688)
+- [‘ASCII’ codec can’t decode byte 0x97 in position 10: ordinal not in range](https://community.shotgridsoftware.com/t/ascii-problem/7688)
 - [Cannot find procedure "MTsetToggleMenuItem"](https://community.shotgridsoftware.com/t/tk-maya-cannot-find-procedure-mtsettogglemenuitem/4629)
 - [Could not resolve row id for path!](https://community.shotgridsoftware.com/t/how-to-troubleshoot-folder-creation-errors/3578)
 - [data_handler_cache error message: ERROR sgtk.env.project.tk-nuke.tk-multi-workfiles2 Failed to create File Open dialog!](https://community.shotgridsoftware.com/t/data-handler-cache-error/10955)

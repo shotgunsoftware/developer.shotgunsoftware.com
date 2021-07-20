@@ -91,6 +91,7 @@ If the search did come up empty, then type the following:
 $ mkdir --parents ~/.pki/nssdb
 $ certutil -N -d "sql:$HOME/.pki/nssdb"
 ```
+
 Do not enter any password.
 
 Launching the {% include product %} Desktop should now work correctly.

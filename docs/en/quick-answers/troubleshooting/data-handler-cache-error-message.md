@@ -8,6 +8,7 @@ lang: en
 # data_handler_cache error message: ERROR sgtk.env.project.tk-nuke.tk-multi-workfiles2 Failed to create File Open dialog!
 
 ## Use case:
+
 It happens when launching an app like Nuke, `tk-multi-workfiles2` File Open dialog fails with an error at the end of the stack trace about the `get_children` method of `data_handler_cache` failing to iterate because it’s been passed a string value when it’s expected a dict.
 
 The full stack looks something like:
@@ -47,9 +48,11 @@ AttributeError: 'str' object has no attribute 'itervalues'
 ```
 
 ## What’s causing the error?
+
 Something has gone wrong in our caching, you should be able to fix it by removing the cache (see next section). 
 
 ## How to fix
+
 [Follow these instructions](https://developer.shotgridsoftware.com/7c9867c0/) on where to find the cache and remove it. You can wipe the whole thing, though that will cause a delay when you restart Desktop next time while it downloads everything. It's recommended that you wipe the folder named after your {% include product %} site that sits inside the root cache folder, there will still be a bit of rebuilding but not as much.
 
 [See the full thread in the community](https://community.shotgridsoftware.com/t/data-handler-cache-error/10955).

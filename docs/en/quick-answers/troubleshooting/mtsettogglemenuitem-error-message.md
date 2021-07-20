@@ -13,6 +13,7 @@ Maya crashs just before loading the full window, after the usual splash screen:
 - Cannot find procedure "MTsetToggleMenuItem"
 
 ## How to fix:
+
 In the before_app_launch hook before launching Maya, it’s possible that something inadvertently is being removed from the path, causing the error at Maya launch. In this case, adding a python install to `PTHONPATH` will prevent Maya 2019 from finding the Plugin Path.
 
 ## Example of what's causing this error: 

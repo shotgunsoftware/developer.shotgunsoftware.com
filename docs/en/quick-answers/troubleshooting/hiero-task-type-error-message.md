@@ -16,7 +16,7 @@ ERROR 18:13:28.365:Hiero(34236): Error! Task type tk_hiero_export.sg_shot_proces
 
 Without fail after a rollback, it still does not initialize the tk-nuke engine, and {% include product %} fails to load anything…
 
-I have attached a full log, this is in a testing environment, so no worries with NDAs…
+The [community post](https://community.shotgridsoftware.com/t/cant-get-shotgun-toolkit-to-work-with-nuke-studio-config-default2/4586) includes a full log for further details.
 
 ## What’s causing the error?
 It’s not treating it as a NukeStudio launch, and is probably instead treating it as a standard Nuke launch.

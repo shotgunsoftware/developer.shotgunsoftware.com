@@ -8,6 +8,7 @@ lang: en
 # `[ERROR] [PROXY]` Error calling __commands::unreal_engine]
 
 ## Use case:
+
 After setting up the {% include product %} desktop app, now after being able to get UE4 to show in the {% include product %} app, once I try to Launch Unreal I get these messages:
 
 ```
@@ -26,9 +27,11 @@ TankError: Could not create folders on disk. Error reported: Could not resolve r
 ```
 
 ## What’s causing the error?
-The path of the UE4’s Project on disk which was `D:\UEProjects\PROJECT_NAME\ incorrect. 
+
+The path of the UE4’s Project on disk which was `D:\UEProjects\PROJECT_NAME\` incorrect. 
 
 ## How to fix
+
 Creating a new folder for {% include product %}'s settings solves the issue.
 
 [See the full thread in the community](https://community.shotgridsoftware.com/t/error-launching-ue4-from-shotgun/8938).

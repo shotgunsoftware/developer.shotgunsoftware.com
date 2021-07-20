@@ -8,9 +8,11 @@ lang: en
 # Errors due to Windows paths too long (>256 characters)
 
 ## The hard facts
+
 Windows has a really low default limit of 255/260 characters for path names. [Microsoft's information about this limit is here](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#maximum-path-length-limitation) and you can see [more technical info here](https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation).
 
 ## The error(s)
+
 This manifests itself in various ways but typically happens when SG Desktop is loading a config for the first time, it hits this error while downloading items into the bundle cache. The error can be somewhat cryptic though it looks like recent versions of Windows 10 have improved the error slightly. These are some examples of what you might see:
 
 ```
@@ -30,12 +32,15 @@ ERROR sgtk.core.bootstrap.cached_configuration Failed to install configuration s
 ```
 
 ## Why this happens
-On Windows, SG Desktop stores data in your `%APPDATA%` folder (typically `C:\Users\jane\AppData\Roaming\Shotgun`. When using the standard default2 Toolkit config things should be mostly fine as long as your username isn't super long. However, if you are creating your own apps, engines, or frameworks, you may have more risk of running into this, especially if you bundle dependencies with your code (as we do), and you have deep trees of directories in your bundles. 
+
+On Windows, {% include product %} Desktop stores data in your `%APPDATA%` folder (typically `C:\Users\jane\AppData\Roaming\Shotgun`. When using the standard default2 Toolkit config things should be mostly fine as long as your username isn't super long. However, if you are creating your own apps, engines, or frameworks, you may have more risk of running into this, especially if you bundle dependencies with your code (as we do), and you have deep trees of directories in your bundles. 
 
 ## Working around the issue
+
 The way to resolve this issue is typically to set a `$SHOTGUN_HOME` environment variable to something very short like `C:\SG`. This tells SG Desktop to store it's data in `C:\SG` instead of `C:\Users\jane\AppData\Roaming\Shotgun` which saves you some characters and is usually enough to keep you under the limit. You can [read about the environment variables here](http://developer.shotgunsoftware.com/tk-core/initializing.html?#environment-variables).
 
 ### Future possibilities?
+
 There *may* be another way to mitigate this issue with more recent versions of Windows 10 by updating the registry [as described here](https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation#enable-long-paths-in-windows-10-version-1607-and-later) but I think it also requires SG Desktop to update it's manifest file to indicate it wants to take advantage of the `longPathAware` setting. I'm a Mac guy so I'm not sure if I'm just talking crap here ;)
 
 [See the full thread in the community](https://community.shotgridsoftware.com/t/errors-due-to-windows-paths-too-long-256-characters/10101).

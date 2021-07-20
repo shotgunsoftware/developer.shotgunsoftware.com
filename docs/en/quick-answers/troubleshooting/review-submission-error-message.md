@@ -8,6 +8,7 @@ lang: en
 # Exception: Review submission failed. Could not render and submit the review associated sequence.
 
 ## Use case:
+
 'Submit for publish' in Nuke has never worked. 
 
 **Question 1:**
@@ -50,7 +51,7 @@ So it's looking in 'publish_plugin_instance.py' for:
 
 I can find these in my local Appdata folder but not in my main install so I'm assuming that I need to look in 'submit_for_review.py' to get at this problem.
 
-Looking at this file I can see that its sucking settings and info for the item from higher up the hereditary chain 'HookBaseClass'.
+Looking at this file I can see that its using settings and info for the item from higher up the hereditary chain 'HookBaseClass'.
 
 So looking for where the 'sg_publish_data' is set in 'submit_for_review.py' I see line 225:
 `sg_publish_data = item.properties.get("sg_publish_data")`
@@ -61,11 +62,13 @@ So where upstream is 'item.properties' is being set? I suspect in the nuke colle
 ## How to fix
 
 ### The Short Answer:
-Assuming you have not added custom code or modified the config too much, you just need to make sure you have `Publish to Shotgun` checked on the item that you are  submitting for review
+
+Assuming you have not added custom code or modified the config too much, you just need to make sure you have `Publish to {% include product %}` checked on the item that you are  submitting for review
 
 ![publish_checkbox](images/review-submission-error-message-01.jpeg) 
 
 ### The Long Answer:
+
 First, [here's the documentation for the publisher API](https://developer.shotgunsoftware.com/tk-multi-publish2/). Most of the concepts involved in solving this problem are explained there. But here's the breakdown for your specific problem. Hopefully going through it like this will help you debug future issues as well.
 
 In the above screenshot, under the `ShorgunWrite1` item you see two `plugins`. These correspond to plugins that were defined in the config.
@@ -104,6 +107,7 @@ In the python files you'll see that all the hooks inherit from `HookBaseClass`. 
 settings.tk-multi-publish2.nuke.shot_step:
   collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py"
 ```
+
 The collector defined here does not exist in any python file. It is actually a combination of the `tk-multi-publish2`'s `collector.py` and `tk-nuke`'s `collector.py`. 
 
 If the quick fix is not enough for you and you need to modify these hooks, checkout the [Customizing Publish Workflows video](https://support.shotgunsoftware.com/hc/en-us/articles/360002566514-Shotgun-Toolkit-Webinars#web_3). It's a great place to start.

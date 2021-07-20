@@ -11,12 +11,12 @@ lang: en
 While working in an ACES color management project, when you use the default toolkit publishing, it fails with an error  `Invalid LUT selected : Gamma2.2`.
 
 ## What’s causing the error?
-The issue you are seeing is because there is an app that creates the quicktime that is a part of the toolkit publishing from Nuke called  `tk-multi-reviewsubmission`,  and by default it will create a QT that works with Nukes standard color model.
+There is an app that creates the quicktime that is a part of the toolkit publishing from Nuke called  `tk-multi-reviewsubmission`,  and by default it will create a QT that works with Nukes standard color model.
 
 ## How to fix
 Since you are using ACES (I'm assuming the ICIO model), we just need to change the colorspace setting in the  `tk-multi-reviewsubmission`  app by taking over and adding it into the  `codec_settings.py`  hook.
 
-I'm not sure what codec would work best for your usage, but I'm using the  `Output - sRGB Codec`  as an example, you may need to change based on your color workflow. So in the  `codec_settings.py` hook add the setting  `settings["colorspace"] = "Output - sRGB"`  to where it makes sense for your setup. (I've just added it everywhere)
+Codecs vary per preference, but in this example, we're using the  `Output - sRGB Codec`: So in the  `codec_settings.py` hook add the setting  `settings["colorspace"] = "Output - sRGB"`  to where it makes sense for your setup. (I've just added it everywhere)
 
 ```python
         settings = {}

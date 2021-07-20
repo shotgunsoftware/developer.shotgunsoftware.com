@@ -19,7 +19,7 @@ Here are a couple of examples of where this is already used:
 https://github.com/shotgunsoftware/tk-shotgun-folders/blob/v0.1.7/app.py#L86
 - The `tk-multi-launchapp` (which is responsible for launching software with the Shotgun integrations) can be passed a `file_to_open` arg, which it will then use to open the file once the software is launched:
 https://github.com/shotgunsoftware/tk-multi-launchapp/blob/v0.11.2/python/tk_multi_launchapp/base_launcher.py#L157
-Normally when you launch the software through Shotgun Desktop it won't provide a `file_to_open` argument, however, you can call the app via the tank command if you are using a centralized config (`tank maya_2019 /path/to/maya/file.mb`). 
+Normally when you launch the software through {% include product %} Desktop it won't provide a `file_to_open` argument, however, you can call the app via the tank command if you are using a centralized config (`tank maya_2019 /path/to/maya/file.mb`). 
 Also our `tk-shotgun-launchpublish` app, in turn, launches the `tk-multi-launchapp` and provides the published file as the `file_to_open` arg.
 https://github.com/shotgunsoftware/tk-shotgun-launchpublish/blob/v0.3.2/hooks/shotgun_launch_publish.py#L126-L133
 
@@ -44,6 +44,7 @@ class AnimalApp(Application):
 ```
 
 ### Running from the tank command
+
 Now if you run the following tank command in a shell:
 
 ```
@@ -65,6 +66,7 @@ libpng warning: iCCP: known incorrect sRGB profile
 ('args', ('Tortoiseshell', 'large'))
 ```
 ### Running from a script
+
 If you wanted to call your app from a script on the `tk-shell` engine you could do the following:
 
 ```python
@@ -93,6 +95,7 @@ engine.commands['print_animal']['callback']("unicorn",4,"it's soooo fluffy!!!!")
 ```
 
 ## Error message
+
 If you tried to launch the app from the menu in Maya you would get an error like this:
 
 ```
@@ -108,6 +111,7 @@ TypeError: run_method() takes at least 3 arguments (1 given) //
 And that is because the app is set to require the arguments, and the menu button doesn't know to provide them. 
 
 ## How to fix
+
 It is better to write your app's `run_method` to use keyword arguments like this:
 
 ```python
