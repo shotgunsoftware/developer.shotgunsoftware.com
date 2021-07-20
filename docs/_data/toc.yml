@@ -25,8 +25,7 @@
       - page: toolkit-workflows
         children:
         - page: toolkit-pipeline-tutorial
-        - text: episodic-pipeline-tutorial
-          url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002689053-Episodic-workflow-with-Nuke-Studio"
+        - page: episodic-nuke-tutorial
       - page: toolkit-administration
         children:
         - page: toolkit-overview
