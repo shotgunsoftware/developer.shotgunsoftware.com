@@ -7,8 +7,60 @@ lang: en
 
 # File System Configuration Reference
 
+In this topic:
+- [Introduction](#introduction)
+- [Part 1 - Folder Creation Syntax](#part-1---folder-creation-syntax)
+  - [Query Folders](#query-folders)
+  - [Multiple folders](#multiple-folders)
+  - [Create With Parent Folder](#create-with-parent-folder)
+  - [Optional fields](#optional-fields)
+  - [Regular expression token matching](#regular-expression-token-matching)
+  - [Examples](#examples)
+  - [List Field Folders](#list-field-folders)
+  - [Pipeline Step Folder](#pipeline-step-folder)
+    - [Different file system layouts for different pipeline steps](#different-file-system-layouts-for-different-pipeline-steps)
+  - [Advanced - Specifying a parent](#advanced---specifying-a-parent)
+  - [Task Folder](#task-folder)
+    - [Advanced - Specify a parent](#advanced---specify-a-parent)
+  - [Workspaces and Deferred Folder Creation](#workspaces-and-deferred-folder-creation)
+  - [Current User Folder](#current-user-folder)
+  - [Static folders](#static-folders)
+  - [Symbolic Links](#symbolic-links)
+  - [Ignoring files and folders](#ignoring-files-and-folders)
+  - [Customizing IO and Permissions](#customizing-io-and-permissions)
+    - [Data passed to the hook](#data-passed-to-the-hook)
+    - [Passing your own folder creation directives to the hook](#passing-your-own-folder-creation-directives-to-the-hook)
+    - [Adding custom configuration to static folders](#adding-custom-configuration-to-static-folders)
+  - [Simple customization of how folders are created](#simple-customization-of-how-folders-are-created)
+- [Part 2 - Configuring File System Templates](#part-2---configuring-file-system-templates)
+  - [The Keys Section](#the-keys-section)
+    - [Example - An alphanumeric name](#example---an-alphanumeric-name)
+    - [Example - Version number](#example---version-number)
+    - [Example - A stereo eye](#example---a-stereo-eye)
+    - [Example - Image sequences](#example---image-sequences)
+    - [Example - Two fields both named version via an alias](#example---two-fields-both-named-version-via-an-alias)
+    - [Example - Timestamp](#example---timestamp)
+    - [Example - mappings](#example---mappings)
+    - [Example - String field with two valid values](#example---string-field-with-two-valid-values)
+    - [Example - Disallowing a value](#example---disallowing-a-value)
+    - [Example - Subsets of strings](#example---subsets-of-strings)
+  - [The Paths Section](#the-paths-section)
+  - [The Strings Section](#the-strings-section)
+  - [Using Optional Keys in Templates](#using-optional-keys-in-templates)
+- [Advanced questions and troubleshooting](#advanced-questions-and-troubleshooting)
+  - [How can I add a new entity type to my file structure?](#how-can-i-add-a-new-entity-type-to-my-file-structure?)
+    - [Fields required for the Episode > Sequence > Shot hierarchy](#fields-required-for-the-episode->-sequence->-shot-hierarchy)
+      - [Episode](#episode)
+      - [Sequence](#sequence)
+      - [Shot](#shot)
+      - [Episodes](#episodes)
+      - [Toolkit template definitions](#toolkit-template-definitions)
+  - [How can I set up a branch in my structure?](#how-can-i-set-up-a-branch-in-my-structure?)
+  - [How can I create a custom Pipeline Step using a custom entity?](#how-can-i-create-a-custom-pipeline-step-using-a-custom-entity?)
+
+
 This document is a complete reference of the file system centric configurations in the {% include product %} Pipeline Toolkit. It outlines how the template system works and which options are available. It also shows all the different parameters you can include in the folder creation configuration.  
-_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For details, see  [{% include product %} Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493)._
+_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For details, see  [{% include product %} Integrations Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide)._
 
 # Introduction
 
@@ -16,10 +68,10 @@ This document explains how to configure the part of Toolkit's configuration rela
 
 1.  **Folder Creation:**  After an object has been created in {% include product %}, folders on disk need to be created before work can begin. This can be as simple as having a folder on disk representing the Shot, or can be more complex-for example setting up a user specific work sandbox so that each user that works on the shot will work in a separate area on disk.
     
-    -   Toolkit automates folder creation when you launch an application (for example you launch Maya for shot BECH_0010), Toolkit ensures that folders exist prior to launching Maya. If folders do not exist, they are created on the fly. Folders can also be created using API methods, using the  [tank command in the shell](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#Useful%20tank%20commands)  and via the  [Create Folders menu in ShotGrid](https://support.shotgunsoftware.com/hc/en-us/articles/219040688-Beyond-your-first-project#Shotgun%20Integration). A special set of configuration files drives this folder creation process and this is outlined in  [Part 1](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)  of the document below.
+    -   Toolkit automates folder creation when you launch an application (for example you launch Maya for shot BECH_0010), Toolkit ensures that folders exist prior to launching Maya. If folders do not exist, they are created on the fly. Folders can also be created using API methods, using the  [tank command in the shell](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#Useful%20tank%20commands)  and via the  [Create Folders menu in ShotGrid](https://developer.shotgridsoftware.com/c3b662a6/?title=Beyond+Your+First+Project#shotgrid-integration). A special set of configuration files drives this folder creation process and this is outlined in  [Part 1](#part-1---folder-creation-syntax)  of the document below.
 2.  **Opening and Saving Work:**  While working, files need to be opened from and saved into standardized locations on disk. These file locations typically exist within the folder structure created prior to work beginning.
     
-    -   Once a folder structure has been established, we can use that structure to identify key locations on disk. These locations are called  [Templates](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates). For example, you can define a template called  `maya_shot_publish`  to refer to published Maya files for Shots.  [Toolkit apps](https://support.shotgunsoftware.com/hc/en-us/articles/219039798)  will then use this template-a publish app may use it to control where it should be writing its files, while a  [Workfiles App](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files)  may use the template to understand where to open files from. Inside Toolkit's environment configuration, you can control which templates each app uses. All the key file locations used by Toolkit are therefore defined in a single template file and are easy to overview.
+    -   Once a folder structure has been established, we can use that structure to identify key locations on disk. These locations are called  [Templates](#part-2---configuring-file-system-templates). For example, you can define a template called  `maya_shot_publish`  to refer to published Maya files for Shots.  [Toolkit apps](https://developer.shotgridsoftware.com/f8596e35/?title=Apps)  will then use this template-a publish app may use it to control where it should be writing its files, while a  [Workfiles App](https://developer.shotgridsoftware.com/9a736ee3/?title=Workfiles)  may use the template to understand where to open files from. Inside Toolkit's environment configuration, you can control which templates each app uses. All the key file locations used by Toolkit are therefore defined in a single template file and are easy to overview.
 
 # Part 1 - Folder Creation Syntax
 
@@ -33,7 +85,7 @@ Digging further inside the sequences folder, there is a  **sequence**  folder an
 
 1.  **Normal folders and files:**  these are simply copied across to the target location.
 2.  **A folder with a YAML file**  (having the same name as the folder): this represents dynamic content. For example, there may be a  **shot**  and  **shot.yml**  and when folders are created, this  **shot**  folder is the template used to generate a number of folders-one folder per shot.
-3.  **A file named name.symlink.yml**  which will generate a symbolic link as folders are being processed.  [Symbolic links are covered later in this document](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-File-System-Reference#Symbolic%20Links).
+3.  **A file named name.symlink.yml**  which will generate a symbolic link as folders are being processed.  [Symbolic links are covered later in this document](#symbolic-links).
 
 The dynamic configuration setup expressed in the YAML files currently supports the following modes:
 
@@ -48,7 +100,7 @@ The dynamic configuration setup expressed in the YAML files currently supports t
 
 Let's dive deeper into these modes.
 
-## {% include product %} Query Folders
+## Query Folders
 
 For a dynamic folder which corresponds to a {% include product %} query, use the following syntax in your YAML file:
 
@@ -83,7 +135,7 @@ For a dynamic folder which corresponds to a {% include product %} query, use the
     -   You can use a single field, like in the example above (e.g.,  `name: code`).
     -   You can use multiple fields in brackets (e.g.,  `name:`  `"{asset_type}_{code}"`).
     -   If you want to include fields from other linked entities, you can use the standard {% include product %} dot syntax (e.g.,  `name: "{sg_sequence.Sequence.code}_{code}"`).
--   The  **filters**  field is a {% include product %} Query. It follows the  [{% include product %} API syntax](http://developer.shotgridsoftware.com/python-api/reference.html)  relatively closely. It is a list of dictionaries, and each dictionary needs to have the keys  _path_,  _relation_, and  _values_. Valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy). For {% include product %} entity links, you can use the $syntax (e.g.,  `{ "path": "project", "relation": "is", "values": [ "$project" ] }`) to refer to a parent folder in the configuration-this is explained more in depth in the  [examples below](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Examples).
+-   The  **filters**  field is a {% include product %} Query. It follows the  [{% include product %} API syntax](http://developer.shotgridsoftware.com/python-api/reference.html)  relatively closely. It is a list of dictionaries, and each dictionary needs to have the keys  _path_,  _relation_, and  _values_. Valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy). For {% include product %} entity links, you can use the $syntax (e.g.,  `{ "path": "project", "relation": "is", "values": [ "$project" ] }`) to refer to a parent folder in the configuration-this is explained more in depth in the  [examples below](#examples).
     
 
 ## Multiple folders
@@ -126,7 +178,7 @@ In {% include product %}, there is nesting within {% include product %} data str
 
 ![create_with_parent_folder](images/file-system-config-reference/create_with_parent_folder_02_DS.png)
 
-{% include info title="Note" content="This filesystem nesting relationship is independent from the  [ShotGrid Hierarchy](https://support.shotgunsoftware.com/hc/en-us/articles/219030828), and there is no connection between the two. They are configured completely independently." %}
+{% include info title="Note" content="This filesystem nesting relationship is independent from the  [ShotGrid Hierarchy](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html), and there is no connection between the two. They are configured completely independently." %}
 
 A shotgun_entity type folder supports an optional flag to control whether the folder creation process tries to recurse down into it when a parent is created, so that the child will also be created. Flags are settings that can only have certain fixed values, in this case "true" or "false". To add this flag, use this example:
 
@@ -207,9 +259,9 @@ To  **find all assets**  use this syntax:
     entity_type: Asset
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
-## {% include product %} List Field Folders
+## List Field Folders
 
-[{% include product %} list field](https://support.shotgunsoftware.com/hc/en-us/articles/219031008)  folders are useful if you want to create one folder for every asset type in {% include product %}, for instance. Asset types are list fields in {% include product %}, and this folder config type makes it possible to define a layer in the file system that reflects those asset type listings.
+[{% include product %} list field](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_field_types_html)  folders are useful if you want to create one folder for every asset type in {% include product %}, for instance. Asset types are list fields in {% include product %}, and this folder config type makes it possible to define a layer in the file system that reflects those asset type listings.
 
 ![list_field_folders](images/file-system-config-reference/list_field_folders_02_DS.png)
 
@@ -245,16 +297,16 @@ When you want a dynamic folder which corresponds to all the items in a {% includ
 
 -   Set value of dynamic content  **type**  field to be  `shotgun_list_field`.
 -   The  `entity_type`  field should be set to the {% include product %} entity from which we want to pull data (for instance, "Asset", "Sequence", "Shot", etc.).
--   The  `field_name`  field should be set to the {% include product %} field from which the data is pulled from and must be a  [list type field](https://support.shotgunsoftware.com/hc/en-us/articles/219031008). You can use expressions if you want to add static text alongside the dynamic content.`field_name: "{sg_asset_type}_type"`  This example expression includes text as well as a template key.
+-   The  `field_name`  field should be set to the {% include product %} field from which the data is pulled from and must be a  [list type field](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_field_types_html). You can use expressions if you want to add static text alongside the dynamic content.`field_name: "{sg_asset_type}_type"`  This example expression includes text as well as a template key.
     
--   The optional  `skip_unused`  parameter will prevent the creation of directories for list type field values which are not used (as covered under the  [Optional Fields](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-File-System-Reference#Optional%20fields)  section above).  {% include info title="Note" content="setting this to True may negatively affect folder creation performance. Also, the culling algorithm is currently crude and does not work in scenarios where complex filters have been applied to the associated entity." %}
+-   The optional  `skip_unused`  parameter will prevent the creation of directories for list type field values which are not used (as covered under the  [Optional Fields](#optional-fields)  section above).  {% include info title="Note" content="setting this to True may negatively affect folder creation performance. Also, the culling algorithm is currently crude and does not work in scenarios where complex filters have been applied to the associated entity." %}
     
--   The optional  `create_with_parent`  parameter forces the creation of the list_field node, even if there isn't a child entity level node that is currently being processed (see  [Create With Parent Folder](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-File-System-Reference#Create%20With%20Parent%20Folder)  section above).
+-   The optional  `create_with_parent`  parameter forces the creation of the list_field node, even if there isn't a child entity level node that is currently being processed (see  [Create With Parent Folder](#create-with-parent-folder)  section above).
     
 
 ## Pipeline Step Folder
 
-The Pipeline Step folder represents a  [Pipeline Step](https://support.shotgunsoftware.com/hc/en-us/articles/219031288)  in {% include product %}. Pipeline Steps are also referred to as Steps.
+The Pipeline Step folder represents a  [Pipeline Step](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Producer_pr_scheduling_tasks_pr_tasks_pipeline_steps_html)  in {% include product %}. Pipeline Steps are also referred to as Steps.
 
 ![pipeline_step_folder](images/file-system-config-reference/pipeline_step_folder_02_DS.png)
 
@@ -266,7 +318,7 @@ The Pipeline Step folder represents a  [Pipeline Step](https://support.shotgunso
     # the {% include product %} field to use for the folder name. This field needs to come from a step entity.
     name: "short_name"
 
-You can use name expressions here, just like you can with the  [{% include product %} entity described above](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-File-System-Reference#Shotgun%20List%20Field%20Folders). The node will look at its parent, grandparent, etc., until a {% include product %} entity folder configuration is found. This entity folder will be associated with the Step and the type of the entity will be used to determine which Steps to create.
+You can use name expressions here, just like you can with the  [{% include product %} entity described above](#list-field-folders). The node will look at its parent, grandparent, etc., until a {% include product %} entity folder configuration is found. This entity folder will be associated with the Step and the type of the entity will be used to determine which Steps to create.
 
 {% include info title="Note" content="If you want to create a top level folder with Pipeline Steps, just use the ShotGrid entity node and set the associated type to step." %}
 
@@ -292,7 +344,7 @@ The above syntax will only be used when Step folders of the type  `Light`  or  `
 
 Now you can define separate sub structures in each of these folders.
 
-## Advanced: Specifying a parent
+## Advanced - Specifying a parent
 
 As part of the folder creation, Toolkit needs to associate a Pipeline Step with an entity (e.g., "Shot", "Asset", etc). Toolkit does this by default by looking up the folder tree and picking the first {% include product %} entity folder it finds. For example, if you have the hierarchy  `Sequence > Shot > Step`, the Step folder will automatically be associated with the Shot, which is typically what you want.
 
@@ -300,9 +352,9 @@ However, if you have a hierarchy with entities below your primary entity, for ex
 
     associated_entity_type: Shot
 
-## {% include product %} Task Folder
+## Task Folder
 
-The Task folder represents a  [Task](https://support.shotgunsoftware.com/hc/en-us/articles/219031248)  in {% include product %}. By default, the Task folder will not will not be created with its parent. For example, if the folder creation is triggered for a Shot which has a Task node associated, the Task folders will not be created automatically. Instead, Task folders will only be created when the folder creation is executed for the Task (e.g., launching a Task from {% include product %}).
+The Task folder represents a  [Task](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Producer_pr_scheduling_tasks_pr_my_tasks_html)  in {% include product %}. By default, the Task folder will not will not be created with its parent. For example, if the folder creation is triggered for a Shot which has a Task node associated, the Task folders will not be created automatically. Instead, Task folders will only be created when the folder creation is executed for the Task (e.g., launching a Task from {% include product %}).
 
 ![task_folder](images/file-system-config-reference/task_folder_02_DS.png)
 
@@ -322,17 +374,17 @@ You can, however, turn on creation so that Tasks are created with their parent e
 
 Similar to a Step, you can also optionally supply a  `filter`  parameter if you want to filter which Tasks your folder configuration should operate on.
 
-Once again, you can use name expressions, just like you can with the  [{% include product %} entity described above](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-File-System-Reference#Shotgun%20List%20Field%20Folders), where static text can be used alongside dynamic content so that you can create a name that has both dynamic and static context.
+Once again, you can use name expressions, just like you can with the  [{% include product %} entity described above](#list-field-folders), where static text can be used alongside dynamic content so that you can create a name that has both dynamic and static context.
 
 `name: "task_{content}"`
 
 The node will look at its parent, grandparent etc., until a {% include product %} entity folder configuration is found. This entity folder will be associated with the task and will be used to determine which task folders to create.
 
-### Advanced: Specifying a parent
+### Advanced - Specify a parent
 
 As part of the folder creation, Toolkit needs to associate a Task with an entity (e.g., a Shot, an Asset, etc.). Toolkit does this by default by looking up the folder tree and picking the first {% include product %} entity folder it finds. For example, if you have the hierarchy  `Sequence > Shot > Task`, the Task folder will automatically be associated with the Shot, which is typically what you want.
 
-However, if you have a hierarchy with entities below your primary entity (e.g., below Shot), like  `Sequence > Shot > Department > Task,`  Toolkit would by default associate the Task with the department level, which is not desired. In this case, we need to explicitly tell Toolkit where to look, similarly to how we updated this with Steps in the  [previous section](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-File-System-Reference#Create%20With%20Parent%20Folder). We can do this by adding the following to the Task configuration:
+However, if you have a hierarchy with entities below your primary entity (e.g., below Shot), like  `Sequence > Shot > Department > Task,`  Toolkit would by default associate the Task with the department level, which is not desired. In this case, we need to explicitly tell Toolkit where to look, similarly to how we updated this with Steps in the  [previous section](#create-with-parent-folder). We can do this by adding the following to the Task configuration:
 
 `associated_entity_type: Shot` 
 
@@ -382,7 +434,7 @@ _Tip: If you prefer a normal, static folder to be created when an application (l
 
 ## Current User Folder
 
-The current user folder is a special construct that lets you set up work areas for different users. A common scenario is if you have multiple artists from a department working on the same shot. User folders can be used so that artists can store their workfiles in their own directories and be able to filter just for their files in the  [Workfiles App](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files). In this case, the configuration file needs to include the following options:
+The current user folder is a special construct that lets you set up work areas for different users. A common scenario is if you have multiple artists from a department working on the same shot. User folders can be used so that artists can store their workfiles in their own directories and be able to filter just for their files in the  [Workfiles App](https://developer.shotgridsoftware.com/9a736ee3/?title=Workfiles). In this case, the configuration file needs to include the following options:
 
     <a name="the type of dynamic content"></a>
     # the type of dynamic content
@@ -485,7 +537,7 @@ Symlink creation happens (like all input/output, or I/O) inside the folder proce
 
 Files that are placed in the schema scaffold will be copied across into the target area as part of the folder creation. This copy process is handled by a core hook, so for example, permissions handling can be customized for a project or studio.
 
-{% include info title="Note" content="There are more details on this kind of handling in the  [Customizing I/O and Permissions section](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Simple%20customization%20of%20how%20folders%20are%20created)Customizing I/O and Permissions section under Simple Customization. We have a  [process_folder_creation core hook](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/process_folder_creation.py#L62-L71)  (https://github.com/shotgunsoftware/tk-core/blob/master/hooks/process_folder_creation.py#L62-L71) that handles a lot of folder setup. You can add chmod calls into this hook (and/or set permissions as you mkdir), thereby setting permissions for the folders you are creating." %}
+{% include info title="Note" content="There are more details on this kind of handling in the  [Customizing I/O and Permissions section](#simple-customization-of-how-folders-are-created)Customizing I/O and Permissions section under Simple Customization. We have a  [process_folder_creation core hook](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/process_folder_creation.py#L62-L71)  (https://github.com/shotgunsoftware/tk-core/blob/master/hooks/process_folder_creation.py#L62-L71) that handles a lot of folder setup. You can add chmod calls into this hook (and/or set permissions as you mkdir), thereby setting permissions for the folders you are creating." %}
 
 Sometimes it can be useful to exclude certain files and folders from being copied across as part of the folder creation. For example, if you store your folder creation configs in Git or SVN, you will have  `.git`  and  `.svn`folders that you will not want to copy to each Shot or Asset folder. If there are files which you do not want to have copied, a file named  `ignore_files`  can be placed in the  `config/core/schema`  folder inside the project configuration. This file should contain glob-style patterns to define files not to copy. Each pattern should be on a separate line:
 
@@ -505,7 +557,7 @@ You can also use wildcards. For example, if you need to exclude all files with t
     .git                # no git temp files to be copied across at folder creation time
     *.tmp           # no files with tmp extension to be copied across at folder creation time
 
-## Customizing I/O and Permissions
+## Customizing IO and Permissions
 
 Shot and Asset folders often need to be created with special permissions and parameters. Sometimes this is as simple as setting permission bits during the folder creation, and sometimes it may be as complex as sending a remote request to a special folder creation server that will create the folders with the appropriate credentials, groups, and permissions.
 
@@ -974,7 +1026,7 @@ A timestamp that defaults to 9:00:00 and is formatted as HH-MM-SS.
         format_spec: "%H-%M-%S"
         default: "09-00-00" 
 
-### Example - {% include product %} mappings
+### Example - mappings
 
 This is useful when you would like to to add {% include product %} fields to a file name, for example. Let's say we would like to include the user name in a file name- we'd use the following definition:
 
@@ -1007,7 +1059,7 @@ Often times a studio will have a project that needs to save out ASCII and Binary
     maya_shot_snapshot:  '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.mb'
     maya_shot_publish:  '@shot_root/publish/maya/{name}.v{version}.mb' 
 
-Check out  [The Paths Section](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-File-System-Reference#The%20Paths%20Section)  below for more details.
+Check out  [The Paths Section](#the-paths-section)  below for more details.
 
 ### Example - Disallowing a value
 
@@ -1102,21 +1154,21 @@ As you pass in a dictionary of fields, Toolkit will choose the right version of 
 
 ## How can I add a new entity type to my file structure?
 
-Let's say you have been working on feature animations and shorts on your {% include product %} site, and now you have been awarded episodic work. Let's walk through how you can incorporate an episodic workflow to Toolkit. The first thing to do is to set up your hierarchy in {% include product %} for episodic work following the instructions  [here](https://support.shotgunsoftware.com/hc/en-us/articles/115000019414).
+Let's say you have been working on feature animations and shorts on your {% include product %} site, and now you have been awarded episodic work. Let's walk through how you can incorporate an episodic workflow to Toolkit. The first thing to do is to set up your hierarchy in {% include product %} for episodic work following the instructions  [here](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html).
 
 ![episode_hierarchy](images/file-system-config-reference/episode_hierarchy.jpg)
 
-{% include info title="Note" content="see the  [Create with parent folder section above](https://support.shotgunsoftware.com/hc/en-us/articles/219039868#Create%20With%20Parent%20Folder)  to revisit nesting relationships in Toolkit (which is completely independent from the project hierarchy in ShotGrid)." %}
+{% include info title="Note" content="see the  [Create with parent folder section above](#create-with-parent-folder)  to revisit nesting relationships in Toolkit (which is completely independent from the project hierarchy in ShotGrid)." %}
 
 **Additional Reference:**
 
--   [How does the Episode entity work?](https://support.shotgunsoftware.com/hc/en-us/articles/115000019414)
--   [Customizing an entity's hierarchy](https://support.shotgunsoftware.com/hc/en-us/articles/219030828)
+-   [How does the Episode entity work?](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html)
+-   [Customizing an entity's hierarchy](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html)
 
 
-### {% include product %} fields required for the Episode > Sequence > Shot hierarchy
+### Fields required for the Episode > Sequence > Shot hierarchy
 
-[You can choose to use any Custom Entity](https://support.shotgunsoftware.com/hc/en-us/articles/114094182834) for `Episode` (Site Preferences > Entities), or you can use the official Episode entity that was made available in {% include product %} [7.0.7.0](https://support.shotgunsoftware.com/hc/en-us/articles/220062367-7-0-Release-Notes#7_0_7_0). If you signed up for {% include product %} pre-7.0.7.0 (before 2017), the "TV Show" template uses `CustomEntity02` for Episodes. If you decide to use another entity that is not `CustomEntity02` or the official Episode entity, no worries! {% include product %} and Toolkit are flexible. Let's walk through both cases.
+[You can choose to use any Custom Entity](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html) for `Episode` (Site Preferences > Entities), or you can use the official Episode entity that was made available in {% include product %} 7.0.7.0. If you signed up for {% include product %} pre-7.0.7.0 (before 2017), the "TV Show" template uses `CustomEntity02` for Episodes. If you decide to use another entity that is not `CustomEntity02` or the official Episode entity, no worries! {% include product %} and Toolkit are flexible. Let's walk through both cases.
 
 For the purpose of this exercise, we will use Episode (`CustomEntity02`) and the official Episode entity as examples of how to incorporate Episodes with the project hierarchy update (you can use either/or). First, the way to properly set up our Project's  **Episode > Sequence > Shot**  hierarchy is to ensure the following fields are in {% include product %}:
 
@@ -1298,7 +1350,7 @@ After you've done this, your schema should reflect the following:
 
 #### Toolkit template definitions
 
-In order to tell Toolkit that you are using Episodes in your schema, you need to create a new key in the  [keys section](https://support.shotgunsoftware.com/hc/en-us/articles/219039868#The%20Keys%20Section)  at the top to define it:
+In order to tell Toolkit that you are using Episodes in your schema, you need to create a new key in the  [keys section](#the-keys-section)  at the top to define it:
 
 **Using the official  `Episode`  Entity**
 
@@ -1334,9 +1386,9 @@ That's all you need for the basic  **Episode > Sequence > Shot**  workflow!
 
 ## How can I set up a branch in my structure?
 
-This relates to  [Different file system layouts for different Pipeline Steps](https://support.shotgunsoftware.com/hc/en-us/articles/219039868#Different%20file%20system%20layouts%20for%20different%20pipeline%20steps), more specifically, if you are looking to add a branch to your structure. For example, you can have one structure for "Pipeline Step A" and another for all other Pipeline Steps.
+This relates to  [Different file system layouts for different Pipeline Steps](#different-file-system-layouts-for-different-pipeline-steps), more specifically, if you are looking to add a branch to your structure. For example, you can have one structure for "Pipeline Step A" and another for all other Pipeline Steps.
 
-Let's say you are adding another kind of  [Asset Type](https://support.shotgunsoftware.com/hc/en-us/articles/219030738-Customizing-existing-fields)  to your Pipeline, and that new Asset Type is a Vehicle. You want to change the file structure for Vehicles so that it has different folders for different Pipeline Steps; for example, "geoprep" and "lookdev", with additional folders inside each of those Pipeline Step folders. In parallel to this update, the way that you create Assets currently should remain the same. Let's walk through how to update your pipeline to accommodate this new flow.
+Let's say you are adding another kind of  [Asset Type](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_customizing_fields_html)  to your Pipeline, and that new Asset Type is a Vehicle. You want to change the file structure for Vehicles so that it has different folders for different Pipeline Steps; for example, "geoprep" and "lookdev", with additional folders inside each of those Pipeline Step folders. In parallel to this update, the way that you create Assets currently should remain the same. Let's walk through how to update your pipeline to accommodate this new flow.
 
 **Step 1: Modify the schema**
 
@@ -1344,7 +1396,7 @@ First, modify your schema to reflect the way your folder structure will look wit
 
 -   Start by creating a new branch in the schema for this new Asset Type: vehicle.
 -   At the same level as  `asset/`  and  `asset.yml`, add an  `asset_vehicle/`  folder and  `asset_vehicle.yml`.
--   These YAML files also have a filter setting in them. Modify the filter in your  `asset.yml`  so that it applies to all assets  _except for_  vehicle, and then modify  `asset_vehicle.yml`  to apply  _only to_  assets of type vehicle.  [Here is an example of what those filters look like](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-File-System-Configuration-Reference#Different%20file%20system%20layouts%20for%20different%20pipeline%20steps).
+-   These YAML files also have a filter setting in them. Modify the filter in your  `asset.yml`  so that it applies to all assets  _except for_  vehicle, and then modify  `asset_vehicle.yml`  to apply  _only to_  assets of type vehicle.  [Here is an example of what those filters look like](#different-file-system-layouts-for-different-pipeline-steps).
 -   Now that you have two folders to represent  `asset`  and  `asset_vehicles`, add all the folders underneath  `asset_vehicle`  that you expect to be created for those assets (e.g.,  `geoprep`,  `lookdev`, etc.).
     
 -   If you are saving and publishing files for these assets, you'll want to create templates, in  `core/templates.yml`, that describe the file paths for saved and publish files. For example, in addition to  [`maya_asset_work`](https://github.com/shotgunsoftware/tk-config-default/blob/v0.17.3/core/templates.yml#L480), you may create a template called  `maya_asset_work_vehicle`, and its definition will be the templated path where you want to save Maya work files for vehicle assets.
@@ -1359,9 +1411,9 @@ At this point, you have a directory structure for the new Asset Type, and you ha
 
 ## How can I create a custom Pipeline Step using a custom entity?
 
-In {% include product %} 7.0.6.0,  [managing Pipeline Steps via the Admin menu](https://support.shotgunsoftware.com/hc/en-us/articles/222766227#managing_pipeline_steps)  was introduced. With this feature, you can easily add custom fields to Pipeline Steps.  **Pro Tip: In most cases, utilizing custom fields on Pipeline Steps helps keep your pipeline more organized than creating a custom entity to manage those Pipeline Steps.**
+In {% include product %} 7.0.6.0,  [managing Pipeline Steps via the Admin menu](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_configure_pipeline_steps_html#managing-pipeline-steps)  was introduced. With this feature, you can easily add custom fields to Pipeline Steps.  **Pro Tip: In most cases, utilizing custom fields on Pipeline Steps helps keep your pipeline more organized than creating a custom entity to manage those Pipeline Steps.**
 
-However, in more advanced cases, it may be useful to have an alternative Pipeline Step. For instance, you might like to have the flexibility of different naming conventions and structures for production versus pipeline in the area of Pipeline Steps, as well as flexibility in naming and structuring them independently. While typically {% include product %}'s built-in Pipeline Steps are used for scheduling purposes, you may want to use another  [Custom Entity](https://support.shotgunsoftware.com/hc/en-us/articles/114094182834)  to structure the file system and group individual tasks together in the pipeline. You can accomplish this by creating a custom link field from a Task to a custom entity. This is then used by the system to group tasks together, via the step node.
+However, in more advanced cases, it may be useful to have an alternative Pipeline Step. For instance, you might like to have the flexibility of different naming conventions and structures for production versus pipeline in the area of Pipeline Steps, as well as flexibility in naming and structuring them independently. While typically {% include product %}'s built-in Pipeline Steps are used for scheduling purposes, you may want to use another  [Custom Entity](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html)  to structure the file system and group individual tasks together in the pipeline. You can accomplish this by creating a custom link field from a Task to a custom entity. This is then used by the system to group tasks together, via the step node.
 
 In the folder configuration, add two special options to tell it to use your custom step setup rather than {% include product %}'s built-in Pipeline Step:
 
