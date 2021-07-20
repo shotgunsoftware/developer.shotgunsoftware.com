@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Disabling auto updates and offline usage
-pagename: disabling-auto-updates-and-offline
+title: Turn off auto updates and offline usage
+pagename: turn-off-auto-updates-and-offline
 lang: ja
 ---
 

@@ -35,7 +35,7 @@
         - page: config-staging-and-rollout
         - page: community-shared-integrations
         - page: other-integrations
-        - page: disabling-auto-updates-and-offline
+        - page: turn-off-auto-updates-and-offline
         - page: toolkit-fs-config-ref
         - page: toolkit-apps-and-engines-config-ref
       - page: toolkit-development
