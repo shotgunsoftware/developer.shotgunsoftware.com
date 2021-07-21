@@ -50,6 +50,7 @@
       - page: quick-answers-troubleshooting
     - page: review
       children:
+      - page: rv-developer-overview
       - text: rv-user-manual
         url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_RV_rv_manuals_rv_user_manual_html"
       - text: rv-sdi
