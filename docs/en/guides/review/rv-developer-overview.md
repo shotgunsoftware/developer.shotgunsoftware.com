@@ -22,7 +22,7 @@ The User Manual includes introductory material to get you started with RV and RV
 The Reference Manual is the starting place for learning how to customize RV. It contains an overview of RV’s package system and Mu scripting capabilities. It is the place to start if you want to change hot keys, add menus, customize color management, create new widgets or integrate RV with your pipeline.
 
 *   [Technical Reference Manual](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_RV_rv_manuals_rv_reference_manual_html)
-*   [Extending RV Forum](hhttps://community.shotgridsoftware.com/c/rv/14)
+*   [Extending RV Forum](https://community.shotgridsoftware.com/c/rv/14)
 
 ### RV-SDI Manual
 
