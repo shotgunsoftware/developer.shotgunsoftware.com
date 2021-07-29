@@ -65,6 +65,7 @@ libpng warning: iCCP: known incorrect sRGB profile
 ('age', '7')
 ('args', ('Tortoiseshell', 'large'))
 ```
+
 ### Running from a script
 
 If you wanted to call your app from a script on the `tk-shell` engine you could do the following:

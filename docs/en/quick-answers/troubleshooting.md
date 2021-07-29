@@ -54,10 +54,10 @@ A collection of quick answers aimed at troubleshooting issues.
 - [TankError: Cannot resolve template data for context](https://community.shotgridsoftware.com/t/tank-folder-creation/8674)
 - [TankError: Tried to resolve a path from the template](https://community.shotgridsoftware.com/t/unable-to-save-file-in-a-specific-task/9686)
 - [TankError: Tried to resolve a path from the template](https://community.shotgridsoftware.com/t/error-when-resolving-path-from-template-at-new-file-open-missing-fields/6468)
-- [Tk-desktop console silently ignoring errors](https://community.shotgridsoftware.com/t/tk-desktop-console-silently-ignoring-errors/8570)
-- [SSLHandshakeError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:727)](https://community.shotgridsoftware.com/t/using-shotgun-desktop-behind-an-firewall-with-ssl-introspection/11434)
-- [TankError: Could not create folders on disk. Error reported: Critical! Could not update {% include product %} with folder data.](https://community.shotgridsoftware.com/t/adding-an-operating-system-for-existing-project/10129)
-- [[WARNING] Storage root primary could not be mapped to a SG local storage](https://community.shotgridsoftware.com/t/use-google-drive-as-primary-storage/11185)
+- [Tk-desktop console silently ignoring errors](./troubleshooting/tk-desktop-console-silently-ignoring-errors.md)
+- [SSLHandshakeError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:727)](./troubleshooting/sslhandshakeerror-ssl-certificate-verify-failed.md)
+- [TankError: Could not create folders on disk. Error reported: Critical! Could not update {% include product %} with folder data.](./troubleshooting/tankerror-could-not-create-folders-error-message.md)
+- [[WARNING] Storage root primary could not be mapped to a SG local storage](./troubleshooting/storage-root-primary-error-message.md)
 
 
 #### Software integrations
