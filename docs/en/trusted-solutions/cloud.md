@@ -13,4 +13,4 @@ lang: en
 
 ## Further Reading
 
-Administration documentation can be found [here](https://support.shotgunsoftware.com/hc/en-us/categories/202866127-Shotgun-Admin-Guide).
+Administration documentation can be found [here](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_html).
