@@ -31,6 +31,7 @@
         - page: toolkit-overview
         - page: integrations-admin-guide
         - page: beyond-your-first-project
+        - page: advanced-toolkit-administration
         - page: config-staging-and-rollout
         - page: community-shared-integrations
         - page: other-integrations
@@ -159,7 +160,7 @@
     - page: toolkit-configuration
       children:
       - text: file-system-configuration
-        url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
+        url: " https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference"
       - page: toolkit-config-ref
 
 - caption: trusted-solutions
