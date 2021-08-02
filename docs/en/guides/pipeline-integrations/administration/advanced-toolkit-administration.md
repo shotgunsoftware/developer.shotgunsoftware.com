@@ -751,7 +751,7 @@ Once you have created the file system structure it is time to configure a set of
 
 **Example: Single Root Template Format**
 
-```python
+```yml
 # The keys section contains the definitions for all the different keys that are being
 # used in the Toolkit. A key is a magic token that is replaced by a value at runtime, for example
 # {Shot}. The section below tells the Toolkit which data types and formats to expect for each key.
@@ -853,7 +853,7 @@ strings:
 
 **Example: Multi Root Template Format**
 
-```python
+```yml
 #
 # The keys section contains the definitions for all the different keys that are being
 # used in the Toolkit. A key is a magic token that is replaced by a value at runtime, for example
@@ -1519,6 +1519,8 @@ Here's a quick rundown of how to customize the `hook_before_app_launch` hook for
 
 3. Finally, update the environment configuration to use your new code:
 
-:::yaml launch_maya: engine: tk-maya extra: {} hook_app_launch: default hook_before_app_launch: before_app_launch # <-- uses custom hook! linux_args: '' linux_path: '@maya_linux' location: {name: tk-multi-launchapp, type: app_store, version: v0.2.4} mac_args: '' mac_path: '@maya_mac' menu_name: Launch Maya windows_args: '' windows_path: '@maya_windows'
+```yml
+yaml launch_maya: engine: tk-maya extra: {} hook_app_launch: default hook_before_app_launch: before_app_launch # <-- uses custom hook! linux_args: '' linux_path: '@maya_linux' location: {name: tk-multi-launchapp, type: app_store, version: v0.2.4} mac_args: '' mac_path: '@maya_mac' menu_name: Launch Maya windows_args: '' windows_path: '@maya_windows'
+```
 
 The next time you run the launch app, your code will be executed instead of the default hook code.
