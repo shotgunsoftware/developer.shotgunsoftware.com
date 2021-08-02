@@ -39,7 +39,7 @@ While these choices are only conventions and not hardcoded into the Toolkit work
 
 Within your Pipeline Configuration, the `config/` directory contains all the files and folders that are meant to be customized. In `config/`, you’ll find three sub-directories: `cache`, `core`, and `env`. The `env` directory holds the environment configuration files, so this document will refer to the files in `config/env`.
 
-![env Folder Contents](./images/env-config-ref/1.png)
+![env Folder Contents](../images/env-config-ref/1.png)
 
 In the Default Configuration, you’ll see the following files in `config/env/`:
 
@@ -244,7 +244,7 @@ engines:
     location: @engines.tk-maya.location
 ```
 
-![engine_locations include file](./images/env-config-ref/2.png)
+![engine_locations include file](../images/env-config-ref/2.png)
 
 You can see here that the value of the `location` setting for the `tk-maya` engine is now a reference to a key from the included YAML file. 
 
