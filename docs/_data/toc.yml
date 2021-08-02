@@ -210,8 +210,6 @@
   children:
   - text: siggraph-shotgun-day
     url: " https://www.youtube.com/playlist?list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d"
-  - text: developer-training
-    url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"
   - text: toolkit-webinars
     url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
 
@@ -220,9 +218,7 @@
   - text: community
     url: " https://community.shotgridsoftware.com/"
   - page: contribution-index
-  - text: shotgun-support
-    url: " https://support.shotgunsoftware.com/"
   - text: service-status
     url: " https://status.shotgridsoftware.com/"
-  - text: new-support-request
-    url: " https://support.shotgunsoftware.com/hc/requests/new"
+  - text: shotgrid-documentation
+    url: " https://help.autodesk.com/view/SGSUB/ENU/"
