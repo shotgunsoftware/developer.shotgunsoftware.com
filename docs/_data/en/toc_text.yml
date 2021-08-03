@@ -17,7 +17,6 @@ pipeline-integrations: Pipeline Integrations
 python-api: Python API
 rest-api: REST API
 event-triggers: Writing Event-Driven Triggers
-action-menu-items: Creating custom Action Menu Items
 jira-bridge-guide: Sync Data Between Jira and ShotGrid
 jira-bridge-ref: Jira Bridge Dev Resources
 examples: Examples
