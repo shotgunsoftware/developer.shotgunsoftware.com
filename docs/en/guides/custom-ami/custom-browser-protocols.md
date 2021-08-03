@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Launching applications using custom browser protocols
+title: Launching Applications Using Custom Browser Protocols
 pagename: custom-browser-protocols
 lang: en
 ---
 
-# Launching applications using custom browser protocols
+# Launching Applications Using Custom Browser Protocols
 
 ## ![asterisk](./images/dv-asterisk.png) Contents
 
@@ -23,7 +23,7 @@ foo://some/info/here
 
 The operating system has to be informed how to handle protocols. By default, all of the current operating systems know that ‘http’ should be handled by the default web browser, and ‘mailto’ should be handled by the default mail client. Sometimes when applications are installed, they register with the OS and tell it to launch the applications for a specific protocol.
 
-As an example, if you install RV, the application registers `rvlink://` with the OS and tells it that RV will handle all `rvlink://` protocol requests to show an image or sequence in RV. So when a user clicks on a link that starts with `rvlink://` , as you can do in {{ akn_product_name }}, the operating system will know to launch RV with the link and the application will parse the link and know how to handle it.
+As an example, if you install RV, the application registers `rvlink://` with the OS and tells it that RV will handle all `rvlink://` protocol requests to show an image or sequence in RV. So when a user clicks on a link that starts with `rvlink://` , as you can do in {% include product %}, the operating system will know to launch RV with the link and the application will parse the link and know how to handle it.
 
 See the [RV User Manual for more information about how RV can act as a protocol handler](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_RV_rv_manuals_rv_user_manual_rv_user_manual_chapter_c_html#c-2-installing-the-protocol-handler) for URLs and the “rvlink” protocol.
 
@@ -66,11 +66,11 @@ QSettings fooOpenKey("HKEY_CLASSES_ROOT\\foo\\shell\\open\\command", QSettings::
 mxOpenKey.setValue(".", cmdLine);
 ```
 
-**Windows example that starts a Python script via a {{ akn_product_name }} AMI**
+**Windows example that starts a Python script via a {% include product %} AMI**
 
 A lot of AMIs that run locally may opt to start a simple Python script via the Python interpreter. This allows you to run simple scripts or even apps with GUIs (PyQT, PySide or your GUI framework of choice). Let’s look at a practical example that should get you started in this direction.
 
-**Step 1: Set up the custom “{{ akn_product_name }}” protocol**
+**Step 1: Set up the custom “{% include product %}” protocol**
 
 Using Windows Registry Editor:
 
@@ -84,7 +84,7 @@ Using Windows Registry Editor:
 @="python""sgTriggerScript.py""%1"
 ```
 
-This setup will register the `{{ akn_product_name }}://` protocol to launch the `python` interpreter with the first argument being the script `sgTriggerScript.py` and the second argument being `%1` . It is important to understand that `%1` will be replaced by the URL that was clicked in the browser or the URL of the AMI that was invoked. This will become the first argument to your Python script.
+This setup will register the `{% include product %}://` protocol to launch the `python` interpreter with the first argument being the script `sgTriggerScript.py` and the second argument being `%1` . It is important to understand that `%1` will be replaced by the URL that was clicked in the browser or the URL of the AMI that was invoked. This will become the first argument to your Python script.
 
 > **Note:** You may need to have full paths to your Python interpreter and your Python script. Please adjust accordingly.
 
@@ -125,11 +125,11 @@ if __name__ == '__main__':
     sys.exit(main(sys.argv[1:]))
 ```
 
-**Step 3: Connect the {{ akn_product_name }} interface with your custom protocol and ultimately, your script**
+**Step 3: Connect the {% include product %} interface with your custom protocol and ultimately, your script**
 
-Finally, create an AMI in {{ akn_product_name }} whose URL value will be `{{ akn_product_name }}://processVersion` . You can assign this AMI to any entity type you wish, but this example uses the Version entity.
+Finally, create an AMI in {% include product %} whose URL value will be `{% include product %}://processVersion` . You can assign this AMI to any entity type you wish, but this example uses the Version entity.
 
-Go to a Version page, right-click on a version and select your AMI from the menu. This should make your browser open a `{{ akn_product_name }}://` URL which will be redirected to your script via the registered custom protocol.
+Go to a Version page, right-click on a version and select your AMI from the menu. This should make your browser open a `{% include product %}://` URL which will be redirected to your script via the registered custom protocol.
 
 In the `output.txt` file in the same directory as your script you should now see something like this:
 ```
@@ -166,7 +166,7 @@ In the `output.txt` file in the same directory as your script you should now see
 
 **Possible variants**
 
-By varying the keyword after the `//` part of the URL in your AMI, you can change the contents of the `action` variable in your script, all the while keeping the same `{{ akn_product_name }}://` protocol and registering only a single custom protocol. Then, based on the content of the `action` variable and the contents of the parameters, your script can understand what the intended behavior should be.
+By varying the keyword after the `//` part of the URL in your AMI, you can change the contents of the `action` variable in your script, all the while keeping the same `{% include product %}://` protocol and registering only a single custom protocol. Then, based on the content of the `action` variable and the contents of the parameters, your script can understand what the intended behavior should be.
 
 Using this methodology you could open applications, upload content via services like FTP, archive data, send email, or generate PDF reports.
 
@@ -221,7 +221,7 @@ shotgrid://something
 
 Finally, move your `.app` bundle to the Applications folder of your Mac. Then double click on it—that will register your protocol with the operating system.
 
-The data flow looks like this: once you click the AMI in {{ akn_product_name }}, or click a URL that starts with `{{ akn_product_name_lower }}://` , the `.app` bundle will respond to it and pass the URL over to your Python script. At this point the same script that was used in the Windows example can be used and all the same possibilities apply.
+The data flow looks like this: once you click the AMI in {% include product %}, or click a URL that starts with `{{ akn_product_name_lower }}://` , the `.app` bundle will respond to it and pass the URL over to your Python script. At this point the same script that was used in the Windows example can be used and all the same possibilities apply.
 
 ## Registering a protocol on Linux
 

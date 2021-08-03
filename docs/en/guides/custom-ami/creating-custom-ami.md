@@ -9,7 +9,7 @@ lang: en
 
 API developers can customize context menu items on a per-entity basis, through Action Menu Items (AMIs). For example, from a Versions page, you could select multiple versions, right-click, then choose “Build a PDF Report.”
 
-![Report](./images/ami/dv-custom-amis-01-report-01.png)
+![Report](../images/ami/dv-custom-amis-01-report-01.png)
 
 ## Action Menu Item fields
 
@@ -19,38 +19,36 @@ API developers can customize context menu items on a per-entity basis, through A
 
 There are two types of menu items you can create:
 
-{{toc}}
-
 ## HTTP URL example
 
-As an example, you can create a custom menu item called “Build PDF Report.” This will allow people to go to any Versions page, select one or more Versions, right-click, and then choose “Build PDF Report” from the {{ akn_product_name }} menu. Doing this will launch a script, which you must create, to get a nicely formatted report sent back to their browser. Here's how it works:
+As an example, you can create a custom menu item called “Build PDF Report.” This will allow people to go to any Versions page, select one or more Versions, right-click, and then choose “Build PDF Report” from the {% include product %} menu. Doing this will launch a script, which you must create, to get a nicely formatted report sent back to their browser. Here's how it works:
 
 ### Create the menu item via the UI
 
-![AMI menu](./images/ami/dv-custom-amis-04-ami-menu-03.png)
+![AMI menu](../images/ami/dv-custom-amis-04-ami-menu-03.png)
 
 
-From the settings menu, choose Action Menu Items to open the AMI Admin page. To create a new AMI, click on ![Add AMI](./images/ami/dv-custom-amis-05-add-ami-04.png) . Fill out the Title and any other required fields, and click on “Create Action Menu Item.”
+From the settings menu, choose Action Menu Items to open the AMI Admin page. To create a new AMI, click on ![Add AMI](../images/ami/dv-custom-amis-05-add-ami-04.png) . Fill out the Title and any other required fields, and click on “Create Action Menu Item.”
 
 ### What happens when a user clicks on the AMI?
 
-{{ akn_product_name }} dispatches a POST request in a new window, or in a modal dialog if that option was selected, and sends along data from the current page (as part of the POST request) to the receiving URL. Here's an example of the workflow.
+{% include product %} dispatches a POST request in a new window, or in a modal dialog if that option was selected, and sends along data from the current page (as part of the POST request) to the receiving URL. Here's an example of the workflow.
 
 *   User navigates to a Versions page
 *   User selects one or more Versions
 *   User brings up the context menu (by right-clicking or clicking on the gear menu in the toolbar)
 *   User clicks ‘Build PDF Report’
-*   {{ akn_product_name }} dispatches a POST request to the AMI’s URL in a new window (If your {{ akn_product_name }} server is served over HTTPS, and your URL is served over HTTP, expect to see a browser warning)
+*   {% include product %} dispatches a POST request to the AMI’s URL in a new window (If your {% include product %} server is served over HTTPS, and your URL is served over HTTP, expect to see a browser warning)
 *   Your script, located at the URL specified, processes the POST data, and generates a PDF document
 *   A nicely formatted PDF report is sent back to the user for viewing or download
 
 ## Custom protocol handler example
 
-A more advanced implementation of custom AMIs involves setting up a custom protocol handler (e.g., shotgun://process_version). This allows you to bridge {{ akn_product_name }} with applications like Maya, RV, or Cinesync via a script on your local computer. When you specify a non HTTP(S) protocol, data is sent via GET instead of POST to your URL. You may want to use this to launch an in-house tool to dispatch different requests.
+A more advanced implementation of custom AMIs involves setting up a custom protocol handler (e.g., shotgun://process_version). This allows you to bridge {% include product %} with applications like Maya, RV, or Cinesync via a script on your local computer. When you specify a non HTTP(S) protocol, data is sent via GET instead of POST to your URL. You may want to use this to launch an in-house tool to dispatch different requests.
 
 Read more about custom protocols in “ [Launching Applications Using Custom Browser Protocols](topicid=SG_Developer_dv_shotgrid_dv_launching_apps_protocols_html) .”
 
-> **Note:** We also have built-in integration with Maya and other software packages via [{{ akn_product_name }} integrations](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide) .
+> **Note:** We also have built-in integration with Maya and other software packages via [{% include product %} integrations](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide) .
 
 ### Light payload
 

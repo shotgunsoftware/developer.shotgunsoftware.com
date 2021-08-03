@@ -69,8 +69,9 @@
         - page: event-daemon-api
         - page: event-daemon-technical-details
         - page: event-daemon-example-plugins
-   - page: creating-custom-ami
+   - page: action-menu-items
       children:
+        - page: creating-custom-ami
         - page: custom-browser-protocols
     - text: jira-bridge-guide
       url: " https://developer.shotgridsoftware.com/sg-jira-bridge/index.html"
