@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Creating Custom Action Menu Items
-pagename: creating-custom-ami
+title: Custom Action Menu Items
+pagename: creating-custom-amis
 lang: en
 ---
 
-# Creating Custom Action Menu Items
+# Custom Action Menu Items
 
 API developers can customize context menu items on a per-entity basis, through Action Menu Items (AMIs). For example, from a Versions page, you could select multiple versions, right-click, then choose “Build a PDF Report.”
 
