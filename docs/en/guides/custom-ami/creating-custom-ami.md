@@ -13,8 +13,6 @@ API developers can customize context menu items on a per-entity basis, through A
 
 ## Action Menu Item fields
 
-<img style="max-width:100%" src="//cdn.thinglink.me/api/image/942585975106699266/1024/10/scaletowidth#tl-942585975106699266;" class="alwaysThinglink"/><script async charset="utf-8" src="//cdn.thinglink.me/jse/embed.js"></script>
-
 ## Types of Action Menu items
 
 There are two types of menu items you can create:
