@@ -125,15 +125,15 @@ By default, setup_project will only list projects that haven't been set up yet. 
 ```python
 > tank setup_project --force
 
-Welcome to the {% include product %} pipeline toolkit!
-For documentation, see https://support.{% include product %}software.com
+Welcome to the Shotgun pipeline toolkit!
+For documentation, see https://support.shotgunsoftware.com
 - Running setup_project...
 
 force mode: Projects already set up with Toolkit can be set up again.
 
-Welcome to the {% include product %} Pipeline Toolkit Project Setup!
+Welcome to the Shotgun Pipeline Toolkit Project Setup!
 
-Connecting to {% include product %}...
+Connecting to Shotgun...
 Connecting to the App Store...
 
 ------------------------------------------------------------------
@@ -227,14 +227,14 @@ Example output from this command:
 > tank Project Bunny configurations
 
 Welcome to Sgtk!
-Will search across all {% include product %} Projects.
+Will search across all Shotgun Projects.
 - Found Project Big Buck Bunny
 - Starting Sgtk v0.13.22 using configuration
 /mnt/software/sgtk/big_buck_bunny.
 - Setting the Context to Big Buck Bunny.
 - Running configurations...
 
-Fetching data from {% include product %}...
+Fetching data from Shotgun...
 
 ======================================================================
 Available Configurations for Project 'Big Buck Bunny'
@@ -260,7 +260,7 @@ If you want to check for app or engine updates, you can run:
 If you want to change the location of this configuration, you can run:
 > /mnt/software/sgtk/big_buck_bunny/tank move_configuration
 
-This is a public configuration. In {% include product %}, the actions defined in this
+This is a public configuration. In Shotgun, the actions defined in this
 configuration will be on all users' menus.
 
 Configuration 'Dev Area' (Private)
@@ -280,9 +280,9 @@ If you want to check for app or engine updates, you can run:
 If you want to change the location of this configuration, you can run:
 > /Users/manne/sgtk_dev/tank move_configuration
 
-This is a private configuration. In {% include product %}, only Admin 3 will see the actions
+This is a private configuration. In Shotgun, only Admin 3 will see the actions
 defined in this config. If you want to add additional members to this
-configuration, navigate to the {% include product %} Pipeline Configuration Page and add
+configuration, navigate to the Shotgun Pipeline Configuration Page and add
 them to the Users field.
 ```
 
@@ -321,7 +321,7 @@ Example output from this command
 
 ```python
 Welcome to Sgtk!
-Will search across all {% include product %} Projects.
+Will search across all Shotgun Projects.
 - Found Asset Squirrel (Project 'Big Buck Bunny')
 - Starting Sgtk v0.13.22 using configuration
 /mnt/software/sgtk/big_buck_bunny.
@@ -438,24 +438,24 @@ Starts an interactive Python shell in your currently selected context. Sets up h
 Example output from this command:
 
 ```python
-Welcome to the {% include product %} pipeline toolkit!
-For documentation, see https://support.{% include product %}software.com
-You are running a tank command associated with {% include product %} Project 'Chasing the
+Welcome to the Shotgun pipeline toolkit!
+For documentation, see https://support.shotgunsoftware.com
+You are running a tank command associated with Shotgun Project 'Chasing the
 Light'. Only items associated with this project will be considered.
 - Found Shot moo87 (Project 'Chasing the Light')
-- Starting the {% include product %} pipeline toolkit v0.15.14.
+- Starting the Shotgun pipeline toolkit v0.15.14.
 - Setting the Context to Shot moo87.
 - Started Shell Engine version v0.3.3
 - Environment: /mnt/software/tank/chasing_the_light/config/env/shot.yml.
 - Running shell...
 
-Welcome to {% include product %} Pipeline Toolkit Python!
+Welcome to Shotgun Pipeline Toolkit Python!
 2.7.1 (r271:86832, Jul 31 2011, 19:30:53)
 [GCC 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)]
 Running on darwin
 
 - A tk API handle is available via the tk variable
-- A {% include product %} API handle is available via the {% include product %} variable
+- A Shotgun API handle is available via the Shotgun variable
 - Your current context is stored in the context variable
 - The shell engine can be accessed via the engine variable
 >>>
@@ -470,8 +470,8 @@ Running on darwin
   User: {'type': 'HumanUser', 'id': 42, 'name': 'Manne \xc3\x96hrstr\xc3\xb6m'}
   Additional Entities: []>
 >>>
->>> {% include product %}
-<tank_vendor.{% include product %}_api3.{% include product %}.{% include product %} object at 0x105fb2990>
+>>> Shotgun
+<tank_vendor.Shotgun_api3.Shotgun.Shotgun object at 0x105fb2990>
 >>>
 >>> engine
 <Sgtk Engine 0x105feead0: tk-shell, env: shot>
@@ -512,10 +512,10 @@ Example output from this command:
 ```python
 > ./tank dump_config shot_step --sparse --file=/tmp/shot_step.yml
 
-Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://support.{% include product %}software.com
-Starting toolkit for path '/{% include product %}/configs/sparse34913'
-- The path is not associated with any {% include product %} object.
+Welcome to the Shotgun Pipeline Toolkit!
+For documentation, see https://support.shotgunsoftware.com
+Starting toolkit for path '/Shotgun/configs/sparse34913'
+- The path is not associated with any Shotgun object.
 - Falling back on default project settings.
 - Running as user 'Toolkit'
 - Using configuration 'Primary' and Core HEAD
@@ -694,18 +694,18 @@ Inside the yaml file, use a special syntax to define how a folder is created. Th
 
 ```python
 # the type of dynamic content
-type: "{% include product %}_entity"
+type: "Shotgun_entity"
 
-# the {% include product %} field to use for the folder name
+# the Shotgun field to use for the folder name
 name: "{code}_{sg_prefix}"
 
-# the {% include product %} entity type to connect to
+# the Shotgun entity type to connect to
 entity_type: "Asset"
 
-# {% include product %} filters to apply when getting the list of items
+# Shotgun filters to apply when getting the list of items
 # this should be a list of dicts, each dict containing
 # three fields: path, relation and values
-# (this is std {% include product %} API syntax)
+# (this is std Shotgun API syntax)
 # any values starting with $ are resolved into path objects
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
@@ -843,7 +843,7 @@ paths:
 
 # The strings section is similar to the paths section - but rather than defining paths
 # on disk, it contains a list of strings. Strings are typically used when you want to be
-# able to configure the way data is written to {% include product %} - it may be the name field for a
+# able to configure the way data is written to Shotgun - it may be the name field for a
 # review version or the formatting of a publish.
 strings:
 
@@ -966,12 +966,12 @@ paths:
 
 # The strings section is similar to the paths section - but rather than defining paths
 # on disk, it contains a list of strings. Strings are typically used when you want to be
-# able to configure the way data is written to {% include product %} - it may be the name field for a
+# able to configure the way data is written to Shotgun - it may be the name field for a
 # review version or the formatting of a publish.
 
 strings:
 
-    # when a review version in {% include product %} is created inside of nuke, this is the
+    # when a review version in Shotgun is created inside of nuke, this is the
     # name that is being given to it (the code field)
     nuke_shot_version_name: '{Shot}_{name}_{channel}_v{version}.{iteration}'
     nuke_asset_version_name: '{Asset}_{name}_{channel}_v{version}.{iteration}'
@@ -1089,7 +1089,7 @@ The project setup process will prompt you for a 'disk name' for your project and
 
 It is possible to use slashes when specifying the disk name. This will produce a project root point which spans over several folders in depth and can sometimes be useful if the studio is organizing its projects based on for example discipline (commercials, vfx, etc) or if the sheer volume of projects in a studio is so large that a single level in the file system would make it difficult to overview. Note that you should always use forward slashes ('/'). Toolkit will make the necessary adjustments on Windows.
 
-In conjunction with the multi-level folders described above, it is also possible to customize the name that Toolkit suggests as part of the setup process. This is done in a special studio-level hook. If you want to customize this behaviour, create a file named `project_name.py` inside of the studio API location, in the `config/core` folder. This folder should already contain files such as `install_location.yml`, `app_store.yml` and `{% include product %}.yml`.
+In conjunction with the multi-level folders described above, it is also possible to customize the name that Toolkit suggests as part of the setup process. This is done in a special studio-level hook. If you want to customize this behaviour, create a file named `project_name.py` inside of the studio API location, in the `config/core` folder. This folder should already contain files such as `install_location.yml`, `app_store.yml` and `shotgun.yml`.
 
 The `project_name.py` hook file can for example look like this:
 
@@ -1117,9 +1117,9 @@ class ProjectName(Hook):
 
 ## Connection hook
 
-Toolkit stores connection settings so that it can connect to its associated {% include product %} instance. Sometimes it may be useful to control these connection settings in a dynamic fashion. In this case, create a hook file named `sg_connection.py` inside of the studio API location, in the `config/core` folder. This folder should already contain files such as `install_location.yml`, `app_store.yml` and `{% include product %}.yml`.
+Toolkit stores connection settings so that it can connect to its associated {% include product %} instance. Sometimes it may be useful to control these connection settings in a dynamic fashion. In this case, create a hook file named `sg_connection.py` inside of the studio API location, in the `config/core` folder. This folder should already contain files such as `install_location.yml`, `app_store.yml` and `shotgun.yml`.
 
-This hook that is called after {% include product %} connection settings have been read in from the `{% include product %}.yml` and `app_store.yml` configuration files. It makes it easy to modify connection settings procedurally, for example set up a proxy server which depends on some external environment variable.
+This hook that is called after {% include product %} connection settings have been read in from the `shotgun.yml` and `app_store.yml` configuration files. It makes it easy to modify connection settings procedurally, for example set up a proxy server which depends on some external environment variable.
 
 The following three parameters are passed to the hook:
 
