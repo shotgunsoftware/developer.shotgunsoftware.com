@@ -210,8 +210,7 @@
   children:
   - text: siggraph-shotgun-day
     url: " https://www.youtube.com/playlist?list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d"
-  - text: toolkit-webinars
-    url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
+  - page: video-webinars
 
 - caption: other
   children:
