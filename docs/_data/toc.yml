@@ -70,6 +70,8 @@
         - page: event-daemon-technical-details
         - page: event-daemon-example-plugins
     - page: action-menu-items-intro
+      children:
+        - page: action-menu-items-create
     - text: jira-bridge-guide
       url: " https://developer.shotgridsoftware.com/sg-jira-bridge/index.html"
     - page: shotgun-webhooks
