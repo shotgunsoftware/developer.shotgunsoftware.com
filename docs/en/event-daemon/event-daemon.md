@@ -5,7 +5,7 @@ pagename: event-daemon
 lang: en
 ---
 
-# Event Framework
+# {% include product %} Event Framework
 This software was originaly developed by [Patrick Boucher](http://www.patrickboucher.com) with support from [Rodeo Fx](http://rodeofx.com) and Oblique. It is now part of [{% include product %} Software](http://www.shotgridsoftware.com)'s [open source initiative](https://github.com/shotgunsoftware).
 
 This software is provided under the MIT License that can be found in the LICENSE file or at the [Open Source Initiative](http://www.opensource.org/licenses/mit-license.php) website.
@@ -97,7 +97,7 @@ If the event proves worthy, the Script will then act on the event and execute wh
 
 ## Event types
 
-All internal event types follow the format **`{% include product %}_[entity_type]_[New|Change|Retirement]`**. Some examples are `{% include product %}_Shot_New` and `{% include product %}_Asset_Change`. For more information, see the [Event types documentation](https://github.com/shotgunsoftware/shotgunEvents/wiki/Technical_Overview#event-types).
+All internal event types follow the format **`Shotgun_[entity_type]_[New|Change|Retirement]`**. Some examples are `Shotgun_Shot_New` and `Shotgun_Asset_Change`. For more information, see the [Event types documentation](https://github.com/shotgunsoftware/shotgunEvents/wiki/Technical_Overview#event-types).
 
 ## Transactions and potentially missing events
 
