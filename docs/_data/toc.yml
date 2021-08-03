@@ -80,6 +80,7 @@
 
 - caption: reference
   children:
+  - page: developer-overview
   - text: python-api
     url: " https://developer.shotgridsoftware.com/python-api/"
   - text: rest-api
