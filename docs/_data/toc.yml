@@ -72,6 +72,7 @@
     - page: action-menu-items-intro
       children:
         - page: action-menu-items-create
+        - page: custom-browser-protocols
     - text: jira-bridge-guide
       url: " https://developer.shotgridsoftware.com/sg-jira-bridge/index.html"
     - page: shotgun-webhooks
