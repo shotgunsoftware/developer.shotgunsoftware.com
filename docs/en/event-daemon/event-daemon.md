@@ -97,7 +97,7 @@ If the event proves worthy, the Script will then act on the event and execute wh
 
 ## Event types
 
-All internal event types follow the format “ **{% include product %}_[entity_type]_[New|Change|Retirement]** .” Some examples are “{% include product %}_Shot_New” and “{% include product %}_Asset_Change.” For more information, see “Event types” documentation at [https://github.com/shotgunsoftware/shotgunEvents/wiki/Technical_Overview#event-types](https://github.com/shotgunsoftware/shotgunEvents/wiki/Technical_Overview#event-types) .
+All internal event types follow the format **`{% include product %}_[entity_type]_[New|Change|Retirement]`**. Some examples are `{% include product %}_Shot_New` and `{% include product %}_Asset_Change`. For more information, see the [Event types documentation](https://github.com/shotgunsoftware/shotgunEvents/wiki/Technical_Overview#event-types).
 
 ## Transactions and potentially missing events
 
