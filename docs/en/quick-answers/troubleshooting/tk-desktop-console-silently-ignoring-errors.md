@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tk-desktop console silently ignoring errors
-pagename: tk-desktop-console-silently-ignoring-errors
+pagename: desktop-console-silently-ignoring-errors
 lang: en
 ---
 
@@ -18,4 +18,4 @@ When Desktop is loading the app for the project, that logging is never getting p
 
 ## Related links
 
-[See the full thread in the community](https://community.shotgridsoftware.com/t/tk-desktop-console-silently-ignoring-errors/8570)
+[See the full thread in the community](https://community.shotgridsoftware.com/t/8570)

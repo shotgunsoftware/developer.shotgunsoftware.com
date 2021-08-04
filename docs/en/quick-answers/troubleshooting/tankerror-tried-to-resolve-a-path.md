@@ -1,7 +1,7 @@
 ---
 layout: default
 title: TankError Tried to Resolve a Path From The Template
-pagename: tankerror-tried-to-resolve-a-path
+pagename: tank-error-tried-to-resolve-a-path
 lang: en
 ---
 
@@ -41,5 +41,5 @@ The fix:
 
 ## Related links
 
-[See the full thread in the community](https://community.shotgridsoftware.com/t/error-when-resolving-path-from-template-at-new-file-open-missing-fields/6468/10)
-[and](https://community.shotgridsoftware.com/t/unable-to-save-file-in-a-specific-task/9686)
+[See the full thread in the community](https://community.shotgridsoftware.com/t/6468/10)
+[and](https://community.shotgridsoftware.com/t/9686)

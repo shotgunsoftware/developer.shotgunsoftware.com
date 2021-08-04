@@ -1,7 +1,7 @@
 ---
 layout: default
 title: TankError Could Not Create Folders On Disk
-pagename: tankerror-could-not-create-folders-error-message
+pagename: tankerror-could-not-create-folders-error
 lang: en
 ---
 
@@ -33,4 +33,4 @@ And importantly:
 
 ## Related links
 
-[See the full thread in the community](https://community.shotgridsoftware.com/t/adding-an-operating-system-for-existing-project/10129)
+[See the full thread in the community](https://community.shotgridsoftware.com/t/10129)

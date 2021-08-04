@@ -1,7 +1,7 @@
 ---
 layout: default
 title: WARNING Storage Root Primary Could Not Be Mapped to a SG Local Storage
-pagename: review-submission-error-message
+pagename: review-error-message-root
 lang: en
 ---
 
@@ -23,4 +23,4 @@ In addition, when using Google Drive, ensure it is set to always keep files loca
 
 ## Related Links
 
-[See the full thread in the community](https://community.shotgridsoftware.com/t/use-google-drive-as-primary-storage/11185)
+[See the full thread in the community](https://community.shotgridsoftware.com/t/11185)
