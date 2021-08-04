@@ -88,6 +88,7 @@
     children:
     - page: python-api-overview
     - page: python-api-permissions
+    - page: python-api-create-manage
     - text: python-api
       url: " https://developer.shotgridsoftware.com/python-api/"
   - text: rest-api
