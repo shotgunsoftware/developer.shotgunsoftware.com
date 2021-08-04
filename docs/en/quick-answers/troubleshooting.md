@@ -49,7 +49,7 @@ A collection of quick answers aimed at troubleshooting issues.
 - [SSLError: [Errno 8] _ssl.c:504: EOF occurred in violation of protocol](https://community.shotgridsoftware.com/t/sslerror-in-nuke-10-5/9299)
 - [Getting CERTIFICATE_VERIFY_FAILED when using {% include product %} Desktop on a local {% include product %} site](./troubleshooting/certificate-fail-local-error-message.md)
 - [[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate](https://community.shotgridsoftware.com/t/certificate-verify-failed-error-on-windows/8860)
-- [sgtk:descriptor:path?linux_path=None&mac_path=None&windows_path=D\Program%Files\{% include product %}\Configurations does not point to a valid bundle on disk!](https://community.shotgridsoftware.com/t/first-time-setting-up-shotgun-and-i-have-this-error/9384)
+- [Configurations does not point to a valid bundle on disk!](https://community.shotgridsoftware.com/t/first-time-setting-up-shotgun-and-i-have-this-error/9384)
 - [TankInitError: You are loading the Toolkit platform from the pipeline configuration located in](https://community.shotgridsoftware.com/t/tankiniterror-loading-toolkit-platform-from-a-different-project/9342)
 - [TankError: Cannot resolve template data for context](https://community.shotgridsoftware.com/t/tank-folder-creation/8674)
 - [TankError: Tried to resolve a path from the template](https://community.shotgridsoftware.com/t/unable-to-save-file-in-a-specific-task/9686)
