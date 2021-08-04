@@ -96,7 +96,7 @@
   - text: jira-bridge-ref
     url: " https://developer.shotgridsoftware.com/sg-jira-bridge/developer.html"
   - text: rv-technical-reference
-    url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024280254-Reference-Manual"
+    url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_RV_rv_manuals_rv_reference_manual_html"
   - page: pipeline-integrations-reference
     children:
     - page: toolkit-apis
