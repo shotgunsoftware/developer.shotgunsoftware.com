@@ -22,7 +22,6 @@ Follow the steps below to create a new Script:
 
 > **Tip:** If for some reason you need to reset the Application Key of your Script, you’ll need to create a new {% include product %} Script entity to do so. First rename your existing Script to something like “[My Script]—OLD”, then delete it. Create a new Script. The reason you need to rename the old one is that {% include product %} requires unique names for each Script.
 
-When to set up a new Script
----------------------------
+## When to set up a new Script
 
 Script actions can be logged. The more fine-grained the use of individual Script keys, the easier it will be for you to track which Script is making changes for debugging. Having separate Scripts is also a good way to track which Scripts will be impacted by changes on your {% include product %} site and who maintains the Script.

@@ -87,6 +87,7 @@
   - page: python-api-intro
     children:
     - page: python-api-overview
+    - page: python-api-best-practices
     - page: python-api-permissions
     - page: python-api-create-manage
     - text: python-api
