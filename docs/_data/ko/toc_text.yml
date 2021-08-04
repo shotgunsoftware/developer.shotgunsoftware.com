@@ -8,7 +8,7 @@ toolkit: 툴킷
 shotgun: ShotGrid
 quick-answers: 빠른 답변
 
-python-api: Python API
+python-api: Python API Documentation
 rest-api: REST API
 event-triggers: 이벤트 기반 트리거
 jira-bridge: Jira 브리지(베타)
