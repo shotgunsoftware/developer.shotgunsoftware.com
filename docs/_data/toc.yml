@@ -69,8 +69,10 @@
         - page: event-daemon-api
         - page: event-daemon-technical-details
         - page: event-daemon-example-plugins
-    - text: action-menu-items
-      url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
+    - page: action-menu-items-intro
+      children:
+        - page: action-menu-items-create
+        - page: custom-browser-protocols
     - text: jira-bridge-guide
       url: " https://developer.shotgridsoftware.com/sg-jira-bridge/index.html"
     - page: shotgun-webhooks
