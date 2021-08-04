@@ -83,6 +83,8 @@
   - page: developer-overview
   - text: python-api
     url: " https://developer.shotgridsoftware.com/python-api/"
+    children: 
+    - page: python-api-overview
   - text: rest-api
     url: " https://developer.shotgridsoftware.com/rest-api/"
   - text: core-api
