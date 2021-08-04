@@ -14,7 +14,7 @@ review: Review
 quick-answers: Quick Answers
 pipeline-integrations: Pipeline Integrations
 
-python-api: Python API
+python-api: Python API Documentation
 rest-api: REST API
 event-triggers: Writing Event-Driven Triggers
 action-menu-items: Creating custom Action Menu Items
