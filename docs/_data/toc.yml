@@ -141,6 +141,7 @@
     - page: toolkit-engines
       children:
       - page: tk-3dsmax
+      - page: tk-3dsmax-plus
       - page: tk-aftereffects
       - page: tk-alias
       - page: tk-desktop
