@@ -125,15 +125,15 @@ By default, setup_project will only list projects that haven't been set up yet. 
 ```python
 > tank setup_project --force
 
-Welcome to the Shotgun pipeline toolkit!
+Welcome to SGTK!
 For documentation, see https://support.shotgunsoftware.com
 - Running setup_project...
 
 force mode: Projects already set up with Toolkit can be set up again.
 
-Welcome to the Shotgun Pipeline Toolkit Project Setup!
+Welcome to SGTK Project Setup!
 
-Connecting to Shotgun...
+Connecting to {% include product %}...
 Connecting to the App Store...
 
 ------------------------------------------------------------------
@@ -214,7 +214,6 @@ is up to date.
 
 You are currently running version v0.13.22 of the Sgtk Platform
 No need to update the Sgtk Core API at this time!
-Mannes-MacBook-Pro:tmp manne$
 ```
 
 ### configurations
@@ -234,7 +233,7 @@ Will search across all Shotgun Projects.
 - Setting the Context to Big Buck Bunny.
 - Running configurations...
 
-Fetching data from Shotgun...
+Fetching data from {% include product %}...
 
 ======================================================================
 Available Configurations for Project 'Big Buck Bunny'
@@ -438,7 +437,7 @@ Starts an interactive Python shell in your currently selected context. Sets up h
 Example output from this command:
 
 ```python
-Welcome to the Shotgun pipeline toolkit!
+Welcome to SGTK!
 For documentation, see https://support.shotgunsoftware.com
 You are running a tank command associated with Shotgun Project 'Chasing the
 Light'. Only items associated with this project will be considered.
@@ -512,10 +511,10 @@ Example output from this command:
 ```python
 > ./tank dump_config shot_step --sparse --file=/tmp/shot_step.yml
 
-Welcome to the Shotgun Pipeline Toolkit!
+Welcome to SGTK!
 For documentation, see https://support.shotgunsoftware.com
 Starting toolkit for path '/Shotgun/configs/sparse34913'
-- The path is not associated with any Shotgun object.
+- The path is not associated with any SG object.
 - Falling back on default project settings.
 - Running as user 'Toolkit'
 - Using configuration 'Primary' and Core HEAD
@@ -843,7 +842,7 @@ paths:
 
 # The strings section is similar to the paths section - but rather than defining paths
 # on disk, it contains a list of strings. Strings are typically used when you want to be
-# able to configure the way data is written to Shotgun - it may be the name field for a
+# able to configure the way data is written to {% include product %} - it may be the name field for a
 # review version or the formatting of a publish.
 strings:
 
@@ -966,12 +965,12 @@ paths:
 
 # The strings section is similar to the paths section - but rather than defining paths
 # on disk, it contains a list of strings. Strings are typically used when you want to be
-# able to configure the way data is written to Shotgun - it may be the name field for a
+# able to configure the way data is written to {% include product %} - it may be the name field for a
 # review version or the formatting of a publish.
 
 strings:
 
-    # when a review version in Shotgun is created inside of nuke, this is the
+    # when a review version in {% include product %} is created inside of nuke, this is the
     # name that is being given to it (the code field)
     nuke_shot_version_name: '{Shot}_{name}_{channel}_v{version}.{iteration}'
     nuke_asset_version_name: '{Asset}_{name}_{channel}_v{version}.{iteration}'
