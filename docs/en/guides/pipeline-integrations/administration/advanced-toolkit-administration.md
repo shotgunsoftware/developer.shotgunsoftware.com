@@ -259,7 +259,7 @@ If you want to check for app or engine updates, you can run:
 If you want to change the location of this configuration, you can run:
 > /mnt/software/sgtk/big_buck_bunny/tank move_configuration
 
-This is a public configuration. In Shotgun, the actions defined in this
+This is a public configuration. In {% include product %}, the actions defined in this
 configuration will be on all users' menus.
 
 Configuration 'Dev Area' (Private)
@@ -279,9 +279,9 @@ If you want to check for app or engine updates, you can run:
 If you want to change the location of this configuration, you can run:
 > /Users/manne/sgtk_dev/tank move_configuration
 
-This is a private configuration. In Shotgun, only Admin 3 will see the actions
+This is a private configuration. In {% include product %}, only Admin 3 will see the actions
 defined in this config. If you want to add additional members to this
-configuration, navigate to the Shotgun Pipeline Configuration Page and add
+configuration, navigate to the SG Pipeline Configuration Page and add
 them to the Users field.
 ```
 
@@ -320,7 +320,7 @@ Example output from this command
 
 ```python
 Welcome to Sgtk!
-Will search across all Shotgun Projects.
+Will search across all {% include product %} Projects.
 - Found Asset Squirrel (Project 'Big Buck Bunny')
 - Starting Sgtk v0.13.22 using configuration
 /mnt/software/sgtk/big_buck_bunny.
@@ -442,13 +442,13 @@ For documentation, see https://support.shotgunsoftware.com
 You are running a tank command associated with Shotgun Project 'Chasing the
 Light'. Only items associated with this project will be considered.
 - Found Shot moo87 (Project 'Chasing the Light')
-- Starting the Shotgun pipeline toolkit v0.15.14.
+- Starting the SG pipeline toolkit v0.15.14.
 - Setting the Context to Shot moo87.
 - Started Shell Engine version v0.3.3
 - Environment: /mnt/software/tank/chasing_the_light/config/env/shot.yml.
 - Running shell...
 
-Welcome to Shotgun Pipeline Toolkit Python!
+Welcome to SG Pipeline Toolkit Python!
 2.7.1 (r271:86832, Jul 31 2011, 19:30:53)
 [GCC 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)]
 Running on darwin
