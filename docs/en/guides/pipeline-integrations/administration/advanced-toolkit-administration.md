@@ -226,7 +226,7 @@ Example output from this command:
 > tank Project Bunny configurations
 
 Welcome to Sgtk!
-Will search across all Shotgun Projects.
+Will search across all {% include product %} Projects.
 - Found Project Big Buck Bunny
 - Starting Sgtk v0.13.22 using configuration
 /mnt/software/sgtk/big_buck_bunny.
@@ -439,7 +439,7 @@ Example output from this command:
 ```python
 Welcome to SGTK!
 For documentation, see https://support.shotgunsoftware.com
-You are running a tank command associated with Shotgun Project 'Chasing the
+You are running a tank command associated with {% include product %} Project 'Chasing the
 Light'. Only items associated with this project will be considered.
 - Found Shot moo87 (Project 'Chasing the Light')
 - Starting the SG pipeline toolkit v0.15.14.
