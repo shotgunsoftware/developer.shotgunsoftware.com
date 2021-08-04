@@ -13,7 +13,7 @@ When installing {% include product %} Desktop for the first time, this error can
 
 ## How to fix
 
-The Pipeline Configuration entity for the project is pointing to `...\{% include product %\Configurations` path to the config on Windows. This is likely not the correct path, so as a first step, ensure that path exists or correct it.
+The Pipeline Configuration entity for the project is pointing to `...\{% include product %}\Configurations` path to the config on Windows. This is likely not the correct path, so as a first step, ensure that path exists or correct it.
 
 It's also possible that you may be trying to access from a centralized set-up where you do not have access to that path location. In this case, switching to a distributed set-up will help.
 
