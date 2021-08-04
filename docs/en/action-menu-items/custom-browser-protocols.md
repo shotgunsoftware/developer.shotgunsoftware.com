@@ -74,12 +74,12 @@ A lot of AMIs that run locally may opt to start a simple Python script via the P
 Using Windows Registry Editor:
 
 ```
-[HKEY_CLASSES_ROOT\shotgun]
-@="URL:shotgun Protocol"
+[HKEY_CLASSES_ROOT\{% include product %}]
+@="URL:{% include product %} Protocol"
 "URL Protocol"=""
-[HKEY_CLASSES_ROOT\shotgun\shell]
-[HKEY_CLASSES_ROOT\shotgun\shell\open]
-[HKEY_CLASSES_ROOT\shotgun\shell\open\command]
+[HKEY_CLASSES_ROOT\{% include product %}\shell]
+[HKEY_CLASSES_ROOT\{% include product %}\shell\open]
+[HKEY_CLASSES_ROOT\{% include product %}\shell\open\command]
 @="python""sgTriggerScript.py""%1"
 ```
 
@@ -197,9 +197,9 @@ Find the saved Application Bundle, and Open Contents. Then, open the info.plist 
 
 You may want to change the following three strings:
 ```
-com.mycompany.AppleScript.Shotgun
-Shotgun
-shotgun
+com.mycompany.AppleScript.{% include product %}
+{% include product %}
+{% include product %}
 ```
 
 The third string is the protocol handler; therefore a URL would be:  
