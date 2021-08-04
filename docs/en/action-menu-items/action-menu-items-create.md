@@ -28,7 +28,11 @@ As an example, you can create a custom menu item called “Build PDF Report.” 
 ![AMI menu](./images/dv-custom-amis-04-ami-menu-03.png)
 
 
-From the settings menu, choose Action Menu Items to open the AMI Admin page. To create a new AMI, click on ![Add AMI](./images/dv-custom-amis-05-add-ami-04.png) . Fill out the Title and any other required fields, and click on “Create Action Menu Item.”
+From the settings menu, choose Action Menu Items to open the AMI Admin page. 
+
+To create a new AMI, click on ![Add AMI](./images/dv-custom-amis-05-add-ami-04.png). 
+
+Fill out the Title and any other required fields, and click on “Create Action Menu Item.”
 
 ### What happens when a user clicks on the AMI?
 

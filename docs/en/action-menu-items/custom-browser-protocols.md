@@ -7,7 +7,7 @@ lang: en
 
 # Launching Applications Using Custom Browser Protocols
 
-## ![asterisk](./images/dv-asterisk.png) Contents
+## Content
 
 - [Registering a protocol](#registering-a-protocol)
   - [Registering a protocol on Windows](#registering-a-protocol-on-windows)
@@ -118,9 +118,9 @@ if __name__ == '__main__':
 
 **Step 3: Connect the {% include product %} interface with your custom protocol and ultimately, your script**
 
-Finally, create an AMI in {% include product %} whose URL value will be `{% include product %}://processVersion` . You can assign this AMI to any entity type you wish, but this example uses the Version entity.
+Finally, create an AMI in {% include product %} whose URL value will be `shotgrid://processVersion` . You can assign this AMI to any entity type you wish, but this example uses the Version entity.
 
-Go to a Version page, right-click on a version and select your AMI from the menu. This should make your browser open a `{% include product %}://` URL which will be redirected to your script via the registered custom protocol.
+Go to a Version page, right-click on a version and select your AMI from the menu. This should make your browser open a `shotgrid://` URL which will be redirected to your script via the registered custom protocol.
 
 In the `output.txt` file in the same directory as your script you should now see something like this:
 ```
@@ -157,7 +157,7 @@ In the `output.txt` file in the same directory as your script you should now see
 
 **Possible variants**
 
-By varying the keyword after the `//` part of the URL in your AMI, you can change the contents of the `action` variable in your script, all the while keeping the same `{% include product %}://` protocol and registering only a single custom protocol. Then, based on the content of the `action` variable and the contents of the parameters, your script can understand what the intended behavior should be.
+By varying the keyword after the `//` part of the URL in your AMI, you can change the contents of the `action` variable in your script, all the while keeping the same `shotgrid://` protocol and registering only a single custom protocol. Then, based on the content of the `action` variable and the contents of the parameters, your script can understand what the intended behavior should be.
 
 Using this methodology you could open applications, upload content via services like FTP, archive data, send email, or generate PDF reports.
 
@@ -211,7 +211,7 @@ shotgrid://something
 
 Finally, move your `.app` bundle to the Applications folder of your Mac. Then double click on it—that will register your protocol with the operating system.
 
-The data flow looks like this: once you click the AMI in {% include product %}, or click a URL that starts with `{{ akn_product_name_lower }}://` , the `.app` bundle will respond to it and pass the URL over to your Python script. At this point the same script that was used in the Windows example can be used and all the same possibilities apply.
+The data flow looks like this: once you click the AMI in {% include product %}, or click a URL that starts with `shotgrid://` , the `.app` bundle will respond to it and pass the URL over to your Python script. At this point the same script that was used in the Windows example can be used and all the same possibilities apply.
 
 ## Registering a protocol on Linux
 
