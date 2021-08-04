@@ -9,7 +9,7 @@ lang: en
 
 **Note:** For more information about the {% include product %} API, see our [API documentation](http://developer.shotgridsoftware.com/python-api/) .
 
-The {% include product %} Application Programming Interface (API) enables users to easily integrate their tools with {% include product %}. Through it you can create automated processes, integrate with many third party software packages, and communicate with existing tools within your studio. Because the needs of every studio are very different, the {% include product %} API provides powerful, low-level functionality and leaves most of the business logic to you.
+The {% include product %} Python Application Programming Interface (API) enables users to easily integrate their tools with {% include product %}. Through it you can create automated processes, integrate with many third party software packages, and communicate with existing tools within your studio. Because the needs of every studio are very different, the {% include product %} API provides powerful, low-level functionality and leaves most of the business logic to you.
 
 The API is built using [Python](https://www.python.org/) , a common programming language used widely across the media and entertainment industry. Use of the [{% include product %} Python API](https://github.com/shotgunsoftware/python-api) is included for free with your {% include product %} site.
 
