@@ -72,7 +72,7 @@ Under certain circumstances, Windows will report that a certificate has been imp
 
 ![Windows Certificates](images/windows-certificates.png)
 
-If the entry is missing, there is probably a group policy issue on your Windows domain or local computer. If it is present, we recommend you contact our [support team](https://support.shotgunsoftware.com/hc/requests/new).
+If the entry is missing, there is probably a group policy issue on your Windows domain or local computer. If it is present, we recommend you contact our [support team](https://knowledge.autodesk.com/contact-support).
 
 At this point, we recommend that you communicate with the person who administers the Windows computers for your organization and ask that person about any group policies that could have been set that instructs Windows not to trust self-signed certificates.
 
@@ -94,8 +94,8 @@ On the next dialog, make sure that **Define these policy settings** is unchecked
 
 At this point, you need to close all Chrome windows and restart Chrome. We recommend doing so with [chrome://restart](chrome://restart) as we did above. This is required for the changes that have been made to take effect. Browsing to the certificates list should now show the **localhost** certificate.
 
-If you still encounter issues using the browser integration after these changes, or if the settings were correct in the first place, please contact our [support team](https://support.shotgunsoftware.com/hc/requests/new).
+If you still encounter issues using the browser integration after these changes, or if the settings were correct in the first place, please contact our [support team](https://knowledge.autodesk.com/contact-support).
 
 ## Troubleshooting on other OSes
 
-If you have issues with the {% include product %} Desktop integration on other OSes, please contact our [support team](https://support.shotgunsoftware.com/hc/en-us/requests/new) so that we can assist you and update this article.
+If you have issues with the {% include product %} Desktop integration on other OSes, please contact our [support team](https://knowledge.autodesk.com/contact-support) so that we can assist you and update this article.

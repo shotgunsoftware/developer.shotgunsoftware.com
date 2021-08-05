@@ -21,7 +21,7 @@ lang: ko
 
 ![코드 탭](../images/apps/multi-demo-code_tab.png)
 
-새 구성요소가 플랫폼에 추가되고, 시간이 허락한다면 새 데모도 추가할 예정입니다. 보고 싶은 공통된 구성요소 사용 패턴이나 데모가 있다면 [티켓을 제출](https://support.shotgunsoftware.com/hc/en-us/requests/new)하여 알려 주십시오.
+새 구성요소가 플랫폼에 추가되고, 시간이 허락한다면 새 데모도 추가할 예정입니다. 보고 싶은 공통된 구성요소 사용 패턴이나 데모가 있다면 [티켓을 제출](https://knowledge.autodesk.com/contact-support)하여 알려 주십시오.
 
 ## 설치
 

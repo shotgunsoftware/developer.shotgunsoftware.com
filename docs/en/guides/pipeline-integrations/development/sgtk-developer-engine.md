@@ -46,8 +46,8 @@ It is up to each engine to implement these methods so that they work nicely insi
 
 ## Things to know before you start
 
-we provide [integrations](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) for the most commonly used content creation software.
-There are also [engines that Toolkit Community members have built and shared back](https://support.shotgunsoftware.com/hc/en-us/articles/219039828-Community-Shared-Integrations). But sometimes you'll need pipeline integrations for software that doesn't have a Toolkit engine yet. 
+We provide [integrations](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components) for the most commonly used content creation software.
+There are also [engines that Toolkit Community members have built and shared back](hhttps://developer.shotgridsoftware.com/58a557ee/?title=Community+Shared+Integrations). But sometimes you'll need pipeline integrations for software that doesn't have a Toolkit engine yet. 
 
 If you have the time and resources, we encourage you to help the Toolkit Community (and yourselves) in writing a missing engine you would like to use!
 

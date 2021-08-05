@@ -18,7 +18,7 @@ lang: zh_CN
 - [配置 Workfiles 和加载器应用](#file-open-file-save-or-the-loader-app-is-slow)以过滤出美工人员不需要的内容。考虑按状态进行过滤，这有助于保持实体列表简短且与美工人员的当前任务相关。
 - 检查您是否有任何自定义挂钩，并且它们不会增加额外开销。
 
-下面列出了一些良好做法和常见的性能下降场景。这不是一个详尽的列表，当我们看到新的模式时，可以尝试将它添加到列表中。如果本手册不能帮助您找到您所面临问题的根源，请随时提交[支持工单](https://support.shotgunsoftware.com/hc/en-us/requests/new)，我们的团队将很乐意进一步帮助您。
+下面列出了一些良好做法和常见的性能下降场景。这不是一个详尽的列表，当我们看到新的模式时，可以尝试将它添加到列表中。如果本手册不能帮助您找到您所面临问题的根源，请随时提交[支持工单](https://knowledge.autodesk.com/contact-support)，我们的团队将很乐意进一步帮助您。
 
 目录：
 - [常规良好做法](#general-good-practice)
@@ -85,9 +85,9 @@ lang: zh_CN
 2. **不管您使用哪种方法启动，速度都很慢吗？也就是说，如果您从 SG Desktop 启动或使用浏览器集成从 SG 站点启动，情况是否大致相同？** - 如果是从 {% include product %} 站点而不是从 SG Desktop 启动很慢，那么这可能是浏览器集成的问题，或者它可能意味着在磁盘上创建文件夹的问题。如果是从项目以外的上下文启动，那么很可能是在磁盘上创建了更多文件夹，所以这可能解释了所花的时间。同样值得注意的是，每次启动软件时，我们都会检查所需的文件夹是否存在。
 3. **是否在所有项目中都发生？** - 如果不是，那么它很可能特定于配置的设置方式。
 4. **是否发生在一天中的特定时刻？** - 如果是，那么这可能表明对基础设施的需求较高，例如在一天的某些时间服务器使用率较高。
-5. **是否针对使用的所有计算机/操作系统发生此情况？** - 如果特定计算机速度很慢，则可能是 Toolkit 以外的某些内容导致了问题。那么，首先想到是清除该计算机上的 Toolkit 缓存。不同的操作系统随附不同版本的软件和 Python 软件包，有时可能在特定的内部版本中出现性能问题。具体来说，我们已经看到在 Windows 上使用 Samba (SMB) 共享的性能问题。目前还没有解决此问题的方法，但是如果您正在使用它，那么最好能够意识到这一点。如果您认为该问题仅限于特定的操作系统、Python 软件包或软件版本，请联系我们的[支持团队](https://support.shotgunsoftware.com/hc/en-us/requests/new)，以便他们可以进一步调查。
+5. **是否针对使用的所有计算机/操作系统发生此情况？** - 如果特定计算机速度很慢，则可能是 Toolkit 以外的某些内容导致了问题。那么，首先想到是清除该计算机上的 Toolkit 缓存。不同的操作系统随附不同版本的软件和 Python 软件包，有时可能在特定的内部版本中出现性能问题。具体来说，我们已经看到在 Windows 上使用 Samba (SMB) 共享的性能问题。目前还没有解决此问题的方法，但是如果您正在使用它，那么最好能够意识到这一点。如果您认为该问题仅限于特定的操作系统、Python 软件包或软件版本，请联系我们的[支持团队](https://knowledge.autodesk.com/contact-support)，以便他们可以进一步调查。
 6. **是否针对所有用户都发生这种情况？** - 与上文类似，如果是同一台计算机上的其他用户，这个问题可能会消失。在这种情况下，首先清除用户的本地 {% include product %} 缓存。此外，请确保没有为正常的生产用途启用调试日志记录，因为这将影响性能。
-7. **启动速度慢局限于特定的应用/软件，还是所有应用/软件的启动速度都异常缓慢？** - 如果特定软件启动缓慢，这可能意味着存在配置问题。可能有必要检查一下，是否有任何自定义挂钩设置为在启动之前或之后运行，这可能会影响性能。启动时使用的常见挂钩是 [`before_app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/before_app_launch.py)、[`app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/app_launch.py) 和核心挂钩 [`engine_init.py`](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/engine_init.py)。有时也会出现以下情况：发布了更新版本的软件，而我们的集成启动速度突然慢很多。在这种情况下，您应该联系[支持](https://support.shotgunsoftware.com/hc/en-us/requests/new) 以确认他们是否了解这一点，以及是否有任何已知的修复。请提供您使用的软件版本号（如果适用，包括修补程序/Service Pack），以及您正在运行的 TK 插件和核心的版本。
+7. **启动速度慢局限于特定的应用/软件，还是所有应用/软件的启动速度都异常缓慢？** - 如果特定软件启动缓慢，这可能意味着存在配置问题。可能有必要检查一下，是否有任何自定义挂钩设置为在启动之前或之后运行，这可能会影响性能。启动时使用的常见挂钩是 [`before_app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/before_app_launch.py)、[`app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/app_launch.py) 和核心挂钩 [`engine_init.py`](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/engine_init.py)。有时也会出现以下情况：发布了更新版本的软件，而我们的集成启动速度突然慢很多。在这种情况下，您应该联系[支持](https://knowledge.autodesk.com/contact-support) 以确认他们是否了解这一点，以及是否有任何已知的修复。请提供您使用的软件版本号（如果适用，包括修补程序/Service Pack），以及您正在运行的 TK 插件和核心的版本。
 
 ### 问题是在启动前还是启动后发生？
 
@@ -117,7 +117,7 @@ lang: zh_CN
 
 一旦定位了时间跳转，日志行就有望让您了解在该阶段发生了什么，例如它是在文件夹创建期间发生的，还是在试图获取 {% include product %} 连接时发生的。
 
-不过，阅读日志可能比较麻烦，而且内容并不总是有意义，因此，您可以再次联系[支持](https://support.shotgunsoftware.com/hc/en-us/requests/new)来帮助您完成这一点。
+不过，阅读日志可能比较麻烦，而且内容并不总是有意义，因此，您可以再次联系[支持](https://knowledge.autodesk.com/contact-support)来帮助您完成这一点。
 
 ### 软件启动速度慢的常见原因
 

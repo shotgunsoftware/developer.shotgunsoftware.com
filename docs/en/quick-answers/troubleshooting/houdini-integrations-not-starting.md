@@ -40,4 +40,4 @@ This will allow the {% include product %} set value to persist when Houdini laun
 
 If you get this you should try using `%HOUDINI_PATH%` instead." %}
 
-If this does not fix your problem please reach out to our [support team](https://support.shotgunsoftware.com/hc/en-us/requests/new) and they will help you diagnose the issue.
+If this does not fix your problem please reach out to our [support team](https://knowledge.autodesk.com/contact-support) and they will help you diagnose the issue.

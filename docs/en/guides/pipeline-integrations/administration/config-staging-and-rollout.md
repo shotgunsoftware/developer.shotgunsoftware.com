@@ -9,7 +9,7 @@ lang: en
 
 This document explains best practices for how to safely roll out changes to your production pipeline. It explains how you can create a staging sandbox, which is a copy of your production configuration, update this sandbox and do testing and then finally push your changes to the production config.  
 
-_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For the default setup, please see  [{% include product %} Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493)._
+_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For the default setup, please see  [{% include product %} Integrations Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide)._
 
 # Introduction
 
@@ -165,7 +165,7 @@ Make sure the loader app is up to date in maya:
 
 This section explains how you can use a clone staging sandbox configuration to safely upgrade the Toolkit Core API. If you haven't got a staging sandbox prepared yet, just follow the instructions in the previous section!
 
-If your staging sandbox was cloned from a pipeline configuration using a  [shared studio Core API](https://support.shotgunsoftware.com/hc/en-us/articles/219040448), you'll want to update your sandbox to use it's own unique Core API code. This is called "localizing" the core and can be done by navigating to your staging sandbox and running  `tank localize`. This command will copy the Core API from the studio install, into your sandbox, making it possible to run and test a different version of the Core API later on.
+If your staging sandbox was cloned from a pipeline configuration using a  [shared studio Core API](https://developer.shotgridsoftware.com/b12f2510/#how-do-i-update-my-pipeline-configuration-to-use-an-existing-shared-core), you'll want to update your sandbox to use it's own unique Core API code. This is called "localizing" the core and can be done by navigating to your staging sandbox and running  `tank localize`. This command will copy the Core API from the studio install, into your sandbox, making it possible to run and test a different version of the Core API later on.
 
 _The default behavior in Toolkit is to localize the core by default. If you haven't explicitly created a shared studio core previously, it's safe to assume your core is localized already._
 ```shell

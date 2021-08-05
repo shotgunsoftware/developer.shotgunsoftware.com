@@ -55,11 +55,11 @@ Below is a conceptual overview of how to install an app and how to tell a {% inc
 
 ### Find the location descriptor for the Python Console App
 
-**Step 1:** Open the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya) and find the information for the {% include product %} Python Console under Maya. Select the title.
+**Step 1:** Open the [Apps and Engines page](https://developer.shotgridsoftware.com/9e62da4a/?title=Maya) and find the information for the {% include product %} Python Console under Maya. Select the title.
 
 ![Python app](./images/installing_app/1_python_app.png)
 
-This will bring up the [information for the app](https://support.shotgunsoftware.com/hc/en-us/articles/219033108), which includes everything that’s needed for the little black book.
+This will bring up the [information for the app](https://developer.shotgridsoftware.com/770a748a/?title=Python+Console), which includes everything that’s needed for the little black book.
 
 ![Python app info](./images/installing_app/2_python_app_info.png)
 
@@ -137,7 +137,7 @@ If an app that you want to use isn’t referenced in the little black book, you 
 
 ## Tell Toolkit where to find the app
 
-**Step 10:** Search the file for `pythonconsole`. If you used the Default Configuration for the project, you will find that the descriptor for the Python Console app is listed in this file. It should match the description we found in the [list](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) of Maya apps we looked at when we started on our journey. Check to make sure the version matches what we looked at in the list of Maya apps. 
+**Step 10:** Search the file for `pythonconsole`. If you used the Default Configuration for the project, you will find that the descriptor for the Python Console app is listed in this file. It should match the description we found in the [list](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components) of Maya apps we looked at when we started on our journey. Check to make sure the version matches what we looked at in the list of Maya apps. 
 
 ```yaml
 apps.tk-multi-pythonconsole.location:
@@ -362,7 +362,7 @@ The Python Console app was added to the Project environment for the chosen proje
 
 ### The {% include product %} developer community
 
-One of the wonderful things about Toolkit is that anyone can create a Toolkit app. Apps can be kept proprietary, or they can be shared within the [{% include product %} community](https://support.shotgunsoftware.com/hc/en-us/articles/219039828), adding to the {% include product %} arsenal. If you’ve created a really stellar app you want share on the {% include product %} community page, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
+One of the wonderful things about Toolkit is that anyone can create a Toolkit app. Apps can be kept proprietary, or they can be shared within the [{% include product %} community](https://community.shotgridsoftware.com/c/pipeline/6), adding to the {% include product %} arsenal. If you’ve created a really stellar app you want share on the {% include product %} community page, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
 Standard Toolkit apps and apps created by the loving {% include product %} community are actively discussed in the **[{% include product %}-dev Google group](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)**. The knowledge and tool base continues to grow as the {% include product %} community adds their contributions.
 
@@ -406,11 +406,11 @@ apps.tk-multi-pythonconsole.location:
   type: app_store
   name: tk-multi-pythonconsole
   version: v1.1.2
-```' %}
+```
 
-Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines).
+Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components).
 
-You can add any app to any appropriate software integration that ShotGrid supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page. 
+You can add any app to any appropriate software integration that ShotGrid supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components) page. 
 
 If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other ShotGrid users will need the same function and sharing new apps is one way to give back to the ShotGrid community. 
 

@@ -75,7 +75,7 @@ More advanced settings and control over the actual export xml content that is be
 ## Bypassing {% include product %} server side transcoding
 By default, Quicktimes are uploaded to {% include product %} review by setting the `Version.sg_uploaded_movie` field. This in turn will trigger {% include product %} server side transcoding; the uploaded quicktime will be further converted to `mp4` and `webm` representations tailored for playback in browsers and mobile. Sometimes, it can be beneficial to bypass this server side transcoding. This is possible by setting the `bypass_shotgun_transcoding` configuration setting. When this is set to true, the integration will upload directly to the `Version.sg_uploaded_movie_mp4` field in {% include product %}, thereby bypassing the server side transcoding. In this case, no `webm` version is generated, so review playback will not be possible in Firefox.
 
-For more information, see https://support.shotgunsoftware.com/entries/26303513-Transcoding
+For more information, see https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Supervisor_Artist_sa_review_approval_sa_transcoding_html
 
 ## Customizing ffmpeg
 
@@ -83,7 +83,7 @@ When the exporter generates quicktimes, it uses a version of ffmpeg which comes 
 
 Please note that the way h264 parameters are passed to ffmpeg has changed between the version that is used by default and the latest versions. By switching to the latest generation of ffmpeg, it is possible to implement exactly the recommended transcoding guidelines that results in optimal upload and performance on the {% include product %} side. You can find these guidelines here:
 
-https://support.shotgunsoftware.com/entries/26303513-Transcoding
+https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Supervisor_Artist_sa_review_approval_sa_transcoding_html
 
 We only recommend changing the ffmpeg version if you are an advanced user. In that case, follow these steps:
 

@@ -31,7 +31,7 @@ To use this guide, the following is required:
 
 1. An active [{% include product %}](https://www.shotgridsoftware.com/signup/) site. You should have a project with at least one Asset created. The asset should have a Model task. 
 2. A basic understanding of how a {% include product %} site is used to manage assets
-3. [{% include product %} Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) installed on your system.
+3. [{% include product %} Desktop](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide#installation-of-desktop) installed on your system.
 4. A cloned pipeline configuration for the identified project, or complete the [Getting started with configurations](./advanced_config.md) guide and clone the configuration created in that exercise.
 5. Basic familiarity with YAML. 
 6. Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
@@ -52,7 +52,7 @@ The Toolkit platform allows you to build your folder structure dynamically by us
 
 ## Begin exercise
 
-Customizing your schema and templates will allow you to dynamically manage the files generated when creating the dining room set: a place setting, a steaming hot filet mignon, a bottle of Penfolds Grange Hermitage 1951, potatoes au gratin, lemon garlic asparagus, etc. Assets used in the dining room set will be associated with the "Dining Room" Set entity enabling you to manage them more easily. Set is not an entity type that comes standard with the Default Configuration, so you need to enable a [custom entity](https://support.shotgunsoftware.com/hc/en-us/articles/114094182834-Enabling-a-custom-entity) and call it Set before extending the schema and templates to use it.
+Customizing your schema and templates will allow you to dynamically manage the files generated when creating the dining room set: a place setting, a steaming hot filet mignon, a bottle of Penfolds Grange Hermitage 1951, potatoes au gratin, lemon garlic asparagus, etc. Assets used in the dining room set will be associated with the "Dining Room" Set entity enabling you to manage them more easily. Set is not an entity type that comes standard with the Default Configuration, so you need to enable a [custom entity](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html) and call it Set before extending the schema and templates to use it.
 
 ### Enabling a custom entity
 
@@ -116,7 +116,7 @@ Select **Create “Dining Room”**.
 
 Select **Create Set**.
 
-Adding **Dining Room** in the Set field of an asset creates an [association](https://support.shotgunsoftware.com/hc/en-us/articles/115000010973-Linking-a-custom-entity) with the Dining Room set entity. 
+Adding **Dining Room** in the Set field of an asset creates an [association](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_linking_custom_entities_html) with the Dining Room set entity. 
 
 ![Python app](./images/dynamic_filesystem_configuration/13_dining_room_associated.png)
 
@@ -128,7 +128,7 @@ You’ve now enabled a Set custom entity, created a Set entity called “Dining 
 
 Now it’s time to define the folder structure you want Toolkit to dynamically generate as artists step through the production pipeline. This is done by editing the schema.
 
-{% include info title="Note" content="It’s a good practice to test configurations in a *cloned* configuration, so as not to affect the active production configuration. The cloning process creates a *copy* of the configuration that you can edit safely before pushing changes to the live config. You can find details on cloning your config in the [Configuration Staging and Rollout](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration) document." %}
+{% include info title="Note" content="It’s a good practice to test configurations in a *cloned* configuration, so as not to affect the active production configuration. The cloning process creates a *copy* of the configuration that you can edit safely before pushing changes to the live config. You can find details on cloning your config in the [Configuration Staging and Rollout](https://developer.shotgridsoftware.com/60762324/?title=Configuration+Staging+and+Rollout#cloning-your-configuration) document." %}
 
 **Step 7:** Navigate to your pipeline configuration. Drill down to the schema folder, `<pipeline_configuration_root>/config/core/schema` and open the `project` folder.
 
@@ -381,7 +381,7 @@ The **Work Area**: is displaying **.../{% include product %}/projects/the_other_
 
 ### Extending the example
 
-In this example, we modified a single template, but there’s plenty more you can do with your filesystem configuration. In a real world example, you’d likely change *all* asset-related files to have the same file naming conventions. You can make modifications based on other entities (Season, Episode, Level, etc.), create user folders, name your folders based on {% include product %} data manipulated with regular expressions, and much more. You can learn about all of Toolkit’s folder and schema options in the [Filesystem Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868). 
+In this example, we modified a single template, but there’s plenty more you can do with your filesystem configuration. In a real world example, you’d likely change *all* asset-related files to have the same file naming conventions. You can make modifications based on other entities (Season, Episode, Level, etc.), create user folders, name your folders based on {% include product %} data manipulated with regular expressions, and much more. You can learn about all of Toolkit’s folder and schema options in the [Filesystem Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference). 
 
 ### The Path Cache
 
@@ -390,6 +390,6 @@ At folder creation time, a mapping is created between a folder on disk and a {% 
 
 ### Additional Resources
 
-* [Filesystem Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868)
+* [Filesystem Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference)
 * [Intro to Toolkit Configuration webinar video](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)
 

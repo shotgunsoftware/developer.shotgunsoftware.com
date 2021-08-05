@@ -27,7 +27,7 @@ The {% include product %} extension panel uses the same color palette and basic 
 
 ## Installation
 
-Installation of the {% include product %} Engine for Photoshop CC follows the same protocol as the other {% include product %} integrations. For information on installing engines and apps, see the [Administering Toolkit](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit) article. In addition, you can reference the [default toolkit config](https://github.com/shotgunsoftware/tk-config-default2) as an example of how to configure the integration.
+Installation of the {% include product %} Engine for Photoshop CC follows the same protocol as the other {% include product %} integrations. For information on installing engines and apps, see the [Administering Toolkit](https://developer.shotgridsoftware.com/425b1da4/?title=Advanced+Toolkit+Administration) article. In addition, you can reference the [default toolkit config](https://github.com/shotgunsoftware/tk-config-default2) as an example of how to configure the integration.
 
 ## Enabling the extension
 

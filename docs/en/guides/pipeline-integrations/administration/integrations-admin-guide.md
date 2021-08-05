@@ -9,7 +9,7 @@ lang: en
 
 ## Introduction
 
-This document serves as a guide for administrators of {% include product %} integrations. It's one of three: user, admin, and developer. Our  [User Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574)  is intended for artists who will be the end users of {% include product %} integrations in their daily workflow, and our  [Developer Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067513)  is technical documentation for those writing Python code to extend the functionality. This document falls between those two: it's intended for those who are implementing {% include product %} integrations for a studio, managing software versions, and making storage decisions for published files.
+This document serves as a guide for administrators of {% include product %} integrations. It's one of three: user, admin, and developer. Our  [User Guide](hhttps://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide)  is intended for artists who will be the end users of {% include product %} integrations in their daily workflow, and our  [Developer Guide](https://developer.shotgridsoftware.com/93c6e555/?title=Integrations+Developer+Guide)  is technical documentation for those writing Python code to extend the functionality. This document falls between those two: it's intended for those who are implementing {% include product %} integrations for a studio, managing software versions, and making storage decisions for published files.
 
 ## Standard Pipeline Configurations
 
@@ -17,15 +17,13 @@ At the heart of any Toolkit setup is the Pipeline Configuration, a set of YAML f
 
 ### The Basic Config
 
-Our out-of-the-box integrations are designed to run without the need to set up or modify any configuration files. When you use our out-of-the-box integrations, there's nothing to administer, but Toolkit uses an implied Pipeline Configuration under the hood, and we call this Pipeline Configuration the Basic Config. The Basic Config makes three Toolkit apps – The Panel, Publisher, and Loader – available in all supported software packages, and looks to your Software Entities in {% include product %} to determine which software packages to display in {% include product %} Desktop. The Basic Config does not include filesystem location support. When you use out-of-the-box integrations on a project, your copy of the Basic Config is auto-updated whenever you launch Desktop, so you'll always have the latest version of our integrations. You can  [subscribe to release notes here](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations), and  [see the Basic Config in Github here](https://github.com/shotgunsoftware/tk-config-basic/).
+Our out-of-the-box integrations are designed to run without the need to set up or modify any configuration files. When you use our out-of-the-box integrations, there's nothing to administer, but Toolkit uses an implied Pipeline Configuration under the hood, and we call this Pipeline Configuration the Basic Config. The Basic Config makes three Toolkit apps – The Panel, Publisher, and Loader – available in all supported software packages, and looks to your Software Entities in {% include product %} to determine which software packages to display in {% include product %} Desktop. The Basic Config does not include filesystem location support. When you use out-of-the-box integrations on a project, your copy of the Basic Config is auto-updated whenever you launch Desktop, so you'll always have the latest version of our integrations. You can  [subscribe to release notes here](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes), and  [see the Basic Config in Github here](https://github.com/shotgunsoftware/tk-config-basic/).
 
 ### The Default Config
 
-This is the default starting point for our Advanced project setup. It includes  [filesystem location support](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference)  and a wider array of Toolkit apps and engines.
+This is the default starting point for our Advanced project setup. It includes  [filesystem location support](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference)  and a wider array of Toolkit apps and engines.
 
 You can  [see the Default Config in Github here](https://github.com/shotgunsoftware/tk-config-default2). For a detailed description of the Default Config's structure, see the  `config/env/README.md`  file in your Pipeline Configuration, or  [view it here in Github](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md).
-
-If you're familiar with the old structure of the Default Config, take a look at the  [Default Config Update FAQ](https://support.shotgunsoftware.com/hc/en-us/community/posts/115003376154-Default-Configuration-Update-FAQ).
 
 {% include info title="Note" content="Looking for the old config structure? With the v1.1 release of Integrations, we reorganized the structure of the Default Config to help maximize efficiency and readability, and to make it match the Basic Config's structure more closely You can still base projects on the legacy Default Config. Just choose 'Legacy Default' when prompted to select a configuration in the Desktop Set Up Project Wizard." %}
 
@@ -33,7 +31,7 @@ If you're familiar with the old structure of the Default Config, take a look at 
 
 The Publisher is designed to ease the transition between the out-of-the-box workflow and the full pipeline configuration. In the out-of-the-box setup, files are published in place, which avoids the need to define templates or filesystem schema. Once a project has gone through the advanced setup and has a full Pipeline Configuration, the same publish plugins will recognize the introduction of templates to the app settings and begin copying files to their designated publish location prior to publishing. Studios can therefore introduce template-based settings on a per-environment or per-DCC basis as needed for projects with full configurations. The Default Config comes fully configured for template-based workflows and is a good reference to see how templates can be configured for the Publish app. See the  [tk-multi-publish2.yml file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-publish2.yml)  in the Default Config in Github for more info.
 
-For details on writing plugins for the Publisher, see the  [Publisher section of our Developer Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067513-Integrations-Developer-Guide#Publisher).
+For details on writing plugins for the Publisher, see the  [Publisher section of our Developer Guide](https://developer.shotgridsoftware.com/93c6e555/?title=Integrations+Developer+Guide#publisher).
 
 ## Configuring software launches
 
@@ -126,13 +124,13 @@ In these cases, you can add your own Software entities. You'll need to have a va
 
 ## Configuring published file path resolution
 
-When you publish a file, the Publisher creates a PublishedFile entity in {% include product %}, which includes a  [File/Link](https://support.shotgunsoftware.com/hc/en-us/articles/219031008-Field-types)  field called  `Path`. Later on, a different user may try to load this file into their own work session using the Loader. The Loader uses complex logic to resolve a valid local path to the PublishedFile across operating systems.
+When you publish a file, the Publisher creates a PublishedFile entity in {% include product %}, which includes a  [File/Link](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_field_types_html)  field called  `Path`. Later on, a different user may try to load this file into their own work session using the Loader. The Loader uses complex logic to resolve a valid local path to the PublishedFile across operating systems.
 
 The way in which the Loader attempts to resolve the publish data into a path depends on whether the the publish is associated with a local file link or a  `file://`  URL.
 
 ### Resolving local file links
 
-Local file links are generated automatically at publish time if the path you are publishing matches any local storage defined in the {% include product %} Site Preferences. If the publish is a local file link, its local operating system representation will be used. Read more about local file links  [here](https://support.shotgunsoftware.com/hc/en-us/articles/219030938-Linking-to-local-files).
+Local file links are generated automatically at publish time if the path you are publishing matches any local storage defined in the {% include product %} Site Preferences. If the publish is a local file link, its local operating system representation will be used. Read more about local file links  [here](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html).
 
 If a local storage doesn’t define a path for the operating system you are currently using, you can use an environment variable to specify your local storage root. The name of the environment variable should take the form of  `SHOTGUN_PATH_<WINDOWS|MAC|LINUX>_<STORAGENAME>`. So, if you wanted to define a path on a Mac for a storage root called "Renders", you'd create a  `SHOTGUN_PATH_MAC_RENDERS`  environment variable. Let's go deeper with that example:
 
@@ -227,7 +225,7 @@ Hosting a websocket server within the {% include product %} Desktop app was, and
 
 **Websockets v2 via {% include product %} Desktop**
 
-The second iteration of the websocket server’s RPC API changes the underlying mechanism used to get, cache, and execute Toolkit actions. This implementation addresses a number of performance issues related to the earlier browser integration implementations, improves the visual organization of the action menus, and adds support for  [out-of-the-box {% include product %} Integrations](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-User-Guide#Getting%20started%20with%20Shotgun%20Desktop), which work without explicitly configuring Toolkit. This is the current implementation of browser integration.
+The second iteration of the websocket server’s RPC API changes the underlying mechanism used to get, cache, and execute Toolkit actions. This implementation addresses a number of performance issues related to the earlier browser integration implementations, improves the visual organization of the action menus, and adds support for  [out-of-the-box {% include product %} Integrations](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide#getting-started-with-desktop), which work without explicitly configuring Toolkit. This is the current implementation of browser integration.
 
 ### Configuration
 
@@ -239,7 +237,7 @@ The Toolkit engine that manages Toolkit actions within the {% include product %}
 
 ![](images/Integration-admin-guide/tk-shotgun_config.png)
 
-In the above example from  [tk-config-basic](https://github.com/shotgunsoftware/tk-config-basic/), there are two apps configured that will result in a number of engine commands turned into menu actions. Toolkit apps will register commands that are to be included in the action menu, including launcher commands for each software package found on the local system that correspond to the list of  [Software entities](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493#Configuring%20software%20launches)  in the {% include product %} site. The result is the list of menu actions shown here:
+In the above example from  [tk-config-basic](https://github.com/shotgunsoftware/tk-config-basic/), there are two apps configured that will result in a number of engine commands turned into menu actions. Toolkit apps will register commands that are to be included in the action menu, including launcher commands for each software package found on the local system that correspond to the list of  [Software entities](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide#configuring-software-launches)  in the {% include product %} site. The result is the list of menu actions shown here:
 
 ![](images/Integration-admin-guide/action_menu.png)
 
@@ -344,7 +342,7 @@ This likely means one of three things:
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1.  {% include product %} Desktop’s websocket server failed to start on launch. This situation is likely limited to situations where a bad release of the websocket server has gone out to the public, which should be exceedingly rare. In this situation, logging will be present in  [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)  explaining the error, which can be  [sent to {% include product %}’s support team](https://support.shotgunsoftware.com/hc/en-us/requests/new).
+1.  {% include product %} Desktop’s websocket server failed to start on launch. This situation is likely limited to situations where a bad release of the websocket server has gone out to the public, which should be exceedingly rare. In this situation, logging will be present in  [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)  explaining the error, which can be  [sent to {% include product %}’s support team](https://knowledge.autodesk.com/contact-support).
 
 **No actions are shown in the action menu**
 
@@ -372,7 +370,7 @@ There are a few possibilities for this one:
 
 1.  The websocket server has not yet finished caching actions. If this is the first time actions are being retrieved after a significant update to the project’s config, the process can take some time to complete. Wait longer, and observe the contents of  `tk-desktop.log`  to see if processing is still occurring.
     
-2.  The websocket server has failed to respond and never will. This situation should be rare, but if it becomes obvious that there is no additional processing occurring as a result of the request for actions, as seen in  `tk-desktop.log`,  [contact ShotGrid support](https://support.shotgunsoftware.com/hc/en-us/requests/new), providing relevant log data.
+2.  The websocket server has failed to respond and never will. This situation should be rare, but if it becomes obvious that there is no additional processing occurring as a result of the request for actions, as seen in  `tk-desktop.log`,  [contact ShotGrid support](https://knowledge.autodesk.com/contact-support), providing relevant log data.
     
 3.  The user is working in more than one {% include product %} site. With {% include product %} Desktop authenticated against a single site, requesting menu actions from a second {% include product %} site results in the user being queried about restarting {% include product %} Desktop and logging into the new site. If that request is ignored, the second site will never receive a list of menu actions.
     
@@ -415,7 +413,7 @@ If your studio is accessing the internet through a proxy, you’ll need to tell 
 
 **Running {% include product %} Desktop with a locally hosted site**
 
-If your {% include product %} site URL does not end with  `shotgunstudio.com` or `shotgrid.autodesk.com`, it means that you are running a local {% include product %} site. In this case, it is possible that your site has not yet been fully prepared for {% include product %} integrations and the {% include product %} team may need to go in and do some small adjustments before you can get going! In this case,  [please submit a ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new)  and we'll help sort you out.
+If your {% include product %} site URL does not end with  `shotgunstudio.com` or `shotgrid.autodesk.com`, it means that you are running a local {% include product %} site. In this case, it is possible that your site has not yet been fully prepared for {% include product %} integrations and the {% include product %} team may need to go in and do some small adjustments before you can get going! In this case,  [please submit a ticket](https://knowledge.autodesk.com/contact-support)  and we'll help sort you out.
 
 **Connecting to the app store with a locally hosted site**
 
@@ -433,7 +431,7 @@ In general use, {% include product %} Desktop automatically checks for updates f
 
 ### {% include product %} Create
 
-The approaches to resolving offline usage scenarios outlined in this document also apply to the integration features provided by  [{% include product %} Create](https://support.shotgunsoftware.com/hc/en-us/articles/360012554734). The various environment variables used to tailor the behavior of {% include product %} Toolkit, such as  `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS`, apply when using {% include product %} Create in the same ways as {% include product %} Desktop.
+The approaches to resolving offline usage scenarios outlined in this document also apply to the integration features provided by  [{% include product %} Create](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Supervisor_Artist_sa_create_sa_intro_create_html). The various environment variables used to tailor the behavior of {% include product %} Toolkit, such as  `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS`, apply when using {% include product %} Create in the same ways as {% include product %} Desktop.
 
 ### Running integrations while offline
 
@@ -441,7 +439,7 @@ _Scenario: I want to run {% include product %} integrations, but I am not connec
 
 **Solution**
 
--   If you can temporarily connect to the internet, just download {% include product %} Desktop. It comes prepackaged with a set of  [integrations](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-User-Guide#Introduction), and pre-bundled with all the apps and engines needed for the {% include product %} integrations for all supported DCCs. When you start it up, it will automatically try to look for upgrades, but if it cannot connect to the {% include product %} App Store, it will simply run the most recent version that exists locally.
+-   If you can temporarily connect to the internet, just download {% include product %} Desktop. It comes prepackaged with a set of  [integrations](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide#introduction), and pre-bundled with all the apps and engines needed for the {% include product %} integrations for all supported DCCs. When you start it up, it will automatically try to look for upgrades, but if it cannot connect to the {% include product %} App Store, it will simply run the most recent version that exists locally.
 
 **Good to know**
 
@@ -478,7 +476,7 @@ _Scenario: My project is about to wrap and I would like to freeze it so that no 
 
 **Solution**
 
--   Determine the version you want to lock your project to.  [You can find the integration releases here.](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations)
+-   Determine the version you want to lock your project to.  [You can find the integration releases here.](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)
 -   In {% include product %}, create a Pipeline Configuration entity for the project you want to lock down, with the following fields populated (In this example, we are locking down the config to use v1.0.36 of the integrations):
 -   Name:  `Primary`
 -   Project: The project you want to lock down
@@ -625,7 +623,7 @@ This is a quick and convenient way to get up and running with a new project with
 
 For more ways and documentation on how to evolve and maintain your pipeline configuration, see here:
 
-[Managing your project configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#Inheriting%20the%20config%20from%20your%20previous%20project)
+[Managing your project configuration](https://developer.shotgridsoftware.com/60762324/?title=Configuration+Staging+and+Rollout#inheriting-the-config-from-your-previous-project)
 
 #### Using a configuration template from git
 
@@ -633,7 +631,7 @@ For more ways and documentation on how to evolve and maintain your pipeline conf
 
 Use this option if you want to keep your project's configuration connected to source control. Specify a url to a remote git or github repository and the setup process will clone it for you. Note that this is not just github, but works with any git repository. Just make sure that the path to the repository ends with  `.git`, and Toolkit will try to process it as a git setup. Because your project configuration is a git repository, you can commit and push any changes you make to your master repository and beyond that to other projects. Using a github based configuration makes it easy to keep multiple Toolkit projects in sync. You can read more about it here:
 
-[Managing your project configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219033168#A%20studio%20configuration%20in%20git%20source%20control)
+[Managing your project configuration](https://developer.shotgridsoftware.com/60762324/?title=Configuration+Staging+and+Rollout#a-studio-configuration-in-git-source-control)
 
 Please note that if you are running on Windows, you need to have git installed on your machine and accessible in your  `PATH`. On Linux and Mac OS X, it is usually installed by default.
 
@@ -688,9 +686,7 @@ windows: \\prod\software\shotgun\golden_circle
 
 Once you are up and running with your first configuration, please navigate to our 'next steps' documentation to learn more about how to configure and adjust Toolkit to better suite your studio needs:
 
-[Beyond your first project](https://support.shotgunsoftware.com/hc/en-us/articles/219040688)
-
-You can also learn more in our  [Advanced Project Setup documentation](https://support.shotgunsoftware.com/hc/en-us/articles/219039808-Index-of-Documentation).
+[Beyond your first project](https://developer.shotgridsoftware.com/c3b662a6/?title=Beyond+Your+First+Project)
 
 ## Advanced functionality
 

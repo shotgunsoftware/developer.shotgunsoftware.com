@@ -344,7 +344,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1. 시작 시 {% include product %} 데스크톱의 Websocket 서버를 시작하지 못했습니다. 이 상황은 잘못된 Websocket 서버 릴리즈가 사용자에게 공개된 경우에만 해당되며 거의 발생하지 않습니다. 이 상황에서, 로깅은 오류에 대해 설명하는 [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)에 표시되며 이 내용은 [{% include product %}의 지원 팀으로 전송](https://support.shotgunsoftware.com/hc/en-us/requests/new)될 수 있습니다.
+1. 시작 시 {% include product %} 데스크톱의 Websocket 서버를 시작하지 못했습니다. 이 상황은 잘못된 Websocket 서버 릴리즈가 사용자에게 공개된 경우에만 해당되며 거의 발생하지 않습니다. 이 상황에서, 로깅은 오류에 대해 설명하는 [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)에 표시되며 이 내용은 [{% include product %}의 지원 팀으로 전송](https://knowledge.autodesk.com/contact-support)될 수 있습니다.
 
 **액션 메뉴에 표시되는 액션이 없음**
 
@@ -372,7 +372,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. Websocket 서버가 아직 캐싱 액션을 완료하지 않았습니다. 이번이 프로젝트 구성에 대한 중요한 업데이트 후 검색하는 첫 번째 액션인 경우 프로세스를 완료하는 데 시간이 약간 걸릴 수 있습니다. 조금 더 기다리다가 아직 진행 중인지 확인하려면 `tk-desktop.log`의 내용을 살펴봅니다.
 
-2. Websocket 서버가 계속 응답하지 않습니다. 이런 상황은 드물게 나타나지만 `tk-desktop.log`를 살펴보았을 때 액션 요청의 결과로 발생하는 추가 프로세스가 없는 것이 확실하다면, [ShotGrid 지원 팀에 문의](https://support.shotgunsoftware.com/hc/en-us/requests/new)하고 관련 로그 데이터를 제공합니다.
+2. Websocket 서버가 계속 응답하지 않습니다. 이런 상황은 드물게 나타나지만 `tk-desktop.log`를 살펴보았을 때 액션 요청의 결과로 발생하는 추가 프로세스가 없는 것이 확실하다면, [ShotGrid 지원 팀에 문의](https://knowledge.autodesk.com/contact-support)하고 관련 로그 데이터를 제공합니다.
 
 3. 사용자가 두 개 이상의 {% include product %} 사이트에서 작업 중입니다. 단일 사이트에서 {% include product %} 데스크톱을 인증한 상태에서 두 번째 {% include product %} 사이트에서 메뉴 액션을 요청하면 사용자에게 {% include product %} 데스크톱을 다시 시작하여 새 사이트에 로그인하라는 메시지가 표시됩니다. 해당 요청을 무시하면 두 번째 사이트는 메뉴 액션 목록을 받을 수 없습니다.
 
@@ -415,7 +415,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 **로컬에서 호스팅되는 사이트를 통해 {% include product %} 데스크톱 실행**
 
-{% include product %} 사이트 URL이 `shotgunstudio.com`으로 끝나지 않는 경우 로컬 {% include product %}사이트에서 실행 중임을 의미합니다. 이 경우 아직 사이트가 {% include product %} 통합에 맞춰 완벽하게 준비되지 않았을 가능성이 있기 때문에 {% include product %} 팀에서 현장을 방문하여 통합을 진행하기 전에 약간의 조정 작업을 해야 할 수 있습니다! 이 경우 [티켓을 제출](https://support.shotgunsoftware.com/hc/en-us/requests/new)하면 준비를 지원해 드리겠습니다.
+{% include product %} 사이트 URL이 `shotgunstudio.com`으로 끝나지 않는 경우 로컬 {% include product %}사이트에서 실행 중임을 의미합니다. 이 경우 아직 사이트가 {% include product %} 통합에 맞춰 완벽하게 준비되지 않았을 가능성이 있기 때문에 {% include product %} 팀에서 현장을 방문하여 통합을 진행하기 전에 약간의 조정 작업을 해야 할 수 있습니다! 이 경우 [티켓을 제출](https://knowledge.autodesk.com/contact-support)하면 준비를 지원해 드리겠습니다.
 
 **로컬에서 호스팅되는 사이트를 통해 앱 스토어에 연결**
 

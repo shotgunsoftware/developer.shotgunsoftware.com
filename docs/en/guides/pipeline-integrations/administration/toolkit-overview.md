@@ -13,7 +13,7 @@ lang: en
 
 Here, we cover the main concepts in detail: How apps and Engines work, how Toolkit is launched and manages the current context (work area), how folders are created on disk, etc. We recommend that anyone involved in configuration or development start here.  
 
-_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For details, see the  [{% include product %} Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493)._
+_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For details, see the  [{% include product %} Integrations Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide)._
 
 # Introduction
 
@@ -50,7 +50,7 @@ Alternatively, you can just take the configuration folder from a project when yo
 
 For detailed information about configuration management, check out our detailed docs:
 
-[Managing your project configuration.](https://support.shotgunsoftware.com/hc/en-us/articles/219033168)
+[Managing your project configuration.](https://developer.shotgridsoftware.com/60762324/?title=Configuration+Staging+and+Rollout)
 
 ## Each Project has a Pipeline Configuration
 
@@ -62,7 +62,7 @@ Please note that the main configuration for a project needs to be named `Primary
 
 Example:
 
-[How to clone a configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration)
+[How to clone a configuration](https://developer.shotgridsoftware.com/60762324/?title=Configuration+Staging+and+Rollout#cloning-your-configuration)
 
 ## Checking for updates
 
@@ -110,7 +110,7 @@ Toolkit provides a number of different dynamic folder types that handle differen
 
 For a detailed walkthrough of how this works, see the admin guide:
 
-[Administering the {% include product %} Pipeline Toolkit](https://support.shotgunsoftware.com/hc/en-us/articles/219033178)
+[Administering the {% include product %} Pipeline Toolkit](https://developer.shotgridsoftware.com/425b1da4/?title=Advanced+Toolkit+Administration)
 
 Toolkit's folder creation happens in two passes: a direct pass, which can be run by anyone at any time, and a deferred pass, which is typically run by the artist just before application launch. This deferred pass is completely automatic and can be used to set up application-specific folders and user sandboxes.
 
@@ -183,9 +183,9 @@ path = publish_template_obj.apply_fields(fields)
 ```
 For more details of how you can configure and use the Templates API, see the following:
 
-[File System Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868)
+[File System Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference)
 
-[Core API Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039848)
+[Core API Reference](https://developer.shotgridsoftware.com/tk-core/core.html#)
 
 # Choosing which Engines and Apps to run
 
@@ -234,9 +234,9 @@ If you try to configure the app using a template that has more than the context 
 
 For a complete reference, check the following links:
 
-[Apps and Engines Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039878)
+[Apps and Engines Configuration Reference](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components)
 
-[File System Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868)
+[File System Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference)
 
 ## Hooks
 
@@ -248,7 +248,7 @@ Apps are powerful because they can be reused across multiple engines and project
 
 This situation is handled in Toolkit using a _hook_. The hook is a customizable piece of code. The App comes with a default hook which contains a base level implementation, meaning that the app will work fine right out of the box. However, if you want to customize the behaviour you can copy that hook file into your configuration and Toolkit will use that code instead.
 
-[Read more about how to work with hooks in the Admin guide.](https://support.shotgunsoftware.com/hc/en-us/articles/219033178)
+[Read more about how to work with hooks in the Admin guide.](https://developer.shotgridsoftware.com/425b1da4/?title=Advanced+Toolkit+Administration#hooks)
 
 # Running from {% include product %} and the Shell
 
@@ -275,7 +275,7 @@ The details of exactly what this means in terms of the data management (where on
 
 As a starting point, however, we recommend our Publish App:
 
-[The Default Multi Publish App.](https://support.shotgunsoftware.com/hc/en-us/articles/219032998)
+[The Default Multi Publish App.](https://developer.shotgridsoftware.com/tk-multi-publish2/)
 
 # Building Reusable Apps
 
@@ -288,8 +288,8 @@ Toolkit is not just a collection of apps and engines. It is also a framework tha
 
 For an more extensive introduction to App Development, see the following documents:
 
-[An Introduction to the Toolkit App Development.](https://support.shotgunsoftware.com/hc/en-us/articles/219033158)
+[An Introduction to the Toolkit App Development.](https://developer.shotgridsoftware.com/2e5ed7bb/?title=Developing+apps)
 
-[The Toolkit API Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039858)
+[The Toolkit API Reference](https://developer.shotgridsoftware.com/tk-core/)
 
-[Apps and Engines Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039878)
+[Apps and Engines Configuration Reference](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components)

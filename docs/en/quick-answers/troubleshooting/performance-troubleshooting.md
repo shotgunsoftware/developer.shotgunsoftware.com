@@ -18,7 +18,7 @@ Here is a quick list of things to check which we cover in further detail below:
 - [Configure the workfiles and loader apps](#file-open-file-save-or-the-loader-app-is-slow) to filter out content that is not needed by the artist. Consider filtering by statuses to help keep the list of entities short and relevant to the artist’s current tasks.
 - Check to see if you have any custom hooks and that they are not adding additional overhead.
 
-Below is a list of good practices and common slow down scenarios. This is not an exhaustive list and we will try to add to it as and when we see new patterns. If this guide doesn’t help you get to the bottom of the problem you’re facing, then please feel free to submit a [support ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new) in and our team will be happy to assist you further.
+Below is a list of good practices and common slow down scenarios. This is not an exhaustive list and we will try to add to it as and when we see new patterns. If this guide doesn’t help you get to the bottom of the problem you’re facing, then please feel free to submit a [support ticket](https://knowledge.autodesk.com/contact-support) in and our team will be happy to assist you further.
 
 Table of Contents:
 - [General good practice](#general-good-practice)
@@ -87,9 +87,9 @@ The first thing you should do is figure out under what conditions this is happen
 3. **Does it happen on all projects?** - If it doesn't, then it’s likely to be something specific to the way the configuration is setup.
 4. **Does this happen at specific points in the day?** - If so, then this could point to high demand on the infrastructure, such as server usage being higher at certain times of the day.
 5. **Does this happen for all Machines/OSs used?** - If a particular machine is slow, then it's possible there is something outside of Toolkit that is causing the issues. However, clearing the Toolkit cache on that machine is a good first step. Different OSs come with different versions of software and Python packages, and sometimes performance issues can crop up on specific builds. Specifically we have seen issues with performance on Windows using Samba (SMB) shares. There isn’t a fix for this as such, but it’s good to be aware of if you are using it.
-If you believe the issue is limited to a certain OS, Python package, or software version then please let our [support team](https://support.shotgunsoftware.com/hc/en-us/requests/new) know so they can investigate further.
+If you believe the issue is limited to a certain OS, Python package, or software version then please let our [support team](https://knowledge.autodesk.com/contact-support) know so they can investigate further.
 6. **Does this happen for all users?** - Similar to above, it’s possible that as a different user on the same machine, the issue might disappear. In this situation, start by clearing the user’s local {% include product %} cache. Also, make sure debug logging is not enabled for normal production use, as this will impact performance.
-7. **Is the slow launching exclusive to a specific app/software or are all apps/software launched abnormally slow?** - If specific software is slow to launch, this might mean that there is a configuration issue. It may be worth checking to see if you have any custom hooks set up to run either before or after launch that might be impacting performance. Common hooks used in start up are [`before_app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/before_app_launch.py), [`app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/app_launch.py), and the core hook [`engine_init.py`](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/engine_init.py). There can also be occurrences from time to time where a newer version of software is released and our integrations are suddenly much slower to start. In this situation, you should reach out to [support](https://support.shotgunsoftware.com/hc/en-us/requests/new) to check if they are aware of this, and if there is any known fix. Please provide the version number of the software your using (including patches/service pack if applicable) and the version of the tk engine and core you’re running.
+7. **Is the slow launching exclusive to a specific app/software or are all apps/software launched abnormally slow?** - If specific software is slow to launch, this might mean that there is a configuration issue. It may be worth checking to see if you have any custom hooks set up to run either before or after launch that might be impacting performance. Common hooks used in start up are [`before_app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/before_app_launch.py), [`app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/app_launch.py), and the core hook [`engine_init.py`](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/engine_init.py). There can also be occurrences from time to time where a newer version of software is released and our integrations are suddenly much slower to start. In this situation, you should reach out to [support](https://knowledge.autodesk.com/contact-support) to check if they are aware of this, and if there is any known fix. Please provide the version number of the software your using (including patches/service pack if applicable) and the version of the tk engine and core you’re running.
 
 ### Is the issue pre or post launch?
 
@@ -120,7 +120,7 @@ For example, here are a few lines where a 5 second jump in time occurs during fo
 
 Once you locate the jumps in time, the log line will hopefully give you some idea about what was happening at that stage, such as if it occurred during folder creation, or if it was trying to get a {% include product %} connection. 
 
-Reading logs can be tricky though and the contents may not always make sense, so again you can reach out to [support](https://support.shotgunsoftware.com/hc/en-us/requests/new) to assist you with this bit.
+Reading logs can be tricky though and the contents may not always make sense, so again you can reach out to [support](https://knowledge.autodesk.com/contact-support) to assist you with this bit.
 
 ### Common causes of slow software launches
 
@@ -134,8 +134,8 @@ Reading logs can be tricky though and the contents may not always make sense, so
 The first thing to do is to narrow down to certain aspects of where the app in question is slow.
 
 - **Is it slow to launch the app or navigate through the tabs?**
-    - It's possible that the app is currently configured to show too much information. The My Tasks tab and others can be configured to filter out unneeded entities from the list. For example, you could filter out tasks that are of a certain status, such as On Hold (`hld`) or Final (`fin`).  Not only does this offer performance benefits, but it also lets the artist see only the information that is important to them. Both the [Loader app](https://support.shotgunsoftware.com/hc/en-us/articles/219033078-Load-Published-Files-#The%20tree%20view) and the Workfiles app can be filtered, however, Workfiles doesn’t currently have a specific doc section on filtering but filters can be applied as part of the [hierarchy settings](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files#Step%20filtering).
-    - The hierarchy on the File Open app can also be configured to defer the loading of the [sub items until it is expanded](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files#Deferred%20queries). This is now the default configuration setup, however, if you have older configs you may wish to transition over to using this.
+    - It's possible that the app is currently configured to show too much information. The My Tasks tab and others can be configured to filter out unneeded entities from the list. For example, you could filter out tasks that are of a certain status, such as On Hold (`hld`) or Final (`fin`).  Not only does this offer performance benefits, but it also lets the artist see only the information that is important to them. Both the [Loader app](https://developer.shotgridsoftware.com/a4c0a4f1/?title=Loader) and the Workfiles app can be filtered, however, Workfiles doesn’t currently have a specific doc section on filtering but filters can be applied as part of the [hierarchy settings](https://developer.shotgridsoftware.com/9a736ee3/?title=Workfiles#step-filtering).
+    - The hierarchy on the File Open app can also be configured to defer the loading of the [sub items until it is expanded](https://developer.shotgridsoftware.com/9a736ee3/?title=Workfiles#deferred-queries). This is now the default configuration setup, however, if you have older configs you may wish to transition over to using this.
     - Check that debug logging isn’t enabled. This can cause a lot of additional I/O and therefore slow things down; these apps do contain a lot of debugging output.
 - **Is it slow opening, saving, or creating a new file?**
     - Check to see if you’ve taken over scene operations or actions hooks, and see if there is any custom behavior around these functions that might slow things down.
@@ -165,7 +165,7 @@ Basically, create the minimum required folders that allow you to save and publis
 
 #### Create with parent
 
-There is a [`create_with_parent` setting](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Create%20With%20Parent%20Folder) that can be applied to schema folders.
+There is a [`create_with_parent` setting](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference#create-with-parent-folder) that can be applied to schema folders.
 Setting it to true will cause the folder to be created at the same time as it’s parent. You should be careful to avoid situations where setting it to True will cause large numbers of folders to be checked and created.
 
 **Example**
@@ -178,7 +178,7 @@ Whilst this might be convenient in some situations, it is causing a lot more fol
 
 #### Defer creation
 
-The [`defer_creation` setting](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Workspaces%20and%20Deferred%20Folder%20Creation) allows you to further refine when folders should be created by restricting the creation of folders to only happen when a certain engine is running. You can even use custom names, and then trigger the creation of them using the [sgtk API](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure).
+The [`defer_creation` setting](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference#workspaces-and-deferred-folder-creation) allows you to further refine when folders should be created by restricting the creation of folders to only happen when a certain engine is running. You can even use custom names, and then trigger the creation of them using the [sgtk API](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure).
 
 **Example**
 
@@ -200,7 +200,7 @@ sgtk.create_filesystem_structure(entity["type"], entity["id"], engine="publish")
 
 Taking the idea of deferring folders further, if you have a number of non-dynamic folders at the root of your project, these typically only ever need to be created once. For example, the [“editorial” and “reference”](https://github.com/shotgunsoftware/tk-config-default2/tree/master/core/schema/project) folders in the root of the Default Configuration’s  schema would only likely need creating once at the start of the project, but by default, the folder creation will check for their existence every time. 
 
-To limit this, you could create [yml files](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference#Static%20folders) for them, where you can set a defer keyword so that they only get created when the folder creation is run in a certain engine or passed the keyword. You could set the defer keyword to `tk-shell` and then run the folder creation via the tank command like `tank folders`. 
+To limit this, you could create [yml files](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference#static-folders) for them, where you can set a defer keyword so that they only get created when the folder creation is run in a certain engine or passed the keyword. You could set the defer keyword to `tk-shell` and then run the folder creation via the tank command like `tank folders`. 
 
 This would mean that these folders would only get created if the folder creation was run via the tank command, which a Toolkit administrator could do when setting up the project for the first time. Alternatively, you could write a small script that ran the folder creation with a custom keyword a bit like the example above.
 
