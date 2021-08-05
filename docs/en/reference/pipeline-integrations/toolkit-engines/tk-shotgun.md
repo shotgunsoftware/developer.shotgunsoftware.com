@@ -7,6 +7,8 @@ lang: en
 
 # {% include product %}
 
+![Engine](../images/engines/sg_shotgrid_engine_1.png)
+
 The {% include product %} engine manages apps that can be launched from within {% include product %}. Sometimes we refer to these Toolkit Apps as *Actions*. They typically appear as items on menus inside of {% include product %}.
 
 ## Using {% include product %} Pipeline Toolkit Actions
