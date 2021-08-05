@@ -2,7 +2,7 @@
 layout: default
 title: About the Isolation Feature Set
 pagename: tier1-getting_started-about
-lang: ja
+lang: en
 ---
 
 # What is the Isolation Feature Set
@@ -41,7 +41,7 @@ With the Media Traffic Isolation feature activated, the media will only leave yo
 
 # Eligibility
 
-The Isolation feature set is available for all Super Awesome clients. See [Getting Started](./getting_started.md) for more details about how to active the different features. The activation of the isolation feature set is not instantaneous, and requires manual setup involving your AWS account.
+The Isolation feature set is available to clients with an active ShotGrid subscription. See [Getting Started](./getting_started.md) for more details about how to active the different features. The activation of the isolation feature set is not instantaneous, and requires manual setup involving your AWS account.
 
 
 # What the Isolation Feature Set is not

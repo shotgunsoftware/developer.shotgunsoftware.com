@@ -8,7 +8,7 @@ lang: en
 # Isolation Feature Set - Getting Started
 
 Want to learn more about the isolation features? See [About the Isolation Feature Set](./about.md) for more details about what is in store for you. 
-**The Isolation feature set is available only to Super Awesome clients. Before starting, make sure to upgrade your subscription to Super Awesome.**
+**The Isolation feature set is available to clients with an active ShotGrid subscription. Before starting, please be sure to complete your subscription purchase.**
 
 
 To get the onboarding process started, go to [Onboarding Process](./onboarding.md).
