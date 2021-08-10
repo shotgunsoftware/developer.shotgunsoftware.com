@@ -7,6 +7,8 @@ lang: en
 
 # Softimage
 
+> **Warning:** The Softimage engine has been end of lifed as of February 13th, 2021. [Learn more here](https://community.shotgridsoftware.com/t/end-of-life-for-softimage-support-on-february-13th-2021/10694).
+
 ![](../images/engines/sg_softimage_1.png)
 
 The {% include product %} engine for Softimage establishes a bridge between the {% include product %} Pipeline Toolkit apps and Softimage. It contains PySide/Qt distributions, making it possible to write apps using Python and PySide that run right inside the engine. This document refers to more advanced configuration setups.
