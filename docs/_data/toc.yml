@@ -147,6 +147,7 @@
       - page: tk-3dsmax-plus
       - page: tk-aftereffects
       - page: tk-alias
+      - page: tk-create
       - page: tk-desktop
       - page: tk-flame
       - page: tk-houdini
@@ -157,6 +158,7 @@
       - page: tk-photoshopcc
       - page: tk-shell
       - page: tk-shotgun
+      - page: tk-softimage
       - page: tk-vred
     - page: toolkit-frameworks
       children:
