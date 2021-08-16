@@ -55,11 +55,11 @@ Below is a conceptual overview of how to install an app and how to tell a {% inc
 
 ### Find the location descriptor for the Python Console App
 
-**Step 1:** Open the [Apps and Engines page](https://developer.shotgridsoftware.com/9e62da4a/?title=Maya) and find the information for the {% include product %} Python Console under Maya. Select the title.
+**Step 1:** Open the [Apps and Engines page](https://developer.shotgridsoftware.com/9e62da4a/) and find the information for the {% include product %} Python Console under Maya. Select the title.
 
 ![Python app](./images/installing_app/1_python_app.png)
 
-This will bring up the [information for the app](https://developer.shotgridsoftware.com/770a748a/?title=Python+Console), which includes everything that’s needed for the little black book.
+This will bring up the [information for the app](https://developer.shotgridsoftware.com/770a748a/), which includes everything that’s needed for the little black book.
 
 ![Python app info](./images/installing_app/2_python_app_info.png)
 
@@ -137,7 +137,7 @@ If an app that you want to use isn’t referenced in the little black book, you 
 
 ## Tell Toolkit where to find the app
 
-**Step 10:** Search the file for `pythonconsole`. If you used the Default Configuration for the project, you will find that the descriptor for the Python Console app is listed in this file. It should match the description we found in the [list](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components) of Maya apps we looked at when we started on our journey. Check to make sure the version matches what we looked at in the list of Maya apps. 
+**Step 10:** Search the file for `pythonconsole`. If you used the Default Configuration for the project, you will find that the descriptor for the Python Console app is listed in this file. It should match the description we found in the [list](https://developer.shotgridsoftware.com/162eaa4b/) of Maya apps we looked at when we started on our journey. Check to make sure the version matches what we looked at in the list of Maya apps. 
 
 ```yaml
 apps.tk-multi-pythonconsole.location:
@@ -378,7 +378,7 @@ The Desktop app opens in the project environment, so find `tk-desktop` in the `p
 
 Open `config/env/project.yml`. 
 
-{% include info title="Note" content='In the engine block, `tk-desktop` points to included content:
+In the engine block, `tk-desktop` points to included content:
 
 ```yaml
 includes:
@@ -408,9 +408,9 @@ apps.tk-multi-pythonconsole.location:
   version: v1.1.2
 ```
 
-Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components).
+Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/.
 
-You can add any app to any appropriate software integration that ShotGrid supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components) page. 
+You can add any app to any appropriate software integration that ShotGrid supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/) page. 
 
 If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other ShotGrid users will need the same function and sharing new apps is one way to give back to the ShotGrid community. 
 

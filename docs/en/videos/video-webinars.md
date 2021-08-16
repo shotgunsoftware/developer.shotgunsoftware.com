@@ -36,7 +36,7 @@ In this webinar, Josh Tomlinson gives a step-by-step walkthrough of creating a c
 
 *Supplemental Material*
 
-[Pipeline Tutorial](https://developer.shotgridsoftware.com/cb8926fc/?title=Pipeline+Tutorial)
+[Pipeline Tutorial](https://developer.shotgridsoftware.com/cb8926fc/)
 
 4: {% include product %} Toolkit Webinar: Cloud Configurations and Multi-location Workflows *(60m)*
 
@@ -84,7 +84,7 @@ Also, Tannaz Sassooni tours our new developer’s documentation site and shows h
 
 *Supplemental Material*
 
-[After Effects integration documentation](https://developer.shotgridsoftware.com/1eca509c/?title=After+Effects)
+[After Effects integration documentation](https://developer.shotgridsoftware.com/1eca509c/)
 
 [Developer documentation portal](https://developer.shotgridsoftware.com)
 

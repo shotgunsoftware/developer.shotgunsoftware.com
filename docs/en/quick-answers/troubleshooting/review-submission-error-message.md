@@ -110,7 +110,7 @@ settings.tk-multi-publish2.nuke.shot_step:
 
 The collector defined here does not exist in any python file. It is actually a combination of the `tk-multi-publish2`'s `collector.py` and `tk-nuke`'s `collector.py`. 
 
-If the quick fix is not enough for you and you need to modify these hooks, checkout the [Customizing Publish Workflows video](https://developer.shotgridsoftware.com/869a6fab/?title=Toolkit+Webinars#shotgrid-toolkit-webinar-videos). It's a great place to start.
+If the quick fix is not enough for you and you need to modify these hooks, checkout the [Customizing Publish Workflows video](https://developer.shotgridsoftware.com/869a6fab/#shotgrid-toolkit-webinar-videos). It's a great place to start.
 
 [See the full thread in the community](https://community.shotgridsoftware.com/t/nuke-submit-for-review-py/10026).
 

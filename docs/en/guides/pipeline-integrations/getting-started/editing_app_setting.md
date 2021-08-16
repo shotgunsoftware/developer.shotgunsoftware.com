@@ -105,7 +105,7 @@ Toolkit pipeline configurations are used to customize environments to meet your 
 
 **Step 11:** Select the **>** at the top right of the **File Open** window next to **Project (name of project)**. 
 
-This reference box shows details about the configuration settings that control the functions of the **File Open** window. Some apps in Toolkit have a reference box to show what settings are used for the app and what the default settings are. Notice the **Location:**: identifier is **tk-multi-workfiles2**. This is the identifier for the bundle of code that creates the Workfiles app. When searching a pipeline configuration this name will identify where the settings live for the app. There’s an [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components) that lists all the configuration settings, apps, and engines for what’s available in a {% include product %} Integration.
+This reference box shows details about the configuration settings that control the functions of the **File Open** window. Some apps in Toolkit have a reference box to show what settings are used for the app and what the default settings are. Notice the **Location:**: identifier is **tk-multi-workfiles2**. This is the identifier for the bundle of code that creates the Workfiles app. When searching a pipeline configuration this name will identify where the settings live for the app. There’s an [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/) that lists all the configuration settings, apps, and engines for what’s available in a {% include product %} Integration.
 
 ![Current_work_area](./images/editing_app_setting/9_current_work_area.png)
 
@@ -123,7 +123,7 @@ When searching for a setting there are several things to consider:
 
 * What software application you are running.
 * What file you are working on and what environment you are working in. This is found in the App’s reference box.
-* What the specific setting is called. This is found in the App’s reference box or on the [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components) page.
+* What the specific setting is called. This is found in the App’s reference box or on the [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/) page.
 * What YAML file to extend. There are identifiers and a roadmap detailed in the YAML files to guide you to where the settings live.
 * What specific blocks within the YAML file to extend. This is identified in the roadmap.
 * What identifiers and symbols are used in the YAML files.

@@ -9,7 +9,7 @@ lang: en
 
 This document explains best practices for how to safely roll out changes to your production pipeline. It explains how you can create a staging sandbox, which is a copy of your production configuration, update this sandbox and do testing and then finally push your changes to the production config.  
 
-_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For the default setup, please see  [{% include product %} Integrations Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide)._
+_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For the default setup, please see  [{% include product %} Integrations Admin Guide](https://developer.shotgridsoftware.com/8085533c/)._
 
 # Introduction
 

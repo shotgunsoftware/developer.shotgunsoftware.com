@@ -224,7 +224,7 @@ You've now completed all the preparation steps and are ready to move onto genera
 Whenever you need to know where a file should be placed or found in Toolkit you can use the templates to resolve an absolute path on disk.
 
 [Templates](https://developer.shotgridsoftware.com/tk-core/core.html#templates) are essentially tokenized strings that when you apply the context and other data to, can be resolved into filesystem paths.
-They are customizable via your [project's pipeline configuration](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference#part-2---configuring-file-system-templates), and their purpose is to provide a standardized method for working out where files should be stored. 
+They are customizable via your [project's pipeline configuration](https://developer.shotgridsoftware.com/82ff76f7/#part-2---configuring-file-system-templates), and their purpose is to provide a standardized method for working out where files should be stored. 
 
 The first thing you need to do is get a template instance for the path you wish to generate.
 Using the `Sgtk` instance you created, you can access the desired `Template` instance via the `Sgtk.templates` attribute, which is a dictionary where the keys are the template names, and the values are [`Template`](https://developer.shotgridsoftware.com/tk-core/core.html#template) instances.
@@ -414,7 +414,7 @@ sgtk.util.register_publish(tk,
                            published_file_type = "Maya Scene")
 ```
 
-At this point, it's also worth noting that our [Publish app](https://developer.shotgridsoftware.com/bc718491/?title=Publish) also comes with [its own API](https://developer.shotgridsoftware.com/tk-multi-publish2/) as well.
+At this point, it's also worth noting that our [Publish app](https://developer.shotgridsoftware.com/bc718491/) also comes with [its own API](https://developer.shotgridsoftware.com/tk-multi-publish2/) as well.
 Although that is still essentially using this same [`sgtk.util.register_publish()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) method, it builds upon the publishing process by providing a framework to handle collection, validation, and publishing.
 
 ## Part 8: The complete script

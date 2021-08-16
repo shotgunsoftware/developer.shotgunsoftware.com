@@ -40,7 +40,7 @@ You can download the API at [https://github.com/shotgunsoftware/python-api](http
 
 ## Action Menu Items (AMIs)
 
-If you write a script that you want to easily launch from within the {% include product %} interface, you can do so via [AMIs](https://developer.shotgridsoftware.com/67695b40/?title=Custom+Action+Menu+Items) . These are customizable options that appear in context menus you get when right-clicking on a row of data. When clicked, they will send a contextual data dump to a web server or a custom browser protocol handler, where you can then run custom business logic.
+If you write a script that you want to easily launch from within the {% include product %} interface, you can do so via [AMIs](https://developer.shotgridsoftware.com/67695b40/) . These are customizable options that appear in context menus you get when right-clicking on a row of data. When clicked, they will send a contextual data dump to a web server or a custom browser protocol handler, where you can then run custom business logic.
 
 You can set up different AMIs for different entities, and can restrict access to them by project or by permission group.
 
@@ -60,7 +60,7 @@ For more information about the {% include product %} API, see these articles:
 *   [{% include product %} API documentation](http://developer.shotgridsoftware.com/python-api/)
 *   [{% include product %}-dev list (Public)](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)
 *   [{% include product %} Event Daemon sample code](https://github.com/shotgunsoftware/shotgunEvents)
-*   [Writing event driven triggers](https://developer.shotgridsoftware.com/0d8a11d9/?title=Writing+Event-Driven+Triggers)
+*   [Writing event driven triggers](https://developer.shotgridsoftware.com/0d8a11d9/)
 *   [{% include product %} schema](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_shotgun_schema_html)
 *   [API best practices](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Developer_dv_getting_started_dv_api_best_practices_html)
 

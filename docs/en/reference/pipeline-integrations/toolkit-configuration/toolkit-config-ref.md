@@ -308,7 +308,7 @@ In our example, we haven’t specified any settings for our apps aside from `loc
 
 With sparse configurations, it’s not immediately evident what configuration settings are available for an app simply by looking at your configuration files. To find out what configuration settings an app has available, you have two choices:
 
-* **App documentation:** Each of our apps has its own documentation page, and each of these pages has a “Configuration Options” section. This section lists all of the available configuration settings for the app, with description and default values for each. You can [see the Workfiles documentation page](https://developer.shotgridsoftware.com/9a736ee3/) as an example. The [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components) lists the documentation pages for all apps and engines. 
+* **App documentation:** Each of our apps has its own documentation page, and each of these pages has a “Configuration Options” section. This section lists all of the available configuration settings for the app, with description and default values for each. You can [see the Workfiles documentation page](https://developer.shotgridsoftware.com/9a736ee3/) as an example. The [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/) lists the documentation pages for all apps and engines. 
 * **The manifest:** Every Toolkit bundle includes a file called `info.yml` in its root directory. We refer to this file as the bundle’s *manifest*, and it defines all of the available configuration settings for the bundle, with a description and default value for each. You can find the manifest in your own cache of the bundle (e.g., `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml` within your pipeline configuration), or in Github ([here it is for Workfiles as an example](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml)).
 
 ## Modifying configuration settings 
@@ -347,5 +347,5 @@ Note that if the settings for `tk-multi-workfiles2` were coming from an included
 * [Animation pipeline tutorial](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [Descriptor reference documentation](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
 * [Webinar: Toolkit administration](https://youtu.be/7qZfy7KXXX0)
-* [File system configuration reference](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference)
+* [File system configuration reference](https://developer.shotgridsoftware.com/82ff76f7/)
 * [Default Configuration environment structure README](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

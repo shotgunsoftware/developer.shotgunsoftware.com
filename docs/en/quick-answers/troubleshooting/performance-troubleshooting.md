@@ -134,8 +134,8 @@ Reading logs can be tricky though and the contents may not always make sense, so
 The first thing to do is to narrow down to certain aspects of where the app in question is slow.
 
 - **Is it slow to launch the app or navigate through the tabs?**
-    - It's possible that the app is currently configured to show too much information. The My Tasks tab and others can be configured to filter out unneeded entities from the list. For example, you could filter out tasks that are of a certain status, such as On Hold (`hld`) or Final (`fin`).  Not only does this offer performance benefits, but it also lets the artist see only the information that is important to them. Both the [Loader app](https://developer.shotgridsoftware.com/a4c0a4f1/?title=Loader) and the Workfiles app can be filtered, however, Workfiles doesn’t currently have a specific doc section on filtering but filters can be applied as part of the [hierarchy settings](https://developer.shotgridsoftware.com/9a736ee3/?title=Workfiles#step-filtering).
-    - The hierarchy on the File Open app can also be configured to defer the loading of the [sub items until it is expanded](https://developer.shotgridsoftware.com/9a736ee3/?title=Workfiles#deferred-queries). This is now the default configuration setup, however, if you have older configs you may wish to transition over to using this.
+    - It's possible that the app is currently configured to show too much information. The My Tasks tab and others can be configured to filter out unneeded entities from the list. For example, you could filter out tasks that are of a certain status, such as On Hold (`hld`) or Final (`fin`).  Not only does this offer performance benefits, but it also lets the artist see only the information that is important to them. Both the [Loader app](https://developer.shotgridsoftware.com/a4c0a4f1/) and the Workfiles app can be filtered, however, Workfiles doesn’t currently have a specific doc section on filtering but filters can be applied as part of the [hierarchy settings](https://developer.shotgridsoftware.com/9a736ee3/#step-filtering).
+    - The hierarchy on the File Open app can also be configured to defer the loading of the [sub items until it is expanded](https://developer.shotgridsoftware.com/9a736ee3/#deferred-queries). This is now the default configuration setup, however, if you have older configs you may wish to transition over to using this.
     - Check that debug logging isn’t enabled. This can cause a lot of additional I/O and therefore slow things down; these apps do contain a lot of debugging output.
 - **Is it slow opening, saving, or creating a new file?**
     - Check to see if you’ve taken over scene operations or actions hooks, and see if there is any custom behavior around these functions that might slow things down.
@@ -165,7 +165,7 @@ Basically, create the minimum required folders that allow you to save and publis
 
 #### Create with parent
 
-There is a [`create_with_parent` setting](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference#create-with-parent-folder) that can be applied to schema folders.
+There is a [`create_with_parent` setting](https://developer.shotgridsoftware.com/82ff76f7/#create-with-parent-folder) that can be applied to schema folders.
 Setting it to true will cause the folder to be created at the same time as it’s parent. You should be careful to avoid situations where setting it to True will cause large numbers of folders to be checked and created.
 
 **Example**
@@ -178,7 +178,7 @@ Whilst this might be convenient in some situations, it is causing a lot more fol
 
 #### Defer creation
 
-The [`defer_creation` setting](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference#workspaces-and-deferred-folder-creation) allows you to further refine when folders should be created by restricting the creation of folders to only happen when a certain engine is running. You can even use custom names, and then trigger the creation of them using the [sgtk API](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure).
+The [`defer_creation` setting](https://developer.shotgridsoftware.com/82ff76f7/#workspaces-and-deferred-folder-creation) allows you to further refine when folders should be created by restricting the creation of folders to only happen when a certain engine is running. You can even use custom names, and then trigger the creation of them using the [sgtk API](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure).
 
 **Example**
 
@@ -200,7 +200,7 @@ sgtk.create_filesystem_structure(entity["type"], entity["id"], engine="publish")
 
 Taking the idea of deferring folders further, if you have a number of non-dynamic folders at the root of your project, these typically only ever need to be created once. For example, the [“editorial” and “reference”](https://github.com/shotgunsoftware/tk-config-default2/tree/master/core/schema/project) folders in the root of the Default Configuration’s  schema would only likely need creating once at the start of the project, but by default, the folder creation will check for their existence every time. 
 
-To limit this, you could create [yml files](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference#static-folders) for them, where you can set a defer keyword so that they only get created when the folder creation is run in a certain engine or passed the keyword. You could set the defer keyword to `tk-shell` and then run the folder creation via the tank command like `tank folders`. 
+To limit this, you could create [yml files](https://developer.shotgridsoftware.com/82ff76f7/#static-folders) for them, where you can set a defer keyword so that they only get created when the folder creation is run in a certain engine or passed the keyword. You could set the defer keyword to `tk-shell` and then run the folder creation via the tank command like `tank folders`. 
 
 This would mean that these folders would only get created if the folder creation was run via the tank command, which a Toolkit administrator could do when setting up the project for the first time. Alternatively, you could write a small script that ran the folder creation with a custom keyword a bit like the example above.
 

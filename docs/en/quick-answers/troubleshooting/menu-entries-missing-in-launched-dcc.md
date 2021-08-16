@@ -12,7 +12,7 @@ It's possible you may not be seeing the app you're after because you're in the w
 
 ## Example
 
-When you launch an application from [{% include product %} Desktop](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide#getting-started-with-desktop), it puts you in the project environment by default. This environment is managed by the config file in your pipeline configuration located at `config/env/project.yml`. Because most user's work will probably not be done in this environment, it's not configured with many apps for you to work with.
+When you launch an application from [{% include product %} Desktop](https://developer.shotgridsoftware.com/d587be80/#getting-started-with-desktop), it puts you in the project environment by default. This environment is managed by the config file in your pipeline configuration located at `config/env/project.yml`. Because most user's work will probably not be done in this environment, it's not configured with many apps for you to work with.
 
 **Default Maya Project actions:**
 

@@ -25,7 +25,7 @@ For simplicity, the digital content creation (DCC) software used will be kept to
 
 * **A working {% include product %} Project** - This tutorial assumes you have experience using {% include product %} for tracking and managing production data. 
 
-* **Understanding of {% include product %} Integrations** - {% include product %} ships with integrations that provide some simple production workflows without requiring any manual configuration. You should understand the features and scope of these workflows before diving into the manual configuration and customizations outlined in this tutorial. More information about {% include product %} Integrations can be found [here](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide). 
+* **Understanding of {% include product %} Integrations** - {% include product %} ships with integrations that provide some simple production workflows without requiring any manual configuration. You should understand the features and scope of these workflows before diving into the manual configuration and customizations outlined in this tutorial. More information about {% include product %} Integrations can be found [here](https://developer.shotgridsoftware.com/d587be80/). 
 
 * **Maya & Nuke Experience** - This tutorial is designed to build a simple pipeline using Maya and Nuke. You should have a basic understanding of these packages in order to customize the integrations provided by {% include product %}. 
 
@@ -39,11 +39,11 @@ For simplicity, the digital content creation (DCC) software used will be kept to
 
 * [{% include product %} Integrations](https://www.shotgridsoftware.com/integrations/)
 
-    * [User Guide](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide)
+    * [User Guide](https://developer.shotgridsoftware.com/d587be80/)
 
-    * [Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide)
+    * [Admin Guide](https://developer.shotgridsoftware.com/8085533c/)
 
-    * [Developer Guide](https://developer.shotgridsoftware.com/93c6e555/?title=Integrations+Developer+Guide)
+    * [Developer Guide](https://developer.shotgridsoftware.com/93c6e555/)
 
 # Project Creation & Setup
 
@@ -79,17 +79,17 @@ If either application does not show up in Desktop or the expected version does n
 
 The Software entity is used to drive which DCC packages to use on your production. By default, the integrations will search for these packages in standard installation locations and make them launchable via Desktop. If you have more than one version installed or you have them installed in a non-standard location, it is possible you need to update the corresponding Software entity entry in {% include product %} to curate the launch experience for your artists. 
 
-For complete details on the Software entity and how to properly configure it, please see the [Integrations Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide). Once you have your DCCs launching the way you expect, you can continue to the next section.
+For complete details on the Software entity and how to properly configure it, please see the [Integrations Admin Guide](https://developer.shotgridsoftware.com/8085533c/). Once you have your DCCs launching the way you expect, you can continue to the next section.
 
 # Configuration
 
 The configuration (config) defines the artist workflow for your project. This includes specifying which {% include product %} integrations to include within the DCCs your artists are launching, how your project's folder structure is defined, and the naming conventions for files and folders created as artists share data.  
 
-By default, all new projects are configured to use the basic [{% include product %} Integrations](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide) which provide a basic workflow for sharing files between artists using many off-the-shelf software packages. The following sections outline how to take over your project's pipeline configuration (config) and customize it for your studio.
+By default, all new projects are configured to use the basic [{% include product %} Integrations](https://developer.shotgridsoftware.com/d587be80/) which provide a basic workflow for sharing files between artists using many off-the-shelf software packages. The following sections outline how to take over your project's pipeline configuration (config) and customize it for your studio.
 
 ## Taking Over the Project Config
 
-Use {% include product %} Desktop (Desktop) to take over your project's configuration. RMB click within Desktop or click the user icon in the bottom right to show the popup menu. Select the **Advanced project setup…** option and follow the wizard to locally install your project configuration. The images below show the required steps. You can also follow the steps outlined in the Integrations Admin Guide for [Taking over a Pipeline Configuration](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide#taking-over-a-pipeline-configuration). 
+Use {% include product %} Desktop (Desktop) to take over your project's configuration. RMB click within Desktop or click the user icon in the bottom right to show the popup menu. Select the **Advanced project setup…** option and follow the wizard to locally install your project configuration. The images below show the required steps. You can also follow the steps outlined in the Integrations Admin Guide for [Taking over a Pipeline Configuration](https://developer.shotgridsoftware.com/8085533c/#taking-over-a-pipeline-configuration). 
 
 {% include figure src="./images/tutorial/image_5.png" caption="Select the **Advanced project setup…** in the Desktop popup menu" %}
 
@@ -129,21 +129,21 @@ Familiarize yourself with the contents of this folder in preparation for the nex
 
 ## Config Organization
 
-Before beginning the process of building your simple pipeline, you need to understand how the pipeline configurations are organized and how they work. The following graphic highlights the major components of the configuration and their purposes. For additional information about configurations and their administration, see the [Administering Toolkit](https://developer.shotgridsoftware.com/425b1da4/?title=Advanced+Toolkit+Administration) article.
+Before beginning the process of building your simple pipeline, you need to understand how the pipeline configurations are organized and how they work. The following graphic highlights the major components of the configuration and their purposes. For additional information about configurations and their administration, see the [Administering Toolkit](https://developer.shotgridsoftware.com/425b1da4/) article.
 
 {% include figure src="./images/tutorial/image_11.png" %}
 
 ### Project Schema 
 
-The simple pipeline you will build in this tutorial uses the project schema provided by the Default configuration. You can browse the **`config/core/schema`** folder to get a feel for the structure that will be created as Toolkit Apps write files to disk. For additional information about configuring the project directory structure, see the [File System Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference) documentation.
+The simple pipeline you will build in this tutorial uses the project schema provided by the Default configuration. You can browse the **`config/core/schema`** folder to get a feel for the structure that will be created as Toolkit Apps write files to disk. For additional information about configuring the project directory structure, see the [File System Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/ documentation.
 
 ### Templates
 
-This tutorial also uses the templates defined in the Default pipeline configuration. You can open the **`config/core/templates.yml`** file to get a peek at the templates that are used by the apps to map input and output files to paths on disk. For more information about the templating system, see the [File System Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference) documentation.
+This tutorial also uses the templates defined in the Default pipeline configuration. You can open the **`config/core/templates.yml`** file to get a peek at the templates that are used by the apps to map input and output files to paths on disk. For more information about the templating system, see the [File System Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/) documentation.
 
 ### Hooks
 
-Much of this tutorial will involve modifying App hooks in order to customize the artist workflows. Before diving into that customization, you should have a basic understanding of what hooks are, how they work, and where they live. Read through the Hooks section of the  [Administration](https://developer.shotgridsoftware.com/425b1da4/?title=Advanced+Toolkit+Administration#hooks) documentation.
+Much of this tutorial will involve modifying App hooks in order to customize the artist workflows. Before diving into that customization, you should have a basic understanding of what hooks are, how they work, and where they live. Read through the Hooks section of the  [Administration](https://developer.shotgridsoftware.com/425b1da4/#hooks) documentation.
 
 As you progress through the tutorial, you will be asked to "take over" a hook defined by one of the Toolkit Apps. The process of taking over an app hook is straightforward. Each time you're asked to do so, simply follow these steps:
 
@@ -177,7 +177,7 @@ Select the Assets tab and drill down into the Teapot's modeling task. Since ther
 
 Clicking this button will create a new, empty Maya session and set your current working context to the Teapot Asset's Model task. 
 
-{%include info title="Note" content="At any time during this tutorial you can launch the ShotGrid Panel via the ShotGrid menu in Maya or Nuke. This panel provides a view into your project data without leaving your DCC. It will show you your current working context and any recent activity within that context. You can also add notes for feedback directly into the panel. See the [ShotGrid Panel documentation](https://developer.shotgridsoftware.com/c0b0ce05/?title=ShotGrid+Panel) for more info." %}
+{%include info title="Note" content="At any time during this tutorial you can launch the ShotGrid Panel via the ShotGrid menu in Maya or Nuke. This panel provides a view into your project data without leaving your DCC. It will show you your current working context and any recent activity within that context. You can also add notes for feedback directly into the panel. See the [ShotGrid Panel documentation](https://developer.shotgridsoftware.com/c0b0ce05/) for more info." %}
 
 Next, model a Teapot, or [download](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj) and import the provided Teapot.
 
@@ -848,6 +848,6 @@ Congratulations, you're done! Hopefully this tutorial has given you a starting p
 
 Ask questions and learn how other studios are using Toolkit over at the [shotgun-dev Google Group](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev).  Be sure to subscribe to stay up to date with the latest posts!
 
-If there are features or workflows that you feel are outside of the default integrations, then you can always write your own apps. [Here is an excellent document](https://developer.shotgridsoftware.com/2e5ed7bb/?title=Developing+apps) to help you get started writing your first app.
+If there are features or workflows that you feel are outside of the default integrations, then you can always write your own apps. [Here is an excellent document](https://developer.shotgridsoftware.com/2e5ed7bb/) to help you get started writing your first app.
 
 As always, if you have additional questions about this tutorial or about {% include product %} or the Toolkit platform in general, [reach out to the community](https://community.shotgridsoftware.com/c/pipeline/6).

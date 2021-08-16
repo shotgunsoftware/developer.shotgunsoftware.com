@@ -24,7 +24,7 @@ For these {% include product %} features to work, some supported desktop integra
 
 ### {% include product %} Desktop
 
-This framework is bundled with {% include product %} Desktop, which can be downloaded [following these steps](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide#installation-of-desktop). When {% include product %} Desktop is run it will automatically start up the websocket server.  If you 
+This framework is bundled with {% include product %} Desktop, which can be downloaded [following these steps](https://developer.shotgridsoftware.com/d587be80/#installation-of-desktop). When {% include product %} Desktop is run it will automatically start up the websocket server.  If you 
 are already running {% include product %} Desktop then your setup process is complete.
 
 ### Configuring the server

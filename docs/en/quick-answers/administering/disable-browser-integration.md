@@ -20,7 +20,7 @@ To disable browser integration, follow these two simple steps.
         [BrowserIntegration]
         enabled=0
 
-See complete instructions on how to configure the browser integration in our [Admin guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide#toolkit-configuration-file).
+See complete instructions on how to configure the browser integration in our [Admin guide](https://developer.shotgridsoftware.com/8085533c/).
 
 **Alternate method**
 

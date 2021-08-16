@@ -7,7 +7,7 @@ lang: en
 
 # ShotGrid Panel
 
-This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [{% include product %} Integrations User Guide](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide#the-panel) for details.
+This document describes functionality only available if you have taken control over a Toolkit configuration. Please refer to the [{% include product %} Integrations User Guide](https://developer.shotgridsoftware.com/d587be80/#the-panel) for details.
 
 ## Configuring the {% include product %} Panel
 

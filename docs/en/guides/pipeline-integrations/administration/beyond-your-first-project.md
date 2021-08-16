@@ -43,8 +43,8 @@ Open this file and make the necessary changes to the paths. Once you have saved 
   
 For more information about applications, check out the following topics:  
    
-- [The Toolkit Application Launcher](https://developer.shotgridsoftware.com/1b9c259a/?title=Launch+App)  
-- [Passing Commandline Arguments](https://developer.shotgridsoftware.com/1b9c259a/?title=Launch+App#use-command-line-arguments-at-launch)    
+- [The Toolkit Application Launcher](https://developer.shotgridsoftware.com/1b9c259a/)  
+- [Passing Commandline Arguments](https://developer.shotgridsoftware.com/1b9c259a/)    
 
   
 ## {% include product %} Integration  
@@ -53,7 +53,7 @@ Toolkit integrates with {% include product %} and extends the traditional interf
   
 ![](images/Beyond-your-first-project/shotgun_integration.png)  
   
-This offers a way to launch Toolkit applications or custom tools that operate on data directly from {% include product %}. You can learn more about integrating with your {% include product %} site in  [the Browser Integration section of the Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide#browser-integration).  
+This offers a way to launch Toolkit applications or custom tools that operate on data directly from {% include product %}. You can learn more about integrating with your {% include product %} site in  [the Browser Integration section of the Admin Guide](https://developer.shotgridsoftware.com/8085533c/).  
   
 ## Adding Publishes to the {% include product %} UI  
   
@@ -135,7 +135,7 @@ If you navigate to your project configuration, you can see a  `tank` and a  `tan
   
 For more details on what you can do with the  `tank` command, please see the in-depth technical documentation:  
   
-[How to Administer Toolkit](https://developer.shotgridsoftware.com/425b1da4/?title=Advanced+Toolkit+Administration)  
+[How to Administer Toolkit](https://developer.shotgridsoftware.com/425b1da4/)  
   
 ### Key Configuration Files  
   
@@ -151,8 +151,8 @@ Together, these two parts of the project configuration makes it possible to adju
 
 Read more about this in our advanced documentation:  
 
-- [Folder Configuration](https://developer.shotgridsoftware.com/425b1da4/?title=Advanced+Toolkit+Administration#creating-folders-on-disk)  
-- [Filesystem Templates](https://developer.shotgridsoftware.com/425b1da4/?title=Advanced+Toolkit+Administration#configuring-templates)  
+- [Folder Configuration](https://developer.shotgridsoftware.com/425b1da4/)  
+- [Filesystem Templates](https://developer.shotgridsoftware.com/425b1da4/)  
   
 A toolkit configuration is essentially made up of a collection of configured  **apps and engines**. This configuration is located in the  `env` folder. If the file system configuration files discussed above define  _where_ resources should be located on disk, the environment configuration with its apps and engines define  _what_ the pipeline is supposed to do.  
 
@@ -169,7 +169,7 @@ Tech Notes: Using a shared Toolkit Core (Click to expand)
   
 We also have a more technical document that goes through the high level concepts in the {% include product %} Pipeline Toolkit and explains 'bigger picture' things. Once you have a good grasp of what Toolkit does out of the box, we recommend that you move on to this document to get a deeper undestanding of how Toolkit could be adjusted to suit your particular studio needs.  
   
-[An introduction to the high level concepts in the {% include product %} Toolkit](https://developer.shotgridsoftware.com/e95205a8/?title=An+Overview+of+Toolkit)  
+[An introduction to the high level concepts in the {% include product %} Toolkit](https://developer.shotgridsoftware.com/e95205a8/)  
   
 ## The Toolkit Community  
   

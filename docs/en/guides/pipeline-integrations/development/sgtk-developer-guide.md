@@ -190,7 +190,7 @@ The Publish app is highly customizable by way of hooks that control how items ar
 
 The full developer documentation for the publisher app can now be found on the  [Toolkit Developer Site](http://developer.shotgridsoftware.com/tk-multi-publish2).
 
-For more information on how to use the Publish app, see the [User Guide](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide#the-publisher). 
+For more information on how to use the Publish app, see the [User Guide](https://developer.shotgridsoftware.com/d587be80/#the-publisher). 
 
 ## Loader
 

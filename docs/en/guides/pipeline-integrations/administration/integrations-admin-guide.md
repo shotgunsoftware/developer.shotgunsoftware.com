@@ -9,7 +9,7 @@ lang: en
 
 ## Introduction
 
-This document serves as a guide for administrators of {% include product %} integrations. It's one of three: user, admin, and developer. Our  [User Guide](hhttps://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide)  is intended for artists who will be the end users of {% include product %} integrations in their daily workflow, and our  [Developer Guide](https://developer.shotgridsoftware.com/93c6e555/?title=Integrations+Developer+Guide)  is technical documentation for those writing Python code to extend the functionality. This document falls between those two: it's intended for those who are implementing {% include product %} integrations for a studio, managing software versions, and making storage decisions for published files.
+This document serves as a guide for administrators of {% include product %} integrations. It's one of three: user, admin, and developer. Our  [User Guide](https://developer.shotgridsoftware.com/d587be80/)  is intended for artists who will be the end users of {% include product %} integrations in their daily workflow, and our  [Developer Guide](https://developer.shotgridsoftware.com/93c6e555/)  is technical documentation for those writing Python code to extend the functionality. This document falls between those two: it's intended for those who are implementing {% include product %} integrations for a studio, managing software versions, and making storage decisions for published files.
 
 ## Standard Pipeline Configurations
 
@@ -21,7 +21,7 @@ Our out-of-the-box integrations are designed to run without the need to set up o
 
 ### The Default Config
 
-This is the default starting point for our Advanced project setup. It includes  [filesystem location support](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference)  and a wider array of Toolkit apps and engines.
+This is the default starting point for our Advanced project setup. It includes  [filesystem location support](https://developer.shotgridsoftware.com/82ff76f7/)  and a wider array of Toolkit apps and engines.
 
 You can  [see the Default Config in Github here](https://github.com/shotgunsoftware/tk-config-default2). For a detailed description of the Default Config's structure, see the  `config/env/README.md`  file in your Pipeline Configuration, or  [view it here in Github](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md).
 
@@ -31,7 +31,7 @@ You can  [see the Default Config in Github here](https://github.com/shotgunsoftw
 
 The Publisher is designed to ease the transition between the out-of-the-box workflow and the full pipeline configuration. In the out-of-the-box setup, files are published in place, which avoids the need to define templates or filesystem schema. Once a project has gone through the advanced setup and has a full Pipeline Configuration, the same publish plugins will recognize the introduction of templates to the app settings and begin copying files to their designated publish location prior to publishing. Studios can therefore introduce template-based settings on a per-environment or per-DCC basis as needed for projects with full configurations. The Default Config comes fully configured for template-based workflows and is a good reference to see how templates can be configured for the Publish app. See the  [tk-multi-publish2.yml file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-publish2.yml)  in the Default Config in Github for more info.
 
-For details on writing plugins for the Publisher, see the  [Publisher section of our Developer Guide](https://developer.shotgridsoftware.com/93c6e555/?title=Integrations+Developer+Guide#publisher).
+For details on writing plugins for the Publisher, see the  [Publisher section of our Developer Guide](https://developer.shotgridsoftware.com/93c6e555/#publisher).
 
 ## Configuring software launches
 
@@ -225,7 +225,7 @@ Hosting a websocket server within the {% include product %} Desktop app was, and
 
 **Websockets v2 via {% include product %} Desktop**
 
-The second iteration of the websocket server’s RPC API changes the underlying mechanism used to get, cache, and execute Toolkit actions. This implementation addresses a number of performance issues related to the earlier browser integration implementations, improves the visual organization of the action menus, and adds support for  [out-of-the-box {% include product %} Integrations](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide#getting-started-with-desktop), which work without explicitly configuring Toolkit. This is the current implementation of browser integration.
+The second iteration of the websocket server’s RPC API changes the underlying mechanism used to get, cache, and execute Toolkit actions. This implementation addresses a number of performance issues related to the earlier browser integration implementations, improves the visual organization of the action menus, and adds support for  [out-of-the-box {% include product %} Integrations](https://developer.shotgridsoftware.com/d587be80/#getting-started-with-desktop), which work without explicitly configuring Toolkit. This is the current implementation of browser integration.
 
 ### Configuration
 
@@ -237,7 +237,7 @@ The Toolkit engine that manages Toolkit actions within the {% include product %}
 
 ![](images/Integration-admin-guide/tk-shotgun_config.png)
 
-In the above example from  [tk-config-basic](https://github.com/shotgunsoftware/tk-config-basic/), there are two apps configured that will result in a number of engine commands turned into menu actions. Toolkit apps will register commands that are to be included in the action menu, including launcher commands for each software package found on the local system that correspond to the list of  [Software entities](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide#configuring-software-launches)  in the {% include product %} site. The result is the list of menu actions shown here:
+In the above example from  [tk-config-basic](https://github.com/shotgunsoftware/tk-config-basic/), there are two apps configured that will result in a number of engine commands turned into menu actions. Toolkit apps will register commands that are to be included in the action menu, including launcher commands for each software package found on the local system that correspond to the list of  [Software entities](https://developer.shotgridsoftware.com/8085533c/#configuring-software-launches)  in the {% include product %} site. The result is the list of menu actions shown here:
 
 ![](images/Integration-admin-guide/action_menu.png)
 
@@ -439,7 +439,7 @@ _Scenario: I want to run {% include product %} integrations, but I am not connec
 
 **Solution**
 
--   If you can temporarily connect to the internet, just download {% include product %} Desktop. It comes prepackaged with a set of  [integrations](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide#introduction), and pre-bundled with all the apps and engines needed for the {% include product %} integrations for all supported DCCs. When you start it up, it will automatically try to look for upgrades, but if it cannot connect to the {% include product %} App Store, it will simply run the most recent version that exists locally.
+-   If you can temporarily connect to the internet, just download {% include product %} Desktop. It comes prepackaged with a set of  [integrations](https://developer.shotgridsoftware.com/d587be80/#introduction), and pre-bundled with all the apps and engines needed for the {% include product %} integrations for all supported DCCs. When you start it up, it will automatically try to look for upgrades, but if it cannot connect to the {% include product %} App Store, it will simply run the most recent version that exists locally.
 
 **Good to know**
 
@@ -623,7 +623,7 @@ This is a quick and convenient way to get up and running with a new project with
 
 For more ways and documentation on how to evolve and maintain your pipeline configuration, see here:
 
-[Managing your project configuration](https://developer.shotgridsoftware.com/60762324/?title=Configuration+Staging+and+Rollout#inheriting-the-config-from-your-previous-project)
+[Managing your project configuration](https://developer.shotgridsoftware.com/60762324/#inheriting-the-config-from-your-previous-project)
 
 #### Using a configuration template from git
 
@@ -631,7 +631,7 @@ For more ways and documentation on how to evolve and maintain your pipeline conf
 
 Use this option if you want to keep your project's configuration connected to source control. Specify a url to a remote git or github repository and the setup process will clone it for you. Note that this is not just github, but works with any git repository. Just make sure that the path to the repository ends with  `.git`, and Toolkit will try to process it as a git setup. Because your project configuration is a git repository, you can commit and push any changes you make to your master repository and beyond that to other projects. Using a github based configuration makes it easy to keep multiple Toolkit projects in sync. You can read more about it here:
 
-[Managing your project configuration](https://developer.shotgridsoftware.com/60762324/?title=Configuration+Staging+and+Rollout#a-studio-configuration-in-git-source-control)
+[Managing your project configuration](https://developer.shotgridsoftware.com/60762324/#a-studio-configuration-in-git-source-control)
 
 Please note that if you are running on Windows, you need to have git installed on your machine and accessible in your  `PATH`. On Linux and Mac OS X, it is usually installed by default.
 
@@ -686,7 +686,7 @@ windows: \\prod\software\shotgun\golden_circle
 
 Once you are up and running with your first configuration, please navigate to our 'next steps' documentation to learn more about how to configure and adjust Toolkit to better suite your studio needs:
 
-[Beyond your first project](https://developer.shotgridsoftware.com/c3b662a6/?title=Beyond+Your+First+Project)
+[Beyond your first project](https://developer.shotgridsoftware.com/c3b662a6/)
 
 ## Advanced functionality
 
