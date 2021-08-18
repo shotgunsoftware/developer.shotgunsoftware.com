@@ -99,7 +99,7 @@ The `{self}` keyword tells Toolkit to look in the app's `hooks` folder for the h
 
 For more information, please see the hook files that come with the app. The hooks also take advantage of inheritance, meaning that you don't need to override everything in the hook, but can more easily extend or augment the default hook in various ways, making hooks easier to manage.
 
-[Learn more about the second gen hook format here.](https://support.shotgunsoftware.com/hc/en-us/articles/219039878#The%20hook%20data%20type)
+[Learn more about the second gen hook format here.](https://developer.shotgridsoftware.com/6d10dedf/)
 
 By using inheritance in your hook, it would be possible to add additional actions to the default hooks like this:
 
@@ -190,7 +190,7 @@ The Publish app is highly customizable by way of hooks that control how items ar
 
 The full developer documentation for the publisher app can now be found on the  [Toolkit Developer Site](http://developer.shotgridsoftware.com/tk-multi-publish2).
 
-For more information on how to use the Publish app, see the [User Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067513-Integrations-Developer-Guide#User_guide_link). If you are looking for more information about the first generation Publisher, please visit the [classic Publisher docs](https://support.shotgunsoftware.com/hc/en-us/articles/115000067513-Integrations-Developer-Guide#classic_publisher_link).
+For more information on how to use the Publish app, see the [User Guide](https://developer.shotgridsoftware.com/d587be80/#the-publisher). 
 
 ## Loader
 

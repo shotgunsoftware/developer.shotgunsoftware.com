@@ -21,7 +21,7 @@ The app is simple to use. Just select a demo from the list on the left and then 
 
 ![Code Tab](../images/apps/multi-demo-code_tab.png)
 
-New demos will be added as new components are added to the platform and as time permits. If there is a common pattern of component usage or a demo that you'd like to see, please let us know by [submitting a ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new).
+New demos will be added as new components are added to the platform and as time permits. If there is a common pattern of component usage or a demo that you'd like to see, please let us know by [submitting a ticket](https://knowledge.autodesk.com/contact-support).
 
 ## Installation
 

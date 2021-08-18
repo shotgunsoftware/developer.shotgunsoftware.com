@@ -43,8 +43,8 @@ Open this file and make the necessary changes to the paths. Once you have saved 
   
 For more information about applications, check out the following topics:  
    
-- [The Toolkit Application Launcher](https://support.shotgunsoftware.com/hc/en-us/articles/219032968)  
-- [Passing Commandline Arguments](https://support.shotgunsoftware.com/hc/en-us/articles/219032968#Use%20Command%20Line%20Arguments%20at%20Launch)    
+- [The Toolkit Application Launcher](https://developer.shotgridsoftware.com/1b9c259a/)  
+- [Passing Commandline Arguments](https://developer.shotgridsoftware.com/1b9c259a/)    
 
   
 ## {% include product %} Integration  
@@ -53,7 +53,7 @@ Toolkit integrates with {% include product %} and extends the traditional interf
   
 ![](images/Beyond-your-first-project/shotgun_integration.png)  
   
-This offers a way to launch Toolkit applications or custom tools that operate on data directly from {% include product %}. You can learn more about integrating with your {% include product %} site in  [the Browser Integration section of the Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493-Integrations-Admin-Guide#Browser%20Integration).  
+This offers a way to launch Toolkit applications or custom tools that operate on data directly from {% include product %}. You can learn more about integrating with your {% include product %} site in  [the Browser Integration section of the Admin Guide](https://developer.shotgridsoftware.com/8085533c/).  
   
 ## Adding Publishes to the {% include product %} UI  
   
@@ -107,8 +107,6 @@ Hopefully at this point you now have the default {% include product %} setup wor
   
 This next section is all about what to do next -- the process of starting to take that default configuration and adjust it to work more like the rest of your studio pipeline. Toolkit is flexible and highly configurable, and we have lots of documentation. But before you get started, to see it all in action, we recommend spending a couple of minutes checking out our various walkthrough videos. These show the {% include product %} Pipeline Toolkit in action, how it works inside applications such as Maya and Nuke. It also goes through basic concepts such as publishing, version control, loading etc.  
   
-[{% include product %} Toolkit Video Collection](https://support.shotgunsoftware.com/hc/en-us/articles/219040678)  
-  
 ## The anatomy of a Toolkit Project  
   
 When you create a new Toolkit project, you end up with a couple of key locations.  
@@ -137,7 +135,7 @@ If you navigate to your project configuration, you can see a  `tank` and a  `tan
   
 For more details on what you can do with the  `tank` command, please see the in-depth technical documentation:  
   
-[How to Administer Toolkit](https://support.shotgunsoftware.com/hc/en-us/articles/219033178)  
+[How to Administer Toolkit](https://developer.shotgridsoftware.com/425b1da4/)  
   
 ### Key Configuration Files  
   
@@ -153,8 +151,8 @@ Together, these two parts of the project configuration makes it possible to adju
 
 Read more about this in our advanced documentation:  
 
-- [Folder Configuration](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Creating%20folders%20on%20disk%20with%20Sgtk)  
-- [Filesystem Templates](https://support.shotgunsoftware.com/hc/en-us/articles/219033178#Configuring%20Templates)  
+- [Folder Configuration](https://developer.shotgridsoftware.com/425b1da4/)  
+- [Filesystem Templates](https://developer.shotgridsoftware.com/425b1da4/)  
   
 A toolkit configuration is essentially made up of a collection of configured  **apps and engines**. This configuration is located in the  `env` folder. If the file system configuration files discussed above define  _where_ resources should be located on disk, the environment configuration with its apps and engines define  _what_ the pipeline is supposed to do.  
 
@@ -171,11 +169,11 @@ Tech Notes: Using a shared Toolkit Core (Click to expand)
   
 We also have a more technical document that goes through the high level concepts in the {% include product %} Pipeline Toolkit and explains 'bigger picture' things. Once you have a good grasp of what Toolkit does out of the box, we recommend that you move on to this document to get a deeper undestanding of how Toolkit could be adjusted to suit your particular studio needs.  
   
-[An introduction to the high level concepts in the {% include product %} Toolkit](https://support.shotgunsoftware.com/hc/en-us/articles/219040648)  
+[An introduction to the high level concepts in the {% include product %} Toolkit](https://developer.shotgridsoftware.com/e95205a8/)  
   
 ## The Toolkit Community  
   
 A part of Toolkit is its community of pipeline engineers and TDs! We are on a mission to create a vibrant, code sharing community where we all can help evolve Toolkit together to become a powerful and flexible pipeline environment.  
   
-If you have any questions, or want to read through existing posts and conversations, please visit our  [public forums section](https://support.shotgunsoftware.com/hc/en-us/community/topics/200682428-Pipeline-Toolkit-Common-Questions-and-Answers).  
+If you have any questions, or want to read through existing posts and conversations, please visit our [community](https://community.shotgridsoftware.com/c/pipeline/6).  
   

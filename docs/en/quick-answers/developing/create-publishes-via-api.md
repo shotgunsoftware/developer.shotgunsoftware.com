@@ -11,7 +11,7 @@ Our sgtk API provides a [convenience method](https://developer.shotgridsoftware.
 
 In addition we also have a Publish app, that comes with [its own API](https://developer.shotgridsoftware.com/tk-multi-publish2/). 
 The Publish API ultimately uses the core sgtk API method to register the PublishedFile, but it also provides a framework around collection, validation, and publishing, which can be customized
-In addition to the the Publish API documentation, we have examples of writing your own publish plugins in our [pipeline tutorial](https://developer.shotgridsoftware.com/cb8926fc/?title=Pipeline+Tutorial).
+In addition to the the Publish API documentation, we have examples of writing your own publish plugins in our [pipeline tutorial](https://developer.shotgridsoftware.com/cb8926fc/).
 
 ## Using the register_publish() API method
 While it is possible to create publish records in {% include product %} using a raw {% include product %} API call, we would strongly recommend using Toolkit's convenience method.

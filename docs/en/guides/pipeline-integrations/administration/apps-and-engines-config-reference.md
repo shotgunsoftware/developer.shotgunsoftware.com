@@ -9,13 +9,13 @@ lang: en
 
 This document contains an overview of all the different options that you can include when creating configurations for Apps, Engines and Frameworks in the {% include product %} Pipeline Toolkit. It can be useful when doing advanced configuration of Apps, and it is important when you are doing development and need to add parameters to your App Configuration Manifest.  
 
-_This document describes functionality only available if you have taken control over a Toolkit configuration. For more info, see [{% include product %} Integrations Admin Guide](https://support.shotgunsoftware.com/hc/en-us/articles/115000067493)._
+_This document describes functionality only available if you have taken control over a Toolkit configuration. For more info, see [{% include product %} Integrations Admin Guide](https://developer.shotgridsoftware.com/8085533c/)._
 
 # Introduction
 
 This document contains specifications for the various file formats that Sgtk uses for its configuration and settings. Please note that this is a reference document which outlines all the various options and parameters available. For best practices on how to manage your configuration, please see the following document:
 
-[Configuration Management best practices.](https://support.shotgunsoftware.com/hc/en-us/articles/219033168)
+[Configuration Management best practices.](https://developer.shotgridsoftware.com/60762324/)
 
 # {% include product %} Pipeline Toolkit Environments
 

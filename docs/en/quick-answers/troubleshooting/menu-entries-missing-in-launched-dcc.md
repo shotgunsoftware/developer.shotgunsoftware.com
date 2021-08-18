@@ -12,13 +12,13 @@ It's possible you may not be seeing the app you're after because you're in the w
 
 ## Example
 
-When you launch an application from [{% include product %} Desktop](https://support.shotgunsoftware.com/entries/95442947), it puts you in the project environment by default. This environment is managed by the config file in your pipeline configuration located at `config/env/project.yml`. Because most user's work will probably not be done in this environment, it's not configured with many apps for you to work with.
+When you launch an application from [{% include product %} Desktop](https://developer.shotgridsoftware.com/d587be80/#getting-started-with-desktop), it puts you in the project environment by default. This environment is managed by the config file in your pipeline configuration located at `config/env/project.yml`. Because most user's work will probably not be done in this environment, it's not configured with many apps for you to work with.
 
 **Default Maya Project actions:**
 
 ![{% include product %} Menu project actions](images/shotgun-menu-project-actions.png)
 
-You can use the [{% include product %} Workfiles app](https://support.shotgunsoftware.com/hc/en-us/articles/219033088-Your-Work-Files) to select the Asset, Shot, or Task to work on. This will load up the appropriate new environment for you which will then have more apps enabled with menu items in your {% include product %} menu.
+You can use the [{% include product %} Workfiles app](https://developer.shotgridsoftware.com/9a736ee3/) to select the Asset, Shot, or Task to work on. This will load up the appropriate new environment for you which will then have more apps enabled with menu items in your {% include product %} menu.
 
 **Default Maya Asset Task actions:**
 

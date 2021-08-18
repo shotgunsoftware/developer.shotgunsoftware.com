@@ -176,7 +176,7 @@ SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 For more information on authentication, see our [developer documentation](http://developer.shotgridsoftware.com/tk-core/authentication.html).
 
-**A note on securing your script user:** It’s good practice to lock down the script user you use on the farm so that it doesn’t have admin-level permissions. [You can learn more about API user permissions here.](https://support.shotgunsoftware.com/hc/en-us/articles/219376228-API-user-permission-groups)
+**A note on securing your script user:** It’s good practice to lock down the script user you use on the farm so that it doesn’t have admin-level permissions. [You can learn more about API user permissions here.](https://developer.shotgridsoftware.com/bbae2ca7/)
 
 #### 3. The init.py script
 

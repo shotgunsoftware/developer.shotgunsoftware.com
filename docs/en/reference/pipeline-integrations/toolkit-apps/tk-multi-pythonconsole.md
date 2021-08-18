@@ -84,4 +84,4 @@ The app comes with a hook that can be implemented to load python source from an 
 
 ## Other notes
 
-* In some older versions of DCCs, leaving the python console open when closing the session may cause a crash. We believe this may be a bug in some older versions of PySide. More recent versions of DCCs, bundled with newer versions of PySide, do not appear to crash on exit. If you encounter this issue with a recent DCC release, please [submit a ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new) so that we can investigate further.
+* In some older versions of DCCs, leaving the python console open when closing the session may cause a crash. We believe this may be a bug in some older versions of PySide. More recent versions of DCCs, bundled with newer versions of PySide, do not appear to crash on exit. If you encounter this issue with a recent DCC release, please [submit a ticket](https://knowledge.autodesk.com/contact-support) so that we can investigate further.

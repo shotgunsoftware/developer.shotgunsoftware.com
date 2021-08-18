@@ -60,6 +60,6 @@ If your configuration uses a shared core, then this will be located inside your 
 
 ## Thumbnails
  
-Thumbnails used by Toolkit apps (like the [Loader](https://support.shotgunsoftware.com/entries/95442527)) are stored in the local Toolkit cache. They are stored per Project, Pipeline Configuration, and App (as needed). The structure beneath the root cache directory is as follows:
+Thumbnails used by Toolkit apps (like the [Loader](https://developer.shotgridsoftware.com/a4c0a4f1)) are stored in the local Toolkit cache. They are stored per Project, Pipeline Configuration, and App (as needed). The structure beneath the root cache directory is as follows:
 
 `<site_name>/p<project_id>c<pipeline_configuration_id>/<app_or_framework_name>/thumbs/`

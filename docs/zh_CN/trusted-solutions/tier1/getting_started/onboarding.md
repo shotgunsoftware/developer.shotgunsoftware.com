@@ -11,7 +11,7 @@ Leveraging the isolation features requires adopters to become AWS users. In orde
 
 Autodesk and Amazon will provide dedicated resources during the onboarding process to help you on this journey.
 
-To start the on-boarding process for any of the Isolation features, please open a [{% include product %} Support ticket](https://support.shotgunsoftware.com/hc/en-us/requests/new), before proceeding with [your setup](../setup/setup.md)
+To start the on-boarding process for any of the Isolation features, please open a [{% include product %} Support ticket](https://knowledge.autodesk.com/contact-support), before proceeding with [your setup](../setup/setup.md)
 
 ## Onboarding Process Overview
 
@@ -35,7 +35,7 @@ During the onboarding process, you'll have direct access to Autodesk and AWS Lea
 
 **Private Slack Channel:** During the onboarding, you will be given access to a dedicated Autodesk Slack Channel. Your {% include product %} and AWS Leaders will be available for quick feedback, answers, and ad-hoc meetings to help you progress as fast as possible with your {% include product %} Isolation setup. This channel will be available only for the onboarding period.
 
-**{% include product %} Support:** A [{% include product %} Support](https://support.shotgunsoftware.com/hc/en-us/requests/new) ticket will be used to track your onboarding at a higher level. Once your {% include product %} Isolation setup is complete, follow-up support tickets can be opened with the support team as needed.
+**{% include product %} Support:** A [{% include product %} Support](https://knowledge.autodesk.com/contact-support) ticket will be used to track your onboarding at a higher level. Once your {% include product %} Isolation setup is complete, follow-up support tickets can be opened with the support team as needed.
 
 ## Next Steps
 

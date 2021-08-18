@@ -52,7 +52,7 @@ A more advanced implementation of custom AMIs involves setting up a custom proto
 
 Read more about custom protocols in “ [Launching Applications Using Custom Browser Protocols](topicid=SG_Developer_dv_shotgrid_dv_launching_apps_protocols_html) .”
 
-> **Note:** We also have built-in integration with Maya and other software packages via [{% include product %} integrations](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide) .
+> **Note:** We also have built-in integration with Maya and other software packages via [{% include product %} integrations](https://developer.shotgridsoftware.com/d587be80/) .
 ### Light payload
 
 When using custom protocols, the query information is sent as a GET request. Certain operating system and browser combinations have varying limitations of the size of the GET request they allow. We suggest enabling the light payload checkbox on custom protocol AMIs. With light payload checked, your script will receive a single event log entry ID that it can fetch to get the full payload from by reading the `ami_payload` key of the record's `meta` field.

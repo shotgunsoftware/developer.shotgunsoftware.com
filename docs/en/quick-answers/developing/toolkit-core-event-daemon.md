@@ -82,7 +82,7 @@ def import_sgtk(project):
         else:
             # use the studio default one
             # this assumes you have a shared studio core installed.
-            # See https://support.shotgunsoftware.com/entries/96141707
+            # See https://developer.shotgridsoftware.com/b12f2510/#how-do-i-share-the-toolkit-core-between-projects
             core_python_path = os.path.join(shotgun_base, "studio", python_subfolder)
 
     # tweak sys.path to add the core API to the beginning so it will be picked up

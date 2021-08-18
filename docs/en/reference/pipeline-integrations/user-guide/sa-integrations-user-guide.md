@@ -71,7 +71,7 @@ The **{% include product %} Desktop** app sits at the heart of our integrations.
 
 **Running Toolkit Classic or a Custom Setup?**  
 
-The {% include product %} Integrations install automatically. If you are an advanced client wanting to install the **Classic** Toolkit configuration or you have a **Custom** Toolkit setup that you want to install via the **Desktop Setup Wizard** , please head over to the [administrator's guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide) to learn how to do this.
+The {% include product %} Integrations install automatically. If you are an advanced client wanting to install the **Classic** Toolkit configuration or you have a **Custom** Toolkit setup that you want to install via the **Desktop Setup Wizard** , please head over to the [administrator's guide](https://developer.shotgridsoftware.com/8085533c/) to learn how to do this.
 
 ### Installation of Desktop
 
@@ -93,7 +93,7 @@ You will only need to update your security certificate list once. Please note th
 
 Once that's set up, you'll need to log in to your {% include product %} site.
 
-If you go through a proxy, you will have to do some additional configuration. See instructions on how to do that in our [Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide#toolkit-configuration-file) .
+If you go through a proxy, you will have to do some additional configuration. See instructions on how to do that in our [Admin Guide](https://developer.shotgridsoftware.com/8085533c/#toolkit-configuration-file) .
 
 #### Authentication and browser integration
 
@@ -143,9 +143,9 @@ You can launch applications like Maya and Nuke straight from {% include product 
 
 ![launching-software-07.jpg](./images/sa-integrations-user-guide-launching-software-07.jpg)
 
-It’s normal for a studio to need additional configuration other than what comes out-of-the-box. Your studio may have software in a non-standard location or in-house engines for software we don’t support natively. It’s easy to configure these cases from right within the {% include product %} web app. See the [Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide) for details.
+It’s normal for a studio to need additional configuration other than what comes out-of-the-box. Your studio may have software in a non-standard location or in-house engines for software we don’t support natively. It’s easy to configure these cases from right within the {% include product %} web app. See the [Admin Guide](https://developer.shotgridsoftware.com/8085533c/) for details.
 
-If you're not seeing an app you expect to see, take a look at the [Configuring the software in {% include product %} Desktop section of our Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide) .
+If you're not seeing an app you expect to see, take a look at the [Configuring the software in {% include product %} Desktop section of our Admin Guide](https://developer.shotgridsoftware.com/8085533c/) .
 
 ## The Panel
 
@@ -499,7 +499,7 @@ If a publish has an associated review version, you will see a play button appear
 
 ## Advanced functionality
 
-All of {% include product %}'s integrations are built on top of a highly customizable and extensible platform for building pipelines called Toolkit. For more information on how to access and configure this functionality, see our [Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide) .
+All of {% include product %}'s integrations are built on top of a highly customizable and extensible platform for building pipelines called Toolkit. For more information on how to access and configure this functionality, see our [Admin Guide](https://developer.shotgridsoftware.com/8085533c/) .
 
 ## Acknowledgments
 

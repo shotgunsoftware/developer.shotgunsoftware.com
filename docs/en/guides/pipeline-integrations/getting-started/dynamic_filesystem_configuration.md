@@ -31,14 +31,14 @@ To use this guide, the following is required:
 
 1. An active [{% include product %}](https://www.shotgridsoftware.com/signup/) site. You should have a project with at least one Asset created. The asset should have a Model task. 
 2. A basic understanding of how a {% include product %} site is used to manage assets
-3. [{% include product %} Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop) installed on your system.
+3. [{% include product %} Desktop](https://developer.shotgridsoftware.com/d587be80/#installation-of-desktop) installed on your system.
 4. A cloned pipeline configuration for the identified project, or complete the [Getting started with configurations](./advanced_config.md) guide and clone the configuration created in that exercise.
 5. Basic familiarity with YAML. 
 6. Read and write permissions set appropriately for the filesystem where the Pipeline Configuration is stored.
 7. Read and write permissions set appropriately to allow Toolkit to read and write to the production filesystem.
 8. An active subscription for Maya. Get a 30 day trial of [Maya](https://www.autodesk.com/products/maya/free-trial-dts?adobe_mc_ref=https%3A%2F%2Fwww.google.com%2F&adobe_mc_sdid=SDID%3D577C0A84DDF5D35D-50E96EA2052056FE%7CMCORGID%3D6DC7655351E5696B0A490D44%2540AdobeOrg%7CTS%3D1543444689) 
 
-{% include info title="Note" content="This guide is based on the `tk-config-default2` pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here." %}
+This guide is based on the `tk-config-default2` pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here.
 
 ### About file schemas and templates
 
@@ -48,11 +48,11 @@ The Toolkit platform allows you to build your folder structure dynamically by us
 
 **Templates** allow you to dynamically name and save files as they’re created using {% include product %} data and information from the schema structure. The Default Configuration provides a set of starter templates that you can edit to meet the needs of your pipeline. 
 
-{% include info title="Note" content="The Basic setup for ShotGrid integrations doesn’t include filesystem management. In order to configure filesystem management for your project, your project will need an Advanced setup. The first guide, [Getting started with configurations](./advanced_config.md) goes through the Advanced setup process" %}
+The Basic setup for ShotGrid integrations doesn’t include filesystem management. In order to configure filesystem management for your project, your project will need an Advanced setup. The first guide, [Getting started with configurations](./advanced_config.md) goes through the Advanced setup process.
 
 ## Begin exercise
 
-Customizing your schema and templates will allow you to dynamically manage the files generated when creating the dining room set: a place setting, a steaming hot filet mignon, a bottle of Penfolds Grange Hermitage 1951, potatoes au gratin, lemon garlic asparagus, etc. Assets used in the dining room set will be associated with the "Dining Room" Set entity enabling you to manage them more easily. Set is not an entity type that comes standard with the Default Configuration, so you need to enable a [custom entity](https://support.shotgunsoftware.com/hc/en-us/articles/114094182834-Enabling-a-custom-entity) and call it Set before extending the schema and templates to use it.
+Customizing your schema and templates will allow you to dynamically manage the files generated when creating the dining room set: a place setting, a steaming hot filet mignon, a bottle of Penfolds Grange Hermitage 1951, potatoes au gratin, lemon garlic asparagus, etc. Assets used in the dining room set will be associated with the "Dining Room" Set entity enabling you to manage them more easily. Set is not an entity type that comes standard with the Default Configuration, so you need to enable a [custom entity](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html) and call it Set before extending the schema and templates to use it.
 
 ### Enabling a custom entity
 
@@ -72,7 +72,7 @@ Displayed is a list of entity types that are available in {% include product %}.
 
 Doing this makes that custom entity active in {% include product %} and gives it the display name *Set*. Essentially you are creating an alias for the custom entity because the system name of the entity remains `CustomEntity01`. In this example, we're using `CustomEntity01`; you might use a different custom entity.
 
-{% include info title="Note" content="Remember the system name of the custom entity you chose." %}
+Remember the system name of the custom entity you chose.
 
 ### Add a data field to associate assets with sets
 
@@ -116,7 +116,7 @@ Select **Create “Dining Room”**.
 
 Select **Create Set**.
 
-Adding **Dining Room** in the Set field of an asset creates an [association](https://support.shotgunsoftware.com/hc/en-us/articles/115000010973-Linking-a-custom-entity) with the Dining Room set entity. 
+Adding **Dining Room** in the Set field of an asset creates an [association](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_linking_custom_entities_html) with the Dining Room set entity. 
 
 ![Python app](./images/dynamic_filesystem_configuration/13_dining_room_associated.png)
 
@@ -128,7 +128,7 @@ You’ve now enabled a Set custom entity, created a Set entity called “Dining 
 
 Now it’s time to define the folder structure you want Toolkit to dynamically generate as artists step through the production pipeline. This is done by editing the schema.
 
-{% include info title="Note" content="It’s a good practice to test configurations in a *cloned* configuration, so as not to affect the active production configuration. The cloning process creates a *copy* of the configuration that you can edit safely before pushing changes to the live config. You can find details on cloning your config in the [Configuration Staging and Rollout](https://support.shotgunsoftware.com/hc/en-us/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration) document." %}
+It’s a good practice to test configurations in a *cloned* configuration, so as not to affect the active production configuration. The cloning process creates a *copy* of the configuration that you can edit safely before pushing changes to the live config. You can find details on cloning your config in the [Configuration Staging and Rollout](https://developer.shotgridsoftware.com/60762324/#cloning-your-configuration) document."
 
 **Step 7:** Navigate to your pipeline configuration. Drill down to the schema folder, `<pipeline_configuration_root>/config/core/schema` and open the `project` folder.
 
@@ -307,7 +307,7 @@ Since templates define where Toolkit reads and writes files, it’s crucial that
 
 Then, we’ll modify the template for work files on asset steps in Maya to also include the set in the file name. In the Default Config, the template in question is `maya_asset_work`, and that’s where we’ll start. 
 
-{% include info title="Note" content="Using a template called `maya_asset_work` for asset-based Workfiles in Maya is a convention of the Default Configuration. To confirm that that’s the right template, check the value of the `template_work` setting for `tk-multi-workfiles2` in the `tk-maya` engine, in the `asset_step` environment ([here it is in Github](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217))." %}
+Using a template called `maya_asset_work` for asset-based Workfiles in Maya is a convention of the Default Configuration. To confirm that that’s the right template, check the value of the `template_work` setting for `tk-multi-workfiles2` in the `tk-maya` engine, in the `asset_step` environment ([here it is in Github](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217)).
 
 **Step 15:** Open `templates.yml` and search for `maya_asset_work`. 
 
@@ -318,7 +318,7 @@ Then, we’ll modify the template for work files on asset steps in Maya to also 
 
 The `definition` value for `maya_asset_work` begins with `@asset_root`. The `@` symbol signifies that the value of `@asset_root` is defined elsewhere. 
 
-{% include info title="Note" content="A leading `@` symbol does not denote an *include* in `templates.yml` as it does in the environment configuration files." %}
+A leading `@` symbol does not denote an *include* in `templates.yml` as it does in the environment configuration files.
 
 Since each integration, each app, and each environment might use different settings, you can imagine that the first part of a path might be used in many different places inside `templates.yml`. The configuration is set up so it can use a single variable to store a common path root, then refer to that variable within templates. You won’t have to change each instance of the path generation settings when you can reference the common root.
 
@@ -381,7 +381,7 @@ The **Work Area**: is displaying **.../{% include product %}/projects/the_other_
 
 ### Extending the example
 
-In this example, we modified a single template, but there’s plenty more you can do with your filesystem configuration. In a real world example, you’d likely change *all* asset-related files to have the same file naming conventions. You can make modifications based on other entities (Season, Episode, Level, etc.), create user folders, name your folders based on {% include product %} data manipulated with regular expressions, and much more. You can learn about all of Toolkit’s folder and schema options in the [Filesystem Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868). 
+In this example, we modified a single template, but there’s plenty more you can do with your filesystem configuration. In a real world example, you’d likely change *all* asset-related files to have the same file naming conventions. You can make modifications based on other entities (Season, Episode, Level, etc.), create user folders, name your folders based on {% include product %} data manipulated with regular expressions, and much more. You can learn about all of Toolkit’s folder and schema options in the [Filesystem Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/). 
 
 ### The Path Cache
 
@@ -390,6 +390,6 @@ At folder creation time, a mapping is created between a folder on disk and a {% 
 
 ### Additional Resources
 
-* [Filesystem Configuration Reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868)
+* [Filesystem Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/)
 * [Intro to Toolkit Configuration webinar video](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)
 

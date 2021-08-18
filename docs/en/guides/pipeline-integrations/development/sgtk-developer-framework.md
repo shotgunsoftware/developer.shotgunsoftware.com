@@ -26,7 +26,7 @@ You could then import that framework in your app, and plug in the playlist picke
 
 ## Pre-made {% include product %} frameworks
 
-{% include product %} supplies some premade [frameworks](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines#frameworks) that you may find useful when creating your own apps.
+{% include product %} supplies some premade [frameworks](https://developer.shotgridsoftware.com/c6db88dd/) that you may find useful when creating your own apps.
 The [Qt Widgets](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/) and [{% include product %} Utils](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/) frameworks are especially useful in app development.
 
 ## Creating a Framework

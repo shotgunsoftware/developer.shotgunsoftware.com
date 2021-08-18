@@ -172,7 +172,7 @@
     - page: toolkit-configuration
       children:
       - text: file-system-configuration
-        url: " https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference"
+        url: " https://developer.shotgridsoftware.com/82ff76f7/"
       - page: toolkit-config-ref
 
 - caption: trusted-solutions

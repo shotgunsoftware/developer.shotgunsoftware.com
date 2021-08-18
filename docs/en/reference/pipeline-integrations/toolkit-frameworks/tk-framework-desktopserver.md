@@ -19,13 +19,12 @@ given entity and to execute them.
 ## How to get desktop integration running
 
 For these {% include product %} features to work, some supported desktop integration must be running.
-[This page](https://support.shotgunsoftware.com/entries/95402178) covers the various options for how
-{% include product %} can integrate with your desktop.  The Websocket Server section covers the functionality that
-this framework provides.
+[This page](https://developer.shotgridsoftware.com/c79f1656/) covers the various options for how
+{% include product %} can integrate with your desktop.  The Websocket Server section covers the functionality that this framework provides.
 
 ### {% include product %} Desktop
 
-This framework is bundled with {% include product %} Desktop, which can be downloaded [here](https://support.shotgunsoftware.com/entries/95442748#Downloading%20Shotgun%20Desktop). When {% include product %} Desktop is run it will automatically start up the websocket server.  If you 
+This framework is bundled with {% include product %} Desktop, which can be downloaded [following these steps](https://developer.shotgridsoftware.com/d587be80/#installation-of-desktop). When {% include product %} Desktop is run it will automatically start up the websocket server.  If you 
 are already running {% include product %} Desktop then your setup process is complete.
 
 ### Configuring the server
@@ -71,9 +70,7 @@ By default, the websocket server is setup to listen to hosted {% include product
 If you run a local {% include product %} server, you will need to update the configuration for the {% include product %} server 
 to allow connections from your websocket server.
 
-When running {% include product %} Desktop, you will need to setup a ```config.ini``` file that lives with the
-{% include product %} binary.  There are detailed instructions for where this file needs to live
-[here](https://support.shotgunsoftware.com/entries/95442748#Advanced%20Installation%20Topics).
+When running {% include product %} Desktop, you will need to setup a ```config.ini``` file that lives with the {% include product %} binary. 
 
 Within that file there is a section that controls the functionality of the websocket server.
 A typical configuration would look like this:

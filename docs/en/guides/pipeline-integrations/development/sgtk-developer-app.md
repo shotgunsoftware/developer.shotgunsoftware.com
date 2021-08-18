@@ -39,7 +39,7 @@ A Toolkit app can be defined as follows:
 - Apps usually have a graphical user interface with which the user can guide the app's operations, but they don't have to. An app can also be a command registered with the integrations, triggered by the user from the {% include product %} menu in the host software.
 - They can have an API/public methods in which other processes or apps could interact.
 - They can be multi-platform, and software agnostic.
-- They can be set up to be configured differently per [environment](https://developer.shotgridsoftware.com/487a9f2c/?title=Environment+Configuration+Reference#what-is-an-environment).
+- They can be set up to be configured differently per [environment](https://developer.shotgridsoftware.com/487a9f2c/#what-is-an-environment).
 - They can be contextually aware. For example, an app can know the task the user is working on, and act accordingly.
 - They can only be run from a Toolkit engine.
 

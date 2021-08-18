@@ -14,7 +14,7 @@ lang: en
 This article explains how to get your episodic workflow up and running with our `tk-hiero-export` app in Nuke Studio or Hiero. Please note there is no one exact method for this, and the approach will vary slightly depending on your desired workflow. For the sake of this example we are going to make the following assumptions:
 
 *   Your goal is to set up a three-tiered hierarchy of `Episode > Sequence > Shot`
-*   You will have read and completed the steps in [the file system configuration guide](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference) .
+*   You will have read and completed the steps in [the file system configuration guide](https://developer.shotgridsoftware.com/82ff76f7/) .
 *   You will use the `Episode` entity type, (not the `CustomEntity02` —both can work in the same way, it’s just a change of name.)
 *   The `Sequence` entity has an entity field called `episode` .
 *   You’ll be using Nuke Studio, although the process is the same for Hiero.
@@ -34,12 +34,12 @@ For this example we will go with the second option: the Sequence tagging solutio
 ## Schema and templates
 
 
-As mentioned previously, this example assumes that you have [updated your schema and templates](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference#how-can-i-add-a-new-entity-type-to-my-file-structure) . Make sure that you have also updated the `hiero_plate_path` and `hiero_render_path` path values in the templates.yml, so that they contain an episode key in the correct part.
+As mentioned previously, this example assumes that you have [updated your schema and templates](https://developer.shotgridsoftware.com/82ff76f7/#how-can-i-add-a-new-entity-type-to-my-file-structure) . Make sure that you have also updated the `hiero_plate_path` and `hiero_render_path` path values in the templates.yml, so that they contain an episode key in the correct part.
 
 ## Hooks and settings
 
 
-In order to get the {% include product %} Export process to handle our `Episode` correctly, you will need to modify some of the export hooks. In this article we’ll assume you know what [hooks](https://developer.shotgridsoftware.com/312b792f/?title=Developing+frameworks#using-frameworks-from-hooks) are, and are comfortable with overriding the base implementations.
+In order to get the {% include product %} Export process to handle our `Episode` correctly, you will need to modify some of the export hooks. In this article we’ll assume you know what [hooks](https://developer.shotgridsoftware.com/312b792f/#using-frameworks-from-hooks) are, and are comfortable with overriding the base implementations.
 
 There are two export hooks that will help you enable episodes.
 

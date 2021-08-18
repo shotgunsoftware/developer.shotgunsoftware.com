@@ -60,7 +60,7 @@ In this topic:
 
 
 This document is a complete reference of the file system centric configurations in the {% include product %} Pipeline Toolkit. It outlines how the template system works and which options are available. It also shows all the different parameters you can include in the folder creation configuration.  
-_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For details, see  [{% include product %} Integrations Admin Guide](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide)._
+_Please note that this document describes functionality only available if you have taken control over a Toolkit configuration. For details, see  [{% include product %} Integrations Admin Guide](https://developer.shotgridsoftware.com/8085533c/)._
 
 # Introduction
 
@@ -68,10 +68,10 @@ This document explains how to configure the part of Toolkit's configuration rela
 
 1.  **Folder Creation:**  After an object has been created in {% include product %}, folders on disk need to be created before work can begin. This can be as simple as having a folder on disk representing the Shot, or can be more complex-for example setting up a user specific work sandbox so that each user that works on the shot will work in a separate area on disk.
     
-    -   Toolkit automates folder creation when you launch an application (for example you launch Maya for shot BECH_0010), Toolkit ensures that folders exist prior to launching Maya. If folders do not exist, they are created on the fly. Folders can also be created using API methods, using the  [tank command in the shell](https://support.shotgunsoftware.com/hc/en-us/articles/219033178-Administering-Toolkit#Useful%20tank%20commands)  and via the  [Create Folders menu in ShotGrid](https://developer.shotgridsoftware.com/c3b662a6/?title=Beyond+Your+First+Project#shotgrid-integration). A special set of configuration files drives this folder creation process and this is outlined in  [Part 1](#part-1---folder-creation-syntax)  of the document below.
+    -   Toolkit automates folder creation when you launch an application (for example you launch Maya for shot BECH_0010), Toolkit ensures that folders exist prior to launching Maya. If folders do not exist, they are created on the fly. Folders can also be created using API methods, using the  [tank command in the shell](https://developer.shotgridsoftware.com/425b1da4/#useful-tank-commands)  and via the  [Create Folders menu in ShotGrid](https://developer.shotgridsoftware.com/c3b662a6/). A special set of configuration files drives this folder creation process and this is outlined in  [Part 1](#part-1---folder-creation-syntax)  of the document below.
 2.  **Opening and Saving Work:**  While working, files need to be opened from and saved into standardized locations on disk. These file locations typically exist within the folder structure created prior to work beginning.
     
-    -   Once a folder structure has been established, we can use that structure to identify key locations on disk. These locations are called  [Templates](#part-2---configuring-file-system-templates). For example, you can define a template called  `maya_shot_publish`  to refer to published Maya files for Shots.  [Toolkit apps](https://developer.shotgridsoftware.com/f8596e35/?title=Apps)  will then use this template-a publish app may use it to control where it should be writing its files, while a  [Workfiles App](https://developer.shotgridsoftware.com/9a736ee3/?title=Workfiles)  may use the template to understand where to open files from. Inside Toolkit's environment configuration, you can control which templates each app uses. All the key file locations used by Toolkit are therefore defined in a single template file and are easy to overview.
+    -   Once a folder structure has been established, we can use that structure to identify key locations on disk. These locations are called  [Templates](#part-2---configuring-file-system-templates). For example, you can define a template called  `maya_shot_publish`  to refer to published Maya files for Shots.  [Toolkit apps](https://developer.shotgridsoftware.com/f8596e35/)  will then use this template-a publish app may use it to control where it should be writing its files, while a  [Workfiles App](https://developer.shotgridsoftware.com/9a736ee3/)  may use the template to understand where to open files from. Inside Toolkit's environment configuration, you can control which templates each app uses. All the key file locations used by Toolkit are therefore defined in a single template file and are easy to overview.
 
 # Part 1 - Folder Creation Syntax
 
@@ -434,7 +434,7 @@ _Tip: If you prefer a normal, static folder to be created when an application (l
 
 ## Current User Folder
 
-The current user folder is a special construct that lets you set up work areas for different users. A common scenario is if you have multiple artists from a department working on the same shot. User folders can be used so that artists can store their workfiles in their own directories and be able to filter just for their files in the  [Workfiles App](https://developer.shotgridsoftware.com/9a736ee3/?title=Workfiles). In this case, the configuration file needs to include the following options:
+The current user folder is a special construct that lets you set up work areas for different users. A common scenario is if you have multiple artists from a department working on the same shot. User folders can be used so that artists can store their workfiles in their own directories and be able to filter just for their files in the  [Workfiles App](https://developer.shotgridsoftware.com/9a736ee3/). In this case, the configuration file needs to include the following options:
 
     <a name="the type of dynamic content"></a>
     # the type of dynamic content

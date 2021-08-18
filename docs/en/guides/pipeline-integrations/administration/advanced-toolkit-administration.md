@@ -62,9 +62,9 @@ In this topic:
 
 Welcome to the {% include product %} Toolkit Admin guide! This document explains how to work with the {% include product %} Pipeline Toolkit from an administrative point of view - installing and updating apps, setting up new projects, and managing your studio configuration. The Toolkit is still relatively technical, so we imagine that the person handling the configuration and administration is a sysadmin, pipeline/tools developer or TD. Before we start getting into details, we would recommend that you read through the following document if you haven't already! It covers a number of the basic concepts and gives a brief introduction to configuration management and updates:
 
-[An Introduction to the basic Concepts in {% include product %} Pipeline Toolkit.](https://developer.shotgridsoftware.com/e95205a8/?title=An+Overview+of+Toolkit)
+[An Introduction to the basic Concepts in {% include product %} Pipeline Toolkit.](https://developer.shotgridsoftware.com/e95205a8/)
 
-If you are not set up with the {% include product %} Toolkit yet, you may want to read through the [Integrations User Guide](https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide).
+If you are not set up with the {% include product %} Toolkit yet, you may want to read through the [Integrations User Guide](https://developer.shotgridsoftware.com/d587be80/).
 
 # Using the tank command
 
@@ -492,7 +492,7 @@ In the example above, `./tank` is starting a Python shell for you and setting up
      Additional Entities: []>
 ```
 
-The `engine` variable points to the currently running instance of the [shell engine](https://developer.shotgridsoftware.com/2ad59ee8/?title=Shell).
+The `engine` variable points to the currently running instance of the [shell engine](https://developer.shotgridsoftware.com/2ad59ee8/).
 
 ### dump_config
 
@@ -616,7 +616,7 @@ Updating the Toolkit Core API is equally easy. Just run the `tank core` command!
 
 ## Creating a staging sandbox
 
-While it is often perfectly safe to simply run `tank updates` on your primary configuration, it is sometimes better to test things prior to rolling it out in production. In this case, you just clone the Primary pipeline configuration and run the update commands there. In the case of a Core API upgrade, make sure you localize the sandbox before running the `core` command (see above for more information about localize). Once you have verified that the update works, run it again on the primary configuration. For more detailed information how to do this, see [Managing your configuration](https://developer.shotgridsoftware.com/60762324/?title=Configuration+Staging+and+Rollout).
+While it is often perfectly safe to simply run `tank updates` on your primary configuration, it is sometimes better to test things prior to rolling it out in production. In this case, you just clone the Primary pipeline configuration and run the update commands there. In the case of a Core API upgrade, make sure you localize the sandbox before running the `core` command (see above for more information about localize). Once you have verified that the update works, run it again on the primary configuration. For more detailed information how to do this, see [Managing your configuration](https://developer.shotgridsoftware.com/60762324/).
 
 # Configuring how Apps are launched
 
@@ -714,7 +714,7 @@ filters:
 
 This will inform that that the dynamic folder should create folders named using two {% include product %} fields on the Asset entity. Using standard {% include product %} API query syntax, we also define constraints based on parent folders; only consider assets for the current project and asset type.
 
-For a full reference of what types of nodes are supported, please [see the reference documentation](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference).
+For a full reference of what types of nodes are supported, please [see the reference documentation](https://developer.shotgridsoftware.com/82ff76f7/).
 
 ## Filesystem Locations
 
@@ -742,7 +742,7 @@ It is also possible to set up the Toolkit folder creation so that it runs in two
 - If you have multiple different content creation applications in your pipeline and don't want to include a complete folder scaffold for every single one of them until they are actually needed, you can set up the folder creation so that each content creation app has its own deferred subtree in the config. When a production person or admin creates folders for the Shot, it will stop just before it starts creating work areas for maya, nuke, mari etc. Then, when an application is launched these folders are created just before the application starts up.
 - If you want to create user based sandboxes in the file system, these will need to be created immediately prior to the work taking place. With deferred folder creation, you can add a special user node that makes this process easy. In the templates config, you then refer the to user node as HumanUser since this is the way the {% include product %} API denotes it.
 
-For more information about deferred creation, please [see the reference documentation](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference).
+For more information about deferred creation, please [see the reference documentation](https://developer.shotgridsoftware.com/82ff76f7/).
 
 # Configuring Templates
 
@@ -976,7 +976,7 @@ strings:
     nuke_asset_version_name: '{Asset}_{name}_{channel}_v{version}.{iteration}'
 ```
 
-There are a number of configuration options available for the templates file - you can find a [complete reference here](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference).
+There are a number of configuration options available for the templates file - you can find a [complete reference here](https://developer.shotgridsoftware.com/82ff76f7/).
 
 ## @include syntax in the template file
 
@@ -991,7 +991,7 @@ strings:
     maya_asset_file: '{name}.v{version}.ma'
 ```
 
-You can also split the templates across multiple files and include files in other files. For full details, see the [reference documentation](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference).
+You can also split the templates across multiple files and include files in other files. For full details, see the [reference documentation](https://developer.shotgridsoftware.com/82ff76f7/).
 
 
 ## Including external files in your template file
@@ -1064,7 +1064,7 @@ Hooks are flexible pieces of the toolkit configuration. Normally, when you confi
 
 Each Toolkit app (and engine for that matter) comes with a collection of settings, some of which can be hooks. Each app carries a collection of default hooks which will be automatically used unless you specifically override them. Hooks are typically used to customize something very application specific. For example, for a Toolkit which loads images into Maya, the UI code and all the interaction logic is inside the app, but the little piece of business logic which actually loads the image into maya is inside a hook. This makes it possible for a studio to customize the behaviour; the default hook may simple create a standard texture node in maya, but a studio which wants to use a different node type can override the hook and thereby easily change the behaviour of the entire app - without having to rewrite any of the code!
 
-When customizing an app hook, you typically copy the default hook from inside the hooks folder in the app into your project's hooks folder. Next, you need to update the app settings inside the environment file so that it will read your new hook and not the default one. Your custom hook will automatically inherit from the default hook provided by the app, making it easy to add tweaks and small adjustments yet keep most of the business logic in the default hook. For more information about hook inheritance, please see the [environment configuration reference](https://developer.shotgridsoftware.com/6d10dedf/?title=Apps+and+Engines+Configuration+Reference).
+When customizing an app hook, you typically copy the default hook from inside the hooks folder in the app into your project's hooks folder. Next, you need to update the app settings inside the environment file so that it will read your new hook and not the default one. Your custom hook will automatically inherit from the default hook provided by the app, making it easy to add tweaks and small adjustments yet keep most of the business logic in the default hook. For more information about hook inheritance, please see the [environment configuration reference](https://developer.shotgridsoftware.com/6d10dedf/.
 
 ## Core level hooks
 
@@ -1324,7 +1324,7 @@ Each item in the environment file has a special `location` token. This token def
 location: {name: tk-multi-setframerange, type: app_store, version: v0.1.2}
 ```
 
-The type indicates that this app comes from the app store and that a particular version is being used. When you run the update check, the {% include product %} Toolkit will connect to the app store and check if there is a version more recent than `v0.1.2` available and if this is the case, ask you if you want to upgrade. The Toolkit supports a couple of different location types, including git and github, so you can build your own apps, use git to track them and when you create a new tag in git, the update will detect this handle it correctly in the upgrades check. For detailed information, [see the reference documentation](https://developer.shotgridsoftware.com/6d10dedf/?title=Apps+and+Engines+Configuration+Reference).
+The type indicates that this app comes from the app store and that a particular version is being used. When you run the update check, the {% include product %} Toolkit will connect to the app store and check if there is a version more recent than `v0.1.2` available and if this is the case, ask you if you want to upgrade. The Toolkit supports a couple of different location types, including git and github, so you can build your own apps, use git to track them and when you create a new tag in git, the update will detect this handle it correctly in the upgrades check. For detailed information, [see the reference documentation](https://developer.shotgridsoftware.com/6d10dedf/).
 
 ## Including files
 
@@ -1424,11 +1424,11 @@ maya_windows: 'C:\Program Files\Autodesk\Maya2012\bin\special_maya.exe'
 
 Here we are using a special version of Maya for windows. The rest of the paths will be the original paths defined in the `paths.yml` file.
 
-For more details on how the includes work, see the [reference documentation](https://developer.shotgridsoftware.com/82ff76f7/?title=Filesystem+Configuration+Reference).
+For more details on how the includes work, see the [reference documentation](https://developer.shotgridsoftware.com/82ff76f7/).
 
 ## Configuring Template settings - file paths
 
-An important type of setting that many Apps use is the `template` setting. Apps needing to specify a file system location will use these settings. Apps are developed to be generic or flexible, designed to work with any file system structure or naming convention. The templates are the key piece which makes it possible for and app to be independent of the underlying file system. For more information about this, see [the concepts introduction](https://developer.shotgridsoftware.com/e95205a8/?title=An+Overview+of+Toolkit).
+An important type of setting that many Apps use is the `template` setting. Apps needing to specify a file system location will use these settings. Apps are developed to be generic or flexible, designed to work with any file system structure or naming convention. The templates are the key piece which makes it possible for and app to be independent of the underlying file system. For more information about this, see [the concepts introduction](https://developer.shotgridsoftware.com/e95205a8/).
 
 When configuring apps and are coming across a template setting, you will need to specify a template that contains the right set of fields. Fields can be either required or optional, with required being fields that have to be included in the template and optional meaning that a field can be part of the template, however the app will also work if that field is not defined in the template.
 

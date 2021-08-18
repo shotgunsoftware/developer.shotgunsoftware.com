@@ -23,11 +23,11 @@ The Desktop Startup framework implements the startup logic of the {% include pro
 
 By default, {% include product %} Desktop downloads `tk-framework-desktopstartup` updates locally on the user's machine and uses it during the launch sequence of the application. When you launch the application, Toolkit automatically checks for updates to the framework. If an update is available, it will also download and install it automatically. 
 
-Alternately, you can configure the {% include product %} Desktop to use a specific copy of the framework instead of using the local copy. This will disable the auto-update function and you will now be responsible for updating your the startup logic. In order to be kept up to date with updates, we suggest you subscribe to [this page](https://support.shotgunsoftware.com/entries/97454918).
+Alternately, you can configure the {% include product %} Desktop to use a specific copy of the framework instead of using the local copy. This will disable the auto-update function and you will now be responsible for updating your the startup logic.
 
 #### Download a specific release from GitHub
 
-You will need to download updates from GitHub manually. The bundles can easily be downloaded from the [Releases](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases) page and you can find more information about each official release [here](https://support.shotgunsoftware.com/entries/97454918#toc_release_notes).
+You will need to download updates from GitHub manually. The bundles can easily be downloaded from the [Releases](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases) page and you can find more information about each official release [here](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes).
 
 #### Configure the {% include product %} Desktop to use a specific copy
 

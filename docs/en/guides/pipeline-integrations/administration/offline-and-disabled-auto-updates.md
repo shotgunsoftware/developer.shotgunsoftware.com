@@ -87,7 +87,7 @@ In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE
 
 Follow these steps to turn off automatic updates for the integrations.
 
-1. Determine the version you want to stay at. You can find the integration releases [here](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations).
+1. Determine the version you want to stay at. You can find the integration releases [here](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes).
 2. In {% include product %}, create a Pipeline Configuration entity either on a project or on a global page, with the following fields populated (In this example, we are locking down the config to use v1.0.36 of the integrations):
 
    1. Name: `Primary`

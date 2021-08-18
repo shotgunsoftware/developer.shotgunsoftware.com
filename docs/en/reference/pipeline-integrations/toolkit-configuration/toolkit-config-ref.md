@@ -21,7 +21,7 @@ The {% include product %} Toolkit platform provides a fully customizable set of 
 
 But often in studio pipelines, it’s common for different types of artists to have different workflows. As a simple example, for artists working on assets, you might want to make texture painting software such as Mari available, whereas for artists working on shots, you might want to make compositing software such as Nuke available. 
 
-Beyond just software packages, you might have different settings for the same Toolkit app for different artists. For example, both shot artists and asset artists might use the [Workfiles app](https://support.shotgunsoftware.com/hc/en-us/articles/219033088), but you might want to limit the file navigation to files associated with Shot entities for the former and Asset entities for the latter. 
+Beyond just software packages, you might have different settings for the same Toolkit app for different artists. For example, both shot artists and asset artists might use the [Workfiles app](https://developer.shotgridsoftware.com/9a736ee3/), but you might want to limit the file navigation to files associated with Shot entities for the former and Asset entities for the latter. 
 
 To support these different workflows within a project, Toolkit divides its app and engine configurations across environments. An environment contains the integrations and their settings for a set of software packages, all with a certain context in common. 
 
@@ -308,7 +308,7 @@ In our example, we haven’t specified any settings for our apps aside from `loc
 
 With sparse configurations, it’s not immediately evident what configuration settings are available for an app simply by looking at your configuration files. To find out what configuration settings an app has available, you have two choices:
 
-* **App documentation:** Each of our apps has its own documentation page, and each of these pages has a “Configuration Options” section. This section lists all of the available configuration settings for the app, with description and default values for each. You can [see the Workfiles documentation page](https://support.shotgunsoftware.com/hc/en-us/articles/219033088) as an example. The [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219033088) lists the documentation pages for all apps and engines. 
+* **App documentation:** Each of our apps has its own documentation page, and each of these pages has a “Configuration Options” section. This section lists all of the available configuration settings for the app, with description and default values for each. You can [see the Workfiles documentation page](https://developer.shotgridsoftware.com/9a736ee3/) as an example. The [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/) lists the documentation pages for all apps and engines. 
 * **The manifest:** Every Toolkit bundle includes a file called `info.yml` in its root directory. We refer to this file as the bundle’s *manifest*, and it defines all of the available configuration settings for the bundle, with a description and default value for each. You can find the manifest in your own cache of the bundle (e.g., `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml` within your pipeline configuration), or in Github ([here it is for Workfiles as an example](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml)).
 
 ## Modifying configuration settings 
@@ -347,5 +347,5 @@ Note that if the settings for `tk-multi-workfiles2` were coming from an included
 * [Animation pipeline tutorial](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [Descriptor reference documentation](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
 * [Webinar: Toolkit administration](https://youtu.be/7qZfy7KXXX0)
-* [File system configuration reference](https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference)
+* [File system configuration reference](https://developer.shotgridsoftware.com/82ff76f7/)
 * [Default Configuration environment structure README](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)
