@@ -34,7 +34,7 @@ Python API는 최신 인증서 사본을 제공하지만 2019년 2월 21일부�
 
 1. Python API **v3.0.39**로 업그레이드합니다.
 
-2. a. `{% include product %}_API_CACERTS`를 `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`로 설정합니다.
+2. a. `SHOTGUN_API_CACERTS`를 `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`로 설정합니다.
 
    또는
 
@@ -46,7 +46,7 @@ Python API는 최신 인증서 사본을 제공하지만 2019년 2월 21일부�
 
 2. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem)에서 최신 인증서 목록을 다운로드합니다.
 
-3. `{% include product %}_API_CACERTS`를 이 파일을 저장한 위치로 설정합니다. 하지만 툴킷은 Python API에서처럼 연결을 만들 때 `ca_certs` 매개변수 지정을 허용하지 않습니다.
+3. `SHOTGUN_API_CACERTS`를 이 파일을 저장한 위치로 설정합니다. 하지만 툴킷은 Python API에서처럼 연결을 만들 때 `ca_certs` 매개변수 지정을 허용하지 않습니다.
 
 ### Python API 또는 툴킷을 업데이트할 수 없는 경우
 

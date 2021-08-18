@@ -34,7 +34,7 @@ Python API 依赖与 API 捆绑在一起且位于计算机上的一组证书才�
 
 1. 升级到 Python API **v3.0.39**
 
-2. a. 将 `{% include product %}_API_CACERTS` 设置为 `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`
+2. a. 将 `SHOTGUN_API_CACERTS` 设置为 `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`
 
    或
 
@@ -46,7 +46,7 @@ Python API 依赖与 API 捆绑在一起且位于计算机上的一组证书才�
 
 2. 从 [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) 下载最新的证书列表。
 
-3. 将 `{% include product %}_API_CACERTS` 设置为该文件的保存位置。与 Python API 类似，Toolkit 不允许您在创建连接时指定 `ca_certs` 参数。
+3. 将 `SHOTGUN_API_CACERTS` 设置为该文件的保存位置。与 Python API 类似，Toolkit 不允许您在创建连接时指定 `ca_certs` 参数。
 
 ### 如果无法更新 Python API 或 Toolkit
 
