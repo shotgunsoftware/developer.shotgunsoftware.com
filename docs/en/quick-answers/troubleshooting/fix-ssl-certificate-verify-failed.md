@@ -34,7 +34,7 @@ Add the required CA certificate to the Windows Certificate Store. Windows 7 user
 
 1. Upgrade to the Python API **v3.0.39**
 
-2. a. Set `{% include product %}_API_CACERTS` to `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`
+2. a. Set `SHOTGUN_API_CACERTS` to `/path/to/shotgun_api3/lib/httplib2/cacerts.txt`
 
    or
    
@@ -47,7 +47,7 @@ the `core/core_api.yml` file of your pipeline configuration, depending on how yo
 
 2. Download an up-to-date list of certificates at [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem).
 
-3. Set `{% include product %}_API_CACERTS` to the location where you saved this file. Toolkit doesn’t allow you to specify the `ca_certs` parameter when creating connections the way the Python API does.
+3. Set `SHOTGUN_API_CACERTS` to the location where you saved this file. Toolkit doesn’t allow you to specify the `ca_certs` parameter when creating connections the way the Python API does.
 
 ### If you can’t update the Python API or Toolkit
 

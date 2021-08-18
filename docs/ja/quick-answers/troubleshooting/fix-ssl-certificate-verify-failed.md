@@ -34,7 +34,7 @@ Windows 証明書ストアに必要な CA 証明書を追加します。Windows 
 
 1. Python API **v3.0.39** にアップグレードします。
 
-2. a. `{% include product %}_API_CACERTS` を `/path/to/shotgun_api3/lib/httplib2/cacerts.txt` に設定します。
+2. a. `SHOTGUN_API_CACERTS` を `/path/to/shotgun_api3/lib/httplib2/cacerts.txt` に設定します。
 
    または
 
@@ -46,7 +46,7 @@ Windows 証明書ストアに必要な CA 証明書を追加します。Windows 
 
 2. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) にある証明書の最新リストをダウンロードします。
 
-3. `{% include product %}_API_CACERTS` をこのファイルの保存場所に設定します。ただし、接続を作成するときに、Python API のように Toolkit から `ca_certs`ca_certs パラメータを指定することはできません。
+3. `SHOTGUN_API_CACERTS` をこのファイルの保存場所に設定します。ただし、接続を作成するときに、Python API のように Toolkit から `ca_certs`ca_certs パラメータを指定することはできません。
 
 ### Python API または Toolkit を更新できない場合
 
