@@ -51,11 +51,11 @@ A collection of quick answers aimed at troubleshooting issues.
 - [[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate](./troubleshooting/unable-to-get-local-issuer-certificate-error.md)
 - [TankInitError: You are loading the Toolkit platform from the pipeline configuration located in](./troubleshooting/tankinit-error-pipeline-config-located-in.md)
 - [TankError: Cannot resolve template data for context](./troubleshooting/tankerror-cannot-resolve-template-data-error.md)
-- [TankError: Tried to resolve a path from the template](./troubleshooting/tank-error-tried-to-resolve-a-path.md)
-- [Tk-desktop console silently ignoring errors](./troubleshooting/desktop-console-silently-ignoring-errors.md)
+- [TankError: Tried to resolve a path from the template](./troubleshooting/tankerror-tried-to-resolve-a-path.md)
+- [Tk-desktop console silently ignoring errors](./troubleshooting/tk-desktop-console-silently-ignoring-errors.md)
 - [SSLHandshakeError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:727)](./troubleshooting/sslhandshakeerror-ssl-certificate-verify-failed.md)
 - [TankError: Could not create folders on disk. Error reported: Critical! Could not update {% include product %} with folder data.](./troubleshooting/could-not-update-with-folder-data.md)
-- [[WARNING] Storage root primary could not be mapped to a SG local storage](./troubleshooting/review-error-message-root.md)
+- [[WARNING] Storage root primary could not be mapped to a SG local storage](./troubleshooting/storage-root-primary-error-message.md) 
 
 
 #### Software integrations
