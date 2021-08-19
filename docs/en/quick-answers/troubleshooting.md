@@ -49,7 +49,7 @@ A collection of quick answers aimed at troubleshooting issues.
 - [Getting CERTIFICATE_VERIFY_FAILED when using {% include product %} Desktop on a local {% include product %} site](./troubleshooting/certificate-fail-local-error-message.md)
 - [SSLError: [Errno 8] _ssl.c:504: EOF occurred in violation of protocol](./troubleshooting/eof-occurred-violation-protocol-tls.md)
 - [[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate](./troubleshooting/unable-to-get-local-issuer-certificate-error.md)
-- [TankInitError: You are loading the Toolkit platform from the pipeline configuration located in](./troubleshooting/tankinit-error-pipeline-config-located-in.md)
+- [TankInitError: You are loading the Toolkit platform from the pipeline configuration located in](./troubleshooting/tankinit-error-pipeline-config-location.md)
 - [TankError: Cannot resolve template data for context](./troubleshooting/tankerror-cannot-resolve-template-data-error.md)
 - [TankError: Tried to resolve a path from the template](./troubleshooting/tankerror-tried-to-resolve-a-path.md)
 - [Tk-desktop console silently ignoring errors](./troubleshooting/tk-desktop-console-silently-ignoring-errors.md)
