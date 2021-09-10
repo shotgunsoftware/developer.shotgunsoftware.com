@@ -34,7 +34,7 @@ I believe we have added linux paths in all places necessary. Is this a matter of
 
 ## How to fix
 
-Add your Linux path to your Local storage in {% include product %}, under It is under Site Preferences > File Management.
+Under Site Preferences > File Management, add your Linux path to your Local storage in {% include product %}.
 
 
 ## Related links
