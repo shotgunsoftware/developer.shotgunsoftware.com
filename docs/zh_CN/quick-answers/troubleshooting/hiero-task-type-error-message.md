@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 错误 18:13:28.365:Hiero(34236): 错误！任务类型
+title: 错误 18:13:28.365:Hiero(34236) 错误！任务类型
 pagename: hiero-task-type-error-message
 lang: zh_CN
 ---
