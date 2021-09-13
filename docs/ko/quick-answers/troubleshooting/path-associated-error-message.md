@@ -1,6 +1,6 @@
 ---
 layout: default
-title: '<PATH>' 경로가 {% include product %} 엔티티 '<ENTITY>'와 이미 연결되어 있음
+title: `<PATH>` 경로가 {% include product %} 엔티티 `<ENTITY>`와 이미 연결되어 있음
 pagename: path-associated-error-message
 lang: ko
 ---
