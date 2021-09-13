@@ -100,7 +100,7 @@ actions_hook: '{self}/tk-maya_actions.py'
 
 詳細については、アプリに付属するフック ファイルを参照してください。フックは継承も活用します。つまり、フック内のすべての項目をオーバーライドすることなく、さまざまな方法で既定のフックを簡単に拡張または強化して簡単にフックを管理できます。
 
-[こちらで、第 2 世代のフック形式を確認してください。](https://support.shotgunsoftware.com/hc/ja/articles/219039878#The%20hook%20data%20type)
+[こちらで、第 2 世代のフック形式を確認してください。](https://developer.shotgridsoftware.com/ja/6d10dedf/)
 
 フックの継承を使用すると、次のように既定のフックに他のアクションを追加できるようになります。
 
@@ -191,9 +191,9 @@ action_mappings:
 
 Publish アプリの開発者を対象とした完全なドキュメントは、[Toolkit 開発者サイト](http://developer.shotgridsoftware.com/tk-multi-publish2)で入手できます。
 
-Publish アプリの使用方法の詳細については、[ユーザ ガイド](https://support.shotgunsoftware.com/hc/ja/articles/115000067513-Integrations-Developer-Guide#User_guide_link)を参照してください。第 1 世代の Publisher の詳細については、[従来型の Publisher に関するドキュメント](https://support.shotgunsoftware.com/hc/ja/articles/115000067513-Integrations-Developer-Guide#classic_publisher_link)を参照してください。
+Publish アプリの使用方法の詳細については、[ユーザ ガイド](https://developer.shotgridsoftware.com/ja/d587be80/#the-publisher)を参照してください。
 
-## ローダー
+## Loader
 
 ロード操作の例については、[https://github.com/shotgunsoftware/tk-multi-loader2/tree/master/hooks](https://github.com/shotgunsoftware/tk-multi-loader2/tree/master/hooks) を参照してください。
 

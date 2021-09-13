@@ -58,6 +58,6 @@ Linux:
 
 ## 썸네일
 
-툴킷 앱(예: [Loader](https://support.shotgunsoftware.com/hc/ko/articles/219033078))에서 사용하는 썸네일은 로컬 툴킷 캐시에 저장됩니다. 썸네일은 프로젝트, 파이프라인 구성, 앱(필요 시)별로 저장됩니다. 루트 캐시 디렉토리 아래의 구조는 다음과 같습니다.
+툴킷 앱(예: [Loader](https://developer.shotgridsoftware.com/a4c0a4f1))에서 사용하는 썸네일은 로컬 툴킷 캐시에 저장됩니다. 썸네일은 프로젝트, 파이프라인 구성, 앱(필요 시)별로 저장됩니다. 루트 캐시 디렉토리 아래의 구조는 다음과 같습니다.
 
 `<site_name>/p<project_id>c<pipeline_configuration_id>/<app_or_framework_name>/thumbs/`

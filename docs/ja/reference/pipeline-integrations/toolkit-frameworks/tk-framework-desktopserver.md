@@ -14,11 +14,11 @@ lang: ja
 ## デスクトップ統合を実行する方法
 
 この {% include product %} 機能を使用するには、サポートされたデスクトップ統合が実行されている必要があります。
-{% include product %} とデスクトップを統合する場合のさまざまなオプションについては、[こちらのページ](https://support.shotgunsoftware.com/hc/ja/articles/219030858)を参照してください。Websocket サーバのセクションでは、このフレームワークが提供する機能について説明します。
+{% include product %} とデスクトップを統合する場合のさまざまなオプションについては[こちらのページ](https://developer.shotgridsoftware.com/ja/c79f1656/)を参照してください。Websocket サーバのセクションでは、このフレームワークが提供する機能について説明します。
 
 ### {% include product %} Desktop
 
-このフレームワークは {% include product %} Desktop にバンドルされています。[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219040668#Downloading%20Shotgun%20Desktop)からダウンロードできます。{% include product %} Desktop を実行すると、Websocket サーバが自動的に起動されます。{% include product %} Desktop を既に実行している場合、セットアップ プロセスは完了しています。
+このフレームワークは {% include product %} Desktop にバンドルされています。Desktop は、[こちらに記されている手順](https://developer.shotgridsoftware.com/d587be80/#installation-of-desktop)に従ってダウンロードできます。{% include product %} Desktop を実行すると、Websocket サーバが自動的に起動されます。{% include product %} Desktop を既に実行している場合、セットアップ プロセスは完了しています。
 
 ### サーバを設定する
 
@@ -56,7 +56,7 @@ lang: ja
 既定では、Websocket サーバはポート 9000 でホストされる {% include product %} サイトをリッスンするようにセットアップされます。
 ローカルで {% include product %} サーバを実行する場合、Websocket サーバからの接続を許可するように、{% include product %} サーバの設定を更新する必要があります。
 
-{% include product %} Desktop を実行する場合は、{% include product %} のバイナリ ファイルを含む ```config.ini``` ファイルを設定する必要があります。このファイルの格納場所の詳細については、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219040668#Advanced%20Installation%20Topics)を参照してください。
+{% include product %} Desktop を実行する場合は、{% include product %} のバイナリ ファイルを含む ```config.ini``` ファイルを設定する必要があります。
 
 このファイル内に Websocket サーバの機能を制御するセクションがあります。
 一般的な設定は次のようになります。
@@ -73,7 +73,7 @@ whitelist=*.shotgunstudio.com
 
 Linux 上でサーバは libffi に依存しています。Desktop が起動時にクラッシュし、libffi が見つからないというメッセージがログに記録された場合は、このパッケージをインストールする必要があります。
 
-セットアップ時の問題や質問については、support@shotgunsoftware.com までお問い合わせください。サーバの実行に関して問題が発生する場合は、**config.ini** ファイルの **debug** を **1** に設定して、Desktop のログ ファイルを追加します。
+セットアップ中の問題や質問がある場合は、[サポート サイト](https://knowledge.autodesk.com/ja/contact-support)にアクセスしてサポートを依頼してください。サーバの実行に関して問題が発生する場合は、**config.ini** ファイルの **debug** を **1** に設定して、Desktop のログ ファイルを追加します。
 
 ログ ファイルは次の場所にあります。
 

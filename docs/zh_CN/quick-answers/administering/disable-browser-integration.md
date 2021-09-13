@@ -11,16 +11,15 @@ lang: zh_CN
 
 1. 在如下位置创建或打开文本文件：
 
-        Windows: %APPDATA%\{% include product %}\preferences\toolkit.ini
-        Macosx: ~/Library/Preferences/{% include product %}/toolkit.ini
-        Linux: ~/.{% include product %}/preferences/toolkit.ini
-
+        Windows：%APPDATA%\{% include product %}\preferences\toolkit.ini
+        Macosx：~/Library/Preferences/{% include product %}/toolkit.ini
+        Linux：~/.{% include product %}/preferences/toolkit.ini
 2. 添加以下部分：
 
         [BrowserIntegration]
         enabled=0
 
-有关如何配置浏览器集成的完整说明，请参见我们的[管理员手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067493-Integrations-Admin-Guide#Toolkit%20Configuration%20File)。
+有关如何配置浏览器集成的完整说明，请参见我们的[管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/)。
 
 **替代方法**
 

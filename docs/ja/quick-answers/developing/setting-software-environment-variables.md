@@ -9,7 +9,8 @@ lang: ja
 
 {% include product %} Toolkit では、起動プロセス中にフックを使用して環境を設定し、カスタム コードを実行することができます。
 
-Nuke や Maya などのソフトウェアを {% include product %} Desktop またはブラウザ統合を使用して起動すると、`tk-multi-launchapp` が実行されます。このアプリには、ソフトウェアを起動し、{% include product %} 統合が予測どおりに起動したことを確認するという役割があります。このプロセス内にフックを使用して公開されている 2 つのポイントがあり、そこでカスタム コードを実行することができます。
+Nuke や Maya などのソフトウェアを {% include product %} Desktop またはブラウザ統合を使用して起動すると、`tk-multi-launchapp` が実行されます。
+このアプリには、ソフトウェアを起動し、{% include product %} 統合が予測どおりに起動したことを確認するという役割があります。このプロセス内にフックを使用して公開されている 2 つのポイントがあり、そこでカスタム コードを実行することができます。
 
 ## before_app_launch.py
 
@@ -39,6 +40,6 @@ tank.util.append_path_to_env_var(\"NUKE_PATH\", \"/my/custom/path\")
 
 ## カスタム ラッパー
 
-スタジオによっては、環境変数の設定とソフトウェアの起動を処理するカスタム ラッパーが用意されている場合があります。このようなカスタム コードを使用する場合は、`Software` エンティティの[パス フィールド](https://support.shotgunsoftware.com/hc/ja/articles/115000067493-Integrations-Admin-Guide#Example:%20Add%20your%20own%20Software)が実行可能なラッパーを示すように指定すると、`tk-multi-launchapp` が代わりに実行されます。
+スタジオによっては、環境変数の設定とソフトウェアの起動を処理するカスタム ラッパーが用意されている場合があります。このようなカスタム コードを使用して環境を設定する場合は、`Software` エンティティの[パス フィールド](https://developer.shotgridsoftware.com/ja/8085533c/#example-add-your-own-software)が実行可能なラッパーを示すように指定すると、`tk-multi-launchapp` によって代わりに実行されます。
 
 {% include warning title="警告" content="この方法を使用する場合は、ShotGrid で設定された環境変数を保持するよう注意してください。そうしないと、統合が起動しなくなります。" %}

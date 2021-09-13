@@ -56,7 +56,7 @@ launch_nuke:
 
 ### 设置环境变量并自动化启动时的行为
 
-应用程序常常需要设置某些环境变量、插件路径等，以便能在工作室的工作流中正常工作。启动器应用可通过“before_app_launch”这个挂钩帮助解决此问题。使用此挂钩，您可以定义一段代码，让它在应用程序每次启动时运行。默认情况下，“before_app_launch”这个挂钩只是一个简单的通道，不执行任何操作，但我们可以按照<a href='https://support.shotgunsoftware.com/entries/95442818#Using%20Hooks%20to%20customize%20App%20Behaviour'>此文档</a>中的说明改写它。
+应用程序常常需要设置某些环境变量、插件路径等，以便能在工作室的工作流中正常工作。启动器应用可通过“before_app_launch”这个挂钩帮助解决此问题。使用此挂钩，您可以定义一段代码，让它在应用程序每次启动时运行。默认情况下，“before_app_launch”这个挂钩只是一个简单的通道，不执行任何操作，但我们可以按照<a href='https://developer.shotgridsoftware.com/425b1da4/#hooks'>此文档</a>中的说明改写它。
 
 例如，如果您使用 <a href='https://www.zyncrender.com/'>Zync Render</a>，Zync Maya 插件目录需要同时包含在 $PYTHONPATH 和 $XBMLANGPATH 中。要让启动器应用设置这些环境变量，请按如下所示为“before_app_launch”挂钩更新几行代码：
 

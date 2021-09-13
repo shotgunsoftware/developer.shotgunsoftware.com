@@ -56,7 +56,7 @@ launch_nuke:
 
 ### 環境変数を設定して起動時に動作を自動化する
 
-多くの場合、アプリケーションには、パイプラインで適切に機能するように設定された特定の環境変数やプラグイン パスなどが 必要になります。起動アプリケーションは「before_app_launch」フックを介してこのようなケースをカバーしており、アプリケーションの起動のたびに実行されるコードのスニペットを定義できます。既定では、「before_app_launch」フックは何も実行しない単純なパススルーですが、<a href='https://support.shotgunsoftware.com/entries/95442818#Using%20Hooks%20to%20customize%20App%20Behaviour'>このドキュメント</a>の説明に従ってオーバーライドできます。
+多くの場合、アプリケーションには、パイプラインで適切に機能するように設定された特定の環境変数やプラグイン パスなどが 必要になります。起動アプリケーションは「before_app_launch」フックを介してこのようなケースをカバーしており、アプリケーションの起動のたびに実行されるコードのスニペットを定義できます。既定では、「before_app_launch」フックは何も実行しない単純なパススルーですが、<a href='https://developer.shotgridsoftware.com/425b1da4/#hooks'>このドキュメント</a>の説明に従ってオーバーライドできます。
 
 たとえば、<a href='https://www.zyncrender.com/'>Zync Render</a> を使用する場合は、Zync Maya プラグイン ディレクトリを、$PYTHONPATH と $XBMLANGPATH の両方に含める必要があります。起動アプリでこの環境変数を設定するには、次のように「before_app_launch」フックのコード数行を更新します。
 

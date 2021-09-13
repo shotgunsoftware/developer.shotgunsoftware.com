@@ -1,11 +1,11 @@
 ---
 layout: default
-title: パイプラインのチュートリアル
+title: アニメーション パイプラインのチュートリアル
 pagename: toolkit-pipeline-tutorial
 lang: ja
 ---
 
-# パイプラインのチュートリアル
+# アニメーション パイプラインのチュートリアル
 
 このチュートリアルは、アニメーションや視覚効果用のシンプルで一般的なパイプラインの作成について説明します。このチュートリアルに従うと、外観加工を介してモデリングのアセットをプロダクション シーンに転送するのに必要なすべての処理を提供するパイプラインを作成できます。
 
@@ -25,7 +25,7 @@ lang: ja
 
 * **作業用の {% include product %} プロジェクト** - このチュートリアルでは、{% include product %} を使用してプロダクション データのトラッキングや管理を行った経験があることが前提となります。
 
-* **{% include product %} 統合の概要** - {% include product %} には統合機能が付属していて、手動設定が不要な、単純なプロダクション ワークフローがいくつか用意されています。このチュートリアルで説明されている手動設定やカスタマイズについて調べる前に、これらのワークフローの機能や範囲について理解する必要があります。{% include product %} 統合の詳細については、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/115000068574)を参照してください。
+* **{% include product %} 統合の概要** - {% include product %} には統合機能が付属していて、手動設定が不要な、単純なプロダクション ワークフローがいくつか用意されています。このチュートリアルで説明されている手動設定やカスタマイズについて調べる前に、これらのワークフローの機能や範囲について理解する必要があります。{% include product %} 統合の詳細については、[こちら](https://developer.shotgridsoftware.com/ja/d587be80/)を参照してください。
 
 * **Maya と Nuke の経験** - このチュートリアルは、Maya および Nuke を使用して単純なパイプラインを作成することを目的としています。{% include product %} の統合機能をカスタマイズするには、これらのパッケージの基本について理解する必要があります。
 
@@ -35,15 +35,15 @@ lang: ja
 
 ## その他のリソース
 
-* [{% include product %} サポート サイト](https://support.shotgunsoftware.com/hc/ja)
+* [{% include product %} サポート サイトhttps://support.shotgunsoftware.com/hc/ja]()
 
-* [{% include product %} 統合](https://www.shotgunsoftware.com/jp/integrations/)
+* [{% include product %} 統合](https://www.shotgridsoftware.com/integrations/)
 
-   * [ユーザ ガイド](https://support.shotgunsoftware.com/hc/ja/articles/115000068574)
+   * [ユーザ ガイド](https://developer.shotgridsoftware.com/ja/d587be80/)
 
-   * [管理者ガイド](https://support.shotgunsoftware.com/hc/ja/articles/115000067493)
+   * [管理者ガイド](https://developer.shotgridsoftware.com/ja/8085533c/)
 
-   * [開発者ガイド](https://support.shotgunsoftware.com/hc/ja/articles/115000067513)
+   * [開発者用ガイド](https://developer.shotgridsoftware.com/ja/93c6e555/)
 
 # プロジェクトの作成とセットアップ
 
@@ -79,23 +79,23 @@ Desktop にアプリケーションが表示されない場合、または予期
 
 ソフトウェア エンティティは、プロダクションで使用する DCC パッケージを操作する場合に使用されます。既定では、標準のインストール場所でこれらのパッケージが検索され、Desktop を使用して起動できるようになります。複数のバージョンがインストールされている場合、または標準以外の場所にインストールされている場合は、{% include product %} の対応するソフトウェア エンティティのエントリを更新して、アーティストの起動環境を整理しなければならない可能性があります。
 
-ソフトウェア エンティティおよび適切な設定方法の詳細については、「[統合管理者ガイド](https://support.shotgunsoftware.com/hc/ja/articles/115000067493#Configuring%20software%20launches)」を参照してください。DCC が予期した方法で起動した場合は、次のセクションに進んでください。
+ソフトウェア エンティティおよび適切な設定方法の詳細については、「[統合管理者ガイド](https://developer.shotgridsoftware.com/ja/8085533c/)」を参照してください。DCC が予期した方法で起動した場合は、次のセクションに進んでください。
 
 # 環境設定
 
 環境設定(設定)は、プロジェクトに関するアーティスト ワークフローを定義します。このワークフローでは、アーティストが起動している DCC に含める {% include product %} 統合、プロジェクトのフォルダ構造の定義方法、およびアーティストがデータを共有するときに作成されるファイルやフォルダの命名規則を指定します。
 
-既定では、すべての新しいプロジェクトは基本的な [{% include product %} 統合](https://support.shotgunsoftware.com/hc/ja/articles/115000068574)を使用するように設定されています。この統合は、多数の既製のソフトウェア パッケージを使用してアーティスト間でファイルを共有するための基本的なワークフローを提供します。 次のセクションでは、プロジェクトのパイプライン環境設定(設定)を引き継いで、スタジオに合わせてカスタマイズする方法の概要を示します。
+既定では、すべての新しいプロジェクトは基本的な [{% include product %} 統合](https://developer.shotgridsoftware.com/ja/d587be80/)を使用するように設定されています。この統合は、多数の既製のソフトウェア パッケージを使用してアーティスト間でファイルを共有するための基本的なワークフローを提供します。次のセクションでは、プロジェクトのパイプライン環境設定(設定)を引き継いで、スタジオに合わせてカスタマイズする方法の概要を示します。
 
 ## プロジェクトの設定を引き継ぐ
 
-{% include product %} Desktop (以下、「Desktop」)を使用して、プロジェクトの設定を引き継ぎます。Desktop 内で右マウス ボタンをクリックするか、または右下のユーザ アイコンをクリックして、ポップアップ メニューを表示します。**[Advanced project setup...]** オプションを選択し、ウィザードに従ってプロジェクトの設定をローカルにインストールします。次の図に、必要な手順を示します。『統合管理者ガイド』の「[パイプラインの設定を引き継ぐ](https://support.shotgunsoftware.com/hc/ja/articles/115000067493#Taking%20over%20a%20Pipeline%20Configuration)」に示されている手順に従うこともできます。
+{% include product %} Desktop (以下、「Desktop」)を使用して、プロジェクトの設定を引き継ぎます。Desktop 内で右マウス ボタンをクリックするか、または右下のユーザ アイコンをクリックして、ポップアップ メニューを表示します。**[Advanced project setup...]** オプションを選択し、ウィザードに従ってプロジェクトの設定をローカルにインストールします。次の図に、必要な手順を示します。『統合管理者ガイド』の「[パイプラインの設定を引き継ぐ](https://developer.shotgridsoftware.com/ja/8085533c/#taking-over-a-pipeline-configuration)」に示されている手順に従うこともできます。
 
 {% include figure src="./images/tutorial/image_5.png" caption="Desktop のポップアップ メニューで**[Advanced project setup...]**を選択する" %}
 
-{% include figure src="./images/tutorial/wizard_01.png" caption="**[ShotGrid Default]（ShotGrid の既定値）**設定タイプを選択する" %}
+{% include figure src="./images/tutorial/wizard_01.png" caption="**[ShotGrid Default](ShotGrid の既定値)**設定タイプを選択する" %}
 
-{% include figure src="./images/tutorial/wizard_02.png" caption="**[Default configuration]（既定の設定）**を選択する" %}
+{% include figure src="./images/tutorial/wizard_02.png" caption="**[Default configuration] (既定の設定)**を選択する" %}
 
 初めて {% include product %} プロジェクトをセットアップする場合は、プロジェクト データのストレージ場所を定義するためのプロンプトも表示されます。それ以外の場合は、既存の格納場所を選択することができます。
 
@@ -105,13 +105,13 @@ Desktop にアプリケーションが表示されない場合、または予期
 
 {% include figure src="./images/tutorial/wizard_05.png" caption="使用するオペレーティング システム上でこのストレージにアクセスするパスを設定します。" %}
 
-**[サイト基本設定]（Site Preferences）**の**[ファイル管理]（File Management）**セクションで、{% include product %} サイトのストレージを表示および編集できます。これらの設定について詳しくは、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219030938)を参照してください。
+**[サイト基本設定](Site Preferences)**の**[ファイル管理](File Management)**セクションで、{% include product %} サイトのストレージを表示および編集できます。これらの設定について詳しくは、[こちら](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html)を参照してください。
 
 格納場所が選択されたので、その場所にある新しいプロジェクトのディレクトリ名を選択します。
 
 {% include figure src="./images/tutorial/wizard_06.png" caption="プロジェクト ファイルを配置するフォルダの名前を入力する。" %}
 
-このチュートリアルでは中央設定を使用します。**[分散設定]（Distributed Setup）**オプションは、さまざまなメリットを提供する代替オプションを提供します。これは、高速共有ストレージのないスタジオで役に立つ場合があります。各種設定の長所と短所について詳しくは、「[ツールキット管理](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2)」のプレゼンテーションを参照してください。
+このチュートリアルでは中央設定を使用します。**[分散設定](Distributed Setup)**オプションは、さまざまなメリットを提供する代替オプションを提供します。これは、高速共有ストレージのないスタジオで役に立つ場合があります。各種設定の長所と短所について詳しくは、「[ツールキット管理](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2)」のプレゼンテーションを参照してください。
 
 サイト全体にわたるストレージとは異なり、設定はプロジェクトごとに異なるため、ここで選択するディレクトリが直接設定の保存に使用されます。
 
@@ -121,7 +121,7 @@ Desktop にアプリケーションが表示されない場合、または予期
 
 上記の画面で**[Run Setup]**をクリックすると、Desktop は設定に必要なすべてのコンポーネントのダウンロードおよびインストールを開始します。このインストール処理には数分かかる場合があります。完了したら、プロジェクト全体の設定のローカル コピーが作成されます。次の手順では、このローカル コピーを変更します。
 
-Desktop インストールのチュートリアルで指定された設定場所は、{% include product %} のプロジェクトの[パイプラインの設定]（Pipeline Configurations）ページに記録されています。
+Desktop インストールのチュートリアルで指定された設定場所は、{% include product %} のプロジェクトの[パイプラインの設定](Pipeline Configurations)ページに記録されています。
 
 {% include figure src="./images/tutorial/image_10.png" caption="ShotGrid のパイプラインの設定エンティティ" %}
 
@@ -129,21 +129,21 @@ Desktop インストールのチュートリアルで指定された設定場所
 
 ## 設定の構成
 
-単純なパイプラインの作成プロセスを開始する前に、パイプライン設定の構成方法とその仕組みについて理解しておく必要があります。次の図に、設定の主な構成要素とその目的を示します。設定とその管理の詳細については、「[ツールキットを管理する](https://support.shotgunsoftware.com/hc/ja/articles/219033178-Administering-Toolkit)」の記事を参照してください。
+単純なパイプラインの作成プロセスを開始する前に、パイプライン設定の構成方法とその仕組みについて理解しておく必要があります。次の図に、設定の主な構成要素とその目的を示します。設定とその管理の詳細については、「[ツールキットを管理する](https://developer.shotgridsoftware.com/ja/425b1da4/)」の記事を参照してください。
 
 {% include figure src="./images/tutorial/image_11.png" %}
 
 ### プロジェクト スキーマ
 
-このチュートリアルで作成する単純なパイプラインでは、既定の設定で提供されるプロジェクト スキーマを使用します。**`config/core/schema`** フォルダを参照して、Toolkit アプリがディスクにファイルを書き込むときに作成される構造を把握することができます。プロジェクト ディレクトリ構造の設定方法の詳細については、「[ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868)」を参照してください。
+このチュートリアルで作成する単純なパイプラインでは、既定の設定で提供されるプロジェクト スキーマを使用します。**`config/core/schema`** フォルダを参照して、Toolkit アプリがディスクにファイルを書き込むときに作成される構造を把握することができます。プロジェクト ディレクトリ構造の設定方法の詳細については、「[ファイル システム設定リファレンス](https://developer.shotgridsoftware.com/ja/82ff76f7)」を参照してください。
 
 ### テンプレート
 
-このチュートリアルでは、既定のパイプラインの設定で定義されたテンプレートも使用します。**`config/core/templates.yml`** ファイルを開いて、入出力ファイルをディスク上のパスにマップするためにアプリで使用されるテンプレートを確認できます。テンプレート システムの詳細については、「[ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868)」を参照してください。
+このチュートリアルでは、既定のパイプラインの設定で定義されたテンプレートも使用します。**`config/core/templates.yml`** ファイルを開いて、入出力ファイルをディスク上のパスにマップするためにアプリで使用されるテンプレートを確認できます。テンプレート システムの詳細については、「[ファイル システム設定リファレンス](https://developer.shotgridsoftware.com/ja/82ff76f7/)」を参照してください。
 
 ### フック
 
-このチュートリアルの大部分では、アーティスト ワークフローをカスタマイズするためにアプリのフックを変更します。カスタマイズの詳細を調べる前に、フックの内容、その仕組み、および格納先についての基本を理解する必要があります。「[管理](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Hooks)」および「[設定](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Hooks)」の「フック」セクションを参照してください。
+このチュートリアルの大部分では、アーティスト ワークフローをカスタマイズするためにアプリのフックを変更します。カスタマイズの詳細を調べる前に、フックの内容、その仕組み、および格納先についての基本を理解する必要があります。[管理](https://developer.shotgridsoftware.com/ja/425b1da4/#hooks)ドキュメントのフックに関するセクションを参照してください。
 
 このチュートリアルの手順を進めると、Toolkit アプリのいずれかで定義されたフックを「引き継ぐ」ように要求されます。アプリのフックを引き継ぐプロセスは簡単です。この操作を行うように要求されるたびに、次に示す手順を実行するだけです。
 
@@ -169,21 +169,21 @@ Desktop インストールのチュートリアルで指定された設定場所
 
 最初に {% include product %} Desktop から Maya を起動します。
 
-Maya が完全にロードされると、[ファイルを開く]（File Open）ダイアログ ボックスが表示されます。このダイアログ ボックスで、プロジェクト内にある既存の Maya ファイルを参照できます。また、{% include product %} 統合で認識される新しいファイルを作成することができます。
+Maya が完全にロードされると、[ファイルを開く](File Open)ダイアログ ボックスが表示されます。このダイアログ ボックスで、プロジェクト内にある既存の Maya ファイルを参照できます。また、{% include product %} 統合で認識される新しいファイルを作成することができます。
 
-[アセット]（Assets）タブを選択して、ティーポットのモデリング タスクにドリル ダウンします。このタスクのアーティスト作業ファイルはまだないため、**[+ New File]**ボタンをクリックします。
+[アセット] (Assets)タブを選択して、ティーポットのモデリング タスクにドリル ダウンします。このタスクのアーティスト作業ファイルはまだないため、**[+ New File]**ボタンをクリックします。
 
 {% include figure src="./images/tutorial/image_13.png" %}
 
 このボタンをクリックすると、新しい空の Maya セッションが作成されて、現在の作業コンテキストがティーポット アセットのモデル タスクに設定されます。
 
-{%include info title="注" content="このチュートリアルを使用している場合はいつでも、Maya または Nuke の ShotGrid メニューを介して ShotGrid Panel を起動することができます。このパネルでは、DCC を終了しなくても、プロジェクト データを表示できます。現在の作業コンテキスト、およびこのコンテキスト内の最近のアクティビティが表示されます。フィードバック用のノートをパネルに直接追加することもできます。詳細については、「[ShotGrid Panel](https://support.shotgunsoftware.com/hc/ja/articles/115000068574#The%20Shotgun%20Panel)」を参照してください。" %}
+{%include info title="注" content="このチュートリアルを使用している場合はいつでも、Maya または Nuke の ShotGrid メニューを介して ShotGrid Panel を起動することができます。このパネルでは、DCC を終了しなくても、プロジェクト データを表示できます。現在の作業コンテキスト、およびこのコンテキスト内の最近のアクティビティが表示されます。フィードバック用のノートをパネルに直接追加することもできます。詳細については、「[ShotGrid Panel](https://developer.shotgridsoftware.com/ja/c0b0ce05/)」を参照してください。" %}
 
 次に、ティーポットをモデリングするか、指定されたディーポットを[ダウンロード](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj)して読み込みます。
 
 {% include figure src="./images/tutorial/image_14.png" %}
 
-ティーポット モデルに問題がなければ、**[{% include product %}] > [File Save...]**メニュー アクションを選択します。 このダイアログ ボックスで、ファイルを指定した名前、バージョン、タイプで保存するように求められます。
+ティーポット モデルに問題がなければ、**[{% include product %}] > [File Save...]**メニュー アクションを選択します。このダイアログ ボックスで、ファイルを指定した名前、バージョン、タイプで保存するように求められます。
 
 {% include figure src="./images/tutorial/image_15.png" %}
 
@@ -207,7 +207,7 @@ Maya が完全にロードされると、[ファイルを開く]（File Open）�
 
 {% include figure src="./images/tutorial/image_16.png" %}
 
-作業内容に問題がなければ、**[{% include product %}] > [File Save...]**メニュー アクションをもう一度実行します。今度は、ダイアログ ボックスのバージョン番号が既定の 2 になります。ファイルのバージョンは自動的に増分するため、アーティストは完了した作業の完全な履歴を維持することができます。[Save]ボタンをクリックします。
+作業内容に問題がなければ、**[{% include product %}] > [File Save…]**メニュー アクションをもう一度実行します。今度は、ダイアログ ボックスのバージョン番号が既定の 2 になります。ファイルのバージョンは自動的に増分するため、アーティストは完了した作業の完全な履歴を維持することができます。[Save]ボタンをクリックします。
 
 {% include figure src="./images/tutorial/image_17.png" %}
 
@@ -219,9 +219,9 @@ Maya が完全にロードされると、[ファイルを開く]（File Open）�
 
 このダイアログ ボックスには、パブリッシュされる内容を表す項目がツリー表示されます。ツリーには、パブリッシュ対象の項目を表すいくつかのエントリと、パブリッシュ操作中に実行されるアクションを表すいくつかのエントリが含まれています。
 
-ダイアログ ボックスの左側には、現在の Maya セッションを表す項目が表示されます。その下に、**[Publish to ShotGriid]**子アクションが表示されます。 **すべてのセッション ジオメトリ**を表す追加項目が、現在のセッションの子項目として表示されます。**[Publish to ShotGrid]**子アクションも表示されます。
+ダイアログ ボックスの左側には、現在の Maya セッションを表す項目が表示されます。その下に、**[Publish to ShotGrid]**子アクションが表示されます。**すべてのセッション ジオメトリ**を表す追加項目が、現在のセッションの子項目として表示されます。**[Publish to ShotGrid]**子アクションも表示されます。
 
-{% include info title="注" content="**[すべてのセッション ジオメトリ]（All Session Geometry）**項目が表示されない場合は、Maya で[Alembic 書き出しプラグインが有効になっていること](https://support.shotgunsoftware.com/hc/ja/articles/219039928-Publishing-Alembic-From-Maya#Before%20You%20Begin)を確認してください。" %}
+{% include info title="注" content="**[すべてのセッション ジオメトリ](All Session Geometry)**項目が表示されない場合は、Maya でAlembic 書き出しプラグインが有効になっていることを確認してください。" %}
 
 ツリーの左側の項目をクリックして、Publish アプリを調べます。操作を行う項目を選択すると、パブリッシュする内容の説明を入力できます。また、右側のカメラ アイコンをクリックして、項目に関連付けられるスクリーンショットを作成することもできます。
 
@@ -267,7 +267,7 @@ Desktop から Maya を起動して開始します。前のセクションの作
 
 {% include figure src="./images/tutorial/image_22.png" %}
 
-次に、ティーポット モデルを新しいサーフェス作成作業ファイルにロードする必要があります。このためには、Maya の **[{% include product %}] > [ロード…]（Load…）**メニュー項目を使用して、Loader アプリを起動します。
+次に、ティーポット モデルを新しいサーフェス作成作業ファイルにロードする必要があります。このためには、Maya の **[{% include product %}] > [Load...]**メニュー項目を使用して、Loader アプリを起動します。
 
 {% include figure src="./images/tutorial/image_23.png" %}
 
@@ -447,7 +447,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 ##### {% include product %} 統合を再ロードする
 
-カスタマイズを試すには、Maya セッション内で統合を再ロードする必要があります。このためには、**[{% include product %}] > [[タスク名]] > [Work Area Info...]**メニュー アクションをクリックします。
+カスタマイズを試すには、Maya セッション内で統合を再ロードする必要があります。このためには、**[{% include product %}] > [Task Name] > [Work Area Info…]**メニュー アクションをクリックします。
 
 {% include figure src="./images/tutorial/image_30.png" %}
 
@@ -468,7 +468,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 {% include figure src="./images/tutorial/image_33.png" %}
 
-お疲れ様でした。パイプラインが正常にカスタマイズされ、ティーポットのシェーダがパブリッシュされました。 学習した内容を使用して、テーブル プロップのサーフェス作成タスクからシェーダをパブリッシュできるかどうかを確認します。結果は以下のようになります。
+お疲れ様でした。パイプラインが正常にカスタマイズされ、ティーポットのシェーダがパブリッシュされました。学習した内容を使用して、テーブル プロップのサーフェス作成タスクからシェーダをパブリッシュできるかどうかを確認します。結果は以下のようになります。
 
 {% include figure src="./images/tutorial/image_34.png" %}
 
@@ -628,7 +628,7 @@ Maya 参照がティーポット Alembic キャッシュの最新の繰り返し
 
 {% include figure src="./images/tutorial/image_45.png" %}
 
-図に示されているように、新しいカメラ項目が収集されて、パブリッシュ プラグインがアタッチされます。先に進んで、**[Publish]**をクリックしてディスクにカメラを書き込み、{% include product %} に登録します。
+図に示されているように、新しいカメラ項目が収集されて、パブリッシュ プラグインがアタッチされます。先に進んで、**[Publish]**をクリックしてディスクにカメラを書き込み、ShotGrid に登録します。
 
 {% include info title="注" content="Alembic 書き出しと同様、カメラのパブリッシュ プラグインには FBX 書き出しプラグインをロードする必要があります。カメラのパブリッシュ プラグイン項目が表示されない場合は、FBX プラグインがロードされていることを確認し、パブリッシャを再起動してください。"%}
 
@@ -662,7 +662,7 @@ Maya のアプリが設定されているセクションを見つけて、**`act
 
 **`FBX Camera: [reference, import]`**
 
-カスタム カメラ パブリッシュ プラグインでは、カメラをディスクに書き込む際に Maya の **`FBXExport`** mel コマンドを使用しました。{% include product %} にファイルを登録する際に使用したパブリッシュ タイプは **`FBX Camera`** でした。設定に追加された行は、ローダーに対して、タイプ **`FBX Camera`** の任意のパブリッシュの **`reference`** および **`import`** アクションを表示するように指示します。これらのアクションは、Loader アプリの [tk-maya-actions.py](https://github.com/shotgunsoftware/tk-multi-loader2/blob/master/hooks/tk-maya_actions.py) フックで定義されています。 これらのアクションは、Maya が参照できる、または読み込むことができる任意のファイル タイプを処理するように実装されています。カスタム プラグインによって生成された **`.fbx`** ファイルはこのカテゴリに分類されるため、これが、パブリッシュされたカメラをロードできるようにするために必要な唯一の変更になります。
+カスタム カメラ パブリッシュ プラグインでは、カメラをディスクに書き込む際に Maya の **`FBXExport`** mel コマンドを使用しました。{% include product %} にファイルを登録する際に使用したパブリッシュ タイプは **`FBX Camera`** でした。設定に追加された行は、ローダーに対して、タイプ **`FBX Camera`** の任意のパブリッシュの **`reference`** および **`import`** アクションを表示するように指示します。これらのアクションは、Loader アプリの [tk-maya-actions.py](https://github.com/shotgunsoftware/tk-multi-loader2/blob/master/hooks/tk-maya_actions.py) フックで定義されています。これらのアクションは、Maya が参照できる、または読み込むことができる任意のファイル タイプを処理するように実装されています。カスタム プラグインによって生成された **`.fbx`** ファイルはこのカテゴリに分類されるため、これが、パブリッシュされたカメラをロードできるようにするために必要な唯一の変更になります。
 
 アプリの設定は次のようになります。
 
@@ -795,7 +795,7 @@ Maya のアプリが設定されているセクションを見つけて、**`act
 
 ## コンポジット ワークフロー
 
-チュートリアルのこの最終セクションでは、Nuke が提供する既定の統合をいくつか紹介します。以前のセクションで参照したアプリの他に、{% include product %} 対応書き込みノードや、レビューのためにレンダーを他のユーザにすばやく送信するためのアプリについて学習します。
+チュートリアルのこの最終セクションでは、Nuke が提供する既定の統合をいくつか紹介します。以前のセクションで参照したアプリの他に、ShotGrid 対応書き込みノードや、レビューのためにレンダーを他のユーザにすばやく送信するためのアプリについて学習します。
 
 最初に、次に示す手順を行って作業ファイルを準備します。
 
@@ -816,7 +816,7 @@ Nuke プロジェクト設定の出力フォーマットが、レンダリング
 
 コンポジットに問題がなければ、**[{% include product %}] > [File Save…]**メニュー アクションを使用して、作業ファイルを保存します。
 
-次に、Nuke の左側メニューで {% include product %} のロゴをクリックします。このメニューの {% include product %} 対応書き込みノードの 1 つをクリックします。
+次に、Nuke の左側メニューで {% include product %} のロゴをクリックします。このメニューの ShotGrid 対応書き込みノードの 1 つをクリックします。
 
 {% include figure src="./images/tutorial/image_59.png" width="400px" %}
 
@@ -836,18 +836,18 @@ Quick Review ノードを作成してから、[Upload]ボタンをクリック�
 
 {% include figure src="./images/tutorial/image_63.png" %}
 
-{% include product %} の[メディア]（Media）タブを調べて、アップロードされた QuickTime を両方とも確認します。
+{% include product %} の[メディア] (Media)タブを調べて、アップロードされた QuickTime を両方とも確認します。
 
 {% include figure src="./images/tutorial/image_64.png" %}
 
-{% include product %} でメディアをレビューする方法の詳細については、[公式のドキュメント](https://support.shotgunsoftware.com/hc/ja/sections/204245448-Review-and-approval)を参照してください。
+{% include product %} でメディアをレビューする方法の詳細については、[公式のドキュメント](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Supervisor_Artist_sa_review_approval_html)を参照してください。
 
 # 結論
 
-おめでとうございます。これで完了です。このチュートリアルが、{% include product %} 統合を使用して独自のカスタム パイプラインを作成する際の第一歩になるはずです。スタジオ固有のニーズに合わせて既存の {% include product %} アプリを拡張する方法について理解できたことでしょう。
+おめでとうございます。これで完了です。このチュートリアルが、{% include product %} 統合を使用して独自のカスタム パイプラインを作成する際の第一歩になるはずです。スタジオ固有のニーズに合わせて既存の Shotgun アプリを拡張する方法について理解できたことでしょう。
 
-Toolkit に関する質問がある場合や、他のスタジオで Toolkit がどのように使用されているかを知りたい場合は、[shotgun-dev Google Group](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev) にアクセスしてください。常に最新の投稿を読むことができるよう、サブスクライプすることをお勧めします。
+Toolkit に関する質問がある場合や、他のスタジオで Toolkit がどのように使用されているかを知りたい場合は、[shotgun-dev Google Group](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=ja#!forum/shotgun-dev) にアクセスしてください。常に最新の投稿を読むことができるよう、サブスクライプすることをお勧めします。
 
-機能やワークフローを既定の統合で実現できないと感じた場合は、独自のアプリをいつでも作成できます。初めてアプリを作成する場合は、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033158)を参照してください。
+機能やワークフローを既定の統合で実現できないと感じた場合は、独自のアプリをいつでも作成できます。初めてアプリを作成する場合は、[こちら](https://developer.shotgridsoftware.com/ja/2e5ed7bb/)を参照してください。
 
-このチュートリアルの詳細または {% include product %} や Toolkit プラットフォームの概要に関して質問がある場合は、[チケットを送信](https://support.shotgunsoftware.com/hc/ja/requests/new)してください。
+このチュートリアルの詳細または {% include product %} や Toolkit プラットフォームの概要に関して質問がある場合は、[コミュニティにアクセス](https://community.shotgridsoftware.com/c/pipeline/6)してください。

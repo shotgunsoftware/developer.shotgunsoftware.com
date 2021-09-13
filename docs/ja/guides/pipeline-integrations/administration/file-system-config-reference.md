@@ -7,8 +7,60 @@ lang: ja
 
 # ファイル システム設定リファレンス
 
+このトピックの内容:
+- [はじめに](#introduction)
+- [パート 1: フォルダ作成構文](#part-1---folder-creation-syntax)
+   - [ クエリー フォルダ](#query-folders)
+   - [複数のフォルダ](#multiple-folders)
+   - [親フォルダを使用して作成する](#create-with-parent-folder)
+   - [オプション フィールド](#optional-fields)
+   - [正規表現トークンの一致](#regular-expression-token-matching)
+   - [例](#examples)
+   - [ リスト フィールド フォルダ](#list-field-folders)
+   - [パイプライン ステップ フォルダ](#pipeline-step-folder)
+      - [パイプライン ステップごとに異なるファイル システム レイアウト](#different-file-system-layouts-for-different-pipeline-steps)
+   - [詳細設定: 親を指定する](#advanced---specifying-a-parent)
+   - [タスク フォルダ](#task-folder)
+      - [詳細設定: 親を指定する](#advanced---specify-a-parent)
+   - [作業スペースと遅延フォルダ作成](#workspaces-and-deferred-folder-creation)
+   - [現在のユーザ フォルダ](#current-user-folder)
+   - [静的フォルダ](#static-folders)
+   - [シンボリック リンク](#symbolic-links)
+   - [ファイルとフォルダを無視する](#ignoring-files-and-folders)
+   - [I/O と権限をカスタマイズする](#customizing-io-and-permissions)
+      - [フックに渡されるデータ](#data-passed-to-the-hook)
+      - [独自のフォルダ作成指示をフックに渡す](#passing-your-own-folder-creation-directives-to-the-hook)
+      - [カスタム設定を静的フォルダに追加する](#adding-custom-configuration-to-static-folders)
+   - [フォルダの作成方法の簡単なカスタマイズ](#simple-customization-of-how-folders-are-created)
+- [パート 2: ファイル システム テンプレートを設定する](#part-2---configuring-file-system-templates)
+   - [キー セクション](#the-keys-section)
+      - [例: 英数字の名前](#example---an-alphanumeric-name)
+      - [例: バージョン番号](#example---version-number)
+      - [例: 立体視](#example---a-stereo-eye)
+      - [例: イメージ シーケンス](#example---image-sequences)
+      - [例: エイリアスを使用して 2 つのフィールドに version という名前を付ける](#example---two-fields-both-named-version-via-an-alias)
+      - [例: タイムスタンプ](#example---timestamp)
+      - [例: マッピング](#example---mappings)
+      - [例: 2 つの有効な値を使用した文字列フィールド](#example---string-field-with-two-valid-values)
+      - [例: 値を無効にする](#example---disallowing-a-value)
+      - [例: 文字列のサブセット](#example---subsets-of-strings)
+   - [パス セクション](#the-paths-section)
+   - [文字列セクション](#the-strings-section)
+   - [テンプレートでオプション キーを使用する](#using-optional-keys-in-templates)
+- [高度な質問とトラブルシューティング](#advanced-questions-and-troubleshooting)
+   - [新しいエンティティ タイプをファイル構造に追加するにはどうしたら良いですか?](#how-can-i-add-a-new-entity-type-to-my-file-structure?)
+      - [「エピソード > シーケンス > ショット」の階層に必要なフィールド](#fields-required-for-the-episode->-sequence->-shot-hierarchy)
+         - [エピソード](#episode)
+         - [シーケンス](#sequence)
+         - [ショット](#shot)
+         - [エピソード](#episodes)
+         - [Toolkit テンプレート定義](#toolkit-template-definitions)
+   - [各自の構造内でブランチをセットアップするにはどうしたら良いですか?](#how-can-i-set-up-a-branch-in-my-structure?)
+   - [カスタム エンティティを使用してカスタム パイプライン ステップを作成するにはどうしたら良いですか?](#how-can-i-create-a-custom-pipeline-step-using-a-custom-entity?)
+
+
 このドキュメントは、{% include product %} Pipeline Toolkit のファイル システム中心の環境設定に関する完全なリファレンスです。テンプレート システムの仕組みと利用可能なオプションについて説明します。また、フォルダ作成の設定に追加できるすべてのパラメータについても説明します。  
-_このドキュメントは、Toolkit の設定を管理するユーザのみが使用可能な機能について説明します。詳細については、『[{% include product %} 統合管理者ガイド](https://support.shotgunsoftware.com/hc/ja/articles/115000067493)』を参照してください。_
+_このドキュメントは、Toolkit の設定を管理するユーザのみが使用可能な機能について説明します。詳細については、『[{% include product %} 統合管理者ガイド](https://developer.shotgridsoftware.com/ja/8085533c/)』を参照してください。_
 
 # はじめに
 
@@ -16,10 +68,10 @@ _このドキュメントは、Toolkit の設定を管理するユーザのみ�
 
 1. **フォルダの作成:**{% include product %} でオブジェクトを作成したら、作業開始前にディスク上にフォルダを作成する必要があります。これは、ショットを表すディスク上にフォルダを作成するという簡単な作業であることも、ショットで作業する各ユーザがディスク上の個別の領域で作業できるようにユーザ固有の作業サンドボックスなどをセットアップするという複雑な作業であることもあります。
 
-   - Toolkit はアプリケーションの起動時にフォルダを自動的に作成し(ショット BECH_0010 の Maya を起動する場合など)、Maya の起動前にフォルダが作成されるようにします。フォルダが存在しない場合はすぐに作成されます。また、フォルダは、API メソッド、[シェルの tank コマンド](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Useful%20tank%20commands)、[ShotGrid の Create Folders](https://support.shotgunsoftware.com/hc/ja/articles/219040688#Shotgun%20Integration) を使用して作成することもできます。一連の特別な設定ファイルによってこのフォルダ作成プロセスが制御されます。これについては、次のセクションの「[パート 1](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)」で説明します。
+   - Toolkit はアプリケーションの起動時にフォルダを自動的に作成し(ショット BECH_0010 の Maya を起動する場合など)、Maya の起動前にフォルダが作成されるようにします。フォルダが存在しない場合はすぐに作成されます。フォルダは、API メソッド、[シェルの tank コマンド](https://developer.shotgridsoftware.com/ja/425b1da4/#useful-tank-commands)、[ShotGrid の[フォルダを作成](Create Folders)メニュー](https://developer.shotgridsoftware.com/ja/c3b662a6/)を使用して作成することもできます。一連の特別な設定ファイルによってこのフォルダ作成プロセスが制御されます。これについては、次のセクションの「[パート 1](#part-1---folder-creation-syntax)」で説明します。
 2. **作業の表示と保存:** 作業中、ディスク上の標準的な場所からファイルを開いてそこに保存する必要があります。通常、このファイルの場所は作業開始前に作成されたフォルダ構造内になります。
 
-   - フォルダ構造を作成すると、この構造を使用してディスク上の主要な場所を特定できます。これらの場所は「[テンプレート](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)」と呼ばれます。たとえば、ショットのパブリッシュした Maya ファイルを参照するように `maya_shot_publish` と呼ばれるテンプレートを定義します。次に、[Toolkit アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219039798)でこのテンプレートを使用します。パブリッシュ アプリがこのテンプレートを使用してファイルの書き込み場所を制御し、[作業ファイル アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)がこのテンプレートを使用して開くファイルの場所を把握できます。Toolkit の環境設定内では、各アプリが使用するテンプレートを制御できます。Toolkit で使用される主なファイルの場所はすべて 1 つのテンプレート ファイルで定義されるため、概要を簡単に表示できます。
+   - フォルダ構造を作成すると、この構造を使用してディスク上の主要な場所を特定できます。これらの場所は、[テンプレート](#part-2---configuring-file-system-templates)と呼ばれています。たとえば、ショットのパブリッシュした Maya ファイルを参照するように `maya_shot_publish` と呼ばれるテンプレートを定義します。[次に、Toolkit アプリ](https://developer.shotgridsoftware.com/ja/f8596e35/)でこのテンプレートを使用します。パブリッシュ アプリはこのテンプレートを使用してファイルの書き込み場所を制御し、[作業ファイル アプリ](https://developer.shotgridsoftware.com/ja/9a736ee3/)はこのテンプレートを使用して開くファイルの場所を把握することができます。Toolkit の環境設定内では、各アプリが使用するテンプレートを制御できます。Toolkit で使用される主なファイルの場所はすべて 1 つのテンプレート ファイルで定義されるため、概要を簡単に表示できます。
 
 # パート 1: フォルダ作成構文
 
@@ -33,7 +85,7 @@ sequences フォルダ内を確認すると、**sequence** フォルダと **seq
 
 1. **通常のフォルダとファイル:** 対象の場所に単純にコピーされます。
 2. **yaml ファイルを含むフォルダ**(フォルダと同じ名前): これは動的コンテンツを表します。たとえば、**shot** と **shot.yml** があるとします。フォルダを作成する場合、この **shot** フォルダは数多くのフォルダの生成に使用されるテンプレートになり、1 つのショットに対して 1 つのフォルダが生成されます。
-3. **name.symlink.yml という名前のファイル**は、フォルダの処理中にシンボリック リンクを生成します。[シンボリック リンクについてはこのドキュメントで説明します](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Symbolic%20Links)。
+3. **name.symlink.yml という名前のファイル**は、フォルダの処理中にシンボリック リンクを生成します。[シンボリック リンク](#symbolic-links)についてはこのドキュメントの後半で説明します。
 
 yaml ファイルで表される動的な設定セットアップは次のモードをサポートしています。
 
@@ -48,7 +100,7 @@ yaml ファイルで表される動的な設定セットアップは次のモー
 
 ここで各モードの詳細を見ていきましょう。
 
-## {% include product %} クエリー フォルダ
+## クエリー フォルダ
 
 {% include product %} クエリーに対応した動的なフォルダの場合、yaml ファイルに次の構文を使用します。
 
@@ -83,7 +135,7 @@ yaml ファイルで表される動的な設定セットアップは次のモー
    - 上記の例のように(`name: code` など)、1 つのフィールドを使用できます。
    - 括弧内に複数のフィールド(`name:``"{asset_type}_{code}"` など)を使用できます。
    - 他にリンクされたエンティティのフィールドを追加する場合は、標準の {% include product %} ドット シンタックス(`name: "{sg_sequence.Sequence.code}_{code}"` など)を使用できます。
-- **filters** フィールドは {% include product %} クエリーです。これは [{% include product %} API 構文](http://developer.shotgridsoftware.com/python-api/reference.html)に比較的近くなります。ディクショナリのリストで、各ディクショナリには、_path_、_relation_、および _values_ の各キーを指定する必要があります。$syntax の有効値は、{% include product %} エンティティ(ディレクトリ階層上位に sequence.yml がある場合はプロジェクトの `"$project"` と `"$sequence"` など)に対応した親フォルダです。{% include product %} エンティティ リンクの場合、$syntax (`{ "path": "project", "relation": "is", "values": [ "$project" ] }` など)を使用すると、環境設定内の親フォルダを参照できます。この詳細については、[以下の例](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Examples)で説明します。
+- **filters** フィールドは {% include product %} クエリーです。これは [{% include product %} API 構文](http://developer.shotgridsoftware.com/python-api/reference.html)に比較的近くなります。ディクショナリのリストで、各ディクショナリには、_path_、_relation_、および _values_ の各キーを指定する必要があります。$syntax の有効値は、{% include product %} エンティティ(ディレクトリ階層上位に sequence.yml がある場合はプロジェクトの `"$project"` と `"$sequence"` など)に対応した親フォルダです。{% include product %} エンティティ リンクの場合、$syntax (`{ "path": "project", "relation": "is", "values": [ "$project" ] }` など)を使用すると、環境設定内の親フォルダを参照できます。この詳細については、[以下の例](#examples)で説明します。
 
 
 ## 複数のフォルダ
@@ -126,7 +178,7 @@ yaml ファイルで表される動的な設定セットアップは次のモー
 
 ![create_with_parent_folder](images/file-system-config-reference/create_with_parent_folder_02_DS.png)
 
-{% include info title="注" content="このファイルシステムのネスト関係は [ShotGrid 階層](https://support.shotgunsoftware.com/hc/ja/articles/219030828)とは無関係で、この 2 つの間は接続されていません。それぞれまったく個別に設定されています。" %}
+{% include info title="注" content="このファイルシステムのネスト関係は [ShotGrid 階層](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html)とは無関係で、この 2 つの間は接続されていません。それぞれまったく個別に設定されています。" %}
 
 shotgun_entity タイプ フォルダは、親が作成されるとフォルダ作成プロセスが再帰的な処理を行って子も作成されるようにするかどうかを制御するためのオプション フラグをサポートします。フラグは特定の固定値のみを指定できる設定で、この場合は「true」または「false」です。このフラグを追加するには、次の例を使用します。
 
@@ -156,7 +208,7 @@ shotgun_entity タイプ フォルダは、親が作成されるとフォルダ�
 
 ## 正規表現トークンの一致
 
-Toolkit では、正規表現を使用して、{% include product %} フィールド名の一部を抽出できます。これにより、{% include product %} の値でフォルダの作成を制御できる単純な式を作成できます。たとえば、{% include product %} 内のすべてのアセットに、3 文字のプリフィックスとその後に続くアンダースコア(`AAT_Boulder7` など)が名前として付けられている場合、 この名前を 2 つのファイルシステム フォルダのレベルに分割できます(例: `AAT/Boulder7`)。
+Toolkit では、正規表現を使用して、{% include product %} フィールド名の一部を抽出できます。これにより、{% include product %} の値でフォルダの作成を制御できる単純な式を作成できます。たとえば、{% include product %} 内のすべてのアセットに、3 文字のプリフィックスとその後に続くアンダースコア(`AAT_Boulder7` など)が名前として付けられている場合、この名前を 2 つのファイルシステム フォルダのレベルに分割できます(例: `AAT/Boulder7`)。
 
     <a name="the type of dynamic content"></a>
     # the type of dynamic content
@@ -207,9 +259,9 @@ Toolkit では、正規表現を使用して、{% include product %} フィー�
     entity_type: Asset
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
-## {% include product %} リスト フィールド フォルダ
+## リスト フィールド フォルダ
 
-[{% include product %}リスト フィールド](https://support.shotgunsoftware.com/hc/ja/articles/219031008) フォルダは、{% include product %} ですべてのアセット タイプにフォルダを 1 つずつ作成する場合などに役立ちます。アセット タイプは {% include product %} のリスト フィールドで、このフォルダの設定タイプにより、このアセット タイプのリストに反映されるファイル システムのレイヤを定義できます。
+[{% include product %} リスト フィールド](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_data_management_ar_field_types_html) フォルダは、{% include product %} ですべてのアセット タイプにフォルダを 1 つずつ作成する場合などに役立ちます。アセット タイプは {% include product %} のリスト フィールドで、このフォルダの設定タイプにより、このアセット タイプのリストに反映されるファイル システムのレイヤを定義できます。
 
 ![list_field_folders](images/file-system-config-reference/list_field_folders_02_DS.png)
 
@@ -245,16 +297,16 @@ Toolkit では、正規表現を使用して、{% include product %} フィー�
 
 - 動的なコンテンツ **type** フィールドの値を `shotgun_list_field` に設定します。
 - `entity_type` フィールドは、データの取得元の {% include product %} エンティティ(「アセット」、「シーケンス」、「ショット」など)に設定する必要があります。
-- `field_name` は、データの取得元の {% include product %} フィールドに設定し、[リスト タイプ フィールド](https://support.shotgunsoftware.com/hc/ja/articles/219031008)にする必要があります。動的なコンテンツとともに静的な文字列を追加する場合は、式を使用することができます。`field_name: "{sg_asset_type}_type"` この式の例にはテキストとテンプレート キーが含まれます。
+- `field_name` フィールドは、データの取得元の {% include product %} フィールドに設定し、[リスト タイプ フィールド](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_data_management_ar_field_types_html)にする必要があります。動的なコンテンツとともに静的な文字列を追加する場合は、式を使用することができます。`field_name: "{sg_asset_type}_type"` この式の例にはテキストとテンプレート キーが含まれます。
 
-- オプションの `skip_unused` パラメータを指定すると、使用しないリスト タイプ フィールドの値に対してディレクトリが作成されなくなります(上記の「[オプション フィールド](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Optional%20fields)」セクションで説明)。{% include info title="注" content="これを True に設定すると、フォルダ作成のパフォーマンスに悪影響を与える可能性があります。また、現在のカリング アルゴリズムは不完全なため、関連するエンティティに複雑なフィルタが適用されている場合には機能しません。"%}
+- オプションの `skip_unused` パラメータを指定すると、使用しないリスト タイプ フィールドの値に対してディレクトリが作成されなくなります(上記の「[オプション フィールド](#optional-fields)」セクションで説明)。{% include info title="注" content="これを True に設定すると、フォルダ作成のパフォーマンスに悪影響を与える可能性があります。また、現在のカリング アルゴリズムは不完全なため、関連するエンティティに複雑なフィルタが適用されている場合には機能しません。"%}
 
-- オプションの `create_with_parent` パラメータを指定すると、子エンティティ レベル ノードを現在処理していなくても、list_field ノードを強制的に作成します(上記の「[親フォルダを使用して作成する](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Create%20With%20Parent%20Folder)」セクションを参照)。
+- オプションの `create_with_parent` パラメータを指定すると、子エンティティ レベル ノードを現在処理していなくても、list_field ノードを強制的に作成します(上記の「[親フォルダを使用して作成する](#create-with-parent-folder)」セクションを参照)。
 
 
 ## パイプライン ステップ フォルダ
 
-パイプライン ステップ フォルダは [{% include product %} のパイプライン ステップ](https://support.shotgunsoftware.com/hc/ja/articles/219031288)を表します。パイプライン ステップはステップとも呼ばれています。
+パイプライン ステップ フォルダは {% include product %} の[パイプライン ステップ](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Producer_pr_scheduling_tasks_pr_tasks_pipeline_steps_html)を表します。パイプライン ステップはステップとも呼ばれています。
 
 ![pipeline_step_folder](images/file-system-config-reference/pipeline_step_folder_02_DS.png)
 
@@ -265,7 +317,7 @@ Toolkit では、正規表現を使用して、{% include product %} フィー�
     <a name="the {% include product %} field to use for the folder name. This field needs to come from a step entity."></a>
     # the {% include product %} field to use for the folder name. このフィールドは、ステップ エンティティから取得する必要があります。name: "short_name"
 
-ここで、[{% include product %}前述の ShotGrid エンティティ](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Shotgun%20List%20Field%20Folders)で使用したように名前の式を使用できます。{% include product %} エンティティ フォルダ設定が検出されるまで、ノードは親や祖親などを探します。このエンティティ フォルダはステップに関連付けられ、エンティティのタイプを使用して作成するステップが決定されます。
+ここで、前述の [{% include product %} エンティティ](#list-field-folders)で使用したように名前の式を使用できます。{% include product %} エンティティ フォルダ設定が検出されるまで、ノードは親や祖親などを探します。このエンティティ フォルダはステップに関連付けられ、エンティティのタイプを使用して作成するステップが決定されます。
 
 {% include info title="注" content="パイプライン ステップの上位フォルダを作成する場合は、単純に ShotGrid エンティティ ノードを使用して関連するタイプをステップに設定します。" %}
 
@@ -299,9 +351,9 @@ Toolkit では、正規表現を使用して、{% include product %} フィー�
 
     associated_entity_type: Shot
 
-## {% include product %} タスク フォルダ
+## タスク フォルダ
 
-タスク フォルダは {% include product %} の[タスク](https://support.shotgunsoftware.com/hc/ja/articles/219031248)を表します。既定では、タスク フォルダがその親とともに作成されることはありません。たとえば、タスク ノードが関連付けられたショットでフォルダ作成がトリガされても、タスク フォルダは自動的に作成されません。その代わり、タスク フォルダは、タスク({% include product %} のタスクの起動など)でフォルダ作成を実行した場合にのみ作成されます。
+タスク フォルダは {% include product %} の[タスク](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Producer_pr_scheduling_tasks_pr_my_tasks_html)を表します。既定では、タスク フォルダがその親とともに作成されることはありません。たとえば、タスク ノードが関連付けられたショットでフォルダ作成がトリガされても、タスク フォルダは自動的に作成されません。その代わり、タスク フォルダは、タスク({% include product %} のタスクの起動など)でフォルダ作成を実行した場合にのみ作成されます。
 
 ![task_folder](images/file-system-config-reference/task_folder_02_DS.png)
 
@@ -321,7 +373,7 @@ Toolkit では、正規表現を使用して、{% include product %} フィー�
 
 ステップと同様に、フォルダ設定で動作するタスクをフィルタする場合は、必要に応じて `filter` パラメータを指定することもできます。
 
-ここで再び、[前述の {% include product %} エンティティ](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Shotgun%20List%20Field%20Folders)で使用したように名前の式を使用できます。動的コンテンツと静的コンテンツの両方が指定された名前を作成できるように、静的テキストが動的コンテンツとともに使用されます。
+ここで再び、[前述の {% include product %} エンティティ](#list-field-folders)で使用したように名前の式を使用できます。動的コンテンツと静的コンテンツの両方が指定された名前を作成できるように、静的テキストが動的コンテンツとともに使用されます。
 
 `name: "task_{content}"`
 
@@ -331,7 +383,7 @@ Toolkit では、正規表現を使用して、{% include product %} フィー�
 
 フォルダ作成の一環として、Toolkit はタスクとエンティティ(ショットやアセットなど)を関連付ける必要があります。このために、既定ではフォルダ ツリーを検索し、見つけた最初の {% include product %} エンティティ フォルダを選択します。たとえば、階層 `Sequence > Shot > Task` にアクセスすると、タスク フォルダが通常は任意のショットと自動的に関連付けられます。
 
-ただし、`Sequence > Shot > Department > Task,` など、プライマリ エンティティよりも下の階層のエンティティの場合(ショットよりも下)、既定では Toolkit はタスクと部門レベルを強制的に関連付けます。この場合、[前のセクション](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Create%20With%20Parent%20Folder)でステップを使用した更新方法と同じように、Toolkit に検索場所を明示的に指示する必要があります。このためには、タスク設定に次のコードを追加します。
+ただし、`Sequence > Shot > Department > Task,` など、プライマリ エンティティよりも下の階層のエンティティの場合(ショットよりも下)、既定では Toolkit はタスクと部門レベルを強制的に関連付けます。この場合、[前のセクション](#create-with-parent-folder)でステップを使用した更新方法と同じように、Toolkit に検索場所を明示的に指示する必要があります。このためには、タスク設定に次のコードを追加します。
 
 `associated_entity_type: Shot`
 
@@ -381,7 +433,7 @@ _ヒント: アプリケーション(Maya など)の起動時に通常の静的�
 
 ## 現在のユーザ フォルダ
 
-現在のユーザ フォルダは特別な構造をしており、別のユーザの作業領域をセットアップできます。一般的なシナリオとして、ある部門の複数のアーティストが同じショットに対して作業している場合があります。ユーザ フォルダを使用することにより、アーティストは自分の作業ファイルを独自のディレクトリに保存し、[作業ファイル アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)でこのファイルをフィルタリングできるようになります。この場合、設定ファイルに次のオプションを含める必要があります。
+現在のユーザ フォルダは特別な構造をしており、別のユーザの作業領域をセットアップできます。一般的なシナリオとして、ある部門の複数のアーティストが同じショットに対して作業している場合があります。ユーザ フォルダを使用することにより、アーティストは自分の作業ファイルを独自のディレクトリに保存し、[作業ファイル アプリ](https://developer.shotgridsoftware.com/ja/9a736ee3/)でこのファイルをフィルタリングできるようになります。この場合、設定ファイルに次のオプションを含める必要があります。
 
     <a name="the type of dynamic content"></a>
     # the type of dynamic content
@@ -484,7 +536,7 @@ symlink の作成は(すべての入力/出力(I/O)のように)フックを処�
 
 スキーマ スキャフォールドに格納されたファイルは、フォルダ作成の一環として対象領域にコピーされます。たとえば、このコピー処理はコア フックで処理されるため、権限の取り扱いはプロジェクトまたはスタジオごとにカスタマイズできます。
 
-{% include info title="注" content="この種の取り扱いの詳細は「簡単なカスタマイズ」の「[I/O と権限をカスタマイズする](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference#Simple%20customization%20of%20how%20folders%20are%20created)」セクションに記載されています。数多くのフォルダ セットアップを処理する [process_folder_creation コア フック](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/process_folder_creation.py#L62-L71)  (https://github.com/shotgunsoftware/tk-core/blob/master/hooks/process_folder_creation.py#L62-L71)があります。このフックに chmod 呼び出しを追加して(mkdir を使用する際の権限の設定も可能)、作成するフォルダの権限を設定できます。" %}
+{% include info title="注" content="この種の取り扱いの詳細は「簡単なカスタマイズ」の「[I/O と権限をカスタマイズする](#simple-customization-of-how-folders-are-created)」セクションに記載されています。数多くのフォルダ セットアップを処理する [process_folder_creation コア フック](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/process_folder_creation.py#L62-L71)  (https://github.com/shotgunsoftware/tk-core/blob/master/hooks/process_folder_creation.py#L62-L71)があります。このフックに chmod 呼び出しを追加して(mkdir を使用する際の権限の設定も可能)、作成するフォルダの権限を設定できます。" %}
 
 場合によっては、フォルダ作成の一環としてコピーされないように特定のファイルとフォルダを除外するのに便利です。たとえば、Git または SVN にフォルダ作成設定を保存している場合、ショットまたはアセットの各フォルダにコピーしない `.git` フォルダと `.svn` フォルダを作成します。コピーしたくないファイルがある場合、`ignore_files` という名前のファイルをプロジェクト設定内の `config/core/schema` フォルダに配置できます。このファイルには、コピーしないようにファイルを定義する glob スタイル パターンを含める必要があります。各パターンは 1 行ずつ指定する必要があります。
 
@@ -642,7 +694,7 @@ Toolkit では 1 つのフックでフォルダ作成をカスタマイズでき
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] } ]
 
-`$sequence`注: 動的なトークン _ は実行中に実際のオブジェクトに解決されます。_
+_注: 動的なトークン `$sequence` は実行中に実際のオブジェクトに解決されます。_
 
 ### 独自のフォルダ作成指示をフックに渡す
 
@@ -823,7 +875,7 @@ Toolkit テンプレート ファイルは Toolkit 設定のハブの 1 つで�
 
 ![configuration](images/file-system-config-reference/templates_file.png)
 
-このファイルには「テンプレート」の定義とその「キー」が含まれます。____
+このファイルには _「テンプレート」_ の定義とその _「キー」_ が含まれます。
 
 **キー**は定義された動的フィールドです。これには、名前、バージョン番号、スクリーン解像度、ショット名などを指定できます。キーには型が設定されるため、キーに文字列または整数などを定義できます。また、キーにはフォーマットを設定することもできるため、文字列に含められるのは英数字のみと定義したり、すべての整数にゼロを 8 個追加する必要があると定義したりできます。
 
@@ -973,7 +1025,7 @@ Toolkit テンプレート ファイルは Toolkit 設定のハブの 1 つで�
         format_spec: "%H-%M-%S"
         default: "09-00-00"
 
-### 例: {% include product %} のマッピング
+### 例: マッピング
 
 これは、{% include product %} フィールドをファイル名に追加する場合などに役立ちます。ファイル名にユーザ名を含めるには、次の定義を使用します。
 
@@ -1006,7 +1058,7 @@ Toolkit アプリで `context.as_template_fields()` メソッドを使用して�
     maya_shot_snapshot:  '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.mb'
     maya_shot_publish:  '@shot_root/publish/maya/{name}.v{version}.mb'
 
-詳細については、以下の「[パス セクション](https://support.shotgunsoftware.com/hc/ja/articles/219039868#The%20Paths%20Section)」を参照してください。
+詳細については、以下の「[パス セクション](#the-paths-section)」を参照してください。
 
 ### 例: 値を無効にする
 
@@ -1101,21 +1153,21 @@ assets フォルダが単なる別のシーケンスではないことを Toolki
 
 ## 新しいエンティティ タイプをファイル構造に追加するにはどうしたら良いですか?
 
-{% include product %} サイトでフィーチャ アニメーションとショートを作成し、エピソード作品の賞を獲得したとします。ここでは、Toolkit にエピソード ワークフローを組み込む方法について説明します。最初に、[ここの](https://support.shotgunsoftware.com/hc/ja/articles/115000019414)説明に従って {% include product %} でエピソード作品の階層をセットアップします。
+{% include product %} サイトでフィーチャ アニメーションとショートを作成し、エピソード作品の賞を獲得したとします。ここでは、Toolkit にエピソード ワークフローを組み込む方法について説明します。最初に、[こちら](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html)の説明に従って {% include product %} でエピソード作品の階層をセットアップします。
 
 ![episode_hierarchy](images/file-system-config-reference/episode_hierarchy.jpg)
 
-{% include info title="注" content="Toolkit でネスト関係を再確認するには(ShotGrid のプロジェクト階層から完全に独立)、「[上記の親フォルダを使用して作成する](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Create%20With%20Parent%20Folder)」を参照してください。" %}
+{% include info title="注" content="Toolkit でネスト関係を再確認するには(ShotGrid のプロジェクト階層から完全に独立)、上記の「[親フォルダを使用して作成する](#create-with-parent-folder)」セクションを参照してください。"%}
 
 **追加の参考資料:**
 
-- [エピソード エンティティはどのように動作するのですか?](https://support.shotgunsoftware.com/hc/ja/articles/115000019414)
-- [エンティティの階層をカスタマイズする](https://support.shotgunsoftware.com/hc/ja/articles/219030828)
+- [エピソード エンティティはどのように動作するのですか?](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html)
+- [エンティティの階層をカスタマイズする](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html)
 
 
-### 「エピソード > シーケンス > ショット」の階層に必要な {% include product %} フィールド
+### 「エピソード > シーケンス > ショット」の階層に必要なフィールド
 
-[ `Episode` ([サイト基本設定](Site Preferences) > [エンティティ] (Entities))のカスタム エンティティ](https://support.shotgunsoftware.com/hc/ja/articles/114094182834)を使用したり、{% include product %} [7.0.7.0](https://support.shotgunsoftware.com/hc/en-us/articles/220062367-7-0-Release-Notes#7_0_7_0) で利用可能な正式なエピソード エンティティを使用したりできます。{% include product %} 7.0.7.0 以前(2017 より前)に登録している場合、「TV Show」テンプレートはエピソードに `CustomEntity02` を使用します。`CustomEntity02` または正式なエピソード エンティティではない別のエンティティを使用する場合も心配しないでください。{% include product %} と Toolkit には柔軟性があります。両方の場合について説明します。
+[`Episode` ([サイト基本設定](Site Preferences) > [エンティティ] (Entities)の)カスタム エンティティ](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html)を使用したり、{% include product %} 7.0.7.0 で利用可能な正式なエピソード エンティティを使用したりできます。{% include product %}7.0.7.0 以前(2017 より前)に登録している場合、「TV Show」テンプレートはエピソードに `CustomEntity02` を使用します。`CustomEntity02` または正式なエピソード エンティティではない別のエンティティを使用する場合も心配しないでください。{% include product %} と Toolkit には柔軟性があります。両方の場合について説明します。
 
 この演習のために、プロジェクト階層更新を使用してエピソードを取り込む方法の例としてエピソード(`CustomEntity02`)と正式なエピソード エンティティを使用します(いずれかを使用)。最初に、プロジェクトの **「エピソード > シーケンス > ショット」**の階層を正しくセットアップするために、次のフィールドが {% include product %} 内にあることを確認します。
 
@@ -1297,7 +1349,7 @@ b) **カスタム エンティティを使用する:** `CustomEntity02` は、�
 
 #### Toolkit テンプレート定義
 
-スキーマでエピソードを使用していることを Toolkit に通知するには、上部の[キー セクション](https://support.shotgunsoftware.com/hc/ja/articles/219039868#The%20Keys%20Section)で新しいキーを作成して定義する必要があります。
+スキーマでエピソードを使用していることを Toolkit に通知するには、上部の[キー セクション](#the-keys-section)で新しいキーを作成して定義する必要があります。
 
 **正式な `Episode` エンティティを使用する**
 
@@ -1333,9 +1385,9 @@ b) **カスタム エンティティを使用する:** `CustomEntity02` は、�
 
 ## 各自の構造内でブランチをセットアップするにはどうしたら良いですか?
 
-これは「[パイプライン ステップごとの異なるファイル システム レイアウト](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Different%20file%20system%20layouts%20for%20different%20pipeline%20steps)」に関連します。具体的には、各自の構造内ブランチを追加する場合です。たとえば、「パイプライン ステップ A」に 1 つの構造を指定し、他のすべてのパイプライン ステップに別の構造を指定するとします。
+これは「[パイプライン ステップごとに異なるファイル システム レイアウト](#different-file-system-layouts-for-different-pipeline-steps)」に関連します。具体的には、各自の構造にブランチを追加する場合です。たとえば、「パイプライン ステップ A」に 1 つの構造を指定し、他のすべてのパイプライン ステップに別の構造を指定するとします。
 
-ここで、別の種類の[アセット タイプ](https://support.shotgunsoftware.com/hc/ja/articles/219030738)をパイプラインに追加して、その新しいアセット タイプを Vehicle に設定するとします。Vehicle のファイル構造を変更して、「geoprep」や「lookdev」など、パイプライン ステップごとに異なるフォルダを指定し、このパイプライン ステップ フォルダごとに別のフォルダを作成します。この更新と同様に、現在のアセットの作成方法は同じままです。この新しいフローに対応するようにパイプラインを更新する方法について説明します。
+ここで、別の種類の[アセット タイプ](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_site_configuration_ar_customizing_fields_html)をパイプラインに追加して、その新しいアセット タイプを Vehicle に設定するとします。Vehicle のファイル構造を変更して、「geoprep」や「lookdev」など、パイプライン ステップごとに異なるフォルダを指定し、このパイプライン ステップ フォルダごとに別のフォルダを作成します。この更新と同様に、現在のアセットの作成方法は同じままです。この新しいフローに対応するようにパイプラインを更新する方法について説明します。
 
 **手順 1: スキーマを修正する**
 
@@ -1343,7 +1395,7 @@ b) **カスタム エンティティを使用する:** `CustomEntity02` は、�
 
 - スキーマでこの新しいアセット タイプ vehicle の新しいブランチを作成します。
 - `asset/` と `asset.yml` と同じレベルで、`asset_vehicle/` フォルダと `asset_vehicle.yml` を追加します。
-- この YAML ファイルにもフィルタ設定があります。vehicle 以外のすべてのアセットに適用されるように `asset.yml` 内のフィルタを修正してから、__タイプ vehicle のアセットのみに適用されるように `asset_vehicle.yml` を修正します。__[ここでは、このフィルタの例を示します](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Different%20file%20system%20layouts%20for%20different%20pipeline%20steps)。
+- この YAML ファイルにもフィルタ設定があります。vehicle 以外のすべてのアセットに適用されるように `asset.yml` 内のフィルタを修正してから、__タイプ vehicle のアセットのみに適用されるように `asset_vehicle.yml` を修正します。__次に、[これらのフィルタの例](#different-file-system-layouts-for-different-pipeline-steps)を示します。
 - これで `asset` と `asset_vehicles` を表す 2 つのフォルダが作成されました。アセット(`geoprep` や `lookdev` など)に対して作成するすべてのフォルダを `asset_vehicle` の下に追加します。
 
 - このアセットのファイルを保存およびパブリッシュする場合は、`core/templates.yml` 内に保存およびパブリッシュしたファイルのファイル パスを定義するテンプレートを作成します。たとえば、[`maya_asset_work`](https://github.com/shotgunsoftware/tk-config-default/blob/v0.17.3/core/templates.yml#L480) とは別に、`maya_asset_work_vehicle` と呼ばれるテンプレートを作成すると、その定義は vehicle アセットの Maya 作業ファイルを保存するテンプレート化したパスになります。
@@ -1358,9 +1410,9 @@ b) **カスタム エンティティを使用する:** `CustomEntity02` は、�
 
 ## カスタム エンティティを使用してカスタム パイプライン ステップを作成するにはどうしたら良いですか?
 
-{% include product %} 7.0.6.0 では、[管理者メニューを使用したパイプライン ステップの管理](https://support.shotgunsoftware.com/hc/ja/articles/222766227#managing_pipeline_steps)が紹介されています。この機能を使用すると、パイプライン ステップにカスタム フィールドを簡単に追加できます。**専門家のヒント: 多くの場合、パイプライン ステップでカスタム フィールドを使用するほうが、カスタム エンティティを作成してそのパイプライン ステップを管理するよりもパイプラインの整理に役立ちます。**
+{% include product %} 7.0.6.0 では、[管理者メニューを使用したパイプライン ステップの管理](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_site_configuration_ar_configure_pipeline_steps_html#managing-pipeline-steps)が紹介されています。この機能を使用すると、パイプライン ステップにカスタム フィールドを簡単に追加できます。**専門家のヒント: 多くの場合、パイプライン ステップでカスタム フィールドを使用するほうが、カスタム エンティティを作成してそのパイプライン ステップを管理するよりもパイプラインの整理に役立ちます。**
 
-ただし、高度なケースでは、代替のパイプライン ステップを作成すると便利なことがあります。たとえば、パイプライン ステップの領域でプロダクションとパイプラインのそれぞれの命名規則と構造に関する柔軟性と、個別に命名および構造化する際の柔軟性を実現するとします。通常の {% include product %} の組み込みパイプライン ステップはスケジュール設定のために使用されますが、パイプラインでファイル システムを構造化して個別のタスクをグループするために別の[カスタム エンティティ](https://support.shotgunsoftware.com/hc/ja/articles/114094182834)を使用します。このためには、タスクのカスタム リンク フィールドをカスタム エンティティに作成します。次に、ステップ ノードを介してタスクをグループ化するためにこのリンクがシステムで使用されます。
+ただし、高度なケースでは、代替のパイプライン ステップを作成すると便利なことがあります。たとえば、パイプライン ステップの領域でプロダクションとパイプラインのそれぞれの命名規則と構造に関する柔軟性と、個別に命名および構造化する際の柔軟性を実現するとします。通常、スケジュールを設定する場合は {% include product %} の組み込みパイプライン ステップを使用しますが、パイプラインでファイル システムを構造化して個別のタスクをグループする場合は、別の[カスタム エンティティ](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html)を使用することができます。このためには、タスクのカスタム リンク フィールドをカスタム エンティティに作成します。次に、ステップ ノードを介してタスクをグループ化するためにこのリンクがシステムで使用されます。
 
 フォルダ設定で、{% include product %} の組み込みパイプライン ステップではなくカスタム ステップ セットアップを使用するように指示する特別な 2 つのオプションを追加します。
 

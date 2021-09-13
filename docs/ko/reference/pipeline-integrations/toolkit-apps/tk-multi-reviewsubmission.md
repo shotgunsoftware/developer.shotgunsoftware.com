@@ -60,7 +60,7 @@ if review_submission_app:
 
 ### 메뉴 항목으로 사용
 
-이 모드는 DCC 내부의 {% include product %} 메뉴에 메뉴 항목을 추가합니다. 
+이 모드는 DCC 내부의 {% include product %} 메뉴에 메뉴 항목을 추가합니다.
 
 이 모드는 현재 뷰포트의 빠른 스냅샷을 만들고 이를 버전 초안으로 {% include product %} Create에 보냅니다. 그런 다음 사용자는 주석, 텍스트 또는 비교 노트를 추가해 {% include product %} Create 내에서 리뷰 제출물을 확장할 수 있습니다.
 

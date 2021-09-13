@@ -9,7 +9,7 @@ lang: zh_CN
 
 ## 简介
 
-本文档是面向 {% include product %} 集成管理员的手册。它适用于三个角色之一：用户、管理员和开发人员。我们的[用户手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)面向将在其日常工作流中使用 {% include product %} 集成的最终用户（也就是艺术家），我们的[开发人员手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067513)是面向编写 Python 代码以扩展功能的人员的技术文档。本文档介于这两者之间：面向在工作室实施 {% include product %} 集成、管理软件版本以及为发布的文件做出存储决策的人员。
+本文档是面向 {% include product %} 集成管理员的手册。它适用于三个角色之一：用户、管理员和开发人员。我们的[用户手册](https://developer.shotgridsoftware.com/zh_CN/d587be80/)面向将在其日常工作流中使用 {% include product %} 集成的最终用户（也就是艺术家），我们的[开发人员手册](https://developer.shotgridsoftware.com/zh_CN/93c6e555/)是面向编写 Python 代码以扩展功能的人员的技术文档。本文档介于这两者之间：面向在工作室实施 {% include product %} 集成、管理软件版本以及为发布的文件做出存储决策的人员。
 
 ## 标准工作流配置
 
@@ -17,15 +17,13 @@ lang: zh_CN
 
 ### 基本配置
 
-即时可用的集成设计为在不需要设置或修改任何配置文件的情况下运行。当您使用即时可用的集成时，没有要管理的内容，但 Toolkit 在后台使用隐式工作流配置，我们称此工作流配置为基本配置。基本配置使三个 Toolkit 应用（面板、发布器和加载器）可用于所有受支持的软件包，并根据您在 {% include product %} 中的软件实体来确定在 {% include product %} Desktop 中显示哪些软件包。基本配置不包含文件系统位置支持。当您在项目中使用即时可用的集成时，无论何时启动 Desktop，都会自动更新您的基本配置副本，因此，您始终拥有最新版本的集成。您可以[在此处订阅发行说明](https://support.shotgunsoftware.com/hc/zh-cn/sections/115000020494)，以及[在此处查看 GitHub 中的基本配置](https://github.com/shotgunsoftware/tk-config-basic/)。
+即时可用的集成设计为在不需要设置或修改任何配置文件的情况下运行。当您使用即时可用的集成时，没有要管理的内容，但 Toolkit 在后台使用隐式工作流配置，我们称此工作流配置为基本配置。基本配置使三个 Toolkit 应用（面板、发布器和加载器）可用于所有受支持的软件包，并根据您在 {% include product %} 中的软件实体来确定在 {% include product %} Desktop 中显示哪些软件包。基本配置不包含文件系统位置支持。当您在项目中使用即时可用的集成时，无论何时启动 Desktop，都会自动更新您的基本配置副本，因此，您始终拥有最新版本的集成。您可以[在此处订阅发行说明](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)，以及[在此处查看 GitHub 中的基本配置](https://github.com/shotgunsoftware/tk-config-basic/)。
 
 ### 默认配置
 
-这是高级项目设置的默认基础配置。它包括[文件系统位置支持](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868)以及一组更广泛的 Toolkit 应用和插件。
+这是高级项目设置的默认基础配置。它包括[文件系统位置支持](https://developer.shotgridsoftware.com/zh_CN/82ff76f7/)以及一组更广泛的 Toolkit 应用和插件。
 
 您可以[在此处查看 GitHub 中的默认配置](https://github.com/shotgunsoftware/tk-config-default2)。有关默认配置结构的详细说明，请参见工作流配置中的 `config/env/README.md` 文件，或[在此处查看 GitHub 中的默认配置结构](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)。
-
-如果您熟悉默认配置的旧结构，请查看[默认配置更新常见问题解答](https://support.shotgunsoftware.com/hc/zh-cn/community/posts/115003376154)。
 
 {% include info title="注意" content="想要查找旧配置结构？采用 v1.1 版本的集成后，我们重新组织了默认配置的结构，以帮助最大限度地提高效率和可读性，并使其更接近基本配置结构。您仍然可以对项目使用旧的默认配置。只需在 Desktop 设置项目向导中提示选择配置时选择“Legacy Default”。" %}
 
@@ -33,7 +31,7 @@ lang: zh_CN
 
 发布器旨在简化即时可用的工作流和完整工作流配置之间的过渡。在即时可用的设置中，文件在原位发布，这就不必定义模板或文件系统数据结构。项目完成高级设置并具有完整工作流配置后，同一发布插件将识别向应用设置引入模板的情况，并开始将文件复制到其指定的发布位置，然后再进行发布。因此，工作室可以根据需要为具有完整配置的项目按每个环境或按每个 DCC 引入基于模板的设置。对于基于模板的工作流，默认配置是完整配置的，要了解如何为发布应用配置模板，它是一个很好的参考。有关详细信息，请参见 GitHub 中的默认配置中的 [tk-multi-publish2.yml 文件](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-publish2.yml)。
 
-有关编写适用于发布器的插件的详细信息，请参见[开发人员手册的“发布器”部分](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067513#Publisher)。
+有关编写适用于发布器的插件的详细信息，请参见[开发人员手册的“发布器”部分](https://developer.shotgridsoftware.com/zh_CN/93c6e555/#publisher)。
 
 ## 配置软件启动
 
@@ -86,7 +84,7 @@ lang: zh_CN
 - 与在自动检测模式下不同，此处，每个版本的给定软件包对应一个软件实体。
 - 为了将它们分组在一起，请使用 `Group` 和 `Group Default` 字段。 `Group` 值相同的软件实体将被分组在 Desktop 中单个图标下的下拉菜单中，该图标使用 `Group` 值作为其名称。
 - 单击该图标本身时，将启动 `Group Default` 处于选中状态的组中的软件。
-- **在软件实体上为“Linux 路径”(Linux Path)、“Mac 路径”(Mac Path)或“Windows 路径”(Windows Path)中任何一个__指定值时，该实体将转为手动模式。**  与自动检测模式（路径字段为空时，软件会__显示在 Desktop 中）不同，在手动模式下，仅当为软件指定了路径且在指定路径中存在文件时，软件包才会__在给定操作系统上显示。
+- **在软件实体上为“Linux 路径”(Linux Path)、“Mac 路径”(Mac Path)或“Windows 路径”(Windows Path)中 _任何_ 一个指定值时，该实体将转为手动模式。**  与自动检测模式（路径字段为空时，软件 _会_ 显示在 Desktop 中）不同，在手动模式下，_仅_ 当为软件指定了路径且在指定路径中存在文件时，软件包才会在给定操作系统上显示。
 - 在此示例中，由于未指定 `Windows Path`，因此三个 Maya 版本均不会显示在 Windows 上的 Desktop 中。
 
 ### 示例：按用户或组限制
@@ -111,7 +109,7 @@ lang: zh_CN
 - 此处我们删除了 `Group` 和 `Group Default` 值，因为在给定环境中总是只有一个 Maya 版本将显示在 Desktop 中。
 - 我们将所有三个版本的 `Software Name` 均设置为“Maya”。 这样，在每个项目中，用户均将看到一个名称相同的图标，但根据此处配置的内容，它将指向不同的版本。
 - 我们将 Maya 2016 的 `Status` 字段设置为 `Disabled`。 我们不再在工作室中使用此版本，且此字段切换在所有项目中的全局可见性。
-- 我们针对 Maya 2017 和 Maya 2018 指定了 `Projects` 值。 此 `Projects` 字段用作限制。 Maya 2017 将仅__显示在 Chicken Planet 项目中，而 Maya 2018 将仅显示在 Chicken Planet II 中。
+- 我们针对 Maya 2017 和 Maya 2018 指定了 `Projects` 值。 此 `Projects` 字段用作限制。 Maya 2017 将 _仅_ 显示在 Chicken Planet 项目中，而 Maya 2018 将仅显示在 Chicken Planet II 中。
 - 请注意，一旦指定了某个软件实体的 `Projects` 值，该软件将仅显示在指定的项目中。 因此，如果您的工作室中除了 Chicken Planet 系列外还有其他项目，您需要为它们明确指定软件。
 
 ### 示例：添加自己的软件
@@ -126,13 +124,13 @@ lang: zh_CN
 
 ## 配置发布的文件路径解析
 
-当您发布文件时，发布器在 {% include product %} 中创建一个 PublishedFile 实体，其中包括名为 `Path` 的[文件/链接(File/Link)](https://support.shotgunsoftware.com/hc/zh-cn/articles/219031008)字段。随后，其他用户可能会尝试使用加载器将此文件加载到自己的工作会话中。加载器使用复杂的逻辑来解析多个操作系统中已发布的文件的有效本地路径。
+当您发布文件时，发布器在 {% include product %} 中创建一个 PublishedFile 实体，其中包括名为 `Path` 的[文件/链接(File/Link)](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_data_management_ar_field_types_html)字段。随后，其他用户可能会尝试使用加载器将此文件加载到自己的工作会话中。加载器使用复杂的逻辑来解析多个操作系统中已发布的文件的有效本地路径。
 
 加载器尝试将发布数据解析为路径的方式取决于发布是与本地文件链接关联还是与 `file://` URL 关联。
 
 ### 解析本地文件链接
 
-如果您发布的路径与 {% include product %} 的“站点偏好设置”(Site Preferences)中定义的任何本地存储相匹配，则在发布时会自动生成本地文件链接。如果发布是本地文件链接，则将会使用其本地操作系统表达方式。请在[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219030938)了解有关本地文件链接的详细信息。
+如果您发布的路径与 {% include product %} 的“站点偏好设置”(Site Preferences)中定义的任何本地存储相匹配，则在发布时会自动生成本地文件链接。如果发布是本地文件链接，则将会使用其本地操作系统表达方式。请在[此处](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html)了解有关本地文件链接的详细信息。
 
 如果未针对您当前使用的操作系统定义本地存储的路径，您可以使用环境变量指定本地存储根。环境变量的名称应采用 `SHOTGUN_PATH_<WINDOWS|MAC|LINUX>_<STORAGENAME>` 形式。 因此，如果您要为名为“Renders”的存储根定义 Mac 上的路径，可以创建 `SHOTGUN_PATH_MAC_RENDERS` 环境变量。 下面我们使用该示例进行更深入的讨论：
 
@@ -227,7 +225,7 @@ lang: zh_CN
 
 **通过 {% include product %} Desktop 的 websocket v2**
 
-websocket 服务器的 RPC API 的第二次实施更改了用于获取、缓存和执行 Toolkit 动作的基本机制。此执行解决了与早期浏览器集成执行有关的许多性能问题，改进了动作菜单的外观组织，并添加了对[即时可用的 {% include product %} 集成](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#Getting%20started%20with%20Shotgun%20Desktop)的支持，这些集成无需显式配置 Toolkit 即可使用。这是浏览器集成的当前执行方式。
+websocket 服务器的 RPC API 的第二次实施更改了用于获取、缓存和执行 Toolkit 动作的基本机制。此执行解决了与早期浏览器集成执行有关的许多性能问题，改进了动作菜单的外观组织，并添加了对[即时可用的 {% include product %} 集成](https://developer.shotgridsoftware.com/zh_CN/d587be80/#getting-started-with-desktop)的支持，这些集成无需显式配置 Toolkit 即可使用。这是浏览器集成的当前执行方式。
 
 ### 配置
 
@@ -239,11 +237,11 @@ websocket 服务器的 RPC API 的第二次实施更改了用于获取、缓存�
 
 ![](images/Integration-admin-guide/tk-shotgun_config.png)
 
-在上面的 [tk-config-basic](https://github.com/shotgunsoftware/tk-config-basic/) 示例中，配置了两个应用，它们会使很多插件命令转换为菜单动作。Toolkit 应用将注册要包含在动作菜单中的命令，包括本地系统上发现的每个软件包的启动器命令，这些命令对应于 {% include product %} 站点中的[软件实体](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067493#Configuring%20software%20launches)列表。结果是此处所示菜单动作列表：
+在上面的 [tk-config-basic](https://github.com/shotgunsoftware/tk-config-basic/) 示例中，配置了两个应用，它们会使很多插件命令转换为菜单动作。Toolkit 应用将注册要包含在动作菜单中的命令，包括本地系统上发现的每个软件包的启动器命令，这些命令对应于 {% include product %} 站点中的[软件实体](https://developer.shotgridsoftware.com/zh_CN/8085533c/#configuring-software-launches)列表。结果是此处所示菜单动作列表：
 
 ![](images/Integration-admin-guide/action_menu.png)
 
-浏览器集成代码找到用户系统上安装的 Houdini、Maya、Nuke 和 Photoshop，从而产生用于启动其中每个集成的菜单动作。请注意，在给定的环境配置文件中，必须存在软件实体的插件，才会针对该环境的实体显示软件的启动器。__ 因此，在此示例中，从中获取此代码片段的文件中必须存在 `tk-houdini`、`tk-maya`、`tk-nuke` 和 `tk-photoshopcc` 所有这些插件。 如果要从此实体的启动器列表中移除某项（例如 Maya），只需从环境配置文件中移除 `tk-maya` 插件块。
+浏览器集成代码找到用户系统上安装的 Houdini、Maya、Nuke 和 Photoshop，从而产生用于启动其中每个集成的菜单动作。请注意，在给定的环境配置文件中，必须存在软件实体的插件，才会针对该环境的实体显示软件的 _启动器_。 因此，在此示例中，从中获取此代码片段的文件中必须存在 `tk-houdini`、`tk-maya`、`tk-nuke` 和 `tk-photoshopcc` 所有这些插件。 如果要从此实体的启动器列表中移除某项（例如 Maya），只需从环境配置文件中移除 `tk-maya` 插件块。
 
 除了这些启动器外，发布应用的“发布...”(Publish…)命令也包含在菜单中。
 
@@ -325,7 +323,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ### 日志
 
-浏览器集成的日志位于 Toolkit 的[标准日志位置](https://developer.shotgridsoftware.com/38c5c024/)。相关日志文件是 `tk-desktop.log` 和 `tk-shotgun.log`。 此外，如果使用的是 Google Chrome，有时部分相关日志输出会保存在该浏览器的开发人员控制台中。
+浏览器集成的日志位于 Toolkit 的[标准日志位置](https://developer.shotgridsoftware.com/zh_CN/38c5c024/)。相关日志文件是 `tk-desktop.log` 和 `tk-shotgun.log`。 此外，如果使用的是 Google Chrome，有时部分相关日志输出会保存在该浏览器的开发人员控制台中。
 
 ### 疑难解答
 
@@ -344,7 +342,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1. {% include product %} Desktop 的 websocket 服务器无法在启动时启动。可能仅在公开发布的 websocket 服务器版本错误时出现此情况，这应该极少发生。在这种情况下，日志记录将位于 [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) 中，用于说明该错误，可以将其[发送到 {% include product %} 的支持团队](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)。
+1. {% include product %} Desktop 的 websocket 服务器无法在启动时启动。可能仅在公开发布的 websocket 服务器版本错误时出现此情况，这应该极少发生。在这种情况下，日志记录将位于 [tk-desktop.log](https://developer.shotgridsoftware.com/zh_CN/38c5c024/) 中，用于说明该错误，可以将其[发送到 {% include product %} 的支持团队](https://knowledge.autodesk.com/zh-hans/contact-support)。
 
 **动作菜单中未显示任何动作**
 
@@ -354,14 +352,14 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. 在正确的环境 YAML 文件中配置了 `tk-shotgun` 插件，但该配置中没有应用。 在此情况下，可能是有意设计此实体类型没有动作。
 
-2. 在正确的环境 YML 文件中配置了 `tk-shotgun` 插件，且存在应用，但菜单中仍未显示动作。 这可能是由于应用无法初始化。在此情况下，可以在 [tk-shotgun.log 和 tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) 中找到描述相关问题的信息。
+2. 在正确的环境 YML 文件中配置了 `tk-shotgun` 插件，且存在应用，但菜单中仍未显示动作。 这可能是由于应用无法初始化。在此情况下，可以在 [tk-shotgun.log 和 tk-desktop.log](https://developer.shotgridsoftware.com/zh_CN/38c5c024/) 中找到描述相关问题的信息。
 
 3. 对应于此实体类型的环境不包含 `tk-shotgun` 的配置。 此处的最终结果与此列表中的第一种情况相同。在此情况下，您可以查看工作流配置的 `pick_environment` 挂钩来确定正在为此实体类型加载哪个环境，可以在那里验证 `tk-shotgun` 的配置。
 
 4. 有一个缓存在磁盘上的空菜单动作列表。要强制重新生成缓存，可使用以下几种选项：
 
-   - 在项目的配置中更新 YAML 文件的修改时间。这样，{% include product %} 下一次请求菜单动作时，将触发重新缓存这些菜单动作。值得注意的是，这将触发参与项目的所有用户进行重新缓存。__
-   - 在 {% include product %} 站点中更新任何软件实体中的字段值。该行为与上述涉及 YAML 文件修改时间的选项相同，但将使 {% include product %} 站点上_所有_项目中所有用户的缓存数据无效。软件实体是非项目实体，这意味着它们在所有项目之间共享。如果更改了任何软件实体中的数据，则会影响所有项目。
+   - 在项目的配置中更新 YAML 文件的修改时间。这样，{% include product %} 下一次请求菜单动作时，将触发重新缓存这些菜单动作。值得注意的是，这将触发参与项目的 _所有_ 用户进行重新缓存。
+   - 在 {% include product %} 站点中更新任何软件实体中的字段值。该行为与上述涉及 YAML 文件修改时间的选项相同，但将使 {% include product %} 站点上 _所有_ 项目中所有用户的缓存数据无效。软件实体是非项目实体，这意味着它们在所有项目之间共享。如果更改了任何软件实体中的数据，则会影响所有项目。
    - 可以在出现问题的主机上删除缓存文件。移除缓存通常没有问题，因为缓存存储在每个主机本地，这仅会导致在相应系统上从头开始重新缓存数据。缓存存储在 {% include product %} 缓存位置中的以下 SQLite 文件中：`<site-name>/site.basic.desktop/tk-desktop/shotgun_engine_commands_v1.sqlite`
 
 **“Toolkit: 正在检索动作...”(Toolkit: Retrieving actions…)始终不替换为菜单动作**
@@ -372,7 +370,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. websocket 服务器尚未完成动作缓存。如果这是对项目的配置进行重大更新后第一次检索动作，该过程可能需要一些时间才能完成。多等待一段时间，然后观察 `tk-desktop.log` 的内容看看是否仍在处理。
 
-2. websocket 服务器无法响应且永远不会响应。这种情况应该很少出现，但如果在请求动作后很明显没有其他处理操作正在进行（如 `tk-desktop.log` 中所示），那应该就是出现了这种情况，此时请[联系 ShotGrid 支持](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)并提供相关日志数据。
+2. websocket 服务器无法响应且永远不会响应。这种情况应该很少出现，但如果在请求动作后很明显没有其他处理操作正在进行（如 `tk-desktop.log` 中所示），那应该就是出现了这种情况，此时请[联系 ShotGrid 支持](https://knowledge.autodesk.com/zh-hans/contact-support)并提供相关日志数据。
 
 3. 用户在多个 {% include product %} 站点上工作。在单个站点上对 {% include product %} Desktop 进行身份认证后，从另一个 {% include product %} 站点请求菜单动作会导致系统询问用户是否重新启动 {% include product %} Desktop 并登录新站点。如果忽略该请求，则另一个站点将永远不会收到菜单动作列表。
 
@@ -383,11 +381,11 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. 指向文件路径的名为 `SGTK_PREFERENCES_LOCATION` 的环境变量。
 2. 在 {% include product %} Toolkit 首选项文件夹中：（请注意，默认情况下这些位置不存在此文件；您必须创建此文件。）
-   - Windows：  `%APPDATA%\Shotgun\Preferences\toolkit.ini`
+   - Windows： `%APPDATA%\Shotgun\Preferences\toolkit.ini`
    - macOS：  `~/Library/Preferences/Shotgun/toolkit.ini`
-   - Linux：  `~/.shotgun/preferences/toolkit.ini`
+   - Linux： `~/.shotgun/preferences/toolkit.ini`
 
-通过 `SGTK_PREFERENCES_LOCATION` 环境变量选项，您可以将您的配置文件存储在计算机或网络上的其他位置。 请注意，`toolkit.ini` 为当前标准文件名。 如果您使用的是 `config.ini`，请参见下面的“旧位置”部分。__
+通过 `SGTK_PREFERENCES_LOCATION` 环境变量选项，您可以将您的配置文件存储在计算机或网络上的其他位置。 请注意，`toolkit.ini` 为当前标准文件名。 如果您使用的是 `config.ini`，请参见下面的 _“旧位置”_ 部分。
 
 您可以参见[此处](https://raw.githubusercontent.com/shotgunsoftware/tk-framework-desktopstartup/master/config.ini.example)一个记录的配置文件示例。
 
@@ -403,9 +401,9 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. 指向文件的名为 `SGTK_DESKTOP_CONFIG_LOCATION` 的环境变量。
 2. 在以下路径中：
-   - Windows：  `%APPDATA%\Shotgun\desktop\config\config.ini`
+   - Windows： `%APPDATA%\Shotgun\desktop\config\config.ini`
    - macOS：  `~/Library/Caches/Shotgun/desktop/config/config.ini`
-   - `~/shotgun/desktop/config/config.ini`Linux：
+   - Linux： `~/shotgun/desktop/config/config.ini`
 
 **代理配置**
 
@@ -415,15 +413,15 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 **使用本地托管站点时运行 {% include product %} Desktop**
 
-如果您的 {% include product %} 站点 URL 不是以 `shotgunstudio.com` 结尾，表示您正在运行本地 {% include product %} 站点。在这种情况下，可能是您的站点尚未完全准备好实施 {% include product %} 集成，{% include product %} 团队可能需要参与进来并进行一些小的调整，然后您才能继续！在这种情况下，[请提交工单](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)，我们将帮助您解决问题。
+如果您的 {% include product %} 站点 URL 不是以 `shotgunstudio.com` 或 `shotgrid.autodesk.com` 结尾，表示您正在运行本地 {% include product %} 站点。在这种情况下，可能是您的站点尚未完全准备好实施 {% include product %} 集成，{% include product %} 团队可能需要参与进来并进行一些小的调整，然后您才能继续！在这种情况下，[请提交工单](https://knowledge.autodesk.com/zh-hans/contact-support)，我们将帮助您解决问题。
 
-**使用本地托管站点时连接到应用存储**
+**使用本地托管站点时连接到应用商店**
 
-如果您要在使用本地 {% include product %} 站点时通过代理访问 Internet，您可能希望设置一个 HTTP 代理用于访问应用存储，但不用于访问本地 {% include product %} 网站。为此，只需将以下行添加到 `toolkit.ini`：
+如果您要在使用本地 {% include product %} 站点时通过代理访问 Internet，您可能希望设置一个 HTTP 代理用于访问应用商店，但不用于访问本地 {% include product %} 网站。为此，只需将以下行添加到 `toolkit.ini`：
 
 `app_store_http_proxy: <proxy_server_address>`
 
-其中 `<proxy_server_address>` 是一个遵循[开发人员文档](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)中所述约定的字符串。
+其中 `<proxy_server_address>` 是一个遵循[开发人员文档](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
 
 如果您需要按每个项目覆盖此设置，可以在项目工作流配置的 `config/core/shotgun.yml` 中完成此操作。
 
@@ -433,7 +431,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ### {% include product %} 创建
 
-本文档中所述的用于解决脱机使用情况的方法也适用于 [{% include product %} Create](https://support.shotgunsoftware.com/hc/zh-cn/articles/360012554734) 中提供的集成功能。当以与 {% include product %} Desktop 相同的方式使用 {% include product %} Create 时，用于定制 {% include product %} Toolkit 行为的各种环境变量（例如 `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS`）适用。
+本文档中所述的用于解决脱机使用情况的方法也适用于 [{% include product %} Create](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Supervisor_Artist_sa_create_sa_intro_create_html) 提供的集成功能。当以与 {% include product %} Desktop 相同的方式使用 {% include product %} Create 时，用于定制 {% include product %} Toolkit 行为的各种环境变量（例如 `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS`）适用。
 
 ### 脱机时运行集成
 
@@ -441,7 +439,7 @@ _情况：我要运行 {% include product %} 集成，但未连接到 Internet�
 
 **解决方案**
 
-- 如果您可以临时连接到 Internet，只需下载 {% include product %} Desktop。它预先打包了一组[集成](https://support.shotgunsoftware.com/hczh-cn/articles/115000068574#Introduction)，且预先捆绑了适用于所有受支持 DCC 的 {% include product %} 集成所需的各种应用和插件。启动后，它将自动尝试查找升级，但如果无法连接到 {% include product %} 应用商店，它将仅运行本地的最新版本。
+- 如果您可以临时连接到 Internet，只需下载 {% include product %} Desktop。它预先打包了一组[集成](https://developer.shotgridsoftware.com/zh_CN/d587be80/#introduction)，且预先捆绑了适用于所有受支持 DCC 的 {% include product %} 集成所需的各种应用和插件。启动后，它将自动尝试查找升级，但如果无法连接到 {% include product %} 应用商店，它将仅运行本地的最新版本。
 
 **补充知识**
 
@@ -457,7 +455,7 @@ _情况：我们的美工人员工作站已断开 Internet 连接，因此无法
 
 - 在连接到 Internet 的工作站上运行 {% include product %} Desktop。该工作站启动后，在 Desktop 启动时将自动下载最新升级。
 - 选项 1：共享 Desktop 包
-- 将[缓存](https://developer.shotgridsoftware.com/7c9867c0/)复制到所有计算机都可以访问的共享位置。
+- 将[包缓存](https://developer.shotgridsoftware.com/zh_CN/7c9867c0/)复制到所有计算机都可以访问的共享位置。
 - 在脱机计算机上设置 `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` 环境变量以指向此位置。
 - 在脱机计算机上启动 Desktop 后，它们将选取缓存中可用的最新升级。
 - 选项 2：本地部署
@@ -478,7 +476,7 @@ _情况：我的项目将要打包，我希望将其冻结，以便不会自动�
 
 **解决方案**
 
-- 确定要将项目锁定到的版本。  [可以在此查找集成版本。](https://support.shotgunsoftware.com/hc/zh-cn/sections/115000020494)
+- 确定要将项目锁定到的版本。  [可以在此查找集成版本。](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)
 - 在 {% include product %} 中，为要锁定的项目创建工作流配置实体，并填充以下字段（在此示例中，我们将配置锁定为使用集成 v1.0.36）：
 - 配置名称(Config Name)：  `Primary`
 - 项目(Project)：要锁定的项目
@@ -536,7 +534,7 @@ _情况：我想要锁定站点中除测试项目以外的其他所有项目，�
 - 按上述部分中所述，针对站点冻结更新。
 - 使用以下字段值配置例外项目的工作流配置实体：
 - 配置名称(Config Name)：  `Primary`
-- 项目(Project)：不希望锁定的项目__
+- 项目(Project)： _不_ 希望锁定的项目
 - 插件 ID(Plugin ids)：  `basic.*`
 - 描述符(Descriptor)：  `sgtk:descriptor:app_store?name=tk-config-basic`
 
@@ -574,7 +572,7 @@ _情况：我想要锁定站点中除测试项目以外的其他所有项目，�
 
 ![](images/Integration-admin-guide/wizard_select.png)
 
-开始配置新项目时，首先要确定使用哪个配置模板__。 配置模板基本上是完整的项目配置，包含运行项目所需的所有设置、文件系统模板、应用和逻辑。
+开始配置新项目时，首先要确定 _使用哪个配置模板_。 配置模板基本上是完整的项目配置，包含运行项目所需的所有设置、文件系统模板、应用和逻辑。
 
 - 如果这是您的第一个项目，请使用 {% include product %} 默认值以便快速入门。
 - 如果您已配置过项目且有以前项目的配置，则可以基于现有项目创建新项目来轻松重用这些配置。
@@ -625,7 +623,7 @@ _情况：我想要锁定站点中除测试项目以外的其他所有项目，�
 
 有关如何改进和维护工作流配置的详细方法和文档，请参见此处：
 
-[管理项目配置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033168#Inheriting%20the%20config%20from%20your%20previous%20project)
+[管理项目配置](https://developer.shotgridsoftware.com/zh_CN/60762324/#inheriting-the-config-from-your-previous-project)
 
 #### 使用 Git 中的配置模板
 
@@ -633,7 +631,7 @@ _情况：我想要锁定站点中除测试项目以外的其他所有项目，�
 
 如果您要使项目的配置与源控制保持连接，请使用此选项。指定指向远程 Git 库或 Github 库的 URL，设置流程将为您克隆它。请注意，这不仅仅是 Github，而是与任何 Git 库一起使用。请务必确保存储库的路径以 `.git` 结尾，Toolkit 将尝试将其作为 Git 设置进行处理。 由于您的项目配置是 Git 库，您可以提交您所做的任何更改并将其推送至您的主存储库，进而推送至其他项目。通过使用基于 Github 的配置，可以轻松地使多个 Toolkit 项目保持同步。可在此处了解详细信息：
 
-[管理项目配置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033168#A%20studio%20configuration%20in%20git%20source%20control)
+[管理项目配置](https://developer.shotgridsoftware.com/zh_CN/60762324/#a-studio-configuration-in-git-source-control)
 
 请注意，如果您运行的是 Windows，则需要将 Git 安装在您的计算机上，并可以通过 `PATH` 访问。 在 Linux 和 Mac OS X 上，通常默认安装 Git。
 
@@ -641,11 +639,11 @@ _情况：我想要锁定站点中除测试项目以外的其他所有项目，�
 
 ![](images/Integration-admin-guide/wizard_browse.png)
 
-如果您的配置在磁盘上（以文件夹形式，或压缩为 zip 文件），请使用此选项。如果有人通过电子邮件向您发送了配置，或如果您在磁盘上保留了一个主配置，您基于它来建立所有项目，这会很有用。这通常是专家选项，我们建议使用另一个项目的配置或我们的应用存储默认配置中的一个。
+如果您的配置在磁盘上（以文件夹形式，或压缩为 zip 文件），请使用此选项。如果有人通过电子邮件向您发送了配置，或如果您在磁盘上保留了一个主配置，您基于它来建立所有项目，这会很有用。这通常是专家选项，我们建议使用另一个项目的配置或我们的应用商店默认配置中的一个。
 
 #### 设置存储
 
-每个 Toolkit 项目均会将其所有文件和数据写入到磁盘上的一个或多个共享存储位置。例如，某个配置可能需要一个存储用来存放纹理，一个用来存放渲染，以及一个用来存储场景文件。通常，在 {% include product %} 的“站点偏好设置”(Site Preferences)中的_“文件管理”(File Management)_选项卡下控制这些存储。
+每个 Toolkit 项目均会将其所有文件和数据写入到磁盘上的一个或多个共享存储位置。例如，某个配置可能需要一个存储用来存放纹理，一个用来存放渲染，以及一个用来存储场景文件。通常，在 {% include product %} 的“站点偏好设置”(Site Preferences)中的 _“文件管理”(File Management)_ 选项卡下控制这些存储。
 
 Toolkit 设置向导将要求您将配置所需的每个存储根映射到 {% include product %} 中的一个本地存储。
 
@@ -688,9 +686,7 @@ windows: \\prod\software\shotgun\golden_circle
 
 当您完成并运行第一个配置后，请导航到“后续步骤”文档，详细了解如何配置和调整 Toolkit，以更好地满足您的工作室需要：
 
-[在您的第一个项目基础上更进一步](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040688)
-
-您还可以参见[高级项目设置文档](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039808)了解详细信息。
+[在您的第一个项目基础上更进一步](https://developer.shotgridsoftware.com/zh_CN/c3b662a6/)
 
 ## 高级功能
 

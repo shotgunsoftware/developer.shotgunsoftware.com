@@ -10,7 +10,7 @@ lang: zh_CN
 
 ## 缓存根位置
 
-Toolkit 将某些数据存储在本地缓存中，以防止向 {% include product %} 服务器进行不必要的调用。这包括[缓存路径](./what-is-path-cache.md)、包缓存和缩略图。虽然默认位置应该适用于大多数用户，但如果您需要更改它，可以使用 [cache_location 核心挂钩](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/cache_location.py)对其进行配置。
+Toolkit 将某些数据存储在本地缓存中，以防止向 {% include product %} 服务器进行不必要的调用。这包括[缓存路径](./what-is-path-cache.md)、缓存和缩略图。虽然默认位置应该适用于大多数用户，但如果您需要更改它，可以使用 [cache_location 核心挂钩](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/cache_location.py)对其进行配置。
 
 默认缓存根位置为：
 
@@ -32,11 +32,11 @@ Toolkit 将某些数据存储在本地缓存中，以防止向 {% include produc
 
 `<site_name>/p<project_id>c<pipeline_configuration_id>/path_cache.db`
 
-## 包缓存
+## 缓存
 
 **分布式配置**
 
-包缓存是在 {% include product %} 站点的所有项目中使用的所有应用程序、插件和框架的缓存集合。 分布式配置的包缓存存储在以下位置：
+缓存是在 {% include product %} 站点的所有项目中使用的所有应用程序、插件和框架的缓存集合。分布式配置的缓存存储在以下位置：
 
 Mac：
 `~/Library/Caches/Shotgun/bundle_cache`
@@ -50,7 +50,7 @@ Linux：
 
 **集中式配置**
 
-集中式配置的包缓存位于集中式配置内。
+集中式配置的缓存位于集中式配置内。
 
 `...{project configuration}/install/`
 
@@ -58,6 +58,6 @@ Linux：
 
 ## 缩略图
 
-Toolkit 应用使用的缩略图（如[加载器](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033078)）存储在本地 Toolkit 缓存中。它们根据需要按项目、工作流配置和应用进行存储。根缓存目录下的结构如下所示：
+Toolkit 应用（如[加载器](https://developer.shotgridsoftware.com/zh_CN/a4c0a4f1)）使用的缩略图存储在本地 Toolkit 缓存中。它们根据需要按项目、工作流配置和应用进行存储。根缓存目录下的结构如下所示：
 
 `<site_name>/p<project_id>c<pipeline_configuration_id>/<app_or_framework_name>/thumbs/`

@@ -2,7 +2,7 @@
 layout: default
 title: AWS Knowledge
 pagename: tier1-knowledge-aws
-lang: ko
+lang: en
 ---
 
 # AWS Knowledge

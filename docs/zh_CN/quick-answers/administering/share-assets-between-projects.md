@@ -9,7 +9,7 @@ lang: zh_CN
 
 很常见的做法是将某项目用作资产库，其中包含可在其他项目中加载到镜头中的资产。
 
-要实现此目的，您可以将一个列出此资产库项目中资产的选项卡添加到[加载器应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033078)。要执行此操作，您必须在加载器设置中针对插件和您的工作环境对此进行定义。您可能需要在多个位置对其进行更新。
+要实现此目的，您可以将一个列出此资产库项目中资产的选项卡添加到[加载器应用](https://developer.shotgridsoftware.com/zh_CN/a4c0a4f1/)。要执行此操作，您必须在加载器设置中针对插件和您的工作环境对此进行定义。您可能需要在多个位置对其进行更新。
 
 例如，要将该选项卡添加到[镜头工序环境中的 Maya 插件](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-multi-loader2.yml#L122)，您需要添加以下代码段：
 

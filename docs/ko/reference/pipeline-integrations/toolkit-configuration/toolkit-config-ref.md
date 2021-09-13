@@ -21,7 +21,7 @@ lang: ko
 
 하지만 대부분의 스튜디오 파이프라인에서는 아티스트 유형별로 다른 워크플로우를 사용하는 것이 일반적입니다. 간단한 예로, 에셋 작업 중인 아티스트의 경우 텍스처 페인팅 소프트웨어(예: Mari)를 사용하게 하고 샷 작업 중인 아티스트의 경우에는 컴포지팅 소프트웨어(예: Nuke)를 사용하게 할 수 있습니다.
 
-소프트웨어 패키지뿐 아니라 동일한 툴킷 앱에 대한 설정도 아티스트별로 다르게 지정할 수 있습니다. 예를 들어 샷 아티스트와 에셋 아티스트 둘 다 [Workfiles 앱](https://support.shotgunsoftware.com/hc/ko/articles/219033088)을 사용할 수 있지만 샷 아티스트는 샷 엔티티, 에셋 아티스트는 에셋 엔티티와 관련된 파일로만 파일 탐색을 제한할 수 있습니다.
+소프트웨어 패키지뿐 아니라 동일한 툴킷 앱에 대한 설정도 아티스트별로 다르게 지정할 수 있습니다. 예를 들어 샷 아티스트와 에셋 아티스트 둘 다 [Workfiles 앱](https://developer.shotgridsoftware.com/9a736ee3/)을 사용할 수 있지만 샷 아티스트는 샷 엔티티, 에셋 아티스트는 에셋 엔티티와 관련된 파일로만 파일 네비게이션을 제한할 수 있습니다.
 
 프로젝트 내에서 이렇게 서로 다른 워크플로우를 지원하기 위해 툴킷은 환경에서 앱과 엔진 구성을 분리합니다. 각 환경에는 소프트웨어 패키지 셋트의 통합과 설정이 모두 공통적으로 포함되어 있습니다.
 
@@ -130,7 +130,7 @@ engines:
 
 `dev` 디스크립터에는 `app_store` 디스크립터와 다른 설정이 있습니다. 다른 설정을 가져올 수 있지만 디스크에 있는 앱 위치를 가리키는 `path` 설정으로 간단하게 설정할 수 있습니다.
 
-사용 가능한 모든 디스크립터 유형 및 해당 설정에 대한 자세한 내용은 [Toolkit Core API 문서의 디스크립터 섹션](https://developer.shotgridsoftware.com/tk-core/descriptor.html)을 참조하십시오.
+사용 가능한 모든 디스크립터 유형 및 해당 설정에 대한 자세한 내용은 [Toolkit Core API 문서의 디스크립터 섹션](https://developer.shotgunsoftware.com/tk-core/descriptor.html)을 참조하십시오.
 
 ### 앱 블록
 
@@ -244,7 +244,7 @@ engines:
     location: @engines.tk-maya.location
 ```
 
-![engine_locations include file](../images/env-config-ref/2.png)
+![engine_locations 포함 파일](../images/env-config-ref/2.png)
 
 `tk-maya` 엔진에 대한 `location` 설정 값이 이제 포함된 YAML 파일의 키에 대한 참조임을 확인할 수 있습니다.
 
@@ -308,7 +308,7 @@ engines:
 
 스파스 구성의 경우 단순히 구성 파일을 보는 것만으로는 앱에 대해 사용할 수 있는 구성 설정을 바로 확인할 수 없습니다. 사용 가능한 앱 구성 설정을 확인하려면 두 가지 방법이 있습니다.
 
-* **앱 설명서:** 각 앱에는 고유의 설명서 페이지가 있으며 이 각 페이지마다 "구성 옵션" 섹션이 있습니다. 이 섹션에는 각각의 설명 및 기본값을 포함하여 사용 가능한 모든 앱 구성 설정이 나와 있습니다. 예를 들어 [Workfiles 설명서 페이지를 참조](https://support.shotgunsoftware.com/hc/ko/articles/219033088)할 수 있습니다. [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219033088)에는 모든 앱 및 엔진에 대한 문서 페이지가 나열되어 있습니다.
+* **앱 설명서:** 각 앱에는 고유의 설명서 페이지가 있으며 이 각 페이지마다 "구성 옵션" 섹션이 있습니다. 이 섹션에는 각각의 설명 및 기본값을 포함하여 사용 가능한 모든 앱 구성 설정이 나와 있습니다. 예를 들어 [Workfiles 설명서 페이지를 참조](https://developer.shotgridsoftware.com/9a736ee3/)할 수 있습니다. [앱 및 엔진 페이지](https://developer.shotgridsoftware.com/162eaa4b/)에는 모든 앱 및 엔진에 대한 문서 페이지가 나열되어 있습니다.
 * **매니페스트:** 모든 툴킷 번들에는 루트 디렉토리에 `info.yml` 파일이 포함되어 있습니다. 이 파일을 번들의 *매니페스트*라고 하며 각각의 설명 및 기본값을 포함하여 번들에 대해 사용 가능한 모든 구성 설정을 정의합니다. 매니페스트는 번들의 자체 캐시(예: 파이프라인 구성 내의 `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml`) 또는 GitHub([Workfiles용](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml))에서 찾을 수 있습니다.
 
 ## 구성 설정 수정
@@ -345,7 +345,7 @@ engines:
 * [툴킷 기본 사항 안내서: 파이프라인 구성 편집](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)
 * [툴킷 기본 사항 안내서: 앱 추가](../../guides/pipeline-integrations/getting-started/installing_app.md)
 * [애니메이션 파이프라인 튜토리얼](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
-* [디스크립터 참조 설명서](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
+* [디스크립터 참조 설명서](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [웨비나: 툴킷 관리](https://youtu.be/7qZfy7KXXX0)
-* [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference)
+* [파일 시스템 구성 참조](https://developer.shotgridsoftware.com/82ff76f7/)
 * [기본 구성 환경 구조 읽어보기](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

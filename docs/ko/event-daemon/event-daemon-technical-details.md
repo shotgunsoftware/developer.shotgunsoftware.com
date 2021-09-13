@@ -94,7 +94,7 @@ lang: ko
 
 - 전역 변수. Ick. 이 작업을 수행하지 마십시오.
 - 상태 정보가 들어 있는 가져온 모듈. Ick, 단순한 전역보다는 낫습니다.
-- `args`[`Registrar.registerCallback`API#wiki-registerCallback](을 호출할 때 ) 인수로 전달된 변경 가능한 것. 설계의 상태 객체 또는 `dict`처럼 간단한 것. 선호.
+- `args`[`Registrar.registerCallback`](API#wiki-registerCallback) 을 호출할 때 인수로 전달된 변경 가능한 것. 설계의 상태 객체 또는 `dict`처럼 간단한 것. 선호.
 - 객체 인스턴스에 대해 `__call__`과 같은 콜백을 구현하고 콜백 객체 초기화 시 일부 공유 상태 객체를 제공합니다. 가장 강력하면서도 가장 어려운 방법입니다. 위의 args 인수 방법에 비해 중복될 수 있습니다.
 
 

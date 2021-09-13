@@ -2,7 +2,7 @@
 layout: default
 title: Media Isolation
 pagename: tier1-setup-s3_bucket
-lang: ko
+lang: en
 ---
 
 # Media Isolation

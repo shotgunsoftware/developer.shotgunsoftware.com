@@ -2,7 +2,7 @@
 layout: default
 title: Media Traffic Isolation
 pagename: tier1-features-media-traffic-isolation
-lang: zh_CN
+lang: en
 ---
 
 # Media Traffic Isolation

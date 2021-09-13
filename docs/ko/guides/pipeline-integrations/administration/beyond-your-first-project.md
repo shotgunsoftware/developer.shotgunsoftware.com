@@ -23,7 +23,7 @@ lang: ko
 
 # 기초 구성
 
-이 섹션에는 구성에 필요한 여러 가지 조정 및 유용한 정보가 포함되어 있습니다. 첫 번째 툴킷 프로젝트를 방금 설정했다면 아마도 올바른 작동을 위해 여러 가지 설정을 조금씩 조정해야 할 것입니다. 이 섹션에서는 이러한 다양한 단계를 설명합니다. 이 중 일부는 구성 파일 편집 및 내부적으로 진행되는 작업과 관련이 있습니다. 질문이 있으면 언제든지 `support@shotgunsoftware.com`으로 문의해 주십시오.
+이 섹션에는 구성에 필요한 여러 가지 조정 및 유용한 정보가 포함되어 있습니다. 첫 번째 툴킷 프로젝트를 방금 설정했다면 아마도 올바른 작동을 위해 여러 가지 설정을 조금씩 조정해야 할 것입니다. 이 섹션에서는 이러한 다양한 단계를 설명합니다. 이 중 일부는 구성 파일 편집 및 내부적으로 진행되는 작업과 관련이 있습니다. 궁금한 사항이 있으시면 언제든지 [지원 사이트](https://knowledge.autodesk.com/ko/contact-support)를 방문해 도움을 주시기 바랍니다.
 
 ## 응용프로그램 경로 설정
 
@@ -43,8 +43,8 @@ lang: ko
 
 응용프로그램에 대한 자세한 정보는 다음 항목을 참조하십시오.
 
-- [툴킷 응용프로그램 시작 관리자](https://support.shotgunsoftware.com/hc/ko/articles/219032968)
-- [명령행 인수 전달](https://support.shotgunsoftware.com/hc/ko/articles/219032968#Use%20Command%20Line%20Arguments%20at%20Launch)
+- [툴킷 응용프로그램 시작 관리자](https://developer.shotgridsoftware.com/1b9c259a/)
+- [명령행 인자 전달](https://developer.shotgridsoftware.com/1b9c259a/)
 
 
 ## {% include product %} 통합
@@ -53,11 +53,11 @@ lang: ko
 
 ![](images/Beyond-your-first-project/shotgun_integration.png)
 
-이를 통해 {% include product %}에서 직접 데이터를 조작하는 툴킷 응용프로그램 또는 커스텀 도구를 시작할 수 있게 됩니다. 통합에 대한 자세한 내용은 {% include product %} 사이트, [관리 안내서의 브라우저 통합 섹션](https://support.shotgunsoftware.com/hc/ko/articles/115000067493-Integrations-Admin-Guide#Browser%20Integration)을 참조하십시오.
+이를 통해 {% include product %}에서 직접 데이터를 조작하는 툴킷 응용프로그램 또는 커스텀 도구를 시작할 수 있게 됩니다. 통합에 대한 자세한 내용은 {% include product %} 사이트, [관리 안내서의 브라우저 통합 섹션](https://developer.shotgridsoftware.com/8085533c/)을 참조하십시오.
 
 ## {% include product %} UI에 게시 추가
 
-툴킷을 설치한 후에는 일반적으로 {% include product %} UI 레이아웃을 약간 조정하는 것이 좋습니다. {% include product %} Pipeline Toolkit은 파일을 게시할 때 _게시 엔티티_를 만들므로 에셋 및 샷과 같은 주요 에셋에 _게시(Publishes) 탭_을 추가하기에 편리합니다. 이렇게 하려면 관리자(admin)로 로그인해야 합니다. 에셋 또는 샷으로 이동하고 _디자인 모드_를 시작합니다.
+툴킷을 설치한 후에는 일반적으로 {% include product %} UI 레이아웃을 약간 조정하는 것이 좋습니다. {% include product %} Pipeline Toolkit은 파일을 게시할 때 _게시 엔티티_ 를 만들므로 에셋 및 샷과 같은 주요 에셋에 _게시(Publishes) 탭_ 을 추가하기에 편리합니다. 이렇게 하려면 관리자(admin)로 로그인해야 합니다. 에셋 또는 샷으로 이동하고 _디자인 모드_ 를 시작합니다.
 
 ![](images/Beyond-your-first-project/design_mode.png)
 
@@ -65,7 +65,7 @@ lang: ko
 
 ![](images/Beyond-your-first-project/create_tab.png)
 
-이제 _저장(Save)_을 클릭하여 변경 사항을 저장합니다. 설정이 끝났습니다.
+이제 _저장(Save)_ 을 클릭하여 변경 사항을 저장합니다. 설정이 끝났습니다.
 
 참고: 사용자가 새 탭을 만들 때 {% include product %}는 몇 개의 기본 필드를 선택하여 가져옵니다. 게시할 필드를 몇 개 더 추가할 수 있습니다. 새 게시 탭에서 볼 수 있는 스프레드시트의 오른쪽 상단에 있는 작은 더하기 버튼을 클릭하면 됩니다. 다음 필드를 추가하는 것이 좋습니다.
 
@@ -99,15 +99,13 @@ Python 경로는 수동으로 편집할 수 있는 구성 파일에 저장됩니
 
 {% include product %} 데스크톱을 표준 위치가 아닌 곳에 설치했거나 별도로 설정한 Python 위치를 사용하려는 경우 파일 경로가 유효한 Python 설치를 가리키는지 확인합니다. Python은 v2.6 이상이어야 합니다(단, Python 3 제외). UI 기반 응용프로그램과 도구를 실행하려면 지정한 Python에 PyQt 또는 PySide가 설치되어 있고 QT v4.6 이상에 링크되어 있는지 확인하십시오.
 
-또한 여러 운영 체제에서 툴킷을 실행하려면 프로젝트 설정 마법사를 실행할 때 원하는 모든 플랫폼에 대한 경로를 지정해야 합니다. 이 작업을 수행하지 않고 저장소 경로 또는 구성 위치에 추가 운영 체제를 추가하려는 경우 `support@shotgunsoftware.com`으로 문의해 주시면 단계별로 안내해 드리겠습니다.
+또한 여러 운영 체제에서 툴킷을 실행하려면 프로젝트 설정 마법사를 실행할 때 원하는 모든 플랫폼에 대한 경로를 지정해야 합니다. 이 작업을 수행하지 않고 저장소 경로 또는 구성 위치에 추가 운영 체제를 추가하려는 경우 [지원 사이트](https://knowledge.autodesk.com/ko/contact-support)에서 도움을 요청하십시오.
 
 # 다음 단계
 
 이제 {% include product %} 프로젝트(또는 테스트 프로젝트)에서 기본 {% include product %} 설정을 사용할 수 있습니다. 응용프로그램이 시작되고 상황에 맞는 메뉴 액션 및 게시가 {% include product %}에 표시되고 항목이 원하는 운영 체제 플랫폼에서 작동합니다.
 
 다음 섹션에서는 해당 기본 구성을 가져와 나머지 스튜디오 파이프라인처럼 작동하도록 조정하는 프로세스에 대해 설명합니다. 툴킷은 유연하고 상세한 구성이 가능하며 당사에서는 많은 문서를 제공합니다. 시작하기 전에 실제 모든 작동 방식을 확인하려면 몇 분 정도 시간을 내어 다양한 연습 동영상을 확인하는 것이 좋습니다. 이 동영상은 {% include product %} Pipeline Toolkit이 Maya 및 Nuke와 같은 응용프로그램 내에서 작동하는 방식을 보여 줍니다. 또한 게시, 버전 제어, 로딩 등과 같은 기본 개념도 설명합니다.
-
-[{% include product %} 툴킷 동영상 컬렉션](https://support.shotgunsoftware.com/hc/ko/articles/219040678)
 
 ## 툴킷 프로젝트 분석
 
@@ -125,7 +123,7 @@ Python 경로는 수동으로 편집할 수 있는 구성 파일에 저장됩니
 
 다음 섹션에서는 프로젝트 구성 폴더의 여러 부분을 살펴보겠습니다.
 
-### 명령행 액세스
+### 명령줄 액세스
 
 {% include product %} 데스크톱뿐만 아니라 터미널 또는 셸을 통해 툴킷에 액세스할 수도 있습니다. 디스크에 생성하는 각 프로젝트에는 API 세션 시작 및 응용프로그램 시작을 포함하여 많은 기능에 명령행 기반으로 액세스할 수 있는 특수 `tank` 명령이 있습니다.
 
@@ -137,7 +135,7 @@ Python 경로는 수동으로 편집할 수 있는 구성 파일에 저장됩니
 
 `tank` 명령을 사용하여 수행할 수 있는 작업에 대한 자세한 정보는 자세한 기술 문서를 참조하십시오.
 
-[툴킷 관리 방법](https://support.shotgunsoftware.com/hc/ko/articles/219033178)
+[툴킷 관리 방법](https://developer.shotgridsoftware.com/425b1da4/)
 
 ### 주요 구성 파일
 
@@ -147,16 +145,16 @@ Python 경로는 수동으로 편집할 수 있는 구성 파일에 저장됩니
 
 응용프로그램을 시작할 때 필요한 모든 구조가 디스크상에 있고 사전에 준비되도록 하기 위해 디스크에 폴더를 자동으로 만드는 폴더 생성 시스템이 툴킷과 함께 제공됩니다. 이에 대한 구성은 위에 표시된 `schema` 폴더에서 찾을 수 있습니다.
 
-또한 툴킷 _템플릿 시스템_을 함께 사용하면 게시, 작업 파일, 렌더링 등 구성할 수 있는 파일에 대한 다양한 경로를 쉽게 정의할 수 있습니다. 이 항목은 위의 `templates.yml` 파일에 저장됩니다.
+또한 툴킷 _템플릿 시스템_ 을 함께 사용하면 게시, 작업 파일, 렌더링 등 구성할 수 있는 파일에 대한 다양한 경로를 쉽게 정의할 수 있습니다. 이 항목은 위의 `templates.yml` 파일에 저장됩니다.
 
 프로젝트 구성의 이 두 부분을 함께 사용하면 툴킷이 기존 파이프라인에서 이해할 수 있도록 디스크의 위치에 데이터를 기록하는 데 사용되는 다양한 앱을 조정할 수 있습니다.
 
 자세한 정보는 다음과 같은 고급 문서를 참조하십시오.
 
-- [폴더 구성](https://support.shotgunsoftware.com/hc/ko/articles/219033178#Creating%20folders%20on%20disk%20with%20Sgtk)
-- [파일 시스템 템플릿](https://support.shotgunsoftware.com/hc/ko/articles/219033178#Configuring%20Templates)
+- [폴더 구성](https://developer.shotgridsoftware.com/425b1da4/)
+- [파일 시스템 템플릿](https://developer.shotgridsoftware.com/425b1da4/)
 
-기본적으로 툴킷은 구성된 **앱 및 엔진**의 모음으로 구성됩니다. 이 구성은 `env` 폴더에 있습니다. 위에 설명된 파일 시스템 구성 파일이 디스크상에서의 리소스 _위치_를 정의하면 해당 앱 및 엔진이 있는 환경 구성이 파이프라인이 수행해야 할 _작업_을 정의합니다.
+기본적으로 툴킷은 구성된 **앱 및 엔진**의 모음으로 구성됩니다. 이 구성은 `env` 폴더에 있습니다. 위에 설명된 파일 시스템 구성 파일이 디스크상에서의 리소스 _위치_ 를 정의하면 해당 앱 및 엔진이 있는 환경 구성이 파이프라인이 수행해야 할 _작업_ 을 정의합니다.
 
 
 ### Core API 플랫폼
@@ -171,11 +169,11 @@ Python 경로는 수동으로 편집할 수 있는 구성 파일에 저장됩니
 
 {% include product %} Pipeline Toolkit의 개략적인 개념을 살펴보고 '전체적인 내용'을 설명하는 좀 더 기술적인 문서도 있습니다. 툴킷이 기본적으로 제공하는 기능을 잘 이해한 다음 이러한 문서로 옮겨가서 특정 스튜디오 요구 사항에 맞게 툴킷을 조정할 수 있는 방법을 더 깊이 이해하는 것이 좋습니다.
 
-[{% include product %} 툴킷](https://support.shotgunsoftware.com/hc/ko/articles/219040648)의 개괄적인 개념에 대한 소개
+[{% include product %} 툴킷](https://developer.shotgridsoftware.com/e95205a8/)의 개괄적인 개념에 대한 소개
 
 ## 툴킷 커뮤니티
 
 TD 및 파이프라인 엔지니어의 커뮤니티는 툴킷의 한 부분을 구성합니다. 우리는 강력하고 유연한 파이프라인 환경으로 툴킷을 함께 개선할 수 있는 역동적인 코드 공유 커뮤니티를 만드는 데 주력하고 있습니다.
 
-궁금한 점이 있거나 기존 게시물 및 논의를 살펴보고 싶다면 [공개 포럼 섹션](https://support.shotgunsoftware.com/hc/en-us/community/topics/200682428-Pipeline-Toolkit-Common-Questions-and-Answers)을 방문하십시오.
+궁금한 점이 있거나 기존 게시물 및 논의를 살펴보고 싶다면 [커뮤니티](https://community.shotgridsoftware.com/c/pipeline/6)를 방문하십시오.
 

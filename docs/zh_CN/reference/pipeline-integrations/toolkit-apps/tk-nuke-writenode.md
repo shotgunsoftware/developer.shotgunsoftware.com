@@ -177,7 +177,7 @@ SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 有关身份认证的详细信息，请参见[开发人员文档](http://developer.shotgridsoftware.com/tk-core/authentication.html)。
 
-**有关保护脚本用户安全的注意事项：**建议锁定您在农场中使用的脚本用户，以使其没有管理员级别的权限。[您可在此处详细了解 API 用户权限。](https://support.shotgunsoftware.com/hc/zh-cn/articles/219376228)
+**有关保护脚本用户安全的注意事项：**建议锁定您在农场中使用的脚本用户，以使其没有管理员级别的权限。[您可在此处详细了解 API 用户权限。](https://developer.shotgridsoftware.com/zh_CN/bbae2ca7/)
 
 #### 3. init.py 脚本
 
