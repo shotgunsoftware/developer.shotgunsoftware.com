@@ -1,6 +1,6 @@
 ---
 layout: default
-title: TankError: Tried to Resolve a Path From The Template
+title: TankError Tried to Resolve a Path From The Template
 pagename: tank-error-tried-to-resolve-a-path
 lang: ja
 ---
