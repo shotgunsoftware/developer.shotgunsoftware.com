@@ -7,6 +7,8 @@ lang: en
 
 # Web Traffic Isolation
 
+{% include info title="Notice" content="Web Traffic Isolation is available in the following AWS regions: us-east-1, us-west-2, eu-west-2 and eu-west-3." %}
+
 The goal is to set up an AWS PrivateLink to privately access your {% include product %} site.
 
 ## Set up PrivateLink to ShotGrid
