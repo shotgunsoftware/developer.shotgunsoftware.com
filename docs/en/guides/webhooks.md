@@ -31,13 +31,19 @@ Webhooks and the [{% include product %} event daemon](https://github.com/shotgun
 
 ## Creating a webhook
 
-To get started creating a webhook, go to a Webhooks page, then navigate to the button above the webhooks list. Access to webhooks is controlled by the "Advanced -> Show Webhooks" permission. It is enabled for default Admin and Manager roles. 
+To get started creating a webhook, go to a Webhooks page, then navigate to the button above the webhooks list. Access to webhooks is controlled by the "Advanced -> Show Webhooks" permission. It is enabled for default Admin and Manager roles.
 
 ![Create Webhook Button](./images/webhooks/create_webhook_button.png)
 
 Next up is to fill out the information required to create the new webhook.
 
 ![Create Webhook Dialog](./images/webhooks/create_webhook_dialog.png)
+
+### Filtering by Project and Entity
+
+Selecting specific projects, entities, and fields will minimize traffic to your webhook, improving performance, reducing resource costs, and preventing unnecessary backlogs.
+
+{% include info title="Note" content="Selecting a project limits you to selecting an entity that always belongs to a single project, such as Versions. If you want to select a non-project (or multi-project) entity like Person, you can't also select a project. This ensures webhook event filtering does not add performance overhead to entity updates." %}
 
 ### Secret token
 
@@ -78,7 +84,7 @@ A webhook can have one of several different statuses, indicating its health and 
 |--------|:-------:|:-----------:|
 | Active | ![Active](./images/webhooks/webhook_status_active.png) | The webhook is operating in a stable fashion. No deliveries to this webhook's consumer URL have failed to reach their destination in the past 24 hours. |
 | Unstable | ![Unstable](./images/webhooks/webhook_status_unstable.png) | The webhook is operating in an unstable fashion. Some deliveries have failed to reach their destination in the past 24 hours, but not enough to cause {% include product %} to consider the webhook to be dead. |
-| Failed | ![Failed](./images/webhooks/webhook_status_failed.png) | The webhook is considered to be dead, and no further deliveries will be attempted. This is a result of too many delivery failures in a short period of time, and the system has determined that the webhook should no longer be considered viable. **A webhook is considered failed if it has 10 failed deliveries in the past 24 hours**. |
+| Failed | ![Failed](./images/webhooks/webhook_status_failed.png) | The webhook is considered to be dead, and no further deliveries will be attempted. This is a result of too many delivery failures in a short period of time, and the system has determined that the webhook should no longer be considered viable. **A webhook is considered failed if it has 100 failed deliveries in the past 24 hours**. |
 | Disabled | ![Disabled](./images/webhooks/webhook_status_disabled.png) | The webhook is in a disabled state, and no further deliveries will be attempted until it is re-enabled. |
 
 ## Deliveries
@@ -152,7 +158,7 @@ A webhook consumer service must respond to deliveries in order for the system to
 
 {% include warning title="Response timeouts" content="A response must be received within six seconds of delivery to a webhook’s URL, after which the connection will be closed. Failure to respond in time will result in a failed delivery." %}
 
-Process time is recorded for each delivery and can be viewed in the Response details tab. 
+Process time is recorded for each delivery and can be viewed in the Response details tab.
 
 #### Throttling
 
