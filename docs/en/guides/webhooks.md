@@ -43,7 +43,7 @@ Next up is to fill out the information required to create the new webhook.
 
 Selecting specific projects, entities, and fields will minimize traffic to your webhook, improving performance, reducing resource costs, and preventing unnecessary backlogs.
 
-{% Note that selecting specific projects will limit you to selecting an entity that always belongs to a single project, such as Versions. If you want to select a non-project (or multi-project) entity like Person, you cannot also select a project. This is to ensure that webhook event filtering does not add performance overhead to your entity updates. %}
+{% include info title="Note" content="Selecting a project limits you to selecting an entity that always belongs to a single project, such as Versions. If you want to select a non-project (or multi-project) entity like Person, you can't also select a project. This ensures webhook event filtering does not add performance overhead to entity updates." %}
 
 ### Secret token
 
@@ -154,11 +154,11 @@ Provided as part of the event payload is the `session_uuid` that triggered the e
 
 #### Response from the Webhook
 
-The Response tab shows details about your webhook's response. You can see your webhook's response HTTP headers, body, and response time.
+The Response tab shows details about your webhook's response to the delivery. You can see your webhook's response HTTP headers, body, and the measured response time.
 
 A maximum of 100 characters of your webhook's response body are retained. (As noted above, delivery information is retained for review for 7 days and deleted afterwards.)
 
-{% Security best practices: do not include any secure data in your webhooks response, and do not return details of system errors in the response. %}
+{% include warning title="Security best practices" content="Do not include any secure data in your webhook's response, and do not return details of system errors in the response." %}
 
 ### Responding to deliveries
 
