@@ -66,36 +66,36 @@ _Please note that this document describes functionality only available if you ha
 
 This document explains how to configure the part of Toolkit's configuration related to your file system, including examples. Toolkit handles a lot of files and directories, and you can leverage Toolkit's configuration as a way of expressing how paths are put together and what they mean. The file system is typically accessed in two different and completely separate ways:
 
-1.  **Folder Creation:**  After an object has been created in {% include product %}, folders on disk need to be created before work can begin. This can be as simple as having a folder on disk representing the Shot, or can be more complex-for example setting up a user specific work sandbox so that each user that works on the shot will work in a separate area on disk.
+1. **Folder Creation:** After an object has been created in {% include product %}, folders on disk need to be created before work can begin. This can be as simple as having a folder on disk representing the Shot, or can be more complex-for example setting up a user specific work sandbox so that each user that works on the shot will work in a separate area on disk.
     
-    -   Toolkit automates folder creation when you launch an application (for example you launch Maya for shot BECH_0010), Toolkit ensures that folders exist prior to launching Maya. If folders do not exist, they are created on the fly. Folders can also be created using API methods, using the  [tank command in the shell](https://developer.shotgridsoftware.com/425b1da4/#useful-tank-commands)  and via the  [Create Folders menu in ShotGrid](https://developer.shotgridsoftware.com/c3b662a6/). A special set of configuration files drives this folder creation process and this is outlined in  [Part 1](#part-1---folder-creation-syntax)  of the document below.
-2.  **Opening and Saving Work:**  While working, files need to be opened from and saved into standardized locations on disk. These file locations typically exist within the folder structure created prior to work beginning.
+- Toolkit automates folder creation when you launch an application (for example you launch Maya for shot BECH_0010), Toolkit ensures that folders exist prior to launching Maya. If folders do not exist, they are created on the fly. Folders can also be created using API methods, using the  [tank command in the shell](https://developer.shotgridsoftware.com/425b1da4/#useful-tank-commands)  and via the  [Create Folders menu in ShotGrid](https://developer.shotgridsoftware.com/c3b662a6/). A special set of configuration files drives this folder creation process and this is outlined in  [Part 1](#part-1---folder-creation-syntax)  of the document below.
+2. **Opening and Saving Work:** While working, files need to be opened from and saved into standardized locations on disk. These file locations typically exist within the folder structure created prior to work beginning.
     
-    -   Once a folder structure has been established, we can use that structure to identify key locations on disk. These locations are called  [Templates](#part-2---configuring-file-system-templates). For example, you can define a template called  `maya_shot_publish`  to refer to published Maya files for Shots.  [Toolkit apps](https://developer.shotgridsoftware.com/f8596e35/)  will then use this template-a publish app may use it to control where it should be writing its files, while a  [Workfiles App](https://developer.shotgridsoftware.com/9a736ee3/)  may use the template to understand where to open files from. Inside Toolkit's environment configuration, you can control which templates each app uses. All the key file locations used by Toolkit are therefore defined in a single template file and are easy to overview.
+- Once a folder structure has been established, we can use that structure to identify key locations on disk. These locations are called  [Templates](#part-2---configuring-file-system-templates). For example, you can define a template called  `maya_shot_publish`  to refer to published Maya files for Shots.  [Toolkit apps](https://developer.shotgridsoftware.com/f8596e35/)  will then use this template-a publish app may use it to control where it should be writing its files, while a  [Workfiles App](https://developer.shotgridsoftware.com/9a736ee3/)  may use the template to understand where to open files from. Inside Toolkit's environment configuration, you can control which templates each app uses. All the key file locations used by Toolkit are therefore defined in a single template file and are easy to overview.
 
 # Part 1 - Folder Creation Syntax
 
-The folder configuration maps entities in {% include product %} to locations on disk. Rather than using a single configuration file, the configuration is in the form of a "mini file system" which acts as a template for each unit that is configured-this is called the  **schema configuration**. Folders and files will be copied across from this "mini file system" to their target location when Toolkit's folder creation executes. It is possible to create dynamic behavior. For example, a folder can represent a Shot in {% include product %}, and you can control the naming of that folder. More specifically, you can pull the name of that folder from several {% include product %} fields and then perform character conversions before the folder is created.
+The folder configuration maps entities in {% include product %} to locations on disk. Rather than using a single configuration file, the configuration is in the form of a "mini file system" which acts as a template for each unit that is configured-this is called the **schema configuration**. Folders and files will be copied across from this "mini file system" to their target location when Toolkit's folder creation executes. It is possible to create dynamic behavior. For example, a folder can represent a Shot in {% include product %}, and you can control the naming of that folder. More specifically, you can pull the name of that folder from several {% include product %} fields and then perform character conversions before the folder is created.
 
 ![configuration](./images/file-system-config-reference/core_config.png)
 
-The above image shows a schema configuration. When you run the Toolkit folder creation, a connection is established between an entity in {% include product %} and a folder on disk. Toolkit uses this folder schema configuration to generate a series of folders on disk and each of these folders are registered as a  [`Filesystem Location`](https://developer.shotgridsoftware.com/cbbf99a4/)  entity in {% include product %}. One way to think about this is that {% include product %} data (e.g., Shot and Asset names) and the configuration is "baked" out into actual folders on disk and in {% include product %}. Configurations always start with a folder named "project". This will always represent the connected project in {% include product %} and will be replaced with the Toolkit name for the project. Below this level are static folders. The folder creator will automatically create the  **sequences**folder, for example.
+The above image shows a schema configuration. When you run the Toolkit folder creation, a connection is established between an entity in {% include product %} and a folder on disk. Toolkit uses this folder schema configuration to generate a series of folders on disk and each of these folders are registered as a  [`Filesystem Location`](https://developer.shotgridsoftware.com/cbbf99a4/)  entity in {% include product %}. One way to think about this is that {% include product %} data (e.g., Shot and Asset names) and the configuration is "baked" out into actual folders on disk and in {% include product %}. Configurations always start with a folder named "project". This will always represent the connected project in {% include product %} and will be replaced with the Toolkit name for the project. Below this level are static folders. The folder creator will automatically create the **sequences**folder, for example.
 
-Digging further inside the sequences folder, there is a  **sequence**  folder and a  **sequence.yml**  file. Whenever Toolkit detects a YAML file with the same name as a folder, it will read the contents of the YAML file and add the desired dynamic behavior. In this case, the  **sequence.yml**  file contains the structure underneath the project folder, which consists of three types of items:
+Digging further inside the sequences folder, there is a **sequence** folder and a **sequence.yml** file. Whenever Toolkit detects a YAML file with the same name as a folder, it will read the contents of the YAML file and add the desired dynamic behavior. In this case, the **sequence.yml** file contains the structure underneath the project folder, which consists of three types of items:
 
-1.  **Normal folders and files:**  these are simply copied across to the target location.
-2.  **A folder with a YAML file**  (having the same name as the folder): this represents dynamic content. For example, there may be a  **shot**  and  **shot.yml**  and when folders are created, this  **shot**  folder is the template used to generate a number of folders-one folder per shot.
-3.  **A file named name.symlink.yml**  which will generate a symbolic link as folders are being processed.  [Symbolic links are covered later in this document](#symbolic-links).
+1. **Normal folders and files:** these are simply copied across to the target location.
+2. **A folder with a YAML file** (having the same name as the folder): this represents dynamic content. For example, there may be a **shot** and **shot.yml** and when folders are created, this **shot** folder is the template used to generate a number of folders-one folder per shot.
+3. **A file named name.symlink.yml** which will generate a symbolic link as folders are being processed.  [Symbolic links are covered later in this document](#symbolic-links).
 
 The dynamic configuration setup expressed in the YAML files currently supports the following modes:
 
--   **[{% include product %} Query folders:](#shotgun-query-folders)**  Dynamic folder names based on a {% include product %} Database Query. For example, this mode can be used to create a folder for every Shot in a project.
+- **[{% include product %} Query folders:](#shotgun-query-folders)** Dynamic folder names based on a {% include product %} Database Query. For example, this mode can be used to create a folder for every Shot in a project.
     
--   **[{% include product %} List Field folders:](#shotgun-list-field-folders)**  Dynamic folder names based on a {% include product %} List Field. For example, this mode can be used to create a folder for every value in the {% include product %} List field "Asset Type", found on the Asset Entity in {% include product %}.
+- **[{% include product %} List Field folders:](#shotgun-list-field-folders)** Dynamic folder names based on a {% include product %} List Field. For example, this mode can be used to create a folder for every value in the {% include product %} List field "Asset Type", found on the Asset Entity in {% include product %}.
     
--   **[Deferred folders:](#workspaces-and-deferred-folder-creation)**  Only executed when a second folder creation pass is requested via the create folders method of the Toolkit API, usually when an application (such as Maya) is launched. Typically, this method is executed by Toolkit's various application launchers just prior to starting up an application.
+- **[Deferred folders:](#workspaces-and-deferred-folder-creation)** Only executed when a second folder creation pass is requested via the create folders method of the Toolkit API, usually when an application (such as Maya) is launched. Typically, this method is executed by Toolkit's various application launchers just prior to starting up an application.
     
--   **[Current User Folders:](#current-user-folder)**  A special folder, which represents the current user.
+- **[Current User Folders:](#current-user-folder)** A special folder, which represents the current user.
     
 
 Let's dive deeper into these modes.
@@ -128,14 +128,14 @@ For a dynamic folder which corresponds to a {% include product %} query, use the
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ] 
 
--   Set the value of dynamic content  **type**  field to be  **shotgun_entity**.
--   The  **entity_type**  field should be set to the {% include product %} entity from which we want to pull data from (e.g., "Asset", "Shot", "Sequence", "CustomEntity02", etc).
--   The  **name**  field is the name that should be given to each folder based on the data in {% include product %}.
+-   Set the value of dynamic content **type** field to be **shotgun_entity**.
+-   The **entity_type** field should be set to the {% include product %} entity from which we want to pull data from (e.g., "Asset", "Shot", "Sequence", "CustomEntity02", etc).
+-   The **name** field is the name that should be given to each folder based on the data in {% include product %}.
     
-    -   You can use a single field, like in the example above (e.g.,  `name: code`).
-    -   You can use multiple fields in brackets (e.g.,  `name:`  `"{asset_type}_{code}"`).
-    -   If you want to include fields from other linked entities, you can use the standard {% include product %} dot syntax (e.g.,  `name: "{sg_sequence.Sequence.code}_{code}"`).
--   The  **filters**  field is a {% include product %} Query. It follows the  [{% include product %} API syntax](http://developer.shotgridsoftware.com/python-api/reference.html)  relatively closely. It is a list of dictionaries, and each dictionary needs to have the keys  _path_,  _relation_, and  _values_. Valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy). For {% include product %} entity links, you can use the $syntax (e.g.,  `{ "path": "project", "relation": "is", "values": [ "$project" ] }`) to refer to a parent folder in the configuration-this is explained more in depth in the  [examples below](#examples).
+- You can use a single field, like in the example above (e.g.,  `name: code`).
+- You can use multiple fields in brackets (e.g.,  `name:`  `"{asset_type}_{code}"`).
+- If you want to include fields from other linked entities, you can use the standard {% include product %} dot syntax (e.g.,  `name: "{sg_sequence.Sequence.code}_{code}"`).
+-   The **filters** field is a {% include product %} Query. It follows the  [{% include product %} API syntax](http://developer.shotgridsoftware.com/python-api/reference.html)  relatively closely. It is a list of dictionaries, and each dictionary needs to have the keys  _path_,  _relation_, and  _values_. Valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy). For {% include product %} entity links, you can use the $syntax (e.g.,  `{ "path": "project", "relation": "is", "values": [ "$project" ] }`) to refer to a parent folder in the configuration-this is explained more in depth in the  [examples below](#examples).
     
 
 ## Multiple folders
@@ -240,21 +240,21 @@ The syntax is similar to the  `subset`  tokens in the Template system; Simply ad
 
 Below are a collection of examples showing how to use the filters syntax.
 
-To  **find all shots which belong to the current project and are in progress**, use the syntax below. Note that the {% include product %} Shot entity has a link field called project which connects a shot to a project. We want to make sure that we only create folders for the shots that are associated with the current project. Since there is a project level higher up in the configuration file system, we can refer to this via the $syntax and Toolkit will automatically create to this {% include product %} entity link reference. Remember, valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy).
+To **find all shots which belong to the current project and are in progress**, use the syntax below. Note that the {% include product %} Shot entity has a link field called project which connects a shot to a project. We want to make sure that we only create folders for the shots that are associated with the current project. Since there is a project level higher up in the configuration file system, we can refer to this via the $syntax and Toolkit will automatically create to this {% include product %} entity link reference. Remember, valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy).
 
     entity_type: Shot
     filters:
         - { "path": "project", "relation": "is", "values": [ "$project" ] }
         - { "path": "status", "relation": "is", "values": [ "ip" ] }
 
-If you have a Sequence folder higher up the tree and want to  **create folders for all Shots which belong to that Sequence**, you can create the following filters:
+If you have a Sequence folder higher up the tree and want to **create folders for all Shots which belong to that Sequence**, you can create the following filters:
 
     entity_type: Shot
     filters:
         - { "path": "project", "relation": "is", "values": [ "$project" ] }
         - { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] }
 
-To  **find all assets**  use this syntax:
+To **find all assets** use this syntax:
 
     entity_type: Asset
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
@@ -295,7 +295,7 @@ When you want a dynamic folder which corresponds to all the items in a {% includ
     # the {% include product %} field to use for the folder name
     field_name: "{sg_asset_type}_type"
 
--   Set value of dynamic content  **type**  field to be  `shotgun_list_field`.
+-   Set value of dynamic content **type** field to be  `shotgun_list_field`.
 -   The  `entity_type`  field should be set to the {% include product %} entity from which we want to pull data (for instance, "Asset", "Sequence", "Shot", etc.).
 -   The  `field_name`  field should be set to the {% include product %} field from which the data is pulled from and must be a  [list type field](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_field_types_html). You can use expressions if you want to add static text alongside the dynamic content.`field_name: "{sg_asset_type}_type"`  This example expression includes text as well as a template key.
     
@@ -406,9 +406,9 @@ Deferred folder creation means that creation will only be executed when a second
 
 This flag makes it possible to split the folder creation in half-one part that runs in a first "global" pass and a second pass that runs at a later point. Typically, the second pass is associated with the engine launching (although it does not happen automatically since the default is  `false`) and allows for a user to create folders just before engine startup. This allows for two primary workflows:
 
-1.  **Workspaces:**  Application specific folder setups. Folders can be created just before an application launches.
+1. **Workspaces:** Application specific folder setups. Folders can be created just before an application launches.
 2.  A common workflow for this is to have a Pipeline Step that might require Houdini, Maya, and another Engine, depending on what the shot requires and how an Artist chooses to tackle it. The Artist can create maya/, houdini/, and other directories for that Pipeline Step initially, but if the Artist on a given shot only ever works in Maya, empty folders for Houdini and any other Engine are unnecessary. So, if you defer the folder creation to happen at the time of the launch of individual engines, then if an Artist never uses Houdini, the houdini/ folder will not be created for that shot.
-3.  **User folders:**  A user folder is created just before application launch. The user folder config construct (described above) is deferred by default.
+3. **User folders:** A user folder is created just before application launch. The user folder config construct (described above) is deferred by default.
 4.  This can happen so that instead of basing a user folder on the assigned user in {% include product %}, you can create a folder for the current user whenever they launch an Engine. For instance, if you start working on a shot, and you launch Maya, a username folder will be created for you (based on your username in {% include product %}), and you will not interfere with anyone else's work.
 
 _Tip: If you prefer a normal, static folder to be created when an application (like Maya) launches, just create a config YAML file named the same as the folder and add the following:_
@@ -442,8 +442,8 @@ The current user folder is a special construct that lets you set up work areas f
     
     name: "login"
 
--   Set value of  **type**  field to be  `user_workspace`.
--   The  **name**  field is the name that should be given to a user folder. It must consist of a combination of fields fetched from People in {% include product %} (`HumanUser`  in {% include product %}).
+-   Set value of **type** field to be  `user_workspace`.
+-   The **name** field is the name that should be given to a user folder. It must consist of a combination of fields fetched from People in {% include product %} (`HumanUser`  in {% include product %}).
 -   You can use a single field, like in the example above (e.g.,  `name: login`).
 -   You can use multiple fields in brackets (e.g.,  `name: "{firstname}_{lastname}"`).
 -   If you want to include fields from other linked entities, you can use the standard {% include product %} dot syntax (e.g.,  `name: "{sg_group.Group.code}_{login}"`).
@@ -872,15 +872,15 @@ A simple folder creation hook could look something like this:
 
 # Part 2 - Configuring File System Templates
 
-The Toolkit templates file is one of the hubs of the Toolkit configuration. There is always one of these files per project and it resides inside the  **config/core**  folder inside your pipeline configuration.
+The Toolkit templates file is one of the hubs of the Toolkit configuration. There is always one of these files per project and it resides inside the **config/core** folder inside your pipeline configuration.
 
 ![configuration](images/file-system-config-reference/templates_file.png)
 
 This file contains definitions for  _templates_  and their  _keys_.
 
-A  **key**  is a dynamic field we defined. It can be a name, a version number, a screen resolution, a shot name etc. Keys are configured with types, so we can define that a key should be a string or an int for example. They are also formatted, so we can define that a string should only contain alpha numeric characters, or that all integers should be padded with eight zeroes.
+A **key** is a dynamic field we defined. It can be a name, a version number, a screen resolution, a shot name etc. Keys are configured with types, so we can define that a key should be a string or an int for example. They are also formatted, so we can define that a string should only contain alpha numeric characters, or that all integers should be padded with eight zeroes.
 
-A  **template**  is a dynamic path. An example of a template is  `shots/{shot}/publish/{name}.{version}.ma`. This template could for represent maya publishes for a shot - the bracketed fields are keys.
+A **template** is a dynamic path. An example of a template is  `shots/{shot}/publish/{name}.{version}.ma`. This template could for represent maya publishes for a shot - the bracketed fields are keys.
 
 The templates file is divided into three sections: keys, paths and strings.
 
@@ -1170,17 +1170,17 @@ Let's say you have been working on feature animations and shorts on your {% incl
 
 [You can choose to use any Custom Entity](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html) for `Episode` (Site Preferences > Entities), or you can use the official Episode entity that was made available in {% include product %} 7.0.7.0. If you signed up for {% include product %} pre-7.0.7.0 (before 2017), the "TV Show" template uses `CustomEntity02` for Episodes. If you decide to use another entity that is not `CustomEntity02` or the official Episode entity, no worries! {% include product %} and Toolkit are flexible. Let's walk through both cases.
 
-For the purpose of this exercise, we will use Episode (`CustomEntity02`) and the official Episode entity as examples of how to incorporate Episodes with the project hierarchy update (you can use either/or). First, the way to properly set up our Project's  **Episode > Sequence > Shot**  hierarchy is to ensure the following fields are in {% include product %}:
+For the purpose of this exercise, we will use Episode (`CustomEntity02`) and the official Episode entity as examples of how to incorporate Episodes with the project hierarchy update (you can use either/or). First, the way to properly set up our Project's **Episode > Sequence > Shot** hierarchy is to ensure the following fields are in {% include product %}:
 
 #### Episode
 
-a)  **Using the official Episode entity:**  the "Episode" entity may be the entity used when creating a TV Show project from the Project Template.
+a) **Using the official Episode entity:** the "Episode" entity may be the entity used when creating a TV Show project from the Project Template.
 
 ![official_episode_entity](images/file-system-config-reference/official_episode_entity.png)
 
 **OR**
 
-b)  **Using a custom entity:**  `CustomEntity02`  may be the custom entity used when creating a TV Show project from the Project Template.  _As noted previously, you can enable another custom entity and use it instead of  `CustomEntity02`—just make sure to replace all  `CustomEntity02`'s with the specific one that you have enabled._
+b) **Using a custom entity:** `CustomEntity02`  may be the custom entity used when creating a TV Show project from the Project Template.  _As noted previously, you can enable another custom entity and use it instead of  `CustomEntity02`—just make sure to replace all  `CustomEntity02`'s with the specific one that you have enabled._
 
 ![episode_custom_entity](images/file-system-config-reference/episode_custom_entity.png)
 
@@ -1382,7 +1382,7 @@ Then, in your template paths below, update the  `shot_root`  template, as well a
             shot_root: shots/{CustomEntity02}/{Sequence}/{Shot}/{Step}
             … 
 
-That's all you need for the basic  **Episode > Sequence > Shot**  workflow!
+That's all you need for the basic **Episode > Sequence > Shot** workflow!
 
 ## How can I set up a branch in my structure?
 
@@ -1411,7 +1411,7 @@ At this point, you have a directory structure for the new Asset Type, and you ha
 
 ## How can I create a custom Pipeline Step using a custom entity?
 
-In {% include product %} 7.0.6.0,  [managing Pipeline Steps via the Admin menu](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_configure_pipeline_steps_html#managing-pipeline-steps)  was introduced. With this feature, you can easily add custom fields to Pipeline Steps.  **Pro Tip: In most cases, utilizing custom fields on Pipeline Steps helps keep your pipeline more organized than creating a custom entity to manage those Pipeline Steps.**
+In {% include product %} 7.0.6.0,  [managing Pipeline Steps via the Admin menu](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_configure_pipeline_steps_html#managing-pipeline-steps)  was introduced. With this feature, you can easily add custom fields to Pipeline Steps. **Pro Tip: In most cases, utilizing custom fields on Pipeline Steps helps keep your pipeline more organized than creating a custom entity to manage those Pipeline Steps.**
 
 However, in more advanced cases, it may be useful to have an alternative Pipeline Step. For instance, you might like to have the flexibility of different naming conventions and structures for production versus pipeline in the area of Pipeline Steps, as well as flexibility in naming and structuring them independently. While typically {% include product %}'s built-in Pipeline Steps are used for scheduling purposes, you may want to use another  [Custom Entity](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html)  to structure the file system and group individual tasks together in the pipeline. You can accomplish this by creating a custom link field from a Task to a custom entity. This is then used by the system to group tasks together, via the step node.
 
