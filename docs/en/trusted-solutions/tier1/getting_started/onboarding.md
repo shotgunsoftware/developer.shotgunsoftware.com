@@ -11,6 +11,8 @@ Leveraging the isolation features requires adopters to become AWS users. In orde
 
 Autodesk and Amazon will provide dedicated resources during the onboarding process to help you on this journey.
 
+To start the on-boarding process for any of the Isolation features, please fill out [this short survey](https://forms.office.com/r/jHraSXbfE9), before proceeding with [your setup](../setup/setup.md).
+
 To start the on-boarding process for any of the Isolation features, please open a [{% include product %} Support ticket](https://knowledge.autodesk.com/contact-support), before proceeding with [your setup](../setup/setup.md)
 
 ## Onboarding Process Overview
