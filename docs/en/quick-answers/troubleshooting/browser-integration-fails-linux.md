@@ -10,7 +10,7 @@ lang: en
 When running the {% include product %} Desktop on Linux for the first time, you may experience one of these error messages. If so, please follow the steps below for your specific error to see if that resolves things.
 If you're still stuck, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
-###Contents
+## Contents
 - [OPENSSL_1.0.1_EC or HTTPSConnection related issues](#openssl_101_ec-or-httpsconnection-related-issues)
 - [libffi.so.5 related issues](#libffiso5-related-issues)
 - [Certificate validation failed related issues](#certificate-validation-failed-related-issues)
