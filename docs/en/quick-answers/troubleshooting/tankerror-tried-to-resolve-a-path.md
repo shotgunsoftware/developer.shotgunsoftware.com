@@ -41,5 +41,5 @@ The fix:
 
 ## Related links
 
-[See the full thread in the community](https://community.shotgridsoftware.com/t/6468/10)
-[and](https://community.shotgridsoftware.com/t/9686)
+[See the full thread in the community here](https://community.shotgridsoftware.com/t/6468/10)
+and [also in this community thread here](https://community.shotgridsoftware.com/t/9686).
