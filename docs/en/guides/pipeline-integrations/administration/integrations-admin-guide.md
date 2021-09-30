@@ -186,8 +186,8 @@ All of the following setups would handle this:
 -   A {% include product %} local storage called “Projects”, augmented with an environment variable:
     
 -   Linux Path:  `/projects`
--   `Windows Path:``
--   `Mac Path:`/projects`
+-   Windows Path: 
+-   Mac Path:  `/projects`
 -   `SHOTGUN_PATH_WINDOWS_PROJECTS=Q:\projects`
 
 **Note:**  If you have a local storage  `Renders`  defined in {% include product %} with  `Linux path`  set, and also a  `SHOTGUN_PATH_LINUX_RENDERS`  environment variable defined, the storage will take precedence, the environment variable will be ignored, and a warning will be logged. Generally speaking, local storage definitions always take precedence over environment variables.
