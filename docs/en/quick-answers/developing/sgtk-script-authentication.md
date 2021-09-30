@@ -71,7 +71,8 @@ If `QApplication` is available, you'll get something akin to this:
 {% include info title="Note" content="If you are importing a Toolkit API (`sgtk` package) that isn't associated with a configuration, for example one that you have downloaded to use to bootstrap into a different configuration, then you shouldn't attempt to create a `CoreDefaultsManager`. Instead, create a `ShotgunAuthenticator()` instance without passing a defaults manager.
 ```python
 authenticator = ShotgunAuthenticator()
-```" %}
+```
+" %}
 
 ## Non-user-facing scripts
 If the script is not user-facing, like on a render farm or in the event handler, you can add this at the beginning, before creating a Sgtk/Tank instance:
