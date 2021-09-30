@@ -408,7 +408,7 @@ apps.tk-multi-pythonconsole.location:
   version: v1.1.2
 ```
 
-Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/.
+Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/).
 
 You can add any app to any appropriate software integration that ShotGrid supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/) page. 
 
