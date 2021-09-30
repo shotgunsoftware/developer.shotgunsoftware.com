@@ -322,9 +322,9 @@ By selecting **+New File**, you began to work on a new asset and the `asset_step
 
 ![Art asset env](./images/editing_app_setting/23_Art_Asset.png)
 
-**Art, Asset** tells you’re working on and what environment you’re in.
+**Art, Asset** > Text Overlay tells you’re working on and what environment you’re in.
 
-**Step 27:** Select **Art, Asset > Work Area Info…** to display what the parameters are in your current work area. 
+**Step 27:** Select **Art, Asset Text Overlay > Work Area Info…** to display what the parameters are in your current work area. 
 
 **Step 28:** Select the **Environment** tab at the bottom.
 
