@@ -48,15 +48,15 @@ In this topic:
   - [The Strings Section](#the-strings-section)
   - [Using Optional Keys in Templates](#using-optional-keys-in-templates)
 - [Advanced questions and troubleshooting](#advanced-questions-and-troubleshooting)
-  - [How can I add a new entity type to my file structure?](#how-can-i-add-a-new-entity-type-to-my-file-structure?)
-    - [Fields required for the Episode > Sequence > Shot hierarchy](#fields-required-for-the-episode->-sequence->-shot-hierarchy)
+  - [How can I add a new entity type to my file structure?](#how-can-i-add-a-new-entity-type-to-my-file-structure)
+    - [Fields required for the Episode > Sequence > Shot hierarchy](#fields-required-for-the-episode--sequence--shot-hierarchy)
       - [Episode](#episode)
       - [Sequence](#sequence)
       - [Shot](#shot)
       - [Episodes](#episodes)
       - [Toolkit template definitions](#toolkit-template-definitions)
-  - [How can I set up a branch in my structure?](#how-can-i-set-up-a-branch-in-my-structure?)
-  - [How can I create a custom Pipeline Step using a custom entity?](#how-can-i-create-a-custom-pipeline-step-using-a-custom-entity?)
+  - [How can I set up a branch in my structure?](#how-can-i-set-up-a-branch-in-my-structure)
+  - [How can I create a custom Pipeline Step using a custom entity?](#how-can-i-create-a-custom-pipeline-step-using-a-custom-entity)
 
 
 This document is a complete reference of the file system centric configurations in the {% include product %} Pipeline Toolkit. It outlines how the template system works and which options are available. It also shows all the different parameters you can include in the folder creation configuration.  

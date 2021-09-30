@@ -17,7 +17,7 @@ This software is provided under the MIT License that can be found in the LICENSE
 - [Writing event driven triggers](#writing-event-driven-triggers)
   - [Example use cases](#example-use-cases)
   - [How event driven triggers work](#how-event-driven-triggers-work)
-  - [Polling the EventLog versus triggers](#polling-the-eventLog-versus-triggers)
+  - [Polling the EventLog versus triggers](#polling-the-eventlog-versus-triggers)
   - [Event types](#event-types)
   - [Transactions and potentially missing events](#transactions-and-potentially-missing-events)
 

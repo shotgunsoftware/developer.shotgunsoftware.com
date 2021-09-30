@@ -39,7 +39,7 @@ The Workfiles app governs file management in a {% include product %} software in
  
 ## Getting familiar with the configuration files
 
-Use the Pipeline Configuration List in {% include product %} to locate where the pipeline configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to <a href="#step5">Step 5</a>.
+Use the Pipeline Configuration List in {% include product %} to locate where the pipeline configuration is stored for the project you’re working with. If you know where it’s stored, you can skip to [step 5](#finding-the-pipeline-configuration).
 
 ## Finding the pipeline configuration
 
