@@ -163,7 +163,7 @@ Below are some ways you can have fun with configurations.
 
 ### Using the command line to create a default configuration
 
-From inside any project configuration, the `tank` command lets you run administrative commands from a terminal. Each project has its own dedicated `tank` command. The `tank setup_project` command's functionality is analogous to the Advanced Setup Wizard's: it creates an editable configuration on disk for your project based either on an existing project's configuration or the Default Configuration. You can learn more about running [`tank setup_project` here](hhttps://developer.shotgridsoftware.com/425b1da4/#setup_project), and more about the  [`tank` command here](https://developer.shotgridsoftware.com/425b1da4/#using-the-tank-command).
+From inside any project configuration, the `tank` command lets you run administrative commands from a terminal. Each project has its own dedicated `tank` command. The `tank setup_project` command's functionality is analogous to the Advanced Setup Wizard's: it creates an editable configuration on disk for your project based either on an existing project's configuration or the Default Configuration. You can learn more about running [`tank setup_project` here](https://developer.shotgridsoftware.com/425b1da4/#setup_project), and more about the  [`tank` command here](https://developer.shotgridsoftware.com/425b1da4/#using-the-tank-command).
 
 ### Editing a configuration that's in production
 

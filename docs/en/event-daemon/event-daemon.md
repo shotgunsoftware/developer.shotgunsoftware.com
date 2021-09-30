@@ -61,7 +61,7 @@ A plugin handles:
 
 **Note:** For more information about event driven triggers, please see our documentation at [https://github.com/shotgunsoftware/shotgunEvents](https://github.com/shotgunsoftware/shotgunEvents) .
 
-{% include product %} creates an [event log entry](topicid=SG_Administrator_ar_data_management_ar_event_logs_html) for every action that happens in {% include product %}. You can see these events in your {% include product %} site, as well as through the {% include product %} API.
+{% include product %} creates an [event log entry](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_event_logs_html) for every action that happens in {% include product %}. You can see these events in your {% include product %} site, as well as through the {% include product %} API.
 
 In addition to seeing a detailed history of events in {% include product %}, you can write your own event listener Scripts to poll the EventLog and act on certain events you care about. Your Script can execute other internal Scripts in your pipeline, or it can use the {% include product %} API and update other information in {% include product %}, or both.
 
