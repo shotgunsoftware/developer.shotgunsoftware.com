@@ -145,7 +145,7 @@ If a local storage doesn’t define a path for the operating system you are curr
 
 The Loader can parse the path and deduce that  `/studio/renders/`  is the storage root part of it, but no storage root is defined for Mac. So, it will look for a  `SHOTGUN_PATH_MAC_RENDERS`  environment variable, and if it finds one, it will replace  `/studio/renders`  in the path with its value.
 
-**Note:**  If you define a  `SHOTGUN_PATH_MAC_RENDERS`  environment variable, and the local storage Renders  _does_have Mac path set, the local storage value will be used and a warning will be logged.
+**Note:**  If you define a  `SHOTGUN_PATH_MAC_RENDERS`  environment variable, and the local storage Renders *does* have Mac path set, the local storage value will be used and a warning will be logged.
 
 **Note:**  If no storage can be resolved for the current operating system, a  `PublishPathNotDefinedError`  is raised.
 
