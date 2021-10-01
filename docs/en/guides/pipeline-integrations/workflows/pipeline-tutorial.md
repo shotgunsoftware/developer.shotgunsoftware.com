@@ -135,7 +135,7 @@ Before beginning the process of building your simple pipeline, you need to under
 
 ### Project Schema 
 
-The simple pipeline you will build in this tutorial uses the project schema provided by the Default configuration. You can browse the **`config/core/schema`** folder to get a feel for the structure that will be created as Toolkit Apps write files to disk. For additional information about configuring the project directory structure, see the [File System Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/ documentation.
+The simple pipeline you will build in this tutorial uses the project schema provided by the Default configuration. You can browse the **`config/core/schema`** folder to get a feel for the structure that will be created as Toolkit Apps write files to disk. For additional information about configuring the project directory structure, see the [File System Configuration Reference](https://developer.shotgridsoftware.com/82ff76f7/) documentation.
 
 ### Templates
 

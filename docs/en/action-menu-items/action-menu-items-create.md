@@ -50,7 +50,7 @@ Fill out the Title and any other required fields, and click on “Create Action 
 
 A more advanced implementation of custom AMIs involves setting up a custom protocol handler (e.g., {% include product %}://process_version). This allows you to bridge {% include product %} with applications like Maya, RV, or Cinesync via a script on your local computer. When you specify a non HTTP(S) protocol, data is sent via GET instead of POST to your URL. You may want to use this to launch an in-house tool to dispatch different requests.
 
-Read more about custom protocols in “ [Launching Applications Using Custom Browser Protocols](topicid=SG_Developer_dv_shotgrid_dv_launching_apps_protocols_html) .”
+Read more about custom protocols in [Launching Applications Using Custom Browser Protocols](https://developer.shotgridsoftware.com/67695b40/).
 
 > **Note:** We also have built-in integration with Maya and other software packages via [{% include product %} integrations](https://developer.shotgridsoftware.com/d587be80/) .
 ### Light payload

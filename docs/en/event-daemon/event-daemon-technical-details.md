@@ -94,7 +94,7 @@ Many options exist for multiple callbacks that need to share state.
 
 - Global variables. Ick. Please don't do this.
 - An imported module that holds the state information. Ick, but a bit better than simple globals.
-- A mutable passed in the `args` argument when calling [`Registrar.registerCallback`](API#wiki-registerCallback). A state object of your design or something as simple as a `dict`. Preferred.
+- A mutable passed in the `args` argument when calling [`Registrar.registerCallback`](https://github.com/shotgunsoftware/shotgunEvents/wiki/API#registerCallbacks). A state object of your design or something as simple as a `dict`. Preferred.
 - Implement callbacks such as `__call__` on object instances and provide some shared state object at callback object initialization. Most powerful yet most convoluted method. May be redundant compared to the args argument method above.
 
 

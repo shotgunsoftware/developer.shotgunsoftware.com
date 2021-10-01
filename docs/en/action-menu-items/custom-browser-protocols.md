@@ -86,6 +86,7 @@ Using Windows Registry Editor:
 This setup will register the `{% include product %}://` protocol to launch the `python` interpreter with the first argument being the script `sgTriggerScript.py` and the second argument being `%1` . It is important to understand that `%1` will be replaced by the URL that was clicked in the browser or the URL of the AMI that was invoked. This will become the first argument to your Python script.
 
 > **Note:** You may need to have full paths to your Python interpreter and your Python script. Please adjust accordingly.
+
 **Step 2: Parse the incoming URL in your Python script**
 
 In your script you will take the first argument that was provided, the URL, and parse it down to its components in order to understand the context in which the AMI was invoked. We’ve provided some simple scaffolding that shows how to do this in the following code.

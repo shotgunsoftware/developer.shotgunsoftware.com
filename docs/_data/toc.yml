@@ -128,8 +128,10 @@
       - page: tk-multi-workfiles2
       - page: tk-hiero-export
       - page: tk-hiero-openinshotgun
+      - page: tk-mari-projectmanager
       - page: tk-nuke-quickreview
       - page: tk-nuke-writenode
+      - page: tk-multi-snapshot
       - page: tk-shotgun-folders
       - page: tk-shotgun-launchfolder
       - page: tk-shotgun-launchpublish

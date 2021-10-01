@@ -14,7 +14,7 @@ The purpose of this guide is to walk through a basic example of how you can use 
 ### Requirements
 
 - An understanding of Python programming fundamentals. 
-- A project with an advanced configuration. If you haven't set up a configuration before you can follow the ["Getting started with configurations"](need link) guide.
+- A project with an advanced configuration. If you haven't set up a configuration before you can follow the [Getting started with configurations](https://developer.shotgridsoftware.com/5d83a936/) guide.
 
 ### Steps
 

@@ -180,7 +180,7 @@ For more information on authentication, see our [developer documentation](http:/
 
 #### 3. The init.py script
 
-At this point, Toolkit environment data is being passed from the render submission tool, and authentication data is in environment variables on the render farm machine. The final piece to bootstrapping Toolkit within your render job is to place the following example `init.py` code in Nuke’s plugin path, so that Nuke will launch it at startup time. (See [the Foundry’s documentation on startup scripts](http://docs.thefoundry.co.uk/nuke/63/pythondevguide/startup.html) for more details.)
+At this point, Toolkit environment data is being passed from the render submission tool, and authentication data is in environment variables on the render farm machine. The final piece to bootstrapping Toolkit within your render job is to place the following example `init.py` code in Nuke’s plugin path, so that Nuke will launch it at startup time. (See [the Foundry’s documentation on startup scripts](https://support.foundry.com/hc/en-us/articles/360003811839-Q100490) for more details.)
 
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap

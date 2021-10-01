@@ -19,9 +19,9 @@ In this topic:
     - [core](#core)
     - [configurations](#configurations)
     - [updates](#updates)
-    - [install_app, install_engine](#install_app,-install_engine)
+    - [install_app, install_engine](#install_app-install_engine)
     - [app_info](#app_info)
-    - [folders, preview_folders](#folders,-preview_folders)
+    - [folders, preview_folders](#folders-preview_folders)
     - [shell](#shell)
     - [dump_config](#dump_config)
     [Advanced tank commands](#advanced-tank-commands)
@@ -40,7 +40,7 @@ In this topic:
   - [Renaming Toolkit Folders](#renaming-toolkit-folders)
   - [Deferred Creation and User Sandboxes](#deferred-creation-and-user-sandboxes)
 - [Configuring Templates](#configuring-templates)
-  - [@include syntax in the template file](#@include-syntax-in-the-template-file)
+  - [@include syntax in the template file](#include-syntax-in-the-template-file)
   - [Including external files in your template file](#including-external-files-in-your-template-file)
   - [Folder creation and templates](#folder-creation-and-templates)
 - [Hooks](#hooks)
@@ -1064,7 +1064,7 @@ Hooks are flexible pieces of the toolkit configuration. Normally, when you confi
 
 Each Toolkit app (and engine for that matter) comes with a collection of settings, some of which can be hooks. Each app carries a collection of default hooks which will be automatically used unless you specifically override them. Hooks are typically used to customize something very application specific. For example, for a Toolkit which loads images into Maya, the UI code and all the interaction logic is inside the app, but the little piece of business logic which actually loads the image into maya is inside a hook. This makes it possible for a studio to customize the behaviour; the default hook may simple create a standard texture node in maya, but a studio which wants to use a different node type can override the hook and thereby easily change the behaviour of the entire app - without having to rewrite any of the code!
 
-When customizing an app hook, you typically copy the default hook from inside the hooks folder in the app into your project's hooks folder. Next, you need to update the app settings inside the environment file so that it will read your new hook and not the default one. Your custom hook will automatically inherit from the default hook provided by the app, making it easy to add tweaks and small adjustments yet keep most of the business logic in the default hook. For more information about hook inheritance, please see the [environment configuration reference](https://developer.shotgridsoftware.com/6d10dedf/.
+When customizing an app hook, you typically copy the default hook from inside the hooks folder in the app into your project's hooks folder. Next, you need to update the app settings inside the environment file so that it will read your new hook and not the default one. Your custom hook will automatically inherit from the default hook provided by the app, making it easy to add tweaks and small adjustments yet keep most of the business logic in the default hook. For more information about hook inheritance, please see the [environment configuration reference](https://developer.shotgridsoftware.com/6d10dedf/).
 
 ## Core level hooks
 

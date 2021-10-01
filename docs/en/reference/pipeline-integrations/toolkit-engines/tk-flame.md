@@ -50,7 +50,7 @@ This is where the main Flame settings are configured and the hook helps build th
 * FieldDominance (`PROGRESSIVE`, `FIELD_1`, `FIELD_2`)
 * AspectRatio (`4:3`, `16:9`, or floating point value as string)
 
-Proxy settings can also be supplied.  For more info, see the [Autodesk Wiretap SDK docs](http://usa.autodesk.com/adsk/servlet/index?siteID=123112&id=7478536)!
+Proxy settings can also be supplied.  For more info, see the [Autodesk Wiretap SDK docs](https://www.autodesk.com/developer-network/platform-technologies/wiretap)!
 
 To view the entire codebase for the project_setup hook, please see our [Github repo for the engine](https://github.com/shotgunsoftware/tk-flame/blob/master/hooks/project_startup.py). 
 

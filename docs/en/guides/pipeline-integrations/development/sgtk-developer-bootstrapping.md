@@ -183,7 +183,7 @@ The [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com
 The entity can be of any entity type that the configuration is set up to work with. 
 For example, if you provide a `Project` entity, the engine will start up in a project context, using the project environment settings.
 Likewise, you could provide a `Task` entity (where the task is linked to an `Asset`), and it will start up using the `asset_step.yml` environment.
-This is based on the default configuration behavior, [the environment that is chosen](https://developer.shotgridsoftware.com/487a9f2c/#how-toolkit-determines-the-current-environment) is controlled via the core hook, [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py), and so could be changed to pick a different environment based on the context or other parameters.
+This is based on the default configuration behavior, [the environment that is chosen](https://developer.shotgridsoftware.com/c73fcb84/#how-toolkit-determines-the-current-environment) is controlled via the core hook, [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py), and so could be changed to pick a different environment based on the context or other parameters.
 
 You need to provide the entity in the format of a {% include product %} entity dictionary which must contain at least the type and id: 
 

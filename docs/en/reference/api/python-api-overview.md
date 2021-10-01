@@ -62,7 +62,7 @@ For more information about the {% include product %} API, see these articles:
 *   [{% include product %} Event Daemon sample code](https://github.com/shotgunsoftware/shotgunEvents)
 *   [Writing event driven triggers](https://developer.shotgridsoftware.com/0d8a11d9/)
 *   [{% include product %} schema](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_shotgun_schema_html)
-*   [API best practices](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Developer_dv_getting_started_dv_api_best_practices_html)
+*   [API best practices](https://developer.shotgridsoftware.com/09b77cf4/)
 
 ## Contribute and collaborate
 

@@ -11,7 +11,7 @@ lang: en
 
 At the heart of a Toolkit pipeline is the environment configuration. Within a Toolkit pipeline configuration, the environment configuration files are where you define which Toolkit apps are available within different DCCs and customize the settings for each. This document is a complete reference to the structure and function of the environment configuration files. It covers the Toolkit concept of *environments* for configuring different workflows within a project, configuration structure, file referencing, and ways to discover what customizations are available.
 
-{% include info title="Note" content="While this document acts as a reference to the environment configuration files, you can  see a step-by-step example of editing a configuration setting in the [Toolkit Basics Guide on Editing a pipeline configuration](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)." %}
+{% include info title="Note" content="While this document acts as a reference to the environment configuration files, you can  see a step-by-step example of editing a configuration setting in the [Toolkit Basics Guide on Editing a pipeline configuration](https://developer.shotgridsoftware.com/37f575b8/)." %}
 
 
 
@@ -31,7 +31,7 @@ In the above example, artists working on assets would be working in an asset ste
 
 Toolkit gives you a lot of freedom in the way you structure your environment configuration. This document is a reference for all of the options that are available to you, so that you’ll have the necessary knowledge to make choices that best suit the needs of your pipeline. 
 
-This document will also occasionally cover some of the specific choices we’ve made in the pipeline configuration provided as a starting point, known as [the Default Configuration](https://github.com/shotgunsoftware/tk-config-default2). When you’re ready to customize your pipeline, the first step is to [create an editable pipeline configuration for your project](../../guides/pipeline-integrations/getting-started/editing_app_setting.md). 
+This document will also occasionally cover some of the specific choices we’ve made in the pipeline configuration provided as a starting point, known as [the Default Configuration](https://github.com/shotgunsoftware/tk-config-default2). When you’re ready to customize your pipeline, the first step is to [create an editable pipeline configuration for your project](https://developer.shotgridsoftware.com/37f575b8/). 
 
 While these choices are only conventions and not hardcoded into the Toolkit workflow, it’s helpful to refer to the Default Configuration as an example for learning what features are available once you start customizing your pipeline and best practices for structuring your own configurations. And, since it's the suggested starting point for new Toolkit users, it’s helpful to know some of its conventions. We will always distinguish between general features of the Toolkit environment configuration and specific choices in the Default Configuration in this document. For specific details on the Default Configuration’s environment structure, see [its README file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md).
 
@@ -293,7 +293,7 @@ engines:
 
 We’re now getting the `tk-maya` engine’s descriptor from the included `engine_locations.yml` file, and the descriptor for each app defined for the `tk-maya` engine from the included `app_locations.yml` file.
 
-{% include info title="Note" content="The Default Configuration employs a second level of nesting that’s not demonstrated here. Every app or engine that has settings beyond just a descriptor has a settings file in `includes/settings` (e.g., `includes/settings/tk-maya.yml`, `includes/settings/tk-multi-workfiles2.yml`). The engine settings files include app settings from the app settings files, and the environment configuration files include from the engine settings files. For details on the Default Configuration’s structure, see [its README file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md). For a detailed walkthrough of modifying a configuration setting, see the [Toolkit Basics Guide on Editing a Configuration Setting](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)." %}
+{% include info title="Note" content="The Default Configuration employs a second level of nesting that’s not demonstrated here. Every app or engine that has settings beyond just a descriptor has a settings file in `includes/settings` (e.g., `includes/settings/tk-maya.yml`, `includes/settings/tk-multi-workfiles2.yml`). The engine settings files include app settings from the app settings files, and the environment configuration files include from the engine settings files. For details on the Default Configuration’s structure, see [its README file](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md). For a detailed walkthrough of modifying a configuration setting, see the [Toolkit Basics Guide on Editing a Configuration Setting](https://developer.shotgridsoftware.com/37f575b8/)." %}
 
 
 ## Sparse configurations
@@ -342,9 +342,9 @@ Note that if the settings for `tk-multi-workfiles2` were coming from an included
 
 ## Additional resources
 
-* [Toolkit Basics Guide: Editing a pipeline configuration](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)
-* [Toolkit Basics Guide: Adding an app](../../guides/pipeline-integrations/getting-started/installing_app.md)
-* [Animation pipeline tutorial](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
+* [Toolkit Basics Guide: Editing a pipeline configuration](https://developer.shotgridsoftware.com/37f575b8/)
+* [Toolkit Basics Guide: Adding an app](https://developer.shotgridsoftware.com/4d147fb2)
+* [Animation pipeline tutorial](https://developer.shotgridsoftware.com/cb8926fc/)
 * [Descriptor reference documentation](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
 * [Webinar: Toolkit administration](https://youtu.be/7qZfy7KXXX0)
 * [File system configuration reference](https://developer.shotgridsoftware.com/82ff76f7/)
