@@ -58,7 +58,7 @@ launch_nuke:
 
 Applications often require certain certain environment variables, plugin paths, etc. to be set in order to properly function in a studio pipeline. The launch app helps cover this case via the 'before_app_launch' hook, which allows you to define a snippet of code to run each time an application starts up. By default, the 'before_app_launch' hook is a simple pass-through that does nothing, but it can be overridden by following the instructions in <a href='https://developer.shotgridsoftware.com/425b1da4/#hooks'>this doc</a>.
 
-For example, if you use Zync Render, the Zync Maya plugin directory needs to be part of both $PYTHONPATH and $XBMLANGPATH. To have the launch app set these environment variables, update the 'before_app_launch' hook with a few lines of code, as follows:
+For example, if you use Zync Render, the Zync Maya plugin directory needs to be part of both `$PYTHONPATH` and `$XBMLANGPATH`. To have the launch app set these environment variables, update the `before_app_launch` hook with a few lines of code, as follows:
 
 ---FOLD---
 Set Environment Variables Example
