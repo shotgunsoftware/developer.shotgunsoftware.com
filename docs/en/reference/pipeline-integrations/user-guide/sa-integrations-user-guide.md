@@ -12,7 +12,7 @@ In this guide:
 - [Introduction](#introduction)
 - [Getting started with Desktop](#getting-started-with-desktop)
   - [Installation of Desktop](#installation-of-desktop)
-  - [Logging in](#logging-in)
+  - [Logging in when self hosted or behind a proxy server](#logging-in-when-self-hosted-or-behind-a-proxy-server)
     - [Authentication and browser integration](#authentication-and-browser-integration)
   - [The system tray](#the-system-tray)
   - [The project browser](#the-project-browser)
@@ -77,15 +77,17 @@ The {% include product %} Integrations install automatically. If you are an adva
 
 You can download {% include product %} Desktop under the Apps menu.
 
-![shotgun-desktop-app-01.png](./images/sa-integrations-user-guide-shotgun-desktop-app-01.png)
+![shotgun-desktop-app-01.png](./images/sa-integrations-user-guide-shotgun-desktop-app-01-v2.png)
 
 Follow the prompts and choose whether to download Desktop for Mac, Windows, or Linux.
 
-![download-desktop-02.png](./images/sa-integrations-user-guide-download-desktop-02.png)
+![download-desktop-02.png](./images/sa-integrations-user-guide-download-desktop-02-v2.png)
 
-### Logging in
+### Logging in when self hosted or behind a proxy server
 
-The first time you open Desktop, you'll be prompted by your browser about certificates. We do this in order to connect {% include product %} with the Desktop app. If you’re having trouble getting certificates set up, take a look at our troubleshooting docs for [Firefox](https://developer.shotgunsoftware.com/d4936105/) and [Chrome and other browsers](https://developer.shotgunsoftware.com/95518180/) .
+*Note: the following content regarding logging in is intended if you are self hosted or using a proxy server. This is not the defaut behavior.*
+
+If you are self hosted or using a proxy server, the first time you open Desktop, you'll be prompted by your browser about certificates. We do this in order to connect {% include product %} with the Desktop app. If you’re having trouble getting certificates set up, take a look at our troubleshooting docs for [Firefox](https://developer.shotgunsoftware.com/d4936105/) and [Chrome and other browsers](https://developer.shotgunsoftware.com/95518180/) .
 
 ![guide-desktop-cert-window-03.png](./images/sa-integrations-user-guide-desktop-cert-window-03.png)
 
@@ -123,9 +125,7 @@ Clicking on a project will take you to the command launcher view for that projec
 
 ### The command launcher
 
-Once you've clicked on a project, you are taken to the command launcher for that project. This window will show whatever tools and applications are available for the project.
-
-This window will show whatever tools and applications are available for the project as a grid of buttons. Simply click on a button to launch its application. It will run in a project-specific environment, and if {% include product %} has an integration for it, you'll see a {% include product %} menu with all of the available tools.
+Once you have selected a project, you are taken to the command launcher for that project. This window will show whatever tools and applications are available for the project as a grid of buttons. Simply click on a button to launch its application. It will run in a project-specific environment, and if {% include product %} has an integration for it, you'll see a {% include product %} menu with all of the available tools.
 
 ### The console
 
