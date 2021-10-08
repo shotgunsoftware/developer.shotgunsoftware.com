@@ -414,4 +414,4 @@ You can add any app to any appropriate software integration that ShotGrid suppor
 
 If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other ShotGrid users will need the same function and sharing new apps is one way to give back to the ShotGrid community. 
 
-In the next guide, you will learn how to customize your production folder structure to reflect how your facility is structured](./dynamic_filesystem_configuration.md). 
+In the [next guide](https://developer.shotgridsoftware.com/56b441c6/), you will learn how to customize your production folder structure to reflect how your facility is structured. 
