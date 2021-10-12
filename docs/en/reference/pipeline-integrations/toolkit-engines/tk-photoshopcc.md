@@ -13,6 +13,14 @@ Once enabled, a **{% include product %}** panel becomes available in Photoshop C
 
 ![extension](../images/engines/photoshopcc-photoshopcc_extension.png)
 
+## Supported Application Versions
+
+This item has been tested and is known to be working on the following application versions: 
+
+{% include tk-photoshopcc %}
+
+Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
+
 ## Interface Overview
 
 The {% include product %} extension panel uses the same color palette and basic layout as native Photoshop CC panels. It is comprised of five components:

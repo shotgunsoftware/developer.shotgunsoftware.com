@@ -11,6 +11,14 @@ The {% include product %} engine for Maya contains a standard platform for integ
 
 ![Engine](../images/engines/maya_menu.png)
 
+## Supported Application Versions
+
+This item has been tested and is known to be working on the following application versions: 
+
+{% include tk-maya %}
+
+Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
+
 ## Pyside
 
 The {% include product %} engine for Maya contains a PySide installation, and will activate this whenever this is necessary.
@@ -18,10 +26,6 @@ The {% include product %} engine for Maya contains a PySide installation, and wi
 ## Maya Project Management
 
 Whenever the {% include product %} engine for Maya starts, it will set the Maya Project to point at a location defined in the settings for this engine. This means that the Project may also change when a new file is opened. The details relating to how the maya project is set based on a file can be configured in the configuration file, using the template system.
-
-## Supported Application Versions
-
-This item has been tested and is known to be working on the following application versions: 2014-2022. Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
 
 ## Installation and Updates
 

@@ -13,6 +13,12 @@ The {% include product %} engine for Flame relies on new integration hooks that 
 
 The simplest way to get started with the {% include product %} engine for Flame is to set up a new test project with our example pipeline configuration. You can do this by launching the {% include product %} Desktop, running the Project Setup for a new project and choosing the default Flame configuration (in the default configurations section).
 
+## Supported Application Versions
+
+This item has been tested and is known to be working on the following application versions: 
+
+{% include tk-flame %}
+
 ## Flame Project Setup
 
 The {% include product %} engine for Flame also helps associate the {% include product %} project with a Flame project, and creates it if need be.  This is key to the integration, as it ensures data from Flame gets associated with the right things in {% include product %}.  As an added feature, the engine provides functionality for managing the naming conventions of Flame projects as well as the other various settings for the project.

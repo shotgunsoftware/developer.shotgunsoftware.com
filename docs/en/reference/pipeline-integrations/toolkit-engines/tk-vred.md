@@ -9,6 +9,14 @@ lang: en
 
 The {% include product %} engine for VRED contains a standard platform for integrating {% include product %} Apps into VRED. It is lightweight and straight forward and adds a {% include product %} menu to the VRED menu.
 
+## Supported Application Versions
+
+This item has been tested and is known to be working on the following application versions: 
+
+{% include tk-vred %}
+
+Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
+
 ## Information for App Developers
     
 ### PySide

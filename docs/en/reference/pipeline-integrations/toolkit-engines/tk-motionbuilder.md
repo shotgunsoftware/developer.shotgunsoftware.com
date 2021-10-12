@@ -13,6 +13,14 @@ The {% include product %} engine for Motion Builder contains a standard platform
 
 ![Engine](../images/engines/mobu.png)
 
+## Supported Application Versions
+
+This item has been tested and is known to be working on the following application versions: 
+
+{% include tk-motionbuilder %}
+
+Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
+
 ## Installation and Updates
 
 ### Adding this Engine to the {% include product %} Pipeline Toolkit

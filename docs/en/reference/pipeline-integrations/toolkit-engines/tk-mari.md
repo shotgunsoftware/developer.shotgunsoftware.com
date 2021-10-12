@@ -11,7 +11,11 @@ The {% include product %} engine for Mari contains a standard platform for integ
 
 ## Supported Application Versions
 
-This item has been tested and is known to be working on the following application versions: 2.6 - 4.6. Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
+This item has been tested and is known to be working on the following application versions: 
+
+{% include tk-mari %}
+
+Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
 
 ## Overview Video
 

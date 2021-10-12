@@ -14,9 +14,15 @@ The {% include product %} Engine for Houdini contains a standard platform for in
 
 # Information for App Developers
 
-## Supported platforms
+## Supported Platforms
 
 The {% include product %} Engine for Houdini is currently supported on Windows, Linux, and OSX
+
+## Supported Application Versions
+
+This item has been tested and is known to be working on the following application versions: 
+
+{% include tk-houdini %}
 
 ## PySide
 
