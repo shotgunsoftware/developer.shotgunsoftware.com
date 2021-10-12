@@ -162,6 +162,7 @@
       - page: tk-shotgun
       - page: tk-softimage
       - page: tk-vred
+    - page: toolkit-engines-supported-versions
     - page: toolkit-frameworks
       children:
       - text: qt-widgets
