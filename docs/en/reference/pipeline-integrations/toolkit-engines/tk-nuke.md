@@ -36,6 +36,13 @@ You can add your own shortcuts based on template paths in your current environme
 The "{% include product %} Current Project" favourite is added automatically for each root defined. You can customize the name with the `project_favourite_name` setting, or disable these favourites by setting the value to an empty string `''`
 
 
+## Supported Application Versions
+
+This item has been tested and is known to be working on the following application versions: 
+
+{% include tk-nuke %}
+
+Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
 
 ***
 

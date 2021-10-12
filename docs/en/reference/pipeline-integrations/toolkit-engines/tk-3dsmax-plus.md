@@ -14,7 +14,9 @@ The {% include product %} engine for 3ds Max Plus provides a bridge between the 
 
 ## Supported Application Versions
 
-This item has been tested and is known to be working on the following application versions: 2016-2020. Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
+This item has been tested and is known to be working on the following application versions: 
+
+{% include tk-3dsmax %}
 
 ## Documenation
 

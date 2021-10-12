@@ -21,6 +21,6 @@ Here is a list of the minimum supported application versions on engines availabl
 |<img src="./images/engines/mari_icon_256.png" alt="tk-mari" width="65"/> | **tk-mari** |  {% include tk-mari %} |
 |<img src="./images/engines/maya_icon_256.png" alt="tk-maya" width="65"/> | **tk-maya** |  {% include tk-maya %} |
 |<img src="./images/engines/mobu_icon_256.png" alt="tk-motionbuilder" width="65"/> | **tk-motionbuilder** |  {% include tk-motionbuilder %} |
-|<img src="./images/engines/nuke_icon_256.png" alt="tk-nuke" width="65"/> | **tk-nuke** |  {% include tk-motionbuilder %} |
+|<img src="./images/engines/nuke_icon_256.png" alt="tk-nuke" width="65"/> | **tk-nuke** |  {% include tk-nuke %} |
 |<img src="./images/engines/photoshop_icon_256.png" alt="tk-photoshopcc" width="65"/> | **tk-photoshopcc** |  {% include tk-photoshopcc %} |
 |<img src="./images/engines/vred_icon_256.png" alt="tk-vred" width="65"/> | **tk-vred** |  {% include tk-vred %} |

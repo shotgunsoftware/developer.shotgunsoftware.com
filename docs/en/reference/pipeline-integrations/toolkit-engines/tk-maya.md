@@ -21,7 +21,11 @@ Whenever the {% include product %} engine for Maya starts, it will set the Maya 
 
 ## Supported Application Versions
 
-This item has been tested and is known to be working on the following application versions: 2014-2022. Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
+This item has been tested and is known to be working on the following application versions: 
+
+{% include tk-maya %}
+
+Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
 
 ## Installation and Updates
 

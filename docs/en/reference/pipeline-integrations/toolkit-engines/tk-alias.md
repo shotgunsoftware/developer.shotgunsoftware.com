@@ -9,19 +9,27 @@ lang: en
 
 The {% include product %} engine for Alias contains a standard platform for integrating {% include product %} Apps into Alias. It is lightweight and straight forward and adds a {% include product %} menu to the Alias menu.
 
-# Information for App Developers
+## Supported Application Versions
+
+This item has been tested and is known to be working on the following application versions: 
+
+{% include tk-alias %}
+
+Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
+
+## Information for App Developers
     
-## PySide
+### PySide
 
 The {% include product %} engine for Alias uses a PySide installation shipped with the {% include product %} Desktop and will activate this whenever this is necessary. 
 
-## Alias Project Management
+### Alias Project Management
 
 Whenever the {% include product %} engine for Alias starts, it will set the Alias Project to point at a location defined in the settings for this engine. This means that the Project may also change when a new file is opened. The details relating to how the Alias project is set based on a file can be configured in the configuration file, using the template system.
 
 ***
 
-# Working with tk-alias
+## Working with tk-alias
 
 This {% include product %} integration supports the Alias application family (Concept, Surface, and AutoStudio).
 
