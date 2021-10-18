@@ -27,7 +27,7 @@ lang: zh_CN
 
 ## 安装
 
-{% include product %} Photoshop CC 插件在安装方面遵循与其他 {% include product %} 集成相同的协议。有关安装插件和应用的信息，请参见[管理 Toolkit](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178) 文章。此外，您还可以参考[默认 Toolkit 配置](https://github.com/shotgunsoftware/tk-config-default2)，以它为例了解如何配置集成。
+{% include product %} Photoshop CC 插件在安装方面遵循与其他 {% include product %} 集成相同的协议。有关安装插件和应用的信息，请参见[管理 Toolkit](https://developer.shotgridsoftware.com/zh_CN/425b1da4/) 文章。此外，您还可以参考[默认 Toolkit 配置](https://github.com/shotgunsoftware/tk-config-default2)，以它为例了解如何配置集成。
 
 ## 启用扩展
 

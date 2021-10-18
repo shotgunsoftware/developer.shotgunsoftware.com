@@ -23,11 +23,11 @@ lang: zh_CN
 
 默认情况下，{% include product %} Desktop 会将 `tk-framework-desktopstartup` 更新下载到用户计算机本地，并在应用程序启动过程中使用它。当您启动应用程序时，Toolkit 会自动检查是否有此框架的更新。如果有更新，它还会自动下载并安装更新。
 
-另外，您还可以将 {% include product %} Desktop 配置为使用框架的特定副本，而不使用本地副本。这样做将禁用自动更新功能，您需要自己更新启动逻辑。为了能够时刻关注更新，建议您订阅[此页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040058)。
+另外，您还可以将 {% include product %} Desktop 配置为使用框架的特定副本，而不使用本地副本。这样做将禁用自动更新功能，您需要自己更新启动逻辑。
 
 #### 从 GitHub 下载特定的发布版本
 
-有时，您需要手动从 GitHub 下载更新。您可以很容易地从[版本(Releases)](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases)页面下载软件包，并可在[此处](https://support.shotgunsoftware.com/hc/en-us/articles/219040058#toc_release_notes)查看有关每个官方发布版本的详细信息。
+有时，您需要手动从 GitHub 下载更新。您可以很容易地从[版本(Releases)](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases)页面下载软件包，并可在[此处](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)找到有关每个官方发布版本的详细信息。
 
 #### 配置 {% include product %} Desktop 使用特定副本
 

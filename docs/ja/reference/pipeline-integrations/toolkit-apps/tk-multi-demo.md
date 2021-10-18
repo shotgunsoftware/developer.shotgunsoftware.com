@@ -21,7 +21,7 @@ Demo アプリでは、{% include product %} Utilities フレームワーク、Q
 
 ![コード タブ](../images/apps/multi-demo-code_tab.png)
 
-新しいデモは、新しいコンポーネントがプラットフォームに追加されたのち、時間があるときに追加されます。コンポーネントの使用法に一定のパターンがある場合や、ご覧になりたいデモがある場合は、[サポート リクエスト](https://support.shotgunsoftware.com/hc/ja/requests/new)からお知らせください。
+新しいデモは、新しいコンポーネントがプラットフォームに追加されたのち、時間があるときに追加されます。コンポーネントの使用法に一定のパターンがある場合や、ご覧になりたいデモがある場合は、[サポート リクエスト](https://knowledge.autodesk.com/ja/contact-support)からお知らせください。
 
 ## インストール
 

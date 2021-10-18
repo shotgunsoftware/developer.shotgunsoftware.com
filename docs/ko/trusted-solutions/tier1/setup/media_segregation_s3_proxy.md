@@ -2,7 +2,7 @@
 layout: default
 title: Media Traffic Isolation - S3 Proxy
 pagename: tier1-setup-media_segregation_s3_proxy
-lang: ko
+lang: en
 ---
 
 {% include info title="Deprecated" content="The preferred way is to use S3 Private Link instead of a S3 proxy, see [Media Traffic Isolation](./media_segregation.md)" %}

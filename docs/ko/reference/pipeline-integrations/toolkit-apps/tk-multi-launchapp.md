@@ -56,9 +56,9 @@ launch_nuke:
 
 ### 시작 시 환경 변수 설정 및 동작 자동화
 
-응용프로그램이 스튜디오 파이프라인에서 제대로 작동하기 위해서는 특정 환경 변수, 플러그인 경로 등을 설정해야 하는 경우가 있습니다. 시작 앱은 'before_app_launch' 후크를 통해 이 경우를 해결할 수 있습니다. 이 후크를 사용하면 응용프로그램을 시작할 때마다 실행할 코드 조각을 정의할 수 있습니다. 기본적으로 'before_app_launch' 후크는 아무런 동작도 수행하지 않는 단순한 통과 후크지만 <a href='https://support.shotgunsoftware.com/entries/95442818#Using%20Hooks%20to%20customize%20App%20Behaviour'>이 문서</a>의 지침에 따라 재지정될 수 있습니다.
+응용프로그램이 스튜디오 파이프라인에서 제대로 작동하기 위해서는 특정 환경 변수, 플러그인 경로 등을 설정해야 하는 경우가 있습니다. 시작 앱은 'before_app_launch' 후크를 통해 이 경우를 해결할 수 있습니다. 이 후크를 사용하면 응용프로그램을 시작할 때마다 실행할 코드 조각을 정의할 수 있습니다. 기본적으로 'before_app_launch' 후크는 아무런 동작도 수행하지 않는 단순한 통과 후크지만 <a href='https://developer.shotgridsoftware.com/425b1da4/#hooks'>이 문서</a>의 지침에 따라 재지정될 수 있습니다.
 
-예를 들어 <a href='https://www.zyncrender.com/'>Zync 렌더</a>를 사용하는 경우 Zync Maya 플러그인 디렉토리는 $PYTHONPATH 및 $XBMLANGPATH의 일부여야 합니다. 시작 앱이 이러한 환경 변수를 설정하게 하려면 'before_app_launch' 후크를 다음과 같이 몇 줄의 코드로 업데이트합니다.
+예를 들어 Zync 렌더를 사용하는 경우 Zync Maya 플러그인 디렉토리는 `$PYTHONPATH` 및 `$XBMLANGPATH`의 일부여야 합니다. 시작 앱이 이러한 환경 변수를 설정하게 하려면 `before_app_launch` 후크를 다음과 같이 몇 줄의 코드로 업데이트합니다.
 
 ---접기---
 환경 변수 설정 예

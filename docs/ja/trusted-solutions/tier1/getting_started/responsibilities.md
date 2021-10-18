@@ -2,7 +2,7 @@
 layout: default
 title: Client Responsibilities
 pagename: tier1-getting_started-responsibilities
-lang: ja
+lang: en
 ---
   
 # Client Responsibilities
@@ -30,7 +30,7 @@ Autodesk does not guarantee any timeline for setup completion.
 |Traffic Isolation	|Creating VPCs. Creating Subnets.|	You|{% include product %}|
 |Private Access Point|Checking that the access point is only available from Your network.|	{% include product %}|	N/A|
 |Monitoring and Reliability|Maintaining uptime up to Autodesk standards. High availability and redundancy of Cloud Services. Metadata and database resiliency and redundancy. Maintaining Recovery Point Objective (RPO) for metadata and database.	|{% include product %}|N/A|
-|Service Level Objective|Maintaining {% include product %} target RPO and RTO (See [{% include product %} Security White Paper](https://support.shotgunsoftware.com/hc/en-us/articles/114094526153-Shotgun-security-white-paper) for more details).|{% include product %}|	N/A|
-|Security and Governance |Maintaining the {% include product %} Cloud Services that Isolation clients are interfacing with, so that they are meeting expectations in terms of security, vulnerability patching, scanning, auditing, etc. (See [{% include product %} Security White Paper](https://support.shotgunsoftware.com/hc/en-us/articles/114094526153-Shotgun-security-white-paper) for more details).|	{% include product %}	|N/A|
+|Service Level Objective|Maintaining {% include product %} target RPO and RTO (See [{% include product %} Security White Paper](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_general_security_ar_security_white_paper_html) for more details).|{% include product %}|	N/A|
+|Security and Governance |Maintaining the {% include product %} Cloud Services that Isolation clients are interfacing with, so that they are meeting expectations in terms of security, vulnerability patching, scanning, auditing, etc. (See [{% include product %} Security White Paper](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_general_security_ar_security_white_paper_html) for more details).|	{% include product %}	|N/A|
 
 *You are solely responsible to seek or obtain any support services AWS may provide under any existing relationship between You and AWS. Autodesk teams are not parties to Your relationship with AWS and therefore not responsible or liable for any services or lack thereof provided by AWS to You. 

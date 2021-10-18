@@ -13,7 +13,7 @@ lang: zh_CN
 
 当流程开始正常运转后，导出器应用还会跟踪 Flare 或 Flame 批处理模式下发生的所有渲染，让您在工作流中轻松将内容送去审看。
 
-## 向 {% include product %} 推送套底
+## 向 {% include product %} 发布套底
 
 当您在 Flame 中为一个场设置了套底，并为时间线中的所有分段**分配了镜头名称**后，选择该场，单击鼠标右键并选择“{% include product %} 镜头导出”(Flame Shot Export)选项。
 
@@ -58,7 +58,7 @@ Toolkit 会在此时显示一个对话框，让您选择是否将渲染发送至
 
 LINKBOX_ENGINE：{% include product %}software/tk-flame：Flame 插件
 
-与往常一样，如果您对集成或自定义有任何疑问，请随时与我们的技术支持团队联系：toolkitsupport@shotgunsoftware.com
+与以往一样，如果您对集成或自定义有任何疑问，请随时访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)。
 
 # 高级主题
 
@@ -66,14 +66,14 @@ LINKBOX_ENGINE：{% include product %}software/tk-flame：Flame 插件
 
 ## 使用导出预设
 
-导出器在其配置中使用了“导出预设”的概念。**当您在 Flame 内启动导出用户界面时，将看到一个下拉列表，其中包含可用的导出预设。每个预设都是一个配置选项，通过它可配置将文件写入磁盘和上传至 {% include product %} 的方式。诸如文件在磁盘上的位置等高级设置直接在环境配置中进行控制，以易于调整默认的配置选项来适合您的工作流。
+导出器在其配置中使用了*“导出预设”*的概念。当您在 Flame 内启动导出用户界面时，将看到一个下拉列表，其中包含可用的导出预设。每个预设都是一个配置选项，通过它可配置将文件写入磁盘和上传至 {% include product %} 的方式。诸如文件在磁盘上的位置等高级设置直接在环境配置中进行控制，以易于调整默认的配置选项来适合您的工作流。
 
 更高级的设置，以及为控制 Flame 而对传递给 Flame 的实际导出 XML 内容施加的控制，则由一个挂钩进行处理，其中定义了每个预设的行为。在该挂钩中，您可以完全控制导出器生成媒体的方式。
 
 ## 绕过 {% include product %} 服务器端转码
 默认情况下，我们通过设置 `Version.sg_uploaded_movie` 字段，将 QuickTime 影片上传至 {% include product %} 进行审看。这进而会触发 {% include product %} 服务器端转码；上传的 QuickTime 影片会进一步转换为专为在浏览器中和移动设备上播放而定制的 `mp4` 和 `webm` 格式。有时，绕过这种服务器端转码可能会有好处。我们可以通过设置 `bypass_shotgun_transcoding` 配置设置来做到这一点。当此设置为 True 时，集成会直接上传至 {% include product %} 中的 `Version.sg_uploaded_movie_mp4` 字段，从而绕过服务器端转码。这种情况下，不会生成 `webm` 版本，因此在 Firefox 中无法进行审看播放。
 
-有关详细信息，请参见 https://support.shotgunsoftware.com/hc/zh-cn/articles/219030418。
+有关详细信息，请参见 https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Supervisor_Artist_sa_review_approval_sa_transcoding_html
 
 ## 自定义 ffmpeg
 
@@ -81,7 +81,7 @@ LINKBOX_ENGINE：{% include product %}software/tk-flame：Flame 插件
 
 请注意，与默认使用的版本相比，最新版本中向 ffmpeg 传递 h264 参数的方式有所变化。通过切换到最新版本的 ffmpeg，可以丝毫不差地实施建议的转码指导原则，在 {% include product %} 端实现最优的上传和性能。您可以在以下位置找到这些指导原则：
 
-https://support.shotgunsoftware.com/hc/zh-cn/articles/219030418
+https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Supervisor_Artist_sa_review_approval_sa_transcoding_html
 
 仅当您是高级用户时，我们才建议更改 ffmpeg 版本。在这种情况下，请按以下步骤操作：
 

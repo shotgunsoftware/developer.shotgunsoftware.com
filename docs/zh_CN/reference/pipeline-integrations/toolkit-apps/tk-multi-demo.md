@@ -21,7 +21,7 @@ lang: zh_CN
 
 ![“代码”选项卡](../images/apps/multi-demo-code_tab.png)
 
-随着新的组件加入平台，在时间允许的情况下，我们会相应添加新的演示。如果您知道某种常见的组件使用方式，或者希望看到某项演示，请通过[提交工单](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)告知我们。
+随着新的组件加入平台，在时间允许的情况下，我们会相应添加新的演示。如果您知道某种常见的组件使用方式，或者希望看到某项演示，请通过[提交工单](https://knowledge.autodesk.com/zh-hans/contact-support)告知我们。
 
 ## 安装
 

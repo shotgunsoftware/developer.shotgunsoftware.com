@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 工作流教程
+title: 动画工作流教程
 pagename: toolkit-pipeline-tutorial
 lang: zh_CN
 ---
 
-# 工作流教程
+# 动画工作流教程
 
 本教程介绍如何为动画或视觉效果制作打造一个简化但却典型的工作流。按照本教程，您将打造一个全面的工作流，为资产的建模、视觉开发到融入制作场景提供所有必要环节。
 
@@ -25,7 +25,7 @@ lang: zh_CN
 
 * **参与 {% include product %} 项目** - 本教程假定您有使用 {% include product %} 跟踪和管理制作数据的经验。
 
-* **了解 {% include product %} 集成** - {% include product %} 附带一些集成，这些集成提供了一些不需要任何手动配置的简单制作工作流。您应先了解这些工作流的功能和范围，然后再深入了解本教程中介绍的手动配置和自定义。有关 {% include product %} 集成的详细信息，请参见[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)。
+* **了解 {% include product %} 集成** - {% include product %} 附带一些集成，这些集成提供了一些不需要任何手动配置的简单制作工作流。您应先了解这些工作流的功能和范围，然后再深入了解本教程中介绍的手动配置和自定义。有关 {% include product %} 集成的详细信息，请参见[此处](https://developer.shotgridsoftware.com/zh_CN/d587be80/)。
 
 * **Maya 和 Nuke 体验** - 本教程旨在使用 Maya 和 Nuke 构建一个简单的工作流。您应该对这些软件包有基本的了解，以便自定义 {% include product %} 提供的集成。
 
@@ -37,13 +37,13 @@ lang: zh_CN
 
 * [{% include product %} 支持站点](https://support.shotgunsoftware.com/hc/zh-cn)
 
-* [{% include product %} 集成](https://www.shotgunsoftware.com/zh-cn/integrations/)
+* [{% include product %} 集成](https://www.shotgridsoftware.com/integrations/)
 
-   * [用户手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)
+   * [用户手册](https://developer.shotgridsoftware.com/zh_CN/d587be80/)
 
-   * [管理员手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067493)
+   * [管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/)
 
-   * [开发人员手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067513)
+   * [开发人员手册](https://developer.shotgridsoftware.com/zh_CN/93c6e555/)
 
 # 项目创建和设置
 
@@ -55,9 +55,9 @@ lang: zh_CN
 
    * **_桌子_**道具
 
-* 一个**镜头序列**
+* 一个**场**
 
-* 一个链接至您创建的**镜头序列**的**镜头**
+* 一个链接至您创建的**场**的**镜头**
 
 * 每个工作流工序一个**任务**
 
@@ -65,7 +65,7 @@ lang: zh_CN
 
 {% include figure src="./images/tutorial/image_1.png" caption="茶壶和桌子资产" %}
 
-{% include figure src="./images/tutorial/image_2.png" caption="链接至镜头序列的镜头" %}
+{% include figure src="./images/tutorial/image_2.png" caption="链接至场的镜头" %}
 
 {% include figure src="./images/tutorial/image_3.png" caption="任务" width="400px" %}
 
@@ -79,17 +79,17 @@ lang: zh_CN
 
 软件实体用于驱动在您的制作中使用哪些 DCC 软件包。默认情况下，集成将在标准安装位置搜索这些软件包并使其可通过 Desktop 启动。如果您安装了多个版本或将它们安装在非标准位置，您可能需要在 {% include product %} 中更新相应的软件实体条目以管理您的艺术家的启动体验。
 
-有关软件实体以及如何正确配置该实体的完整详细信息，请参见[集成管理员手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067493#Configuring%20software%20launches)。在您的 DCC 按预期启动后，可以继续阅读下一节。
+有关软件实体以及如何正确配置该实体的完整详细信息，请参见[集成管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/)。在您的 DCC 按预期启动后，可以继续阅读下一节。
 
 # 配置
 
-配置定义项目的美工人员工作流。这包括指定哪些 {% include product %} 集成包含在艺术家要启动的 DCC 中，如何定义项目的文件夹结构，以及艺术家共享数据时创建的文件和文件夹的命名约定。
+配置定义项目的艺术家工作流。这包括指定哪些 {% include product %} 集成包含在艺术家要启动的 DCC 中，如何定义项目的文件夹结构，以及艺术家共享数据时创建的文件和文件夹的命名约定。
 
-默认情况下，所有新项目均配置为使用基本 [{% include product %} 集成](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)，这些集成提供了使用许多现成的软件包在艺术家之间共享文件的基本工作流。以下各节概述了如何接管项目的工作流配置以及如何为您的工作室对其进行自定义。
+默认情况下，所有新项目均配置为使用基本 [{% include product %} 集成](https://developer.shotgridsoftware.com/zh_CN/d587be80/)，这些集成提供了使用许多现成的软件包在艺术家之间共享文件的基本工作流。以下各节概述了如何接管项目的工作流配置以及如何为您的工作室对其进行自定义。
 
 ## 接管项目配置
 
-可使用 {% include product %} Desktop (Desktop) 接管项目的配置。在 Desktop 中单击鼠标右键或单击右下方的用户图标以显示弹出菜单。选择**“Advanced project setup…”**选项，然后按照向导操作在本地安装项目配置。以下各图显示了所需的操作步骤。也可以按照《集成管理员手册》的[接管工作流配置](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067493#Taking%20over%20a%20Pipeline%20Configuration) 中所述的步骤操作。
+可使用 {% include product %} Desktop (Desktop) 接管项目的配置。在 Desktop 中单击鼠标右键或单击右下方的用户图标以显示弹出菜单。选择**“Advanced project setup…”**选项，然后按照向导操作在本地安装项目配置。以下各图显示了所需的操作步骤。也可以按照《集成管理员手册》的[接管工作流配置](https://developer.shotgridsoftware.com/zh_CN/8085533c/#taking-over-a-pipeline-configuration)中所述的步骤操作。
 
 {% include figure src="./images/tutorial/image_5.png" caption="在 Desktop 弹出菜单中选择**“Advanced project setup...”**" %}
 
@@ -105,7 +105,7 @@ lang: zh_CN
 
 {% include figure src="./images/tutorial/wizard_05.png" caption="设置在您要使用的操作系统上将可以访问此存储的路径。" %}
 
-您可以在**“站点偏好设置”(Site Preferences)**的**“文件管理”(File Management)**部分下查看和编辑 {% include product %} 站点的存储。可以在[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219030938)了解有关这些设置的详细信息。
+您可以在**“站点偏好设置”(Site Preferences)**的**“文件管理”(File Management)**部分下查看和编辑 {% include product %} 站点的存储。可以在[此处](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html)了解有关这些设置的详细信息。
 
 现在，您已选择存储位置，需要在该位置为新项目选择目录名称。
 
@@ -129,21 +129,21 @@ lang: zh_CN
 
 ## 配置组织
 
-在开始构建简单的工作流之前，您需要了解工作流配置的组织方式和工作方式。下图高亮显示了配置的主要组件及其用途。有关配置及其管理的其他信息，请参见[管理 Toolkit](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178) 一文。
+在开始构建简单的工作流之前，您需要了解工作流配置的组织方式和工作方式。下图高亮显示了配置的主要组件及其用途。有关配置及其管理的其他信息，请参见[管理 Toolkit](https://developer.shotgridsoftware.com/zh_CN/425b1da4/) 一文。
 
 {% include figure src="./images/tutorial/image_11.png" %}
 
 ### 项目数据结构
 
-您将在本教程中构建的简单工作流使用默认配置提供的项目数据结构。您可以浏览 **`config/core/schema`** 文件夹来了解 Toolkit 应用向磁盘写入文件时将创建的结构。有关配置项目目录结构的其他信息，请参见[文件系统配置参考](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868) 文档。
+您将在本教程中构建的简单工作流使用默认配置提供的项目数据结构。您可以浏览 **`config/core/schema`** 文件夹来了解 Toolkit 应用向磁盘写入文件时将创建的结构。有关配置项目目录结构的其他信息，请参见[文件系统配置参考](https://developer.shotgridsoftware.com/zh_CN/82ff76f7/)文档。
 
 ### 模板
 
-本教程还使用默认工作流配置中定义的模板。您可以打开 **`config/core/templates.yml`** 文件来查看应用将输入和输出文件映射到磁盘上的路径时使用的模板。有关模板系统的详细信息，请参见[文件系统配置参考](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868) 文档。
+本教程还使用默认工作流配置中定义的模板。您可以打开 **`config/core/templates.yml`** 文件来查看应用将输入和输出文件映射到磁盘上的路径时使用的模板。有关模板系统的详细信息，请参见[文件系统配置参考](https://developer.shotgridsoftware.com/zh_CN/82ff76f7/)文档。
 
 ### 挂钩
 
-本教程的很多内容将涉及到修改应用挂钩以便自定义美工人员工作流。在深入了解该自定义之前，您应该对挂钩的概念、工作方式和位置有基本的了解。阅读[管理](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178#Hooks) 和[配置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178#Hooks) 文档的“挂钩”部分。
+本教程的很多内容将涉及到修改应用挂钩以便自定义美工人员工作流。在深入了解该自定义之前，您应该对挂钩的概念、工作方式和位置有基本的了解。阅读[管理](https://developer.shotgridsoftware.com/zh_CN/425b1da4/#hooks)文档的“挂钩”部分。
 
 在学习本教程的过程中，您将需要“接管”其中一个 Toolkit 应用定义的挂钩。接管应用挂钩的过程非常简单。每次系统要求您执行此操作时，只需按照以下步骤操作即可：
 
@@ -177,7 +177,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 单击此按钮将创建一个新的空 Maya 会话，并将您的当前工作上下文设置为茶壶资产的建模任务。
 
-{%include info title="注意" content="在本教程中的任何时间，您都可以通过 Maya 或 Nuke 中的 ShotGrid 菜单启动 ShotGrid 面板。在此面板中，您可以查看您的项目数据，而无需离开 DCC。它将向您显示您的当前工作上下文以及该上下文中的任何最近活动。您还可以直接在该面板中为反馈添加注释。有关详细信息，请参见 [ShotGrid 面板文档](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#The%20Shotgun%20Panel)。" %}
+{%include info title="注意" content="在本教程中的任何时间，您都可以通过 Maya 或 Nuke 中的 ShotGrid 菜单启动 ShotGrid 面板。在此面板中，您可以查看您的项目数据，而无需离开 DCC。它将向您显示您的当前工作上下文以及该上下文中的任何最近活动。您还可以直接在该面板中为反馈添加注释。有关详细信息，请参见 [ShotGrid 面板文档](https://developer.shotgridsoftware.com/zh_CN/c0b0ce05/)。" %}
 
 接下来，创建一个茶壶模型，或[下载](https://raw.githubusercontent.com/shotgunsoftware/tk-config-default2/pipeline_tutorial/resources/teapot.obj) 并导入所提供的茶壶。
 
@@ -207,7 +207,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include figure src="./images/tutorial/image_16.png" %}
 
-当您对自己的作品满意后，再次运行**“{% include product %} > File Save…”**菜单动作。此时，在对话框中版本号默认设置为 2。文件版本自动递增功能让艺术家可维护所完成工作的完整历史记录。单击“保存”(Save)按钮。
+当您对自己的作品满意后，再次运行**“{% include product %} > File Save…”**菜单动作。 此时，在对话框中版本号默认设置为 2。文件版本自动递增功能让艺术家可维护所完成工作的完整历史记录。单击“保存”(Save)按钮。
 
 {% include figure src="./images/tutorial/image_17.png" %}
 
@@ -221,7 +221,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 在该对话框左侧，您将看到表示当前 Maya 会话的项。在它下面，您将看到**“Publish to ShotGrid”**子动作。表示**“All Session Geometry”**的另一项显示为当前会话的子项。它也有**“Publish to ShotGrid”**子动作。
 
-{% include info title="注意" content="如果**“All Session Geometry”**项没有显示，请确保在 Maya 中[已启用 Alembic 导出插件](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039928#Before%20You%20Begin)。" %}
+{% include info title="注意" content="如果**“All Session Geometry”**项没有显示，请确保在 Maya 中已启用 Alembic 导出插件。" %}
 
 可单击树左侧的项了解发布应用。您将注意到，在选择要对其执行操作的项后，您可以输入要发布的内容的说明。您还可以单击右侧的摄影机图标拍摄屏幕截图以与该项关联。
 
@@ -334,7 +334,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 这是您将添加用于收集当前会话中发现的任何网格的新方法。此方法将创建着色器发布插件（您将在后面创建）可以对其进行操作的网格项。要传入的项是将作为网格项的父项的会话项。
 
-{% include info title="注意" content="这是一种修改现有发布插件的非常有针对性的方法。要深入了解发布器的结构及其所有移动部分，请[参见开发人员文档](http://developer.shotgridsoftware.com/tk-multi-publish2/)。" %}
+{% include info title="注意" content="这是一种修改现有发布插件的非常有针对性的方法。要深入了解发布器的结构及其所有移动部分，请参见[开发人员文档](http://developer.shotgridsoftware.com/tk-multi-publish2/)。" %}
 
 现在，将下面的新方法定义添加到文件底部：
 
@@ -457,11 +457,11 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 ### 发布着色器网络
 
-现在可以查看更改项目配置的效果。从 {% include product %} 菜单启动发布应用。您应该会看到收集的茶壶网格项以及附加的**“Publish Shaders”**插件：
+现在可以查看更改项目配置的效果。从 {% include product %} 菜单启动发布应用。 您应该会看到收集的茶壶网格项以及附加的**“Publish Shaders”**插件：
 
 {% include figure src="./images/tutorial/image_32.png" %}
 
-输入作品说明，并截取已贴图茶壶的缩略图以与已发布的文件关联。最后，单击“Publish”将茶壶着色器导出到磁盘并在 {% include product %} 中将文件注册为发布。完成后，请注意，会话发布插件已自动将您的工作文件保存为下一个可用版本。这是 {% include product %} 集成支持的所有 DCC 中的默认行为。
+输入作品说明，并截取已贴图茶壶的缩略图以与已发布的文件关联。最后，单击“Publish”将茶壶着色器导出到磁盘并在 {% include product %} 中将文件注册为发布。 完成后，请注意，会话发布插件已自动将您的工作文件保存为下一个可用版本。这是 {% include product %} 集成支持的所有 DCC 中的默认行为。
 
 
 现在，您可以浏览到 {% include product %} 中的茶壶资产以验证是否一切都符合预期。
@@ -476,7 +476,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 ## 装配工作流
 
-此时，您应该可以非常轻松地使用 {% include product %} 提供的 Workfiles 和“发布”应用打开（或创建）、保存和发布工作文件。此外，您还曾使用加载器应用加载来自上游的发布。使用所学内容完成以下任务：
+此时，您应该可以非常轻松地使用 {% include product %} 提供的 Workfiles 和“发布”应用打开（或创建）、保存和发布工作文件。 此外，您还曾使用加载器应用加载来自上游的发布。使用所学内容完成以下任务：
 
 * 从 {% include product %} Desktop 启动 Maya
 
@@ -628,7 +628,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include figure src="./images/tutorial/image_45.png" %}
 
-如图中所示，收集了新摄影机项并附加了发布插件。继续操作并单击**“Publish”**将摄影机写入磁盘，然后向 {% include product %} 注册该摄影机。
+如图中所示，收集了新摄影机项并附加了发布插件。继续操作并单击**“Publish”**将摄影机写入磁盘，然后向 ShotGrid 注册该摄影机。
 
 {% include info title="注意" content="与 Alembic 导出类似，摄影机发布插件需要加载 FBX 导出插件。如果您没有看到摄影机发布插件项，请确保 FBX 插件已加载，然后重新启动发布器。" %}
 
@@ -795,7 +795,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 ## 合成工作流
 
-在本教程的最后一节中，将向您介绍 Nuke 提供的一些默认集成。除了在前面各节中提到的应用之外，您还将了解 {% include product %} 可识别的写入节点和一个用于将渲染快速发送给其他人以供审核的应用。
+在本教程的最后一节中，将向您介绍 Nuke 提供的一些默认集成。除了在前面各节中提到的应用之外，您还将了解 ShotGrid 可识别的写入节点和一个用于将渲染快速发送给其他人以供审核的应用。
 
 首先，执行以下步骤来准备工作文件。
 
@@ -816,7 +816,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 当您对自己的合成满意后，使用**“{% include product %} > File Save…”**菜单动作保存工作文件。
 
-然后，单击 Nuke 的左侧菜单中的 {% include product %} 标识。在该菜单中单击一个 {% include product %} 可识别的写入节点：
+然后，单击 Nuke 的左侧菜单中的 {% include product %} 标识。在该菜单中单击一个 ShotGrid 可识别的写入节点：
 
 {% include figure src="./images/tutorial/image_59.png" width="400px" %}
 
@@ -840,14 +840,14 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include figure src="./images/tutorial/image_64.png" %}
 
-有关在 {% include product %} 中审核媒体的详细信息，请参见[官方文档](https://support.shotgunsoftware.com/hc/zh-cn/sections/204245448)。
+有关在 {% include product %} 中审核媒体的详细信息，请参见[官方文档](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Supervisor_Artist_sa_review_approval_html)。
 
 # 总结
 
-祝贺您，您已完成本教程！我们希望本教程能为您使用 {% include product %} 集成打造自己的自定义工作流奠定良好的基础。学完本教程，您应该能够了解如何根据自己工作室的特定需求扩展默认的集成。
+祝贺您，您已完成本教程！我们希望本教程能为您使用 {% include product %} 集成打造自己的自定义工作流奠定良好的基础。 学完本教程，您应该能够了解如何根据自己工作室的特定需求扩展默认的集成。
 
-在 [shotgun-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev)中提出问题，了解其他工作室如何使用 Toolkit。请订阅以查看最新的帖子！
+在 [shotgun-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=zh_CN#!forum/shotgun-dev)中提出问题，了解其他工作室如何使用 Toolkit。请订阅以查看最新的帖子！
 
-如果您认为默认的集成未涵盖某些功能或工作流，可以随时编写自己的应用。[这里是一份详实的文档](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033158)，可帮助您开始编写您的第一个应用。
+如果您认为默认的集成未涵盖某些功能或工作流，可以随时编写自己的应用。[这里是一份详实的文档](https://developer.shotgridsoftware.com/zh_CN/2e5ed7bb/)，可帮助您开始编写您的第一个应用。
 
-与以往一样，如果您对本教程或者 {% include product %} 或 Toolkit 平台的一般使用有其他疑问，请随时[提交工单](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)。
+与以往一样，如果您对本教程、{% include product %} 或 Toolkit 平台有其他疑问，请[访问社区](https://community.shotgridsoftware.com/c/pipeline/6)。

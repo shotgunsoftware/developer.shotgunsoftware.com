@@ -19,7 +19,7 @@ Cinesync では、複数の場所から再生を同時に同期できます。{%
 
 {% include product %} と Deadline の統合により、すべてのサムネイル、フレームへのリンク、および他のメタデータとともにレンダリングしたバージョンが {% include product %} に自動的に送信されます。
 
-詳細については、[http://www.thinkboxsoftware.com/deadline-5-shotgunevent](http://www.thinkboxsoftware.com/deadline-5-shotgunevent) を参照してください。
+詳細については、[https://docs.thinkboxsoftware.com/products/deadline/5.2/User%20Manual/manual/shotgunevent.html](https://docs.thinkboxsoftware.com/products/deadline/5.2/User%20Manual/manual/shotgunevent.html) を参照してください。
 
 ## Rush
 

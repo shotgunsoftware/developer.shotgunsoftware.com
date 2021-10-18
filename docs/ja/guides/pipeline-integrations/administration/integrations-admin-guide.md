@@ -9,7 +9,7 @@ lang: ja
 
 ## はじめに
 
-このドキュメントは、管理者向けの {% include product %} 統合ガイドです。ユーザ ガイド、管理者ガイド、開発者ガイドのうちの 1 つです。[ユーザ ガイド](https://support.shotgunsoftware.com/hc/ja/articles/115000068574)は、日常のワークフローで {% include product %} の統合が必要なアーティストを対象にしています。[開発者ガイド](https://support.shotgunsoftware.com/hc/ja/articles/115000067513)は、機能を拡張するために Python コードを記述するユーザを対象にした技術ドキュメントです。この統合管理者ガイドは、これら 2 つのドキュメントの中間に位置するものです。{% include product %} を統合するユーザ、ソフトウェア バージョンを管理するユーザ、パブリッシュ ファイルのストレージを決定するユーザを対象にしています。
+このドキュメントは、管理者向けの {% include product %} 統合ガイドです。ユーザ ガイド、管理者ガイド、開発者ガイドのうちの 1 つです。[ユーザ ガイド](https://developer.shotgridsoftware.com/ja/d587be80/)は、日常のワークフローで {% include product %} の統合が必要なアーティストを対象にしています。[開発者ガイド](https://developer.shotgridsoftware.com/ja/93c6e555/)は、機能を拡張するために Python コードを記述するユーザを対象にした技術ドキュメントです。この統合管理者ガイドは、これら 2 つのドキュメントの中間に位置するものです。{% include product %} を統合するユーザ、ソフトウェア バージョンを管理するユーザ、パブリッシュ ファイルのストレージを決定するユーザを対象にしています。
 
 ## 標準的なパイプライン設定
 
@@ -17,15 +17,13 @@ Toolkit セットアップの中心はパイプライン設定です。つまり
 
 ### 基本設定
 
-すぐに利用可能な統合機能は、環境設定ファイルをセットアップまたは変更しなくても実行できるように設計されています。すぐに利用可能な統合機能を使用する場合は、管理が必要なものは何もありません。Toolkit が内部でパイプライン設定を暗示的に使用します。このパイプライン設定は基本設定と呼ばれています。基本設定によって、すべてのサポート対象ソフトウェア パッケージで Panel、Publisher、Loader の 3 つの Toolkit アプリを利用できるようにしたり、{% include product %} のソフトウェア エンティティを参照して {% include product %} Desktop に表示するソフトウェア パッケージを決定します。基本設定にはファイルシステム ロケーション サポートが含まれていません。プロジェクトですぐに利用可能な統合機能を使用すると、Desktop を起動するたびに基本設定のコピーが自動的に更新されるため、常に最新バージョンの統合が使用されます。[こちらからリリース ノートを参照](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations)したり、[こちらの Github で基本設定を参照](https://github.com/shotgunsoftware/tk-config-basic/)できます。
+すぐに利用可能な統合機能は、環境設定ファイルをセットアップまたは変更しなくても実行できるように設計されています。すぐに利用可能な統合機能を使用する場合は、管理が必要なものは何もありません。Toolkit が内部でパイプライン設定を暗示的に使用します。このパイプライン設定は基本設定と呼ばれています。基本設定によって、すべてのサポート対象ソフトウェア パッケージで Panel、Publisher、Loader の 3 つの Toolkit アプリを利用できるようにしたり、{% include product %} のソフトウェア エンティティを参照して {% include product %} Desktop に表示するソフトウェア パッケージを決定します。基本設定にはファイルシステム ロケーション サポートが含まれていません。プロジェクトですぐに利用可能な統合機能を使用すると、Desktop を起動するたびに基本設定のコピーが自動的に更新されるため、常に最新バージョンの統合が使用されます。[こちらからリリース ノートを参照](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)したり、[こちらの Github で基本設定を参照](https://github.com/shotgunsoftware/tk-config-basic/)したりできます。
 
 ### 既定の設定
 
-これは高度なプロジェクト設定を開始するための既定の開始点です。これには、[ファイルシステム ロケーション サポート](https://support.shotgunsoftware.com/hc/ja/articles/219039868)およびさまざまな Toolkit アプリとエンジンが含まれます。
+これは高度なプロジェクト設定を開始するための既定の開始点です。これには、[ファイルシステム ロケーション サポート](https://developer.shotgridsoftware.com/ja/82ff76f7/)およびさまざまな Toolkit アプリとエンジンが含まれています。
 
 [こちらから Github の既定の設定を参照](https://github.com/shotgunsoftware/tk-config-default2)できます。既定の設定の構造に関する詳細については、パイプライン設定の `config/env/README.md` ファイルを参照するか、[Github でこちらを参照](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)してください。
-
-以前の構造による既定の設定に慣れている場合は、「[既定の設定更新に関するよくある質問(FAQ)￼](https://support.shotgunsoftware.com/hc/ja/community/posts/115003376154)」を参照してください。
 
 {% include info title="注" content="以前の設定構造の場合統合の v1.1 リリースでは、効率性と分かりやすさを最大限に高め、基本設定の構造とより適合するように、既定の設定の構造を再調整しました。従来の既定の設定に基づいてプロジェクトを作成することもできます。プロンプトが表示されたら[Legacy Default]を選択し、[Desktop Set Up Project]ウィザードで設定を選択します。"%}
 
@@ -33,7 +31,7 @@ Toolkit セットアップの中心はパイプライン設定です。つまり
 
 Publisher は、すぐに使用可能なワークフローとすべてのパイプライン設定間の移行を簡単に実行できるように設計されています。すぐに使用可能なセットアップでは、ファイルが所定の方法でパブリッシュされるため、テンプレートまたはファイル システム スキーマを定義する必要がありません。高度なセットアップでプロジェクトを設定し、すべてのパイプライン設定を完了したら、同じパブリッシュ プラグインがアプリ設定に導入されたテンプレートを認識し、パブリッシュ前に指定されたパブリッシュ場所に対してファイルのコピーを開始します。このため、すべてが設定されたプロジェクトに対して、環境ごとまたは DCC ごとにテンプレートベースの設定を必要に応じて導入できます。既定の設定は、テンプレートベースのワークフローが完全に設定されているため、Publish アプリでテンプレートを設定する方法の確認に使用できます。詳細については、Github で既定の設定の [tk-multi-publish2.yml ファイル](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-publish2.yml)を参照してください。
 
-Publisher のプラグインの作成に関する詳細については、[開発者ガイドの Publisher に関するセクション](https://support.shotgunsoftware.com/hc/ja/articles/115000067513#Publisher)を参照してください。
+Publisher のプラグインの作成に関する詳細については、[開発者ガイドの Publisher に関するセクション](https://developer.shotgridsoftware.com/ja/93c6e555/#publisher)を参照してください。
 
 ## ソフトウェアの起動を設定する
 
@@ -45,18 +43,18 @@ Publisher のプラグインの作成に関する詳細については、[開発
 
 ソフトウェア エンティティには次のフィールドがあります。
 
-- **[ソフトウェア名](Software Name):** Desktop のソフトウェアの表示名です。
+- **[ソフトウェア名] (Software Name):** Desktop のソフトウェアの表示名です。
 - **[サムネイル] (Thumbnail):** Desktop アイコン用にアップロードされるイメージ ファイルです。
 - **[ステータス] (Status):** ソフトウェアが利用できるかどうかを制御します。
 - **[エンジン] (Engine):** コンテンツ作成ツールの統合の名前です。
 - **[製品] (Products):** バリアント(Houdini に対する Houdini FX など)を含むソフトウェア パッケージの場合は、ここでカンマ区切りリストを指定できます。手動モードではなく、自動検出モードの場合のみ有効です。
 - **[バージョン] (Versions):** 表示するソフトウェアの特定のバージョンです。ここではカンマ区切りリストを指定できます。手動モードではなく、自動検出モードの場合のみ有効です。
 - **[グループ] (Group):** `Group` フィールドの値が同じエンティティは、Desktop の 1 つのアイコンと {% include product %} の 1 つのメニューにグループ化されます。たとえば、Houdini と Nuke を含む FX グループを作成することもできます。
-- **[グループの既定値](Group Default):** グループ内のいずれかのメンバーの `Group Default` が選択されている場合、このアイコンまたはメニュー項目をクリックすると、このソフトウェアが起動します。
+- **[グループの既定値] (Group Default):** グループ内のいずれかのメンバーの `Group Default` が選択されている場合、このアイコンまたはメニュー項目をクリックすると、このソフトウェアが起動します。
 - **[プロジェクト] (Projects):** ソフトウェアを特定のプロジェクトに制限する方法です。
-- **[ユーザ制限](User Restrictions):** ソフトウェアを特定のユーザまたはグループに制限する方法です。
-- **[Linux/Mac/Windows のパス](Linux/Mac/Windows Path):** ソフトウェアに対する OS 固有のパスを明示的に指定するためにこのフィールドを使用します。
-- **[Linux/Mac/Windows の引数](Linux/Mac/Windows Args):** ソフトウェアの起動時にコマンドに追加するためのコマンドライン引数です。
+- **[ユーザ制限] (User Restrictions):** ソフトウェアを特定のユーザまたはグループに制限する方法です。
+- **[Linux/Mac/Windows のパス] (Linux/Mac/Windows Path):** ソフトウェアに対する OS 固有のパスを明示的に指定するためにこのフィールドを使用します。
+- **[Linux/Mac/Windows の引数] (Linux/Mac/Windows Args):** ソフトウェアの起動時にコマンドに追加するためのコマンドライン引数です。
 
 ここでは、これらのフィールドがどのように動作するかを学習するために、いくつかの使用方法を説明します。
 
@@ -86,7 +84,7 @@ Publisher のプラグインの作成に関する詳細については、[開発
 - 自動検出モードとは異なり、任意のソフトウェア パッケージのバージョンごとにソフトウェア エンティティがあります。
 - これをグループ化するには、`Group` フィールドと `Group Default` フィールドを使用します。`Group` で同じ値を共有するソフトウェア エンティティは Desktop で 1 つのアイコンのドロップダウンにグループ化されます。その名前には `Group` の値が使用されます。
 - このアイコン自体をクリックすると、`Group Default` を選択しているグループ内のソフトウェアが起動します。
-- **ソフトウェア エンティティで Linux のパス、Mac のパス、または Windows のパスのいずれか__に値を指定すると、このエンティティは手動モードに移行します。**自動検出モードとは異なり、パス フィールドが空のときにソフトウェアが Desktop に表示されます__。手動モードでは、ソフトウェア パッケージのパスが指定されており、そのファイルが指定されたパスに存在する場合、ソフトウェア パッケージは任意のオペレーティング システム上でのみ__表示されます。
+- **ソフトウェア エンティティで Linux のパス、Mac のパス、または Windows のパスの_いずれか_に値を指定すると、このエンティティは手動モードに移行します。**自動検出モードとは異なり、パス フィールドが空のときにソフトウェアが Desktop に_表示_されます。手動モードでは、ソフトウェア パッケージのパスが指定されており、そのファイルが指定されたパスに存在する場合、ソフトウェア パッケージは任意のオペレーティング システム上で_のみ_表示されます。
 - 上記の例では、`Windows Path` を指定していないため、Windows にインストールされている Desktop には、Maya のバージョンは 3 つとも表示されません。
 
 ### 例: ユーザまたはグループ別に制限する
@@ -111,7 +109,7 @@ Publisher のプラグインの作成に関する詳細については、[開発
 - 任意の環境の Desktop で表示される Maya のバージョンを 1 つにするため、ここでは `Group` と `Group Default` の値を削除しています。
 - 3 つすべてのバージョンの `Software Name` を「Maya」に設定しています。この方法では、すべてのプロジェクトでユーザに同一名のアイコンが表示されますが、アイコンにはここで設定した内容に応じて異なるバージョンが指定されます。
 - Maya 2016 の `Status` フィールドを `Disabled` に設定しています。このバージョンはもう使用しません。このフィールドですべてのプロジェクトのグローバル表示が切り替わります。
-- Maya 2017 と Maya 2018 の `Projects` に値を指定しています。`Projects` は制限事項として機能します。Maya 2017 が表示されるのは Chicken Planet プロジェクトのみ__で、Maya 2018 は Chicken Planet II にしか表示されません。
+- Maya 2017 と Maya 2018 の `Projects` に値を指定しています。`Projects` は制限事項として機能します。Maya 2017 が表示されるのは Chicken Planet プロジェクト _のみ_ で、Maya 2018 は Chicken Planet II にしか表示されません。
 - ソフトウェア エンティティの `Projects` に値を指定すると、ソフトウェアは指定したプロジェクトでしか表示されなくなります。そのため、スタジオに Chicken Planet シリーズとは別のプロジェクトがある場合は、そのプロジェクトのソフトウェアを明示的に指定する必要があります。
 
 ### 例: 独自のソフトウェアを追加する
@@ -126,13 +124,13 @@ Publisher のプラグインの作成に関する詳細については、[開発
 
 ## パブリッシュ ファイル パスの解決を設定する
 
-ファイルをパブリッシュすると、Publisher により、`Path` と呼ばれる[ファイル/リンク](https://support.shotgunsoftware.com/hc/ja/articles/219031008) フィールドを含む PublishedFile エンティティが {% include product %} に作成されます。その後、別のユーザがローダーを使用して独自の作業セッションにこのファイルをロードしようとします。Loader は複雑なロジックを使用して、有効なローカル パスをオペレーティング システム上の PublishedFile に解決します。
+ファイルをパブリッシュすると、Publisher により、`Path` と呼ばれる[ファイル/リンク](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_data_management_ar_field_types_html) フィールドを含む PublishedFile エンティティが {% include product %} に作成されます。その後、別のユーザがローダーを使用して独自の作業セッションにこのファイルをロードしようとします。Loader は複雑なロジックを使用して、有効なローカル パスをオペレーティング システム上の PublishedFile に解決します。
 
 Loader がパブリッシュ データをパスに解決する方法は、パブリッシュがローカル ファイル リンクまたは `file://` URL に関連付けられているかどうかによって異なります。
 
 ### ローカル ファイル リンクを解決する
 
-パブリッシュするパスが {% include product %} の[サイト基本設定](Site Preferences)で定義されたローカル ストレージと一致する場合、ローカル ファイル リンクがパブリッシュ時に自動的に生成されます。パブリッシュがローカル ファイル リンクの場合は、そのローカル オペレーティング システムの表示が使用されます。ローカル ファイル リンクの詳細については、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219030938)を参照してください。
+パブリッシュするパスが {% include product %} の[サイト基本設定] (Site Preferences)で定義されたローカル ストレージと一致する場合、ローカル ファイル リンクがパブリッシュ時に自動的に生成されます。パブリッシュがローカル ファイル リンクの場合は、そのローカル オペレーティング システムの表示が使用されます。ローカル ファイル リンクの詳細については、[こちら](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html)を参照してください。
 
 ローカル ストレージで現在使用しているオペレーティング システムのパスを定義しない場合は、環境変数を使用すると、ローカル ストレージ ルートを指定できます。環境変数の名前は `SHOTGUN_PATH_<WINDOWS|MAC|LINUX>_<STORAGENAME>` の形式になります。そのため、「Renders」と呼ばれるストレージ ルートのパスを Mac で定義する場合は、環境変数 `SHOTGUN_PATH_MAC_RENDERS` を作成します。次の例を使用して詳細を確認してみましょう。
 
@@ -147,7 +145,7 @@ Loader がパブリッシュ データをパスに解決する方法は、パブ
 
 ローダーはパスを解析して `/studio/renders/` がパスのストレージ ルートであると推定しますが、Mac 用のストレージ ルートは定義されていません。そのため、環境変数 `SHOTGUN_PATH_MAC_RENDERS` を探します。環境変数が見つかると、パスの `/studio/renders` とその値を置き換えます。
 
-**注:** 環境変数 `SHOTGUN_PATH_MAC_RENDERS` を定義して、ローカル ストレージ レンダリングで Mac のパスが設定されている場合は、ローカル ストレージの値が使用され、警告がログに記録されます。
+**注:** 環境変数 `SHOTGUN_PATH_MAC_RENDERS` を定義して、ローカル ストレージ レンダリングで Mac のパスが *設定されている* 場合は、ローカル ストレージの値が使用され、警告がログに記録されます。
 
 **注:** 現在のオペレーティング システムで何もストレージが解決できない場合は、`PublishPathNotDefinedError` が発生します。
 
@@ -188,8 +186,8 @@ Linux で `/projects/some/file.txt` というファイルをパブリッシュ�
 - 「Projects」と呼ばれる {% include product %} のローカル ストレージで次の環境変数を使用します。
 
 - Linux のパス: `/projects`
-- `Windows のパス:``
-- `Mac Path:`/projects`
+- Windows のパス:
+- Mac のパス: `/projects`
 - `SHOTGUN_PATH_WINDOWS_PROJECTS=Q:\projects`
 
 **注:** `Linux path` と環境変数 `SHOTGUN_PATH_LINUX_RENDERS` が設定された {% include product %} でローカル ストレージ `Renders` が定義されている場合は、ストレージが優先され、環境変数は無視され、警告がログに記録されます。一般的に、ローカル ストレージ定義は、環境変数よりも常に優先されます。
@@ -227,7 +225,7 @@ PublishedFile パスの解決を実行する基本的なメソッドの詳細に
 
 **{% include product %} Desktop を介した Websocket v2**
 
-Websocket サーバの RPC API のバージョン 2 では、Toolkit アクションの取得、キャッシュ、および実行に使用される基盤メカニズムが変更されています。この変更により、以前のブラウザ統合の実装に関連する多くのパフォーマンス上の問題が解決され、アクション メニューの視覚的構成が改善されました。また、[すぐに利用可能な {% include product %} 統合](https://support.shotgunsoftware.com/hc/ja/articles/115000068574#Getting%20started%20with%20Shotgun%20Desktop)のサポートも追加されました。これにより、明示的に Toolkit を設定することなく動作するようになりました。これがブラウザ統合の現在の実装です。
+Websocket サーバの RPC API のバージョン 2 では、Toolkit アクションの取得、キャッシュ、および実行に使用される基盤メカニズムが変更されています。この変更により、以前のブラウザ統合の実装に関連する多くのパフォーマンス上の問題が解決され、アクション メニューの視覚的構成が改善されました。また、[すぐに利用可能な {% include product %} 統合](https://developer.shotgridsoftware.com/ja/d587be80/#getting-started-with-desktop)のサポートも追加されました。これにより、Toolkit を明示的に設定しなくても動作するようになりました。これがブラウザ統合の現在の実装です。
 
 ### 環境設定
 
@@ -239,11 +237,11 @@ Websocket サーバの RPC API のバージョン 2 では、Toolkit アクシ�
 
 ![](images/Integration-admin-guide/tk-shotgun_config.png)
 
-上記の [tk-config-basic](https://github.com/shotgunsoftware/tk-config-basic/) の例では、2 つのアプリが設定されており、いくつかのエンジン コマンドがメニュー アクションになっています。Toolkit アプリによって、アクション メニューに含まれるコマンドが登録されます。これにはローカル システム上の各ソフトウェア パッケージを起動するコマンドなどがあり、{% include product %} サイトにある[ソフトウェア エンティティ](https://support.shotgunsoftware.com/hc/ja/articles/115000067493#Configuring%20software%20launches)のリストに対応しています。その結果、メニュー アクションのリストは次のようになります。
+上記の [tk-config-basic](https://github.com/shotgunsoftware/tk-config-basic/) の例では、2 つのアプリが設定されており、いくつかのエンジン コマンドがメニュー アクションになっています。Toolkit アプリによって、アクション メニューに含まれるコマンドが登録されます。これにはローカル システム上の各ソフトウェア パッケージを起動するコマンドなどがあり、{% include product %} サイトにある[ソフトウェア エンティティ](https://developer.shotgridsoftware.com/ja/8085533c/#configuring-software-launches)のリストに対応しています。その結果、メニュー アクションのリストは次のようになります。
 
 ![](images/Integration-admin-guide/action_menu.png)
 
-ブラウザ統合コードにより、ユーザのシステムで Houdini、Maya、Nuke、および Photoshop のインストールが検出されたため、それぞれの統合を起動するためのメニュー アクションが作成されました。特定の環境設定ファイルでは、その環境のエンティティにソフトウェアのランチャーを表示するために、ソフトウェア エンティティのエンジン__が必要になります。そのため、この例では、`tk-houdini`、`tk-maya`、`tk-nuke`、および `tk-photoshopcc` エンジンのすべてが、このスニペットの取得元であるファイルに含まれている必要があります。たとえば、このエンティティのランチャーのリストから Maya を削除する場合は、環境設定ファイルから `tk-maya` エンジン ブロックを削除するだけです。
+ブラウザ統合コードにより、ユーザのシステムで Houdini、Maya、Nuke、および Photoshop のインストールが検出されたため、それぞれの統合を起動するためのメニュー アクションが作成されました。特定の環境設定ファイルでは、その環境のエンティティにソフトウェアのランチャーを表示するために、ソフトウェア エンティティの _エンジン_ が必要になります。そのため、この例では、`tk-houdini`、`tk-maya`、`tk-nuke`、および `tk-photoshopcc` エンジンのすべてが、このスニペットの取得元であるファイルに含まれている必要があります。たとえば、このエンティティのランチャーのリストから Maya を削除する場合は、環境設定ファイルから `tk-maya` エンジン ブロックを削除するだけです。
 
 また、Publish アプリの Publish... コマンドもメニューに含まれています。
 
@@ -325,13 +323,13 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ### ログ
 
-ブラウザ統合のログは、Toolkit の[標準のログ格納場所](https://developer.shotgridsoftware.com/38c5c024/)にあります。関連するログ ファイルは `tk-desktop.log` と `tk-shotgun.log` です。また、Google Chrome を使用している場合は、ブラウザの開発者コンソールで関連するログ出力を利用できることがあります。
+ブラウザ統合のログは、Toolkit の[標準のログ格納場所](https://developer.shotgridsoftware.com/ja/38c5c024/)にあります。関連するログ ファイルは `tk-desktop.log` と `tk-shotgun.log` です。また、Google Chrome を使用している場合は、ブラウザの開発者コンソールで関連するログ出力を利用できることがあります。
 
 ### トラブルシューティング
 
 Web アプリケーションとローカル デスクトップとの通信は複雑な性質を持つため、途中で障害が発生する可能性があります。以下に、障害の例とそのような状況になったときに最初にとるべき手順についての提案をいくつか示します。
 
-**アクション メニューに[{% include product %} Desktop を開くかインストールしてこのメニューを有効にする](Open or install ShotGrid Desktop to enable this menu)と表示される**
+**アクション メニューに[{% include product %} Desktop を開くかインストールしてこのメニューを有効にする] (Open or install ShotGrid Desktop to enable this menu)と表示される**
 
 ![](images/Integration-admin-guide/install_desktop.png)
 
@@ -344,7 +342,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1. {% include product %} Desktop の Websocket サーバが起動に失敗した。この状況は、Websocket サーバの問題のあるリリースが一般に公開された場合にほぼ限定され、非常にまれです。この場合、[tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) にエラーを説明するログが表示されます。このログを [{% include product %} のサポート チーム](https://support.shotgunsoftware.com/hc/ja/requests/new)に送信してください。
+1. {% include product %} Desktop の Websocket サーバが起動に失敗した。この状況は、Websocket サーバの問題のあるリリースが一般に公開された場合にほぼ限定され、非常にまれです。この場合、[tk-desktop.log](https://developer.shotgridsoftware.com/ja/38c5c024/) にエラーを説明するログが表示されます。このログを [{% include product %} のサポート チーム](https://knowledge.autodesk.com/ja/contact-support)に送信してください。
 
 **アクション メニューにアクションが表示されない**
 
@@ -354,17 +352,17 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 1. `tk-shotgun` エンジンは正しい YAML 環境ファイルで設定されているものの、その環境設定内にアプリが存在しない。この場合、このエンティティ タイプに対してアクションが存在しないことが意図されている可能性があります。
 
-2. `tk-shotgun` エンジンが正しい YML 環境ファイルで設定されていて、アプリが存在するにもかかわらず、アクションがメニューに表示されない。これは、アプリが初期化に失敗したことが原因の可能性があります。この場合、問題に関する説明が [tk-shotgun.log and tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) に記録されています。
+2. `tk-shotgun` エンジンが正しい YML 環境ファイルで設定されていて、アプリが存在するにもかかわらず、アクションがメニューに表示されない。これは、アプリが初期化に失敗したことが原因の可能性があります。この場合、問題に関する説明が [tk-shotgun.log および tk-desktop.log](https://developer.shotgridsoftware.com/ja/38c5c024/) に記録されています。
 
 3. このエンティティ タイプに対応する環境に、`tk-shotgun` の環境設定が含まれていない。この場合の最終的な結果は、このリストの 1 番と同じです。この場合、パイプライン設定の `pick_environment` フックを確認することでこのエンティティ タイプに対してどの環境がロードされているかを判断でき、そこで `tk-shotgun` の環境設定を確認できます。
 
 4. ディスクに空のメニュー アクション リストがキャッシュされています。キャッシュを強制的に再生成するには、次のいくつかの方法の中から選択できます。
 
-   - プロジェクトの環境設定で YAML ファイルの変更時刻を更新します。こうすると、次回に {% include product %} からメニュー アクションが要求されたときに、メニュー アクションの再キャッシュがトリガされます。注目する必要があるのは、これによってプロジェクトで作業しているすべてのユーザに対して再キャッシュがトリガされることです。__
-   - {% include product %} サイトで、いずれかのソフトウェア エンティティのフィールド値を更新します。この場合の動作は、上記の YAML ファイルの変更時刻を更新した場合と同じですが、{% include product %} サイトのすべてのプロジェクトで、すべてのユーザのキャッシュされたデータが無効になります。__ソフトウェア エンティティは非プロジェクト エンティティであるため、すべてのプロジェクトで共有されます。いずれかのソフトウェア エンティティのデータが変更された場合は、すべてのプロジェクトが影響を受けます。
+   - プロジェクトの環境設定で YAML ファイルの変更時刻を更新します。こうすると、次回に {% include product %} からメニュー アクションが要求されたときに、メニュー アクションの再キャッシュがトリガされます。注目する必要があるのは、これによってプロジェクトで作業している _すべて_ のユーザに対して再キャッシュがトリガされることです。
+   - {% include product %} サイトで、いずれかのソフトウェア エンティティのフィールド値を更新します。この場合の動作は、上記の YAML ファイルの変更時刻を更新した場合と同じですが、{% include product %} サイトの _すべて_ のプロジェクトで、すべてのユーザのキャッシュされたデータが無効になります。ソフトウェア エンティティは非プロジェクト エンティティであるため、すべてのプロジェクトで共有されます。いずれかのソフトウェア エンティティのデータが変更された場合は、すべてのプロジェクトが影響を受けます。
    - 問題の影響を受けるホストのキャッシュ ファイルを削除できます。キャッシュを削除しても、通常は問題ありません。各ホストにキャッシュがローカルに保存されているため、この特定のシステム上のデータが最初から再キャッシュされるだけです。キャッシュは、{% include product %} のキャッシュ場所にある SQLite ファイル(`<site-name>/site.basic.desktop/tk-desktop/shotgun_engine_commands_v1.sqlite`)に格納されます。
 
-**[Toolkit: アクションを取得中...](Toolkit: Retrieving actions...)がメニュー アクションと置き換わらない**
+**[Toolkit: アクションを取得中...] (Toolkit: Retrieving actions...)がメニュー アクションと置き換わらない**
 
 ![](images/Integration-admin-guide/retrieving_actions.png)
 
@@ -372,7 +370,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 1. Websocket サーバがまだキャッシング アクションを完了していない。プロジェクトの環境設定が大幅に更新された後に初めてアクションが取得される場合、プロセスの完了に時間がかかることがあります。時間を置いてから、`tk-desktop.log` の内容を確認して、処理がまだ行われているかどうかを確認してください。
 
-2. Websocket サーバが応答に失敗し、その後も応答しない。このような状況はまれですが、`tk-desktop.log` を確認してアクションの要求の結果として追加の処理が行われていないことが明らかになった場合は、[ShotGrid サポートに連絡して](https://support.shotgunsoftware.com/hc/ja/requests/new)関連するログ データを提供してください。
+2. Websocket サーバが応答に失敗し、その後も応答しない。このような状況はまれですが、`tk-desktop.log` を確認してアクションの要求の結果として追加の処理が行われていないことが明らかになった場合は、[ShotGrid サポートに連絡して](https://knowledge.autodesk.com/ja/contact-support)関連するログ データを提供してください。
 
 3. ユーザが複数の {% include product %} サイトで作業している。{% include product %} Desktop が 1 つのサイトに対して認証されているときに、2 番目の {% include product %} サイトからメニュー アクションを要求すると、{% include product %} Desktop を再起動して新しいサイトにログインするかどうかを尋ねられます。この要求が無視されると、2 番目のサイトはメニュー アクションのリストを受け取らなくなります。
 
@@ -385,7 +383,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 2. {% include product %} Toolkit プリファレンス フォルダ内: (このファイルは次の場所に既定では存在しません。自分で作成する必要があります。)
    - Windows: `%APPDATA%\Shotgun\Preferences\toolkit.ini`
    - macOS: `~/Library/Preferences/Shotgun/toolkit.ini`
-   - `~/.shotgun/preferences/toolkit.ini`Linux:
+   - Linux: `~/.shotgun/preferences/toolkit.ini`
 
 `SGTK_PREFERENCES_LOCATION` 環境変数オプションを使用すると、コンピュータ上またはネットワーク上のどこにでも設定ファイルを保存できます。`toolkit.ini` は現在の標準ファイル名です。`config.ini` を使用する場合は、「_従来の場所_」セクションを確認してください。
 
@@ -405,7 +403,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 2. 次のパス:
    - Windows: `%APPDATA%\Shotgun\desktop\config\config.ini`
    - macOS: `~/Library/Caches/Shotgun/desktop/config/config.ini`
-   - `~/shotgun/desktop/config/config.ini`Linux:
+   - Linux: `~/shotgun/desktop/config/config.ini`
 
 **プロキシ設定**
 
@@ -415,7 +413,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 **ローカル ホスト サイトで {% include product %} Desktop を実行する**
 
-{% include product %} サイトの URL の最後が `shotgunstudio.com` でない場合は、ローカルの {% include product %} サイトを実行していることを示します。この場合、サイトと {% include product %} との統合の準備が完了していない可能性があり、開始前に {% include product %} チームによる何らかの調整が必要になる場合があります。その場合はサポートいたしますので、[サポート リクエストを送信](https://support.shotgunsoftware.com/hc/ja/requests/new)してください。
+{% include product %} サイトの URL の最後が `shotgunstudio.com` または `shotgrid.autodesk.com` でない場合は、ローカルの {% include product %} サイトを実行していることを示します。この場合、サイトと {% include product %} との統合の準備が完了していない可能性があり、開始前に {% include product %} チームによる何らかの調整が必要になる場合があります。その場合はサポートいたしますので、[チケットを送信](https://knowledge.autodesk.com/ja/contact-support)してください。
 
 **ローカル ホスト サイトでアプリ ストアに接続する**
 
@@ -423,7 +421,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 `app_store_http_proxy: <proxy_server_address>`
 
-この `<proxy_server_address>` は[開発者ドキュメント](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)に記載された命名規則に従った文字列です。
+この `<proxy_server_address>` は[開発者ドキュメント](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
 
 プロジェクトごとにこの設定を上書きする必要がある場合は、プロジェクトのパイプライン設定の `config/core/shotgun.yml` に上書きします。
 
@@ -433,7 +431,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 ### {% include product %}作成
 
-このドキュメントで概要が説明されているオフライン時の問題を解決する方法は、[{% include product %} Create](https://support.shotgunsoftware.com/hc/ja/articles/360012554734) で紹介されている統合機能にも適用されます。{% include product %} Toolkit の動作を調整するために使用されるさまざまな環境変数(`SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` など)は、{% include product %} Create を使用する場合でも、{% include product %} Desktop と同じように適用されます。
+このドキュメントで概要が説明されているオフライン時の問題を解決する方法は、[{% include product %} Create](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Supervisor_Artist_sa_create_sa_intro_create_html) で紹介されている統合機能にも適用されます。{% include product %} Toolkit の動作を調整するために使用されるさまざまな環境変数(`SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` など)は、{% include product %} Create を使用する場合でも、{% include product %} Desktop と同じように適用されます。
 
 ### オフライン時に統合を実行する
 
@@ -441,7 +439,7 @@ _シナリオ: {% include product %} の統合を実行したいと考えてい�
 
 **ソリューション**
 
-- 一時的にインターネットに接続できる場合は、{% include product %} Desktop をダウンロードします。ShotGrid Desktop には一連の[統合](https://support.shotgunsoftware.com/hc/ja/articles/115000068574#Introduction)があらかじめパッケージ化されており、サポートされているすべての DCC 向けの {% include product %} の統合に必要なアプリとエンジンがあらかじめすべてバンドルされています。ShotGrid Desktop を起動すると自動的にアップグレードが検索されますが、{% include product %} App Store に接続できない場合は、ローカルに存在する最新のバージョンが実行されます。
+- 一時的にインターネットに接続できる場合は、{% include product %} Desktop をダウンロードします。Shotgun Desktop には一連の[統合](https://developer.shotgridsoftware.com/ja/d587be80/#introduction)があらかじめパッケージ化されており、サポートされているすべての DCC 向けの {% include product %} の統合に必要なアプリとエンジンがあらかじめすべてバンドルされています。Shotgun Desktop を起動すると自動的にアップグレードが検索されますが、{% include product %} App Store に接続できない場合は、ローカルに存在する最新のバージョンが実行されます。
 
 **知っておきたい情報**
 
@@ -457,7 +455,7 @@ _シナリオ: アーティストのワークステーションがインター�
 
 - インターネットに接続されたワークステーションで {% include product %} Desktop を実行します。起動時に、最新のアップグレードが自動的にダウンロードされます。
 - オプション 1: 共有 Desktop バンドル
-- [バンドル キャッシュ](https://developer.shotgridsoftware.com/7c9867c0/)を、すべてのマシンがアクセスできる共有場所にコピーします。
+- [バンドル キャッシュ](https://developer.shotgridsoftware.com/ja/7c9867c0/)を、すべてのマシンがアクセスできる共有場所にコピーします。
 - オフライン マシンの `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` 環境変数がこの場所を指すように設定します。
 - オフライン マシンで Desktop が起動すると、バンドル キャッシュにある利用可能な最新のアップグレードが取得されます。
 - オプション 2: ローカル配置
@@ -474,11 +472,11 @@ Desktop の自動更新は常に最新の状態を保つために役立ちます
 
 ### 単一のプロジェクトの更新をフリーズする
 
-シナリオ: プロジェクトがもうすぐ完了するため、{% include product %} の統合の更新プログラムが自動的にダウンロードされないようにフリーズしたいと考えています。__
+_シナリオ: プロジェクトがもうすぐ完了するため、{% include product %} の統合の更新プログラムが自動的にダウンロードされないようにフリーズしたいと考えています。_
 
 **ソリューション**
 
-- プロジェクトをロックするバージョンを決定します。[統合のリリース ノートはこちらでご覧いただけます。](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations)
+- プロジェクトをロックするバージョンを決定します。[統合のリリース ノートはこちらでご覧いただけます。](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)
 - {% include product %} で、ロックするプロジェクトのパイプライン設定エンティティを作成し、次のフィールドを入力します(この例では、v1.0.36 の統合を使用するように環境設定をロックしています)。
 - 名前: `Primary`
 - プロジェクト: ロックするプロジェクト
@@ -536,7 +534,7 @@ _シナリオ: 自動更新を許可するテスト プロジェクトを除い�
 - 上記のセクションで説明したように、サイトの更新をフリーズします。
 - 例外にするプロジェクトのパイプライン設定エンティティに、次のフィールド値を設定します。
 - 名前: `Primary`
-- プロジェクト: ロックしない__プロジェクト
+- プロジェクト: ロック _しない_ プロジェクト
 - プラグインの ID: `basic.*`
 - 記述子: `sgtk:descriptor:app_store?name=tk-config-basic`
 
@@ -550,11 +548,11 @@ _シナリオ: 自動更新を許可するテスト プロジェクトを除い�
 
 **解決策**
 
-- {% include product %} でパイプラインの設定エンティティを右クリックし、[選択した項目を複製](Duplicate Selected)を選択して複製します。
-- クローン作成した設定に「update test」という名前をつけて、自分を[ユーザ制限](User Restrictions)フィールドに割り当てます。
+- {% include product %} でパイプラインの設定エンティティを右クリックし、[選択した項目を複製] (Duplicate Selected)を選択して複製します。
+- クローン作成した設定に「update test」という名前をつけて、自分を[ユーザ制限] (User Restrictions)フィールドに割り当てます。
 - このパイプライン設定を使用するようになります。
 - テストするバージョンを指すように記述子を変更します。
-- テストに参加させるユーザは、[ユーザ制限](User Restrictions)フィールドに追加して招待できます。
+- テストに参加させるユーザは、[ユーザ制限] (User Restrictions)フィールドに追加して招待できます。
 - 問題なくテストが完了したら、そのバージョンを使用するようにメインのパイプライン設定を更新するだけです。
 - ユーザが Desktop または DCC を再起動すると、更新が取得されます。
 
@@ -574,7 +572,7 @@ _シナリオ: 自動更新を許可するテスト プロジェクトを除い�
 
 ![](images/Integration-admin-guide/wizard_select.png)
 
-新しいプロジェクトの設定を開始する場合、まずは使用する設定テンプレート__を決定します。基本的に、設定テンプレートは、プロジェクトの実行に必要なすべての設定、ファイル システム テンプレート、アプリ、およびロジックが設定された完全なプロジェクト設定です。
+新しいプロジェクトの設定を開始する場合、まずは_使用する設定テンプレート_を決定します。基本的に、設定テンプレートは、プロジェクトの実行に必要なすべての設定、ファイル システム テンプレート、アプリ、およびロジックが設定された完全なプロジェクト設定です。
 
 - これが最初のプロジェクトである場合は、{% include product %} の既定値を使用して開始してみてください。
 - プロジェクトおよび以前のプロジェクトの環境設定を既に設定している場合は、既存のプロジェクトをベースにして新しいプロジェクトを作成することで既定値を簡単に再利用できます。
@@ -625,7 +623,7 @@ _シナリオ: 自動更新を許可するテスト プロジェクトを除い�
 
 パイプライン設定の展開と管理の方法に関するドキュメントについては、こちらを参照してください。
 
-[プロジェクトの環境設定を管理する](https://support.shotgunsoftware.com/hc/ja/articles/219033168#Inheriting%20the%20config%20from%20your%20previous%20project)
+[プロジェクトの環境設定を管理する](https://developer.shotgridsoftware.com/ja/60762324/#inheriting-the-config-from-your-previous-project)
 
 #### git の設定テンプレートを使用する
 
@@ -633,7 +631,7 @@ _シナリオ: 自動更新を許可するテスト プロジェクトを除い�
 
 プロジェクトの環境設定をソース コントロールに接続したままにする場合はこのオプションを使用します。リモート git または github リポジトリに URL を指定すると、セットアップ プロセスで URL がクローン作成されます。これは github だけでなく、すべての git リポジトリで動作します。リポジトリのパスの最後が `.git` で終わるようにしてください。Toolkit が git セットアップとして処理します。プロジェクト設定は git リポジトリであるため、変更をマスター リポジトリだけでなく、他のプロジェクトにも反映することができます。github ベースの環境設定を使用すると、複数の Toolkit プロジェクトを簡単に同期できます。詳細はこちらでご確認ください。
 
-[プロジェクトの環境設定を管理する](https://support.shotgunsoftware.com/hc/ja/articles/219033168#A%20studio%20configuration%20in%20git%20source%20control)
+[プロジェクトの環境設定を管理する](https://developer.shotgridsoftware.com/ja/60762324/#a-studio-configuration-in-git-source-control)
 
 Windows 上で実行している場合は、使用するマシンに git をインストールして、`PATH` からアクセスできるようにしておく必要があります。Linux と Mac OS X の場合、通常は既定でインストールされます。
 
@@ -645,7 +643,7 @@ Windows 上で実行している場合は、使用するマシンに git をイ�
 
 #### ストレージをセットアップする
 
-それぞれの Toolkit プロジェクトでは、すべてのファイルとデータがディスク上の 1 つ以上の共有ストレージの場所に書き込まれます。たとえば、環境設定には、テクスチャを保存するストレージ、レンダリングを保存するストレージ、シーン ファイルを保存するストレージが必要です。通常、これらのストレージは、{% include product %} の[サイト基本設定](Site Preferences)の[ファイル管理](File Management)タブでコントロールします。__
+それぞれの Toolkit プロジェクトでは、すべてのファイルとデータがディスク上の 1 つ以上の共有ストレージの場所に書き込まれます。たとえば、環境設定には、テクスチャを保存するストレージ、レンダリングを保存するストレージ、シーン ファイルを保存するストレージが必要です。通常、これらのストレージは、{% include product %} の[サイト基本設定] (Site Preferences)の _[ファイル管理] (File Management)_ タブでコントロールします。
 
 Toolkit セットアップ ウィザードに、設定に必要な各ストレージのルートを {% include product %} のローカル ストレージにマップするよう求めるメッセージが表示されます。
 
@@ -688,9 +686,7 @@ windows: \\prod\software\shotgun\golden_circle
 
 最初の環境設定が完了したら、マニュアルの「次のステップ」に移動し、ニーズに合わせて Toolkit を設定および調整する方法を確認します。
 
-[最初のプロジェクトの作成後](https://support.shotgunsoftware.com/hc/ja/articles/219040688)
-
-詳細については、[高度なプロジェクト設定のドキュメント](https://support.shotgunsoftware.com/hc/ja/articles/219039808)を参照してください。
+[最初のプロジェクトの作成後](https://developer.shotgridsoftware.com/ja/c3b662a6/)
 
 ## 高度な機能
 

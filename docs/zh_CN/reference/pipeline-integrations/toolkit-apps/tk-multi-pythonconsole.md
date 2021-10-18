@@ -84,4 +84,4 @@ Python 控制台会显示一个或多个选项卡，每个选项卡包含一个�
 
 ## 其他说明
 
-* 在某些早期版本的 DCC 中，Python 控制台如果在关闭会话时处于打开状态，可能会导致崩溃。我们认为这可能是某些早期版本的 PySide 的一个错误。较新版本的 DCC 捆绑了更新版本的 PySide，退出时不会发生崩溃。如果您在使用最新 DCC 版本时遇到此问题，请[提交工单](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)，以便我们可以进一步调查。
+* 在某些早期版本的 DCC 中，Python 控制台如果在关闭会话时处于打开状态，可能会导致崩溃。我们认为这可能是某些早期版本的 PySide 的一个错误。较新版本的 DCC 捆绑了更新版本的 PySide，退出时不会发生崩溃。如果您在使用最新 DCC 版本时遇到此问题，请[提交工单](https://knowledge.autodesk.com/zh-hans/contact-support)，以便我们可以进一步调查。

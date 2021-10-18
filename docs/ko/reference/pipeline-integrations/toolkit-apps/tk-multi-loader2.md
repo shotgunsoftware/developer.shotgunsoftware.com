@@ -7,7 +7,7 @@ lang: ko
 
 # Loader
 
-이 문서에서는 툴킷 구성에 대한 제어 권한이 있는 경우에만 사용할 수 있는 기능에 대해 설명합니다. 자세한 정보는 [{% include product %} 통합 사용자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000068574-Integrations-User-Guide#The%20Loader)를 참조하십시오.
+이 문서에서는 툴킷 구성에 대한 제어 권한이 있는 경우에만 사용할 수 있는 기능에 대해 설명합니다. 자세한 정보는 [{% include product %} 통합 사용자 안내서](https://developer.shotgridsoftware.com/ko/d587be80/)를 참조하십시오.
 
 ## 구성
 
@@ -208,7 +208,7 @@ app.open_publish( `str` **title**, `str` **action**, `list` **publish_types** )
 * `list` **publish_types** - 사용 가능한 게시 목록을 필터링하는 데 사용할 게시 유형 목록입니다. 이 값이 비어 있거나 None인 경우 모든 게시가 표시됩니다.
 * **반환값:** 사용자가 선택한 {% include product %} 엔티티 사전 목록을 반환합니다.
 
-**예**
+**예시**
 
 ```python
 >>> engine = sgtk.platform.current_engine()

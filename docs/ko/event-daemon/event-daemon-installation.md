@@ -13,7 +13,7 @@ lang: ko
 <a id="System_Requirements"></a>
 ## 시스템 요구사항
 
-데몬은 Python이 설치되어 있고 {% include product %} 서버에 대한 네트워크 액세스 권한이 있는 모든 시스템에서 실행할 수 있습니다. ** 서버 자체에서 실행할 필요가 **없습니다{% include product %}. 실제로 {% include product %}의 호스트된 버전을 사용하는 경우 이는 옵션이 아닙니다. 그러나 원하는 경우 {% include product %} 서버에서 실행할 수 있습니다. 그렇지 않으면 서버가 해당 작업을 수행합니다.
+데몬은 Python이 설치되어 있고 {% include product %} 서버에 대한 네트워크 액세스 권한이 있는 모든 시스템에서 실행할 수 있습니다. {% include product %} 서버 자체에서 실행할 필요가 **없습니다**. 실제로 {% include product %}의 호스트된 버전을 사용하는 경우 이는 옵션이 아닙니다. 그러나 원하는 경우 {% include product %} 서버에서 실행할 수 있습니다. 그렇지 않으면 서버가 해당 작업을 수행합니다.
 
 * Python v2.6, v2.7 또는 3.7
 * [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)

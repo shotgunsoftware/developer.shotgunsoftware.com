@@ -2,7 +2,7 @@
 layout: default
 title: Onboarding Process
 pagename: tier1-getting_started-onboarding
-lang: ja
+lang: en
 ---
 
 # Onboarding Process

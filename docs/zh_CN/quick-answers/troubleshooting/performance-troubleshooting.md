@@ -11,19 +11,19 @@ lang: zh_CN
 
 以下是所要检查事项的快速列表，下面我们将详细介绍这些内容：
 
-- 确保您的应用、插件、框架、核心和 {% include product %} Desktop [都是最新的](#keeping-up-to-date)。
+- 确保您的应用、插件、框架、核心和 {% include product %} Desktop 都是[最新的](#keeping-up-to-date)。
 - 确保在常规使用期间没有启用[调试日志记录](./turn-debug-logging-on.md)。
 - 仅[创建所需的文件夹](#folder-creation-is-slow)并限制文件夹，以便仅在确实需要这些文件夹时才创建它们。在数据结构中添加太多文件夹会降低速度。
 - 将用户缓存存储在服务器上可能会很慢。通过将 [`{% include product %}_HOME` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)设置为指向本地驱动器上的位置，来重定向用户的 {% include product %} 缓存。
-- [配置 Workfiles 和加载器应用](#file-open-file-save-or-the-loader-app-is-slow)以过滤出美工人员不需要的内容。考虑按状态进行过滤，这有助于保持实体列表简短且与美工人员的当前任务相关。
+- [配置 Workfiles 和加载器应用](#file-open-file-save-or-the-loader-app-is-slow)以过滤出艺术家不需要的内容。考虑按状态进行过滤，这有助于保持实体列表简短且与美工人员的当前任务相关。
 - 检查您是否有任何自定义挂钩，并且它们不会增加额外开销。
 
-下面列出了一些良好做法和常见的性能下降场景。这不是一个详尽的列表，当我们看到新的模式时，可以尝试将它添加到列表中。如果本手册不能帮助您找到您所面临问题的根源，请随时提交[支持工单](https://knowledge.autodesk.com/contact-support)，我们的团队将很乐意进一步帮助您。
+下面列出了一些良好做法和常见的性能下降场景。这不是一个详尽的列表，当我们看到新的模式时，可以尝试将它添加到列表中。如果本手册不能帮助您找到您所面临问题的根源，请随时提交[支持工单](https://knowledge.autodesk.com/zh-hans/contact-support)，我们的团队将很乐意进一步帮助您。
 
 目录：
 - [常规良好做法](#general-good-practice)
    - [缓存位置](#cache-location)
-   - [保持更新](#keeping-up-to-date)
+   - [保持最新](#keeping-up-to-date)
    - [集中式配置与分布式配置](#centralized-configs-vs-distributed-configs)
    - [调试](#debugging)
 - [启动软件时速度很慢](#launching-software-is-slow)
@@ -42,13 +42,13 @@ lang: zh_CN
 
 {% include product %} Toolkit [将数据缓存到用户的主目录](../administering/where-is-my-cache.md)。此缓存可以包括许多不同的 SQLite 数据库以及缓存的应用和配置。通常，用户的主目录存储在计算机的本地硬盘驱动器上，但是工作室将它们重定向到网络存储是相当常见的。这样做会影响性能，尤其是 SQLite 数据库，这些数据库用于浏览器集成和文件夹创建/查找等。
 
-如果您的用户目录存储在服务器位置，我们建议使用 [`{% include product %}_HOME` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)重新指定 {% include product %} Toolkit 缓存的路径。`{% include product %}_HOME` 环境变量用于设置 Toolkit 缓存各种数据的位置，例如包缓存、缩略图、用于快速查找数据和其他内容的 SQLite 数据库。
+如果您的用户目录存储在服务器位置，我们建议使用 [`{% include product %}_HOME` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)重新指定 {% include product %} Toolkit 缓存的路径。`{% include product %}_HOME` 环境变量用于设置 Toolkit 缓存各种数据的位置，例如缓存、缩略图、用于快速查找数据和其他内容的 SQLite 数据库。
 
 ### 调试
 
 您可以在 {% include product %} Toolkit 中启用调试日志记录，以便能够从各个进程获取更详细的输出。这在尝试诊断问题时非常有用，但是，调试设置不是设计为在日常使用期间启用的。日志记录输出的增加可能会对性能产生显著影响。
 
-当遇到性能问题时，尤其是本地化到特定计算机或用户的问题时，请先确认未启用[调试日志记录](./turn-debug-logging-on.md)。
+当遇到性能问题时，尤其是局限于特定计算机或用户的问题时，请先确认未启用[调试日志记录](./turn-debug-logging-on.md)。
 
 ### 保持更新
 
@@ -70,24 +70,25 @@ lang: zh_CN
 
 总之，如果您的存储速度较慢，但是 Internet 连接良好，那么分布式配置可能是最佳的解决方案，但是如果您的服务器存储性能很好，而 Internet 连接很差，那么集中式配置可能更合适。
 
-{% include info title="注意" content="如果您对分布式配置感兴趣，但担心按计算机下载依赖项，则可以仅集中包缓存，以便在所有用户之间共享。" %}
+{% include info title="注意" content="如果您对分布式配置感兴趣，但担心按计算机下载依赖项，则可以仅集中缓存，以便在所有用户之间共享。" %}
 
-当使用分布式配置时，用户只需在缓存中找不到相关内容时才下载它，一旦某个用户已下载它，其他用户也能够利用它。为此，您可以在每台计算机上设置 [`{% include product %}_BUNDLE_CACHE_PATH` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables) 以指向共享位置。
+当使用分布式配置时，用户只需在缓存中找不到相关内容时才下载它，一旦某个用户已下载它，其他用户也能够利用它。为此，您可以在每台计算机上设置 [`{% include product %}_BUNDLE_CACHE_PATH` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)以指向共享位置。
 
 ## 启动软件时速度很慢
 
 您可能会注意到，当启动诸如 Maya、Nuke、Houdini 或其他软件时，启动时间比不带 {% include product %} 时要长。这是正常的，它们可能比不带 {% include product %} 时稍长片刻，但有时这些时间可能会增加到难以接受的水平（通常取决于我们期望它们在一分钟内启动的软件）。这可能是诊断起来比较棘手的的领域之一，因为启动软件涉及许多过程。
 
 ### 诊断
+
 首先要做的是弄清楚这是在什么条件下发生的。
 
 1. **不带 {% include product %} 时启动速度慢吗？** - 这似乎是显而易见的，但应注意检查是否仅在带有 {% include product %} 的情况下启动软件时才发生该问题。
 2. **不管您使用哪种方法启动，速度都很慢吗？也就是说，如果您从 SG Desktop 启动或使用浏览器集成从 SG 站点启动，情况是否大致相同？** - 如果是从 {% include product %} 站点而不是从 SG Desktop 启动很慢，那么这可能是浏览器集成的问题，或者它可能意味着在磁盘上创建文件夹的问题。如果是从项目以外的上下文启动，那么很可能是在磁盘上创建了更多文件夹，所以这可能解释了所花的时间。同样值得注意的是，每次启动软件时，我们都会检查所需的文件夹是否存在。
 3. **是否在所有项目中都发生？** - 如果不是，那么它很可能特定于配置的设置方式。
 4. **是否发生在一天中的特定时刻？** - 如果是，那么这可能表明对基础设施的需求较高，例如在一天的某些时间服务器使用率较高。
-5. **是否针对使用的所有计算机/操作系统发生此情况？** - 如果特定计算机速度很慢，则可能是 Toolkit 以外的某些内容导致了问题。那么，首先想到是清除该计算机上的 Toolkit 缓存。不同的操作系统随附不同版本的软件和 Python 软件包，有时可能在特定的内部版本中出现性能问题。具体来说，我们已经看到在 Windows 上使用 Samba (SMB) 共享的性能问题。目前还没有解决此问题的方法，但是如果您正在使用它，那么最好能够意识到这一点。如果您认为该问题仅限于特定的操作系统、Python 软件包或软件版本，请联系我们的[支持团队](https://knowledge.autodesk.com/contact-support)，以便他们可以进一步调查。
+5. **是否针对使用的所有计算机/操作系统发生此情况？** - 如果特定计算机速度很慢，则可能是 Toolkit 以外的某些内容导致了问题。那么，首先想到是清除该计算机上的 Toolkit 缓存。不同的操作系统随附不同版本的软件和 Python 软件包，有时可能在特定的内部版本中出现性能问题。具体来说，我们已经看到在 Windows 上使用 Samba (SMB) 共享的性能问题。目前还没有解决此问题的方法，但是如果您正在使用它，那么最好能够意识到这一点。如果您认为该问题仅限于特定的操作系统、Python 软件包或软件版本，请联系我们的[支持团队](https://knowledge.autodesk.com/zh-hans/contact-support)，以便他们可以进一步调查。
 6. **是否针对所有用户都发生这种情况？** - 与上文类似，如果是同一台计算机上的其他用户，这个问题可能会消失。在这种情况下，首先清除用户的本地 {% include product %} 缓存。此外，请确保没有为正常的生产用途启用调试日志记录，因为这将影响性能。
-7. **启动速度慢局限于特定的应用/软件，还是所有应用/软件的启动速度都异常缓慢？** - 如果特定软件启动缓慢，这可能意味着存在配置问题。可能有必要检查一下，是否有任何自定义挂钩设置为在启动之前或之后运行，这可能会影响性能。启动时使用的常见挂钩是 [`before_app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/before_app_launch.py)、[`app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/app_launch.py) 和核心挂钩 [`engine_init.py`](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/engine_init.py)。有时也会出现以下情况：发布了更新版本的软件，而我们的集成启动速度突然慢很多。在这种情况下，您应该联系[支持](https://knowledge.autodesk.com/contact-support) 以确认他们是否了解这一点，以及是否有任何已知的修复。请提供您使用的软件版本号（如果适用，包括修补程序/Service Pack），以及您正在运行的 TK 插件和核心的版本。
+7. **启动速度慢局限于特定的应用/软件，还是所有应用/软件的启动速度都异常缓慢？** - 如果特定软件启动缓慢，这可能意味着存在配置问题。可能有必要检查一下，是否有任何自定义挂钩设置为在启动之前或之后运行，这可能会影响性能。启动时使用的常见挂钩是 [`before_app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/before_app_launch.py)、[`app_launch.py`](https://github.com/shotgunsoftware/tk-multi-launchapp/blob/master/hooks/app_launch.py) 和核心挂钩 [`engine_init.py`](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/engine_init.py)。有时也会出现以下情况：发布了更新版本的软件，而我们的集成启动速度突然慢很多。在这种情况下，您应该联系[支持团队](https://knowledge.autodesk.com/zh-hans/contact-support)以确认他们是否了解这一点，以及是否有任何已知的修复。请提供您使用的软件版本号（如果适用，包括修补程序/Service Pack），以及您正在运行的 TK 插件和核心的版本。
 
 ### 问题是在启动前还是启动后发生？
 
@@ -117,7 +118,7 @@ lang: zh_CN
 
 一旦定位了时间跳转，日志行就有望让您了解在该阶段发生了什么，例如它是在文件夹创建期间发生的，还是在试图获取 {% include product %} 连接时发生的。
 
-不过，阅读日志可能比较麻烦，而且内容并不总是有意义，因此，您可以再次联系[支持](https://knowledge.autodesk.com/contact-support)来帮助您完成这一点。
+不过，阅读日志可能比较麻烦，而且内容并不总是有意义，因此，您可以再次联系[支持团队](https://knowledge.autodesk.com/zh-hans/contact-support)来帮助您完成这一点。
 
 ### 软件启动速度慢的常见原因
 
@@ -131,8 +132,8 @@ lang: zh_CN
 首先要做的是将问题范围缩小到相关应用速度慢的某些方面。
 
 - **启动应用或浏览选项卡是否很慢？**
-   - 有可能是该应用当前配置为显示太多信息。可以将“我的任务”(My Tasks)选项卡和其他选项卡配置为从列表中过滤出不需要的实体。例如，您可以过滤出处于特定状态的任务，例如“暂停”(On Hold) (`hld`) 或“最终”(Final) (`fin`)。这不仅提供了性能优势，而且还让美工人员仅看到对他们来说重要的信息。可以过滤[加载器应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033078#The%20tree%20view)和 Workfiles 应用，但是过滤时 Workfiles 目前没有特定的文档部分，不过过滤器可以作为[层次结构设置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088#Step%20filtering)的一部分应用。
-   - “File Open”应用的层次结构也可以配置为延迟加载[子项直到它被展开](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088#Deferred%20queries)。现在这是默认的配置设置，但是，如果您有较旧的配置，则可能希望过渡到使用该设置。
+   - 有可能是该应用当前配置为显示太多信息。可以将“我的任务”(My Tasks)选项卡和其他选项卡配置为从列表中过滤出不需要的实体。例如，您可以过滤出处于特定状态的任务，例如“暂停”(On Hold) (`hld`) 或“最终”(Final) (`fin`)。这不仅提供了性能优势，而且还让美工人员仅看到对他们来说重要的信息。可以过滤[加载器应用](https://developer.shotgridsoftware.com/zh_CN/a4c0a4f1/)和 Workfiles 应用，但是过滤时 Workfiles 目前没有特定的文档部分，不过过滤器可以作为[层次结构设置](https://developer.shotgridsoftware.com/zh_CN/9a736ee3/#step-filtering)的一部分应用。
+   - “File Open”应用的层次结构也可以配置为延迟加载[子项直到它被展开](https://developer.shotgridsoftware.com/zh_CN/9a736ee3/#deferred-queries)。现在这是默认的配置设置，但是，如果您有较旧的配置，则可能希望过渡到使用该设置。
    - 确认未启用调试日志记录。这可能会导致大量额外的 I/O，因此会降低速度；这些应用确实包含大量的调试输出。
 - **打开、保存或创建新文件时是否很慢？**
    - 检查您是否已接管场景操作或动作挂钩，并确定这些功能是否有任何可能会降低速度的自定义行为。
@@ -162,7 +163,7 @@ lang: zh_CN
 
 #### 随父文件夹一起创建
 
-有一个 [`create_with_parent` 设置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Create%20With%20Parent%20Folder)，可应用于数据结构文件夹。
+有一个 [`create_with_parent` 设置](https://developer.shotgridsoftware.com/zh_CN/82ff76f7/#create-with-parent-folder)，可应用于数据结构文件夹。
 将其设置为 True 会导致子文件夹随父文件夹一起创建。您应注意避免这种情况，因为将其设置为 True 会导致检查并创建大量的文件夹。
 
 **示例**
@@ -174,7 +175,8 @@ lang: zh_CN
 {% include info title="注意" content="工序数据结构文件夹的设置默认为 True。" %}
 
 #### 延迟创建
-[`defer_creation` 设置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Workspaces%20and%20Deferred%20Folder%20Creation)允许您将文件夹的创建限制为仅在特定插件运行时才创建文件夹，从而进一步细化何时应创建文件夹。您甚至可以使用自定义名称，然后使用 [sgtk API](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure) 触发它们的创建。
+
+[`defer_creation` 设置](https://developer.shotgridsoftware.com/zh_CN/82ff76f7/#workspaces-and-deferred-folder-creation)允许您将文件夹的创建限制为仅在特定插件运行时进行，从而进一步细化何时应创建文件夹。您甚至可以使用自定义名称，然后使用 [sgtk API](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure) 触发它们的创建。
 
 **示例**
 
@@ -195,7 +197,7 @@ sgtk.create_filesystem_structure(entity["type"], entity["id"], engine="publish")
 
 考虑进一步延迟文件夹，如果在项目的根目录下有许多非动态文件夹，通常只需要创建一次。例如，默认配置的数据结构根目录下的[“editorial”和“reference”](https://github.com/shotgunsoftware/tk-config-default2/tree/master/core/schema/project)文件夹可能只需要在项目开始时创建一次，但默认情况下，每次创建文件夹时都将检查它们是否存在。
 
-为了限制这一点，可以为它们创建 [yml 文件](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868#Static%20folders)，您可以在其中设置一个延迟关键字，这样只有在特定插件中运行文件夹创建或传递该关键字时才会创建它们。您可以将延迟关键字设置为 `tk-shell`，然后通过 tank 命令（如 `tank folders`）运行文件夹创建。
+为了限制这一点，可以为它们创建 [yml 文件](https://developer.shotgridsoftware.com/zh_CN/82ff76f7/#static-folders)，您可以在其中设置一个延迟关键字，这样只有在特定插件中运行文件夹创建或传递该关键字时才会创建它们。您可以将延迟关键字设置为 `tk-shell`，然后通过 tank 命令（如 `tank folders`）运行文件夹创建。
 
 这意味着，只有在通过 tank 命令运行文件夹创建时才会创建这些文件夹，这是 Toolkit 管理员在第一次设置项目时可以执行的操作。或者，您可以编写一个小型脚本，使用 custom 关键字运行文件夹创建，类似于上面的示例。
 
@@ -208,6 +210,7 @@ sgtk.create_filesystem_structure(entity["type"], entity["id"], engine="publish")
 本地[缓存路径](../administering/what-is-path-cache.md)使用 SQLite 数据库来存储数据。如果数据库存储在网络存储上，那么可能会严重影响数据库的读取和写入性能。
 
 #### 初始同步
+
 在某些情况下，需要从头开始为一个已经注册了许多文件夹的项目生成本地缓存（例如，当新用户加入已在进行中的项目时）。这个过程可能会明显延长，但令人高兴的是，对于该项目，这种情况应该仅发生一次。
 
 后续同步将仅提取本地缓存和站点注册之间的差异。如果用户不经常处理项目，并且在会话之间创建了许多文件夹，那么当所有内容都缓存时，他们可能会明显等待很长时间。

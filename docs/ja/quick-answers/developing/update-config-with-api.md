@@ -58,4 +58,4 @@ c.execute({})
 
 関連トピック
 
-- [カスタム スクリプトによる認証とログイン資格情報](https://support.shotgunsoftware.com/hc/ja/articles/219040338)
+- [カスタム スクリプトによる認証とログイン資格情報](https://developer.shotgridsoftware.com/ja/724152ce/)

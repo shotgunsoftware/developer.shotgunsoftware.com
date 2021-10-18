@@ -11,7 +11,7 @@ lang: ja
 
 Toolkit パイプラインの中心にあるのは環境設定です。Toolkit パイプライン設定内の環境構成ファイルでは、さまざまな DCC 内で使用可能な Toolkit アプリを定義し、それぞれの設定をカスタマイズできます。このドキュメントは環境設定ファイルの構造と機能についての完全なリファレンスです。ここでは、プロジェクト内のさまざまなワークフローを設定するための Toolkit の*「環境」*の概念、環境設定の構成、ファイル参照、そしてどのようなカスタマイズが行えるかを確認する方法について説明します。
 
-{% include info title="注" content="このドキュメントは環境設定ファイルのリファレンスとして使用しますが、『[パイプライン設定の編集に関する Toolkit の基本ガイド](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)』には、構成設定を編集するステップバイステップの手順が例として記載されています。"%}
+{% include info title="注" content="このドキュメントは環境設定ファイルのリファレンスとして使用しますが、『[パイプライン設定の編集に関する Toolkit の基本ガイド](https://developer.shotgridsoftware.com/ja/37f575b8/)』には、構成設定を編集するステップバイステップの手順が例として記載されています。" %}
 
 
 
@@ -21,7 +21,7 @@ Toolkit パイプラインの中心にあるのは環境設定です。Toolkit �
 
 しかし、スタジオのパイプラインでは、さまざまなタイプのアーティストが異なるワークフローを使用するのが一般的です。簡単な例として、アセットを扱うアーティストの場合は Mari などのテクスチャ ペイント ソフトウェアを利用可能にし、ショットを扱うアーティストの場合は Nuke などの合成ソフトウェアを利用可能にします。
 
-ソフトウェア パッケージの他にも、異なるアーティストに対して、同じ Toolkit アプリで異なる設定を使用することができます。たとえば、ショットのアーティストとアセットのアーティストの両方が [Workfiles アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)を使用することがありますが、ショットのアーティストは Shot エンティティ、アセットのアーティストは Asset エンティティに関連付けられているファイルにのみナビゲートできるように制限することができます。
+ソフトウェア パッケージの他にも、異なるアーティストに対して、同じ Toolkit アプリで異なる設定を使用することができます。たとえば、ショットのアーティストとアセットのアーティストの両方が [Workfiles アプリ](https://developer.shotgridsoftware.com/ja/9a736ee3/)を使用することがありますが、ショットのアーティストは Shot エンティティ、アセットのアーティストは Asset エンティティに関連付けられているファイルにのみナビゲートできるように制限することができます。
 
 プロジェクト内でこれらの個別のワークフローをサポートするために、Toolkit はアプリとエンジンの構成を環境上で分離しています。環境には、一連のソフトウェア パッケージの統合とその設定が含まれています。それらのすべてには、特定の共通するコンテキストがあります。
 
@@ -31,7 +31,7 @@ Toolkit パイプラインの中心にあるのは環境設定です。Toolkit �
 
 Toolkit での環境設定の構築には多くの自由が与えられています。このドキュメントは利用可能なすべてのオプションのリファレンスで、実際のパイプラインのニーズに最も適した選択をするのに必要な知識を得ることができます。
 
-またこのドキュメントでは、[既定の設定](https://github.com/shotgunsoftware/tk-config-default2)と呼ばれる、パイプライン設定の出発点として選択された特別な設定についても説明します。パイプラインをカスタマイズする準備が整ったら、最初の手順は[プロジェクト用の編集可能なパイプライン設定を作成する](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)ことです。
+またこのドキュメントでは、[既定の設定](https://github.com/shotgunsoftware/tk-config-default2)と呼ばれる、パイプライン設定の出発点として選択された特別な設定についても説明します。パイプラインをカスタマイズする準備が整ったら、最初の手順は[プロジェクト用の編集可能なパイプライン設定を作成する](https://developer.shotgridsoftware.com/ja/37f575b8/)ことです。
 
 これらの選択は単なる規則であり、Toolkit のワークフローにハードコードされているわけではありませんが、既定の設定を例として参照すると、パイプラインのカスタマイズを開始した後に使用できる機能や、独自の設定を構築するためのベスト プラクティスについて学ぶことができます。また、新しい Toolkit ユーザが既定の設定を出発点として参照すれば、Toolkit の規則について知るのにも役立ちます。このドキュメントでは、Toolkit の環境設定の一般的な機能と、既定の設定における特定の選択とを常に区別します。既定の設定の環境構成の詳細については、[README ファイル](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)を参照してください。
 
@@ -293,7 +293,7 @@ engines:
 
 インクルードされた `engine_locations.yml` ファイルから `tk-maya` エンジンのディスクリプタを取得し、インクルードされた `app_locations.yml` ファイルから `tk-maya` エンジン用に定義された各アプリのディスクリプタを取得します。
 
-{% include info title="注" content="既定の設定では、この例では示されていない 2 番目のネスト レベルを使用しています。単なるディスクリプタ以上の設定を持つすべてのアプリまたはエンジンは、`includes/settings` に設定ファイルがあります(例: `includes/settings/tk-maya.yml`、`includes/settings/tk-multi-workfiles2.yml`)。エンジン設定ファイルには、アプリ設定ファイルからのアプリ設定が含まれ、環境設定ファイルにはエンジン設定ファイルからの設定が含まれています。既定の設定の構造の詳細については、[README ファイル](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)を参照してください。構成設定の変更に関する詳細な手順については、『[構成設定の編集に関する Toolkit の基本ガイド](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)』を参照してください。"%}
+{% include info title="注" content="既定の設定では、この例では示されていない 2 番目のネスト レベルを使用しています。単なるディスクリプタ以上の設定を持つすべてのアプリまたはエンジンは、`includes/settings` に設定ファイルがあります(例: `includes/settings/tk-maya.yml`、`includes/settings/tk-multi-workfiles2.yml`)。エンジン設定ファイルには、アプリ設定ファイルからのアプリ設定が含まれ、環境設定ファイルにはエンジン設定ファイルからの設定が含まれています。既定の設定の構造の詳細については、[README ファイル](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)を参照してください。構成設定の変更に関する詳細な手順については、『[構成設定の編集に関する Toolkit の基本ガイド](https://developer.shotgridsoftware.com/ja/37f575b8/)』を参照してください。" %}
 
 
 ## スパース構成
@@ -308,7 +308,7 @@ engines:
 
 スパース構成では、単に設定ファイルを見ただけでは、どの構成設定がアプリに使用できるかをすぐに判断することはできません。アプリで利用可能な構成設定を確認する場合、2 つの選択肢があります。
 
-* **アプリのドキュメント**: 各アプリには独自のドキュメント ページがあり、それぞれのページに「設定オプション」セクションがあります。このセクションでは、アプリで使用可能なすべての構成設定が、それぞれの説明と既定値と共に一覧表示されています。たとえば、[Workfiles ドキュメント ページ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)を参照することができます。[アプリとエンジンのページ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)には、すべてのアプリとエンジンのドキュメント ページが一覧表示されています。
+* **アプリのドキュメント**: 各アプリには独自のドキュメント ページがあり、それぞれのページに「設定オプション」セクションがあります。このセクションでは、アプリで使用可能なすべての構成設定が、それぞれの説明と既定値と共に一覧表示されています。たとえば、[Workfiles ドキュメント ページ](https://developer.shotgridsoftware.com/ja/9a736ee3/)を参照することができます。[アプリとエンジンのページ](https://developer.shotgridsoftware.com/ja/162eaa4b/)には、すべてのアプリとエンジンのドキュメント ページが一覧表示されています。
 * **マニフェスト:** すべての Toolkit バンドルは、そのルート ディレクトリに `info.yml` というファイルを含んでいます。このファイルをバンドルの*「マニフェスト」*と呼び、バンドルで利用可能なすべての設定を、それぞれの説明と既定値と共に定義します。マニフェストは、バンドルの独自のキャッシュ(パイプライン設定内の `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml` など)、または Github ([ここでは Workfiles の場合の例を示します](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml))にあります。
 
 ## 構成設定を修正する
@@ -342,10 +342,10 @@ engines:
 
 ## その他の参考情報
 
-* [Toolkit の基本ガイド: パイプライン設定を編集する](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)
-* [Toolkit の基本ガイド: アプリを追加する](../../guides/pipeline-integrations/getting-started/installing_app.md)
-* [アニメーション パイプラインのチュートリアル](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
+* [Toolkit の基本ガイド: パイプライン設定を編集する](https://developer.shotgridsoftware.com/ja/37f575b8/)
+* [Toolkit の基本ガイド: アプリを追加する](https://developer.shotgridsoftware.com/ja/4d147fb2)
+* [アニメーション パイプラインのチュートリアル](https://developer.shotgridsoftware.com/ja/cb8926fc/)
 * [ディスクリプタのリファレンス ドキュメント](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
 * [ウェビナー: Toolkit の管理](https://youtu.be/7qZfy7KXXX0)
-* [ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference)
+* [ファイル システム設定リファレンス](https://developer.shotgridsoftware.com/ja/82ff76f7/)
 * [既定の設定の環境構成に関する README](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

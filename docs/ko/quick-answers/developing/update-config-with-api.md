@@ -58,4 +58,4 @@ c.execute({})
 
 참고:
 
-- [커스텀 스크립트의 인증 및 로그인 자격 증명](https://support.shotgunsoftware.com/hc/ko/articles/219040338)
+- [커스텀 스크립트의 인증 및 로그인 자격 증명](https://developer.shotgridsoftware.com/ko/724152ce/)

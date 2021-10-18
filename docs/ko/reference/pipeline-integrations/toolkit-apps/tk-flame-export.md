@@ -58,7 +58,7 @@ Submit 버튼을 클릭하면 다음과 같이 여러 작업이 즉시 수행됩
 
 LINKBOX_ENGINE:{% include product %}software/tk-flame: Flame 엔진
 
-통합 또는 커스터마이즈에 관한 질문이 있으면 언제든지 지원 팀(toolkitsupport@shotgunsoftware.com)에 문의해 주십시오.
+통합 또는 커스터마이즈에 관한 질문이 있으면 언제든지 [지원 사이트](https://knowledge.autodesk.com/ko/contact-support)를 방문해 주십시오.
 
 # 고급 항목
 
@@ -73,7 +73,7 @@ Flame을 제어하기 위해 Flame에 전달되는 실제 내보내기 xml 컨�
 ## {% include product %} 서버 측 트랜스코딩 건너뛰기
 기본적으로 Quicktime은 `Version.sg_uploaded_movie` 필드를 설정하는 방법으로 {% include product %} Review에 업로드됩니다. 그러면 {% include product %} 서버 측 트랜스코딩이 트리거되고 업로드된 Quicktime은 브라우저 및 모바일에서 재생하기에 적합한 `mp4` 및 `webm` 표현으로 변환됩니다. 경우에 따라 이 서버 측 트랜스코딩을 건너뛰는 것이 유익할 수 있습니다. `bypass_shotgun_transcoding` 구성 설정을 설정하면 건너뛸 수 있습니다. true로 설정하면 통합에서 {% include product %}의 `Version.sg_uploaded_movie_mp4` 필드로 직접 업로드하여 서버 측 트랜스코딩을 건너뜁니다. 이 경우 `webm` 버전이 생성되지 않으므로 Firefox에서 리뷰를 재생할 수 없습니다.
 
-자세한 정보는 https://support.shotgunsoftware.com/hc/ko/articles/219030418을 참조하십시오.
+자세한 정보는 https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Supervisor_Artist_sa_review_approval_sa_transcoding_html을 참조하십시오.
 
 ## ffmpeg 커스터마이즈
 
@@ -81,7 +81,7 @@ Flame을 제어하기 위해 Flame에 전달되는 실제 내보내기 xml 컨�
 
 h264 매개변수가 ffmpeg로 전달되는 방식이 기본적으로 사용되는 버전과 최신 버전 간에 변경되었습니다. 최신 ffmpeg로 전환하면 {% include product %} 측에서 최적의 업로드 및 성능을 제공하는 권장 트랜스코딩 지침을 정확히 구현할 수 있습니다. 이러한 지침은 다음을 참조하십시오.
 
-https://support.shotgunsoftware.com/hc/ko/articles/219030418
+https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Supervisor_Artist_sa_review_approval_sa_transcoding_html
 
 고급 사용자인 경우 ffmpeg 버전만 변경하는 것이 좋습니다. 이 경우 다음 단계를 수행합니다.
 

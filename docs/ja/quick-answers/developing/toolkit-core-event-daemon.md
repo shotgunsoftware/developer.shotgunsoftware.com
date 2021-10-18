@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ShotGrid Event デーモンを使用してさまざまな Toolkit コア モジュールをロードするにはどうすればいいですか?
+title: ShotGrid のイベント デーモンを使用してさまざまな Toolkit コア モジュールをロードするにはどうすればいいですか?
 pagename: toolkit-core-event-daemon
 lang: ja
 ---
@@ -13,7 +13,7 @@ lang: ja
 
 Toolkit の sgtk API はプロジェクト中心です。つまり、API を使用するプロジェクトから明示的に API を読み込まなければなりません。つまり、1 つの Python セッションで複数のプロジェクトに対して sgtk API 操作を使用すると、Python では同じ名前のモジュールを 1 回しか読み込めないため、問題が発生します。
 
-[{% include product %} Event デーモン](https://github.com/shotgunsoftware/shotgunEvents)を使用している場合、特定のイベントについてはプラグイン内で Toolkit のアクションを実行することができます。これは、Python がモジュールを一度しか読み込まないため少々厄介です。そのため、プロジェクト A の Toolkit Core API をプラグインの初回実行時に読み込む場合、このバージョンはデーモンの存続期間中読み込まれたままになります。つまり、プラグインに割り当てられる次のイベントがプロジェクト B 用である場合、プロジェクト A の Core API を使用してプロジェクト B の新しい Toolkit オブジェクトのインスタンスを作成しようとすると、Toolkit にエラーが表示されます。
+[{% include product %} Event デーモン](https://github.com/shotgunsoftware/shotgunEvents) を使用している場合、特定のイベントについてはプラグイン内で Toolkit のアクションを実行することができます。 これは、Python がモジュールを一度しか読み込まないため少々厄介です。そのため、プロジェクト A の Toolkit Core API をプラグインの初回実行時に読み込む場合、このバージョンはデーモンの存続期間中読み込まれたままになります。つまり、プラグインに割り当てられる次のイベントがプロジェクト B 用である場合、プロジェクト A の Core API を使用してプロジェクト B の新しい Toolkit オブジェクトのインスタンスを作成しようとすると、Toolkit にエラーが表示されます。
 
 **一元管理設定を使用する場合の問題の例:**
 
@@ -81,7 +81,7 @@ def import_sgtk(project):
         else:
             # use the studio default one
             # this assumes you have a shared studio core installed.
-            # See https://support.shotgunsoftware.com/entries/96141707
+            # See https://developer.shotgridsoftware.com/b12f2510/#how-do-i-share-the-toolkit-core-between-projects
             core_python_path = os.path.join(shotgun_base, "studio", python_subfolder)
 
     # tweak sys.path to add the core API to the beginning so it will be picked up

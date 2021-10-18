@@ -99,7 +99,7 @@ actions_hook: '{self}/tk-maya_actions.py'
 
 有关详细信息，请参见应用随附的挂钩文件。挂钩还会利用继承性，这意味着您不需要改写挂钩中的所有内容，而是可以更轻松地用各种方式对默认挂钩进行扩展或补充，使挂钩更易于管理。
 
-[单击此处详细了解第二代挂钩格式。](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039878#The%20hook%20data%20type)
+[单击此处详细了解第二代挂钩格式。](https://developer.shotgridsoftware.com/zh_CN/6d10dedf/)
 
 通过在挂钩中运用继承性，您可以像下面这样向默认挂钩中添加附加动作：
 
@@ -190,7 +190,7 @@ action_mappings:
 
 有关发布应用的完整开发人员文档，请参见 [Toolkit 开发人员站点](http://developer.shotgridsoftware.com/tk-multi-publish2)。
 
-有关如何使用发布应用的详细信息，请参见[用户手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067513#User_guide_link)。如果要查找有关第一代发布器的详细信息，请访问[经典发布器文档](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000067513#classic_publisher_link)。
+有关如何使用发布应用的详细信息，请参见[用户手册](https://developer.shotgridsoftware.com/zh_CN/d587be80/#the-publisher)。
 
 ## 加载器
 

@@ -24,22 +24,22 @@ lang: ko
 
 이 안내서를 사용하고 파이프라인 구성에 대한 편집을 수행하려면 다음이 필요합니다.
 
-1. 활성 [{% include product %}](https://www.shotgunsoftware.com/kr/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 사이트.
+1. 활성 [{% include product %}](https://www.shotgridsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 사이트
 2. 하나 이상의 에셋이 있는 프로젝트. 첫 번째 안내서에서 생성한 the_other_side 프로젝트에 에셋을 추가할 수 있습니다. [구성 시작하기](./advanced_config.md) 안내서에서 프로젝트의 에셋을 생성하는 방법을 익힐 수 있습니다.
 3. 식별된 프로젝트에 대한 파이프라인 구성이나 [구성 시작하기](./advanced_config.md) 안내서를 완료하고 해당 연습에서 생성한 구성을 사용합니다.
 4. 파이프라인 구성이 저장된 파일 시스템에 대해 읽기 및 쓰기 권한을 적절하게 설정합니다.
 5. {% include product %} 데스크톱이 시스템에 설치되어 있어야 합니다.
-6. 활성 상태의 Maya 멤버쉽. Maya의 30일 체험판은 [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 구할 수 있습니다.
+6. 활성 상태의 Maya 서브스크립션. Maya의 30일 체험판은 [여기](https://www.autodesk.co.kr/products/maya/free-trial)에서 구할 수 있습니다.
 
 {% include info title="참고" content="이 안내서는 `tk-config-default2` 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다." %}
 
 ## Workfiles 앱 정보
 
-Workfiles 앱은 {% include product %} 소프트웨어 통합에서 파일 관리를 제어하고, 작업 파일을 검색하고 열고 저장하는 기능에 대한 액세스를 제어합니다. **+새 태스크**(+New Task) 버튼은 사용자가 이 작업을 수행하기 위해 {% include product %}으로 이동할 필요 없이 태스크를 추가할 수 있게 해 주는 Workfiles 앱의 동작입니다. 구성은 환경별 파일로 나뉩니다. 이를 통해 파일을 생성하고, 파일에 이름을 지정하고, 파일을 저장하는 시기 또는 태스크를 실행하거나 특정 기능을 수행하는 시기를 제어하는 등 파이프라인의 여러 단계와 관련된 기능을 관리할 수 있습니다. 이러한 구성은 Workfiles 앱의 모든 기능과 연관되며 앱 또는 엔진의 설정을 수정할 때도 적용됩니다. 자세한 내용은 이 문서의 끝부분에 있는 [고급 항목](#advanced-topics)을 참조하십시오.
+Workfiles 앱은 {% include product %} 소프트웨어 통합에서 파일 관리를 제어하고, 작업 파일을 검색하고 열고 저장하는 기능에 대한 액세스를 제어합니다. **+새 태스크(+New Task)** 버튼은 사용자가 이 작업을 수행하기 위해 {% include product %}로 이동할 필요 없이 태스크를 추가할 수 있게 해 주는 Workfiles 앱의 동작입니다. 구성은 환경별 파일로 나뉩니다. 이를 통해 파일을 생성하고, 파일에 이름을 지정하고, 파일을 저장하는 시기 또는 태스크를 실행하거나 특정 기능을 수행하는 시기를 제어하는 등 파이프라인의 여러 단계와 관련된 기능을 관리할 수 있습니다. 이러한 구성은 Workfiles 앱의 모든 기능과 연관되며 앱 또는 엔진의 설정을 수정할 때도 적용됩니다. 자세한 내용은 이 문서의 끝부분에 있는 [고급 항목](#advanced-topics)을 참조하십시오.
 
 ## 구성 파일 익히기
 
-S{% include product %}의 파이프라인 구성 목록을 사용하여 작업 중인 프로젝트의 파이프라인 구성이 저장된 위치를 찾을 수 있습니다. 저장된 위치를 아는 경우 <a href="#step5">5단계</a>로 건너뛸 수 있습니다.
+{% include product %}의 파이프라인 구성 목록을 사용하여 작업 중인 프로젝트의 파이프라인 구성이 저장된 위치를 찾을 수 있습니다. 파일이 저장된 위치를 알고 있는 경우 [5단계](#finding-the-pipeline-configuration)로 건너뛸 수 있습니다.
 
 ## 파이프라인 구성 찾기
 
@@ -91,7 +91,7 @@ S{% include product %}의 파이프라인 구성 목록을 사용하여 작업 �
 
 **{% include product %}** 메뉴가 완전히 로드될 때까지 기다립니다. 인터넷 연결 속도가 느릴 경우 메뉴가 로드되는 동안 커피 한 잔 준비하는 것도 좋습니다.
 
-Maya와 {% include product %}이 완전히 로드되면 **파일 열기**(File Open) 대화상자가 자동으로 열립니다. {% include product %} 데스크톱에서 Maya를 실행하면 **프로젝트** 환경에서 Maya가 시작되고 툴킷 워크플로우의 구성이 `config/env/project.yml` 파일에 의해 구동됩니다. 기본 구성에서 식별되는 환경은 `project`, `sequence`, `shot`, `shot_step`, `asset`, `asset_step`입니다.
+Maya와 {% include product %}가 완전히 로드되면 **파일 열기(File Open)** 대화상자가 자동으로 열립니다. {% include product %} 데스크톱에서 Maya를 실행하면 **프로젝트** 환경에서 Maya가 시작되고 툴킷 워크플로우의 구성이 `config/env/project.yml` 파일에 의해 구동됩니다. 기본 구성에서 식별되는 환경은 `project`, `sequence`, `shot`, `shot_step`, `asset`, `asset_step`입니다.
 
 **10단계:** **파일 열기**(File Open) 대화상자의 왼쪽 창에서 **에셋**(Assets) 탭을 선택합니다. 검색 결과에 표시되는 폴더 내의 모든 에셋을 선택합니다.
 
@@ -105,7 +105,7 @@ Maya와 {% include product %}이 완전히 로드되면 **파일 열기**(File O
 
 **11단계:** **프로젝트(프로젝트 이름)**(Project(프로젝트 이름)) 옆에 있는 **파일 열기**(File Open) 창의 오른쪽 상단에서 **>**를 선택합니다.
 
-이 참조 상자는 **파일 열기**(File Open) 창의 기능을 제어하는 구성 설정에 대한 상세한 정보를 보여 줍니다. 툴킷의 일부 앱에는 앱에 사용된 설정과 기본 설정을 보여 주는 참조 상자가 있습니다. **위치:**(Location:) 식별자는 **tk-multi-workfiles2**입니다. 이 식별자는 Workfiles 앱을 만드는 코드 번들의 식별자입니다. 파이프라인 구성을 검색할 때 이 이름으로 앱의 설정이 있는 위치를 확인할 수 있습니다. {% include product %} 통합에서 사용할 수 있는 모든 구성 설정, 앱 및 엔진이 나열된 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)가 있습니다.
+이 참조 상자는 **파일 열기**(File Open) 창의 기능을 제어하는 구성 설정에 대한 상세한 정보를 보여 줍니다. 툴킷의 일부 앱에는 앱에 사용된 설정과 기본 설정을 보여 주는 참조 상자가 있습니다. **위치:**(Location:) 식별자는 **tk-multi-workfiles2**입니다. 이 식별자는 Workfiles 앱을 만드는 코드 번들의 식별자입니다. 파이프라인 구성을 검색할 때 이 이름으로 앱의 설정이 있는 위치를 확인할 수 있습니다. {% include product %} 통합에서 사용할 수 있는 모든 구성 설정, 앱 및 엔진이 나열된 [앱 및 엔진 페이지](https://developer.shotgridsoftware.com/ko/162eaa4b/)가 있습니다.
 
 ![Current_work_area](./images/editing_app_setting/9_current_work_area.png)
 
@@ -123,7 +123,7 @@ Maya와 {% include product %}이 완전히 로드되면 **파일 열기**(File O
 
 * 실행 중인 소프트웨어 응용프로그램
 * 작업 중인 파일과 환경. 이 부분은 앱의 참조 상자에서 확인할 수 있습니다.
-* 호출되는 설정. 이 부분은 앱의 참조 상자 또는 [앱 및 엔진 페이지](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)에서 확인할 수 있습니다.
+* 호출되는 설정. 이 부분은 앱의 참조 상자 또는 [앱 및 엔진 페이지](https://developer.shotgridsoftware.com/ko/162eaa4b/)에서 확인할 수 있습니다.
 * 확장할 YAML 파일. YAML 파일에 자세히 나와 있는 식별자와 로드맵으로 설정이 있는 위치를 확인할 수 있습니다.
 * 확장할 YAML 파일 내의 특정 블록. 이는 로드맵에서 확인할 수 있습니다.
 * YAML 파일에서 사용되는 식별자 및 기호.
@@ -137,7 +137,7 @@ Maya와 {% include product %}이 완전히 로드되면 **파일 열기**(File O
 
 **13단계:** Maya 창의 오른쪽 상단에서 **{% include product %}** 메뉴 항목을 찾습니다.
 
-![Maya {% include product %}2](./images/editing_app_setting/12_Maya_Shotgun2.png)
+![Maya{% include product %}2](./images/editing_app_setting/12_Maya_Shotgun2.png)
 
 **팁:** 메뉴가 표시되지 않을 경우 일부 숨겨진 메뉴 항목을 볼 수 있는 **>>**가 표시됩니다. **>>**를 선택하여 {% include product %} 메뉴를 표시하거나 Maya 창을 넓히면 됩니다.
 
@@ -318,13 +318,13 @@ Workfiles 앱의 구성 설정을 수정하여 프로젝트 환경의 버튼 동
 
 ## 작업 중인 환경 검색
 
-**26단계:** Maya 메뉴 오른쪽 상단에서 **{% include product %}**을 선택합니다.
+**26단계:** Maya 메뉴 오른쪽 상단에서 **{% include product %}**를 선택합니다.
 
 ![아트 에셋 환경](./images/editing_app_setting/23_Art_Asset.png)
 
-**아트, 에셋**(Art, Asset)은 지금 작업 중이라는 것과 현재 환경을 알려 줍니다.
+**아트, 에셋 텍스트 오버레이(Art, Asset Text Overlay)**는 작업 중인 환경과 현재 환경을 알려 줍니다.
 
-**27단계:** **아트, 에셋((Art, Asset) > 작업 영역 정보…(Work Area Info…)**를 선택하여 현재 작업 영역에 어떤 매개변수가 있는지 표시합니다.
+**27단계:** **아트, 에셋 텍스트 오버레이((Art, Asset Text Overlay) > 작업 영역 정보…(Work Area Info…)**를 선택하여 현재 작업 영역에 어떤 매개변수가 있는지 표시합니다.
 
 **28단계:** 아래에 있는 **환경**(Environment) 탭을 선택합니다.
 
@@ -350,7 +350,7 @@ Workfiles 앱의 시스템 이름은 `tk-multi-workfiles2`이고 여기서 `mult
 
 ### 커스텀 환경 생성
 
-기본 구성은 일련의 미리 정의된 파이프라인 단계(`project`, `sequence`, `shot`, `shot_step`, `asset` 및 `asset_step`)와 함께 제공됩니다. 그러나 스튜디오에서는 파이프라인 단계(`asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light` 등)마다 다른 구성 설정을 원할 수 있습니다. 툴킷은 커스텀 환경을 지원합니다. 자세한 내용은 [환경 구성 참조의 "커스텀 환경" 섹션](../../../toolkit/env_config_ref.md#custom-environments)을 참조하십시오.
+기본 구성은 일련의 미리 정의된 파이프라인 단계(`project`, `sequence`, `shot`, `shot_step`, `asset` 및 `asset_step`)와 함께 제공됩니다. 그러나 스튜디오에서는 파이프라인 단계(`asset_step_rig`, `asset_step_model`, `shot_step_anim`, `shot_step_light` 등)마다 다른 구성 설정을 원할 수 있습니다. 툴킷은 커스텀 환경을 지원합니다. 자세한 내용은 [환경 구성 참조의 "커스텀 환경" 섹션](https://developer.shotgridsoftware.com/ko/c73fcb84/#custom-environments)을 참조하십시오.
 
 ### 비디오 리소스
 

@@ -20,7 +20,7 @@ lang: ja
         [BrowserIntegration]
         enabled=0
 
-ブラウザ統合の設定方法に関する詳細については、『[管理者ガイド](https://support.shotgunsoftware.com/hc/ja-jp/articles/115000067493-Integrations-Admin-Guide#Toolkit%20Configuration%20File)』を参照してください。
+ブラウザ統合の設定方法に関する詳細については、『[管理者ガイド](https://developer.shotgridsoftware.com/ja/8085533c/)』を参照してください。
 
 **別の方法**
 

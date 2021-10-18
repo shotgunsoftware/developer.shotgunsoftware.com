@@ -8,7 +8,7 @@ lang: zh_CN
 # 如何在自定义脚本中处理身份认证和登录凭据？
 
 ## 错误消息
-如果出现类似以下来自脚本的错误，则意味着脚本无权与 ShotGrid 站点进行通信。
+如果出现类似以下来自脚本的错误，则意味着脚本无权与 {% include product %} 站点进行通信。
 
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'
@@ -50,7 +50,7 @@ user = authenticator.get_user()
 
 # print "User is '%s'" % user
 
-# Tells Toolkit which user to use for connecting to Shotgun. Note that this should
+# Tells Toolkit which user to use for connecting to ShotGrid. Note that this should
 # always take place before creating a Sgtk instance.
 sgtk.set_authenticated_user(user)
 
@@ -71,7 +71,8 @@ authenticator.clear_default_user()
 {% include info title="注意" content="如果导入的 Toolkit API（`sgtk` 软件包）未与配置关联，例如您已下载用于引导到其他配置的 Toolkit API，则不应尝试创建 `CoreDefaultsManager`。应改为创建 `ShotgunAuthenticator()` 实例，而不传递默认管理器。
 ```python
 authenticator = ShotgunAuthenticator()
-```" %}
+```
+" %}
 
 ## 非面向用户的脚本
 如果脚本不面向用户，比如在渲染农场或事件处理程序中，您可以在创建 Sgtk/Tank 实例前，在脚本开头添加以下内容：
@@ -95,12 +96,12 @@ authenticator = ShotgunAuthenticator(cdm)
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
     api_script="Toolkit",
-    api_key="4e48f....<use the key from your Shotgun site>"
+    api_key="4e48f....<use the key from your ShotGrid site>"
 )
 
 # print "User is '%s'" % user
 
-# Tells Toolkit which user to use for connecting to Shotgun.
+# Tells Toolkit which user to use for connecting to ShotGrid.
 sgtk.set_authenticated_user(user)
 ```
 

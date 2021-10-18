@@ -7,9 +7,9 @@ lang: ko
 
 # Demo
 
-데모 앱은 {% include product %} 유틸리티 프레임워크, Qt Widgets 프레임워크, Toolkit Core 등 {% include product %}의 기본 개발자 플랫폼 구성 요소의 라이브 시연 모습을 제공합니다.
+Demo 앱은 {% include product %} 유틸리티 프레임워크, Qt Widgets 프레임워크, Toolkit Core 등 {% include product %}의 기본 개발자 플랫폼 구성 요소의 라이브 시연 모습을 제공합니다.
 
-![데모 앱](../images/apps/multi-demo-demo_app.png)
+![Demo 앱](../images/apps/multi-demo-demo_app.png)
 
 앱에 표시되는 각 데모에는 하나 이상의 기본 플랫폼 구성요소를 사용하는 방법을 보여 주는 실제 인터랙티브 UI가 포함됩니다. 또한 구동 중인 코드를 사용자의 앱에 쉽게 복사해 붙여넣을 수 있습니다.
 
@@ -21,11 +21,11 @@ lang: ko
 
 ![코드 탭](../images/apps/multi-demo-code_tab.png)
 
-새 구성요소가 플랫폼에 추가되고, 시간이 허락한다면 새 데모도 추가할 예정입니다. 보고 싶은 공통된 구성요소 사용 패턴이나 데모가 있다면 [티켓을 제출](https://knowledge.autodesk.com/contact-support)하여 알려 주십시오.
+새 구성요소가 플랫폼에 추가되고, 시간이 허락한다면 새 데모도 추가할 예정입니다. 보고 싶은 공통된 구성요소 사용 패턴이나 데모가 있다면 [티켓을 제출](https://knowledge.autodesk.com/ko/contact-support)하여 알려 주십시오.
 
 ## 설치
 
-데모 앱을 설치하려면 다음 명령을 실행하십시오.
+Demo 앱을 설치하려면 다음 명령을 실행하십시오.
 
 ```
 tank install_app project tk-shell tk-multi-demo

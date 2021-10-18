@@ -23,11 +23,11 @@ Desktop Startup Framework는 {% include product %} 데스크톱의 시작 로직
 
 기본적으로 {% include product %} 데스크톱은 `tk-framework-desktopstartup` 업데이트를 사용자 컴퓨터에 로컬로 다운로드하고, 응용프로그램 실행 시퀀스 중에 이를 사용합니다. 응용프로그램을 실행하면 툴킷이 프레임워크 업데이트를 자동으로 확인합니다. 또한 업데이트가 있으면 자동으로 다운로드하여 설치합니다.
 
-아니면, {% include product %} 데스크톱이 로컬 사본 대신 특정 프레임워크 사본을 사용하도록 구성해도 됩니다. 이렇게 하면 자동 업데이트가 비활성화되기 때문에 시작 로직 업데이트는 여러분이 직접 책임져야 합니다. 업데이트를 최신 상태로 유지하려면 [이 페이지](https://support.shotgunsoftware.com/entries/97454918)를 구독하는 것이 좋습니다.
+아니면, {% include product %} 데스크톱이 로컬 사본 대신 특정 프레임워크 사본을 사용하도록 구성해도 됩니다. 이렇게 하면 자동 업데이트가 비활성화되기 때문에 시작 로직 업데이트는 여러분이 직접 책임져야 합니다.
 
 #### GitHub에서 특정 릴리즈 다운로드
 
-GitHub에서는 수동으로 업데이트를 다운로드해야 합니다. 번들은 [릴리즈](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases) 페이지에서 쉽게 다운로드할 수 있고, 각각의 공식 릴리즈에 대한 자세한 정보는 [여기](https://support.shotgunsoftware.com/entries/97454918#toc_release_notes)에서 참조할 수 있습니다.
+GitHub에서는 수동으로 업데이트를 다운로드해야 합니다. 번들은 [출시](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases) 페이지에서 쉽게 다운로드할 수 있고, 각각의 공식 출시에 대한 자세한 정보는 [여기](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)에서 참조할 수 있습니다.
 
 #### 특정 사본을 사용하도록 {% include product %} 데스크톱 구성
 

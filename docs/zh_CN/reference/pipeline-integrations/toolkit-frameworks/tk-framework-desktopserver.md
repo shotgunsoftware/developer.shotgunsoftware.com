@@ -15,11 +15,11 @@ lang: zh_CN
 ## 如何让桌面集成正常运行
 
 要让这些 {% include product %} 功能正常工作，某些支持的桌面集成必须运行。
-[此页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219030858)介绍了 {% include product %} 如何与您的桌面进行集成的各种选项。“Websocket 服务器”部分介绍了此框架提供的功能。
+[此页面](https://developer.shotgridsoftware.com/zh_CN/c79f1656/)介绍了 {% include product %} 如何与您的桌面进行集成的各种选项。“Websocket 服务器”部分介绍了此框架提供的功能。
 
 ### {% include product %} Desktop
 
-此框架随 {% include product %} Desktop 捆绑提供，可在[这里](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040668#Downloading%20Shotgun%20Desktop)下载。{% include product %} Desktop 运行时，会自动启动 Websocket 服务器。如果 {% include product %} Desktop 已运行，您的设置过程即告完成。
+此框架与 {% include product %} Desktop 捆绑在一起，可以[执行以下步骤](https://developer.shotgridsoftware.com/zh_CN/d587be80/#installation-of-desktop)进行下载。{% include product %} Desktop 运行时，会自动启动 Websocket 服务器。如果 {% include product %} Desktop 已运行，您的设置过程即告完成。
 
 ### 配置服务器
 
@@ -57,7 +57,7 @@ lang: zh_CN
 默认情况下，Websocket 服务器设置为在端口 9000 上侦听托管的 {% include product %} 站点。
 如果您运行的是本地 {% include product %} 服务器，需要更新 {% include product %} 服务器的配置，以便可以从您的 Websocket 服务器进行连接。
 
-运行 {% include product %} Desktop 时，您需要设置一个 ```config.ini``` 文件，该文件与 {% include product %} 二进制文件位于同一个位置。有关此文件需要位于何处的详细说明，请参见[此处](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040668#Advanced%20Installation%20Topics)。
+运行 {% include product %} Desktop 时，您需要设置一个 ```config.ini``` 文件，该文件与 {% include product %} 二进制文件位于同一个位置。
 
 此文件内有一个部分用来控制 Websocket 服务器的功能。
 典型的配置如下所示：
@@ -74,7 +74,7 @@ whitelist=*.shotgunstudio.com
 
 在 Linux 平台上，该服务器增加了对 libffi 的依赖。  如果 Desktop 在启动时崩溃，并且日志中包含未找到 libffi 的消息，您需要安装此软件包。
 
-如果您在设置过程中遇到任何问题或有任何疑问，请发送电子邮件至 support@shotgunsoftware.com。  如果运行服务器时遇到问题，请在 **config.ini** 文件中将 **debug** 设置为 **1**，并包含 Desktop 的日志文件。
+如果您在设置期间遇到任何问题，请访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)。如果运行服务器时遇到问题，请在 **config.ini** 文件中将 **debug** 设置为 **1**，并包含 Desktop 的日志文件。
 
 日志文件可在以下位置找到：
 

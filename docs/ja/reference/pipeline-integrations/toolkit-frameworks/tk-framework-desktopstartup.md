@@ -23,11 +23,11 @@ lang: ja
 
 既定では、{% include product %} Desktop はユーザのローカル マシンに `tk-framework-desktopstartup` アップデートをダウンロードし、アプリケーションの起動シーケンス時に使用します。アプリケーションを起動すると、Toolkit は自動的にフレームワークの更新をチェックします。利用可能なアップデートがあれば、自動的にダウンロードしてインストールします。
 
-または、ローカル コピーではなくフレームワークの特定のコピーを使用するように {% include product %} Desktop を構成することもできます。これにより自動更新機能が無効になり、ユーザが自分自身が起動ロジックを更新できるようになります。[こちらのページ](https://support.shotgunsoftware.com/hc/ja/articles/219040058)を定期的に確認し、常に最新のバージョンを使用することを推奨します。
+または、ローカル コピーではなくフレームワークの特定のコピーを使用するように {% include product %} Desktop を構成することもできます。これにより自動更新機能が無効になり、ユーザが自分自身が起動ロジックを更新できるようになります。
 
 #### GitHub から特定のリリースをダウンロードする
 
-GitHub から手動でアップデートをダウンロードする必要があります。バンドルは、[リリース](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases) ページから簡単にダウンロードできます。公式リリースの詳細については、[こちら](https://support.shotgunsoftware.com/entries/97454918#toc_release_notes)を参照してください。
+GitHub から手動でアップデートをダウンロードする必要があります。バンドルは、[リリース](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases) ページから簡単にダウンロードできます。公式リリースの詳細については、[こちら](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)を参照してください。
 
 #### 特定のコピーを使用する場合の {% include product %} Desktop の設定
 
