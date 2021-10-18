@@ -1,6 +1,6 @@
 ---
 layout: default
-title: WARNING: Storage Root Primary Could Not Be Mapped to a SG Local Storage
+title: WARNING Storage Root Primary Could Not Be Mapped to a SG Local Storage
 pagename: review-error-message-root
 lang: ja
 ---

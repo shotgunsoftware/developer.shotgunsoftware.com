@@ -1,6 +1,6 @@
 ---
 layout: default
-title: TankError: 템플릿에서 경로를 확인하려고 시도했습니다.
+title: TankError 템플릿에서 경로를 확인하려고 시도했습니다.
 pagename: tank-error-tried-to-resolve-a-path
 lang: ko
 ---

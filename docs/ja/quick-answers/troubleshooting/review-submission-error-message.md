@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Exception: Review submission failed. Could not render and submit the review associated sequence.
+title: Exception Review submission failed. Could not render and submit the review associated sequence.
 pagename: review-submission-error-message
 lang: ja
 ---

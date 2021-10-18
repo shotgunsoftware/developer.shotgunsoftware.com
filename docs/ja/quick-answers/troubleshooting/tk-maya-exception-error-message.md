@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Error: {% include product %} tk-maya An exception was raised from Toolkit
+title: Error {% include product %} tk-maya An exception was raised from Toolkit
 pagename: tk-maya-exception-error-message
 lang: ja
 ---

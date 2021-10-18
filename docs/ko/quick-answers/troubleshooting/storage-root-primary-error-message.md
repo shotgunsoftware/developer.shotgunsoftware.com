@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 경고: 기본 루트 저장소를 SG 로컬 저장소에 매핑할 수 없습니다.
+title: 경고 기본 루트 저장소를 SG 로컬 저장소에 매핑할 수 없습니다.
 pagename: review-error-message-root
 lang: ko
 ---

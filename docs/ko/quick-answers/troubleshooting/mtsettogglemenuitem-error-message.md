@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "MTsetToggleMenuItem" 프로시저를 찾을 수 없음
+title: “MTsetToggleMenuItem” 프로시저를 찾을 수 없음
 pagename: mtsettogglemenuitem-error-message
 lang: ko
 ---
