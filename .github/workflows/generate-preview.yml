@@ -21,6 +21,9 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
+          # Force bundler to 1.17.2 -- this matches the Dockerfile configuration
+          # but more importantly, using a newer bundler version seems to trigger
+          # a regression in the i18n of images.
           bundler: 1.17.2
       - name: Install Pandoc
         run: sudo apt-get install -y pandoc
