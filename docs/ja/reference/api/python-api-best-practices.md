@@ -19,7 +19,7 @@ lang: ja
 ## 制御とデバッグ
 
 1. スクリプトごとに個別のキーを使用し、ツールごとに一意のキーとしてください。これは、デバッグでは重要です。
-2. 各スクリプトに所有者または管理者が存在すること、および [管理者](Admin)メニューにある[スクリプト](Scripts)ページの情報が最新であることを確認します。
+2. 各スクリプトに所有者または管理者が存在すること、および [管理者] (Admin)メニューにある[スクリプト] (Scripts)ページの情報が最新であることを確認します。
 3. [API ユーザの読み取り専用権限グループ](https://developer.shotgridsoftware.com/ja/bbae2ca7/)を作成することを検討します。多くのスクリプトには読み取りアクセスのみが必要であるため、これらのグループを作成することで、誤って変更されることを防ぐことができます。
 4. 使用中のキーをトラックして、古いスクリプトが削除できるようにします。この操作を簡単にするために、一部のスタジオでは、API ラッパーで監査情報をスクリプト化しています。
 5. エンティティ名とフィールドをチェックしてください。{% include product %} にはフィールドごとに 2 つの名前があります。1 つは UI に使用される表示名(一意とは限らない)で、もう 1 つが API で使用される内部フィールド名です。表示名はいつでも変更することができるため、表示名からフィールド名を確実に予測できるわけではありません。フィールド名を確認するには、[管理者] (Admin)メニューのフィールド オプションに移動するか、[http://developer.shotgridsoftware.com/python-api/reference.html?%20read#working-with-the-shotgun-schema](http://developer.shotgridsoftware.com/python-api/reference.html?%20read#working-with-the-shotgun-schema) で説明されている `schema_read(), schema_field_read(), schema_entity_read() methods` を使用します。

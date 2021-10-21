@@ -30,7 +30,7 @@ API 开发人员可以通过动作菜单项 (AMI) 按实体自定义上下文菜
 
 在设置菜单中，选择“动作菜单项”(Action Menu Items)以打开 AMI 管理页面。
 
-要创建新 AMI，请单击 ![添加 AMI](。/images/dv-custom-amis-05-add-ami-04.png)。
+要创建新 AMI，请单击 ![添加 AMI](./images/dv-custom-amis-05-add-ami-04.png)。
 
 填写“标题”(Title)和任何其他必填字段，然后单击“创建动作菜单项”(Create Action Menu Item)。
 

@@ -30,7 +30,7 @@ API 개발자는 액션 메뉴 항목(AMI)을 통해 엔티티별로 상황에 �
 
 설정(Settings) 메뉴에서 액션 메뉴 항목(Action Menu Items)을 선택하여 AMI 관리자(AMI Admin) 페이지를 엽니다.
 
-새 AMI를 생성하려면 ![AMI 추가(Add AMI)](를 클릭합니다./images/dv-custom-amis-05-add-ami-04.png).
+새 AMI를 생성하려면 ![AMI 추가(Add AMI)](./images/dv-custom-amis-05-add-ami-04.png).
 
 제목(Title) 및 기타 필수 필드를 입력하고, "액션 메뉴 항목 만들기(Create Action Menu Item)"를 클릭합니다.
 
