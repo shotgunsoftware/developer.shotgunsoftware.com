@@ -7,9 +7,9 @@ lang: en
 
 # Set Python 3 as the default Python version in {% include product %} Desktop
 
-[Windows](#windows)
-[MacOS](#macos)
-[CentOS 7](#Centos-7)
+- [Windows](#windows)
+- [MacOS](#macos)
+- [CentOS 7](#Centos-7)
 
 ## Windows
 
