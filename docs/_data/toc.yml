@@ -33,6 +33,7 @@
         - page: beyond-your-first-project
         - page: advanced-toolkit-administration
         - page: config-staging-and-rollout
+        - page: setting-python-3-desktop
         - page: community-shared-integrations
         - page: other-integrations
         - page: turn-off-auto-updates-and-offline
