@@ -9,7 +9,7 @@ lang: en
 
 - [Windows](#windows)
 - [MacOS](#macos)
-- [CentOS 7](#Centos-7)
+- [CentOS 7](#centos-7)
 
 ## Windows
 
@@ -42,7 +42,7 @@ lang: en
 
 ## MacOS
 
-### Set the SHOTGUN_PYTHON_VERSION environment to 3 on MacOS
+### Set the `SHOTGUN_PYTHON_VERSION` environment to 3 on MacOS
 
 - Create a properties file under `~/Library/LaunchAgents/` named `my.startup.plist`  
 
@@ -79,7 +79,7 @@ $ vi my.startup.plist
 
 ## CentOS 7
 
-### Set the SHOTGUN_PYTHON_VERSION environment to 3 on CentOS 7
+### Set the `SHOTGUN_PYTHON_VERSION` environment to 3 on CentOS 7
 
 - Add the following to your `~/.bashrc` file: 
 
