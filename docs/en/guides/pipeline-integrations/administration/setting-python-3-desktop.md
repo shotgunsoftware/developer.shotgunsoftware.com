@@ -15,27 +15,27 @@ lang: en
 
 ### Manually Set the `SHOTGUN_PYTHON_VERSION` environment to 3 on Windows
 
-1. On the Windows taskbar, right-click the Windows icon and select **System**, navigate through the **Control Panel/System and Security/System**. 
+- On the Windows taskbar, right-click the Windows icon and select **System**, navigate through the **Control Panel/System and Security/System**. 
 
 ![](images/setting-python-3-desktop/01-setting-python-3-desktop.png)
 
-2. Once there, select **Advanced system settings**.
+- Once there, select **Advanced system settings**.
 
 ![](images/setting-python-3-desktop/02-setting-python-3-desktop.png)
 
-3. Next, select **Environment Variables** in System Properties.
+- Next, select **Environment Variables** in System Properties.
 
 ![](images/setting-python-3-desktop/03-setting-python-3-desktop.jpg)
 
-4. In the **Environment Variables** window, you can add/edit your paths by selecting **New...**. 
+- In the **Environment Variables** window, you can add/edit your paths by selecting **New...**. 
 
 ![](images/setting-python-3-desktop/04-setting-python-3-desktop.jpg)
 
-5. For the **Variable name**, add `SHOTGUN_PYTHON_VERSION`, and set the **Variable value** to `3`. 
+- For the **Variable name**, add `SHOTGUN_PYTHON_VERSION`, and set the **Variable value** to `3`. 
 
 ![](images/setting-python-3-desktop/05-setting-python-3-desktop.jpg)
 
-6. Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 3. 
+- Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 3. 
 
 ![](images/setting-python-3-desktop/06-setting-python-3-desktop.jpg)
 
@@ -44,13 +44,13 @@ lang: en
 
 ### Set the SHOTGUN_PYTHON_VERSION environment to 3 on MacOS
 
-1. Create a properties file under `~/Library/LaunchAgents/` named `my.startup.plist`  
+- Create a properties file under `~/Library/LaunchAgents/` named `my.startup.plist`  
 
 ```
 $ vi my.startup.plist
 ```
 
-2. Add the following to `my.startup.plist` and **save**:
+- Add the following to `my.startup.plist` and **save**:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -71,9 +71,9 @@ $ vi my.startup.plist
 </plist>
 ```
 
-3. After rebooting your Mac, the new environment variable will remain active.
+- After rebooting your Mac, the new environment variable will remain active.
 
-4. Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 3. 
+- Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 3. 
 
 ![](images/setting-python-3-desktop/07-setting-python-3-desktop.jpg)
 
@@ -81,18 +81,18 @@ $ vi my.startup.plist
 
 ### Set the SHOTGUN_PYTHON_VERSION environment to 3 on CentOS 7
 
-1. Add the following to your `~/.bashrc` file: 
+- Add the following to your `~/.bashrc` file: 
 
 ```
 export SHOTGUN_PYTHON_VERSION="3"
 ```
 
-2. Reboot your OS by running:  
+- Reboot your OS by running:  
 
 ```
 $ sudo reboot 
 ```
 
-3. Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 3. 
+- Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 3. 
 
 ![](images/setting-python-3-desktop/08-setting-python-3-desktop.jpg)
