@@ -19,7 +19,7 @@ Cinesync를 사용하면 여러 위치 사이를 동시에 동기화하여 재�
 
 {% include product %}+Deadline 통합을 사용하면 썸네일, 프레임 링크 및 기타 메타데이터가 모두 포함된 렌더링된 버전을 {% include product %}에 자동으로 제출할 수 있습니다.
 
-자세한 정보는 [http://www.thinkboxsoftware.com/deadline-5-shotgunevent](http://www.thinkboxsoftware.com/deadline-5-shotgunevent)를 참조하십시오.
+자세한 내용은 [https://docs.thinkboxsoftware.com/products/deadline/5.2/User%20Manual/manual/shotgunevent.html](https://docs.thinkboxsoftware.com/products/deadline/5.2/User%20Manual/manual/shotgunevent.html)을 참조하십시오.
 
 ## Rush
 

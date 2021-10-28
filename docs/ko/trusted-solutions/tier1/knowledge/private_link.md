@@ -2,7 +2,7 @@
 layout: default
 title: Private Link
 pagename: tier1-knowledge-private_link
-lang: ko
+lang: en
 ---
 
 # Private Link

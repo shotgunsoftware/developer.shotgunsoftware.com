@@ -2,7 +2,7 @@
 layout: default
 title: Fine Tuning
 pagename: tier1-setup-tuning
-lang: ja
+lang: en
 ---
 
 # Fine Tuning
@@ -47,8 +47,8 @@ We strongly recommend you test media access and media transcoding in your migrat
             "Sid": "Access-to-specific-VPC-only and Shotgun transcoder",
             "Effect": "Deny",
             "Principal": "*",
-            "Action": "s3:GetObject*",
-            "Resource": "arn:aws:s3:::your_s3_bucket/shotgun/*",
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::your_s3_bucket/*",
             "Condition": {
                 "NotIpAddress": {
                     "aws:SourceIp": [

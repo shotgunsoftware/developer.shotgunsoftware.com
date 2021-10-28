@@ -60,7 +60,7 @@ Python 콘솔은 각각 편집기 및 출력 창을 포함하고 있는 탭을 �
 
 ![전역](../images/apps/multi-pythonconsoleglobals.png)
 
-일부 {% include product %}/툴킷 전역은 [셸용 {% include product %} 엔진](https://support.shotgunsoftware.com/entries/95441287)에서 사용할 수 있는 항목과 유사하게 콘솔에 사전 정의되어 있습니다.
+일부 {% include product %}/툴킷 전역은 [셸용 {% include product %} 엔진](https://support.shotgunsoftware.com/hc/ko/articles/219039898)에서 사용할 수 있는 항목과 유사하게 콘솔에 사전 정의되어 있습니다.
 
 * Tk API 핸들은 `tk` 변수를 통해 사용할 수 있습니다.
 * {% include product %} API 핸들은 `shotgun` 변수를 통해 사용할 수 있습니다.
@@ -84,4 +84,4 @@ Python 콘솔은 각각 편집기 및 출력 창을 포함하고 있는 탭을 �
 
 ## 기타 참고 사항
 
-* 일부 이전 버전의 DCC에서는 세션을 닫을 때 Python 콘솔을 연 채로 두면 충돌이 발생할 수도 있습니다. 이는 일부 이전 버전의 PySide에서 발생하는 버그일 수 있습니다. 최신 버전의 PySide와 번들로 제공되는 보다 최신 버전의 DCC에서는 종료 시 충돌이 나타나지 않습니다. 최신 DCC 릴리즈 버전에서 이 문제가 발생하면 자세히 조사할 수 있도록 [티켓을 제출](https://knowledge.autodesk.com/contact-support)해 주십시오.
+* 일부 이전 버전의 DCC에서는 세션을 닫을 때 Python 콘솔을 연 채로 두면 충돌이 발생할 수도 있습니다. 이는 일부 이전 버전의 PySide에서 발생하는 버그일 수 있습니다. 최신 버전의 PySide와 번들로 제공되는 보다 최신 버전의 DCC에서는 종료 시 충돌이 나타나지 않습니다. 최신 DCC 릴리즈 버전에서 이 문제가 발생하면 자세히 조사할 수 있도록 [티켓을 제출](https://knowledge.autodesk.com/ko/contact-support)해 주십시오.

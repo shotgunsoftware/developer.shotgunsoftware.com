@@ -45,7 +45,7 @@ def registerCallbacks(reg):
 - 추가 정보를 위해 {% include product %}를 쿼리해야 하는 경우 {% include product %} 연결 인스턴스
 - 보고에 사용해야 하는 Python Logger 객체. 오류 및 중요 메시지는 구성된 모든 사용자에게 이메일을 통해 전송됩니다.
 - 처리할 {% include product %} 이벤트
-- 콜백 등록 시 전달되는 `args` 값. [`Registrar.registerCallback`](을 참조하십시오./event-daemon-api.md#wiki-registerCallback))
+- 콜백 등록 시 전달되는 `args` 값. (참조 항목: [`Registrar.registerCallback`](./event-daemon-api.md#wiki-registerCallback))
 
 {% include info title="경고" content="플러그인에서 원하는 모든 작업을 수행할 수 있지만 예외가 프레임워크에 다시 발생하면 디스크의 파일이 변경될 때까지(읽기: 수정) 잘못된 콜백(및 포함된 모든 콜백)이 있는 플러그인이 비활성화됩니다." %}
 

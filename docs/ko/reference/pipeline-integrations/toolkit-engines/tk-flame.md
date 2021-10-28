@@ -9,7 +9,7 @@ lang: ko
 
 ## 설치
 
-Flame용 {% include product %} 엔진은 Flame 2015 Extension 2에 추가된 새 통합 후크를 사용합니다.  엔진이 작동하려면 *반드시* 이 Flame 버전을 사용해야 합니다. Flame 2015 Extension 2에 대한 자세한 정보(얻는 방법 포함)는 [Flame 지원 팀](http://knowledge.autodesk.com/search-result/caas/sfdcarticles/sfdcarticles/Contacting-Autodesk-Flame-or-Smoke-Customer-Support.html)에 문의하십시오.
+Flame용 {% include product %} 엔진은 Flame 2015 Extension 2에 추가된 새 통합 후크를 사용합니다.  엔진이 작동하려면 *반드시* 이 Flame 버전을 사용해야 합니다. Flame 2015 Extension 2에 대한 자세한 정보(얻는 방법 포함)는 [Flame 지원 팀](https://knowledge.autodesk.com/ko/support/flame-products/troubleshooting/caas/sfdcarticles/sfdcarticles/KOR/Contacting-Autodesk-Flame-or-Smoke-Customer-Support.html)에 문의하십시오.
 
 Flame용 {% include product %} 엔진을 시작하는 가장 간단한 방법은 예제 파이프라인 구성을 사용하여 새 테스트 프로젝트를 설정하는 것입니다. {% include product %} 데스크톱을 시작하고 새 프로젝트에 대한 프로젝트 설정을 실행하여 기본 구성 섹션에서 기본 Flame 구성을 선택하면 이 작업을 수행할 수 있습니다.
 
@@ -49,7 +49,7 @@ Flame용 {% include product %} 엔진은 {% include product %} 프로젝트를 F
 * FieldDominance(`PROGRESSIVE`, `FIELD_1`, `FIELD_2`)
 * AspectRatio(`4:3`, `16:9` 또는 문자열 부동 소수점 값)
 
-프록시 설정을 제공할 수도 있습니다. 자세한 정보는 [Autodesk Wiretap SDK 문서](http://usa.autodesk.com/adsk/servlet/index?siteID=123112&id=7478536)를 참조하십시오.
+프록시 설정을 제공할 수도 있습니다. 자세한 정보는 [Autodesk Wiretap SDK 문서](https://www.autodesk.com/developer-network/platform-technologies/wiretap)를 참조하십시오.
 
 project_setup 후크의 전체 코드베이스를 보려면 [엔진에 대한 Github 리포지토리](https://github.com/shotgunsoftware/tk-flame/blob/master/hooks/project_startup.py)를 참조하십시오.
 

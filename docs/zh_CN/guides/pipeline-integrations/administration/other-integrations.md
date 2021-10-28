@@ -19,7 +19,7 @@ cineSync 允许您在多个位置之间同时进行同步播放。{% include pro
 
 {% include product %}+Deadline 集成允许您自动将包含缩略图、指向帧的链接和其他元数据的渲染版本提交到 {% include product %}。
 
-有关详细信息，请参见 [http://www.thinkboxsoftware.com/deadline-5-shotgunevent](http://www.thinkboxsoftware.com/deadline-5-shotgunevent)。
+有关详细信息，请参见 [https://docs.thinkboxsoftware.com/products/deadline/5.2/User%20Manual/manual/shotgunevent.html](https://docs.thinkboxsoftware.com/products/deadline/5.2/User%20Manual/manual/shotgunevent.html)。
 
 ## Rush
 

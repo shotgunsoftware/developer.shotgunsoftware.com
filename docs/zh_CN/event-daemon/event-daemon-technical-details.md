@@ -94,7 +94,7 @@ lang: zh_CN
 
 - 全局变量。呃，请不要这样做。
 - 一个包含状态信息的已导入模块。这样也不行，但比完全是全局变量好一点。
-- 一个在调用 [`Registrar.registerCallback`](API#wiki-registerCallback) 时传入 `args` 参数的可变要素。一个设计状态对象，或仅仅是一个 `dict`。首选。
+- 一个在调用 [`Registrar.registerCallback`](https://github.com/shotgunsoftware/shotgunEvents/wiki/API#registerCallbacks) 时传入 `args` 参数的可变要素。一个设计状态对象，或仅仅是一个 `dict`。首选。
 - 在对象实例上执行回调（如 `__call__`），并在回调对象初始化时提供一些共享状态对象。最强大但也最复杂的方法。与上述 args 参数方法相比，可能有些不必要。
 
 

@@ -60,7 +60,7 @@ if review_submission_app:
 
 ### 作为菜单项
 
-此模式向 DCC 内的 {% include product %} 菜单添加菜单项。 
+此模式向 DCC 内的 {% include product %} 菜单添加菜单项。
 
 此模式创建当前视口的快照，并将其作为版本草稿发送到 {% include product %} Create。然后，用户可以通过添加标注、文字或比较注释，在 {% include product %} Create 内扩展审核提交。
 

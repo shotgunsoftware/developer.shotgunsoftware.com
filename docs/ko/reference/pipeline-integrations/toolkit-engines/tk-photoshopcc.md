@@ -27,7 +27,7 @@ Photoshop CC용 {% include product %} 엔진은 Photoshop CC 워크플로우에 
 
 ## 설치
 
-Photoshop CC용 {% include product %} 엔진의 설치는 다른 {% include product %} 통합과 동일한 프로토콜을 수행합니다. 엔진 및 앱 설치에 대한 자세한 정보는 [툴킷 관리](https://support.shotgunsoftware.com/hc/ko/articles/219033178-Administering-Toolkit) 문서를 참조하십시오. 또한 통합 구성 방법의 예로 [기본 툴킷 구성](https://github.com/shotgunsoftware/tk-config-default2)을 참조할 수 있습니다.
+Photoshop CC용 {% include product %} 엔진의 설치는 다른 {% include product %} 통합과 동일한 프로토콜을 수행합니다. 엔진 및 앱 설치에 대한 자세한 정보는 [툴킷 관리](https://developer.shotgridsoftware.com/ko/425b1da4/) 문서를 참조하십시오. 또한 통합 구성 방법의 예로 [기본 툴킷 구성](https://github.com/shotgunsoftware/tk-config-default2)을 참조할 수 있습니다.
 
 ## 익스텐션 활성화
 

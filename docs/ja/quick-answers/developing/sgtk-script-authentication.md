@@ -8,7 +8,7 @@ lang: ja
 # カスタム スクリプトで認証とログイン資格情報を使用するにはどうすればよいですか?
 
 ## エラー メッセージ
-スクリプトで次のようなエラーが表示された場合は、スクリプトと ShotGrid サイトの通信が許可されていないことを意味します。
+スクリプトで次のようなエラーが表示された場合は、スクリプトと {% include product %} サイトの通信が許可されていないことを意味します。
 
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'
@@ -48,7 +48,7 @@ user = authenticator.get_user()
 
 # print "User is '%s'" % user
 
-# Tells Toolkit which user to use for connecting to Shotgun. Note that this should
+# Tells Toolkit which user to use for connecting to ShotGrid. Note that this should
 # always take place before creating a Sgtk instance.
 sgtk.set_authenticated_user(user)
 
@@ -69,7 +69,8 @@ authenticator.clear_default_user()
 {% include info title="注" content="ダウンロードした Toolkit API (`sgtk` パッケージ)を使用して別の環境設定にブートストラップする場合のように、環境設定に関連付けられていない Toolkit API を読み込む場合は、`CoreDefaultsManager` を作成しないでください。代わりに、既定のマネージャを渡さずに、`ShotgunAuthenticator()` のインスタンスを作成します。
 ```python
 authenticator = ShotgunAuthenticator()
-```" %}
+```
+" %}
 
 ## ユーザ向け以外のスクリプト
 レンダリング ファームやイベント ハンドラなど、スクリプトがユーザ向けではない場合は、Sgtk/Tank インスタンスを作成する前に、最初に以下を追加します。
@@ -93,12 +94,12 @@ authenticator = ShotgunAuthenticator(cdm)
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
     api_script="Toolkit",
-    api_key="4e48f....<use the key from your Shotgun site>"
+    api_key="4e48f....<use the key from your ShotGrid site>"
 )
 
 # print "User is '%s'" % user
 
-# Tells Toolkit which user to use for connecting to Shotgun.
+# Tells Toolkit which user to use for connecting to ShotGrid.
 sgtk.set_authenticated_user(user)
 ```
 

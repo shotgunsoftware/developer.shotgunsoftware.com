@@ -2,7 +2,7 @@
 layout: default
 title: Web Traffic Isolation
 pagename: tier1-features-web-traffic-isolation
-lang: zh_CN
+lang: en
 ---
 
 # Web Traffic Isolation

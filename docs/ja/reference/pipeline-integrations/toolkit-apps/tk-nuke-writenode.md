@@ -176,11 +176,11 @@ SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 認証の詳細については、オートデスクの[開発者用ドキュメント](http://developer.shotgridsoftware.com/tk-core/authentication.html)を参照してください。
 
-**スクリプト ユーザの保護に関する注意事項:** ファームで使用するスクリプト ユーザをロックして、管理者レベルの権限が付与されないようにすることをお勧めします。[こちらで、API ユーザの権限を確認してください。](https://support.shotgunsoftware.com/hc/ja/articles/219376228-API-user-permission-groups)
+**スクリプト ユーザの保護に関する注意事項:** ファームで使用するスクリプト ユーザをロックして、管理者レベルの権限が付与されないようにすることをお勧めします。[こちらで、API ユーザの権限を確認してください。](https://developer.shotgridsoftware.com/ja/bbae2ca7/)
 
 #### 3. init.py スクリプト
 
-この時点で、レンダリング送信ツールから Toolkit 環境データが渡されていて、レンダリング ファーム マシンの環境変数に認証データが格納されています。レンダリング ジョブ内で Toolkit をブートストラップするためには、最後に、次の `init.py` サンプル コードを Nuke のプラグイン パスに配置して、Nuke を開始するときに起動されるようにする必要があります。(詳細については、[起動スクリプトに関する Foundry のドキュメント](http://docs.thefoundry.co.uk/nuke/63/pythondevguide/startup.html)を参照してください。)
+この時点で、レンダリング送信ツールから Toolkit 環境データが渡されていて、レンダリング ファーム マシンの環境変数に認証データが格納されています。レンダリング ジョブ内で Toolkit をブートストラップするためには、最後に、次の `init.py` サンプル コードを Nuke のプラグイン パスに配置して、Nuke を開始するときに起動されるようにする必要があります。(詳細については、[起動スクリプトに関する Foundry のドキュメント](https://support.foundry.com/hc/ja/articles/360003811839-Q100490)を参照してください。)
 
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap
@@ -244,7 +244,7 @@ sg_entity = mgr.get_entity_from_environment()
 nuke_engine = mgr.bootstrap_engine("tk-nuke", entity=sg_entity)
 ```
 
-設定がこの例よりも複雑な場合、または Nuke (`.nk`)スクリプトでなく `-t` フラグを使用して、 Python スクリプトをコマンド ラインに渡している場合は、このスクリプトを拡張しなければならない可能性があります。
+設定がこの例よりも複雑な場合、または Nuke (`.nk`)スクリプトでなく `-t` フラグを使用して、Python スクリプトをコマンド ラインに渡している場合は、このスクリプトを拡張しなければならない可能性があります。
 
 #### 期限固有の手順
 
@@ -265,7 +265,7 @@ Deadline は、レンダリング時に Nuke スクリプトを一時的な場�
 
 **パラメータと戻り値**
 
-* **戻り値: **`list` - シーン内で見つかった Toolkit 書き込みノードのリスト
+* **戻り値:** `list` - シーン内で見つかった Toolkit 書き込みノードのリスト
 
 **例**
 

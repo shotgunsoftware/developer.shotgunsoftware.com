@@ -7,7 +7,7 @@ lang: ja
 
 # Maya で Toolkit アプリを起動するシェルフ ボタンを追加するにはどうすればいいですか?
 
-Maya で Toolkit アプリを起動するシェルフ ボタンを Maya に追加するのは非常に簡単です。次に、[Loader アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219033078)を起動するカスタム シェルフ ボタンの追加方法の例を示します。
+Maya で Toolkit アプリを起動するシェルフ ボタンを Maya に追加するのは非常に簡単です。次に、[Loader アプリ](https://developer.shotgridsoftware.com/ja/a4c0a4f1/)を起動するカスタム シェルフ ボタンの追加方法の例を示します。
 
 {% include info title="注" content="これは、Toolkit が現在の Maya セッションで有効であることが前提です。このコード例では Toolkit をブートストラップしません。"%}
 

@@ -11,16 +11,17 @@ lang: zh_CN
 
 ## 示例
 
-从 [{% include product %} Desktop](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039818) 启动应用程序时，默认进入项目环境中。此环境由工作流配置中位于 `config/env/project.yml` 下的配置文件进行管理。由于用户的大多数工作可能不在此环境中进行，其中并未配置许多应用供您使用。
+从 [{% include product %} Desktop](https://developer.shotgridsoftware.com/zh_CN/d587be80/#getting-started-with-desktop) 启动应用程序时，默认进入项目环境中。此环境由工作流配置中位于 `config/env/project.yml` 下的配置文件进行管理。由于用户的大多数工作可能不在此环境中进行，其中并未配置许多应用供您使用。
 
 **默认 Maya 项目动作：**
 
 ![{% include product %} 菜单项目动作](images/shotgun-menu-project-actions.png)
 
-您可以使用 [{% include product %} Workfiles 应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088-Your-Work-Files)选择要处理的资产、镜头或任务。这将加载相应的新环境，这样，更多的应用便会启用 {% include product %} 菜单中的菜单项。
+您可以使用 [{% include product %} Workfiles 应用](https://developer.shotgridsoftware.com/zh_CN/9a736ee3/)选择要处理的资产、镜头或任务。这将加载相应的新环境，这样，更多的应用便会启用 {% include product %} 菜单中的菜单项。
 
 **默认 Maya 资产任务动作：**
 
 ![{% include product %} 菜单项目动作](images/shotgun-menu-asset-step-actions.png)
 
-如果您认为您处于正确的环境，但动作仍未显示，则下一步是检查相关[日志](where-are-my-log-files.md)，查看是否存在任何错误。您可能需要[启用调试日志记录](turn-debug-logging-on.md)以获得完整输出。
+如果您认为您处于正确的环境，但动作仍未显示，则下一步是检查相关[日志](where-are-my-log-files.md)，查看是否存在任何错误。
+您可能需要[启用调试日志记录](turn-debug-logging-on.md)以获得完整输出。

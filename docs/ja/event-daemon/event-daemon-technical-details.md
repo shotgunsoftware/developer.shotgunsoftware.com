@@ -94,7 +94,7 @@ lang: ja
 
 - グローバル変数。これは適切ではありません。使用しないでください。
 - 読み込んだモジュール。状態の情報を保持します。適切ではありませんが、単純なグローバル変数よりは適しています。
-- [`Registrar.registerCallback`](API#wiki-registerCallback) を呼び出すときに `args` 引数で渡される可変値。設計の状態オブジェクト、または `dict` のような単純な関数。推奨します。
+- [`Registrar.registerCallback`](https://github.com/shotgunsoftware/shotgunEvents/wiki/API#registerCallbacks) を呼び出すときに `args` 引数で渡される可変値。設計の状態オブジェクト、または `dict` のような単純な関数。推奨します。
 - オブジェクト インスタンスで `__call__` などのコールバックを使用して、コールバック オブジェクトの初期化時に共有状態オブジェクトをいくつか指定します。最も強力な方法ですが、最も複雑な方法でもあります。上記の args 引数メソッドと比較すると、煩雑になる場合があります。
 
 

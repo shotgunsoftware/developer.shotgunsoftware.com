@@ -15,7 +15,7 @@ Flame で最初のコンフォームを作成したら、ショット書き出�
 
 ## {% include product %} にコンフォームを送信する
 
-Flame でシーケンスのコンフォームをセットアップし、タイムラインのすべてのセグメントに**ショット名を割り当て**たら、シーケンスを選択し、右クリックして[{% include product %} ショット書き出し](ShotGrid Shot Export)オプションを選択します。
+Flame でシーケンスのコンフォームをセットアップし、タイムラインのすべてのセグメントに**ショット名を割り当て**たら、シーケンスを選択し、右クリックして[{% include product %} ショット書き出し] (Shotgun Shot Export)オプションを選択します。
 
 ![メニュー](../images/apps/flame-export-menu.png)
 
@@ -58,7 +58,7 @@ Toolkit にダイアログが表示され、{% include product %} Review にレ�
 
 LINKBOX_ENGINE:{% include product %}software/tk-flame:Flame エンジン
 
-他の場合と同様に、統合やカスタマイズに関する質問は、サポート(toolkitsupport@shotgunsoftware.com)までお問い合わせください。
+統合やカスタマイズに関して疑問がある場合は、[サポート サイト](https://knowledge.autodesk.com/ja/contact-support)にアクセスしてサポートを依頼してください。
 
 # 高度なトピック
 
@@ -66,14 +66,14 @@ LINKBOX_ENGINE:{% include product %}software/tk-flame:Flame エンジン
 
 ## 書き出しプリセットを使用する
 
-書き出し機能は、設定の「書き出しプリセット」**の概念を使用します。Flame 内で書き出し UI を起動すると、ドロップダウンに利用可能な書き出しプリセットが表示されます。各プリセットは、ファイルをディスクに書き込む方法と {% include product %} にアップロードする方法を設定できる設定オプションです。ディスク上のファイルの場所など、高度な設定は環境設定で直接制御するため、パイプラインに合わせて既定の設定オプションを簡単に調整できます。
+書き出し機能は、設定の *「書き出しプリセット」* の概念を使用します。Flame 内で書き出し UI を起動すると、ドロップダウンに利用可能な書き出しプリセットが表示されます。各プリセットは、ファイルをディスクに書き込む方法と {% include product %} にアップロードする方法を設定できる設定オプションです。ディスク上のファイルの場所など、高度な設定は環境設定で直接制御するため、パイプラインに合わせて既定の設定オプションを簡単に調整できます。
 
 Flame を制御するために Flame に渡される実際の書き出し XML コンテンツに関する高度な設定と制御は、プリセットごとの動作が定義されているフックによって処理されます。フックでは、書き出し機能によってメディアを生成する方法を完全に制御できます。
 
 ## {% include product %} サーバ側のトランスコーディングを回避する
 既定では、`Version.sg_uploaded_movie` フィールドを設定すると、QuickTime が {% include product %} Review にアップロードされます。これにより、{% include product %} サーバ側のトランスコーディングがトリガされます。アップロードされた QuickTime は、ブラウザやモバイルで再生できるように `mp4` と `webm` の各形式に変換されます。場合によっては、このサーバ側のトランスコーディングを回避すると有用なときがあります。回避するには `bypass_shotgun_transcoding` 構成設定を指定します。true に設定すると、統合により {% include product %} の `Version.sg_uploaded_movie_mp4` フィールドに直接アップロードされるため、サーバ側のトランスコーディングが回避されます。この場合、`webm` バージョンが生成されないため、Firefox でレビューを再生できなくなります。
 
-詳細については、https://support.shotgunsoftware.com/hc/ja/articles/219030418 を参照してください。
+詳細については、https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Supervisor_Artist_sa_review_approval_sa_transcoding_html を参照してください。
 
 ## ffmpeg をカスタマイズする
 
@@ -81,7 +81,7 @@ Flame を制御するために Flame に渡される実際の書き出し XML �
 
 h264 パラメータが ffmpeg に渡される方法は、既定のバージョンと最新バージョンとの間で変更されています。ffmpeg を最新バージョンに切り替えると、推奨するトランスコーディング ガイドラインを完全に実装できるため、{% include product %} 側でアップロードとパフォーマンスが最適化されます。このガイドラインは以下を参照してください。
 
-https://support.shotgunsoftware.com/hc/ja/articles/219030418
+https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Supervisor_Artist_sa_review_approval_sa_transcoding_html
 
 ffmpeg バージョンの変更は上級ユーザのみにお勧めします。変更する場合は、次の手順に従ってください。
 

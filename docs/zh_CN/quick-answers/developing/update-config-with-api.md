@@ -58,4 +58,4 @@ c.execute({})
 
 请参见：
 
-- [自定义脚本中的身份认证和登录凭据](https://support.shotgunsoftware.com/hc/zh-cn/articles/219040338)
+- [自定义脚本中的身份认证和登录凭据](https://developer.shotgridsoftware.com/zh_CN/724152ce/)

@@ -2,7 +2,7 @@
 layout: default
 title: Media Isolation
 pagename: tier1-features-media-isolation
-lang: ja
+lang: en
 ---
 
 # Media Isolation

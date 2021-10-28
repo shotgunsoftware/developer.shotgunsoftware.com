@@ -2,7 +2,7 @@
 layout: default
 title: Direct Connect
 pagename: tier1-knowledge-direct_connect
-lang: zh_CN
+lang: en
 ---
 
 # Direct Connect

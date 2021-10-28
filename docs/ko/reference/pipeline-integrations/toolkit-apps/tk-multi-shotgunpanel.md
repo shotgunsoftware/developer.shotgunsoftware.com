@@ -5,9 +5,9 @@ pagename: tk-multi-shotgunpanel
 lang: ko
 ---
 
-# ShotGrid Panel
+# {% include product %} 패널
 
-이 문서에서는 툴킷 구성에 대한 제어 권한이 있는 경우에만 사용할 수 있는 기능에 대해 설명합니다. 자세한 정보는 [{% include product %} 통합 사용자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000068574-Integrations-User-Guide#The%20Shotgun%20Panel)를 참조하십시오.
+이 문서에서는 툴킷 구성에 대한 제어 권한이 있는 경우에만 사용할 수 있는 기능에 대해 설명합니다. 자세한 정보는 [{% include product %} 통합 사용자 안내서](https://developer.shotgridsoftware.com/ko/d587be80/#the-panel)를 참조하십시오.
 
 ## {% include product %} Panel 구성
 
@@ -67,7 +67,7 @@ lang: ko
 - 사용자가 지정된 태스크에 자신을 할당할 수 있는 액션
 - Maya에 {% include product %} 게시를 Maya 참조로 로드하는 액션
 
-액션의 실제 페이로드는 *액션 후크*에 정의됩니다. 액션 로직을 정의한 후에는 앱 구성에서 해당 액션을 {% include product %} 객체에 매핑할 수 있습니다. 이 액션 매핑은 다음 예와 같은 모습입니다.
+액션의 실제 페이로드는 *액션 후크* 에 정의됩니다. 액션 로직을 정의한 후에는 앱 구성에서 해당 액션을 {% include product %} 객체에 매핑할 수 있습니다. 이 액션 매핑은 다음 예와 같은 모습입니다.
 
 ```yaml
 action_mappings:

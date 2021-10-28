@@ -9,7 +9,7 @@ lang: ja
 
 他のプロジェクトのショットにロードできるアセットを含むアセット ライブラリとして使用されるプロジェクトを指定するのは珍しくありません。
 
-これを実現するには、このアセット ライブラリ プロジェクトのアセットをリストする[Loader アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219033078)にタブを追加します。このためには、作業しているエンジンと環境のローダー設定でこのタブを定義する必要があります。このタブは複数の場所で更新する必要があります。
+これを実現するには、このアセット ライブラリ プロジェクトのアセットをリストする[Loader アプリ](https://developer.shotgridsoftware.com/ja/a4c0a4f1/)にタブを追加します。このためには、作業しているエンジンと環境のローダー設定でこのタブを定義する必要があります。このタブは複数の場所で更新する必要があります。
 
 たとえば、[ショットのステップ環境の Maya エンジン](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-multi-loader2.yml#L122)にこのタブを追加するには、次のスニペットを追加します。
 

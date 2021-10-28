@@ -20,7 +20,7 @@ lang: ko
         [BrowserIntegration]
         enabled=0
 
-브라우저 통합 구성 방법에 대한 자세한 내용은 [관리자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000067493-Integrations-Admin-Guide#Toolkit%20Configuration%20File)를 참조하십시오.
+브라우저 통합 구성 방법에 대한 자세한 내용은 [관리자 안내서](https://developer.shotgridsoftware.com/ko/8085533c/)를 참조하십시오.
 
 **대체 방법**
 

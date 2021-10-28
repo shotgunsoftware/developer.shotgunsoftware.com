@@ -5,9 +5,9 @@ pagename: tk-multi-shotgunpanel
 lang: zh_CN
 ---
 
-# ShotGrid 面板
+# {% include product %} 面板
 
-本文档介绍仅当控制 Toolkit 配置时可用的功能。有关详细信息，请参见 [{% include product %} 集成用户手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#The%20Shotgun%20Panel)。
+本文档介绍仅当控制 Toolkit 配置时可用的功能。有关详细信息，请参见 [{% include product %} 集成用户手册](https://developer.shotgridsoftware.com/zh_CN/d587be80/#the-panel)。
 
 ## 配置 {% include product %} 面板
 

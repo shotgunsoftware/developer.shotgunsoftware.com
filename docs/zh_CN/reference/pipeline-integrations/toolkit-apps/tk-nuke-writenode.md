@@ -73,7 +73,7 @@ tk-nuke-writenode:
 
 ![添加新节点](../images/apps/nuke-writenode-write_node_add_new.png)
 
-__注意：__请务必将任何新模板（例如 nuke_shot_render_mono_tif）添加到 `templates.yml` 文件中，该文件可在项目配置中找到 (`<configuration root>/config/core/templates.yml`)。
+__注意：__ 请务必将任何新模板（例如 nuke_shot_render_mono_tif）添加到 `templates.yml` 文件中，该文件可在项目配置中找到 (`<configuration root>/config/core/templates.yml`)。
 
 下面是另一个示例，显示了如何添加一个以 0.5 的压缩率和 4:2:2 的子采样率输出 JPEG 的 {% include product %} 写入节点。此配置文件还使用了“promote_write_knobs”选项将 JPEG 质量旋钮提升到小控件的用户界面。这样，配置文件便可以设置图片质量的默认值，同时还能为用户提供滑块控件以自己更改该设置：
 
@@ -106,7 +106,7 @@ tk-nuke-writenode:
 
 #### 启用转换菜单选项
 
-有一个名为 `show_convert_actions` 的配置选项，可以将其添加到应用设置的环境 yml 文件中。当您添加设置 `show_convert_actions: True` 时，“将 SG 写入节点转转为写入节点...”(Convert SG Write Nodes to Write Nodes...)**和“将写入节点转换回 SG 格式...”(Convert Write Nodes back to SG format...)**菜单选项将可用。
+有一个名为 `show_convert_actions` 的配置选项，可以将其添加到应用设置的环境 yml 文件中。当您添加设置 `show_convert_actions: True` 时，*“将 SG 写入节点转转为写入节点...”(Convert SG Write Nodes to Write Nodes...)* 和 *“将写入节点转换回 SG 格式...”(Convert Write Nodes back to SG format...)* 菜单选项将可用。
 
 ![写入节点转换菜单选项](../images/apps/nuke-writenode-write_node_convert_menu_options.png)
 
@@ -177,11 +177,11 @@ SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 有关身份认证的详细信息，请参见[开发人员文档](http://developer.shotgridsoftware.com/tk-core/authentication.html)。
 
-**有关保护脚本用户安全的注意事项：**建议锁定您在农场中使用的脚本用户，以使其没有管理员级别的权限。[您可在此处详细了解 API 用户权限。](https://support.shotgunsoftware.com/hc/zh-cn/articles/219376228)
+**有关保护脚本用户安全的注意事项：**建议锁定您在农场中使用的脚本用户，以使其没有管理员级别的权限。[您可在此处详细了解 API 用户权限。](https://developer.shotgridsoftware.com/zh_CN/bbae2ca7/)
 
 #### 3. init.py 脚本
 
-目前，Toolkit 环境数据是从渲染提交工具传递过来的，身份认证数据在渲染农场计算机上的环境变量中。在渲染作业中引导 Toolkit 的最后一部分是将以下示例 `init.py` 代码放置在 Nuke 的插件路径中，以便 Nuke 在启动时启动它。（有关更多详细信息，请参见 [Foundry 提供的有关启动脚本的文档](http://docs.thefoundry.co.uk/nuke/63/pythondevguide/startup.html)。）
+目前，Toolkit 环境数据是从渲染提交工具传递过来的，身份认证数据在渲染农场计算机上的环境变量中。在渲染作业中引导 Toolkit 的最后一部分是将以下示例 `init.py` 代码放置在 Nuke 的插件路径中，以便 Nuke 在启动时启动它。（有关更多详细信息，请参见 [Foundry 提供的有关启动脚本的文档](https://support.foundry.com/hc/zh-cn/articles/360003811839-Q100490)。）
 
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap

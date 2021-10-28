@@ -27,7 +27,7 @@ lang: ja
 
 ## インストール
 
-{% include product %} Engine for Photoshop CC のインストールには、{% include product %} と他の製品を統合する場合と同じプロトコルを使用します。エンジンやアプリのインストールについては、「[Toolkit を管理する](https://support.shotgunsoftware.com/hc/ja/articles/219033178)」という記事を参照してください。また、統合の設定方法については、「[Toolkit の既定の設定](https://github.com/shotgunsoftware/tk-config-default2)」の例を参照してください。
+{% include product %} Engine for Photoshop CC のインストールには、{% include product %} と他の製品を統合する場合と同じプロトコルを使用します。エンジンやアプリのインストールについては、「[Toolkit を管理する](https://developer.shotgridsoftware.com/ja/425b1da4/)」という記事を参照してください。また、統合の設定方法については、「[Toolkit の既定の設定](https://github.com/shotgunsoftware/tk-config-default2)」の例を参照してください。
 
 ## 拡張を有効にする
 

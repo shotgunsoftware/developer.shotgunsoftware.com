@@ -64,7 +64,7 @@ lang: ko
 - 사용자가 지정된 태스크에 자신을 할당할 수 있는 액션
 - Maya에 {% include product %} 게시를 Maya 참조로 로드하는 액션
 
-액션의 실제 페이로드는 _액션 후크_에 정의됩니다. 액션 로직을 정의한 후에는 앱 구성에서 해당 액션을 {% include product %} 객체에 매핑할 수 있습니다. 이 액션 매핑은 다음 예와 같은 모습입니다.
+액션의 실제 페이로드는 _액션 후크_ 에 정의됩니다. 액션 로직을 정의한 후에는 앱 구성에서 해당 액션을 {% include product %} 객체에 매핑할 수 있습니다. 이 액션 매핑은 다음 예와 같은 모습입니다.
 
 ```yaml
 action_mappings:
@@ -99,7 +99,7 @@ actions_hook: '{self}/tk-maya_actions.py'
 
 자세한 정보는 앱과 함께 제공되는 후크 파일을 참조하십시오. 후크는 또한 상속을 이용합니다. 즉, 후크의 모든 사항을 재지정할 필요는 없지만 다양한 방식으로 기본 후크를 좀 더 쉽게 확장하거나 확대하여 보다 쉽게 후크를 관리할 수 있습니다.
 
-[2세대 후크 형식에 대한 자세한 정보는 여기를 참조하십시오.](https://support.shotgunsoftware.com/hc/ko/articles/219039878#The%20hook%20data%20type)
+[2세대 후크 형식에 대한 자세한 정보는 여기를 참조하십시오.](https://developer.shotgridsoftware.com/ko/6d10dedf/)
 
 후크에서 상속을 사용하면 다음과 같은 기본 후크에 액션을 추가할 수 있습니다.
 
@@ -188,9 +188,9 @@ action_mappings:
 
 Publish 앱은 퍼블리싱을 위해 항목이 아티스트에게 제공되는 방식과 해당 항목이 그 이후 처리되는 방식을 제어하는 후크를 통해 커스터마이즈할 수 있는 범위가 매우 넓습니다.
 
-Publisher 앱의 전체 개발자 문서를 이제 [툴킷 개발자 사이트](http://developer.shotgridsoftware.com/tk-multi-publish2)에서 살펴볼 수 있습니다.
+Publisher 앱의 전체 개발자 문서를 이제 [툴킷 개발자 사이트](http://developer.shotgunsoftware.com/tk-multi-publish2)에서 살펴볼 수 있습니다.
 
-Publish 앱을 사용하는 자세한 방법은 [사용자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000067513-Integrations-Developer-Guide#User_guide_link)를 참조하십시오. 1세대 Publisher에 대한 자세한 내용을 보려면 [클래식 게시자 문서](https://support.shotgunsoftware.com/hc/ko/articles/115000067513-Integrations-Developer-Guide#classic_publisher_link)를 참조하십시오.
+Publish 앱을 사용하는 자세한 방법은 [사용자 안내서](https://developer.shotgridsoftware.com/ko/d587be80/#the-publisher)를 참조하십시오.
 
 ## Loader
 
