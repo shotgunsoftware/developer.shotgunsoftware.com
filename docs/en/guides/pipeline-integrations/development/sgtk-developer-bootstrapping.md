@@ -158,8 +158,10 @@ However, in some situations, the engine may have specific setup requirements tha
 To bootstrap, you must first create a [`ToolkitManager`](https://developer.shotgridsoftware.com/tk-core/initializing.html#toolkitmanager) instance.
 
 ```python
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 ```
+
+> If a `user` is not passed into the `ToolkitManager`'s initializer, `ShotgunAuthenticator().get_user()` is called internally, which will return the currently authenticated ShotGrid user. To bootstrap using any other `HumanUser` or `ScriptUser`, pass in a user created via [ShotgunAuthenticator.create_session_user](https://developer.shotgridsoftware.com/tk-core/authentication.html#sgtk.authentication.ShotgunAuthenticator.create_session_user) or [ShotgunAuthenticator.create_script_user](https://developer.shotgridsoftware.com/tk-core/authentication.html#sgtk.authentication.ShotgunAuthenticator.create_script_user).
 
 For Toolkit to bootstrap, it needs to know at least the entity, plugin id, and engine.
 This guide won't cover all the available parameters and options, as they are covered in the [reference documentation](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api).
@@ -253,7 +255,7 @@ sgtk.set_authenticated_user(user)
 ###########
 
 # create an instance of the ToolkitManager which we will use to set a bunch of settings before initiating the bootstrap. 
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 mgr.plugin_id = "basic.shell"
 
 project = {"type": "Project", "id": 176}
@@ -356,7 +358,7 @@ sgtk.set_authenticated_user(user)
 ###########
 
 # create an instance of the ToolkitManager which we will use to set a bunch of settings before initiating the bootstrap. 
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 mgr.plugin_id = "basic.shell"
 
 project = {"type": "Project", "id": 176}
