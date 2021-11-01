@@ -249,7 +249,9 @@ user = authenticator.create_script_user(
 )
 
 # Tells Toolkit which user to use for connecting to ShotGrid.
-sgtk.set_authenticated_user(user)
+# This is actually not necessary when using the ToolkitManager. The authenticated user will be set
+# before launching the engine.
+# sgtk.set_authenticated_user(user)
 
 # Bootstrap
 ###########
@@ -352,7 +354,9 @@ user = authenticator.create_script_user(
 )
 
 # Tells Toolkit which user to use for connecting to ShotGrid.
-sgtk.set_authenticated_user(user)
+# This is actually not necessary when using the ToolkitManager. The authenticated user will be set
+# before launching the engine.
+# sgtk.set_authenticated_user(user)
 
 # Bootstrap
 ###########
