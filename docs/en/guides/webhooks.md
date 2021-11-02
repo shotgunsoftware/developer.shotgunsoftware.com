@@ -228,7 +228,7 @@ Acknowledgements allow for out of band, detailed reporting of success or failure
 
 A good example would be a webhook triggered on the creation of an `Asset` entity. If that webhook's responsibility is to create a directory structure on disk for each new `Asset`, the webhook's URL can successfully receive a delivery, but be unable to create the associated directories due to a disk or network outage. Then, it can update the delivery record with a detailed error message stating that the directory structure was not created, and why.
 
-## Testing webhooks
+## Testing Webhooks
 
 You can use any of the freely available webhook URL generators online for testing purposes. These services are specifically intended to be used for testing webhooks and other types of HTTP requests. This is a great way to get started learning about webhooks without needing to set up any infrastructure on your own network.
 
