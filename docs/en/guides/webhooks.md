@@ -7,8 +7,6 @@ lang: en
 
 # Webhooks
 
-{% include info title="Beta" content="Webhooks is currently in beta. Join the [webhooks community forum](https://community.shotgridsoftware.com/c/webhooks) to learn more and participate." %}
-
 Webhooks allow a service you control to be notified of events that occur in {% include product %}. When you create a webhook, you specify the type of event you are interested in and tell {% include product %} what URL to send data to when it is triggered. Once the relevant event happens in {% include product %}, a payload of data describing the event will be sent to the webhook’s URL. This allows you to build tight integrations with {% include product %} and automate portions of your workflow.
 
 ## What are some examples of how to use webhooks?
@@ -29,19 +27,27 @@ Another great example of how to automate status management would be to trigger a
 
 Webhooks and the [{% include product %} event daemon](https://github.com/shotgunsoftware/shotgunEvents/wiki) offer similar features, but with a few key differences. The event daemon requires that you run, monitor, and maintain your own service. All of your code must be written in Python, and it allows you to initiate your own connections to {% include product %}. Webhooks, in contrast, answer connections and can be written in any programming language. They can be hosted in a serverless environment, such as [AWS Lambda](https://aws.amazon.com/lambda/), or can trigger any of the automation platforms available online, such as [Zapier](https://zapier.com) and [IFTTT](https://ifttt.com). If your use case works with webhooks, it should be the preferred solution.
 
-## Creating a webhook
+## Creating a Webhook
 
-To get started creating a webhook, go to a Webhooks page, then navigate to the button above the webhooks list. Access to webhooks is controlled by the "Advanced -> Show Webhooks" permission. It is enabled for default Admin and Manager roles. 
+To get started creating a webhook, go to the **Webhooks** page.
+
+![Create Webhook Button](./images/webhooks/webhooks_page.png)
+
+Then, select **Create Webhook**. 
 
 ![Create Webhook Button](./images/webhooks/create_webhook_button.png)
 
-Next up is to fill out the information required to create the new webhook.
+{% include info title="Note" content="Access to webhooks is controlled by **Show Webhooks** under Advanced Permissions. It is enabled by default for Admin and Manager permission roles ![Create Webhook Dialog](./images/webhooks/show_webhooks_permission.png)." %}
+
+Next, fill out the information required to create your new webhook.
 
 ![Create Webhook Dialog](./images/webhooks/create_webhook_dialog.png)
 
 ### Secret token
 
-Assigning a secret token to a webhook is optional. If provided, any request sent to the webhook URL will be signed using that token. The token value is sent with the request as a header named `X-SG-SIGNATURE`. The signature is calculated using HMAC with SHA1 and the message signed is the JSON body of the request.
+Assigning a secret token to a webhook is optional. When provided, any request sent to the webhook URL will be signed using that token. The token value is sent with the request as a header named `X-SG-SIGNATURE`. The signature is calculated using HMAC with SHA1 and the message signed is the JSON body of the request.
+
+![Secret Token](./images/webhooks/webhook_secret_token.png)
 
 #### Header format
 
@@ -55,7 +61,7 @@ While not strictly required, providing a secret token causes the payload sent to
 
 An example of how to verify the signature of the payload is provided below using Python.
 
-```
+```python
 >>> import hmac
 >>> import hashlib
 >>> body | `<json body>'
@@ -68,6 +74,20 @@ True
 
 Validation of SSL certificates is an optional feature that will help ensure the security of any connections made to the webhook’s consumer URL. If turned on, when a delivery is made to the webhook’s URL, {% include product %} will use OpenSSL’s certificate validation routine to verify the certificate.
 
+![Validate SSL certificate](./images/webhooks/webhooks_validate_ssl_certificate.png)
+
+### Filtering by Project and Entity
+
+Selecting specific projects, entities, and fields will minimize traffic to your webhook, which in result will:
+
+- Improve performance
+- Reduce resource costs
+- Prevent unnecessary backlogs
+
+![Webhook Filters](./images/webhooks/webhook_project_entity_field_filter.png)
+
+{% include info title="Note" content="Selecting a project limits you to selecting an entity that always belongs to a single project, such as Versions. If you want to select a non-project (or multi-project) entity like Person, you should **not** select a project. This ensures webhook event filtering does not add performance overhead to entity updates." %}
+
 ## Webhook status
 
 A webhook can have one of several different statuses, indicating its health and ability to continue receiving deliveries.
@@ -78,18 +98,18 @@ A webhook can have one of several different statuses, indicating its health and 
 |--------|:-------:|:-----------:|
 | Active | ![Active](./images/webhooks/webhook_status_active.png) | The webhook is operating in a stable fashion. No deliveries to this webhook's consumer URL have failed to reach their destination in the past 24 hours. |
 | Unstable | ![Unstable](./images/webhooks/webhook_status_unstable.png) | The webhook is operating in an unstable fashion. Some deliveries have failed to reach their destination in the past 24 hours, but not enough to cause {% include product %} to consider the webhook to be dead. |
-| Failed | ![Failed](./images/webhooks/webhook_status_failed.png) | The webhook is considered to be dead, and no further deliveries will be attempted. This is a result of too many delivery failures in a short period of time, and the system has determined that the webhook should no longer be considered viable. **A webhook is considered failed if it has 10 failed deliveries in the past 24 hours**. |
+| Failed | ![Failed](./images/webhooks/webhook_status_failed.png) | The webhook is considered to be dead, and no further deliveries will be attempted. This is a result of too many delivery failures in a short period of time, and the system has determined that the webhook should no longer be considered viable. **A webhook is considered failed if it has 100 failed deliveries in the past 24 hours**. |
 | Disabled | ![Disabled](./images/webhooks/webhook_status_disabled.png) | The webhook is in a disabled state, and no further deliveries will be attempted until it is re-enabled. |
 
 ## Deliveries
 
-Selecting a webhook in the webhooks list will show all of the deliveries that have been made for that webhook dating back as far as seven days ago.
+Selecting a webhook from the webhooks list will show all of the deliveries that have been made for that webhook dating back as far as seven days.
 
 {% include info title="Note" content="Delivery logs older than seven days are removed and are not recoverable." %}
 
 ### Delivery status
 
-A delivery’s status indicates whether it was successfully delivered to the webhook’s URL.
+A delivery status indicates whether it was successfully delivered to the webhook’s URL.
 
 ![Delivery Status](./images/webhooks/delivery_status.png)
 
@@ -146,20 +166,33 @@ The payload sent to the webhook's URL contains information describing the event 
 
 Provided as part of the event payload is the `session_uuid` that triggered the event in {% include product %}. This value can be provided to [{% include product %}'s Python API](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid), which will cause any open browser session with that session_uuid to display updates for events generated by the API.
 
+#### Response from the Webhook
+
+![Response tab](./images/webhooks/webhooks_response_tab.png)
+
+The Response tab shows details about your webhook's response to the delivery. 
+
+You can see your webhook's response HTTP headers, body, and the measured response time.
+
+A maximum of 100 characters of your webhook's response body are retained. (As noted above, delivery information is retained for review for 7 days and deleted afterwards.)
+
+{% include warning title="Security best practices" content="Do not include any secure data in your webhook's response, and do not return details of system errors in the response." %}
+
 ### Responding to deliveries
 
 A webhook consumer service must respond to deliveries in order for the system to consider them successfully delivered.
 
 {% include warning title="Response timeouts" content="A response must be received within six seconds of delivery to a webhook’s URL, after which the connection will be closed. Failure to respond in time will result in a failed delivery." %}
 
-Process time is recorded for each delivery and can be viewed in the Response details tab. 
+Process time is recorded for each delivery and can be viewed in the Response details tab.
 
 #### Throttling
 
 Your consumer response times to deliveries will impact webhooks throughput for your site.
+
 Each site is allowed 1 minute of response time per minute. So if all configured consumer endpoints for a site take the full 6 seconds to respond, webhooks deliveries for that site will be throttled to 10 per a minute.
 
-Where a high rate of overall throughput is needed, then consumer endpoints should be designed according to the following model:
+When a high rate of overall throughput is needed, consumer endpoints should be designed according to the following model:
  1. Receive the request
  2. Spawn another process/thread to handle it the way you want
  3. Answer an acknowledging 200 immediately
@@ -195,15 +228,17 @@ A delivery can be updated to include an acknowledgement. When a delivery is made
 
 #### What are acknowledgements used for?
 
-Acknowledgements allow for out of band, detailed reporting of success or failure to process a delivery that was successfully received by your webhook's URL. This creates a separation between the status of receiving the delivery from {% include product %} and the success or failure to process the event associated with that delivery. In this way, successfully-delivered events can contain additional information useful for debugging purposes. A good example would be a webhook triggered on the creation of an `Asset` entity. If that webhook's responsibility is to create a directory structure on disk for each new `Asset`, the webhook's URL could successfully receive a delivery, but be unable to create the associated directories due to a disk or network outage. It could then update the delivery record with a detailed error message stating that the directory structure was not created, and why.
+Acknowledgements allow for out of band, detailed reporting of success or failure to process a delivery that was successfully received by your webhook's URL. This creates a separation between the status of receiving the delivery from {% include product %} and the success or failure to process the event associated with that delivery. As a result, successfully-delivered events can contain additional information useful for debugging purposes. 
 
-## Testing webhooks
+A good example would be a webhook triggered on the creation of an `Asset` entity. If that webhook's responsibility is to create a directory structure on disk for each new `Asset`, the webhook's URL can successfully receive a delivery, but be unable to create the associated directories due to a disk or network outage. Then, it can update the delivery record with a detailed error message stating that the directory structure was not created, and why.
+
+## Testing Webhooks
 
 You can use any of the freely available webhook URL generators online for testing purposes. These services are specifically intended to be used for testing webhooks and other types of HTTP requests. This is a great way to get started learning about webhooks without needing to set up any infrastructure on your own network.
 
 ### Using webhook.site
 
-We recommend [webhook.site](https://webhook.site). It provides a unique URL that can be copied and pasted into a webhook, and will show you deliveries made to that address in real time. The page can be customized to respond to deliveries with a specific status code and body, which means you can test delivery success and failure.
+We recommend [webhook.site](https://webhook.site). It provides a unique URL that can be copied and pasted into a webhook and will show you deliveries made to that address in real time. The page can be customized to respond to deliveries with a specific status code and body, which means you can test delivery success and failure.
 
 The webhook.site service is aggressively rate limited. This means that it is easy to end up in a situation where some deliveries are rejected, resulting in unstable or failed webhooks. When testing, we recommend that you use a known, controllable project environment rather than live data in production.
 
