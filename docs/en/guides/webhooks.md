@@ -33,13 +33,13 @@ To get started creating a webhook, go to the **Webhooks** page.
 
 ![Create Webhook Button](./images/webhooks/webhooks_page.png)
 
-Then, select **Create Webhook** ![Create Webhook Button](./images/webhooks/create_webhook_button_v2.png). 
+Then, select **Create Webhook**. 
 
 ![Create Webhook Button](./images/webhooks/create_webhook_button.png)
 
 {% include info title="Note" content="Access to webhooks is controlled by **Show Webhooks** under Advanced Permissions. It is enabled by default for Admin and Manager permission roles ![Create Webhook Dialog](./images/webhooks/show_webhooks_permission.png)." %}
 
-Next, fill out the information required to create the new webhook.
+Next, fill out the information required to create your new webhook.
 
 ![Create Webhook Dialog](./images/webhooks/create_webhook_dialog.png)
 
@@ -168,7 +168,11 @@ Provided as part of the event payload is the `session_uuid` that triggered the e
 
 #### Response from the Webhook
 
-The Response tab ![Response tab](./images/webhooks/webhooks_response_tab.png) shows details about your webhook's response to the delivery. You can see your webhook's response HTTP headers, body, and the measured response time.
+![Response tab](./images/webhooks/webhooks_response_tab.png)
+
+The Response tab shows details about your webhook's response to the delivery. 
+
+You can see your webhook's response HTTP headers, body, and the measured response time.
 
 A maximum of 100 characters of your webhook's response body are retained. (As noted above, delivery information is retained for review for 7 days and deleted afterwards.)
 
