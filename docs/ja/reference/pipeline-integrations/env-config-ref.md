@@ -19,7 +19,7 @@ Toolkit パイプラインの中心にあるのは環境設定です。Toolkit �
 
 しかし、スタジオのパイプラインでは、さまざまなタイプのアーティストが異なるワークフローを使用するのが一般的です。簡単な例として、アセットを扱うアーティストの場合は Mari などのテクスチャ ペイント ソフトウェアを利用可能にし、ショットを扱うアーティストの場合は Nuke などの合成ソフトウェアを利用可能にします。
 
-ソフトウェア パッケージの他にも、異なるアーティストに対して、同じ Toolkit アプリで異なる設定を使用することができます。たとえば、ショットのアーティストとアセットのアーティストの両方が [Workfiles アプリ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)を使用することがありますが、ショットのアーティストは Shot エンティティ、アセットのアーティストは Asset エンティティに関連付けられているファイルにのみナビゲートできるように制限することができます。
+ソフトウェア パッケージの他にも、異なるアーティストに対して、同じ Toolkit アプリで異なる設定を使用することができます。たとえば、ショットのアーティストとアセットのアーティストの両方が [Workfiles アプリ](https://developer.shotgridsoftware.com/ja/9a736ee3)を使用することがありますが、ショットのアーティストは Shot エンティティ、アセットのアーティストは Asset エンティティに関連付けられているファイルにのみナビゲートできるように制限することができます。
 
 プロジェクト内でこれらの個別のワークフローをサポートするために、Toolkit はアプリとエンジンの構成を環境上で分離しています。環境には、一連のソフトウェア パッケージの統合とその設定が含まれています。それらのすべてには、特定の共通するコンテキストがあります。
 
@@ -306,7 +306,7 @@ engines:
 
 スパース構成では、単に設定ファイルを見ただけでは、どの構成設定がアプリに使用できるかをすぐに判断することはできません。アプリで利用可能な構成設定を確認する場合、2 つの選択肢があります。
 
-* **アプリのドキュメント**: 各アプリには独自のドキュメント ページがあり、それぞれのページに「設定オプション」セクションがあります。このセクションでは、アプリで使用可能なすべての構成設定が、それぞれの説明と既定値と共に一覧表示されています。たとえば、[Workfiles ドキュメント ページ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)を参照することができます。[アプリとエンジンのページ](https://support.shotgunsoftware.com/hc/ja/articles/219033088)には、すべてのアプリとエンジンのドキュメント ページが一覧表示されています。
+* **アプリのドキュメント**: 各アプリには独自のドキュメント ページがあり、それぞれのページに「設定オプション」セクションがあります。このセクションでは、アプリで使用可能なすべての構成設定が、それぞれの説明と既定値と共に一覧表示されています。たとえば、[Workfiles ドキュメント ページ](https://developer.shotgridsoftware.com/ja/9a736ee3)を参照することができます。[アプリとエンジンのページ](https://developer.shotgridsoftware.com/ja/9a736ee3)には、すべてのアプリとエンジンのドキュメント ページが一覧表示されています。
 * **マニフェスト:** すべての Toolkit バンドルは、そのルート ディレクトリに `info.yml` というファイルを含んでいます。このファイルをバンドルの**「マニフェスト」と呼び、バンドルで利用可能なすべての設定を、それぞれの説明と既定値と共に定義します。マニフェストは、バンドルの独自のキャッシュ(パイプライン設定内の `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml` など)、または Github ([ここでは Workfiles の場合の例を示します](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml))にあります。
 
 ## 構成設定を修正する
@@ -345,5 +345,5 @@ engines:
 * [アニメーション パイプラインのチュートリアル](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [ディスクリプタのリファレンス ドキュメント](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
 * [ウェビナー: Toolkit の管理](https://youtu.be/7qZfy7KXXX0)
-* [ファイル システム設定リファレンス](https://support.shotgunsoftware.com/hc/ja/articles/219039868-Integrations-File-System-Reference)
+* [ファイル システム設定リファレンス](https://developer.shotgridsoftware.com/ja/82ff76f7)
 * [既定の設定の環境構成に関する README](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

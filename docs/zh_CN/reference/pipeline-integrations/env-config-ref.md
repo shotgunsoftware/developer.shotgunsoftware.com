@@ -19,7 +19,7 @@ Toolkit 工作流的核心是环境配置。在 Toolkit 工作流配置中，环
 
 但在工作室工作流中，通常情况下，不同类型的美工人员一般会采用不同的工作流。举一个简单的示例，对于处理资产的美工人员，您可能希望提供纹理绘制软件（如 Mari），而对于处理镜头的美工人员，您可能希望提供合成软件（如 Nuke）。
 
-除了软件包之外，对于不同的美工人员，同一 Toolkit 应用也可能需要使用不同的设置。例如，镜头美工人员和资产美工人员都可能使用 [Workfiles 应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)，但您可能希望对文件导航进行限制：对于前者，只能导航到与镜头实体关联的文件；对于后者，只能导航到与资产实体关联的文件。
+除了软件包之外，对于不同的美工人员，同一 Toolkit 应用也可能需要使用不同的设置。例如，镜头美工人员和资产美工人员都可能使用 [Workfiles 应用](https://developer.shotgridsoftware.com/zh_CN/9a736ee3)，但您可能希望对文件导航进行限制：对于前者，只能导航到与镜头实体关联的文件；对于后者，只能导航到与资产实体关联的文件。
 
 为了在一个项目中支持不同的工作流，Toolkit 跨环境分隔其应用和插件配置。一个环境中包含一组软件包的集成及其设置，所有这些都共用一个特定上下文。
 
@@ -306,7 +306,7 @@ engines:
 
 使用稀疏配置时，难以直接通过查看配置文件确定哪些配置设置可用于应用。要确定应用有哪些配置设置可用，可以采用两种方式：
 
-* **应用文档：**每个应用都有其自己的文档页面，每个页面都有“配置选项”部分。此部分列出相应应用的所有可用配置设置，每个设置都有说明和默认值。例如，您可以[查看 Workfiles 文档页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)。[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)列出了所有应用和插件的文档页面。
+* **应用文档：**每个应用都有其自己的文档页面，每个页面都有“配置选项”部分。此部分列出相应应用的所有可用配置设置，每个设置都有说明和默认值。例如，您可以[查看 Workfiles 文档页面](https://developer.shotgridsoftware.com/zh_CN/9a736ee3)。[应用和插件页面](https://developer.shotgridsoftware.com/zh_CN/9a736ee3)列出了所有应用和插件的文档页面。
 * **清单文件：**每个 Toolkit 包的根目录中都包含一个名为 `info.yml` 的文件。我们将此文件称为包的清单文件**，此文件定义相应包的所有可用配置设置，每个设置都有说明和默认值。您可以在自己的包缓存中查找清单文件（例如工作流配置中的 `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml`），也可以在 Github 中查找清单文件（[例如，此处是 Workfiles 的清单文件](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml)）。
 
 ## 修改配置设置
@@ -345,5 +345,5 @@ engines:
 * [动画工作流教程](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [描述符参考文档](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
 * [网络讲座：Toolkit 管理](https://youtu.be/7qZfy7KXXX0)
-* [文件系统配置参考](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868)
+* [文件系统配置参考](https://developer.shotgridsoftware.com/zh_CN/82ff76f7)
 * [默认配置环境结构自述文件](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)
