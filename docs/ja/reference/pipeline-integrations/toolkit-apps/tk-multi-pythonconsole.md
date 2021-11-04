@@ -60,7 +60,7 @@ Python コンソールには 1 つまたは複数のタブが表示され、そ�
 
 ![グローバル](../images/apps/multi-pythonconsoleglobals.png)
 
-一部の {% include product %}/Toolkit グローバル変数は、[シェルの {% include product %} エンジン](https://support.shotgunsoftware.com/hc/ja/articles/219039898)で利用可能なグローバル変数と同様、コンソールにあらかじめ定義されています。
+一部の {% include product %}/Toolkit グローバル変数は、[シェルの {% include product %} エンジン](https://developer.shotgridsoftware.com/ja/2ad59ee8/?title=Shell)で利用可能なグローバル変数と同様、コンソールにあらかじめ定義されています。
 
 * Tk API ハンドルは `tk` 変数を介して利用できます
 * {% include product %} API ハンドルは `shotgun` 変数を介して利用できます
