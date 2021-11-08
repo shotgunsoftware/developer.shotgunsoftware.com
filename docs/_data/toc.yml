@@ -26,6 +26,8 @@
         children:
         - page: toolkit-pipeline-tutorial
         - page: episodic-nuke-tutorial
+        - text: Artist Workflows in Automotive Design
+          url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_RV_rv_manuals_rv_user_manual_html"
       - page: toolkit-administration
         children:
         - page: toolkit-overview
