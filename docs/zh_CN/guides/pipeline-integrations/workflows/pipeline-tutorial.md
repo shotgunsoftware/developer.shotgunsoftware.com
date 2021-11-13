@@ -35,7 +35,7 @@ lang: zh_CN
 
 ## 其他资源
 
-* [{% include product %} 支持站点](https://support.shotgunsoftware.com/hc/zh-cn)
+* [{% include product %} 支持站点](https://developer.shotgridsoftware.com/zh_CN)
 
 * [{% include product %} 集成](https://www.shotgridsoftware.com/integrations/)
 

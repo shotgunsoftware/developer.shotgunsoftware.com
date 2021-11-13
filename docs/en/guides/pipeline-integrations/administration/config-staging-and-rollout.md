@@ -86,7 +86,7 @@ If you have a old dev or staging sandbox set up, but it is out of date and you n
 tank push_configuration
 
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://support.shotgunsoftware.com
+For documentation, see https://developer.shotgridsoftware.com
 Starting Toolkit for your current directory '/tmp'
 - Using configuration 'Primary' and Core v0.14.52
 - Setting the Context to Empty Context.
@@ -173,7 +173,7 @@ cd /my/staging/sandbox
 ./tank localize
 
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://support.shotgunsoftware.com
+For documentation, see https://developer.shotgridsoftware.com
 Starting Toolkit for your current directory '/my/staging/sandbox'
 - Using configuration 'Staging Sandbox' and Core v0.14.52
 - Setting the Context to Empty Context.
@@ -235,7 +235,7 @@ This is a very simple way to gradually evolve the configuration over time. Chang
 For your second project, you will be presented with a list of paths to configurations for previous projects. Choose one of these paths and enter that when the setup process prompts for a config. This will copy that configuration to the new project:
 ```
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://support.shotgunsoftware.com
+For documentation, see https://developer.shotgridsoftware.com
 - Running command setup_project...
 
 ----------------------------------------------------------------------

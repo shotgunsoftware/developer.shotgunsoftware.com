@@ -35,7 +35,7 @@ For simplicity, the digital content creation (DCC) software used will be kept to
 
 ## Additional Resources
 
-* [{% include product %} Support Site](https://support.shotgunsoftware.com)
+* [{% include product %} Support Site](https://developer.shotgridsoftware.com)
 
 * [{% include product %} Integrations](https://www.shotgridsoftware.com/integrations/)
 
