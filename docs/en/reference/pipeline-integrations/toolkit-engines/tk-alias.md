@@ -17,6 +17,17 @@ This item has been tested and is known to be working on the following applicatio
 
 Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
 
+## Python Version Support
+
+The Alias toolkit engine uses the Python interpreter shipped with Shotgun Desktop, or a locally installed interpreter.
+
+|tk-alias Engine Version | Shotgun Desktop Application Version | Shotgun Desktop Engine Version | Python Interpreter Version |
+| ---------------------- | ----------------------------------- | ------------------------------ | -------------------------- |
+|  v2.0.5 or older       |  v1.5.8 or older                    |  v2.4.14 or older              | v2.7.x                     |
+|  v2.0.6 or newer       |  v1.6.0 or newer                    |  v2.5.0 or newer               | v2.7.x & v3.7.x            |
+
+Tested locally installed Python Interpreters: v2.7.x or v3.7.4
+
 ## Information for App Developers
     
 ### PySide
