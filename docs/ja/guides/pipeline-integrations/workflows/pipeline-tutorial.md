@@ -35,7 +35,7 @@ lang: ja
 
 ## その他のリソース
 
-* [{% include product %} サポート サイト](https://support.shotgunsoftware.com/hc/ja)
+* [{% include product %} サポート サイト](https://developer.shotgridsoftware.com/ja)
 
 * [{% include product %} 統合](https://www.shotgridsoftware.com/integrations/)
 

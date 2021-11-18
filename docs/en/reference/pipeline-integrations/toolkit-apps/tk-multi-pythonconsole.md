@@ -60,7 +60,7 @@ The output area displays the results of the executed python. Echoing the source 
 
 ![Globals](../images/apps/multi-pythonconsoleglobals.png)
 
-Some {% include product %}/Toolkit globals are pre-defined in the console, similar to what is available in the [{% include product %} Engine for the shell](https://support.shotgunsoftware.com/entries/95441287).
+Some {% include product %}/Toolkit globals are pre-defined in the console, similar to what is available in the [{% include product %} Engine for the shell](https://developer.shotgridsoftware.com/2ad59ee8/?title=Shell).
 
  * Tk API handle is available via the `tk` variable
  * {% include product %} API handle is available via the `shotgun` variable

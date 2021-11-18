@@ -86,7 +86,7 @@ _studio_ インストールにはすべてのプロジェクトの Core API が�
 tank push_configuration
 
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://support.shotgunsoftware.com
+For documentation, see https://developer.shotgridsoftware.com
 Starting Toolkit for your current directory '/tmp'
 - Using configuration 'Primary' and Core v0.14.52
 - Setting the Context to Empty Context.
@@ -173,7 +173,7 @@ cd /my/staging/sandbox
 ./tank localize
 
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://support.shotgunsoftware.com
+For documentation, see https://developer.shotgridsoftware.com
 Starting Toolkit for your current directory '/my/staging/sandbox'
 - Using configuration 'Staging Sandbox' and Core v0.14.52
 - Setting the Context to Empty Context.
@@ -235,7 +235,7 @@ Core API を更新したら、このインストールを必ずテストして�
 2 つ目のプロジェクトの場合、以前のプロジェクトの環境設定へのパスのリストが表示されます。これらのいずれかのパスを選択し、セットアップ プロセスで環境設定の指定を求められたら[Enter]キーを押します。これで新しいプロジェクトにこの環境設定がコピーされます。
 ```
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://support.shotgunsoftware.com
+For documentation, see https://developer.shotgridsoftware.com
 - Running command setup_project...
 
 ----------------------------------------------------------------------

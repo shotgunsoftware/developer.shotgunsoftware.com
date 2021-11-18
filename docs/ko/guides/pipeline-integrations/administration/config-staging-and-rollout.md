@@ -86,7 +86,7 @@ _스튜디오_ 설치에는 모든 프로젝트의 Core API가 포함되어 있�
 tank push_configuration
 
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://support.shotgunsoftware.com
+For documentation, see https://developer.shotgridsoftware.com
 Starting Toolkit for your current directory '/tmp'
 - Using configuration 'Primary' and Core v0.14.52
 - Setting the Context to Empty Context.
@@ -173,7 +173,7 @@ cd /my/staging/sandbox
 ./tank localize
 
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://support.shotgunsoftware.com
+For documentation, see https://developer.shotgridsoftware.com
 Starting Toolkit for your current directory '/my/staging/sandbox'
 - Using configuration 'Staging Sandbox' and Core v0.14.52
 - Setting the Context to Empty Context.
@@ -235,7 +235,7 @@ Core API를 업데이트했으면 설치를 테스트해야 합니다. 샌드박
 두 번째 프로젝트의 경우 이전 프로젝트 구성에 대한 경로 목록이 제공됩니다. 이러한 경로 중 하나를 선택하여 설정 프로세스에서 구성을 묻는 메시지가 표시될 때 입력합니다. 이렇게 하면 해당 구성이 새 프로젝트에 복사됩니다.
 ```
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://support.shotgunsoftware.com
+For documentation, see https://developer.shotgridsoftware.com
 - Running command setup_project...
 
 ----------------------------------------------------------------------
