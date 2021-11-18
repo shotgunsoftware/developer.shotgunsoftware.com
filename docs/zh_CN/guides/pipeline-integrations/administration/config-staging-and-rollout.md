@@ -86,7 +86,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 tank push_configuration
 
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://developer.shotgridsoftware.com
+For documentation, see https://support.shotgunsoftware.com
 Starting Toolkit for your current directory '/tmp'
 - Using configuration 'Primary' and Core v0.14.52
 - Setting the Context to Empty Context.
@@ -173,7 +173,7 @@ cd /my/staging/sandbox
 ./tank localize
 
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://developer.shotgridsoftware.com
+For documentation, see https://support.shotgunsoftware.com
 Starting Toolkit for your current directory '/my/staging/sandbox'
 - Using configuration 'Staging Sandbox' and Core v0.14.52
 - Setting the Context to Empty Context.
@@ -235,7 +235,7 @@ Toolkit 将检查是否有新版本可用，并让您下载并安装它。
 设置第二个项目时，您将看到之前项目的配置路径列表。选择其中一个路径，当设置过程提示输入配置时，输入此路径。这会将相应的配置复制到新项目：
 ```
 Welcome to the {% include product %} Pipeline Toolkit!
-For documentation, see https://developer.shotgridsoftware.com
+For documentation, see https://support.shotgunsoftware.com
 - Running command setup_project...
 
 ----------------------------------------------------------------------

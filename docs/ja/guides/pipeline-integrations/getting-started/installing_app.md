@@ -293,7 +293,7 @@ cache		config		install		tank		tank.bat
 $ ./tank push_configuration
 
 Welcome to the Shotgun Pipeline Toolkit!
-For documentation, see https://developer.shotgridsoftware.com
+For documentation, see https://support.shotgunsoftware.com
 Starting Toolkit for your current path
 '/Users/michelle/Documents/Shotgun/configs/the_other_side_clone2'
 - The path is not associated with any Shotgun object.

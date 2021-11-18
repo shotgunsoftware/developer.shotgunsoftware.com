@@ -7,8 +7,6 @@ lang: ja
 
 # Webhook
 
-{% include info title="ベータ" content="Webhook は現在ベータ版です。詳細について学習し、情報を共有するには、[Webhook コミュニティ フォーラム](https://community.shotgridsoftware.com/c/webhooks)に参加してください。" %}
-
 Webhook を使用すると、ユーザがコントロールしているサービスに {% include product %} で発生したイベントを通知することができます。Webhook を作成する場合は、対象となるイベントのタイプを指定し、このイベントがトリガされたときにデータを送信する URL を {% include product %} に指示します。{% include product %} で関連イベントが発生すると、そのイベントを示すデータのペイロードが Webhook の URL に送信されます。これにより、{% include product %} との統合が緊密化され、ワークフローの一部を自動化することができます。
 
 ## Webhook を使用する例
@@ -31,17 +29,25 @@ Webhook および [{% include product %} のイベント デーモン](https://g
 
 ## Webhook を作成する
 
-Webhook の作成を開始するには、Webhook のページに移動し、Webhook リストの上にあるボタンにナビゲートします。Webhook へのアクセスは、「[詳細設定] (Advanced) -> [Webhook を表示] (Show Webhooks)」の権限でコントロールされます。既定の管理者ロールでは有効になっています。
+Webhook の作成を開始するには、**[Webhooks](Webhooks)**ページに移動します。
+
+![[Webhook を作成](Create Webhook)ボタン](/images/webhooks/webhooks_page.png)
+
+次に、**[Webhook を作成](Create Webhook)**を選択します。
 
 ![Webhook ボタンを作成する](./images/webhooks/create_webhook_button.png)
 
-次に、新しい Webhook を作成するのに必要な情報を入力します。
+{% include info title="注" content="Webhook へのアクセスは、[高度な権限](Advanced Permissions)の**[Webhook を表示](Show Webhooks)**でコントロールします。管理者およびマネージャ権限ロールでは、このオプションは既定で有効になっています。![[Webhook を作成](Create Webhook)ダイアログ](./images/webhooks/show_webhooks_permission.png)" %}
 
-![Webhook ダイアログを作成する](./images/webhooks/create_webhook_dialog.png)
+次に、新しい Webhook を作成するために必要な情報を入力します。
+
+![[Webhook を作成](Create Webhook)ダイアログ](./images/webhooks/create_webhook_dialog.png)
 
 ### シークレット トークン
 
 Webhook にシークレット トークンを割り当てる作業は省略できます。シークレット トークンを指定した場合、Webhook の URL に送信されるすべての要求はこのトークンを使用して署名されます。この要求と一緒にトークン値が送信されます(ヘッダ名は `X-SG-SIGNATURE`)。署名は HMAC および SHA1 を使用して計算され、署名されたメッセージが要求の本文(JSON 形式)になります。
+
+![シークレット トークン](./images/webhooks/webhook_secret_token.png)
 
 #### ヘッダ形式
 
@@ -55,7 +61,7 @@ Webhook にシークレット トークンを割り当てる作業は省略で�
 
 Python を使用してペイロードの署名を確認する例の 1 つを、次に示します。
 
-```
+```python
 >>> import hmac
 >>> import hashlib
 >>> body | `<json body>'
@@ -68,17 +74,31 @@ True
 
 SSL 証明書の検証機能はオプションです。Webhook の使用者 URL に対する接続のセキュリティを確保する際に役立ちます。この機能を有効にすると、Webhook の URL に配信された場合、{% include product %} は OpenSSL の証明書検証ルーチンを使用して証明書を検証します。
 
+![SSL 証明書を検証する](./images/webhooks/webhooks_validate_ssl_certificate.png)
+
+### プロジェクトとエンティティでフィルタする
+
+特定のプロジェクト、エンティティ、フィールドを選択すると、Webhook へのトラフィックが最小限になるため、以下のことが可能になります。
+
+- パフォーマンスを改善する
+- リソースのコストを削減する
+- 不要なバックログを防止する
+
+![Webhook のフィルタ](./images/webhooks/webhook_project_entity_field_filter.png)
+
+{% include info title="注" content="プロジェクトの制限を選択すると、「バージョン」のように常に 1 つのプロジェクトに属するエンティティを選択できます。ユーザなどのプロジェクト以外(またはマルチプロジェクト)のエンティティを選択する場合は、プロジェクトを**選択しないでください**。こうすることで、Webhook イベントをフィルタするときに、エンティティ更新のパフォーマンスにオーバーヘッドが生じることはなくなります。"%}
+
 ## Webhook のステータス
 
 Webhook はさまざまなステータスを取ることができます(健全性や、配信を引き続き受信できるかどうか)。
 
-![Webhook ダイアログを作成する](./images/webhooks/webhook_selected_status.png)
+![[Webhook を作成](Create Webhook)ダイアログ](./images/webhooks/webhook_selected_status.png)
 
 | ステータス | 例 | 説明 |
 |--------|:-------:|:-----------:|
 | アクティブ | ![アクティブ](./images/webhooks/webhook_status_active.png) | Webhook の動作は安定しています。過去 24 時間以内に、この Webhook の使用者 URL に対する配信が宛先に到達しなかったことはありません。 |
 | 不安定 | ![不安定](./images/webhooks/webhook_status_unstable.png) | Webhook の動作は不安定です。過去 24 時間以内に、一部の配信が宛先に到達しませんでしたが、Webhook が停止していると {% include product %} が判断するには不十分です。 |
-| 失敗 | ![失敗](./images/webhooks/webhook_status_failed.png) | Webhook は停止していると判断されていて、配信はこれ以上試行されません。この原因は、短期間に発生した配信失敗の数が多すぎたことです。システムは、Webhook が使用できなくなったと判断しました。**過去 24 時間以内に配信が 10 回失敗すると、Webhook に障害があると見なされます**。 |
+| 失敗 | ![失敗](./images/webhooks/webhook_status_failed.png) | Webhook は停止していると判断されていて、配信はこれ以上試行されません。この原因は、短期間に発生した配信失敗の数が多すぎたことです。システムは、Webhook が使用できなくなったと判断しました。**過去 24 時間以内に配信が 100 回失敗すると、Webhook に障害があると見なされます**。 |
 | 無効 | ![無効](./images/webhooks/webhook_status_disabled.png) | Webhook は無効な状態です。再度有効になるまで、配信はこれ以上試行されません。 |
 
 ## 配信
@@ -89,7 +109,7 @@ Webhook リスト内の Webhook を選択すると、この Webhook に行われ
 
 ### 配信ステータス
 
-配信のステータスは、Webhook の URL に正常に配信されたかどうかを示します。
+配信ステータスは、Webhook の URL に正常に配信されたかどうかを示します。
 
 ![配信ステータス](./images/webhooks/delivery_status.png)
 
@@ -146,17 +166,31 @@ Webhook の URL に送信されるペイロードには、{% include product %} 
 
 {% include product %} でイベントをトリガした `session_uuid` が、イベント ペイロードの一部として提供されます。この値を [{% include product %} の Python API](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) に提供して、この session_uuid を持つ、開いている任意のブラウザ セッションに、この API によって生成されたイベントの最新情報を表示することができます。
 
+#### Webhook からの応答
+
+![[応答](Response)タブ](./images/webhooks/webhooks_response_tab.png)
+
+[応答](Response)タブには、配信に対する Webhook の応答に関する詳細が表示されます。
+
+Webhook の応答の HTTP ヘッダ、本文、および計測された応答時間を確認できます。
+
+Webhook の応答の本文の最大文字数は 100 文字です。(上記のとおり、配信情報は確認のために 7 日間保持され、その後削除されます)。
+
+{% include warning title="セキュリティ上のベスト プラクティス" content="Webhook の応答にセキュリティに関するデータを含めないでください。また、応答にシステム エラーの詳細を含めて返さないでください。" %}
+
 ### 配信に応答する
 
 配信が正常に行われたとシステムが判断するためには、Webhook コンシューマ サービスが配信に応答する必要があります。
 
 {% include warning title="応答のタイムアウト" content="Webhook の URL に配信されてから 6 秒以内に応答を受信する必要があります。6 秒が経過すると、接続は終了します。時間内に応答しなかった場合は、配信が失敗します。" %}
 
-各配信の処理時間が記録され、[応答の詳細] (Response details)タブに表示されます。
+各配信の処理時間が記録され、[応答の詳細](Response details)タブに表示されます。
 
 #### 調整
 
-使用者の配信への応答時間は、サイトの Webhook のスループットに影響します。各サイトでは、1 分あたりの応答時間として 1 分が許可されます。そのため、サイトに設定されたコンシューマ エンドポイントが応答するまで丸々 6 秒かかった場合、このサイトの Webhook 配信数は 1 分あたり 10 に調整されます。
+使用者の配信への応答時間は、サイトの Webhook のスループットに影響します。
+
+各サイトでは、1 分あたりの応答時間として 1 分が許可されます。そのため、サイトに設定されたコンシューマ エンドポイントが応答するまで丸々 6 秒かかった場合、このサイトの Webhook 配信数は 1 分あたり 10 に調整されます。
 
 全体的なスループット レートを高くする必要がある場合は、次のモデルに従ってコンシューマ エンドポイントを設計する必要があります。
 1. 要求を受け取ります。
@@ -194,7 +228,9 @@ Webhook の URL に送信されるペイロードには、{% include product %} 
 
 #### 確認応答の用途
 
-確認応答を使用すると、成功または失敗を示す詳細レポートを帯域外で送信し、Web フックの URL で正常に受信された配信を処理することができます。これにより、{% include product %} からの配信に関する受信ステータスを成功または失敗から切り離し、この配信に関連付けられているイベントを処理できるようになります。このようにして、正常に配信されたイベントにデバッグに役立つ追加情報を含めることができます。適切な例として、`Asset` エンティティの作成時にトリガされる Webhook があります。新しい `Asset` ごとにディスク上にディレクトリ構造を 1 つ作成する作業を Webhook で行う場合、Webhook の URL は配信を正常に受信できますが、ディスクまたはネットワークが停止しているため、関連ディレクトリを作成することはできません。配信を受信した後、Webhook は、ディレクトリ構造が作成されなかったことおよびその理由を示す詳細なエラー メッセージを使用して、配信記録を更新することができます。
+確認応答を使用すると、成功または失敗を示す詳細レポートを帯域外で送信し、Web フックの URL で正常に受信された配信を処理することができます。これにより、{% include product %} からの配信に関する受信ステータスを成功または失敗から切り離し、この配信に関連付けられているイベントを処理できるようになります。その結果、正常に配信されたイベントにデバッグに役立つ追加情報を含めることができます。
+
+適切な例として、`Asset` エンティティの作成時にトリガされる Webhook があります。新しい `Asset` ごとにディスク上にディレクトリ構造を 1 つ作成する作業を Webhook で行う場合、Webhook の URL は配信を正常に受信できますが、ディスクまたはネットワークが停止しているため、関連ディレクトリを作成することはできません。配信を受信した後、Webhook は、ディレクトリ構造が作成されなかったこと、およびその理由を示す詳細なエラー メッセージを使用して、配信記録を更新することができます。
 
 ## Webhook のテスト
 
@@ -202,7 +238,7 @@ Webhook の URL に送信されるペイロードには、{% include product %} 
 
 ### webhook.site を使用する
 
-[webhook.site](https://webhook.site) を使用することをお勧めします。このサイトでは、コピーして Webhook に貼り付けることができる一意の URL が提供されていて、このアドレスへの配信がリアルタイムに表示されます。このページは、特定のステータス コードおよび本文を含む配信に応答するようにカスタマイズできます。つまり、配信の成功と失敗をテストすることができます。
+[webhook.site](https://webhook.site) を使用することをお勧めします。このサイトでは、コピーして Webhook に貼り付けることができる一意の URL が提供され、このアドレスへの配信がリアルタイムに表示されます。このページは、特定のステータス コードおよび本文を含む配信に応答するようにカスタマイズできます。つまり、配信の成功と失敗をテストすることができます。
 
 webhook.site サービスの速度は積極的に制限されます。つまり、一部の配信が拒否されて、Webhook が不安定になる、または停止することが容易に発生します。テストする場合は、プロダクションのライブ データではなく、既知のコントロール可能なプロジェクト環境を使用することをお勧めします。
 

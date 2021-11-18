@@ -126,7 +126,7 @@ Tank コマンドの使用方法の基本的な概要を次に示します。
 > tank setup_project --force
 
 Welcome to SGTK!
-For documentation, see https://developer.shotgridsoftware.com
+For documentation, see https://support.shotgunsoftware.com
 - Running setup_project...
 
 force mode: Projects already set up with Toolkit can be set up again.
@@ -438,7 +438,7 @@ In total, 93 folders were processed.
 
 ```python
 Welcome to SGTK!
-For documentation, see https://developer.shotgridsoftware.com
+For documentation, see https://support.shotgunsoftware.com
 You are running a tank command associated with {% include product %} Project 'Chasing the
 Light'. Only items associated with this project will be considered.
 - Found Shot moo87 (Project 'Chasing the Light')
@@ -512,7 +512,7 @@ Core `v0.18` で利用可能です。
 > ./tank dump_config shot_step --sparse --file=/tmp/shot_step.yml
 
 Welcome to SGTK!
-For documentation, see https://developer.shotgridsoftware.com
+For documentation, see https://support.shotgunsoftware.com
 Starting toolkit for path '/Shotgun/configs/sparse34913'
 - The path is not associated with any SG object.
 - Falling back on default project settings.
