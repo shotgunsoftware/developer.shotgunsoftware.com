@@ -29,15 +29,15 @@ Webhook および [{% include product %} のイベント デーモン](https://g
 
 ## Webhook を作成する
 
-Webhook の作成を開始するには、**[Webhooks](Webhooks)**ページに移動します。
+Webhook の作成を開始するには、**[Webhooks] (Webhooks)**ページに移動します。
 
 ![[Webhook を作成](Create Webhook)ボタン](/images/webhooks/webhooks_page.png)
 
-次に、**[Webhook を作成](Create Webhook)**を選択します。
+次に、**[Webhook を作成] (Create Webhook)**を選択します。
 
 ![Webhook ボタンを作成する](./images/webhooks/create_webhook_button.png)
 
-{% include info title="注" content="Webhook へのアクセスは、[高度な権限](Advanced Permissions)の**[Webhook を表示](Show Webhooks)**でコントロールします。管理者およびマネージャ権限ロールでは、このオプションは既定で有効になっています。![[Webhook を作成](Create Webhook)ダイアログ](./images/webhooks/show_webhooks_permission.png)" %}
+{% include info title="注" content="Webhook へのアクセスは、[高度な権限] (Advanced Permissions)の**[Webhook を表示] (Show Webhooks)**でコントロールします。管理者およびマネージャ権限ロールでは、このオプションは既定で有効になっています。![[Webhook を作成](Create Webhook)ダイアログ](./images/webhooks/show_webhooks_permission.png)" %}
 
 次に、新しい Webhook を作成するために必要な情報を入力します。
 
@@ -184,7 +184,7 @@ Webhook の応答の本文の最大文字数は 100 文字です。(上記のと
 
 {% include warning title="応答のタイムアウト" content="Webhook の URL に配信されてから 6 秒以内に応答を受信する必要があります。6 秒が経過すると、接続は終了します。時間内に応答しなかった場合は、配信が失敗します。" %}
 
-各配信の処理時間が記録され、[応答の詳細](Response details)タブに表示されます。
+各配信の処理時間が記録され、[応答の詳細] (Response details)タブに表示されます。
 
 #### 調整
 
