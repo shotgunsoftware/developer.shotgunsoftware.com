@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/shotgunsoftware/developer.shotgridsoftware.com/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/shotgunsoftware/developer.shotgridsoftware.com/actions/workflows/publish-docs.yml)
+[![Build Status](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/actions/workflows/publish-docs.yml)
 [![Doc Generator](https://img.shields.io/badge/Built%20With-SG%20Doc%20Generator-blue.svg)](http://github.com/shotgunsoftware/tk-doc-generator)
 
 
@@ -29,8 +29,8 @@ with the documentation generation system.
 
 For a new file to show up on the site, you'll need to add it to the Table of Contents in the left sidebar:
 
-1. Add it to [`docs/_data/toc.yml`](https://github.com/shotgunsoftware/developer.shotgridsoftware.com/blob/master/docs/_data/toc.yml). Use a meaningful token to identify your page, using dashes to separate words, for example, `pipeline-integrations`.
-2. In [`docs/_data/en/toc_text.yml`](https://github.com/shotgunsoftware/developer.shotgridsoftware.com/blob/master/docs/_data/en/toc_text.yml), provide the English translation for the token you used, as you want it to show up in the left sidebar, for example, "Pipeline Integrations".
+1. Add it to [`docs/_data/toc.yml`](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/blob/master/docs/_data/toc.yml). Use a meaningful token to identify your page, using dashes to separate words, for example, `pipeline-integrations`.
+2. In [`docs/_data/en/toc_text.yml`](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/blob/master/docs/_data/en/toc_text.yml), provide the English translation for the token you used, as you want it to show up in the left sidebar, for example, "Pipeline Integrations".
 3. Create the file in the proper place in the directory structure. Add metadata to the top, using the identifier you used in `toc.yml`, and following this model:
 
 ```
