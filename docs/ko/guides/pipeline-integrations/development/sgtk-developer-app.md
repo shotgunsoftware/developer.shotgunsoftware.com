@@ -250,6 +250,6 @@ git에 첫 번째 태그를 생성하고 나면(예: `v1.0.0`) 태그를 가리�
 ### 기여
 저희는 여러분들의 요청을 환영합니다. 다른 사람에게도 도움이 될 만한 변경 사항이 있다면 주저하지 말고 사용자 요청으로 알려 주십시오.
 피드백을 앱의 메인 버전에 적용할 수도 있을 것입니다.
-[로드맵 페이지](https://www.shotgunsoftware.com/roadmap/)에서 새 아이디어에 대한 제안을 추가해 주셔도 좋습니다.
+[로드맵 페이지](https://www.shotgridsoftware.com/roadmap/)에서 새 아이디어에 대한 제안을 추가해 주셔도 좋습니다.
 
-전체 앱을 커뮤니티와 공유하려면 [포럼](https://community.shotgunsoftware.com/)을 통해 알려 주십시오!
+전체 앱을 커뮤니티와 공유하려면 [포럼](https://community.shotgridsoftware.com/)을 통해 알려 주십시오!

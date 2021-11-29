@@ -242,6 +242,6 @@ Toolkit 支持即时使用 Git (http://git-scm.com/)，在对配置运行 `tank 
 ### 贡献
 我们欢迎大家提出 Pull 请求！如果您觉得自己的更改对其他人有益，请随时以 Pull 请求的形式反馈给我们。
 我们随后可以将更改合并到应用的主版本中。
-或者，在我们的[路线图页面](https://www.shotgunsoftware.com/roadmap/)上添加有关新想法的建议。
+或者，在我们的[路线图页面](https://www.shotgridsoftware.com/roadmap/)上添加有关新想法的建议。
 
 如果您开发了完整的应用并愿意与社区共享，请在[论坛](https://community.shotgridsoftware.com/)上告诉大家！

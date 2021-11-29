@@ -501,4 +501,4 @@ sgtk.util.register_publish(tk,
 이 안내서를 통해 툴킷 API를 시작하는 방법에 대한 기본적인 이해를 갖추게 되었기를 바랍니다.
 물론 API를 사용하는 다른 방법도 많이 있으므로 자세한 내용은 [tk-core API](https://developer.shotgridsoftware.com/tk-core/index.html)를 참조해 주십시오.
 
-또한 API에 대한 질문에 답을 구하고 이 안내서에 대해 피드백을 남길 수 있는 [포럼](https://community.shotgunsoftware.com/c/pipeline/6)도 방문해 주십시오.
+또한 API에 대한 질문에 답을 구하고 이 안내서에 대해 피드백을 남길 수 있는 [포럼](https://community.shotgridsoftware.com/c/pipeline/6)도 방문해 주십시오.

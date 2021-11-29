@@ -7,7 +7,7 @@ lang: ko
 
 # 웹후크
 
-{% include info title="베타" content="웹후크는 현재 베타 테스트 중입니다. [웹후크 커뮤니티 포럼](https://community.shotgunsoftware.com/c/webhooks)에 가입하면 상세한 정보를 얻고 여러 활동에 참여할 수 있습니다." %}
+{% include info title="베타" content="웹후크는 현재 베타 테스트 중입니다. [웹후크 커뮤니티 포럼](https://community.shotgridsoftware.com/c/webhooks)에 가입하면 상세한 정보를 얻고 여러 활동에 참여할 수 있습니다." %}
 
 웹후크를 사용하면 사용자가 제어하는 서비스는 {% include product %}에서 발생하는 이벤트에 대한 알림을 받을 수 있습니다. 웹후크를 만들 때 관심 있는 이벤트 유형을 지정하고 이벤트가 트리거될 때 데이터를 보낼 URL을 {% include product %}에 알려 주십시오. {% include product %}에서 관련 이벤트가 발생하면 이벤트를 정의하는 데이터 페이로드가 웹후크의 URL로 전송됩니다. 이런 방법으로 {% include product %}와의 긴밀한 통합을 구축하고 워크플로우의 일부를 자동화할 수 있습니다.
 
