@@ -391,7 +391,7 @@ Nuke Studio를 시작하고 프로젝트를 만들어 시퀀스와 footage로 �
 ![구조 내보내기 계층](/images/tutorial/tu-episodic-nuke-mceclip3-05.png)
 
 
-내보내기(Export)를 클릭하면 {% include product %} 사이트에 에피소드, 시퀀스 및 샷이 만들어질 뿐만 아니라 디스크에 폴더 구조가 만들어집니다. 문제가 발생할 경우 발생할 수 있는 모든 오류에 대해 Nuke Studio 스크립트 편집기 또는 [ {% include product %} 로그(tk-nukestudio.log)](https://developer.shotgunsoftware.com/ko/38c5c024/)를 확인합니다.
+내보내기(Export)를 클릭하면 {% include product %} 사이트에 에피소드, 시퀀스 및 샷이 만들어질 뿐만 아니라 디스크에 폴더 구조가 만들어집니다. 문제가 발생할 경우 발생할 수 있는 모든 오류에 대해 Nuke Studio 스크립트 편집기 또는 [ {% include product %} 로그(tk-nukestudio.log)](https://developer.shotgridsoftware.com/ko/38c5c024/)를 확인합니다.
 
 이로써 안내서가 완료되었습니다. 물론 이는 에피소드 작업을 수행하는 많은 방법 중 하나일 뿐이며 스튜디오에 가장 적합한 접근 방법 및 구조를 사용하면 됩니다.
 

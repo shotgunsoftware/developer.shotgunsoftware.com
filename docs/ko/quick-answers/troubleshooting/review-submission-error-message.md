@@ -68,7 +68,7 @@ Nuke의 SG 게시 GUI에서 다음 오류가 발생합니다.
 
 ### 자세한 답변:
 
-먼저 [여기에 게시자 API에 대한 설명서](https://developer.shotgunsoftware.com/tk-multi-publish2/)가 있습니다. 이 문제를 해결하는 데 관련된 대부분의 개념이 여기에 설명되어 있습니다. 하지만 구체적인 문제에 대한 분석 내용은 아래와 같습니다. 이러한 과정을 거치는 것이 향후 문제를 해결하는 데도 도움이 될 것입니다.
+먼저 [여기에 게시자 API에 대한 설명서](https://developer.shotgridsoftware.com/tk-multi-publish2/)가 있습니다. 이 문제를 해결하는 데 관련된 대부분의 개념이 여기에 설명되어 있습니다. 하지만 구체적인 문제에 대한 분석 내용은 아래와 같습니다. 이러한 과정을 거치는 것이 향후 문제를 해결하는 데도 도움이 될 것입니다.
 
 위 스크린샷의 `ShorgunWrite1` 항목 아래에 두 개의 `plugins`이 있습니다. 이러한 플러그인은 구성에 정의된 플러그인에 해당합니다.
 
@@ -84,7 +84,7 @@ Nuke의 SG 게시 GUI에서 다음 오류가 발생합니다.
 
 ![publish_file_hook](images/review-submission-error-message-03.jpeg)
 
-파일 시스템에 앱이 있는 위치는 `app_locations.yml`이 구성된 방식에 따라 달라지지만 아무 것도 변경하지 않은 경우 번들 캐시 폴더에서 앱을 찾을 수 있습니다. 필요한 경우 [캐시 위치를 찾는 방법](https://developer.shotgunsoftware.com/7c9867c0/)을 참조하십시오.
+파일 시스템에 앱이 있는 위치는 `app_locations.yml`이 구성된 방식에 따라 달라지지만 아무 것도 변경하지 않은 경우 번들 캐시 폴더에서 앱을 찾을 수 있습니다. 필요한 경우 [캐시 위치를 찾는 방법](https://developer.shotgridsoftware.com/7c9867c0/)을 참조하십시오.
 
 두 번째 플러그인의 경우 후크 경로는 다음과 같습니다.
 ```

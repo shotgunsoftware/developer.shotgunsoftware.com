@@ -7,7 +7,7 @@ lang: ko
 
 # 파이프라인 구성을 새 위치로 이동하려면 어떻게 해야 합니까?
 
-{% include info title="참고" content="이 문서의 내용은 [중앙 집중식 구성 설정](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)에만 적용됩니다. [분산 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)은 개별 클라이언트 시스템에 로컬로 캐시되고 툴킷에서 자동으로 관리됩니다." %}
+{% include info title="참고" content="이 문서의 내용은 [중앙 집중식 구성 설정](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)에만 적용됩니다. [분산 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)은 개별 클라이언트 시스템에 로컬로 캐시되고 툴킷에서 자동으로 관리됩니다." %}
 
 파이프라인 구성을 새 위치로 옮길 수 있는 가장 쉬운 방법은 `tank move_configuration` 명령을 사용하는 것입니다. 이렇게 하면 파일을 이동하고, {% include product %}를 업데이트하고, 새 위치를 가리키도록 구성 파일을 업데이트하는 작업이 모두 이루어집니다.
 
@@ -28,7 +28,7 @@ lang: ko
         $ ./tank move_configuration
 
         Welcome to the {% include product %} Pipeline Toolkit!
-        For documentation, see https://toolkit.shotgunsoftware.com
+        For documentation, see https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide
         Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
         - The path is not associated with any {% include product %} object.
         - Falling back on default project settings.
@@ -73,7 +73,7 @@ lang: ko
 
         Welcome to the {% include product %} Pipeline Toolkit!
 
-        For documentation, see https://toolkit.shotgunsoftware.com
+        For documentation, see https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide
         Starting toolkit for path '/sgtk/software/shotgun/scarlet'
         - The path is not associated with any {% include product %} object.
 

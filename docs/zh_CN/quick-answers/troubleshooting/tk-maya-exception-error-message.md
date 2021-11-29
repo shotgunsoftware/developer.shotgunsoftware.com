@@ -22,7 +22,7 @@ lang: zh_CN
 
 ## 对应用进行编程以接受参数
 
-如果您要[编写自定义应用](https://developer.shotgunsoftware.com/zh_CN/2e5ed7bb/)，只需将在插件中注册的回调方法设置为接受所需的参数。下面是一个简单的应用，它设置为需要两个参数，接受任何其他参数，然后输出它们：
+如果您要[编写自定义应用](https://developer.shotgridsoftware.com/zh_CN/2e5ed7bb/)，只需将在插件中注册的回调方法设置为接受所需的参数。下面是一个简单的应用，它设置为需要两个参数，接受任何其他参数，然后输出它们：
 
 ```python
 from sgtk.platform import Application

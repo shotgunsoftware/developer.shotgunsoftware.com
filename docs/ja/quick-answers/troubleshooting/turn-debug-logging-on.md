@@ -132,7 +132,7 @@ tank コマンドを実行し、ターミナルでデバッグ出力を確認す
     /sgtk/software/shotgun/scarlet/install/core/scripts/tank_cmd.py
 
     Welcome to the Shotgun Pipeline Toolkit!
-    For documentation, see https://toolkit.shotgunsoftware.com
+    For documentation, see https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide
     Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
     - The path is not associated with any Shotgun object.
     - Falling back on default project settings.

@@ -28,7 +28,7 @@ This command is also useful if you are only moving the location for a single ope
         $ ./tank move_configuration
 
         Welcome to the {% include product %} Pipeline Toolkit!
-        For documentation, see https://toolkit.shotgunsoftware.com
+        For documentation, see https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide
         Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
         - The path is not associated with any {% include product %} object.
         - Falling back on default project settings.
@@ -72,7 +72,7 @@ This command is also useful if you are only moving the location for a single ope
         $ ./tank move_configuration "/mnt/hgfs/sgtk/software/shotgun/scarlet_new" "z:\sgtk\software\shotgun\scarlet_new" "/sgtk/software/shotgun/scarlet_new"
 
         Welcome to the {% include product %} Pipeline Toolkit!
-        For documentation, see https://toolkit.shotgunsoftware.com
+        For documentation, see https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide
         Starting toolkit for path '/sgtk/software/shotgun/scarlet'
         - The path is not associated with any {% include product %} object.
         - Falling back on default project settings.

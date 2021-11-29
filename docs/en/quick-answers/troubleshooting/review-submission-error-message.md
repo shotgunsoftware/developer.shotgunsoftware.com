@@ -69,7 +69,7 @@ Assuming you have not added custom code or modified the config too much, you jus
 
 ### The Long Answer:
 
-First, [here's the documentation for the publisher API](https://developer.shotgunsoftware.com/tk-multi-publish2/). Most of the concepts involved in solving this problem are explained there. But here's the breakdown for your specific problem. Hopefully going through it like this will help you debug future issues as well.
+First, [here's the documentation for the publisher API](https://developer.shotgridsoftware.com/tk-multi-publish2/). Most of the concepts involved in solving this problem are explained there. But here's the breakdown for your specific problem. Hopefully going through it like this will help you debug future issues as well.
 
 In the above screenshot, under the `ShorgunWrite1` item you see two `plugins`. These correspond to plugins that were defined in the config.
 
@@ -85,7 +85,7 @@ can be found under the tk-multi-publish2 app folder:
 
 ![publish_file_hook](images/review-submission-error-message-03.jpeg) 
 
-Where the app exists on your file system depends on how `app_locations.yml` is configured, but if you haven't changed anything there, you can find the app in your bundle cache folder. [Here's how to find your cache location](https://developer.shotgunsoftware.com/7c9867c0/) if you need it. 
+Where the app exists on your file system depends on how `app_locations.yml` is configured, but if you haven't changed anything there, you can find the app in your bundle cache folder. [Here's how to find your cache location](https://developer.shotgridsoftware.com/7c9867c0/) if you need it. 
 
 For the second plugin, the hook path is 
 ```

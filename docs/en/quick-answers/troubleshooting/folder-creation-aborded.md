@@ -13,7 +13,7 @@ Currently we create new project on the web interface and then use {% include pro
 
 ## How to fix
 
-Once the advanced setup wizard has been run on a project, the option to run it is intentionally removed. It is possible to [re setup a project](https://developer.shotgunsoftware.com/fb5544b1/) however if you wish.
+Once the advanced setup wizard has been run on a project, the option to run it is intentionally removed. It is possible to [re setup a project](https://developer.shotgridsoftware.com/fb5544b1/) however if you wish.
 
 You will need to run the tank command mentioned in the error message:
 

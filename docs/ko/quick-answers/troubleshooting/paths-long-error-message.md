@@ -37,7 +37,7 @@ Windows에서 {% include product %} 데스크톱은 데이터를 `%APPDATA%` 폴
 
 ## 문제 해결
 
-이 문제를 해결하는 방법은 일반적으로 `$SHOTGUN_HOME` 환경 변수를 `C:\SG`와 같이 매우 짧게 설정하는 것입니다. 이렇게 하면 SG 데스크톱이 `C:\Users\jane\AppData\Roaming\Shotgun` 대신 `C:\SG`에 해당 데이터를 저장하게 되며 문자 길이가 줄어들어 일반적으로 제한 수준을 유지할 수 있습니다. [환경 변수에 대한 자세한 내용은 여기를 참조](http://developer.shotgunsoftware.com/tk-core/initializing.html?#environment-variables)하십시오.
+이 문제를 해결하는 방법은 일반적으로 `$SHOTGUN_HOME` 환경 변수를 `C:\SG`와 같이 매우 짧게 설정하는 것입니다. 이렇게 하면 SG 데스크톱이 `C:\Users\jane\AppData\Roaming\Shotgun` 대신 `C:\SG`에 해당 데이터를 저장하게 되며 문자 길이가 줄어들어 일반적으로 제한 수준을 유지할 수 있습니다. [환경 변수에 대한 자세한 내용은 여기를 참조](http://developer.shotgridsoftware.com/tk-core/initializing.html?#environment-variables)하십시오.
 
 ### 향후 가능성
 

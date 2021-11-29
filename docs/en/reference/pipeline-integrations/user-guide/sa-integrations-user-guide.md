@@ -87,7 +87,7 @@ Follow the prompts and choose whether to download Desktop for Mac, Windows, or L
 
 *Note: the following content regarding logging in is intended if you are self hosted or using a proxy server. This is not the defaut behavior.*
 
-If you are self hosted or using a proxy server, the first time you open Desktop, you'll be prompted by your browser about certificates. We do this in order to connect {% include product %} with the Desktop app. If you’re having trouble getting certificates set up, take a look at our troubleshooting docs for [Firefox](https://developer.shotgunsoftware.com/d4936105/) and [Chrome and other browsers](https://developer.shotgunsoftware.com/95518180/) .
+If you are self hosted or using a proxy server, the first time you open Desktop, you'll be prompted by your browser about certificates. We do this in order to connect {% include product %} with the Desktop app. If you’re having trouble getting certificates set up, take a look at our troubleshooting docs for [Firefox](https://developer.shotgridsoftware.com/d4936105/) and [Chrome and other browsers](https://developer.shotgridsoftware.com/95518180/) .
 
 ![guide-desktop-cert-window-03.png](./images/sa-integrations-user-guide-desktop-cert-window-03.png)
 

@@ -390,7 +390,7 @@ Nuke Studio を起動し、プロジェクトを作成し、シーケンスや�
 ![構造階層を書き出す](./images/tutorial/tu-episodic-nuke-mceclip3-05.png)
 
 
-[書き出し] (export)をクリックすると、{% include product %} サイト内にエピソード、シーケンス、およびショットが作成され、ディスク上にフォルダ構造が作成されます。この方法で問題が生じた場合は、Nuke Studio スクリプト エディタまたは [{% include product %} のログ(tk-nukestudio.log)](https://developer.shotgunsoftware.com/ja/38c5c024/)で、発生した可能性のあるエラーがないか確認してください。
+[書き出し] (export)をクリックすると、{% include product %} サイト内にエピソード、シーケンス、およびショットが作成され、ディスク上にフォルダ構造が作成されます。この方法で問題が生じた場合は、Nuke Studio スクリプト エディタまたは [{% include product %} のログ(tk-nukestudio.log)](https://developer.shotgridsoftware.com/ja/38c5c024/)で、発生した可能性のあるエラーがないか確認してください。
 
 これでこのガイドは完了です。 もちろん、これはエピソードを処理する複数の方法の中の 1 つにすぎません。ご使用のスタジオに最適な方法および構造を特定するのは、ユーザの役割です。
 

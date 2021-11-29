@@ -88,7 +88,7 @@ lang: ja
 
 *注: ここに記載されているログインに関する内容は、セルフ ホスト環境の場合またはプロキシ サーバを使用している場合を想定しています。これは既定の動作ではありません。*
 
-セルフ ホスト環境の場合またはプロキシ サーバを使用している場合に、Desktop を初めて開くと、証明書に関するプロンプトがブラウザに表示されます。このプロンプトが表示されるのは、{% include product %} と Desktop アプリを接続するためです。証明書の設定を取得できない場合は、[Firefox](https://developer.shotgunsoftware.com/ja/d4936105/) および [Chrome とその他のブラウザ](https://developer.shotgunsoftware.com/ja/95518180/)のトラブルシューティングに関するドキュメントを参照してください。
+セルフ ホスト環境の場合またはプロキシ サーバを使用している場合に、Desktop を初めて開くと、証明書に関するプロンプトがブラウザに表示されます。このプロンプトが表示されるのは、{% include product %} と Desktop アプリを接続するためです。証明書の設定を取得できない場合は、[Firefox](https://developer.shotgridsoftware.com/ja/d4936105/) および [Chrome とその他のブラウザ](https://developer.shotgridsoftware.com/ja/95518180/)のトラブルシューティングに関するドキュメントを参照してください。
 
 ![guide-desktop-cert-window-03.png](./images/sa-integrations-user-guide-desktop-cert-window-03.png)
 

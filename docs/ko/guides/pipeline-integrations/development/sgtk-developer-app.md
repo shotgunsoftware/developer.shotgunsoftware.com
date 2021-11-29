@@ -43,7 +43,7 @@ lang: ko
 - 컨텍스트를 인식할 수 있습니다. 예를 들어 앱은 사용자가 작업 중인 태스크를 인식하고 그에 따라 작업을 수행할 수 있습니다.
 - 툴킷 엔진에서만 실행할 수 있습니다.
 
-툴킷 앱은 툴킷 엔진에 의해 초기화됩니다. [엔진](https://developer.shotgunsoftware.com/tk-core/platform.html#engines)은 특정 소프트웨어 환경에서 실행되도록 설계되었으며 툴킷 앱을 실행할 인터페이스를 제공합니다. 엔진은 앱에서 다양한 소프트웨어 환경을 처리하는 데 필요한 복잡성을 추상화합니다.
+툴킷 앱은 툴킷 엔진에 의해 초기화됩니다. [엔진](https://developer.shotgridsoftware.com/tk-core/platform.html#engines)은 특정 소프트웨어 환경에서 실행되도록 설계되었으며 툴킷 앱을 실행할 인터페이스를 제공합니다. 엔진은 앱에서 다양한 소프트웨어 환경을 처리하는 데 필요한 복잡성을 추상화합니다.
 따라서 앱은 해당 목적을 이행하기 위한 기능을 제공하는 데만 중점을 두며 창 부모-자식 관리, 사용자의 컨텍스트 추적 또는 앱 시작 단축키 등의 기능을 처리할 필요가 없습니다.
 
 ## 자체 앱 제작
@@ -75,9 +75,9 @@ lang: ko
 이을 알면 그에 맞게 앱 설정을 추가해야 하는 환경 YAML 및 엔진을 지정합니다.
 
 확실하지 않을 경우에는 먼저 프로젝트 환경의 `tk-shell` 엔진에 추가해 두는 것이 좋습니다.
-이 방법을 사용하면 [IDE에서 실행](./sgtk-developer-bootstrapping.md)하거나 [중앙 집중식 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)이 있는 경우에는 tank 명령을 사용하여 명령행을 통해 실행할 수 있습니다. 이렇게 하면 개발 속도가 빨라집니다.
+이 방법을 사용하면 [IDE에서 실행](./sgtk-developer-bootstrapping.md)하거나 [중앙 집중식 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)이 있는 경우에는 tank 명령을 사용하여 명령행을 통해 실행할 수 있습니다. 이렇게 하면 개발 속도가 빨라집니다.
 
-시작하려면 앱 위치에 대한 [dev 디스크립터](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)를 사용하십시오.
+시작하려면 앱 위치에 대한 [dev 디스크립터](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)를 사용하십시오.
 
 ```yaml
 tk-multi-starterapp:
@@ -125,14 +125,14 @@ save_template:
     description: The template to use when building the path to save the file into
     allows_empty: False
 ```
-이 설정을 지정하면 앱 코드에서 템플릿 이름을 하드 코딩할 필요가 없고 대신 `info.yml`에 기본적으로 정의되거나 환경 YAML 파일에서 재정의된 설정에서 [값을 가져올](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting) 수 있습니다.
+이 설정을 지정하면 앱 코드에서 템플릿 이름을 하드 코딩할 필요가 없고 대신 `info.yml`에 기본적으로 정의되거나 환경 YAML 파일에서 재정의된 설정에서 [값을 가져올](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting) 수 있습니다.
 
 ```python
 template = app.get_setting("save_template")
 ```
 즉, 앱이 실행되는 환경에 따라 다른 템플릿을 사용하도록 앱을 구성할 수 있습니다.
 
-[참조 문서](https://developer.shotgunsoftware.com/tk-core/platform.html#the-configuration-section)에서 구성 설정에 대한 자세한 내용을 확인할 수 있습니다.
+[참조 문서](https://developer.shotgridsoftware.com/tk-core/platform.html#the-configuration-section)에서 구성 설정에 대한 자세한 내용을 확인할 수 있습니다.
 
 ### 프레임워크
 
@@ -163,7 +163,7 @@ frameworks:
 
 프레임워크와 그 유용성에 대한 자세한 정보는 다음 링크에서 확인하십시오.
 
-- [Qt Widgets 프레임워크](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/)
+- [Qt Widgets 프레임워크](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/)
 - [{% include product %} utils 프레임워크](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)
 
 ### 변경 사항 다시 로드
@@ -224,7 +224,7 @@ git에 첫 번째 태그를 생성하고 나면(예: `v1.0.0`) 태그를 가리�
 설정하고 나면 `tank updates`를 간단히 실행할 수 있고, 새 태그가 생성되었다면 업그레이드할지 묻는 메시지가 나타납니다.
 이제 워크플로우는 공식 앱 스토어 앱의 경우와 동일합니다.
 
-{% include warning title="주의" content="git 디스크립터는 [중앙 집중식 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)에서 잘 작동합니다. 중앙 집중식 구성에서 앱 캐싱은 일반적으로 관리자(admin)가 실행하며 모든 사용자가 액세스할 수 있는 중앙 위치에 저장됩니다. 그러나 [분산 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)을 사용하는 경우에는 적합하지 않을 수 있습니다. 앱이 사용자별로 다운로드되므로 각 사용자가 리포지토리에서 인증받고 코드에 액세스하기 위해 git를 설치하고 설정해야 합니다." %}
+{% include warning title="주의" content="git 디스크립터는 [중앙 집중식 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)에서 잘 작동합니다. 중앙 집중식 구성에서 앱 캐싱은 일반적으로 관리자(admin)가 실행하며 모든 사용자가 액세스할 수 있는 중앙 위치에 저장됩니다. 그러나 [분산 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)을 사용하는 경우에는 적합하지 않을 수 있습니다. 앱이 사용자별로 다운로드되므로 각 사용자가 리포지토리에서 인증받고 코드에 액세스하기 위해 git를 설치하고 설정해야 합니다." %}
 
 ## 기존 앱 수정
 빈 스타터 템플릿으로 시작하는 것보다 기존 앱(예: {% include product %} 소프트웨어의 표준 앱 중 하나)에 작은 기능을 추가하는 것이 좋을 때도 있습니다.
@@ -250,6 +250,6 @@ git에 첫 번째 태그를 생성하고 나면(예: `v1.0.0`) 태그를 가리�
 ### 기여
 저희는 여러분들의 요청을 환영합니다. 다른 사람에게도 도움이 될 만한 변경 사항이 있다면 주저하지 말고 사용자 요청으로 알려 주십시오.
 피드백을 앱의 메인 버전에 적용할 수도 있을 것입니다.
-[로드맵 페이지](https://www.shotgunsoftware.com/roadmap/)에서 새 아이디어에 대한 제안을 추가해 주셔도 좋습니다.
+[로드맵 페이지](https://www.shotgridsoftware.com/roadmap/)에서 새 아이디어에 대한 제안을 추가해 주셔도 좋습니다.
 
-전체 앱을 커뮤니티와 공유하려면 [포럼](https://community.shotgunsoftware.com/)을 통해 알려 주십시오!
+전체 앱을 커뮤니티와 공유하려면 [포럼](https://community.shotgridsoftware.com/)을 통해 알려 주십시오!

@@ -68,7 +68,7 @@ Nuke 中的“Submit for publish”从未起作用。
 
 ### 详实的回答：
 
-首先，[这是发布器 API 的文档](https://developer.shotgunsoftware.com/tk-multi-publish2/)。在此将介绍解决此问题所涉及的大多数概念。下面是您的具体问题的细分。希望这样做也能帮助您调试未来的问题。
+首先，[这是发布器 API 的文档](https://developer.shotgridsoftware.com/tk-multi-publish2/)。在此将介绍解决此问题所涉及的大多数概念。下面是您的具体问题的细分。希望这样做也能帮助您调试未来的问题。
 
 在上面的屏幕截图中，在 `ShorgunWrite1` 项下，您会看到两个 `plugins`。它们对应于配置中定义的插件。
 
@@ -84,7 +84,7 @@ Nuke 中的“Submit for publish”从未起作用。
 
 ![publish_file_hook](images/review-submission-error-message-03.jpeg)
 
-应用在文件系统中的位置取决于 `app_locations.yml` 的配置方式，但如果您未在其中更改任何内容，则可以在缓存文件夹中找到该应用。[下面介绍了如何查找缓存位置](https://developer.shotgunsoftware.com/zh_CN/7c9867c0/)（如果需要）。
+应用在文件系统中的位置取决于 `app_locations.yml` 的配置方式，但如果您未在其中更改任何内容，则可以在缓存文件夹中找到该应用。[下面介绍了如何查找缓存位置](https://developer.shotgridsoftware.com/zh_CN/7c9867c0/)（如果需要）。
 
 对于第二个插件，挂钩路径为
 ```
