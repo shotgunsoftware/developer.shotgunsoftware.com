@@ -21,7 +21,7 @@ Amazon 在其后端更新了一些证书。浏览需要新证书的网页时，W
 
 如果您对有问题的计算机具有 GUI 访问权限，只需播放当前存储在 S3 上的任何媒体，即可更新证书存储。此播放解决方案仅适用于 Chrome、Internet Explorer、Edge 或其他基于 Chromium 的浏览器。此播放解决方案在 Firefox 或 Safari 上不起作用，因为这些浏览器不使用 Windows 标准 API 进行证书验证。
 
-对于此解决方案不起作用的用户，或者如果您有大量要更新的计算机（如 Deadline 渲染农场），我们还提供了一个脚本，该脚本会将缺失的证书添加到您的计算机中。[下面是我们共享的脚本的链接](https://developer.shotgunsoftware.com/zh_CN/c593f0aa/)。
+对于此解决方案不起作用的用户，或者如果您有大量要更新的计算机（如 Deadline 渲染农场），我们还提供了一个脚本，该脚本会将缺失的证书添加到您的计算机中。[下面是我们共享的脚本的链接](https://developer.shotgridsoftware.com/zh_CN/c593f0aa/)。
 
 对于 Windows 10 上的 PowerShell 或 Windows 7 上的 PowerShell 3 用户，您可以在计算机上以管理员身份运行以下脚本以获取新证书。
 

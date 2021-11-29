@@ -13,7 +13,7 @@ lang: zh_CN
 
 ## 如何修复
 
-在项目上运行高级设置向导后，会有意移除用于运行该向导的选项。但是，如果需要，可以[重新设置项目](https://developer.shotgunsoftware.com/zh_CN/fb5544b1/)。
+在项目上运行高级设置向导后，会有意移除用于运行该向导的选项。但是，如果需要，可以[重新设置项目](https://developer.shotgridsoftware.com/zh_CN/fb5544b1/)。
 
 您需要运行错误消息中提及的 tank 命令：
 

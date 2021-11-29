@@ -25,7 +25,7 @@ https://github.com/shotgunsoftware/tk-shotgun-launchpublish/blob/v0.3.2/hooks/sh
 
 ## Programming your app to accept args
 
-If you're [writing a custom app](https://developer.shotgunsoftware.com/2e5ed7bb/), all you need to do is set the callback method that gets registered with the engine to accept the args you need. 
+If you're [writing a custom app](https://developer.shotgridsoftware.com/2e5ed7bb/), all you need to do is set the callback method that gets registered with the engine to accept the args you need. 
 Here is a simple app set up to require two args, accept any additional ones, and print them:
 
 ```python

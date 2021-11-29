@@ -21,7 +21,7 @@ Amazon updated some certificates on their backend. Windows usually refreshes its
 
 If you have GUI access to the machine that has the issue, simply playing back any media that is currently stored on S3 should update your certificate store. This playback solution only works on Chrome, Internet Explorer, Edge or other Chromium based browsers. This playback solution does not work on Firefox or Safari, as these browser do not use Windows’ standard APIs for certificate validation.
 
-For users whom this solution does not work, or if you have a big list of computers to update, like a Deadline render farm, we’re also providing a script that will add the missing certificate to your computer. [Here is a link to a script we’ve shared](https://developer.shotgunsoftware.com/c593f0aa/).
+For users whom this solution does not work, or if you have a big list of computers to update, like a Deadline render farm, we’re also providing a script that will add the missing certificate to your computer. [Here is a link to a script we’ve shared](https://developer.shotgridsoftware.com/c593f0aa/).
 
 For users of Powershell on Windows 10 or Powershell 3 on Windows 7, you can run the following script as an administrator on the computer to get the new certificate.
 

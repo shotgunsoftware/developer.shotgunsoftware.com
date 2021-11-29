@@ -88,7 +88,7 @@ lang: zh_CN
 
 *注意：如果您是自主托管的或使用代理服务器，则需要使用以下有关登录的内容。这不是默认行为。*
 
-如果您是自主托管的或使用代理服务器，则首次打开 Desktop 时，浏览器将提示您提供证书。这样做的目的是连接 {% include product %} 与 Desktop 应用。如果您无法正确设置证书，请查看我们针对 [Firefox](https://developer.shotgunsoftware.com/zh_CN/d4936105/) 与 [Chrome 和其他浏览器](https://developer.shotgunsoftware.com/zh_CN/95518180/)提供的疑难解答文档。
+如果您是自主托管的或使用代理服务器，则首次打开 Desktop 时，浏览器将提示您提供证书。这样做的目的是连接 {% include product %} 与 Desktop 应用。如果您无法正确设置证书，请查看我们针对 [Firefox](https://developer.shotgridsoftware.com/zh_CN/d4936105/) 与 [Chrome 和其他浏览器](https://developer.shotgridsoftware.com/zh_CN/95518180/)提供的疑难解答文档。
 
 ![guide-desktop-cert-window-03.png](./images/sa-integrations-user-guide-desktop-cert-window-03.png)
 

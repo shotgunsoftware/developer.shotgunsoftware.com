@@ -136,7 +136,7 @@ sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있
 - 위의 예와 같이 단일 필드를 사용할 수 있습니다(예: `name: code`).
 - 여러 필드를 괄호로 묶어 사용할 수 있습니다(예: `name:``"{asset_type}_{code}"`).
 - 링크된 다른 엔티티의 필드를 포함하려면 표준 `name: "{sg_sequence.Sequence.code}_{code}"` 도트 구문을 사용할 수 있습니다(예: {% include product %}).
-- **filters** 필드는 {% include product %} 쿼리이며 [{% include product %} API 구문](http://developer.shotgunsoftware.com/python-api/reference.html)을 비슷하게 따릅니다. 이는 사전 목록이며 각 사전에는 _path_, _relation_ 및 _values_ 키가 있어야 합니다. 유효한 $syntax 값은 상응하는 {% include product %} 엔티티(예: 프로젝트의 경우 `"$project"`, sequence.yml이 상위 디렉토리 계층에 있는 경우 `"$sequence"`)가 있는 모든 상위 폴더입니다. {% include product %} 엔티티 링크의 경우 $syntax(예: `{ "path": "project", "relation": "is", "values": [ "$project" ] }`)를 사용하여 구성에서 상위 폴더를 참조할 수 있습니다. [아래 예](#examples)에서 자세히 설명합니다.
+- **filters** 필드는 {% include product %} 쿼리이며 [{% include product %} API 구문](http://developer.shotgridsoftware.com/python-api/reference.html)을 비슷하게 따릅니다. 이는 사전 목록이며 각 사전에는 _path_, _relation_ 및 _values_ 키가 있어야 합니다. 유효한 $syntax 값은 상응하는 {% include product %} 엔티티(예: 프로젝트의 경우 `"$project"`, sequence.yml이 상위 디렉토리 계층에 있는 경우 `"$sequence"`)가 있는 모든 상위 폴더입니다. {% include product %} 엔티티 링크의 경우 $syntax(예: `{ "path": "project", "relation": "is", "values": [ "$project" ] }`)를 사용하여 구성에서 상위 폴더를 참조할 수 있습니다. [아래 예](#examples)에서 자세히 설명합니다.
 
 
 ## 다중 폴더
@@ -927,7 +927,7 @@ _동적 토큰 `$sequence`는 런타임에 실제 객체로 해석되었습니�
 - `subset`  및 `subset_format` - 지정된 입력 문자열의 하위 집합을 추출하여 키 값으로 만듭니다. 예를 들어 사용자 이름 전체에서 이니셜 키를 만들거나 모든 샷 이름의 첫 세 글자를 포함하는 키를 만들 수 있습니다.
 
 
-템플릿 키에 대한 기술적인 상세 정보는 [API 참조](http://developer.shotgunsoftware.com/tk-core/core.html#template-system)를 참조하십시오.
+템플릿 키에 대한 기술적인 상세 정보는 [API 참조](http://developer.shotgridsoftware.com/tk-core/core.html#template-system)를 참조하십시오.
 
 ### 예 - 영숫자 이름
 

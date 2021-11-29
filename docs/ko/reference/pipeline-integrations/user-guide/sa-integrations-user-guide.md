@@ -87,7 +87,7 @@ lang: ko
 
 *참고: 로그인에 관한 다음 내용은 자체 호스팅되거나 프록시 서버를 사용하는 경우에 필요합니다. 이는 기본 동작이 아닙니다.*
 
-자체 호스팅되거나 프록시 서버를 사용하는 경우 처음 데스크톱을 열면 인증서에 관해 묻는 메시지가 브라우저에 표시됩니다. 이는 {% include product %}를 데스크톱 앱과 연결하기 위한 것입니다. 인증서 설정에 문제가 있다면 [Firefox](https://developer.shotgunsoftware.com/ko/d4936105/)와 [Chrome 및 기타 브라우저](https://developer.shotgunsoftware.com/ko/95518180/)에 관한 문제 해결 설명서를 참조하십시오.
+자체 호스팅되거나 프록시 서버를 사용하는 경우 처음 데스크톱을 열면 인증서에 관해 묻는 메시지가 브라우저에 표시됩니다. 이는 {% include product %}를 데스크톱 앱과 연결하기 위한 것입니다. 인증서 설정에 문제가 있다면 [Firefox](https://developer.shotgridsoftware.com/ko/d4936105/)와 [Chrome 및 기타 브라우저](https://developer.shotgridsoftware.com/ko/95518180/)에 관한 문제 해결 설명서를 참조하십시오.
 
 ![guide-desktop-cert-window-03.png](./images/sa-integrations-user-guide-desktop-cert-window-03.png)
 

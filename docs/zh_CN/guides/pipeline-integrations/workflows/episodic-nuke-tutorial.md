@@ -391,7 +391,7 @@ return fields["Episode"]
 ![导出结构层次结构](./images/tutorial/tu-episodic-nuke-mceclip3-05.png)
 
 
-单击“导出”(Export)后，应该会在您的 {% include product %} 站点上创建剧集、场和镜头，以及在磁盘上创建文件夹结构。如果在此过程中遇到问题，请在 Nuke Studio 脚本编辑器或 [{% include product %} 日志 (tk-nukestudio.log)](https://developer.shotgunsoftware.com/zh_CN/38c5c024/) 中检查是否存在您可能遇到的任何错误。
+单击“导出”(Export)后，应该会在您的 {% include product %} 站点上创建剧集、场和镜头，以及在磁盘上创建文件夹结构。如果在此过程中遇到问题，请在 Nuke Studio 脚本编辑器或 [{% include product %} 日志 (tk-nukestudio.log)](https://developer.shotgridsoftware.com/zh_CN/38c5c024/) 中检查是否存在您可能遇到的任何错误。
 
 上文就是本手册介绍的方法。当然，这只是用于处理剧集的多种方法之一，您可以自行找到最适合您的工作室的方法和结构。
 

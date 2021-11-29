@@ -9,7 +9,7 @@ lang: en
 
 ## How to fix:
 
-This has to do with the location descriptor on your custom app—[check out this doc](https://developer.shotgunsoftware.com/2e5ed7bb/#part-6-preparing-your-first-release).
+This has to do with the location descriptor on your custom app—[check out this doc](https://developer.shotgridsoftware.com/2e5ed7bb/#part-6-preparing-your-first-release).
 
 For locations, set up your my-app with a path descriptor—[see details here](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk).
 

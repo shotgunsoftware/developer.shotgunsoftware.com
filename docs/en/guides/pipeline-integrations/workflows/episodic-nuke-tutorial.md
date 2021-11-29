@@ -391,7 +391,7 @@ Check that the Export Structure hierarchy matches that of our schema. If it does
 ![Export Structure hierarchy](./images/tutorial/tu-episodic-nuke-mceclip3-05.png)  
   
 
-Once you click export, it should then create your Episodes, Sequences, and Shots in your {% include product %} site, as well as the folder structure on disk. If you run into issues along the way, remember to check the Nuke Studio script editor or [ {% include product %} logs (tk-nukestudio.log)](https://developer.shotgunsoftware.com/38c5c024/) for any errors that you might encounter.
+Once you click export, it should then create your Episodes, Sequences, and Shots in your {% include product %} site, as well as the folder structure on disk. If you run into issues along the way, remember to check the Nuke Studio script editor or [ {% include product %} logs (tk-nukestudio.log)](https://developer.shotgridsoftware.com/38c5c024/) for any errors that you might encounter.
 
 That completes this guide. Of course this is just one of the many ways to achieve working with episodes, and it’s up to you to figure out which approach and structure works best for your studio.
 
