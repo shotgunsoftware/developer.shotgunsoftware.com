@@ -161,7 +161,6 @@
       - page: tk-photoshopcc
       - page: tk-shell
       - page: tk-shotgun
-      - page: tk-softimage
       - page: tk-vred
     - page: toolkit-engines-supported-versions
     - page: toolkit-engines-supported-os
