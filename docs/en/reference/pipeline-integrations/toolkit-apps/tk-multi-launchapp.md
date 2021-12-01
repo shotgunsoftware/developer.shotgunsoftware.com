@@ -27,7 +27,6 @@ Currently supported applications and engines are:
 * Photoshop
 * Mari
 * Houdini
-* Softimage
 * Flame
 
 ### Use Command Line Arguments at Launch
