@@ -26,6 +26,16 @@
         children:
         - page: toolkit-pipeline-tutorial
         - page: episodic-nuke-tutorial
+      - page: alias-shotgrid-workflows
+        children:
+        - text: working-with-shotgrid
+          url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=Alias_ShotGrid_Workflows_alias_shotgrid_working_with_html"
+        - text: loading-in-alias
+          url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=Alias_ShotGrid_Workflows_alias_shotgrid_loading_html"
+        - text: publishing-in-alias
+          url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=Alias_ShotGrid_Workflows_alias_shotgrid_publishing_html"
+        - text: scene-breakdown-in-alias
+          url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=Alias_ShotGrid_Workflows_alias_shotgrid_scene_breakdown_html"
       - page: toolkit-administration
         children:
         - page: toolkit-overview
