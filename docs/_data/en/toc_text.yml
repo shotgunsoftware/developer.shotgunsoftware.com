@@ -13,6 +13,10 @@ shotgun: ShotGrid
 review: Review
 quick-answers: Quick Answers
 pipeline-integrations: Pipeline Integrations
+working-with-shotgrid: Working with ShotGrid
+loading-in-alias: Loading in Alias
+publishing-in-alias: Publishing in Alias
+scene-breakdown-in-alias: Scene breakdown in Alias
 
 python-api: Python API Documentation
 rest-api: REST API
