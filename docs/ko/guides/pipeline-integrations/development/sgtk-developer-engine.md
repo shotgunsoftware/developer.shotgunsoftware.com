@@ -38,7 +38,7 @@ lang: ko
 - 기본 클래스는 시작 프로세스의 여러 지점에서 실행되는 다양한 init 및 destroy 방식을 제공합니다. 시작 및 종료 실행을 제어하기 위해 이 방식을 재정의할 수 있습니다.
 - 자동 소프트웨어 탐색 및 시작 시 `tk-multi-launchapp`에 의해 호출되는 시작 로직.
 
-엔진은 [`sgtk.platform.start_engine()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.start_engine) 또는 [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식을 사용하여 툴킷 플랫폼에 의해 시작됩니다.
+엔진은 [`sgtk.platform.start_engine()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.start_engine) 또는 [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식을 사용하여 툴킷 플랫폼에 의해 시작됩니다.
 이 명령은 구성 파일을 읽고, 엔진을 시작하고, 모든 앱을 로드하는 등의 역할을 수행합니다.
 엔진의 목표는 일단 시작된 후에 앱에 일관된 Python/QT 인터페이스를 제공하는 것입니다.
 모든 엔진이 같은 기본 클래스를 구현하므로 앱은 UI 생성 등의 작업을 수행하기 위해 엔진에서 이 방식을 호출할 수 있습니다.
@@ -56,7 +56,7 @@ Shotgun 팀에서는 가장 일반적으로 사용되는 컨텐츠 생성 소프
 가능한 경우 툴킷을 통합하려는 소프트웨어의 기술 담당자나 개발자와의 커뮤니케이션 채널을 열어 두면
 가능성이나 장애물에 대한 정보를 파악할 수 있어 작업을 진행하는 데 도움이 될 것입니다.
 커뮤니케이션 채널을 설정하고 생각하고 있는 기본적인 사항에 대한 이야기를 나눈 후에는 저희 팀을 대화에 초대해 함께 미팅을 진행하면서 엔진의 특정 요소에 대한 대화를 나눌 수 있습니다.
-[{% include product %} 커뮤니티 포럼](https://community.shotgridsoftware.com/c/pipeline)에서 툴킷 커뮤니티에 참여할 수도 있습니다.
+[{% include product %} 커뮤니티 포럼](https://community.shotgunsoftware.com/c/pipeline)에서 툴킷 커뮤니티에 참여할 수도 있습니다.
 
 더욱 발전할 새로운 통합을 기대합니다! 툴킷 커뮤니티에 열성적으로 참여해 주시는 여러분의 노력에 늘 감사드립니다.
 
@@ -112,7 +112,7 @@ Python 스크립팅이 없지만 C++ 플러그인을 생성할 수 있습니다.
 ## 시작 동작
 엔진은 소프트웨어 시작 방법 및 통합의 시작 방법도 담당합니다.
 이 로직은 `tk-multi-launchapp`이 엔진을 사용해 소프트웨어를 시작하려고 할 때 호출됩니다.
-이 설정 방법에 대한 자세한 내용은 [코어 설명서](https://developer.shotgridsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software)에서 확인할 수 있습니다.
+이 설정 방법에 대한 자세한 내용은 [코어 설명서](https://developer.shotgunsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software)에서 확인할 수 있습니다.
 
 ## 호스트 소프트웨어 위시리스트
 다음 호스트 소프트웨어 특성을 툴킷 엔진이 활용할 수 있습니다.

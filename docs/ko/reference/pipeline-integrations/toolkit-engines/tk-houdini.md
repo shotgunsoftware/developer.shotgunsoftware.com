@@ -18,6 +18,12 @@ Houdini용 {% include product %} 엔진에는 {% include product %} 앱을 Houdi
 
 Houdini용 {% include product %} 엔진은 현재 Windows, Linux 및 OSX에서 지원됩니다.
 
+## 지원되는 응용프로그램 버전
+
+이 항목은 테스트를 거쳐 다음 응용프로그램 버전에서 작동하는 것으로 알려져 있습니다.
+
+{% include tk-houdini %}
+
 ## PySide
 
 Houdini의 이전 버전(13 이하)은 PySide의 외부 빌드가 필요합니다. Windows에서는 Houdini가 실행되는 Python에서 작동하는 호환 가능한 PySide 빌드가 번들로 제공됩니다. Linux에서 Houdini는 PySide 또는 PyQt를 지원해야 하는 시스템 Python(http://www.sidefx.com/docs/houdini12.0/hom/)을 사용합니다.

@@ -27,7 +27,6 @@ lang: zh_CN
 * Photoshop
 * Mari
 * Houdini
-* Softimage
 * Flame
 
 ### 启动时使用命令行参数

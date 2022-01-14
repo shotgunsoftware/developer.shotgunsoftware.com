@@ -25,7 +25,7 @@ lang: ko
 
 ## 인자를 허용하도록 앱 프로그래밍
 
-[커스텀 앱을 작성](https://developer.shotgridsoftware.com/2e5ed7bb/)하는 경우 필요한 인자를 허용하도록 엔진에 등록되는 콜백 메서드만 설정하면 됩니다.
+[커스텀 앱을 작성](https://developer.shotgridsoftware.com/ko/2e5ed7bb/)하는 경우 필요한 인자를 허용하도록 엔진에 등록되는 콜백 메서드만 설정하면 됩니다.
 다음은 두 개의 인자가 필요하고 추가 인자를 허용하고 출력하도록 설정된 간단한 앱입니다.
 
 ```python

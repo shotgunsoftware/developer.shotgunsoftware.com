@@ -14,7 +14,7 @@ lang: ko
 - 앱, 엔진, 프레임워크, 코어 및 {% include product %} 데스크톱이 [최신 상태](#keeping-up-to-date)인지 확인합니다.
 - 일반적인 사용 중에 [디버그 로깅](./turn-debug-logging-on.md)이 활성화되지 않았는지 확인합니다.
 - [필요한 폴더만 생성하며](#folder-creation-is-slow) 폴더가 실제로 필요할 때만 생성되도록 제한합니다. 너무 많은 폴더를 스키마에 추가하면 속도가 느려집니다.
-- 서버에 사용자 캐시를 저장하면 속도가 느려질 수 있습니다. 로컬 드라이브 위치를 가리키도록 {% include product %} [`{% include product %}_HOME` 환경 변수](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables) 를 설정하여 사용자의 캐시를 리디렉션할 수 있습니다.
+- 서버에 사용자 캐시를 저장하면 속도가 느려질 수 있습니다. 로컬 드라이브 위치를 가리키도록 {% include product %} [`{% include product %}_HOME` 환경 변수](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables) 를 설정하여 사용자의 캐시를 리디렉션할 수 있습니다.
 - 아티스트에게 필요하지 않은 컨텐츠는 필터링하여 제외하도록 [Workfiles 및 Loader 앱을 구성](#file-open-file-save-or-the-loader-app-is-slow)합니다. 엔티티 목록을 아티스트의 현재 태스크와 관련이 있는 항목으로 간결하게 유지하려면 상태를 기준으로 필터링해 보십시오.
 - 커스텀 후크가 있는지 그리고 이러한 커스텀 후크로 인해 오버헤드가 증가하지는 않는지 확인하십시오.
 
@@ -42,7 +42,7 @@ lang: ko
 
 {% include product %} 툴킷은 [사용자의 홈 디렉토리에 데이터를 캐시](../administering/where-is-my-cache.md)합니다. 이 캐시에는 여러 가지 SQLite 데이터베이스와 캐시된 앱 및 구성이 포함될 수 있습니다. 대개 사용자의 홈 디렉토리는 시스템의 로컬 하드 드라이브에 저장되지만, 스튜디오에서 이를 네트워크 저장소로 리디렉션하는 경우가 많습니다. 이렇게 되면 성능에 영향을 미칠 수 있습니다. 특히, 브라우저 통합 및 폴더 생성/조회 등에 사용되는 SQLite 데이터베이스에 주로 영향을 미칩니다.
 
-사용자 디렉토리가 서버 위치에 저장되는 경우 [`{% include product %}_HOME` 환경 변수](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)를 사용하여 {% include product %} 툴킷 캐시의 경로를 변경하는 것이 좋습니다. `{% include product %}_HOME` 환경 변수는 툴킷이 번들 캐시, 썸네일, 그리고 데이터의 빠른 조회에 사용되는 SQLite 데이터베이스 등과 같은 다양한 데이터를 캐시하는 위치를 설정하는 데 사용됩니다.
+사용자 디렉토리가 서버 위치에 저장되는 경우 [`{% include product %}_HOME` 환경 변수](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables)를 사용하여 {% include product %} 툴킷 캐시의 경로를 변경하는 것이 좋습니다. `{% include product %}_HOME` 환경 변수는 툴킷이 번들 캐시, 썸네일, 그리고 데이터의 빠른 조회에 사용되는 SQLite 데이터베이스 등과 같은 다양한 데이터를 캐시하는 위치를 설정하는 데 사용됩니다.
 
 ### 디버깅
 
@@ -56,7 +56,7 @@ lang: ko
 
 ### 중앙 집중식 구성과 분산 구성 비교
 
-고급 툴킷 구성은 [중앙 집중식 구성과 분산 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#the-toolkit-startup)이라는 두 가지 방법으로 설정할 수 있습니다. 주된 차이점은 중앙 집중식 구성의 경우 일반적으로 모든 사용자가 액세스할 수 있는 스튜디오의 네트워크 저장소에 저장되며, 분산 구성의 경우 대개 클라우드에 저장되고 사용자별로 로컬로 캐시된다는 점입니다.
+고급 툴킷 구성은 [중앙 집중식 구성과 분산 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#the-toolkit-startup)이라는 두 가지 방법으로 설정할 수 있습니다. 주된 차이점은 중앙 집중식 구성의 경우 일반적으로 모든 사용자가 액세스할 수 있는 스튜디오의 네트워크 저장소에 저장되며, 분산 구성의 경우 대개 클라우드에 저장되고 사용자별로 로컬로 캐시된다는 점입니다.
 
 이러한 차이점은 성능 이외의 측면에도 영향을 미치지만 성능 차원에서도 각기 다른 장단점을 가집니다. 다음 표에는 성능 측면의 장단점이 정리되어 있습니다.
 
@@ -72,7 +72,7 @@ lang: ko
 
 {% include info title="참고" content="분산 구성을 사용하고 싶지만 시스템별로 종속 항목을 다운로드하는 것이 염려된다면 번들 캐시를 중앙 집중화하여 모든 사용자가 공유하도록 할 수 있습니다." %}
 
-분산 구성을 사용하는 경우 사용자는 캐시에 없는 항목만 다운로드하면 되며, 한 사용자가 다운로드한 항목을 다른 사용자도 활용할 수 있게 됩니다. 이렇게 하려면 각 시스템에서 공유 위치를 가리키도록 [`{% include product %}_BUNDLE_CACHE_PATH` 환경 변수](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)를 설정하면 됩니다.
+분산 구성을 사용하는 경우 사용자는 캐시에 없는 항목만 다운로드하면 되며, 한 사용자가 다운로드한 항목을 다른 사용자도 활용할 수 있게 됩니다. 이렇게 하려면 각 시스템에서 공유 위치를 가리키도록 [`{% include product %}_BUNDLE_CACHE_PATH` 환경 변수](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables)를 설정하면 됩니다.
 
 ## 소프트웨어의 시작 속도가 느림
 
@@ -178,7 +178,7 @@ Maya, Nuke, Houdini 등의 소프트웨어를 시작할 때 {% include product %
 
 #### 생성 유예
 
-[`defer_creation` 설정](https://developer.shotgridsoftware.com/ko/82ff76f7/#workspaces-and-deferred-folder-creation)을 사용하면 특정 엔진이 실행 중일 때에만 폴더 생성이 발생하도록 제한하여 폴더가 생성되는 경우를 세부적으로 조정할 수 있습니다. 커스텀 이름을 사용하여 [sgtk API](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure)를 통해 이에 대한 생성 작업을 트리거할 수도 있습니다.
+[`defer_creation` 설정](https://developer.shotgridsoftware.com/ko/82ff76f7/#workspaces-and-deferred-folder-creation)을 사용하면 특정 엔진이 실행 중일 때에만 폴더 생성이 발생하도록 제한하여 폴더가 생성되는 경우를 세부적으로 조정할 수 있습니다. 커스텀 이름을 사용하여 [sgtk API](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=create_#sgtk.Sgtk.create_filesystem_structure)를 통해 이에 대한 생성 작업을 트리거할 수도 있습니다.
 
 **예시**
 

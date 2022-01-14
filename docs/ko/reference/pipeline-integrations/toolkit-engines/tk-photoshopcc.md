@@ -13,6 +13,14 @@ Photoshop CC용 {% include product %} 엔진은 Photoshop CC 워크플로우에 
 
 ![익스텐션](../images/engines/photoshopcc-photoshopcc_extension.png)
 
+## 지원되는 응용프로그램 버전
+
+이 항목은 테스트를 거쳐 다음 응용프로그램 버전에서 작동하는 것으로 알려져 있습니다.
+
+{% include tk-photoshopcc %}
+
+최신 릴리즈에서는 더 완벽하게 작동할 수 있지만 이러한 버전에서 아직 공식적으로 테스트되지는 않았습니다.
+
 ## 인터페이스 개요
 
 {% include product %} 익스텐션 패널은 기본 Photoshop CC 패널과 동일한 색상 팔레트 및 기본 레이아웃을 사용합니다. 익스텐션 패널은 다음 다섯 가지 구성요소로 이루어져 있습니다.

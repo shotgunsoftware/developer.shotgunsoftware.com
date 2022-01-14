@@ -35,7 +35,7 @@ lang: ko
 
 ## 추가 리소스
 
-* [{% include product %} 지원 사이트](https://developer.shotgridsoftware.com/ko)
+* [{% include product %} 지원 사이트](https://developer.shotgridsoftware.com/ko/)
 
 * [{% include product %} 통합](https://www.shotgridsoftware.com/integrations/)
 
@@ -292,7 +292,7 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 {% include info title="참고" content="추가할 커스터마이즈는 확실히 매우 간단하고 쉽습니다. 보다 강력한 솔루션을 위해 외부 이미지를 텍스처 맵으로 사용하는 에셋 관리 측면뿐만 아니라 서페이스 처리된 캐릭터의 대체 표현을 고려해야 할 수 있습니다. 이 예제는 실제 솔루션을 빌드하기 위한 시작점만 제공합니다." %}
 
-{% include info title="참고" content="Publisher 플러그인을 작성하는 방법에 대한 전체 상세 정보는 [여기](https://developer.shotgridsoftware.com/tk-multi-publish2/)에서 확인할 수 있습니다." %}
+{% include info title="참고" content="Publisher 플러그인을 작성하는 방법에 대한 전체 상세 정보는 [여기](https://developer.shotgunsoftware.com/tk-multi-publish2/)에서 확인할 수 있습니다." %}
 
 #### Maya 컬렉터 재지정
 
@@ -334,7 +334,7 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 이 줄은 현재 세션에 있는 모든 메쉬를 수집하기 위해 추가할 새 방식입니다. 이 방식은 나중에 만들 예정인 셰이더 게시 플러그인이 작동할 수 있는 메쉬 항목을 만듭니다. 전달되는 항목은 메쉬 항목의 상위가 될 세션 항목입니다.
 
-{% include info title="참고" content="이 방식은 기존 게시 플러그인을 수정하는 매우 직접적인 접근 방법입니다. 게시자 구조 및 움직이는 모든 부분에 대한 자세한 정보는 [개발자 문서](http://developer.shotgridsoftware.com/tk-multi-publish2/)를 참조하십시오." %}
+{% include info title="참고" content="이 방식은 기존 게시 플러그인을 수정하는 매우 직접적인 접근 방법입니다. 게시자 구조 및 움직이는 모든 부분에 대한 자세한 정보는 [개발자 문서](http://developer.shotgunsoftware.com/tk-multi-publish2/)를 참조하십시오." %}
 
 이제 파일 하단에 아래 새 방식 정의를 추가합니다.
 

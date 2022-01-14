@@ -27,7 +27,6 @@ lang: ko
 * Photoshop
 * Mari
 * Houdini
-* Softimage
 * Flame
 
 ### 시작 시 명령행 인수 사용

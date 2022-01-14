@@ -1396,7 +1396,7 @@ b) **カスタム エンティティを使用する:** `CustomEntity02` は、�
 
 - スキーマでこの新しいアセット タイプ vehicle の新しいブランチを作成します。
 - `asset/` と `asset.yml` と同じレベルで、`asset_vehicle/` フォルダと `asset_vehicle.yml` を追加します。
-- この YAML ファイルにもフィルタ設定があります。vehicle _以外の_ すべてのアセットに適用されるように `asset.yml` 内のフィルタを修正してから、タイプ vehicle のアセット_のみ_に適用されるように `asset_vehicle.yml` を修正します。[これらのフィルタの例については、こちらを参照してください](#different-file-system-layouts-for-different-pipeline-steps)。
+- この YAML ファイルにもフィルタ設定があります。vehicle _以外の_ すべてのアセットに適用されるように `asset.yml` 内のフィルタを修正してから、タイプ vehicle のアセット _のみ_ に適用されるように `asset_vehicle.yml` を修正します。[これらのフィルタの例については、こちらを参照してください](#different-file-system-layouts-for-different-pipeline-steps)。
 - これで `asset` と `asset_vehicles` を表す 2 つのフォルダが作成されました。アセット(`geoprep` や `lookdev` など)に対して作成するすべてのフォルダを `asset_vehicle` の下に追加します。
 
 - このアセットのファイルを保存およびパブリッシュする場合は、`core/templates.yml` 内に保存およびパブリッシュしたファイルのファイル パスを定義するテンプレートを作成します。たとえば、[`maya_asset_work`](https://github.com/shotgunsoftware/tk-config-default/blob/v0.17.3/core/templates.yml#L480) とは別に、`maya_asset_work_vehicle` と呼ばれるテンプレートを作成すると、その定義は vehicle アセットの Maya 作業ファイルを保存するテンプレート化したパスになります。

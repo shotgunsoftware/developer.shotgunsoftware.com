@@ -14,9 +14,15 @@ lang: ja
 
 # アプリ開発者向けの情報
 
-## サポート対象プラットフォーム
+## サポートされているプラットフォーム
 
 現在、{% include product %} Engine for Houdini は Windows、Linux、OSX でサポートされています。
+
+## サポート対象のアプリケーション バージョン
+
+この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。
+
+{% include tk-houdini %}
 
 ## PySide
 

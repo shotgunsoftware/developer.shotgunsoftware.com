@@ -9,6 +9,14 @@ lang: zh_CN
 
 {% include product %} VRED 插件包含一个用于在 VRED 中集成 {% include product %} 应用的标准平台。它采用轻量型设计，操作简单直观，并会向 VRED 菜单中添加一个 {% include product %} 菜单。
 
+## 支持的应用程序版本
+
+此插件已经过测试，已知可支持以下应用程序版本：
+
+{% include tk-vred %}
+
+请注意，此插件也许（甚至非常有可能）支持更新的发行版本，但是尚未正式在这些版本中进行测试。
+
 ## 应用开发人员须知
 
 ### PySide

@@ -40,7 +40,7 @@ lang: ko
 
 파이프라인 구성에서 참조하는 앱은 다양한 위치에서 가져온 것일 수 있습니다. 기본 구성에서 표준인 앱은 {% include product %} 앱 스토어에서 가져온 것입니다. 파이프라인 구성의 파일은 툴킷에 "주소록에서 Python 콘솔 앱의 주소를 찾아줄래?"라고 묻는 것처럼 {% include product %} 통합이 앱에 액세스하는 방법을 지정합니다. 파이프라인 구성 파일은 툴킷에 특정 앱에 활용되는 코드의 번들을 찾는 위치를 알려줍니다.
 
-기본 구성에서 툴킷 앱의 "주소"는 `config/env/includes/app_locations.yml` 파일에 나열되어 있으며 코드를 찾는 위치를 지정합니다. 이러한 "주소"를 [디스크립터](https://developer.shotgridsoftware.com/tk-core/descriptor.html)라고 합니다. {% include product %} 통합은 앱에 대한 코드 번들을 찾는 위치뿐 아니라 앱을 사용하는 환경도 알아야 합니다.
+기본 구성에서 툴킷 앱의 "주소"는 `config/env/includes/app_locations.yml` 파일에 나열되어 있으며 코드를 찾는 위치를 지정합니다. 이러한 "주소"를 [디스크립터](https://developer.shotgunsoftware.com/tk-core/descriptor.html)라고 합니다. {% include product %} 통합은 앱에 대한 코드 번들을 찾는 위치뿐 아니라 앱을 사용하는 환경도 알아야 합니다.
 
 다음은 앱 설치 방법과 {% include product %} 통합에 앱을 사용하는 위치를 알리는 방법에 대한 개념적인 개요입니다. 여기서는 구성을 확장하고 툴킷에 디스크립터를 조회하도록 요청하고 {% include product %}에 앱을 사용하는 위치를 알리는 단계를 간략하게 설명합니다. 이 안내서에서는 다음 단계를 자세히 살펴봅니다.
 
@@ -149,7 +149,7 @@ apps.tk-multi-pythonconsole.location:
 
 {% include info title="참고" content="다른 구성을 사용하는 경우 파일에 디스크립터를 추가해야 할 수 있습니다." %}
 
-모든 앱과 엔진에는 디스크립터가 있습니다. [Core API 문서의 디스크립터 섹션](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types)에서 디스크립터의 작동 방식과 `type:`를 설정하는 방법을 확인할 수 있습니다.
+모든 앱과 엔진에는 디스크립터가 있습니다. [Core API 문서의 디스크립터 섹션](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types)에서 디스크립터의 작동 방식과 `type:`를 설정하는 방법을 확인할 수 있습니다.
 
 ## 툴킷에 디스크립터를 사용하도록 지시
 
@@ -234,7 +234,7 @@ settings.tk-maya.project:
 
 **Screening Room, {% include product %} Panel 및 Workfiles2** 앱의 위치 식별자가 포함된 다른 파일에 나열되어 있고 **About** 앱과 다르게 액세스되는 것을 알 수 있습니다.  이러한 앱에는 추가 설정이 있으므로 정리를 위해 포함된 설정 폴더로 분리되었습니다.
 
-{% include info title="참고" content="Python 콘솔 앱은 기본 구성에 이미 있지만, 사용 중인 구성에 이전에 추가한 적이 없는 앱을 추가할 경우 또는 앱의 버전을 변경하고 [중앙 집중식 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)을 사용하는 경우에는 추가 단계를 수행해야 합니다. 터미널을 열고 복제된 구성이 저장된 위치를 찾습니다. 복제된 구성의 루트 폴더에서 다음 명령을 실행합니다.<br/>
+{% include info title="참고" content="Python 콘솔 앱은 기본 구성에 이미 있지만, 사용 중인 구성에 이전에 추가한 적이 없는 앱을 추가할 경우 또는 앱의 버전을 변경하고 [중앙 집중식 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)을 사용하는 경우에는 추가 단계를 수행해야 합니다. 터미널을 열고 복제된 구성이 저장된 위치를 찾습니다. 복제된 구성의 루트 폴더에서 다음 명령을 실행합니다.<br/>
 
 Linux 또는 Mac:
 

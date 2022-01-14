@@ -194,7 +194,7 @@ Loader는 `file://` URL 해석도 지원합니다. 게시할 때 게시 중인 �
 
 ### 고급 구성
 
-PublishedFile 경로 해석을 수행하는 기본 방법에 대한 자세한 정보는 [개발자 참조 문서](http://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)를 참조하십시오.
+PublishedFile 경로 해석을 수행하는 기본 방법에 대한 자세한 정보는 [개발자 참조 문서](http://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)를 참조하십시오.
 
 고급 프로젝트 설정을 사용하는 경우 `resolve_publish` 코어 후크를 커스터마이즈하는 방식으로 로컬 파일 링크 및 `file://` URL 이상의 지원을 추가할 수 있습니다. 가능한 커스터마이즈 항목은 다음과 같습니다.
 

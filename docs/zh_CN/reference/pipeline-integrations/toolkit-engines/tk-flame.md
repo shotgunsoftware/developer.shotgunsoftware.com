@@ -13,6 +13,12 @@ lang: zh_CN
 
 要想快速开始学习 {% include product %} Flame 插件，最简单的方法是使用我们的示例工作流配置设置一个新的测试项目。您只要启动 {% include product %} Desktop，运行项目设置向导设置一个新项目，然后选择默认的 Flame 配置（在默认配置部分）即可。
 
+## 支持的应用程序版本
+
+此插件已经过测试，已知可支持以下应用程序版本：
+
+{% include tk-flame %}
+
 ## Flame 项目设置
 
 {% include product %} Flame 插件还能帮您将 {% include product %} 项目与 Flame 项目关联起来，需要时还可创建 Flame 项目。这是集成的关键所在，因为这可以确保 Flame 的数据与 {% include product %} 中的正确数据相关联。作为一项附加特性，插件还提供管理 Flame 项目命名约定以及项目其他各种设置的功能。

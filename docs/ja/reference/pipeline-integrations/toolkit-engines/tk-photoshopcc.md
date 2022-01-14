@@ -13,6 +13,14 @@ lang: ja
 
 ![拡張機能](../images/engines/photoshopcc-photoshopcc_extension.png)
 
+## サポート対象のアプリケーション バージョン
+
+この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。
+
+{% include tk-photoshopcc %}
+
+最新のリリースでの動作は十分可能ですが、正式なテストはまだ完了していません。
+
 ## インタフェースの概要
 
 {% include product %} 拡張パネルは、Photoshop CC のネイティブ パネルと同じカラー パレットと基本レイアウトを使用します。次の 5 つのコンポーネントで構成されます。

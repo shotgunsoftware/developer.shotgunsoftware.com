@@ -1,6 +1,6 @@
 ﻿# Translated text strings used by the table of contents
 # 
-# For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/toc/
+# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
 #
 
 reference: リファレンス
@@ -13,6 +13,10 @@ shotgun: ShotGrid
 review: レビュー
 quick-answers: クイック アンサー
 pipeline-integrations: パイプライン統合
+working-with-shotgrid: ShotGrid を使用する
+loading-in-alias: Alias にロードする
+publishing-in-alias: Alias でパブリッシュする
+scene-breakdown-in-alias: Alias のシーンの詳細情報
 
 python-api: Python API ドキュメント
 rest-api: REST API

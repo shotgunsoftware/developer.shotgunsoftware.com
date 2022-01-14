@@ -1,6 +1,6 @@
 ﻿# Translated text strings used by the table of contents
 # 
-# For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/toc/
+# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
 #
 
 reference: 参考
@@ -13,6 +13,10 @@ shotgun: ShotGrid
 review: 审核
 quick-answers: 快速解答
 pipeline-integrations: 工作流集成
+working-with-shotgrid: 使用 ShotGrid
+loading-in-alias: 在 Alias 中加载
+publishing-in-alias: 在 Alias 中发布
+scene-breakdown-in-alias: Alias 中的场景细分
 
 python-api: Python API 文档
 rest-api: REST API
@@ -59,3 +63,4 @@ other: 其他
 community: 社区
 service-status: 服务状态
 shotgrid-documentation: ShotGrid 文档
+

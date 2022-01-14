@@ -13,6 +13,14 @@ lang: zh_CN
 
 ![扩展](../images/engines/photoshopcc-photoshopcc_extension.png)
 
+## 支持的应用程序版本
+
+此插件已经过测试，已知可支持以下应用程序版本：
+
+{% include tk-photoshopcc %}
+
+请注意，此插件也许（甚至非常有可能）支持更新的发行版本，但是尚未正式在这些版本中进行测试。
+
 ## 界面概述
 
 {% include product %} 扩展面板采用与原生 Photoshop CC 面板相同的配色和基本布局。面板有五个部分组成：

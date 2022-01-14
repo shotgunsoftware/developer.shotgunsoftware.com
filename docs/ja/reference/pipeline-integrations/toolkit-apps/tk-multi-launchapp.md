@@ -27,7 +27,6 @@ lang: ja
 * Photoshop
 * Mari
 * Houdini
-* Softimage
 * Flame
 
 ### 起動時にコマンド ライン引数を使用する
