@@ -76,6 +76,12 @@ Validation of SSL certificates is an optional feature that will help ensure the 
 
 ![Validate SSL certificate](./images/webhooks/webhooks_validate_ssl_certificate.png)
 
+### Notify when unstable
+
+This feature allows you to select a person or group to notify when the webhook fails. This setting is optional.
+
+![Notify when unstable](./images/webhooks/webhook_notifications.png)
+
 ### Filtering by Project and Entity
 
 Selecting specific projects, entities, and fields will minimize traffic to your webhook, which in result will:
