@@ -76,6 +76,12 @@ Validation of SSL certificates is an optional feature that will help ensure the 
 
 ![Validate SSL certificate](./images/webhooks/webhooks_validate_ssl_certificate_v2.png)
 
+### Deliver in Batched Format
+
+![Deliver in Batched Format](./images/webhooks/webhooks_batched_format.png)
+
+[Read more about delivering in batched format here](https://developer.shotgridsoftware.com/e7890fc8/).
+
 ### Notify when unstable
 
 This feature allows you to select a person or group to notify when the webhook fails. This setting is optional.
