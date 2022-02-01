@@ -1,4 +1,4 @@
 [submodule "tk-doc-generator"]
 	path = tk-doc-generator
 	url = https://github.com/shotgunsoftware/tk-doc-generator.git
-    branch = fix-build-folder-not-exists
+    branch = "fix-build-folder-not-exists"
