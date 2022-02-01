@@ -35,19 +35,19 @@ To get started creating a webhook, go to the **Webhooks** page.
 
 Then, select **Create Webhook**. 
 
-![Create Webhook Button](./images/webhooks/create_webhook_button.png)
+![Create Webhook Button](./images/webhooks/create_webhook_button_v3.png)
 
 {% include info title="Note" content="Access to webhooks is controlled by **Show Webhooks** under Advanced Permissions. It is enabled by default for Admin and Manager permission roles ![Create Webhook Dialog](./images/webhooks/show_webhooks_permission.png)." %}
 
 Next, fill out the information required to create your new webhook.
 
-![Create Webhook Dialog](./images/webhooks/create_webhook_dialog.png)
+![Create Webhook Dialog](./images/webhooks/create_webhook_dialog_v2.png)
 
 ### Secret token
 
 Assigning a secret token to a webhook is optional. When provided, any request sent to the webhook URL will be signed using that token. The token value is sent with the request as a header named `X-SG-SIGNATURE`. The signature is calculated using HMAC with SHA1 and the message signed is the JSON body of the request.
 
-![Secret Token](./images/webhooks/webhook_secret_token.png)
+![Secret Token](./images/webhooks/webhook_secret_token_v2.png)
 
 #### Header format
 
@@ -74,13 +74,13 @@ True
 
 Validation of SSL certificates is an optional feature that will help ensure the security of any connections made to the webhook’s consumer URL. If turned on, when a delivery is made to the webhook’s URL, {% include product %} will use OpenSSL’s certificate validation routine to verify the certificate.
 
-![Validate SSL certificate](./images/webhooks/webhooks_validate_ssl_certificate.png)
+![Validate SSL certificate](./images/webhooks/webhooks_validate_ssl_certificate_v2.png)
 
 ### Notify when unstable
 
 This feature allows you to select a person or group to notify when the webhook fails. This setting is optional.
 
-![Notify when unstable](./images/webhooks/webhook_notifications.png)
+![Notify when unstable](./images/webhooks/webhook_notifications_v2.png)
 
 ### Filtering by Project and Entity
 
@@ -90,7 +90,7 @@ Selecting specific projects, entities, and fields will minimize traffic to your 
 - Reduce resource costs
 - Prevent unnecessary backlogs
 
-![Webhook Filters](./images/webhooks/webhook_project_entity_field_filter.png)
+![Webhook Filters](./images/webhooks/webhook_project_entity_field_filter_v2.png)
 
 {% include info title="Note" content="Selecting a project limits you to selecting an entity that always belongs to a single project, such as Versions. If you want to select a non-project (or multi-project) entity like Person, you should **not** select a project. This ensures webhook event filtering does not add performance overhead to entity updates." %}
 
@@ -98,7 +98,7 @@ Selecting specific projects, entities, and fields will minimize traffic to your 
 
 A webhook can have one of several different statuses, indicating its health and ability to continue receiving deliveries.
 
-![Create Webhook Dialog](./images/webhooks/webhook_selected_status.png)
+![Create Webhook Dialog](./images/webhooks/webhook_selected_status_v2.png)
 
 | Status | Example | Description |
 |--------|:-------:|:-----------:|
@@ -117,13 +117,13 @@ Selecting a webhook from the webhooks list will show all of the deliveries that 
 
 A delivery status indicates whether it was successfully delivered to the webhook’s URL.
 
-![Delivery Status](./images/webhooks/delivery_status.png)
+![Delivery Status](./images/webhooks/delivery_status_v2.png)
 
 ### Delivery details
 
 Deliveries can be expanded to show detailed information about the request sent to the webhook URL and the response to that request.
 
-![Delivery Details](./images/webhooks/delivery_details.png)
+![Delivery Details](./images/webhooks/delivery_details_v2.png)
 
 #### Request Payload
 
@@ -136,35 +136,37 @@ The payload sent to the webhook's URL contains information describing the event 
 ```json
 {
   "data": {
-    "id": "95.0",
+    "id": "11777.3065.0",
     "meta": {
       "type": "attribute_change",
-      "entity_id": 758,
-      "new_value": "This is the newest description ever!!",
-      "old_value": "This is the old description!",
-      "entity_type": "Asset",
+      "entity_id": 1246,
+      "new_value": "*Add fog and mist with depth",
+      "old_value": "*Add fog and mist.",
+      "entity_type": "Shot",
       "attribute_name": "description",
       "field_data_type": "text"
     },
     "user": {
-      "id": 113,
+      "id": 88,
       "type": "HumanUser"
     },
     "entity": {
-      "id": 758,
-      "type": "Asset"
+      "id": 1246,
+      "type": "Shot"
     },
     "project": {
-      "id": 65,
+      "id": 122,
       "type": "Project"
     },
     "operation": "update",
-    "created_at": "2019-07-12 21:14:36.598835",
-    "event_type": "Shotgun_Asset_Change",
-    "session_uuid": "07473c00-a4ea-11e9-b3b8-0242ac110006",
+    "created_at": "2022-02-01 20:53:08.523887",
+    "event_type": "Shotgun_Shot_Change",
+    "delivery_id": "3a5de4ee-8f05-4eac-b537-611e845352fc",
+    "session_uuid": "dd6a1d6a-83a0-11ec-8826-0242ac110006",
     "attribute_name": "description",
-    "event_log_entry_id": 248249
-  }
+    "event_log_entry_id": 545175
+  },
+  "timestamp": "2022-02-01T20:53:09Z"
 }
 ```
 
