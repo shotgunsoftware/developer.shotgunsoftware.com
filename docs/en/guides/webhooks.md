@@ -84,7 +84,7 @@ Validation of SSL certificates is an optional feature that will help ensure the 
 
 ### Notify when unstable
 
-This feature allows you to select a person or group to notify when the webhook fails. This setting is optional.
+**Notify when unstable** allows you to select a person or group to notify when the webhook fails. This setting is optional.
 
 ![Notify when unstable](./images/webhooks/webhook_notifications_v2.png)
 
