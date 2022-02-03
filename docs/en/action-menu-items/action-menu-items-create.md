@@ -102,3 +102,7 @@ Here are some related example scripts to help get you started:
 
 *   **project_name:** The name of the Project (e.g., Gunslinger)
 *   **project_id:** The ID of the Project (e.g., 81)
+
+# Internal Resources Menu
+
+To learn more about leveraging Action Menu Items for Internal Resources in the User Menu, [visit our Admin Guide here](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html).
