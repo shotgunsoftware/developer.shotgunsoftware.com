@@ -165,7 +165,7 @@ lang: ja
 
         # End of file.
 
-3. {% include product %} でこのプロジェクトに対応する PipelineConfiguration エンティティを特定し、上記の変更と一致するように、[Mac のパス](Mac Path)、[Windows のパス](Windows Path)、[Linux のパス](Linux Path)の各フィールドの値を修正します。
+3. {% include product %} でこのプロジェクトに対応する PipelineConfiguration エンティティを特定し、上記の変更と一致するように、[Mac のパス] (Mac Path)、[Windows のパス] (Windows Path)、[Linux のパス] (Linux Path)の各フィールドの値を修正します。
 
 ![ShotGrid のパイプライン設定の場所。](images/new-pipeline-configuration-locations.png)
 

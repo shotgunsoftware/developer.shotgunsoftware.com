@@ -31,7 +31,7 @@ lang: ko
 
 ![](images/setting-python-3-desktop/04-setting-python-3-desktop.jpg)
 
-- **변수 이름**으로 `SHOTGUN_PYTHON_VERSION`을 추가하고 **변수 값 **을 `3`으로 설정합니다.
+- **변수 이름**으로 `SHOTGUN_PYTHON_VERSION`을 추가하고 **변수 값** 을 `3`으로 설정합니다.
 
 ![](images/setting-python-3-desktop/05-setting-python-3-desktop.jpg)
 

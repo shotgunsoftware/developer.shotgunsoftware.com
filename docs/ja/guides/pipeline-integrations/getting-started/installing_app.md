@@ -105,7 +105,7 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ![クローン作成完了](./images/installing_app/8_clone_complete.png)
 
-**手順 7:** [パイプライン設定リスト](Pipeline Configuration List)内の設定およびディレクトリ内のファイルに、それぞれ「Primary Clone Config 2」および「the_other_side_clone2」という名前を付けます。**[OK]**をクリックします。
+**手順 7:** [パイプライン設定リスト] (Pipeline Configuration List)内の設定およびディレクトリ内のファイルに、それぞれ「Primary Clone Config 2」および「the_other_side_clone2」という名前を付けます。**[OK]**をクリックします。
 
 ![クローンに名前を付ける](./images/installing_app/9_name_clone.png)
 

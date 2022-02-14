@@ -33,7 +33,7 @@ Nuke의 SG 게시 GUI에서 다음 오류가 발생합니다.
 
         raise Exception("Review submission failed. Could not render and "
 
-    Exception: Review submission failed. 리뷰 관련 시퀀스를 렌더링하고 제출할 수 없습니다.
+    Exception: Review submission failed. Could not render and submit the review associated sequence.
 
 다음 예외도 표시됩니다.
 

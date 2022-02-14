@@ -49,7 +49,7 @@ Snapshot: [スナップショット] (Snapshot)ダイアログを開き、現在
 
 
 ### パブリッシュ
-Publish: [パブリッシュ] (Publish)ダイアログを開き、ファイルを {% include product %} にパブリッシュします。パブリッシュ ファイルは、下流工程でアーティストが使用します。VRED のパブリッシュの詳細については、[こちら](https://github.com/shotgunsoftware/tk-vred/wiki/Publishing)![https://help.autodesk.com/cloudhelp/2020/JPN/VRED-Shotgun/images/ShotgunPublishVRED.png](を参照してください。)
+Publish: [パブリッシュ] (Publish)ダイアログを開き、ファイルを {% include product %} にパブリッシュします。パブリッシュ ファイルは、下流工程でアーティストが使用します。VRED のパブリッシュの詳細については、[こちら](https://github.com/shotgunsoftware/tk-vred/wiki/Publishing) ![](https://help.autodesk.com/cloudhelp/2020/JPN/VRED-Shotgun/images/ShotgunPublishVRED.png) を参照してください。
 
 
 ### ローダー
