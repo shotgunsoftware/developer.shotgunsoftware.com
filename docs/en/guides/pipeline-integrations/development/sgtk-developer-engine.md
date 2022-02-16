@@ -31,14 +31,14 @@ The engine is a collection of files, [similar in structure to an app](sgtk-devel
 Different engines then re-implement various aspects of this base class depending on their internal complexity. 
 An engine typically handles or provides the following services:
 
-- Menu management. At engine startup, once the apps have been loaded, the engine needs to create its Shotgun menu and add the various apps to this menu.
+- Menu management. At engine startup, once the apps have been loaded, the engine needs to create its {% include product %} menu and add the various apps to this menu.
 - Logging methods are typically overridden to write to the software's log/console.
 - Methods for displaying UI dialogs and windows. These methods are usually overridden, if the way the engine handles Qt is different from the default base class behavior, to ensure seamless integration of windows launched by Toolkit apps and the underlying host software window management setup.
 - Provides a `commands` dictionary containing all the command objects registered by apps. This is typically accessed when menu entries are created.
 - The base class exposes various init and destroy methods that are executed at various points in the startup process. These can be overridden to control startup and shutdown execution.
 - Startup logic that gets called by the `tk-multi-launchapp` at launch time, as well as automatic software discovery.
 
-Engines are launched by the Toolkit platform using the [`sgtk.platform.start_engine()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.start_engine)  or the [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) methods. 
+Engines are launched by the Toolkit platform using the [`sgtk.platform.start_engine()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.start_engine)  or the [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) methods. 
 This command will read the configuration files, launch the engines, load all apps, etc.
 The goal with the engine is that once it has launched, it will provide a consistent Python/Qt interface to the apps. 
 Since all engines implement the same base class, apps can call methods on the engines, for example, to create UIs. 
@@ -46,17 +46,17 @@ It is up to each engine to implement these methods so that they work nicely insi
 
 ## Things to know before you start
 
-we provide [integrations](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) for the most commonly used content creation software.
-There are also [engines that Toolkit Community members have built and shared back](https://support.shotgunsoftware.com/hc/en-us/articles/219039828-Community-Shared-Integrations). But sometimes you'll need pipeline integrations for software that doesn't have a Toolkit engine yet. 
+We provide [integrations](https://developer.shotgridsoftware.com/162eaa4b/) for the most commonly used content creation software.
+There are also [engines that Toolkit Community members have built and shared back](https://developer.shotgridsoftware.com/58a557ee/). But sometimes you'll need pipeline integrations for software that doesn't have a Toolkit engine yet. 
 
 If you have the time and resources, we encourage you to help the Toolkit Community (and yourselves) in writing a missing engine you would like to use!
 
-Before embarking on writing code, [talk to us!](toolkitsupport@shotgunsoftware.com) We can't promise anything, but we will be happy to discuss your plans with you. 
+Before embarking on writing code, [talk to us!](https://knowledge.autodesk.com/contact-support) We can't promise anything, but we will be happy to discuss your plans with you. 
 We may also be able to connect you to other users who are interested in or have done work on the same engine.
 If you can, open a channel of communication with a technical contact or developer of the software you are looking to integrate Toolkit into. 
 This helps gain insight into what the possibilities and/or roadblocks are for getting something going. 
 Once you establish a contact and talk through the basics of what you are trying to do, you can bring us into the conversation and set up a meeting with all of us to talk through some of the specifics of the engine.
-Also, you can engage directly with the Toolkit community in the [Shotgun community forum](https://community.shotgunsoftware.com/c/pipeline). 
+Also, you can engage directly with the Toolkit community in the [{% include product %} community forum](https://community.shotgridsoftware.com/c/pipeline). 
 
 We love to see new integrations, and are always eternally grateful for people's generous contributions to the Toolkit Community!
 
@@ -70,7 +70,7 @@ This section outlines a couple of different complexity levels that we have notic
 
 ### Host software includes Qt, PyQt/PySide, and Python
 This is the best setup for Toolkit and implementing an engine on top of a host software that supports Qt, Python, and PySide is very straight forward. 
-The [Nuke engine](https://github.com/shotgunsoftware/tk-nuke) or the [Maya engine](https://github.com/shotgunsoftware/tk-maya) is a good example of this. Integration is merely a matter of hooking up some log file management and write code to set up the Shotgun menu.
+The [Nuke engine](https://github.com/shotgunsoftware/tk-nuke) or the [Maya engine](https://github.com/shotgunsoftware/tk-maya) is a good example of this. Integration is merely a matter of hooking up some log file management and write code to set up the {% include product %} menu.
 
 
 ### Host software includes Qt and Python but not PySide/PyQt
@@ -112,7 +112,7 @@ The window parenting is important to provide a consistent experience and without
 ## Startup behavior
 The engine is also responsible for handling how the software is launched and its integration is started. 
 This logic will be called when the `tk-multi-launchapp` tries to launch the software with your engine.
-You can read more about how this is set up in the [core documentation](https://developer.shotgunsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software).
+You can read more about how this is set up in the [core documentation](https://developer.shotgridsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software).
 
 ## Host software wish list
 The following host software traits can be taken advantage of by Toolkit engines. 

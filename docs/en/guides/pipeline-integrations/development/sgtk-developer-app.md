@@ -10,7 +10,7 @@ lang: en
 ## Introduction
 
 This guide outlines what a Toolkit app is, covers how to create one, and explains some basics around app development.
-Shotgun Pipeline Toolkit is not only a collection of apps and engines maintained by Shotgun Software, it is also a development platform that makes it easy to quickly build custom pipeline tools!
+{% include product %} Pipeline Toolkit is not only a collection of apps and engines maintained by {% include product %} Software, it is also a development platform that makes it easy to quickly build custom pipeline tools!
 
 - [What is a Toolkit app?](#what-is-a-toolkit-app)
 - [Creating your own app](#creating-your-own-app)
@@ -35,19 +35,19 @@ Additional info:
 
 A Toolkit app can be defined as follows:
 
-- A tool that is usually run by an end-user, using the Shotgun integrations.
-- Apps usually have a graphical user interface with which the user can guide the app's operations, but they don't have to. An app can also be a command registered with the integrations, triggered by the user from the Shotgun menu in the host software.
+- A tool that is usually run by an end-user, using the {% include product %} integrations.
+- Apps usually have a graphical user interface with which the user can guide the app's operations, but they don't have to. An app can also be a command registered with the integrations, triggered by the user from the {% include product %} menu in the host software.
 - They can have an API/public methods in which other processes or apps could interact.
 - They can be multi-platform, and software agnostic.
-- They can be set up to be configured differently per [environment](https://developer.shotgunsoftware.com/487a9f2c/?title=Environment+Configuration+Reference#what-is-an-environment).
+- They can be set up to be configured differently per [environment](https://developer.shotgridsoftware.com/487a9f2c/#what-is-an-environment).
 - They can be contextually aware. For example, an app can know the task the user is working on, and act accordingly.
 - They can only be run from a Toolkit engine.
 
-Toolkit apps are initialized by Toolkit engines. [Engines](https://developer.shotgunsoftware.com/tk-core/platform.html#engines) are designed to run within a specific software environment, where they then provide an interface from which to run Toolkit apps. The engine abstracts away the complexity of needing to handle the various software environments from the app.
+Toolkit apps are initialized by Toolkit engines. [Engines](https://developer.shotgridsoftware.com/tk-core/platform.html#engines) are designed to run within a specific software environment, where they then provide an interface from which to run Toolkit apps. The engine abstracts away the complexity of needing to handle the various software environments from the app.
 This means the app only needs to focus on providing the functionality to fulfill its purpose and doesn't need to, for example, handle window parenting, keeping track of the user's context, or providing a shortcut for launching itself.
 
 ## Creating your own app.
-All apps and engines maintained and released by Shotgun Software are open source and you can find them in [GitHub](https://github.com/shotgunsoftware).
+All apps and engines maintained and released by {% include product %} Software are open source and you can find them in [GitHub](https://github.com/shotgunsoftware).
 
 This section goes through how to create a new app using our starter template. 
 We assume that you are familiar with GitHub and git workflows, but please note that you can do Toolkit development even if you are not using git as your source control solution.
@@ -70,15 +70,15 @@ Either way, the goal is to have a local copy of the starter app code so you can 
 ## Part 3: Adding the app to your config
 We recommend reading the "[Adding an app](../getting-started/installing_app.md)" guide, as it explains in more detail how to add an app to your configuration.
 
-When adding the app to your config, you need to consider where your app will be used, i.e. perhaps only in Nuke or in multiple different software, or standalone from Shotgun Desktop.
+When adding the app to your config, you need to consider where your app will be used, i.e. perhaps only in Nuke or in multiple different software, or standalone from {% include product %} Desktop.
 You also need to think about the context that your app will depend on.
 For example, can your app only run when you know the task the user is working on, or can it run with just the project known?
 Knowing this will dictate which environment YAMLs and engines you need to add your app settings to.
 
 If you're not sure right now, it's a good idea to start by adding it to the `tk-shell` engine in the project environment. 
-That way you can [run it from your IDE](./sgtk-developer-bootstrapping.md) or via the command line with the tank command if you have a [centralized config](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations). This will make it quicker to develop with.
+That way you can [run it from your IDE](./sgtk-developer-bootstrapping.md) or via the command line with the tank command if you have a [centralized config](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations). This will make it quicker to develop with.
 
-To start, use a [dev descriptor](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk) for the location of your app.
+To start, use a [dev descriptor](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk) for the location of your app.
 
 ```yaml
 tk-multi-starterapp:
@@ -127,7 +127,7 @@ save_template:
     allows_empty: False
 ```
 Creating a setting for this means you don't have to hard code the template name in your app code, 
-and [can instead get the value](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting) 
+and [can instead get the value](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting) 
 from the settings defined either by default in the `info.yml` or overridden in the environment YAML file settings.
 
 ```python
@@ -135,13 +135,13 @@ template = app.get_setting("save_template")
 ```
 This means that you could configure your app to use a different template depending on the environment the app is running in.
 
-You can read more on configuration settings [in the reference documentation](https://developer.shotgunsoftware.com/tk-core/platform.html#the-configuration-section).
+You can read more on configuration settings [in the reference documentation](https://developer.shotgridsoftware.com/tk-core/platform.html#the-configuration-section).
 
 ### Frameworks
 
 If you know that you will be using frameworks, you can add them to the manifest file.
 
-For example, if you plan to use the Qt Widgets and Shotgun Utils frameworks for your app, add the following to the `info.yml`:
+For example, if you plan to use the Qt Widgets and {% include product %} Utils frameworks for your app, add the following to the `info.yml`:
 
 ```python
 # the frameworks required to run this app
@@ -166,14 +166,14 @@ When the app is updated using `tank updates`, any configured frameworks not meet
 
 For more information about frameworks and how they can be useful, check out the following links:
 
-- [The Qt Widgets Framework](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/)
-- [The Shotgun utils Framework](https://developer.shotgunsoftware.com/tk-framework-shotgunutils/)
+- [The Qt Widgets Framework](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/)
+- [The {% include product %} utils Framework](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)
 
 ### Reloading your changes
 
 If you are testing your app within software such as Maya, then as soon as you have one or more dev items in your configuration, 
-Toolkit will automatically add a **Reload and Restart** option to the Shotgun menu.
-![Shotgun menu Reload and Restart option](./images/reload-restart.png)
+Toolkit will automatically add a **Reload and Restart** option to the {% include product %} menu.
+![{% include product %} menu Reload and Restart option](./images/reload-restart.png)
 
 Clicking this will reload your configuration and code and then restart your engine. 
 This means that you can iterate quickly: start Maya once, and then each time you make code or configuration changes that you want to try out, simply hit the **Reload and Restart** button and your changes will be pulled in. 
@@ -181,10 +181,10 @@ This means that you can iterate quickly: start Maya once, and then each time you
 {% include info title="Note" content="If you have any UIs active on screen, these will not automatically update, but you have to go in and re-launch the UIs from the menu." %}
 
 ## Part 5: Testing
-When you want to test your code, you can easily invite other users to your dev sandbox by adding them to the `User Restrictions` field on the `PipelineConfiguration` entity in Shotgun. 
-As soon as you have added a user, they will see new entries on their menus inside of Shotgun Create and the browser actions, as well as an option to pick the configuration inside of Shotgun Desktop.
+When you want to test your code, you can easily invite other users to your dev sandbox by adding them to the `User Restrictions` field on the `PipelineConfiguration` entity in {% include product %}. 
+As soon as you have added a user, they will see new entries on their menus inside of {% include product %} Create and the browser actions, as well as an option to pick the configuration inside of {% include product %} Desktop.
 
-![Dev configuration selectable in Shotgun Desktop](./images/dev-configuration.png)
+![Dev configuration selectable in {% include product %} Desktop](./images/dev-configuration.png)
 
 {% include info title="Note" content="Make sure they have access to see your app code as well, otherwise the app will not load." %}
 
@@ -193,7 +193,7 @@ As soon as you have added a user, they will see new entries on their menus insid
 In [part three](#part-3---adding-the-app-to-your-config) you set your configuration to point to your app using a dev descriptor.
 For released software, you will want to ensure that your app can be accessed by all users and that things are versioned so that they can be upgraded safely and easily.
 
-All apps provided by Shotgun use the Toolkit app store to track updates and releases, and they will have a location tag that looks something like this:
+All apps provided by {% include product %} use the Toolkit app store to track updates and releases, and they will have a location tag that looks something like this:
 
 ```yaml
 location:
@@ -206,9 +206,9 @@ Whenever the updates command is run and a new version is available, Toolkit will
 
 There are a few different options for sourcing your app releases.
 
-- [Git](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) and [GitHub](https://developer.shotgunsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
-- [Shotgun Uploads](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
-- [Local paths](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
+- [Git](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) and [GitHub](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
+- [{% include product %} Uploads](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
+- [Local paths](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
 
 In your production config, you add your app and switch to using the descriptor that suits your needs.
 
@@ -229,10 +229,10 @@ Once you have created your first tag in git (eg. `v1.0.0`), you could then set u
 Then you can simply run `tank updates`, and if new tags have been created, you will be prompted if you want to upgrade. 
 The workflow is now identical to the one which happens with official app store apps.
 
-{% include warning title="Caution" content="The git descriptor works well with [centralized configs](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), where the caching of apps is usually run by an admin and is stored to a central location where all users can access it. However, if you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations), then it may not be as suitable. Your app will be downloaded per user, which means each user will need to have git installed and setup to authenticate with your repo and access the code." %}
+{% include warning title="Caution" content="The git descriptor works well with [centralized configs](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations), where the caching of apps is usually run by an admin and is stored to a central location where all users can access it. However, if you are using a [distributed config](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations), then it may not be as suitable. Your app will be downloaded per user, which means each user will need to have git installed and setup to authenticate with your repo and access the code." %}
 
 ## Modifying an existing app
-Rather than starting from an empty starter template, it is sometimes necessary to add a minor feature to an existing app, for example, one of Shotgun Software's standard apps. 
+Rather than starting from an empty starter template, it is sometimes necessary to add a minor feature to an existing app, for example, one of {% include product %} Software's standard apps. 
 When you work with a modified version of an app, you typically want to 'track' against the source app and make sure to regularly pull in changes and bug fixes.
 
 When you do this type of development, you pick up the parent code, then apply some of your changes, then release this to your pipeline. 
@@ -255,6 +255,6 @@ The tagging scheme outlined above guarantees that the Toolkit updates work corre
 ### Contributing
 We love pull requests! If you feel you have made a change that can benefit others, don't hesitate to feed it back to us as a pull request.
 We may then fold it back into the main version of the app.
-Alternatively, add a suggestion for a new idea on our [roadmap page](https://www.shotgunsoftware.com/roadmap/).
+Alternatively, add a suggestion for a new idea on our [roadmap page](https://www.shotgridsoftware.com/roadmap/).
 
-If you've made an entire app that your willing to share with the community, let us all know on the [forums](https://community.shotgunsoftware.com/)!
+If you've made an entire app that your willing to share with the community, let us all know on the [forums](https://community.shotgridsoftware.com/)!

@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Pipeline Integrations
+title: Pipeline Integration Components
 pagename: pipeline-integrations-reference
 lang: en
 ---
 
-# Pipeline Integrations
+# Pipeline Integration Components
 
-Here you'll find reference documentation for components of the Toolkit platform
+Here you'll find reference documentation for components of the Toolkit platform.

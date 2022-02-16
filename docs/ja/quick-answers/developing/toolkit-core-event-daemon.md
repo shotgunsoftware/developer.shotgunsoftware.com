@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun Event デーモンを使用してさまざまな Toolkit コア モジュールをロードするにはどうすればいいですか?
+title: ShotGrid のイベント デーモンを使用してさまざまな Toolkit コア モジュールをロードするにはどうすればいいですか?
 pagename: toolkit-core-event-daemon
 lang: ja
 ---
@@ -13,7 +13,7 @@ lang: ja
 
 Toolkit の sgtk API はプロジェクト中心です。つまり、API を使用するプロジェクトから明示的に API を読み込まなければなりません。つまり、1 つの Python セッションで複数のプロジェクトに対して sgtk API 操作を使用すると、Python では同じ名前のモジュールを 1 回しか読み込めないため、問題が発生します。
 
-[Shotgun Event デーモン](https://github.com/shotgunsoftware/shotgunEvents)を使用している場合、特定のイベントについてはプラグイン内で Toolkit のアクションを実行することができます。これは、Python がモジュールを一度しか読み込まないため少々厄介です。そのため、プロジェクト A の Toolkit Core API をプラグインの初回実行時に読み込む場合、このバージョンはデーモンの存続期間中読み込まれたままになります。つまり、プラグインに割り当てられる次のイベントがプロジェクト B 用である場合、プロジェクト A の Core API を使用してプロジェクト B の新しい Toolkit オブジェクトのインスタンスを作成しようとすると、Toolkit にエラーが表示されます。
+[{% include product %} Event デーモン](https://github.com/shotgunsoftware/shotgunEvents) を使用している場合、特定のイベントについてはプラグイン内で Toolkit のアクションを実行することができます。 これは、Python がモジュールを一度しか読み込まないため少々厄介です。そのため、プロジェクト A の Toolkit Core API をプラグインの初回実行時に読み込む場合、このバージョンはデーモンの存続期間中読み込まれたままになります。つまり、プラグインに割り当てられる次のイベントがプロジェクト B 用である場合、プロジェクト A の Core API を使用してプロジェクト B の新しい Toolkit オブジェクトのインスタンスを作成しようとすると、Toolkit にエラーが表示されます。
 
 **一元管理設定を使用する場合の問題の例:**
 
@@ -81,7 +81,7 @@ def import_sgtk(project):
         else:
             # use the studio default one
             # this assumes you have a shared studio core installed.
-            # See https://support.shotgunsoftware.com/entries/96141707
+            # See https://developer.shotgridsoftware.com/b12f2510/#how-do-i-share-the-toolkit-core-between-projects
             core_python_path = os.path.join(shotgun_base, "studio", python_subfolder)
 
     # tweak sys.path to add the core API to the beginning so it will be picked up
@@ -100,7 +100,7 @@ def import_sgtk(project):
 
 ## 分散設定
 
-上の例では、[一元管理設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)を使用していると想定しており、[分散設定](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)を使用している場合は、状況が多少異なります。分散設定用の sgtk API を読み込むには、[ブートストラップ API](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api)を使用する必要があります。ブートストラップ API を使用する場合は、通常プロジェクト中心ではない sgtk API を読み込むことから始め、それを使用して特定のプロジェクトのエンジンをブートストラップします。ブートストラップ プロセスは sgtk モジュールのスワップ アウトを処理するので、ブートストラップ プロセスの最後にはエンジン オブジェクトがあります。ブートストラップの後に sgtk を読み込むと、プロジェクトに適した適切な sgtk モジュールが読み込まれます。上記の例のように複数のプロジェクトに対して sgtk をロードする必要がある場合は、代わりに複数のプロジェクトに対してブートストラップする必要があります。ここで少し問題になるのは、一度に実行できるエンジンは 1 つであるため、別のエンジンをロードする前に現在のエンジンを破棄する必要があることです。
+上の例では、[一元管理設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)を使用していると想定しており、[分散設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)を使用している場合は、状況が多少異なります。分散設定用の sgtk API を読み込むには、[ブートストラップ API](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api)を使用する必要があります。ブートストラップ API を使用する場合は、通常プロジェクト中心ではない sgtk API を読み込むことから始め、それを使用して特定のプロジェクトのエンジンをブートストラップします。ブートストラップ プロセスは sgtk モジュールのスワップ アウトを処理するので、ブートストラップ プロセスの最後にはエンジン オブジェクトがあります。ブートストラップの後に sgtk を読み込むと、プロジェクトに適した適切な sgtk モジュールが読み込まれます。上記の例のように複数のプロジェクトに対して sgtk をロードする必要がある場合は、代わりに複数のプロジェクトに対してブートストラップする必要があります。ここで少し問題になるのは、一度に実行できるエンジンは 1 つであるため、別のエンジンをロードする前に現在のエンジンを破棄する必要があることです。
 
 {% include warning title="警告" content="設定をブートストラップする場合、設定をローカルにキャッシュし、すべての依存関係をダウンロードする必要があるため、処理が遅くなる可能性があります。Event デーモン プラグインのブートストラップはパフォーマンスに深刻な影響を与える可能性があります。考えられるアプローチの 1 つは、プロジェクトのブートストラップごとに別々の Python インスタンスを生成し、プラグインからの通信によりコマンドを送信することです。これにより、必要になるたびにプロジェクトをブートストラップし直す必要がなくなります。"%}
 

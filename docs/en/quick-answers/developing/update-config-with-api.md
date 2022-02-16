@@ -58,4 +58,4 @@ c.execute({})
 
 See also:
 
-- [Authentication and login credentials in custom scripts](https://support.shotgunsoftware.com/entries/95445997-How-do-I-work-with-authentication-and-login-credentials-in-custom-scripts-)
+- [Authentication and login credentials in custom scripts](https://developer.shotgridsoftware.com/724152ce/)

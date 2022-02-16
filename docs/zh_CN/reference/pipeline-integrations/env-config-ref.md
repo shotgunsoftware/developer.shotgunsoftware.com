@@ -15,11 +15,11 @@ Toolkit 工作流的核心是环境配置。在 Toolkit 工作流配置中，环
 
 ## 什么是环境？
 
-Shotgun Toolkit 平台为常用内容创建软件提供了一组完全可自定义的集成，您可以通过其构建工作室工作流。在项目的配置中，您可以指定哪些软件包具有集成，在每个软件包中哪些特定 Toolkit 应用可用，以及针对每个应用所做的选择 - 构建符合工作室需求的美工人员工作流。
+{% include product %} Toolkit 平台为常用内容创建软件提供了一组完全可自定义的集成，您可以通过其构建工作室工作流。在项目的配置中，您可以指定哪些软件包具有集成，在每个软件包中哪些特定 Toolkit 应用可用，以及针对每个应用所做的选择 - 构建符合工作室需求的美工人员工作流。
 
 但在工作室工作流中，通常情况下，不同类型的美工人员一般会采用不同的工作流。举一个简单的示例，对于处理资产的美工人员，您可能希望提供纹理绘制软件（如 Mari），而对于处理镜头的美工人员，您可能希望提供合成软件（如 Nuke）。
 
-除了软件包之外，对于不同的美工人员，同一 Toolkit 应用也可能需要使用不同的设置。例如，镜头美工人员和资产美工人员都可能使用 [Workfiles 应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)，但您可能希望对文件导航进行限制：对于前者，只能导航到与镜头实体关联的文件；对于后者，只能导航到与资产实体关联的文件。
+除了软件包之外，对于不同的美工人员，同一 Toolkit 应用也可能需要使用不同的设置。例如，镜头美工人员和资产美工人员都可能使用 [Workfiles 应用](https://developer.shotgridsoftware.com/zh_CN/9a736ee3)，但您可能希望对文件导航进行限制：对于前者，只能导航到与镜头实体关联的文件；对于后者，只能导航到与资产实体关联的文件。
 
 为了在一个项目中支持不同的工作流，Toolkit 跨环境分隔其应用和插件配置。一个环境中包含一组软件包的集成及其设置，所有这些都共用一个特定上下文。
 
@@ -54,7 +54,7 @@ shot_step.yml
 
 ## Toolkit 确定当前环境的方式
 
-Toolkit 使用称为 [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) 的核心挂钩来根据当前[上下文](https://developer.shotgunsoftware.com/tk-core/core.html#context)确定要在给定时间使用的环境文件。`pick_environment` 挂钩的返回值对应于环境配置文件。例如，如果 `pick_environment` 返回 `shot_step`，则 Toolkit 将使用 `config/env/shot_step.yml` 配置 Toolkit 环境。
+Toolkit 使用称为 [pick_environment](https://github.com/shotgunsoftware/tk-core/blob/master/hooks/pick_environment.py) 的核心挂钩来根据当前[上下文](https://developer.shotgridsoftware.com/tk-core/core.html#context)确定要在给定时间使用的环境文件。`pick_environment` 挂钩的返回值对应于环境配置文件。例如，如果 `pick_environment` 返回 `shot_step`，则 Toolkit 将使用 `config/env/shot_step.yml` 配置 Toolkit 环境。
 
 ## 自定义环境
 
@@ -107,7 +107,7 @@ engines:
 
 ### 位置描述符
 
-每个 Toolkit 包都有一个 `location` 设置，我们将其称为包的描述符**。描述符告知 Toolkit 在何处查找给定包，以及根据其类型，是直接访问它还是在本地缓存它。Toolkit 包可以来自多个位置，例如，Shotgun App Store、git 库、磁盘上的路径或上传到 Shotgun 站点的 zip 文件。其中每个位置都有一个对应的描述符类型，相应类型具有特定设置。下面是上述示例中 `tk-maya` 插件的描述符：
+每个 Toolkit 包都有一个 `location` 设置，我们将其称为包的描述符**。描述符告知 Toolkit 在何处查找给定包，以及根据其类型，是直接访问它还是在本地缓存它。Toolkit 包可以来自多个位置，例如，{% include product %} App Store、git 库、磁盘上的路径或上传到 {% include product %} 站点的 zip 文件。其中每个位置都有一个对应的描述符类型，相应类型具有特定设置。下面是上述示例中 `tk-maya` 插件的描述符：
 
 ```yaml
     location:
@@ -116,7 +116,7 @@ engines:
         version: v0.9.4
 ```
 
-这是类型为 `app_store` 的描 符，此描述符告知 Toolkit 从 Shotgun App Store 获取给定包。类型为 `app_store` 的描述符具有设置 `name` 和 `version`。
+这是类型为 `app_store` 的描 符，此描述符告知 Toolkit 从 {% include product %} App Store 获取给定包。类型为 `app_store` 的描述符具有设置 `name` 和 `version`。
 
 相反，如果您正在开发自定义包 - 即您正在为工作室中的一个特定工作流编写一个 Toolkit 应用，您可能希望直接从磁盘上的路径获取它。在此示例中，将使用类型为 `dev` 的描述符，它可能如下所示：
 
@@ -128,7 +128,7 @@ engines:
 
 `dev` 描述符的设置与 `app_store` 描述符的设置不同。虽然它可以采用其他设置，但可以直接为其设置指向应用所在磁盘位置的 `path` 设置。
 
-有关所有可用描述符类型及其设置的详细信息，请参见 [Toolkit 核心 API 文档的“描述符”部分](https://developer.shotgunsoftware.com/tk-core/descriptor.html)。
+有关所有可用描述符类型及其设置的详细信息，请参见 [Toolkit 核心 API 文档的“描述符”部分](https://developer.shotgridsoftware.com/tk-core/descriptor.html)。
 
 ### 应用块
 
@@ -306,7 +306,7 @@ engines:
 
 使用稀疏配置时，难以直接通过查看配置文件确定哪些配置设置可用于应用。要确定应用有哪些配置设置可用，可以采用两种方式：
 
-* **应用文档：**每个应用都有其自己的文档页面，每个页面都有“配置选项”部分。此部分列出相应应用的所有可用配置设置，每个设置都有说明和默认值。例如，您可以[查看 Workfiles 文档页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)。[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)列出了所有应用和插件的文档页面。
+* **应用文档：**每个应用都有其自己的文档页面，每个页面都有“配置选项”部分。此部分列出相应应用的所有可用配置设置，每个设置都有说明和默认值。例如，您可以[查看 Workfiles 文档页面](https://developer.shotgridsoftware.com/zh_CN/9a736ee3)。[应用和插件页面](https://developer.shotgridsoftware.com/zh_CN/9a736ee3)列出了所有应用和插件的文档页面。
 * **清单文件：**每个 Toolkit 包的根目录中都包含一个名为 `info.yml` 的文件。我们将此文件称为包的清单文件**，此文件定义相应包的所有可用配置设置，每个设置都有说明和默认值。您可以在自己的包缓存中查找清单文件（例如工作流配置中的 `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml`），也可以在 Github 中查找清单文件（[例如，此处是 Workfiles 的清单文件](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml)）。
 
 ## 修改配置设置
@@ -343,7 +343,7 @@ engines:
 * [Toolkit 基础知识手册：编辑工作流配置](./learning-resources/guides/editing_app_setting.md)
 * [Toolkit 基础知识手册：添加应用](./learning-resources/guides/installing_app.md)
 * [动画工作流教程](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
-* [描述符参考文档](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
+* [描述符参考文档](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
 * [网络讲座：Toolkit 管理](https://youtu.be/7qZfy7KXXX0)
-* [文件系统配置参考](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868)
+* [文件系统配置参考](https://developer.shotgridsoftware.com/zh_CN/82ff76f7)
 * [默认配置环境结构自述文件](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

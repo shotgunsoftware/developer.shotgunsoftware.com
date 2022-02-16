@@ -7,7 +7,7 @@ lang: en
 
 # Fixing the SSL: CERTIFICATE_VERIFY_FAILED issues with the Python API
 
-The Python API relies on a list of certificates that is bundled with the API and on your machine in order to connect to the various webservices Shotgun uses. Unfortunately, new certificate authorities can be released and those might not be bundled with the Python API or OS.
+The Python API relies on a list of certificates that is bundled with the API and on your machine in order to connect to the various webservices {% include product %} uses. Unfortunately, new certificate authorities can be released and those might not be bundled with the Python API or OS.
 
 While our Python API comes with a very recent copy of the certificates, as of February 21st 2019, there’s a bug that prevents the API from using those certificates for Amazon S3 uploads, even if you are using the latest version of the API. For background please see [this AWS blog post](https://aws.amazon.com/blogs/security/how-to-prepare-for-aws-move-to-its-own-certificate-authority/). To remediate the situation temporarily, you can try the following solutions. 
 

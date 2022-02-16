@@ -7,7 +7,7 @@ lang: en
 
 # How do I add a shelf button to launch a Toolkit app in Maya?
 
-Adding a shelf button in Maya to launch Toolkit apps in Maya is pretty straightforward. Here is an example of how to add a custom shelf button that opens the [Loader app](https://support.shotgunsoftware.com/entries/95442527). 
+Adding a shelf button in Maya to launch Toolkit apps in Maya is pretty straightforward. Here is an example of how to add a custom shelf button that opens the [Loader app](https://developer.shotgridsoftware.com/a4c0a4f1/). 
 
 {% include info title="Note" content="This assumes Toolkit is currently enabled in your Maya session. This example code does not bootstrap Toolkit." %}
 
@@ -26,7 +26,7 @@ try:
     # get the current engine (e.g. tk-maya) 
     current_engine = sgtk.platform.current_engine() 
     if not current_engine: 
-        cmds.error("Shotgun integration is not available!") 
+        cmds.error("ShotGrid integration is not available!") 
 
     # find the current instance of the app.
     # You can print current_engine.commands to list all available commands.

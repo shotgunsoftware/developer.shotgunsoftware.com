@@ -8,7 +8,7 @@ lang: en
 # How do I work with authentication and login credentials in custom scripts?
 
 ## Error Message
-If you're seeing an error like the one below coming from your script, then it means your script is not authorized to talk to your Shotgun site.
+If you're seeing an error like the one below coming from your script, then it means your script is not authorized to talk to your {% include product %} site.
 
 ```text
 tank.errors.TankError: Missing required script user in config '/path/to/your/project/config/core/shotgun.yml'
@@ -50,7 +50,7 @@ user = authenticator.get_user()
 
 # print "User is '%s'" % user
 
-# Tells Toolkit which user to use for connecting to Shotgun. Note that this should
+# Tells Toolkit which user to use for connecting to ShotGrid. Note that this should
 # always take place before creating a Sgtk instance.
 sgtk.set_authenticated_user(user)
 
@@ -71,7 +71,8 @@ If `QApplication` is available, you'll get something akin to this:
 {% include info title="Note" content="If you are importing a Toolkit API (`sgtk` package) that isn't associated with a configuration, for example one that you have downloaded to use to bootstrap into a different configuration, then you shouldn't attempt to create a `CoreDefaultsManager`. Instead, create a `ShotgunAuthenticator()` instance without passing a defaults manager.
 ```python
 authenticator = ShotgunAuthenticator()
-```" %}
+```
+" %}
 
 ## Non-user-facing scripts
 If the script is not user-facing, like on a render farm or in the event handler, you can add this at the beginning, before creating a Sgtk/Tank instance:
@@ -95,12 +96,12 @@ authenticator = ShotgunAuthenticator(cdm)
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
     api_script="Toolkit",
-    api_key="4e48f....<use the key from your Shotgun site>"
+    api_key="4e48f....<use the key from your ShotGrid site>"
 )
 
 # print "User is '%s'" % user
 
-# Tells Toolkit which user to use for connecting to Shotgun.
+# Tells Toolkit which user to use for connecting to ShotGrid.
 sgtk.set_authenticated_user(user)
 ```
 

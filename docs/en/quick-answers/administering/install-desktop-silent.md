@@ -1,13 +1,13 @@
 ---
 layout: default
-title: How do I install the Shotgun Desktop silently on Windows?
+title: How do I install the ShotGrid Desktop silently on Windows?
 pagename: install-desktop-silent
 lang: en
 ---
 
-# How do I install the Shotgun Desktop silently on Windows?
+# How do I install the {% include product %} Desktop silently on Windows?
 
-To run the Shotgun Desktop installer silently, simply launch the Shotgun Desktop installer the following way:
+To run the {% include product %} Desktop installer silently, simply launch the {% include product %} Desktop installer the following way:
 
 `ShotgunInstaller_Current.exe /S`
 

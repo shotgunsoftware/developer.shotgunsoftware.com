@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 如何使用 Shotgun Event 进程加载不同的 Toolkit 核心模块？
+title: 如何使用 ShotGrid 事件进程加载不同的 Toolkit 核心模块？
 pagename: toolkit-core-event-daemon
 lang: zh_CN
 ---
@@ -13,7 +13,7 @@ lang: zh_CN
 
 Toolkit 的 sgtk API 以项目为中心。换句话说，您必须专门从要使用它的项目导入此 API。这意味着，如果您在单个 Python 会话中对多个项目使用 sgtk API 操作，您将会遇到问题，因为 Python 仅允许具有相同名称的模块导入一次。
 
-如果您使用的是 [Shotgun Event 进程](https://github.com/shotgunsoftware/shotgunEvents)，您可能需要在特定事件对应的插件内部执行 Toolkit 操作。这并非易事，因为 Python 仅导入一次模块。因此，如果您在第一次运行该插件时导入了用于项目 A 的 Toolkit 核心 API，则在此进程的使用周期内将始终导入该版本。这意味着，如果分派给该插件的下一个事件用于项目 B，则当您尝试使用来自项目 A 的核心 API 实例化用于项目 B 的新 Toolkit 对象时，可能会发生错误。
+如果您使用的是 [{% include product %} 事件进程](https://github.com/shotgunsoftware/shotgunEvents)，您可能需要在特定事件对应的插件内部执行 Toolkit 操作。这并非易事，因为 Python 仅导入一次模块。因此，如果您在第一次运行该插件时导入了用于项目 A 的 Toolkit 核心 API，则在此进程的使用周期内将始终导入该版本。这意味着，如果分派给该插件的下一个事件用于项目 B，则当您尝试使用来自项目 A 的核心 API 实例化用于项目 B 的新 Toolkit 对象时，可能会发生错误。
 
 **使用集中式配置时的问题示例：**
 
@@ -81,7 +81,7 @@ def import_sgtk(project):
         else:
             # use the studio default one
             # this assumes you have a shared studio core installed.
-            # See https://support.shotgunsoftware.com/entries/96141707
+            # See https://developer.shotgridsoftware.com/b12f2510/#how-do-i-share-the-toolkit-core-between-projects
             core_python_path = os.path.join(shotgun_base, "studio", python_subfolder)
 
     # tweak sys.path to add the core API to the beginning so it will be picked up
@@ -100,7 +100,7 @@ def import_sgtk(project):
 
 ## 分布式配置
 
-上述示例假设您使用的是[集中式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)，但是，如果您使用的是[分布式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)，情况可能略有不同。要为分布式配置导入 sgtk API，您需要使用[引导 API](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api)。使用引导 API 时，您通常应首先导入不以项目为中心的 sgtk API，然后使用此 sgtk API 为指定项目引导插件。引导过程将换出 sgtk 模块，以便在引导过程结束后具有插件对象。如果在引导后导入 sgtk，它将导入适合您的项目的相关 sgtk 模块。在上面的示例中，需要为多个项目加载 sgtk，因此需要针对多个项目进行引导。有一个小问题是您一次只能运行一个插件，因此您在加载其他插件之前必须将其破坏。
+上述示例假设您使用的是[集中式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)，但是，如果您使用的是[分布式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)，情况可能略有不同。要为分布式配置导入 sgtk API，您需要使用[引导 API](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api)。使用引导 API 时，您通常应首先导入不以项目为中心的 sgtk API，然后使用此 sgtk API 为指定项目引导插件。引导过程将换出 sgtk 模块，以便在引导过程结束后具有插件对象。如果在引导后导入 sgtk，它将导入适合您的项目的相关 sgtk 模块。在上面的示例中，需要为多个项目加载 sgtk，因此需要针对多个项目进行引导。有一个小问题是您一次只能运行一个插件，因此您在加载其他插件之前必须将其破坏。
 
 {% include warning title="警告" content="引导配置可能会很慢，因为此过程需要确保在本地缓存配置并且将下载所有依存关系。在事件进程插件中引导可能会严重影响性能。一种可能的方法是，针对每次项目引导添加单独 Python 实例，以便从插件进行通信和发送命令。这将避免在每次需要项目时必须重新引导它。" %}
 

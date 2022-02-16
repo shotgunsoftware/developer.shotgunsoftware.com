@@ -7,9 +7,9 @@ lang: zh_CN
 
 # 如何将我的工作流配置移动到新位置？
 
-{% include info title="注意" content="本文档的内容仅适用于[集中式配置设置](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)。[分布式配置](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)在本地缓存到各个客户端计算机，并由 Toolkit 自动管理。" %}
+{% include info title="注意" content="本文档的内容仅适用于[集中式配置设置](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)。[分布式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)在本地缓存到各个客户端计算机，并由 Toolkit 自动管理。" %}
 
-要将工作流配置移动到新位置，最简单的方法是使用 `tank move_configuration` 命令。该命令将移动文件，更新 Shotgun，并更新配置文件以指向新位置。
+要将工作流配置移动到新位置，最简单的方法是使用 `tank move_configuration` 命令。该命令将移动文件，更新 {% include product %}，并更新配置文件以指向新位置。
 
 以下情况下此命令也非常有用：您仅移动单个操作系统的位置，或者以前未使用某个操作系统，但现在想添加该操作系统。Toolkit 将检测需要移动或添加的内容以及不需要移动或添加的内容，同时还会向您显示即将执行的操作，以便您在继续操作之前进行确认。
 
@@ -27,10 +27,10 @@ lang: zh_CN
         $ cd /sgtk/software/shotgun/scarlet
         $ ./tank move_configuration
 
-        Welcome to the Shotgun Pipeline Toolkit!
-        For documentation, see https://toolkit.shotgunsoftware.com
+        Welcome to the {% include product %} Pipeline Toolkit!
+        For documentation, see https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide
         Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
-        - The path is not associated with any Shotgun object.
+        - The path is not associated with any {% include product %} object.
         - Falling back on default project settings.
         - Using configuration 'Primary' and Core v0.15.22
         - Setting the Context to Scarlet.
@@ -71,10 +71,10 @@ lang: zh_CN
         $ cd /sgtk/software/shotgun/scarlet
         $ ./tank move_configuration "/mnt/hgfs/sgtk/software/shotgun/scarlet_new" "z:\sgtk\software\shotgun\scarlet_new" "/sgtk/software/shotgun/scarlet_new"
 
-        Welcome to the Shotgun Pipeline Toolkit!
-        For documentation, see https://toolkit.shotgunsoftware.com
+        Welcome to the {% include product %} Pipeline Toolkit!
+        For documentation, see https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide
         Starting toolkit for path '/sgtk/software/shotgun/scarlet'
-        - The path is not associated with any Shotgun object.
+        - The path is not associated with any {% include product %} object.
         - Falling back on default project settings.
         - Using configuration 'Primary' and Core v0.15.22
         - Setting the Context to Scarlet.
@@ -129,7 +129,7 @@ lang: zh_CN
         Copying /sgtk/software/shotgun/scarlet/install/frameworks...
         Copying /sgtk/software/shotgun/scarlet/install/frameworks/app_store...
         Updating cached locations in /sgtk/software/shotgun/scarlet_new/config/core/install_location.yml...
-        Updating Shotgun Configuration Record...
+        Updating {% include product %} Configuration Record...
         Deleting original configuration files...
 
         All done! Your configuration has been successfully moved.
@@ -151,7 +151,7 @@ lang: zh_CN
 
    更新此文件中的路径，以指向工作流配置在所有适用平台上的新位置。如果您未使用平台，请输入空字符串 `''`
 
-        # Shotgun Pipeline Toolkit configuration file
+        # {% include product %} Pipeline Toolkit configuration file
         # This file was automatically created by setup_project
         # This file reflects the paths in the primary pipeline
 
@@ -162,9 +162,9 @@ lang: zh_CN
 
         # End of file.
 
-3. 在 Shotgun 中找到与此项目对应的 PipelineConfiguration 实体，并修改“Linux 路径”(Linux Path)、“Mac 路径”(Mac Path)和“Windows 路径”(Windows Path)字段值，以匹配您在上面所做的更改。
+3. 在 {% include product %} 中找到与此项目对应的 PipelineConfiguration 实体，并修改“Linux 路径”(Linux Path)、“Mac 路径”(Mac Path)和“Windows 路径”(Windows Path)字段值，以匹配您在上面所做的更改。
 
-![Shotgun 中的工作流配置位置。](images/new-pipeline-configuration-locations.png)
+![ShotGrid 中的工作流配置位置。](images/new-pipeline-configuration-locations.png)
 
 现在，您的工作流配置应该会在新位置按预期工作。
 

@@ -7,7 +7,7 @@ lang: zh_CN
 
 # 如何在 Maya 中添加用于启动 Toolki 应用的工具架按钮？
 
-在 Maya 中添加一个用于启动 Maya 的 Toolkit 应用的工具架按钮是一项非常简单的操作。以下示例显示了如何添加自定义工具架按钮，以便打开[加载器应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033078)。
+在 Maya 中添加一个用于启动 Maya 的 Toolkit 应用的工具架按钮是一项非常简单的操作。以下示例显示了如何添加自定义工具架按钮，以便打开[加载器应用](https://developer.shotgridsoftware.com/zh_CN/a4c0a4f1/)。
 
 {% include info title="注意" content="假设 Toolkit 当前在 Maya 会话中处于启用状态。此示例代码不会引导 Toolkit。" %}
 
@@ -26,7 +26,7 @@ try:
     # get the current engine (e.g. tk-maya)
     current_engine = sgtk.platform.current_engine()
     if not current_engine:
-        cmds.error("Shotgun integration is not available!")
+        cmds.error("ShotGrid integration is not available!")
 
     # find the current instance of the app.
     # You can print current_engine.commands to list all available commands.
@@ -43,6 +43,6 @@ except Exception, e:
     cmds.error(msg)
 ```
 
-选择此代码并将其拖动到自定义工具架。请参见 [Maya 文档以了解有关如何使用自定义工具架按钮的详细信息](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/CHS/Maya/files/GUID-C693E884-F81A-4858-B5D6-3856EB8F394E-htm.html)。
+选择此代码并将其拖动到自定义工具架。请参见 [Maya 文档以了解有关如何使用自定义工具架按钮的详细信息](https://knowledge.autodesk.com/zh-hans/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/CHS/Maya/files/GUID-C693E884-F81A-4858-B5D6-3856EB8F394E-htm.html)。
 
 您应该可以使用此代码示例启动在 Maya 中启用的任何 Toolkit 应用，方法是修改顶部的 `tk_app` 和 `call_func` 变量。

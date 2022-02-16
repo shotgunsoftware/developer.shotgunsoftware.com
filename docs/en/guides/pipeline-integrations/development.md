@@ -10,7 +10,7 @@ lang: en
 ## What is Toolkit?
 
 Toolkit is the platform that underpins our pipeline integrations. 
-For example, If you are using the Shotgun Panel app in Maya or launching the Publish app from Shotgun Create, you are using tools built upon the Toolkit platform.
+For example, If you are using the {% include product %} Panel app in Maya or launching the Publish app from {% include product %} Create, you are using tools built upon the Toolkit platform.
 
 ## How can I develop with Toolkit?
 
@@ -22,13 +22,13 @@ There are a number of different ways in which you can develop with Toolkit.
 
 To do any of these things it's important to understand how to work with the Toolkit API.
 
-Shotgun as a whole has three main API's
-- [Shotgun Python API](https://developer.shotgunsoftware.com/python-api)
-- [Shotgun REST API](https://developer.shotgunsoftware.com/rest-api/)
-- [Shotgun Toolkit API](https://developer.shotgunsoftware.com/tk-core)
+{% include product %} as a whole has three main API's
+- [{% include product %} Python API](https://developer.shotgridsoftware.com/python-api)
+- [{% include product %} REST API](https://developer.shotgridsoftware.com/rest-api/)
+- [{% include product %} Toolkit API](https://developer.shotgridsoftware.com/tk-core)
 
-The Toolkit API is a Python API, designed to be used alongside the Shotgun Python API or REST API, and is not a replacement for them.
-Although the Toolkit API does have some wrapper methods, in general whenever you need to access data from your Shotgun site you will use the Shotgun Python or REST APIs instead.
+The Toolkit API is a Python API, designed to be used alongside the {% include product %} Python API or REST API, and is not a replacement for them.
+Although the Toolkit API does have some wrapper methods, in general whenever you need to access data from your {% include product %} site you will use the {% include product %} Python or REST APIs instead.
 
 The Toolkit API instead focuses on the integrations and management of file paths.
 Some Toolkit apps and frameworks also [have their own APIs](../../reference/pipeline-integrations.md).  

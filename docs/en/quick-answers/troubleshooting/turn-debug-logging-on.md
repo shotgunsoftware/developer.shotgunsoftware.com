@@ -11,17 +11,18 @@ Sometimes you want to see more logging data than Toolkit tools output by default
 
 {% include info title="Note" content="Not sure where to find your log files? Take a look at our [Where are my log files?](./where-are-my-log-files.md) doc." %}
 
-## Enable debugging through Shotgun Desktop
+## Enable debugging through {% include product %} Desktop
 
-The easiest way to enable debugging is to toggle it on through the Shotgun Desktop app. This can be set once you are logged into Shotgun Desktop: click on your profile picture in the bottom right of the app, and select **Advanced -> Toggle Debug Logging**. This setting is persistent between sessions, so remember to turn it off when you are finished.
+The easiest way to enable debugging is to toggle it on through the {% include product %} Desktop app. This can be set once you are logged into {% include product %} Desktop: click on your profile picture in the bottom right of the app, and select **Advanced -> Toggle Debug Logging**. This setting is persistent between sessions, so remember to turn it off when you are finished.
 
 ![Toggle debug logging in SG Desktop](images/desktop-enable-debug-logging.png)
 
-It should also be noted that when this is toggled on, apps launched from Shotgun Desktop, or even the Toolkit commands through the browser integration, will also inherit this debug state.
+It should also be noted that when this is toggled on, apps launched from {% include product %} Desktop, or even the Toolkit commands through the browser integration, will also inherit this debug state.
 
 ## Setting up an environment variable
 
 ### Permanently turning on debug logging
+
 First, you will need to set up a new environment variable: `TK_DEBUG=1`
 
 {% include info title="Note" content="We suggest discussing how to set up environment variables with a technical expert at your studio since instructions are platform specific. However, the example below includes setting up an environment variable on a Windows 7 machine." %}
@@ -61,7 +62,7 @@ If you would like to use debug logging temporarily for a session instead, you ca
 
 Then, launch the Desktop through your terminal.
 
-{% include info title="Note" content="Once you close Shotgun Desktop and your terminal, debug logging is no longer turned on." %}
+{% include info title="Note" content="Once you close ShotGrid Desktop and your terminal, debug logging is no longer turned on." %}
 
 
 
@@ -71,7 +72,7 @@ If you are in an advanced setup, there are a few more options for you. This func
 
 Every engine has a `debug_logging` setting in the environment file. Turning this on will emit additional debug-level log messages to the default output in your Software (e.g., the script editor in Nuke or Maya). All of the apps running in your engine will emit these debug-level messages so turning this on for the engine will effectively turn it on for all of your apps as well.
 
-This does not output any log messages to a file. We are working on a more standard logging framework that will allow this. The exceptions are [Shotgun Desktop](https://support.shotgunsoftware.com/hc/en-us/articles/219039818-Shotgun-Desktop) and the [Photoshop engine](https://support.shotgunsoftware.com/hc/en-us/articles/115000026653-Photoshop-CC), which log output both in a GUI console and to a file.
+This does not output any log messages to a file. We are working on a more standard logging framework that will allow this. The exceptions are [{% include product %} Desktop](https://developer.shotgridsoftware.com/d587be80/#getting-started-with-desktop) and the [Photoshop engine](https://developer.shotgridsoftware.com/8d461cbe/), which log output both in a GUI console and to a file.
 
 ### Turning on debug logging for an engine in your software
 
@@ -97,7 +98,7 @@ engines:
 
 Save the file and relaunch Nuke in the shot step environment. You will now see the debug output in the script editor window. 
 
-{% include info title="Note" content="If debug logging is enabled via any one of the Shotgun Desktop checkbox, environment variable, or engine configuration setting, debug logging will be output. Additionally, each of these three is modified independently of the others: the checkbox value a persistent app setting, totally independent of the engine setting or environment variable. This means that while the Desktop checkbox may be unchecked, debug logging might still be enabled by way of one of the other methods." %}
+{% include info title="Note" content="If debug logging is enabled via any one of the ShotGrid Desktop checkbox, environment variable, or engine configuration setting, debug logging will be output. Additionally, each of these three is modified independently of the others: the checkbox value a persistent app setting, totally independent of the engine setting or environment variable. This means that while the Desktop checkbox may be unchecked, debug logging might still be enabled by way of one of the other methods." %}
 
 ### Turning on debug logging for the tank command
 
@@ -131,7 +132,7 @@ If you’re running the tank command and want to see debug output in your termin
     /sgtk/software/shotgun/scarlet/install/core/scripts/tank_cmd.py
     
     Welcome to the Shotgun Pipeline Toolkit!
-    For documentation, see https://toolkit.shotgunsoftware.com
+    For documentation, see https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide
     Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
     - The path is not associated with any Shotgun object.
     - Falling back on default project settings.
@@ -151,7 +152,7 @@ If you’re running the tank command and want to see debug output in your termin
     ----------------------------------------------------------------------
     
     
-    Welcome to the Shotgun Pipeline Toolkit update checker!
+    Welcome to the {% include product %} Pipeline Toolkit update checker!
     This script will check if the Toolkit Core API installed
     in /sgtk/software/shotgun/scarlet
     is up to date.

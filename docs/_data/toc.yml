@@ -1,6 +1,6 @@
 # This file holds the table of contents for the site
 #
-# For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
+# For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/toc/
 #
 #
 # NOTE: All external links pointing at the developer site (for example to sphinx docs)
@@ -15,6 +15,7 @@
   children:
     - page: toolkit-pipeline-integrations
       children:
+      - page: integrations-user-guide
       - page: toolkit-getting-started
         children:
         - page: toolkit-guides-advanced-config
@@ -24,106 +25,211 @@
       - page: toolkit-workflows
         children:
         - page: toolkit-pipeline-tutorial
-        - text: episodic-pipeline-tutorial
-          url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002689053-Episodic-workflow-with-Nuke-Studio"
+        - page: episodic-nuke-tutorial
+      - page: alias-shotgrid-workflows
+        children:
+        - text: working-with-shotgrid
+          url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=Alias_ShotGrid_Workflows_alias_shotgrid_working_with_html"
+        - text: loading-in-alias
+          url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=Alias_ShotGrid_Workflows_alias_shotgrid_loading_html"
+        - text: publishing-in-alias
+          url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=Alias_ShotGrid_Workflows_alias_shotgrid_publishing_html"
+        - text: scene-breakdown-in-alias
+          url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=Alias_ShotGrid_Workflows_alias_shotgrid_scene_breakdown_html"
       - page: toolkit-administration
         children:
-        - page: disabling-auto-updates-and-offline
+        - page: toolkit-overview
+        - page: integrations-admin-guide
+        - page: beyond-your-first-project
+        - page: advanced-toolkit-administration
+        - page: config-staging-and-rollout
+        - page: setting-python-3-desktop
+        - page: community-shared-integrations
+        - page: other-integrations
+        - page: turn-off-auto-updates-and-offline
+        - page: toolkit-fs-config-ref
+        - page: toolkit-apps-and-engines-config-ref
       - page: toolkit-development
         children:
          - page: sgtk-developer-getting-started
+         - page: sgtk-developer-guide
          - page: sgtk-developer-generating-path-and-publish
          - page: sgtk-developer-bootstrapping
          - page: sgtk-developer-app
          - page: sgtk-developer-engine
          - page: sgtk-developer-framework
+         - page: sgtk-how-to-submit-fixes
+      - page: quick-answers-troubleshooting
     - page: review
       children:
+      - page: rv-developer-overview
       - text: rv-user-manual
-        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024712894-User-Manual"
+        url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_RV_rv_manuals_rv_user_manual_html"
       - text: rv-sdi
-        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025736833-RV-SDI-Manual"
+        url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_RV_rv_manuals_rv_rv_sdi_manual_html"
       - text: rv-maya-integration
-        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360025583533-RV-Maya-Integration-v1-4-"
+        url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_RV_rv_manuals_rv_maya_integration_html"
       - text: rv-nuke-integration
-        url: " https://support.shotgunsoftware.com/hc/en-us/articles/219042148-Nuke-RV-integration"
-      - text: rv-shotgun-integration
-        url: " https://support.shotgunsoftware.com/hc/en-us/articles/360013250713"
-      - text: screening-room-and-shotgun-review
-        url: " https://support.shotgunsoftware.com/hc/en-us/articles/223949707-What-s-the-difference-between-Screening-Room-and-Shotgun-Review-"
-    - text: action-menu-items
-      url: " https://support.shotgunsoftware.com/entries/110709-How-to-create-custom-menu-items-for-integration-with-other-pipeline-tools"
-    - text: event-triggers
-      url: " https://github.com/shotgunsoftware/shotgunEvents/wiki"
+        url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_RV_rv_knowledge_base_rv_nuke_integration_html"
+      - text: rv-shotgrid-integration
+        url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_RV_rv_packages_rv_integrations_7_3_0_html"
+    - page: event-daemon
+      children:
+        - page: event-daemon-installation
+        - page: event-daemon-configuration
+        - page: event-daemon-plugins
+        - page: event-daemon-api
+        - page: event-daemon-technical-details
+        - page: event-daemon-example-plugins
+    - page: action-menu-items-intro
+      children:
+        - page: action-menu-items-create
+        - page: custom-browser-protocols
     - text: jira-bridge-guide
-      url: " https://developer.shotgunsoftware.com/sg-jira-bridge/index.html"
+      url: " https://developer.shotgridsoftware.com/sg-jira-bridge/index.html"
     - page: shotgun-webhooks
+      children:
+      - page: webhooks-batch-deliveries
     - page: python-3-best-practices
 
 - caption: reference
   children:
-  - text: python-api
-    url: " https://developer.shotgunsoftware.com/python-api/"
+  - page: developer-overview
+  - page: python-api-intro
+    children:
+    - page: python-api-overview
+    - page: python-api-best-practices
+    - page: python-api-permissions
+    - page: python-api-create-manage
+    - text: python-api
+      url: " https://developer.shotgridsoftware.com/python-api/"
   - text: rest-api
-    url: " https://developer.shotgunsoftware.com/rest-api/"
+    url: " https://developer.shotgridsoftware.com/rest-api/"
+  - text: core-api
+    url: " https://developer.shotgridsoftware.com/tk-core"
   - text: jira-bridge-ref
-    url: " https://developer.shotgunsoftware.com/sg-jira-bridge/developer.html"
+    url: " https://developer.shotgridsoftware.com/sg-jira-bridge/developer.html"
   - text: rv-technical-reference
-    url: " https://support.shotgunsoftware.com/hc/en-us/articles/360024280254-Reference-Manual"
+    url: " https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_RV_rv_manuals_rv_reference_manual_html"
   - page: pipeline-integrations-reference
     children:
-    - text: core-api
-      url: " https://developer.shotgunsoftware.com/tk-core"
-    - text: qt-widgets
-      url: " https://developer.shotgunsoftware.com/tk-framework-qtwidgets/"
-    - text: shotgun-utils
-      url: " https://developer.shotgunsoftware.com/tk-framework-shotgunutils/"
-    - text: publish-api
-      url: " https://developer.shotgunsoftware.com/tk-multi-publish2/"
-    - text: hiero-export-api
-      url: " https://developer.shotgunsoftware.com/tk-hiero-export"
-    - text: file-system-configuration
-      url: " https://support.shotgunsoftware.com/hc/en-us/articles/219039868-Integrations-File-System-Reference"
-    - page: env-config-ref
+    - page: toolkit-apis
+      children:
+      - text: publish-api
+        url: " https://developer.shotgridsoftware.com/tk-multi-publish2/"
+      - text: hiero-export-api
+        url: " https://developer.shotgridsoftware.com/tk-hiero-export"
+    - page: toolkit-apps
+      children:
+      - page: tk-multi-about
+      - page: tk-multi-breakdown
+      - page: tk-multi-demo
+      - page: tk-multi-launchapp
+      - page: tk-multi-loader2
+      - page: tk-multi-publish2
+      - page: tk-multi-pythonconsole
+      - page: tk-multi-reviewsubmission
+      - page: tk-multi-screeningroom
+      - page: tk-multi-setframerange
+      - page: tk-multi-shotgunpanel
+      # No docs for the Mari project manager, but we'll keep it here
+      # for if we get to putting basic docs together for it in the
+      # future.
+      # - page: tk-multi-snapshot
+      - page: tk-multi-workfiles2
+      - page: tk-hiero-export
+      - page: tk-hiero-openinshotgun
+      - page: tk-mari-projectmanager
+      - page: tk-nuke-quickreview
+      - page: tk-nuke-writenode
+      - page: tk-multi-snapshot
+      - page: tk-shotgun-folders
+      - page: tk-shotgun-launchfolder
+      - page: tk-shotgun-launchpublish
+      - page: tk-flame-export
+      - page: tk-flame-review
+      - page: tk-houdini-alembicnode
+      - page: tk-houdini-mantranode
+      # No docs for the Mari project manager, but we'll keep it here
+      # for if we get to putting basic docs together for it in the
+      # future. 
+      # - page: tk-mari-projectmanager
+    - page: toolkit-engines
+      children:
+      - page: tk-3dsmax
+      - page: tk-3dsmax-plus
+      - page: tk-aftereffects
+      - page: tk-alias
+      - page: tk-create
+      - page: tk-desktop
+      - page: tk-flame
+      - page: tk-houdini
+      - page: tk-mari
+      - page: tk-maya
+      - page: tk-motionbuilder
+      - page: tk-nuke
+      - page: tk-photoshopcc
+      - page: tk-shell
+      - page: tk-shotgun
+      - page: tk-vred
+    - page: toolkit-engines-supported-versions
+    - page: toolkit-engines-supported-os
+    - page: toolkit-frameworks
+      children:
+      - text: qt-widgets
+        url: " https://developer.shotgridsoftware.com/tk-framework-qtwidgets/"
+      - text: shotgun-utils
+        url: " https://developer.shotgridsoftware.com/tk-framework-shotgunutils/"
+      - page: tk-framework-adminui
+      - page: tk-framework-desktopstartup
+      - page: tk-framework-desktopserver
+    - page: toolkit-configuration
+      children:
+      - text: file-system-configuration
+        url: " https://developer.shotgridsoftware.com/82ff76f7/"
+      - page: toolkit-config-ref
 
-- caption: offerings
+- caption: trusted-solutions
   children:
     - page: cloud-index
-    - page: spc-index
+    - page: tier1-index
       children:
-      - page: spc-getting_started
+      - page: tier1-getting_started
         children:
-        - page: spc-getting_started-about
-        - page: spc-getting_started-responsibilities
-        - page: spc-getting_started-onboarding
-        - page: spc-getting_started-planning
-      - page: spc-setup
+        - page: tier1-getting_started-about
+        - page: tier1-getting_started-responsibilities
+        - page: tier1-getting_started-onboarding
+      - page: tier1-features
         children:
-        - page: spc-setup-workflow
-        - page: spc-setup-aws_account
-        - page: spc-setup-s3_bucket
-        - page: spc-setup-closed_vpc
-        - page: spc-setup-media_segregation
-        - page: spc-setup-traffic_segregation
-        - page: spc-setup-tuning
-        - page: spc-setup-s3_replication
-      - page: spc-knowledge
+        - page: tier1-features-media-isolation
+        - page: tier1-features-media-traffic-isolation
+        - page: tier1-features-web-traffic-isolation
+        - page: tier1-features-media-replication
+      - page: tier1-setup
         children:
-        - page: spc-knowledge-connecting
-        - page: spc-knowledge-direct_connect_onboarding
-        - page: spc-knowledge-s3
-        - page: spc-knowledge-vpc_iam_sec
-        - page: spc-knowledge-direct_connect
-        - page: spc-knowledge-private_link
-        - page: spc-knowledge-endpoints
-        - page: spc-knowledge-aws
-#      - page: spc-learn
-    - page: enterprise-index
+        - page: tier1-getting_started-planning
+        - page: tier1-setup-shotgun_poc_site
+        - page: tier1-setup-s3_bucket
+        - page: tier1-setup-media_segregation
+        - page: tier1-setup-media_segregation_s3_proxy
+        - page: tier1-setup-traffic_segregation
+        - page: tier1-setup-s3_replication
+        - page: tier1-setup-tuning
+        - page: tier1-setup-migration
+      - page: tier1-knowledge
+        children:
+        - page: tier1-knowledge-connecting
+        - page: tier1-knowledge-direct_connect_onboarding
+        - page: tier1-knowledge-s3
+        - page: tier1-knowledge-vpc_iam_sec
+        - page: tier1-knowledge-direct_connect
+        - page: tier1-knowledge-private_link
+        - page: tier1-knowledge-endpoints
+        - page: tier1-knowledge-aws
 
 - caption: quick-answers
   children:
   - page: quick-answers-administering
-  - page: quick-answers-troubleshooting
   - page: quick-answers-developing
   - page: quick-answers-workflow
 
@@ -131,19 +237,14 @@
   children:
   - text: siggraph-shotgun-day
     url: " https://www.youtube.com/playlist?list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d"
-  - text: developer-training
-    url: " https://support.shotgunsoftware.com/hc/en-us/articles/115002525494-Developer-Training-Shotgun"
-  - text: toolkit-webinars
-    url: " https://support.shotgunsoftware.com/hc/en-us/articles/360002566514"
+  - page: video-webinars
 
 - caption: other
   children:
   - text: community
-    url: " https://community.shotgunsoftware.com/"
+    url: " https://community.shotgridsoftware.com/"
   - page: contribution-index
-  - text: shotgun-support
-    url: " https://support.shotgunsoftware.com/"
   - text: service-status
-    url: " https://status.shotgunsoftware.com/"
-  - text: new-support-request
-    url: " https://support.shotgunsoftware.com/hc/requests/new"
+    url: " https://status.shotgridsoftware.com/"
+  - text: shotgrid-documentation
+    url: " https://help.autodesk.com/view/SGSUB/ENU/"

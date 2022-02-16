@@ -9,12 +9,11 @@ lang: zh_CN
 
 ## 概述
 
-在 Shotgun 中，动作菜单有时不显示可用 Toolkit 应用程序的列表，或者在使用本地文件链接时有时会出错，即使 Shotgun Desktop 正在运行中。
-这是 Firefox 中的 Shotgun Desktop 浏览器集成的疑难解答手册，希望对您有所帮助。我们为 [Chrome](./cant-use-file-linking-toolkit-app-chrome.md) 提供单独手册。
+在 {% include product %} 中，动作菜单有时不显示可用 Toolkit 应用程序的列表，或者在使用本地文件链接时有时会出错，即使 {% include product %} Desktop 正在运行中。这是 Firefox 中的 {% include product %} Desktop 浏览器集成的疑难解答手册，希望对您有所帮助。我们为 [Chrome](./cant-use-file-linking-toolkit-app-chrome.md) 提供单独手册。
 
 ## 诊断问题
 
-### Shotgun Desktop 是否正在运行？
+### {% include product %} Desktop 是否正在运行？
 
 是的，我们知道。您可能已经检查过了，但我们必须要问一下。:)
 
@@ -24,7 +23,7 @@ lang: zh_CN
 
 ### Firefox 是否拒绝证书？
 
-您可以浏览到 https://localhost:9000 来确认 Firefox 是否接受证书，这是 Shotgun 网站为了执行本地文件链接和启动 Toolkit 应用程序而尝试访问的网址。您通常会看到以下消息：
+您可以浏览到 https://localhost:9000 来确认 Firefox 是否接受证书，这是 {% include product %} 网站为了执行本地文件链接和启动 Toolkit 应用程序而尝试访问的网址。您通常会看到以下消息：
 
 ![Autobahn Python 消息](images/autobahn-python.png)
 
@@ -40,9 +39,9 @@ lang: zh_CN
 
 ![向 Firefox 添加例外](images/add-exception-firefox.png)
 
-**单击**获取证书**，然后选择**确定安全例外。您可以忽略证书不受信任的消息。这很正常，因为证书是由 Shotgun Desktop 生成的，而不是由证书颁发机构生成。
+**单击**获取证书**，然后选择**确定安全例外。您可以忽略证书不受信任的消息。这很正常，因为证书是由 {% include product %} Desktop 生成的，而不是由证书颁发机构生成。
 
-您现在应该可以从您的 Shotgun 站点访问本地文件链接和启动 Toolkit 应用程序了。如果在添加例外后仍有问题，请联系我们：support@shotgunsoftware.com。
+您现在应该可以从您的 {% include product %} 站点访问本地文件链接和启动 Toolkit 应用程序了。如果在添加例外后仍遇到问题，请访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)以获取帮助。
 
 ## 如何修复“安全连接失败”问题
 
@@ -58,4 +57,4 @@ lang: zh_CN
 
 此时，需要按照上面所述的步骤添加一个例外。
 
-如果您看到的屏幕不是这样，请联系我们：support@shotgunsoftware.com。
+如果您所看到的屏幕不是这样，请访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)以获取帮助。

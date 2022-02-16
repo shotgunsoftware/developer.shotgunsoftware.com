@@ -13,4 +13,4 @@ Dig into RV's Reference Manuals for a complete understanding of node graphs, cus
 
 Check out the RV-SDI manual to learn about our implementation of the NVIDIA SDI video device as a presentation mode device.
 
-Look to our Integration Packages for seamless workflows with Maya, Nuke, and even Shotgun itself.
+Look to our Integration Packages for seamless workflows with Maya, Nuke, and even {% include product %} itself.

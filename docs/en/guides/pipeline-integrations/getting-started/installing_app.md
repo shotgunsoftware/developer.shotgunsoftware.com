@@ -16,9 +16,9 @@ By completing this guide, you will quickly become acquainted with the configurat
 
 ## About the guide
 
-This guide will demonstrate how to add a Shotgun Toolkit app to an existing pipeline configuration. You will quickly become acquainted with the configuration management tools. 
+This guide will demonstrate how to add a {% include product %} Toolkit app to an existing pipeline configuration. You will quickly become acquainted with the configuration management tools. 
 
-The app we will be adding is the Shotgun Python Console app. Maya has its own Python console, but there are some features in the Toolkit app that don’t exist in the Maya console. 
+The app we will be adding is the {% include product %} Python Console app. Maya has its own Python console, but there are some features in the Toolkit app that don’t exist in the Maya console. 
 
 This guide utilizes the pipeline configuration we created in the [Editing a Pipeline Configuration](./editing_app_setting.md) guide. If you haven’t completed this guide, you can use an existing pipeline configuration and add the app there.
 
@@ -26,40 +26,40 @@ This guide utilizes the pipeline configuration we created in the [Editing a Pipe
  
 To use this guide and install a Toolkit app, the following is required:
 
-1. An active [Shotgun](https://www.shotgunsoftware.com/signup/) site.
+1. An active [{% include product %}](https://www.shotgridsoftware.com/signup/) site.
 2. A pipeline configuration for the identified project, or complete the [Getting Started with Configurations guide](./advanced_config.md) and use the configuration created in that exercise.
 3. Read and write permissions set appropriately for the filesystem where the pipeline configuration is stored.
-4. Shotgun Desktop installed on your system.
+4. {% include product %} Desktop installed on your system.
 5. An active subscription for Maya. Get a 30 day trial of Maya [here](https://www.autodesk.com/products/maya/free-trial-dts). 
 
 {% include info title="Note" content="This guide is based on the tk-config-default2 pipeline configuration. If your config was modified, the location of files, folders, and blocks of YAML settings may vary from what is described here." %}
 
-## About Shotgun Toolkit apps
+## About {% include product %} Toolkit apps
 
 ### How Toolkit apps work
 
-Apps that are referenced in pipeline configurations can be sourced from various locations. The apps that are standard in the Default Configuration are sourced from the Shotgun App Store. The files in a pipeline configuration specify how Shotgun integrations access an app, kind of like asking Toolkit, “Can you look in your little black book for the address of the Python Console App?” The pipeline configuration files tell Toolkit where to find the bundles of code that are utilized for a specific app.
+Apps that are referenced in pipeline configurations can be sourced from various locations. The apps that are standard in the Default Configuration are sourced from the {% include product %} App Store. The files in a pipeline configuration specify how {% include product %} integrations access an app, kind of like asking Toolkit, “Can you look in your little black book for the address of the Python Console App?” The pipeline configuration files tell Toolkit where to find the bundles of code that are utilized for a specific app.
 
-The “addresses” for Toolkit Apps are listed in the `config/env/includes/app_locations.yml` file in the Default Configuration and specify how to find the code. These “addresses” are called [descriptors](https://developer.shotgunsoftware.com/tk-core/descriptor.html). The Shotgun integrations need to be told not only how to find the code bundles for the app, but also in what environment(s) to use the app.
+The “addresses” for Toolkit Apps are listed in the `config/env/includes/app_locations.yml` file in the Default Configuration and specify how to find the code. These “addresses” are called [descriptors](https://developer.shotgridsoftware.com/tk-core/descriptor.html). The {% include product %} integrations need to be told not only how to find the code bundles for the app, but also in what environment(s) to use the app.
 
-Below is a conceptual overview of how to install an app and how to tell a Shotgun integration where to use it. It outlines the steps for extending the configuration, asking Toolkit to look up a descriptor, and telling Shotgun where to use the app. These steps are detailed in this guide:
+Below is a conceptual overview of how to install an app and how to tell a {% include product %} integration where to use it. It outlines the steps for extending the configuration, asking Toolkit to look up a descriptor, and telling {% include product %} where to use the app. These steps are detailed in this guide:
 
 1. Determine the descriptor for the app you want to add.
 2. Make a copy of the active pipeline configuration you want to add the app descriptor to.
 3. See if the app’s descriptor exists in the configuration and if not, add it.
 4. Format the YAML file correctly using spaces and not tabs for indents.
 5. Determine in what environment(s) the app is to be used.
-6. Within those environment(s), add the setting that will allow Shotgun to use the app.
+6. Within those environment(s), add the setting that will allow {% include product %} to use the app.
 7. Test the new configuration.
 8. Push the extended configuration live.
 
 ### Find the location descriptor for the Python Console App
 
-**Step 1:** Open the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Applications-that-Toolkit-Integrates-with#tk-maya) and find the information for the Shotgun Python Console under Maya. Select the title.
+**Step 1:** Open the [Apps and Engines page](https://developer.shotgridsoftware.com/9e62da4a/) and find the information for the {% include product %} Python Console under Maya. Select the title.
 
 ![Python app](./images/installing_app/1_python_app.png)
 
-This will bring up the [information for the app](https://support.shotgunsoftware.com/hc/en-us/articles/219033108), which includes everything that’s needed for the little black book.
+This will bring up the [information for the app](https://developer.shotgridsoftware.com/770a748a/), which includes everything that’s needed for the little black book.
 
 ![Python app info](./images/installing_app/2_python_app_info.png)
 
@@ -67,7 +67,7 @@ The **System Name** is the main identifier: `tk-multi-pythonconsole`. You will a
 
 ### Confirm that there’s no Python Console app in the Project environment in Maya
 
-**Step 2:** Launch Maya and select the Shotgun Menu, **Shotgun > Project the_other_side** and you will see the list of apps that are available for that project in the Project environment.
+**Step 2:** Launch Maya and select the {% include product %} Menu, **{% include product %} > Project the_other_side** and you will see the list of apps that are available for that project in the Project environment.
 
 ![List of apps](./images/installing_app/3_list_of_apps.png)
 
@@ -81,11 +81,11 @@ Cloning a pipeline configuration automates the process of creating a copy, build
 
 ### Go to the Pipeline Configuration list. 
 
-**Step 3:** Open Shotgun and in the upper right, select the **Admin Menu (your avatar) > Default Layouts > Pipeline Configuration > Pipeline Configuration List**.
+**Step 3:** Open {% include product %} and in the upper right, select the **Admin Menu (your avatar) > Default Layouts > Pipeline Configuration > Pipeline Configuration List**.
 
 ![Pipeline configuration list](./images/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
-This action displays a detailed list of all of your Shotgun site's pipeline configurations.
+This action displays a detailed list of all of your {% include product %} site's pipeline configurations.
 
 **Step 4:** Once the Pipeline Configuration List is displayed, select the **+** sign on the far right of the column headers, and add the column **Projects**.
 
@@ -109,21 +109,21 @@ This displays the paths to the configuration files.
 
 ![Name clone](./images/installing_app/9_name_clone.png)
 
-Wait while Shotgun copies all of the files and folders in the configuration and creates a cache for the apps. Now would be an opportune time to use an app that makes you a light, fluffy, melt in your mouth croissant to go with that perfect shot of espresso.
+Wait while {% include product %} copies all of the files and folders in the configuration and creates a cache for the apps. Now would be an opportune time to use an app that makes you a light, fluffy, melt in your mouth croissant to go with that perfect shot of espresso.
 
 ![Clone Complete](./images/installing_app/10_clone_complete.png)
 
 When completed, the Configuration List will be updated with information about the cloned configuration and there will be a new configuration added to your local config folder.
 
-{% include info title="Note" content="Under **User Restrictions** your user name was added. Shotgun automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way Shotgun allows for flexibility and control." %}
+{% include info title="Note" content="Under **User Restrictions** your user name was added. ShotGrid automatically restricts access to the new configuration to only the person who created the configuration. You can add people you want to edit, test, and eventually use this configuration. Yet another way ShotGrid allows for flexibility and control." %}
 
 ## Associate the cloned configuration with the project
 
-**Step 8:** Open Shotgun Desktop and select the project you created the cloned configuration for. Select the **down arrow** in the upper right to display the configurations associated with this project and select the **Primary Clone Config 2** that you just created.
+**Step 8:** Open {% include product %} Desktop and select the project you created the cloned configuration for. Select the **down arrow** in the upper right to display the configurations associated with this project and select the **Primary Clone Config 2** that you just created.
 
 ![Select clone](./images/installing_app/11_select_clone.png)
 
-Shotgun Desktop is now using the cloned config for this project.
+{% include product %} Desktop is now using the cloned config for this project.
 
 ## Edit the Pipeline Configuration
 
@@ -137,7 +137,7 @@ If an app that you want to use isn’t referenced in the little black book, you 
 
 ## Tell Toolkit where to find the app
 
-**Step 10:** Search the file for `pythonconsole`. If you used the Default Configuration for the project, you will find that the descriptor for the Python Console app is listed in this file. It should match the description we found in the [list](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) of Maya apps we looked at when we started on our journey. Check to make sure the version matches what we looked at in the list of Maya apps. 
+**Step 10:** Search the file for `pythonconsole`. If you used the Default Configuration for the project, you will find that the descriptor for the Python Console app is listed in this file. It should match the description we found in the [list](https://developer.shotgridsoftware.com/162eaa4b/) of Maya apps we looked at when we started on our journey. Check to make sure the version matches what we looked at in the list of Maya apps. 
 
 ```yaml
 apps.tk-multi-pythonconsole.location:
@@ -149,7 +149,7 @@ apps.tk-multi-pythonconsole.location:
 
 {% include info title="Note" content="If you’re using a different configuration, you may need to add the descriptor to the file." %}
 
-All apps and engines have descriptors. You can read about how descriptors work and how to set the `type:` in the [Descriptor section of our Core API docs](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptor-types).
+All apps and engines have descriptors. You can read about how descriptors work and how to set the `type:` in the [Descriptor section of our Core API docs](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types).
 
 ## Tell Toolkit to use the descriptor
 
@@ -181,7 +181,7 @@ The `tk-maya: “@settings.tk-maya.project”` line using the `@settings` tells 
 
 ### YAML files
 
-The Shotgun Toolkit pipeline configuration uses simple terms in [YAML](https://yaml.org/spec/1.2/spec.html) files to identify the location of apps and engines, as well as their settings.
+The {% include product %} Toolkit pipeline configuration uses simple terms in [YAML](https://yaml.org/spec/1.2/spec.html) files to identify the location of apps and engines, as well as their settings.
 
 For this specific block:
 
@@ -190,11 +190,11 @@ For this specific block:
 * `tk-maya` is the identifier for Toolkit's engine for Maya
 * `@` is a Toolkit term used to denote that a setting value is coming from an included file  
 
-The YAML files are the windows into Shotgun’s integrations and make it easier to configure working environments that meet the needs of your pipeline. 
+The YAML files are the windows into {% include product %}’s integrations and make it easier to configure working environments that meet the needs of your pipeline. 
 
 ### How the configuration references Toolkit bundles
 
-The code for Shotgun’s integrations is organized into bundles for apps, engines, and frameworks. The bundles are referenced in Toolkit’s YAML files using identifiers like `tk-maya`, `tk-multi-pythonconsole`, etc. Each bundle's corresponding block of YAML contains settings that control how the identified bundle is accessed and utilized.
+The code for {% include product %}’s integrations is organized into bundles for apps, engines, and frameworks. The bundles are referenced in Toolkit’s YAML files using identifiers like `tk-maya`, `tk-multi-pythonconsole`, etc. Each bundle's corresponding block of YAML contains settings that control how the identified bundle is accessed and utilized.
 
 ## Where to put settings for the Python Console
 
@@ -232,9 +232,9 @@ settings.tk-maya.project:
     tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"
 ```
  
-You will notice the **Screening Room, Shotgun Panel, and Workfiles2** app’s location identifiers are listed in a different included file and accessed differently than the **About** app. To keep things tidy, these apps were split off to the included settings folder because they have additional settings.
+You will notice the **Screening Room, {% include product %} Panel, and Workfiles2** app’s location identifiers are listed in a different included file and accessed differently than the **About** app. To keep things tidy, these apps were split off to the included settings folder because they have additional settings.
 
-{% include info title="Note" content="The python console app already exists in the Default Configuration, however if you are adding an app that has never been added to your configuration before or if you have changed the version of an app, and you are using a [centralized configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), then there is an additional step you need to take. Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration’s root folder, run the following command:<br/>
+{% include info title="Note" content="The python console app already exists in the Default Configuration, however if you are adding an app that has never been added to your configuration before or if you have changed the version of an app, and you are using a [centralized configuration](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations), then there is an additional step you need to take. Open your terminal and browse to where your cloned configuration is stored. From your cloned configuration’s root folder, run the following command:<br/>
 
 On Linux or Mac:
 
@@ -248,7 +248,7 @@ This will scan your configuration for apps, engines and frameworks and ensure th
 
 ## View the changes in Maya
 
-**Step 16:** Open Shotgun Desktop, select the project you were working with, and confirm you are using the cloned configuration. 
+**Step 16:** Open {% include product %} Desktop, select the project you were working with, and confirm you are using the cloned configuration. 
 
 There will be a blue bar with the name of the clone that you created under the name of the project. 
 
@@ -256,7 +256,7 @@ There will be a blue bar with the name of the clone that you created under the n
 
 ![Maya cloned config](./images/installing_app/14_maya_cloned_config.png)
 
-**Step 17:** Launch Maya from Desktop and select the menu **Shotgun > Project > …**
+**Step 17:** Launch Maya from Desktop and select the menu **{% include product %} > Project > …**
 
 If:
 
@@ -264,7 +264,7 @@ If:
 * The cloned configuration was extended correctly
 * You saved the extended files
 * You chose to associate the project with the cloned configuration
-* You relaunched Maya from Shotgun Desktop
+* You relaunched Maya from {% include product %} Desktop
 
 The Python Console app will be available in Maya.
 
@@ -293,7 +293,7 @@ cache		config		install		tank		tank.bat
 $ ./tank push_configuration
 
 Welcome to the Shotgun Pipeline Toolkit!
-For documentation, see https://support.shotgunsoftware.com
+For documentation, see https://developer.shotgridsoftware.com
 Starting Toolkit for your current path
 '/Users/michelle/Documents/Shotgun/configs/the_other_side_clone2'
 - The path is not associated with any Shotgun object.
@@ -324,11 +324,11 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 There will be a list of the available pipeline configurations that the cloned configuration can be pushed to. Enter the ID of the primary pipeline configuration for the project you are updating the configuration for.
 
-{% include info title="Note" content="You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in Shotgun that we viewed in **Step 3** of this guide. To find the project ID, go to the Configuration List and add the ID column." %}
+{% include info title="Note" content="You can also find the id for your Pipeline Configuration on the Pipeline Configuration page in ShotGrid that we viewed in **Step 3** of this guide. To find the project ID, go to the Configuration List and add the ID column." %}
 
 ![ID column](./images/installing_app/17_id_column.png)
 
-After you enter the ID, Shotgun will:
+After you enter the ID, {% include product %} will:
 
 * Backup the Primary configuration
 * Copy the cloned configuration
@@ -348,11 +348,11 @@ Push Complete!
 
 ## View the changes you made in the primary configuration 
 
-**Step 19:** In Shotgun Desktop, click on the arrow in the upper right and choose **Primary** in the **CONFIGURATION** list.
+**Step 19:** In {% include product %} Desktop, click on the arrow in the upper right and choose **Primary** in the **CONFIGURATION** list.
 
 ![Change config maya](./images/installing_app/18_change_config_maya.png)
 
-**Step 20:** Launch Maya from Desktop and look in the menu **Shotgun > Project > …** to find the Shotgun Python Console...
+**Step 20:** Launch Maya from Desktop and look in the menu **{% include product %} > Project > …** to find the {% include product %} Python Console...
 
 ![App in Maya](./images/installing_app/19_app_in_maya.png)
 
@@ -360,15 +360,15 @@ The Python Console app was added to the Project environment for the chosen proje
 
 ## Advanced topics
 
-### The Shotgun developer community
+### The {% include product %} developer community
 
-One of the wonderful things about Toolkit is that anyone can create a Toolkit app. Apps can be kept proprietary, or they can be shared within the [Shotgun community](https://support.shotgunsoftware.com/hc/en-us/articles/219039828), adding to the Shotgun arsenal. If you’ve created a really stellar app you want share on the Shotgun community page, email us at [support@shotgunsoftware.com](mailto:support@shotgunsoftware.com).
+One of the wonderful things about Toolkit is that anyone can create a Toolkit app. Apps can be kept proprietary, or they can be shared within the [{% include product %} community](https://community.shotgridsoftware.com/c/pipeline/6), adding to the {% include product %} arsenal. If you’ve created a really stellar app you want share on the {% include product %} community page, please visit our [support site](https://knowledge.autodesk.com/contact-support) for help.
 
-Standard Toolkit apps and apps created by the loving Shotgun community are actively discussed in the **[shotgun-dev Google group](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)**. The knowledge and tool base continues to grow as the Shotgun community adds their contributions.
+Standard Toolkit apps and apps created by the loving {% include product %} community are actively discussed in the **[{% include product %}-dev Google group](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)**. The knowledge and tool base continues to grow as the {% include product %} community adds their contributions.
 
 ### Investigate how to extend a configuration
 
-You may have noticed when we were selecting which configuration to use for the project, the Python Console App was available in the Shotgun Desktop dropdown. 
+You may have noticed when we were selecting which configuration to use for the project, the Python Console App was available in the {% include product %} Desktop dropdown. 
 
 ![Desktop python console](./images/installing_app/20_desktop_python_console.png)
 
@@ -378,7 +378,7 @@ The Desktop app opens in the project environment, so find `tk-desktop` in the `p
 
 Open `config/env/project.yml`. 
 
-{% include info title="Note" content='In the engine block, `tk-desktop` points to included content:
+In the engine block, `tk-desktop` points to included content:
 
 ```yaml
 includes:
@@ -406,12 +406,12 @@ apps.tk-multi-pythonconsole.location:
   type: app_store
   name: tk-multi-pythonconsole
   version: v1.1.2
-```' %}
+```
 
-Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines).
+Every app, engine, and framework has a location descriptor that is used to tell Toolkit where to access the specific bundle. Many app descriptors exist in the `app_locations.yml` file, but may not be referenced where you want them, as we saw with the Python Console app. All the standard Apps and Engines are listed on the [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/).
 
-You can add any app to any appropriate software integration that Shotgun supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://support.shotgunsoftware.com/hc/en-us/articles/219039798-Integrations-Apps-and-Engines) page. 
+You can add any app to any appropriate software integration that ShotGrid supports, or add your own proprietary application to your Toolkit arsenal. All the supported software applications are also listed on the Integrations [Apps and Engines page](https://developer.shotgridsoftware.com/162eaa4b/) page. 
 
-If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other Shotgun users will need the same function and sharing new apps is one way to give back to the Shotgun community. 
+If you can’t find the exact app you are looking for, you can create one. There’s a good chance that other ShotGrid users will need the same function and sharing new apps is one way to give back to the ShotGrid community. 
 
-In the next guide, you will learn how to customize your production folder structure to reflect how your facility is structured](./dynamic_filesystem_configuration.md). 
+In the [next guide](https://developer.shotgridsoftware.com/56b441c6/), you will learn how to customize your production folder structure to reflect how your facility is structured. 

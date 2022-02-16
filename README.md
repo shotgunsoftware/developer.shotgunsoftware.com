@@ -1,15 +1,15 @@
-[![Build Status](https://secure.travis-ci.org/shotgunsoftware/developer.shotgunsoftware.com.svg?branch=master)](http://travis-ci.org/shotgunsoftware/developer.shotgunsoftware.com)
+[![Build Status](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/actions/workflows/publish-docs.yml)
 [![Doc Generator](https://img.shields.io/badge/Built%20With-SG%20Doc%20Generator-blue.svg)](http://github.com/shotgunsoftware/tk-doc-generator)
 
 
 
-# [developer.shotgunsoftware.com](http://developer.shotgunsoftware.com/)
+# [developer.shotgridsoftware.com](http://developer.shotgridsoftware.com/)
 
-Welcome to the source repository for [developer.shotgunsoftware.com](http://developer.shotgunsoftware.com/). This repository holds the markdown source and configuration used to generate the Shotgun developer site.
+Welcome to the source repository for [developer.shotgridsoftware.com](http://developer.shotgridsoftware.com/). This repository holds the markdown source and configuration used to generate the {% include product %} developer site.
 
 ## How does it work?
 
-The Shotgun Developer site uses *continous integration*. What you see in the master branch of this repository is reflected on the developer website. You create github issues and pull requests in order to make changes to the Repository.
+The {% include product %} Developer site uses *continous integration*. What you see in the master branch of this repository is reflected on the developer website. You create github issues and pull requests in order to make changes to the Repository.
 
 The site uses the [Toolkit Documentation Generation system](https://github.com/shotgunsoftware/tk-doc-generator) to convert markdown, sphinx and other content to a website, complete with search, table of contents etc.
 
@@ -23,7 +23,7 @@ For documentation on syntax and formatting guidelines, please see
 the **style guide** that comes 
 with the documentation generation system.
 
-- [tk-doc-generator style guide](https://developer.shotgunsoftware.com/tk-doc-generator/19bd79d8/?title=Introduction)
+- [tk-doc-generator style guide](https://developer.shotgridsoftware.com/tk-doc-generator/19bd79d8/)
 
 ## Adding content
 
@@ -43,6 +43,19 @@ lang: en
 ```
 
 **Special Characters:** If using special characters (including colons) in page titles, it's necessary to wrap the title in ASCII double quotes, as shown in the example above.
+
+
+## Updating ``tk-doc-generator`` version
+
+To update the version of ``tk-doc-generator``, follow these steps:
+
+    git submodule init
+    git submodule update
+    cd tk-doc-generator
+    git fetch
+    git checkout <commit-id-you-need-or-branch-name>
+    cd ..
+    git commit -a -m "Updated version of tk-doc-generator"
 
 
 ## Site Preview

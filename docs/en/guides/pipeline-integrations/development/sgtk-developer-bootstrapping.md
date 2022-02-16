@@ -13,7 +13,7 @@ Bootstrapping is useful in situations where a Toolkit engine has not already bee
 For example, you might have a processing script that runs on a render farm and needs to utilize the Toolkit API to handle paths and context.
 Or you may wish to be able to run your Toolkit app from your favorite IDE.
 
-{% include info title="Note" content="If you are using a [distributed config](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations), a Toolkit engine must be initialized before running Toolkit API methods. It is possible to use the API without bootstrapping an engine if you are using a [centralized config](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations), using the [factory methods](https://developer.shotgunsoftware.com/tk-core/initializing.html#factory-methods), however, you will need to manually find the path to the correct core API for your project when importing `sgtk`." %}
+{% include info title="Note" content="If you are using a [distributed config](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations), a Toolkit engine must be initialized before running Toolkit API methods. It is possible to use the API without bootstrapping an engine if you are using a [centralized config](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations), using the [factory methods](https://developer.shotgridsoftware.com/tk-core/initializing.html#factory-methods), however, you will need to manually find the path to the correct core API for your project when importing `sgtk`." %}
 
 
 ### Requirements
@@ -62,10 +62,10 @@ import sgtk
 ## Part 2: Logging
 
 If you are running this script via an IDE or shell, then you will most likely want to enable the logging to be output.
-To do this you need to run [`LogManager().initialize_custom_handler()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.log.LogManager.initialize_custom_handler).
+To do this you need to run [`LogManager().initialize_custom_handler()`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.log.LogManager.initialize_custom_handler).
 You don't need to provide a custom handler for this purpose, as not providing one will set up a standard stream-based logging handler.
 
-Optionally you can also set the [`LogManager().global_debug = True`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.log.LogManager.global_debug) to give you more verbose output. 
+Optionally you can also set the [`LogManager().global_debug = True`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.log.LogManager.global_debug) to give you more verbose output. 
 This means that any `logger.debug()` calls in our code or yours will now be output.
 Logging can have an impact on performance, so you should only enable debug logging when developing, and try to limit the amount of `logger.info()` method calls to those that are important to have visibility over during normal operation.
 
@@ -80,8 +80,8 @@ sgtk.LogManager().global_debug = True
 
 ## Part 3: Authentication
 
-When running a script that uses the Toolkit API outside of an environment where Shotgun Toolkit has already been started, you will always need to authenticate.
-So before you can perform the bootstrapping, you need to authenticate the Toolkit API with your Shotgun site.
+When running a script that uses the Toolkit API outside of an environment where {% include product %} Toolkit has already been started, you will always need to authenticate.
+So before you can perform the bootstrapping, you need to authenticate the Toolkit API with your {% include product %} site.
 
 You can authenticate with user credentials or with script credentials.
 
@@ -89,7 +89,7 @@ You can authenticate with user credentials or with script credentials.
 then user authentication is the best way to go, (This is how all our integrations work by default).
 - If you're writing a script to automate something and a user is not present to authenticate then you should use script credentials.
 
-Authentication is handled via the [`ShotgunAuthenticator`](https://developer.shotgunsoftware.com/tk-core/authentication.html?highlight=shotgunauthenticator#sgtk.authentication.ShotgunAuthenticator) class.
+Authentication is handled via the [`{% include product %}Authenticator`](https://developer.shotgridsoftware.com/tk-core/authentication.html?highlight=shotgunauthenticator#sgtk.authentication.ShotgunAuthenticator) class.
 Here is an example of both user and script authentication.
 
 ### User Authentication
@@ -111,7 +111,7 @@ authenticator.clear_default_user()
 # information.
 user = authenticator.get_user()
 
-# Tells Toolkit which user to use for connecting to Shotgun. Note that this should
+# Tells Toolkit which user to use for connecting to ShotGrid. Note that this should
 # always take place before creating an `Sgtk` instance.
 sgtk.set_authenticated_user(user)
 ```
@@ -128,24 +128,24 @@ authenticator = sgtk.authentication.ShotgunAuthenticator()
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>",
+ api_key="4e48f....<use the key from your ShotGrid site>",
  host="https://yoursite.shotgunstudio.com"
 )
 
-# Tells Toolkit which user to use for connecting to Shotgun.
+# Tells Toolkit which user to use for connecting to ShotGrid.
 sgtk.set_authenticated_user(user)
 ```
 
 ## Part 4: Bootstrapping an engine
 
 Now that you have authenticated the Toolkit API for the session, you can start the bootstrapping process.
-You can find a lot of information on the bootstrap API in our [reference docs](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api).
+You can find a lot of information on the bootstrap API in our [reference docs](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api).
 
 The bootstrapping process at a high level essentially performs the following steps:
 
 1. Retrieves or locates the Toolkit configuration folder.
 2. Ensures that the configuration dependencies such as the apps and engines are present in the [bundle cache](../../../quick-answers/administering/where-is-my-cache.md#bundle-cache). 
-If they are not present, and they are using cloud-based descriptors such as [`app_store`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#the-shotgun-app-store), or [`shotgun`](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun) then it will download them to the bundle cache.
+If they are not present, and they are using cloud-based descriptors such as [`app_store`](https://developer.shotgridsoftware.com/tk-core/descriptor.html#the-shotgun-app-store), or [`{% include product %}`](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun) then it will download them to the bundle cache.
 3. Swaps out the current loaded sgtk core for the one appropriate to the config.
 4. Initializes the engine, apps, and frameworks.
 
@@ -155,14 +155,16 @@ However, in some situations, the engine may have specific setup requirements tha
 
 
 ### Bootstrap Preparation
-To bootstrap, you must first create a [`ToolkitManager`](https://developer.shotgunsoftware.com/tk-core/initializing.html#toolkitmanager) instance.
+To bootstrap, you must first create a [`ToolkitManager`](https://developer.shotgridsoftware.com/tk-core/initializing.html#toolkitmanager) instance.
 
 ```python
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 ```
 
+> If a `user` is not passed into the `ToolkitManager`'s initializer, `ShotgunAuthenticator().get_user()` is called internally, which will return the currently authenticated ShotGrid user. To bootstrap using any other `HumanUser` or `ScriptUser`, pass in a user created via [ShotgunAuthenticator.create_session_user](https://developer.shotgridsoftware.com/tk-core/authentication.html#sgtk.authentication.ShotgunAuthenticator.create_session_user) or [ShotgunAuthenticator.create_script_user](https://developer.shotgridsoftware.com/tk-core/authentication.html#sgtk.authentication.ShotgunAuthenticator.create_script_user).
+
 For Toolkit to bootstrap, it needs to know at least the entity, plugin id, and engine.
-This guide won't cover all the available parameters and options, as they are covered in the [reference documentation](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api).
+This guide won't cover all the available parameters and options, as they are covered in the [reference documentation](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api).
 
 #### Plugin ID
 
@@ -176,25 +178,25 @@ mgr.plugin_id = "basic.shell"
 If your goal is to launch an app or run Toolkit code in a standalone python environment outside of software such as Maya or Nuke, then `tk-shell` is the engine you will want to bootstrap into. 
 
 If you are wanting to run Toolkit apps within supported Software, then you will want to pick the appropriate engine, such as `tk-maya` or `tk-nuke`.
-This parameter is passed directly to the [`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) method. See the example in the [entity section](#entity) bellow.
+This parameter is passed directly to the [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) method. See the example in the [entity section](#entity) bellow.
 
 #### Entity
-The [`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) methods `entity` parameter, is used to set the [context](https://developer.shotgunsoftware.com/tk-core/core.html#context) and therefore [environment](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment) for the launched engine.
+The [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) methods `entity` parameter, is used to set the [context](https://developer.shotgridsoftware.com/tk-core/core.html#context) and therefore [environment](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment) for the launched engine.
 The entity can be of any entity type that the configuration is set up to work with. 
 For example, if you provide a `Project` entity, the engine will start up in a project context, using the project environment settings.
 Likewise, you could provide a `Task` entity (where the task is linked to an `Asset`), and it will start up using the `asset_step.yml` environment.
-This is based on the default configuration behavior, [the environment that is chosen](https://developer.shotgunsoftware.com/487a9f2c/?title=Environment+Configuration+Reference#how-toolkit-determines-the-current-environment) is controlled via the core hook, [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py), and so could be changed to pick a different environment based on the context or other parameters.
+This is based on the default configuration behavior, [the environment that is chosen](https://developer.shotgridsoftware.com/c73fcb84/#how-toolkit-determines-the-current-environment) is controlled via the core hook, [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py), and so could be changed to pick a different environment based on the context or other parameters.
 
-You need to provide the entity in the format of a Shotgun entity dictionary which must contain at least the type and id: 
+You need to provide the entity in the format of a {% include product %} entity dictionary which must contain at least the type and id: 
 
 ```python
 task = {"type": "Task", "id": 17264}
 engine = mgr.bootstrap_engine("tk-shell", entity=task)
 ```
 
-If you bootstrap into an entity type other than `Project`, you may need to ensure your [path cache](https://developer.shotgunsoftware.com/cbbf99a4/) is in sync, otherwise, it may not be able to load the environment if, for example, it tries to resolve a template.
+If you bootstrap into an entity type other than `Project`, you may need to ensure your [path cache](https://developer.shotgridsoftware.com/cbbf99a4/) is in sync, otherwise, it may not be able to load the environment if, for example, it tries to resolve a template.
 Since you don't have an `Sgtk` instance before bootstrapping, you will need to tell the bootstrap process to perform the synchronization after it's created an `Sgtk` instance but before it starts the engine.
-You can do this by setting the [`ToolkitManager.pre_engine_start_callback`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.pre_engine_start_callback) property to point to a custom method.
+You can do this by setting the [`ToolkitManager.pre_engine_start_callback`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.pre_engine_start_callback) property to point to a custom method.
 In that method you can then run the synchronization:
 
 ```python
@@ -214,13 +216,13 @@ mgr.pre_engine_start_callback = pre_engine_start_callback
 
 #### Choice of configuration
 
-You have the choice of explicitly defining which configuration to bootstrap, or leaving the bootstrap logic to [autodetect an appropriate configuration](https://developer.shotgunsoftware.com/tk-core/initializing.html#managing-distributed-configurations).
+You have the choice of explicitly defining which configuration to bootstrap, or leaving the bootstrap logic to [autodetect an appropriate configuration](https://developer.shotgridsoftware.com/tk-core/initializing.html#managing-distributed-configurations).
 You can even set a fallback configuration in case one is not automatically found.
 In this guide, we assume that your project has a configuration already setup and that it will be found automatically. 
 
 ### Bootstrapping
 
-Once all the [`ToolkitManager`](https://developer.shotgunsoftware.com/tk-core/initializing.html#toolkitmanager) parameters have been set, and you call the [`ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) method, it will start the engine, and return a pointer to the engine instance.
+Once all the [`ToolkitManager`](https://developer.shotgridsoftware.com/tk-core/initializing.html#toolkitmanager) parameters have been set, and you call the [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) method, it will start the engine, and return a pointer to the engine instance.
 
 Here is a recap of the code so far:
 
@@ -242,18 +244,20 @@ authenticator = sgtk.authentication.ShotgunAuthenticator()
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>",
+ api_key="4e48f....<use the key from your ShotGrid site>",
  host="https://yoursite.shotgunstudio.com"
 )
 
-# Tells Toolkit which user to use for connecting to Shotgun.
-sgtk.set_authenticated_user(user)
+# Tells Toolkit which user to use for connecting to ShotGrid.
+# This is actually not necessary when using the ToolkitManager. The authenticated user will be set
+# before launching the engine.
+# sgtk.set_authenticated_user(user)
 
 # Bootstrap
 ###########
 
 # create an instance of the ToolkitManager which we will use to set a bunch of settings before initiating the bootstrap. 
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 mgr.plugin_id = "basic.shell"
 
 project = {"type": "Project", "id": 176}
@@ -265,7 +269,7 @@ engine = mgr.bootstrap_engine("tk-shell", entity=project)
 
 Now that you have an engine instance, you're ready to start using the Toolkit API.
 
-Before covering how to launch the app, it's worth pointing out you can get hold of the [current context](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), [Sgtk instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk), and [Shotgun API instance](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun) via the engine.
+Before covering how to launch the app, it's worth pointing out you can get hold of the [current context](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context), [Sgtk instance](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk), and [{% include product %} API instance](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun) via the engine.
 
 ```python
 engine.context
@@ -280,7 +284,7 @@ When the engine starts, it initializes all the apps defined for the environment.
 The apps in turn register commands with the engine, and the engine usually displays these as actions in a menu, if running in Software like Maya.
 
 #### Finding the commands
-To first see what commands have been registered, you can print out the [`Engine.commands`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.commands) property:
+To first see what commands have been registered, you can print out the [`Engine.commands`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.commands) property:
 
 ```python
 # use pprint to give us a nicely formatted output.
@@ -345,18 +349,20 @@ authenticator = sgtk.authentication.ShotgunAuthenticator()
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>",
+ api_key="4e48f....<use the key from your ShotGrid site>",
  host="https://yoursite.shotgunstudio.com"
 )
 
-# Tells Toolkit which user to use for connecting to Shotgun.
-sgtk.set_authenticated_user(user)
+# Tells Toolkit which user to use for connecting to ShotGrid.
+# This is actually not necessary when using the ToolkitManager. The authenticated user will be set
+# before launching the engine.
+# sgtk.set_authenticated_user(user)
 
 # Bootstrap
 ###########
 
 # create an instance of the ToolkitManager which we will use to set a bunch of settings before initiating the bootstrap. 
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 mgr.plugin_id = "basic.shell"
 
 project = {"type": "Project", "id": 176}

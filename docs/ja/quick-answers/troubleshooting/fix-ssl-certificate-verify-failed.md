@@ -7,9 +7,9 @@ lang: ja
 
 # Python API で発生する SSL: CERTIFICATE_VERIFY_FAILED の問題の解決
 
-Python API は、API にバンドルされ、マシンに格納されている証明書のリストを利用して、Shotgun で使用されているさまざまな Web サービスに接続します。ただし、新しい認証局がリリースされた場合は、これらが Python API または OS にバンドルされていないことがあります。
+Python API は、API にバンドルされ、マシンに格納されている証明書のリストを利用して、{% include product %} で使用されているさまざまな Web サービスに接続します。ただし、新しい認証局がリリースされた場合は、これらが Python API または OS にバンドルされていないことがあります。
 
-オートデスクの Python API には、2019 年 2 月 21 日時点の証明書の最新コピーが付属していますが、最新バージョンの API を使用している場合でも、API がこれらの証明書を使用して Amazon S3 にアップロードするのを妨害するバグが存在します。背景情報については、[この AWS に関するブログの投稿](https://aws.amazon.com/blogs/security/how-to-prepare-for-aws-move-to-its-own-certificate-authority/)を参照してください。状況を一時的に修正するには、次の解決策を試してください。
+オートデスクの Python API には、2019 年 2 月 21 日時点の証明書の最新コピーが付属していますが、最新バージョンの API を使用している場合でも、API がこれらの証明書を使用して Amazon S3 にアップロードするのを妨害するバグが存在します。背景情報については、[この AWS に関するブログの投稿](https://aws.amazon.com/jp/blogs/security/how-to-prepare-for-aws-move-to-its-own-certificate-authority/)を参照してください。状況を一時的に修正するには、次の解決策を試してください。
 
 {% include info title="注" content="これらは一時的な回避策です。オートデスクでは長期的な解決策を模索しています。"%}
 
@@ -44,12 +44,12 @@ Windows 証明書ストアに必要な CA 証明書を追加します。Windows 
 
 1. Toolkit の展開方法に応じて、`tank core` コマンドを使用するか、パイプライン設定の `core/core_api.yml` ファイルを更新して、最新バージョンの Toolkit API にアップグレードします。
 
-2. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) にある証明書の最新リストをダウンロードします。
+2. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) にある証明書の最新リストをダウンロードします。
 
 3. `SHOTGUN_API_CACERTS` をこのファイルの保存場所に設定します。ただし、接続を作成するときに、Python API のように Toolkit から `ca_certs`ca_certs パラメータを指定することはできません。
 
 ### Python API または Toolkit を更新できない場合
 
-1. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) にある証明書の最新リストをダウンロードします。
+1. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) にある証明書の最新リストをダウンロードします。
 
 2. `SSL_CERT_FILE` 環境変数をこのファイルの保存場所に設定します。

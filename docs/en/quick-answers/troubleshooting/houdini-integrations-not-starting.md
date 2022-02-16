@@ -1,21 +1,21 @@
 ---
 layout: default
-title: Why are my Houdini Shotgun integrations not starting?
+title: Why are my Houdini ShotGrid integrations not starting?
 pagename: houdini-integrations-not-starting
 lang: en
 ---
 
-# Why are my Houdini Shotgun integrations not starting?
+# Why are my Houdini {% include product %} integrations not starting?
 
 
-This covers the most common reason we’ve seen for the Shotgun integrations not starting in Houdini. In this case,
-Houdini launches without error from Shotgun Desktop, your Shotgun website, or the tank command. However, once Houdini
-is launched, the Shotgun menu or shelf does not appear.
+This covers the most common reason we’ve seen for the {% include product %} integrations not starting in Houdini. In this case,
+Houdini launches without error from {% include product %} Desktop, your {% include product %} website, or the tank command. However, once Houdini
+is launched, the {% include product %} menu or shelf does not appear.
 
-Often the reason for this is that the `HOUDINI_PATH` environment variable has been overridden, and Shotgun relies on that
+Often the reason for this is that the `HOUDINI_PATH` environment variable has been overridden, and {% include product %} relies on that
  for passing the startup script path.
 
-When Houdini is launched from Shotgun, the launch app logic adds the Shotgun bootstrap script path to the `HOUDINI_PATH`
+When Houdini is launched from {% include product %}, the launch app logic adds the {% include product %} bootstrap script path to the `HOUDINI_PATH`
 environment variable. However, the problem can arise when Houdini has a
 [houdini.env file](http://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables).
 This file allows the user to set environment variables that will be present when Houdini is loaded, but any values
@@ -32,7 +32,7 @@ Then you should add `$HOUDINI_PATH;` to the end of the path defined in the file 
 
     HOUDINI_PATH = /example/of/an/existing/path;$HOUDINI_PATH;&
 
-This will allow the Shotgun set value to persist when Houdini launches.
+This will allow the {% include product %} set value to persist when Houdini launches.
 
 {% include warning title="Caution" content="On Windows we've seen `$HOUDINI_PATH` causing issues. It sometimes tries to bootstrap the Shotgun integration multiple times generating an error like this: 
 
@@ -40,4 +40,4 @@ This will allow the Shotgun set value to persist when Houdini launches.
 
 If you get this you should try using `%HOUDINI_PATH%` instead." %}
 
-If this does not fix your problem please reach out to our [support team](https://support.shotgunsoftware.com/hc/en-us/requests/new) and they will help you diagnose the issue.
+If this does not fix your problem please reach out to our [support team](https://knowledge.autodesk.com/contact-support) and they will help you diagnose the issue.
