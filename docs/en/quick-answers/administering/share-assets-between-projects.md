@@ -7,9 +7,9 @@ lang: en
 
 # How do I share assets between projects?
 
-It's not uncommon to have a project that's used as an Asset Library, containing assets that can be loaded into shots in other projects.
+It is common to have a project that is used as an Asset Library, containing assets that can be loaded into shots in other projects.
 
-With the introduction of the Linked Projects Field on the Asset Entity, you can now add a single tab to the [Loader app](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Supervisor_Artist_sa_integrations_sa_integrations_user_guide_html#the-loader) that includes all Linked Projects. In order to do so, you'll have to define this in the Loader settings for the engine and environment you're working in. You'll potentially have to update this in multiple places. 
+With the introduction of the Linked Projects field on the Asset entity, you can now add a single tab to the [Loader app](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Supervisor_Artist_sa_integrations_sa_integrations_user_guide_html#the-loader) that includes all Linked Projects. In order to do so, you'll have to define this in the Loader settings for the engine and environment you're working in. You'll potentially have to update this in multiple places. 
 
 ```yaml
 - caption: Assets - Linked
@@ -23,7 +23,7 @@ You can refer to the Alias and VRED Engine settings [in the tk-multi-loader2.yml
 
 ---
 
-The initial way to achieve cross-project sharing was to add a tab to the [Loader app](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Supervisor_Artist_sa_integrations_sa_integrations_user_guide_html#the-loader) that lists assets from a specific Asset Library project.
+Before introducing the Linked Projects field on Assets, the initial way to achieve cross-Project sharing was to add a tab to the [Loader app](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Supervisor_Artist_sa_integrations_sa_integrations_user_guide_html#the-loader) that lists assets from a specific Asset Library project.
 
 For example, to add this to the [Maya engine in the shot step environment](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/settings/tk-multi-loader2.yml#L122), you'd add this snippet:
 
@@ -43,4 +43,6 @@ With these settings, you should get the Loader app to show a tab that lists publ
 
 ---
 
-(This initial technique is still included here as it does offer a way to have a different tab per Project identified within the Loader.)
+{% include info title="Note" content="This initial technique is still included here as it does offer a way to have a different tab per Project identified within the Loader." %}
+
+To learn more about web-based cross-Project Asset linking, visit our [Cross-Project Asset Linking documentation here](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_cross_project_asset_linking_html).
