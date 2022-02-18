@@ -19,7 +19,7 @@ With the introduction of the Linked Projects field on the Asset entity, you can 
     hierarchy: [project.Project.name, sg_asset_type, code]
 ```
 
-You can refer to the Alias and VRED Engine settings [in the tk-multi-loader2.yml configuration file](https://github.com/shotgunsoftware/tk-config-default2/blob/a5af14aefbafaec6cf0933db83343f600eb75870/env/includes/settings/tk-multi-loader2.yml#L343-L347) included with [tk-config-default2](https://github.com/shotgunsoftware/tk-config-default2) as it is the default behavior there.
+You can refer to the Alias Engine settings [in the tk-multi-loader2.yml configuration file](https://github.com/shotgunsoftware/tk-config-default2/blob/a5af14aefbafaec6cf0933db83343f600eb75870/env/includes/settings/tk-multi-loader2.yml#L343-L347) included with [tk-config-default2](https://github.com/shotgunsoftware/tk-config-default2) as it is the default behavior there.
 
 ---
 
