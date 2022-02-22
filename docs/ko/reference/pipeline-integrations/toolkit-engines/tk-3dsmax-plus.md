@@ -20,7 +20,7 @@ lang: ko
 
 ## 문서화
 
-이 엔진은 Max Plus의 Python 지원을 통해 {% include product %} Pipeline Toolkit(Sgtk)과 3D studio Max를 연결합니다.
+이 엔진은 Max Plus의 Python 지원을 통해 {% include product %} Pipeline Toolkit(Sgtk)과 3ds Max를 연결합니다.
 
 ![엔진](../images/engines/3dsmaxplus_engine.png)
 
