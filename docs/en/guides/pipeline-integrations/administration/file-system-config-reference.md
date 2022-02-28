@@ -105,29 +105,23 @@ Let's dive deeper into these modes.
 
 For a dynamic folder which corresponds to a {% include product %} query, use the following syntax in your YAML file:
 
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: shotgun_entity
     
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: Asset
     
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: code
     
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ] 
+```
 
 -   Set the value of dynamic content **type** field to be **shotgun_entity**.
 -   The **entity_type** field should be set to the {% include product %} entity from which we want to pull data from (e.g., "Asset", "Shot", "Sequence", "CustomEntity02", etc).
@@ -143,27 +137,19 @@ For a dynamic folder which corresponds to a {% include product %} query, use the
 
 Include a slash in your name definition in order to create an expression which creates multiple folders at once:
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: shotgun_entity
     
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: Asset
     
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "{sg_asset_type}/{code}"
     
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ] 
 
@@ -183,9 +169,10 @@ In {% include product %}, there is nesting within {% include product %} data str
 
 A shotgun_entity type folder supports an optional flag to control whether the folder creation process tries to recurse down into it when a parent is created, so that the child will also be created. Flags are settings that can only have certain fixed values, in this case "true" or "false". To add this flag, use this example:
 
-    <a name="recurse down from parent folder"></a>
+```YAML
     # recurse down from parent folder
     create_with_parent: true 
+```
 
 As mentioned, this setting is optional and set to false by default. If you set it to true, Toolkit create folders for any child entity it finds. To continue with our example, if you want Shots to be created whenever their parent Sequence is created, set  `create_with_parent`  to  `true`  for the Shot.
 
@@ -211,29 +198,23 @@ You define optional fields using square brackets, like:  `{code}[_{sg_extra_fiel
 
 Toolkit supports the extraction of parts of a {% include product %} field name using regular expressions. This makes it possible to create simple expressions where a value in {% include product %} can drive the folder creation. For example, if all assets in {% include product %} are named with a three letter prefix followed by an underscore (e.g  `AAT_Boulder7`), this can split into two filesystem folder levels, e.g.  `AAT/Boulder7`:
 
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: shotgun_entity
     
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: Asset
     
-    <a name="Extract parts of the name using regular expressions"></a>
     # Extract parts of the name using regular expressions
     name: "{code:^([^_]+)}/{code^[^_]+_(.*)}"
     
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
+```
 
 The syntax is similar to the  `subset`  tokens in the Template system; Simply add a colon after the {% include product %} field name, then followed by a regular expression. Any groups (e.g. sections surrounded by  `()`s) defined in the regular expression will be used to extract values. If there are multiple groups in the regex, these will be concatenated together. For example, the following expression would extract the intials for the user who created an object:  `{created_by.HumanUser.code:^([A-Z])[a-z]* ([A-Z])[a-z]*}`
 
@@ -243,22 +224,28 @@ Below are a collection of examples showing how to use the filters syntax.
 
 To **find all shots which belong to the current project and are in progress**, use the syntax below. Note that the {% include product %} Shot entity has a link field called project which connects a shot to a project. We want to make sure that we only create folders for the shots that are associated with the current project. Since there is a project level higher up in the configuration file system, we can refer to this via the $syntax and Toolkit will automatically create to this {% include product %} entity link reference. Remember, valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy).
 
+```YAML
     entity_type: Shot
     filters:
         - { "path": "project", "relation": "is", "values": [ "$project" ] }
         - { "path": "status", "relation": "is", "values": [ "ip" ] }
+```
 
 If you have a Sequence folder higher up the tree and want to **create folders for all Shots which belong to that Sequence**, you can create the following filters:
 
+```YAML
     entity_type: Shot
     filters:
         - { "path": "project", "relation": "is", "values": [ "$project" ] }
         - { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] }
+```
 
 To **find all assets** use this syntax:
 
+```YAML
     entity_type: Asset
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
+```
 
 ## List Field Folders
 
@@ -270,31 +257,25 @@ To **find all assets** use this syntax:
 
 When you want a dynamic folder which corresponds to all the items in a {% include product %} list field, use the following syntax in your YAML file:
 
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: "shotgun_list_field"
     
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Asset"
     
-    <a name="only create for values which are used in this project."></a>
     # only create for values which are used in this project.
-    <a name="this is optional and will be set to false if not specified."></a>
     # this is optional and will be set to false if not specified.
     skip_unused: false
     
-    <a name="by default, list fields are only created if they are needed by a child entity node"></a>
     # by default, list fields are only created if they are needed by a child entity node
-    <a name="by setting the create_with_parent parameter to true you ensure that list field"></a>
     # by setting the create_with_parent parameter to true you ensure that list field
-    <a name="nodes are always created"></a>
     # nodes are always created
     create_with_parent: false
     
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     field_name: "{sg_asset_type}_type"
+```
 
 -   Set value of dynamic content **type** field to be  `shotgun_list_field`.
 -   The  `entity_type`  field should be set to the {% include product %} entity from which we want to pull data (for instance, "Asset", "Sequence", "Shot", etc.).
@@ -311,13 +292,13 @@ The Pipeline Step folder represents a  [Pipeline Step](https://help.autodesk.com
 
 ![pipeline_step_folder](images/file-system-config-reference/pipeline_step_folder_02_DS.png)
 
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: "shotgun_step"
     
-    <a name="the {% include product %} field to use for the folder name. This field needs to come from a step entity."></a>
     # the {% include product %} field to use for the folder name. This field needs to come from a step entity.
     name: "short_name"
+```
 
 You can use name expressions here, just like you can with the  [{% include product %} entity described above](#list-field-folders). The node will look at its parent, grandparent, etc., until a {% include product %} entity folder configuration is found. This entity folder will be associated with the Step and the type of the entity will be used to determine which Steps to create.
 
@@ -327,9 +308,10 @@ By default, the Step folder will try to create all the relevant Steps for a part
 
 You can, however, turn this off by using the following syntax:
 
-    <a name="recurse down from parent folder"></a>
+```YAML
     # recurse down from parent folder
     create_with_parent: false
+```
 
 Adding this setting to the configuration means that no Step folders will be created when a Shot folder is created. Instead, Step folders will be created only when you run the folder creation on a Task. This can be useful if you want to configure user sandboxes and other structures which are created just before work starts.
 
@@ -351,7 +333,9 @@ As part of the folder creation, Toolkit needs to associate a Pipeline Step with 
 
 However, if you have a hierarchy with entities below your primary entity, for example  `Sequence > Shot > Department > Step`, Toolkit will, by default, associate the Step with the Department level, which is not desired. In this case, we need to explicitly tell Toolkit where to look. We can do this by adding the following to the Step configuration:
 
+```YAML
     associated_entity_type: Shot
+```
 
 ## Task Folder
 
@@ -359,19 +343,20 @@ The Task folder represents a  [Task](https://help.autodesk.com/view/SGSUB/ENU/?g
 
 ![task_folder](images/file-system-config-reference/task_folder_02_DS.png)
 
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: "shotgun_task"
     
-    <a name="the {% include product %} field to use for the folder name. This field needs to come from a task entity."></a>
     # the {% include product %} field to use for the folder name. This field needs to come from a task entity.
     name: "content" 
+```
     
 You can, however, turn on creation so that Tasks are created with their parent entity by using the following syntax:
     
-    <a name="recurse down from parent folder"></a>
+```YAML
     # recurse down from parent folder
     create_with_parent: true
+```
 
 Similar to a Step, you can also optionally supply a  `filter`  parameter if you want to filter which Tasks your folder configuration should operate on.
 
@@ -393,17 +378,15 @@ However, if you have a hierarchy with entities below your primary entity (e.g., 
 
 Deferred folder creation means that creation will only be executed when a second folder creation pass is requested via the optional  `engine`  parameter in the create folders method of the Toolkit API. Typically, this method is executed by Toolkit's various application launchers just prior to starting up an application. Most folder types support a deferred flag, which is  `false`  by default. To make deferred folder creation  `true`, you can add this flag:
 
-    <a name="only create this folder when tk.create_filesystem_structure is"></a>
+```YAML
     # only create this folder when tk.create_filesystem_structure is
-    <a name="called with tk-maya, tk-nuke or any-custom-string."></a>
     # called with tk-maya, tk-nuke or any-custom-string.
     defer_creation: ["tk-maya", "tk-nuke", "any-custom-string]
     
-    <a  name="create this folder when any application launches, but not when normal folder"></a>
     # create this folder when any application launches, but not when normal folder
-    <a name="creation runs"></a>
     # creation runs
     defer_creation: true
+```
 
 This flag makes it possible to split the folder creation in half-one part that runs in a first "global" pass and a second pass that runs at a later point. Typically, the second pass is associated with the engine launching (although it does not happen automatically since the default is  `false`) and allows for a user to create folders just before engine startup. This allows for two primary workflows:
 
@@ -414,34 +397,31 @@ This flag makes it possible to split the folder creation in half-one part that r
 
 _Tip: If you prefer a normal, static folder to be created when an application (like Maya) launches, just create a config YAML file named the same as the folder and add the following:_
 
-    <a name="type of content"></a>
+```YAML
     # type of content
     type: "static"
     
-    <a name="only create this folder for maya"></a>
     # only create this folder for maya
     defer_creation: "tk-maya"
     
-    :::yaml
-    <a name="type of content"></a>
     # type of content
     type: "static"
     
-    <a name="only create this folder when tk.create_filesystem_structure is"></a>
     # only create this folder when tk.create_filesystem_structure is
-    <a name="called with any-custom-string."></a>
     # called with any-custom-string.
     defer_creation: "any-custom-string" 
+```
 
 ## Current User Folder
 
 The current user folder is a special construct that lets you set up work areas for different users. A common scenario is if you have multiple artists from a department working on the same shot. User folders can be used so that artists can store their workfiles in their own directories and be able to filter just for their files in the  [Workfiles App](https://developer.shotgridsoftware.com/9a736ee3/). In this case, the configuration file needs to include the following options:
 
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: "user_workspace"
     
     name: "login"
+```
 
 -   Set value of **type** field to be  `user_workspace`.
 -   The **name** field is the name that should be given to a user folder. It must consist of a combination of fields fetched from People in {% include product %} (`HumanUser`  in {% include product %}).
@@ -457,41 +437,33 @@ Static folders (and files) are the most simple type. You can drop them into the 
 
 Often, you will not need to go beyond this for static folders; however, Toolkit does support some more advanced functionality for static folders. It is possible to define dynamic conditions to determine if a static folder should get created. For example, you may want to have special static folders that only get created for Pipeline Steps of the Editorial type. In this case, you need to add a YAML configuration file next to the static folder and give it the same name, with the extension "yml". Then, use the following syntax:
 
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: "static"
 
-    <a name="pick one of the {% include product %} folders that are above this folder"></a>
     # pick one of the {% include product %} folders that are above this folder
-    <a name="in the folder hierarchy. In this case it is a parent folder"></a>
     # in the folder hierarchy. In this case it is a parent folder
-    <a name="named step that we want to look at when deciding if this"></a>
     # named step that we want to look at when deciding if this
-    <a name="static folder should be created or not."></a>
     # static folder should be created or not.
     constrain_by_entity: "$step"
     
-    <a name="we can now define constraints for this step. Constraints are simple"></a>
     # we can now define constraints for this step. Constraints are simple
-    <a name="{% include product %} queries, following the same syntax as the other {% include product %} filters"></a>
     # {% include product %} queries, following the same syntax as the other {% include product %} filters
-    <a name="shown in previous sections."></a>
     # shown in previous sections.
-    #
-    <a name="In our example, if the parent step matches the constraints given"></a>
+    
     # In our example, if the parent step matches the constraints given
-    <a name="in the filter below, the static folder will be created. If not,"></a>
     # in the filter below, the static folder will be created. If not,
-    <a name="it (and its children) will be ignored by the folder creation process."></a>
     # it (and its children) will be ignored by the folder creation process.
     constraints:
         - { "path": "short_name", "relation": "is", "values": [ "edit" ] } 
+```
 
 By default, static folders will automatically get created together with their parent folder. There may be cases where this is not desirable, and in those cases you can add a special flag to indicate that the static folder should not be created together with its parent:
 
-    <a name="do not recurse down automatically"></a>
+```YAML
     # do not recurse down automatically
-    create_with_parent: false 
+    create_with_parent: false
+``` 
 
 ## Symbolic Links
 
@@ -499,40 +471,39 @@ You can create symbolic links (symlink) as part of the dynamic folder creation. 
 
 The  `artwork.symlink.yml`  file must, at the very least, contain a  `target`  key:
 
-    <a name="Example of a .symlink.yml file"></a>
+```YAML
     # Example of a .symlink.yml file
     
-    <a name="A target parameter is required."></a>
     # A target parameter is required.
     target: "../Stuff/$Project/$Shot"
     
-    <a name="Additional parameters will be passed to the hook as metadata"></a>
     # Additional parameters will be passed to the hook as metadata
-    <a name="so you can for example include permission hints or other stuff"></a>
     # so you can for example include permission hints or other stuff
-    <a name="that you may need for advanced customization"></a>
     # that you may need for advanced customization
     additional_param1: abc
     additional_param2: def 
+```
 
 If the target parameter contains  `$EntityType`  tokens such as  `$Asset`,  `$Shot`, or  `$Project`, these will attempt to be resolved with the name of the folder representing that entity (Asset, Shot, Project, etc.). Toolkit will look up the filesystem tree for these values and if they are not defined higher up in the tree, an error will be reported.
 
 List fields, such as asset type on assets, are expressed with a syntax that includes the entity type, e.g.  `$Asset.sg_asset_type`. For example:
 
-    <a name="Example of a .symlink.yml file"></a>
+```YAML
     # Example of a .symlink.yml file
     
-    <a name="A target parameter is required."></a>
     # A target parameter is required.
     target: "../renders/$Project/$Asset.sg_asset_type/$Asset"
-    
+```
+
 Symlink creation happens (like all input/output, or I/O) inside the folder processing hook. A special  `symlink`action is passed from the system into the hook, and you will get the name of the symlink, the fully resolved target, and all the YAML metadata contained within the definition file along with this request. For our  `artwork`example above, we create the folder under the Shot like this:
-    
+
+```  
      {'action': 'symlink',
       'path': '/mnt/projects/chasing_the_light/Sequences/AA/AA001/artwork'
       'target': '../Stuff/chasing_the_light/AA001',
       'metadata': {'target': '../Stuff/$Project/$Shot', 'additional_param1': 'abc', 'additional_param2': 'def'}
       }
+```
 
 ## Ignoring files and folders
 
@@ -542,21 +513,23 @@ Files that are placed in the schema scaffold will be copied across into the targ
 
 Sometimes it can be useful to exclude certain files and folders from being copied across as part of the folder creation. For example, if you store your folder creation configs in Git or SVN, you will have  `.git`  and  `.svn`folders that you will not want to copy to each Shot or Asset folder. If there are files which you do not want to have copied, a file named  `ignore_files`  can be placed in the  `config/core/schema`  folder inside the project configuration. This file should contain glob-style patterns to define files not to copy. Each pattern should be on a separate line:
 
-    <a name="This is a good example of a standard ignore_files file"></a>
+```YAML
     # This is a good example of a standard ignore_files file
     
     .svn                # no svn temp files to be copied across at folder creation time
     .git                # no git temp files to be copied across at folder creation time
-    .DS_Store           # no mac temp files to be copied across at folder creation time 
+    .DS_Store           # no mac temp files to be copied across at folder creation time
+```
 
 You can also use wildcards. For example, if you need to exclude all files with the TMP extension, just add a *.tmp line to the file.
 
-    <a name="This is a good example of a standard ignore_files file"></a>
+```YAML
     # This is a good example of a standard ignore_files file
     
     .svn                # no svn temp files to be copied across at folder creation time
     .git                # no git temp files to be copied across at folder creation time
     *.tmp           # no files with tmp extension to be copied across at folder creation time
+```
 
 ## Customizing IO and Permissions
 
@@ -572,6 +545,7 @@ The folder creation hook is executed just once for each folder creation request.
 
 The data in the list is always a depth first recursion, starting with the top level folders and files and then traversing deeper and deeper. Here is an example of what the data passed to the hook may look like:
 
+```python
     [
     
      {'action': 'entity_folder',
@@ -630,6 +604,7 @@ The data in the list is always a depth first recursion, starting with the top le
       },
     
     ]
+```
 
 The data is a list of dictionaries. Each dictionary has a key called  `action`. This key denotes the type of I/O item that is requested. If you are implementing the folder creation hook, you need to add support for the following different actions:
 
@@ -643,6 +618,7 @@ Each of the actions have a different set of dictionary keys. For example, the  `
 
 All  `actions`  also have a key called  `metadata`. This key represents the YAML configuration data that comes from the associated configuration file in the schema setup. You can see in the example above how the  `metadata`  key for a {% include product %} folder contains all the filter and naming information that is set up within the schema configuration. For example, here is the metadata for the Shot folder in the example above:
 
+```python
     {'action': 'entity_folder',
       'entity': {'id': 1184, 'name': 'moo87', 'type': 'Shot'},
       'metadata': {'entity_type': 'Shot',
@@ -652,49 +628,37 @@ All  `actions`  also have a key called  `metadata`. This key represents the YAML
                    'name': 'code',
                    'type': 'shotgun_entity'},
       'path': '/mnt/projects/chasing_the_light/sequences/aa2/moo87'} 
+```
 
 ...which corresponds to the  `shot.yml`  schema configuration file:
 
-    <a name="Copyright (c) 2013 {% include product %} Software Inc."></a>
+```YAML
     # Copyright (c) 2013 {% include product %} Software Inc.
     #
-    <a name="CONFIDENTIAL AND PROPRIETARY"></a>
     # CONFIDENTIAL AND PROPRIETARY
     #
-    <a name="This work is provided _AS IS_ and subject to the {% include product %} Pipeline Toolkit"></a>
     # This work is provided "AS IS" and subject to the {% include product %} Pipeline Toolkit
-    <a name="Source Code License included in this distribution package. See LICENSE."></a>
     # Source Code License included in this distribution package. See LICENSE.
-    <a name="By accessing, using, copying or modifying this work you indicate your"></a>
     # By accessing, using, copying or modifying this work you indicate your
-    <a name="agreement to the {% include product %} Pipeline Toolkit Source Code License. All rights"></a>
     # agreement to the {% include product %} Pipeline Toolkit Source Code License. All rights
-    <a name="not expressly granted therein are reserved by {% include product %} Software Inc."></a>
     # not expressly granted therein are reserved by {% include product %} Software Inc.
     
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
     
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
     
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Shot"
     
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] } ] 
+```
 
 _Note that the dynamic token  `$sequence`  has been resolved into an actual object at runtime._
 
@@ -704,28 +668,26 @@ In addition to the various configuration directives required by Toolkit, you can
 
 For example, if you had the following structure in your schema setup:
 
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: "shotgun_entity"
     
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
     
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Shot"
     
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
     filters: [ { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] } ]
     
-    <a name="user settings"></a>
     # user settings
     studio_permissions_level: "admin" 
+```
 
 ...the data passed via the folder creation hook would be:
 
+```python
     {'action': 'entity_folder',
       'entity': {'id': 1184, 'name': 'moo87', 'type': 'Shot'},
       'metadata': {'entity_type': 'Shot',
@@ -736,6 +698,7 @@ For example, if you had the following structure in your schema setup:
                    'type': 'shotgun_entity',
                    'studio_permissions_level': 'admin'},
       'path': '/mnt/projects/chasing_the_light/sequences/aa2/moo87'} 
+```
 
 Now the special parameter  `studio_permissions_level`  is passed into the hook and you can use that, for example, to control file permissions. You can also pass arbitrarily complex data structures using this method. A typical usecase for this would be to control permissions at a very detailed level.
 
@@ -745,15 +708,18 @@ Typically, when you create a folder inside the folder schema configuration, and 
 
 If you would like to associate custom configuration metadata with a static folder, you have to create a YAML configuration file with the  `static`  type. For example, let's say you have a static  `assets`  folder just under the project root and would like to group together assets and add custom configuration metadata. To achieve this, create the following  `assets.yml`  file:
 
+```YAML
     type: static
     studio_permissions_level: "admin"
+```
 
 The configuration data passed to the hook will then contain the following:
 
+```YAML
     {'action': 'folder',
      'metadata': {'studio_permissions_level': 'admin', 'type': 'static'},
      'path': '/mnt/projects/chasing_the_light/assets'},
-
+```
 
 Again, arbitrarily complex data can be passed from the YAML configuration file into the hook in this way.
 
@@ -761,6 +727,7 @@ Again, arbitrarily complex data can be passed from the YAML configuration file i
 
 A simple folder creation hook could look something like this:
 
+```python
     class ProcessFolderCreation(Hook):
     
         def execute(self, items, preview_mode, **kwargs):
@@ -870,6 +837,7 @@ A simple folder creation hook could look something like this:
                 os.umask(old_umask)
     
             return folders 
+```
 
 # Part 2 - Configuring File System Templates
 
@@ -889,10 +857,12 @@ The templates file is divided into three sections: keys, paths and strings.
 
 Keys define what values are acceptable for fields. In the template config file keys are defined in the form:
 
+```YAML
     key_name:
        type: key_type
        option: option_value
        option: option_value 
+```
 
 Key type is either  `str`,  `int`, or  `sequence`. Str keys are keys whose values are strings, int keys are keys whose values are integers, and sequence keys are keys whose values are sequences of integers.
 
@@ -933,32 +903,39 @@ For technical details about template keys, see the  [API reference](http://devel
 
 A name that defaults to "comp" and that is alphanumeric:
 
+```YAML
     name:
         type: str
         default: "comp"
         filter_by: alphanumeric
     
     nuke_shot_work: sequences/{Sequence}/{Shot}/{Step}/work/nuke/{name}.v{version}.nk 
+```
 
 ### Example - Version number
 
 A version number that would match numbers such as 002, 102, 034, 12341
 
+```YAML
     version:
         type: int
         format_spec: "03" 
+```
 
 A version number that would match numbers such as 002, 102, 034, 12341, but also 0002, 2 and 0102
 
+```YAML
     version:
         type: int
         format_spec: "03"
         strict_matching: false 
+```
 
 ### Example - A stereo eye
 
 A typical stereo eye setup. The eye field is either L or R, but when used in software, it is often referred to in a generic, abstract fashion as %V. Since %V does not really refer to a file name but rather a collection of files, we set the  _abstract_  flag. Abstract fields need to have a default value that is pulled in whenever the abstract representation is being requested.
 
+```YAML
     eye:
         type: str
         choices: ["L", "R", "%V"]
@@ -966,21 +943,25 @@ A typical stereo eye setup. The eye field is either L or R, but when used in sof
         abstract: true
     
     nuke_shot_render_stereo: sequences/{Sequence}/{Shot}/{Step}/work/images/{Shot}_{name}_{eye}_v{version}.{SEQ}.exr
+```
 
 ### Example - Image sequences
 
 Image sequences are abstract by definition and they have a default value set to %0Xd unless otherwise specified. The below sequence spec would identify frame numbers such as 0001, 1234 and 12345.
 
+```YAML
     SEQ:
         type: sequence
         format_spec: "04"
     
     nuke_shot_render_stereo: sequences/{Sequence}/{Shot}/{Step}/work/images/{Shot}_{name}_{channel}_{eye}_v{version}.{SEQ}.exr 
+```
 
 ### Example - Two fields both named version via an alias
 
 Two definitions of version number that can both be used by code that expects a key which is named "version". This is useful if you have two Toolkit apps that both need a  _version_  field but you want these version field to be formatted differently.
 
+```YAML
     nuke_version:
         type: int
         format_spec: "03"
@@ -990,19 +971,15 @@ Two definitions of version number that can both be used by code that expects a k
         format_spec: "04"
         alias: version
     
-    <a name="nuke versions are using numbers on the form 003, 004, 005"></a>
     # nuke versions are using numbers on the form 003, 004, 005
-    <a name="the nuke publish app requires a field called {version}"></a>
     # the nuke publish app requires a field called {version}
-    <a name="however {nuke_version} is a valid replacement for {version}"></a>
     # however {nuke_version} is a valid replacement for {version}
-    <a name="because it has an alias defined"></a>
     # because it has an alias defined
     nuke_shot_work: sequences/{Sequence}/{Shot}/{Step}/work/nuke/{name}.v{nuke_version}.nk
     
-    <a name="maya versions are using numbers on the form 0004, 0005, 0006"></a>
     # maya versions are using numbers on the form 0004, 0005, 0006
     maya_shot_work: sequences/{Sequence}/{Shot}/{Step}/work/maya/{name}.v{maya_version}.ma 
+```
 
 ### Example - Timestamp
 
@@ -1044,21 +1021,27 @@ When a Toolkit app populates all the context fields (via the  `context.as_templa
 
 Often times a studio will have a project that needs to save out ASCII and Binary Maya files. In this scenario, a string value with two valid values looks like:
 
+```YAML
     maya_file_extension:
         type: str
         choices: ["ma", "mb"] 
+```
 
 {% include info title="Note" content="the default apps use either  `.ma`  or  `.mb`  based on what's configured in the  `templates.yml`. So, for example, if you want to change the work files app to save  `.mb`  instead of  `.ma`  in a project, you can change these three templates (for Shots):" %}
 
+```YAML
     maya_shot_work:  '@shot_root/work/maya/{name}.v{version}.ma'
     maya_shot_snapshot:  '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.ma'
     maya_shot_publish:  '@shot_root/publish/maya/{name}.v{version}.ma'
-    
+```
+
     If  you  instead  end  them  with  .mb,  then  the  apps  will  save  out  as  Maya  binary:
-    
+
+```YAML
     maya_shot_work:  '@shot_root/work/maya/{name}.v{version}.mb'
     maya_shot_snapshot:  '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.mb'
     maya_shot_publish:  '@shot_root/publish/maya/{name}.v{version}.mb' 
+```
 
 Check out  [The Paths Section](#the-paths-section)  below for more details.
 
@@ -1112,9 +1095,11 @@ This form is required if any optional attributes need to be defined. Currently, 
 
 For example, it may look like this:
 
+```YAML
     shot_work:
       definition: sequences/{Sequence}/{Shot}/{Step}/work/{Shot}.v{version}.ma
       root_name: primary 
+```
 
 You need to use the above format if you want to use another storage root than the primary one. In this example, using this simple format implies that you are using the primary root for all entries.
 
@@ -1122,11 +1107,15 @@ You need to use the above format if you want to use another storage root than th
 
 Strings are similar to paths in that they must include a name and definition, which can be supplied in the simple form:
 
+```YAML
     string_name: string_definition
+```
 
 String definitions are templates consisting of key names and other values which together resolve to a string rather than a file system path. An example might the name used in {% include product %} for a publish:
 
+```YAML
     maya_publish_sg_name: "Maya  publish,  {name},  v{version}"
+```
 
 With name and version as key names defined in the same file.
 
@@ -1136,12 +1125,16 @@ Optional keys in templates are useful for a number of reasons. One common case i
 
 Optional sections can be defined using square brackets:
 
+```YAML
     shot_work: sequences/{Shot}/work/{Shot}.[v{version}.]ma 
+```
 
 The optional section must contain at least one key. If the path is resolved with no value for the key(s) in an optional section, the path will resolve as if that section did not exist in the definition. The example above can be thought of as two templates baked into a single definition:
 
+```YAML
     shot_work: sequences/{Shot}/work/{Shot}.v{version}.ma
     shot_work: sequences/{Shot}/work/{Shot}.ma 
+```
 
 As you pass in a dictionary of fields, Toolkit will choose the right version of the template depending on the values:
 
@@ -1232,55 +1225,43 @@ In your  `config/core/schema/project/shots`  folder, create a folder named  `epi
 
 **Using the official  `Episode`  Entity**
 
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: "shotgun_entity"
     
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
     
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Episode"
     
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing 
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
+```
 
-**Using  `CustomEntity02`**
+**Using `CustomEntity02`**
 
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: "shotgun_entity"
     
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
     
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "CustomEntity02"
     
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing 
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ] 
+```
 
 This tells Toolkit to create folders for every Episode in this project.
 
@@ -1288,29 +1269,23 @@ This tells Toolkit to create folders for every Episode in this project.
 
 In your  `config/core/schema/project/shots/episode`  folder, create a folder named  `sequence`  with a corresponding  `sequence.yml`  file in the same directory with the following content:
 
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: "shotgun_entity"
     
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
     
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Sequence"
     
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing 
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "sg_episode", "relation": "is", "values": [ "$episode" ] } ]` 
+```
 
 This tells Toolkit to create folders for every Sequence that is linked to the Episode above it in the directory tree.
 
@@ -1318,30 +1293,23 @@ This tells Toolkit to create folders for every Sequence that is linked to the Ep
 
 In your  `config/core/schema/project/shots/episode/sequence`  folder, create a folder named  `shot`  with a corresponding  `shot.yml`  file in the same directory with the following content:
 
-
-    <a name="the type of dynamic content"></a>
+```YAML
     # the type of dynamic content
     type: "shotgun_entity"
     
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
     
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Shot"
     
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing 
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] } ]` 
+```
 
 This tells Toolkit to create folders for every Shot that is linked to the Sequence above it in the directory tree.
 
@@ -1355,33 +1323,41 @@ In order to tell Toolkit that you are using Episodes in your schema, you need to
 
 **Using the official  `Episode`  Entity**
 
+```YAML
     keys:
         ...
         Episode:
             type: str
         ... 
+```
 
 Then, in your template paths below, update the  `shot_root`  template, as well as any other template paths that are in the shot hierarchy, to match your episodic hierarchy by inserting  `{Episode}`  in the proper place to specify the episode in the directory structure:
 
+```YAML
     ...
         paths:
             shot_root: shots/{Episode}/{Sequence}/{Shot}/{Step}
             … 
+```
 
 **Using  `CustomEntity02`**
 
+```YAML
     keys:
         ...
         CustomEntity02:
             type: str
         ...
+```
 
 Then, in your template paths below, update the  `shot_root`  template, as well as any other template paths that are in the shot hierarchy, to match your episodic hierarchy by inserting  `{CustomEntity02}`  in the proper place to specify the episode in the directory structure:
 
+```YAML
     ...
         paths:
             shot_root: shots/{CustomEntity02}/{Sequence}/{Shot}/{Step}
             … 
+```
 
 That's all you need for the basic **Episode > Sequence > Shot** workflow!
 
@@ -1418,5 +1394,7 @@ However, in more advanced cases, it may be useful to have an alternative Pipelin
 
 In the folder configuration, add two special options to tell it to use your custom step setup rather than {% include product %}'s built-in Pipeline Step:
 
+```YAML
     entity_type: "CustomNonProjectEntity05"
     task_link_field: "sg_task_type"
+```
