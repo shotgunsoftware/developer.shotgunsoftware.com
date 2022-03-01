@@ -105,7 +105,6 @@ Let's dive deeper into these modes.
 
 For a dynamic folder which corresponds to a {% include product %} query, use the following syntax in your YAML file:
 
-```YAML
     # the type of dynamic content
     type: shotgun_entity
     
@@ -121,7 +120,6 @@ For a dynamic folder which corresponds to a {% include product %} query, use the
     # (this is std {% include product %} API syntax)
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ] 
-```
 
 -   Set the value of dynamic content **type** field to be **shotgun_entity**.
 -   The **entity_type** field should be set to the {% include product %} entity from which we want to pull data from (e.g., "Asset", "Shot", "Sequence", "CustomEntity02", etc).
@@ -169,10 +167,8 @@ In {% include product %}, there is nesting within {% include product %} data str
 
 A shotgun_entity type folder supports an optional flag to control whether the folder creation process tries to recurse down into it when a parent is created, so that the child will also be created. Flags are settings that can only have certain fixed values, in this case "true" or "false". To add this flag, use this example:
 
-```YAML
     # recurse down from parent folder
     create_with_parent: true 
-```
 
 As mentioned, this setting is optional and set to false by default. If you set it to true, Toolkit create folders for any child entity it finds. To continue with our example, if you want Shots to be created whenever their parent Sequence is created, set  `create_with_parent`  to  `true`  for the Shot.
 
@@ -198,7 +194,6 @@ You define optional fields using square brackets, like:  `{code}[_{sg_extra_fiel
 
 Toolkit supports the extraction of parts of a {% include product %} field name using regular expressions. This makes it possible to create simple expressions where a value in {% include product %} can drive the folder creation. For example, if all assets in {% include product %} are named with a three letter prefix followed by an underscore (e.g  `AAT_Boulder7`), this can split into two filesystem folder levels, e.g.  `AAT/Boulder7`:
 
-```YAML
     # the type of dynamic content
     type: shotgun_entity
     
@@ -214,7 +209,6 @@ Toolkit supports the extraction of parts of a {% include product %} field name u
     # (this is std {% include product %} API syntax)
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
-```
 
 The syntax is similar to the  `subset`  tokens in the Template system; Simply add a colon after the {% include product %} field name, then followed by a regular expression. Any groups (e.g. sections surrounded by  `()`s) defined in the regular expression will be used to extract values. If there are multiple groups in the regex, these will be concatenated together. For example, the following expression would extract the intials for the user who created an object:  `{created_by.HumanUser.code:^([A-Z])[a-z]* ([A-Z])[a-z]*}`
 
@@ -224,28 +218,22 @@ Below are a collection of examples showing how to use the filters syntax.
 
 To **find all shots which belong to the current project and are in progress**, use the syntax below. Note that the {% include product %} Shot entity has a link field called project which connects a shot to a project. We want to make sure that we only create folders for the shots that are associated with the current project. Since there is a project level higher up in the configuration file system, we can refer to this via the $syntax and Toolkit will automatically create to this {% include product %} entity link reference. Remember, valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy).
 
-```YAML
     entity_type: Shot
     filters:
         - { "path": "project", "relation": "is", "values": [ "$project" ] }
         - { "path": "status", "relation": "is", "values": [ "ip" ] }
-```
 
 If you have a Sequence folder higher up the tree and want to **create folders for all Shots which belong to that Sequence**, you can create the following filters:
 
-```YAML
     entity_type: Shot
     filters:
         - { "path": "project", "relation": "is", "values": [ "$project" ] }
         - { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] }
-```
 
 To **find all assets** use this syntax:
 
-```YAML
     entity_type: Asset
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
-```
 
 ## List Field Folders
 
