@@ -34,11 +34,12 @@ Make sure the "Linked Projects" field is visible on the page, if not you can add
 
 *See the detailed documentation* [here](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_cross_project_asset_linking_html). 
 
-<img src="./images/cross-project/library-project-reuse.png" alt="Brekadown2"/>
+<img src="./images/cross-project/library-project-reuse.PNG" alt="Library Project Linked Projects Field"/>
 
 ## Step 2 - Loading Assets
 With an Asset properly linked you can have a simple and dynamic tab in Loader to show your studios linked Assets. This helps artist and creative teams easily re-use assets across multiple projects. 
-(Note: If you use the Alias or VRED Integration this will be included by default. If you use other engines, feel free to add this tab to your config [using Alias or VRED as an example](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-loader2.yml#L378-L382) )
+
+*Note: If you use the Alias or VRED Integration this will be included by default. If you use other engines, feel free to add this tab to your config [using Alias or VRED as an example](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-loader2.yml#L378-L382).*
 
 
 
@@ -60,7 +61,7 @@ If you choose to Reference this data and keep it pointing at a source somewhere 
 
 Using the Scene Breakdown 2 app in your config, you can see all the referenced items currently in your scene. If any of those references gets updated, the scene breakdown will inform you, share the published file notes about what changed, and allow you to update to the latest version or any other version of the published file. 
 
-<img src="./images/cross-project/breakdown-cross-project.png" alt="Scene Breakdown 2"/>
+<img src="./images/cross-project/breakdown-cross-project.PNG" alt="Scene Breakdown 2"/>
 
 *Note: The updating of assets only apply's for Advanced Configs. If your studio uses a Basic config you will not have access ot this app.*
 
