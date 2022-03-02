@@ -1,0 +1,67 @@
+---
+layout: default
+title: Cross Project Workflow
+pagename: cross-project-workflow
+lang: en
+---
+# Cross Project Workflow
+
+## Best Practice
+
+Cross Project workflows for ShotGrid supports re-using, sharing and working with assets across multiple projects. The most common method is a single "Asset Library" project. While we still recommend using a singular "Library" project to keep it simple, ShotGrid also allows you to link Assets across multiple active projects.
+
+There are 2 main ways we see studios re-using assets. Some studios may have flexibility and can re-use a source asset "as is". Other studios may have limitations or restrictions based on their projects and pipeline. 
+
+* **Direct Reference** - Re-use a source asset as is. If that asset changes, you can keep your version or update to the latest version.
+* **Duplicating or Forking** - Import from another project (breaking any link) and build upon or take control and save to your current project
+
+
+
+# Cross Project / Library Project Workflow
+This tutorial will show you how to use ShotGrid Toolkit to re-use your assets across multiple projects and build up an asset library thats easily accessible for artists in your studio. Let's take you through the 3 main steps to get this working.
+
+1. **ShotGrid Assets linked across Projects** - using the "Linked Projects" linked field between Assets and Projects
+2. **Loading/referencing assets into scenes** - using a dynamic tab in the Loader
+3. **Keep Assets up to date** - using the Scene Breakdown App
+
+
+## Step 1 - Linking Assets
+
+The first step of re-using assets is telling ShotGrid what other projects you would like to use an Asset in. 
+
+From the source Project that has the original Asset your're looking to use, navigate to the Assets page.
+Make sure the "Linked Projects" field is visible on the page, if not you can add it. Then in that field add the project you want to use the asset in.
+
+*See the detailed documentation* [here](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_cross_project_asset_linking_html). 
+
+<img src="./images/cross-project/library-project-reuse.png" alt="Brekadown2"/>
+
+## Step 2 - Loading Assets
+With an Asset properly linked you can have a simple and dynamic tab in Loader to show your studios linked Assets. This helps artist and creative teams easily re-use assets across multiple projects. 
+(Note: If you use the Alias or VRED Integration this will be included by default. If you use other engines, feel free to add this tab to your config [using Alias or VRED as an example](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-loader2.yml#L378-L382) )
+
+
+
+Assuming the asset is properly linked, open your DCC of choice (Maya, Houdini, Alias, etc.), set the context by opening or saving your working scene. Once your scene context is correctly set, launch the Loader from the ShotGrid menu. Here you will see the tab called "Assets - Linked" allowing you to access Published Files for Assets across projects.
+
+<img src="./images/cross-project/loader-assets-linked.png" alt="Loader Tab for Assets - Linked"/>
+
+
+
+<img src="./images/cross-project/loader-assets-linked-description.png" alt="Loader Tab for Assets - Linked Description"/>
+
+
+From here, you can take advantage of your DCC Loader actions to do things like Import, if you plan to duplicate or fork your asset breaking any link to its source or Reference for an ongoing link to the current version and all subsequent versions of this asset.
+
+<img src="./images/cross-project/loader-actions.png" alt="Loader Actions"/>
+
+## Step 3 - Updating those assets
+If you choose to Reference this data and keep it pointing at a source somewhere else, you likely will want to see if the source changes. Maybe a different team is continuing to work on this asset and you need the latest version. 
+
+Using the Scene Breakdown 2 app in your config, you can see all the referenced items currently in your scene. If any of those references gets updated, the scene breakdown will inform you, share the published file notes about what changed, and allow you to update to the latest version or any other version of the published file. 
+
+<img src="./images/cross-project/breakdown-cross-project.png" alt="Scene Breakdown 2"/>
+
+*Note: The updating of assets only apply's for Advanced Configs. If your studio uses a Basic config you will not have access ot this app.*
+
+
