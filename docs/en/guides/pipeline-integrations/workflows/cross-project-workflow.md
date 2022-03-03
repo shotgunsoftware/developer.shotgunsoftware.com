@@ -8,12 +8,12 @@ lang: en
 
 ## Best Practice
 
-Cross Project workflows for ShotGrid supports re-using, sharing and working with assets across multiple projects. The most common method is a single "Asset Library" project. While we still recommend using a singular "Library" project to keep it simple, ShotGrid also allows you to link Assets across multiple active projects.
+Cross Project workflows in ShotGrid lets you re-use, share and work with assets across multiple projects. The most common method is to use a single "Asset Library" project. While we still recommend using a singular "Library" project to keep it simple, ShotGrid also allows you to link Assets across multiple active projects.
 
-There are 2 main ways we see studios re-using assets. Some studios may have flexibility and can re-use a source asset "as is". Other studios may have limitations or restrictions based on their projects and pipeline. 
+There are 2 main ways we see studios re-using assets. Some studios may have flexibility and can re-use a source asset "as is". Other studios may have limitations or restrictions based on their projects and pipeline and will want to copy and asset over into a project and use it from there. 
 
 * **Direct Reference** - Re-use a source asset as is. If that asset changes, you can keep your version or update to the latest version.
-* **Duplicating or Forking** - Import from another project (breaking any link) and build upon or take control and save to your current project
+* **Duplicating or Forking** - Import from another project (breaking any link) and build upon or take control and save to your current project.
 
 
 
@@ -63,6 +63,6 @@ Using the Scene Breakdown 2 app in your config, you can see all the referenced i
 
 <img src="./images/cross-project/breakdown-cross-project.PNG" alt="Scene Breakdown 2"/>
 
-*Note: The updating of assets only apply's for Advanced Configs. If your studio uses a Basic config you will not have access ot this app.*
+*Note: The updating of assets only apply's for Advanced Configs. If your studio uses a Basic config you will not have access to this app.*
 
 
