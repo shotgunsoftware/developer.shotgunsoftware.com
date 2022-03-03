@@ -39,11 +39,10 @@ Make sure the "Linked Projects" field is visible on the page, if not you can add
 ## Step 2 - Loading Assets
 With an Asset properly linked you can have a simple and dynamic tab in Loader to show your studios linked Assets. This helps artist and creative teams easily re-use assets across multiple projects. 
 
-*Note: If you use the Alias or VRED Integration this will be included by default. If you use other engines, feel free to add this tab to your config [using Alias or VRED as an example](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-loader2.yml#L378-L382).*
-
-
-
 Assuming the asset is properly linked, open your DCC of choice (Maya, Houdini, Alias, etc.), set the context by opening or saving your working scene. Once your scene context is correctly set, launch the Loader from the ShotGrid menu. Here you will see the tab called "Assets - Linked" allowing you to access Published Files for Assets across projects.
+
+*See the detailed instructions to add to this Tab to the Loader in your config [here](https://developer.shotgridsoftware.com/2088a677/).*
+
 
 <img src="./images/cross-project/loader-assets-linked.png" alt="Loader Tab for Assets - Linked"/>
 
