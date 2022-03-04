@@ -55,7 +55,7 @@ Once the Asset is properly linked:
 <img src="./images/cross-project/loader-assets-linked-description.png" alt="Loader Tab for Assets - Linked Description"/>
 
 
-From here, you can take advantage of your DCC Loader actions to do things like Import, if you plan to duplicate or fork your asset breaking any link to its source or Reference for an ongoing link to the current version and all subsequent versions of this asset.
+From here, you can take advantage of your content creation software Loader actions to do things like Import—if you plan to duplicate or fork your asset breaking any connections to its source—or Reference the Asset for an ongoing connection to the current Version and all subsequent Versions of this Asset.
 
 <img src="./images/cross-project/loader-actions.png" alt="Loader Actions"/>
 
