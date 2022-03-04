@@ -18,7 +18,7 @@ There are two main ways to re-use Assets. The more nimble approach is to re-use 
 
 
 # Cross Project / Library Project Workflow
-This tutorial will show you how to use ShotGrid Toolkit to re-use your assets across multiple projects and build up an asset library thats easily accessible for artists in your studio. Let's take you through the 3 main steps to get this working.
+This tutorial will show you how to use {% include product %} Toolkit to re-use your Assets across multiple Projects and build up an Asset library that's easily accessible for Artists in your studio. Let's take you through the three main steps to get this up and running.
 
 1. **ShotGrid Assets linked across Projects** - using the "Linked Projects" linked field between Assets and Projects
 2. **Loading/referencing assets into scenes** - using a dynamic tab in the Loader
