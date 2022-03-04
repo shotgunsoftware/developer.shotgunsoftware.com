@@ -26,6 +26,7 @@
         children:
         - page: toolkit-pipeline-tutorial
         - page: episodic-nuke-tutorial
+        - page: cross-project-workflow
       - page: alias-shotgrid-workflows
         children:
         - text: working-with-shotgrid
