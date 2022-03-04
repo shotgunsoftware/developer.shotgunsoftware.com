@@ -12,7 +12,7 @@ Cross Project workflows in {% include product %} allow you to re-use, share and 
 
 There are two main ways to re-use Assets. The more nimble approach is to re-use a source asset "as is" (Direct Reference). However,  limitations or restrictions may be in place based on Projects and Pipelines—so copying the source Asset over into a project is also an option (Duplicating or Forking). 
 
-* **Direct Reference** - Re-use a source asset as is. If that asset changes, you can keep your version or update to the latest version.
+* **Direct Reference** - Re-use a source Asset as is. If that asset changes, you can keep your Version or update to the latest Version.
 * **Duplicating or Forking** - Import from another project (breaking any link) and build upon or take control and save to your current project.
 
 
