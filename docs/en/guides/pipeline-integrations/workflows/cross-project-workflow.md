@@ -66,6 +66,6 @@ Using the Scene Breakdown 2 App in your config will enable you to see all the re
 
 <img src="./images/cross-project/breakdown-cross-project.PNG" alt="Scene Breakdown 2"/>
 
-*Note: The updating of assets only apply's for Advanced Configs. If your studio uses a Basic config you will not have access to this app.*
+*Note: The updating of Assets only applies when using an Advanced Configuration. If your studio uses a Basic Configuration, you will not have access to this Scene Breakdown App.*
 
 
