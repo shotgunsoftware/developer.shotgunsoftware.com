@@ -20,24 +20,24 @@ There are two main ways to re-use Assets. The more nimble approach is to re-use 
 # Cross Project / Library Project Workflow
 This tutorial will show you how to use {% include product %} Toolkit to re-use your Assets across multiple Projects and build up an Asset library that's easily accessible for Artists in your studio. Let's take you through the three main steps to get this up and running.
 
-1. **ShotGrid Assets linked across Projects** - using the "Linked Projects" linked field between Assets and Projects
-2. **Loading/referencing assets into scenes** - using a dynamic tab in the Loader
-3. **Keep Assets up to date** - using the Scene Breakdown App
+1. **ShotGrid Assets linked across Projects** - use the **Linked Projects** field to link between Assets and Projects
+2. **Loading/referencing Assets into Scenes** - use a dynamic tab in the Loader
+3. **Keep Assets up to date** - use the Scene Breakdown App
 
 
 ## Step 1 - Linking Assets
 
-The first step of re-using assets is telling ShotGrid what other projects you would like to use an Asset in. 
+The first step to re-use an Asset is by making {% include product %} aware of what other Projects you would like to use the source Asset in. 
 
-From the source Project that has the original Asset your're looking to use, navigate to the Assets page.
-Make sure the "Linked Projects" field is visible on the page, if not you can add it. Then in that field add the project you want to use the asset in.
+From the source Project that has the original Asset you're re-using, navigate to the Assets page.
+Add the **Linked Projects** field to the Assets Page (if it's not already visible). Then, specify Project you want to re-use the Asset in.
 
 *See the detailed documentation* [here](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_cross_project_asset_linking_html). 
 
 <img src="./images/cross-project/library-project-reuse.PNG" alt="Library Project Linked Projects Field"/>
 
 ## Step 2 - Loading Assets
-With an Asset properly linked you can have a simple and dynamic tab in Loader to show your studios linked Assets. This helps artist and creative teams easily re-use assets across multiple projects. 
+With an Asset properly linked via the **Linked Projects** field, you can have a simple and dynamic tab in Loader to show your studios linked, re-used Assets. This helps Artist and creative teams easily re-use Assets across multiple Projects. 
 
 Once the Asset is properly linked:
 * Launch your content creation software of choice (Maya, Houdini, Alias, etc.)
