@@ -62,7 +62,7 @@ From here, you can take advantage of your content creation software Loader actio
 ## Step 3 - Updating those assets
 If you choose to reference the Asset by keeping the connection to the source, you will likely want to see updates and changes to that source Asset. In this scenario, it's common that another team may continue to iterate on the source Asset and you will need the latest Version. 
 
-Using the Scene Breakdown 2 app in your config, you can see all the referenced items currently in your scene. If any of those references gets updated, the scene breakdown will inform you, share the published file notes about what changed, and allow you to update to the latest version or any other version of the published file. 
+Using the Scene Breakdown 2 App in your config will enable you to see all the referenced items currently in your Scene. When any of these references get updated, the Scene Breakdown will show you the conflicts, share the Published File notes about what changed, and allow you to update to the latest Version or any other Version of the Published File. 
 
 <img src="./images/cross-project/breakdown-cross-project.PNG" alt="Scene Breakdown 2"/>
 
