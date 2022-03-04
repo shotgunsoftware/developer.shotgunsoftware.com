@@ -8,7 +8,7 @@ lang: en
 
 ## Best Practice
 
-Cross Project workflows in ShotGrid lets you re-use, share and work with assets across multiple projects. The most common method is to use a single "Asset Library" project. While we still recommend using a singular "Library" project to keep it simple, ShotGrid also allows you to link Assets across multiple active projects.
+Cross Project workflows in {% include product %} allow you to re-use, share and work with Assets across multiple Projects. The most common method for re-using Assets is to use a single "Asset Library" project as the source Project. While we still recommend using a singular "Library" project to keep it simple, {% include product %} also allows you to link Assets across any active Project.
 
 There are 2 main ways we see studios re-using assets. Some studios may have flexibility and can re-use a source asset "as is". Other studios may have limitations or restrictions based on their projects and pipeline and will want to copy and asset over into a project and use it from there. 
 
