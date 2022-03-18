@@ -19,5 +19,4 @@ To start the setup for any of the Isolation features, go to the [Setup section](
 <!-- When updating this, also update tier1.md -->
 * [Media Isolation](./media_isolation.md)
 * [Media Traffic Isolation](./media_traffic_isolation.md)
-* [Web Traffic Isolation](./web_traffic_isolation.md)
 * [Media Replication](./media_replication.md)

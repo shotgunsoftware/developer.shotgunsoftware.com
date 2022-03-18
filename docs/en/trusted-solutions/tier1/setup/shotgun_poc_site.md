@@ -19,6 +19,4 @@ Once you have your test site, you can the implementation of the feature you need
 
 See [Media Isolation](./s3_bucket.md) for activating the Media Isolation feature.
 
-See [Web Traffic Isolation](./traffic_segregation.md) for activating the Web Traffic Isolation feature.
-
 Go to [Setup](./setup.md) for an overview of the possible next steps.
