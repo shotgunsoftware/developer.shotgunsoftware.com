@@ -17,7 +17,6 @@ The setup process will depend on which feature you want to activate for your sit
 * [Migration Test Site](./shotgun_poc_site.md)
 * [Media Isolation](./s3_bucket.md)
 * [Media Traffic Isolation](./media_segregation.md)
-* [Web Traffic Isolation](./traffic_segregation.md)
 * [Media Replication](./s3_replication.md)
 * [Isolation Fine Tuning](./tuning.md)
 * [Migration](./migration.md)
@@ -49,10 +48,6 @@ This feature allow you to use a S3 Bucket owned by your studio to store media.
 ## [Media Traffic Isolation](./media_segregation.md)
 
 This feature allows for private routing of the media through the AWS Backbone and your studio network, isolating the media traffic from the public internet.
-
-## [Web Traffic Isolation](./traffic_segregation.md)
-
-This feature isolate the web traffic on AWS Backbone and your studio network, isolating the traffic from the public internet.
 
 ## [Media Replication](./s3_replication.md)
 

@@ -204,7 +204,6 @@
         children:
         - page: tier1-features-media-isolation
         - page: tier1-features-media-traffic-isolation
-        - page: tier1-features-web-traffic-isolation
         - page: tier1-features-media-replication
       - page: tier1-setup
         children:
@@ -213,7 +212,6 @@
         - page: tier1-setup-s3_bucket
         - page: tier1-setup-media_segregation
         - page: tier1-setup-media_segregation_s3_proxy
-        - page: tier1-setup-traffic_segregation
         - page: tier1-setup-s3_replication
         - page: tier1-setup-tuning
         - page: tier1-setup-migration

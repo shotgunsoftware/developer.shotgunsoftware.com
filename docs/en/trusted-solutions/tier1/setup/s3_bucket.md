@@ -65,9 +65,7 @@ At this stage, you should be able to upload and download media. The {% include p
 
 See [Media Traffic Isolation](./media_segregation.md) to activate the Media Traffic Isolation feature.
 
-See [Web Traffic Isolation](./traffic_segregation.md) to activate the Web Traffic Isolation feature.
-
-See [Media Replication](./s3_replication.md) to activate the Web Traffic Isolation feature.
+See [Media Replication](./s3_replication.md) to activate the Media Replication Isolation feature.
 
 Go to [Setup](./setup.md) for an overview of the possible next steps.
 

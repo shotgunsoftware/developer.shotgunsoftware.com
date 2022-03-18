@@ -14,7 +14,6 @@ lang: en
 Pick which features you want to activate
   * Media Isolation
   * Media Traffic Isolation
-  * Web Traffic Isolation
   * Media Replication
 
 ## AWS Account Creation

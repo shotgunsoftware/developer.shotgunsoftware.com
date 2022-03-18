@@ -66,8 +66,6 @@ Use the endpoint URL to list objects in your bucket using AWS CLI. In the follow
 
 ## Next Steps
 
-See [Web Traffic Isolation](./traffic_segregation.md) to activate the Web Traffic Isolation feature.
-
-See [Media Replication](./s3_replication.md) to activate the Web Traffic Isolation feature.
+See [Media Replication](./s3_replication.md) to activate the Media Replication Isolation feature.
 
 Go to [Setup](./setup.md) for an overview of the possible next steps.
