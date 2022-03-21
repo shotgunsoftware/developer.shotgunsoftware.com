@@ -32,7 +32,6 @@ lang: ja
         For documentation, see https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide
         Starting Toolkit for your current path '/sgtk/software/shotgun/scarlet'
         - The path is not associated with any {% include product %} object.
-
         - Falling back on default project settings.
         - Using configuration 'Primary' and Core v0.15.22
         - Setting the Context to Scarlet.
@@ -78,7 +77,6 @@ lang: ja
         For documentation, see https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide
         Starting toolkit for path '/sgtk/software/shotgun/scarlet'
         - The path is not associated with any {% include product %} object.
-
         - Falling back on default project settings.
         - Using configuration 'Primary' and Core v0.15.22
         - Setting the Context to Scarlet.
@@ -167,7 +165,7 @@ lang: ja
 
         # End of file.
 
-3. {% include product %} でこのプロジェクトに対応する PipelineConfiguration エンティティを特定し、上記の変更と一致するように、[Mac のパス](Mac Path)、[Windows のパス](Windows Path)、[Linux のパス](Linux Path)の各フィールドの値を修正します。
+3. {% include product %} でこのプロジェクトに対応する PipelineConfiguration エンティティを特定し、上記の変更と一致するように、[Mac のパス] (Mac Path)、[Windows のパス] (Windows Path)、[Linux のパス] (Linux Path)の各フィールドの値を修正します。
 
 ![ShotGrid のパイプライン設定の場所。](images/new-pipeline-configuration-locations.png)
 

@@ -13,6 +13,10 @@ shotgun: ShotGrid
 review: 리뷰
 quick-answers: 빠른 답변
 pipeline-integrations: 파이프라인 통합
+working-with-shotgrid: ShotGrid 작업
+loading-in-alias: Alias에서 로드
+publishing-in-alias: Alias에서 게시
+scene-breakdown-in-alias: Alias에서 씬 분할
 
 python-api: Python API 설명서
 rest-api: REST API

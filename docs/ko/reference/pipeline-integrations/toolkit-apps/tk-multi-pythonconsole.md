@@ -60,7 +60,7 @@ Python 콘솔은 각각 편집기 및 출력 창을 포함하고 있는 탭을 �
 
 ![전역](../images/apps/multi-pythonconsoleglobals.png)
 
-일부 {% include product %}/툴킷 전역은 [셸용 {% include product %} 엔진](https://developer.shotgridsoftware.com/ko/2ad59ee8)에서 사용할 수 있는 항목과 유사하게 콘솔에 사전 정의되어 있습니다.
+일부 {% include product %}/툴킷 전역은 [셸용 {% include product %} 엔진](https://developer.shotgridsoftware.com/ko/2ad59ee8/?title=Shell)에서 사용할 수 있는 항목과 유사하게 콘솔에 사전 정의되어 있습니다.
 
 * Tk API 핸들은 `tk` 변수를 통해 사용할 수 있습니다.
 * {% include product %} API 핸들은 `shotgun` 변수를 통해 사용할 수 있습니다.

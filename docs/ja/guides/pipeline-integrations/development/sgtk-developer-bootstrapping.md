@@ -145,8 +145,10 @@ sgtk.set_authenticated_user(user)
 ブートストラップを実行するには、まず [`ToolkitManager`](https://developer.shotgridsoftware.com/tk-core/initializing.html#toolkitmanager) インスタンスを作成する必要があります。
 
 ```python
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 ```
+
+> `user` が `ToolkitManager` のイニシャライザに渡されない場合、`ShotgunAuthenticator().get_user()` は内部的に呼び出され、現在認証されている ShotGrid ユーザを返します。他の任意の `HumanUser` または `ScriptUser` を使用してブートストラップするには、[ShotgunAuthenticator.create_session_user](https://developer.shotgridsoftware.com/tk-core/authentication.html#sgtk.authentication.ShotgunAuthenticator.create_session_user) または [ShotgunAuthenticator.create_script_user](https://developer.shotgridsoftware.com/tk-core/authentication.html#sgtk.authentication.ShotgunAuthenticator.create_script_user) を使用して作成されたユーザを渡します。
 
 Toolkit でブートストラップを行うには、少なくともエンティティ、プラグイン ID、およびエンジンについての情報が必要になります。使用可能なすべてのパラメータとオプションについては、このガイドでは説明しません。[リファレンス ドキュメント](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api)に記載されています。
 
@@ -226,13 +228,15 @@ user = authenticator.create_script_user(
 )
 
 # Tells Toolkit which user to use for connecting to ShotGrid.
-sgtk.set_authenticated_user(user)
+# This is actually not necessary when using the ToolkitManager. The authenticated user will be set
+# before launching the engine.
+# sgtk.set_authenticated_user(user)
 
 # Bootstrap
 ###########
 
 # create an instance of the ToolkitManager which we will use to set a bunch of settings before initiating the bootstrap.
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 mgr.plugin_id = "basic.shell"
 
 project = {"type": "Project", "id": 176}
@@ -326,13 +330,15 @@ user = authenticator.create_script_user(
 )
 
 # Tells Toolkit which user to use for connecting to ShotGrid.
-sgtk.set_authenticated_user(user)
+# This is actually not necessary when using the ToolkitManager. The authenticated user will be set
+# before launching the engine.
+# sgtk.set_authenticated_user(user)
 
 # Bootstrap
 ###########
 
 # create an instance of the ToolkitManager which we will use to set a bunch of settings before initiating the bootstrap.
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 mgr.plugin_id = "basic.shell"
 
 project = {"type": "Project", "id": 176}

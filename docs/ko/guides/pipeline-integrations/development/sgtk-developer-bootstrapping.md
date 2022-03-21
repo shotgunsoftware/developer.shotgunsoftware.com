@@ -156,8 +156,10 @@ sgtk.set_authenticated_user(user)
 부트스트랩(Bootstrap)하려면 먼저 [`ToolkitManager`](https://developer.shotgridsoftware.com/tk-core/initializing.html#toolkitmanager) 인스턴스를 작성해야 합니다.
 
 ```python
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 ```
+
+> `user`가 `ToolkitManager`의 이니셜라이저로 전달되지 않는 경우 `ShotgunAuthenticator().get_user()`가 내부적으로 호출되어 현재 인증된 ShotGrid 사용자를 반환합니다. 다른 `HumanUser` 또는 `ScriptUser`를 사용하여 부트스트랩하려면 [ShotgunAuthenticator.create_session_user](https://developer.shotgridsoftware.com/tk-core/authentication.html#sgtk.authentication.ShotgunAuthenticator.create_session_user) 또는 [ShotgunAuthenticator.create_script_user](https://developer.shotgridsoftware.com/tk-core/authentication.html#sgtk.authentication.ShotgunAuthenticator.create_script_user)를 통해 생성된 사용자를 전달합니다.
 
 툴킷을 부트스트랩(Bootstrapping)하려면 최소한 엔티티, 플러그인 ID 및 엔진에 대해 알아야 합니다.
 이 안내서에서는 사용 가능한 모든 매개변수와 옵션 중 일부만을 설명합니다. 전체 내용은 [참조 문서](https://developer.shotgridsoftware.com/tk-core/initializing.html#bootstrap-api)에서 참조하십시오.
@@ -177,7 +179,7 @@ Maya 또는 Nuke와 같은 소프트웨어 외의 독립 실행형 Python 환경
 이 매개변수는 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식에 직접 전달됩니다. 아래 [엔티티 섹션](#entity)의 예를 참조하십시오.
 
 #### 엔티티
-[`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식 `entity` 매개변수는 시작한 엔진에 대해 [컨텍스트](https://developer.shotgridsoftware.com/tk-core/core.html#context) 및 [환경](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)을 설정하는 데 사용됩니다.
+[`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식 `entity` 매개변수는 시작한 엔진에 대해 [컨텍스트](https://developer.shotgridsoftware.com/tk-core/core.html#context) 및 [환경](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)을 설정하는 데 사용됩니다.
 이 엔티티는 구성이 작동하도록 설정된 엔티티 유형 중 하나일 수 있습니다.
 예를 들어 `Project` 엔티티를 제공하는 경우 엔진은 프로젝트 환경 설정을 사용하여 프로젝트 컨텍스트에서 시작됩니다.
 마찬가지로, 태스크가 `Asset`에 링크되어 있는 `Task` 엔티티를 제공할 수 있으며, 이 엔티티는 `asset_step.yml` 환경을 사용하여 시작됩니다.
@@ -245,13 +247,15 @@ user = authenticator.create_script_user(
 )
 
 # Tells Toolkit which user to use for connecting to ShotGrid.
-sgtk.set_authenticated_user(user)
+# This is actually not necessary when using the ToolkitManager. The authenticated user will be set
+# before launching the engine.
+# sgtk.set_authenticated_user(user)
 
 # Bootstrap
 ###########
 
 # create an instance of the ToolkitManager which we will use to set a bunch of settings before initiating the bootstrap.
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 mgr.plugin_id = "basic.shell"
 
 project = {"type": "Project", "id": 176}
@@ -348,13 +352,15 @@ user = authenticator.create_script_user(
 )
 
 # Tells Toolkit which user to use for connecting to ShotGrid.
-sgtk.set_authenticated_user(user)
+# This is actually not necessary when using the ToolkitManager. The authenticated user will be set
+# before launching the engine.
+# sgtk.set_authenticated_user(user)
 
 # Bootstrap
 ###########
 
 # create an instance of the ToolkitManager which we will use to set a bunch of settings before initiating the bootstrap.
-mgr = sgtk.bootstrap.ToolkitManager()
+mgr = sgtk.bootstrap.ToolkitManager(user)
 mgr.plugin_id = "basic.shell"
 
 project = {"type": "Project", "id": 176}

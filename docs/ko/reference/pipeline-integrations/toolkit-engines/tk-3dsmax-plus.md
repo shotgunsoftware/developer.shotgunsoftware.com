@@ -14,11 +14,13 @@ lang: ko
 
 ## 지원되는 응용프로그램 버전
 
-이 항목은 테스트를 거쳐 2016-2020 응용프로그램 버전에서 작동하는 것으로 알려져 있습니다. 최신 릴리즈에서는 더 완벽하게 작동할 수 있지만 이러한 버전에서 아직 공식적으로 테스트되지는 않았습니다.
+이 항목은 테스트를 거쳐 다음 응용프로그램 버전에서 작동하는 것으로 알려져 있습니다.
+
+{% include tk-3dsmax %}
 
 ## 문서화
 
-이 엔진은 Max Plus의 Python 지원을 통해 {% include product %} Pipeline Toolkit(Sgtk)과 3D studio Max를 연결합니다.
+이 엔진은 Max Plus의 Python 지원을 통해 {% include product %} Pipeline Toolkit(Sgtk)과 3ds Max를 연결합니다.
 
 ![엔진](../images/engines/3dsmaxplus_engine.png)
 

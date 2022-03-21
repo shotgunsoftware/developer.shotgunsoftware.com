@@ -13,6 +13,14 @@ lang: ja
 
 ![エンジン](../images/engines/mobu.png)
 
+## サポート対象のアプリケーション バージョン
+
+この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。
+
+{% include tk-motionbuilder %}
+
+最新のリリースでの動作は十分可能ですが、正式なテストはまだ完了していません。
+
 ## インストールと更新
 
 ### {% include product %} Pipeline Toolkit にこのエンジンを追加する

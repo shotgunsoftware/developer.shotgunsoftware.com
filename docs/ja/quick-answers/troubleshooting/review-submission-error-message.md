@@ -84,7 +84,7 @@ Nuke の SG パブリッシュ GUI で次のエラーが発生します。
 
 ![publish_file_hook](images/review-submission-error-message-03.jpeg)
 
-ファイル システム上のアプリの場所は、`app_locations.yml` の設定方法によって異なりますが、何も変更していない場合は、バンドル キャッシュ フォルダ内にあります。必要に応じて、[キャッシュの場所の確認方法](https://developer.shotgridsoftware.com/ja/7c9867c0/)を参照してください。
+ファイル システム上のアプリの場所は、`app_locations.yml` の設定方法によって異なりますが、何も変更していない場合は、バンドル キャッシュ フォルダ内にあります。[必要に応じて、キャッシュの場所の確認方法](https://developer.shotgridsoftware.com/ja/7c9867c0/)を参照してください。
 
 2 番目のプラグインのフック パスは次のとおりです
 ```

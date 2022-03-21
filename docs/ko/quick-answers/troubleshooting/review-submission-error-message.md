@@ -33,7 +33,7 @@ Nuke의 SG 게시 GUI에서 다음 오류가 발생합니다.
 
         raise Exception("Review submission failed. Could not render and "
 
-    Exception: Review submission failed. 리뷰 관련 시퀀스를 렌더링하고 제출할 수 없습니다.
+    Exception: Review submission failed. Could not render and submit the review associated sequence.
 
 다음 예외도 표시됩니다.
 
@@ -84,7 +84,7 @@ Nuke의 SG 게시 GUI에서 다음 오류가 발생합니다.
 
 ![publish_file_hook](images/review-submission-error-message-03.jpeg)
 
-파일 시스템에 앱이 있는 위치는 `app_locations.yml`이 구성된 방식에 따라 달라지지만 아무 것도 변경하지 않은 경우 번들 캐시 폴더에서 앱을 찾을 수 있습니다. 필요한 경우 [캐시 위치를 찾는 방법](https://developer.shotgridsoftware.com/7c9867c0/)을 참조하십시오.
+파일 시스템에 앱이 있는 위치는 `app_locations.yml`이 구성된 방식에 따라 달라지지만 아무 것도 변경하지 않은 경우 번들 캐시 폴더에서 앱을 찾을 수 있습니다. 필요한 경우 [캐시 위치를 찾는 방법](https://developer.shotgridsoftware.com/ko/7c9867c0/)을 참조하십시오.
 
 두 번째 플러그인의 경우 후크 경로는 다음과 같습니다.
 ```

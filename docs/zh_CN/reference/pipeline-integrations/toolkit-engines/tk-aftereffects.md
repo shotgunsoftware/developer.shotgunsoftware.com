@@ -13,7 +13,15 @@ lang: zh_CN
 
 ![插件](../images/engines/aftereffects_extension.png)
 
-# 界面概述
+## 支持的应用程序版本
+
+此插件已经过测试，已知可支持以下应用程序版本：
+
+{% include tk-aftereffects %}
+
+请注意，此插件也许（甚至非常有可能）支持更新的发行版本，但是尚未正式在这些版本中进行测试。
+
+## 界面概述
 
 {% include product %} 扩展面板采用与原生 After Effects 面板相同的配色和基本布局。面板有五个部分组成：
 
@@ -25,11 +33,11 @@ lang: zh_CN
 4. **上下文菜单** - 其他与上下文相关的命令和调试工具。
 5. **日志记录控制台** - 一个控制台叠加层，显示调试的日志记录输出。
 
-# 安装
+## 安装
 
 {% include product %} After Effects 插件在安装方面遵循与其他 {% include product %} 集成相同的协议。有关安装插件和应用的信息，请参见[管理 Toolkit](https://developer.shotgridsoftware.com/zh_CN/425b1da4/) 文章。此外，您还可以参考[默认 Toolkit 配置](https://github.com/shotgunsoftware/tk-config-default2)，以它为例了解如何配置集成。
 
-# 启用扩展
+## 启用扩展
 
 安装此扩展后，需要通过 After Effects 中的扩展菜单启动它。
 
@@ -41,11 +49,11 @@ lang: zh_CN
 
 此屏幕通常会持续显示几秒钟，待当前上下文确定后再显示命令。
 
-# 界面组成部分
+## 界面组成部分
 
 以下部分概述了 {% include product %} After Effects 集成的组成部分。
 
-## 上下文标题
+### 上下文标题
 
 上下文标题是一个可自定义的区域，可显示有关当前 {% include product %} 上下文的信息。
 
@@ -55,7 +63,7 @@ lang: zh_CN
 
 另外还需要注意的是，仅当使用 {% include product %} open 时才能识别上下文切换。
 
-## 收藏工具架
+### 收藏工具架
 
 收藏工具架与 Maya 和 Houdini 等其他 {% include product %} DCC 集成中提供的菜单收藏夹类似。在界面的这个部分，用户随手即可访问最常用的 Toolkit 应用，并可按照上下文标题轻松找到应用。
 
@@ -67,7 +75,7 @@ lang: zh_CN
 
 有关如何指定命令收藏夹的详细信息，请参见下面的**工具架收藏夹**部分。
 
-## 命令列表
+### 命令列表
 
 命令列表显示当前上下文注册的其他“常规”命令。
 
@@ -77,7 +85,7 @@ lang: zh_CN
 
 命令列表中按钮的行为与收藏工具架中按钮的行为类似。唯一真正的区别在于它们以列表的形式显示，并且其图标右侧带有完整名称。
 
-## 上下文菜单
+### 上下文菜单
 
 所有注册为上下文菜单命令的命令将显示在 {% include product %} 扩展面板的上下文菜单中。
 
@@ -85,7 +93,7 @@ lang: zh_CN
 
 与其他命令区域一样，这些命令会随上下文一起变化。诸如 **Jump to {% include product %}** 和 **Jump to Filesystem** 这样的命令将始终位于此处。
 
-## 日志记录控制台
+### 日志记录控制台
 
 日志记录控制台同时显示来自 CEP Javascript 解释器和 Toolkit Python 进程的所有日志记录输出。
 
@@ -93,15 +101,15 @@ lang: zh_CN
 
 当扩展遇到任何需要技术支持的问题时，日志记录控制台的输出就变得极为有用，这些信息可帮助 {% include product %} 技术支持团队调试问题。
 
-# 配置和技术细节
+## 配置和技术细节
 
 以下部分对集成中技术性更强的一些方面进行了概述，以帮助您根据自己工作室工作流的具体需求来配置集成。
 
-## PySide
+### PySide
 
 {% include product %} After Effects 插件依赖于 PySide。请参见有关[安装 PySide](http://pyside.readthedocs.io/en/latest/installing/index.html) 的官方说明。
 
-## CEP 扩展
+### CEP 扩展
 
 扩展本身与插件捆绑在一起，插件会在首次启动 After Effects 时自动安装扩展。扩展安装在美工人员的本地计算机上，位于操作系统特定的标准 CEP 扩展目录中：
 
@@ -115,7 +123,7 @@ lang: zh_CN
 
 每次启动 After Effects 时，插件引导代码会对照计算机上安装的扩展版本，检查随插件捆绑的扩展版本。这意味着，当插件更新后，假设它随附了一个新的扩展版本，已安装的扩展会自动更新为新捆绑的版本。
 
-## 配置收藏夹
+### 配置收藏夹
 
 我们可以配置**收藏工具架**，让它显示已安装应用的任何注册命令。要执行此操作，只需向环境配置的 `tk-aftereffects` 部分添加 `shelf_favorites` 设置即可。示例如下：
 
@@ -129,7 +137,7 @@ shelf_favorites:
 
 设置的值是一个词典列表，每个词典指定了配置中安装的一个应用提供的一个注册命令。`app_instance` 键标识了一个特定的已安装应用，`name` 键则与该应用注册的命令的显示名称一致。在上面的示例中，您可以看到四个收藏的命令：`tk-multi-workfiles2` 应用的“File Open”和“File Save”对话框，以及 Toolkit 的“发布”(Publish)和“Snapshot”标准对话框。这四个命令现在将显示在收藏工具架中。
 
-## 环境变量
+### 环境变量
 
 为了辅助调试，有一组环境变量可用来更改插件的某些默认值：
 
@@ -143,7 +151,7 @@ shelf_favorites:
 注意：其他环境变量存在于 Adobe 框架中。有关详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-framework-adobe/)。
 
 
-## 上下文字段显示挂钩
+### 上下文字段显示挂钩
 
 插件随附了一个挂钩，用来控制面板的**上下文标题**部分显示的字段。我们可以改写挂钩中的两个方法来自定义显示的内容。
 
@@ -155,13 +163,13 @@ shelf_favorites:
 
 要注意的是，插件始终会显示实体的缩略图（如果有的话）。
 
-## 导入连续镜头挂钩
+### 导入连续镜头挂钩
 
 插件提供了一个挂钩，用于控制特定文件类型的导入行为。用户可能想将 psd 文件导入为单个层，而不是合成。在这种情况下，该挂钩可以用来覆盖此行为。
 
 [默认的挂钩执行](https://github.com/shotgunsoftware/tk-aftereffects/blob/master/hooks/import_footage.py)
 
-## After Effects API
+### After Effects API
 
 有关 After Effects API 的详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-aftereffects)。
 

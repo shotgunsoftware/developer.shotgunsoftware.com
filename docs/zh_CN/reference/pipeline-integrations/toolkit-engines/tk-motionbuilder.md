@@ -13,6 +13,14 @@ lang: zh_CN
 
 ![插件](../images/engines/mobu.png)
 
+## 支持的应用程序版本
+
+此插件已经过测试，已知可支持以下应用程序版本：
+
+{% include tk-motionbuilder %}
+
+请注意，此插件也许（甚至非常有可能）支持更新的发行版本，但是尚未正式在这些版本中进行测试。
+
 ## 安装和更新
 
 ### 将此插件添加到 {% include product %} Pipeline Toolkit

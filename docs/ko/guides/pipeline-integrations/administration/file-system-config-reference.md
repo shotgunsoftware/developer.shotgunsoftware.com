@@ -105,27 +105,19 @@ sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있
 
 {% include product %} 쿼리에 해당하는 동적 폴더의 경우 YAML 파일에서 다음 구문을 사용합니다.
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: shotgun_entity
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: Asset
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: code
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
@@ -143,27 +135,19 @@ sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있
 
 한 번에 여러 폴더를 만드는 표현식을 만들려면 이름 정의에 슬래시를 포함합니다.
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: shotgun_entity
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: Asset
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "{sg_asset_type}/{code}"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
@@ -183,7 +167,6 @@ sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있
 
 shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목을 만들 때 하위 항목도 만들어지도록 반복할지 여부를 제어하는 선택적 플래그를 지원합니다. 플래그는 특정 고정 값(이 경우 "true" 또는 "false")만을 지정할 수 있는 설정입니다. 이 플래그를 추가하려면 다음 예를 사용합니다.
 
-    <a name="recurse down from parent folder"></a>
     # recurse down from parent folder
     create_with_parent: true
 
@@ -211,27 +194,19 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 툴킷을 통해 정규식을 사용하여 {% include product %} 필드 이름의 일부를 추출할 수 있습니다. 이렇게 하면 {% include product %}의 값으로 폴더 생성을 유도할 수 있는 간단한 표현식을 만들 수 있습니다. 예를 들어 {% include product %}의 모든 에셋 이름이 세 문자 접두어와 밑줄로 지정되면(예: `AAT_Boulder7`) 두 개의 파일 시스템 폴더 수준으로 나눌 수 있습니다(예: `AAT/Boulder7`).
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: shotgun_entity
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: Asset
 
-    <a name="Extract parts of the name using regular expressions"></a>
     # Extract parts of the name using regular expressions
     name: "{code:^([^_]+)}/{code^[^_]+_(.*)}"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
@@ -270,29 +245,21 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 {% include product %} 목록 필드의 모든 항목에 해당하는 동적 폴더의 경우 YAML 파일에서 다음 구문을 사용합니다.
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_list_field"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Asset"
 
-    <a name="only create for values which are used in this project."></a>
     # only create for values which are used in this project.
-    <a name="this is optional and will be set to false if not specified."></a>
     # this is optional and will be set to false if not specified.
     skip_unused: false
 
-    <a name="by default, list fields are only created if they are needed by a child entity node"></a>
     # by default, list fields are only created if they are needed by a child entity node
-    <a name="by setting the create_with_parent parameter to true you ensure that list field"></a>
     # by setting the create_with_parent parameter to true you ensure that list field
-    <a name="nodes are always created"></a>
     # nodes are always created
     create_with_parent: false
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     field_name: "{sg_asset_type}_type"
 
@@ -311,11 +278,9 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 ![pipeline_step_folder](images/file-system-config-reference/pipeline_step_folder_02_DS.png)
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_step"
 
-    <a name="the {% include product %} field to use for the folder name. This field needs to come from a step entity."></a>
     # the {% include product %} field to use for the folder name. This field needs to come from a step entity.
     name: "short_name"
 
@@ -327,7 +292,6 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 그러나 다음 구문을 사용하여 이 기능을 끌 수 있습니다.
 
-    <a name="recurse down from parent folder"></a>
     # recurse down from parent folder
     create_with_parent: false
 
@@ -359,17 +323,14 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 ![task_folder](images/file-system-config-reference/task_folder_02_DS.png)
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_task"
 
-    <a name="the {% include product %} field to use for the folder name. This field needs to come from a task entity."></a>
     # the {% include product %} field to use for the folder name. This field needs to come from a task entity.
     name: "content"
 
 그러나 다음 구문을 사용하여 상위 엔티티와 함께 태스크가 만들어지도록 생성을 켤 수 있습니다.
 
-    <a name="recurse down from parent folder"></a>
     # recurse down from parent folder
     create_with_parent: true
 
@@ -393,15 +354,11 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 폴더 생성 유예란 툴킷 API의 폴더 생성 방식에서 선택적 `engine` 매개변수를 통해 두 번째 폴더 생성 패스가 요청된 경우에만 생성이 실행됨을 의미합니다. 일반적으로 이 방식은 응용프로그램을 시작하기 직전에 툴킷의 다양한 응용프로그램 시작 관리자에 의해 실행됩니다. 대부분의 폴더 유형은 유예됨 플래그(기본적으로 `false`)를 지원합니다. 폴더 생성 유예를 `true`로 설정하려면 이 플래그를 추가합니다.
 
-    <a name="only create this folder when tk.create_filesystem_structure is"></a>
     # only create this folder when tk.create_filesystem_structure is
-    <a name="called with tk-maya, tk-nuke or any-custom-string."></a>
     # called with tk-maya, tk-nuke or any-custom-string.
     defer_creation: ["tk-maya", "tk-nuke", "any-custom-string]
 
-    <a  name="create this folder when any application launches, but not when normal folder"></a>
     # create this folder when any application launches, but not when normal folder
-    <a name="creation runs"></a>
     # creation runs
     defer_creation: true
 
@@ -414,30 +371,24 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적인 폴더를 만들려면 폴더와 동일한 이름의 구성 YAML 파일을 만들고 다음을 추가합니다._
 
-    <a name="type of content"></a>
     # type of content
     type: "static"
 
-    <a name="only create this folder for maya"></a>
     # only create this folder for maya
     defer_creation: "tk-maya"
 
-    :::yaml
-    <a name="type of content"></a>
     # type of content
     type: "static"
 
-    <a name="only create this folder when tk.create_filesystem_structure is"></a>
     # only create this folder when tk.create_filesystem_structure is
-    <a name="called with any-custom-string."></a>
     # called with any-custom-string.
     defer_creation: "any-custom-string"
+
 
 ## 현재 사용자 폴더
 
 현재 사용자 폴더는 다른 사용자의 작업 영역을 설정할 수 있도록 하는 특수한 구성입니다. 일반적인 시나리오는 한 부서에서 근무하는 여러 아티스트가 같은 샷에 대해 작업하는 경우입니다. 아티스트가 자신의 디렉토리에 작업 파일을 저장할 수 있으므로 사용자 폴더가 사용될 수 있으며 [Workfiles 앱](https://developer.shotgridsoftware.com/ko/9a736ee3/)에서 자신의 파일에 대해서만 필터링할 수 있습니다. 이 경우 구성 파일에 다음 옵션이 포함되어야 합니다.
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "user_workspace"
 
@@ -457,39 +408,27 @@ _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적�
 
 대개 정적 폴더에서는 이 작업 이외에 수행해야 할 작업이 없지만, 툴킷은 정적 폴더에 대한 몇 가지 고급 기능을 지원합니다. 동적 조건을 정의하여 정적 폴더를 만들지 여부를 결정할 수 있습니다. 예를 들어 편집 유형의 파이프라인 단계에 대해서만 생성되는 특별한 정적 폴더가 필요할 수 있습니다. 이 경우 정적 폴더 옆에 YAML 구성 파일을 추가하고 동일한 이름(확장자는 "yml")을 지정해야 합니다. 이제 다음 구문을 사용합니다.
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "static"
 
-    <a name="pick one of the {% include product %} folders that are above this folder"></a>
     # pick one of the {% include product %} folders that are above this folder
-    <a name="in the folder hierarchy. In this case it is a parent folder"></a>
     # in the folder hierarchy. In this case it is a parent folder
-    <a name="named step that we want to look at when deciding if this"></a>
     # named step that we want to look at when deciding if this
-    <a name="static folder should be created or not."></a>
     # static folder should be created or not.
     constrain_by_entity: "$step"
 
-    <a name="we can now define constraints for this step. Constraints are simple"></a>
     # we can now define constraints for this step. Constraints are simple
-    <a name="{% include product %} queries, following the same syntax as the other {% include product %} filters"></a>
     # {% include product %} queries, following the same syntax as the other {% include product %} filters
-    <a name="shown in previous sections."></a>
     # shown in previous sections.
-    #
-    <a name="In our example, if the parent step matches the constraints given"></a>
+
     # In our example, if the parent step matches the constraints given
-    <a name="in the filter below, the static folder will be created. If not,"></a>
     # in the filter below, the static folder will be created. If not,
-    <a name="it (and its children) will be ignored by the folder creation process."></a>
     # it (and its children) will be ignored by the folder creation process.
     constraints:
         - { "path": "short_name", "relation": "is", "values": [ "edit" ] }
 
 기본적으로 정적 폴더는 상위 폴더와 함께 자동으로 만들어집니다. 이렇게 되는 것을 원하지 않을 수 있으며, 그럴 경우 정적 폴더가 상위 폴더와 함께 만들어지지 않도록 특수 플래그를 추가합니다.
 
-    <a name="do not recurse down automatically"></a>
     # do not recurse down automatically
     create_with_parent: false
 
@@ -499,18 +438,13 @@ _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적�
 
 `artwork.symlink.yml` 파일에는 적어도 `target` 키가 포함되어야 합니다.
 
-    <a name="Example of a .symlink.yml file"></a>
     # Example of a .symlink.yml file
 
-    <a name="A target parameter is required."></a>
     # A target parameter is required.
     target: "../Stuff/$Project/$Shot"
 
-    <a name="Additional parameters will be passed to the hook as metadata"></a>
     # Additional parameters will be passed to the hook as metadata
-    <a name="so you can for example include permission hints or other stuff"></a>
     # so you can for example include permission hints or other stuff
-    <a name="that you may need for advanced customization"></a>
     # that you may need for advanced customization
     additional_param1: abc
     additional_param2: def
@@ -519,20 +453,20 @@ _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적�
 
 에셋의 에셋 유형과 같은 목록 필드는 엔티티 유형을 포함하는 구문으로 표현됩니다(예: `$Asset.sg_asset_type`). 예:
 
-    <a name="Example of a .symlink.yml file"></a>
     # Example of a .symlink.yml file
 
-    <a name="A target parameter is required."></a>
     # A target parameter is required.
     target: "../renders/$Project/$Asset.sg_asset_type/$Asset"
 
 기호 링크 생성은 모든 입력/출력 또는 I/O와 같이 폴더 처리 후크 내부에서 발생합니다. 특별한 `symlink` 액션이 시스템에서 후크로 전달되면 기호 링크의 이름, 완전히 확인된 대상 그리고 이 요청과 함께 정의 파일에 포함된 모든 YAML 메타데이터를 가져옵니다. 위의 `artwork` 예의 경우 샷 아래에 다음과 같은 폴더를 만듭니다.
+
 
      {'action': 'symlink',
       'path': '/mnt/projects/chasing_the_light/Sequences/AA/AA001/artwork'
       'target': '../Stuff/chasing_the_light/AA001',
       'metadata': {'target': '../Stuff/$Project/$Shot', 'additional_param1': 'abc', 'additional_param2': 'def'}
       }
+
 
 ## 파일 및 폴더 무시
 
@@ -542,16 +476,15 @@ _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적�
 
 폴더 생성 중에 특정 파일 및 폴더를 복사 대상에서 제외하려는 경우에도 유용할 수 있습니다. 예를 들어 Git 또는 SVN에 폴더 생성 구성을 저장하는 경우 각 샷 또는 에셋 폴더로 복사하지 않으려는 `.git` 및 `.svn` 폴더가 있습니다. 복사하지 않으려는 파일이 있는 경우 `ignore_files` 파일을 프로젝트 구성 내의 `config/core/schema` 폴더에 놓을 수 있습니다. 이 파일에는 복사하지 않을 파일을 정의하는 전역 스타일의 패턴이 있어야 합니다. 각 패턴은 별도의 줄에 있어야 합니다.
 
-    <a name="This is a good example of a standard ignore_files file"></a>
     # This is a good example of a standard ignore_files file
 
     .svn                # no svn temp files to be copied across at folder creation time
     .git                # no git temp files to be copied across at folder creation time
     .DS_Store           # no mac temp files to be copied across at folder creation time
 
+
 와일드카드를 사용할 수도 있습니다. 예를 들어 TMP 익스텐션이 있는 모든 파일을 제외해야 하는 경우 *.tmp 줄을 파일에 추가하기만 하면 됩니다.
 
-    <a name="This is a good example of a standard ignore_files file"></a>
     # This is a good example of a standard ignore_files file
 
     .svn                # no svn temp files to be copied across at folder creation time
@@ -572,6 +505,7 @@ _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적�
 
 목록의 데이터는 항상 깊이를 우선하여 반복되며 최상위 레벨의 폴더 및 파일부터 시작하여 점점 더 깊게 이동합니다. 다음 예에서 후크에 전달된 데이터를 보여 줍니다.
 
+```python
     [
 
      {'action': 'entity_folder',
@@ -630,6 +564,7 @@ _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적�
       },
 
     ]
+```
 
 데이터는 사전 목록입니다. 각 사전에는 `action`이라는 키가 있습니다. 이 키는 요청된 I/O 항목의 유형을 나타냅니다. 폴더 생성 후크를 구현하는 경우 다음과 같은 다양한 액션에 대한 지원을 추가해야 합니다.
 
@@ -643,6 +578,7 @@ _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적�
 
 또한 모든 `actions`에는 `metadata`라는 키가 있습니다. 이 키는 스키마 설정의 관련 구성 파일에서 가져온 YAML 구성 데이터를 나타냅니다. 위의 예에서 스키마 구성 내에 설정된 모든 필터 및 이름 지정 정보가 {% include product %} 폴더의 `metadata` 키에 어떻게 포함되어 있는지 볼 수 있습니다. 예를 들어 위의 예에서 샷 폴더의 메타데이터는 다음과 같습니다.
 
+```python
     {'action': 'entity_folder',
       'entity': {'id': 1184, 'name': 'moo87', 'type': 'Shot'},
       'metadata': {'entity_type': 'Shot',
@@ -652,47 +588,33 @@ _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적�
                    'name': 'code',
                    'type': 'shotgun_entity'},
       'path': '/mnt/projects/chasing_the_light/sequences/aa2/moo87'}
+```
 
 ...`shot.yml` 스키마 구성 파일에 해당합니다.
 
-    <a name="Copyright (c) 2013 {% include product %} Software Inc."></a>
     # Copyright (c) 2013 {% include product %} Software Inc.
     #
-    <a name="CONFIDENTIAL AND PROPRIETARY"></a>
     # CONFIDENTIAL AND PROPRIETARY
     #
-    <a name="This work is provided _AS IS_ and subject to the {% include product %} Pipeline Toolkit"></a>
     # This work is provided "AS IS" and subject to the {% include product %} Pipeline Toolkit
-    <a name="Source Code License included in this distribution package. See LICENSE."></a>
     # Source Code License included in this distribution package. See LICENSE.
-    <a name="By accessing, using, copying or modifying this work you indicate your"></a>
     # By accessing, using, copying or modifying this work you indicate your
-    <a name="agreement to the {% include product %} Pipeline Toolkit Source Code License. All rights"></a>
     # agreement to the {% include product %} Pipeline Toolkit Source Code License. All rights
-    <a name="not expressly granted therein are reserved by {% include product %} Software Inc."></a>
     # not expressly granted therein are reserved by {% include product %} Software Inc.
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Shot"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] } ]
 
@@ -704,28 +626,24 @@ _동적 토큰 `$sequence`는 런타임에 실제 객체로 해석되었습니�
 
 예를 들어 스키마 설정의 구조가 다음과 같은 경우입니다.
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Shot"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
     filters: [ { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] } ]
 
-    <a name="user settings"></a>
     # user settings
     studio_permissions_level: "admin"
 
 ...폴더 생성 후크를 통해 데이터가 전달됩니다.
 
+```python
     {'action': 'entity_folder',
       'entity': {'id': 1184, 'name': 'moo87', 'type': 'Shot'},
       'metadata': {'entity_type': 'Shot',
@@ -736,6 +654,7 @@ _동적 토큰 `$sequence`는 런타임에 실제 객체로 해석되었습니�
                    'type': 'shotgun_entity',
                    'studio_permissions_level': 'admin'},
       'path': '/mnt/projects/chasing_the_light/sequences/aa2/moo87'}
+```
 
 이제 특별한 매개변수 `studio_permissions_level`이 후크로 전달되면 이를 사용하여 파일 권한 제어 등을 수행할 수 있습니다. 이 방법을 사용하여 임의로 복잡한 데이터 구조를 전달할 수도 있습니다. 이에 대한 일반적인 활용 사례는 매우 상세한 레벨에서 권한을 제어하는 것입니다.
 
@@ -754,13 +673,13 @@ _동적 토큰 `$sequence`는 런타임에 실제 객체로 해석되었습니�
      'metadata': {'studio_permissions_level': 'admin', 'type': 'static'},
      'path': '/mnt/projects/chasing_the_light/assets'},
 
-
 다시 말하지만, 임의로 복잡한 데이터는 YAML 구성 파일에서 이런 방법으로 후크에 전달될 수 있습니다.
 
 ## 간단한 폴더 생성 방법 커스터마이즈
 
 간단한 폴더 생성 후크는 다음과 같이 표시될 수 있습니다.
 
+```python
     class ProcessFolderCreation(Hook):
 
         def execute(self, items, preview_mode, **kwargs):
@@ -870,6 +789,7 @@ _동적 토큰 `$sequence`는 런타임에 실제 객체로 해석되었습니�
                 os.umask(old_umask)
 
             return folders
+```
 
 # 2부 - 파일 시스템 템플릿 구성
 
@@ -990,17 +910,12 @@ _동적 토큰 `$sequence`는 런타임에 실제 객체로 해석되었습니�
         format_spec: "04"
         alias: version
 
-    <a name="nuke versions are using numbers on the form 003, 004, 005"></a>
     # nuke versions are using numbers on the form 003, 004, 005
-    <a name="the nuke publish app requires a field called {version}"></a>
     # the nuke publish app requires a field called {version}
-    <a name="however {nuke_version} is a valid replacement for {version}"></a>
     # however {nuke_version} is a valid replacement for {version}
-    <a name="because it has an alias defined"></a>
     # because it has an alias defined
     nuke_shot_work: sequences/{Sequence}/{Shot}/{Step}/work/nuke/{name}.v{nuke_version}.nk
 
-    <a name="maya versions are using numbers on the form 0004, 0005, 0006"></a>
     # maya versions are using numbers on the form 0004, 0005, 0006
     maya_shot_work: sequences/{Sequence}/{Shot}/{Step}/work/maya/{name}.v{maya_version}.ma
 
@@ -1042,7 +957,7 @@ UTC 시간으로 기본 설정되는 YYYY.MM.DD 형식의 타임스탬프입니�
 
 ### 예 - 두 개의 유효 값이 있는 문자열 필드
 
-스튜디오에는 ASCII 및 Binary Maya 파일을 저장해야 하는 프로젝트가 있는 경우가 종종 있습니다. 이 시나리오에서 두 개의 유효 값이 있는 문자열 값은 다음과 같습니다.
+스튜디오에는 ASCII 및 바이너리 Maya 파일을 저장해야 하는 프로젝트가 있는 경우가 종종 있습니다. 이 시나리오에서 두 개의 유효 값이 있는 문자열 값은 다음과 같습니다.
 
     maya_file_extension:
         type: str
@@ -1054,7 +969,7 @@ UTC 시간으로 기본 설정되는 YYYY.MM.DD 형식의 타임스탬프입니�
     maya_shot_snapshot:  '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.ma'
     maya_shot_publish:  '@shot_root/publish/maya/{name}.v{version}.ma'
 
-    If  you  instead  end  them  with  .mb,  then  the  apps  will  save  out  as  Maya  binary:
+대신 .mb로 끝낼 경우 앱이 Maya 바이너리로 저장됩니다.
 
     maya_shot_work:  '@shot_root/work/maya/{name}.v{version}.mb'
     maya_shot_snapshot:  '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.mb'
@@ -1232,53 +1147,37 @@ b) **커스텀 엔티티 사용:** `CustomEntity02`는 프로젝트 템플릿에
 
 **공식 `Episode` 엔티티 사용**
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Episode"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
 **`CustomEntity02` 사용**
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "CustomEntity02"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
@@ -1288,27 +1187,19 @@ b) **커스텀 엔티티 사용:** `CustomEntity02`는 프로젝트 템플릿에
 
 `config/core/schema/project/shots/episode` 폴더에서 `sequence`라는 이름의 폴더를 다음 컨텐츠와 동일한 디렉토리에 해당 `sequence.yml` 파일과 함께 만듭니다.
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Sequence"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "sg_episode", "relation": "is", "values": [ "$episode" ] } ]`
 
@@ -1318,28 +1209,19 @@ b) **커스텀 엔티티 사용:** `CustomEntity02`는 프로젝트 템플릿에
 
 `config/core/schema/project/shots/episode/sequence` 폴더에서 `shot`라는 이름의 폴더를 다음 컨텐츠와 동일한 디렉토리에 해당 `shot.yml` 파일과 함께 만듭니다.
 
-
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Shot"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] } ]`
 

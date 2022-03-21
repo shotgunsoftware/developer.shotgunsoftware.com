@@ -9,6 +9,14 @@ lang: ja
 
 {% include product %} Engine for VRED は、{% include product %} アプリと VRED を統合する標準プラットフォームを提供します。軽量で操作性に優れており、VRED のメニューに {% include product %} のメニューを追加します。
 
+## サポート対象のアプリケーション バージョン
+
+この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。
+
+{% include tk-vred %}
+
+最新のリリースでの動作は十分可能ですが、正式なテストはまだ完了していません。
+
 ## アプリ開発者向けの情報
 
 ### PySide
@@ -41,7 +49,7 @@ Snapshot: [スナップショット] (Snapshot)ダイアログを開き、現在
 
 
 ### パブリッシュ
-Publish: [パブリッシュ] (Publish)ダイアログを開き、ファイルを {% include product %} にパブリッシュします。パブリッシュ ファイルは、下流工程でアーティストが使用します。VRED のパブリッシュの詳細については、[こちら](https://github.com/shotgunsoftware/tk-vred/wiki/Publishing)![https://help.autodesk.com/cloudhelp/2020/JPN/VRED-Shotgun/images/ShotgunPublishVRED.png](を参照してください。)
+Publish: [パブリッシュ] (Publish)ダイアログを開き、ファイルを {% include product %} にパブリッシュします。パブリッシュ ファイルは、下流工程でアーティストが使用します。VRED のパブリッシュの詳細については、[こちら](https://github.com/shotgunsoftware/tk-vred/wiki/Publishing) ![](https://help.autodesk.com/cloudhelp/2020/JPN/VRED-Shotgun/images/ShotgunPublishVRED.png) を参照してください。
 
 
 ### ローダー

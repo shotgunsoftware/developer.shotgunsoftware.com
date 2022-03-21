@@ -7,8 +7,6 @@ lang: ko
 
 # 웹후크
 
-{% include info title="베타" content="웹후크는 현재 베타 테스트 중입니다. [웹후크 커뮤니티 포럼](https://community.shotgridsoftware.com/c/webhooks)에 가입하면 상세한 정보를 얻고 여러 활동에 참여할 수 있습니다." %}
-
 웹후크를 사용하면 사용자가 제어하는 서비스는 {% include product %}에서 발생하는 이벤트에 대한 알림을 받을 수 있습니다. 웹후크를 만들 때 관심 있는 이벤트 유형을 지정하고 이벤트가 트리거될 때 데이터를 보낼 URL을 {% include product %}에 알려 주십시오. {% include product %}에서 관련 이벤트가 발생하면 이벤트를 정의하는 데이터 페이로드가 웹후크의 URL로 전송됩니다. 이런 방법으로 {% include product %}와의 긴밀한 통합을 구축하고 워크플로우의 일부를 자동화할 수 있습니다.
 
 ## 웹후크 사용 방법에는 어떤 것이 있습니까?
@@ -31,17 +29,25 @@ lang: ko
 
 ## 웹후크 생성
 
-웹후크 생성을 시작하려면 웹후크 페이지로 이동한 다음 웹후크 목록 위에 있는 버튼으로 이동합니다. 웹후크에 대한 액세스는 "고급(Advanced) -> 웹후크 표시(Show Webhooks)" 권한으로 제어됩니다. 이 권한은 기본 관리자(Admin) 및 매니저 역할에 사용할 수 있습니다.
+웹후크 생성을 시작하려면 **웹후크** 페이지로 이동합니다.
 
-![웹후크 생성 버튼](./images/webhooks/create_webhook_button.png)
+![웹후크 생성 버튼](./images/webhooks/webhooks_page.png)
 
-다음으로 새 웹후크를 생성하는 데 필요한 정보를 입력합니다.
+그런 다음 **웹후크 생성(Create Webhook)**을 선택합니다.
 
-![웹후크 생성 대화상자](./images/webhooks/create_webhook_dialog.png)
+![웹후크 생성 버튼](./images/webhooks/create_webhook_button_v3.png)
+
+{% include info title="참고" content="웹후크에 대한 액세스는 고급 권한(Advanced Permissions)의 **웹후크 표시(Show Webhooks)**를 통해 제어됩니다. 이 기능은 관리자(Admin) 및 매니저 권한 역할에 대해 기본적으로 활성화되어 있습니다. ![웹후크 생성 대화상자](/images/webhooks/show_webhooks_permission.png)." %}
+
+그런 다음 새 웹후크를 생성하는 데 필요한 정보를 입력합니다.
+
+![웹후크 생성 대화상자](./images/webhooks/create_webhook_dialog_v2.png)
 
 ### 비밀 토큰
 
-웹후크에 비밀 토큰을 할당하는 것은 선택 사항입니다. 비밀 토큰을 제공한 경우, 해당 웹후크 URL에 전송된 모든 요청은 해당 토큰을 사용하여 서명됩니다. 토큰 값은 요청과 함께 `X-SG-SIGNATURE`라는 이름의 헤더로 전송됩니다. 서명은 SHA1과 함께 HMAC를 사용하여 계산되고 서명된 메시지는 요청의 JSON 본문입니다.
+웹후크에 비밀 토큰을 할당하는 것은 선택 사항입니다. 비밀 토큰을 제공한 경우 해당 웹후크 URL에 전송된 모든 요청은 해당 토큰을 사용하여 서명됩니다. 토큰 값은 요청과 함께 `X-SG-SIGNATURE`라는 이름의 헤더로 전송됩니다. 서명은 SHA1과 함께 HMAC를 사용하여 계산되고 서명된 메시지는 요청의 JSON 본문입니다.
+
+![비밀 토큰](./images/webhooks/webhook_secret_token_v2.png)
 
 #### 헤더 형식
 
@@ -55,7 +61,7 @@ lang: ko
 
 Python을 사용한 페이로드 서명 확인 방법의 예가 아래에 나와 있습니다.
 
-```
+```python
 >>> import hmac
 >>> import hashlib
 >>> body | `<json body>'
@@ -68,36 +74,62 @@ True
 
 SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 연결의 보안을 유지하는 데 도움이 되는 선택적 기능입니다. 이 옵션이 설정된 경우 웹후크의 URL로 전달이 이루어지면 {% include product %}는 OpenSSL 인증서 유효성 확인 루틴을 사용하여 인증서를 확인합니다.
 
+![SSL 인증서 유효성 확인](./images/webhooks/webhooks_validate_ssl_certificate_v2.png)
+
+### 배치 형식으로 전달(Deliver in Batched Format)
+
+![배치 형식으로 전달합니다](./images/webhooks/webhooks_batched_format.png)
+
+[여기](https://developer.shotgridsoftware.com/ko/e7890fc8/)에서 배치 형식으로 제공하는 방법에 대해 자세히 알아보십시오.
+
+### 불안정할 경우 알림(Notify when unstable)
+
+**불안정할 경우 알림(Notify when unstable)**을 선택하면 웹후크가 실패할 때 알림을 보낼 사람 또는 그룹을 선택할 수 있습니다. 이 설정은 선택 사항입니다.
+
+![불안정할 경우 알림](./images/webhooks/webhook_notifications_v2.png)
+
+### 프로젝트 및 엔티티별 필터링
+
+특정 프로젝트, 엔티티 및 필드를 선택하면 웹후크에 대한 트래픽이 최소화되어 다음과 같은 결과가 나타납니다.
+
+- 성능 개선
+- 리소스 비용 절감
+- 불필요한 백로그 방지
+
+![웹후크 필터](./images/webhooks/webhook_project_entity_field_filter_v2.png)
+
+{% include info title="참고" content="프로젝트를 선택하면 버전과 같이 항상 단일 프로젝트에 속하는 엔티티만 선택할 수 있습니다. 작업자와 같은 비 프로젝트(또는 다중 프로젝트) 엔티티를 선택하려면 프로젝트를 선택하지 **마십시오**. 이렇게 하면 엔티티 업데이트 시에 웹후크 이벤트 필터링으로 인해 성능 오버헤드가 부가되지 않습니다." %}
+
 ## 웹후크 상태
 
 웹후크의 상태는 여러 가지 중 하나이며 계속해서 전달을 받을 수 있는 기능 및 상태를 나타냅니다.
 
-![웹후크 생성 대화상자](./images/webhooks/webhook_selected_status.png)
+![웹후크 생성 대화상자](./images/webhooks/webhook_selected_status_v2.png)
 
 | 상태 | 예시 | 설명 |
 |--------|:-------:|:-----------:|
 | 활성(Active) | ![활성](./images/webhooks/webhook_status_active.png) | 웹후크가 안정적인 방식으로 작동합니다. 지난 24시간 동안 이 웹후크의 사용자 URL에 전달이 없으면 해당 대상에 도달하지 못한 것입니다. |
 | 불안정(Unstable) | ![불안정](./images/webhooks/webhook_status_unstable.png) | 웹후크가 불안정한 방식으로 작동합니다. 지난 24시간 동안 일부 전달이 대상에 도달하지 못했지만 {% include product %}에서 웹후크가 작동하지 않는 것으로 간주할 정도는 아닙니다. |
-| 실패(Failed) | ![실패](./images/webhooks/webhook_status_failed.png) | 웹후크가 작동하지 않는 것으로 간주되고 더 이상 전달을 시도하지 않습니다. 이는 짧은 기간 동안 너무 많은 전달 실패에 따른 결과이며 시스템은 웹후크가 더 이상 실행 가능하지 않은 것으로 판단합니다. **지난 24시간 동안 10번의 전달에 실패한 경우 웹후크가 실패로 간주됩니다**. |
+| 실패(Failed) | ![실패](./images/webhooks/webhook_status_failed.png) | 웹후크가 작동하지 않는 것으로 간주되고 더 이상 전달을 시도하지 않습니다. 이는 짧은 기간 동안 너무 많은 전달 실패에 따른 결과이며 시스템은 웹후크가 더 이상 실행 가능하지 않은 것으로 판단합니다. **지난 24시간 동안 100번의 전달에 실패한 경우 웹후크가 실패로 간주됩니다**. |
 | 비활성화됨(Disabled) | ![비활성화됨](./images/webhooks/webhook_status_disabled.png) | 웹후크가 비활성화된 상태이며 다시 활성 상태가 될 때까지 전달이 더 이상 시도되지 않습니다. |
 
-## 전달
+## 전달(Deliveries)
 
 웹후크 목록에서 웹후크를 선택하면 7일 전까지 수행된 해당 웹후크의 모든 전달이 표시됩니다.
 
 {% include info title="참고" content="7일보다 오래된 전달 로그는 제거되며 복구할 수 없습니다." %}
 
-### 전달 상태
+### 전달 상태(Delivery status)
 
 전달 상태는 웹후크의 URL로 성공적으로 전달되었는지 여부를 나타냅니다.
 
-![전달 상태](./images/webhooks/delivery_status.png)
+![전달 상태](./images/webhooks/delivery_status_v2.png)
 
-### 전달 상세 정보
+### 전달 상세 정보(Delivery details)
 
 전달을 확장하여 웹후크 URL로 전송한 요청과 해당 요청에 대한 응답의 상세 정보를 표시할 수 있습니다.
 
-![전달 상세 정보](./images/webhooks/delivery_details.png)
+![전달 상세 정보](./images/webhooks/delivery_details_v2.png)
 
 #### 페이로드 요청
 
@@ -110,41 +142,55 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 ```json
 {
   "data": {
-    "id": "95.0",
+    "id": "11777.3065.0",
     "meta": {
       "type": "attribute_change",
-      "entity_id": 758,
-      "new_value": "This is the newest description ever!!",
-      "old_value": "This is the old description!",
-      "entity_type": "Asset",
+      "entity_id": 1246,
+      "new_value": "*Add fog and mist with depth",
+      "old_value": "*Add fog and mist.",
+      "entity_type": "Shot",
       "attribute_name": "description",
       "field_data_type": "text"
     },
     "user": {
-      "id": 113,
+      "id": 88,
       "type": "HumanUser"
     },
     "entity": {
-      "id": 758,
-      "type": "Asset"
+      "id": 1246,
+      "type": "Shot"
     },
     "project": {
-      "id": 65,
+      "id": 122,
       "type": "Project"
     },
     "operation": "update",
-    "created_at": "2019-07-12 21:14:36.598835",
-    "event_type": "Shotgun_Asset_Change",
-    "session_uuid": "07473c00-a4ea-11e9-b3b8-0242ac110006",
+    "created_at": "2022-02-01 20:53:08.523887",
+    "event_type": "Shotgun_Shot_Change",
+    "delivery_id": "3a5de4ee-8f05-4eac-b537-611e845352fc",
+    "session_uuid": "dd6a1d6a-83a0-11ec-8826-0242ac110006",
     "attribute_name": "description",
-    "event_log_entry_id": 248249
-  }
+    "event_log_entry_id": 545175
+  },
+  "timestamp": "2022-02-01T20:53:09Z"
 }
 ```
 
 ##### 세션 UUID
 
-{% include product %}에서 이벤트를 트리거한 `session_uuid`가 이벤트 페이로드의 일부로 제공됩니다. 이 값은 [{% include product %}의 Python API](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)에 제공될 수 있으며, 그러면 이 session_uuid를 사용하여 열려 있는 모든 브라우저 세션에 API에서 생성한 이벤트에 대한 업데이트가 표시됩니다.
+{% include product %}에서 이벤트를 트리거한 `session_uuid`가 이벤트 페이로드의 일부로 제공됩니다. 이 값은 [{% include product %}의 Python API](https://developer.shotgunsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)에 제공될 수 있으며, 그러면 이 session_uuid를 사용하여 열려 있는 모든 브라우저 세션에 API에서 생성한 이벤트에 대한 업데이트가 표시됩니다.
+
+#### 웹후크의 응답
+
+![응답(Response) 탭](./images/webhooks/webhooks_response_tab.png)
+
+응답(Response) 탭에는 전달에 대한 웹후크 응답과 관련한 정보가 표시됩니다.
+
+웹후크의 응답 HTTP 헤더, 본문 및 측정된 응답 시간을 확인할 수 있습니다.
+
+웹후크 응답 본문은 최대 100자까지 유지됩니다. (위에 설명한 것처럼 전달 정보는 검토를 위해 7일 동안 유지되며 그 이후 삭제됩니다.)
+
+{% include warning title="보안 모범 사례" content="웹후크의 응답에 보안 데이터를 포함하지 말고, 응답에서 시스템 오류에 대한 상세 정보를 반환하지 마십시오." %}
 
 ### 전달에 대한 응답
 
@@ -157,9 +203,10 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 #### 스로틀링
 
 전달에 대한 사용자 응답 시간은 사이트의 웹후크 처리량에 영향을 미칩니다.
+
 각 사이트에서는 분당 1분의 응답 시간이 허용됩니다. 따라서 사이트에 대해 구성된 모든 사용자 엔드포인트가 응답하는 데 총 6초가 걸릴 경우 해당 사이트의 웹후크 전달이 분당 10번으로 제한됩니다.
 
-전체 처리량 속도를 높여야 할 경우 다음 모델에 따라 사용자 엔드포인트를 설계해야 합니다.
+전체 처리량을 높여야 할 경우 다음 모델에 따라 사용자 엔드포인트를 설계해야 합니다.
 1. 요청 받기
 2. 또 다른 프로세스/스레드를 생성하여 원하는 방식으로 처리
 3. 즉시 확인 200에 응답
@@ -195,7 +242,9 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 #### 확인 응답의 역할은 무엇입니까?
 
-확인 응답은 웹후크의 URL에서 성공적으로 수신한 전달 처리의 성공 또는 실패에 대한 대역 외 상세 보고를 허용합니다. 이를 통해 {% include product %}에서 전달 수신 상태를, 해당 전달과 관련된 이벤트 처리의 성공 또는 실패와 구분할 수 있습니다. 이런 방법으로, 성공적으로 전달된 이벤트에서 디버깅을 위해 유용한 추가 정보를 포함할 수 있습니다. `Asset` 엔티티 생성 시 트리거되는 웹후크가 좋은 예입니다. 이 웹후크의 역할이 새로운 각 `Asset`에 대해 디스크에 디렉토리 구조를 만드는 것인 경우 웹후크의 URL을 성공적으로 전달받을 수 있지만 디스크 또는 네트워크 문제로 인해 관련 디렉토리를 만들지 못할 수도 있습니다. 이 경우 디렉토리 구조가 생성되지 않은 사실과 그 원인을 나타내는 자세한 오류 메시지와 함께 전달 레코드가 업데이트됩니다.
+확인 응답은 웹후크의 URL에서 성공적으로 수신한 전달 처리의 성공 또는 실패에 대한 대역 외 상세 보고를 허용합니다. 이를 통해 {% include product %}에서 전달 수신 상태를, 해당 전달과 관련된 이벤트 처리의 성공 또는 실패와 구분할 수 있습니다. 결과적으로, 성공적으로 전달된 이벤트에서 디버깅을 위해 유용한 추가 정보를 포함할 수 있습니다.
+
+`Asset` 엔티티 생성 시 트리거되는 웹후크가 좋은 예입니다. 웹후크의 역할이 새로운 각 `Asset`에 대해 디스크에 디렉토리 구조를 만드는 것인 경우, 웹후크의 URL을 성공적으로 전달받을 수 있지만 디스크 또는 네트워크 문제로 인해 관련 디렉토리를 만들지 못할 수도 있습니다. 이 경우 디렉토리 구조가 생성되지 않은 사실과 그 원인을 나타내는 자세한 오류 메시지와 함께 전달 레코드가 업데이트됩니다.
 
 ## 웹후크 테스트
 
@@ -203,7 +252,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 ### webhook.site 사용
 
-[webhook.site](https://webhook.site)를 사용하는 것이 권장됩니다. 이는 웹후크에 복사하여 붙여넣을 수 있는 고유한 URL로, 해당 주소에 대한 전달을 실시간으로 보여 줍니다. 전달에 응답할 때 특정 상태 코드 및 본문을 사용하도록 이 페이지를 사용자 지정하여, 전달 성공 및 실패를 테스트할 수 있습니다.
+[webhook.site](https://webhook.site)를 사용하는 것이 권장됩니다. 이는 웹후크에 복사하여 붙여넣을 수 있는 고유한 URL로, 해당 주소에 대한 전달 현황을 실시간으로 보여 줍니다. 전달에 응답할 때 특정 상태 코드 및 본문을 사용하도록 이 페이지를 사용자 지정하여, 전달 성공 및 실패를 테스트할 수 있습니다.
 
 webhook.site의 서비스는 매우 속도에 제한적입니다. 즉, 일부 전달이 거부되거나 불안정해지거나 실패한 웹후크 상황에서 쉽게 종료될 수 있습니다. 테스트할 때는 프로덕션의 라이브 데이터 대신, 알려져 있으며 제어 가능한 프로젝트 환경을 사용하는 것이 좋습니다.
 

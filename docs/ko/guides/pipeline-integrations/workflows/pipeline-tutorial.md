@@ -35,7 +35,7 @@ lang: ko
 
 ## 추가 리소스
 
-* [{% include product %} 지원 사이트](https://developer.shotgridsoftware.com/ko)
+* [{% include product %} 지원 사이트](https://developer.shotgridsoftware.com/ko/)
 
 * [{% include product %} 통합](https://www.shotgridsoftware.com/integrations/)
 

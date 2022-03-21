@@ -13,6 +13,14 @@ Motion Builder용 {% include product %} 엔진에는 {% include product %} 툴�
 
 ![엔진](../images/engines/mobu.png)
 
+## 지원되는 응용프로그램 버전
+
+이 항목은 테스트를 거쳐 다음 응용프로그램 버전에서 작동하는 것으로 알려져 있습니다.
+
+{% include tk-motionbuilder %}
+
+최신 릴리즈에서는 더 완벽하게 작동할 수 있지만 이러한 버전에서 아직 공식적으로 테스트되지는 않았습니다.
+
 ## 설치 및 업데이트
 
 ### {% include product %} Pipeline Toolkit에 이 엔진 추가

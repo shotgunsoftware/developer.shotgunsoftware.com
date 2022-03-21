@@ -160,7 +160,7 @@ frameworks:
 ### 変更を再ロードする
 
 Maya などのソフトウェア内でアプリをテストする場合に、設定に 1 つまたは複数の開発項目を追加するとすぐに、Toolkit は {% include product %} メニューに**[Reload and Restart]**オプションを追加します。
-![{% include product %} メニューの[再ロードして再起動](Reload and Restart)オプション](./images/reload-restart.png)
+![{% include product %} メニューの再ロードして再起動オプション](./images/reload-restart.png)
 
 これをクリックすると、設定とコードが再ロードされ、エンジンが再起動されます。これによって、繰り返しの処理が高速化されます。すなわち、Maya を一度起動し、目的のコードまたは構成の変更を実行したら、**[Reload and Restart]**ボタンを押すだけで、変更が有効になります。
 

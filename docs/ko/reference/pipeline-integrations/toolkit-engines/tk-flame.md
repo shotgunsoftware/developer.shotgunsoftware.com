@@ -13,6 +13,12 @@ Flame용 {% include product %} 엔진은 Flame 2015 Extension 2에 추가된 새
 
 Flame용 {% include product %} 엔진을 시작하는 가장 간단한 방법은 예제 파이프라인 구성을 사용하여 새 테스트 프로젝트를 설정하는 것입니다. {% include product %} 데스크톱을 시작하고 새 프로젝트에 대한 프로젝트 설정을 실행하여 기본 구성 섹션에서 기본 Flame 구성을 선택하면 이 작업을 수행할 수 있습니다.
 
+## 지원되는 응용프로그램 버전
+
+이 항목은 테스트를 거쳐 다음 응용프로그램 버전에서 작동하는 것으로 알려져 있습니다.
+
+{% include tk-flame %}
+
 ## Flame 프로젝트 설정
 
 Flame용 {% include product %} 엔진은 {% include product %} 프로젝트를 Flame 프로젝트와 연결하는 데 도움을 주며 필요한 경우 Flame 프로젝트를 생성합니다.  Flame의 데이터가 {% include product %}의 올바른 데이터와 연결되도록 하므로 이 설정이 통합의 핵심입니다.  추가 기능으로 엔진은 Flame 프로젝트의 명명 규칙 및 프로젝트의 다른 여러 설정을 관리하는 기능을 제공합니다.

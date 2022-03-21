@@ -9,19 +9,38 @@ lang: zh_CN
 
 {% include product %} Alias 插件包含一个用于在 Alias 中集成 {% include product %} 应用的标准平台。它采用轻量型设计，操作简单直观，并会向 Alias 菜单中添加一个 {% include product %} 菜单。
 
-# 应用开发人员须知
+## 支持的应用程序版本
 
-## PySide
+此插件已经过测试，已知可支持以下应用程序版本：
+
+{% include tk-alias %}
+
+请注意，此插件也许（甚至非常有可能）支持更新的发行版本，但是尚未正式在这些版本中进行测试。
+
+## Python 版本支持
+
+Alias Toolkit 插件使用 Shotgun Desktop 附带的 Python 解释器或本地安装的解释器。
+
+| tk-alias 插件版本 | Shotgun Desktop 应用程序版本 | Shotgun Desktop 插件版本 | Python 解释器版本 |
+| ---------------------- | ----------------------------------- | ------------------------------ | -------------------------- |
+| v2.0.5 或更低版本 | v1.5.8 或更低版本 | v2.4.14 或更低版本 | v2.7.x |
+| v2.0.6 或更高版本 | v1.6.0 或更高版本 | v2.5.0 或更高版本 | v2.7.x 和 v3.7.x |
+
+经过测试的本地安装的 Python 解释器：v2.7.x 或 v3.7.4
+
+## 应用开发人员须知
+
+### PySide
 
 {% include product %} Alias 插件使用随 {% include product %} Desktop 发行的 PySide 版本，并在必要时将其激活。
 
-## Alias 项目管理
+### Alias 项目管理
 
 {% include product %} Alias 插件在每次启动时，都会将 Alias 项目设置为指向此插件的设置中定义的位置。这意味着，当您打开新文件时，项目也可能会发生变化。设置Shotgun Alias 项目的详细信息，可以使用模板系统，在配置文件中配置。
 
 ***
 
-# 使用 tk-alias
+## 使用 tk-alias
 
 此 {% include product %} 集成支持 Alias 应用程序系列（Concept、Surface 和 AutoStudio）。
 

@@ -60,7 +60,7 @@ Python 控制台会显示一个或多个选项卡，每个选项卡包含一个�
 
 ![全局参数](../images/apps/multi-pythonconsoleglobals.png)
 
-控制台中预先定义了一些 {% include product %}/Toolkit 全局参数，这与 [{% include product %} Shell 插件](https://developer.shotgridsoftware.com/zh_CN/2ad59ee8)中提供的参数类似。
+控制台中预先定义了一些 {% include product %}/Toolkit 全局参数，这与 [{% include product %} Shell 插件](https://developer.shotgridsoftware.com/zh_CN/2ad59ee8/?title=Shell)中提供的参数类似。
 
 * Tk API 句柄通过 `tk` 变量提供
 * {% include product %} API 句柄通过 `shotgun` 变量提供
