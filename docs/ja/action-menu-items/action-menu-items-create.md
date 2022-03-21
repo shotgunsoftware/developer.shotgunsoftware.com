@@ -102,3 +102,7 @@ API 開発者は、アクション メニュー アイテム(AMI)からエンテ
 
 * **project_name**: プロジェクトの名前(例: Gunslinger)
 * **project_id**: プロジェクトの ID (例: 81)
+
+# 内部リソース メニュー
+
+ユーザ メニューの内部リソースに対してアクション メニュー アイテムを活用する方法の詳細については、『[管理者ガイド](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)』を参照してください。

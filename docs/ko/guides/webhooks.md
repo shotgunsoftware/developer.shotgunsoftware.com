@@ -35,19 +35,19 @@ lang: ko
 
 그런 다음 **웹후크 생성(Create Webhook)**을 선택합니다.
 
-![웹후크 생성 버튼](./images/webhooks/create_webhook_button.png)
+![웹후크 생성 버튼](./images/webhooks/create_webhook_button_v3.png)
 
-{% include info title="참고" content="웹후크에 대한 액세스는 고급 권한(Advanced Permissions)의 **웹후크 표시(Show Webhooks)**를 통해 제어됩니다. 이 기능은 관리자(Admin) 및 매니저 권한 역할에 대해 기본적으로 활성화되어 있습니다. ![웹후크 생성 대화상자](./images/webhooks/show_webhooks_permission.png)." %}
+{% include info title="참고" content="웹후크에 대한 액세스는 고급 권한(Advanced Permissions)의 **웹후크 표시(Show Webhooks)**를 통해 제어됩니다. 이 기능은 관리자(Admin) 및 매니저 권한 역할에 대해 기본적으로 활성화되어 있습니다. ![웹후크 생성 대화상자](/images/webhooks/show_webhooks_permission.png)." %}
 
 그런 다음 새 웹후크를 생성하는 데 필요한 정보를 입력합니다.
 
-![웹후크 생성 대화상자](./images/webhooks/create_webhook_dialog.png)
+![웹후크 생성 대화상자](./images/webhooks/create_webhook_dialog_v2.png)
 
 ### 비밀 토큰
 
 웹후크에 비밀 토큰을 할당하는 것은 선택 사항입니다. 비밀 토큰을 제공한 경우 해당 웹후크 URL에 전송된 모든 요청은 해당 토큰을 사용하여 서명됩니다. 토큰 값은 요청과 함께 `X-SG-SIGNATURE`라는 이름의 헤더로 전송됩니다. 서명은 SHA1과 함께 HMAC를 사용하여 계산되고 서명된 메시지는 요청의 JSON 본문입니다.
 
-![비밀 토큰](./images/webhooks/webhook_secret_token.png)
+![비밀 토큰](./images/webhooks/webhook_secret_token_v2.png)
 
 #### 헤더 형식
 
@@ -74,7 +74,19 @@ True
 
 SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 연결의 보안을 유지하는 데 도움이 되는 선택적 기능입니다. 이 옵션이 설정된 경우 웹후크의 URL로 전달이 이루어지면 {% include product %}는 OpenSSL 인증서 유효성 확인 루틴을 사용하여 인증서를 확인합니다.
 
-![SSL 인증서 유효성 확인](./images/webhooks/webhooks_validate_ssl_certificate.png)
+![SSL 인증서 유효성 확인](./images/webhooks/webhooks_validate_ssl_certificate_v2.png)
+
+### 배치 형식으로 전달(Deliver in Batched Format)
+
+![배치 형식으로 전달합니다](./images/webhooks/webhooks_batched_format.png)
+
+[여기](https://developer.shotgridsoftware.com/ko/e7890fc8/)에서 배치 형식으로 제공하는 방법에 대해 자세히 알아보십시오.
+
+### 불안정할 경우 알림(Notify when unstable)
+
+**불안정할 경우 알림(Notify when unstable)**을 선택하면 웹후크가 실패할 때 알림을 보낼 사람 또는 그룹을 선택할 수 있습니다. 이 설정은 선택 사항입니다.
+
+![불안정할 경우 알림](./images/webhooks/webhook_notifications_v2.png)
 
 ### 프로젝트 및 엔티티별 필터링
 
@@ -84,7 +96,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 - 리소스 비용 절감
 - 불필요한 백로그 방지
 
-![웹후크 필터](./images/webhooks/webhook_project_entity_field_filter.png)
+![웹후크 필터](./images/webhooks/webhook_project_entity_field_filter_v2.png)
 
 {% include info title="참고" content="프로젝트를 선택하면 버전과 같이 항상 단일 프로젝트에 속하는 엔티티만 선택할 수 있습니다. 작업자와 같은 비 프로젝트(또는 다중 프로젝트) 엔티티를 선택하려면 프로젝트를 선택하지 **마십시오**. 이렇게 하면 엔티티 업데이트 시에 웹후크 이벤트 필터링으로 인해 성능 오버헤드가 부가되지 않습니다." %}
 
@@ -92,7 +104,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 웹후크의 상태는 여러 가지 중 하나이며 계속해서 전달을 받을 수 있는 기능 및 상태를 나타냅니다.
 
-![웹후크 생성 대화상자](./images/webhooks/webhook_selected_status.png)
+![웹후크 생성 대화상자](./images/webhooks/webhook_selected_status_v2.png)
 
 | 상태 | 예시 | 설명 |
 |--------|:-------:|:-----------:|
@@ -101,23 +113,23 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 | 실패(Failed) | ![실패](./images/webhooks/webhook_status_failed.png) | 웹후크가 작동하지 않는 것으로 간주되고 더 이상 전달을 시도하지 않습니다. 이는 짧은 기간 동안 너무 많은 전달 실패에 따른 결과이며 시스템은 웹후크가 더 이상 실행 가능하지 않은 것으로 판단합니다. **지난 24시간 동안 100번의 전달에 실패한 경우 웹후크가 실패로 간주됩니다**. |
 | 비활성화됨(Disabled) | ![비활성화됨](./images/webhooks/webhook_status_disabled.png) | 웹후크가 비활성화된 상태이며 다시 활성 상태가 될 때까지 전달이 더 이상 시도되지 않습니다. |
 
-## 전달
+## 전달(Deliveries)
 
 웹후크 목록에서 웹후크를 선택하면 7일 전까지 수행된 해당 웹후크의 모든 전달이 표시됩니다.
 
 {% include info title="참고" content="7일보다 오래된 전달 로그는 제거되며 복구할 수 없습니다." %}
 
-### 전달 상태
+### 전달 상태(Delivery status)
 
 전달 상태는 웹후크의 URL로 성공적으로 전달되었는지 여부를 나타냅니다.
 
-![전달 상태](./images/webhooks/delivery_status.png)
+![전달 상태](./images/webhooks/delivery_status_v2.png)
 
-### 전달 상세 정보
+### 전달 상세 정보(Delivery details)
 
 전달을 확장하여 웹후크 URL로 전송한 요청과 해당 요청에 대한 응답의 상세 정보를 표시할 수 있습니다.
 
-![전달 상세 정보](./images/webhooks/delivery_details.png)
+![전달 상세 정보](./images/webhooks/delivery_details_v2.png)
 
 #### 페이로드 요청
 
@@ -130,35 +142,37 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 ```json
 {
   "data": {
-    "id": "95.0",
+    "id": "11777.3065.0",
     "meta": {
       "type": "attribute_change",
-      "entity_id": 758,
-      "new_value": "This is the newest description ever!!",
-      "old_value": "This is the old description!",
-      "entity_type": "Asset",
+      "entity_id": 1246,
+      "new_value": "*Add fog and mist with depth",
+      "old_value": "*Add fog and mist.",
+      "entity_type": "Shot",
       "attribute_name": "description",
       "field_data_type": "text"
     },
     "user": {
-      "id": 113,
+      "id": 88,
       "type": "HumanUser"
     },
     "entity": {
-      "id": 758,
-      "type": "Asset"
+      "id": 1246,
+      "type": "Shot"
     },
     "project": {
-      "id": 65,
+      "id": 122,
       "type": "Project"
     },
     "operation": "update",
-    "created_at": "2019-07-12 21:14:36.598835",
-    "event_type": "Shotgun_Asset_Change",
-    "session_uuid": "07473c00-a4ea-11e9-b3b8-0242ac110006",
+    "created_at": "2022-02-01 20:53:08.523887",
+    "event_type": "Shotgun_Shot_Change",
+    "delivery_id": "3a5de4ee-8f05-4eac-b537-611e845352fc",
+    "session_uuid": "dd6a1d6a-83a0-11ec-8826-0242ac110006",
     "attribute_name": "description",
-    "event_log_entry_id": 248249
-  }
+    "event_log_entry_id": 545175
+  },
+  "timestamp": "2022-02-01T20:53:09Z"
 }
 ```
 
@@ -207,7 +221,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 ### 확인 응답
 
-확인 응답을 포함하도록 전달을 업데이트할 수 있습니다. 전달이 만들어지면 요청의 일부로 헤더가 제공됩니다. 이러한 헤더에는 `x-sg-delivery-id` 키에 저장된 전달 레코드의 ID가 포함됩니다. 이 ID는 [{% include product %} REST API](https://developer.shotgunsoftware.com/rest-api)를 사용하여 확인 응답이 포함되도록 전달 레코드를 업데이트하는 데 사용할 수 있습니다.
+확인 응답을 포함하도록 전달을 업데이트할 수 있습니다. 전달이 만들어지면 요청의 일부로 헤더가 제공됩니다. 이러한 헤더에는 `x-sg-delivery-id` 키에 저장된 전달 레코드의 ID가 포함됩니다. 이 ID는 [{% include product %} REST API](https://developer.shotgridsoftware.com/rest-api)를 사용하여 확인 응답이 포함되도록 전달 레코드를 업데이트하는 데 사용할 수 있습니다.
 
 {% include warning title="확인 응답 크기" content="확인 응답에 허용되는 최대 크기는 4KB입니다." %}
 

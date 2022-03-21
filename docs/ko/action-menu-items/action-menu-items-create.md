@@ -30,7 +30,7 @@ API 개발자는 액션 메뉴 항목(AMI)을 통해 엔티티별로 상황에 �
 
 설정(Settings) 메뉴에서 액션 메뉴 항목(Action Menu Items)을 선택하여 AMI 관리자(AMI Admin) 페이지를 엽니다.
 
-새 AMI를 생성하려면 ![AMI 추가(Add AMI)](./images/dv-custom-amis-05-add-ami-04.png).
+AMI를 생성하려면 ![AMI 추가(Add AMI)](./images/dv-custom-amis-05-add-ami-04.png)를 클릭합니다.
 
 제목(Title) 및 기타 필수 필드를 입력하고, "액션 메뉴 항목 만들기(Create Action Menu Item)"를 클릭합니다.
 
@@ -102,3 +102,7 @@ API 개발자는 액션 메뉴 항목(AMI)을 통해 엔티티별로 상황에 �
 
 * **project_name:** 프로젝트의 이름(예: Gunslinger)
 * **project_id:** 프로젝트의 ID(예: 81)
+
+# 내부 리소스 메뉴
+
+사용자 메뉴에서 내부 리소스에 대해 액션 메뉴 항목을 활용하는 방법에 대해 자세히 알아보려면 [관리자 안내서](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)를 참조하십시오.

@@ -35,19 +35,19 @@ Webhook の作成を開始するには、**[Webhooks] (Webhooks)**ページに�
 
 次に、**[Webhook を作成] (Create Webhook)**を選択します。
 
-![Webhook ボタンを作成する](./images/webhooks/create_webhook_button.png)
+![Webhook ボタンを作成する](./images/webhooks/create_webhook_button_v3.png)
 
-{% include info title="注" content="Webhook へのアクセスは、[高度な権限] (Advanced Permissions)の**[Webhook を表示] (Show Webhooks)**でコントロールします。管理者およびマネージャ権限ロールでは、このオプションは既定で有効になっています。![Webhook を作成ダイアログ](./images/webhooks/show_webhooks_permission.png)" %}
+{% include info title="注" content="Webhook へのアクセスは、[高度な権限] (Advanced Permissions)の**[Webhook を表示] (Show Webhooks)**でコントロールします。管理者およびマネージャ権限ロールでは、このオプションは既定で有効になっています。![Webhook を作成ダイアログ](./images/webhooks/show_webhooks_permission.png)." %}
 
 次に、新しい Webhook を作成するために必要な情報を入力します。
 
-![Webhook を作成ダイアログ](./images/webhooks/create_webhook_dialog.png)
+![Webhook を作成ダイアログ](./images/webhooks/create_webhook_dialog_v2.png)
 
 ### シークレット トークン
 
 Webhook にシークレット トークンを割り当てる作業は省略できます。シークレット トークンを指定した場合、Webhook の URL に送信されるすべての要求はこのトークンを使用して署名されます。この要求と一緒にトークン値が送信されます(ヘッダ名は `X-SG-SIGNATURE`)。署名は HMAC および SHA1 を使用して計算され、署名されたメッセージが要求の本文(JSON 形式)になります。
 
-![シークレット トークン](./images/webhooks/webhook_secret_token.png)
+![シークレット トークン](./images/webhooks/webhook_secret_token_v2.png)
 
 #### ヘッダ形式
 
@@ -74,7 +74,19 @@ True
 
 SSL 証明書の検証機能はオプションです。Webhook の使用者 URL に対する接続のセキュリティを確保する際に役立ちます。この機能を有効にすると、Webhook の URL に配信された場合、{% include product %} は OpenSSL の証明書検証ルーチンを使用して証明書を検証します。
 
-![SSL 証明書を検証する](./images/webhooks/webhooks_validate_ssl_certificate.png)
+![SSL 証明書を検証する](./images/webhooks/webhooks_validate_ssl_certificate_v2.png)
+
+### バッチ形式で配信
+
+![バッチ形式で配信](./images/webhooks/webhooks_batched_format.png)
+
+[バッチ形式での配布の詳細については、こちら](https://developer.shotgridsoftware.com/ja/e7890fc8/)を参照してください。
+
+### 不安定な場合に通知
+
+**不安定な場合に通知**: Webhook が失敗したときに通知するユーザまたはグループを選択できます。この設定はオプションです。
+
+![不安定な場合に通知](./images/webhooks/webhook_notifications_v2.png)
 
 ### プロジェクトとエンティティでフィルタする
 
@@ -84,7 +96,7 @@ SSL 証明書の検証機能はオプションです。Webhook の使用者 URL 
 - リソースのコストを削減する
 - 不要なバックログを防止する
 
-![Webhook のフィルタ](./images/webhooks/webhook_project_entity_field_filter.png)
+![Webhook のフィルタ](./images/webhooks/webhook_project_entity_field_filter_v2.png)
 
 {% include info title="注" content="プロジェクトの制限を選択すると、「バージョン」のように常に 1 つのプロジェクトに属するエンティティを選択できます。ユーザなどのプロジェクト以外(またはマルチプロジェクト)のエンティティを選択する場合は、プロジェクトを**選択しないでください**。こうすることで、Webhook イベントをフィルタするときに、エンティティ更新のパフォーマンスにオーバーヘッドが生じることはなくなります。"%}
 
@@ -92,7 +104,7 @@ SSL 証明書の検証機能はオプションです。Webhook の使用者 URL 
 
 Webhook はさまざまなステータスを取ることができます(健全性や、配信を引き続き受信できるかどうか)。
 
-![Webhook を作成ダイアログ](./images/webhooks/webhook_selected_status.png)
+![Webhook を作成ダイアログ](./images/webhooks/webhook_selected_status_v2.png)
 
 | ステータス | 例 | 説明 |
 |--------|:-------:|:-----------:|
@@ -111,13 +123,13 @@ Webhook リスト内の Webhook を選択すると、この Webhook に行われ
 
 配信ステータスは、Webhook の URL に正常に配信されたかどうかを示します。
 
-![配信ステータス](./images/webhooks/delivery_status.png)
+![配信ステータス](./images/webhooks/delivery_status_v2.png)
 
 ### 配信の詳細
 
 配信を展開して、Webhook の URL に送信された要求およびこの要求に対する応答の詳細を表示することができます。
 
-![配信の詳細](./images/webhooks/delivery_details.png)
+![配信の詳細](./images/webhooks/delivery_details_v2.png)
 
 #### ペイロードの要求
 
@@ -130,35 +142,37 @@ Webhook の URL に送信されるペイロードには、{% include product %} 
 ```json
 {
   "data": {
-    "id": "95.0",
+    "id": "11777.3065.0",
     "meta": {
       "type": "attribute_change",
-      "entity_id": 758,
-      "new_value": "This is the newest description ever!!",
-      "old_value": "This is the old description!",
-      "entity_type": "Asset",
+      "entity_id": 1246,
+      "new_value": "*Add fog and mist with depth",
+      "old_value": "*Add fog and mist.",
+      "entity_type": "Shot",
       "attribute_name": "description",
       "field_data_type": "text"
     },
     "user": {
-      "id": 113,
+      "id": 88,
       "type": "HumanUser"
     },
     "entity": {
-      "id": 758,
-      "type": "Asset"
+      "id": 1246,
+      "type": "Shot"
     },
     "project": {
-      "id": 65,
+      "id": 122,
       "type": "Project"
     },
     "operation": "update",
-    "created_at": "2019-07-12 21:14:36.598835",
-    "event_type": "Shotgun_Asset_Change",
-    "session_uuid": "07473c00-a4ea-11e9-b3b8-0242ac110006",
+    "created_at": "2022-02-01 20:53:08.523887",
+    "event_type": "Shotgun_Shot_Change",
+    "delivery_id": "3a5de4ee-8f05-4eac-b537-611e845352fc",
+    "session_uuid": "dd6a1d6a-83a0-11ec-8826-0242ac110006",
     "attribute_name": "description",
-    "event_log_entry_id": 248249
-  }
+    "event_log_entry_id": 545175
+  },
+  "timestamp": "2022-02-01T20:53:09Z"
 }
 ```
 
@@ -170,7 +184,7 @@ Webhook の URL に送信されるペイロードには、{% include product %} 
 
 ![応答タブ](./images/webhooks/webhooks_response_tab.png)
 
-[応答] (Response)タブには、配信に対する Webhook の応答に関する詳細が表示されます。
+[応答](Response)タブには、配信に対する Webhook の応答に関する詳細が表示されます。
 
 Webhook の応答の HTTP ヘッダ、本文、および計測された応答時間を確認できます。
 
@@ -228,7 +242,7 @@ Webhook の応答の本文の最大文字数は 100 文字です。(上記のと
 
 #### 確認応答の用途
 
-確認応答を使用すると、成功または失敗を示す詳細レポートを帯域外で送信し、Web フックの URL で正常に受信された配信を処理することができます。これにより、{% include product %} からの配信に関する受信ステータスを成功または失敗から切り離し、この配信に関連付けられているイベントを処理できるようになります。その結果、正常に配信されたイベントにデバッグに役立つ追加情報を含めることができます。
+確認応答を使用すると、成功または失敗を示す詳細レポートを帯域外で送信し、Webhook の URL で正常に受信された配信を処理することができます。これにより、{% include product %} からの配信に関する受信ステータスを成功または失敗から切り離し、この配信に関連付けられているイベントを処理できるようになります。その結果、正常に配信されたイベントにデバッグに役立つ追加情報を含めることができます。
 
 適切な例として、`Asset` エンティティの作成時にトリガされる Webhook があります。新しい `Asset` ごとにディスク上にディレクトリ構造を 1 つ作成する作業を Webhook で行う場合、Webhook の URL は配信を正常に受信できますが、ディスクまたはネットワークが停止しているため、関連ディレクトリを作成することはできません。配信を受信した後、Webhook は、ディレクトリ構造が作成されなかったこと、およびその理由を示す詳細なエラー メッセージを使用して、配信記録を更新することができます。
 

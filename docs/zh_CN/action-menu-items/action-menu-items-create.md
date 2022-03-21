@@ -102,3 +102,7 @@ API 开发人员可以通过动作菜单项 (AMI) 按实体自定义上下文菜
 
 * **project_name**：项目的名称（例如 Gunslinger）
 * **project_id**：项目的 ID（例如 81）
+
+# “内部资源”(Internal Resources)菜单
+
+要详细了解如何将“动作菜单项”(Action Menu Items)用于用户菜单中的“内部资源”(Internal Resources)，请[访问此处的管理员手册](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)。

@@ -35,19 +35,19 @@ Webhook 和 [{% include product %} 事件进程](https://github.com/shotgunsoftw
 
 然后选择**“创建 Webhook”(Create Webhook)**。
 
-![“创建 Webhook”(Create Webhook)按钮](./images/webhooks/create_webhook_button.png)
+![“创建 Webhook”(Create Webhook)按钮](./images/webhooks/create_webhook_button_v3.png)
 
 {% include info title="注意" content="对 Webhook 的访问权限由“高级”(Advanced)权限下的**“显示 Webhook”(Show Webhooks)**控制。默认情况下，对于管理员和经理权限角色，此选项处于启用状态。![“创建 Webhook”(Create Webhook)对话框](./images/webhooks/show_webhooks_permission.png)。" %}
 
 接下来，填写创建新 Webhook 所需的信息。
 
-![“创建 Webhook”(Create Webhook)对话框](./images/webhooks/create_webhook_dialog.png)
+![“创建 Webhook”(Create Webhook)对话框](./images/webhooks/create_webhook_dialog_v2.png)
 
 ### 秘密令牌
 
 为 Webhook 指定秘密令牌是可选的。如果提供，任何发送至 Webhook URL 的请求都会使用该令牌进行签名。令牌值作为名为 `X-SG-SIGNATURE` 的标题随请求一起发送。使用 HMAC 与 SHA1 计算签名，并且签名的消息是请求的 JSON 主体。
 
-![秘密令牌](./images/webhooks/webhook_secret_token.png)
+![秘密令牌](./images/webhooks/webhook_secret_token_v2.png)
 
 #### 标题格式
 
@@ -74,7 +74,19 @@ True
 
 验证 SSL 证书是一项可选功能，该功能可帮助确保到 Webhook 的使用者 URL 的任何连接的安全性。如果启用，则向 Webhook 的 URL 交付内容时，{% include product %} 将使用 OpenSSL 的证书验证例程来验证证书。
 
-![验证 SSL 证书](./images/webhooks/webhooks_validate_ssl_certificate.png)
+![验证 SSL 证书](./images/webhooks/webhooks_validate_ssl_certificate_v2.png)
+
+### 以批处理格式交付
+
+![以批处理格式交付](./images/webhooks/webhooks_batched_format.png)
+
+[在此处阅读有关以批处理格式交付的详细信息](https://developer.shotgridsoftware.com/zh_CN/e7890fc8/)。
+
+### 不稳定时通知
+
+**“不稳定时通知”(Notify when unstable)**允许您选择一个用户或组，以在 Webhook 失败时予以通知。此设置为可选项。
+
+![不稳定时通知](./images/webhooks/webhook_notifications_v2.png)
 
 ### 按项目和实体过滤
 
@@ -84,7 +96,7 @@ True
 - 降低资源成本
 - 防止出现不必要的积压工作
 
-![Webhook 过滤器](./images/webhooks/webhook_project_entity_field_filter.png)
+![Webhook 过滤器](./images/webhooks/webhook_project_entity_field_filter_v2.png)
 
 {% include info title="注意" content="如果选择项目，则您只能选择始终属于单个项目的实体（例如“版本”(Versions)）。如果要选择非项目（或多项目）实体（例如“人员”(Person)），则**不**应选择项目。这可确保 Webhook 事件过滤不会增加实体更新的性能开销。" %}
 
@@ -92,7 +104,7 @@ True
 
 一个 Webhook 可以有以下几种不同的状态，以指示其运行状况和继续接收交付内容的能力。
 
-![“创建 Webhook”(Create Webhook)对话框](./images/webhooks/webhook_selected_status.png)
+![“创建 Webhook”(Create Webhook)对话框](./images/webhooks/webhook_selected_status_v2.png)
 
 | 状态(Status) | 示例 | 说明 |
 |--------|:-------:|:-----------:|
@@ -111,13 +123,13 @@ True
 
 交付状态指示是否已成功交付到 Webhook 的 URL。
 
-![交付状态](./images/webhooks/delivery_status.png)
+![交付状态](./images/webhooks/delivery_status_v2.png)
 
 ### 交付详细信息
 
 交付可展开以显示有关发送到此 Webhook URL 的请求以及对此请求的响应的详细信息。
 
-![交付详细信息](./images/webhooks/delivery_details.png)
+![交付详细信息](./images/webhooks/delivery_details_v2.png)
 
 #### 请求有效负载
 
@@ -130,35 +142,37 @@ True
 ```json
 {
   "data": {
-    "id": "95.0",
+    "id": "11777.3065.0",
     "meta": {
       "type": "attribute_change",
-      "entity_id": 758,
-      "new_value": "This is the newest description ever!!",
-      "old_value": "This is the old description!",
-      "entity_type": "Asset",
+      "entity_id": 1246,
+      "new_value": "*Add fog and mist with depth",
+      "old_value": "*Add fog and mist.",
+      "entity_type": "Shot",
       "attribute_name": "description",
       "field_data_type": "text"
     },
     "user": {
-      "id": 113,
+      "id": 88,
       "type": "HumanUser"
     },
     "entity": {
-      "id": 758,
-      "type": "Asset"
+      "id": 1246,
+      "type": "Shot"
     },
     "project": {
-      "id": 65,
+      "id": 122,
       "type": "Project"
     },
     "operation": "update",
-    "created_at": "2019-07-12 21:14:36.598835",
-    "event_type": "Shotgun_Asset_Change",
-    "session_uuid": "07473c00-a4ea-11e9-b3b8-0242ac110006",
+    "created_at": "2022-02-01 20:53:08.523887",
+    "event_type": "Shotgun_Shot_Change",
+    "delivery_id": "3a5de4ee-8f05-4eac-b537-611e845352fc",
+    "session_uuid": "dd6a1d6a-83a0-11ec-8826-0242ac110006",
     "attribute_name": "description",
-    "event_log_entry_id": 248249
-  }
+    "event_log_entry_id": 545175
+  },
+  "timestamp": "2022-02-01T20:53:09Z"
 }
 ```
 

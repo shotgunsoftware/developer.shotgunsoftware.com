@@ -105,27 +105,19 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 
 要创建一个与 {% include product %} 查询对应的动态文件夹，请在 YAML 文件中使用以下语法：
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: shotgun_entity
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: Asset
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: code
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
@@ -143,27 +135,19 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 
 在名称定义中包含斜杠是为了创建可一次性创建多个文件夹的表达式：
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: shotgun_entity
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: Asset
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "{sg_asset_type}/{code}"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
@@ -183,7 +167,6 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 
 shotgun_entity 类型的文件夹支持一个可选标志，该标志可控制文件夹创建过程在创建父文件夹后是否尝试向下递归到该文件夹中，如果是的话，还将创建子文件夹。标志作为一种设置，只能有某些固定值，在本例中为“true”或“false”。要添加此标志，请参考下面这个示例：
 
-    <a name="recurse down from parent folder"></a>
     # recurse down from parent folder
     create_with_parent: true
 
@@ -211,27 +194,19 @@ shotgun_entity 类型的文件夹支持一个可选标志，该标志可控制�
 
 Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的部分内容。这样，可以创建简单的表达式，从而可使用 {% include product %} 中的值来驱动文件夹的创建。例如，如果 {% include product %} 中的所有资产都以三个字母为前缀，后跟一个下划线命名（例如 `AAT_Boulder7`），这样就可以拆分为两个文件系统文件夹级别（例如 `AAT/Boulder7`）：
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: shotgun_entity
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: Asset
 
-    <a name="Extract parts of the name using regular expressions"></a>
     # Extract parts of the name using regular expressions
     name: "{code:^([^_]+)}/{code^[^_]+_(.*)}"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
@@ -270,29 +245,21 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
 
 如果需要一个动态文件夹来对应 {% include product %} 列表字段中的所有项，可在 YAML 文件中使用以下语法：
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_list_field"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Asset"
 
-    <a name="only create for values which are used in this project."></a>
     # only create for values which are used in this project.
-    <a name="this is optional and will be set to false if not specified."></a>
     # this is optional and will be set to false if not specified.
     skip_unused: false
 
-    <a name="by default, list fields are only created if they are needed by a child entity node"></a>
     # by default, list fields are only created if they are needed by a child entity node
-    <a name="by setting the create_with_parent parameter to true you ensure that list field"></a>
     # by setting the create_with_parent parameter to true you ensure that list field
-    <a name="nodes are always created"></a>
     # nodes are always created
     create_with_parent: false
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     field_name: "{sg_asset_type}_type"
 
@@ -311,11 +278,9 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
 
 ![pipeline_step_folder](images/file-system-config-reference/pipeline_step_folder_02_DS.png)
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_step"
 
-    <a name="the {% include product %} field to use for the folder name. This field needs to come from a step entity."></a>
     # the {% include product %} field to use for the folder name. This field needs to come from a step entity.
     name: "short_name"
 
@@ -327,7 +292,6 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
 
 但是，您可以使用以下语法关闭此功能：
 
-    <a name="recurse down from parent folder"></a>
     # recurse down from parent folder
     create_with_parent: false
 
@@ -359,17 +323,14 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
 
 ![task_folder](images/file-system-config-reference/task_folder_02_DS.png)
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_task"
 
-    <a name="the {% include product %} field to use for the folder name. This field needs to come from a task entity."></a>
     # the {% include product %} field to use for the folder name. This field needs to come from a task entity.
     name: "content"
 
 但是，您可以使用以下语法开启创建功能，让任务文件夹随其父文件夹一起创建：
 
-    <a name="recurse down from parent folder"></a>
     # recurse down from parent folder
     create_with_parent: true
 
@@ -393,15 +354,11 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
 
 延迟文件夹创建是指，仅当 Toolkit API 的创建文件夹方法通过可选的 `engine` 参数请求第二次文件夹创建操作时，才执行创建操作。 通常，Toolkit 的各种应用程序启动器会在启动应用程序前执行此方法。大多数文件夹类型都支持延迟标志，其默认值为 `false`。 要将延迟文件夹创建功能设置为 `true`，可以添加此标志：
 
-    <a name="only create this folder when tk.create_filesystem_structure is"></a>
     # only create this folder when tk.create_filesystem_structure is
-    <a name="called with tk-maya, tk-nuke or any-custom-string."></a>
     # called with tk-maya, tk-nuke or any-custom-string.
     defer_creation: ["tk-maya", "tk-nuke", "any-custom-string]
 
-    <a  name="create this folder when any application launches, but not when normal folder"></a>
     # create this folder when any application launches, but not when normal folder
-    <a name="creation runs"></a>
     # creation runs
     defer_creation: true
 
@@ -414,30 +371,24 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
 
 _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通的静态文件夹，只需创建一个与文件夹同名的 YAML 配置文件，并添加以下内容即可：_
 
-    <a name="type of content"></a>
     # type of content
     type: "static"
 
-    <a name="only create this folder for maya"></a>
     # only create this folder for maya
     defer_creation: "tk-maya"
 
-    :::yaml
-    <a name="type of content"></a>
     # type of content
     type: "static"
 
-    <a name="only create this folder when tk.create_filesystem_structure is"></a>
     # only create this folder when tk.create_filesystem_structure is
-    <a name="called with any-custom-string."></a>
     # called with any-custom-string.
     defer_creation: "any-custom-string"
+
 
 ## 当前用户文件夹
 
 当前用户文件夹是一种特殊构造，通过它可为不同用户设置工作区。例如，我们经常会遇到一个部门的多位艺术家共同处理同一个镜头的情况。可以使用用户文件夹，这样艺术家可以将其工作文件存储在自己的目录中，并且能够在 [Workfiles 应用](https://developer.shotgridsoftware.com/zh_CN/9a736ee3/)中准确过滤出属于自己的文件。这种情况下，配置文件需要包含以下选项：
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "user_workspace"
 
@@ -457,39 +408,27 @@ _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通�
 
 通常，静态文件夹的使用不会超出这些示例介绍的范围；但是，Toolkit 确实支持一些更高级的静态文件夹功能。我们可以定义动态条件来决定是否应创建某个静态文件夹。例如，您可能会需要只有剪辑类型的工作流工序才会创建的特殊静态文件夹。在这种情况下，需要在静态文件夹的同一层添加一个 YAML 配置文件，并为它指定相同的名称，文件扩展名为“yml”。然后，使用以下语法：
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "static"
 
-    <a name="pick one of the {% include product %} folders that are above this folder"></a>
     # pick one of the {% include product %} folders that are above this folder
-    <a name="in the folder hierarchy. In this case it is a parent folder"></a>
     # in the folder hierarchy. In this case it is a parent folder
-    <a name="named step that we want to look at when deciding if this"></a>
     # named step that we want to look at when deciding if this
-    <a name="static folder should be created or not."></a>
     # static folder should be created or not.
     constrain_by_entity: "$step"
 
-    <a name="we can now define constraints for this step. Constraints are simple"></a>
     # we can now define constraints for this step. Constraints are simple
-    <a name="{% include product %} queries, following the same syntax as the other {% include product %} filters"></a>
     # {% include product %} queries, following the same syntax as the other {% include product %} filters
-    <a name="shown in previous sections."></a>
     # shown in previous sections.
-    #
-    <a name="In our example, if the parent step matches the constraints given"></a>
+
     # In our example, if the parent step matches the constraints given
-    <a name="in the filter below, the static folder will be created. If not,"></a>
     # in the filter below, the static folder will be created. If not,
-    <a name="it (and its children) will be ignored by the folder creation process."></a>
     # it (and its children) will be ignored by the folder creation process.
     constraints:
         - { "path": "short_name", "relation": "is", "values": [ "edit" ] }
 
 默认情况下，静态文件夹会自动随其父文件夹一起创建。但有些时候，我们并不希望如此。这种情况下，可以添加一个特殊标志，指示静态文件夹不要随其父文件夹一起创建。
 
-    <a name="do not recurse down automatically"></a>
     # do not recurse down automatically
     create_with_parent: false
 
@@ -499,18 +438,13 @@ _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通�
 
 `artwork.symlink.yml` 文件必须至少包含一个 `target` 键：
 
-    <a name="Example of a .symlink.yml file"></a>
     # Example of a .symlink.yml file
 
-    <a name="A target parameter is required."></a>
     # A target parameter is required.
     target: "../Stuff/$Project/$Shot"
 
-    <a name="Additional parameters will be passed to the hook as metadata"></a>
     # Additional parameters will be passed to the hook as metadata
-    <a name="so you can for example include permission hints or other stuff"></a>
     # so you can for example include permission hints or other stuff
-    <a name="that you may need for advanced customization"></a>
     # that you may need for advanced customization
     additional_param1: abc
     additional_param2: def
@@ -519,20 +453,20 @@ _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通�
 
 列表字段（如资产的资产类型）采用包含实体类型的某种语法进行表示，例如 `$Asset.sg_asset_type`。 例如：
 
-    <a name="Example of a .symlink.yml file"></a>
     # Example of a .symlink.yml file
 
-    <a name="A target parameter is required."></a>
     # A target parameter is required.
     target: "../renders/$Project/$Asset.sg_asset_type/$Asset"
 
 符号链接的创建操作（与所有输入/输出或 I/O 一样）在文件夹处理挂钩内进行。系统会向挂钩传递一个特殊的 `symlink` 动作，您将随这个请求一起获得符号链接的名称、完全解析的目标，以及定义文件内包含的所有 YAML 元数据。 对于上面的 `artwork` 示例，我们在镜头文件夹 (Shot) 下创建文件夹，如下所示：
+
 
      {'action': 'symlink',
       'path': '/mnt/projects/chasing_the_light/Sequences/AA/AA001/artwork'
       'target': '../Stuff/chasing_the_light/AA001',
       'metadata': {'target': '../Stuff/$Project/$Shot', 'additional_param1': 'abc', 'additional_param2': 'def'}
       }
+
 
 ## 忽略文件和文件夹
 
@@ -542,16 +476,15 @@ _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通�
 
 在文件夹创建过程中，有时将某些文件和文件夹排除在复制内容之外可能会有所帮助。例如，如果您使用 Git 或 SVN 来存储文件夹创建配置，您会不想将 `.git` 和 `.svn` 文件夹复制到每个镜头文件夹或资产文件夹。 如果有些文件是您不想复制的，您可以在项目配置内的 `config/core/schema` 文件夹中放置一个名为 `ignore_files` 的文件。 这个文件应包含 glob 样式的模式，用以定义不复制的文件。每个模式应单独一行：
 
-    <a name="This is a good example of a standard ignore_files file"></a>
     # This is a good example of a standard ignore_files file
 
     .svn                # no svn temp files to be copied across at folder creation time
     .git                # no git temp files to be copied across at folder creation time
     .DS_Store           # no mac temp files to be copied across at folder creation time
 
+
 您也可以使用通配符。例如，如果需要排除所有带 TMP 扩展名的文件，只需向文件中添加一行 *.tmp 即可。
 
-    <a name="This is a good example of a standard ignore_files file"></a>
     # This is a good example of a standard ignore_files file
 
     .svn                # no svn temp files to be copied across at folder creation time
@@ -572,6 +505,7 @@ _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通�
 
 列表中的数据始终是深度优先的递归，从顶层文件夹和文件开始，然后遍历更深的层。下面这个示例显示了传递给挂钩的数据的形式：
 
+```python
     [
 
      {'action': 'entity_folder',
@@ -630,6 +564,7 @@ _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通�
       },
 
     ]
+```
 
 这些数据是一个词典列表。每个词典有一个称为 `action` 的键。 这个键表示请求的 I/O 项的类型。如果您要执行文件夹创建挂钩，需要添加对以下不同动作的支持：
 
@@ -643,6 +578,7 @@ _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通�
 
 所有的 `actions` 还有一个名为 `metadata` 的键。 此键表示数据结构设置中关联的配置文件的 YAML 配置数据。在上面的示例中，可以看到 {% include product %} 文件夹的 `metadata` 键怎样包含数据结构配置内设置的所有过滤器和命名信息。例如，下面是上面示例中镜头文件夹的元数据：
 
+```python
     {'action': 'entity_folder',
       'entity': {'id': 1184, 'name': 'moo87', 'type': 'Shot'},
       'metadata': {'entity_type': 'Shot',
@@ -652,47 +588,33 @@ _提示：如果您更喜欢应用程序（例如 Maya）启动时创建普通�
                    'name': 'code',
                    'type': 'shotgun_entity'},
       'path': '/mnt/projects/chasing_the_light/sequences/aa2/moo87'}
+```
 
 ...它对应于 `shot.yml` 数据结构配置文件：
 
-    <a name="Copyright (c) 2013 {% include product %} Software Inc."></a>
     # Copyright (c) 2013 {% include product %} Software Inc.
     #
-    <a name="CONFIDENTIAL AND PROPRIETARY"></a>
     # CONFIDENTIAL AND PROPRIETARY
     #
-    <a name="This work is provided _AS IS_ and subject to the {% include product %} Pipeline Toolkit"></a>
     # This work is provided "AS IS" and subject to the {% include product %} Pipeline Toolkit
-    <a name="Source Code License included in this distribution package. See LICENSE."></a>
     # Source Code License included in this distribution package. See LICENSE.
-    <a name="By accessing, using, copying or modifying this work you indicate your"></a>
     # By accessing, using, copying or modifying this work you indicate your
-    <a name="agreement to the {% include product %} Pipeline Toolkit Source Code License. All rights"></a>
     # agreement to the {% include product %} Pipeline Toolkit Source Code License. All rights
-    <a name="not expressly granted therein are reserved by {% include product %} Software Inc."></a>
     # not expressly granted therein are reserved by {% include product %} Software Inc.
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Shot"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing"></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] } ]
 
@@ -704,28 +626,24 @@ _请注意，动态令牌 `$sequence` 在运行时已被解析为实际对象。
 
 例如，如果您的数据结构设置中有以下结构：
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Shot"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
     filters: [ { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] } ]
 
-    <a name="user settings"></a>
     # user settings
     studio_permissions_level: "admin"
 
 ...通过文件夹创建挂钩传递的数据将为：
 
+```python
     {'action': 'entity_folder',
       'entity': {'id': 1184, 'name': 'moo87', 'type': 'Shot'},
       'metadata': {'entity_type': 'Shot',
@@ -736,6 +654,7 @@ _请注意，动态令牌 `$sequence` 在运行时已被解析为实际对象。
                    'type': 'shotgun_entity',
                    'studio_permissions_level': 'admin'},
       'path': '/mnt/projects/chasing_the_light/sequences/aa2/moo87'}
+```
 
 这时，特殊参数 `studio_permissions_level` 将传递给挂钩，您可以使用它来控制文件权限。 您还可以使用这种方法传递任意复杂度的数据结构。此方法的一个典型用途是对权限进行非常精细的控制。
 
@@ -754,13 +673,13 @@ _请注意，动态令牌 `$sequence` 在运行时已被解析为实际对象。
      'metadata': {'studio_permissions_level': 'admin', 'type': 'static'},
      'path': '/mnt/projects/chasing_the_light/assets'},
 
-
 同样，可以用这种方式将任意复杂度的数据从 YAML 配置文件传递给挂钩。
 
 ## 文件夹创建方式的简单自定义
 
 下面是一个简单的文件夹创建挂钩：
 
+```python
     class ProcessFolderCreation(Hook):
 
         def execute(self, items, preview_mode, **kwargs):
@@ -870,6 +789,7 @@ _请注意，动态令牌 `$sequence` 在运行时已被解析为实际对象。
                 os.umask(old_umask)
 
             return folders
+```
 
 # 第 2 部分 - 配置文件系统模板
 
@@ -990,17 +910,12 @@ Toolkit 的模板文件是 Toolkit 配置的一个中枢。每个项目都会有
         format_spec: "04"
         alias: version
 
-    <a name="nuke versions are using numbers on the form 003, 004, 005"></a>
     # nuke versions are using numbers on the form 003, 004, 005
-    <a name="the nuke publish app requires a field called {version}"></a>
     # the nuke publish app requires a field called {version}
-    <a name="however {nuke_version} is a valid replacement for {version}"></a>
     # however {nuke_version} is a valid replacement for {version}
-    <a name="because it has an alias defined"></a>
     # because it has an alias defined
     nuke_shot_work: sequences/{Sequence}/{Shot}/{Step}/work/nuke/{name}.v{nuke_version}.nk
 
-    <a name="maya versions are using numbers on the form 0004, 0005, 0006"></a>
     # maya versions are using numbers on the form 0004, 0005, 0006
     maya_shot_work: sequences/{Sequence}/{Shot}/{Step}/work/maya/{name}.v{maya_version}.ma
 
@@ -1054,7 +969,7 @@ Toolkit 应用在填充所有上下文字段时（通过 `context.as_template_fi
     maya_shot_snapshot:  '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.ma'
     maya_shot_publish:  '@shot_root/publish/maya/{name}.v{version}.ma'
 
-    If  you  instead  end  them  with  .mb,  then  the  apps  will  save  out  as  Maya  binary:
+如果改为使用 .mb 结束，则应用将另存为 Maya 二进制：
 
     maya_shot_work:  '@shot_root/work/maya/{name}.v{version}.mb'
     maya_shot_snapshot:  '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.mb'
@@ -1232,53 +1147,37 @@ b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板�
 
 **使用官方 `Episode` 实体**
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Episode"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
-**使用  `CustomEntity02`**
+**使用 `CustomEntity02`**
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "CustomEntity02"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "project", "relation": "is", "values": [ "$project" ] } ]
 
@@ -1288,27 +1187,19 @@ b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板�
 
 在您的 `config/core/schema/project/shots/episode` 文件夹中，创建一个名为 `sequence` 的文件夹，并在同一目录创建一个对应的 `sequence.yml` 文件，文件内容如下：
 
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Sequence"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "sg_episode", "relation": "is", "values": [ "$episode" ] } ]`
 
@@ -1318,28 +1209,19 @@ b) **使用自定义实体：**`CustomEntity02` 可以作为基于项目模板�
 
 在您的 `config/core/schema/project/shots/episode/sequence` 文件夹中，创建一个名为 `shot` 的文件夹，并在同一目录创建一个对应的 `shot.yml` 文件，文件内容如下：
 
-
-    <a name="the type of dynamic content"></a>
     # the type of dynamic content
     type: "shotgun_entity"
 
-    <a name="the {% include product %} field to use for the folder name"></a>
     # the {% include product %} field to use for the folder name
     name: "code"
 
-    <a name="the {% include product %} entity type to connect to"></a>
     # the {% include product %} entity type to connect to
     entity_type: "Shot"
 
-    <a name="{% include product %} filters to apply when getting the list of items"></a>
     # {% include product %} filters to apply when getting the list of items
-    <a name="this should be a list of dicts, each dict containing "></a>
     # this should be a list of dicts, each dict containing
-    <a name="three fields: path, relation and values"></a>
     # three fields: path, relation and values
-    <a name="(this is std {% include product %} API syntax)"></a>
     # (this is std {% include product %} API syntax)
-    <a name="any values starting with $ are resolved into path objects"></a>
     # any values starting with $ are resolved into path objects
     filters: [ { "path": "sg_sequence", "relation": "is", "values": [ "$sequence" ] } ]`
 
