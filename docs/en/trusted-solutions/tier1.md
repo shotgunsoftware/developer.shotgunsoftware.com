@@ -33,12 +33,11 @@ Go to [Setup](./tier1/setup/setup.md) if you are ready to activate the Isolation
 ### Setup
 <!-- When updating this, also update setup/setup.md -->
 * [Setup Overview](./tier1/setup/setup.md)
-* [Migration Test Site](./tier1/setup/shotgun_poc_site.md)
 * [Media Isolation](./tier1/setup/s3_bucket.md)
 * [Media Traffic Isolation](./tier1/setup/media_segregation.md)
 * [Media Replication](./tier1/setup/s3_replication.md)
 * [Isolation Fine Tuning](./tier1/setup/tuning.md)
-* [Migration](./tier1/setup/migration.md)
+* [Activation](./tier1/setup/activation.md)
 
 
 ### AWS Knowledge

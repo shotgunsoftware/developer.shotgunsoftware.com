@@ -54,7 +54,7 @@ Please contact {% include product %} support via the dedicated Slack channel and
 
 At this stage, you should be able to upload and download media. The {% include product %} Transcoding Service should also be able to read, transcode and write back the thumbnails, filmstrip and web friendly versions of your media back to your S3 Bucket. To validate this:
 
-1. Log in your Migration Test Site.
+1. Log in your Site.
 2. From the Navigation Bar, go the the Media app
 3. Once in the Media App, drag and drop or upload an image or a video from your computer. If you didn't created a Project yet, you may have to create one first.
 4. A version should appear, with a thumbnail, in the Media App.
