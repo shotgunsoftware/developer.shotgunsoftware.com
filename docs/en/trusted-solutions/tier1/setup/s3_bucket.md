@@ -52,7 +52,7 @@ Please contact {% include product %} support via the dedicated Microsoft Teams c
 
 Navigate to your site's site preferences and under the "Isolation" section, fill in the "S3 Configuration" preference with the following JSON replacing all `<EXAMPLE_NAME>` below:
 
-```
+```json
 {​​​​​​​
    "<S3_CONFIG_NAME>": {​​​​​​​
      "region": "<BUCKET_REGION>",

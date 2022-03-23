@@ -60,22 +60,22 @@ Use the endpoint URL to list objects in your bucket using AWS CLI. In the follow
 You can test this by adding a temporary entry to the "S3 Configuration" site preference on your site.
 The complete entry may look something like the following:
 
-```
+```json
 {​​​​​​
-   "<S3_CONFIG_NAME>": {​​​​​​
-     "region": "<BUCKET_REGION>",
-     "bucket": "<BUCKET_NAME>",
-     "prefix": "<BUCKET_PREFIX>",
-     "aws_role_arn": "<ROLE_ARN>",
-     "s3_interface_vpc_endpoint_dns_name": ""
-   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​,
-   "<S3_CONFIG_NAME_WITH_S3_VPC_ENDPOINT>": {​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
-     "region": "<BUCKET_REGION>",
-     "bucket": "<BUCKET_NAME>",
-     "prefix": "<BUCKET_PREFIX>",
-     "aws_role_arn": "<ROLE_ARN>",
-     "s3_interface_vpc_endpoint_dns_name": "<S3_INTERFACE_VPC_ENDPOINT>"
-   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+   "<S3_CONFIG_NAME>": {​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": ""
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​,
+   "<S3_CONFIG_NAME_WITH_S3_VPC_ENDPOINT>": {​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": "<S3_INTERFACE_VPC_ENDPOINT>"
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 }
 ```​​​​​​​​​​​​​​​​​​​​​​​​​​
 
