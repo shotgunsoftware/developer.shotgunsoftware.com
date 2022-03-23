@@ -110,7 +110,7 @@ Please contact {% include product %} support via the dedicated Microsoft Teams c
 
 ## Media Configuration Setup
 
-Navigate to your site's site preferences and under the "Isolation" section, fill in the "S3 Configuration" preference with the following JSON.
+Navigate to your site's site preferences and under the Isolation section, fill in the S3 Configuration preference with the following JSON:
 
 ```json
 {​​​​​​​
@@ -122,7 +122,9 @@ Navigate to your site's site preferences and under the "Isolation" section, fill
      "s3_interface_vpc_endpoint_dns_name": ""
    }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 }​​
-```​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+```
+
+Coco.
 
 | Field| Description | 
 |------|----------------------------------------------|
