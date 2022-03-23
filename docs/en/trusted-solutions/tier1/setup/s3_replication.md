@@ -45,9 +45,9 @@ The `IP Adresses for S3 replication` preference can be edited in Site Preference
 ## Configure your site
 
 To configure S3 replication, you will need to add an additional entry to the "S3 Configuration" site preference.
- 
-``` 
 The complete entry may look something like the following:
+
+``` 
 {​​​​​​​​
    "<S3_CONFIG_NAME>": {​​​​​​​​
      "region": "<BUCKET_REGION>",

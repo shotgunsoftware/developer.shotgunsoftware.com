@@ -58,7 +58,6 @@ Use the endpoint URL to list objects in your bucket using AWS CLI. In the follow
 ### Configure site to use your S3 VPC endpoint
 
 You can test this by adding a temporary entry to the "S3 Configuration" site preference on your site.
-
 The complete entry may look something like the following:
 
 ```
