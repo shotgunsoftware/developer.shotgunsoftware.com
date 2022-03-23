@@ -39,7 +39,7 @@ It's possible to start from the [Private S3 bucket AWS CloudFormation template](
   * Set a stack name like {% include product %}-s3-bucket
   * Set your S3 bucket name and your {% include product %} site name
   * Next
-  * Accept `I acknowledge that AWS CloudFormation might create IAM resources`
+  * Accept I acknowledge that AWS CloudFormation might create IAM resources
   * Next
 
 ### CORS Configuration
@@ -62,7 +62,7 @@ Please contact {% include product %} support via the dedicated Microsoft Teams c
 
 ## Media Configuration Setup
 
-Navigate to your site's site preferences and under the "Isolation" section, fill in the "S3 Configuration" preference with the following JSON replacing all `<EXAMPLE_NAME>` below:
+Navigate to your site's site preferences and under the "Isolation" section, fill in the "S3 Configuration" preference with the following JSON.
 
 ```json
 {​​​​​​​
