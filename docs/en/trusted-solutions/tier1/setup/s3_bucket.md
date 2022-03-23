@@ -21,6 +21,18 @@ lang: en
 
 {% include info title="Disclaimer" content="The security of your S3 bucket is solely a client responsibility, and the integrity of your data will be at risk without it. We very strongly recommend [securing your S3 bucket properly](https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/)." %}
 
+```json
+{​​​​​​​
+   "<S3_CONFIG_NAME>": {​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": ""
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+}​​
+```
+
 ## AWS Account Creation
 
 You can quickly [create your AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
@@ -42,6 +54,18 @@ It's possible to start from the [Private S3 bucket AWS CloudFormation template](
   * Accept I acknowledge that AWS CloudFormation might create IAM resources
   * Next
 
+```json
+{​​​​​​​
+   "<S3_CONFIG_NAME>": {​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": ""
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+}​​
+```
+
 ### CORS Configuration
 
 CORS policy on your S3 bucket will be minimally configured, allowing only the required origin (your site) and methods, amongst other things.
@@ -53,12 +77,36 @@ The template will create an AWS Role with the following permissions on your buck
 * Allow {% include product %} to access your S3 bucket.
 * Allow the {% include product %} account to assume the role by setting the role Trust Relationship.
 
+```json
+{​​​​​​​
+   "<S3_CONFIG_NAME>": {​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": ""
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+}​​
+```
+
 ## Media Isolation Activation
 
 Please contact {% include product %} support via the dedicated Microsoft Teams channel and provide the following information:
   * {% include product %} IAM Role ARN
 
 {% include product %} will allow your site to use your IAM role.
+
+```json
+{​​​​​​​
+   "<S3_CONFIG_NAME>": {​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": ""
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+}​​
+```
 
 ## Media Configuration Setup
 
