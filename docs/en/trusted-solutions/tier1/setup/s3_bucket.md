@@ -7,6 +7,18 @@ lang: en
 
 # Media Isolation
 
+```json
+{​​​​​​​
+   "<S3_CONFIG_NAME>": {​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": ""
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+}​​
+```
+
 {% include info title="Disclaimer" content="The security of your S3 bucket is solely a client responsibility, and the integrity of your data will be at risk without it. We very strongly recommend [securing your S3 bucket properly](https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/)." %}
 
 ## AWS Account Creation
