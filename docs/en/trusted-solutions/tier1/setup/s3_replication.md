@@ -62,7 +62,7 @@ The complete entry may look something like the following:
      "prefix": "<BUCKET_PREFIX_REPLICA>",
      "aws_role_arn": "<ROLE_ARN>",
      "s3_interface_vpc_endpoint_dns_name": "<S3_INTERFACE_VPC_ENDPOINT_REPLICA>"
-   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​,
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 ```
 
