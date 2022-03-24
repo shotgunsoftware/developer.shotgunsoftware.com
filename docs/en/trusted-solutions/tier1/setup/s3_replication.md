@@ -66,10 +66,10 @@ The complete entry may look something like the following:
 }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 ```
 
-After the configuration has been updated on your site, navigate to the /admin/speedtest route of your ShotGrid site. Select the new S3_CONFIG_NAME_REPLICA and start the test to confirm that all the upload/download tests work as intended.
+After the configuration has been updated on your site, navigate to the /admin/speedtest route of your ShotGrid site. Select the new **S3_CONFIG_NAME_REPLICA** and start the test to confirm that all the upload/download tests work as intended.
 
 Update the following Site Preferences:
-  * S3 Bucket for Replication - This should have the same value as `<S3_CONFIG_NAME_REPLICA>` from the S3 Configuration
+  * S3 Bucket for Replication - This should have the same value as **S3_CONFIG_NAME_REPLICA** from the S3 Configuration
   * S3 Replication Delay - Set this to something reasonable such as 60 seconds.
 
 ## FAQ

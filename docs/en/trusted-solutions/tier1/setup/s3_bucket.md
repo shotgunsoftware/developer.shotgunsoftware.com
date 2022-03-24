@@ -77,7 +77,7 @@ Navigate to your site's site preferences and under the Isolation section, fill i
 
 ## Testing Media Configuration
 
-After the configuration has been updated on your site, navigate to the /admin/speedtest route of your ShotGrid site. Select the new S3_CONFIG_NAME that was just set up previously and start the test to confirm that all the upload/download tests work as intended.
+After the configuration has been updated on your site, navigate to the /admin/speedtest route of your ShotGrid site. Select the new **S3_CONFIG_NAME** that was just set up previously and start the test to confirm that all the upload/download tests work as intended.
 
 ## Next Steps
 
