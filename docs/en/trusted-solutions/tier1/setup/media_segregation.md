@@ -55,14 +55,35 @@ Use the endpoint URL to list objects in your bucket using AWS CLI. In the follow
     aws s3 --endpoint-url https://bucket.vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com ls s3://my-bucket/
 ```
 
-### Configure your test site to use your S3 VPC endpoint
+### Configure site to use your S3 VPC endpoint
 
-* Please contact {% include product %} support via the dedicated Slack channel and provide the following information:
-  * Your S3 bucket name
-  * Your S3 VPC endpoint DNS Name
-* Autodesk will configure your test site to use your S3 VPC endpoint
-* Confirm that you are still able to access existing media
-* Attempt to upload new media
+You can test by adding a temporary entry to the **S3 Configuration** site preference on your site.
+The complete entry will look like the following:
+
+
+```json
+{​​​​​​​​
+   "<S3_CONFIG_NAME>": {​​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>"
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​,
+   "<S3_CONFIG_NAME_WITH_S3_VPC_ENDPOINT>": {​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": "vpce-1234567-5e6f.s3.us-east-1.vpce.amazonaws.com"
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+```
+
+After the configuration has been updated on your site, navigate to the /admin/speedtest route of your ShotGrid site. Select the new **S3_CONFIG_NAME_WITH_S3_VPC_ENDPOINT** and start the test to confirm that all the upload/download tests work as intended.
+
+Once it has been verified to work correctly, add the value from s3_interface_vpc_endpoint_dns_name to the main S3 configuration **S3_CONFIG_NAME** and your current setup should be using Media Traffic Isolation.
+
+Erase the **S3_CONFIG_NAME_WITH_S3_VPC_ENDPOINT** entry from the S3 Configuration to clean up your configurations.
 
 ## Next Steps
 
