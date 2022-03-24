@@ -45,23 +45,8 @@ Simply add an `com.amazonaws.us-west-2.s3` Interface VPC Endpoint to your existi
 
 In order for the S3 VPC endpoint to communicate with your S3 bucket your bucket policy must allow access from the S3 endpoint's VPC. You can find instructions on how to configure the policy in the [Fine Tuning](./tuning.md#s3-bucket-policy) step.
 
-## Validation
-
-### Test the S3 VPC endpoint
-
-Use the endpoint URL to list objects in your bucket using AWS CLI. In the following example, replace the VPC endpoint ID `vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com` and bucket name `my-bucket` with appropriate information.
-
-```
-    aws s3 --endpoint-url https://bucket.vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com ls s3://my-bucket/
-```
-
-### Configure site to use your S3 VPC endpoint
-
-You can test this by adding a temporary entry to the **S3 Configuration** site preference on your site.
-The complete entry may look something like the following:
-
 ```json
-{​​​​​​
+{
    "<S3_CONFIG_NAME>": {​​​​​​
      "region": "<BUCKET_REGION>",
      "bucket": "<BUCKET_NAME>",
@@ -78,6 +63,61 @@ The complete entry may look something like the following:
    }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 }
 ```​​​​​​​​​​​​​​​​​​​​​​​​​​
+
+## Validation
+
+### Test the S3 VPC endpoint
+
+Use the endpoint URL to list objects in your bucket using AWS CLI. In the following example, replace the VPC endpoint ID `vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com` and bucket name `my-bucket` with appropriate information.
+
+```
+    aws s3 --endpoint-url https://bucket.vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com ls s3://my-bucket/
+```
+
+```json
+{
+   "<S3_CONFIG_NAME>": {​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": ""
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​,
+   "<S3_CONFIG_NAME_WITH_S3_VPC_ENDPOINT>": {​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": "<S3_INTERFACE_VPC_ENDPOINT>"
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+}
+```​​​​​​​​​​​​​​​​​​​​​​​​​​
+
+### Configure site to use your S3 VPC endpoint
+
+You can test this by adding a temporary entry to the **S3 Configuration** site preference on your site.
+The complete entry may look something like the following:
+
+
+```json
+{
+   "<S3_CONFIG_NAME>": {​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": ""
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​,
+   "<S3_CONFIG_NAME_WITH_S3_VPC_ENDPOINT>": {​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": "<S3_INTERFACE_VPC_ENDPOINT>"
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+}
+```​​​​​​​​​​​​​​​​​​​​​​​​​​
+
 
 After the configuration has been updated on your site, navigate to the /admin/speedtest route of your ShotGrid site. Select the new S3_CONFIG_NAME_WITH_S3_VPC_ENDPOINT and start the test to confirm that all the upload/download tests work as intended.
 
