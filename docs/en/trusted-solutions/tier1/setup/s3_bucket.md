@@ -58,8 +58,7 @@ Navigate to your site's site preferences and under the Isolation section, fill i
      "region": "<BUCKET_REGION>",
      "bucket": "<BUCKET_NAME>",
      "prefix": "<BUCKET_PREFIX>",
-     "aws_role_arn": "<ROLE_ARN>",
-     "s3_interface_vpc_endpoint_dns_name": ""
+     "aws_role_arn": "<ROLE_ARN>"
    }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 }​​
 ```
