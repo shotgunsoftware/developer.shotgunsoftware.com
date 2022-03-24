@@ -64,7 +64,7 @@ Navigate to your site's site preferences and under the Isolation section, fill i
 }​​
 ```
 
-Coco.
+### Fields description
 
 | Field| Description | 
 |------|----------------------------------------------|
