@@ -22,13 +22,13 @@ API developers can customize context menu items on a per-entity basis, through A
 4. **Order (list_order):** The ordinal position of the menu item (relative to other custom menu items).
 5. **Light Payload (light_payload):** When using a [custom protocol](https://developer.shotgridsoftware.com/af0c94ce/) your script will receive the id of the event log entry record that holds the payload information instead of the full payload itself.
 6. **Configure Menu Options:** There are a few options to select from:
-  - **Include in the right-click menu on an Entity record:** This is the default value that will include the AMI by right-clicking on a record.
+* **Include in the right-click menu on an Entity record:** This is the default value that will include the AMI by right-clicking on a record.
     ![Right-Click on Record](./images/ami-configure-menu-options-right-click-menu.png)
-  - **Include in "Add Entity" dropdown menu on Entity pages:** Option to include this AMI in the "Add Entity" dropdown menu (ex: "Add Asset", "Add Shot", etc.).
+* **Include in "Add Entity" dropdown menu on Entity pages:** Option to include this AMI in the "Add Entity" dropdown menu (ex: "Add Asset", "Add Shot", etc.).
     ![Add Entity Dropdown Menu](./images/ami-configure-menu-options-add-entity-dropdown-menu.png)
-  - **Override "Add Entity" button on Entity pages:** This option allows you to overwrite the "Add Entity" button with an AMI.
+* **Override "Add Entity" button on Entity pages:** This option allows you to overwrite the "Add Entity" button with an AMI.
     ![Add Entity Dropdown Menu](./images/ami-configure-menu-options-add-entity-override.png)
-  - **Include in Internal Resources section of the User Menu:** This gives you the option to customize the User Menu with internal resources. Learn more about [customizing the user menu with internal resources here](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html).
+* **Include in Internal Resources section of the User Menu:** This gives you the option to customize the User Menu with internal resources. Learn more about [customizing the user menu with internal resources here](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html).
 7. **Folder (folder):** Allows you to organize AMIs into folders within the context menu (currently only a single level of folders is supported).
    ![Folders](./images/ami-create-folder.png)
 8. **Open in Modal Overlay:** Allows AMIs to open in an iframe window, instead of in a new tab. Please note that if Shotgun is running HTTPS, then all iframes need to be HTTPS as well.
