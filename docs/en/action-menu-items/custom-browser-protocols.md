@@ -35,12 +35,12 @@ On Windows, registering protocol handlers involves modifying the Windows Registr
 
 ```
 HKEY_CLASSES_ROOT
-foo
-(Default) = "URL:foo Protocol"
-URL Protocol = ""
-shell
-open
-command (Default) = "foo_path" "%1"
+  foo
+    (Default) = "URL:foo Protocol"
+    URL Protocol = ""
+    shell
+      open
+        command (Default) = "foo_path" "%1"
 ```
 The target URL would look like:
 
@@ -55,7 +55,7 @@ If the application you are developing is written using the QT (or PyQT / PySide)
 
 This is what the code looks like to automatically have the application set up the registry keys:
 
-```
+```python
 // cmdLine points to the foo path.
 //Add foo to the Os protocols and set foobar to handle the protocol
 QSettings fooKey("HKEY_CLASSES_ROOT\\foo", QSettings::NativeFormat);
@@ -93,7 +93,7 @@ In your script you will take the first argument that was provided, the URL, and 
 
 **Python script**
 
-```
+```python
 import sys
 import urlparse
 import pprint
@@ -168,7 +168,7 @@ To register a protocol on OSX you need to create a .app bundle that is configure
 
 Start by writing the following script in the AppleScript Script Editor:
 
-```
+```applescript
 on open location this_URL
     do shell script "sgTriggerScript.py '" & this_URL & "'"
 end open location 
