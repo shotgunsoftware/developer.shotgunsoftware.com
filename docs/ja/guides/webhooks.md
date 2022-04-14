@@ -184,7 +184,7 @@ Webhook の URL に送信されるペイロードには、{% include product %} 
 
 ![応答タブ](./images/webhooks/webhooks_response_tab.png)
 
-[応答](Response)タブには、配信に対する Webhook の応答に関する詳細が表示されます。
+[応答] (Response)タブには、配信に対する Webhook の応答に関する詳細が表示されます。
 
 Webhook の応答の HTTP ヘッダ、本文、および計測された応答時間を確認できます。
 
