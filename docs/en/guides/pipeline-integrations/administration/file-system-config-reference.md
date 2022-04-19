@@ -56,7 +56,7 @@ In this topic:
       - [Episodes](#episodes)
       - [Toolkit template definitions](#toolkit-template-definitions)
   - [How can I set up a branch in my structure?](#how-can-i-set-up-a-branch-in-my-structure)
-  - [How can I create a custom Pipeline Step using a custom entity?](#how-can-i-create-a-custom-pipeline-step-using-a-custom-entity)
+  - [How can I create a custom Pipeline Step?](#how-can-i-create-a-custom-pipeline-step) 
 
 
 This document is a complete reference of the file system centric configurations in the {% include product %} Pipeline Toolkit. It outlines how the template system works and which options are available. It also shows all the different parameters you can include in the folder creation configuration.  
@@ -1292,13 +1292,6 @@ At this point, you have a directory structure for the new Asset Type, and you ha
 -   Create a copy of  `env/asset_step.yml`  called  `env/asset_vehicle_step.yml`. These two files will be identical, except  `env/asset_vehicle_step.yml`  will use your new templates. Replace any instances of  `maya_asset_work`  with  `maya_asset_work_vehicle`. Do the same for any other vehicle templates you've created.
 -   Finally, you'll need to teach Toolkit when to pick your new environment. To do this, modify the  [pick_environment](https://github.com/shotgunsoftware/tk-config-default/blob/master/core/hooks/pick_environment.py)  core hook to return  `asset_vehicle`  or  `asset_vehicle_step`  when the asset in context is of type  `vehicle`  . Now, when you are working with an Asset of this new type (vehicle), Toolkit will know to use its environment configuration, and to therefore save and publish files to its alternate file system structure.
 
-## How can I create a custom Pipeline Step using a custom entity?
+## How can I create a custom Pipeline Step?
 
 In {% include product %} 7.0.6.0,  [managing Pipeline Steps via the Admin menu](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_configure_pipeline_steps_html#managing-pipeline-steps)  was introduced. With this feature, you can easily add custom fields to Pipeline Steps. **Pro Tip: In most cases, utilizing custom fields on Pipeline Steps helps keep your pipeline more organized than creating a custom entity to manage those Pipeline Steps.**
-
-However, in more advanced cases, it may be useful to have an alternative Pipeline Step. For instance, you might like to have the flexibility of different naming conventions and structures for production versus pipeline in the area of Pipeline Steps, as well as flexibility in naming and structuring them independently. While typically {% include product %}'s built-in Pipeline Steps are used for scheduling purposes, you may want to use another  [Custom Entity](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html)  to structure the file system and group individual tasks together in the pipeline. You can accomplish this by creating a custom link field from a Task to a custom entity. This is then used by the system to group tasks together, via the step node.
-
-In the folder configuration, add two special options to tell it to use your custom step setup rather than {% include product %}'s built-in Pipeline Step:
-
-    entity_type: "CustomNonProjectEntity05"
-    task_link_field: "sg_task_type"
