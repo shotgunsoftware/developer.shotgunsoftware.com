@@ -56,7 +56,7 @@ In this topic:
       - [Episodes](#episodes)
       - [Toolkit template definitions](#toolkit-template-definitions)
   - [How can I set up a branch in my structure?](#how-can-i-set-up-a-branch-in-my-structure)
-  - [How can I create a custom Pipeline Step using a custom entity?](#how-can-i-create-a-custom-pipeline-step-using-a-custom-entity)
+  - [How can I create a custom Pipeline Step?](#how-can-i-create-a-custom-pipeline-step) 
 
 
 This document is a complete reference of the file system centric configurations in the {% include product %} Pipeline Toolkit. It outlines how the template system works and which options are available. It also shows all the different parameters you can include in the folder creation configuration.  
