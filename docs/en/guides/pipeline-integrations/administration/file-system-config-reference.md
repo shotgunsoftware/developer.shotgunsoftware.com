@@ -1292,6 +1292,6 @@ At this point, you have a directory structure for the new Asset Type, and you ha
 -   Create a copy of  `env/asset_step.yml`  called  `env/asset_vehicle_step.yml`. These two files will be identical, except  `env/asset_vehicle_step.yml`  will use your new templates. Replace any instances of  `maya_asset_work`  with  `maya_asset_work_vehicle`. Do the same for any other vehicle templates you've created.
 -   Finally, you'll need to teach Toolkit when to pick your new environment. To do this, modify the  [pick_environment](https://github.com/shotgunsoftware/tk-config-default/blob/master/core/hooks/pick_environment.py)  core hook to return  `asset_vehicle`  or  `asset_vehicle_step`  when the asset in context is of type  `vehicle`  . Now, when you are working with an Asset of this new type (vehicle), Toolkit will know to use its environment configuration, and to therefore save and publish files to its alternate file system structure.
 
-## How can I create a custom Pipeline Step ?
+## How can I create a custom Pipeline Step?
 
 In {% include product %} 7.0.6.0,  [managing Pipeline Steps via the Admin menu](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_configure_pipeline_steps_html#managing-pipeline-steps)  was introduced. With this feature, you can easily add custom fields to Pipeline Steps. **Pro Tip: In most cases, utilizing custom fields on Pipeline Steps helps keep your pipeline more organized than creating a custom entity to manage those Pipeline Steps.**
