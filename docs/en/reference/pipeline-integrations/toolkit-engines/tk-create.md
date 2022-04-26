@@ -46,3 +46,11 @@ If you have access to the {% include product %} Pipeline Toolkit, you also have 
 ## Special Requirements
 
 You need {% include product %} Pipeline Toolkit Core API version v0.19.1 or higher to use this.
+
+## Fixing {% include product %} Integration Error
+
+Your users are getting the following error message: *Failed to initialize integrations. ValueError - Invalid localhost certificate data in {% include product %}! Please contact support.* This error message indicates that they are trying to access SGTK features when your {% include product %} local install has not enabled SGTK integration. 
+
+To prevent users from accessng the SGTK and seeing the error message, enable the environment variable `SHOTGUN_CREATE_DISABLE_TOOLKIT_INTEGRATION`. This env var completely disables SGTK integration on your {% include product %} local install.
+
+If you've enabled this env var by mistake, disabling it should restore SGTK integration.
