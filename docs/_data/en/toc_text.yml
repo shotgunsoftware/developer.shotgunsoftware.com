@@ -34,6 +34,7 @@ qt-widgets: QT Widgets
 shotgun-utils: ShotGrid Utils
 publish-api: Publish API
 hiero-export-api: Hiero Export API
+tk-multi-breakdown2: Breakdown2
 development: Development
 app-development: App Development
 engine-development: Engine Development
