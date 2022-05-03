@@ -120,12 +120,13 @@
         url: " https://developer.shotgridsoftware.com/tk-multi-publish2/"
       - text: hiero-export-api
         url: " https://developer.shotgridsoftware.com/tk-hiero-export"
+      - text: tk-multi-breakdown2
+        url: " https://developer.shotgridsoftware.com/tk-multi-breakdown2"
     - page: toolkit-apps
       children:
       - page: tk-multi-about
       - page: tk-multi-breakdown
-      - text: tk-multi-breakdown2
-        url: " https://developer.shotgridsoftware.com/tk-multi-breakdown2"
+      - page: tk-multi-breakdown2
       - page: tk-multi-demo
       - page: tk-multi-launchapp
       - page: tk-multi-loader2
