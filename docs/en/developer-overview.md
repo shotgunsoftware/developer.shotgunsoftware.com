@@ -14,6 +14,7 @@ lang: en
 *   [Code Repository](https://github.com/shotgunsoftware/python-api)
 *   [Documentation](http://developer.shotgridsoftware.com/python-api/)
 *   [Forums](https://community.shotgridsoftware.com/c/pipeline/6)
+*   [ABC](https://community.shotgridsoftware.com/c/pipeline/6)
 
 ### Event Trigger Framework
 
