@@ -124,6 +124,8 @@
       children:
       - page: tk-multi-about
       - page: tk-multi-breakdown
+      - text: tk-multi-breakdown2
+          url: " https://developer.shotgridsoftware.com/tk-multi-breakdown2"
       - page: tk-multi-demo
       - page: tk-multi-launchapp
       - page: tk-multi-loader2
