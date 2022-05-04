@@ -126,7 +126,6 @@
       children:
       - page: tk-multi-about
       - page: tk-multi-breakdown
-      - page: tk-multi-breakdown2
       - page: tk-multi-demo
       - page: tk-multi-launchapp
       - page: tk-multi-loader2
