@@ -5,7 +5,9 @@ pagename: setting-python-3-desktop
 lang: zh_CN
 ---
 
-# 将 {% include product %} Desktop 中的默认 Python 版本设置为 Python 3
+# 将 {% include product %} Desktop 中的默认 Python 版本设置为 Python 2
+
+**Note:** Python 2 is getting removed by November 1st 2022. You can find the notification [here](https://community.shotgridsoftware.com/t/important-notice-upcoming-removal-of-python-2-7-and-3-7-interpreter-in-shotgrid-desktop/15166).
 
 - [Windows](#windows)
 - [MacOS](#macos)
@@ -13,7 +15,7 @@ lang: zh_CN
 
 ## Windows
 
-### 在 Windows 上手动将 `SHOTGUN_PYTHON_VERSION` 环境设置为 3
+### 在 Windows 上手动将 `SHOTGUN_PYTHON_VERSION` 环境设置为 2
 
 - 在 Windows 任务栏上，右键单击 Windows 图标，然后选择**“系统”**，导航到**“控制面板”/“系统和安全”/“系统”**。
 
@@ -31,18 +33,18 @@ lang: zh_CN
 
 ![](images/setting-python-3-desktop/04-setting-python-3-desktop.jpg)
 
-- 对于**“变量名”**，添加 `SHOTGUN_PYTHON_VERSION`，并将**“变量值”**设置为 `3`。
+- 对于**“变量名”**，添加 `SHOTGUN_PYTHON_VERSION`，并将**“变量值”**设置为 `2`。
 
 ![](images/setting-python-3-desktop/05-setting-python-3-desktop.jpg)
 
-- 重新启动 {% include product %} Desktop 应用程序。现在，您应该会看到运行的 Python 版本已更新为 Python 3。
+- 重新启动 {% include product %} Desktop 应用程序。现在，您应该会看到运行的 Python 版本已更新为 Python 2。
 
 ![](images/setting-python-3-desktop/06-setting-python-3-desktop.jpg)
 
 
 ## MacOS
 
-### 在 MacOS 上将 `SHOTGUN_PYTHON_VERSION` 环境设置为 3
+### 在 MacOS 上将 `SHOTGUN_PYTHON_VERSION` 环境设置为 2
 
 - 在 `~/Library/LaunchAgents/` 下创建名为 `my.startup.plist` 的属性文件
 
@@ -63,7 +65,7 @@ $ vi my.startup.plist
   <array>
     <string>sh</string>
     <string>-c</string>
-    <string>launchctl setenv SHOTGUN_PYTHON_VERSION 3</string>
+    <string>launchctl setenv SHOTGUN_PYTHON_VERSION 2</string>
   </array>
   <key>RunAtLoad</key>
   <true/>
@@ -73,18 +75,18 @@ $ vi my.startup.plist
 
 - 重新启动 Mac 后，新环境变量将保持活动状态。
 
-- 重新启动 {% include product %} Desktop 应用程序。现在，您应该会看到运行的 Python 版本已更新为 Python 3。
+- 重新启动 {% include product %} Desktop 应用程序。现在，您应该会看到运行的 Python 版本已更新为 Python 2。
 
 ![](images/setting-python-3-desktop/07-setting-python-3-desktop.jpg)
 
 ## CentOS 7
 
-### 在 CentOS 7 上将 `SHOTGUN_PYTHON_VERSION` 环境设置为 3
+### 在 CentOS 7 上将 `SHOTGUN_PYTHON_VERSION` 环境设置为 2
 
 - 将以下内容添加到 `~/.bashrc` 文件：
 
 ```
-export SHOTGUN_PYTHON_VERSION="3"
+export SHOTGUN_PYTHON_VERSION="2"
 ```
 
 - 通过运行以下命令重新启动操作系统：
@@ -93,6 +95,6 @@ export SHOTGUN_PYTHON_VERSION="3"
 $ sudo reboot
 ```
 
-- 重新启动 {% include product %} Desktop 应用程序。现在，您应该会看到运行的 Python 版本已更新为 Python 3。
+- 重新启动 {% include product %} Desktop 应用程序。现在，您应该会看到运行的 Python 版本已更新为 Python 2。
 
 ![](images/setting-python-3-desktop/08-setting-python-3-desktop.jpg)

@@ -5,7 +5,9 @@ pagename: setting-python-3-desktop
 lang: ja
 ---
 
-# {% include product %} Desktop で Python 3 を既定の Python バージョンとして設定する
+# {% include product %} Desktop で Python 2 を既定の Python バージョンとして設定する
+
+**Note:** Python 2 is getting removed by November 1st 2022. You can find the notification [here](https://community.shotgridsoftware.com/t/important-notice-upcoming-removal-of-python-2-7-and-3-7-interpreter-in-shotgrid-desktop/15166).
 
 - [Windows](#windows)
 - [MacOS](#macos)
@@ -13,7 +15,7 @@ lang: ja
 
 ## Windows
 
-### Windows で `SHOTGUN_PYTHON_VERSION` 環境を手動で 3 に設定する
+### Windows で `SHOTGUN_PYTHON_VERSION` 環境を手動で 2 に設定する
 
 - Windows タスクバーで Windows アイコンを右クリックし、**[システム]**を選択して、**[コントロール パネル] > [システムとセキュリティ] > [システム]**の順にナビゲートします。
 
@@ -31,11 +33,11 @@ lang: ja
 
 ![](images/setting-python-3-desktop/04-setting-python-3-desktop.jpg)
 
-- **[変数名]**に `SHOTGUN_PYTHON_VERSION` と入力し、**[編数値]**を`3` に設定します。
+- **[変数名]**に `SHOTGUN_PYTHON_VERSION` と入力し、**[編数値]**を`2` に設定します。
 
 ![](images/setting-python-3-desktop/05-setting-python-3-desktop.jpg)
 
-- {% include product %} Desktop アプリケーションを再起動します。これで、Python 3 を実行するように Python のバージョンが更新されました。
+- {% include product %} Desktop アプリケーションを再起動します。これで、Python 2 を実行するように Python のバージョンが更新されました。
 
 ![](images/setting-python-3-desktop/06-setting-python-3-desktop.jpg)
 
@@ -73,18 +75,18 @@ $ vi my.startup.plist
 
 - Mac を再起動すると、新しい環境変数が有効になります。
 
-- {% include product %} Desktop アプリケーションを再起動します。これで、Python 3 を実行するように Python のバージョンが更新されました。
+- {% include product %} Desktop アプリケーションを再起動します。これで、Python 2 を実行するように Python のバージョンが更新されました。
 
 ![](images/setting-python-3-desktop/07-setting-python-3-desktop.jpg)
 
 ## CentOS 7
 
-### CentOS 7 で `SHOTGUN_PYTHON_VERSION` 環境を 3 に設定する
+### CentOS 7 で `SHOTGUN_PYTHON_VERSION` 環境を 2 に設定する
 
 - `~/.bashrc` ファイルに以下を追加します。
 
 ```
-export SHOTGUN_PYTHON_VERSION="3"
+export SHOTGUN_PYTHON_VERSION="2"
 ```
 
 - 次のコマンドを実行して、OS を再起動します。
