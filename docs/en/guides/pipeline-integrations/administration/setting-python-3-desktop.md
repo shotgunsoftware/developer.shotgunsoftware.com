@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Setting Python 3 for Desktop
+title: Setting Python 2 for Desktop
 pagename: setting-python-3-desktop
 lang: en
 ---
