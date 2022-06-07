@@ -1,11 +1,11 @@
 ---
 layout: default
-title: VRed
+title: VRED
 pagename: tk-vred
 lang: ko
 ---
 
-# VRed
+# VRED
 
 VRED용 {% include product %} 엔진에는 {% include product %} 앱을 VRED에 통합하기 위한 표준 플랫폼이 포함되어 있습니다. 직접적으로 실행되는 경량의 플랫폼으로, VRED 메뉴에 {% include product %} 메뉴를 추가합니다.
 
