@@ -95,8 +95,6 @@ lang: ko
 
 {% include figure src="./images/tutorial/wizard_01.png" caption="**ShotGrid 기본값**(ShotGrid Default) 구성 유형을 선택합니다." %}
 
-{% include figure src="./images/tutorial/wizard_02.png" caption="**기본값 구성**(Default configuration)을 선택합니다." %}
-
 이번에 처음으로 {% include product %} 프로젝트를 설정하는 경우 프로젝트 데이터의 저장소 위치를 정의하라는 메시지가 표시될 수도 있습니다. 아니면 기존 저장소 위치를 선택할 수 있습니다.
 
 {% include figure src="./images/tutorial/wizard_03.png" caption="새 저장소를 만듭니다." %}
