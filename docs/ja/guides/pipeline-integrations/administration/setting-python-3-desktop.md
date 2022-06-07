@@ -44,7 +44,7 @@ lang: ja
 
 ## MacOS
 
-### MacOS で `SHOTGUN_PYTHON_VERSION` 環境を 3 に設定する
+### MacOS で `SHOTGUN_PYTHON_VERSION` 環境を 2 に設定する
 
 - `~/Library/LaunchAgents/` の下に `my.startup.plist` という名前のプロパティ ファイルを作成します
 
@@ -65,7 +65,7 @@ $ vi my.startup.plist
   <array>
     <string>sh</string>
     <string>-c</string>
-    <string>launchctl setenv SHOTGUN_PYTHON_VERSION 3</string>
+    <string>launchctl setenv SHOTGUN_PYTHON_VERSION 2</string>
   </array>
   <key>RunAtLoad</key>
   <true/>
@@ -95,6 +95,6 @@ export SHOTGUN_PYTHON_VERSION="2"
 $ sudo reboot
 ```
 
-- {% include product %} Desktop アプリケーションを再起動します。これで、Python 3 を実行するように Python のバージョンが更新されました。
+- {% include product %} Desktop アプリケーションを再起動します。これで、Python 2 を実行するように Python のバージョンが更新されました。
 
 ![](images/setting-python-3-desktop/08-setting-python-3-desktop.jpg)

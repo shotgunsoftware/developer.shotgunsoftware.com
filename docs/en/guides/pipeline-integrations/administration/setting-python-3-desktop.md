@@ -33,11 +33,11 @@ lang: en
 
 ![](images/setting-python-3-desktop/04-setting-python-3-desktop.jpg)
 
-- For the **Variable name**, add `SHOTGUN_PYTHON_VERSION`, and set the **Variable value** to `3`. 
+- For the **Variable name**, add `SHOTGUN_PYTHON_VERSION`, and set the **Variable value** to `2`. 
 
 ![](images/setting-python-3-desktop/05-setting-python-3-desktop.jpg)
 
-- Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 3. 
+- Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 2. 
 
 ![](images/setting-python-3-desktop/06-setting-python-3-desktop.jpg)
 
