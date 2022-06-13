@@ -95,8 +95,6 @@ lang: zh_CN
 
 {% include figure src="./images/tutorial/wizard_01.png" caption="选择**“ShotGrid Default”**配置类型" %}
 
-{% include figure src="./images/tutorial/wizard_02.png" caption="选择**“默认”(Default)**配置" %}
-
 如果这是您第一次设置 {% include product %} 项目，系统还会提示您为项目数据定义一个存储位置。否则，可以选择现有存储位置。
 
 {% include figure src="./images/tutorial/wizard_03.png" caption="创建新存储。" %}
