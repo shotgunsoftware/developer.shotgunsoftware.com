@@ -31,13 +31,13 @@ https://community.shotgridsoftware.com/t/a-new-version-of-shotgrid-desktop-has-b
 
 ## Older Versions
 
-The Alias toolkit engine uses the Python interpreter shipped with Shotgun Desktop, or a _locally installed interpreter (see note.)_
+The Alias toolkit engine uses the Python interpreter shipped with ShotGrid Desktop, or a _locally installed interpreter (see note.)_
 
-|tk-alias Engine Version | Shotgun Desktop Application Version | Shotgun Desktop Engine Version | Python Interpreter Version |
-| ---------------------- | ----------------------------------- | ------------------------------ | -------------------------- |
-|  v2.0.5 or older       |  v1.5.8 or older                    |  v2.4.14 or older              | v2.7.x                     |
-|  v2.0.6 to v2.1.4      |  v1.6.0 to v1.7.2                   |  v2.5.0 to v2.6.2              | v2.7.x & v3.7.x            |
-|  v2.1.5 or newer       |  v1.7.3 or newer                    |  v2.6.3 or newer               | v3.7.x                     |
+|tk-alias Engine Version | ShotGrid Desktop Application Version | ShotGrid Desktop Engine Version | Python Interpreter Version |
+| ---------------------- |--------------------------------------|---------------------------------| -------------------------- |
+|  v2.0.5 or older       | v1.5.8 or older                      | v2.4.14 or older                | v2.7.x                     |
+|  v2.0.6 to v2.1.4      | v1.6.0 to v1.7.2                     | v2.5.0 to v2.6.2                | v2.7.x & v3.7.x            |
+|  v2.1.5 or newer       | v1.7.3 or newer                      | v2.6.3 or newer                 | v3.7.x                     |
 
 Tested locally installed Python Interpreters: v3.7.4
 
