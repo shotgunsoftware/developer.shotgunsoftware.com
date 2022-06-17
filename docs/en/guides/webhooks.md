@@ -252,7 +252,7 @@ You can use any of the freely available webhook URL generators online for testin
 
 ### Using webhook.site
 
-We recommend [webhook.site](https://webhook.site). It provides a unique URL that can be copied and pasted into a webhook and will show you deliveries made to that address in real time. The page can be customized to respond to deliveries with a specific status code and body, which means you can test delivery success and failure.
+We recommend [webhook.site](https://webhook.site). It provides a unique URL that can be copied and pasted into a webhook and will show you deliveries made to that address in real time. The page can be customized to respond to deliveries with a specific status code and body, which means you can test delivery success and failure. 
 
 The webhook.site service is aggressively rate limited. This means that it is easy to end up in a situation where some deliveries are rejected, resulting in unstable or failed webhooks. When testing, we recommend that you use a known, controllable project environment rather than live data in production.
 

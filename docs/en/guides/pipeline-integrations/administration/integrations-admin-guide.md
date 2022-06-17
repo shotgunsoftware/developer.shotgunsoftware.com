@@ -578,14 +578,6 @@ When you start configuring a new project, the first thing to decide is  _which c
 -   If you already have configured projects and configurations for previous projects, you can easily reuse these by basing your new project on an existing project
 -   For advanced workflows, you can use external configurations or configs stored in git repositories.
 
-#### Default configuration templates
-
-![](images/Integration-admin-guide/wizard_config_default.png)
-
-This is the place to go if you want to start from scratch. The default configuration contain all the latest apps and engines set up with a default file structure and file naming convention.
-
-Once you have installed the default configuration, you can manually tweak the configuration files and customize it to fit the specific needs of your pipeline. Once you have got a project up and running, you can base your next project on this configuration.
-
 ##### The Default Configuration
 
 This is the default Toolkit VFX configuration and usually a great starting point when you start setting things up. It comes with 3dsmax, Flame, Houdini, Nuke, Mari, Maya, Motionbuilder, and Photoshop set up and contains a simple, straight forward folder setup on disk.
