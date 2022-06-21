@@ -7,7 +7,7 @@ lang: en
 
 # An Overview of Toolkit
 
-![](https://sg-toolkit.s3.amazonaws.com/tank/docs/docs/10/no_version_0330_043251/icon_256.png)
+![](images/toolkit-overview/icon_256.png)
 
 # An overview of the different concepts in the {% include product %} Pipeline Toolkit.
 
