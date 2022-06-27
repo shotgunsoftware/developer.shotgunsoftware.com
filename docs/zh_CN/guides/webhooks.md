@@ -23,33 +23,33 @@ Webhook 允许向您控制的服务通知 {% include product %} 中发生的事�
 
 另一个说明如何自动进行状态管理的示例是，在创建新的 `Note` 后触发 `Task` 实体状态更改。这是一种很好的方法，可以告知艺术家和制作团队，主管在审核会话后已请求更改或修复当前作品。
 
-## 何时应使用 Webhook，而不是 {% include product %} 事件进程？
+## 何时应使用 Webhook 而不是 {% include product %} 事件进程？
 
-Webhook 和 [{% include product %} 事件进程](https://github.com/shotgunsoftware/shotgunEvents/wiki)提供类似的功能，但存在一些关键区别。事件进程要求您运行、监视和维护自己的服务。您的所有代码都必须使用 Python 编写，并且允许您启动自己的 {% include product %} 连接。相反，Webhook 会应答连接，并且可以使用任何编程语言编写。它们可以在无服务器环境中托管，例如 [AWS Lambda](https://aws.amazon.com/cn/lambda)，也可以触发任何在线提供的自动化平台，例如 [Zapier](https://zapier.com) 和 [IFTTT](https://ifttt.com)。如果您的用例用到 Webhook，这应该是首选解决方案。
+Webhook 和 [{% include product %} 事件进程](https://github.com/shotgunsoftware/shotgunEvents/wiki)提供类似的功能，但有一些主要区别。事件进程要求您运行、监视和维护自己的服务。您的所有代码都必须使用 Python 编写，并且允许您启动自己的 {% include product %} 连接。相反，Webhook 会应答连接，并且可以使用任何编程语言编写。它们可以托管在无服务器环境（例如 [AWS Lambda](https://aws.amazon.com/lambda/)）中，也可以触发任何联机可用的自动化平台（例如 [Zapier](https://zapier.com) 和 [IFTTT](https://ifttt.com)）。如果您的用例用到 Webhook，这应该是首选解决方案。
 
 ## 创建 Webhook
 
-要开始创建 Webhook，请转到 **Webhook** 页面。
+要开始创建 Webhook，请转到**“Webhook”**页面。
 
 ![“创建 Webhook”(Create Webhook)按钮](./images/webhooks/webhooks_page.png)
 
-然后选择**“创建 Webhook”(Create Webhook)**。
+然后选择**“创建 Webhook”(Create Webhook)**。 
 
 ![“创建 Webhook”(Create Webhook)按钮](./images/webhooks/create_webhook_button_v3.png)
 
-{% include info title="注意" content="对 Webhook 的访问权限由“高级”(Advanced)权限下的**“显示 Webhook”(Show Webhooks)**控制。默认情况下，对于管理员和经理权限角色，此选项处于启用状态。![“创建 Webhook”(Create Webhook)对话框](./images/webhooks/show_webhooks_permission.png)。" %}
+{% include info title="注意" content="对 Webhook 的访问权限由“高级”(Advanced)权限下的**“显示 Webhook”(Show Webhooks)**控制。默认情况下，对于管理员和经理权限角色，它处于启用状态 ![“创建 Webhook”(Create Webhook)对话框](./images/webhooks/show_webhooks_permission.png)。" %}
 
 接下来，填写创建新 Webhook 所需的信息。
 
 ![“创建 Webhook”(Create Webhook)对话框](./images/webhooks/create_webhook_dialog_v2.png)
 
-### 秘密令牌
+### 秘密代币
 
 为 Webhook 指定秘密令牌是可选的。如果提供，任何发送至 Webhook URL 的请求都会使用该令牌进行签名。令牌值作为名为 `X-SG-SIGNATURE` 的标题随请求一起发送。使用 HMAC 与 SHA1 计算签名，并且签名的消息是请求的 JSON 主体。
 
-![秘密令牌](./images/webhooks/webhook_secret_token_v2.png)
+![秘密代币](./images/webhooks/webhook_secret_token_v2.png)
 
-#### 标题格式
+#### 标头格式
 
 `<algorithm>=<signature>`
 
@@ -72,7 +72,7 @@ True
 
 ### 验证 SSL 证书
 
-验证 SSL 证书是一项可选功能，该功能可帮助确保到 Webhook 的使用者 URL 的任何连接的安全性。如果启用，则向 Webhook 的 URL 交付内容时，{% include product %} 将使用 OpenSSL 的证书验证例程来验证证书。
+验证 SSL 证书是一项可选功能，该功能可帮助确保到 Webhook 的使用者 URL 的任何连接的安全性。如果启用，当向 Webhook 的 URL 进行交付时，{% include product %} 将使用 OpenSSL 的证书验证例程来验证证书。
 
 ![验证 SSL 证书](./images/webhooks/webhooks_validate_ssl_certificate_v2.png)
 
@@ -80,7 +80,7 @@ True
 
 ![以批处理格式交付](./images/webhooks/webhooks_batched_format.png)
 
-[在此处阅读有关以批处理格式交付的详细信息](https://developer.shotgridsoftware.com/zh_CN/e7890fc8/)。
+[在此处了解有关以批处理格式交付的详细信息](https://developer.shotgridsoftware.com/e7890fc8/)。
 
 ### 不稳定时通知
 
@@ -102,20 +102,20 @@ True
 
 ## Webhook 状态
 
-一个 Webhook 可以有以下几种不同的状态，以指示其运行状况和继续接收交付内容的能力。
+一个 Webhook 可以具有几种不同的状态之一，以指示其运行状况和继续接收交付内容的能力。
 
 ![“创建 Webhook”(Create Webhook)对话框](./images/webhooks/webhook_selected_status_v2.png)
 
-| 状态(Status) | 示例 | 说明 |
+| 状态 | 示例 | 说明 |
 |--------|:-------:|:-----------:|
 | 活动 | ![活动](./images/webhooks/webhook_status_active.png) | Webhook 运行稳定。在过去 24 小时内，向此 Webhook 的使用者 URL 进行的交付都已到达其目的地。 |
 | 不稳定 | ![不稳定](./images/webhooks/webhook_status_unstable.png) | Webhook 运行不稳定。在过去 24 小时内，某些交付未能到达其目的地，但不足以导致 {% include product %} 将 Webhook 视为终止。 |
-| 失败 | ![失败](./images/webhooks/webhook_status_failed.png) | Webhook 被视为终止，且不会再尝试交付。这是因为在短时间内出现太多交付失败，且系统已确定不应再将 Webhook 视为可行。**如果在过去 24 小时内出现 100 次交付失败，Webhook 将被视为失败**。 |
+| 失败 | ![失败](./images/webhooks/webhook_status_failed.png) | Webhook 被视为终止，且不会再尝试交付。这是因为在短时间内出现太多交付失败，且系统已确定不应再将 Webhook 视为可行。**如果在过去 24 小时内出现 100 次交付失败，则 Webhook 将被视为失败**。 |
 | 禁用 | ![禁用](./images/webhooks/webhook_status_disabled.png) | Webhook 处于禁用状态，并且在重新启用之前，不会再尝试进行任何交付。 |
 
 ## 交付
 
-从 Webhook 列表中选择一个 Webhook 将显示七天以来向该 Webhook 发起的所有交付。
+从 Webhook 列表中选择一个 Webhook 将显示七天以来向该 Webhook 进行的所有交付。
 
 {% include info title="注意" content="超过七天的交付日志将被移除且无法恢复。" %}
 
@@ -178,13 +178,13 @@ True
 
 ##### 会话 UUID
 
-事件有效负载的一部分是在 {% include product %} 中触发事件的 `session_uuid`。此值可以提供给 [{% include product %} 的 Python API](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)，这将导致具有该 session_uuid 的任何已打开浏览器会话为 API 生成的事件显示更新。
+事件有效负载的一部分是在 {% include product %} 中触发事件的 `session_uuid`。此值可以提供给 [{% include product %} 的 Python API](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)，这将导致具有该 session_uuid 的任何打开的浏览器会话显示由此 API 生成的事件的更新。
 
 #### 来自 Webhook 的响应
 
 ![“响应”(Response)选项卡](./images/webhooks/webhooks_response_tab.png)
 
-“响应”(Response)选项卡显示有关 Webhook 对交付的响应的详细信息。
+“响应”(Response)选项卡显示有关 Webhook 对交付的响应的详细信息。 
 
 您可以查看 Webhook 的响应 HTTP 标头、正文和测量的响应时间。
 
@@ -196,9 +196,9 @@ Webhook 的响应正文最多保留 100 个字符。（如上所述，交付信�
 
 Webhook 使用者服务必须响应交付，这样系统才会将其视为已成功交付。
 
-{% include warning title="响应超时" content="必须在交付到 Webhook URL 后六秒内收到响应，否则连接将关闭。未能及时响应将导致交付失败。" %}
+{% include warning title="响应超时" content="必须在交付到 Webhook URL 后六秒内收到响应，之后连接将关闭。未能及时响应将导致交付失败。" %}
 
-系统会记录每个交付的处理时间，您可以在“响应详细信息”(Response details)选项卡中查看该时间。
+系统会记录每次交付的处理时间，您可以在“响应详细信息”(Response details)选项卡中查看该时间。
 
 #### 限制
 
@@ -207,9 +207,9 @@ Webhook 使用者服务必须响应交付，这样系统才会将其视为已成
 每个站点允许的响应时间为 1 分钟。因此，如果某个站点的所有已配置使用者端点都需要整整 6 秒时间来响应，则该站点的 Webhook 交付限制为每分钟 10 个。
 
 如果需要较高的整体吞吐量，则应根据以下模型设计使用者端点：
-1. 接收请求
-2. 生成另一个进程/线程以按所需方式对其进行处理
-3. 立即回答确认 200
+ 1. 接收请求
+ 2. 生成另一个进程/线程以按所需方式对其进行处理
+ 3. 立即回答确认 200
 
 #### 状态代码
 
@@ -221,11 +221,11 @@ Webhook 使用者服务必须响应交付，这样系统才会将其视为已成
 
 ### 确认
 
-可以更新交付，使其包含确认。进行交付后，标题将作为请求的一部分提供。标题中包含交付记录的 ID（存储在 `x-sg-delivery-id` 键中）。此 ID 可以用于更新交付记录，以使用 [{% include product %} REST API](https://developer.shotgridsoftware.com/rest-api) 包含确认。
+可以更新交付，使其包含确认。进行交付后，标题将作为请求的一部分提供。标头中包含交付记录的 ID（存储在 `x-sg-delivery-id` 键中）。此 ID 可用于更新交付记录，以包含使用 [{% include product %} REST API](https://developer.shotgridsoftware.com/rest-api) 的确认。
 
 {% include warning title="确认大小" content="确认的最大允许大小为 4 KB。" %}
 
-#### 标题示例
+#### 标头示例
 
 ```json
 {
@@ -242,7 +242,7 @@ Webhook 使用者服务必须响应交付，这样系统才会将其视为已成
 
 #### 确认有什么用途？
 
-确认允许在带外详细报告对 Webhook URL 已成功接收的交付的处理是成功还是失败。这会将从 {% include product %} 接收交付的状态与此次交付的关联事件处理成功还是失败分开。因此，成功交付的事件可以包含对调试有用的其他信息。
+确认允许在带外详细报告对 Webhook URL 已成功接收的交付的处理是成功还是失败。这会将从 {% include product %} 接收交付的状态与该交付的关联事件处理成功还是失败分开。因此，成功交付的事件可以包含对调试有用的其他信息。 
 
 一个很好的示例是在创建 `Asset` 实体时触发的 Webhook。如果该 Webhook 的职责是为每个新 `Asset` 在磁盘上创建目录结构，则 Webhook URL 可以成功接收交付，但由于磁盘或网络故障无法创建关联的目录。然后，它可以使用详细的错误消息更新交付记录，说明未创建目录结构及其原因。
 
@@ -252,8 +252,8 @@ Webhook 使用者服务必须响应交付，这样系统才会将其视为已成
 
 ### 使用 webhook.site
 
-我们建议使用 [webhook.site](https://webhook.site)。它提供了可复制并粘贴到 Webhook 的唯一 URL，并且向您实时显示向该地址执行的交付。可以自定义页面，以便对具有特定状态代码和正文的交付做出响应，这意味着您可以测试交付是成功还是失败。
+我们建议使用 [webhook.site](https://webhook.site)。它提供了可复制并粘贴到 Webhook 的唯一 URL，并且向您实时显示向该地址执行的交付。可以自定义页面，以便对具有特定状态代码和正文的交付做出响应，这意味着您可以测试交付是成功还是失败。 
 
 webhook.site 服务存在严格的速率限制。这意味着，最后很容易出现某些交付被拒绝，从而导致 Webhook 不稳定或失败的情况。在测试时，建议您使用已知且可控制的项目环境，而不是生产环境中的实时数据。
 
-{% include warning title="生产数据" content="建议不要将生产事件数据发送到可公开获得的第三方 Web 服务！我们建议在使用 webhook.site 测试 Webhook 时仅使用测试数据。" %}
+{% include warning title="制作数据" content="建议不要将制作事件数据发送到可公开获得的第三方 Web 服务！我们建议仅当使用 webhook.site 等服务测试 Webhook 时才使用测试数据。" %}
