@@ -219,7 +219,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 在该对话框左侧，您将看到表示当前 Maya 会话的项。在它下面，您将看到**“Publish to ShotGrid”**子动作。表示**“All Session Geometry”**的另一项显示为当前会话的子项。它也有**“Publish to ShotGrid”**子动作。  
 
-{% include info title="注意" content="如果**“All Session Geometry”**项没有显示，请确保在 Maya 中已启用 Alembic 导出插件。"
+{% include info title="注意" content="如果**“All Session Geometry”**项没有显示，请确保在 Maya 中已启用 Alembic 导出插件。" %}
 
 可单击树左侧的项了解发布应用。您将注意到，在选择要对其执行操作的项后，您可以输入要发布的内容的说明。您还可以单击右侧的摄影机图标拍摄屏幕截图以与该项关联。 
 
