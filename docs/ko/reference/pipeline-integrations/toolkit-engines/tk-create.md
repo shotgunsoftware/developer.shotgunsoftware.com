@@ -9,7 +9,7 @@ lang: ko
 
 데스크톱2 엔진은 [{% include product %} Create](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Supervisor_Artist_sa_create_sa_intro_create_html) 응용프로그램 내부에서 실행되는 엔진입니다. 브라우저 통합을 통해 {% include product %} 웹 응용프로그램에서뿐만 아니라 {% include product %} Create에서도 DCC 시작을 처리합니다.
 
-tk-desktop2 엔진은 {% include product %} Create와 툴킷을 통합할 수 있도록 합니다. {% include product %} Create는 [DCC 시작](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Supervisor_Artist_sa_create_sa_create_artists_html#launching-your-creative-apps)을 포함하여 툴킷 사용자에게 익숙한 기능을 지원합니다.
+tk-desktop2 엔진은 {% include product %} Create와 툴킷을 통합할 수 있도록 합니다. {% include product %} Create는 [DCC 시작](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Supervisor_Artist_sa_create_sa_create_artists_html#launching-your-creative-apps)을 포함하여 툴킷 사용자에게 익숙한 기능을 지원합니다.
 
 ![](../images/engines/create-dcc-01.png)
 

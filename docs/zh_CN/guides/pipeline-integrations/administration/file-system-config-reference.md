@@ -60,7 +60,7 @@ lang: zh_CN
 
 
 本文档全面地介绍了 {% include product %} Pipeline Toolkit 中以文件系统为中心的配置。其中概述了模板系统的工作方式以及可用的选项。还列出了在文件夹创建配置中可以包含的所有不同参数。  
-_请注意，本文档介绍仅当您控制了 Toolkit 配置时才可用的功能。有关详细信息，请参见 [{% include product %} 集成管理员手册](https://developer.shotgridsoftware.com/8085533c/)。_
+_请注意，本文档介绍仅当您控制了 Toolkit 配置时才可用的功能。有关详细信息，请参见 [{% include product %} 集成管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/)。_
 
 # 简介
 
@@ -68,11 +68,11 @@ _请注意，本文档介绍仅当您控制了 Toolkit 配置时才可用的功�
 
 **文件夹创建：**在 {% include product %} 中创建对象后，需要先在磁盘上创建文件夹，然后才能开始工作。这个过程可以很简单，比如在磁盘上创建一个文件夹来代表镜头；也可以更复杂，比如设置一个特定于用户的工作沙盒，让每个处理镜头的用户在单独的磁盘区域工作。
     
-- Toolkit 会在您启动应用程序（例如为镜头 BECH_0010 启动 Maya）时自动创建文件夹，并确保在启动 Maya 前文件夹已存在。如果文件夹不存在，则会即时创建这些文件夹。也可以使用 API 方法、使用 [shell 中的 tank 命令](https://developer.shotgridsoftware.com/425b1da4/#useful-tank-commands)以及通过 [ShotGrid 中的“创建文件夹”(Create Folders)菜单](https://developer.shotgridsoftware.com/c3b662a6/)来创建文件夹。此文件夹创建过程由一组特殊的配置文件来驱动，以下文档的[第 1 部分](#part-1---folder-creation-syntax)对此进行了概述。
+- Toolkit 会在您启动应用程序（例如为镜头 BECH_0010 启动 Maya）时自动创建文件夹，并确保在启动 Maya 前文件夹已存在。如果文件夹不存在，则会即时创建这些文件夹。也可以使用 API 方法、使用 [shell 中的 tank 命令](https://developer.shotgridsoftware.com/zh_CN/425b1da4/#useful-tank-commands)以及通过 [ShotGrid 中的“创建文件夹”(Create Folders)菜单](https://developer.shotgridsoftware.com/zh_CN/c3b662a6/)来创建文件夹。此文件夹创建过程由一组特殊的配置文件来驱动，以下文档的[第 1 部分](#part-1---folder-creation-syntax)对此进行了概述。
 
 **打开和保存工作：**在工作时，需要在磁盘上的标准位置打开和保存文件。这些文件位置通常位于在开始工作之前创建的文件夹结构中。
     
-- 建立文件夹结构后，我们可以使用该结构来确定关键的磁盘位置。这些位置称为[模板](#part-2---configuring-file-system-templates)。例如，您可以定义一个名为 `maya_shot_publish` 的模板，来指代为镜头发布的 Maya 文件。然后，[Toolkit 应用](https://developer.shotgridsoftware.com/f8596e35/)将使用此模板 - 发布应用可能会使用它来控制应在何处写入其文件，而 [Workfiles 应用](https://developer.shotgridsoftware.com/9a736ee3/)可能会使用此模板了解从何处打开文件。在 Toolkit 的环境配置内，您可以控制每个应用使用哪些模板。因此，Toolkit 使用的所有关键文件位置都定义在一个模板文件中，并且易于查看。
+- 建立文件夹结构后，我们可以使用该结构来确定关键的磁盘位置。这些位置称为[模板](#part-2---configuring-file-system-templates)。例如，您可以定义一个名为 `maya_shot_publish` 的模板，来指代为镜头发布的 Maya 文件。然后，[Toolkit 应用](https://developer.shotgridsoftware.com/zh_CN/f8596e35/)将使用此模板 - 发布应用可能会使用它来控制应在何处写入其文件，而 [Workfiles 应用](https://developer.shotgridsoftware.com/zh_CN/9a736ee3/)可能会使用此模板了解从何处打开文件。在 Toolkit 的环境配置内，您可以控制每个应用使用哪些模板。因此，Toolkit 使用的所有关键文件位置都定义在一个模板文件中，并且易于查看。
 
 # 第 1 部分 - 文件夹创建语法
 
@@ -80,7 +80,7 @@ _请注意，本文档介绍仅当您控制了 Toolkit 配置时才可用的功�
 
 ![配置](./images/file-system-config-reference/core_config.png)
 
-上图显示了一个数据结构配置。当您执行 Toolkit 文件夹创建时，会在 {% include product %} 中的实体与磁盘上的文件夹之间建立联系。Toolkit 使用此文件夹数据结构配置在磁盘上生成一系列文件夹，而每个文件夹在 {% include product %} 中都注册为一个 [`Filesystem Location`](https://developer.shotgridsoftware.com/cbbf99a4/) 实体。我们可以将这看成是 {% include product %} 数据（例如镜头和资产名称）和配置被“烘焙”到磁盘上和 {% include product %} 中的实际文件夹。配置总是以一个名为“project”的文件夹开头。此文件夹始终表示 {% include product %} 中连接的项目，并将被替换为项目的 Toolkit 名称。这层下面是静态文件夹。例如，文件夹创建器将自动创建 **sequences** 文件夹。
+上图显示了一个数据结构配置。当您执行 Toolkit 文件夹创建时，会在 {% include product %} 中的实体与磁盘上的文件夹之间建立联系。Toolkit 使用此文件夹数据结构配置在磁盘上生成一系列文件夹，而每个文件夹在 {% include product %} 中都注册为一个 [`Filesystem Location`](https://developer.shotgridsoftware.com/zh_CN/cbbf99a4/) 实体。我们可以将这看成是 {% include product %} 数据（例如镜头和资产名称）和配置被“烘焙”到磁盘上和 {% include product %} 中的实际文件夹。配置总是以一个名为“project”的文件夹开头。此文件夹始终表示 {% include product %} 中连接的项目，并将被替换为项目的 Toolkit 名称。这层下面是静态文件夹。例如，文件夹创建器将自动创建 **sequences** 文件夹。
 
 进一步深入 sequences 文件夹，有一个 **sequence** 文件夹和一个 **sequence.yml** 文件。每当 Toolkit 检测到与文件夹同名的 YAML 文件时，它就会读取 YAML 文件的内容，并添加所需的动态行为。在本例中，**sequence.yml** 文件包含 project 文件夹下的结构，由三种内容组成：
 
@@ -163,7 +163,7 @@ _请注意，本文档介绍仅当您控制了 Toolkit 配置时才可用的功�
 
 ![create_with_parent_folder](images/file-system-config-reference/create_with_parent_folder_02_DS.png)
 
-{% include info title="注意" content="这种文件系统嵌套关系独立于 [ShotGrid 层次结构](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html)，两者之间没有任何联系。它们的配置是完全独立的。" %}
+{% include info title="注意" content="这种文件系统嵌套关系独立于 [ShotGrid 层次结构](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html)，两者之间没有任何联系。它们的配置是完全独立的。" %}
 
 shotgun_entity 类型的文件夹支持一个可选标志，以控制在创建父文件夹后文件夹创建过程是否尝试向下递归到该文件夹中，以便也创建子文件夹。标志作为一种设置，只能有某些固定值，在本例中为“true”或“false”。要添加此标志，请参考下面这个示例：
 
@@ -237,7 +237,7 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
 
 ## 列表字段文件夹
 
-例如，如果您要为 {% include product %} 中的每种资产类型创建一个文件夹，则 [{% include product %} 列表字段](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_field_types_html)文件夹很有用。在 {% include product %} 中，资产类型是列表字段。使用此文件夹配置类型，可以在文件系统中定义一个层来反映这些资产类型列表。
+例如，如果您要为 {% include product %} 中的每种资产类型创建一个文件夹，则 [{% include product %} 列表字段](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_data_management_ar_field_types_html)文件夹很有用。在 {% include product %} 中，资产类型是列表字段。使用此文件夹配置类型，可以在文件系统中定义一个层来反映这些资产类型列表。
 
 ![list_field_folders](images/file-system-config-reference/list_field_folders_02_DS.png)
 
@@ -265,7 +265,7 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
 
 -   将动态内容 **type** 字段的值设置为 `shotgun_list_field`。
 -   `entity_type` 字段应设置为想要从中提取数据的 {% include product %} 实体（例如“资产”(Asset)、“场”(Sequence)、“镜头”(Shot)等）。
--   `field_name` 字段应设置为从中提取数据的 {% include product %} 字段，并且必须是[列表类型字段](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_field_types_html)。如果想随动态内容一起添加静态文本，则可以使用表达式。`field_name: "{sg_asset_type}_type"`此示例表达式包含文本和一个模板键。
+-   `field_name` 字段应设置为从中提取数据的 {% include product %} 字段，并且必须是[列表类型字段](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_data_management_ar_field_types_html)。如果想随动态内容一起添加静态文本，则可以使用表达式。`field_name: "{sg_asset_type}_type"`此示例表达式包含文本和一个模板键。
     
 -   可选的 `skip_unused` 参数将阻止为未使用的列表类型字段值创建目录（如上面的[可选字段](#optional-fields)部分所述）。{% include info title="注意" content="将此设置为 True 可能会对文件夹创建性能产生负面影响。另外，剔除算法目前还很简陋，不支持关联实体应用了复杂过滤器的情况。" %}
     
@@ -274,7 +274,7 @@ Toolkit 支持使用正则表达式提取 {% include product %} 字段名称的�
 
 ## 工作流工序文件夹
 
-Pipeline Step 文件夹表示 {% include product %} 中的[工作流工序](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Producer_pr_scheduling_tasks_pr_tasks_pipeline_steps_html)。工作流工序也称为“工序”。
+Pipeline Step 文件夹表示 {% include product %} 中的[工作流工序](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Producer_pr_scheduling_tasks_pr_tasks_pipeline_steps_html)。工作流工序也称为“工序”。
 
 ![pipeline_step_folder](images/file-system-config-reference/pipeline_step_folder_02_DS.png)
 
@@ -319,7 +319,7 @@ Pipeline Step 文件夹表示 {% include product %} 中的[工作流工序](http
 
 ## 任务文件夹
 
-任务文件夹表示 {% include product %} 中的[任务](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Producer_pr_scheduling_tasks_pr_my_tasks_html)。默认情况下，任务文件夹不会随其父文件夹一起创建。例如，如果某个关联了任务节点的镜头触发了文件夹创建操作，则不会自动创建任务文件夹。相反，仅当为任务执行文件夹创建时，才会创建任务文件夹（例如从 {% include product %} 启动某项任务时）。
+任务文件夹表示 {% include product %} 中的[任务](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Producer_pr_scheduling_tasks_pr_my_tasks_html)。默认情况下，任务文件夹不会随其父文件夹一起创建。例如，如果某个关联了任务节点的镜头触发了文件夹创建操作，则不会自动创建任务文件夹。相反，仅当为任务执行文件夹创建时，才会创建任务文件夹（例如从 {% include product %} 启动某项任务时）。
 
 ![task_folder](images/file-system-config-reference/task_folder_02_DS.png)
 
@@ -387,7 +387,7 @@ _提示：如果您更喜欢在应用程序（例如 Maya）启动时创建普�
 
 ## 当前用户文件夹
 
-当前用户文件夹是一种特殊构造，通过它可为不同用户设置工作区。例如，我们经常会遇到一个部门的多位艺术家共同处理同一个镜头的情况。可以使用用户文件夹，这样艺术家可以将其工作文件存储在自己的目录中，并且能够在 [Workfiles 应用](https://developer.shotgridsoftware.com/9a736ee3/)中过滤出他们的文件。这种情况下，配置文件需要包含以下选项：
+当前用户文件夹是一种特殊构造，通过它可为不同用户设置工作区。例如，我们经常会遇到一个部门的多位艺术家共同处理同一个镜头的情况。可以使用用户文件夹，这样艺术家可以将其工作文件存储在自己的目录中，并且能够在 [Workfiles 应用](https://developer.shotgridsoftware.com/zh_CN/9a736ee3/)中过滤出他们的文件。这种情况下，配置文件需要包含以下选项：
 
     # the type of dynamic content
     type: "user_workspace"
@@ -797,7 +797,7 @@ Toolkit 模板文件是 Toolkit 配置的一个中枢。每个项目总是有一
 
 ![配置](images/file-system-config-reference/templates_file.png)
 
-此文件包含_模板_及其_键_的定义。
+此文件包含 _模板_ 及其 _键_ 的定义。
 
 **键**是我们定义的动态字段。它可以是名称、版本号、屏幕分辨率、镜头名称等。我们会为键配置类型，这样便可定义一个键应该是字符串还是整数。键还具有格式，这样便可定义一个字符串应仅包含字母数字字符，还是所有整数都填充八个零。
 
@@ -1021,7 +1021,7 @@ Toolkit 应用在填充所有上下文字段时（通过 `context.as_template_fi
 
 {% include info title="注意" content="如果一个 string 键的名称与一个关联了 ShotGrid 实体的动态数据结构文件夹的实体类型一致，将使用该文件夹名称来代替代币。例如，假设您像上面的代码段那样正在使用一个“string”类型的 {Sequence} 模板键，并且在您的数据结构中有一个名为“sequence”的动态文件夹，但在对应的 `sequence.yml` 文件中，它被定义为 `shotgun_entity` 类型，并且连接到 ShotGrid 中的“场”(Sequence)实体类型。这种情况下，Toolkit 会认为您的模板键对应于这个动态文件夹的实体类型（示例中二者均为“场”(Sequence)）。因此，Toolkit 会提取生成的文件夹名称（即相关的具体场的名称），并使用它替换模板键。" %}
 
-如果需要定义任何可选属性，必须使用这种格式。目前，只有 `root_name` 这一个可选属性，在有多个根目录的项目中，可以用它来指定路径的项目根目录。当您想添加新的存储根目录来存储某些项目文件时，会用到[多个根目录](https://developer.shotgridsoftware.com/9ea9dd4e/)。
+如果需要定义任何可选属性，必须使用这种格式。目前，只有 `root_name` 这一个可选属性，在有多个根目录的项目中，可以用它来指定路径的项目根目录。当您想添加新的存储根目录来存储某些项目文件时，会用到[多个根目录](https://developer.shotgridsoftware.com/zh_CN/9ea9dd4e/)。
 
 `root_name: name_of_project_root`
 
@@ -1070,7 +1070,7 @@ Toolkit 应用在填充所有上下文字段时（通过 `context.as_template_fi
 
 ## 如何向文件结构中添加新的实体类型？
 
-我们假设您之前一直在 {% include product %} 站点上制作专题动画和短片，而现在您接到了剧集工作。下面我们就来一起了解如何向 Toolkit 加入剧集工作流。首先，按照[此处](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html)的说明在 {% include product %} 中为剧集工作设置层次结构。
+我们假设您之前一直在 {% include product %} 站点上制作专题动画和短片，而现在您接到了剧集工作。下面我们就来一起了解如何向 Toolkit 加入剧集工作流。首先，按照[此处](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html)的说明在 {% include product %} 中为剧集工作设置层次结构。
 
 ![episode_hierarchy](images/file-system-config-reference/episode_hierarchy.jpg)
 
@@ -1078,13 +1078,13 @@ Toolkit 应用在填充所有上下文字段时（通过 `context.as_template_fi
 
 **其他参考：**
 
--   [“剧集”(Episode)实体如何工作？](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html)
--   [自定义实体的层次结构](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html)
+-   [“剧集”(Episode)实体如何工作？](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html)
+-   [自定义实体的层次结构](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html)
 
 
 ### “剧集 > 场 > 镜头”(Episode > Sequence > Shot)层次结构需要的字段
 
-[您可以选择为 `Episode` 使用任何自定义实体](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html)（“站点偏好设置 > 实体”(Site Preferences > Entities)），也可以使用 {% include product %} 7.0.7.0 中提供的官方“剧集”(Episode)实体。如果您注册了 {% include product %} 7.0.7.0 之前的版本（2017 之前），则“TV Show”模板会为剧集使用 `CustomEntity02`。如果您决定使用 `CustomEntity02` 或官方“剧集”(Episode)实体之外的其他实体，没问题，{% include product %} 和 Toolkit 很灵活。下面我们就来介绍这两种情况。
+[您可以选择为 `Episode` 使用任何自定义实体](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html)（“站点偏好设置 > 实体”(Site Preferences > Entities)），也可以使用 {% include product %} 7.0.7.0 中提供的官方“剧集”(Episode)实体。如果您注册了 {% include product %} 7.0.7.0 之前的版本（2017 之前），则“TV Show”模板会为剧集使用 `CustomEntity02`。如果您决定使用 `CustomEntity02` 或官方“剧集”(Episode)实体之外的其他实体，没问题，{% include product %} 和 Toolkit 很灵活。下面我们就来介绍这两种情况。
 
 就本练习而言，我们将使用“剧集”(Episode)(`CustomEntity02`) 和官方“剧集”(Episode)实体为例，讲解如何在项目层次结构更新中整合剧集（可以任选其一）。首先，正确设置项目的**“剧集 > 场 > 镜头”(Episode > Sequence > Shot)**层次结构的方法是，确保 {% include product %} 中存在以下字段：
 
@@ -1271,7 +1271,7 @@ b) **使用自定义实体：**`CustomEntity02` 可以是从项目模板创建�
 
 这与[不同工作流工序的不同文件系统布局](#different-file-system-layouts-for-different-pipeline-steps)相关，更具体地说，如果您希望向结构中添加分支，就会遇到此问题。例如，您可以为“工作流工序 A”设置一个结构，为其他所有工作流工序设置另一个结构。
 
-假设您要将另一种[资产类型](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_customizing_fields_html)添加到工作流中，并且新的“资产类型”(Asset Type)是“车辆”(Vehicle)。您需要更改 Vehicles 的文件结构，为不同的工作流工序设置不同的文件夹（例如“geoprep”和“lookdev”），而每个工作流工序文件夹内还有其他文件夹。在进行此项更新的同时，创建资产的方式目前应保持不变。下面我们来一起了解如何更新您的工作流以适应此新流。
+假设您要将另一种[资产类型](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_site_configuration_ar_customizing_fields_html)添加到工作流中，并且新的“资产类型”(Asset Type)是“车辆”(Vehicle)。您需要更改 Vehicles 的文件结构，为不同的工作流工序设置不同的文件夹（例如“geoprep”和“lookdev”），而每个工作流工序文件夹内还有其他文件夹。在进行此项更新的同时，创建资产的方式目前应保持不变。下面我们来一起了解如何更新您的工作流以适应此新流。
 
 **步骤 1：修改数据结构**
 
@@ -1279,7 +1279,7 @@ b) **使用自定义实体：**`CustomEntity02` 可以是从项目模板创建�
 
 -   先在数据结构中为这个新的资产类型创建一个新的分支：vehicle。
 -   在与 `asset/` 和 `asset.yml` 同一级目录中，添加一个 `asset_vehicle/` 文件夹和一个 `asset_vehicle.yml`。
--   这些 YAML 文件中还有一项过滤器设置。修改 `asset.yml` 中的过滤器，让它应用于_除_车辆以外的所有资产，然后修改 `asset_vehicle.yml` 使其_仅_应用于车辆类型的资产。[下面是这些过滤器的一个示例](#different-file-system-layouts-for-different-pipeline-steps)。
+-   这些 YAML 文件中还有一项过滤器设置。修改 `asset.yml` 中的过滤器，让它应用于 _除_ 车辆以外的所有资产，然后修改 `asset_vehicle.yml` 使其_仅_应用于车辆类型的资产。[下面是这些过滤器的一个示例](#different-file-system-layouts-for-different-pipeline-steps)。
 -   现在，您已有了两个文件夹来表示 `asset` 和 `asset_vehicles`，在 `asset_vehicle` 下添加您希望为这些资产创建的所有文件夹（例如 `geoprep`、`lookdev` 等）。
     
 -   如果您要为这些资产保存和发布文件，需要在 `core/templates.yml` 中创建模板，描述保存的和发布的文件的文件路径。例如，除了 [`maya_asset_work`](https://github.com/shotgunsoftware/tk-config-default/blob/v0.17.3/core/templates.yml#L480)，您还可以创建一个名为 `maya_asset_work_vehicle` 的模板，其定义将是要保存车辆资产的 Maya 工作文件的模板化路径。
@@ -1294,4 +1294,4 @@ b) **使用自定义实体：**`CustomEntity02` 可以是从项目模板创建�
 
 ## 如何创建自定义工作流工序？
 
-在 {% include product %} 7.0.6.0 中，引入了[通过“管理”(Admin)菜单管理工作流工序](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_configure_pipeline_steps_html#managing-pipeline-steps)。使用此功能，您可以轻松向工作流工序中添加自定义字段。**专业提示：大多数情况下，与创建自定义实体来管理工作流工序相比，在工作流工序中使用自定义字段有助于工作流条理更加清晰。**
+在 {% include product %} 7.0.6.0 中，引入了[通过“管理”(Admin)菜单管理工作流工序](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_site_configuration_ar_configure_pipeline_steps_html#managing-pipeline-steps)。使用此功能，您可以轻松向工作流工序中添加自定义字段。**专业提示：大多数情况下，与创建自定义实体来管理工作流工序相比，在工作流工序中使用自定义字段有助于工作流条理更加清晰。**

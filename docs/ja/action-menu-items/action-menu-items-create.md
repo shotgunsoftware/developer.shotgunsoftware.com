@@ -26,7 +26,7 @@ API 開発者は、アクション メニュー アイテム(AMI)からエンテ
 
 **5\.[軽量ペイロード] (Light Payload) (light_payload):**[カスタム プロトコル](https://developer.shotgridsoftware.com/ja/af0c94ce/)を使用している場合、スクリプトは、完全なペイロードではなく、ペイロード情報を保持するイベント ログ エントリ レコードの ID を受け取ります。
 
-**[6]:設定メニュー オプション:**次のオプションから選択できます。
+**6:設定メニュー オプション:**次のオプションから選択できます。
 
 - **[エンティティ レコードの右クリック メニューに含める] (Include in the right-click menu on an Entity record):**レコードを右クリックして AMI を含める既定値です。![レコードを右クリック](./images/ami-configure-menu-options-right-click-menu.png)
 
@@ -36,19 +36,19 @@ API 開発者は、アクション メニュー アイテム(AMI)からエンテ
 
 - **[ユーザ] (User)メニューの内部リソース セクションに含める:**これにより、内部リソースを使用してユーザ メニューをカスタマイズすることができます。[内部リソースを使用してユーザ メニューをカスタマイズする方法の詳細については、こちら](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)を参照してください。
 
-**7\.[フォルダ] (Folder) (folder): **コンテキスト メニュー内のフォルダに AMI を収納できます(現在は単一レベルのフォルダのみをサポート)。![フォルダ](./images/ami-create-folder.png)
+**7\.[フォルダ] (Folder) (folder):**コンテキスト メニュー内のフォルダに AMI を収納できます(現在は単一レベルのフォルダのみをサポート)。![フォルダ](./images/ami-create-folder.png)
 
-**8\.[モーダル オーバーレイで開く] (Open in Modal Overlay): **AMI を新しいタブではなく iframe ウィンドウで開けるようにします。Shotgun で HTTPS が実行されている場合は、すべての iframe を HTTPS に設定する必要もあります。
+**8\.[モーダル オーバーレイで開く] (Open in Modal Overlay):**AMI を新しいタブではなく iframe ウィンドウで開けるようにします。Shotgun で HTTPS が実行されている場合は、すべての iframe を HTTPS に設定する必要もあります。
 
-**9\.[データ更新のポーリング] (Poll for Data Updates) (poll_for_data_updates): **イベント ログ エントリを照会するポーリングのループを開始します。これは、ActionMenuItem の反対側のコードを変更して、ActionMenuItem をトリガしたページに表示されているエンティティの API を介して Shotgun に戻る場合に使用します。
+**9\.[データ更新のポーリング] (Poll for Data Updates) (poll_for_data_updates):**イベント ログ エントリを照会するポーリングのループを開始します。これは、ActionMenuItem の反対側のコードを変更して、ActionMenuItem をトリガしたページに表示されているエンティティの API を介して Shotgun に戻る場合に使用します。
 
 **10\.[権限グループに制限] (Restrict to Permission Groups) (permissions_groups):**指定した権限グループのみが AMI を使用できるように制限できます。空の場合は、すべてのユーザが AMI を使用できます。
 
-**11\.[プロジェクトに制限] (Restrict to Projects) (projects): **指定したプロジェクトにのみ AMI が表示されるようにします。空の場合は、すべてのプロジェクトで AMI を使用できます。
+**11\.[プロジェクトに制限] (Restrict to Projects) (projects):**指定したプロジェクトにのみ AMI が表示されるようにします。空の場合は、すべてのプロジェクトで AMI を使用できます。
 
-**12\.[シークレット トークン] (Secret Token): **[シークレット トークン](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_general_security_ar_securing_amis_html)を設定して、AMI を保護します。
+**12\.[シークレット トークン] (Secret Token):**[シークレット トークン](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_general_security_ar_securing_amis_html)を設定して、AMI を保護します。
 
-**13\.[選択が必要] (Selection Required) (selection_required): **現在選択されている行がない場合に、メニュー項目をアクティブにするかどうかを決定します。
+**13\.[選択が必要] (Selection Required) (selection_required):**現在選択されている行がない場合に、メニュー項目をアクティブにするかどうかを決定します。
 
 ## アクション メニュー アイテムのタイプ
 

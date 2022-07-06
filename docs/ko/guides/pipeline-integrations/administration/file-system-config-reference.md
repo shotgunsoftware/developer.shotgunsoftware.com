@@ -60,7 +60,7 @@ lang: ko
 
 
 이 문서는 {% include product %} Pipeline Toolkit의 파일 시스템 중심 구성에 대한 내용을 완전하게 소개하는 참조 문서입니다. 여기에서는 템플릿 시스템 작동 방식 및 사용 가능한 옵션을 설명합니다. 또한 폴더 생성 구성에 포함할 수 있는 다양한 매개변수를 모두 보여 줍니다.  
- _이 문서에서는 툴킷 구성에 대한 제어 권한을 갖고 있는 경우에만 사용할 수 있는 기능에 대해 설명합니다. 자세한 내용은 [{% include product %} 통합 관리자 안내서](https://developer.shotgridsoftware.com/8085533c/)를 참조하십시오._
+ _이 문서에서는 툴킷 구성에 대한 제어 권한을 갖고 있는 경우에만 사용할 수 있는 기능에 대해 설명합니다. 자세한 내용은 [{% include product %} 통합 관리자 안내서](https://developer.shotgridsoftware.com/ko/8085533c/)를 참조하십시오._
 
 # 소개
 
@@ -68,11 +68,11 @@ lang: ko
 
 **폴더 생성:** {% include product %}에서 객체를 생성한 후에는 작업이 시작될 수 있도록 디스크에 폴더를 생성해야 합니다. 이 작업은 디스크에 샷을 나타내는 폴더를 생성하는 것처럼 간단할 수도 있고, 샷에 대해 작업하는 각 사용자가 디스크의 개별 영역에서 작업할 수 있도록 사용자별 작업 샌드박스를 설정하는 것처럼 복잡할 수 있습니다.
     
-- 툴킷은 응용프로그램을 시작할 때(예: 샷 BECH_0010을 위해 Maya를 시작할 때) 폴더 생성을 자동화하며 Maya를 시작하기 전에 폴더가 있는지 확인합니다. 폴더가 없으면 즉시 생성됩니다. 또한 API 메서드, [쉘의 tank 명령](https://developer.shotgridsoftware.com/425b1da4/#useful-tank-commands), [ShotGrid의 폴더 만들기 메뉴](https://developer.shotgridsoftware.com/c3b662a6/)를 통해 폴더를 생성할 수 있습니다. 이 폴더 생성 프로세스는 특별한 구성 파일 세트를 통해 진행됩니다. 자세한 정보는 아래 문서의 [1부](#part-1---folder-creation-syntax)를 참조하십시오.
+- 툴킷은 응용프로그램을 시작할 때(예: 샷 BECH_0010을 위해 Maya를 시작할 때) 폴더 생성을 자동화하며 Maya를 시작하기 전에 폴더가 있는지 확인합니다. 폴더가 없으면 즉시 생성됩니다. 또한 API 메서드, [쉘의 tank 명령](https://developer.shotgridsoftware.com/ko/425b1da4/#useful-tank-commands), [ShotGrid의 폴더 만들기 메뉴](https://developer.shotgridsoftware.com/ko/c3b662a6/)를 통해 폴더를 생성할 수 있습니다. 이 폴더 생성 프로세스는 특별한 구성 파일 세트를 통해 진행됩니다. 자세한 정보는 아래 문서의 [1부](#part-1---folder-creation-syntax)를 참조하십시오.
 
 **작업 열기 및 저장:** 작업하는 동안 디스크의 표준 위치에서 파일을 열고 저장해야 합니다. 이러한 파일 위치는 일반적으로 작업 시작 전에 만들어진 폴더 구조 내에 있습니다.
     
-- 폴더 구조가 설정되면 해당 구조를 사용하여 디스크의 주요 위치를 식별할 수 있습니다. 이러한 위치를 [템플릿](#part-2---configuring-file-system-templates)이라고 합니다. 예를 들어 `maya_shot_publish`라는 템플릿을 정의하여 샷을 위해 게시된 Maya 파일을 참조할 수 있습니다. [툴킷 앱](https://developer.shotgridsoftware.com/f8596e35/)은 이 템플릿을 사용합니다. Publish 앱은 이 템플릿을 사용하여 파일을 작성해야 할 위치를 제어할 수 있으며 [Workfiles 앱](https://developer.shotgridsoftware.com/9a736ee3/)은 템플릿을 사용하여 파일을 열 위치를 확인할 수 있습니다. 툴킷의 환경 구성 내에서 각 앱이 사용하는 템플릿을 제어할 수 있습니다. 툴킷에서 사용되는 모든 주요 파일 위치는 단일 템플릿 파일에 정의되므로 쉽게 확인할 수 있습니다.
+- 폴더 구조가 설정되면 해당 구조를 사용하여 디스크의 주요 위치를 식별할 수 있습니다. 이러한 위치를 [템플릿](#part-2---configuring-file-system-templates)이라고 합니다. 예를 들어 `maya_shot_publish`라는 템플릿을 정의하여 샷을 위해 게시된 Maya 파일을 참조할 수 있습니다. [툴킷 앱](https://developer.shotgridsoftware.com/ko/f8596e35/)은 이 템플릿을 사용합니다. Publish 앱은 이 템플릿을 사용하여 파일을 작성해야 할 위치를 제어할 수 있으며 [Workfiles 앱](https://developer.shotgridsoftware.com/ko/9a736ee3/)은 템플릿을 사용하여 파일을 열 위치를 확인할 수 있습니다. 툴킷의 환경 구성 내에서 각 앱이 사용하는 템플릿을 제어할 수 있습니다. 툴킷에서 사용되는 모든 주요 파일 위치는 단일 템플릿 파일에 정의되므로 쉽게 확인할 수 있습니다.
 
 # 1부 - 폴더 생성 구문
 
@@ -80,7 +80,7 @@ lang: ko
 
 ![구성](./images/file-system-config-reference/core_config.png)
 
-위의 이미지는 스키마 구성을 보여 줍니다. 툴킷 폴더 생성을 실행하면 {% include product %}의 엔티티와 디스크의 폴더 간에 연결이 설정됩니다. 툴킷은 이 폴더 스키마 구성을 사용하여 디스크에 일련의 폴더를 생성하고 이러한 각 폴더는 {% include product %}의 [`Filesystem Location`](https://developer.shotgridsoftware.com/cbbf99a4/) 엔티티로 등록됩니다. 즉, {% include product %} 데이터(예: 샷 및 에셋 이름) 및 구성이 디스크 및 {% include product %}의 실제 폴더에 "지정"된다고 생각할 수 있습니다. 구성은 항상 "project"라는 폴더에서 시작됩니다. 이 폴더는 항상 {% include product %}의 연결된 프로젝트를 나타내며 프로젝트의 툴킷 이름으로 대체됩니다. 이 레벨 아래에는 정적 폴더가 있습니다. 폴더 작성자는 자동으로 **sequences**와 같은 폴더를 만듭니다.
+위의 이미지는 스키마 구성을 보여 줍니다. 툴킷 폴더 생성을 실행하면 {% include product %}의 엔티티와 디스크의 폴더 간에 연결이 설정됩니다. 툴킷은 이 폴더 스키마 구성을 사용하여 디스크에 일련의 폴더를 생성하고 이러한 각 폴더는 {% include product %}의 [`Filesystem Location`](https://developer.shotgridsoftware.com/ko/cbbf99a4/) 엔티티로 등록됩니다. 즉, {% include product %} 데이터(예: 샷 및 에셋 이름) 및 구성이 디스크 및 {% include product %}의 실제 폴더에 "지정"된다고 생각할 수 있습니다. 구성은 항상 "project"라는 폴더에서 시작됩니다. 이 폴더는 항상 {% include product %}의 연결된 프로젝트를 나타내며 프로젝트의 툴킷 이름으로 대체됩니다. 이 레벨 아래에는 정적 폴더가 있습니다. 폴더 작성자는 자동으로 **sequences**와 같은 폴더를 만듭니다.
 
 sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있습니다. 툴킷은 폴더와 같은 이름을 가진 YAML 파일을 발견할 때마다 YAML 파일의 컨텐츠를 읽고 원하는 동적 동작을 추가합니다. 이 경우, **sequence.yml** 파일에는 project 폴더 아래 세 가지 유형의 항목으로 구성된 구조가 있습니다.
 
@@ -163,7 +163,7 @@ sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있
 
 ![create_with_parent_folder](images/file-system-config-reference/create_with_parent_folder_02_DS.png)
 
-{% include info title="참고" content="이 파일 시스템 중첩 관계는 [ShotGrid 계층](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html)과는 별개이며 서로 연결되어 있지 않습니다. 이들은 완전히 독립적으로 구성됩니다." %}
+{% include info title="참고" content="이 파일 시스템 중첩 관계는 [ShotGrid 계층](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html)과는 별개이며 서로 연결되어 있지 않습니다. 이들은 완전히 독립적으로 구성됩니다." %}
 
 shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목을 만들 때 하위 항목도 만들어지도록 반복할지 여부를 제어하는 선택적 플래그를 지원합니다. 플래그는 특정 고정 값(이 경우 "true" 또는 "false")만을 지정할 수 있는 설정입니다. 이 플래그를 추가하려면 다음 예를 사용합니다.
 
@@ -237,7 +237,7 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 ## 목록 필드 폴더
 
-예를 들어 [{% include product %} 목록 필드](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_field_types_html) 폴더는 {% include product %}의 모든 에셋 유형에 대해 하나의 폴더를 생성하려는 경우에 유용합니다. 에셋 유형은 {% include product %}의 목록 필드이며 이 폴더 구성 유형을 사용하면 이러한 에셋 유형 목록이 반영된 파일 시스템의 계층을 정의할 수 있습니다.
+예를 들어 [{% include product %} 목록 필드](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_data_management_ar_field_types_html) 폴더는 {% include product %}의 모든 에셋 유형에 대해 하나의 폴더를 생성하려는 경우에 유용합니다. 에셋 유형은 {% include product %}의 목록 필드이며 이 폴더 구성 유형을 사용하면 이러한 에셋 유형 목록이 반영된 파일 시스템의 계층을 정의할 수 있습니다.
 
 ![list_field_folders](images/file-system-config-reference/list_field_folders_02_DS.png)
 
@@ -265,7 +265,7 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 -   동적 컨텐츠 **type** 필드의 값을 `shotgun_list_field`로 설정합니다.
 -   `entity_type` 필드는 데이터를 가져올 {% include product %} 엔티티(예: "에셋", "시퀀스", "샷" 등)로 설정해야 합니다.
--   `field_name` 필드는 데이터를 가져온 {% include product %} 필드로 설정해야 하며 [목록 유형 필드](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_field_types_html)여야 합니다. 표현식을 사용하여 정적 텍스트를 동적 컨텐츠와 함께 추가할 수 있습니다.`field_name: "{sg_asset_type}_type"` 이 표현식 예는 텍스트와 템플릿 키를 포함합니다.
+-   `field_name` 필드는 데이터를 가져온 {% include product %} 필드로 설정해야 하며 [목록 유형 필드](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_data_management_ar_field_types_html)여야 합니다. 표현식을 사용하여 정적 텍스트를 동적 컨텐츠와 함께 추가할 수 있습니다.`field_name: "{sg_asset_type}_type"` 이 표현식 예는 텍스트와 템플릿 키를 포함합니다.
     
 -   선택적 `skip_unused` 매개변수는 사용되지 않는 목록 유형 필드 값에 대해 디렉토리가 생성되는 것을 방지합니다(위의 [선택 필드](#optional-fields) 섹션 참조). {% include info title="참고" content="이 값을 True로 설정하면 폴더 생성 성능에 부정적인 영향을 줄 수 있습니다. 또한, 컬링 알고리즘은 현재 완전하지 않아 관련 엔티티에 복잡한 필터가 적용된 시나리오에서는 작동하지 않습니다." %}
     
@@ -274,7 +274,7 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 ## 파이프라인 단계 폴더
 
-파이프라인 단계 폴더는 {% include product %}의 [파이프라인 단계](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Producer_pr_scheduling_tasks_pr_tasks_pipeline_steps_html)를 나타냅니다. 파이프라인 단계는 단계라고도 합니다.
+파이프라인 단계 폴더는 {% include product %}의 [파이프라인 단계](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Producer_pr_scheduling_tasks_pr_tasks_pipeline_steps_html)를 나타냅니다. 파이프라인 단계는 단계라고도 합니다.
 
 ![pipeline_step_folder](images/file-system-config-reference/pipeline_step_folder_02_DS.png)
 
@@ -319,7 +319,7 @@ shotgun_entity 유형 폴더는 폴더 생성 프로세스에서 상위 항목�
 
 ## 태스크 폴더
 
-태스크 폴더는 {% include product %}의 [태스크](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Producer_pr_scheduling_tasks_pr_my_tasks_html)를 나타냅니다. 기본적으로 태스크 폴더는 상위 폴더와 함께 만들어지지 않습니다. 예를 들어 태스크 노드가 연결된 샷에 대해 폴더 생성이 트리거되면 태스크 폴더가 자동으로 만들어지지 않습니다. 대신, 태스크 폴더는 태스크에 대해 폴더 생성이 실행될 때(예: {% include product %}에서 태스크 시작)에만 만들어집니다.
+태스크 폴더는 {% include product %}의 [태스크](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Producer_pr_scheduling_tasks_pr_my_tasks_html)를 나타냅니다. 기본적으로 태스크 폴더는 상위 폴더와 함께 만들어지지 않습니다. 예를 들어 태스크 노드가 연결된 샷에 대해 폴더 생성이 트리거되면 태스크 폴더가 자동으로 만들어지지 않습니다. 대신, 태스크 폴더는 태스크에 대해 폴더 생성이 실행될 때(예: {% include product %}에서 태스크 시작)에만 만들어집니다.
 
 ![task_folder](images/file-system-config-reference/task_folder_02_DS.png)
 
@@ -387,7 +387,7 @@ _팁: Maya와 같은 응용프로그램이 시작될 때 일반적이고 정적�
 
 ## 현재 사용자 폴더
 
-현재 사용자 폴더는 다른 사용자의 작업 영역을 설정할 수 있도록 하는 특수한 구성입니다. 일반적인 시나리오는 한 부서에서 근무하는 여러 아티스트가 같은 샷에 대해 작업하는 경우입니다. 아티스트가 자신의 디렉토리에 작업 파일을 저장할 수 있으므로 사용자 폴더가 사용될 수 있으며 [Workfiles 앱](https://developer.shotgridsoftware.com/9a736ee3/)에서 자신의 파일에 대해서만 필터링할 수 있습니다. 이 경우 구성 파일에 다음 옵션이 포함되어야 합니다.
+현재 사용자 폴더는 다른 사용자의 작업 영역을 설정할 수 있도록 하는 특수한 구성입니다. 일반적인 시나리오는 한 부서에서 근무하는 여러 아티스트가 같은 샷에 대해 작업하는 경우입니다. 아티스트가 자신의 디렉토리에 작업 파일을 저장할 수 있으므로 사용자 폴더가 사용될 수 있으며 [Workfiles 앱](https://developer.shotgridsoftware.com/ko/9a736ee3/)에서 자신의 파일에 대해서만 필터링할 수 있습니다. 이 경우 구성 파일에 다음 옵션이 포함되어야 합니다.
 
     # the type of dynamic content
     type: "user_workspace"
@@ -1021,7 +1021,7 @@ UTC 시간으로 기본 설정되는 YYYY.MM.DD 형식의 타임스탬프입니�
 
 {% include info title="참고" content="문자열 키의 이름이 연관된 ShotGrid 엔티티가 있는 동적 스키마 폴더의 엔티티 유형과 일치하면 해당 폴더 이름이 토큰으로 대체됩니다. 예를 들어 위의 코드 조각과 같이 'string' 유형의 {Sequence} 템플릿 키를 사용하고 스키마에서 'sequence'라는 동적 폴더가 있는 경우 해당 `sequence.yml` 파일에서 `shotgun_entity` 유형으로 정의되며 ShotGrid의 'Sequence' 엔티티 유형에 연결됩니다. 툴킷은 템플릿 키가 이 동적 폴더의 엔티티 유형이라는 것을 인식합니다(여기서는 둘 다 Sequence임). 따라서 툴킷은 폴더 이름(즉, 특정 시퀀스의 이름)을 가져와서 템플릿 키로 대체합니다." %}
 
-선택적 속성을 정의해야 하는 경우 이 양식이 필요합니다. 현재 유일한 선택적 속성은 `root_name`이며 이 속성은 여러 루트가 있는 프로젝트의 경로에 대한 프로젝트 루트를 지정하는 데 사용할 수 있습니다. [다중 루트](https://developer.shotgridsoftware.com/9ea9dd4e/)는 새로운 저장소 루트를 추가하여 일부 프로젝트 파일을 저장할 때 사용됩니다.
+선택적 속성을 정의해야 하는 경우 이 양식이 필요합니다. 현재 유일한 선택적 속성은 `root_name`이며 이 속성은 여러 루트가 있는 프로젝트의 경로에 대한 프로젝트 루트를 지정하는 데 사용할 수 있습니다. [다중 루트](https://developer.shotgridsoftware.com/ko/9ea9dd4e/)는 새로운 저장소 루트를 추가하여 일부 프로젝트 파일을 저장할 때 사용됩니다.
 
 `root_name: name_of_project_root`
 
@@ -1070,7 +1070,7 @@ name과 version은 동일한 파일에 정의된 키 이름입니다.
 
 ## 파일 구조에 새 엔티티 유형을 추가하는 방법
 
-{% include product %} 사이트에서 장편 및 단편 애니메이션 작업을 하여 에피소드를 만들었다고 가정해 보겠습니다. 에피소드 워크플로우를 툴킷에 통합하는 방법을 살펴보겠습니다. 가장 먼저 해야 할 일은 {% include product %}에 계층을 설정하여 [여기](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html)의 지침에 따라 에피소드 작업을 수행하는 것입니다.
+{% include product %} 사이트에서 장편 및 단편 애니메이션 작업을 하여 에피소드를 만들었다고 가정해 보겠습니다. 에피소드 워크플로우를 툴킷에 통합하는 방법을 살펴보겠습니다. 가장 먼저 해야 할 일은 {% include product %}에 계층을 설정하여 [여기](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html)의 지침에 따라 에피소드 작업을 수행하는 것입니다.
 
 ![episode_hierarchy](images/file-system-config-reference/episode_hierarchy.jpg)
 
@@ -1078,13 +1078,13 @@ name과 version은 동일한 파일에 정의된 키 이름입니다.
 
 **추가 참조:**
 
--   [에피소드 엔티티는 어떻게 작동합니까?](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html)
--   [엔티티 계층 커스터마이즈](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html)
+-   [에피소드 엔티티는 어떻게 작동합니까?](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_get_started_ar_episode_entity_html)
+-   [엔티티 계층 커스터마이즈](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_site_configuration_ar_customizing_hierarchy_html)
 
 
 ### 에피소드 > 시퀀스 > 샷 계층에 필요한 필드
 
-`Episode`용 [커스텀 엔티티(사이트 기본 설정(Site Preferences) > 엔티티(Entities))를 사용하도록 선택](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html)하거나 {% include product %} 7.0.7.0에서 사용할 수 있었던 공식 에피소드 엔티티를 사용할 수 있습니다 7.0.7.0 이전의 {% include product %}(2017년 이전)에 가입했다면 "TV Show" 템플릿에서 에피소드용 `CustomEntity02`를 사용합니다. `CustomEntity02` 또는 공식 에피소드 엔티티가 아닌 다른 엔티티를 사용하는 경우에는 신경쓸 필요가 없습니다. {% include product %} 및 툴킷은 유연합니다. 두 경우를 모두 살펴보겠습니다.
+`Episode`용 [커스텀 엔티티(사이트 기본 설정(Site Preferences) > 엔티티(Entities))를 사용하도록 선택](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_get_started_ar_enabling_custom_entities_html)하거나 {% include product %} 7.0.7.0에서 사용할 수 있었던 공식 에피소드 엔티티를 사용할 수 있습니다 7.0.7.0 이전의 {% include product %}(2017년 이전)에 가입했다면 "TV Show" 템플릿에서 에피소드용 `CustomEntity02`를 사용합니다. `CustomEntity02` 또는 공식 에피소드 엔티티가 아닌 다른 엔티티를 사용하는 경우에는 신경쓸 필요가 없습니다. {% include product %} 및 툴킷은 유연합니다. 두 경우를 모두 살펴보겠습니다.
 
 이 연습을 위해 에피소드(`CustomEntity02`)와 공식 에피소드 엔티티를 프로젝트 계층 업데이트에 에피소드를 통합하는 방법의 예(둘 중 하나 또는 둘 다 사용할 수 있음)로 사용합니다. 첫째, 프로젝트의 **에피소드> 시퀀스> 샷** 계층을 올바르게 설정하는 방법은 다음 필드가 {% include product %}에 있는지 확인하는 것입니다.
 
@@ -1271,7 +1271,7 @@ b) **커스텀 엔티티 사용:** `CustomEntity02`는 프로젝트 템플릿에
 
 이는 [서로 다른 파이프라인 단계에 대한 각기 다른 파일 시스템 레이아웃](#different-file-system-layouts-for-different-pipeline-steps)과 관련이 있습니다. 특히, 구조에 분기를 추가하려는 경우에 더욱 그렇습니다. 예를 들어 "파이프라인 단계 A"에 대한 구조 하나와 다른 모든 파이프라인 단계에 대한 구조 하나를 설정할 수 있습니다.
 
-파이프라인에 다른 종류의 [에셋 유형](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_customizing_fields_html)을 추가하고 새로운 에셋 유형이 차량이라고 가정해 봅니다 차량에 대한 파일 구조를 변경하여 각 파이프라인 단계(예: "geoprep" 및 "lookdev")에 대해 서로 다른 폴더가 있도록 하고 각 파이프라인 단계 폴더 내에 추가 폴더가 있도록 하려고 합니다. 이 업데이트와 병행하여 현재 에셋을 만드는 방법은 동일하게 유지되어야 합니다. 이 새로운 흐름을 위해 파이프라인을 업데이트하는 방법을 살펴보겠습니다.
+파이프라인에 다른 종류의 [에셋 유형](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_site_configuration_ar_customizing_fields_html)을 추가하고 새로운 에셋 유형이 차량이라고 가정해 봅니다 차량에 대한 파일 구조를 변경하여 각 파이프라인 단계(예: "geoprep" 및 "lookdev")에 대해 서로 다른 폴더가 있도록 하고 각 파이프라인 단계 폴더 내에 추가 폴더가 있도록 하려고 합니다. 이 업데이트와 병행하여 현재 에셋을 만드는 방법은 동일하게 유지되어야 합니다. 이 새로운 흐름을 위해 파이프라인을 업데이트하는 방법을 살펴보겠습니다.
 
 **1단계: 스키마 수정**
 
@@ -1294,4 +1294,4 @@ b) **커스텀 엔티티 사용:** `CustomEntity02`는 프로젝트 템플릿에
 
 ## 커스텀 파이프라인 단계를 만드는 방법
 
-{% include product %} 7.0.6.0에서는 [관리자 메뉴를 통한 파이프라인 단계 관리](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_site_configuration_ar_configure_pipeline_steps_html#managing-pipeline-steps)가 도입되었습니다. 이 기능을 사용하면 파이프라인 단계에 커스텀 필드를 쉽게 추가할 수 있습니다. **전문가 팁: 대부분의 경우 파이프라인 단계에서 커스텀 필드를 사용하면 해당 파이프라인 단계를 관리할 커스텀 엔티티를 만드는 것보다 체계적으로 파이프라인을 유지할 수 있습니다.**
+{% include product %} 7.0.6.0에서는 [관리자 메뉴를 통한 파이프라인 단계 관리](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_site_configuration_ar_configure_pipeline_steps_html#managing-pipeline-steps)가 도입되었습니다. 이 기능을 사용하면 파이프라인 단계에 커스텀 필드를 쉽게 추가할 수 있습니다. **전문가 팁: 대부분의 경우 파이프라인 단계에서 커스텀 필드를 사용하면 해당 파이프라인 단계를 관리할 커스텀 엔티티를 만드는 것보다 체계적으로 파이프라인을 유지할 수 있습니다.**

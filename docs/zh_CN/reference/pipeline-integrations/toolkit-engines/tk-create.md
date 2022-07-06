@@ -7,9 +7,9 @@ lang: zh_CN
 
 # {% include product %} Create
 
-Desktop2 插件是运行在 [{% include product %} Create](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Supervisor_Artist_sa_create_sa_intro_create_html) 应用程序内部的插件。它用于从 {% include product %} Create 启动 DCC 以及通过浏览器集成从 {% include product %} Web 应用程序启动 DCC。
+Desktop2 插件是运行在 [{% include product %} Create](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Supervisor_Artist_sa_create_sa_intro_create_html) 应用程序内部的插件。它用于从 {% include product %} Create 启动 DCC 以及通过浏览器集成从 {% include product %} Web 应用程序启动 DCC。
 
-tk-desktop2 插件支持 Toolkit 与 {% include product %} Create 的集成。{% include product %} Create 支持 Toolkit 用户熟悉的功能，包括 [DCC 启动](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Supervisor_Artist_sa_create_sa_create_artists_html#launching-your-creative-apps)。
+tk-desktop2 插件支持 Toolkit 与 {% include product %} Create 的集成。{% include product %} Create 支持 Toolkit 用户熟悉的功能，包括 [DCC 启动](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Supervisor_Artist_sa_create_sa_create_artists_html#launching-your-creative-apps)。
 
 ![](../images/engines/create-dcc-01.png)
 

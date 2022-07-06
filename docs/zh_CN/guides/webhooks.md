@@ -80,7 +80,7 @@ True
 
 ![以批处理格式交付](./images/webhooks/webhooks_batched_format.png)
 
-[在此处了解有关以批处理格式交付的详细信息](https://developer.shotgridsoftware.com/e7890fc8/)。
+[在此处了解有关以批处理格式交付的详细信息](https://developer.shotgridsoftware.com/zh_CN/e7890fc8/)。
 
 ### 不稳定时通知
 

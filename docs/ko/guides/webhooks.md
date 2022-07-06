@@ -80,7 +80,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 ![배치 형식으로 전달(Deliver in Batched Format)](./images/webhooks/webhooks_batched_format.png)
 
-[배치 형식으로 전달하는 방법에 대한 자세한 내용은 여기를 참조하십시오](https://developer.shotgridsoftware.com/e7890fc8/).
+[배치 형식으로 전달하는 방법에 대한 자세한 내용은 여기를 참조하십시오](https://developer.shotgridsoftware.com/ko/e7890fc8/).
 
 ### 불안정할 경우 알림(Notify when unstable)
 

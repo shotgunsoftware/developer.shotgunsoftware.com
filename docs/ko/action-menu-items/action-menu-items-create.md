@@ -24,7 +24,7 @@ API 개발자는 액션 메뉴 항목(AMI)을 통해 엔티티별로 상황에 �
 
 **4\. 순서(list_order):** 메뉴 항목의 순서입니다(다른 커스텀 메뉴 항목에 상대적임).
 
-**5\. 경량 페이로드(light_payload):** [커스텀 프로토콜](https://developer.shotgridsoftware.com/af0c94ce/)을 사용하는 경우 스크립트가 전체 페이로드 대신 페이로드 정보를 보관하는 이벤트 로그 항목 레코드의 ID를 수신합니다.
+**5\. 경량 페이로드(light_payload):** [커스텀 프로토콜](https://developer.shotgridsoftware.com/ko/af0c94ce/)을 사용하는 경우 스크립트가 전체 페이로드 대신 페이로드 정보를 보관하는 이벤트 로그 항목 레코드의 ID를 수신합니다.
 
 **6\. 구성 메뉴 옵션:** 다음과 같은 몇 가지 옵션 중에서 선택할 수 있습니다.
 
@@ -34,11 +34,11 @@ API 개발자는 액션 메뉴 항목(AMI)을 통해 엔티티별로 상황에 �
 
 - **엔티티 페이지에서 "엔티티 추가(Add Entity)" 버튼 재정의:** 이 옵션을 사용하면 "엔티티 추가(Add Entity)" 버튼을 AMI로 덮어쓸 수 있습니다. ![엔티티(Add Entity) 추가 드롭다운 메뉴](./images/ami-configure-menu-options-add-entity-override.png)
 
-- **사용자 메뉴의 내부 리소스(Internal Resources) 섹션에 포함:** 이렇게 하면 내부 리소스를 사용하여 사용자 메뉴를 커스터마이즈할 수 있는 옵션이 제공됩니다. 내부 리소스를 사용하여 사용자 메뉴를 커스터마이즈하는 방법에 대한 자세한 내용은 [여기](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)를 참조하십시오.
+- **사용자 메뉴의 내부 리소스(Internal Resources) 섹션에 포함:** 이렇게 하면 내부 리소스를 사용하여 사용자 메뉴를 커스터마이즈할 수 있는 옵션이 제공됩니다. 내부 리소스를 사용하여 사용자 메뉴를 커스터마이즈하는 방법에 대한 자세한 내용은 [여기](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)를 참조하십시오.
 
 **7\. 폴더(folder):** 상황에 맞는 메뉴 내 폴더에 AMI를 구성할 수 있습니다(현재로서는 단일 수준의 폴더만 지원됨). ![폴더](./images/ami-create-folder.png)
 
-**8\. 모달 오버레이에서 열기: ** AMI가 새 탭 대신 iframe 창에서 열리도록 합니다. 참고로, Shotgun이 HTTPS를 실행 중인 경우 모든 iframe도 HTTPS여야 합니다.
+**8\. 모달 오버레이에서 열기:** AMI가 새 탭 대신 iframe 창에서 열리도록 합니다. 참고로, Shotgun이 HTTPS를 실행 중인 경우 모든 iframe도 HTTPS여야 합니다.
 
 **9\. 데이터 업데이트 폴링(poll_for_data_updates):** 이벤트 로그 항목을 쿼리하는 폴링 루프를 시작합니다. 액션메뉴항목의 다른 쪽에 있는 코드가 API를 통해 Shotgun에 다시 액션메뉴항목을 트리거한 페이지에 표시되는 엔티티에 대한 변경 작업을 수행하는 경우에 해당합니다.
 
@@ -46,7 +46,7 @@ API 개발자는 액션 메뉴 항목(AMI)을 통해 엔티티별로 상황에 �
 
 **11\. 프로젝트로 제한(projects):** AMI가 지정된 프로젝트에만 표시되도록 합니다. 비워 두면 AMI를 모든 프로젝트에서 사용할 수 있습니다.
 
-**12\. 비밀 토큰: ** [비밀 토큰](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_general_security_ar_securing_amis_html)을 설정하여 AMI를 보호합니다.
+**12\. 비밀 토큰:** [비밀 토큰](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_general_security_ar_securing_amis_html)을 설정하여 AMI를 보호합니다.
 
 **13\. 선택 필요(selection_required):** 현재 선택된 행이 없는 경우 메뉴 항목이 활성화되는지 여부를 결정합니다.
 
@@ -85,9 +85,9 @@ API 개발자는 액션 메뉴 항목(AMI)을 통해 엔티티별로 상황에 �
 
 커스텀 AMI를 한 차원 높게 구현하는 작업에는 커스텀 프로토콜 처리기(예: {% include product %}://process_version)를 설정하는 작업이 수반됩니다. 이렇게 하면 로컬 컴퓨터에서 스크립트를 통해 {% include product %} 소프트웨어를 Maya, RV 또는 Cinesync 같은 응용프로그램과 연동할 수 있습니다. 비-HTTP(S) 프로토콜을 지정하면 데이터가 POST 대신 GET을 통해 사용자 URL로 전송됩니다. 이 방법을 사용하여 내부 도구를 실행하고 다양한 요청을 발송할 수도 있습니다.
 
-커스텀 프로토콜에 관한 자세한 정보는 [커스텀 브라우저 프로토콜을 사용하여 응용프로그램 실행](https://developer.shotgridsoftware.com/67695b40/)을 참조하십시오.
+커스텀 프로토콜에 관한 자세한 정보는 [커스텀 브라우저 프로토콜을 사용하여 응용프로그램 실행](https://developer.shotgridsoftware.com/ko/67695b40/)을 참조하십시오.
 
-> **참고:** [{% include product %} 통합](https://developer.shotgridsoftware.com/d587be80/)을 통해 Maya 및 기타 소프트웨어 패키지와의 통합도 기본 제공합니다.
+> **참고:** [{% include product %} 통합](https://developer.shotgridsoftware.com/ko/d587be80/)을 통해 Maya 및 기타 소프트웨어 패키지와의 통합도 기본 제공합니다.
 ### 경량 페이로드
 
 커스텀 프로토콜 사용 시 쿼리 정보는 GET 요청으로 전송됩니다. 특정 운영 체제와 브라우저 조합에 따라 허용되는 GET 요청 크기에 다양한 제약이 있습니다. 그래서 커스텀 프로토콜 AMI에서 경량 페이로드 체크박스를 선택하는 것이 좋습니다. 경량 페이로드를 선택한 상태에서는 스크립트가 단일 이벤트 로그 항목 ID를 수신하고, 이를 불러와 레코드 `meta` 필드의 `ami_payload` 키를 읽어 풀 페이로드를 가져올 수 있습니다.
@@ -140,4 +140,4 @@ API 개발자는 액션 메뉴 항목(AMI)을 통해 엔티티별로 상황에 �
 
 # 내부 리소스(Internal Resources) 메뉴
 
-사용자 메뉴에서 내부 리소스에 대해 액션 메뉴 항목을 활용하는 방법에 대한 자세한 내용은 [관리자 안내서](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)를 참조하십시오.
+사용자 메뉴에서 내부 리소스에 대해 액션 메뉴 항목을 활용하는 방법에 대한 자세한 내용은 [관리자 안내서](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)를 참조하십시오.

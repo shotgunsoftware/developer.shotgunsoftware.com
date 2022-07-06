@@ -24,7 +24,7 @@ API 开发人员可以通过动作菜单项 (AMI) 按实体自定义上下文菜
 
 **4. 顺序(Order)(list_order)：**菜单项的顺序位置（相对于其他自定义菜单项）。
 
-**5. 轻量有效负载(Light Payload)(light_payload)：**使用[自定义协议](https://developer.shotgridsoftware.com/af0c94ce/)时，您的脚本将收到用于保存有效负载信息的事件日志条目记录的 ID，而不是完整的有效负载本身。
+**5. 轻量有效负载(Light Payload)(light_payload)：**使用[自定义协议](https://developer.shotgridsoftware.com/zh_CN/af0c94ce/)时，您的脚本将收到用于保存有效负载信息的事件日志条目记录的 ID，而不是完整的有效负载本身。
 
 **6. 配置菜单选项：**有几个选项可供选择：
 
@@ -34,7 +34,7 @@ API 开发人员可以通过动作菜单项 (AMI) 按实体自定义上下文菜
 
 - **覆盖实体页面上的“添加实体”(Add Entity")按钮：**此选项允许您使用 AMI 覆盖“添加实体”(Add Entity)按钮。![“添加实体”(Add Entity)下拉菜单](./images/ami-configure-menu-options-add-entity-override.png)
 
-- **包含在用户菜单的“内部资源”(Internal Resources)部分中：**这使您可以选择使用内部资源自定义用户菜单。在[此处](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)了解有关使用内部资源自定义用户菜单的详细信息。
+- **包含在用户菜单的“内部资源”(Internal Resources)部分中：**这使您可以选择使用内部资源自定义用户菜单。在[此处](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)了解有关使用内部资源自定义用户菜单的详细信息。
 
 **7. 文件夹(Folder)(folder)：**允许您在上下文菜单中将 AMI 组织到文件夹中（当前仅支持单个级别的文件夹）。![文件夹](./images/ami-create-folder.png)
 
@@ -46,7 +46,7 @@ API 开发人员可以通过动作菜单项 (AMI) 按实体自定义上下文菜
 
 **11. 限制到项目(Restrict to Projects)(projects)：**将使 AMI 仅显示在指定的项目中。如果保留为空，则 AMI 可在所有项目中使用。
 
-**12. 秘密代币(Secret Token)：**通过设置[秘密代币](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_general_security_ar_securing_amis_html)来保护您的 AMI。
+**12. 秘密代币(Secret Token)：**通过设置[秘密代币](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_general_security_ar_securing_amis_html)来保护您的 AMI。
 
 **13. 需要选择(Selection Required)(selection_required)：**确定当前未选择任何行时菜单项是否处于活动状态。
 
@@ -85,9 +85,9 @@ API 开发人员可以通过动作菜单项 (AMI) 按实体自定义上下文菜
 
 更高级的自定义 AMI 执行涉及设置自定义协议处理程序（例如 {% include product %}://process_version）。这样，您可以通过本地计算机上的脚本将 {% include product %} 与应用程序（如 Maya、RV 或 Cinesync）桥接起来。如果您指定非 HTTP(S) 协议，则将通过 GET 而不是 POST 将数据发送到您的 URL。您可能希望使用此项来启动内部工具以分派不同的请求。
 
-有关自定义协议的详细信息，请参见[使用自定义浏览器协议启动应用程序](https://developer.shotgridsoftware.com/67695b40/)。
+有关自定义协议的详细信息，请参见[使用自定义浏览器协议启动应用程序](https://developer.shotgridsoftware.com/zh_CN/67695b40/)。
 
-> **注意：**我们还通过 [{% include product %} 集成](https://developer.shotgridsoftware.com/d587be80/)内置了与 Maya 和其他软件包的集成。
+> **注意：**我们还通过 [{% include product %} 集成](https://developer.shotgridsoftware.com/zh_CN/d587be80/)内置了与 Maya 和其他软件包的集成。
 ### 轻量有效负载
 
 使用自定义协议时，查询信息作为 GET 请求发送。某些操作系统和浏览器组合对允许的 GET 请求的大小限制有所不同。我们建议在自定义协议 AMI 上选中轻量有效负载复选框。在选中轻量有效负载复选框的情况下，您的脚本将收到一个事件日志条目 ID，它可以提取该 ID 以通过读取记录的 `meta` 字段的 `ami_payload` 键来从其获取完整的有效负载。
@@ -140,4 +140,4 @@ API 开发人员可以通过动作菜单项 (AMI) 按实体自定义上下文菜
 
 # “内部资源”(Internal Resources)菜单
 
-要了解有关将“动作菜单项”(Action Menu Items)用于“用户”(User)菜单中的“内部资源”(Internal Resources)的详细信息，请[访问此处的管理员手册](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)。
+要了解有关将“动作菜单项”(Action Menu Items)用于“用户”(User)菜单中的“内部资源”(Internal Resources)的详细信息，请[访问此处的管理员手册](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)。

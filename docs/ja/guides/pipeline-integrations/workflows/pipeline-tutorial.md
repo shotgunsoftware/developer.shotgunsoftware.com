@@ -159,7 +159,7 @@ Desktop インストールのチュートリアルで指定した設定場所は
 
 次のセクションでは、パイプラインの各手順について説明します。すぐに使用できる機能を示し、{% include product %} 統合のカスタマイズ プロセスを紹介します。これらのセクションが終了するころには、機能をすべて備えた、エンドツーエンドの単純なプロダクション パイプラインが作成されています。また、アーティストがプロダクション作業で行う手順についても理解できるでしょう。
 
-{% include info title="注" content="このチュートリアルのすべてのコードと設定は、[**`tk-config-default2` **レポジトリ](https://github.com/shotgunsoftware/tk-config-default2/tree/pipeline_tutorial/)の **`pipeline_tutorial`**ブランチにあります。ファイルの格納場所や、コードの追加場所などについてのヒントが必要な場合は、このブランチを参照してください。" %}
+{% include info title="注" content="このチュートリアルのすべてのコードと設定は、 [**`tk-config-default2` ** レポジトリ](https://github.com/shotgunsoftware/tk-config-default2/tree/pipeline_tutorial/) の **`pipeline_tutorial`**ブランチにあります。ファイルの格納場所や、コードの追加場所などについてのヒントが必要な場合は、このブランチを参照してください。" %}
 
 ## モデリング ワークフロー
 

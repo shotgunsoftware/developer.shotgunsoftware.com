@@ -63,7 +63,7 @@ lang: zh_CN
 
 下面是一些屏幕截图，显示了您在 {% include product %} 中配置的项目实体：
 
-/images/tutorial/image_1.png" caption="茶壶和桌子资产" %}
+{% include figure src="./images/tutorial/image_1.png" caption="茶壶和桌子资产" %}
 
 {% include figure src="./images/tutorial/image_2.png" caption="链接至场的镜头" %}
 

@@ -9,7 +9,7 @@ lang: ko
 
 ## 소개
 
-이 문서는 {% include product %} 통합 관리자를 위한 안내서 역할을 합니다. 사용자 안내서, 관리자 안내서, 개발자 안내서 중 하나입니다. [사용자 안내서](https://developer.shotgridsoftware.com/d587be80/)는 일상적인 워크플로우에서 {% include product %} 통합의 최종 사용자가 될 아티스트를 위한 것이며 [개발자 안내서](https://developer.shotgridsoftware.com/93c6e555/)는 Python 코드를 작성하여 기능을 확장하려는 개발자를 위한 기술 문서입니다. 이 문서는 이 두 지점 사이에 존재합니다. 스튜디오에서 {% include product %} 통합을 구현하고, 소프트웨어 버전을 관리하며 게시된 파일의 저장소를 결정하는 사용자를 위해 작성되었습니다.
+이 문서는 {% include product %} 통합 관리자를 위한 안내서 역할을 합니다. 사용자 안내서, 관리자 안내서, 개발자 안내서 중 하나입니다. [사용자 안내서](https://developer.shotgridsoftware.com/ko/d587be80/)는 일상적인 워크플로우에서 {% include product %} 통합의 최종 사용자가 될 아티스트를 위한 것이며 [개발자 안내서](https://developer.shotgridsoftware.com/ko/93c6e555/)는 Python 코드를 작성하여 기능을 확장하려는 개발자를 위한 기술 문서입니다. 이 문서는 이 두 지점 사이에 존재합니다. 스튜디오에서 {% include product %} 통합을 구현하고, 소프트웨어 버전을 관리하며 게시된 파일의 저장소를 결정하는 사용자를 위해 작성되었습니다.
 
 ## 표준 파이프라인 구성
 
@@ -21,7 +21,7 @@ lang: ko
 
 ### 기본 구성
 
-고급 프로젝트 설정의 기본 시작 지점입니다. 여기에는 [파일 시스템 위치 지원](https://developer.shotgridsoftware.com/82ff76f7/)과 다양한 툴킷 앱 및 엔진이 포함됩니다.
+고급 프로젝트 설정의 기본 시작 지점입니다. 여기에는 [파일 시스템 위치 지원](https://developer.shotgridsoftware.com/ko/82ff76f7/)과 다양한 툴킷 앱 및 엔진이 포함됩니다.
 
 [여기에서 Github의 기본 구성을 확인](https://github.com/shotgunsoftware/tk-config-default2)할 수 있습니다. 기본 구성 구조에 대한 자세한 정보는 파이프라인 구성에 있는 `config/env/README.md` 파일을 참조하거나 [Github에서 확인](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)하십시오.
 
@@ -31,7 +31,7 @@ lang: ko
 
 Publisher는 기본 제공 워크플로우와 전체 파이프라인 구성 간에 쉽게 전환할 수 있도록 설계되었었습니다. 기본 제공 설정의 경우 파일이 즉시 게시되기 때문에 템플릿 또는 파일 시스템 스키마를 정의할 필요가 없습니다. 프로젝트가 고급 설정 단계를 지나 전체 파이프라인 구성을 갖추고 나면 동일한 게시 플러그인이 앱 설정으로의 템플릿 도입을 인식하고 게시 전에 파일을 지정된 게시 위치로 복사하기 시작합니다. 그러면 스튜디오는 전체 구성을 가진 프로젝트에 필요한 대로 환경별 또는 DCC 기준별로 템플릿 기반 설정을 도입할 수 있습니다. 기본 구성은 템플릿 기반 워크플로우에 대해 완전히 구성된 상태로 제공되며 Publish 앱에서 템플릿을 어떻게 구성할 수 있는지 살펴볼 수 있는 좋은 참조가 됩니다. 자세한 정보는 Github의 기본 구성에 있는 [tk-multi-publish2.yml 파일](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/settings/tk-multi-publish2.yml)을 참조하십시오.
 
-Publisher용 플러그인 작성에 대한 자세한 정보는 [개발자 안내서의 Publisher 섹션](https://developer.shotgridsoftware.com/93c6e555/#publisher)을 참조하십시오.
+Publisher용 플러그인 작성에 대한 자세한 정보는 [개발자 안내서의 Publisher 섹션](https://developer.shotgridsoftware.com/ko/93c6e555/#publisher)을 참조하십시오.
 
 ## 소프트웨어 시작 구성
 
@@ -124,13 +124,13 @@ Publisher용 플러그인 작성에 대한 자세한 정보는 [개발자 안내
 
 ## 게시된 파일 경로 해석 구성
 
-파일을 게시하면 Publisher가 {% include product %}에 PublishedFile 엔티티를 만드는데, 여기에는 [파일/링크](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_field_types_html) 필드(`Path`라고 함)가 포함됩니다. 나중에 다른 사용자가 Loader를 사용하여 자신의 작업 세션에 이 파일을 로드하려고 할 수 있습니다. 로더는 복잡한 로직을 사용하여 전체 운영 체제에서 PublishedFile의 유효한 로컬 경로를 해석합니다.
+파일을 게시하면 Publisher가 {% include product %}에 PublishedFile 엔티티를 만드는데, 여기에는 [파일/링크](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_data_management_ar_field_types_html) 필드(`Path`라고 함)가 포함됩니다. 나중에 다른 사용자가 Loader를 사용하여 자신의 작업 세션에 이 파일을 로드하려고 할 수 있습니다. 로더는 복잡한 로직을 사용하여 전체 운영 체제에서 PublishedFile의 유효한 로컬 경로를 해석합니다.
 
 로더가 게시 데이터를 경로로 해석하려고 시도하는 방법은 해당 게시가 로컬 파일 링크 또는 `file://` URL과 연결되어 있는지 여부에 따라 다릅니다.
 
 ### 로컬 파일 링크 해석
 
-게시 중인 경로가 {% include product %} 사이트 기본 설정에서 정의한 로컬 저장소와 일치하는 경우 게시할 때 로컬 파일 링크가 자동으로 생성됩니다. 게시가 로컬 파일 링크인 경우에는 해당 로컬 운영 체제 표현이 사용됩니다. 로컬 파일 링크에 대한 자세한 정보는 [여기](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html)를 참조하십시오.
+게시 중인 경로가 {% include product %} 사이트 기본 설정에서 정의한 로컬 저장소와 일치하는 경우 게시할 때 로컬 파일 링크가 자동으로 생성됩니다. 게시가 로컬 파일 링크인 경우에는 해당 로컬 운영 체제 표현이 사용됩니다. 로컬 파일 링크에 대한 자세한 정보는 [여기](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html)를 참조하십시오.
 
 로컬 저장소가 현재 사용 중인 운영 체제의 경로를 정의하지 않는 경우에는 환경 변수를 사용하여 로컬 저장소 루트를 지정할 수 있습니다. 환경 변수 이름은 `SHOTGUN_PATH_<WINDOWS|MAC|LINUX>_<STORAGENAME>` 형식이어야 합니다. 따라서, Mac에 "Renders"라고 하는 저장소 루트에 대한 경로를 정의하려면 `SHOTGUN_PATH_MAC_RENDERS` 환경 변수를 만들어야 합니다. 이 예를 더 구체적으로 살펴보겠습니다.
 
@@ -225,7 +225,7 @@ PublishedFile 경로 해석을 수행하는 기본 방법에 대한 자세한 �
 
 **{% include product %} 데스크톱을 통한 Websockets v2**
 
-Websocket 서버의 RPC API를 이용한 두 번째 반복은 툴킷 액션을 가져오고, 캐싱 및 실행하는 데 사용되는 기반 메커니즘을 변경합니다. 이 구현은 이전의 브라우저 통합과 관련된 많은 성능 문제를 해결하고 액션 메뉴의 시각적 구성을 개선하며 명시적으로 툴킷을 구성하지 않아도 작동하는 [기본적인 {% include product %} 통합](https://developer.shotgridsoftware.com/d587be80/#getting-started-with-desktop)에 대한 지원을 추가합니다. 이것이 현재 구현되어 있는 브라우저 통합입니다.
+Websocket 서버의 RPC API를 이용한 두 번째 반복은 툴킷 액션을 가져오고, 캐싱 및 실행하는 데 사용되는 기반 메커니즘을 변경합니다. 이 구현은 이전의 브라우저 통합과 관련된 많은 성능 문제를 해결하고 액션 메뉴의 시각적 구성을 개선하며 명시적으로 툴킷을 구성하지 않아도 작동하는 [기본적인 {% include product %} 통합](https://developer.shotgridsoftware.com/ko/d587be80/#getting-started-with-desktop)에 대한 지원을 추가합니다. 이것이 현재 구현되어 있는 브라우저 통합입니다.
 
 ### 구성
 
@@ -237,7 +237,7 @@ Websocket 서버의 RPC API를 이용한 두 번째 반복은 툴킷 액션을 �
 
 ![](images/Integration-admin-guide/tk-shotgun_config.png)
 
-위의 [tk-config-basic](https://github.com/shotgunsoftware/tk-config-basic/) 예에는 많은 엔진 명령이 메뉴 액션으로 바뀌게 되는 두 가지 앱이 구성되어 있습니다. 툴킷 앱은 액션 메뉴에 포함될 명령을 등록합니다. 여기에는 {% include product %} 사이트의 [소프트웨어 엔티티](https://developer.shotgridsoftware.com/8085533c/#configuring-software-launches) 목록에 해당하는 로컬 시스템의 각 소프트웨어 패키지에 대한 시작 관리자 명령이 포함됩니다. 그 결과가 다음과 같이 표시되는 메뉴 액션 목록입니다.
+위의 [tk-config-basic](https://github.com/shotgunsoftware/tk-config-basic/) 예에는 많은 엔진 명령이 메뉴 액션으로 바뀌게 되는 두 가지 앱이 구성되어 있습니다. 툴킷 앱은 액션 메뉴에 포함될 명령을 등록합니다. 여기에는 {% include product %} 사이트의 [소프트웨어 엔티티](https://developer.shotgridsoftware.com/ko/8085533c/#configuring-software-launches) 목록에 해당하는 로컬 시스템의 각 소프트웨어 패키지에 대한 시작 관리자 명령이 포함됩니다. 그 결과가 다음과 같이 표시되는 메뉴 액션 목록입니다.
 
 ![](images/Integration-admin-guide/action_menu.png)
 
@@ -323,7 +323,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ### 로그
 
-브라우저 통합 로그는 툴킷의 [표준 로그 위치](https://developer.shotgridsoftware.com/38c5c024/)에서 확인할 수 있습니다. 관련 로그 파일은 `tk-desktop.log` 및 `tk-shotgun.log`입니다. 또한 Google Chrome을 사용하는 경우 브라우저의 개발자 콘솔에서 몇 가지 관련 로그 출력을 사용할 수도 있습니다.
+브라우저 통합 로그는 툴킷의 [표준 로그 위치](https://developer.shotgridsoftware.com/ko/38c5c024/)에서 확인할 수 있습니다. 관련 로그 파일은 `tk-desktop.log` 및 `tk-shotgun.log`입니다. 또한 Google Chrome을 사용하는 경우 브라우저의 개발자 콘솔에서 몇 가지 관련 로그 출력을 사용할 수도 있습니다.
 
 ### 문제 해결
 
@@ -342,7 +342,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1.  시작 시 {% include product %} 데스크톱의 Websocket 서버를 시작하지 못했습니다. 이 상황은 잘못된 Websocket 서버 릴리즈가 사용자에게 공개된 경우에만 해당되며 거의 발생하지 않습니다. 이 상황의 경우 [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)에 해당 오류를 설명하는 로그가 기록되며 이 로그를 [{% include product %}의 지원 팀에 전달](https://knowledge.autodesk.com/contact-support)할 수 있습니다.
+1.  시작 시 {% include product %} 데스크톱의 Websocket 서버를 시작하지 못했습니다. 이 상황은 잘못된 Websocket 서버 릴리즈가 사용자에게 공개된 경우에만 해당되며 거의 발생하지 않습니다. 이 상황의 경우 [tk-desktop.log](https://developer.shotgridsoftware.com/ko/38c5c024/)에 해당 오류를 설명하는 로그가 기록되며 이 로그를 [{% include product %}의 지원 팀에 전달](https://knowledge.autodesk.com/ko/contact-support)할 수 있습니다.
 
 **액션 메뉴에 표시되는 액션이 없음**
 
@@ -352,7 +352,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1.  `tk-shotgun` 엔진이 올바른 환경 YAML 파일에서 구성되었지만 해당 구성에 앱이 없습니다. 이 경우, 이 엔티티 유형에 대한 액션이 없는 것이 의도된 것일 수 있습니다.
     
-2.  `tk-shotgun` 엔진이 올바른 환경 YAML 파일에서 구성되었고 앱도 있지만 메뉴에 여전히 액션이 표시되지 않습니다. 앱을 초기화하지 못한 것이 원인일 가능성이 높습니다. 이 경우 [tk-shotgun.log 및 tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)에 문제를 설명하는 정보가 있을 것입니다.
+2.  `tk-shotgun` 엔진이 올바른 환경 YAML 파일에서 구성되었고 앱도 있지만 메뉴에 여전히 액션이 표시되지 않습니다. 앱을 초기화하지 못한 것이 원인일 가능성이 높습니다. 이 경우 [tk-shotgun.log 및 tk-desktop.log](https://developer.shotgridsoftware.com/ko/38c5c024/)에 문제를 설명하는 정보가 있을 것입니다.
     
 3.  이 엔티티 유형에 해당하는 환경에 `tk-shotgun`에 대한 구성이 포함되어 있지 않습니다. 최종 결과는 이 목록에 있는 1번과 동일합니다. 이 경우, 파이프라인 구성의 `pick_environment` 후크를 살펴보고 이 엔티티 유형에 대해 로드되고 있는 환경을 살펴본 후에 거기에서 `tk-shotgun`의 구성을 검증하면 됩니다.
     
@@ -370,7 +370,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1.  Websocket 서버가 아직 캐싱 액션을 완료하지 않았습니다. 이번이 프로젝트 구성에 대한 중요한 업데이트 후 검색하는 첫 번째 액션인 경우 프로세스를 완료하는 데 시간이 약간 걸릴 수 있습니다. 조금 더 기다리다가 아직 진행 중인지 확인하려면 `tk-desktop.log`의 내용을 살펴봅니다.
     
-2.  Websocket 서버가 계속 응답하지 않습니다. 이런 상황은 드물게 나타나지만 `tk-desktop.log`를 살펴보았을 때 액션 요청의 결과로 발생하는 추가 프로세스가 없는 것이 확실하다면, [ShotGrid 지원 팀에 문의](https://knowledge.autodesk.com/contact-support)하고 관련 로그 데이터를 제공합니다.
+2.  Websocket 서버가 계속 응답하지 않습니다. 이런 상황은 드물게 나타나지만 `tk-desktop.log`를 살펴보았을 때 액션 요청의 결과로 발생하는 추가 프로세스가 없는 것이 확실하다면, [ShotGrid 지원 팀에 문의](https://knowledge.autodesk.com/ko/contact-support)하고 관련 로그 데이터를 제공합니다.
     
 3.  사용자가 두 개 이상의 {% include product %} 사이트에서 작업 중입니다. 단일 사이트에서 {% include product %} 데스크톱을 인증한 상태에서 두 번째 {% include product %} 사이트에서 메뉴 액션을 요청하면 사용자에게 {% include product %} 데스크톱을 다시 시작하여 새 사이트에 로그인하라는 메시지가 표시됩니다. 해당 요청을 무시하면 두 번째 사이트는 메뉴 액션 목록을 받을 수 없습니다.
     
@@ -413,7 +413,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 **로컬에서 호스팅되는 사이트를 통해 {% include product %} 데스크톱 실행**
 
-{% include product %} 사이트 URL이 `shotgunstudio.com` 또는 `shotgrid.autodesk.com`으로 끝나지 않는 경우 로컬 {% include product %} 사이트에서 실행 중임을 의미합니다. 이 경우 아직 사이트가 {% include product %} 통합에 맞춰 완벽하게 준비되지 않았을 가능성이 있기 때문에 {% include product %} 팀에서 현장을 방문하여 통합을 진행하기 전에 약간의 조정 작업을 해야 할 수 있습니다! 이 경우 [티켓을 제출](https://knowledge.autodesk.com/contact-support)하면 준비를 지원해 드리겠습니다.
+{% include product %} 사이트 URL이 `shotgunstudio.com` 또는 `shotgrid.autodesk.com`으로 끝나지 않는 경우 로컬 {% include product %} 사이트에서 실행 중임을 의미합니다. 이 경우 아직 사이트가 {% include product %} 통합에 맞춰 완벽하게 준비되지 않았을 가능성이 있기 때문에 {% include product %} 팀에서 현장을 방문하여 통합을 진행하기 전에 약간의 조정 작업을 해야 할 수 있습니다! 이 경우 [티켓을 제출](https://knowledge.autodesk.com/ko/contact-support)하면 준비를 지원해 드리겠습니다.
 
 **로컬에서 호스팅되는 사이트를 통해 앱 스토어에 연결**
 
@@ -431,7 +431,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ### {% include product %} Create
 
-이 문서에 설명된 오프라인 사용 시나리오의 해결 방법은 [{% include product %} Create](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Supervisor_Artist_sa_create_sa_intro_create_html)에서 제공하는 통합 기능에도 적용됩니다. {% include product %} 툴킷의 동작을 맞춤 설정하는 데 사용되는 다양한 환경 변수(예: `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS`)는 {% include product %} Create를 {% include product %} 데스크톱과 동일한 방법으로 사용하는 경우 적용됩니다.
+이 문서에 설명된 오프라인 사용 시나리오의 해결 방법은 [{% include product %} Create](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Supervisor_Artist_sa_create_sa_intro_create_html)에서 제공하는 통합 기능에도 적용됩니다. {% include product %} 툴킷의 동작을 맞춤 설정하는 데 사용되는 다양한 환경 변수(예: `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS`)는 {% include product %} Create를 {% include product %} 데스크톱과 동일한 방법으로 사용하는 경우 적용됩니다.
 
 ### 오프라인 상태에서 통합 실행
 
@@ -439,7 +439,7 @@ _시나리오: {% include product %} 통합을 실행하고 싶지만 인터넷�
 
 **솔루션**
 
--   일시적으로 인터넷에 연결할 수 있는 경우 그냥 {% include product %} 데스크톱을 다운로드합니다. 여기에는 일련의 [통합 항목](https://developer.shotgridsoftware.com/d587be80/#introduction)이 미리 패키징되어 있으며 지원되는 모든 DCC에서 {% include product %} 통합에 필요한 모든 앱과 엔진을 사전 번들로 제공합니다. 데스크톱을 시작하면 자동으로 업그레이드를 검색합니다. 하지만, {% include product %} 앱 스토어에 연결할 수 없는 경우 로컬에 있는 가장 최신 버전을 실행합니다.
+-   일시적으로 인터넷에 연결할 수 있는 경우 그냥 {% include product %} 데스크톱을 다운로드합니다. 여기에는 일련의 [통합 항목](https://developer.shotgridsoftware.com/ko/d587be80/#introduction)이 미리 패키징되어 있으며 지원되는 모든 DCC에서 {% include product %} 통합에 필요한 모든 앱과 엔진을 사전 번들로 제공합니다. 데스크톱을 시작하면 자동으로 업그레이드를 검색합니다. 하지만, {% include product %} 앱 스토어에 연결할 수 없는 경우 로컬에 있는 가장 최신 버전을 실행합니다.
 
 **유용한 정보**
 
@@ -455,7 +455,7 @@ _시나리오: 아티스트의 워크스테이션이 인터넷에 연결되어 �
 
 -   인터넷에 연결된 워크스테이션에서 {% include product %} 데스크톱을 실행합니다. 시작할 때 최신 업그레이드가 자동으로 다운로드됩니다.
 -   옵션 1: 공유 데스크톱 번들
--   [번들 캐시](https://developer.shotgridsoftware.com/7c9867c0/)를 모든 컴퓨터가 액세스할 수 있는 공유 위치에 복사합니다.
+-   [번들 캐시](https://developer.shotgridsoftware.com/ko/7c9867c0/)를 모든 컴퓨터가 액세스할 수 있는 공유 위치에 복사합니다.
 -   오프라인 컴퓨터에서 `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` 환경 변수가 이 위치를 가리키도록 설정합니다.
 -   오프라인 컴퓨터에서 데스크톱을 시작하면 번들 캐시에서 사용할 수 있는 최신 업그레이드를 선택합니다.
 -   옵션 2: 로컬 배포
@@ -615,7 +615,7 @@ _시나리오: 자동 업데이트를 계속 허용할 테스트 프로젝트를
 
 파이프라인 구성을 발전시키고 유지하는 방법에 대한 자세한 내용과 문서는 다음을 참조하십시오.
 
-[프로젝트 구성 관리](https://developer.shotgridsoftware.com/60762324/#inheriting-the-config-from-your-previous-project)
+[프로젝트 구성 관리](https://developer.shotgridsoftware.com/ko/60762324/#inheriting-the-config-from-your-previous-project)
 
 #### git의 구성 템플릿 사용
 
@@ -623,7 +623,7 @@ _시나리오: 자동 업데이트를 계속 허용할 테스트 프로젝트를
 
 소스 제어에 연결된 프로젝트 구성을 유지하려는 경우 이 옵션을 사용합니다. 원격 git 또는 github 리포지토리에 대한 URL을 지정하면 설정 프로세스가 이를 복제합니다. 이는 단지 github뿐만 아니라 모든 git 리포지토리에서도 작동합니다. 리포지토리 경로가 `.git`으로 끝나기만 하면 툴킷이 이를 git 설정으로 처리하려고 시도합니다. 프로젝트 구성은 git 리포지토리이기 때문에 마스터 리포지토리를 변경하고 해당 변경 사항을 푸시할 수 있으며 이후 다른 프로젝트에서도 가능합니다. github 기반 구성을 사용하면 여러 툴킷 프로젝트를 지속적으로 동기화할 수 있습니다. 다음에서 자세한 내용을 확인할 수 있습니다.
 
-[프로젝트 구성 관리](https://developer.shotgridsoftware.com/60762324/#a-studio-configuration-in-git-source-control)
+[프로젝트 구성 관리](https://developer.shotgridsoftware.com/ko/60762324/#a-studio-configuration-in-git-source-control)
 
 Windows에서 실행 중인 경우 컴퓨터에 git를 설치하고 `PATH`에서 액세스할 수 있어야 합니다. Linux 및 Mac OS X에서는 기본적으로 설치되어 있습니다.
 
@@ -678,7 +678,7 @@ windows: \\prod\software\shotgun\golden_circle
 
 첫 번째 구성을 완료 및 실행했으면 '다음 단계' 문서로 이동하여 스튜디오 요구 사항에 더 잘 맞게 툴킷을 구성 및 조정하는 방법에 대해 알아보십시오.
 
-[첫 번째 프로젝트 실행 이후 작업](https://developer.shotgridsoftware.com/c3b662a6/)
+[첫 번째 프로젝트 실행 이후 작업](https://developer.shotgridsoftware.com/ko/c3b662a6/)
 
 ## 고급 기능
 
