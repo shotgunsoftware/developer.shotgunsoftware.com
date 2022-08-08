@@ -95,8 +95,6 @@ Use {% include product %} Desktop (Desktop) to take over your project's configur
 
 {% include figure src="./images/tutorial/wizard_01.png" caption="Choose the **ShotGrid Default** configuration type" %}
 
-{% include figure src="./images/tutorial/wizard_02.png" caption="Choose the **Default configuration**" %}
-
 If this is your first time setting up a {% include product %} project, you'll also be prompted to define a storage location for your project data.  Otherwise, you can select an existing storage location.
 
 {% include figure src="./images/tutorial/wizard_03.png" caption="Create a new storage." %}

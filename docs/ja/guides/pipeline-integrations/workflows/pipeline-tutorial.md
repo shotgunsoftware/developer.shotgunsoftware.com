@@ -95,8 +95,6 @@ Desktop にアプリケーションが表示されない場合、または予期
 
 {% include figure src="./images/tutorial/wizard_01.png" caption="**[ShotGrid Default] (ShotGrid の既定値)**設定タイプを選択する" %}
 
-{% include figure src="./images/tutorial/wizard_02.png" caption="**[Default configuration] (既定の設定)**を選択する" %}
-
 初めて {% include product %} プロジェクトをセットアップする場合は、プロジェクト データのストレージ場所を定義するためのプロンプトも表示されます。それ以外の場合は、既存の格納場所を選択することができます。
 
 {% include figure src="./images/tutorial/wizard_03.png" caption="新しいストレージを作成します。"%}

@@ -19,14 +19,32 @@ Please note that it is perfectly possible, even likely, that it will work with m
 
 ## Python Version Support
 
-The Alias toolkit engine uses the Python interpreter shipped with Shotgun Desktop, or a locally installed interpreter.
+# Important
 
-|tk-alias Engine Version | Shotgun Desktop Application Version | Shotgun Desktop Engine Version | Python Interpreter Version |
-| ---------------------- | ----------------------------------- | ------------------------------ | -------------------------- |
-|  v2.0.5 or older       |  v1.5.8 or older                    |  v2.4.14 or older              | v2.7.x                     |
-|  v2.0.6 or newer       |  v1.6.0 or newer                    |  v2.5.0 or newer               | v2.7.x & v3.7.x            |
+With the release of v2.1.5 of the Alias ShotGrid toolkit engine, we will stop supporting Python v2.7.x .
 
-Tested locally installed Python Interpreters: v2.7.x or v3.7.4
+Please download v1.7.3 (or newer) of ShotGrid Desktop to ensure Python 3 is used as the default:
+
+https://community.shotgridsoftware.com/t/a-new-version-of-shotgrid-desktop-has-been-released/13877/14
+
+***
+
+## Older Versions
+
+The Alias toolkit engine uses the Python interpreter shipped with ShotGrid Desktop, or a _locally installed interpreter (see note.)_
+
+|tk-alias Engine Version | ShotGrid Desktop Application Version | ShotGrid Desktop Engine Version | Python Interpreter Version |
+| ---------------------- |--------------------------------------|---------------------------------| -------------------------- |
+|  v2.0.5 or older       | v1.5.8 or older                      | v2.4.14 or older                | v2.7.x                     |
+|  v2.0.6 to v2.1.4      | v1.6.0 to v1.7.2                     | v2.5.0 to v2.6.2                | v2.7.x & v3.7.x            |
+|  v2.1.5 or newer       | v1.7.3 or newer                      | v2.6.3 or newer                 | v3.7.x                     |
+
+Tested locally installed Python Interpreters: v3.7.4
+
+***
+### Notes
+
+A locally installed interpreter may lead to unexpected behaviour. Please [contact support](https://knowledge.autodesk.com/contact-support) if you would like to use this in your studio environment.
 
 ## Information for App Developers
     
@@ -46,41 +64,34 @@ This {% include product %} integration supports the Alias application family (Co
 
 When Alias opens, a {% include product %} menu (the Alias engine) is added to the menu bar.
 
-![](https://help.autodesk.com/cloudhelp/2020/ENU/Alias-Shotgun/images/ShotgunOtherApps.png)
+![other apps](../images/engines/alias-other-apps.png)
 
 
 ### File Open and Save
 
 Use the My Tasks and Assets tabs to see all your assigned tasks and browse for assets. To the right, use these tabs to view all files, working or published files associated with what is selected to the left.
 
-![](https://help.autodesk.com/cloudhelp/2020/ENU/Alias-Shotgun/images/ShotgunFileOpen.png)
+![file open](../images/engines/alias-file-open.png)
 
-![](https://help.autodesk.com/cloudhelp/2020/ENU/Alias-Shotgun/images/ShotgunFileSave.png)
-
-
-### Snapshot
-
-Opens the Snapshot dialog to create a quick backup of the current scene. 
-
-![](https://help.autodesk.com/cloudhelp/2020/ENU/Alias-Shotgun/images/ShotgunSnapshot.png)
+![file save](../images/engines/alias-file-save.png)
 
 
 ### Publish
 
 Opens the Publish dialog for publishing the file to {% include product %}, which can then be used by artists downstream. For more information, see [Publishing in Alias](https://github.com/shotgunsoftware/tk-alias/wiki/Publishing). 
 
-![](https://help.autodesk.com/cloudhelp/2020/ENU/Alias-Shotgun/images/ShotgunPublish.png)
+![publish](../images/engines/alias-publish.png)
 
 
 ### Loader
 
 Opens the Content Loader app, allowing you to load data into Alias. For more information see [Loading in Alias](https://github.com/shotgunsoftware/tk-alias/wiki/Loading)
 
-![](https://help.autodesk.com/cloudhelp/2020/ENU/Alias-Shotgun/images/ShotgunLoader.png)
+![loader](../images/engines/alias-loader.png)
 
 ### Scene Breakdown
 
-Opens the Breakdown dialog, which displays a list of referenced (WREF References) content, along with what in the scene is out-of-date. Select one or more items and click Update Selected to switch and use the latest version of the content. For more information see [Scene Breakdown in Alias](https://github.com/shotgunsoftware/tk-alias/wiki/Scene-Breakdown)
+Opens the Breakdown dialog, which displays a list of referenced (WREF References) content, along with what in the scene is out-of-date or using an alternate version of the PublishedFile. For more information see [Scene Breakdown in Alias](https://github.com/shotgunsoftware/tk-alias/wiki/Scene-Breakdown)
 
-![](https://help.autodesk.com/cloudhelp/2020/ENU/Alias-Shotgun/images/ShotgunBreakdown.png)
+![breakdown](../images/engines/alias-breakdown.png)
 

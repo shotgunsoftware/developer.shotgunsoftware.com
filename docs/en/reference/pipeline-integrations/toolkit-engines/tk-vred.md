@@ -1,11 +1,11 @@
 ---
 layout: default
-title: VRed
+title: VRED
 pagename: tk-vred
 lang: en
 ---
 
-# VRed
+# VRED
 
 The {% include product %} engine for VRED contains a standard platform for integrating {% include product %} Apps into VRED. It is lightweight and straight forward and adds a {% include product %} menu to the VRED menu.
 
@@ -18,10 +18,6 @@ This item has been tested and is known to be working on the following applicatio
 Please note that it is perfectly possible, even likely, that it will work with more recent releases, however it has not yet been formally tested with these versions.
 
 ## Information for App Developers
-    
-### PySide
-
-The {% include product %} engine for VRED contains a PySide installation, and will activate this whenever this is necessary. 
 
 ### VRED Project Management
 
@@ -32,32 +28,27 @@ Whenever the {% include product %} engine for VRED starts, it will set the VRED 
 This {% include product %} integration supports the VRED product family (Pro & Design).
 
 When VRED opens, a {% include product %} menu (the VRED engine) is added to the menu bar.
-![](https://help.autodesk.com/cloudhelp/2020/ENU/VRED-Shotgun/images/ShotgunMenuVRED.png)
+![menu](../images/engines/vred-sg-menu.png)
 
 
 ### File Open and Save
 
 Use the My Tasks and Assets tabs to see all your assigned tasks and browse for assets. To the right, use these tabs to view all files, working or published files associated with what is selected to the left.
-![](https://help.autodesk.com/cloudhelp/2020/ENU/VRED-Shotgun/images/ShotgunFileOpenVRED.png)
+![file open](../images/engines/vred-file-open.png)
 
-![](https://help.autodesk.com/cloudhelp/2020/ENU/VRED-Shotgun/images/ShotgunFileSaveVRED.png)
-
-
-### Snapshot
-Snapshot: Opens the Snapshot dialog to create a quick backup of the current scene. 
-![](https://help.autodesk.com/cloudhelp/2020/ENU/VRED-Shotgun/images/ShotgunSnapshotVRED.png)
+![file save](../images/engines/vred-file-save.png)
 
 
 ### Publish 
 Publish: Opens the Publish dialog for publishing the file to {% include product %}, which can then be used by artists downstream. For more information on VRED Publishing, [see here](https://github.com/shotgunsoftware/tk-vred/wiki/Publishing)
-![](https://help.autodesk.com/cloudhelp/2020/ENU/VRED-Shotgun/images/ShotgunPublishVRED.png)
+![publish](../images/engines/vred-publish.png)
 
 
 ### Loader 
 Load: Opens the Content Loader app, along with instructional slides explaining how it works.
 To see more info about VRED loading [see here](https://github.com/shotgunsoftware/tk-vred/wiki/Loading)
-![](https://help.autodesk.com/cloudhelp/2020/ENU/VRED-Shotgun/images/ShotgunLoaderVRED.png)
+![loader](../images/engines/vred-loader.png)
 
 ### Scene Breakdown 
-Scene Breakdown: Opens the Breakdown dialog, which displays a list of "referenced" files (and their links), along with what in the scene is out-of-date. Select one or more items and click Update Selected to switch and use the latest version of the content.
-![](https://help.autodesk.com/cloudhelp/2020/ENU/VRED-Shotgun/images/ShotgunBreakdownVRED.png)
+Scene Breakdown: Opens the Breakdown dialog, which displays a list of "referenced" files (and their links), along with what in the scene is out-of-date or using an alternate version of the PublishedFile.
+![breakdown](../images/engines/vred-breakdown.png)
