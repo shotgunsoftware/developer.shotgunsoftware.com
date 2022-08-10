@@ -178,7 +178,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 ##### 세션 UUID
 
-{% include product %}에서 이벤트를 트리거한 `session_uuid`가 이벤트 페이로드의 일부로 제공됩니다. 이 값은 [{% include product %}의 Python API](https://developer.shotgunsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)에 제공될 수 있으며, 그러면 이 session_uuid를 사용하여 열려 있는 모든 브라우저 세션에 API에서 생성한 이벤트에 대한 업데이트가 표시됩니다.
+{% include product %}에서 이벤트를 트리거한 `session_uuid`가 이벤트 페이로드의 일부로 제공됩니다. 이 값은 [{% include product %}의 Python API](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid)에 제공될 수 있으며, 그러면 이 session_uuid를 사용하여 열려 있는 모든 브라우저 세션에 API에서 생성한 이벤트에 대한 업데이트가 표시됩니다.
 
 #### 웹후크의 응답
 
