@@ -19,10 +19,6 @@ languages: ["en", "ko", "ja", "zh_CN"]
 lang_vars: ["English", "한국어", "日本語", "简体中文"]
 default_lang: "en"
 
-# analytics - see https://github.com/hendrikschneider/jekyll-analytics
-jekyll_analytics:
-  GoogleAnalytics:          # Add, if you want to track with Google Analytics
-    id: UA-2114792-9        # Required - replace with your tracking id
 
 # custom google search integration
 google_custom_search_id: "015683694229584726942:8l32_vorpny"
