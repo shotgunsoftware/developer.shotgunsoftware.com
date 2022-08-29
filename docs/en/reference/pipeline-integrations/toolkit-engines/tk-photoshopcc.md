@@ -151,7 +151,7 @@ It should be noted that the engine will always display the entity thumbnail if o
 
 ### Photoshop API
 
-The engine exposes the Javascript API for Photoshop CC to Python. The full docs for this API can be found [here](http://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf).
+The engine exposes the Javascript API for Photoshop CC to Python.
 
 The Photoshop API object is exposed as `engine.adobe`. The examples below show how it is possible to directly manipulate the Photoshop DOM from within Toolkit apps and hooks. The standard Toolkit apps also contain working examples of how to interact with Photoshop documents.
 
