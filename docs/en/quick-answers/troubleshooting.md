@@ -23,6 +23,7 @@ A collection of quick answers aimed at troubleshooting issues.
 - [Why and how do I unregister folders?](https://community.shotgridsoftware.com/t/toolkit-episode-sequence-shot-task/4604)
 - [Can I delete FilesystemLocations on my site instead of unregistering folders?](https://community.shotgridsoftware.com/t/unregistering-folders-in-tank-vs-moving-file-system-locations-to-trash/536)
 - [How can I unregister folders when using a distributed config?](https://community.shotgridsoftware.com/t/how-can-i-unregister-folders-when-using-a-distributed-config)
+- [Running SG Desktop v1.7.3 in Rocky Linux 8](./troubleshooting/rocky-linux-workaround.md)
 
 #### Error message guidance
 - [`ASCII` codec can’t decode byte 0x97 in position 10: ordinal not in range](./troubleshooting/ascii-error-message.md)
