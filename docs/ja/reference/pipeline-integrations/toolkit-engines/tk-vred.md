@@ -11,17 +11,13 @@ lang: ja
 
 ## サポート対象のアプリケーション バージョン
 
-この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。
+この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。 
 
 {% include tk-vred %}
 
 最新のリリースでの動作は十分可能ですが、正式なテストはまだ完了していません。
 
 ## アプリ開発者向けの情報
-
-### PySide
-
-{% include product %} Engine for VRED には PySide がインストールされており、必要に応じて有効になります。
 
 ### VRED プロジェクト管理
 
@@ -31,31 +27,22 @@ lang: ja
 
 この {% include product %} 統合は、VRED 製品ファミリ(Pro および Design)をサポートします。
 
-VRED を開くと、{% include product %} メニュー(VRED エンジン)がメニュー バーに追加されます。
-![](https://help.autodesk.com/cloudhelp/2020/ENU/VRED-Shotgun/images/ShotgunMenuVRED.png)
+VRED を開くと、メニュー バーに {% include product %} メニュー(VRED エンジン)が追加されます。![メニュー](../images/engines/vred-sg-menu.png)
 
 
 ### ファイルの表示と保存
 
-[マイ タスク] (My Tasks)タブと[アセット] (Assets)タブを使用すると、割り当てられたすべてのタスクを表示して、アセットを参照できます。右側では、これらのタブを使用してすべてのファイル、作業ファイル、またはパブリッシュ ファイルを表示します。これらのファイルは、左側で選択されているものに関連付けられています。
-![](https://help.autodesk.com/cloudhelp/2020/JPN/VRED-Shotgun/images/ShotgunFileOpenVRED.png)
+[マイ タスク] (My Tasks)タブと[アセット] (Assets)タブを使用すると、割り当てられたすべてのタスクを表示して、アセットを参照できます。 右側では、これらのタブを使用してすべてのファイル、作業ファイル、またはパブリッシュ ファイルを表示します。これらのファイルは、左側で選択されているものに関連付けられています。![ファイルの表示](../images/engines/vred-file-open.png)
 
-![](https://help.autodesk.com/cloudhelp/2020/JPN/VRED-Shotgun/images/ShotgunFileSaveVRED.png)
-
-
-### スナップショット
-Snapshot: [スナップショット] (Snapshot)ダイアログを開き、現在のシーンの簡易バックアップを作成します。
-![](https://help.autodesk.com/cloudhelp/2020/JPN/VRED-Shotgun/images/ShotgunSnapshotVRED.png)
+![ファイルの保存](../images/engines/vred-file-save.png)
 
 
-### パブリッシュ
-Publish: [パブリッシュ] (Publish)ダイアログを開き、ファイルを {% include product %} にパブリッシュします。パブリッシュ ファイルは、下流工程でアーティストが使用します。VRED のパブリッシュの詳細については、[こちら](https://github.com/shotgunsoftware/tk-vred/wiki/Publishing) ![](https://help.autodesk.com/cloudhelp/2020/JPN/VRED-Shotgun/images/ShotgunPublishVRED.png) を参照してください。
+### パブリッシュ 
+[パブリッシュ] (Publish)ダイアログを開き、ファイルを {% include product %} にパブリッシュします。パブリッシュ ファイルは、下流工程でアーティストが使用します。VRED パブリッシュの詳細については、[こちら](https://github.com/shotgunsoftware/tk-vred/wiki/Publishing)を参照してください。 ![パブリッシュ](../images/engines/vred-publish.png)
 
 
-### ローダー
-Loader: コンテンツ ローダ アプリを開きます。動作について説明するスライドも含まれています。
-VRED のロードの詳細については、[こちら](https://github.com/shotgunsoftware/tk-vred/wiki/Loading)![](https://help.autodesk.com/cloudhelp/2020/JPN/VRED-Shotgun/images/ShotgunLoaderVRED.png)を参照してください。
+### ローダー 
+Loader: コンテンツ ローダ アプリを開きます。動作について説明するスライドも含まれています。VRED のロードの詳細については、[こちら](https://github.com/shotgunsoftware/tk-vred/wiki/Loading)を参照してください。 ![ローダー](../images/engines/vred-loader.png)
 
-### Scene Breakdown
-Scene Breakdown: [詳細情報] (Breakdown)ダイアログが開き、シーン内の古い内容とともに、「参照される」ファイル(およびそのリンク)が表示されます。1 つまたは複数のアイテムを選択し、[選択した内容を更新] (Update Selected)をクリックして切り替え、最新バージョンのコンテンツを使用します。
-![](https://help.autodesk.com/cloudhelp/2020/JPN/VRED-Shotgun/images/ShotgunBreakdownVRED.png)
+### シーンの詳細情報 
+[詳細情報](Breakdown)ダイアログが開き、「参照される」ファイル(およびそのリンク)のリストが表示され、シーン内で古くなっているものや Published File の別のバージョンを使用しているものが表示されます。![詳細情報](../images/engines/vred-breakdown.png)
