@@ -25,7 +25,6 @@ You can download such a [copy](https://github.com/certifi/python-certifi/blob/ma
 
 Once this is done, simply set `SHOTGUN_API_CACERTS` environment variable to the path location, e.g. `/opt/certs/cacert.pem` and launch the Shotgun Desktop.
 
-
 ## Related links
 
 [See the full thread in the community](https://community.shotgridsoftware.com/t/using-shotgun-desktop-behind-an-firewall-with-ssl-introspection/11434)
