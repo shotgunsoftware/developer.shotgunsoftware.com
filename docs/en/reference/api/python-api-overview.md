@@ -15,11 +15,24 @@ The API is built using [Python](https://www.python.org/) , a common programming 
 
 The API follows the CRUD pattern, allowing your script to run Create, Read, Update, and Delete actions for a single entity type. Many operations include the ability to define filters, columns to return, and sort results.
 
+## Setting Up Your Environment with the Python API
+
+[Setting Up Your Environment with the Python API](./images/python-set-up-env-video.png)](https://youtu.be/RYEBQDJiXAs)
+
+
+## Script Keys 
+
 In order to communicate with the {% include product %} server via the API, your script can authenticate with the server either by providing a user’s credentials or by utilizing a script key. You can generate new script keys from the Scripts page, listed in the Admin menu:
 
 ![Scripts](./images/dv-developers-api-01-scripts-01.png)
 
-**Tip:** Register your scripts separately and have individual API keys for each. This will help you to monitor each of your scripts and the actions they are performing much more accurately in the [event logs](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_event_logs_html) .
+**Tip:** Register your scripts separately and have individual API keys for each. This will help you to monitor each of your scripts and the actions they are performing much more accurately in the [event logs](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_event_logs_html).
+
+## Personal Access Tokens (PAT)
+
+In addition to script keys, you will also need to set up a Personal Access token in order to communicate with your {% include product %} site. Reference the following video documentation to set this up:
+
+- [Configure your Personal Access Token (PAT)](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Migration_mi_migration_mi_overview_html#configure-your-personal-access-token-pat-).
 
 ## Common first projects
 
