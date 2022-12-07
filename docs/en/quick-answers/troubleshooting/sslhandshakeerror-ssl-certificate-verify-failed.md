@@ -15,7 +15,7 @@ On a local network set up with a firewall that does local packet inspection, you
 SSLHandshakeError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:727)
 ```
 
-This error occurs due to firewalls often getting configured with a self-signed certificate that your network administrator created themselves and that Python does not have access to. Unfortunately, unlike other applications, Python does not always look inside the OS’s keychain for certificates, so you have to provide it yourself.
+This error occurs due to firewalls often getting configured with a self-signed certificate that your network administrator created themselves, and that Python does not have access to. Unfortunately, unlike other applications, Python does not always look inside the OS’s keychain for certificates, so you have to provide it yourself.
 
 ## How to fix
 
