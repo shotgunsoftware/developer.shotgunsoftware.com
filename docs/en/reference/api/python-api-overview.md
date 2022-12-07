@@ -29,7 +29,7 @@ In order to communicate with the {% include product %} server via the API, your 
 
 ## Personal Access Tokens (PAT)
 
-In addition to script keys, you will also need to set up a Personal Access token in order to communicate with your {% include product %} site. Reference the following video documentation to set this up:
+In addition to script keys, you will also need to set up a Personal Access Token (PAT) in order to communicate with your {% include product %} site. Reference the following video documentation to set this up:
 
 - [Configure your Personal Access Token (PAT)](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Migration_mi_migration_mi_overview_html#configure-your-personal-access-token-pat-).
 
