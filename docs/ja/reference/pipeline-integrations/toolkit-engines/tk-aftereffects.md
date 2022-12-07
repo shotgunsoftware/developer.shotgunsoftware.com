@@ -107,7 +107,7 @@ lang: ja
 
 ### PySide
 
-{% include product %} Engine for After Effects は PySide を使用します。正式な手順については、「[PySide をインストールする](http://pyside.readthedocs.io/en/latest/installing/index.html)」を参照してください。
+{% include product %} Engine for After Effects は PySide を使用します。正式な手順については、「[PySide をインストールする](https://pyside.readthedocs.io/en/latest/installing/index.html)」を参照してください。
 
 ### CEP 拡張機能
 

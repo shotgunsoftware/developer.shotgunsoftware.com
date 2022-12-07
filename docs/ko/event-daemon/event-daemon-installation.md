@@ -27,7 +27,7 @@ lang: ko
 Python이 이미 컴퓨터에 설치되어 있다고 가정하면 {% include product %} 이벤트 데몬에서 Python API를 사용하여 {% include product %} 서버에 연결할 수 있도록 {% include product %} Python API를 설치해야 합니다. 다음과 같은 방법으로 이 작업을 수행할 수 있습니다.
 
 - {% include product %} 이벤트 데몬과 동일한 디렉토리에 배치합니다.
-- [`PYTHONPATH` 환경 변수](http://docs.python.org/tutorial/modules.html)에서 지정한 디렉토리 중 하나에 배치합니다.
+- [`PYTHONPATH` 환경 변수](https://docs.python.org/tutorial/modules.html)에서 지정한 디렉토리 중 하나에 배치합니다.
 
 터미널 창에서 {% include product %} API가 제대로 설치되었는지 테스트하려면:
 
@@ -122,8 +122,8 @@ $ pip install -r /path/to/requirements.txt
 
 Windows 시스템에 다음 중 하나가 필요합니다.
 
-* [PyWin32](http://sourceforge.net/projects/pywin32/)와 함께 Python이 설치됨
-* [Active Python](http://www.activestate.com/activepython)
+* [PyWin32](https://sourceforge.net/projects/pywin32/)와 함께 Python이 설치됨
+* [Active Python](https://www.activestate.com/activepython)
 
 활성 Python은 {% include product %} 이벤트 데몬을 Windows 서비스 아키텍처와 통합하는 데 필요한 PyWin32 모듈과 함께 제공됩니다.
 

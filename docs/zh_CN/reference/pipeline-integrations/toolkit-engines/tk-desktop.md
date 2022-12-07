@@ -23,7 +23,7 @@ Toolkit 的一个基本原则是，各个项目可以完全彼此隔离。  通�
 
 ## 注册自定义面板
 
-具有[基于面板的 UI](http://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel) 的 Toolkit 应用执行时将自动停靠在 Desktop 内的选项卡中。
+具有[基于面板的 UI](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel) 的 Toolkit 应用执行时将自动停靠在 Desktop 内的选项卡中。
 
 如果您有基于面板的应用（如 {% include product %} 面板）并希望它在 {% include product %} Desktop 中显示为选项卡，只需将其配置为在启动时运行。Desktop 在其站点上下文模式下启动时（此时它显示所有项目），它将启动注册为自动启动的所有项。如果其中任何项是面板，则这些项将会停靠。这些项按其在配置中定义的顺序进行处理，该顺序即表示选项卡顺序。
 

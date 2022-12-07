@@ -25,7 +25,7 @@ lang: ja
 * {% include product %} でエピソードをあらかじめ作成し、エピソードのコンテキストで機能するように Nuke Studio Toolkit の統合を設定します。こうすることで、書き出すときに、現在のシーンのコンテキストから `Episode` エンティティを取得することができます。
 * `Episode` エンティティがまだ作成されていないと想定して、Nuke Studio のタグ付け機能を利用してシーケンスにエピソード名をタグ付けし、書き出すときに `Episode` を解決します。
 
-使用しているワークフローに適した別の方法が存在する可能性があります。たとえば、Nuke Studio のシーケンス名やショット名の一部からエピソード名を抽出する(例: シーケンス「ep1_s01」から「ep1」を取り出す)などの方法があります。 または、書き出しアプリの [hiero_customize_export_ui.py](http://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) フックを使用して、書き出しとエピソードをリンクするための GUI を追加することができます。
+使用しているワークフローに適した別の方法が存在する可能性があります。たとえば、Nuke Studio のシーケンス名やショット名の一部からエピソード名を抽出する(例: シーケンス「ep1_s01」から「ep1」を取り出す)などの方法があります。 または、書き出しアプリの [hiero_customize_export_ui.py](https://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) フックを使用して、書き出しとエピソードをリンクするための GUI を追加することができます。
 
 この例では、2 番目のオプションである、シーケンスのタグ付けによる解決策を使用します。
 
@@ -66,7 +66,7 @@ lang: ja
 
 `hiero_get_shot.py` フックを使用して、書き出しプロセスにエピソード名を検索し、{% include product %} で `Episode` を作成する方法を指定する必要があります。
 
-[フックの既定のバージョン(hiero_get_shot.py)](http://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip)では、TrackItem と同じ名前の `Shot` が {% include product %} から返されます。Nuke Studio シーケンス項目と同じ名前を持つ `Sequence` に `Shot` をリンクする必要もあります。`Sequence` または `Shot` が {% include product %} 内になければ、フックによって作成されます。別の階層レベルが追加されるため、`Episode` が存在しなければこれも作成するようにフックに指示する必要があります。
+[フックの既定のバージョン(hiero_get_shot.py)](https://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip)では、TrackItem と同じ名前の `Shot` が {% include product %} から返されます。Nuke Studio シーケンス項目と同じ名前を持つ `Sequence` に `Shot` をリンクする必要もあります。`Sequence` または `Shot` が {% include product %} 内になければ、フックによって作成されます。別の階層レベルが追加されるため、`Episode` が存在しなければこれも作成するようにフックに指示する必要があります。
 
 また、`Sequence` は `Episode` にリンクされているため、`Sequence` を検索するコード(`get_shot_parent()` メソッド)にこれを関連付ける必要があります。
 

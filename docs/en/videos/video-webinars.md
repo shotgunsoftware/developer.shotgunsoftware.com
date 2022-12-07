@@ -20,19 +20,19 @@ lang: en
 
 In the first of a new series of Toolkit webinars, Rob Blau, and Manne Öhrström, answer questions about out-of-the-box integrations.
 
-[![](http://img.youtube.com/vi/rgzHEwUhENI/0.jpg)](http://www.youtube.com/watch?v=rgzHEwUhENI)
+[![](https://img.youtube.com/vi/rgzHEwUhENI/0.jpg)](https://www.youtube.com/watch?v=rgzHEwUhENI)
 
 2: {% include product %} Toolkit Webinar: Demystifying the New Default Configuration *(60m)*
 
 In this webinar, Josh Tomlinson and Rob Blau cover what has changed (and why) in the new default configuration for Toolkit projects.
 
-[![](http://img.youtube.com/vi/eKHaC1dZCeE/0.jpg)](http://www.youtube.com/watch?v=eKHaC1dZCeE)
+[![](https://img.youtube.com/vi/eKHaC1dZCeE/0.jpg)](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
 3: {% include product %} Toolkit Webinar: Customizing Publish Workflows - A Live Demo *(60m)*
 
 In this webinar, Josh Tomlinson gives a step-by-step walkthrough of creating a custom publish workflow in Maya. Learn the constructs of the publish app, how to configure it, and how to write custom hooks for collecting and publishing data.
 
-[![](http://img.youtube.com/vi/pH4mylrnktY/0.jpg)](http://www.youtube.com/watch?v=pH4mylrnktY)
+[![](https://img.youtube.com/vi/pH4mylrnktY/0.jpg)](https://www.youtube.com/watch?v=pH4mylrnktY)
 
 *Supplemental Material*
 
@@ -42,7 +42,7 @@ In this webinar, Josh Tomlinson gives a step-by-step walkthrough of creating a c
 
 In this webinar, Manne Ohrstrom explores workflows for studios with artists in multiple locations.
 
-[![](http://img.youtube.com/vi/NyIk07F2RoM/0.jpg)](http://www.youtube.com/watch?v=NyIk07F2RoM)
+[![](https://img.youtube.com/vi/NyIk07F2RoM/0.jpg)](https://www.youtube.com/watch?v=NyIk07F2RoM)
 
 *Supplemental Material*
 
@@ -54,7 +54,7 @@ In this webinar, Manne Ohrstrom explores workflows for studios with artists in m
 
 In this webinar, Brandon Ashworth will walk us through a bunch of useful demos, examples, and recipes to show what the REST API is, why it’s important, and how it can be used.
 
-[![](http://img.youtube.com/vi/3xPPj2pbHVQ/0.jpg)](http://www.youtube.com/watch?v=3xPPj2pbHVQ)
+[![](https://img.youtube.com/vi/3xPPj2pbHVQ/0.jpg)](https://www.youtube.com/watch?v=3xPPj2pbHVQ)
 
 *Supplemental Material*
 
@@ -64,7 +64,7 @@ In this webinar, Brandon Ashworth will walk us through a bunch of useful demos, 
 
 The latest Integrations release includes an improved Publish API, which allows you to decouple publish logic from the GUI app and run publishes from your own tools, or even on the render farm. In this webinar, Jean-Francois Boismenu demos how you can use the API to pass a publish item tree from the Publisher UI to a render farm job.
 
-[![](http://img.youtube.com/vi/ZxP3IXHt47U/0.jpg)](http://www.youtube.com/watch?v=ZxP3IXHt47U)
+[![](https://img.youtube.com/vi/ZxP3IXHt47U/0.jpg)](https://www.youtube.com/watch?v=ZxP3IXHt47U)
 
 *Supplemental Material*
 
@@ -80,7 +80,7 @@ Adobe After Effects is our latest {% include product %} integration. In this web
   
 Also, Tannaz Sassooni tours our new developer’s documentation site and shows how we’re making it easier for our users to learn how to integrate with {% include product %}.
 
-[![](http://img.youtube.com/vi/g-062_VTbAI/0.jpg)](http://www.youtube.com/watch?v=g-062_VTbAI)
+[![](https://img.youtube.com/vi/g-062_VTbAI/0.jpg)](https://www.youtube.com/watch?v=g-062_VTbAI)
 
 *Supplemental Material*
 
@@ -105,7 +105,7 @@ Full slide decks, code examples and other resources related to this content can 
 
 In this webinar, Tannaz Sassooni and Patrick Boucher give an introduction to {% include product %} development, including a discussion on {% include product %}’s entry points for automation, {% include product %}’s Python and REST APIs and how {% include product %}’s APIs automate tasks and data-tracking for studios.
 
-[![](http://img.youtube.com/vi/i0aVJepZw8Y/0.jpg)](http://www.youtube.com/watch?v=i0aVJepZw8Y)
+[![](https://img.youtube.com/vi/i0aVJepZw8Y/0.jpg)](https://www.youtube.com/watch?v=i0aVJepZw8Y)
 
 [0:56](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=56s) Welcome and orientation
 
@@ -117,7 +117,7 @@ In this webinar, Tannaz Sassooni and Patrick Boucher give an introduction to {% 
 
 In this webinar,  Brandon Ashworth and Manne Öhrström dive into {% include product %} using the event daemon and new webhooks to react to data changes in {% include product %}, and show how to write a simple pipeline tool using {% include product %} Toolkit.
 
-[![](http://img.youtube.com/vi/xUeY1pECHdI/0.jpg)](http://www.youtube.com/watch?v=xUeY1pECHdI)
+[![](https://img.youtube.com/vi/xUeY1pECHdI/0.jpg)](https://www.youtube.com/watch?v=xUeY1pECHdI)
 
 [0:39](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=39s) Welcome and orientation
 
@@ -129,7 +129,7 @@ In this webinar,  Brandon Ashworth and Manne Öhrström dive into {% include pro
 
 In this webinar,  Josh Tomlinson, Tannaz Sassooni and Phil Scadding demo how to take over integrations and create a custom directory structure and hooks to automate more of the data flow in your studio.
 
-[![](http://img.youtube.com/vi/7qZfy7KXXX0/0.jpg)](http://www.youtube.com/watch?v=7qZfy7KXXX0)
+[![](https://img.youtube.com/vi/7qZfy7KXXX0/0.jpg)](https://www.youtube.com/watch?v=7qZfy7KXXX0)
 
 [0:00](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=0s) Welcome and Orientation
 
@@ -143,7 +143,7 @@ In this webinar,  Josh Tomlinson, Tannaz Sassooni and Phil Scadding demo how to 
 
 Manne Ohrstrom, Jeff Beeland, and Rob Blau demonstrate best practices for source control and cloud-based pipeline deployment, and dive into building apps and using Toolkit’s standard frameworks for rapidly designing UIs and handling data.
 
-[![](http://img.youtube.com/vi/bT2WlQaJVmY/0.jpg)](http://www.youtube.com/watch?v=bT2WlQaJVmY)
+[![](https://img.youtube.com/vi/bT2WlQaJVmY/0.jpg)](https://www.youtube.com/watch?v=bT2WlQaJVmY)
 
 [0:00](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=0s) Welcome and Orientation
 

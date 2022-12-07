@@ -12,7 +12,7 @@ lang: en
 {% include product %} software provides a Python-based API for accessing {% include product %} and integrating with other tools. The API follows the CRUD pattern allowing execution of Create, Read, Update, and Delete actions on the {% include product %} server. Each request acts on a single entity type and depending on the specific action, can define filters, columns to return, sorting information, and some additional options.
 
 *   [Code Repository](https://github.com/shotgunsoftware/python-api)
-*   [Documentation](http://developer.shotgridsoftware.com/python-api/)
+*   [Documentation](https://developer.shotgridsoftware.com/python-api/)
 *   [Forums](https://community.shotgridsoftware.com/c/pipeline/6)
 
 ### Event Trigger Framework
@@ -33,4 +33,4 @@ The framework is a daemon process that runs on a server and monitors the {% incl
 API developers can customize context menu items on a per-entity basis. For example, from a Versions page, you could select multiple versions, right-click, then.... Build a PDF Report (for example). We call these ActionMenuItems (AMI's).
 
 *   [Documentation]()
-*   [Example Code Repository](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
+*   [Example Code Repository](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)

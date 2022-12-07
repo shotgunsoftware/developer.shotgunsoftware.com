@@ -188,7 +188,7 @@ action_mappings:
 
 发布应用可以采用挂钩形式进行高度自定义，控制如何将内容项呈现给美工人员以供发布以及稍后如何处理这些内容项。
 
-有关发布应用的完整开发人员文档，请参见 [Toolkit 开发人员站点](http://developer.shotgridsoftware.com/tk-multi-publish2)。
+有关发布应用的完整开发人员文档，请参见 [Toolkit 开发人员站点](https://developer.shotgridsoftware.com/tk-multi-publish2)。
 
 有关如何使用发布应用的详细信息，请参见[用户手册](https://developer.shotgridsoftware.com/zh_CN/d587be80/#the-publisher)。
 

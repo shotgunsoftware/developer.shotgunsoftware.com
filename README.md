@@ -1,11 +1,11 @@
 [![Build Status](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/shotgunsoftware/developer.shotgunsoftware.com/actions/workflows/publish-docs.yml)
-[![Doc Generator](https://img.shields.io/badge/Built%20With-SG%20Doc%20Generator-blue.svg)](http://github.com/shotgunsoftware/tk-doc-generator)
+[![Doc Generator](https://img.shields.io/badge/Built%20With-SG%20Doc%20Generator-blue.svg)](https://github.com/shotgunsoftware/tk-doc-generator)
 
 
 
-# [developer.shotgridsoftware.com](http://developer.shotgridsoftware.com/)
+# [developer.shotgridsoftware.com](https://developer.shotgridsoftware.com/)
 
-Welcome to the source repository for [developer.shotgridsoftware.com](http://developer.shotgridsoftware.com/). This repository holds the markdown source and configuration used to generate the {% include product %} developer site.
+Welcome to the source repository for [developer.shotgridsoftware.com](https://developer.shotgridsoftware.com/). This repository holds the markdown source and configuration used to generate the {% include product %} developer site.
 
 ## How does it work?
 

@@ -234,7 +234,7 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 通过发布应用，美工人员可以发布他们的作品，以便其可供下游的美工人员使用。它支持在艺术家的内容创建软件中以传统方式发布工作流，以及在磁盘上单独发布任何文件。在内容创建软件中操作并使用基本 {% include product %} 集成时，该应用将自动发现并显示项目以供艺术家发布。对于较复杂的生产需求，工作室可以编写自定义发布插件来推动美工人员工作流。
 
-以下各部分介绍了发布器 UI 和基本集成工作流。有关根据工作室特定需求自定义发布器的信息，请参见[发布器开发手册](http://developer.shotgridsoftware.com/tk-multi-publish2/)。
+以下各部分介绍了发布器 UI 和基本集成工作流。有关根据工作室特定需求自定义发布器的信息，请参见[发布器开发手册](https://developer.shotgridsoftware.com/tk-multi-publish2/)。
 
 ### 界面组件和概念
 
@@ -504,7 +504,7 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 ## 致谢
 
-* PySide 的错误修复版本随 {% include product %} Desktop 一起分发，可在[此处](http://www.autodesk.com/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip)下载。
+* PySide 的错误修复版本随 {% include product %} Desktop 一起分发，可在[此处](https://www.autodesk.com/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip)下载。
 * 动画电影“Big Buck Bunny”（大雄兔）由 (CC) Blender Foundation (www.blender.org) 提供
 
 通过添加 TANK_NO_HEADER 这个特殊标记，指示文档生成系统不需要生成标题。

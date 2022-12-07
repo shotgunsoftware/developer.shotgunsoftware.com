@@ -12,7 +12,7 @@ lang: ko
 {% include product %} 소프트웨어는 {% include product %}에 액세스하고 다른 도구와 통합하는 데 사용할 수 있는 Python 기반 API를 제공합니다. 이 API는 {% include product %} 서버에서 생성, 읽기, 업데이트 및 삭제 액션의 실행을 허용하는 CRUD 패턴을 따릅니다. 각 요청은 단일 엔티티 유형에 작용하며, 특정 액션에 따라 필터, 반환할 열, 정렬 정보, 그 밖에 추가 옵션을 정의할 수 있습니다.
 
 * [코드 리포지토리](https://github.com/shotgunsoftware/python-api)
-* [설명서](http://developer.shotgridsoftware.com/python-api/)
+* [설명서](https://developer.shotgridsoftware.com/python-api/)
 * [포럼](https://community.shotgridsoftware.com/c/pipeline/6)
 
 ### 이벤트 트리거 프레임워크
@@ -33,4 +33,4 @@ lang: ko
 API 개발자는 엔티티별로 상황에 맞는 메뉴 항목을 커스터마이즈할 수 있습니다. 예를 들어, 버전 페이지에서 여러 버전을 선택하고 마우스 오른쪽 버튼을 클릭한 후 PDF 보고서 작성 등을 선택할 수 있습니다. 이를 액션 메뉴 항목(AMI)이라고 합니다.
 
 * [설명서]()
-* [코드 리포지토리 예](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
+* [코드 리포지토리 예](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)

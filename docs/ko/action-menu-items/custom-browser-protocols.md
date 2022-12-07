@@ -48,7 +48,7 @@ command (Default) = "foo_path" "%1"
 foo://host/path...
 ```
 
-> **참고:** 자세한 정보는 [http://msdn.microsoft.com/ko-kr/library/aa767914(VS.85).aspx](https://docs.microsoft.com/ko-kr/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767914(v=vs.85)?redirectedfrom=MSDN)를 참조하십시오.
+> **참고:** 자세한 정보는 [https://msdn.microsoft.com/ko-kr/library/aa767914(VS.85).aspx](https://docs.microsoft.com/ko-kr/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767914(v=vs.85)?redirectedfrom=MSDN)를 참조하십시오.
 > **Windows QT/QSetting 예시**
 
 개발 중인 응용프로그램이 QT(또는 PyQT / PySide) 프레임워크로 작성되었다면 QSetting 객체를 활용하여 레지스트리 키 생성을 관리할 수 있습니다.
@@ -229,4 +229,4 @@ gconftool-2 -s /desktop/gnome/url-handlers/foo/enabled true -t bool
 
 Gnome 설정만 변경해도 KDE에도 적용됩니다. Firefox 및 GNU IceCat은 인식할 수 없는 접두사(`foo://` 등)를 만나면 사용자가 실행 중인 창 관리자에 상관없이 gnome-open을 따릅니다. 때문에 KDE의 Konqueror 같은 다른 브라우저는 이 시나리오에서 작동하지 않습니다.
 
-Ubuntu에서 액션 메뉴 항목의 프로토콜 처리기를 설정하는 방법에 대한 자세한 정보는 [http://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity](http://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity)를 참조하십시오.
+Ubuntu에서 액션 메뉴 항목의 프로토콜 처리기를 설정하는 방법에 대한 자세한 정보는 [https://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity](https://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity)를 참조하십시오.

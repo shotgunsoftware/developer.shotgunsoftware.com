@@ -7,7 +7,7 @@ lang: ja
 
 # API の概要
 
-**注:** {% include product %} API の詳細については、[API ドキュメント](http://developer.shotgridsoftware.com/python-api/)を参照してください。
+**注:** {% include product %} API の詳細については、[API ドキュメント](https://developer.shotgridsoftware.com/python-api/)を参照してください。
 
 {% include product %} Python のアプリケーション プログラミング インタフェース(API)を使用すると、ユーザは独自のツールを {% include product %} に簡単に統合することができます。これにより、自動プロセスの作成、数多くのサード パーティ ソフトウェア パッケージとの統合、スタジオ内の既存のツールとの通信が可能になります。スタジオごとにニーズが大きく異なるため、{% include product %} API は最低限の強力な機能のみを提供し、ビジネス ロジックのほとんどはお客様が決定できます。
 
@@ -25,9 +25,9 @@ API を使用して {% include product %} サーバと通信する場合、ユ�
 
 API は [https://github.com/shotgunsoftware/python-api](https://github.com/shotgunsoftware/python-api) でダウンロードすることができます。 一般的な最初のプロジェクトのいくつかには、以下のものが含まれます。
 
-1. [バージョンを作成し、ショットにリンク](http://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_create_version_link_shot.html)します。レビュー用に新しいレンダラの送信を自動化できます。
-2. [サムネイルをアップロード](http://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_upload_thumbnail_version.html)します。サイト上のすべての要素に、手動で追加することなく最新のサムネイルを反映できます。
-3. [SVN などのコード リポジトリと {% include product %} を統合](http://developer.shotgridsoftware.com/python-api/cookbook/examples/svn_integration.html)します。{% include product %} を利用してソフトウェア開発のプロジェクトを管理します。
+1. [バージョンを作成し、ショットにリンク](https://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_create_version_link_shot.html)します。レビュー用に新しいレンダラの送信を自動化できます。
+2. [サムネイルをアップロード](https://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_upload_thumbnail_version.html)します。サイト上のすべての要素に、手動で追加することなく最新のサムネイルを反映できます。
+3. [SVN などのコード リポジトリと {% include product %} を統合](https://developer.shotgridsoftware.com/python-api/cookbook/examples/svn_integration.html)します。{% include product %} を利用してソフトウェア開発のプロジェクトを管理します。
 
 ## API で実行できない操作
 
@@ -57,7 +57,7 @@ API は [https://github.com/shotgunsoftware/python-api](https://github.com/shotg
 {% include product %} API に関する詳細については、次の記事を参照してください。
 
 * [GitHub からの {% include product %} API のダウンロード](https://github.com/shotgunsoftware/python-api/)
-* [{% include product %} APIドキュメント](http://developer.shotgridsoftware.com/python-api/)
+* [{% include product %} APIドキュメント](https://developer.shotgridsoftware.com/python-api/)
 * [{% include product %}-dev リスト(公開)](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)
 * [{% include product %} イベント デーモン サンプル コード](https://github.com/shotgunsoftware/shotgunEvents)
 * [イベント駆動型トリガの書き込み](https://developer.shotgridsoftware.com/ja/0d8a11d9/)

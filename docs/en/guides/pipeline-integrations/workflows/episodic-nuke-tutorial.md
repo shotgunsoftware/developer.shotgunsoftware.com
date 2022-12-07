@@ -25,7 +25,7 @@ There is one more decision to make before you get started, and that is how to re
 *   Create the Episodes up front in {% include product %} and configure the Nuke Studio Toolkit integrations to work in the context of an Episode, so that at export time you can get the `Episode` entity from the current scene context.
 *   Assume `Episode` entities haven’t already been created and make use of the Nuke Studio’s tagging feature to tag the Sequence with the Episode name and use that to resolve our `Episode` at export time.
 
-There may be other ways that suit your workflow better, such as extracting the episode name from part of the Nuke Studio Sequence or Shot names, e.g., taking the “ep1” bit from a sequence called “ep1_s01”. Or you could use the export app’s [hiero_customize_export_ui.py](http://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) hook to add a GUI for linking up exports with Episodes.
+There may be other ways that suit your workflow better, such as extracting the episode name from part of the Nuke Studio Sequence or Shot names, e.g., taking the “ep1” bit from a sequence called “ep1_s01”. Or you could use the export app’s [hiero_customize_export_ui.py](https://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) hook to add a GUI for linking up exports with Episodes.
 
 For this example we will go with the second option: the Sequence tagging solution.
 
@@ -66,7 +66,7 @@ This adds a valid export token named `{Episode}` to the Hiero exporter.
 
 Now you need to tell the export process how to find the Episode name and create the `Episode` in {% include product %} , using the `hiero_get_shot.py` hook.
 
-The [default version of the hook (hiero_get_shot.py)](http://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) will return the `Shot` from {% include product %} with the same name as the TrackItem. The `Shot` must also be linked to a `Sequence` with the same name as the Nuke Studio sequence item. If the `Sequence` or `Shot` doesn’t exist in {% include product %} , the hook will create them. You’re adding another level of hierarchy so you need to tell the hook to also create the `Episode` if it doesn’t exist.
+The [default version of the hook (hiero_get_shot.py)](https://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) will return the `Shot` from {% include product %} with the same name as the TrackItem. The `Shot` must also be linked to a `Sequence` with the same name as the Nuke Studio sequence item. If the `Sequence` or `Shot` doesn’t exist in {% include product %} , the hook will create them. You’re adding another level of hierarchy so you need to tell the hook to also create the `Episode` if it doesn’t exist.
 
 And, since the `Sequence` is linked to the `Episode` , you should tie this into the code that looks up the `Sequence` , ( `get_shot_parent()` method).
 

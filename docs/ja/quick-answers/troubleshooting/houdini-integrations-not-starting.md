@@ -12,7 +12,7 @@ lang: ja
 
 この問題は、`HOUDINI_PATH` 環境変数がオーバーライドされていて、{% include product %} がその環境変数に基づいて起動スクリプト パスを渡そうとしているために発生することがよくあります。
 
-Houdini を {% include product %} から起動すると、起動アプリケーション ロジックは {% include product %} ブートストラップ スクリプト パスを `HOUDINI_PATH` 環境変数に追加します。しかし、Houdini に [houdini.env ファイル](http://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables)があると問題が発生することがあります。このファイルがあると、ユーザーは Houdini がロードされたときに存在する環境変数を設定できますが、ファイルに定義されている値によって現在のセッションの既存の環境変数が上書きされます。
+Houdini を {% include product %} から起動すると、起動アプリケーション ロジックは {% include product %} ブートストラップ スクリプト パスを `HOUDINI_PATH` 環境変数に追加します。しかし、Houdini に [houdini.env ファイル](https://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables)があると問題が発生することがあります。このファイルがあると、ユーザーは Houdini がロードされたときに存在する環境変数を設定できますが、ファイルに定義されている値によって現在のセッションの既存の環境変数が上書きされます。
 
 これを修正するには、その変数の新しい定義に既存の `HOUDINI_PATH` 環境変数を含めます。
 

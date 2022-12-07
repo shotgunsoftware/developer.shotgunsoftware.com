@@ -25,7 +25,7 @@ lang: zh_CN
 * 提前在 {% include product %} 中创建剧集，并配置 Nuke Studio Toolkit 集成以在剧集上下文中使用，以便在导出时您可以从当前场景上下文中获得 `Episode` 实体。
 * 假定尚未创建 `Episode` 实体，并要利用 Nuke Studio 的标记功能以剧集名称标记场，以及在导出时使用相应信息来解析 `Episode`。
 
-可能有更适合您的工作流的其他方法，例如，从 Nuke Studio 场或镜头名称中提取剧集名称（例如，从名为 ep1_s01 的场中提取 ep1 部分）。或者，可以使用导出应用的 [hiero_customize_export_ui.py](http://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) 挂钩添加一个用于将导出与剧集相链接的 GUI。
+可能有更适合您的工作流的其他方法，例如，从 Nuke Studio 场或镜头名称中提取剧集名称（例如，从名为 ep1_s01 的场中提取 ep1 部分）。或者，可以使用导出应用的 [hiero_customize_export_ui.py](https://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) 挂钩添加一个用于将导出与剧集相链接的 GUI。
 
 对于此示例，我们采用第二种方式：场标记解决方案。
 
@@ -66,7 +66,7 @@ lang: zh_CN
 
 现在，需要使用 `hiero_get_shot.py` 挂钩告诉导出流程如何查找剧集名称并在 {% include product %} 中创建 `Episode`。
 
-[默认的挂钩版本 (hiero_get_shot.py)](http://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) 将从 {% include product %} 返回名称与 TrackItem 相同的 `Shot`。还必须将 `Shot` 链接到名称与 Nuke Studio 场项相同的 `Sequence`。如果 {% include product %} 中不存在 `Sequence` 或 `Shot`，该挂钩将创建它们。您将为该层次结构添加另一层，因此您需要告诉挂钩，如果 `Episode` 不存在，还要创建它。
+[默认的挂钩版本 (hiero_get_shot.py)](https://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) 将从 {% include product %} 返回名称与 TrackItem 相同的 `Shot`。还必须将 `Shot` 链接到名称与 Nuke Studio 场项相同的 `Sequence`。如果 {% include product %} 中不存在 `Sequence` 或 `Shot`，该挂钩将创建它们。您将为该层次结构添加另一层，因此您需要告诉挂钩，如果 `Episode` 不存在，还要创建它。
 
 由于 `Sequence` 已链接到 `Episode`，您应将其关联到查找 `Sequence` 的代码（`get_shot_parent()` 方法）。
 

@@ -128,7 +128,7 @@ _请注意，本文档介绍仅当控制 Toolkit 配置时可用的功能。有�
 - 您可以像上面的示例中那样，只使用一个字段（例如 `name: code`）。
 - 也可以在大括号内使用多个字段（例如 `name:` `"{asset_type}_{code}"`）。
 - 如果想包含来自其他链接实体的字段，可使用标准 {% include product %} 语法（例如 `name: "{sg_sequence.Sequence.code}_{code}"`）。
-- **filters** 字段是一个 {% include product %} 查询。该字段相对严格遵循 [{% include product %} API 语法](http://developer.shotgridsoftware.com/python-api/reference.html)。它是一个词典列表，并且每个词典需要有 _path_、_relation_ 和 _values_ 键。 $ 语法的有效值是任何包含对应 {% include product %} 实体的根文件夹（例如，对于项目来说是 `"$project"`，而如果上层目录层次结构存在 sequence.yml，也可以是 `"$sequence"`）。对于 {% include product %} 实体链接，您可以使用 $ 语法（例如 `{ "path": "project", "relation": "is", "values": [ "$project" ] }`）指代配置中的父文件夹 - [下面的示例](#examples)对此做出了更深入的解释。
+- **filters** 字段是一个 {% include product %} 查询。该字段相对严格遵循 [{% include product %} API 语法](https://developer.shotgridsoftware.com/python-api/reference.html)。它是一个词典列表，并且每个词典需要有 _path_、_relation_ 和 _values_ 键。 $ 语法的有效值是任何包含对应 {% include product %} 实体的根文件夹（例如，对于项目来说是 `"$project"`，而如果上层目录层次结构存在 sequence.yml，也可以是 `"$sequence"`）。对于 {% include product %} 实体链接，您可以使用 $ 语法（例如 `{ "path": "project", "relation": "is", "values": [ "$project" ] }`）指代配置中的父文件夹 - [下面的示例](#examples)对此做出了更深入的解释。
 
 
 ## 多个文件夹
@@ -847,7 +847,7 @@ Toolkit 的模板文件是 Toolkit 配置的一个中枢。每个项目都会有
 - `subset`  和 `subset_format` - 提取给定输入字符串的一部分并将它设为键值。这样，便可根据完整的用户名创建用户名首字母缩写键，或创建可容纳每个镜头名称前三个字母的键。
 
 
-有关模板键的技术细节，请参见 [API 参考](http://developer.shotgridsoftware.com/tk-core/core.html#template-system)。
+有关模板键的技术细节，请参见 [API 参考](https://developer.shotgridsoftware.com/tk-core/core.html#template-system)。
 
 ### 示例 - 字母数字名称
 

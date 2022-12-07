@@ -204,7 +204,7 @@ location:
 
 我们建议开始使用源代码管理工具以确保跟踪更改，无论您是否要使用 Git 描述符都是如此。
 
-Toolkit 支持即时使用 Git (http://git-scm.com/)，在对配置运行 `tank updates` 时，它可以检查您的 Git 库中的最新版本，并更新配置，就像使用应用商店描述符一样。
+Toolkit 支持即时使用 Git (https://git-scm.com/)，在对配置运行 `tank updates` 时，它可以检查您的 Git 库中的最新版本，并更新配置，就像使用应用商店描述符一样。
 
 此项的要求如下：
 

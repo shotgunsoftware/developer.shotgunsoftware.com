@@ -22,7 +22,7 @@ lang: zh_CN
 2. 确保每个脚本都具有一个所有者或维护人员，且“脚本”(Scripts)页面（位于“管理”(Admin)菜单下）中的信息是最新的。
 3. 考虑[为 API 用户创建只读权限组](https://developer.shotgridsoftware.com/zh_CN/bbae2ca7/)。许多脚本仅需要读取访问权限，这可以防止意外更改。
 4. 跟踪正在使用哪些密钥，以便删除旧脚本。为了简化该操作，一些工作室在 API 封装器中为审核信息编写脚本。
-5. 检查实体名称和字段。{% include product %} 的每个字段都有两个名称：UI 中使用的显示名称（并不一定唯一）和 API 使用的内部字段名称。显示名称可以随时更改，因此无法通过显示名称可靠地预测字段名称。可以转到“管理”(Admin)菜单中的字段选项来查看字段名称，也可以使用 `schema_read(), schema_field_read(), schema_entity_read() methods`，如 [http://developer.shotgridsoftware.com/python-api/reference.html?%20read#working-with-the-shotgun-schema](http://developer.shotgridsoftware.com/python-api/reference.html?%20read#working-with-the-shotgun-schema) 中所述。
+5. 检查实体名称和字段。{% include product %} 的每个字段都有两个名称：UI 中使用的显示名称（并不一定唯一）和 API 使用的内部字段名称。显示名称可以随时更改，因此无法通过显示名称可靠地预测字段名称。可以转到“管理”(Admin)菜单中的字段选项来查看字段名称，也可以使用 `schema_read(), schema_field_read(), schema_entity_read() methods`，如 [https://developer.shotgridsoftware.com/python-api/reference.html?%20read#working-with-the-shotgun-schema](https://developer.shotgridsoftware.com/python-api/reference.html?%20read#working-with-the-shotgun-schema) 中所述。
 
 ## 概念设计
 

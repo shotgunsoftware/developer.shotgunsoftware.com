@@ -12,7 +12,7 @@ lang: ko
 
 원인은 {% include product %}가 재정의된 `HOUDINI_PATH` 환경 변수를 사용하여 시작 스크립트 경로를 전달하기 때문인 경우가 많습니다.
 
-{% include product %}에서 Houdini가 시작되면 시작 앱 로직에서는 {% include product %} 부트스트랩(Bootstrap) 스크립트 경로를 `HOUDINI_PATH` 환경 변수에 추가합니다. 그러나 Houdini에 [houdini.env 파일](http://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables)이 있는 경우 문제가 발생할 수 있습니다.
+{% include product %}에서 Houdini가 시작되면 시작 앱 로직에서는 {% include product %} 부트스트랩(Bootstrap) 스크립트 경로를 `HOUDINI_PATH` 환경 변수에 추가합니다. 그러나 Houdini에 [houdini.env 파일](https://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables)이 있는 경우 문제가 발생할 수 있습니다.
 이 파일을 통해 사용자는 Houdini가 로드될 때 제공되는 환경 변수를 설정할 수 있지만 파일에 정의된 모든 값이 현재 세션의 기존 환경 변수를 덮어씁니다.
 
 이 문제를 해결하려면 기존의 `HOUDINI_PATH` 환경 변수를 해당 변수에 대한 새 정의에 포함해야 합니다.

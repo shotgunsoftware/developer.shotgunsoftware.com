@@ -94,7 +94,7 @@ def execute_multiple_actions(self, actions)
 
 有关详细信息，请参见应用随附的挂钩文件。挂钩还会利用继承性，这意味着您不需要改写挂钩中的所有内容，而是可以更轻松地用各种方式对默认挂钩进行扩展或补充，使挂钩更易于管理。
 
-请注意，在 `v1.12.0` 之前的版本中，应用程序会调用 `execute_action` 挂钩来执行动作。而较新的版本会调用 `execute_multiple_actions` 挂钩。为了向后兼容现有挂钩，`execute_multiple_actions` 挂钩实际为提供的每个动作调用 `execute_action`。如果应用程序在升级到 `v1.12.0` 或更高版本后提示未定义 `execute_multiple_actions` 挂钩，请确保环境中的 `actions_hook` 设置正确地从内置挂钩 `{self}/{engine_name}_actions.py` 继承设置。要了解有关如何从内置挂钩派生自定义挂钩的详细信息，请参见 [Toolkit 参考文档](http://developer.shotgridsoftware.com/tk-core/core.html#hook)。
+请注意，在 `v1.12.0` 之前的版本中，应用程序会调用 `execute_action` 挂钩来执行动作。而较新的版本会调用 `execute_multiple_actions` 挂钩。为了向后兼容现有挂钩，`execute_multiple_actions` 挂钩实际为提供的每个动作调用 `execute_action`。如果应用程序在升级到 `v1.12.0` 或更高版本后提示未定义 `execute_multiple_actions` 挂钩，请确保环境中的 `actions_hook` 设置正确地从内置挂钩 `{self}/{engine_name}_actions.py` 继承设置。要了解有关如何从内置挂钩派生自定义挂钩的详细信息，请参见 [Toolkit 参考文档](https://developer.shotgridsoftware.com/tk-core/core.html#hook)。
 
 LINKBOX_DOC:5#The%20hook%20data%20type：单击此处详细了解第二代挂钩格式。
 

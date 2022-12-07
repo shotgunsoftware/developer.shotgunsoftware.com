@@ -216,13 +216,13 @@ In your production config, you add your app and switch to using the descriptor t
 
 We recommend that you start using source control to make sure that changes are tracked, regardless of if you intend to use a git descriptor.
 
-Toolkit supports git (http://git-scm.com/) out of the box, and when running `tank updates` on a configuration, it can check for the latest release in your git repository and update your configuration, just like with the app store descriptor.
+Toolkit supports git (https://git-scm.com/) out of the box, and when running `tank updates` on a configuration, it can check for the latest release in your git repository and update your configuration, just like with the app store descriptor.
 
 The requirements for this are:
 
 - Your git repo needs to contain just a single app
 - Your git repo should have the same structure as the [starter app repository](https://github.com/shotgunsoftware/tk-multi-starterapp).
-- You use [Semantic Versioning](http://semver.org) when creating your tags. 
+- You use [Semantic Versioning](https://semver.org) when creating your tags. 
 Toolkit will use these version numbers to try to determine which version is the most recent, and by following the convention `vX.Y.Z`.
 
 Once you have created your first tag in git (eg. `v1.0.0`), you could then set up your config to use a git descriptor that points to your tag.

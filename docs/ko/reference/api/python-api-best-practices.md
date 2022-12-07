@@ -22,7 +22,7 @@ lang: ko
 2. 모든 스크립트에는 소유자 또는 관리자(Admin)가 있어야 하며 관리자(Admin) 메뉴에서 스크립트(Scripts) 페이지의 정보는 최신 상태여야 합니다.
 3. [API 사용자용 읽기 전용 권한 그룹](https://developer.shotgridsoftware.com/ko/bbae2ca7/)을 만드는 것이 좋습니다. 많은 스크립트는 읽기 액세스 권한만 필요하므로 실수로 변경되는 경우를 제한할 수 있습니다.
 4. 사용 중인 키를 트래킹하여 이전 스크립트를 제거할 수 있습니다. 이 작업을 쉽게 하기 위해 일부 스튜디오는 API 래퍼로 감사 정보를 스크립팅합니다.
-5. 엔티티 이름과 필드를 확인합니다. {% include product %}의 각 필드 이름은 UI에서 사용되는 표시 이름(반드시 고유하지는 않음)과 API에서 사용되는 내부 필드 이름, 두 가지가 있습니다. 표시 이름은 언제든지 변경할 수 있기 때문에 표시 이름에서 필드 이름을 안정적으로 예측할 수 없습니다. 관리자(Admin) 메뉴의 필드 옵션으로 이동하여 필드 이름을 보거나 [http://developer.shotgridsoftware.com/python-api/reference.html?%20read#working-with-the-shotgun-schema](http://developer.shotgridsoftware.com/python-api/reference.html?%20read#working-with-the-shotgun-schema)에서 설명한 대로 `schema_read(), schema_field_read(), schema_entity_read() methods`를 사용할 수 있습니다.
+5. 엔티티 이름과 필드를 확인합니다. {% include product %}의 각 필드 이름은 UI에서 사용되는 표시 이름(반드시 고유하지는 않음)과 API에서 사용되는 내부 필드 이름, 두 가지가 있습니다. 표시 이름은 언제든지 변경할 수 있기 때문에 표시 이름에서 필드 이름을 안정적으로 예측할 수 없습니다. 관리자(Admin) 메뉴의 필드 옵션으로 이동하여 필드 이름을 보거나 [https://developer.shotgridsoftware.com/python-api/reference.html?%20read#working-with-the-shotgun-schema](https://developer.shotgridsoftware.com/python-api/reference.html?%20read#working-with-the-shotgun-schema)에서 설명한 대로 `schema_read(), schema_field_read(), schema_entity_read() methods`를 사용할 수 있습니다.
 
 ## 디자인
 

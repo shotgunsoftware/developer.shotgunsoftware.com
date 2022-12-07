@@ -6,9 +6,9 @@ lang: en
 ---
 
 # {% include product %} Event Framework
-This software was originaly developed by [Patrick Boucher](http://www.patrickboucher.com) with support from [Rodeo Fx](http://rodeofx.com) and Oblique. It is now part of [{% include product %} Software](http://www.shotgridsoftware.com)'s [open source initiative](https://github.com/shotgunsoftware).
+This software was originaly developed by [Patrick Boucher](https://www.patrickboucher.com) with support from [Rodeo Fx](https://rodeofx.com) and Oblique. It is now part of [{% include product %} Software](https://www.shotgridsoftware.com)'s [open source initiative](https://github.com/shotgunsoftware).
 
-This software is provided under the MIT License that can be found in the LICENSE file or at the [Open Source Initiative](http://www.opensource.org/licenses/mit-license.php) website.
+This software is provided under the MIT License that can be found in the LICENSE file or at the [Open Source Initiative](https://www.opensource.org/licenses/mit-license.php) website.
 
 **Content:**
 

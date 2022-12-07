@@ -188,7 +188,7 @@ By deriving from the hook as shown above, the custom hook code only need to cont
 
 The Publish app is highly customizable by way of hooks that control how items are presented to artists for publishing and how those items are then processed.
 
-The full developer documentation for the publisher app can now be found on the  [Toolkit Developer Site](http://developer.shotgridsoftware.com/tk-multi-publish2).
+The full developer documentation for the publisher app can now be found on the  [Toolkit Developer Site](https://developer.shotgridsoftware.com/tk-multi-publish2).
 
 For more information on how to use the Publish app, see the [User Guide](https://developer.shotgridsoftware.com/d587be80/#the-publisher). 
 

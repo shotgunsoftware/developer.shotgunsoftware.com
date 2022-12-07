@@ -141,7 +141,7 @@ Nuke は、プラグイン パス上にあるすべての `init.py` スクリプ
 
 ```python
 # Populating environment variables from running Nuke:
-# http://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.create_engine_launcher
+# https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.create_engine_launcher
 current_engine = sgtk.platform.current_engine()
 launcher = sgtk.platform.create_engine_launcher(
      current_engine.sgtk,
@@ -174,7 +174,7 @@ SHOTGUN_FARM_SCRIPT_USER = “sg_api_user”
 SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx”
 ```
 
-認証の詳細については、オートデスクの[開発者用ドキュメント](http://developer.shotgridsoftware.com/tk-core/authentication.html)を参照してください。
+認証の詳細については、オートデスクの[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-core/authentication.html)を参照してください。
 
 **スクリプト ユーザの保護に関する注意事項:** ファームで使用するスクリプト ユーザをロックして、管理者レベルの権限が付与されないようにすることをお勧めします。[こちらで、API ユーザの権限を確認してください。](https://developer.shotgridsoftware.com/ja/bbae2ca7/)
 
@@ -185,7 +185,7 @@ SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap
 # Toolkit in Nuke on the render farm.
-# http://developer.shotgridsoftware.com/tk-core/bootstrap.html#bootstrapping-toolkit
+# https://developer.shotgridsoftware.com/tk-core/bootstrap.html#bootstrapping-toolkit
 
 import sys
 import os
@@ -200,7 +200,7 @@ if TK_CORE_PATH not in sys.path:
 # If your render nodes don’t have access to the Toolkit Core API in the same filesystem location as artist workstations, you have to make sure that it is available in the PYTHONPATH, so that render nodes can import it. An easy way
 # to install tk-core in a centralized location is with pip. You can read more
 # about it here:
-# http://developer.shotgridsoftware.com/tk-core/bootstrap.html#installing-the-sgtk-module-using-pip
+# https://developer.shotgridsoftware.com/tk-core/bootstrap.html#installing-the-sgtk-module-using-pip
 
 import sgtk
 

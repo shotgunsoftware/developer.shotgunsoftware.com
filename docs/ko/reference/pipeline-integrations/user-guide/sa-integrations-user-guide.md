@@ -233,7 +233,7 @@ Maya 및 Nuke 같은 응용프로그램은 {% include product %} 데스크톱에
 
 아티스트는 Publish 앱을 통해 아티스트 다운스트림에서 사용할 수 있도록 작업물을 게시할 수 있습니다. 아티스트의 컨텐츠 생성 소프트웨어 내에서 기존 게시 워크플로우를 지원하고 디스크상의 파일을 독립 실행형으로 게시할 수 있습니다. 컨텐츠 생성 소프트웨어에서 작업하거나 기본 {% include product %} 통합을 사용하여 작업할 때 이 앱은 아티스트가 게시할 수 있는 항목을 자동으로 검색해 표시해 줍니다. 보다 정교한 프로덕션이 필요한 경우 스튜디오는 커스텀 게시 플러그인을 작성하여 아티스트 워크플로우를 진행할 수 있습니다.
 
-다음 섹션에서는 Publisher UI 및 기본 통합 워크플로우를 다룹니다. 스튜디오의 특정 요구 사항에 맞게 Publisher를 커스터마이즈하는 방법은 [Publisher Dev 안내서](http://developer.shotgridsoftware.com/tk-multi-publish2/)를 참조하십시오.
+다음 섹션에서는 Publisher UI 및 기본 통합 워크플로우를 다룹니다. 스튜디오의 특정 요구 사항에 맞게 Publisher를 커스터마이즈하는 방법은 [Publisher Dev 안내서](https://developer.shotgridsoftware.com/tk-multi-publish2/)를 참조하십시오.
 
 ### 인터페이스 구성요소 및 개념
 
@@ -503,7 +503,7 @@ Nuke 스크립트나 Maya 파일처럼 텍스처보다 덜 시각적인 항목�
 
 ## 감사의 인사
 
-* PySide의 버그 픽스 버전은 {% include product %} 데스크톱을 통해 배포되며, [여기](http://www.autodesk.com/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip)에서 얻을 수 있습니다.
+* PySide의 버그 픽스 버전은 {% include product %} 데스크톱을 통해 배포되며, [여기](https://www.autodesk.com/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip)에서 얻을 수 있습니다.
 * Big Buck Bunny - footage 제공: (CC) Blender Foundation, www.blender.org
 
 이 특별 마크업(TANK_NO_HEADER)을 추가해 헤더가 없어도 된다고 문서 생성 시스템에 알리십시오

@@ -7,7 +7,7 @@ lang: ko
 
 # API 개요
 
-**참고:** {% include product %} API에 대한 자세한 내용은 [API 설명서](http://developer.shotgridsoftware.com/python-api/)를 참조하십시오.
+**참고:** {% include product %} API에 대한 자세한 내용은 [API 설명서](https://developer.shotgridsoftware.com/python-api/)를 참조하십시오.
 
 {% include product %} Python API(응용프로그램 인터페이스)를 통해 사용자는 {% include product %} 소프트웨어와 자신의 도구를 쉽게 통합할 수 있습니다. 이를 통해 자동화된 프로세스를 만들고, 많은 타사 소프트웨어 패키지와 통합하며, 스튜디오 내 기존 도구와 통신할 수 있습니다. 스튜디오마다 요구 사항이 매우 다르기 때문에 {% include product %} API는 강력한 로우 레벨 기능을 제공하며 대부분의 비즈니스 로직을 유지합니다.
 
@@ -25,9 +25,9 @@ API를 통해 {% include product %} 서버와 통신하기 위해 사용자의 �
 
 API는 [https://github.com/shotgunsoftware/python-api](https://github.com/shotgunsoftware/python-api)에서 다운로드할 수 있습니다. 다음은 몇 가지 일반적인 첫 번째 프로젝트입니다.
 
-1. [버전을 만들고 샷에 링크](http://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_create_version_link_shot.html). 리뷰를 위해 새 렌더의 제출을 자동화할 수 있습니다.
-2. [썸네일 업로드](http://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_upload_thumbnail_version.html). 사이트의 모든 항목은 수동으로 추가하지 않고도 최신 썸네일을 보유할 수 있습니다.
-3. [SVN과 같은 코드 리포지토리와 {% include product %} 통합](http://developer.shotgridsoftware.com/python-api/cookbook/examples/svn_integration.html) . 프로젝트에 {% include product %} 소프트웨어를 활용하여 모든 소프트웨어 개발을 관리합니다.
+1. [버전을 만들고 샷에 링크](https://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_create_version_link_shot.html). 리뷰를 위해 새 렌더의 제출을 자동화할 수 있습니다.
+2. [썸네일 업로드](https://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_upload_thumbnail_version.html). 사이트의 모든 항목은 수동으로 추가하지 않고도 최신 썸네일을 보유할 수 있습니다.
+3. [SVN과 같은 코드 리포지토리와 {% include product %} 통합](https://developer.shotgridsoftware.com/python-api/cookbook/examples/svn_integration.html) . 프로젝트에 {% include product %} 소프트웨어를 활용하여 모든 소프트웨어 개발을 관리합니다.
 
 ## API를 사용하여 수행할 수 없는 작업
 
@@ -57,7 +57,7 @@ API는 [https://github.com/shotgunsoftware/python-api](https://github.com/shotgu
 {% include product %} API에 대한 자세한 정보는 다음 문서를 참조하십시오.
 
 * [GitHub에서 {% include product %} API 다운로드](https://github.com/shotgunsoftware/python-api/)
-* [{% include product %} API 설명서](http://developer.shotgridsoftware.com/python-api/)
+* [{% include product %} API 설명서](https://developer.shotgridsoftware.com/python-api/)
 * [{% include product %}-dev 리스트(공개)](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)
 * [{% include product %} 이벤트 데몬 샘플 코드](https://github.com/shotgunsoftware/shotgunEvents)
 * [이벤트 구동 트리거 작성](https://developer.shotgridsoftware.com/ko/0d8a11d9/)

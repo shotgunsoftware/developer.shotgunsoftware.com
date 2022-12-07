@@ -107,7 +107,7 @@ The following sections outline some of the more technical aspects of the integra
 
 ### PySide
 
-The {% include product %} engine for Photoshop CC relies on PySide. Please see the official instructions for [Installing Pyside](http://pyside.readthedocs.io/en/latest/installing/index.html).
+The {% include product %} engine for Photoshop CC relies on PySide. Please see the official instructions for [Installing Pyside](https://pyside.readthedocs.io/en/latest/installing/index.html).
 
 ### CEP extension
 

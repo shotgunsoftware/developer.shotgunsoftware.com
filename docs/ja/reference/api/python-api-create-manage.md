@@ -18,7 +18,7 @@ lang: ja
 
    > **注:** API キーはパスワードのように扱われ、一度作成されると、{% include product %} の Web アプリや API で再び表示することはできません。続行する前に、キーをコピーしておきます。
 
-4. これで、スクリプト キーを使用して {% include product %} に接続できるようになりました。スクリプトに {% include product %} を接続する方法の詳細については、[API ドキュメントの「{% include product %} メソッド」](http://developer.shotgridsoftware.com/python-api/reference.html#shotgun-methods)を参照してください。
+4. これで、スクリプト キーを使用して {% include product %} に接続できるようになりました。スクリプトに {% include product %} を接続する方法の詳細については、[API ドキュメントの「{% include product %} メソッド」](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun-methods)を参照してください。
 
 > **ヒント:** 何らかの理由で、スクリプトのアプリケーション キーをリセットする必要がある場合は、その操作を実行する新しい {% include product %} スクリプト エンティティを作成する必要があります。最初に、既存のスクリプトの名前を「[My Script]—OLD」などに変更してから削除します。新しいスクリプトを作成します。{% include product %} で古いスクリプトの名前を変更するのは、各スクリプトに一意の名前が必要であるからです。
 

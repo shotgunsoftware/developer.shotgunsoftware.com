@@ -194,7 +194,7 @@ lang: zh_CN
 
 ### 高级配置
 
-有关执行已发布的文件路径解析的基本方法的信息，请查看[开发人员参考文档](http://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)。
+有关执行已发布的文件路径解析的基本方法的信息，请查看[开发人员参考文档](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)。
 
 如果您要使用“Advanced Project Setup”，可以通过自定义 `resolve_publish` 核心挂钩添加超出本地文件链接和 `file://` URL 的支持。 可以进行以下自定义：
 
@@ -421,7 +421,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 `app_store_http_proxy: <proxy_server_address>`
 
-其中 `<proxy_server_address>` 是一个遵循[开发人员文档](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
+其中 `<proxy_server_address>` 是一个遵循[开发人员文档](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
 
 如果您需要按每个项目覆盖此设置，可以在项目工作流配置的 `config/core/shotgun.yml` 中完成此操作。
 

@@ -33,5 +33,5 @@ lang: zh_CN
 
 ## 自定义
 
-审核提交的大多数方面都可以使用挂钩进行调整。可以在[此处](http://developer.shotgridsoftware.com/tk-nuke-quickreview)找到相关文档。
+审核提交的大多数方面都可以使用挂钩进行调整。可以在[此处](https://developer.shotgridsoftware.com/tk-nuke-quickreview)找到相关文档。
 

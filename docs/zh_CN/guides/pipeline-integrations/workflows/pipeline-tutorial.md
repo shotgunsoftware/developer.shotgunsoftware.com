@@ -332,7 +332,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 这是您将添加用于收集当前会话中发现的任何网格的新方法。此方法将创建着色器发布插件（您将在后面创建）可以对其进行操作的网格项。要传入的项是将作为网格项的父项的会话项。
 
-{% include info title="注意" content="这是一种修改现有发布插件的非常有针对性的方法。要深入了解发布器的结构及其所有移动部分，请参见[开发人员文档](http://developer.shotgridsoftware.com/tk-multi-publish2/)。" %}
+{% include info title="注意" content="这是一种修改现有发布插件的非常有针对性的方法。要深入了解发布器的结构及其所有移动部分，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-multi-publish2/)。" %}
 
 现在，将下面的新方法定义添加到文件底部：
 

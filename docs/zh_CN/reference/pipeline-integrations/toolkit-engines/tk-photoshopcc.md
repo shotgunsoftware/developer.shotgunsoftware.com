@@ -107,7 +107,7 @@ lang: zh_CN
 
 ### PySide
 
-{% include product %} Photoshop CC 插件依赖于 PySide。请参见有关[安装 Pyside](http://pyside.readthedocs.io/en/latest/installing/index.html) 的官方说明。
+{% include product %} Photoshop CC 插件依赖于 PySide。请参见有关[安装 Pyside](https://pyside.readthedocs.io/en/latest/installing/index.html) 的官方说明。
 
 ### CEP 扩展
 
@@ -151,7 +151,7 @@ shelf_favorites:
 
 ### Photoshop API
 
-插件向 Python 公开了适用于 Photoshop CC 的 Javascript API。单击[此处](http://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf)可查看此 API 的完整文档。
+插件向 Python 公开了适用于 Photoshop CC 的 Javascript API。单击[此处](https://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf)可查看此 API 的完整文档。
 
 Photoshop API 对象被公开为 `engine.adobe`。下面的示例说明怎样才能从 Toolkit 应用和挂钩内直接操纵 Photoshop DOM。标准 Toolkit 应用还包含有关如何与 Photoshop 文档进行交互的可行示例。
 

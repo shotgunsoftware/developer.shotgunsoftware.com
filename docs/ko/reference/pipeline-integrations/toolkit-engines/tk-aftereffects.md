@@ -107,7 +107,7 @@ After Effects용 {% include product %} 엔진의 설치는 다른 {% include pro
 
 ### PySide
 
-After Effects용 {% include product %} 엔진은 PySide를 사용합니다. [PySide 설치](http://pyside.readthedocs.io/en/latest/installing/index.html)에 대한 공식 지침을 참조하십시오.
+After Effects용 {% include product %} 엔진은 PySide를 사용합니다. [PySide 설치](https://pyside.readthedocs.io/en/latest/installing/index.html)에 대한 공식 지침을 참조하십시오.
 
 ### CEP 익스텐션
 

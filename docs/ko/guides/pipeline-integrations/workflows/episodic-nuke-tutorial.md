@@ -25,7 +25,7 @@ lang: ko
 * 먼저 {% include product %}에서 에피소드를 만들고 에피소드 컨텍스트에서 작동하도록 Nuke Studio 툴킷 통합을 구성하면 내보낼 때 현재 씬 컨텍스트에서 `Episode` 엔티티를 가져올 수 있습니다.
 * `Episode` 엔티티가 아직 생성되지 않았다고 가정하고 Nuke Studio의 태그 지정 기능을 활용하여 에피소드 이름으로 시퀀스에 태그를 지정하고 이를 사용하여 내보낼 때 `Episode`를 확인합니다.
 
-Nuke Studio 시퀀스 또는 샷 이름의 일부에서 에피소드 이름을 추출(예: "ep1_s01" 시퀀스의 "ep1" 비트 사용)하는 등 워크플로우에 더 적합한 다른 방법이 있을 수 있습니다. 또는 내보내기 앱의 [hiero_customize_export_ui.py](http://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) 후크를 사용하여 에피소드와 내보내기를 링크할 GUI를 추가할 수 있습니다.
+Nuke Studio 시퀀스 또는 샷 이름의 일부에서 에피소드 이름을 추출(예: "ep1_s01" 시퀀스의 "ep1" 비트 사용)하는 등 워크플로우에 더 적합한 다른 방법이 있을 수 있습니다. 또는 내보내기 앱의 [hiero_customize_export_ui.py](https://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip) 후크를 사용하여 에피소드와 내보내기를 링크할 GUI를 추가할 수 있습니다.
 
 이 예에서는 두 번째 옵션인 시퀀스 태그 지정 솔루션을 사용합니다.
 
@@ -66,7 +66,7 @@ Nuke Studio 시퀀스 또는 샷 이름의 일부에서 에피소드 이름을 �
 
 이제 `hiero_get_shot.py` 후크를 사용하여 내보내기 프로세스에 에피소드 이름을 찾는 방법을 지정하고 {% include product %}에서 `Episode`를 만들어야 합니다.
 
-[후크의 기본 버전(hiero_get_shot.py)](http://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip)은 TrackItem과 이름이 같은 {% include product %}의 `Shot`을 반환합니다. `Shot`은 Nuke Studio 시퀀스 항목과 이름이 같은 `Sequence`에 링크되어야 합니다. `Sequence` 또는 `Shot`이 {% include product %}에 없으면 후크가 이를 만듭니다. 다른 계층 수준을 추가하고 있으므로 `Episode`가 없는 경우 이 또한 후크가 만들도록 해야 합니다.
+[후크의 기본 버전(hiero_get_shot.py)](https://areadownloads.autodesk.com/wdm/shotgrid/tu-episodic-nuke.zip)은 TrackItem과 이름이 같은 {% include product %}의 `Shot`을 반환합니다. `Shot`은 Nuke Studio 시퀀스 항목과 이름이 같은 `Sequence`에 링크되어야 합니다. `Sequence` 또는 `Shot`이 {% include product %}에 없으면 후크가 이를 만듭니다. 다른 계층 수준을 추가하고 있으므로 `Episode`가 없는 경우 이 또한 후크가 만들도록 해야 합니다.
 
 `Sequence`는 `Episode`에 링크되므로 `Sequence`를 조회하는 코드에 연결해야 합니다(`get_shot_parent()` 메서드).
 

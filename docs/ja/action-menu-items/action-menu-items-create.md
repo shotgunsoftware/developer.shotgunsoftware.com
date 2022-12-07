@@ -61,8 +61,8 @@ API 開発者は、アクション メニュー アイテム(AMI)からエンテ
 
 次に、基本的ないくつかのサンプル スクリプトを示します。
 
-* [ActionMenuItem 呼び出しの処理](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
-* [バージョン パッケージ ツール](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_version_packager.html)
+* [ActionMenuItem 呼び出しの処理](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
+* [バージョン パッケージ ツール](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_version_packager.html)
 
 ## ペイロードの内容
 
@@ -83,7 +83,7 @@ API 開発者は、アクション メニュー アイテム(AMI)からエンテ
 * **page_id**: アクション メニュー アイテムのクリック元のページの ID (例: 1353)
 * **server_hostname:** AMI がトリガされたシステムのホスト名。同じ AMI を呼び出す複数のサーバがある場合に役立ちます(ステージング サーバとプロダクション サーバなど)。
 * **referrer_path:** AMI が呼び出された URL の正規のパス。
-* **session_uuid:** この AMI が呼び出されたウィンドウの一意の識別子。AMI が呼び出されたページに情報を一斉送信するために、[データ更新のポーリング] (Poll for Data Updates)チェックボックスと Python API の [`set_session_uuid`](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) メソッドで使用できます。 **注:** この機能の更新のポーリングは急激に減少し、最終的に停止します。そのため、ポーリングが停止する前に AMI が更新されない場合、ソース ページに更新が表示されないことがあります。
+* **session_uuid:** この AMI が呼び出されたウィンドウの一意の識別子。AMI が呼び出されたページに情報を一斉送信するために、[データ更新のポーリング] (Poll for Data Updates)チェックボックスと Python API の [`set_session_uuid`](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) メソッドで使用できます。 **注:** この機能の更新のポーリングは急激に減少し、最終的に停止します。そのため、ポーリングが停止する前に AMI が更新されない場合、ソース ページに更新が表示されないことがあります。
 * **cols**: ページで表示可能な列すべてのシステム フィールド名を含むカンマ区切りリスト(例: code, sg_status_list, description)
 * **column_display_names:** ページで表示可能な列すべての表示名を含むカンマ区切りリスト(例: Version, Status, Description)
 * **view:** AMI が呼び出されたときに選択されていたビュー。ページのデザイン モードを使用して、任意のページに対して複数のビューを作成できます。

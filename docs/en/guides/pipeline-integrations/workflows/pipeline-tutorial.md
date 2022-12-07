@@ -332,7 +332,7 @@ Now you need to open up your copy of the collector in your preferred IDE or text
 
 This is a new method that you will add to collect any meshes found in the current session. The method will create mesh items that a shader publish plugin (that you'll create later) can act upon. The item being passed in is the session item that will be the parent for our mesh items. 
 
-{% include info title="Note" content="This is a very directed approach to modifying existing publish plugins. For a deeper dive into the structure of the publisher and all of its moving parts, please [see the developer docs](http://developer.shotgridsoftware.com/tk-multi-publish2/)." %}
+{% include info title="Note" content="This is a very directed approach to modifying existing publish plugins. For a deeper dive into the structure of the publisher and all of its moving parts, please [see the developer docs](https://developer.shotgridsoftware.com/tk-multi-publish2/)." %}
 
 Now add the new method definition below to the bottom of the file:
 

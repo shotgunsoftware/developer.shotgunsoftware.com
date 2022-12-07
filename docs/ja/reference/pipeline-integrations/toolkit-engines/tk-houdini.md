@@ -26,7 +26,7 @@ lang: ja
 
 ## PySide
 
-古いバージョンの Houdini (13 以前)の場合、PySide の外部ビルドが必要です。Windows の場合、Houdini が実行する Python と連携する、互換性のある PySide ビルドがバンドルされています。Linux の場合、Houdini は PySide または PyQt のサポートが必要な Python システム(http://www.sidefx.com/docs/houdini12.0/hom/)を使用しています。
+古いバージョンの Houdini (13 以前)の場合、PySide の外部ビルドが必要です。Windows の場合、Houdini が実行する Python と連携する、互換性のある PySide ビルドがバンドルされています。Linux の場合、Houdini は PySide または PyQt のサポートが必要な Python システム(https://www.sidefx.com/docs/houdini12.0/hom/)を使用しています。
 
 ## メニューのロード
 

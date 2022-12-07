@@ -48,7 +48,7 @@ The target URL would look like:
 foo://host/path...
 ```
 
-> **Note:** For more information, please see [http://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx](http://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx) .
+> **Note:** For more information, please see [https://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx](https://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx) .
 **Windows QT/QSetting example**
 
 If the application you are developing is written using the QT (or PyQT / PySide) framework, you can leverage the QSetting object to manage the creation of the registry keys for you.
@@ -229,4 +229,4 @@ Then use the settings from your local GConf file in the global defaults in:
 
 Even though the change is only in the GNOME settings, it also works for KDE. Firefox and GNU IceCat defer to gnome-open regardless of what window manager you are running when it encounters a prefix it doesn’t understand (such as `foo://` ). So, other browsers, like Konqueror in KDE, won’t work under this scenario.
 
-See [http://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity](http://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity) for more information on setting up protocol handlers for Action Menu Items in Ubuntu.
+See [https://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity](https://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity) for more information on setting up protocol handlers for Action Menu Items in Ubuntu.

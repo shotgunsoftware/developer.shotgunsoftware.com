@@ -107,7 +107,7 @@ Photoshop CC용 {% include product %} 엔진의 설치는 다른 {% include prod
 
 ### PySide
 
-Photoshop CC용 {% include product %} 엔진은 PySide를 사용합니다. [Pyside 설치](http://pyside.readthedocs.io/en/latest/installing/index.html)에 대한 공식 지침을 참조하십시오.
+Photoshop CC용 {% include product %} 엔진은 PySide를 사용합니다. [Pyside 설치](https://pyside.readthedocs.io/en/latest/installing/index.html)에 대한 공식 지침을 참조하십시오.
 
 ### CEP 익스텐션
 
@@ -151,7 +151,7 @@ shelf_favorites:
 
 ### Photoshop API
 
-이 엔진은 Photoshop CC용 Javascript API를 Python에 노출합니다. 이 API에 대한 전체 문서는 [여기](http://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf)에서 찾을 수 있습니다.
+이 엔진은 Photoshop CC용 Javascript API를 Python에 노출합니다. 이 API에 대한 전체 문서는 [여기](https://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf)에서 찾을 수 있습니다.
 
 Photoshop API 객체는 `engine.adobe`로 노출됩니다. 아래 예는 툴킷 앱과 후크 내에서 Photoshop DOM을 직접 조작하는 방법을 보여 줍니다. 표준 툴킷 앱에는 Photoshop 문서와 상호 작용하는 방법에 대한 작업 예가 포함되어 있습니다.
 

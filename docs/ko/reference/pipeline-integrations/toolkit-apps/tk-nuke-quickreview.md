@@ -32,5 +32,5 @@ Quickreview 앱을 사용하면 {% include product %}에서 리뷰를 위해 Nuk
 
 ## 커스터마이즈
 
-대부분의 리뷰 제출 특성은 후크를 사용하여 조정할 수 있습니다. 설명서는 [여기](http://developer.shotgridsoftware.com/tk-nuke-quickreview)에서 찾을 수 있습니다.
+대부분의 리뷰 제출 특성은 후크를 사용하여 조정할 수 있습니다. 설명서는 [여기](https://developer.shotgridsoftware.com/tk-nuke-quickreview)에서 찾을 수 있습니다.
 

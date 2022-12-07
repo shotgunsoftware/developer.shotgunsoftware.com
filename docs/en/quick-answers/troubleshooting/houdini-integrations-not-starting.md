@@ -17,7 +17,7 @@ Often the reason for this is that the `HOUDINI_PATH` environment variable has be
 
 When Houdini is launched from {% include product %}, the launch app logic adds the {% include product %} bootstrap script path to the `HOUDINI_PATH`
 environment variable. However, the problem can arise when Houdini has a
-[houdini.env file](http://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables).
+[houdini.env file](https://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables).
 This file allows the user to set environment variables that will be present when Houdini is loaded, but any values
 defined in the file will overwrite pre-existing environment variables in the current session.
 

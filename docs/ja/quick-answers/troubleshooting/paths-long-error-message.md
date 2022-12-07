@@ -37,7 +37,7 @@ Windows では、{% include product %} Desktop はデータを `%APPDATA%` フ�
 
 ## 問題の回避策
 
-この問題を解決するには、通常、環境変数 `$SHOTGUN_HOME` を `C:\SG` のような非常に短い値に設定します。これにより、SG Desktop は `C:\Users\jane\AppData\Roaming\Shotgun` でなく、`C:\SG` にデータを保存するようになるため、文字数が節約されます。制限内に収まるよう維持するには、通常はこの方法で十分です。環境変数については、[こちら](http://developer.shotgridsoftware.com/tk-core/initializing.html?#environment-variables)を参照してください。
+この問題を解決するには、通常、環境変数 `$SHOTGUN_HOME` を `C:\SG` のような非常に短い値に設定します。これにより、SG Desktop は `C:\Users\jane\AppData\Roaming\Shotgun` でなく、`C:\SG` にデータを保存するようになるため、文字数が節約されます。制限内に収まるよう維持するには、通常はこの方法で十分です。環境変数については、[こちら](https://developer.shotgridsoftware.com/tk-core/initializing.html?#environment-variables)を参照してください。
 
 ### 将来の可能性
 

@@ -234,7 +234,7 @@ Desktop または {% include product %} からアプリケーションを起動�
 
 アーティストは Publish アプリを使用して作品をパブリッシュすることにより、下流工程に関わるアーティストが自分の作品を使用できるようにすることができます。アーティストのコンテンツ作成ソフトウェア内における従来のパブリッシュ ワークフローと、ディスク上にある任意のファイルのスタンドアロン パブリッシュがサポートされます。コンテンツ作成ソフトウェアで作業し、基本的な {% include product %} の統合を使用している場合、このアプリはアーティストがパブリッシュする項目を自動的に探して表示します。さらに高度な制作上のニーズがある場合は、アーティストのワークフローを操作するカスタム パブリッシュ プラグインを作成することもできます。
 
-次のセクションでは、パブリッシャーの UI および基本的な統合ワークフローについて説明します。スタジオ固有のニーズに合わせてパブリッシャーをカスタマイズする方法については、『[パブリッシャー開発ガイド](http://developer.shotgridsoftware.com/tk-multi-publish2/)』を参照してください。
+次のセクションでは、パブリッシャーの UI および基本的な統合ワークフローについて説明します。スタジオ固有のニーズに合わせてパブリッシャーをカスタマイズする方法については、『[パブリッシャー開発ガイド](https://developer.shotgridsoftware.com/tk-multi-publish2/)』を参照してください。
 
 ### インタフェースのコンポーネントおよび概念
 
@@ -504,7 +504,7 @@ Nuke スクリプトや Maya ファイルのように、テクスチャほど視
 
 ## 謝辞
 
-* PySide のバグ修正バージョンは {% include product %} Desktop と共に配布されており、[こちら](http://www.autodesk.com/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip)から入手できます。
+* PySide のバグ修正バージョンは {% include product %} Desktop と共に配布されており、[こちら](https://www.autodesk.com/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip)から入手できます。
 * Big Buck Bunny - 画像提供: (CC) Blender Foundation (www.blender.org)
 
 特殊マークアップ「TANK_NO_HEADER」を追加して、ヘッダが不要だということをドキュメント作成システムに通知します。

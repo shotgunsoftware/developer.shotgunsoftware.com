@@ -13,7 +13,7 @@ lang: zh_CN
 
 cineSync 允许您在多个位置之间同时进行同步播放。{% include product %} 的集成允许您创建版本的播放列表，在 cineSync 中播放它，以及将您在会话期间所做的注释直接发送回 {% include product %}。
 
-有关详细信息，请参见 [http://www.cinesync.com/manual/latest](http://www.cinesync.com/manual/latest/)。
+有关详细信息，请参见 [https://www.cinesync.com/manual/latest](https://www.cinesync.com/manual/latest/)。
 
 ## Deadline
 
@@ -25,7 +25,7 @@ cineSync 允许您在多个位置之间同时进行同步播放。{% include pro
 
 与 Deadline 集成很像，{% include product %}+Rush 集成允许您自动将包含缩略图、指向帧的链接和其他元数据的渲染版本提交到 {% include product %}。
 
-有关详细信息，请参见 [http://seriss.com/rush-current/index.html](http://seriss.com/rush-current/index.html)。
+有关详细信息，请参见 [https://seriss.com/rush-current/index.html](https://seriss.com/rush-current/index.html)。
 
 ## Subversion (SVN)
 
