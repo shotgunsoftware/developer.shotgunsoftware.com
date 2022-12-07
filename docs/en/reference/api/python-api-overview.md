@@ -15,7 +15,7 @@ The API is built using [Python](https://www.python.org/) , a common programming 
 
 The API follows the CRUD pattern, allowing your script to run Create, Read, Update, and Delete actions for a single entity type. Many operations include the ability to define filters, columns to return, and sort results.
 
-## Setting Up Your Environment with the Python API
+## Setting Up Your Environment with the Python API Overview Video
 
 [Setting Up Your Environment with the Python API](./images/python-set-up-env-video.png)](https://youtu.be/RYEBQDJiXAs)
 
