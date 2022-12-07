@@ -17,8 +17,7 @@ The API follows the CRUD pattern, allowing your script to run Create, Read, Upda
 
 ## Setting Up Your Environment with the Python API Overview Video
 
-[Setting Up Your Environment with the Python API](./images/python-set-up-env-video.png)](https://youtu.be/RYEBQDJiXAs)
-
+[![](http://img.youtube.com/vi/RYEBQDJiXAs/0.jpg)](https://youtu.be/RYEBQDJiXAs)
 
 ## Script Keys 
 
