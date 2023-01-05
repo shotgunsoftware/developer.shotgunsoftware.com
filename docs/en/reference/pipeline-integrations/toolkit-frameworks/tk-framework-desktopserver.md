@@ -29,7 +29,7 @@ are already running {% include product %} Desktop then your setup process is com
 
 ### Configuring the server
 
-You can store the browser integration settings in a configuration file. This configuration file can be specified by setting the environment variable `SGTK_BROWSER_INTEGRATION_CONFIG_LOCATION`. More details on how you can configure the local server can be found in our [sample file](https://github.com/shotgunsoftware/tk-framework-desktopserver/blob/master/app/config.ini.example).
+You can store the browser integration settings in a configuration file. This configuration file can be specified by setting the environment variable `SGTK_BROWSER_INTEGRATION_CONFIG_LOCATION`. More details on how you can configure the local server can be found in our [sample file](https://github.com/shotgunsoftware/tk-framework-desktopstartup/blob/master/config.ini.example).
 
 ### Removing a certificate
 
