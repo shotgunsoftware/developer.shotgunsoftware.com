@@ -2,7 +2,7 @@
 layout: default
 title: Web Traffic Isolation
 pagename: tier1-setup-traffic_segregation
-lang: en
+lang: ko
 ---
 
 # Web Traffic Isolation

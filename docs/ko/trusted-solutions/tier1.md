@@ -2,7 +2,7 @@
 layout: default
 title: Isolation Features
 pagename: tier1-index
-lang: en
+lang: ko
 ---
 
 # Isolation Feature Set
