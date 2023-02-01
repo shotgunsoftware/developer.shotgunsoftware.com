@@ -2,7 +2,7 @@
 layout: default
 title: Knowledge
 pagename: tier1-knowledge
-lang: ja
+lang: en
 ---
 
 # Generic Knowledge

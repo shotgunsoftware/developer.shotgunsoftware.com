@@ -2,7 +2,7 @@
 layout: default
 title: Getting Started
 pagename: tier1-getting_started
-lang: ko
+lang: en
 ---
 
 # Isolation Feature Set - Getting Started

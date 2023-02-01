@@ -2,7 +2,7 @@
 layout: default
 title: Learn
 pagename: tier1-learn
-lang: ja
+lang: en
 ---
 
 # {% include product %} Isolation - Learn

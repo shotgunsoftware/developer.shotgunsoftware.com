@@ -2,7 +2,7 @@
 layout: default
 title: Fine Tuning
 pagename: tier1-setup-tuning
-lang: zh_CN
+lang: en
 ---
 
 # Fine Tuning

@@ -179,7 +179,7 @@ Maya 또는 Nuke와 같은 소프트웨어 외의 독립 실행형 Python 환경
 이 매개변수는 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식에 직접 전달됩니다. 아래 [엔티티 섹션](#entity)의 예를 참조하십시오.
 
 #### 엔티티
-[`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식 `entity` 매개변수는 시작한 엔진에 대해 [컨텍스트](https://developer.shotgridsoftware.com/tk-core/core.html#context) 및 [환경](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)을 설정하는 데 사용됩니다.
+[`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식 `entity` 매개변수는 시작한 엔진에 대해 [컨텍스트](https://developer.shotgridsoftware.com/tk-core/core.html#context) 및 [환경](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)을 설정하는 데 사용됩니다.
 이 엔티티는 구성이 작동하도록 설정된 엔티티 유형 중 하나일 수 있습니다.
 예를 들어 `Project` 엔티티를 제공하는 경우 엔진은 프로젝트 환경 설정을 사용하여 프로젝트 컨텍스트에서 시작됩니다.
 마찬가지로, 태스크가 `Asset`에 링크되어 있는 `Task` 엔티티를 제공할 수 있으며, 이 엔티티는 `asset_step.yml` 환경을 사용하여 시작됩니다.

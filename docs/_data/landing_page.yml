@@ -1,8 +1,0 @@
-# This file holds data for the site landing page.
-# 
-# For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/landing-page/
-#
-
-# main logo image
-image: ./images/landing_page/sg_large_logo.png
-

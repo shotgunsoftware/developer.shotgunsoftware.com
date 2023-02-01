@@ -2,7 +2,7 @@
 layout: default
 title: ShotGrid in the Cloud
 pagename: cloud-index
-lang: zh_CN
+lang: en
 ---
 
 # {% include product %} in the Cloud
