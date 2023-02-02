@@ -2,7 +2,7 @@
 layout: default
 title: Fine Tuning
 pagename: tier1-setup-tuning
-lang: ko
+lang: en
 ---
 
 # Fine Tuning

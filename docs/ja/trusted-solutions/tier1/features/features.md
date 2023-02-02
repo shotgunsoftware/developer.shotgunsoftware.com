@@ -2,7 +2,7 @@
 layout: default
 title: Features Description
 pagename: tier1-features
-lang: ja
+lang: en
 ---
 
 # Isolation Feature Set

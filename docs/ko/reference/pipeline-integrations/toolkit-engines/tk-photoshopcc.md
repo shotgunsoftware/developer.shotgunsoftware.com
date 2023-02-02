@@ -7,7 +7,7 @@ lang: ko
 
 # Photoshop
 
-Photoshop CC용 {% include product %} 엔진은 Photoshop CC 워크플로우에 {% include product %}를 통합하기 위한 플랫폼을 제공합니다. 이는 표준 {% include product %} Pipeline Toolkit 엔진으로 구성되며 [tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe)(CEP)를 사용합니다.
+Photoshop CC용 {% include product %} 엔진은 Photoshop CC 워크플로우에 {% include product %}를 통합하기 위한 플랫폼을 제공합니다. 표준 {% include product %} Pipeline Toolkit 엔진으로 구성되며, [tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe)(CEP)를 사용합니다.
 
 활성화되면 Photoshop CC에서 **{% include product %}** 패널을 사용할 수 있게 됩니다. {% include product %} 컨텍스트에 대한 정보와 현재 해당 컨텍스트에 설치된 앱에 등록된 명령을 표시합니다.
 
@@ -15,7 +15,7 @@ Photoshop CC용 {% include product %} 엔진은 Photoshop CC 워크플로우에 
 
 ## 지원되는 응용프로그램 버전
 
-이 항목은 테스트를 거쳐 다음 응용프로그램 버전에서 작동하는 것으로 알려져 있습니다.
+이 항목은 테스트를 거쳐 다음 응용프로그램 버전에서 작동하는 것으로 알려져 있습니다. 
 
 {% include tk-photoshopcc %}
 
@@ -27,15 +27,15 @@ Photoshop CC용 {% include product %} 엔진은 Photoshop CC 워크플로우에 
 
 ![익스텐션 구성요소](../images/engines/photoshopcc-extension_components.png)
 
-1. **컨텍스트 헤더** - 현재 컨텍스트에 대한 썸네일 및 필드입니다.
-2. **즐겨찾기 쉘프** - 현재 컨텍스트에서 가장 많이 사용되는 앱을 표시하도록 디자인되었습니다.
-3. **명령 목록** - 현재 컨텍스트에서 자주 사용되지 않는 모든 명령입니다.
-4. **상황에 맞는 메뉴** - 추가 컨텍스트 관련 명령 및 디버깅 도구입니다.
-5. **로깅 콘솔** - 디버깅용 로깅 출력을 표시하는 콘솔 오버레이입니다.
+1. **컨텍스트 헤더** \- 현재 컨텍스트에 대한 썸네일 및 필드입니다.
+2. **즐겨찾기 쉘프** \- 현재 컨텍스트에서 가장 많이 사용되는 앱을 표시하도록 디자인되었습니다.
+3. **명령 목록** \- 현재 컨텍스트에서 자주 사용되지 않는 모든 명령입니다.
+4. **상황에 맞는 메뉴** \- 추가 컨텍스트 관련 명령 및 디버깅 도구입니다.
+5. **로깅 콘솔** \- 디버깅용 로깅 출력을 표시하는 콘솔 오버레이입니다.
 
 ## 설치
 
-Photoshop CC용 {% include product %} 엔진의 설치는 다른 {% include product %} 통합과 동일한 프로토콜을 수행합니다. 엔진 및 앱 설치에 대한 자세한 정보는 [툴킷 관리](https://developer.shotgridsoftware.com/ko/425b1da4/) 문서를 참조하십시오. 또한 통합 구성 방법의 예로 [기본 툴킷 구성](https://github.com/shotgunsoftware/tk-config-default2)을 참조할 수 있습니다.
+Photoshop CC용 {% include product %} 엔진의 설치는 다른 {% include product %} 통합과 동일한 프로토콜을 수행합니다. 엔진 및 앱 설치에 대한 자세한 내용은 [툴킷 관리](https://developer.shotgridsoftware.com/ko/425b1da4/) 문서를 참조하십시오. 또한 통합을 구성하는 방법의 예로 [기본 툴킷 구성](https://github.com/shotgunsoftware/tk-config-default2)을 참조할 수 있습니다.
 
 ## 익스텐션 활성화
 
@@ -145,13 +145,13 @@ shelf_favorites:
 
 {% include product %}에서 데이터를 쿼리하면 후크의 두 번째 방식이 호출됩니다. 이 `get_context_html()` 방식은 `get_entity_fields()` 방식에서 지정된 쿼리된 필드로 채워진 컨텍스트 엔티티 사전을 수신합니다. 예상되는 반환값은 쿼리된 엔티티 필드를 표시하도록 형식이 지정된 HTML을 포함하는 문자열입니다.
 
-[기본 후크 구현](https://github.com/shotgunsoftware/tk-photoshopcc/blob/master/hooks/context_fields_display.py)은 이러한 방식에 필요한 사항에 대한 좋은 참조 자료입니다.
+[기본 후크 구현](https://github.com/shotgunsoftware/tk-photoshopcc/blob/master/hooks/context_fields_display.py)은 이러한 방식에 필요한 사항에 대한 좋은 참조입니다.
 
 엔진은 엔티티 썸네일을 사용할 수 있는 경우 항상 이를 표시합니다.
 
 ### Photoshop API
 
-이 엔진은 Photoshop CC용 Javascript API를 Python에 노출합니다. 이 API에 대한 전체 문서는 [여기](http://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf)에서 찾을 수 있습니다.
+이 엔진은 Photoshop CC용 Javascript API를 Python에 노출합니다.
 
 Photoshop API 객체는 `engine.adobe`로 노출됩니다. 아래 예는 툴킷 앱과 후크 내에서 Photoshop DOM을 직접 조작하는 방법을 보여 줍니다. 표준 툴킷 앱에는 Photoshop 문서와 상호 작용하는 방법에 대한 작업 예가 포함되어 있습니다.
 
@@ -219,8 +219,8 @@ for (i, layer) in enumerate(layers):
 
 `SHOTGUN_ADOBE_PYTHON` - 엔진을 시작할 때 사용할 Python 실행 파일의 경로입니다. 설정되지 않은 경우 시스템 Python이 사용됩니다. Photoshop이 {% include product %} 데스크톱과 같은 Python 프로세스에서 또는 tk-shell 엔진을 통해 시작되면 해당 프로세스에서 사용되는 Python이 Photoshop 통합에서 사용됩니다.
 
-참고: Adobe 프레임워크에 추가 환경 변수가 존재합니다. 자세한 내용은 [개발자 설명서](https://developer.shotgridsoftware.com/tk-framework-adobe/)를 참조하십시오.
+참고: Adobe 프레임워크에 추가 환경 변수가 존재합니다. 자세한 내용은 [개발자 문서](https://developer.shotgridsoftware.com/tk-framework-adobe/)를 참조하십시오.
 
 ### 앱 개발자 노트
 
-* Python 프로세스는 Photoshop CC 프로세스와 별개이므로 가능한 깔끔한 방식으로 Photoshop 창 위에 표시되는 앱 창을 만들기 위해 엔진 내에서 일부 작업이 수행됩니다. 이 설정의 한 가지 문제는 `QFileDialog`의 경우 기본 OS 창을 사용하도록 하는 기본 옵션입니다. 이 엔진과 함께 사용할 앱을 개발하는 경우 기본 대화상자를 사용하지 않도록 옵션을 설정해야 합니다. [tk-multi-pythonconsole 앱에서 이 예를 참조하십시오.](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218).
+* Python 프로세스는 Photoshop CC 프로세스와 별개이므로 가능한 깔끔한 방식으로 Photoshop 창 위에 표시되는 앱 창을 만들기 위해 엔진 내에서 일부 작업이 수행됩니다. 이 설정의 한 가지 문제는 `QFileDialog`의 경우 기본 OS 창을 사용하도록 하는 기본 옵션입니다. 이 엔진과 함께 사용할 앱을 개발하는 경우 기본 대화상자를 사용하지 않도록 옵션을 설정해야 합니다. [tk-multi-pythonconsole 앱에서 이에 대한 예를 참조하십시오](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218).

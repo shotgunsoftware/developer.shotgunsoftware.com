@@ -2,7 +2,7 @@
 layout: default
 title: VPC Endpoints
 pagename: tier1-knowledge-endpoints
-lang: zh_CN
+lang: en
 ---
 
 # VPC Endpoints

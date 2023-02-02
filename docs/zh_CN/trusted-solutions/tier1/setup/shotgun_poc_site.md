@@ -2,7 +2,7 @@
 layout: default
 title: Migration Test Site
 pagename: tier1-setup-shotgun_poc_site
-lang: zh_CN
+lang: en
 ---
 
 # {% include product %} Migration Test Site

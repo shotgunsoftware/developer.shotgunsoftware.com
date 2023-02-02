@@ -5,13 +5,13 @@ pagename: tk-alias
 lang: zh_CN
 ---
 
-# 	Alias
+# Alias
 
 {% include product %} Alias 插件包含一个用于在 Alias 中集成 {% include product %} 应用的标准平台。它采用轻量型设计，操作简单直观，并会向 Alias 菜单中添加一个 {% include product %} 菜单。
 
 ## 支持的应用程序版本
 
-此插件已经过测试，已知可支持以下应用程序版本：
+此插件已经过测试，已知可支持以下应用程序版本： 
 
 {% include tk-alias %}
 
@@ -19,20 +19,38 @@ lang: zh_CN
 
 ## Python 版本支持
 
-Alias Toolkit 插件使用 Shotgun Desktop 附带的 Python 解释器或本地安装的解释器。
+# 重要信息
 
-| tk-alias 插件版本 | Shotgun Desktop 应用程序版本 | Shotgun Desktop 插件版本 | Python 解释器版本 |
-| ---------------------- | ----------------------------------- | ------------------------------ | -------------------------- |
-| v2.0.5 或更低版本 | v1.5.8 或更低版本 | v2.4.14 或更低版本 | v2.7.x |
-| v2.0.6 或更高版本 | v1.6.0 或更高版本 | v2.5.0 或更高版本 | v2.7.x 和 v3.7.x |
+发布 Alias ShotGrid Toolkit 插件 v2.1.5 时，我们将不再支持 Python v2.7.x。
 
-经过测试的本地安装的 Python 解释器：v2.7.x 或 v3.7.4
+请下载 ShotGrid Desktop v1.7.3（或更高版本），以确保默认使用 Python 3：
+
+https://community.shotgridsoftware.com/t/a-new-version-of-shotgrid-desktop-has-been-released/13877/14
+
+***
+
+## 旧版本
+
+Alias Toolkit 插件使用 ShotGrid Desktop 附带的 Python 解释器或_本地安装的解释器（参见说明）_。
+
+|tk-alias 插件版本 | ShotGrid Desktop 应用程序版本 | ShotGrid Desktop 插件版本 | Python 解释器版本 |
+| ---------------------- |--------------------------------------|---------------------------------| -------------------------- |
+|  v2.0.5 或更低版本       | v1.5.8 或更低版本                      | v2.4.14 或更低版本                | v2.7.x                     |
+|  v2.0.6 到 v2.1.4      | v1.6.0 到 v1.7.2                     | v2.5.0 到 v2.6.2                | v2.7.x 和 v3.7.x            |
+|  v2.1.5 或更高版本       | v1.7.3 或更高版本                      | v2.6.3 或更高版本                 | v3.7.x                     |
+
+经过测试的本地安装的 Python 解释器：v3.7.4
+
+***
+### 说明
+
+本地安装的解释器可能会导致出现意外行为。如果您想在工作室环境中使用此解释器，请[联系技术支持](https://knowledge.autodesk.com/zh-hans/contact-support)。
 
 ## 应用开发人员须知
-
+    
 ### PySide
 
-{% include product %} Alias 插件使用随 {% include product %} Desktop 发行的 PySide 版本，并在必要时将其激活。
+{% include product %} Alias 插件使用随 {% include product %} Desktop 发行的 PySide 版本，并在必要时将其激活。 
 
 ### Alias 项目管理
 
@@ -46,41 +64,34 @@ Alias Toolkit 插件使用 Shotgun Desktop 附带的 Python 解释器或本地�
 
 当 Alias 打开时，{% include product %} 菜单（Alias 插件）会添加到菜单栏中。
 
-![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunOtherApps.png)
+![其他应用](../images/engines/alias-other-apps.png)
 
 
-### 文件打开和保存
+### “File Open”和“File Save”
 
-使用“我的任务”(My Tasks)和“零部件”(Assets)选项卡可以查看您的所有已分配任务，并浏览零部件。在右侧，使用这些选项卡可以查看所有文件、与左侧选定内容关联的工作文件或已发布文件。
+使用“我的任务”(My Tasks)和“零部件”(Assets)选项卡可以查看您的所有已分配任务，并浏览零部件。 在右侧，使用这些选项卡可以查看所有文件、与左侧选定内容关联的工作文件或已发布文件。
 
-![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunFileOpen.png)
+![File Open](../images/engines/alias-file-open.png)
 
-![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunFileSave.png)
-
-
-### 快照
-
-打开“快照”(Snapshot)对话框以创建当前场景的快速备份。
-
-![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunSnapshot.png)
+![File Save](../images/engines/alias-file-save.png)
 
 
-### 发布
+### 发布(Publish)
 
-打开“发布”(Publish)对话框以将文件发布到 {% include product %}，然后供下游艺术家使用。有关详细信息，请参见[在 Alias 中发布](https://github.com/shotgunsoftware/tk-alias/wiki/Publishing)。
+打开“发布”(Publish)对话框以将文件发布到 {% include product %}，然后供下游艺术家使用。有关详细信息，请参见[在 Alias 中发布](https://github.com/shotgunsoftware/tk-alias/wiki/Publishing)。 
 
-![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunPublish.png)
+![发布(Publish)](../images/engines/alias-publish.png)
 
 
-### 加载器
+### 加载器(Loader)
 
-打开内容加载器应用，从而可以将数据加载到 Alias 中。有关详细信息，请参见[在 Alias 中加载](https://github.com/shotgunsoftware/tk-alias/wiki/Loading)
+打开内容加载器应用，从而可以将数据加载到 Alias 中。有关详细信息，请参见[在 Alias 中加载](https://github.com/shotgunsoftware/tk-alias/wiki/Loading)。
 
-![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunLoader.png)
+![加载器(Loader)](../images/engines/alias-loader.png)
 
-### 场景细分
+### Scene Breakdown
 
-打开“细分”(Breakdown)对话框，其中显示已参考（WREF 参考）内容的列表，以及场景中过时的内容。选择一个或多个项目，然后单击“更新选定项”(Update Selected)以切换并使用最新版本的内容。 有关详细信息，请参见 [Alias 中的场景细分](https://github.com/shotgunsoftware/tk-alias/wiki/Scene-Breakdown)
+打开“Scene Breakdown”对话框，其中显示已参考（WREF 参考）内容的列表，以及场景中过时或使用备用版本的 PublishedFile 的内容。有关详细信息，请参见 [Alias 中的场景细分](https://github.com/shotgunsoftware/tk-alias/wiki/Scene-Breakdown)。
 
-![](https://help.autodesk.com/cloudhelp/2020/CHS/Alias-Shotgun/images/ShotgunBreakdown.png)
+![Scene Breakdown](../images/engines/alias-breakdown.png)
 

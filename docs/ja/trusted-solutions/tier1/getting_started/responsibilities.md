@@ -2,7 +2,7 @@
 layout: default
 title: Client Responsibilities
 pagename: tier1-getting_started-responsibilities
-lang: ja
+lang: en
 ---
   
 # Client Responsibilities

@@ -2,7 +2,7 @@
 layout: default
 title: Planning Your Setup
 pagename: tier1-getting_started-planning
-lang: ja
+lang: en
 ---
 
 # Planning Your Setup

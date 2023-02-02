@@ -1,4 +1,4 @@
-﻿# Translated text strings used by the table of contents
+# Translated text strings used by the table of contents
 # 
 # For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/toc/
 #
@@ -26,7 +26,7 @@ jira-bridge-guide: Jira 및 ShotGrid 간 데이터 동기화
 jira-bridge-ref: Jira 브리지 Dev 리소스
 examples: 예
 webinars: 웨비나 녹화
-developer-training-videos: 개발자 교육 동영상 
+developer-training-videos: 개발자 교육 동영상
 episodic-pipeline-tutorial: 에피소드 파이프라인 튜토리얼
 
 core-api: Toolkit Core API
@@ -34,6 +34,7 @@ qt-widgets: QT Widgets
 shotgun-utils: ShotGrid Utils
 publish-api: 게시 API
 hiero-export-api: Hiero 내보내기 API
+tk-multi-breakdown2: Breakdown2
 development: 개발
 app-development: 앱 개발
 engine-development: 엔진 개발

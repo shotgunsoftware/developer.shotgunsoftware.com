@@ -2,7 +2,7 @@
 layout: default
 title: ShotGrid AWS Direct Connect Onboarding
 pagename: tier1-knowledge-direct_connect_onboarding
-lang: zh_CN
+lang: en
 ---
 
 # {% include product %} AWS Direct Connect Onboarding

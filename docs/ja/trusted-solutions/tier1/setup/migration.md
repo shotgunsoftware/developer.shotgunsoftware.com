@@ -2,7 +2,7 @@
 layout: default
 title: Migration
 pagename: tier1-setup-migration
-lang: ja
+lang: en
 ---
 
 # Migration
