@@ -19,15 +19,7 @@ Please note that it is perfectly possible, even likely, that it will work with m
 
 ## Python Version Support
 
-# Important
-
-With the release of v2.1.5 of the Alias ShotGrid toolkit engine, we will stop supporting Python v2.7.x .
-
-Please download v1.7.3 (or newer) of ShotGrid Desktop to ensure Python 3 is used as the default:
-
-https://community.shotgridsoftware.com/t/a-new-version-of-shotgrid-desktop-has-been-released/13877/14
-
-***
+> **Important:** With the release of v2.1.5 of the Alias ShotGrid toolkit engine, we will stop supporting Python v2.7.x. [Please download v1.7.3 (or newer) of ShotGrid Desktop to ensure Python 3 is used as the default](https://community.shotgridsoftware.com/t/a-new-version-of-shotgrid-desktop-has-been-released/13877/14).
 
 ## Older Versions
 
