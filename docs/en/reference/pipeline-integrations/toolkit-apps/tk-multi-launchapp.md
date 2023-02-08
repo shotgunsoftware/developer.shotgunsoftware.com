@@ -33,8 +33,7 @@ Currently supported applications and engines are:
 
 Many applications have command line options that can be called to choose a different edition of the application (ex. Nuke vs. NukeX) or to specify other various usage aspects.  The launcher app has an 'args' setting for each OS that can be configured for this purpose.  For example if you put '--nukex' there, it will add that to the command line launch and NukeX will run instead of regular Nuke:
 
----FOLD---
-Launch NukeX Example
+#### Launch NukeX Example
 
 ```yaml
 launch_nuke:
@@ -51,16 +50,13 @@ launch_nuke:
   windows_args: '--nukex'
   windows_path: '@nuke_windows'
 ```
----FOLD---
-
 ### Set Environment Variables and Automate Behavior at Launch
 
 Applications often require certain certain environment variables, plugin paths, etc. to be set in order to properly function in a studio pipeline. The launch app helps cover this case via the 'before_app_launch' hook, which allows you to define a snippet of code to run each time an application starts up. By default, the 'before_app_launch' hook is a simple pass-through that does nothing, but it can be overridden by following the instructions in <a href='https://developer.shotgridsoftware.com/425b1da4/#hooks'>this doc</a>.
 
 For example, if you use Zync Render, the Zync Maya plugin directory needs to be part of both `$PYTHONPATH` and `$XBMLANGPATH`. To have the launch app set these environment variables, update the `before_app_launch` hook with a few lines of code, as follows:
 
----FOLD---
-Set Environment Variables Example
+#### Set Environment Variables Example
 
 ```python
 def execute(self, **kwargs):
@@ -78,12 +74,10 @@ def execute(self, **kwargs):
     # with $PYTHONPATH if already defined in your pipeline
     os.environ["XBMLANGPATH"] = "~/Library/zync/zync-maya"
 ```
----FOLD---
 
 You can also use the 'before_app_launch' to automate other behavior, including {% include product %} updates. For example, you can configure the launch app to update the Task status (in this case, to "in progress") each time it's run (as long as the launch is from a Task, of course), as follows:
 
----FOLD---
-Automate Task Status Update Example
+#### Automate Task Status Update Example
 
 ```python
 def execute(self, **kwargs):
@@ -100,7 +94,6 @@ def execute(self, **kwargs):
         }
         self.parent.shotgun.update("Task", task_id, data)
 ```
----FOLD---
 
 As you can imagine, there are many possibilities here, and the launch app aims to provide the flexibility your pipeline needs.
 
