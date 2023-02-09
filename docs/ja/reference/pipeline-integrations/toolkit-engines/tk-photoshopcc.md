@@ -15,7 +15,7 @@ lang: ja
 
 ## サポート対象のアプリケーション バージョン
 
-この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。
+この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。 
 
 {% include tk-photoshopcc %}
 
@@ -35,15 +35,15 @@ lang: ja
 
 ## インストール
 
-{% include product %} Engine for Photoshop CC のインストールには、{% include product %} と他の製品を統合する場合と同じプロトコルを使用します。エンジンやアプリのインストールについては、「[Toolkit を管理する](https://developer.shotgridsoftware.com/ja/425b1da4/)」という記事を参照してください。また、統合の設定方法については、「[Toolkit の既定の設定](https://github.com/shotgunsoftware/tk-config-default2)」の例を参照してください。
+{% include product %} Engine for Photoshop CC のインストールには、{% include product %} と他の製品を統合する場合と同じプロトコルを使用します。エンジンやアプリのインストールについては、「[Toolkit を管理する](https://developer.shotgridsoftware.com/ja/425b1da4/)」という記事を参照してください。また、統合の設定方法の例については、「[Toolkit の既定の設定](https://github.com/shotgunsoftware/tk-config-default2)」を参照してください。
 
-## 拡張を有効にする
+## 拡張機能を有効にする
 
-拡張をインストールしたら、Photoshop CC の拡張メニューから起動する必要があります。
+拡張機能をインストールしたら、Photoshop CC の拡張メニューから起動する必要があります。
 
-![拡張メニュー](../images/engines/photoshopcc-extensions_menu.png)
+![拡張機能メニュー](../images/engines/photoshopcc-extensions_menu.png)
 
-これは、1 回のみ実行する必要があります。それ以降は起動すると、有効にしなくても、{% include product %} 拡張パネルが Photoshop CC のレイアウトに表示されるようになります。
+これは、1 回のみ実行する必要があります。それ以降は起動すると、有効にしなくても、{% include product %} 拡張機能パネルが Photoshop CC のレイアウトに表示されるようになります。
 
 一度有効にすると、それ以降の起動では、{% include product %} 統合のブートストラップ時に、拡張パネルにロード画面が表示されます。
 
@@ -107,7 +107,7 @@ lang: ja
 
 ### PySide
 
-{% include product %} Engine for Photoshop CC は PySide を使用します。正式な手順については、「[Pyside をインストールする](http://pyside.readthedocs.io/en/latest/installing/index.html)」を参照してください。
+{% include product %} Engine for Photoshop CC は PySide を使用します。Pyside のインストールについては、[Pyside をインストールする](http://pyside.readthedocs.io/en/latest/installing/index.html)公式の手順を参照してください。
 
 ### CEP 拡張機能
 
@@ -145,13 +145,13 @@ shelf_favorites:
 
 {% include product %} からデータをクエリーすると、フックの 2 番目のメソッドが呼び出されます。この `get_context_html()` メソッドは、`get_entity_fields()` メソッドで指定されたクエリー フィールドが入力されたコンテキスト エンティティ ディクショナリを受け取ります。予想される戻り値は、クエリー対象のエンティティ フィールドを表示するためにフォーマット化された HTML を含む文字列です。
 
-このメソッドで指定する必要がある内容については、「[既定のフックの実装](https://github.com/shotgunsoftware/tk-photoshopcc/blob/master/hooks/context_fields_display.py)」を参照してください。
+これらのメソッドで必要とされる内容については、「[既定のフックの実装](https://github.com/shotgunsoftware/tk-photoshopcc/blob/master/hooks/context_fields_display.py)」を参照してください。
 
 エンジンは、エンティティのサムネイルが使用可能であれば、それを常に表示します。
 
 ### Photoshop API
 
-エンジンは Photoshop CC の JavaScript API を Python に公開します。この API の完全なマニュアルについては、[こちら](http://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf)を参照してください。
+エンジンは Photoshop CC の JavaScript API を Python に公開します。
 
 Photoshop API オブジェクトは `engine.adobe` として公開されます。次の例では、Toolkit のアプリやフック内から Photoshop DOM を直接操作する方法を示します。標準的な Toolkit アプリには、Photoshop マニュアルの操作方法に関する作業例が含まれています。
 
@@ -219,8 +219,8 @@ for (i, layer) in enumerate(layers):
 
 `SHOTGUN_ADOBE_PYTHON`: エンジンの起動時に使用する Python の実行可能ファイルへのパス。設定しない場合は、システムの Python が使用されます。Photoshop が {% include product %} Desktop や tk-shell エンジンなどの Python プロセスから起動される場合、このプロセスで使用する Python は Photoshop との統合で使用されます。
 
-注: 追加の環境変数が Adobe のフレームワークに存在します。詳細については、[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-framework-adobe/)を参照してください。
+注: 追加の環境変数が Adobe のフレームワークに存在します。詳細については、「[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-framework-adobe/)」を参照してください。
 
 ### アプリ開発者メモ
 
-* Python プロセスは Photoshop CC プロセスから独立しているため、アプリ ウィンドウで上記の Photoshop ウィンドウをできるだけ整理して表示するには、エンジン内でいくつかの作業を行います。このセットアップの注意点の 1 つに、`QFileDialog` にネイティブ OS Windows を使用する既定のオプションがあります。このエンジンを使用してアプリを開発する場合は、ネイティブのダイアログを使用しないオプションを設定してください。[tk-multi-pythonconsole アプリでの例を参照してください](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218)。
+* Python プロセスは Photoshop CC プロセスから独立しているため、アプリ ウィンドウで上記の Photoshop ウィンドウをできるだけ整理して表示するには、エンジン内でいくつかの作業を行います。このセットアップの注意点の 1 つに、`QFileDialog` にネイティブ OS Windows を使用する既定のオプションがあります。このエンジンを使用してアプリを開発する場合は、ネイティブのダイアログを使用しないオプションを設定してください。[tk-multi-pythonconsole アプリの例を参照してください。](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218)

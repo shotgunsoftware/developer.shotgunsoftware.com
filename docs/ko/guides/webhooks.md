@@ -25,7 +25,7 @@ lang: ko
 
 ## 언제 {% include product %} 이벤트 데몬 대신 웹후크를 사용해야 합니까?
 
-웹후크와 [{% include product %} 이벤트 데몬](https://github.com/shotgunsoftware/shotgunEvents/wiki)은 비슷한 기능을 제공하지만 몇 가지 중요한 차이점이 있습니다. 이벤트 데몬을 사용하려면 사용자 고유의 서비스를 실행, 모니터링 및 유지 관리해야 합니다. 모든 사용자 코드는 Python으로 작성해야 하며 그래야 {% include product %}에 대한 사용자 고유의 연결을 시작할 수 있습니다. 웹후크는 이와 달리 연결에 응답하며 모든 프로그래밍 언어로 작성할 수 있습니다. 웹후크는 [AWS Lambda](https://aws.amazon.com/ko/lambda/)와 같은 서버리스 환경에서 호스트되거나 [Zapier](https://zapier.com) 및 [IFTTT](https://ifttt.com)와 같이 온라인으로 사용 가능한 모든 자동화 플랫폼을 트리거할 수 있습니다. 웹후크를 사용한 경우에는 이 솔루션을 사용하는 것이 좋습니다.
+웹후크와 [{% include product %} 이벤트 데몬](https://github.com/shotgunsoftware/shotgunEvents/wiki)은 비슷한 기능을 제공하지만 몇 가지 중요한 차이점이 있습니다 이벤트 데몬을 사용하려면 사용자 고유의 서비스를 실행, 모니터링 및 유지 관리해야 합니다. 모든 사용자 코드는 Python으로 작성해야 하며 그래야 {% include product %}에 대한 사용자 고유의 연결을 시작할 수 있습니다. 웹후크는 이와 달리 연결에 응답하며 모든 프로그래밍 언어로 작성할 수 있습니다. 웹후크는 [AWS Lambda](https://aws.amazon.com/lambda/)와 같은 서버리스 환경에서 호스트되거나 [Zapier](https://zapier.com) 및 [IFTTT](https://ifttt.com)와 같이 온라인으로 사용 가능한 모든 자동화 플랫폼을 트리거할 수 있습니다. 웹후크를 사용한 경우에는 이 솔루션을 사용하는 것이 좋습니다.
 
 ## 웹후크 생성
 
@@ -33,11 +33,11 @@ lang: ko
 
 ![웹후크 생성 버튼](./images/webhooks/webhooks_page.png)
 
-그런 다음 **웹후크 생성(Create Webhook)**을 선택합니다.
+그런 다음 **웹후크 생성(Create Webhook)**을 선택합니다. 
 
 ![웹후크 생성 버튼](./images/webhooks/create_webhook_button_v3.png)
 
-{% include info title="참고" content="웹후크에 대한 액세스는 고급 권한(Advanced Permissions)의 **웹후크 표시(Show Webhooks)**를 통해 제어됩니다. 이 기능은 관리자(Admin) 및 매니저 권한 역할에 대해 기본적으로 활성화되어 있습니다. ![웹후크 생성 대화상자](/images/webhooks/show_webhooks_permission.png)." %}
+{% include info title="참고" content="웹후크에 대한 액세스는 고급 권한(Advanced Permissions)의 **웹후크 표시(Show Webhooks)**를 통해 제어됩니다. 이 기능은 관리자(Admin) 및 매니저 권한 역할에 대해 기본적으로 활성화되어 있습니다. ![웹후크 생성 대화상자](./images/webhooks/show_webhooks_permission.png)" %}
 
 그런 다음 새 웹후크를 생성하는 데 필요한 정보를 입력합니다.
 
@@ -78,15 +78,15 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 ### 배치 형식으로 전달(Deliver in Batched Format)
 
-![배치 형식으로 전달합니다](./images/webhooks/webhooks_batched_format.png)
+![배치 형식으로 전달(Deliver in Batched Format)](./images/webhooks/webhooks_batched_format.png)
 
-[여기](https://developer.shotgridsoftware.com/ko/e7890fc8/)에서 배치 형식으로 제공하는 방법에 대해 자세히 알아보십시오.
+[배치 형식으로 전달하는 방법에 대한 자세한 내용은 여기를 참조하십시오](https://developer.shotgridsoftware.com/ko/e7890fc8/).
 
 ### 불안정할 경우 알림(Notify when unstable)
 
 **불안정할 경우 알림(Notify when unstable)**을 선택하면 웹후크가 실패할 때 알림을 보낼 사람 또는 그룹을 선택할 수 있습니다. 이 설정은 선택 사항입니다.
 
-![불안정할 경우 알림](./images/webhooks/webhook_notifications_v2.png)
+![불안정할 경우 알림(Notify when unstable)](./images/webhooks/webhook_notifications_v2.png)
 
 ### 프로젝트 및 엔티티별 필터링
 
@@ -108,10 +108,10 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 | 상태 | 예시 | 설명 |
 |--------|:-------:|:-----------:|
-| 활성(Active) | ![활성](./images/webhooks/webhook_status_active.png) | 웹후크가 안정적인 방식으로 작동합니다. 지난 24시간 동안 이 웹후크의 사용자 URL에 전달이 없으면 해당 대상에 도달하지 못한 것입니다. |
-| 불안정(Unstable) | ![불안정](./images/webhooks/webhook_status_unstable.png) | 웹후크가 불안정한 방식으로 작동합니다. 지난 24시간 동안 일부 전달이 대상에 도달하지 못했지만 {% include product %}에서 웹후크가 작동하지 않는 것으로 간주할 정도는 아닙니다. |
-| 실패(Failed) | ![실패](./images/webhooks/webhook_status_failed.png) | 웹후크가 작동하지 않는 것으로 간주되고 더 이상 전달을 시도하지 않습니다. 이는 짧은 기간 동안 너무 많은 전달 실패에 따른 결과이며 시스템은 웹후크가 더 이상 실행 가능하지 않은 것으로 판단합니다. **지난 24시간 동안 100번의 전달에 실패한 경우 웹후크가 실패로 간주됩니다**. |
-| 비활성화됨(Disabled) | ![비활성화됨](./images/webhooks/webhook_status_disabled.png) | 웹후크가 비활성화된 상태이며 다시 활성 상태가 될 때까지 전달이 더 이상 시도되지 않습니다. |
+| 활성(Active) | ![활성(Active)](./images/webhooks/webhook_status_active.png) | 웹후크가 안정적인 방식으로 작동합니다. 지난 24시간 동안 이 웹후크의 사용자 URL에 전달이 없으면 해당 대상에 도달하지 못한 것입니다. |
+| 불안정(Unstable) | ![불안정(Unstable)](./images/webhooks/webhook_status_unstable.png) | 웹후크가 불안정한 방식으로 작동합니다. 지난 24시간 동안 일부 전달이 대상에 도달하지 못했지만 {% include product %}에서 웹후크가 작동하지 않는 것으로 간주할 정도는 아닙니다. |
+| 실패(Failed) | ![실패(Failed)](./images/webhooks/webhook_status_failed.png) | 웹후크가 작동하지 않는 것으로 간주되고 더 이상 전달을 시도하지 않습니다. 이는 짧은 기간 동안 너무 많은 전달 실패에 따른 결과이며 시스템은 웹후크가 더 이상 실행 가능하지 않은 것으로 판단합니다. **지난 24시간 동안 100번의 전달에 실패한 경우 웹후크가 실패로 간주됩니다.** |
+| 비활성화됨(Disabled) | ![비활성화됨(Disabled)](./images/webhooks/webhook_status_disabled.png) | 웹후크가 비활성화된 상태이며 다시 활성 상태가 될 때까지 전달이 더 이상 시도되지 않습니다. |
 
 ## 전달(Deliveries)
 
@@ -184,7 +184,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 ![응답(Response) 탭](./images/webhooks/webhooks_response_tab.png)
 
-응답(Response) 탭에는 전달에 대한 웹후크 응답과 관련한 정보가 표시됩니다.
+응답(Response) 탭에는 전달에 대한 웹후크 응답과 관련한 정보가 표시됩니다. 
 
 웹후크의 응답 HTTP 헤더, 본문 및 측정된 응답 시간을 확인할 수 있습니다.
 
@@ -207,9 +207,9 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 각 사이트에서는 분당 1분의 응답 시간이 허용됩니다. 따라서 사이트에 대해 구성된 모든 사용자 엔드포인트가 응답하는 데 총 6초가 걸릴 경우 해당 사이트의 웹후크 전달이 분당 10번으로 제한됩니다.
 
 전체 처리량을 높여야 할 경우 다음 모델에 따라 사용자 엔드포인트를 설계해야 합니다.
-1. 요청 받기
-2. 또 다른 프로세스/스레드를 생성하여 원하는 방식으로 처리
-3. 즉시 확인 200에 응답
+ 1. 요청 받기
+ 2. 또 다른 프로세스/스레드를 생성하여 원하는 방식으로 처리
+ 3. 즉시 확인 200에 응답
 
 #### 상태 코드
 
@@ -242,7 +242,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 #### 확인 응답의 역할은 무엇입니까?
 
-확인 응답은 웹후크의 URL에서 성공적으로 수신한 전달 처리의 성공 또는 실패에 대한 대역 외 상세 보고를 허용합니다. 이를 통해 {% include product %}에서 전달 수신 상태를, 해당 전달과 관련된 이벤트 처리의 성공 또는 실패와 구분할 수 있습니다. 결과적으로, 성공적으로 전달된 이벤트에서 디버깅을 위해 유용한 추가 정보를 포함할 수 있습니다.
+확인 응답은 웹후크의 URL에서 성공적으로 수신한 전달 처리의 성공 또는 실패에 대한 대역 외 상세 보고를 허용합니다. 이를 통해 {% include product %}에서 전달 수신 상태를, 해당 전달과 관련된 이벤트 처리의 성공 또는 실패와 구분할 수 있습니다. 결과적으로, 성공적으로 전달된 이벤트에서 디버깅을 위해 유용한 추가 정보를 포함할 수 있습니다. 
 
 `Asset` 엔티티 생성 시 트리거되는 웹후크가 좋은 예입니다. 웹후크의 역할이 새로운 각 `Asset`에 대해 디스크에 디렉토리 구조를 만드는 것인 경우, 웹후크의 URL을 성공적으로 전달받을 수 있지만 디스크 또는 네트워크 문제로 인해 관련 디렉토리를 만들지 못할 수도 있습니다. 이 경우 디렉토리 구조가 생성되지 않은 사실과 그 원인을 나타내는 자세한 오류 메시지와 함께 전달 레코드가 업데이트됩니다.
 
@@ -252,7 +252,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
 
 ### webhook.site 사용
 
-[webhook.site](https://webhook.site)를 사용하는 것이 권장됩니다. 이는 웹후크에 복사하여 붙여넣을 수 있는 고유한 URL로, 해당 주소에 대한 전달 현황을 실시간으로 보여 줍니다. 전달에 응답할 때 특정 상태 코드 및 본문을 사용하도록 이 페이지를 사용자 지정하여, 전달 성공 및 실패를 테스트할 수 있습니다.
+[webhook.site](https://webhook.site)를 사용하는 것이 좋습니다. 이는 웹후크에 복사하여 붙여넣을 수 있는 고유한 URL로, 해당 주소에 대한 전달 현황을 실시간으로 보여 줍니다. 전달에 응답할 때 특정 상태 코드 및 본문을 사용하도록 이 페이지를 사용자 지정하여, 전달 성공 및 실패를 테스트할 수 있습니다. 
 
 webhook.site의 서비스는 매우 속도에 제한적입니다. 즉, 일부 전달이 거부되거나 불안정해지거나 실패한 웹후크 상황에서 쉽게 종료될 수 있습니다. 테스트할 때는 프로덕션의 라이브 데이터 대신, 알려져 있으며 제어 가능한 프로젝트 환경을 사용하는 것이 좋습니다.
 

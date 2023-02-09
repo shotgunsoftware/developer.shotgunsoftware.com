@@ -1,4 +1,4 @@
-﻿# Translated text strings used by the table of contents
+# Translated text strings used by the table of contents
 # 
 # For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/toc/
 #
@@ -26,7 +26,7 @@ jira-bridge-guide: JIRA と ShotGrid 間でデータを同期する
 jira-bridge-ref: JIRA Bridge 開発リソース
 examples: 例
 webinars: ウェビナーの録画
-developer-training-videos: 開発者向けトレーニング ビデオ 
+developer-training-videos: 開発者向けトレーニング ビデオ
 episodic-pipeline-tutorial: エピソード パイプライン チュートリアル
 
 core-api: Toolkit Core API
@@ -34,6 +34,7 @@ qt-widgets: QT ウィジェット
 shotgun-utils: ShotGrid ユーティリティ
 publish-api: パブリッシュ API
 hiero-export-api: Hiero 書き出し API
+tk-multi-breakdown2: 詳細情報2
 development: 開発
 app-development: アプリケーション開発
 engine-development: エンジン開発
