@@ -425,6 +425,14 @@ where  `<proxy_server_address>`  is a string that follows the convention documen
 
 If you need to override this setting on a per-project basis, you can do so in  `config/core/shotgun.yml`  in your project’s Pipeline Configuration.
 
+## Configuring the thumbnail display in ShotGrid Desktop
+
+ShotGrid Desktop will now resize non-square images used as thumbnails to show the entire image as shown by the `Demo: Automotive` project in the image.
+
+![](images/Integration-admin-guide/desktop_thumbnail_resizing.png)
+
+If you would like to revert to the previous cropping behavior you can use the `SGTK_PROJ_THUMB_OLD` environment variable.
+
 ## Offline Usage Scenarios
 
 In general use, {% include product %} Desktop automatically checks for updates for the Desktop app itself, the tk-desktop engine, and the basic configuration at launch time. However, there are cases where you might want to run integrations while offline or on machines that are completely disconnected from the Internet. The following section describes how to address each of these scenarios.

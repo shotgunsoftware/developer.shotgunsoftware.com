@@ -44,3 +44,4 @@ tk-desktop:
 
 Please note that the special `Apps` entry controls where (in the tab order) the default `Apps` tab should appear.
 
+## [Configuring the thumbnail display in ShotGrid Desktop](https://developer.shotgridsoftware.com/8085533c/?title=ShotGrid+Integrations+Admin+Guide#configuring-the-thumbnail-display-in-shotgrid-desktop)
