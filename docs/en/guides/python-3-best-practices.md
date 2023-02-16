@@ -12,11 +12,11 @@ lang: en
 
 There are a few compelling reasons to make the leap to Python 3.  Perhaps the most dramatic is the Python 2 end of life, which occurred on January 1, 2020[^1]. With the sunsetting of Python 2, all support for Python 2 ceases, meaning that even new security vulnerabilities found in Python 2 will not be addressed.
 
-For CY2020, the [VFX reference platform](https://vfxplatform.com/) makes the switch as well, targeting Python version 3.7.x.  As a practical matter for many of us, all of this will mean we don't have much choice in when to add support for Python 3 -- as DCCs (digital content creation applications) that we develop for begin to move to Python 3 interpreters, it will become a necessity to support them.
+In CY2020, the [VFX reference platform](https://vfxplatform.com/) made the switch as well, targeting Python version 3.7.x.  As a practical matter for many of us, all of this means we don't have much choice in when we added support for Python 3—as DCCs (digital content creation applications) that we develop for moved to Python 3 interpreters.
 
-## Things to Consider Before Starting
+## Things to Consider (Prior to updating to Python 3)
 
-When considering moving to support Python 3, it's good to look at the requirements and application of your codebase to set expectations.  Obviously, any host applications your code runs in will help drive this decision.  Knowing whether you need to support many different Python interpreter versions and, if so, which ones, will be important information as you decide on the porting process that makes sense for you.
+When considering moving to Python 3, it's good to look at the requirements and application of your codebase to set expectations.  Obviously, any host applications your code runs in will help drive this decision.  Knowing whether you need to support many different Python interpreter versions and, if so, which ones, will be important information as you decide on the porting process that makes sense for you.
 
 Next, take an audit of what libraries your code depends on.  If any of these libraries do not have Python 3 compatible versions, you'll need to find an alternative library, or fork the library to provide compatibility yourself. Both of these options could potentially be costly decisions and are important to consider early on.  Additionally, even libraries that do offer Python 3 compatible versions may not be drop-in replacements, and some libraries choose to fork for Python 3 support rather than maintain compatibility for both Python 2 and 3 as a single source.  We'll discuss this in more depth in the "Porting Options" section below.
 

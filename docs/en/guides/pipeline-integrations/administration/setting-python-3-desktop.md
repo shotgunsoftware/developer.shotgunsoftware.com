@@ -5,9 +5,9 @@ pagename: setting-python-3-desktop
 lang: en
 ---
 
-# Set Python 2 as the default Python version in {% include product %} Desktop
+# Set Python 3 as the default Python version in {% include product %} Desktop
 
-**Note:** Python 2 is getting removed by November 1st 2022. You can find the notification [here](https://community.shotgridsoftware.com/t/important-notice-upcoming-removal-of-python-2-7-and-3-7-interpreter-in-shotgrid-desktop/15166).
+**Note:** Python 2 was removed November 1st 2022 due to security reasons, [learn more here](https://community.shotgridsoftware.com/t/important-notice-upcoming-removal-of-python-2-7-and-3-7-interpreter-in-shotgrid-desktop/15166).
 
 - [Windows](#windows)
 - [MacOS](#macos)
@@ -15,7 +15,7 @@ lang: en
 
 ## Windows
 
-### Manually Set the `SHOTGUN_PYTHON_VERSION` environment to 2 on Windows
+### Manually Set the `SHOTGUN_PYTHON_VERSION` environment to 3 on Windows
 
 - On the Windows taskbar, right-click the Windows icon and select **System**, navigate through the **Control Panel/System and Security/System**. 
 
@@ -35,16 +35,11 @@ lang: en
 
 - For the **Variable name**, add `SHOTGUN_PYTHON_VERSION`, and set the **Variable value** to `2`. 
 
-![](images/setting-python-3-desktop/05-setting-python-3-desktop.jpg)
-
-- Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 2. 
-
-![](images/setting-python-3-desktop/06-setting-python-3-desktop.jpg)
-
+- Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 3. 
 
 ## MacOS
 
-### Set the `SHOTGUN_PYTHON_VERSION` environment to 2 on MacOS
+### Set the `SHOTGUN_PYTHON_VERSION` environment to 3 on MacOS
 
 - Create a properties file under `~/Library/LaunchAgents/` named `my.startup.plist`  
 
@@ -65,7 +60,7 @@ $ vi my.startup.plist
   <array> 
     <string>sh</string> 
     <string>-c</string> 
-    <string>launchctl setenv SHOTGUN_PYTHON_VERSION 2</string> 
+    <string>launchctl setenv SHOTGUN_PYTHON_VERSION 3</string> 
   </array> 
   <key>RunAtLoad</key> 
   <true/> 
@@ -75,18 +70,16 @@ $ vi my.startup.plist
 
 - After rebooting your Mac, the new environment variable will remain active.
 
-- Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 2. 
-
-![](images/setting-python-3-desktop/07-setting-python-3-desktop.jpg)
+- Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 3. 
 
 ## CentOS 7
 
-### Set the `SHOTGUN_PYTHON_VERSION` environment to 2 on CentOS 7
+### Set the `SHOTGUN_PYTHON_VERSION` environment to 3 on CentOS 7
 
 - Add the following to your `~/.bashrc` file: 
 
 ```
-export SHOTGUN_PYTHON_VERSION="2"
+export SHOTGUN_PYTHON_VERSION="3"
 ```
 
 - Reboot your OS by running:  
@@ -95,6 +88,4 @@ export SHOTGUN_PYTHON_VERSION="2"
 $ sudo reboot 
 ```
 
-- Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 2. 
-
-![](images/setting-python-3-desktop/08-setting-python-3-desktop.jpg)
+- Restart the {% include product %} Desktop application. Now, you should see that the Python version has been updated to run Python 3. 
