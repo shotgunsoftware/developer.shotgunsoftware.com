@@ -19,13 +19,13 @@ Please note that it is perfectly possible, even likely, that it will work with m
 
 ## Python Version Support
 
-> **Important:** With the release of v2.1.5 of the Alias ShotGrid toolkit engine, we will stop supporting Python v2.7.x. [Please download v1.7.3 (or newer) of ShotGrid Desktop to ensure Python 3 is used as the default](https://community.shotgridsoftware.com/t/a-new-version-of-shotgrid-desktop-has-been-released/13877/14).
+> **Important:** With the release of v2.1.5 of the Alias {% include product %} toolkit engine, we have discontinued support for Python v2.7.x. [Please download v1.7.3 (or newer) of {% include product %} Desktop to ensure Python 3 is used as the default](https://community.shotgridsoftware.com/t/a-new-version-of-shotgrid-desktop-has-been-released/13877/14).
 
 ## Older Versions
 
-The Alias toolkit engine uses the Python interpreter shipped with ShotGrid Desktop, or a _locally installed interpreter (see note.)_
+The Alias toolkit engine uses the Python interpreter shipped with {% include product %} Desktop, or a _locally installed interpreter (see note.)_
 
-|tk-alias Engine Version | ShotGrid Desktop Application Version | ShotGrid Desktop Engine Version | Python Interpreter Version |
+|tk-alias Engine Version | {% include product %} Desktop Application Version | {% include product %} Desktop Engine Version | Python Interpreter Version |
 | ---------------------- |--------------------------------------|---------------------------------| -------------------------- |
 |  v2.0.5 or older       | v1.5.8 or older                      | v2.4.14 or older                | v3.7.x                     |
 |  v2.0.6 to v2.1.4      | v1.6.0 to v1.7.2                     | v2.5.0 to v2.6.2                | v3.7.x            |
