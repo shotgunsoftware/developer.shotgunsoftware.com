@@ -34,7 +34,7 @@ ModuleNotFoundError: No module named 'Cookie'
 
 ## How to fix
 
-This issue may be due to using Python 3. Python 2.7 does have a Cookie module, but 3.x does not. So this can be fixed by using python 2.7.
+This issue may be due to using Python 3 (older versions of Python are no longer supported)
 
 ## Related links
 
