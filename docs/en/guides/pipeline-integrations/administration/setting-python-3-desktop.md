@@ -7,7 +7,7 @@ lang: en
 
 # Set Python 3 as the default Python version in {% include product %} Desktop
 
-**Note:** Python 2 was removed November 1st 2022 due to security reasons, [learn more here](https://community.shotgridsoftware.com/t/important-notice-upcoming-removal-of-python-2-7-and-3-7-interpreter-in-shotgrid-desktop/15166).
+**Important:** **This topic is only valid when using {% include product %} Desktop version 1.7.3**—these steps are no longer needed when using newer versions of {% include product %} Desktop. Python 2 was removed November 1st 2022 due to security reasons, [learn more here](https://community.shotgridsoftware.com/t/important-notice-upcoming-removal-of-python-2-7-and-3-7-interpreter-in-shotgrid-desktop/15166).
 
 - [Windows](#windows)
 - [MacOS](#macos)

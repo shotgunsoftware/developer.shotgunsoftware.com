@@ -16,7 +16,7 @@ The following guide will help you setup {% include product %}Events for your stu
 The daemon can run on any machine that has Python installed and has network access to your {% include product %} server. It does **not** need to run on the {% include product %} server itself. In fact, if you are using the hosted version of {% include product %}, this isn't an option. However, you may run it on your {% include product %} server if you like. Otherwise, any server will do.
 
 * [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)
-  * Use use v3.1.0 or more for Python 3.7 (_note: Python 2 is no longer supported_).
+  * Use use v3.1.0 or more for Python 3.7+ (_note: Python 2 is no longer supported_).
   * In either case, we strongly suggest using [the most up to date Python API version](https://github.com/shotgunsoftware/python-api/releases) and keeping this dependency updated over time.
 * Network access to your {% include product %} server
 

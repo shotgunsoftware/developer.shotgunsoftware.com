@@ -7,12 +7,9 @@ lang: en
 
 # Python 3 Porting Best Practices
 
-
 ## Why the move to Python 3?
 
 There are a few compelling reasons to make the leap to Python 3.  Perhaps the most dramatic is the Python 2 end of life, which occurred on January 1, 2020[^1]. With the sunsetting of Python 2, all support for Python 2 ceases, meaning that even new security vulnerabilities found in Python 2 will not be addressed.
-
-In CY2020, the [VFX reference platform](https://vfxplatform.com/) made the switch as well, targeting Python version 3.7.x.  As a practical matter for many of us, all of this means we don't have much choice in when we added support for Python 3—as DCCs (digital content creation applications) that we develop for moved to Python 3 interpreters.
 
 ## Things to Consider (Prior to updating to Python 3)
 
