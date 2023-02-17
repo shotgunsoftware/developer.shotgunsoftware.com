@@ -23,15 +23,7 @@ Please note that it is perfectly possible, even likely, that it will work with m
 
 ## Older Versions
 
-The Alias toolkit engine uses the Python interpreter shipped with {% include product %} Desktop, or a _locally installed interpreter (see note.)_
-
-|tk-alias Engine Version | {% include product %} Desktop Application Version | {% include product %} Desktop Engine Version | Python Interpreter Version |
-| ---------------------- |--------------------------------------|---------------------------------| -------------------------- |
-|  v2.0.5 or older       | v1.5.8 or older                      | v2.4.14 or older                | v3.7.x                     |
-|  v2.0.6 to v2.1.4      | v1.6.0 to v1.7.2                     | v2.5.0 to v2.6.2                | v3.7.x            |
-|  v2.1.5 or newer       | v1.7.3 or newer                      | v2.6.3 or newer                 | v3.7.x                     |
-
-Tested locally installed Python Interpreters: v3.7.4
+[Learn more about Python version support for older versions here](https://github.com/shotgunsoftware/tk-alias/wiki/Python-Version-Support#older-versions).
 
 ***
 ### Notes
