@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Desktop に Python 2 を設定する
+title: Desktop に Python 3 を設定する
 pagename: setting-python-3-desktop
 lang: ja
 ---

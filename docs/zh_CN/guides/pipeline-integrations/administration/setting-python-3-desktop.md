@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 为 Desktop 设置 Python 2
+title: 为 Desktop 设置 Python 3
 pagename: setting-python-3-desktop
 lang: zh_CN
 ---

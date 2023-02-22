@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 데스크톱용 Python 2 설정
+title: 데스크톱용 Python 3 설정
 pagename: setting-python-3-desktop
 lang: ko
 ---
