@@ -48,7 +48,7 @@ The target URL would look like:
 foo://host/path...
 ```
 
-> **Note:** For more information, please see [http://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx](http://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx) .
+{% include info title="Note" content="For more information, please see [http://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx](http://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx)." %}
 **Windows QT/QSetting example**
 
 If the application you are developing is written using the QT (or PyQT / PySide) framework, you can leverage the QSetting object to manage the creation of the registry keys for you.
@@ -162,9 +162,9 @@ By varying the keyword after the `//` part of the URL in your AMI, you can chang
 
 Using this methodology you could open applications, upload content via services like FTP, archive data, send email, or generate PDF reports.
 
-## Registering a protocol on OSX
+## Registering a protocol on OSX (BigSur and Monterey)
 
-To register a protocol on OSX you need to create a .app bundle that is configured to run your application or script.
+To register a protocol on OSX BigSur and Monterey, you need to create a .app bundle that is configured to run your application or script.
 
 Start by writing the following script in the AppleScript Script Editor:
 
@@ -174,10 +174,86 @@ on open location this_URL
 end open location 
 ```
 
-> **Tip:** To ensure you are running Python from a specific shell, such as tcsh, you can change the do shell script for something like the following:  
-> 
->     do shell script "tcsh -c \"sgTriggerScript.py '" & this_URL & "'\""
-In the Script Editor, save your short script as an “Application Bundle”.
+{% include info title="Tip" content="To ensure you are running Python from a specific shell, such as tcsh, you can change the do shell script for something like the following:  
+    do shell script "tcsh -c \"sgTriggerScript.py '" & this_URL & "'\""
+    In the Script Editor, save your short script as an “Application Bundle”." %}
+
+Find the saved Application Bundle, and Open Contents. Then, open the info.plist file and add the following to the plist dict:
+
+```
+    <key>CFBundleIdentifier</key>
+    <string>com.mycompany.AppleScript.Shotgun</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLName</key>
+        <string>Shotgun</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>shotgun</string>
+        </array>
+      </dict>
+    </array>
+```
+
+You may want to change the following three strings:
+```
+com.mycompany.AppleScript.{% include product %}
+{% include product %}
+{% include product %}
+```
+
+The third string is the protocol handler; therefore a URL would be:  
+
+```
+shotgrid://something
+```
+
+Then, **delete** the following lines in the `info.plist` file, which fall between the `NSAppleEventsUsageDescription` and `NSSystemAdministrationUsageDescription`:
+
+```
+	<string>This script needs to control other applications to run.</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>This script needs access to your music to run.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This script needs access to your calendars to run.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This script needs access to your camera to run.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>This script needs access to your contacts to run.</string>
+	<key>NSHomeKitUsageDescription</key>
+	<string>This script needs access to your HomeKit Home to run.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This script needs access to your microphone to run.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This script needs access to your photos to run.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>This script needs access to your reminders to run.</string>
+	<key>NSSiriUsageDescription</key>
+	<string>This script needs access to Siri to run.</string> 
+  ```
+
+Finally, move your `.app` bundle to the Applications folder of your Mac. Then double click on it—that will register your protocol with the operating system.
+
+The data flow looks like this: once you click the AMI in {% include product %}, or click a URL that starts with `shotgrid://` , the `.app` bundle will respond to it and pass the URL over to your Python script. At this point the same script that was used in the Windows example can be used and all the same possibilities apply.
+
+{% include info title="Info" content="For additional information on troubleshooting with Monterey, [visit this community post](https://community.shotgridsoftware.com/t/amis-stopped-working-on-osx-monterey/16886)." %}
+
+## Registering a protocol on OSX (Older than BigSur)
+
+To register a protocol on OSX older than BigSur, you need to create a .app bundle that is configured to run your application or script.
+
+Start by writing the following script in the AppleScript Script Editor:
+
+```
+on open location this_URL
+    do shell script "sgTriggerScript.py '" & this_URL & "'"
+end open location 
+```
+
+{% include info title="Note" content="To ensure you are running Python from a specific shell, such as tcsh, you can change the do shell script for something like the following:  
+  do shell script "tcsh -c \"sgTriggerScript.py '" & this_URL & "'\""
+  In the Script Editor, save your short script as an “Application Bundle”." %}
 
 Find the saved Application Bundle, and Open Contents. Then, open the info.plist file and add the following to the plist dict:
 ```
