@@ -179,13 +179,17 @@ on open location this_URL
 end open location 
 ```
 
-{% include info title="Note" content="To ensure you are running Python from a specific shell, such as `tcsh`, you can change the do shell script for something like the following:<br/>  
-do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`<br/>
-In the Script Editor, save your short script as an “Application Bundle”." %}
+{% include info title="Note" content="To ensure you are running Python from a specific shell, such as `tcsh`, you can change the do shell script for something like the following: do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`. In the Script Editor, save your short script as an “Application Bundle”." %}
 
 **Step 2: Edit the `info.plist` file**
 
-Find the saved Application Bundle, and Open Contents. Then, open the `info.plist` file and add the following to the plist dict:
+Find the saved Application Bundle, and Open Contents. 
+
+![Locate App](./images/custom-browser-protocols-right-click-app.png)
+
+Then, open the `info.plist` file and add the following to the plist dict:
+
+![Open info.plist file](./images/custom-browser-protocols-edit-plist.png)
 
 ```
     <key>CFBundleIdentifier</key>
@@ -264,13 +268,18 @@ on open location this_URL
 end open location 
 ```
 
-{% include info title="Note" content="To ensure you are running Python from a specific shell, such as tcsh, you can change the do shell script for something like the following:<br/>
-do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`<br/>
-In the Script Editor, save your short script as an “Application Bundle”." %}
+{% include info title="Note" content="To ensure you are running Python from a specific shell, such as `tcsh`, you can change the do shell script for something like the following: do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`. In the Script Editor, save your short script as an “Application Bundle”." %}
 
 **Step 2: Edit the `info.plist` file**
 
-Find the saved Application Bundle, and Open Contents. Then, open the `info.plist` file and add the following to the plist dict:
+Find the saved Application Bundle, and Open Contents. 
+
+![Locate App](./images/custom-browser-protocols-right-click-app.png)
+
+Then, open the `info.plist` file and add the following to the plist dict:
+
+![Open info.plist file](./images/custom-browser-protocols-edit-plist.png)
+
 ```
     <key>CFBundleIdentifier</key>
     <string>com.mycompany.AppleScript.Shotgun</string>
