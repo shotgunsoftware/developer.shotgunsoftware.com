@@ -14,7 +14,7 @@ lang: en
   - [Registering a protocol on macOS](#registering-a-protocol-on-macOS)
   - [Registering a protocol on Linux](#registering-a-protocol-on-linux)
 
-A very practical version of an [Action Menu Item](https://developer.shotgridsoftware.com/67695b40/) (AMI) is a variant that will run an application or a script on your local computer. For this to work you need to set up a connection between your browser and the script or application you wish to run. This link is called a custom browser protocol.
+A very practical version of an [Action Menu Item](action-menu-items-create.md) (AMI) is a variant that will run an application or a script on your local computer. For this to work you need to set up a connection between your browser and the script or application you wish to run. This link is called a custom browser protocol.
 
 You may want to set up a type of link where if a user clicks on it, it will launch the [foo] application. Instead of having ‘http’ as the prefix, you need to designate a custom protocol, such as ‘foo’. Ideally you want a link that looks like:  
 ```
@@ -179,7 +179,7 @@ on open location this_URL
 end open location 
 ```
 
-{% include info title="Note" content="To ensure you are running Python from a specific shell, such as `tcsh`, you can change the do shell script for something like the following: do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`. In the Script Editor, save your short script as an “Application Bundle”." %}
+{% include info title="Info" content="To ensure you are running Python from a specific shell, such as `tcsh`, you can change the do shell script for something like the following: do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`. In the Script Editor, save your short script as an _Application Bundle_." %}
 
 **Step 2: Edit the `info.plist` file**
 
@@ -268,7 +268,7 @@ on open location this_URL
 end open location 
 ```
 
-{% include info title="Note" content="To ensure you are running Python from a specific shell, such as `tcsh`, you can change the do shell script for something like the following: do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`. In the Script Editor, save your short script as an “Application Bundle”." %}
+{% include info title="Info" content="To ensure you are running Python from a specific shell, such as `tcsh`, you can change the do shell script for something like the following: do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`. In the Script Editor, save your short script as an _Application Bundle_." %}
 
 **Step 2: Edit the `info.plist` file**
 
