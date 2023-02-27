@@ -179,7 +179,7 @@ on open location this_URL
 end open location 
 ```
 
-{% include info title="Tip" content="To ensure you are running Python from a specific shell, such as tcsh, you can change the do shell script for something like the following:<br/>  
+{% include info title="Note" content="To ensure you are running Python from a specific shell, such as `tcsh`, you can change the do shell script for something like the following:<br/>  
 do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`<br/>
 In the Script Editor, save your short script as an “Application Bundle”." %}
 
