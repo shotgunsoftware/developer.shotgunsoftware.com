@@ -165,8 +165,6 @@ Using this methodology you could open applications, upload content via services 
 
 ## Registering a protocol on macOS
 
-**Create and configure an `.app` bundle**
-
 To register a protocol on macOS BigSur and Monterey, you need to create an `.app` bundle that is configured to run your application or script.
 
 **Step 1: AppleScript Script Editor**
