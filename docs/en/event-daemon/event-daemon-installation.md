@@ -49,7 +49,7 @@ ImportError: No module named shotgun_api3
 
 The location you choose to install {% include product %}Events is really up to you. Again, as long as Python and the {% include product %} API are installed on the machine, and it has network access to your {% include product %} server, it can run from anywhere. However, it makes sense to install it somehwere that is logical to your studio, something like `/usr/local/shotgun/shotgunEvents` seems logical so we'll use that as the example from here on out.
 
-The source and archives are available on GitHub at [https://github.com/shotgunsoftware/shotgunEvents]()
+The source and archives are available on GitHub at <https://github.com/shotgunsoftware/shotgunEvents>
 
 {% include info title="Note" content="**For Windows:** You could use `C:\shotgun\shotgunEvents` if you have a Windows server but for this documentation we will be using the Linux path." %}
 
@@ -70,7 +70,7 @@ $ git clone git://github.com/shotgunsoftware/shotgunEvents.git
 
 If you don't have `git` on your machine or you simply would rather download an archive of the source, you can get things rolling following these steps.
 
-- head over to [https://github.com/shotgunsoftware/shotgunEvents/archives/master]()
+- head over to <https://github.com/shotgunsoftware/shotgunEvents/>
 - download the source in the format you want
 - save it to your machine
 - extract the files to the `/usr/local/shotgun` directory
