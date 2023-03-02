@@ -25,6 +25,7 @@ A collection of quick answers aimed at troubleshooting issues.
 - [How can I unregister folders when using a distributed config?](https://community.shotgridsoftware.com/t/how-can-i-unregister-folders-when-using-a-distributed-config)
 
 #### Error message guidance
+- [Error: module 'tank' has no attribute 'support_url'](./troubleshooting/module-tank-has-no-attribute-support-url.md)
 - [`ASCII` codec can’t decode byte 0x97 in position 10: ordinal not in range](./troubleshooting/ascii-error-message.md)
 - [Configurations does not point to a valid bundle on disk!](./troubleshooting/configurations-does-not-point-to-valid-bundle-on-disk.md)
 - [Cannot find procedure "MTsetToggleMenuItem"](./troubleshooting/mtsettogglemenuitem-error-message.md)
