@@ -23,7 +23,7 @@ The Descriptor version is incompatible with the newer {% include product %} Desk
 
 ## Solution
 
-To overcome this issue do the following:
+To overcome this issue, do the following:
 
 1. Access the Pipeline Configuration List page on the {% include product %} website.
 2. Check if the Descriptor field has an old version incompatible with the newer {% include product %} Desktop version.
