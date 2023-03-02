@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Error module 'tank' has no attribute 'support_url'" when launching {% include product %} Desktop
+title: Error module 'tank' has no attribute 'support_url' when launching {% include product %} Desktop
 pagename: module-tank-has-no-attribute-support-url
 lang: en
 ---
 
-# "Error module 'tank' has no attribute 'support_url'" when launching {% include product %} Desktop
+# Error module 'tank' has no attribute 'support_url' when launching {% include product %} Desktop
 
 ## Issue
 
