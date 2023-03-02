@@ -18,7 +18,8 @@ Error: module 'tank' has no attribute 'support_url'
 
 ## Causes
 
-'support_url' was introduced in tk-core v0.19.18. and the Descriptor version is incompatible with the newer {% include product %} Desktop version 1.7.3.
+The Descriptor version is incompatible with the newer {% include product %} Desktop version 1.7.3.
+'support_url' was introduced in tk-core v0.19.18.
 
 ## Solution
 
