@@ -12,6 +12,7 @@ In this guide:
 - [Introduction](#introduction)
 - [Getting started with Desktop](#getting-started-with-desktop)
   - [Installation of Desktop](#installation-of-desktop)
+    - [Installing a newer version of Desktop](#installing-a-newer-version-of-desktop)
   - [Logging in when self hosted or behind a proxy server](#logging-in-when-self-hosted-or-behind-a-proxy-server)
     - [Authentication and browser integration](#authentication-and-browser-integration)
   - [The system tray](#the-system-tray)
