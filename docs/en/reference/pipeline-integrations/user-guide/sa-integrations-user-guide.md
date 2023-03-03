@@ -83,6 +83,12 @@ Follow the prompts and choose whether to download Desktop for Mac, Windows, or L
 
 ![download-desktop-02.png](./images/sa-integrations-user-guide-download-desktop-02-v2.png)
 
+#### Installing a newer version of Desktop
+
+You can update {% include product %} Desktop on all supported operating systems without uninstalling you current version. However, **ensure that you close your existing session prior to updating your {% include product %} Desktop version**.
+
+{% include info title="Note" content="On Windows, if Desktop is running while updating the version, a binary lock will interfere with the install and cause the installer to stop. Before this interference, some files were already copied, so this will result in an incomplete installation. To fix this, exit Desktop and select "retry"." %}
+
 ### Logging in when self hosted or behind a proxy server
 
 *Note: the following content regarding logging in is intended if you are self hosted or using a proxy server. This is not the defaut behavior.*
