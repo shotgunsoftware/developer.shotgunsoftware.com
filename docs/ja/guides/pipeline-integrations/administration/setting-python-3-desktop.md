@@ -7,8 +7,6 @@ lang: ja
 
 # {% include product %} Desktop で Python 2 を既定の Python バージョンとして設定する
 
-**Note:** Python 2 is getting removed by November 1st 2022. You can find the notification [here](https://community.shotgridsoftware.com/t/important-notice-upcoming-removal-of-python-2-7-and-3-7-interpreter-in-shotgrid-desktop/15166).
-
 - [Windows](#windows)
 - [MacOS](#macos)
 - [CentOS 7](#centos-7)
