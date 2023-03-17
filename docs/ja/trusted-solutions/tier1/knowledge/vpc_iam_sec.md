@@ -2,7 +2,7 @@
 layout: default
 title: VPC / IAM / Security Group
 pagename: tier1-knowledge-vpc_iam_sec
-lang: en
+lang: ja
 ---
 
 # VPC / IAM / Security Group

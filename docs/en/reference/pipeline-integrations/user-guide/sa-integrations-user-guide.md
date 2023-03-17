@@ -12,6 +12,7 @@ In this guide:
 - [Introduction](#introduction)
 - [Getting started with Desktop](#getting-started-with-desktop)
   - [Installation of Desktop](#installation-of-desktop)
+    - [Installing a newer version of Desktop](#installing-a-newer-version-of-desktop)
   - [Logging in when self hosted or behind a proxy server](#logging-in-when-self-hosted-or-behind-a-proxy-server)
     - [Authentication and browser integration](#authentication-and-browser-integration)
   - [The system tray](#the-system-tray)
@@ -82,6 +83,12 @@ You can download {% include product %} Desktop under the Apps menu.
 Follow the prompts and choose whether to download Desktop for Mac, Windows, or Linux.
 
 ![download-desktop-02.png](./images/sa-integrations-user-guide-download-desktop-02-v2.png)
+
+#### Installing a newer version of Desktop
+
+You can update {% include product %} Desktop on all supported operating systems without uninstalling you current version. However, **ensure that you close your existing session prior to updating your {% include product %} Desktop version**.
+
+*Note: on Windows, if Desktop is running while updating the version, a binary lock will interfere with the install and cause the installer to stop. This will result in an incomplete installation since some files have already been copied. To fix this, exit Desktop and select "retry".*
 
 ### Logging in when self hosted or behind a proxy server
 

@@ -7,15 +7,15 @@ lang: en
 
 # After Effects
 
-The {% include product %} engine for After Effects provides a platform for integrating {% include product %} into your After Effects workflow. It consists of a standard {% include product %} Toolkit engine and relies on the [tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP).
+The {% include product %} engine for After Effects provides a platform for integrating {% include product %} into your After Effects workflow. It consists of a standard {% include product %} Pipeline Toolkit engine and relies on the [tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP).
 
-Once enabled, a **{% include product %} Adobe Panel** panel becomes available in After Effects. It displays information about the current {% include product %} context as well as the commands that are registered for the apps installed in that context.
+Once enabled, a **{% include product %} Adobe Panel** becomes available in After Effects. It displays information about the current {% include product %} context as well as the commands that are registered for the apps installed in that context.
 
 ![Engine](../images/engines/aftereffects_extension.png)
 
 ## Supported Application Versions
 
-This item has been tested and is known to be working on the following application versions: 
+This item has been tested and is known to be working on the following application versions:
 
 {% include tk-aftereffects %}
 
@@ -172,5 +172,3 @@ The [default hook implementation](https://github.com/shotgunsoftware/tk-aftereff
 ### After Effects API
 
 Please see the [developer documentation](https://developer.shotgridsoftware.com/tk-aftereffects) for details on the After Effects API.
-
-

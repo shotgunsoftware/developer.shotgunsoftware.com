@@ -2,7 +2,7 @@
 layout: default
 title: Features Description
 pagename: tier1-features
-lang: en
+lang: zh_CN
 ---
 
 # Isolation Feature Set

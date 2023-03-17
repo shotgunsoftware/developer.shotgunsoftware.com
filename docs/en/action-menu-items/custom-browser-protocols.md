@@ -11,10 +11,10 @@ lang: en
 
 - [Registering a protocol](#registering-a-protocol)
   - [Registering a protocol on Windows](#registering-a-protocol-on-windows)
-  - [Registering a protocol on OSX](#registering-a-protocol-on-osx)
+  - [Registering a protocol on macOS](#registering-a-protocol-on-macos)
   - [Registering a protocol on Linux](#registering-a-protocol-on-linux)
 
-A very practical version of an [Action Menu Item]() (AMI) is a variant that will run an application or a script on your local computer. For this to work you need to set up a connection between your browser and the script or application you wish to run. This link is called a custom browser protocol.
+A very practical version of an [Action Menu Item](action-menu-items-create.md) (AMI) is a variant that will run an application or a script on your local computer. For this to work you need to set up a connection between your browser and the script or application you wish to run. This link is called a custom browser protocol.
 
 You may want to set up a type of link where if a user clicks on it, it will launch the [foo] application. Instead of having ‘http’ as the prefix, you need to designate a custom protocol, such as ‘foo’. Ideally you want a link that looks like:  
 ```
@@ -48,7 +48,8 @@ The target URL would look like:
 foo://host/path...
 ```
 
-> **Note:** For more information, please see [https://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx](https://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx) .
+{% include info title="Note" content="For more information, please see [http://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx](http://msdn.microsoft.com/en-us/library/aa767914(VS.85).aspx)." %}
+
 **Windows QT/QSetting example**
 
 If the application you are developing is written using the QT (or PyQT / PySide) framework, you can leverage the QSetting object to manage the creation of the registry keys for you.
@@ -85,7 +86,7 @@ Using Windows Registry Editor:
 
 This setup will register the `{% include product %}://` protocol to launch the `python` interpreter with the first argument being the script `sgTriggerScript.py` and the second argument being `%1` . It is important to understand that `%1` will be replaced by the URL that was clicked in the browser or the URL of the AMI that was invoked. This will become the first argument to your Python script.
 
-> **Note:** You may need to have full paths to your Python interpreter and your Python script. Please adjust accordingly.
+{% include info title="Info" content="You may need to have full paths to your Python interpreter and your Python script. Please adjust accordingly." %}
 
 **Step 2: Parse the incoming URL in your Python script**
 
@@ -147,12 +148,12 @@ In the `output.txt` file in the same directory as your script you should now see
   'project_name': ['Test'],
   'referrer_path': ['/detail/HumanUser/24'],
   'selected_ids': ['6934'],
-  'server_hostname': ['patrick.shotgunstudio.com'],
+  'server_hostname': ['my-site.shotgrid.autodesk.com'],
   'session_uuid': ['9676a296-7e16-11e7-8758-0242ac110004'],
   'sort_column': ['created_at'],
   'sort_direction': ['asc'],
   'user_id': ['24'],
-  'user_login': ['shotgun_admin'],
+  'user_login': ['shotgrid_admin'],
   'view': ['Default']})
 ```
 
@@ -162,11 +163,13 @@ By varying the keyword after the `//` part of the URL in your AMI, you can chang
 
 Using this methodology you could open applications, upload content via services like FTP, archive data, send email, or generate PDF reports.
 
-## Registering a protocol on OSX
+## Registering a protocol on macOS
 
-To register a protocol on OSX you need to create a .app bundle that is configured to run your application or script.
+To register a protocol on macOS BigSur and Monterey, you need to create an `.app` bundle that is configured to run your application or script.
 
-Start by writing the following script in the AppleScript Script Editor:
+**Step 1: AppleScript Script Editor**
+
+First, start by writing the following script in the AppleScript Script Editor:
 
 ```
 on open location this_URL
@@ -174,29 +177,35 @@ on open location this_URL
 end open location 
 ```
 
-> **Tip:** To ensure you are running Python from a specific shell, such as tcsh, you can change the do shell script for something like the following:  
-> 
->     do shell script "tcsh -c \"sgTriggerScript.py '" & this_URL & "'\""
-In the Script Editor, save your short script as an “Application Bundle”.
+> **Note:** To ensure you are running Python from a specific shell, such as `tcsh`, you can change the do shell script for something like the following: do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`. In the Script Editor, save your short script as an _Application Bundle_.
 
-Find the saved Application Bundle, and Open Contents. Then, open the info.plist file and add the following to the plist dict:
-```
-    <key>CFBundleIdentifier</key>
-    <string>com.mycompany.AppleScript.Shotgun</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-        <key>CFBundleURLName</key>
-        <string>Shotgun</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
-          <string>shotgun</string>
-        </array>
-      </dict>
-    </array>
+**Step 2: Edit the `info.plist` file**
+
+Find the saved Application Bundle, and Open Contents. 
+
+![Locate App](./images/custom-browser-protocols-right-click-app.png)
+
+Then, open the `info.plist` file and add the following to the plist dict:
+
+![Open info.plist file](./images/custom-browser-protocols-edit-plist.png)
+
+```xml
+<key>CFBundleIdentifier</key>
+<string>com.mycompany.AppleScript.{% include product %}</string>
+<key>CFBundleURLTypes</key>
+<array>
+<dict>
+<key>CFBundleURLName</key>
+<string>{% include product %}</string>
+<key>CFBundleURLSchemes</key>
+<array>
+<string>{% include product %}</string>
+</array>
+</dict>
+</array>
 ```
 
-You may want to change the following three strings:
+You can also change the following three strings (optional):
 ```
 com.mycompany.AppleScript.{% include product %}
 {% include product %}
@@ -209,10 +218,37 @@ The third string is the protocol handler; therefore a URL would be:
 shotgrid://something
 ```
 
+**If using BigSur and Monterey, you will need to _delete_ the following lines in the `info.plist` file, which fall between the `NSAppleEventsUsageDescription` and `NSSystemAdministrationUsageDescription`.** If you are using a version older than BigSur, skip this step and continue to step 3 below.
+
+```xml
+	<string>This script needs to control other applications to run.</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>This script needs access to your music to run.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This script needs access to your calendars to run.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This script needs access to your camera to run.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>This script needs access to your contacts to run.</string>
+	<key>NSHomeKitUsageDescription</key>
+	<string>This script needs access to your HomeKit Home to run.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This script needs access to your microphone to run.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This script needs access to your photos to run.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>This script needs access to your reminders to run.</string>
+	<key>NSSiriUsageDescription</key>
+	<string>This script needs access to Siri to run.</string> 
+  ```
+
+**Step 3: Move your `.app` bundle to the Applications folder**
 
 Finally, move your `.app` bundle to the Applications folder of your Mac. Then double click on it—that will register your protocol with the operating system.
 
 The data flow looks like this: once you click the AMI in {% include product %}, or click a URL that starts with `shotgrid://` , the `.app` bundle will respond to it and pass the URL over to your Python script. At this point the same script that was used in the Windows example can be used and all the same possibilities apply.
+
+{% include info title="Info" content="For additional information on troubleshooting with Monterey, [visit this community post](https://community.shotgridsoftware.com/t/amis-stopped-working-on-osx-monterey/16886)." %}
 
 ## Registering a protocol on Linux
 

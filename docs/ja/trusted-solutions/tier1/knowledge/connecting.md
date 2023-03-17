@@ -2,7 +2,7 @@
 layout: default
 title: Connecting Your Studio With Your AWS VPC
 pagename: tier1-knowledge-connecting
-lang: en
+lang: ja
 ---
 
 # Connecting Your Studio With Your AWS VPC

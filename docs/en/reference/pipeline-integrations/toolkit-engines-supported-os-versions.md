@@ -11,6 +11,6 @@ Here is a list of Toolkit engine supported operating systems.
 
 ----------
 
-| Windows | macOS | CentOS |
+| Windows | macOS | Linux |
 |:-------:|:-----:|:------:|
-|   10    |10.14+ <br>**Note:** M1 is not supported yet, [learn more here](https://community.shotgridsoftware.com/t/13606).    |  7.4   |
+|   10    |10.14+ <br>**Note:** M1 is not supported yet, [learn more here](https://community.shotgridsoftware.com/t/13606).    |  CentOS 7.4, Rocky 8.5  |
