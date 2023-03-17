@@ -12,7 +12,7 @@ lang: zh_CN
 {% include product %} 软件提供基于 Python 的 API，用于访问 {% include product %} 以及与其他工具相集成。API 遵循 CRUD 模式，允许在 {% include product %} 服务器上执行创建、读取、更新和删除动作。每个请求作用于单个实体类型，根据特定动作，可以定义过滤器、返回的列、排序信息以及一些其他选项。
 
 * [代码库](https://github.com/shotgunsoftware/python-api)
-* [文档](http://developer.shotgridsoftware.com/python-api/)
+* [文档](https://developer.shotgridsoftware.com/python-api/)
 * [论坛](https://community.shotgridsoftware.com/c/pipeline/6)
 
 ### 事件触发器框架
@@ -33,4 +33,4 @@ lang: zh_CN
 API 开发人员可以按实体自定义上下文菜单项。例如，在“版本”(Versions)页面中，可以选择多个版本，单击鼠标右键，然后...。生成 PDF 报告（例如）。我们将其称为动作菜单项 (AMI)。
 
 * [文档]()
-* [示例代码库](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
+* [示例代码库](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)

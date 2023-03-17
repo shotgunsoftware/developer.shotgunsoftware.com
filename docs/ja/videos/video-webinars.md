@@ -20,19 +20,19 @@ lang: ja
 
 新しい一連の Toolkit ウェビナーではまず、Rob Blau と Manne Öhrström が、すぐに開始できる統合についての質問に答えます。
 
-[![](http://img.youtube.com/vi/rgzHEwUhENI/0.jpg)](http://www.youtube.com/watch?v=rgzHEwUhENI)
+[![](https://img.youtube.com/vi/rgzHEwUhENI/0.jpg)](https://www.youtube.com/watch?v=rgzHEwUhENI)
 
 2: {% include product %} Toolkit ウェビナー: 新しい既定の設定についての解説*(60 分)*
 
 このウェビナーでは、Josh Tomlinson と Rob Blau が、Toolkit プロジェクトの新しい既定の設定での変更点(およびその理由)について説明します。
 
-[![](http://img.youtube.com/vi/eKHaC1dZCeE/0.jpg)](http://www.youtube.com/watch?v=eKHaC1dZCeE)
+[![](https://img.youtube.com/vi/eKHaC1dZCeE/0.jpg)](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
 3: {% include product %} Toolkit ウェビナー: パブリッシュ ワークフローのカスタマイズ - ライブ デモ*(60 分)*
 
 このウェビナーでは、Josh Tomlinson が、Maya でカスタムのパブリッシュ ワークフローを作成する方法について手順に沿って説明します。ここでは、パブリッシュ アプリの構成、構成方法、およびデータの収集とパブリッシュのためのカスタム フックの作成方法について学びます。
 
-[![](http://img.youtube.com/vi/pH4mylrnktY/0.jpg)](http://www.youtube.com/watch?v=pH4mylrnktY)
+[![](https://img.youtube.com/vi/pH4mylrnktY/0.jpg)](https://www.youtube.com/watch?v=pH4mylrnktY)
 
 *補足資料*
 
@@ -42,7 +42,7 @@ lang: ja
 
 このウェビナーでは、Manne Ohrstrom が複数の場所にあるスタジオのアーティストのためのワークフローについて説明します。
 
-[![](http://img.youtube.com/vi/NyIk07F2RoM/0.jpg)](http://www.youtube.com/watch?v=NyIk07F2RoM)
+[![](https://img.youtube.com/vi/NyIk07F2RoM/0.jpg)](https://www.youtube.com/watch?v=NyIk07F2RoM)
 
 *補足資料*
 
@@ -54,7 +54,7 @@ lang: ja
 
 このウェビナーでは、Brandon Ashworth が、役に立つデモ、使用例、レシピの紹介を通じて REST API の全体像と重要性、使用方法について説明します。
 
-[![](http://img.youtube.com/vi/3xPPj2pbHVQ/0.jpg)](http://www.youtube.com/watch?v=3xPPj2pbHVQ)
+[![](https://img.youtube.com/vi/3xPPj2pbHVQ/0.jpg)](https://www.youtube.com/watch?v=3xPPj2pbHVQ)
 
 *補足資料*
 
@@ -64,7 +64,7 @@ lang: ja
 
 最新の統合リリースには、改善された Publish API が含まれています。これによって GUI アプリからパブリッシュ ロジックを分離し、各自のツールから、あるいはレンダー ファームからパブリッシュを実行できます。このウェビナーでは、Jean-Francois Boismenu が、API を使用して Publisher UI からパブリッシュ項目ツリーをレンダー ファームのジョブに渡す方法について説明します。
 
-[![](http://img.youtube.com/vi/ZxP3IXHt47U/0.jpg)](http://www.youtube.com/watch?v=ZxP3IXHt47U)
+[![](https://img.youtube.com/vi/ZxP3IXHt47U/0.jpg)](https://www.youtube.com/watch?v=ZxP3IXHt47U)
 
 *補足資料*
 
@@ -80,7 +80,7 @@ Adobe After Effects は、{% include product %} の最新の統合対象です�
 
 また、Tannaz Sassooni が、新しい開発者向けドキュメント サイトを紹介し、{% include product %} との統合方法を学ぶユーザ向けによりわかりやすいコンテンツを作成している現状を説明します。
 
-[![](http://img.youtube.com/vi/g-062_VTbAI/0.jpg)](http://www.youtube.com/watch?v=g-062_VTbAI)
+[![](https://img.youtube.com/vi/g-062_VTbAI/0.jpg)](https://www.youtube.com/watch?v=g-062_VTbAI)
 
 *補足資料*
 
@@ -105,7 +105,7 @@ Adobe After Effects は、{% include product %} の最新の統合対象です�
 
 このウェビナーでは、Tannaz Sassooni と Patrick Boucher が {% include product %} 開発の概要を説明し、{% include product %} の自動化エントリ ポイント、{% include product %} の Python および REST API、{% include product %} の API を使用してスタジオのタスクやデータ トラッキングを自動化する方法について紹介します。
 
-[![](http://img.youtube.com/vi/i0aVJepZw8Y/0.jpg)](http://www.youtube.com/watch?v=i0aVJepZw8Y)
+[![](https://img.youtube.com/vi/i0aVJepZw8Y/0.jpg)](https://www.youtube.com/watch?v=i0aVJepZw8Y)
 
 [0:56](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=56s) 挨拶とオリエンテーション
 
@@ -117,7 +117,7 @@ Adobe After Effects は、{% include product %} の最新の統合対象です�
 
 このウェビナーでは、Brandon Ashworth と Manne Öhrström が、{% include product %} について説明します。イベント デーモンと新しい Webhooks を使用して {% include product %} でのデータ変更に対応し、{% include product %} Toolkit を使用して簡単なパイプライン ツールを作成する方法を紹介します。
 
-[![](http://img.youtube.com/vi/xUeY1pECHdI/0.jpg)](http://www.youtube.com/watch?v=xUeY1pECHdI)
+[![](https://img.youtube.com/vi/xUeY1pECHdI/0.jpg)](https://www.youtube.com/watch?v=xUeY1pECHdI)
 
 [0:39](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=39s) 挨拶とオリエンテーション
 
@@ -129,7 +129,7 @@ Adobe After Effects は、{% include product %} の最新の統合対象です�
 
 このウェビナーでは、Josh Tomlinson、Tannaz Sassooni、Phil Scadding が、統合を引き継ぎ、カスタム ディレクトリ構造を作成し、フックによってスタジオのデータフローをさらに自動化する方法をデモを通じて説明します。
 
-[![](http://img.youtube.com/vi/7qZfy7KXXX0/0.jpg)](http://www.youtube.com/watch?v=7qZfy7KXXX0)
+[![](https://img.youtube.com/vi/7qZfy7KXXX0/0.jpg)](https://www.youtube.com/watch?v=7qZfy7KXXX0)
 
 [0:00](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=0s) 挨拶とオリエンテーション
 
@@ -143,7 +143,7 @@ Adobe After Effects は、{% include product %} の最新の統合対象です�
 
 Manne Ohrstrom、Jeff Beeland、Rob Blau が、ソース管理とクラウドベースのパイプライン展開のベスト プラクティスを実演し、アプリのビルドおよび Toolkit の標準フレームワークを使用した UI の迅速な設計とデータ処理について説明します。
 
-[![](http://img.youtube.com/vi/bT2WlQaJVmY/0.jpg)](http://www.youtube.com/watch?v=bT2WlQaJVmY)
+[![](https://img.youtube.com/vi/bT2WlQaJVmY/0.jpg)](https://www.youtube.com/watch?v=bT2WlQaJVmY)
 
 [0:00](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=0s) 挨拶とオリエンテーション
 

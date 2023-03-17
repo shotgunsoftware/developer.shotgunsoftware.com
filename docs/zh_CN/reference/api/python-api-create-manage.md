@@ -18,7 +18,7 @@ lang: zh_CN
 
    > **注意：**API 密钥作为密码处理，并且一经创建，即无法通过 {% include product %} Web 应用或 API 再次查看。确保先复制密钥，然后再继续。
 
-4. 现在，可以使用脚本密钥来连接到 {% include product %}。请参见[我们的 API 文档中的“{% include product %} 方法”](http://developer.shotgridsoftware.com/python-api/reference.html#shotgun-methods)，详细了解如何使用脚本连接到 {% include product %}。
+4. 现在，可以使用脚本密钥来连接到 {% include product %}。请参见[我们的 API 文档中的“{% include product %} 方法”](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun-methods)，详细了解如何使用脚本连接到 {% include product %}。
 
 > **提示：**如果出于某些原因需要重置脚本的应用程序密钥，将需要创建新的 {% include product %} 脚本实体来执行此操作。首先将现有脚本重命名为“[My Script]—OLD”这样的名称，然后将其删除。创建新脚本。之所以需要重命名旧脚本，是因为 {% include product %} 要求每个脚本具有唯一名称。
 

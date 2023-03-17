@@ -27,7 +27,7 @@ The daemon can run on any machine that has Python installed and has network acce
 Assuming Python is already installed on your machine, you now need to install the {% include product %} Python API so that the {% include product %} Event Daemon can use it to connect to your {% include product %} server. You can do this in a couple of ways:
 
 - place it in the same directory as the {% include product %} Event Daemon
-- place it in one of the directories specified by the [`PYTHONPATH` environment variable](http://docs.python.org/tutorial/modules.html).
+- place it in one of the directories specified by the [`PYTHONPATH` environment variable](https://docs.python.org/tutorial/modules.html).
 
 To test that the {% include product %} API is installed correctly, from your terminal window:
 
@@ -122,8 +122,8 @@ $ pip install -r /path/to/requirements.txt
 
 You will need one of the following on your Windows system:
 
-* Python with [PyWin32](http://sourceforge.net/projects/pywin32/) installed
-* [Active Python](http://www.activestate.com/activepython)
+* Python with [PyWin32](https://sourceforge.net/projects/pywin32/) installed
+* [Active Python](https://www.activestate.com/activepython)
 
 Active Python ships with the PyWin32 module which is required for integrating the {% include product %} Event Daemon with Windows' Service architecture.
 

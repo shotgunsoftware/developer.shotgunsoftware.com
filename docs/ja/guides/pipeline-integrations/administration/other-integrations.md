@@ -13,7 +13,7 @@ lang: ja
 
 Cinesync では、複数の場所から再生を同時に同期できます。{% include product %} との統合により、バージョンのプレイリストを作成し、Cinesync で再生して、セッション時に作成したノートを {% include product %} に送信できます。
 
-詳細については、[http://www.cinesync.com/manual/latest](http://www.cinesync.com/manual/latest)を参照してください。
+詳細については、[https://www.cinesync.com/manual/latest](https://www.cinesync.com/manual/latest)を参照してください。
 
 ## Deadline
 
@@ -25,7 +25,7 @@ Cinesync では、複数の場所から再生を同時に同期できます。{%
 
 Deadline との統合とほぼ同じように、{% include product %} と Rush の統合により、すべてのサムネイル、フレームへのリンク、および他のメタデータとともにレンダリングしたバージョンが {% include product %} に自動的に送信されます。
 
-詳細については、[http://seriss.com/rush-current/index.html](http://seriss.com/rush-current/index.html) を参照してください。
+詳細については、[https://seriss.com/rush-current/index.html](https://seriss.com/rush-current/index.html) を参照してください。
 
 ## Subversion (SVN)
 

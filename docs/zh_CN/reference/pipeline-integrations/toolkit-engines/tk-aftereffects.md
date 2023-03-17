@@ -107,7 +107,7 @@ lang: zh_CN
 
 ### PySide
 
-{% include product %} After Effects 插件依赖于 PySide。请参见有关[安装 PySide](http://pyside.readthedocs.io/en/latest/installing/index.html) 的官方说明。
+{% include product %} After Effects 插件依赖于 PySide。请参见有关[安装 PySide](https://pyside.readthedocs.io/en/latest/installing/index.html) 的官方说明。
 
 ### CEP 扩展
 

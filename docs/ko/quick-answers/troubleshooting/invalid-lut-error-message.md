@@ -35,7 +35,7 @@ ACES(ICIO 모델이라고 가정함)를 사용 중이므로 `tk-multi-reviewsubm
         elif sys.platform == "linux2":
             if nuke.NUKE_VERSION_MAJOR >= 9:
                 # Nuke 9.0v1 removed ffmpeg and replaced it with the mov64 writer
-                # http://help.thefoundry.co.uk/nuke/9.0/#appendices/appendixc/supported_file_formats.html
+                # https://help.thefoundry.co.uk/nuke/9.0/#appendices/appendixc/supported_file_formats.html
                 settings["file_type"] = "mov64"
                 settings["mov64_codec"] = "jpeg"
                 settings["mov64_quality_max"] = "3"

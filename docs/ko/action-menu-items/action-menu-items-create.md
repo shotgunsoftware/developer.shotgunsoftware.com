@@ -61,8 +61,8 @@ AMI를 생성하려면 ![AMI 추가(Add AMI)](./images/dv-custom-amis-05-add-ami
 
 다음은 시작하는 데 도움이 될 만한 몇 가지 관련 예시 스크립트입니다.
 
-* [ActionMenuItem 호출 처리](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
-* [버전 패키저](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_version_packager.html)
+* [ActionMenuItem 호출 처리](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
+* [버전 패키저](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_version_packager.html)
 
 ## 페이로드 컨텐츠
 
@@ -83,7 +83,7 @@ AMI를 생성하려면 ![AMI 추가(Add AMI)](./images/dv-custom-amis-05-add-ami
 * **page_id:** 액션 메뉴 항목이 클릭된 페이지의 ID(예: 1353)
 * **server_hostname:** AMI가 트리거된 시스템의 호스트 이름. 스테이징 서버와 프로덕션 서버 등 같은 AMI를 호출하는 여러 서버가 있는 경우 유용할 수 있습니다.
 * **referrer_path:** AMI가 호출된 URL의 정규 경로.
-* **session_uuid:** 이 AMI가 호출된 창의 고유 식별자. "데이터 업데이트 폴링(Poll for Data Updates)" 체크박스 및 Python API의 [`set_session_uuid`](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) 메서드와 함께 사용하면 AMI가 호출된 페이지로 정보를 다시 브로드캐스팅할 수 있습니다. **참고:** 이 기능의 업데이트 폴링은 기하급수적으로 감소하며, 폴링이 중지될 때까지 AMI가 업데이트되지 않으면 결국 중지되어 소스 페이지에서 업데이트를 볼 수 없게 될 수도 있습니다.
+* **session_uuid:** 이 AMI가 호출된 창의 고유 식별자. "데이터 업데이트 폴링(Poll for Data Updates)" 체크박스 및 Python API의 [`set_session_uuid`](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) 메서드와 함께 사용하면 AMI가 호출된 페이지로 정보를 다시 브로드캐스팅할 수 있습니다. **참고:** 이 기능의 업데이트 폴링은 기하급수적으로 감소하며, 폴링이 중지될 때까지 AMI가 업데이트되지 않으면 결국 중지되어 소스 페이지에서 업데이트를 볼 수 없게 될 수도 있습니다.
 * **cols:** 페이지에 표시되는 모든 열의 시스템 필드 이름을 쉼표로 분리한 목록(예: code, sg_status_list, description)
 * **column_display_names:** 페이지에 표시되는 모든 열의 표시 이름을 쉼표로 분리한 목록(예: 버전, 상태, 설명)
 * **view:** AMI가 호출되었을 때 선택했던 뷰. 페이지 디자인 모드를 통해 특정 페이지에 대한 여러 뷰를 생성할 수 있습니다.

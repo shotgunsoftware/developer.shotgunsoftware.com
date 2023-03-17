@@ -235,7 +235,7 @@ Webhook 使用者服务必须响应交付，这样系统才会将其视为已成
   "x-sg-delivery-id": "dea7a71d-4896-482f-b238-b61820df8b65",
   "x-sg-event-batch-id": "1",
   "x-sg-event-batch-size": "4",
-  "x-sg-webhook-site-url": "http://yoursite.shotgunstudio.com/",
+  "x-sg-webhook-site-url": "https://yoursite.shotgunstudio.com/",
   "x-sg-event-batch-index": "3"
 }
 ```

@@ -265,4 +265,4 @@ Then use the settings from your local GConf file in the global defaults in:
 
 Even though the change is only in the GNOME settings, it also works for KDE. Firefox and GNU IceCat defer to gnome-open regardless of what window manager you are running when it encounters a prefix it doesn’t understand (such as `foo://` ). So, other browsers, like Konqueror in KDE, won’t work under this scenario.
 
-See [http://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity](http://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity) for more information on setting up protocol handlers for Action Menu Items in Ubuntu.
+See [https://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity](https://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity) for more information on setting up protocol handlers for Action Menu Items in Ubuntu.

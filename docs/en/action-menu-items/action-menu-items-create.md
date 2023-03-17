@@ -100,8 +100,8 @@ When using custom protocols, the query information is sent as a GET request. Cer
 
 Here are some related example scripts to help get you started:
 
-*   [Handling ActionMenuItem Calls](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
-*   [Version Packager](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_version_packager.html)
+*   [Handling ActionMenuItem Calls](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
+*   [Version Packager](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_version_packager.html)
 
 ## Payload contents
 
@@ -122,7 +122,7 @@ Here are some related example scripts to help get you started:
 *   **page_id:** The ID of the page from which the action menu item was clicked (e.g., 1353)
 *   **server_hostname:** The hostname of the system where the AMI was triggered. Can be useful if you have multiple servers invoking the same AMIs like a staging and a production server.
 *   **referrer_path:** the canonical path of the URL where the AMI was invoked.
-*   **session_uuid:** The unique identifier for the window where this AMI was invoked. This can be used with the “Poll for Data Updates” checkbox and the Python API's [`set_session_uuid`](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) method to broadcast back information to the page where the AMI was invoked. **Note:** This feature’s polling for updates falls off exponentially and eventually stops so if your AMI doesn’t update before polling stops, you may not see any updates in your source page.
+*   **session_uuid:** The unique identifier for the window where this AMI was invoked. This can be used with the “Poll for Data Updates” checkbox and the Python API's [`set_session_uuid`](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) method to broadcast back information to the page where the AMI was invoked. **Note:** This feature’s polling for updates falls off exponentially and eventually stops so if your AMI doesn’t update before polling stops, you may not see any updates in your source page.
 *   **cols:** A comma-separated list of system field names of all the visible columns on the page (e.g., code, sg_status_list, description)
 *   **column_display_names:** A comma-separated list of display names of all the visible columns on the page (e.g., Version, Status, Description)
 *   **view:** The view that was selected when the AMI was invoked. Multiple views can be created for any given page via the design page mode.

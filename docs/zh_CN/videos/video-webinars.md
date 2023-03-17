@@ -20,19 +20,19 @@ lang: zh_CN
 
 在新的 Toolkit 网络讲座系列的第一个讲座中，Rob Blau 和 Manne Öhrström 将为您解答有关即时可用的集成的问题。
 
-[![](http://img.youtube.com/vi/rgzHEwUhENI/0.jpg)](http://www.youtube.com/watch?v=rgzHEwUhENI)
+[![](https://img.youtube.com/vi/rgzHEwUhENI/0.jpg)](https://www.youtube.com/watch?v=rgzHEwUhENI)
 
 2：{% include product %} Toolkit 网络讲座：揭秘新的默认配置*（60 分钟）*
 
 在此网络讲座中，Josh Tomlinson 和 Rob Blau 将为您介绍 Toolkit 项目的新默认配置中发生了哪些变化（以及变化原因）。
 
-[![](http://img.youtube.com/vi/eKHaC1dZCeE/0.jpg)](http://www.youtube.com/watch?v=eKHaC1dZCeE)
+[![](https://img.youtube.com/vi/eKHaC1dZCeE/0.jpg)](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
 3：{% include product %} Toolkit 网络讲座：自定义发布工作流 - 现场演示*（60 分钟）*
 
 在此网络讲座中，Josh Tomlinson 分步演练了在 Maya 中创建自定义发布工作流的过程。了解发布应用的构造、发布应用的配置方式以及如何编写用于收集和发布数据的自定义挂钩。
 
-[![](http://img.youtube.com/vi/pH4mylrnktY/0.jpg)](http://www.youtube.com/watch?v=pH4mylrnktY)
+[![](https://img.youtube.com/vi/pH4mylrnktY/0.jpg)](https://www.youtube.com/watch?v=pH4mylrnktY)
 
 *补充材料*
 
@@ -42,7 +42,7 @@ lang: zh_CN
 
 在此网络讲座中，Manne Ohrstrom 探讨了所属艺术家位于多个位置的工作室的工作流。
 
-[![](http://img.youtube.com/vi/NyIk07F2RoM/0.jpg)](http://www.youtube.com/watch?v=NyIk07F2RoM)
+[![](https://img.youtube.com/vi/NyIk07F2RoM/0.jpg)](https://www.youtube.com/watch?v=NyIk07F2RoM)
 
 *补充材料*
 
@@ -54,7 +54,7 @@ lang: zh_CN
 
 在此网络讲座中，Brandon Ashworth 将为我们演练一些有用的演示、示例和模板，以展示 REST API 是什么、它重要的原因以及它的使用方式。
 
-[![](http://img.youtube.com/vi/3xPPj2pbHVQ/0.jpg)](http://www.youtube.com/watch?v=3xPPj2pbHVQ)
+[![](https://img.youtube.com/vi/3xPPj2pbHVQ/0.jpg)](https://www.youtube.com/watch?v=3xPPj2pbHVQ)
 
 *补充材料*
 
@@ -64,7 +64,7 @@ lang: zh_CN
 
 最新的集成发布包括经过改进的 Publish API，此 API 允许您将发布逻辑与 GUI 应用分离，并通过您自己的工具、甚至在渲染农场上运行发布。在此网络讲座中，Jean-Francois Boismenu 将演示如何使用此 API 将发布项目树从 Publisher UI 传递到渲染农场作业。
 
-[![](http://img.youtube.com/vi/ZxP3IXHt47U/0.jpg)](http://www.youtube.com/watch?v=ZxP3IXHt47U)
+[![](https://img.youtube.com/vi/ZxP3IXHt47U/0.jpg)](https://www.youtube.com/watch?v=ZxP3IXHt47U)
 
 *补充材料*
 
@@ -80,7 +80,7 @@ Adobe After Effects 是我们最新的 {% include product %} 集成。在此网�
 
 此外，Tannaz Sassooni 为我们导览了新的开发人员文档站点，并展示我们如何让用户更轻松地了解与 {% include product %} 的集成方式。
 
-[![](http://img.youtube.com/vi/g-062_VTbAI/0.jpg)](http://www.youtube.com/watch?v=g-062_VTbAI)
+[![](https://img.youtube.com/vi/g-062_VTbAI/0.jpg)](https://www.youtube.com/watch?v=g-062_VTbAI)
 
 *补充材料*
 
@@ -105,7 +105,7 @@ Adobe After Effects 是我们最新的 {% include product %} 集成。在此网�
 
 在此网络讲座中，Tannaz Sassooni 和 Patrick Boucher 对 {% include product %} 开发进行了介绍，其中讨论了 {% include product %} 的自动化入口点、{% include product %} 的 Python 和 REST API，以及 {% include product %} 的 API 如何自动化工作室的任务和数据跟踪。
 
-[![](http://img.youtube.com/vi/i0aVJepZw8Y/0.jpg)](http://www.youtube.com/watch?v=i0aVJepZw8Y)
+[![](https://img.youtube.com/vi/i0aVJepZw8Y/0.jpg)](https://www.youtube.com/watch?v=i0aVJepZw8Y)
 
 [0:56](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=56s) 欢迎和情况介绍
 
@@ -117,7 +117,7 @@ Adobe After Effects 是我们最新的 {% include product %} 集成。在此网�
 
 在此网络讲座中，Brandon Ashworth 和 Manne Öhrström 深入剖析 {% include product %} 如何使用事件进程和新 Webhook 响应 {% include product %} 中的数据变更，并介绍如何使用 {% include product %} Toolkit 编写简单的工作流工具。
 
-[![](http://img.youtube.com/vi/xUeY1pECHdI/0.jpg)](http://www.youtube.com/watch?v=xUeY1pECHdI)
+[![](https://img.youtube.com/vi/xUeY1pECHdI/0.jpg)](https://www.youtube.com/watch?v=xUeY1pECHdI)
 
 [0:39](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=39s) 欢迎和情况介绍
 
@@ -129,7 +129,7 @@ Adobe After Effects 是我们最新的 {% include product %} 集成。在此网�
 
 在此网络讲座中，Josh Tomlinson、Tannaz Sassooni 和 Phil Scadding 演示了如何掌管集成并创建自定义目录结构和挂钩以在工作室中实现更多数据流的自动化。
 
-[![](http://img.youtube.com/vi/7qZfy7KXXX0/0.jpg)](http://www.youtube.com/watch?v=7qZfy7KXXX0)
+[![](https://img.youtube.com/vi/7qZfy7KXXX0/0.jpg)](https://www.youtube.com/watch?v=7qZfy7KXXX0)
 
 [0:00](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=0s) 欢迎和情况介绍
 
@@ -143,7 +143,7 @@ Adobe After Effects 是我们最新的 {% include product %} 集成。在此网�
 
 Manne Ohrstrom、Jeff Beeland 和 Rob Blau 演示了源控制和基于远程服务的工作流部署的最佳实践，并深入剖析了应用构建以及使用 Toolkit 的标准框架快速设计 UI 和处理数据的过程。
 
-[![](http://img.youtube.com/vi/bT2WlQaJVmY/0.jpg)](http://www.youtube.com/watch?v=bT2WlQaJVmY)
+[![](https://img.youtube.com/vi/bT2WlQaJVmY/0.jpg)](https://www.youtube.com/watch?v=bT2WlQaJVmY)
 
 [0:00](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=0s) 欢迎和情况介绍
 

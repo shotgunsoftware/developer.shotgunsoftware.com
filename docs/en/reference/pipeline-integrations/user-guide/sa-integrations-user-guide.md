@@ -240,7 +240,7 @@ When you start working on a Task, you can use the Panel to set your Current Work
 
 The Publish app allows artists to publish their work so that it can be used by artists downstream. It supports traditional publishing workflows within the artist’s content creation software as well as stand-alone publishing of any file on disk. When working in content creation software and using the basic {% include product %} integration, the app will automatically discover and display items for the artist to publish. For more sophisticated production needs, studios can write custom publish plugins to drive artist workflows.
 
-The following sections cover the publisher UI and basic integration workflows. For information about customizing the publisher for your studio-specific needs, please see the [Publisher Dev Guide](http://developer.shotgridsoftware.com/tk-multi-publish2/) .
+The following sections cover the publisher UI and basic integration workflows. For information about customizing the publisher for your studio-specific needs, please see the [Publisher Dev Guide](https://developer.shotgridsoftware.com/tk-multi-publish2/) .
 
 ### Interface components and concepts
 
@@ -510,7 +510,7 @@ All of {% include product %}'s integrations are built on top of a highly customi
 
 ## Acknowledgments
 
-* A bug fix version of PySide is distributed with {% include product %} Desktop and is available [here](http://www.autodesk.com/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip) .
+* A bug fix version of PySide is distributed with {% include product %} Desktop and is available [here](https://www.autodesk.com/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip) .
 * Big Buck Bunny - footage courtesy of (CC) Blender Foundation, www.blender.org
 
 Tell the doc gen system that we don't want a header by adding this special markup: TANK_NO_HEADER

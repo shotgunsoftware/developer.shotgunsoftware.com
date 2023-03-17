@@ -107,7 +107,7 @@ The following sections outline some of the more technical aspects of the integra
 
 ### PySide
 
-The {% include product %} engine for After Effects relies on PySide. Please see the official instructions for [Installing PySide](http://pyside.readthedocs.io/en/latest/installing/index.html).
+The {% include product %} engine for After Effects relies on PySide. Please see the official instructions for [Installing PySide](https://pyside.readthedocs.io/en/latest/installing/index.html).
 
 ### CEP extension
 

@@ -61,8 +61,8 @@ API 开发人员可以通过动作菜单项 (AMI) 按实体自定义上下文菜
 
 下面是一些相关的示例脚本，可帮助您快速入门：
 
-* [处理 ActionMenuItem 调用](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
-* [版本包装程序](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_version_packager.html)
+* [处理 ActionMenuItem 调用](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
+* [版本包装程序](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_version_packager.html)
 
 ## 有效负载内容
 
@@ -83,7 +83,7 @@ API 开发人员可以通过动作菜单项 (AMI) 按实体自定义上下文菜
 * **page_id**：单击其中的动作菜单项的页面的 ID（例如 1353）
 * **server_hostname**：在其中触发 AMI 的系统的主机名。如果您有多个调用相同 AMI 的服务器（例如开发服务器和生产服务器），可能很有用
 * **referrer_path**：在其中调用 AMI 的 URL 的规范路径
-* **session_uuid**：在其中调用此 AMI 的窗口的唯一标识符。此项可以与“轮询数据更新”(Poll for Data Updates)复选框以及 Python API 的 [`set_session_uuid`](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) 方法一起使用，以将信息发送回在其中调用 AMI 的页面。**注意：**此功能的更新轮询成指数级衰减并最终停止，因此如果您的 AMI 在轮询停止前未更新，您可能无法在源页面中看到任何更新
+* **session_uuid**：在其中调用此 AMI 的窗口的唯一标识符。此项可以与“轮询数据更新”(Poll for Data Updates)复选框以及 Python API 的 [`set_session_uuid`](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) 方法一起使用，以将信息发送回在其中调用 AMI 的页面。**注意：**此功能的更新轮询成指数级衰减并最终停止，因此如果您的 AMI 在轮询停止前未更新，您可能无法在源页面中看到任何更新
 * **cols**：页面上所有可见列的系统字段名称的逗号分隔列表（例如 code, sg_status_list, description）
 * **column_display_names**：页面上所有可见列的显示名称的逗号分隔列表（例如：版本(Version), 状态(Status), 说明(Description)）
 * **view**：调用 AMI 时选择的视图。可以通过设计页面模式为任何给定页面创建多个视图

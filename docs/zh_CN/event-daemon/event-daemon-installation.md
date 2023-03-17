@@ -27,7 +27,7 @@ lang: zh_CN
 假设您的计算机上已安装 Python，现在需要安装 {% include product %} Python API，以便 {% include product %} Event 进程可以使用它来连接您的 {% include product %} 服务器。您可以通过多种方式完成此操作：
 
 - 将它与 {% include product %} Event 进程置于同一目录中
-- 将它放在 [`PYTHONPATH` 环境变量](http://docs.python.org/tutorial/modules.html)指定的某个目录中。
+- 将它放在 [`PYTHONPATH` 环境变量](https://docs.python.org/tutorial/modules.html)指定的某个目录中。
 
 要测试 {% include product %} API 是否正确安装，请观察终端窗口：
 
@@ -122,8 +122,8 @@ $ pip install -r /path/to/requirements.txt
 
 Windows 系统上需要具有以下其中一项：
 
-* 已安装 [PyWin32](http://sourceforge.net/projects/pywin32/) 的 Python
-* [Active Python](http://www.activestate.com/activepython)
+* 已安装 [PyWin32](https://sourceforge.net/projects/pywin32/) 的 Python
+* [Active Python](https://www.activestate.com/activepython)
 
 Active Python 附带 PyWin32 模块，在集成 {% include product %} Event 进程和 Windows 服务架构时，需要用到此模块。
 

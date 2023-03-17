@@ -194,7 +194,7 @@ Linux で `/projects/some/file.txt` というファイルをパブリッシュ�
 
 ### 高度な設定
 
-PublishedFile パスの解決を実行する基本的なメソッドの詳細については、[開発者参照ドキュメント](http://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)を参照してください。
+PublishedFile パスの解決を実行する基本的なメソッドの詳細については、[開発者参照ドキュメント](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)を参照してください。
 
 高度なプロジェクト セットアップを使用している場合は、`resolve_publish` コア フックをカスタマイズして、ローカル ファイル リンクと `file://` URL 以外のサポートを追加できます。有効なカスタマイズは次のとおりです。
 
@@ -421,7 +421,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 `app_store_http_proxy: <proxy_server_address>`
 
-この `<proxy_server_address>` は[開発者ドキュメント](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
+この `<proxy_server_address>` は[開発者ドキュメント](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
 
 プロジェクトごとにこの設定を上書きする必要がある場合は、プロジェクトのパイプライン設定の `config/core/shotgun.yml` に上書きします。
 

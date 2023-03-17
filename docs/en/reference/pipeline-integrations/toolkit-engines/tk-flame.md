@@ -9,7 +9,7 @@ lang: en
 
 ## Installation
 
-The {% include product %} engine for Flame relies on new integration hooks that were added in Flame 2015 Extension 2.  This version of Flame *must* be used in order for the engine to function.  For more info on Flame 2015 Extension 2 (including how to get it), reach out to [Flame Support](http://knowledge.autodesk.com/search-result/caas/sfdcarticles/sfdcarticles/Contacting-Autodesk-Flame-or-Smoke-Customer-Support.html).
+The {% include product %} engine for Flame relies on new integration hooks that were added in Flame 2015 Extension 2.  This version of Flame *must* be used in order for the engine to function.  For more info on Flame 2015 Extension 2 (including how to get it), reach out to [Flame Support](https://knowledge.autodesk.com/search-result/caas/sfdcarticles/sfdcarticles/Contacting-Autodesk-Flame-or-Smoke-Customer-Support.html).
 
 The simplest way to get started with the {% include product %} engine for Flame is to set up a new test project with our example pipeline configuration. You can do this by launching the {% include product %} Desktop, running the Project Setup for a new project and choosing the default Flame configuration (in the default configurations section).
 

@@ -37,7 +37,7 @@ On Windows, {% include product %} Desktop stores data in your `%APPDATA%` folder
 
 ## Working around the issue
 
-The way to resolve this issue is typically to set a `$SHOTGUN_HOME` environment variable to something very short like `C:\SG`. This tells SG Desktop to store it's data in `C:\SG` instead of `C:\Users\jane\AppData\Roaming\Shotgun` which saves you some characters and is usually enough to keep you under the limit. You can [read about the environment variables here](http://developer.shotgridsoftware.com/tk-core/initializing.html?#environment-variables).
+The way to resolve this issue is typically to set a `$SHOTGUN_HOME` environment variable to something very short like `C:\SG`. This tells SG Desktop to store it's data in `C:\SG` instead of `C:\Users\jane\AppData\Roaming\Shotgun` which saves you some characters and is usually enough to keep you under the limit. You can [read about the environment variables here](https://developer.shotgridsoftware.com/tk-core/initializing.html?#environment-variables).
 
 ### Future possibilities?
 

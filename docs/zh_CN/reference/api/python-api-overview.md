@@ -7,7 +7,7 @@ lang: zh_CN
 
 # API 概述
 
-**注意：**有关 {% include product %} API 的详细信息，请参见我们的 [API 文档](http://developer.shotgridsoftware.com/python-api/)。
+**注意：**有关 {% include product %} API 的详细信息，请参见我们的 [API 文档](https://developer.shotgridsoftware.com/python-api/)。
 
 借助 {% include product %} Python 应用程序编程接口 (API)，用户可以轻松地将其工具与 {% include product %} 集成。通过它您可以创建自动化流程，集成众多第三方软件包，并与工作室内的现有工具进行通信。由于各个工作室的需求迥异，因此 {% include product %} API 提供了强大的基础功能，并将大部分业务逻辑都留给您自己来处理。
 
@@ -25,9 +25,9 @@ API 遵循 CRUD 模式，允许您的脚本对单个实体类型运行创建、�
 
 您可以在此处下载 API：[https://github.com/shotgunsoftware/python-api](https://github.com/shotgunsoftware/python-api)。 一些常用的第一个项目包括：
 
-1. [创建版本并将其链接到镜头](http://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_create_version_link_shot.html)。允许您自动提交新的渲染以供审核。
-2. [上传缩略图](http://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_upload_thumbnail_version.html)。无需手动添加，站点上的所有内容便可拥有最新的缩略图。
-3. [将 {% include product %} 与您的代码库（如 SVN）集成](http://developer.shotgridsoftware.com/python-api/cookbook/examples/svn_integration.html)。利用 {% include product %} 对任何软件开发进行项目管理。
+1. [创建版本并将其链接到镜头](https://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_create_version_link_shot.html)。允许您自动提交新的渲染以供审核。
+2. [上传缩略图](https://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_upload_thumbnail_version.html)。无需手动添加，站点上的所有内容便可拥有最新的缩略图。
+3. [将 {% include product %} 与您的代码库（如 SVN）集成](https://developer.shotgridsoftware.com/python-api/cookbook/examples/svn_integration.html)。利用 {% include product %} 对任何软件开发进行项目管理。
 
 ## 使用 API 无法完成的操作
 
@@ -57,7 +57,7 @@ API 遵循 CRUD 模式，允许您的脚本对单个实体类型运行创建、�
 有关 {% include product %} API 的详细信息，请参见以下文章：
 
 * [通过 GitHub 下载 {% include product %} API](https://github.com/shotgunsoftware/python-api/)
-* [{% include product %} API 文档](http://developer.shotgridsoftware.com/python-api/)
+* [{% include product %} API 文档](https://developer.shotgridsoftware.com/python-api/)
 * [{% include product %} 开发人员列表（公共）](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)
 * [{% include product %} 事件进程示例代码](https://github.com/shotgunsoftware/shotgunEvents)
 * [编写事件驱动的触发器](https://developer.shotgridsoftware.com/zh_CN/0d8a11d9/)

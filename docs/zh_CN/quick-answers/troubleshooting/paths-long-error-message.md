@@ -37,7 +37,7 @@ ERROR sgtk.core.bootstrap.cached_configuration Failed to install configuration s
 
 ## 解决该问题
 
-解决该问题的方法通常是，将 `$SHOTGUN_HOME` 环境变量设置为非常短的值，如 `C:\SG`。这会告知 SG Desktop 将其数据存储在 `C:\SG` 而不是 `C:\Users\jane\AppData\Roaming\Shotgun` 中，这样可以节省一些字符，通常足以使您保持在限制之内。您可以[在此处阅读有关环境变量的信息](http://developer.shotgridsoftware.com/tk-core/initializing.html?#environment-variables)。
+解决该问题的方法通常是，将 `$SHOTGUN_HOME` 环境变量设置为非常短的值，如 `C:\SG`。这会告知 SG Desktop 将其数据存储在 `C:\SG` 而不是 `C:\Users\jane\AppData\Roaming\Shotgun` 中，这样可以节省一些字符，通常足以使您保持在限制之内。您可以[在此处阅读有关环境变量的信息](https://developer.shotgridsoftware.com/tk-core/initializing.html?#environment-variables)。
 
 ### 未来的可能性？
 

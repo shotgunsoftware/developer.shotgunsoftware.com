@@ -18,7 +18,7 @@ lang: ko
 
    > **참고:** API 키는 암호처럼 처리되고 생성된 후에는 {% include product %} 웹 앱 또는 API를 통해 다시 볼 수 없습니다. 계속하기 전에 키를 복사해야 합니다.
 
-4. 이제 스크립트 키를 사용하여 {% include product %}에 연결할 수 있습니다. 스크립트를 사용하여 {% include product %}에 연결하는 방법에 대한 자세한 내용은 [API 설명서에 있는 "{% include product %} 메서드"](http://developer.shotgridsoftware.com/python-api/reference.html#shotgun-methods)를 참조하십시오.
+4. 이제 스크립트 키를 사용하여 {% include product %}에 연결할 수 있습니다. 스크립트를 사용하여 {% include product %}에 연결하는 방법에 대한 자세한 내용은 [API 설명서에 있는 "{% include product %} 메서드"](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun-methods)를 참조하십시오.
 
 > **팁:** 어떤 이유로 스크립트의 응용프로그램 키를 재설정해야 하는 경우 이를 수행하려면 새 {% include product %} 스크립트 엔티티를 만들어야 합니다. 먼저 기존 스크립트의 이름을 변경(예: "[My Script]—OLD")한 다음 이를 삭제합니다. 새 스크립트를 만듭니다. 이전 스크립트의 이름을 변경해야 하는 이유는 {% include product %} 소프트웨어가 각 스크립트에 대해 고유한 이름을 요구하기 때문입니다.
 

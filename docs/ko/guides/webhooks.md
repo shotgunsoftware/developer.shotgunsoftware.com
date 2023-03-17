@@ -235,7 +235,7 @@ SSL 인증서 유효성 확인은 웹후크의 사용자 URL에 대한 모든 �
   "x-sg-delivery-id": "dea7a71d-4896-482f-b238-b61820df8b65",
   "x-sg-event-batch-id": "1",
   "x-sg-event-batch-size": "4",
-  "x-sg-webhook-site-url": "http://yoursite.shotgunstudio.com/",
+  "x-sg-webhook-site-url": "https://yoursite.shotgunstudio.com/",
   "x-sg-event-batch-index": "3"
 }
 ```

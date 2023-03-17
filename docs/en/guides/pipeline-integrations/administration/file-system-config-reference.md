@@ -128,7 +128,7 @@ For a dynamic folder which corresponds to a {% include product %} query, use the
 - You can use a single field, like in the example above (e.g.,  `name: code`).
 - You can use multiple fields in brackets (e.g.,  `name:`  `"{asset_type}_{code}"`).
 - If you want to include fields from other linked entities, you can use the standard {% include product %} dot syntax (e.g.,  `name: "{sg_sequence.Sequence.code}_{code}"`).
--   The **filters** field is a {% include product %} Query. It follows the  [{% include product %} API syntax](http://developer.shotgridsoftware.com/python-api/reference.html)  relatively closely. It is a list of dictionaries, and each dictionary needs to have the keys  _path_,  _relation_, and  _values_. Valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy). For {% include product %} entity links, you can use the $syntax (e.g.,  `{ "path": "project", "relation": "is", "values": [ "$project" ] }`) to refer to a parent folder in the configuration-this is explained more in depth in the  [examples below](#examples).
+-   The **filters** field is a {% include product %} Query. It follows the  [{% include product %} API syntax](https://developer.shotgridsoftware.com/python-api/reference.html)  relatively closely. It is a list of dictionaries, and each dictionary needs to have the keys  _path_,  _relation_, and  _values_. Valid values for $syntax are any ancestor folder that has a corresponding {% include product %} entity (e.g.,  `"$project"`  for the Project and  `"$sequence"`  if you have a sequence.yml higher up the directory hierarchy). For {% include product %} entity links, you can use the $syntax (e.g.,  `{ "path": "project", "relation": "is", "values": [ "$project" ] }`) to refer to a parent folder in the configuration-this is explained more in depth in the  [examples below](#examples).
     
 
 ## Multiple folders
@@ -847,7 +847,7 @@ In addition to specifying the type, you can also specify additional options. The
 -   `subset`  and  `subset_format`  - Extracts a subset of the given input string and makes that the key value, allowing you to create for example an initials key from a full username or a key that holds the three first letters of every shot name.
     
 
-For technical details about template keys, see the  [API reference](http://developer.shotgridsoftware.com/tk-core/core.html#template-system).
+For technical details about template keys, see the  [API reference](https://developer.shotgridsoftware.com/tk-core/core.html#template-system).
 
 ### Example - An alphanumeric name
 

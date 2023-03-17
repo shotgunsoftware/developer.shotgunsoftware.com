@@ -26,7 +26,7 @@ lang: zh_CN
 
 ## PySide
 
-对于先前的 Houdini 版本（13 及更早），需要安装 PySide 的外部版本。在 Windows 上，我们已经捆绑了一个兼容的 PySide 版本，该版本可支持 Houdini 运行的 Python。在 Linux 上，Houdini 使用系统 Python（依据 http://www.sidefx.com/docs/houdini12.0/hom/），需要有 PySide 或 PyQt 支持。
+对于先前的 Houdini 版本（13 及更早），需要安装 PySide 的外部版本。在 Windows 上，我们已经捆绑了一个兼容的 PySide 版本，该版本可支持 Houdini 运行的 Python。在 Linux 上，Houdini 使用系统 Python（依据 https://www.sidefx.com/docs/houdini12.0/hom/），需要有 PySide 或 PyQt 支持。
 
 ## 菜单加载
 

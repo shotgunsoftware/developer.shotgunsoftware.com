@@ -189,7 +189,7 @@ action_mappings:
 
 パブリッシュ用に項目をアーティストに表示する方法やそれらの項目を処理する方法を制御するフックにより、Publish アプリを高度にカスタマイズすることができます。
 
-Publish アプリの開発者を対象とした完全なドキュメントは、[Toolkit 開発者サイト](http://developer.shotgridsoftware.com/tk-multi-publish2)で入手できます。
+Publish アプリの開発者を対象とした完全なドキュメントは、[Toolkit 開発者サイト](https://developer.shotgridsoftware.com/tk-multi-publish2)で入手できます。
 
 Publish アプリの使用方法の詳細については、[ユーザ ガイド](https://developer.shotgridsoftware.com/ja/d587be80/#the-publisher)を参照してください。
 

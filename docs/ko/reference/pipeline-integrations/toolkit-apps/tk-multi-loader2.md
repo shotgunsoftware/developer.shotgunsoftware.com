@@ -94,7 +94,7 @@ def execute_multiple_actions(self, actions)
 
 자세한 정보는 앱과 함께 제공되는 후크 파일을 참조하십시오. 후크는 또한 상속을 이용합니다. 즉, 후크의 모든 사항을 재지정할 필요는 없지만 다양한 방식으로 기본 후크를 좀 더 쉽게 확장하거나 확대하여 보다 쉽게 후크를 관리할 수 있습니다.
 
-`v1.12.0` 이전 버전에서는 응용프로그램이 `execute_action` 후크를 호출하여 액션을 실행했습니다. 최신 버전에서는 `execute_multiple_actions` 후크를 호출합니다. 기존 후크와의 호환성을 제공하기 위해 `execute_multiple_actions` 후크는 실제로 제공된 각각의 액션에 대해 `execute_action`을 호출합니다. 응용프로그램이 `v1.12.0` 이상으로 업그레이드 후 `execute_multiple_actions` 후크가 정의되지 않았다고 보고하는 경우 환경의 `actions_hook` 설정이 기본 제공 후크 `{self}/{engine_name}_actions.py`에서 올바르게 상속받는지 확인합니다. 기본 제공 후크에서 커스텀 후크를 파생하는 방법에 대한 자세한 정보는 [툴킷 참조 문서](http://developer.shotgridsoftware.com/tk-core/core.html#hook)를 참조하십시오.
+`v1.12.0` 이전 버전에서는 응용프로그램이 `execute_action` 후크를 호출하여 액션을 실행했습니다. 최신 버전에서는 `execute_multiple_actions` 후크를 호출합니다. 기존 후크와의 호환성을 제공하기 위해 `execute_multiple_actions` 후크는 실제로 제공된 각각의 액션에 대해 `execute_action`을 호출합니다. 응용프로그램이 `v1.12.0` 이상으로 업그레이드 후 `execute_multiple_actions` 후크가 정의되지 않았다고 보고하는 경우 환경의 `actions_hook` 설정이 기본 제공 후크 `{self}/{engine_name}_actions.py`에서 올바르게 상속받는지 확인합니다. 기본 제공 후크에서 커스텀 후크를 파생하는 방법에 대한 자세한 정보는 [툴킷 참조 문서](https://developer.shotgridsoftware.com/tk-core/core.html#hook)를 참조하십시오.
 
 LINKBOX_DOC:5#The%20hook%20data%20type: 2세대 후크 형식에 대한 자세한 정보는 여기에서 확인하십시오.
 

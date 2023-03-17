@@ -7,7 +7,7 @@ lang: en
 
 # API Overview
 
-**Note:** For more information about the {% include product %} API, see our [API documentation](http://developer.shotgridsoftware.com/python-api/) .
+**Note:** For more information about the {% include product %} API, see our [API documentation](https://developer.shotgridsoftware.com/python-api/) .
 
 The {% include product %} Python Application Programming Interface (API) enables users to easily integrate their tools with {% include product %}. Through it you can create automated processes, integrate with many third party software packages, and communicate with existing tools within your studio. Because the needs of every studio are very different, the {% include product %} API provides powerful, low-level functionality and leaves most of the business logic to you.
 
@@ -37,9 +37,9 @@ In addition to script keys, you will also need to set up a Personal Access Token
 
 You can download the API at [https://github.com/shotgunsoftware/python-api](https://github.com/shotgunsoftware/python-api) . Some common first projects include:
 
-1.  [Creating a Version and linking it to a Shot](http://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_create_version_link_shot.html) . Allows you to automate the submission of new renders for review.
-2.  [Uploading a thumbnail](http://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_upload_thumbnail_version.html) . Everything on your site can have an up-to-date thumbnail without manually adding them.
-3.  [Integrating {% include product %} with your code repository such as SVN](http://developer.shotgridsoftware.com/python-api/cookbook/examples/svn_integration.html) . Utilize {% include product %} to project manage any software development.
+1.  [Creating a Version and linking it to a Shot](https://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_create_version_link_shot.html) . Allows you to automate the submission of new renders for review.
+2.  [Uploading a thumbnail](https://developer.shotgridsoftware.com/python-api/cookbook/examples/basic_upload_thumbnail_version.html) . Everything on your site can have an up-to-date thumbnail without manually adding them.
+3.  [Integrating {% include product %} with your code repository such as SVN](https://developer.shotgridsoftware.com/python-api/cookbook/examples/svn_integration.html) . Utilize {% include product %} to project manage any software development.
 
 ## Some things you can’t do with the API
 
@@ -69,7 +69,7 @@ Every action performed in {% include product %} (either by a user or an API scri
 For more information about the {% include product %} API, see these articles:
 
 *   [Download the {% include product %} API from GitHub](https://github.com/shotgunsoftware/python-api/)
-*   [{% include product %} API documentation](http://developer.shotgridsoftware.com/python-api/)
+*   [{% include product %} API documentation](https://developer.shotgridsoftware.com/python-api/)
 *   [{% include product %}-dev list (Public)](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)
 *   [{% include product %} Event Daemon sample code](https://github.com/shotgunsoftware/shotgunEvents)
 *   [Writing event driven triggers](https://developer.shotgridsoftware.com/0d8a11d9/)

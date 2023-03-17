@@ -26,7 +26,7 @@ This item has been tested and is known to be working on the following applicatio
 
 ## PySide
 
-For older versions of Houdini (13 and older) an external build of PySide is required. On Windows, we have bundled a compatible PySide build that will work with the python that Houdini runs. On Linux, Houdini uses the system python (per http://www.sidefx.com/docs/houdini12.0/hom/) which needs to have PySide or PyQt support.
+For older versions of Houdini (13 and older) an external build of PySide is required. On Windows, we have bundled a compatible PySide build that will work with the python that Houdini runs. On Linux, Houdini uses the system python (per https://www.sidefx.com/docs/houdini12.0/hom/) which needs to have PySide or PyQt support.
 
 ## Menu loading
 

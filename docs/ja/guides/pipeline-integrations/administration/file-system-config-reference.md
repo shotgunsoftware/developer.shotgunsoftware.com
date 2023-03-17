@@ -128,7 +128,7 @@ yaml ファイルで表される動的な設定セットアップは次のモー
 - 上記の例のように(`name: code` など)、1 つのフィールドを使用できます。
 - 括弧内に複数のフィールド(`name:``"{asset_type}_{code}"` など)を使用できます。
 - 他にリンクされたエンティティのフィールドを追加する場合は、標準の {% include product %} ドット シンタックス(`name: "{sg_sequence.Sequence.code}_{code}"` など)を使用できます。
-- **filters** フィールドは {% include product %} クエリーです。 これは [{% include product %} API 構文](http://developer.shotgridsoftware.com/python-api/reference.html)に比較的近くなります。ディクショナリのリストで、各ディクショナリには、_path_、_relation_、および _values_ の各キーを指定する必要があります。$syntax の有効値は、{% include product %} エンティティ(ディレクトリ階層上位に sequence.yml がある場合はプロジェクトの `"$project"` と `"$sequence"` など)に対応した親フォルダです。{% include product %} エンティティ リンクの場合、$syntax (`{ "path": "project", "relation": "is", "values": [ "$project" ] }` など)を使用すると、環境設定内の親フォルダを参照できます。この詳細については、[以下の例](#examples)で説明します。
+- **filters** フィールドは {% include product %} クエリーです。 これは [{% include product %} API 構文](https://developer.shotgridsoftware.com/python-api/reference.html)に比較的近くなります。ディクショナリのリストで、各ディクショナリには、_path_、_relation_、および _values_ の各キーを指定する必要があります。$syntax の有効値は、{% include product %} エンティティ(ディレクトリ階層上位に sequence.yml がある場合はプロジェクトの `"$project"` と `"$sequence"` など)に対応した親フォルダです。{% include product %} エンティティ リンクの場合、$syntax (`{ "path": "project", "relation": "is", "values": [ "$project" ] }` など)を使用すると、環境設定内の親フォルダを参照できます。この詳細については、[以下の例](#examples)で説明します。
 
 
 ## 複数のフォルダ
@@ -847,7 +847,7 @@ Toolkit テンプレート ファイルは Toolkit 設定のハブの 1 つで�
 - `subset` と `subset_format`: 指定した入力文字列のサブセットを抽出し、完全なユーザ名からイニシャルのキーを作成したり、すべてのショット名の最初の 3 文字を保持するキーを作成したりできるキーの値を作成します。
 
 
-テンプレート キーの技術的詳細については、「[API リファレンス](http://developer.shotgridsoftware.com/tk-core/core.html#template-system)」を参照してください。
+テンプレート キーの技術的詳細については、「[API リファレンス](https://developer.shotgridsoftware.com/tk-core/core.html#template-system)」を参照してください。
 
 ### 例: 英数字の名前
 

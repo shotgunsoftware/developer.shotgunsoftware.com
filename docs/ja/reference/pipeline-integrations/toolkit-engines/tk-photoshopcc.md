@@ -107,7 +107,7 @@ lang: ja
 
 ### PySide
 
-{% include product %} Engine for Photoshop CC は PySide を使用します。正式な手順については、「[Pyside をインストールする](http://pyside.readthedocs.io/en/latest/installing/index.html)」を参照してください。
+{% include product %} Engine for Photoshop CC は PySide を使用します。正式な手順については、「[Pyside をインストールする](https://pyside.readthedocs.io/en/latest/installing/index.html)」を参照してください。
 
 ### CEP 拡張機能
 
@@ -151,7 +151,7 @@ shelf_favorites:
 
 ### Photoshop API
 
-エンジンは Photoshop CC の JavaScript API を Python に公開します。この API の完全なマニュアルについては、[こちら](http://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf)を参照してください。
+エンジンは Photoshop CC の JavaScript API を Python に公開します。この API の完全なマニュアルについては、[こちら](https://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf)を参照してください。
 
 Photoshop API オブジェクトは `engine.adobe` として公開されます。次の例では、Toolkit のアプリやフック内から Photoshop DOM を直接操作する方法を示します。標準的な Toolkit アプリには、Photoshop マニュアルの操作方法に関する作業例が含まれています。
 

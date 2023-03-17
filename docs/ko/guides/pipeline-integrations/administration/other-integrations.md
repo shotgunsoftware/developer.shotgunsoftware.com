@@ -13,7 +13,7 @@ lang: ko
 
 Cinesync를 사용하면 여러 위치 사이를 동시에 동기화하여 재생할 수 있습니다. {% include product %} 통합을 통해 버전 재생 목록을 만들고, 이를 Cinesync에서 재생하고, 세션 중에 작성한 노트를 {% include product %}로 바로 보낼 수 있습니다.
 
-자세한 정보는 [http://www.cinesync.com/manual/latest](http://www.cinesync.com/manual/latest/)를 참조하십시오.
+자세한 정보는 [https://www.cinesync.com/manual/latest](https://www.cinesync.com/manual/latest/)를 참조하십시오.
 
 ## Deadline
 
@@ -25,7 +25,7 @@ Cinesync를 사용하면 여러 위치 사이를 동시에 동기화하여 재�
 
 Deadline 통합과 마찬가지로, {% include product %}+Rush 통합을 사용하면 썸네일, 프레임 링크 및 기타 메타데이터가 모두 포함된 렌더링된 버전을 {% include product %}에 자동으로 제출할 수 있습니다.
 
-자세한 정보는 [http://seriss.com/rush-current/index.html](http://seriss.com/rush-current/index.html)을 참조하십시오.
+자세한 정보는 [https://seriss.com/rush-current/index.html](https://seriss.com/rush-current/index.html)을 참조하십시오.
 
 ## Subversion(SVN)
 

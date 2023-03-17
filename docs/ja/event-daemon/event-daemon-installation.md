@@ -27,7 +27,7 @@ lang: ja
 Python が既にマシンにインストールされている場合は、{% include product %} Python API をインストールして、{% include product %} イベント デーモンが {% include product %} サーバに接続するために使用できるようにする必要があります。これを実行するにはいくつかの方法があります。
 
 - {% include product %} イベント デーモンと同じディレクトリに配置する
-- [`PYTHONPATH` 環境変数](http://docs.python.org/tutorial/modules.html)によって指定されたフォルダのいずれかに配置する
+- [`PYTHONPATH` 環境変数](https://docs.python.org/tutorial/modules.html)によって指定されたフォルダのいずれかに配置する
 
 {% include product %} API が正しくインストールされているかをテストするには、ターミナル ウィンドウで以下を確認します。
 
@@ -122,8 +122,8 @@ $ pip install -r /path/to/requirements.txt
 
 Windows システムでは、次のいずれかが必要です。
 
-* [PyWin32](http://sourceforge.net/projects/pywin32/) がインストールされた Python
-* [Active Python](http://www.activestate.com/activepython)
+* [PyWin32](https://sourceforge.net/projects/pywin32/) がインストールされた Python
+* [Active Python](https://www.activestate.com/activepython)
 
 Active Python には {% include product %} イベント デーモンと Windows のサービス アーキテクチャを統合するために必要な PyWin32 モジュールが付属しています。
 

@@ -12,7 +12,7 @@ lang: ja
 {% include product %} ソフトウェアは、Python ベースの API を使用して {% include product %} にアクセスし、他のツールと連携します。API は CRUD パターンに従い、{% include product %} サーバで作成、読み取り、更新、および削除のアクションを実行できます。各リクエストは単一のエンティティ タイプに従って動作し、アクションに応じて、フィルタ、返される列、ソート情報、およびいくつかの追加オプションを定義できます。
 
 * [コード リポジトリ](https://github.com/shotgunsoftware/python-api)
-* [ドキュメント](http://developer.shotgridsoftware.com/python-api/)
+* [ドキュメント](https://developer.shotgridsoftware.com/python-api/)
 * [フォーラム](https://community.shotgridsoftware.com/c/pipeline/6)
 
 ### イベント トリガ フレームワーク
@@ -33,4 +33,4 @@ lang: ja
 API 開発者は、エンティティ単位でコンテキスト メニュー項目をカスタマイズできます。たとえば、Versions ページから複数のバージョンを選択して右クリックし、(たとえば) PDF レポートを作成します。これらを ActionMenuItems (AMIs)と呼びます。
 
 * [ドキュメント]()
-* [サンプル コード リポジトリ](http://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)
+* [サンプル コード リポジトリ](https://developer.shotgridsoftware.com/python-api/cookbook/examples/ami_handler.html)

@@ -33,5 +33,5 @@ By default, the app will generate a Quicktime with a slate and burn-ins:
 
 ## Customization
 
-Most aspects of the review submission can be adjusted using hooks. Documentation can be found [here](http://developer.shotgridsoftware.com/tk-nuke-quickreview).
+Most aspects of the review submission can be adjusted using hooks. Documentation can be found [here](https://developer.shotgridsoftware.com/tk-nuke-quickreview).
 

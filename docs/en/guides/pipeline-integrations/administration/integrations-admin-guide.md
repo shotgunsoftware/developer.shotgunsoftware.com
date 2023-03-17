@@ -194,7 +194,7 @@ All of the following setups would handle this:
 
 ### Advanced configuration
 
-For information on the underlying method that performs the resolution of PublishedFile paths, take a look at our  [developer reference docs](http://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path).
+For information on the underlying method that performs the resolution of PublishedFile paths, take a look at our  [developer reference docs](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path).
 
 If you are using Advanced Project Setup, you can add support beyond local file links and  `file://`  URLs by customizing the  `resolve_publish`  core hook. Possible customizations include:
 
@@ -421,7 +421,7 @@ If you are using a local {% include product %} site with access to the Internet 
 
 `app_store_http_proxy: <proxy_server_address>`
 
-where  `<proxy_server_address>`  is a string that follows the convention documented  [in our developer docs.](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
+where  `<proxy_server_address>`  is a string that follows the convention documented  [in our developer docs.](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
 
 If you need to override this setting on a per-project basis, you can do so in  `config/core/shotgun.yml`  in your project’s Pipeline Configuration.
 

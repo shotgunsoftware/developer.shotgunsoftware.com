@@ -83,7 +83,7 @@ Toolkit 目前支持使用以下位置 _描述符_ 来安装和管理应用：
 - **dev** 描述符表示开发者沙盒
 - **manual** 描述符用于自定义部署和推行
 
-有关不同描述符用法的文档，请参见 [Toolkit 参考文档](http://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types)。
+有关不同描述符用法的文档，请参见 [Toolkit 参考文档](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types)。
 
 ## 禁用应用和插件
 
@@ -103,4 +103,4 @@ _deny_platforms_ 参数的值可以是 `windows`、`linux` 和 `mac`。
 
 ## 设置和参数
 
-每个应用、插件或框架都显式地定义了一些设置，您可以在配置文件中改写这些设置。这些设置分为字符串、整数、列表等强类型。有关详细信息，请参见 [Toolkit 参考文档](http://developer.shotgridsoftware.com/tk-core/platform.html#configuration-and-info-yml-manifest)。
+每个应用、插件或框架都显式地定义了一些设置，您可以在配置文件中改写这些设置。这些设置分为字符串、整数、列表等强类型。有关详细信息，请参见 [Toolkit 参考文档](https://developer.shotgridsoftware.com/tk-core/platform.html#configuration-and-info-yml-manifest)。

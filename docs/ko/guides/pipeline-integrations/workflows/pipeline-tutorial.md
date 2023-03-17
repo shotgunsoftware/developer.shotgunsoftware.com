@@ -332,7 +332,7 @@ Loader 앱의 레이아웃은 Workfiles 앱과 유사하지만 지금은 작업 
 
 이 줄은 현재 세션에 있는 모든 메쉬를 수집하기 위해 추가할 새 방식입니다. 이 방식은 나중에 만들 예정인 셰이더 게시 플러그인이 작동할 수 있는 메쉬 항목을 만듭니다. 전달되는 항목은 메쉬 항목의 상위가 될 세션 항목입니다.
 
-{% include info title="참고" content="이 방식은 기존 게시 플러그인을 수정하는 매우 직접적인 접근 방법입니다. 게시자 구조 및 움직이는 모든 부분에 대한 자세한 정보는 [개발자 문서](http://developer.shotgridsoftware.com/tk-multi-publish2/)를 참조하십시오." %}
+{% include info title="참고" content="이 방식은 기존 게시 플러그인을 수정하는 매우 직접적인 접근 방법입니다. 게시자 구조 및 움직이는 모든 부분에 대한 자세한 정보는 [개발자 문서](https://developer.shotgridsoftware.com/tk-multi-publish2/)를 참조하십시오." %}
 
 이제 파일 하단에 아래 새 방식 정의를 추가합니다.
 
