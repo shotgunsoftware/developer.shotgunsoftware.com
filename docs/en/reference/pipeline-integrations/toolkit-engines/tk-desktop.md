@@ -19,7 +19,7 @@ One of the fundamental principles of Toolkit is that projects can be completely 
 
 When you click on a project, a python interpreter is launched in the background. This python interpreter is the one the project has been configured to use and on startup will initialize the tk-desktop for that project.  That instance of the engine will communicate back to the GUI what commands it can launch.
 
-When you click on a command, that background python process is responsible for launching the command.  This makes it possible (for example) to have one project running python 2.6 while testing python 2.7 on another project.
+When you click on a command, that background python process is responsible for launching the command.
 
 ## Registering custom panels
 

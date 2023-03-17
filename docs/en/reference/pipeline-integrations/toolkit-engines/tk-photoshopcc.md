@@ -9,13 +9,13 @@ lang: en
 
 The {% include product %} engine for Photoshop CC provides a platform for integrating {% include product %} into your Photoshop CC workflow. It consists of a standard {% include product %} Pipeline Toolkit engine and relies on the [tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP).
 
-Once enabled, a **{% include product %}** panel becomes available in Photoshop CC. It displays information about the current {% include product %} context as well as the commands that are registered for the apps installed in that context.
+Once enabled, a **{% include product %} Adobe Panel** becomes available in Photoshop CC. It displays information about the current {% include product %} context as well as the commands that are registered for the apps installed in that context.
 
-![extension](../images/engines/photoshopcc-photoshopcc_extension.png)
+![Engine](../images/engines/photoshopcc-photoshopcc_extension.png)
 
 ## Supported Application Versions
 
-This item has been tested and is known to be working on the following application versions: 
+This item has been tested and is known to be working on the following application versions:
 
 {% include tk-photoshopcc %}
 
@@ -25,7 +25,7 @@ Please note that it is perfectly possible, even likely, that it will work with m
 
 The {% include product %} extension panel uses the same color palette and basic layout as native Photoshop CC panels. It is comprised of five components:
 
-![extension components](../images/engines/photoshopcc-extension_components.png)
+![components](../images/engines/photoshopcc-extension_components.png)
 
 1. **Context Header** - Thumbnail and fields for the current context.
 2. **Favorites Shelf** - Designed to show the most commonly-used apps for the current context.
@@ -41,7 +41,7 @@ Installation of the {% include product %} Engine for Photoshop CC follows the sa
 
 Once the extension is installed, it will need to be launched via the extensions menu in Photoshop CC.
 
-![extension menu](../images/engines/photoshopcc-extensions_menu.png)
+![Menu](../images/engines/photoshopcc-extensions_menu.png)
 
 This will only need to be done once and the {% include product %} extension panel can remain in the Photoshop CC layout without having to be enabled on subsequent launches.
 
@@ -57,7 +57,7 @@ The following sections outline the components of the {% include product %} Photo
 
 The context header is a customizable area which can display information about the current {% include product %} context.
 
-![extension header](../images/engines/photoshopcc-extension_header.png)
+![Header](../images/engines/photoshopcc-extension_header.png)
 
 The context is determined by the currently-active document. Once the context is determined by the engine, the header will update to display the context's thumbnail field detail. The field information is controlled by a hook. For information on how to customize the field display, see the **Context Fields Display Hook** section below.
 
@@ -67,7 +67,7 @@ It should also be noted that since Photoshop CC is a multi-document interface, t
 
 The favorites shelf is similar to the menu favorites available in other {% include product %} DCC integrations such as Maya and Houdini. This section of the interface makes the most commonly used Toolkit apps readily available and easy to find just under the context header.
 
-![extension shelf](../images/engines/photoshopcc-extension_shelf.png)
+![Shelf](../images/engines/photoshopcc-extension_shelf.png)
 
 The shelf displays the favorited commands as buttons that, when moused over, transition from grayscale to color and display their name in the label at the top. Tooltips for the buttons will show by hovering the mouse above them.
 
@@ -79,7 +79,7 @@ For details on how to specify command favorites, see the **Shelf Favorites** sec
 
 The command list shows the other "regular" commands that are registered for the current context.
 
-![extension commands](../images/engines/photoshopcc-extension_commands.png)
+![Commands](../images/engines/photoshopcc-extension_commands.png)
 
 Typically, apps installed within a pipeline configuration will register one or more commands that are displayed here. If the commands are not identified as favorites, and are not identified as context-menu commands, they will display here.
 
@@ -89,7 +89,7 @@ The command list buttons behave in a manner similar to those in the favorites sh
 
 Any commands registered as context menu commands will show in the {% include product %} extension panel's context menu.
 
-![extension context menu](../images/engines/photoshopcc-extension_context_menu.png)
+![Context Menu](../images/engines/photoshopcc-extension_context_menu.png)
 
 Like the other command areas, these commands will change along with the context. Commands such as **Jump to {% include product %}** and **Jump to Filesystem** will always be available here.
 
@@ -97,7 +97,7 @@ Like the other command areas, these commands will change along with the context.
 
 The logging console shows all of the logging output from both the CEP Javascript interpreter and Toolkit's Python process.
 
-![extension](../images/engines/photoshopcc-extension_console.png)
+![Console](../images/engines/photoshopcc-extension_console.png)
 
 If there are any issues with the extension that require support, the logging console output is extremely useful for helping the {% include product %} support team debug the problem.
 

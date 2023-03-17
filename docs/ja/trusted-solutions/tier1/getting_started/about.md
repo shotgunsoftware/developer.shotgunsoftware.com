@@ -2,7 +2,7 @@
 layout: default
 title: About the Isolation Feature Set
 pagename: tier1-getting_started-about
-lang: en
+lang: ja
 ---
 
 # What is the Isolation Feature Set

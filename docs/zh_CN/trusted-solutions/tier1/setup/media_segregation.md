@@ -2,7 +2,7 @@
 layout: default
 title: Media Traffic Isolation
 pagename: tier1-setup-media_segregation
-lang: en
+lang: zh_CN
 ---
 
 # Media Traffic Isolation using AWS PrivateLink for Amazon S3

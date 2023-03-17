@@ -2,7 +2,7 @@
 layout: default
 title: Setup
 pagename: tier1-setup
-lang: en
+lang: ja
 ---
 
 # {% include product %} Isolation Feature Set - Setup

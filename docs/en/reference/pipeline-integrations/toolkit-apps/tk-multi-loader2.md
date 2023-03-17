@@ -96,7 +96,7 @@ For more information, please see the hook files that come with the app. The hook
 
 Note that in versions previous to `v1.12.0`, the application invoked the `execute_action` hook to execute an action. Newer versions invoke the `execute_multiple_actions` hook. In order to provide backward compatibility with existing hooks, the `execute_multiple_actions` hook actually invokes `execute_action` for each actions provided. If the application is reporting that the `execute_multiple_actions` hook is not defined after upgrading to `v1.12.0` or later, make sure that the `actions_hook` setting in your environment correctly inherits from the builtin hook `{self}/{engine_name}_actions.py`. To learn more about how you can derive custom hooks from the builtin ones, see our [Toolkit reference documentation](http://developer.shotgridsoftware.com/tk-core/core.html#hook).
 
-LINKBOX_DOC:5#The%20hook%20data%20type:Learn more about the second gen hook format here.
+[Learn more about the second gen hook format here.](https://developer.shotgridsoftware.com/6d10dedf/)
 
 By using inheritance in your hook, it would be possible to add additional actions to the default hooks like
 this:
