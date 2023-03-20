@@ -1,3 +1,4 @@
 [submodule "tk-doc-generator"]
 	path = tk-doc-generator
 	url = https://github.com/shotgunsoftware/tk-doc-generator.git
+	branch = ticket/SG-30020_improve_error_handling
