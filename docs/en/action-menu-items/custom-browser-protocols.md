@@ -218,10 +218,9 @@ The third string is the protocol handler; therefore a URL would be:
 shotgrid://something
 ```
 
-**If using BigSur and Monterey, you will need to _delete_ the following lines in the `info.plist` file, which fall between the `NSAppleEventsUsageDescription` and `NSSystemAdministrationUsageDescription`.** If you are using a version older than BigSur, skip this step and continue to step 3 below.
+**If using BigSur, you will need to _delete_ the following lines in the `info.plist` file, which fall between the `NSAppleEventsUsageDescription` and `NSSystemAdministrationUsageDescription`.** If you are using a version older than BigSur, skip this step and continue to step 3 below.
 
 ```xml
-	<string>This script needs to control other applications to run.</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>This script needs access to your music to run.</string>
 	<key>NSCalendarsUsageDescription</key>
@@ -249,6 +248,18 @@ Finally, move your `.app` bundle to the Applications folder of your Mac. Then do
 The data flow looks like this: once you click the AMI in {% include product %}, or click a URL that starts with `shotgrid://` , the `.app` bundle will respond to it and pass the URL over to your Python script. At this point the same script that was used in the Windows example can be used and all the same possibilities apply.
 
 {% include info title="Info" content="For additional information on troubleshooting with Monterey, [visit this community post](https://community.shotgridsoftware.com/t/amis-stopped-working-on-osx-monterey/16886)." %}
+
+**Debugging Tip:** Catching an error and then displaying it in a popup will allow you to see if there were any issues executing the Python script without it erroring silently. Here is an example snippet that can be added to your Python script for a try on error:
+
+```python
+on open location this_URL
+	try
+		do shell script "/path/to/script.py '" & this_URL & "'"
+	on error errStr
+		display dialog "error" & errStr
+	end try
+end open location 
+```
 
 ## Registering a protocol on Linux
 
