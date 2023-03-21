@@ -177,6 +177,18 @@ on open location this_URL
 end open location 
 ```
 
+**Debugging Tip:** Catching an error and then displaying it in a popup will allow you to see if there were any issues executing the Python script without it erroring silently. Here is an example snippet that can be added to your AppleScript for a try on error:
+
+```
+on open location this_URL
+	try
+		do shell script "/path/to/script.py '" & this_URL & "'"
+	on error errStr
+		display dialog "error" & errStr
+	end try
+end open location 
+```
+
 > **Note:** To ensure you are running Python from a specific shell, such as `tcsh`, you can change the do shell script for something like the following: do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`. In the Script Editor, save your short script as an _Application Bundle_.
 
 **Step 2: Edit the `info.plist` file**
@@ -248,18 +260,6 @@ Finally, move your `.app` bundle to the Applications folder of your Mac. Then do
 The data flow looks like this: once you click the AMI in {% include product %}, or click a URL that starts with `shotgrid://` , the `.app` bundle will respond to it and pass the URL over to your Python script. At this point the same script that was used in the Windows example can be used and all the same possibilities apply.
 
 {% include info title="Info" content="For additional information on troubleshooting with Monterey, [visit this community post](https://community.shotgridsoftware.com/t/amis-stopped-working-on-osx-monterey/16886)." %}
-
-**Debugging Tip:** Catching an error and then displaying it in a popup will allow you to see if there were any issues executing the Python script without it erroring silently. Here is an example snippet that can be added to your Python script for a try on error:
-
-```python
-on open location this_URL
-	try
-		do shell script "/path/to/script.py '" & this_URL & "'"
-	on error errStr
-		display dialog "error" & errStr
-	end try
-end open location 
-```
 
 ## Registering a protocol on Linux
 
