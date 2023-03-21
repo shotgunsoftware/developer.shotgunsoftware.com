@@ -177,6 +177,18 @@ on open location this_URL
 end open location 
 ```
 
+**Debugging Tip:** Catching an error and then displaying it in a popup will allow you to see if there were any issues executing the Python script without it erroring silently. Here is an example snippet that can be added to your AppleScript for a try on error:
+
+```
+on open location this_URL
+	try
+		do shell script "/path/to/script.py '" & this_URL & "'"
+	on error errStr
+		display dialog "error" & errStr
+	end try
+end open location 
+```
+
 > **Note:** To ensure you are running Python from a specific shell, such as `tcsh`, you can change the do shell script for something like the following: do shell script `tcsh -c \"sgTriggerScript.py '" & this_URL & "'\"`. In the Script Editor, save your short script as an _Application Bundle_.
 
 **Step 2: Edit the `info.plist` file**
@@ -218,10 +230,9 @@ The third string is the protocol handler; therefore a URL would be:
 shotgrid://something
 ```
 
-**If using BigSur and Monterey, you will need to _delete_ the following lines in the `info.plist` file, which fall between the `NSAppleEventsUsageDescription` and `NSSystemAdministrationUsageDescription`.** If you are using a version older than BigSur, skip this step and continue to step 3 below.
+**If using BigSur, you will need to _delete_ the following lines in the `info.plist` file, which fall between the `NSAppleEventsUsageDescription` and `NSSystemAdministrationUsageDescription`.** If you are using a version older than BigSur, skip this step and continue to step 3 below.
 
 ```xml
-	<string>This script needs to control other applications to run.</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>This script needs access to your music to run.</string>
 	<key>NSCalendarsUsageDescription</key>
