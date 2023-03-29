@@ -9,7 +9,7 @@ lang: en
 
 If you are using {% include product %} for managing your Published Files, use the Scene Breakdown app to keep your references up to date. The Scene Breakdown app helps you manage references and versioning of {% include product %} Published Files.
 
-![Overview of the legacy breakdown](../images/apps/07_scenebreakdown1.png)
+![Overview of the breakdown2 app](../images/apps/07_scenebreakdown1.png)
 
 Please refer to the following documentation for the latest breakdown app:
 
