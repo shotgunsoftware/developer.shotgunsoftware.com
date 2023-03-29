@@ -7,7 +7,12 @@ lang: en
 
 # Breakdown
 
-If you are using {% include product %} for managing your Published Files, use the Scene Breakdown app to keep your references up to date. The Scene Breakdown app helps you manage references and versioning of {% include product %} Published Files.
+If you are using {% include product %} for managing your Published Files, use the Scene Breakdown app to keep your references up to date. The Scene Breakdown app helps you manage references and versioning of {% include product %} Published Files. The breakdown app allows you to:
+
+- Manage references in multiple {% include product %} Projects
+- Override to a version of a PublishedFile that is not the latest
+- Get version history file information
+- Multiple configurable and scalable viewing styles available
 
 ![Overview of the breakdown2 app](../images/apps/07_scenebreakdown1.png)
 
