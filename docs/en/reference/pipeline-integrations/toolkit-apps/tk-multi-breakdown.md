@@ -22,7 +22,7 @@ The Legacy Scene Breakdown app shows you a list of referenced content and tells 
 
 ![Overview of the legacy breakdown](../images/apps/multi-breakdown-breakdown.png)
 
-You can select one more more items and hit update selected. This will switch the items to use the latest version of the content.
+You can select one more items and hit update selected. This will switch the items to use the latest version of the content.
 
 ### Scanning the Scene
 
