@@ -15,6 +15,7 @@ Please refer to the following documentation for the latest breakdown app:
 
 - [Breakdown App User Documentation](https://help.autodesk.com/view/SGSUB/ENU/?guid=VRED_ShotGrid_for_Automotive_Design_VRED_ShotGrid_Worflows_Scene_Breakdown_in_VRED_html)
 - [Breakdown App Developer API Documentation](https://developer.shotgridsoftware.com/tk-multi-breakdown2/)
+- [Release Notes](https://github.com/shotgunsoftware/tk-multi-breakdown2/wiki/Release-Notes)
 
 ## Legacy Breakdown
 
