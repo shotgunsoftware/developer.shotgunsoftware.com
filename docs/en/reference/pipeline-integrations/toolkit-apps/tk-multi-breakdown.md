@@ -7,19 +7,38 @@ lang: en
 
 # Breakdown
 
-The Scene Breakdown app shows you a list of referenced content and tells you which items are out of date. You access it from the {% include product %} Menu.
+If you are using {% include product %} for managing your Published Files, use the Scene Breakdown app to keep your references up to date. The Scene Breakdown app helps you manage references and versioning of {% include product %} Published Files. The breakdown app allows you to:
 
-![Overview of the breakdown](../images/apps/multi-breakdown-breakdown.png)
+- Manage references in multiple {% include product %} Projects
+- Override to a version of a PublishedFile that is not the latest
+- Get version history file information
+- Multiple configurable and scalable viewing styles available
 
-You can select one more more items and hit update selected. This will switch the items to use the latest version of the content.
+![Overview of the breakdown2 app](../images/apps/07_scenebreakdown1.png)
 
-## Scanning the Scene
+Please refer to the following documentation for the latest breakdown app:
 
-When the breakdown app scans the scene for references, it will call a special scanning hook. The scanning hook will return a list of nodes with file corresponding paths. For each reference it finds, it returns the file path, and tank will look at the file path and first check if it recognizes it as a publish, and if it does, see if there is a more recent version available.
+- [Breakdown App User Documentation](https://help.autodesk.com/view/SGSUB/ENU/?guid=VRED_ShotGrid_for_Automotive_Design_VRED_ShotGrid_Worflows_Scene_Breakdown_in_VRED_html)
+- [Breakdown App Developer API Documentation](https://developer.shotgridsoftware.com/tk-multi-breakdown2/)
+- [Release Notes](https://github.com/shotgunsoftware/tk-multi-breakdown2/wiki/Release-Notes)
+
+------------------------------------------------------------------
+
+## Legacy Breakdown
+
+The Legacy Scene Breakdown app shows you a list of referenced content and tells you which items are out of date. You access it from the {% include product %} Menu.
+
+![Overview of the legacy breakdown](../images/apps/multi-breakdown-breakdown.png)
+
+You can select one more items and hit update selected. This will switch the items to use the latest version of the content.
+
+### Scanning the Scene
+
+When the legacy breakdown app scans the scene for references, it will call a special scanning hook. The scanning hook will return a list of nodes with file corresponding paths. For each reference it finds, it returns the file path, and tank will look at the file path and first check if it recognizes it as a publish, and if it does, see if there is a more recent version available.
 
 If the user clicks the update button that is shown for outdated versions, the app will call another hook to do the actual update work. This means that by customizing these hooks it is relatively simple to add new custom nodes to the breakdown.
 
-## Accessing {% include product %} Data
+### Accessing {% include product %} Data
 
 If you need to access {% include product %} data for the publish you are about to update to in the hook, this is straight forward; a single call to `find_publish` will retrieve metadata for all the items passed in from the app, like this:
 
@@ -59,7 +78,7 @@ class BreakdownHook(Hook):
 
 ```
 
-## API Access
+### API Access
 
 You can access the breakdown app programatically using its API. The following methods exist:
 
@@ -77,7 +96,7 @@ If you want to show the breakdown UI, execute the `show_breakdown_dialog()` meth
 >>> e.apps["tk-multi-breakdown"].show_breakdown_dialog()
 ```
 
-### Running the scene analysis
+#### Running the scene analysis
 
 ```
 items = app_object.analyze_scene()
@@ -129,7 +148,7 @@ for item in breakdown_items:
 ```
 
 
-### Computing the highest version for an item
+#### Computing the highest version for an item
 
 ```
 highest_version = app_object.compute_highest_version(template, fields)
@@ -140,7 +159,7 @@ In order to figure out the highest version for an item, use the `compute_highest
 This will perform a scan on disk to determine the highest version. The method returns the highest version number found on disk. See the usage example below for more details.
 
 
-### Updating a scene item
+#### Updating a scene item
 
 ```
 app_object.update_item(node_type, node_name, template, fields)
@@ -150,10 +169,7 @@ In order to update an item, you can use the `update_item(node_type, node_name, t
 
 This is similar to running the update in the breakdown UI. The actual update call will be dispatched to a hook which handles the DCC specific logic. See the usage example below for more details.
         
-
-
-
-### Breakdown API example
+#### Breakdown API example
 
 Below is an example showing how to retrieve the scene breakdown and update all items that are not using the latest version.
 
