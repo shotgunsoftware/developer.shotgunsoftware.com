@@ -22,6 +22,8 @@ Please refer to the following documentation for the latest breakdown app:
 - [Breakdown App Developer API Documentation](https://developer.shotgridsoftware.com/tk-multi-breakdown2/)
 - [Release Notes](https://github.com/shotgunsoftware/tk-multi-breakdown2/wiki/Release-Notes)
 
+------------------------------------------------------------------
+
 ## Legacy Breakdown
 
 The Legacy Scene Breakdown app shows you a list of referenced content and tells you which items are out of date. You access it from the {% include product %} Menu.
