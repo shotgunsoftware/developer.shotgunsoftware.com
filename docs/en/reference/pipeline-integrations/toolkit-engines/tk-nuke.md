@@ -48,6 +48,19 @@ Please note that it is perfectly possible, even likely, that it will work with m
 
 _Note: There is currently a bug in Nuke 8.0 running specifically on CentOS 6.5 that causes Nuke to crash when running Toolkit. Other versions of CentOS are unaffected. The Foundry is aware of this issue (bug 43766). If you are running into this, please contact us so we can try and help you workaround it until it is resolved in a future update of Nuke._
 
+## Configuring software launches
+
+Newer versions of Hiero need an additional configuration within the [`software_paths.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/software_paths.yml) file. The `software_paths.yml` file is available when you have taken over your configuration. Ensure that your reflects the following paths for Hiero to launch, with your specific path, version, and application information added:
+
+```yml
+# Hiero
+path.linux.hiero: "Nuke12.1"
+path.mac.hiero: "/Applications/Nuke12.1v4/Hiero12.1v4.app"
+path.windows.hiero: C:\Program Files\Nuke12.1v4\Nuke12.1.exe
+
+```
+
+[See this `software_paths.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/software_paths.yml) file for reference.
 
 ## Information for App Developers
     
