@@ -16,11 +16,11 @@ If you are using {% include product %} for managing your Published Files, use th
 
 ![Overview of the breakdown2 app](../images/apps/07_scenebreakdown1.png)
 
-After installing the breakdown app, it will be available in your application via the **{% include product %}** menu > **Scene Breakdown**.
+Both the Breakdown and [Legacy Breakdown](#legacy-breakdown) apps are available in your application via the **{% include product %}** menu > **Scene Breakdown**.
 
 ![Accessing the breakdown app](../images/apps/breakdown-02.png)
 
-{% include info title="Note" content="You can run both the Breakdown and Legacy Breakdown apps concurrently, as seen in the above image. [Follow these steps to configure running them at the same time]()." %}
+{% include info title="Note" content="You can run both the Breakdown and Legacy Breakdown apps concurrently, as seen in the above image. Running both apps at the same time is the default behavior." %}
 
 Please refer to the following documentation for the latest breakdown app:
 
