@@ -4,10 +4,10 @@ title: Toolkit ウェビナー
 pagename: video-webinars
 lang: ja
 ---
-
+  
 # {% include product %} Toolkit ウェビナー
 
-*更新日: 2020/5/8*
+*更新日: 2020 年 5 月 8 日*
 
 ## {% include product %} Toolkit ウェビナー プレイリスト
 
@@ -46,9 +46,9 @@ lang: ja
 
 *補足資料*
 
-[Toolkit の初期化と設定管理の開発者向けドキュメント](https://developer.shotgridsoftware.com/tk-core/initializing.html)
+[Toolkit の初期化と設定管理に関する開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-core/initializing.html)
 
-[Manne が動画で引用している記述子タイプの一覧](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types)
+[Manne がビデオで参照する記述子タイプのリスト](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types)
 
 5: {% include product %} エコシステム ウェビナー: REST API *(60 分)*
 
@@ -58,7 +58,7 @@ lang: ja
 
 *補足資料*
 
-[REST API リファレンス ドキュメント](https://developer.shotgridsoftware.com/rest-api/)
+[REST API 参照ドキュメント](https://developer.shotgridsoftware.com/rest-api/)
 
 6: {% include product %} Toolkit ウェビナー: 新しい Publisher API *(35 分)*
 
@@ -68,16 +68,16 @@ lang: ja
 
 *補足資料*
 
-[設定を含む Github リポジトリ](https://github.com/shotgunsoftware/tk-config-publish_api_webinar)
+[設定付き GitHub リポジトリ](https://github.com/shotgunsoftware/tk-config-publish_api_webinar)
 
-[31:00 で言及されている Pull 要求](https://github.com/shotgunsoftware/tk-config-publish_api_webinar/pull/1)
+[31:00 に参照されたプル リクエスト](https://github.com/shotgunsoftware/tk-config-publish_api_webinar/pull/1)
 
-[Publish API のドキュメント](https://developer.shotgridsoftware.com/tk-multi-publish2/)
+[Publish API ドキュメント](https://developer.shotgridsoftware.com/tk-multi-publish2/)
 
 7: {% include product %} Toolkit ウェビナー: After Effects の統合*(38 分)*
 
-Adobe After Effects は、{% include product %} の最新の統合対象です。このウェビナーでは、Rob Blau が、機能のライブ デモを通じて After Effects の統合について詳しく説明します。また、Photoshop との統合における困難な仕事を振り返り、Adobe 統合のための再利用可能なフレームワークを開発する方法について議論を展開します。
-
+Adobe After Effects は、{% include product %} の最新の統合対象です。このウェビナーでは、Rob Blau が、機能のライブ デモを通じて After Effects の統合について詳しく説明します。また、Photoshop との統合における困難な仕事を振り返り、Adobe 統合のための再利用可能なフレームワークを開発する方法について議論を展開します。  
+  
 また、Tannaz Sassooni が、新しい開発者向けドキュメント サイトを紹介し、{% include product %} との統合方法を学ぶユーザ向けによりわかりやすいコンテンツを作成している現状を説明します。
 
 [![](https://img.youtube.com/vi/g-062_VTbAI/0.jpg)](https://www.youtube.com/watch?v=g-062_VTbAI)
@@ -86,7 +86,7 @@ Adobe After Effects は、{% include product %} の最新の統合対象です�
 
 [After Effects の統合ドキュメント](https://developer.shotgridsoftware.com/ja/1eca509c/)
 
-[開発者用ドキュメント ポータル](https://developer.shotgridsoftware.com/ja)
+[開発者用ドキュメントのポータル](https://developer.shotgridsoftware.com/ja/)
 
 ## {% include product %} Developer Day プレイリスト
 
@@ -99,7 +99,7 @@ Adobe After Effects は、{% include product %} の最新の統合対象です�
 
 {% include product %} チームは SIGGRAPH 2018 および 2019 において {% include product %} Developer Day を発表しました。このコースへの参加を通じて、開発者はタスクの自動化、カスタム アプリの作成などで使用できるさまざまなリソースについて学ぶことができます。SIGGRAPH の後、Developer Day のコンテンツを特集した一連のウェビナーを開催しました。このプレイリストには、それらのウェビナーの記録が含まれています。
 
-完全なスライド資料、サンプル コード、およびこのコンテンツに関連するその他の資料は、[2019 の場合はこちら](https://github.com/shotgunsoftware/sg-siggraph-2019)、[2018 の場合はこちら](https://github.com/shotgunsoftware/sg-devday-2018/)にあります。
+スライド デッキ全体、コード例、およびこのコンテンツに関連するその他のリソースは、2019 の場合は[こちら](https://github.com/shotgunsoftware/sg-siggraph-2019)、2018 の場合は[こちら](https://github.com/shotgunsoftware/sg-devday-2018/)にあります。
 
 1: SIGGRAPH Developer Day 2019: {% include product %} 開発の概要*(83 分)*
 
@@ -107,11 +107,11 @@ Adobe After Effects は、{% include product %} の最新の統合対象です�
 
 [![](https://img.youtube.com/vi/i0aVJepZw8Y/0.jpg)](https://www.youtube.com/watch?v=i0aVJepZw8Y)
 
-[0:56](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=56s) 挨拶とオリエンテーション
+[0:56](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=56s) あいさつとオリエンテーション
 
-[3:00](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=180s) {% include product %} 開発の概要: 一般的なパイプラインのニーズと、{% include product %} の API と開発フレームワークを使用してそのニーズを満たす方法の概要を説明します。[Tannaz Sassooni]
+[3:00](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=180s) {% include product %} 開発の概要:パイプラインに関する一般的なニーズの概要、および {% include product %} の API と開発フレームワークを使用した対処方法を示します。[Tannaz Sassooni]
 
-[25:59](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=1559s) {% include product %} API を使用したデータ管理の概要: 簡単な Python スクリプトと REST スクリプト、およびアクション メニュー アイテムを作成するためのフレームワークを使用して {% include product %} の API について説明します。[Patrick Boucher]
+[25:59](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=1559s) {% include product %} API を使用したデータ管理の概要: 簡単な Python および REST スクリプトと、アクション メニュー項目を作成するためのフレームワークを使用して、{% include product %} の API について詳しく説明します。[Patrick Boucher]
 
 2: SIGGRAPH Developer Day 2019: 高度な {% include product %} 開発*(78 分)*
 
@@ -119,11 +119,11 @@ Adobe After Effects は、{% include product %} の最新の統合対象です�
 
 [![](https://img.youtube.com/vi/xUeY1pECHdI/0.jpg)](https://www.youtube.com/watch?v=xUeY1pECHdI)
 
-[0:39](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=39s) 挨拶とオリエンテーション
+[0:39](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=39s) あいさつとオリエンテーション
 
-[2:33](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=153s) {% include product %} イベントの操作 [Brandon Ashworth]
+[2:33](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=153s) {% include product %} イベントを操作する[Brandon Ashworth]
 
-[41:25](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=2485s) 複数のアーティスト アプリで実行する {% include product %} Tool の開発 [Manne Öhrström]
+[41:25](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=2485s) 複数のアーティスト アプリで実行される {% include product %} ツールを開発する[Manne Öhrström]
 
 3: SIGGRAPH Developer Day: Toolkit の管理*(1 時間 15 分)*
 
@@ -131,11 +131,11 @@ Adobe After Effects は、{% include product %} の最新の統合対象です�
 
 [![](https://img.youtube.com/vi/7qZfy7KXXX0/0.jpg)](https://www.youtube.com/watch?v=7qZfy7KXXX0)
 
-[0:00](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=0s) 挨拶とオリエンテーション
+[0:00](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=0s) あいさつとオリエンテーション
 
-[1:04](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=64s) {% include product %} Toolkit の管理: {% include product %} Desktop アプリを使用して一般的なコンテンツ作成ソフトウェアを起動する方法、および既定のパイプライン統合を使用して、アーティストが作業中のセッションを離れることなく {% include product %} で作業する方法について説明します。[Phil Scadding]
+[1:04](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=64s){% include product %} Toolkit 管理: {% include product %} Desktop アプリを使用して一般的なコンテンツ作成ソフトウェアを起動する方法と、既定のパイプライン統合を使用して、作業セッションを終了せずにアーティストが {% include product %} を操作する方法について確認します。[Phil Scadding]
 
-[32:41](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=1961s) Toolkit の設定の概要: Toolkit のパイプライン設定を自由にナビゲートして、パイプライン ワークフローをカスタマイズする方法について説明します。[Tannaz Sassooni]
+[32:41](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=1961s) Toolkit の設定の紹介: Toolkit のパイプライン設定を自由にナビゲートして、パイプライン ワークフローをカスタマイズする方法について学びます。[Tannaz Sassooni]
 
 [56:20](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=3380s) フックの管理: {% include product %} Toolkit の広範なフック セットを使用して設定にカスタム ロジックを追加し、Toolkit パイプラインをスタジオのニーズに合わせて調整する方法について説明します。[Josh Tomlinson]
 
@@ -145,11 +145,11 @@ Manne Ohrstrom、Jeff Beeland、Rob Blau が、ソース管理とクラウドベ
 
 [![](https://img.youtube.com/vi/bT2WlQaJVmY/0.jpg)](https://www.youtube.com/watch?v=bT2WlQaJVmY)
 
-[0:00](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=0s) 挨拶とオリエンテーション
+[0:00](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=0s) あいさつとオリエンテーション
 
-[2:31](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=151s) Toolkit プラットフォーム: 開発と展開パターン: 開発のワークフロー、バージョン管理のベスト プラクティス、{% include product %} サイトへのアップロードによるリモート ユーザへのパイプライン設定の配布など、Toolkit パイプライン構成を設定および展開するためのさまざまな方法について説明します。 [Manne Ohrstrom]
+[2:31](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=151s) Toolkit プラットフォーム: 開発と展開パターン: 開発のワークフロー、バージョン管理のベスト プラクティス、{% include product %} サイトへのアップロードによるリモート ユーザへのパイプライン設定の配布など、Toolkit パイプライン構成を設定および展開するためのさまざまな方法について説明します。[Manne Ohrstrom]
 
 [30:23](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=1823s) Toolkit プラットフォーム: 独自のアプリを作成する: 提供されている API とフレームワークを利用して強力な UI を迅速に作成する方法を、簡単な Toolkit アプリの作成を通じて説明します。[Jeff Beeland]
 
-[1:02:22](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=3742s) Autodesk Forge の紹介: オートデスクの一連の API 駆動型クラウド サービスである Forge、およびこのサービスを使用して {% include product %} をさらに便利にする方法について説明します。[Rob Blau]
-
+[1:02:22](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=3742s) Autodesk Forge の概要: オートデスクの一連の API 駆動型クラウド サービスである Forge、およびこのサービスを使用して {% include product %} をさらに便利にする方法について説明します。[Rob Blau]
+  

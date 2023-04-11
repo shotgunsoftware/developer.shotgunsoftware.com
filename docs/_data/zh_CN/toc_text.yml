@@ -34,6 +34,7 @@ qt-widgets: QT 控件
 shotgun-utils: ShotGrid 实用程序
 publish-api: 发布 API
 hiero-export-api: Hiero 导出 API
+tk-multi-breakdown2: Breakdown2
 development: 开发
 app-development: 应用开发
 engine-development: 插件开发

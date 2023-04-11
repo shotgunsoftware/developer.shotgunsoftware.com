@@ -9,13 +9,13 @@ lang: ja
 
 ## インストール
 
-{% include product %} Engine for Flame は、Flame 2015 Extension 2 に追加されている新しい統合フックを使用します。エンジンを機能させるためには、このバージョンの Flame を使用する必要**があります。Flame 2015 Extension 2 の詳細(取得方法など)については、「[Flame サポート](https://knowledge.autodesk.com/ja/support/flame-products/troubleshooting/caas/sfdcarticles/sfdcarticles/JPN/Contacting-Autodesk-Flame-or-Smoke-Customer-Support.html)」を参照してください。
+{% include product %} Engine for Flame は、Flame 2015 Extension 2 に追加されている新しい統合フックを使用します。エンジンを機能させるためには、このバージョンの Flame を使用する必要**があります。Flame 2015 Extension 2 の詳細(取得方法を含む)については、「[Flame のサポート](https://www.autodesk.co.jp/support/technical/article/caas/sfdcarticles/sfdcarticles/JPN/Contacting-Autodesk-Flame-or-Smoke-Customer-Support.html)」を参照してください。
 
 {% include product %} Engine for Flame の最も簡単な開始方法は、パイプライン設定例を使用して新しいテスト プロジェクトをセットアップすることです。それには、{% include product %} Desktop を起動して、新しいプロジェクトのプロジェクト セットアップを実行し、(既定の設定セクションで)既定の Flame 設定を選択します。
 
 ## サポート対象のアプリケーション バージョン
 
-この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。
+この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。 
 
 {% include tk-flame %}
 
@@ -31,8 +31,7 @@ Flame を {% include product %} から初めて起動すると、Flame プロジ
 
 `use_project_settings_ui` `True` に設定すると、プロジェクト作成 UI が表示されます。`False` の場合、Flame プロジェクトはフック内の他の既定値に基づいて自動的に作成されます。
 
-`get_server_hostname`
- 既定では「localhost」に設定されますが、必要に応じてオーバーライドできます。
+`get_server_hostname` 既定では「localhost」に設定されますが、必要に応じてオーバーライドできます。
 
 `get_project_name` 既定では {% include product %} プロジェクトと同じ値に設定されますが、必要に応じてオーバーライドできます。
 
@@ -46,11 +45,11 @@ Flame を {% include product %} から初めて起動すると、Flame プロジ
 
 * FrameWidth (例: `1280`)
 * FrameHeight (例: `1080`)
-* FrameDepth (`16-bit fp`、`12-bit`、`12-bit u`、`10-bit`、`8-bit`)
+* FrameDepth (`16-bit fp`、`12-bit`、`12-bit u`、`10-bit`、`8-bit`) 
 * FieldDominance (`PROGRESSIVE`、`FIELD_1`、`FIELD_2`)
 * AspectRatio (`4:3`、`16:9`、または文字列として浮動小数点値)
 
-プロキシ設定を指定することもできます。詳細については、[Autodesk Wiretap SDK のマニュアル](https://www.autodesk.co.jp/developer-network/platform-technologies/wiretap)を参照してください。
+プロキシ設定を指定することもできます。詳細については、[Autodesk Wiretap SDK のドキュメント](https://www.autodesk.co.jp/developer-network/platform-technologies/wiretap)を参照してください。
 
-project_setup フックのコードベース全体を確認するには、[該当のエンジン向けの Github リポジトリ](https://github.com/shotgunsoftware/tk-flame/blob/master/hooks/project_startup.py)を参照してください。
+project_setup フックのコードベース全体を表示するには、「[エンジンの Github リポジトリ](https://github.com/shotgunsoftware/tk-flame/blob/master/hooks/project_startup.py)」を参照してください。 
 

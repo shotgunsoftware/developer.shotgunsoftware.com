@@ -7,7 +7,7 @@ lang: ko
 
 # Nuke Write Node
 
-Nuke Write Node 앱은 이미지를 렌더링할 위치를 쉽게 표준화할 수 있는 커스텀 {% include product %} Write node를 제공합니다.  각 환경에 맞게 구성할 수 있습니다. 경로 외에도 구성에 따라 사용할 렌더 형식이 결정됩니다.
+Nuke Write Node 앱은 이미지를 렌더링할 위치를 쉽게 표준화할 수 있는 커스텀 {% include product %} Write node를 제공합니다. 각 환경에 맞게 구성할 수 있습니다. 경로 외에도 구성에 따라 사용할 렌더 형식이 결정됩니다.
 
 ## 일반적인 사용
 
@@ -29,7 +29,7 @@ Write Node는 현재 경로를 캐시하므로 파일이 툴킷 작업 영역 �
 
 ## 다른 Write Node 프로파일 추가
 
-{% include product %} Write Node는 Nuke의 기본 제공 쓰기 노드를 래핑하므로 Nuke에서 지원하는 모든 형식을 앱에서 사용할 수 있으며 구성을 통해 노드를 더 추가할 수 있습니다.  가장 간단한 시작 방법은 원하는 매개변수로 간단한 Nuke Write node를 설정하는 것입니다. 예를 들어 LZW 압축을 사용하는 16비트 tif를 작성한다고 가정해 보겠습니다. 텍스트 편집기에서 Nuke 스크립트를 보면 쓰기 노드는 다음과 같습니다.
+{% include product %} Write Node는 Nuke의 기본 제공 쓰기 노드를 래핑하므로 Nuke에서 지원하는 모든 형식을 앱에서 사용할 수 있으며 구성을 통해 노드를 더 추가할 수 있습니다. 가장 간단한 시작 방법은 원하는 매개변수로 간단한 Nuke Write node를 설정하는 것입니다. 예를 들어 LZW 압축을 사용하는 16비트 tif를 작성한다고 가정해 보겠습니다. 텍스트 편집기에서 Nuke 스크립트를 보면 쓰기 노드는 다음과 같습니다.
 
 ```
 Write {
@@ -101,13 +101,13 @@ tk-nuke-writenode:
 
 ### {% include product %} Write node를 표준 Nuke Write node로 변환
 
-간단한 솔루션은 렌더링할 스크립트를 보내기 전에 {% include product %} Write node를 일반 Nuke Write node로 변환하는 것입니다. 두 가지 옵션이 있습니다. 1. 변환 메뉴 옵션을 활성화하여 사용할 수 있습니다. 2. 앱에서 API 변환 방식을 사용할 수 있습니다.
+간단한 솔루션은 렌더링할 스크립트를 보내기 전에 {% include product %} Write node를 일반 Nuke Write node로 변환하는 것입니다. 두 가지 옵션이 있습니다. 1\. 변환 메뉴 옵션을 활성화하고 사용할 수 있습니다. 2\. 앱에서 API 변환 방식을 사용할 수 있습니다.
 
 #### 변환 메뉴 옵션 활성화
 
-환경 yml 파일에는 앱 설정에 추가할 수 있는 `show_convert_actions`라는 구성 옵션이 있습니다. `show_convert_actions: True` 설정을 추가할 경우 *SG Write Node를 Write Node로 변환..*(Convert SG Write Nodes to Write Nodes...) 및 *Write Node를 다시 SG 형식으로 변환...*(Convert Write Nodes back to SG format...) 메뉴 옵션을 사용할 수 있습니다.
+환경 yml 파일에는 앱 설정에 추가할 수 있는 `show_convert_actions`라는 구성 옵션이 있습니다. `show_convert_actions: True` 설정을 추가할 경우 *SG Write Node를 Write Node로 변환..(Convert SG Write Nodes to Write Nodes...)* 및 *Write Node를 다시 SG 형식으로 변환...(Convert Write Nodes back to SG format...)* 메뉴 옵션을 사용할 수 있습니다.
 
-![write node 변환 메뉴 옵션](../images/apps/nuke-writenode-write_node_convert_menu_options.png)
+![쓰기 노드 변환 메뉴 옵션](../images/apps/nuke-writenode-write_node_convert_menu_options.png)
 
 그러나 쓰기 노브를 승격하는 것으로 정의된 {% include product %} Write node 프로파일이 있는 경우에는 `show_convert_actions`가 `True`로 설정된 경우에도 이러한 메뉴 옵션이 숨겨집니다. 이는 현재 다시 변환 기능이 승격된 노브를 지원하지 않기 때문입니다.
 
@@ -122,12 +122,12 @@ import sgtk
 eng = sgtk.platform.current_engine()
 app = eng.apps["tk-nuke-writenode"]
 if app:
-    app.convert_to_write_nodes()
+    app.convert_to_write_nodes() 
 ```
 
 이렇게 하면 씬에서 {% include product %} Write node가 제거되므로 렌더링할 스크립트의 복사본을 만들어 복사본에 대한 변환을 수행하고 복사본을 팜에 제출하는 것이 좋습니다. 씬에는 더 이상 툴킷 참조가 없으므로 렌더 팜에서 Nuke 스크립트가 열린 경우 툴킷이 필요하지 않습니다.
 
-**참고:** 해당 `convert_from_write_nodes()` 방식을 사용할 수 있지만 데이터 무결성을 보장하기 위해 파이프라인의 일부가 아닌 디버깅용으로만 사용하는 것이 좋습니다.
+**참고:** 해당 `convert_from_write_nodes()` 방식을 사용할 수 있지만 데이터 무결성을 보장하기 위해 파이프라인의 일부가 아닌 디버깅용으로만 사용하는 것이 좋습니다. 
 
 ### init.py를 사용하여 {% include product %} Pipeline Toolkit 엔진 부트스트랩(Bootstrap)
 
@@ -135,7 +135,7 @@ Nuke는 플러그인 경로에 있는 `init.py` 스크립트를 실행합니다.
 
 이 워크플로우에는 몇 가지 단계가 있습니다. 첫째, {% include product %} 인식 Nuke 세션에서 실행되는 "사전" 제출 스크립트는 팜 작업 환경을 설정하는 데 사용되는 데이터를 가져옵니다. 다음으로 렌더 팜에서 {% include product %} 세션을 인증하는 데 사용되는 추가 환경 변수는 렌더 팜 관리자가 설정합니다. 마지막으로, {% include product %} 부트스트랩(Bootstrap) 코드가 있는 `init.py`는 렌더 팜의 Nuke 세션이 탐지하고 실행하는 위치에 배치되어 세션 내에서 `tk-nuke` 엔진을 부트스트랩하고 {% include product %} Write node가 제대로 작동하도록 할 수 있습니다.
 
-#### 1. 사전 제출 스크립트
+#### 1\. 사전 제출 스크립트
 
 이 접근법은 아티스트가 Nuke의 {% include product %} 인식 세션에서 팜 작업을 제출한다고 가정합니다. 제출 시간에 다음 코드를 실행해야 합니다. 현재 Nuke 세션에서 툴킷 컨텍스트, 파이프라인 구성 URI, Toolkit Core API 위치 등과 같은 환경 정보를 가져와 렌더 작업에 전달될 사전에 입력되며 환경 변수를 설정하는 데 사용됩니다.
 
@@ -178,9 +178,9 @@ SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 **스크립트 사용자 보안에 대한 참고 사항:** 관리자(Admin) 레벨의 권한을 갖지 않도록 팜에서 사용하는 스크립트 사용자를 잠그는 것이 좋습니다. [API 사용자 권한에 대한 자세한 정보는 여기를 참조하십시오.](https://developer.shotgridsoftware.com/ko/bbae2ca7/)
 
-#### 3. init.py 스크립트
+#### 3\. init.py 스크립트
 
-이 시점에서 툴킷 환경 데이터는 렌더 제출 도구에서 전달되고 인증 데이터는 렌더 팜 컴퓨터에서 환경 변수에 있습니다. 렌더 작업 내에서 툴킷을 부트스트랩(Bootstrapping)하는 마지막 단계는 Nuke의 플러그인 경로에 다음 예제 `init.py` 코드를 배치하여 Nuke가 시작될 때 이를 시작하도록 하는 것입니다. (자세한 정보는 [시작 스크립트에 대한 Foundry의 문서](https://support.foundry.com/hc/ko/articles/360003811839-Q100490)를 참조하십시오.)
+이 시점에서 툴킷 환경 데이터는 렌더 제출 도구에서 전달되고 인증 데이터는 렌더 팜 컴퓨터에서 환경 변수에 있습니다. 렌더 작업 내에서 툴킷을 부트스트랩(Bootstrapping)하는 마지막 단계는 Nuke의 플러그인 경로에 다음 예제 `init.py` 코드를 배치하여 Nuke가 시작될 때 이를 시작하도록 하는 것입니다. (자세한 내용은 [시작 스크립트에 대한 Foundry의 문서](https://support.foundry.com/hc/en-us/articles/360003811839-Q100490)를 참조하십시오.)
 
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap
@@ -197,8 +197,8 @@ TK_CORE_PATH = os.environ["SHOTGUN_SGTK_MODULE_PATH"]
 if TK_CORE_PATH not in sys.path:
     sys.path.append(TK_CORE_PATH)
 
-# If your render nodes don’t have access to the Toolkit Core API in the same filesystem location as artist workstations, you have to make sure that it is available in the PYTHONPATH, so that render nodes can import it. An easy way
-# to install tk-core in a centralized location is with pip. You can read more
+# If your render nodes don’t have access to the Toolkit Core API in the same filesystem location as artist workstations, you have to make sure that it is available in the PYTHONPATH, so that render nodes can import it. An easy way 
+# to install tk-core in a centralized location is with pip. You can read more 
 # about it here:
 # https://developer.shotgridsoftware.com/tk-core/bootstrap.html#installing-the-sgtk-module-using-pip
 
@@ -225,7 +225,7 @@ mgr = sgtk.bootstrap.ToolkitManager(sg_user=user)
 # Set the base pipeline configuration from the environment variable:
 mgr.base_configuration = os.environ["SHOTGUN_CONFIG_URI"]
 
-# Disable {% include product %} lookup to ensure that we are getting the Pipeline
+# Disable {% include product %} lookup to ensure that we are getting the Pipeline 
 # Configuration defined in SHOTGUN_CONFIG_URI, and not a dev or override
 # Pipeline Configuration defined in {% include product %}.
 mgr.do_shotgun_config_lookup = False
@@ -250,7 +250,7 @@ nuke_engine = mgr.bootstrap_engine("tk-nuke", entity=sg_entity)
 
 Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 있습니다. 이렇게 하면 파일이 더 이상 인식할 수 있는 디스크 위치에 있지 않으므로 툴킷에 문제가 발생합니다. 이 동작을 비활성화하고 원본 위치에서 스크립트를 로드하려면 다음을 수행합니다.
 
-1. Deadline에서 도구(Tools) > 플러그인 구성(Configure Plugin)으로 이동합니다(수퍼 유저 모드에서).
+1. Deadline에서 도구(Tools) > 플러그인 구성(Configure Plugin)으로 이동합니다(수퍼 유저 모드에서). 
 2. '경로 매핑 활성화(Enable Path Mapping)' 옵션을 비활성화합니다.
 
 ## 기술적 상세 정보
@@ -263,11 +263,11 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `list` app.get_write_nodes()
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * **반환값:** `list` - 씬에서 발견되는 툴킷 쓰기 노드 목록입니다.
 
-**예시**
+**예**
 
 ```python
 >>> import sgtk
@@ -282,12 +282,12 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `string` get_node_name(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
 * **반환값:** `string` - 노드의 이름입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -302,12 +302,12 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `string` get_node_profile_name(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
 * **반환값:** `string` - 구성에 정의된 대로 이 쓰기 노드에 대한 프로파일 이름입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -322,18 +322,18 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `string` get_node_render_path(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `string` - 이 노드의 렌더 경로입니다.
+* **반환값**: `string` - 이 노드의 렌더 경로입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_render_path(nodes[0])
+>>> app.get_node_render_path(nodes[0]) 
 ```
 
 ### get_node_render_files()
@@ -342,12 +342,12 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `list` get_node_render_files(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:**`list` - 이 쓰기 노드에 의해 렌더링된 이미지 파일의 목록입니다.
+* **반환값:** `list` - 이 쓰기 노드에 의해 렌더링된 이미지 파일의 목록입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -362,18 +362,18 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `template` get_node_render_template(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
-* **반환값:** `template` - 이 노드를 사용하도록 구성된 렌더 템플릿입니다.
+* **반환값**: `template` - 이 노드를 사용하도록 구성된 렌더 템플릿입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_render_template(nodes[0])
+>>> app.get_node_render_template(nodes[0]) 
 ```
 
 ### get_node_publish_template()
@@ -382,18 +382,18 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `template` get_node_publish_template(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
 * **반환값:** `template` - 이 노드를 사용하도록 구성된 게시 템플릿입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_publish_template(nodes[0])
+>>> app.get_node_publish_template(nodes[0]) 
 ```
 
 ### get_node_proxy_render_path()
@@ -402,18 +402,18 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `string` get_node_proxy_render_path(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
 * **반환값:** `string` - 이 노드의 프록시 렌더 경로입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_proxy_render_path(nodes[0])
+>>> app.get_node_proxy_render_path(nodes[0]) 
 ```
 
 ### get_node_proxy_render_files()
@@ -422,12 +422,12 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `list` get_node_proxy_render_files(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
 * **반환값:** `list` - 이 쓰기 노드에 의해 렌더링된 프록시 이미지 파일의 목록입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
@@ -444,18 +444,18 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `template` get_node_proxy_render_template(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
 * **반환값:** `template` - 이 노드를 사용하도록 구성된 프록시 렌더 템플릿입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_proxy_render_template(nodes[0])
+>>> app.get_node_proxy_render_template(nodes[0]) 
 ```
 
 ### get_node_proxy_publish_template()
@@ -466,18 +466,18 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `template` get_node_proxy_publish_template(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
 * **반환값:** `template` - 이 노드를 사용하도록 구성된 프록시 게시 템플릿입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_proxy_publish_template(nodes[0])
+>>> app.get_node_proxy_publish_template(nodes[0]) 
 ```
 
 ### get_node_published_file_type()
@@ -486,18 +486,18 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `string` get_node_published_file_type(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
 * **반환값:** `string` - 이 노드를 사용하도록 구성된 게시된 파일 형식입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_published_file_type(nodes[0])
+>>> app.get_node_published_file_type(nodes[0]) 
 ```
 
 ### generate_node_thumbnail()
@@ -506,18 +506,18 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `string` generate_node_thumbnail(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
 * **반환값:** `string` - 디스크상의 렌더링된 썸네일 이미지에 대한 경로입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.generate_node_thumbnail(nodes[0])
+>>> app.generate_node_thumbnail(nodes[0]) 
 ```
 
 ### reset_node_render_path()
@@ -526,18 +526,18 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `None` reset_node_render_path(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
 * **반환값:** `None` - 값이 반환되지 않습니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.reset_node_render_path(nodes[0])
+>>> app.reset_node_render_path(nodes[0]) 
 ```
 
 ### is_node_render_path_locked()
@@ -546,32 +546,32 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `bool` is_node_render_path_locked(`node` 노드)
 
-**매개변수 및 반환값**
+**매개변수 및 반환값** 
 
 * `node` **노드** - 쿼리할 쓰기 노드입니다.
 * **반환값:** `bool` - 렌더 경로가 잠겨 있으면 True이고, 그렇지 않으면 False입니다.
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.is_node_render_path_locked(nodes[0])
+>>> app.is_node_render_path_locked(nodes[0]) 
 ```
 
 ### convert_to_write_nodes()
 
-현재 스크립트에 있는 모든 {% include product %} Write node를 일반 Nuke Write node로 변환합니다.  추가 툴킷 정보는 'tk_*'라는 사용자 노브에 저장됩니다.
+현재 스크립트에 있는 모든 {% include product %} Write node를 일반 Nuke Write node로 변환합니다. 추가 툴킷 정보는 'tk_*'라는 사용자 노브에 저장됩니다.
 
 `None` convert_to_write_nodes()
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
->>> app.convert_to_write_nodes()
+>>> app.convert_to_write_nodes() 
 ```
 
 ### convert_from_write_nodes()
@@ -580,24 +580,24 @@ Deadline은 렌더링 시 Nuke 스크립트를 임시 위치에 복사할 수 �
 
 `None` convert_from_write_nodes()
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
->>> app.convert_from_write_nodes()
+>>> app.convert_from_write_nodes() 
 ```
 
 ### process_placeholder_nodes()
 
-모든 자리 표시자 노드를 전체 {% include product %} Write node로 변환합니다.  이 방식은 주로 Nuke에서 스크립트를 처음 열 때 Hiero 툴킷 스크립트 내보내기로 만든 자리 표시자 노드를 변환하는 데 사용됩니다.
+모든 자리 표시자 노드를 전체 {% include product %} Write node로 변환합니다. 이 방식은 주로 Nuke에서 스크립트를 처음 열 때 Hiero 툴킷 스크립트 내보내기로 만든 자리 표시자 노드를 변환하는 데 사용됩니다.
 
 `None` process_placeholder_nodes()
 
-**예시**
+**예**
 ```python
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
->>> app.process_placeholder_nodes()
+>>> app.process_placeholder_nodes() 
 ```

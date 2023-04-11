@@ -48,7 +48,7 @@ command (Default) = "foo_path" "%1"
 foo://host/path...
 ```
 
-> **注意：**有关详细信息，请参见 [https://msdn.microsoft.com/zh-cn/library/aa767914(VS.85).aspx](https://docs.microsoft.com/zh-cn/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767914(v=vs.85)?redirectedfrom=MSDN)。
+> **注意：**有关详细信息，请参见 [http://msdn.microsoft.com/zh-cn/library/aa767914(VS.85).aspx](https://docs.microsoft.com/zh-cn/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767914(v=vs.85)?redirectedfrom=MSDN)。
 > **Windows QT/QSetting 示例**
 
 如果您开发的应用程序是使用 QT（或 PyQT/PySide）框架编写的，可以利用 QSetting 对象来为您管理注册表项的创建。
@@ -229,4 +229,4 @@ gconftool-2 -s /desktop/gnome/url-handlers/foo/enabled true -t bool
 
 尽管仅在 GNOME 设置中进行更改，但对 KDE 也有效。Firefox 和 GNU IceCat 在遇到无法识别的前缀（例如 `foo://`）时会采用 gnome-open，无论运行的窗口管理器是什么。 因此，在这种情况下，其他浏览器（例如 KDE 中的 Konqueror）无法运行。
 
-有关如何在 Ubuntu 中为动作菜单项设置协议处理程序的详细信息，请参见 [https://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity](https://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity)。
+有关如何在 Ubuntu 中为动作菜单项设置协议处理程序的详细信息，请参见 [http://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity](http://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity)。

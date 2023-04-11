@@ -48,7 +48,7 @@ command (Default) = "foo_path" "%1"
 foo://host/path...
 ```
 
-> **注:** 詳細については、[https://msdn.microsoft.com/ja-jp/library/aa767914(VS.85).aspx](https://docs.microsoft.com/ja-jp/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767914(v=vs.85)?redirectedfrom=MSDN) を参照してください。
+> **注:** 詳細については、[http://msdn.microsoft.com/ja-jp/library/aa767914(VS.85).aspx](https://docs.microsoft.com/ja-jp/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767914(v=vs.85)?redirectedfrom=MSDN) を参照してください。
 > **Windows QT/QSetting の例**
 
 開発しているアプリケーションが QT (または PyQT/PySide)フレームワークを使用して記述されている場合は、QSetting オブジェクトを利用してレジストリ キーの作成を管理できます。
@@ -229,4 +229,4 @@ gconftool-2 -s /desktop/gnome/url-handlers/foo/enabled true -t bool
 
 この変更は GNOME 設定でのみ行われますが、KDE でも機能します。Firefox と GNU IceCat は、不明なプレフィックス(`foo://` など)を検出したときに、実行しているウィンドウ マネージャに関係なく gnome-open に従います。 そのため、KDE の Konqueror のような他のブラウザは、このシナリオでは機能しません。
 
-Ubuntu でアクション メニュー アイテムのプロトコル ハンドラをセットアップする方法については、[https://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity](https://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity) を参照してください。
+Ubuntu でアクション メニュー アイテムのプロトコル ハンドラをセットアップする方法については、[http://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity](http://askubuntu.com/questions/527166/how-to-set-subl-protocol-handler-with-unity) を参照してください。

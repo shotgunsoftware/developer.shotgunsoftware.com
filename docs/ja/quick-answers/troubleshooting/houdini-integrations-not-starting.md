@@ -12,7 +12,7 @@ lang: ja
 
 この問題は、`HOUDINI_PATH` 環境変数がオーバーライドされていて、{% include product %} がその環境変数に基づいて起動スクリプト パスを渡そうとしているために発生することがよくあります。
 
-Houdini を {% include product %} から起動すると、起動アプリケーション ロジックは {% include product %} ブートストラップ スクリプト パスを `HOUDINI_PATH` 環境変数に追加します。しかし、Houdini に [houdini.env ファイル](https://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables)があると問題が発生することがあります。このファイルがあると、ユーザーは Houdini がロードされたときに存在する環境変数を設定できますが、ファイルに定義されている値によって現在のセッションの既存の環境変数が上書きされます。
+Houdini を {% include product %} から起動すると、起動アプリケーション ロジックは {% include product %} ブートストラップ スクリプト パスを `HOUDINI_PATH` 環境変数に追加します。ただし、Houdini に [houdini.env ファイル](https://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables)があると問題が発生する可能性があります。このファイルがあると、ユーザーは Houdini がロードされたときに存在する環境変数を設定できますが、ファイルに定義されている値によって現在のセッションの既存の環境変数が上書きされます。
 
 これを修正するには、その変数の新しい定義に既存の `HOUDINI_PATH` 環境変数を含めます。
 
@@ -26,10 +26,10 @@ Houdini を {% include product %} から起動すると、起動アプリケー�
 
 これにより、Houdini の起動時に {% include product %} の設定値が維持されます。
 
-{% include warning title="注意" content="Windows では、`$HOUDINI_PATH` によって問題が発生することがあります。この変数によって Shotgun の統合へのブートストラップが数回試行され、次のようなエラーが表示されます。
+{% include warning title="注意" content="Windows では、問題が発生する原因が `$HOUDINI_PATH` にあることがわかりました。この変数によって Shotgun の統合へのブートストラップが数回試行され、次のようなエラーが表示されます。 
 
     Toolkit bootstrap is missing a required variable : TANK_CONTEXT
 
-このエラーが表示される場合は、代わりに `%HOUDINI_PATH%` を使用してください。"%}
+このエラーが表示される場合は、代わりに `%HOUDINI_PATH%` を使用してください。" %}
 
 問題が解決しない場合は、[サポート チーム](https://knowledge.autodesk.com/ja/contact-support)に問い合わせて問題の診断を依頼してください。

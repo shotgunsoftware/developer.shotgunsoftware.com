@@ -7,9 +7,9 @@ lang: ja
 
 # After Effects
 
-{% include product %} Engine for After Effects は、{% include product %} と After Effects のワークフローを統合するプラットフォームを提供します。{% include product %} Toolkit の標準エンジンで構成され、[tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP) を使用します。
+{% include product %} Engine for After Effects は、{% include product %} と After Effects のワークフローを統合するプラットフォームを提供します。{% include product %} Pipeline Toolkit の標準エンジンで構成され、[tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP)を使用します。
 
-有効にすると、**[{% include product %} Adobe パネル] (Shotgun Adobe Panel)** というパネルが After Effects で使用できるようになります。現在の {% include product %} コンテキストの情報とそのコンテキストにインストールされたアプリに登録されているコマンドが表示されます。
+有効にすると、**[{% include product %} Adobe パネル](ShotGrid Adobe Panel)**というパネルが After Effects で使用できるようになります。現在の {% include product %} コンテキストの情報とそのコンテキストにインストールされたアプリに登録されているコマンドが表示されます。
 
 ![エンジン](../images/engines/aftereffects_extension.png)
 
@@ -35,9 +35,9 @@ lang: ja
 
 ## インストール
 
-{% include product %} Engine for After Effects のインストールには、{% include product %} の他の統合と同じプロトコルを使用します。エンジンやアプリのインストールについては、「[Toolkit を管理する](https://developer.shotgridsoftware.com/ja/425b1da4/)」という記事を参照してください。また、統合の設定方法については、「[Toolkit の既定の設定](https://github.com/shotgunsoftware/tk-config-default2)」の例を参照してください。
+{% include product %} Engine for After Effects のインストールには、{% include product %} の他の統合と同じプロトコルを使用します。エンジンやアプリのインストールについては、「[Toolkit を管理する](https://developer.shotgridsoftware.com/ja/425b1da4/)」という記事を参照してください。また、統合の設定方法の例については、「[Toolkit の既定の設定](https://github.com/shotgunsoftware/tk-config-default2)」を参照してください。
 
-## 拡張を有効にする
+## 拡張機能を有効にする
 
 拡張をインストールしたら、After Effects の拡張メニューから起動する必要があります。
 
@@ -57,7 +57,7 @@ lang: ja
 
 コンテキスト ヘッダは、現在の {% include product %} コンテキストに関する情報を表示するカスタマイズ可能な領域です。
 
-![ヘッダ](../images/engines/extension_header.png)
+![ヘッダー](../images/engines/extension_header.png)
 
 コンテキストは現在アクティブなドキュメントによって決定されます。コンテキストがエンジンによって決定されると、ヘッダはコンテキストのサムネイル フィールドの詳細を表示するように更新されます。フィールド情報はフックで制御されます。フィールド表示のカスタマイズ方法については、「**コンテキスト フィールド表示フック**」を参照してください。
 
@@ -97,7 +97,7 @@ lang: ja
 
 ロギング コンソールは、CEP JavaScript インタプリタと Toolkit の Python プロセスの両方のログ出力をすべて表示します。
 
-![コンソール](../images/engines/extension_console.png)
+![Console](../images/engines/extension_console.png)
 
 拡張機能に問題があり、サポートが必要な場合、ロギング コンソール出力は、{% include product %} のサポート チームが問題をデバッグする際に非常に役立ちます。
 
@@ -107,7 +107,7 @@ lang: ja
 
 ### PySide
 
-{% include product %} Engine for After Effects は PySide を使用します。正式な手順については、「[PySide をインストールする](https://pyside.readthedocs.io/en/latest/installing/index.html)」を参照してください。
+{% include product %} Engine for After Effects は PySide を使用します。Pyside のインストールについては、[Pyside をインストールする](https://pyside.readthedocs.io/en/latest/installing/index.html)公式の手順を参照してください。
 
 ### CEP 拡張機能
 
@@ -141,14 +141,14 @@ shelf_favorites:
 
 デバッグをサポートするために、エンジンの既定値の一部を変更する環境変数のセットが用意されています。
 
-- `SHOTGUN_ADOBE_HEARTBEAT_INTERVAL`: Python ハートビート間隔(単位は秒、既定は 1 秒)。
+- `SHOTGUN_ADOBE_HEARTBEAT_INTERVAL`: Python ハートビート間隔(秒単位、既定は 1 秒)。
 - `SHOTGUN_ADOBE_HEARTBEAT_TOLERANCE`: 終了までのハートビートのエラー数(既定は 2)。この変数を設定すると、従来の環境変数
 - `SGTK_PHOTOSHOP_HEARTBEAT_TOLERANCE` が優先されます。
 - `SHOTGUN_ADOBE_NETWORK_DEBUG`: ログ出力時に追加のネットワーク デバッグ メッセージを含めます。この変数を設定すると、従来の環境変数
 - `SGTK_PHOTOSHOP_NETWORK_DEBUG` が優先されます。
 - `SHOTGUN_ADOBE_PYTHON`: エンジンの起動時に使用する Python の実行可能ファイルへのパス。設定しない場合は、システムの Python が使用されます。Photoshop が {% include product %} Desktop や tk-shell エンジンなどの Python プロセスから起動される場合、このプロセスで使用する Python は Photoshop との統合で使用されます。
 
-注: 追加の環境変数が Adobe のフレームワークに存在します。詳細については、[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-framework-adobe/)を参照してください。
+注: 追加の環境変数が Adobe のフレームワークに存在します。詳細については、「[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-framework-adobe/)」を参照してください。
 
 
 ### コンテキスト フィールド表示フック
@@ -159,7 +159,7 @@ shelf_favorites:
 
 {% include product %} からデータをクエリーすると、フックの 2 番目のメソッドが呼び出されます。この `get_context_html()` メソッドは、`get_entity_fields()` メソッドで指定されたクエリー フィールドが入力されたコンテキスト エンティティ ディクショナリを受け取ります。予想される戻り値は、クエリー対象のエンティティ フィールドを表示するためにフォーマット化された HTML を含む文字列です。
 
-このメソッドで指定する必要がある内容については、「[既定のフックの実装](https://github.com/shotgunsoftware/tk-aftereffects/blob/master/hooks/context_fields_display.py)」を参照してください。
+これらのメソッドで必要とされる内容については、「[既定のフックの実装](https://github.com/shotgunsoftware/tk-aftereffects/blob/master/hooks/context_fields_display.py)」を参照してください。
 
 エンジンは、エンティティのサムネイルが使用可能であれば、それを常に表示します。
 
@@ -171,6 +171,4 @@ shelf_favorites:
 
 ### After Effects の API
 
-After Effects の API に関する詳細については、[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-aftereffects)を参照してください。
-
-
+After Effects API の詳細については、[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-aftereffects)を参照してください。

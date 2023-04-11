@@ -19,16 +19,16 @@ lang: ja
 2. [スターター アプリ リポジトリのフォークまたはダウンロード](#part-2-forking-or-downloading-the-starter-app-repository)
 3. [アプリを環境設定に追加する](#part-3-adding-the-app-to-your-config)
 4. [アプリを開発する](#part-4-developing-the-app)
-   - [テンプレート スターター アプリの構造](#anatomy-of-the-template-starter-app)
-   - [環境設定](#configuration-settings)
-   - [フレームワーク](#frameworks)
-   - [変更を再ロードする](#reloading-your-changes)
-5. [テスト](#part-5-testing)
+    - [テンプレート スターター アプリの構造](#anatomy-of-the-template-starter-app)
+    - [環境設定](#configuration-settings)
+    - [フレームワーク](#frameworks)
+    - [変更を再ロードする](#reloading-your-changes)
+5. [テストする](#part-5-testing)
 6. [最初のリリースを準備する](#part-6-preparing-your-first-release)
 
 追加情報:
 - [既存のアプリを変更する](#modifying-an-existing-app)
-   - [支援する](#contributing)
+    - [支援する](#contributing)
 
 ## Toolkit アプリとは何か?
 
@@ -38,7 +38,7 @@ Toolkit アプリは、次のように定義されます。
 - 通常、アプリにはユーザの操作をガイドするためのグラフィカル ユーザ インタフェースが備わっているが、必ずしも必要なわけではない。統合に登録されたコマンドとして使用可能なアプリもあり、ホスト ソフトウェアの {% include product %} メニューからトリガできる。
 - 他のプロセスやアプリと相互作用できる API/パブリック メソッドが含まれることがある。
 - 複数のプラットフォームに対応することが可能で、ソフトウェアに依存しない。
-- [環境](https://developer.shotgridsoftware.com/ja/487a9f2c/#what-is-an-environment)に応じて異なる設定にすることができる。
+- これらの設定は、[環境](https://developer.shotgridsoftware.com/ja/487a9f2c/#環境について)ごとに変更できます。
 - コンテキスト対応にすることができる。たとえば、ユーザが作業しているタスクをアプリが認識し、それに応じて動作するように設定できる。
 - Toolkit エンジンからのみ実行できる。
 
@@ -47,13 +47,11 @@ Toolkit アプリは Toolkit エンジンによって初期化されます。[�
 ## 独自のアプリを作成する
 {% include product %} Software によって維持およびリリースされるすべてのアプリとエンジンはオープン ソースであり、[GitHub](https://github.com/shotgunsoftware) から入手できます。
 
-このセクションでは、スターター テンプレートを使用して新しいアプリを作成する方法について説明します。
-ユーザは GitHub と git のワークフローに精通していることが前提となりますが、ソース管理ソリューションとして git を使用していなくても、Toolkit の開発は可能です。
+このセクションでは、スターター テンプレートを使用して新しいアプリを作成する方法について説明します。ユーザは GitHub と git のワークフローに精通していることが前提となりますが、ソース管理ソリューションとして git を使用していなくても、Toolkit の開発は可能です。
 
 
 ## パート 1: 開発サンドボックスを作成する
-他の作業を開始する前に、[プロジェクト設定のクローンを作成して開発サンドボックスを設定する](../getting-started/installing_app.md#clone-the-pipeline-configuration-you-want-to-add-an-app-to)ことをお勧めします。
-これにより、個別の設定が作成され、プロダクション環境の他のユーザに影響を与えることなく、コードを開発して変更をテストできるようになります。
+他の作業を開始する前に、[プロジェクト設定のクローンを作成して開発サンドボックスを設定する](../getting-started/installing_app.md#clone-the-pipeline-configuration-you-want-to-add-an-app-to)ことをお勧めします。これにより、個別の設定が作成され、プロダクション環境の他のユーザに影響を与えることなく、コードを開発して変更をテストできるようになります。 
 
 ## パート 2: スターター アプリ リポジトリのフォークまたはダウンロード
 オートデスクは、独自のアプリを作成する際の第一歩として使用できる[テンプレート スターター アプリ](https://github.com/shotgunsoftware/tk-multi-starterapp)を提供しています。このアプリを使用すると、ユーザ用に設定されたすべての標準的なツールキット定型コード、および基本的なサンプル GUI が使用できるようになります。
@@ -65,12 +63,11 @@ Toolkit アプリは Toolkit エンジンによって初期化されます。[�
 ## パート 3: アプリを環境設定に追加する
 「[アプリを追加する](../getting-started/installing_app.md)」ガイドを参照することをお勧めします。このガイドには、環境設定にアプリを追加する詳細な方法が示されています。
 
-アプリを環境設定に追加する場合は、アプリの使用場所を考慮する必要があります。たとえば、Nuke だけで使用する場合、複数の異なるソフトウェアで使用する場合、または {% include product %} Desktop からスタンドアロンで使用する場合があります。
-アプリが依存するコンテキストについても考慮する必要があります。たとえば、ユーザが作業しているタスクがわかっている場合に限ってアプリを実行できるのか、または既知のプロジェクトに限定してアプリを実行できるのかを検討します。この情報がわかれば、アプリの設定を追加する必要がある YAML 環境ファイルおよびエンジンが決まります。
+アプリを環境設定に追加する場合は、アプリの使用場所を考慮する必要があります。たとえば、Nuke だけで使用する場合、複数の異なるソフトウェアで使用する場合、または {% include product %} Desktop からスタンドアロンで使用する場合があります。アプリが依存するコンテキストについても考慮する必要があります。たとえば、ユーザが作業しているタスクがわかっている場合に限ってアプリを実行できるのか、または既知のプロジェクトに限定してアプリを実行できるのかを検討します。この情報がわかれば、アプリの設定を追加する必要がある YAML 環境ファイルおよびエンジンが決まります。
 
-現時点で不明な場合は、まず、プロジェクト環境の `tk-shell` エンジンにアプリの設定を追加することをお勧めします。このようにすると、[IDE から実行](./sgtk-developer-bootstrapping.md)したり、[一元管理設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)がある場合に tank コマンドを使用してコマンド ラインから実行したりできます。これにより、開発にかかる時間が短縮されます。
+現時点で不明な場合は、まず、プロジェクト環境の `tk-shell` エンジンにアプリの設定を追加することをお勧めします。こうすることにより、[IDE からアプリを実行](./sgtk-developer-bootstrapping.md)したり、[一元管理設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)が適用されている場合は tank コマンドを使用してコマンド ラインを介して実行することができます。これにより、開発にかかる時間が短縮されます。
 
-最初は、アプリの場所として[開発記述子](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)を使用します。
+開始するには、アプリの場所に[開発記述子](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)を使用します。
 
 ```yaml
 tk-multi-starterapp:
@@ -78,8 +75,7 @@ tk-multi-starterapp:
     type: dev
     path: /path/to/source_code/tk-multi-starterapp
 ```
-開発記述子は、Toolkit に対して、指定された場所のディスクから直接アプリ コードをロードするよう指示します。これは、コードを常に変更する必要がある開発に最適です。
-後でプロダクション設定にアプリを追加する場合は、別の記述子を使用できます。
+開発記述子は、Toolkit に対して、指定された場所のディスクから直接アプリ コードをロードするよう指示します。これは、コードを常に変更する必要がある開発に最適です。後でプロダクション設定にアプリを追加する場合は、別の記述子を使用できます。
 
 アプリの環境への追加が完了すると、アプリを起動することができるようになります。アプリの起動方法は、エンジン、およびエンジン内で定義された環境によって異なります。
 
@@ -89,7 +85,7 @@ tk-multi-starterapp:
 
 ### テンプレート スターター アプリの構造
 
-[テンプレート スターター アプリ](https://github.com/shotgunsoftware/tk-multi-starterapp)には、以下の基本構造が含まれています。
+[テンプレート スターター アプリ](https://github.com/shotgunsoftware/tk-multi-starterapp)には、次の基本構造が含まれています。
 
 ![](./images/tk-multi-starterapp-directory.png)
 
@@ -97,18 +93,17 @@ tk-multi-starterapp:
 - **info.yml**: マニフェスト ファイルとも呼ばれます。このアプリをインストールするときに必要なさまざまな設定と、既定値(指定されている場合)がすべて定義されます。再利用可能なアプリが必要で、アプリ自体に値をハード コードしたくない場合には、それらの設定がしばしば役に立ちます。
 - **python/app/dialog.py**: このフォルダには、メイン アプリ ウィンドウを生成するロジックやイベント コールバックなどが格納されます。
 - **python/app/ui**: このフォルダには、自動的に生成された UI コードおよびリソース ファイルが格納されます。このフォルダを直接編集しないで、代わりに `resources` フォルダ内の Qt UI ファイルを編集してください。
-- **resources/**: リソース フォルダにある `dialog.ui` ファイルは Qt Designer ファイルです。これを開いて使用することで、アプリのルック アンド フィールをすばやく設計および定義することができます。
-   変更の後、`build_resources.sh` スクリプトを実行して UI ファイルを Python コードに変換し、`/python/app/ui/dialog.py` として保存する必要があります。
+- **resources/**: リソース フォルダにある `dialog.ui` ファイルは Qt Designer ファイルです。これを開いて使用することで、アプリのルック アンド フィールをすばやく設計および定義することができます。変更の後、`build_resources.sh` スクリプトを実行して UI ファイルを Python コードに変換し、`/python/app/ui/dialog.py` として保存する必要があります。
 - **style.qss**: このファイルで UI の QSS (Qt スタイルシート)を定義できます。
 
-{% include info title="注" content="アプリに UI はなくてもかまいませんが、有効なアプリの最低限の要件は、`app.py` に `Application` クラスおよび `info.yml` が含まれていることです。"%}
+{% include info title="注" content="アプリに UI はなくてもかまいませんが、有効なアプリの最低限の要件は`app.py`、 に `Application` クラスおよび `info.yml` が含まれていることです。" %}
 
 ### 環境設定
 マニフェスト ファイル内に、アプリの設定を定義できる `configuration` セクションが含まれている必要があります。
 
 マニフェスト ファイル内で設定を定義すると、YAML 環境ファイル内のアプリにさまざまな値を設定できます。これは、アプリが配置されている環境に応じて動作を変更する必要がある場合に便利です。
 
-たとえば、ファイルを保存するときに使用するテンプレートを定義する設定が必要な場合があります。
+たとえば、ファイルを保存するときに使用するテンプレートを定義する設定が必要な場合があります。 
 ```yaml
 save_template:
     type: template
@@ -148,32 +143,27 @@ frameworks:
     - {"name": "tk-framework-qtwidgets", "version": "v1.x.x", "minimum_version": "v1.5.0"}
 ```
 
-これにより、`tk-framework-qtwidgets` の `v1.5.0` がアプリで使用できるようになります。
-使用できない場合、アプリは起動時にロードされず、コンソールにエラーが出力されます。
-アプリが `tank updates` を使用して更新されると、必要最小限のバージョンを満たしていない設定済みのフレームワークはアプリとともに自動的に更新されます。
+これにより、`tk-framework-qtwidgets` の `v1.5.0` がアプリで使用できるようになります。使用できない場合、アプリは起動時にロードされず、コンソールにエラーが出力されます。アプリが `tank updates` を使用して更新されると、必要最小限のバージョンを満たしていない設定済みのフレームワークはアプリとともに自動的に更新されます。
 
 フレームワークとその効果的な利用の方法については、次のリンクを確認してください:
 
-- [Qt ウィジェット フレームワーク](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/)
-- [{% include product %} utils フレームワーク](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)
+- [QT ウィジェット フレームワーク](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/)
+- [{% include product %} ユーティリティ フレームワーク](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)
 
 ### 変更を再ロードする
 
-Maya などのソフトウェア内でアプリをテストする場合に、設定に 1 つまたは複数の開発項目を追加するとすぐに、Toolkit は {% include product %} メニューに**[Reload and Restart]**オプションを追加します。
-![{% include product %} メニューの再ロードして再起動オプション](./images/reload-restart.png)
+Maya などのソフトウェア内でアプリをテストする場合に、設定に 1 つまたは複数の開発項目を追加するとすぐに、Toolkit は {% include product %} メニューに**[再ロードして再起動](Reload and Restart)**オプションを追加します。![{% include product %} メニューの[再ロードして再起動](Reload and Restart)オプション](./images/reload-restart.png)
 
-これをクリックすると、設定とコードが再ロードされ、エンジンが再起動されます。これによって、繰り返しの処理が高速化されます。すなわち、Maya を一度起動し、目的のコードまたは構成の変更を実行したら、**[Reload and Restart]**ボタンを押すだけで、変更が有効になります。
+これをクリックすると、設定とコードが再ロードされ、エンジンが再起動されます。これによって、繰り返しの処理が高速化されます。すなわち、Maya を一度起動し、目的のコードまたは構成の変更を実行したら、**[再ロードして再起動](Reload and Restart)**ボタンを押すだけで、変更が有効になります。 
 
-{% include info title="注" content="UI が画面上でアクティブになっている場合は、自動的に更新されず、メニューから UI を呼び出して再起動する必要があります。"%}
+{% include info title="注" content="UI が画面上でアクティブになっている場合は、これらは自動的に更新されず、メニューから UI を呼び出して再起動する必要があります。" %}
 
 ## パート 5: テスト
-コードをテストする場合は、他のユーザを {% include product %} の `PipelineConfiguration` エンティティの `User Restrictions` フィールドに追加することで、自分の開発サンドボックスに簡単に招待できます。
-
-ユーザを追加するとすぐに、{% include product %} Create 内のメニューに関する新しいエントリ、ブラウザ アクション、および {% include product %} Desktop 内で設定を選択するオプションが表示されます。
+コードをテストする場合は、他のユーザを {% include product %} の `PipelineConfiguration` エンティティの `User Restrictions` フィールドに追加することで、自分の開発サンドボックスに簡単に招待できます。ユーザを追加するとすぐに、{% include product %} Create 内のメニューに関する新しいエントリ、ブラウザ アクション、および {% include product %} Desktop 内で設定を選択するオプションが表示されます。
 
 ![{% include product %} Desktop で選択可能な開発設定](./images/dev-configuration.png)
 
-{% include info title="注" content="アプリ コードを表示するために必要なアクセス権がユーザにあることを確認してください。必要なアクセス権がない場合は、アプリがロードされません。"%}
+{% include info title="注" content="アプリ コードを表示するために必要なアクセス権がユーザにあることを確認してください。必要なアクセス権がない場合は、アプリがロードされません。" %}
 
 ## パート 6: 最初のリリースを準備する
 
@@ -187,13 +177,12 @@ location:
    type: app_store
    version: v0.1.7
 ```
-これにより、Toolkit (たとえば、`tank updates` コマンド)は更新が利用可能になる時期を確認し、設定を非常に安全な方法で更新および維持することができます。
-更新コマンドの実行中に新しいバージョンが利用可能になると、Toolkit はコードをダウンロードし、ディスク上のローカルな「バンドル キャッシュ」に配置し、ユーザがコードにアクセスできるようにします。
+これにより、Toolkit (たとえば、`tank updates` コマンド)は更新が利用可能になる時期を確認し、設定を非常に安全な方法で更新および維持することができます。更新コマンドの実行中に新しいバージョンが利用可能になると、Toolkit はコードをダウンロードし、ディスク上のローカルな「バンドル キャッシュ」に配置し、ユーザがコードにアクセスできるようにします。
 
 アプリのリリースを取得するオプションがいくつか用意されています。
 
-- [Git](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) および [GitHub](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
-- [{% include product %} アップロード](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
+- [git](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) および [GitHub](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
+- [{% include product %} のアップロード](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
 - [ローカル パス](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
 
 プロダクション設定内でアプリを追加し、必要に応じて記述子を使用するように切り替えます。
@@ -207,39 +196,26 @@ Toolkit では、git (https://git-scm.com/)をそのまま使用できます。�
 このための要件は、次のとおりです。
 
 - git リポジトリにアプリが 1 つだけ含まれている必要があります
-- git リポジトリの構造が[スターター アプリのリポジトリ](https://github.com/shotgunsoftware/tk-multi-starterapp)と同じである必要があります。
-- タグを作成する場合は、[セマンティック バージョニング](https://semver.org/lang/ja/)を使用します。Toolkit はこれらのバージョン番号を使用して、どのバージョンが最新であるかを、規則 `vX.Y.Z` に従って判別します。
+- git リポジトリの構造が[スターター アプリ リポジトリ](https://github.com/shotgunsoftware/tk-multi-starterapp)と同じである必要があります。
+- タグを作成する場合は、[セマンティック バージョニング](https://semver.org)を使用します。Toolkit はこれらのバージョン番号を使用して、どのバージョンが最新であるかを、規則 `vX.Y.Z` に従って判別します。
 
-git で最初のタグ(例: `v1.0.0`)を作成した後で、タグを指す git 記述子を使用するように環境を設定できます。その後、`tank updates` を実行します。新しいタグが作成されると、アップグレードするかを尋ねるメッセージが表示されます。
-これで、ワークフローは公式の App Store アプリで実行されるワークフローと同じになります。
+git で最初のタグ(例:`v1.0.0`)を作成した後で、タグを指す git 記述子を使用するように環境を設定できます。その後、`tank updates` を実行します。新しいタグが作成されると、アップグレードするかを尋ねるメッセージが表示されます。これで、ワークフローは公式の App Store アプリで実行されるワークフローと同じになります。
 
-{% include warning title="注意" content="git 記述子は[中央設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)で適切に機能します。中央設定では、通常、管理者がアプリのキャッシュを実行して、すべてのユーザがアクセスできる中央の場所に格納します。ただし、[分散設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)を使用している場合は、適切に機能しない可能性があります。アプリはユーザごとにダウンロードされるため、それぞれのユーザが git をインストールするとともに、リポジトリを使用して認証し、コードにアクセスするように設定する必要があります。"%}
+{% include warning title="注意" content=" git 記述子は[一元管理設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)と連携します。一元管理設定では、通常、管理者がアプリのキャッシュを実行し、すべてのユーザがアクセスできる一元的な場所に保存します。ただし、[分散設定](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)を使用している場合は、適切でない可能性があります。アプリはユーザごとにダウンロードされるため、それぞれのユーザが git をインストールするとともに、リポジトリを使用して認証し、コードにアクセスするように設定する必要があります。" %}
 
 ## 既存のアプリを変更する
-場合によっては、空のスターター テンプレートから開始するのではなく、{% include product %} Software の標準アプリの 1 つなどの既存のアプリに、マイナー機能を追加する必要があります。
+場合によっては、空のスターター テンプレートから開始するのではなく、{% include product %} Software の標準アプリの 1 つなどの既存のアプリに、マイナー機能を追加する必要があります。変更したバージョンのアプリを使用する場合は通常、ソース アプリを「トラック」し、定期的に変更とバグ修正を取得します。
 
-変更したバージョンのアプリを使用する場合は通常、ソース アプリを「トラック」し、定期的に変更とバグ修正を取得します。
+このような開発を行うときは、親コードを選択し、変更のいくつかを適用して、パイプラインにリリースします。リリースはアプリの基本バージョンと適用されたローカルの変更で効果的に構成されます。既存のバージョン番号にバージョン サフィックスを追加することを推奨します。これは Toolkit とシームレスに連携し、動作も比較的単純です。次のワークフローに実行の手順を示します。
 
-このような開発を行うときは、親コードを選択し、変更のいくつかを適用して、パイプラインにリリースします。
-リリースはアプリの基本バージョンと適用されたローカルの変更で効果的に構成されます。
-既存のバージョン番号にバージョン サフィックスを追加することを推奨します。
-これは Toolkit とシームレスに連携し、動作も比較的単純です。
-次のワークフローに実行の手順を示します。
-
-- 親アプリをフォークして、自分専用のリポジトリを作成します。フォークを使用してすべての git タグを取得します。
-   最新のタグは `v0.2.12` と呼ばれ、マスター ブランチは基本的にこのタグのコンテンツと同じです。
-- 変更を適用し、マスター ブランチにコミットします。これで、`v0.2.12` に変更が加えられた状態になります。
-   これをプロダクション構成にリリースするときは、タグを作成する必要があります。タグに `v0.2.12.1` という名前を付け、コードが `v0.2.12` に基づいていること、そしてこれが最初のリリースであることを示します。
+- 親アプリをフォークして、自分専用のリポジトリを作成します。フォークを使用してすべての git タグを取得します。最新のタグは `v0.2.12` と呼ばれ、マスター ブランチは基本的にこのタグのコンテンツと同じです。
+- 変更を適用し、マスター ブランチにコミットします。これで、`v0.2.12` に変更が加えられた状態になります。これをプロダクション構成にリリースするときは、タグを作成する必要があります。タグに `v0.2.12.1` という名前を付け、コードが `v0.2.12` に基づいていること、そしてこれが最初のリリースであることを示します。
 - 誰かが変更部分にバグを見つけました。バグを修正し、タグを付けて `v0.2.12.2` をリリースします。
-- 親リポジトリではいくつかの重要なバグ修正がリリースされました。
-   それらをリポジトリにプル ダウンします。親リポジトリで発生したリリースにより、現在の最新のタグは `v0.2.15` です。
-   変更をマスターとマージして、テストします。これで、基本的に親アプリ `v0.2.15` が変更にマージされました。`v0.2.15.1` にタグを付けます。
+- 親リポジトリではいくつかの重要なバグ修正がリリースされました。それらをリポジトリにプル ダウンします。親リポジトリで発生したリリースにより、現在の最新のタグは `v0.2.15` です。変更をマスターとマージして、テストします。これで、基本的に親アプリ `v0.2.15` が変更にマージされました。`v0.2.15.1` にタグを付けます。
 
 上記のタグ付けスキームにより、Toolkit の更新が正しく実行され、フォーク内の各タグがどのコードに基づいているかを簡単に確認できるようになります。
 
 ### 支援する
-プル リクエストを歓迎します。他のユーザにとっても有益と思われる変更を行った場合には、プル リクエストとしてフィードバックしていただくようお願いいたします。
-フィードバックは、アプリのメイン バージョンに反映させていただく場合があります。
-あるいは、[ロードマップ ページ](https://www.shotgridsoftware.com/roadmap/)に新しいアイデアに関する提案を追加してください。
+プル リクエストを歓迎します。他のユーザにとっても有益と思われる変更を行った場合には、プル リクエストとしてフィードバックしていただくようお願いいたします。フィードバックは、アプリのメイン バージョンに反映させていただく場合があります。あるいは、[ロードマップ ページ](https://www.shotgridsoftware.com/roadmap/)に新しいアイデアに関する提案を追加してください。
 
 コミュニティで共有するアプリを作成したら、[フォーラム](https://community.shotgridsoftware.com/)ですべてのユーザにお知らせください。

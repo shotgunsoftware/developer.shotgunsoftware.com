@@ -19,11 +19,11 @@ Toolkit の基本原則の 1 つは、プロジェクト同士を完全に分離
 
 プロジェクトをクリックすると、Python インタプリタはバックグラウンドで起動されます。この Python インタプリタは、プロジェクトが使用できるように設定されているため、起動時にこのプロジェクトの tk-desktop を初期化します。エンジンのこのインスタンスは起動するコマンドを GUI に通知します。
 
-コマンドをクリックすると、このバックグラウンド Python プロセスがコマンドの起動を管理します。これにより、あるプロジェクトで Python 2.6 を実行し、別のプロジェクトで Python 2.7 をテストすることなどが可能です。
+コマンドをクリックすると、このバックグラウンド Python プロセスがコマンドの起動を管理します。
 
 ## カスタム パネルを登録する
 
-[パネル ベースの UI](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel) がある Toolkit アプリは、実行時に Desktop の内側のタブに自動的にドッキングされます。
+[パネル ベースの UI](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel) を持つ Toolkit アプリは、実行時に Desktop 内のタブに自動的にドッキングされます。 
 
 {% include product %} Panel などのパネル ベースのアプリを {% include product %} Desktop でタブとして表示したい場合は、起動時に実行されるように設定します。Desktop がサイト コンテキスト モード(すべてのプロジェクトが表示される)で起動すると、自動起動するよう登録されたすべての項目が起動します。これらの項目にパネルが含まれる場合、ドッキングされます。項目は、設定で定義された順序で処理され、これによりタブの順序が決まります。
 
