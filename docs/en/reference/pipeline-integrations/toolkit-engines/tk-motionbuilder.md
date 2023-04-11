@@ -46,6 +46,17 @@ Alternatively, you can run your studio tank command and specify the project name
 > tank Project XYZ updates
 ```
 
+## Configuring software launches
+
+Newer versions of MotionBuilder need an additional configuration within the [`software_paths.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/software_paths.yml) file. The `software_paths.yml` file is available when you have taken over your configuration. Ensure that your reflects the following paths for MotionBuilder to launch, with your specific path, version, and application information added:
+
+```yml
+# Motionbuilder
+path.windows.motionbuilder: C:\Program Files\Autodesk\MotionBuilder 2020\bin\x64\motionbuilder.exe
+```
+
+[See this `software_paths.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/software_paths.yml) file for reference.
+
 ## Collaboration and Evolution
 
 If you have access to the {% include product %} Pipeline Toolkit, you also have access to the source code for all apps, engines and frameworks in Github where we store and manage them. Feel free to evolve these items; use them as a base for further independent development, make changes (and submit pull requests back to us!) or simply tinker with them to see how they have been built and how the toolkit works. You can access this code repository at https://github.com/shotgunsoftware/tk-motionbuilder.

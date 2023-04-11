@@ -39,6 +39,8 @@ It’s simple to rely on {% include product %}’s auto-detection of host applic
 
 When you create a new {% include product %} site, it will have a set of default Software entities—one for each supported host application. You can modify these and add your own to manage the software that shows up in Desktop exactly how you want it.
 
+{% include info title="Important" content="Newer versions of Hiero, Mari, MotionBuilder and RV will need an additional configuration within the [`software_paths.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/software_paths.yml) file. The `software_paths.yml` file is available when you have taken over your configuration. For more details, see instructions in the [Hiero](./../../../reference/pipeline-integrations/toolkit-engines/tk-nuke.md#configuring-software-launches), [Mari](./../../../reference/pipeline-integrations/toolkit-engines/tk-mari.md#configuring-software-launches), [MotionBuilder](./../../../reference/pipeline-integrations/toolkit-engines/tk-motionbuilder.md#configuring-software-launches) and [RV](../../review/rv-developer-overview.md#configuring-software-launches) engine topics." %}
+
 To see your Software entities in {% include product %}, open the Admin menu by clicking on the profile icon in the upper right corner of the screen, and choose  `Software`.
 
 The Software entity has the following fields:

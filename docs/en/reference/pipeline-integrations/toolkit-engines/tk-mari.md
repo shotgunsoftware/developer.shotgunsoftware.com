@@ -46,6 +46,19 @@ Alternatively, you can run your studio `tank` command and specify the project na
 > tank Project XYZ updates
 ```
 
+## Configuring software launches
+
+Newer versions of Mari will need an additional configuration within the [`software_paths.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/software_paths.yml) file. The `software_paths.yml` file is available when you have taken over your configuration. Ensure that your reflects the following paths for Mari to launch, with your specific path, version, and application information added:
+
+```yml
+# Mari
+path.linux.mari: "Mari4.6"
+path.mac.mari: "/Applications/Mari4.6v4/Mari4.6v4.app"
+path.windows.mari: C:\Program Files\Mari4.6v4\Bundle\bin\Mari4.6v4.exe
+```
+
+[See this `software_paths.yml`](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/includes/software_paths.yml) file for reference.
+
 ## Collaboration and Evolution
 
 If you have access to the {% include product %} Pipeline Toolkit, you also have access to the source code for all apps, engines and {% include product %} in Github where we store and manage them. Feel free to evolve these items; use them as a base for further independent development, make changes (and submit pull requests back to us!) or simply tinker with them to see how they have been built and how the toolkit works. You can access this code repository at https://github.com/shotgunsoftware/tk-mari.
