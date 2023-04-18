@@ -14,7 +14,6 @@ lang: zh_CN
 Pick which features you want to activate
   * Media Isolation
   * Media Traffic Isolation
-  * Web Traffic Isolation
   * Media Replication
 
 ## AWS Account Creation
@@ -29,7 +28,7 @@ If your company is located in different locations, consider enabling the media r
 
 ## Plan the VPC IP ranges
 
-Plan your AWS VPC and subnets IP ranges.
+Plan your AWS VPC and subnets IP ranges if you plan to use Media Traffic Isolation.
 
 ### IP Range Example
 
@@ -49,4 +48,8 @@ We highly recommand you to leverage Direct Connect. Direct Connect guarantees th
 
 ## Next Step
 
-With your plan layed down, you are ready to start implementing the AWS building blocks that will allow you to activate the isolation features. To avoid disruption on your production site, you will first materialize and test your setup on your [Migration Test Site](./shotgun_poc_site.md)
+With your plan layed down, you are ready to start implementing the AWS building blocks that will allow you to activate the isolation features.
+
+See [Media Isolation](./s3_bucket.md) for activating the Media Isolation feature.
+
+Go to [Setup](./setup.md) for an overview of the possible next steps.

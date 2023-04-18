@@ -9,9 +9,9 @@ lang: ja
 
 {% include product %} Engine for Photoshop CC は、{% include product %} と Photoshop CC のワークフローを統合するプラットフォームを提供します。{% include product %} Pipeline Toolkit の標準エンジンで構成され、[tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP)を使用します。
 
-有効にすると、**{% include product %}** パネルを Photoshop CC で使用できるようになります。現在の {% include product %} コンテキストの情報とそのコンテキストにインストールされたアプリに登録されているコマンドが表示されます。
+有効にすると、**{% include product %}Adobe パネル**を Photoshop CC で使用できるようになります。現在の {% include product %} コンテキストの情報とそのコンテキストにインストールされたアプリに登録されているコマンドが表示されます。
 
-![拡張機能](../images/engines/photoshopcc-photoshopcc_extension.png)
+![エンジン](../images/engines/photoshopcc-photoshopcc_extension.png)
 
 ## サポート対象のアプリケーション バージョン
 
@@ -25,7 +25,7 @@ lang: ja
 
 {% include product %} 拡張パネルは、Photoshop CC のネイティブ パネルと同じカラー パレットと基本レイアウトを使用します。次の 5 つのコンポーネントで構成されます。
 
-![拡張コンポーネント](../images/engines/photoshopcc-extension_components.png)
+![コンポーネント](../images/engines/photoshopcc-extension_components.png)
 
 1. **コンテキスト ヘッダ**: 現在のコンテキストのサムネイルとフィールドです。
 2. **お気に入りシェルフ**: 現在のコンテキストで最もよく使用するアプリを表示するように設計されています。
@@ -35,15 +35,15 @@ lang: ja
 
 ## インストール
 
-{% include product %} Engine for Photoshop CC のインストールには、{% include product %} と他の製品を統合する場合と同じプロトコルを使用します。エンジンやアプリのインストールについては、「[Toolkit を管理する](https://developer.shotgridsoftware.com/ja/425b1da4/)」という記事を参照してください。また、統合の設定方法については、「[Toolkit の既定の設定](https://github.com/shotgunsoftware/tk-config-default2)」の例を参照してください。
+{% include product %} Engine for Photoshop CC のインストールには、{% include product %} と他の製品を統合する場合と同じプロトコルを使用します。エンジンやアプリのインストールについては、「[Toolkit を管理する](https://developer.shotgridsoftware.com/ja/425b1da4/)」という記事を参照してください。また、統合の設定方法の例については、「[Toolkit の既定の設定](https://github.com/shotgunsoftware/tk-config-default2)」を参照してください。
 
-## 拡張を有効にする
+## 拡張機能を有効にする
 
-拡張をインストールしたら、Photoshop CC の拡張メニューから起動する必要があります。
+拡張機能をインストールしたら、Photoshop CC の拡張メニューから起動する必要があります。
 
-![拡張メニュー](../images/engines/photoshopcc-extensions_menu.png)
+![メニュー](../images/engines/photoshopcc-extensions_menu.png)
 
-これは、1 回のみ実行する必要があります。それ以降は起動すると、有効にしなくても、{% include product %} 拡張パネルが Photoshop CC のレイアウトに表示されるようになります。
+これは、1 回のみ実行する必要があります。それ以降は起動すると、有効にしなくても、{% include product %} 拡張機能パネルが Photoshop CC のレイアウトに表示されるようになります。
 
 一度有効にすると、それ以降の起動では、{% include product %} 統合のブートストラップ時に、拡張パネルにロード画面が表示されます。
 
@@ -57,7 +57,7 @@ lang: ja
 
 コンテキスト ヘッダは、現在の {% include product %} コンテキストに関する情報を表示するカスタマイズ可能な領域です。
 
-![拡張ヘッダ](../images/engines/photoshopcc-extension_header.png)
+![ヘッダー](../images/engines/photoshopcc-extension_header.png)
 
 コンテキストは現在アクティブなドキュメントによって決定されます。コンテキストがエンジンによって決定されると、ヘッダはコンテキストのサムネイル フィールドの詳細を表示するように更新されます。フィールド情報はフックで制御されます。フィールド表示のカスタマイズ方法については、「**コンテキスト フィールド表示フック**」を参照してください。
 
@@ -67,7 +67,7 @@ lang: ja
 
 お気に入りシェルフは、Maya や Houdini のような他の {% include product %} DCC 統合で利用できるお気に入りメニューと似ています。インタフェースのこのセクションはコンテキスト ヘッダのすぐ下にあるので、よく使用する Toolkit アプリが使いやすく、簡単に見つけられるようになります。
 
-![拡張シェルフ](../images/engines/photoshopcc-extension_shelf.png)
+![シェルフ](../images/engines/photoshopcc-extension_shelf.png)
 
 シェルフにはお気に入りのコマンドがボタンで表示されます。マウスを上に重ねると、灰色から色付きに変化し、上部のラベルにその名前が表示されます。マウスを上に重ねると、ボタンの説明が表示されます。
 
@@ -79,7 +79,7 @@ lang: ja
 
 コマンド リストには、現在のコンテキストに登録されているその他の「標準」コマンドが表示されます。
 
-![拡張コマンド](../images/engines/photoshopcc-extension_commands.png)
+![コマンド](../images/engines/photoshopcc-extension_commands.png)
 
 通常、パイプライン設定内にインストールされたアプリはここに表示される 1 つまたは複数のコマンドを登録します。コマンドがお気に入りとして識別されず、コンテキスト メニュー コマンドとしても識別されていない場合は、ここに表示されます。
 
@@ -89,7 +89,7 @@ lang: ja
 
 コンテキスト メニュー コマンドとして登録されているコマンドは、{% include product %} 拡張パネルのコンテキスト メニューに表示されます。
 
-![拡張コンテキスト メニュー](../images/engines/photoshopcc-extension_context_menu.png)
+![コンテキスト メニュー](../images/engines/photoshopcc-extension_context_menu.png)
 
 他のコマンド領域と同様に、このコマンドはコンテキストに応じて変化します。**Jump to {% include product %}** や **Jump to Filesystem** などのコマンドは常にここから使用できます。
 
@@ -97,7 +97,7 @@ lang: ja
 
 ロギング コンソールは、CEP JavaScript インタプリタと Toolkit の Python プロセスの両方のログ出力をすべて表示します。
 
-![拡張機能](../images/engines/photoshopcc-extension_console.png)
+![Console](../images/engines/photoshopcc-extension_console.png)
 
 拡張機能に問題があり、サポートが必要な場合、ロギング コンソール出力は、{% include product %} のサポート チームが問題をデバッグする際に非常に役立ちます。
 
@@ -107,7 +107,7 @@ lang: ja
 
 ### PySide
 
-{% include product %} Engine for Photoshop CC は PySide を使用します。正式な手順については、「[Pyside をインストールする](https://pyside.readthedocs.io/en/latest/installing/index.html)」を参照してください。
+{% include product %} Engine for Photoshop CC は PySide を使用します。Pyside のインストールについては、[Pyside をインストールする](https://pyside.readthedocs.io/en/latest/installing/index.html)公式の手順を参照してください。
 
 ### CEP 拡張機能
 
@@ -145,13 +145,13 @@ shelf_favorites:
 
 {% include product %} からデータをクエリーすると、フックの 2 番目のメソッドが呼び出されます。この `get_context_html()` メソッドは、`get_entity_fields()` メソッドで指定されたクエリー フィールドが入力されたコンテキスト エンティティ ディクショナリを受け取ります。予想される戻り値は、クエリー対象のエンティティ フィールドを表示するためにフォーマット化された HTML を含む文字列です。
 
-このメソッドで指定する必要がある内容については、「[既定のフックの実装](https://github.com/shotgunsoftware/tk-photoshopcc/blob/master/hooks/context_fields_display.py)」を参照してください。
+これらのメソッドで必要とされる内容については、「[既定のフックの実装](https://github.com/shotgunsoftware/tk-photoshopcc/blob/master/hooks/context_fields_display.py)」を参照してください。
 
 エンジンは、エンティティのサムネイルが使用可能であれば、それを常に表示します。
 
 ### Photoshop API
 
-エンジンは Photoshop CC の JavaScript API を Python に公開します。この API の完全なマニュアルについては、[こちら](https://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf)を参照してください。
+エンジンは Photoshop CC の JavaScript API を Python に公開します。
 
 Photoshop API オブジェクトは `engine.adobe` として公開されます。次の例では、Toolkit のアプリやフック内から Photoshop DOM を直接操作する方法を示します。標準的な Toolkit アプリには、Photoshop マニュアルの操作方法に関する作業例が含まれています。
 
@@ -219,8 +219,8 @@ for (i, layer) in enumerate(layers):
 
 `SHOTGUN_ADOBE_PYTHON`: エンジンの起動時に使用する Python の実行可能ファイルへのパス。設定しない場合は、システムの Python が使用されます。Photoshop が {% include product %} Desktop や tk-shell エンジンなどの Python プロセスから起動される場合、このプロセスで使用する Python は Photoshop との統合で使用されます。
 
-注: 追加の環境変数が Adobe のフレームワークに存在します。詳細については、[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-framework-adobe/)を参照してください。
+注: 追加の環境変数が Adobe のフレームワークに存在します。詳細については、「[開発者用ドキュメント](https://developer.shotgridsoftware.com/tk-framework-adobe/)」を参照してください。
 
 ### アプリ開発者メモ
 
-* Python プロセスは Photoshop CC プロセスから独立しているため、アプリ ウィンドウで上記の Photoshop ウィンドウをできるだけ整理して表示するには、エンジン内でいくつかの作業を行います。このセットアップの注意点の 1 つに、`QFileDialog` にネイティブ OS Windows を使用する既定のオプションがあります。このエンジンを使用してアプリを開発する場合は、ネイティブのダイアログを使用しないオプションを設定してください。[tk-multi-pythonconsole アプリでの例を参照してください](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218)。
+* Python プロセスは Photoshop CC プロセスから独立しているため、アプリ ウィンドウで上記の Photoshop ウィンドウをできるだけ整理して表示するには、エンジン内でいくつかの作業を行います。このセットアップの注意点の 1 つに、`QFileDialog` にネイティブ OS Windows を使用する既定のオプションがあります。このエンジンを使用してアプリを開発する場合は、ネイティブのダイアログを使用しないオプションを設定してください。[tk-multi-pythonconsole アプリの例を参照してください。](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218)

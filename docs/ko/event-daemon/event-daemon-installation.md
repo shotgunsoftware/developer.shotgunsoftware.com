@@ -17,8 +17,8 @@ lang: ko
 
 * Python v2.6, v2.7 또는 3.7
 * [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)
-   * Python v2.6 또는 v2.7의 경우 v3.0.37 이상을 사용하고 Python 3.7의 경우 v3.1.0 이상을 사용합니다.
-   * 어떤 경우든 [최신 Python API 버전](https://github.com/shotgunsoftware/python-api/releases)을 사용하고 이 종속성을 시간이 지남에 따라 계속 업데이트하는 것이 좋습니다.
+  * Python 3.7 이상에 v3.1.0 이상을 사용합니다(_참고: Python 2는 더 이상 지원되지 않음_).
+  * 어떤 경우든 [최신 Python API 버전](https://github.com/shotgunsoftware/python-api/releases)을 사용하고 이 종속성을 시간이 지남에 따라 계속 업데이트하는 것이 좋습니다.
 * {% include product %} 서버에 대한 네트워크 액세스
 
 <a id="Installing_Shotgun_API"></a>
@@ -27,7 +27,7 @@ lang: ko
 Python이 이미 컴퓨터에 설치되어 있다고 가정하면 {% include product %} 이벤트 데몬에서 Python API를 사용하여 {% include product %} 서버에 연결할 수 있도록 {% include product %} Python API를 설치해야 합니다. 다음과 같은 방법으로 이 작업을 수행할 수 있습니다.
 
 - {% include product %} 이벤트 데몬과 동일한 디렉토리에 배치합니다.
-- [`PYTHONPATH` 환경 변수](https://docs.python.org/tutorial/modules.html)에서 지정한 디렉토리 중 하나에 배치합니다.
+- [`PYTHONPATH` 환경 변수 ](https://docs.python.org/tutorial/modules.html)에서 지정한 디렉토리 중 하나에 배치합니다.
 
 터미널 창에서 {% include product %} API가 제대로 설치되었는지 테스트하려면:
 
@@ -49,7 +49,7 @@ ImportError: No module named shotgun_api3
 
 {% include product %}Events 설치 위치는 사용자가 임의로 선택할 수 있습니다. 다시 말하지만 Python 및 {% include product %} API가 컴퓨터에 설치되어 있고 {% include product %} 서버에 대한 네트워크 액세스 권한이 있는 경우 어디에서나 실행할 수 있습니다. 그러나 스튜디오에 적합한 위치(예: `/usr/local/shotgun/shotgunEvents`)에 설치하는 것이 타당하므로 이 위치를 예제에서 사용합니다.
 
-소스 및 아카이브는 GitHub([https://github.com/shotgunsoftware/shotgunEvents]())에서 사용할 수 있습니다.
+소스 및 아카이브는 GitHub(<https://github.com/shotgunsoftware/shotgunEvents>)에서 사용할 수 있습니다.
 
 {% include info title="참고" content="**Windows:** Windows 서버가 있는 경우 `C:\shotgun\shotgunEvents`를 사용할 수 있지만 이 설명서에서는 Linux 경로를 사용합니다." %}
 
@@ -70,7 +70,7 @@ $ git clone git://github.com/shotgunsoftware/shotgunEvents.git
 
 컴퓨터에 `git`가 없거나 단순히 소스 아카이브를 다운로드하려는 경우에는 다음 단계를 수행하여 시작할 수 있습니다.
 
-- [https://github.com/shotgunsoftware/shotgunEvents/archives/master]()로 이동합니다.
+- <https://github.com/shotgunsoftware/shotgunEvents/>로 이동합니다.
 - 원하는 형식으로 소스를 다운로드합니다.
 - 이를 컴퓨터에 저장합니다.
 - `/usr/local/shotgun` 디렉토리에 파일을 추출합니다.
@@ -122,8 +122,8 @@ $ pip install -r /path/to/requirements.txt
 
 Windows 시스템에 다음 중 하나가 필요합니다.
 
-* [PyWin32](https://sourceforge.net/projects/pywin32/)와 함께 Python이 설치됨
-* [Active Python](https://www.activestate.com/activepython)
+* [PyWin32](https://sourceforge.net/projects/pywin32/)가 설치된 Python
+* [활성 Python](https://www.activestate.com/activepython)
 
 활성 Python은 {% include product %} 이벤트 데몬을 Windows 서비스 아키텍처와 통합하는 데 필요한 PyWin32 모듈과 함께 제공됩니다.
 

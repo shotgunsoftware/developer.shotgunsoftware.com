@@ -21,11 +21,11 @@ lang: ko
 
 템플릿 언어는 다음과 같은 방식으로 작동합니다.
 
-- {% include product %} 값은 `{brackets}`로 묶여 있습니다(예: `<b>Description:</b> {description}`). 이 템플릿이 렌더링되면 `{description}` 부분은 설명 필드 값으로 대체됩니다.
-
-- 값의 선택적 접두사 또는 접미사(값이 비어 있지 않은 경우에만 표시)를 원한다면 `{[Prefix]sg_field[suffix]}` 구문을 사용하면 됩니다. 템플릿 `{[Start: ]start_date} {[End: ]end_date}`는 두 값이 모두 입력될 경우 `Start: 12 July 2009 End: 14 July 2012`를 렌더링하지만 종료 날짜가 설정되지 않은 경우 `Start: 12 July 2009`를 렌더링합니다.
-
-- 일부 값이 설정되지 않은 경우에는 폴백을 정의할 수 있습니다. {% include product %} 버전의 경우 제작자가 아티스트 대신 버전을 제출하는 워크플로우를 지원하기 위해 `artist` 필드가 `created_by` 필드보다 우선권을 가집니다. 이 경우, 버전은 제작자에 의해 생성되지만 `artist` 필드는 아티스트로 설정됩니다. 그러나 항상 그렇지는 않습니다. 아티스트가 자신의 작업을 제출하는 파이프라인에 아티스트를 비워 두는 경우도 있습니다. 따라서 버전을 표시할 때에는 `artist` 필드를 먼저 확인하고, 이 필드가 설정되어 있지 않은 경우에는 `created_by` 필드로 폴백할 수 있도록 하는 것이 좋습니다. 이 작업은 `{field1|field2}` 구문을 사용하여 수행할 수 있습니다(예: `Created By: {artist|created_by}`). 이 구문을 선택적 필드(예: `{[Created By: ]artist|created_by}`)와 결합할 수도 있습니다.
+-   {% include product %} 값은 `{brackets}`로 묶여 있습니다(예: `<b>Description:</b> {description}`). 이 템플릿이 렌더링되면 `{description}` 부분은 설명 필드 값으로 대체됩니다.
+    
+-   값의 선택적 접두사 또는 접미사(값이 비어 있지 않은 경우에만 표시)를 원한다면 `{[Prefix]sg_field[suffix]}` 구문을 사용하면 됩니다. 템플릿 `{[Start: ]start_date} {[End: ]end_date}`는 두 값이 모두 입력될 경우 `Start: 12 July 2009 End: 14 July 2012`를 렌더링하지만 종료 날짜가 설정되지 않은 경우 `Start: 12 July 2009`를 렌더링합니다.
+    
+-   일부 값이 설정되지 않은 경우에는 폴백을 정의할 수 있습니다. {% include product %} 버전의 경우 제작자가 아티스트 대신 버전을 제출하는 워크플로우를 지원하기 위해 `artist` 필드가 `created_by` 필드보다 우선권을 가집니다. 이 경우, 버전은 제작자에 의해 생성되지만 `artist` 필드는 아티스트로 설정됩니다. 그러나 항상 그렇지는 않습니다. 아티스트가 자신의 작업을 제출하는 파이프라인에 아티스트를 비워 두는 경우도 있습니다. 따라서 버전을 표시할 때에는 `artist` 필드를 먼저 확인하고, 이 필드가 설정되어 있지 않은 경우에는 `created_by` 필드로 폴백할 수 있도록 하는 것이 좋습니다. 이 작업은 `{field1|field2}` 구문을 사용하여 수행할 수 있습니다(예: `Created By: {artist|created_by}`). 이 구문을 선택적 필드(예: `{[Created By: ]artist|created_by}`)와 결합할 수도 있습니다.
 
 이 후크에는 다음 방식이 포함됩니다.
 
@@ -60,11 +60,11 @@ lang: ko
 
 액션은 {% include product %} 데이터에서 작동하는 작은 코드 조각입니다. 다음과 같은 예를 들 수 있습니다.
 
-- 지정된 {% include product %} 버전에 대해 RV를 시작하는 액션
-- 사용자가 지정된 태스크에 자신을 할당할 수 있는 액션
-- Maya에 {% include product %} 게시를 Maya 참조로 로드하는 액션
+-   지정된 {% include product %} 버전에 대해 RV를 시작하는 액션
+-   사용자가 지정된 태스크에 자신을 할당할 수 있는 액션
+-   Maya에 {% include product %} 게시를 Maya 참조로 로드하는 액션
 
-액션의 실제 페이로드는 _액션 후크_ 에 정의됩니다. 액션 로직을 정의한 후에는 앱 구성에서 해당 액션을 {% include product %} 객체에 매핑할 수 있습니다. 이 액션 매핑은 다음 예와 같은 모습입니다.
+액션의 실제 페이로드는 _액션 후크_에 정의됩니다. 액션 로직을 정의한 후에는 앱 구성에서 해당 액션을 {% include product %} 객체에 매핑할 수 있습니다. 이 액션 매핑은 다음 예와 같은 모습입니다.
 
 ```yaml
 action_mappings:
@@ -116,7 +116,7 @@ class MyActions(HookBaseClass):
     def generate_actions(self, sg_data, actions, ui_area):
         """
  Returns a list of action instances for a particular object.
- The data returned from this hook will be used to populate the
+ The data returned from this hook will be used to populate the 
  actions menu.
 
  The mapping between {% include product %} objects and actions are kept in a different place
@@ -126,12 +126,12 @@ class MyActions(HookBaseClass):
  This method needs to return detailed data for those actions, in the form of a list
  of dictionaries, each with name, params, caption and description keys.
 
- Because you are operating on a particular object, you may tailor the output
+ Because you are operating on a particular object, you may tailor the output 
  (caption, tooltip etc) to contain custom information suitable for this publish.
 
- The ui_area parameter is a string and indicates where the publish is to be shown.
+ The ui_area parameter is a string and indicates where the publish is to be shown. 
 
- - If it will be shown in the main browsing area, "main" is passed.
+ - If it will be shown in the main browsing area, "main" is passed. 
  - If it will be shown in the details area, "details" is passed.
 
  :param sg_data: {% include product %} data dictionary with all the standard publish fields.
@@ -190,7 +190,7 @@ Publish 앱은 퍼블리싱을 위해 항목이 아티스트에게 제공되는 
 
 Publisher 앱의 전체 개발자 문서를 이제 [툴킷 개발자 사이트](https://developer.shotgridsoftware.com/tk-multi-publish2)에서 살펴볼 수 있습니다.
 
-Publish 앱을 사용하는 자세한 방법은 [사용자 안내서](https://developer.shotgridsoftware.com/ko/d587be80/#the-publisher)를 참조하십시오.
+Publish 앱을 사용하는 자세한 방법은 [사용자 안내서](https://developer.shotgridsoftware.com/ko/d587be80/#the-publisher)를 참조하십시오. 
 
 ## Loader
 

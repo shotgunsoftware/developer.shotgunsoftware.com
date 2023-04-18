@@ -9,7 +9,7 @@ lang: ja
 
 ## パネル
 
-パネル アクションの例については、[https://github.com/shotgunsoftware/tk-multi-shotgunpanel/tree/master/hooks](https://github.com/shotgunsoftware/tk-multi-shotgunpanel/tree/master/hooks) を参照してください。
+パネルのアクションの例については、[https://github.com/shotgunsoftware/tk-multi-shotgunpanel/tree/master/hooks](https://github.com/shotgunsoftware/tk-multi-shotgunpanel/tree/master/hooks) を参照してください。
 
 ### 表示内容を設定する
 
@@ -17,15 +17,15 @@ lang: ja
 
 **システムをテンプレート化する**
 
-フックはシンプルなテンプレート言語をサポートしているため、優れた柔軟性が得られます。また、Qt でサポートされている HTML サブセットもサポートしているため、表示される値の色、フォント サイズ、ウェイトなどを制御できます 。
+フックはシンプルなテンプレート言語をサポートしているため、優れた柔軟性が得られます。また、Qt でサポートされている HTML サブセットもサポートしているため、表示される値の色、フォント サイズ、ウェイトなどをコントロールできます
 
 テンプレート言語は次のように機能します。
 
-- {% include product %} の値は、`{brackets}` のように `<b>Description:</b> {description}` で囲まれています。このテンプレートをレンダリングすると、`{description}` の部分が説明フィールドの値で置き換えられます。
-
-- 値が空以外の場合にのみ表示される値にオプションの接頭辞または接尾辞を指定する場合、`{[Prefix]sg_field[suffix]}` 構文を使用できます。両方の値が追加されている場合、テンプレート `{[Start: ]start_date} {[End: ]end_date}` は `Start: 12 July 2009 End: 14 July 2012` をレンダリングします。ただし、終了日を設定していない場合は `Start: 12 July 2009` をレンダリングします。
-
-- 一部の値が設定されていない場合はフォールバックを定義することができます。{% include product %} のバージョンについては、プロデューサがアーティストの代わりにバージョンを送信するというワークフローをサポートするため、`created_by` フィールドが `artist` フィールドよりも優先されます。この場合、バージョンはプロデューサによって作成されますが、`artist` フィールドはアーティストに設定されます。ただし、いつもそういうわけではありません。アーティストが自分の作業を送信するパイプラインでは、アーティスト欄は空欄になります。バージョンを表示する場合、最初に `artist` フィールドを確認できるようにしておくと役立ちます。今回このフィールドは設定されていないため、`created_by` フィールドにフォールバックします。このようにするには、`Created By: {artist|created_by}` のように構文 `{field1|field2}` を使用します。`{[Created By: ]artist|created_by}` のようにオプション フィールドを組み合わせることができます。
+-   {% include product %} の値は、`{brackets}` のように `<b>Description:</b> {description}` で囲まれています。このテンプレートをレンダリングすると、`{description}` の部分が説明フィールドの値で置き換えられます。
+    
+-   値が空以外の場合にのみ表示される値にオプションの接頭辞または接尾辞を指定する場合、`{[Prefix]sg_field[suffix]}` 構文を使用できます。両方の値が追加されている場合、テンプレート `{[Start: ]start_date} {[End: ]end_date}` は `Start: 12 July 2009 End: 14 July 2012` をレンダリングします。ただし、終了日を設定していない場合は `Start: 12 July 2009` をレンダリングします。
+    
+-   一部の値が設定されていない場合はフォールバックを定義することができます。{% include product %} のバージョンについては、プロデューサがアーティストの代わりにバージョンを送信するというワークフローをサポートするため、`created_by` フィールドが `artist` フィールドよりも優先されます。この場合、バージョンはプロデューサによって作成されますが、`artist` フィールドはアーティストに設定されます。ただし、いつもそういうわけではありません。アーティストが自分の作業を送信するパイプラインでは、アーティスト欄は空欄になります。バージョンを表示する場合、最初に `artist` フィールドを確認できるようにしておくと役立ちます。今回このフィールドは設定されていないため、`created_by` フィールドにフォールバックします。このようにするには、`Created By: {artist|created_by}` のように構文 `{field1|field2}` を使用します。`{[Created By: ]artist|created_by}` のようにオプション フィールドを組み合わせることができます。
 
 このフックには次のメソッドが含まれます。
 
@@ -60,11 +60,11 @@ lang: ja
 
 アクションは {% include product %} のデータを操作するコードの小さなスニペットです。例を次に示します。
 
-- 任意の {% include product %} バージョンの RV を起動するアクション
-- 任意のタスクに自分に割り当てることができるアクション
-- Maya リファレンスとして Maya に {% include product %} パブリッシュをロードするアクション
+-   任意の {% include product %} バージョンの RV を起動するアクション
+-   任意のタスクに自分に割り当てることができるアクション
+-   Maya リファレンスとして Maya に {% include product %} パブリッシュをロードするアクション
 
-アクションの実際のペイロードはアクション フック__で定義されます。アクションのロジックを定義したら、アプリ設定の {% include product %} オブジェクトにこのアクションをマップすることができます。次に、このアクション マッピングの例を示します。
+アクションの実際のペイロードは_アクション フック_で定義されます。アクションのロジックを定義したら、アプリ設定の {% include product %} オブジェクトにこのアクションをマップすることができます。次に、このアクション マッピングの例を示します。
 
 ```yaml
 action_mappings:
@@ -95,12 +95,11 @@ action_mappings:
 actions_hook: '{self}/tk-maya_actions.py'
 ```
 
-キーワード `{self}` は、フックのアプリの `hooks` フォルダを確認するように Toolkit に指示します。
- このフックをユーザが設定した実装でオーバーライドする場合は、値を `{config}/panel/maya_actions.py` に変更します。これにより、設定フォルダ内の `hooks/panel/maya_actions.py` と呼ばれるフックを使用するように Toolkit に指示します。
+キーワード `{self}` は、フックのアプリの `hooks` フォルダを確認するように Toolkit に指示します。このフックをユーザが設定した実装でオーバーライドする場合は、値を `{config}/panel/maya_actions.py` に変更します。これにより、設定フォルダ内の `hooks/panel/maya_actions.py` と呼ばれるフックを使用するように Toolkit に指示します。
 
 詳細については、アプリに付属するフック ファイルを参照してください。フックは継承も活用します。つまり、フック内のすべての項目をオーバーライドすることなく、さまざまな方法で既定のフックを簡単に拡張または強化して簡単にフックを管理できます。
 
-[こちらで、第 2 世代のフック形式を確認してください。](https://developer.shotgridsoftware.com/ja/6d10dedf/)
+第 2 世代のフック形式については、[こちら](https://developer.shotgridsoftware.com/ja/6d10dedf/)で確認してください。
 
 フックの継承を使用すると、次のように既定のフックに他のアクションを追加できるようになります。
 
@@ -117,7 +116,7 @@ class MyActions(HookBaseClass):
     def generate_actions(self, sg_data, actions, ui_area):
         """
  Returns a list of action instances for a particular object.
- The data returned from this hook will be used to populate the
+ The data returned from this hook will be used to populate the 
  actions menu.
 
  The mapping between {% include product %} objects and actions are kept in a different place
@@ -127,12 +126,12 @@ class MyActions(HookBaseClass):
  This method needs to return detailed data for those actions, in the form of a list
  of dictionaries, each with name, params, caption and description keys.
 
- Because you are operating on a particular object, you may tailor the output
+ Because you are operating on a particular object, you may tailor the output 
  (caption, tooltip etc) to contain custom information suitable for this publish.
 
- The ui_area parameter is a string and indicates where the publish is to be shown.
+ The ui_area parameter is a string and indicates where the publish is to be shown. 
 
- - If it will be shown in the main browsing area, "main" is passed.
+ - If it will be shown in the main browsing area, "main" is passed. 
  - If it will be shown in the details area, "details" is passed.
 
  :param sg_data: {% include product %} data dictionary with all the standard publish fields.
@@ -191,11 +190,11 @@ action_mappings:
 
 Publish アプリの開発者を対象とした完全なドキュメントは、[Toolkit 開発者サイト](https://developer.shotgridsoftware.com/tk-multi-publish2)で入手できます。
 
-Publish アプリの使用方法の詳細については、[ユーザ ガイド](https://developer.shotgridsoftware.com/ja/d587be80/#the-publisher)を参照してください。
+Publish アプリの使用方法の詳細については、[ユーザ ガイド](https://developer.shotgridsoftware.com/ja/d587be80/#the-publisher)を参照してください。 
 
-## Loader
+## ローダー
 
-ロード操作の例については、[https://github.com/shotgunsoftware/tk-multi-loader2/tree/master/hooks](https://github.com/shotgunsoftware/tk-multi-loader2/tree/master/hooks) を参照してください。
+ロード アクションの例については、[https://github.com/shotgunsoftware/tk-multi-loader2/tree/master/hooks](https://github.com/shotgunsoftware/tk-multi-loader2/tree/master/hooks) を参照してください。
 
 ## 高度な機能
 

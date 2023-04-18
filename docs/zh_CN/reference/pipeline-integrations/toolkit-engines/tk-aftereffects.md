@@ -7,9 +7,9 @@ lang: zh_CN
 
 # After Effects
 
-{% include product %} After Effects 插件提供一个用于在 After Effects 工作流中集成 {% include product %} 的平台。它包含一个标准 {% include product %} Toolkit 插件并依赖于 [tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP)。
+{% include product %} After Effects 插件提供一个用于在 After Effects 工作流中集成 {% include product %} 的平台。它包含一个标准 {% include product %} Pipeline Toolkit 插件并依赖于 [tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP)。
 
-启用后，**{% include product %} Adobe Panel** 面板在 After Effects 中变为可用。此面板显示有关当前 {% include product %} 上下文以及该上下文中安装的应用注册的各种命令的信息。
+启用后，**{% include product %} Adobe Panel** 在 After Effects 中变为可用。此面板显示有关当前 {% include product %} 上下文以及该上下文中安装的应用注册的各种命令的信息。
 
 ![插件](../images/engines/aftereffects_extension.png)
 
@@ -23,19 +23,19 @@ lang: zh_CN
 
 ## 界面概述
 
-{% include product %} 扩展面板采用与原生 After Effects 面板相同的配色和基本布局。面板有五个部分组成：
+{% include product %} 扩展面板采用与原生 After Effects 面板相同的配色和基本布局。面板由五个部分组成：
 
 ![组件](../images/engines/extension_components.png)
 
-1. **上下文标题** - 当前上下文的缩略图和字段。
-2. **收藏工具架** - 用于显示当前上下文中最常用的应用。
-3. **命令列表** - 当前上下文的所有未收藏命令。
-4. **上下文菜单** - 其他与上下文相关的命令和调试工具。
-5. **日志记录控制台** - 一个控制台叠加层，显示调试的日志记录输出。
+1. **上下文标题** \- 当前上下文的缩略图和字段。
+2. **收藏工具架** \- 用于显示当前上下文中最常用的应用。
+3. **命令列表** \- 当前上下文的所有未收藏命令。
+4. **上下文菜单** \- 与上下文相关的其他命令和调试工具。
+5. **日志记录控制台** \- 一个控制台叠加层，显示调试的日志记录输出。
 
 ## 安装
 
-{% include product %} After Effects 插件在安装方面遵循与其他 {% include product %} 集成相同的协议。有关安装插件和应用的信息，请参见[管理 Toolkit](https://developer.shotgridsoftware.com/zh_CN/425b1da4/) 文章。此外，您还可以参考[默认 Toolkit 配置](https://github.com/shotgunsoftware/tk-config-default2)，以它为例了解如何配置集成。
+{% include product %} After Effects 插件在安装方面遵循的协议与其他 {% include product %} 集成相同。有关安装插件和应用的信息，请参见[管理 Toolkit](https://developer.shotgridsoftware.com/zh_CN/425b1da4/) 文章。此外，您还可以参考[默认 Toolkit 配置](https://github.com/shotgunsoftware/tk-config-default2)，以它为例了解如何配置集成。
 
 ## 启用扩展
 
@@ -59,7 +59,7 @@ lang: zh_CN
 
 ![标题](../images/engines/extension_header.png)
 
-上下文由当前激活的文档决定。插件确定上下文后，标题会更新并显示上下文的缩略图字段详情。这些字段信息由一个挂钩来控制。有关如何对字段的显示进行自定义的信息，请参见下面的**上下文字段显示挂钩** 部分。
+上下文由当前激活的文档决定。插件确定上下文后，标题会更新并显示上下文的缩略图字段详情。这些字段信息由一个挂钩来控制。有关如何对字段的显示进行自定义的信息，请参见下面的**上下文字段显示挂钩**部分。
 
 另外还需要注意的是，仅当使用 {% include product %} open 时才能识别上下文切换。
 
@@ -97,7 +97,7 @@ lang: zh_CN
 
 日志记录控制台同时显示来自 CEP Javascript 解释器和 Toolkit Python 进程的所有日志记录输出。
 
-![控制台](../images/engines/extension_console.png)
+![控制台(Console)](../images/engines/extension_console.png)
 
 当扩展遇到任何需要技术支持的问题时，日志记录控制台的输出就变得极为有用，这些信息可帮助 {% include product %} 技术支持团队调试问题。
 
@@ -107,7 +107,7 @@ lang: zh_CN
 
 ### PySide
 
-{% include product %} After Effects 插件依赖于 PySide。请参见有关[安装 PySide](https://pyside.readthedocs.io/en/latest/installing/index.html) 的官方说明。
+{% include product %} After Effects 插件依赖于 PySide。请参见有关[安装 Pyside](https://pyside.readthedocs.io/en/latest/installing/index.html) 的官方说明。
 
 ### CEP 扩展
 
@@ -148,7 +148,7 @@ shelf_favorites:
 - 如果设置，也会考虑 `SGTK_PHOTOSHOP_NETWORK_DEBUG`。
 - `SHOTGUN_ADOBE_PYTHON` - 启动插件时使用的 Python 可执行文件的路径。如果不设置，将使用系统的 Python。如果 Photoshop 是从某个 Python 进程启动（如 {% include product %} Desktop 或通过 tk-shell 插件），则 Photoshop 集成将使用该进程使用的 Python。
 
-注意：其他环境变量存在于 Adobe 框架中。有关详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-framework-adobe/)。
+注意：Adobe 框架中存在其他环境变量。有关详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-framework-adobe/)。
 
 
 ### 上下文字段显示挂钩
@@ -172,5 +172,3 @@ shelf_favorites:
 ### After Effects API
 
 有关 After Effects API 的详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-aftereffects)。
-
-

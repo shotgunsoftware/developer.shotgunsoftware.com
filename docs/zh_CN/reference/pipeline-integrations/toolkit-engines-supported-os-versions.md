@@ -11,6 +11,6 @@ lang: zh_CN
 
 ----------
 
-| Windows | macOS | CentOS |
+| Windows | macOS | Linux |
 |:-------:|:-----:|:------:|
-| 10 | 10.14+ <br>**注意：**尚不支持 M1，[请在此处了解详细信息](https://community.shotgridsoftware.com/t/13606)。 | 7.4 |
+|   10    |10.14+ <br>**注意：**不支持 M1 原生，但支持搭载 Rosetta 算法的 M1，[请单击此处了解详细信息](https://community.shotgridsoftware.com/t/13606)。   |  CentOS 7.4、Rocky 8.5    |

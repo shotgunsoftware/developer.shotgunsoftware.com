@@ -4,7 +4,7 @@ title: Toolkit 网络讲座
 pagename: video-webinars
 lang: zh_CN
 ---
-
+  
 # {% include product %} Toolkit 网络讲座
 
 *更新日期：2020/5/8*
@@ -18,7 +18,7 @@ lang: zh_CN
 
 1：{% include product %} Toolkit 网络讲座：即时可用的集成*（60 分钟）*
 
-在新的 Toolkit 网络讲座系列的第一个讲座中，Rob Blau 和 Manne Öhrström 将为您解答有关即时可用的集成的问题。
+在全新系列 Toolkit 网络讲座的第一个讲座中，Rob Blau 和 Manne Öhrström 将为您解答有关即时可用的集成的问题。
 
 [![](https://img.youtube.com/vi/rgzHEwUhENI/0.jpg)](https://www.youtube.com/watch?v=rgzHEwUhENI)
 
@@ -40,7 +40,7 @@ lang: zh_CN
 
 4：{% include product %} Toolkit 网络讲座：远程服务配置和多位置工作流*（60 分钟）*
 
-在此网络讲座中，Manne Ohrstrom 探讨了所属艺术家位于多个位置的工作室的工作流。
+在此网络讲座中，Manne Ohrstrom 探讨了工作室的艺术家们分布在不同位置时的工作流。
 
 [![](https://img.youtube.com/vi/NyIk07F2RoM/0.jpg)](https://www.youtube.com/watch?v=NyIk07F2RoM)
 
@@ -52,7 +52,7 @@ lang: zh_CN
 
 5：{% include product %} 生态系统网络讲座：REST API*（60 分钟）*
 
-在此网络讲座中，Brandon Ashworth 将为我们演练一些有用的演示、示例和模板，以展示 REST API 是什么、它重要的原因以及它的使用方式。
+在此网络讲座中，Brandon Ashworth 将为我们演练一些有用的演示、示例和模板，以展示 REST API 的用途、重要意义及其使用方式。
 
 [![](https://img.youtube.com/vi/3xPPj2pbHVQ/0.jpg)](https://www.youtube.com/watch?v=3xPPj2pbHVQ)
 
@@ -68,16 +68,16 @@ lang: zh_CN
 
 *补充材料*
 
-[包含配置的 Github 库](https://github.com/shotgunsoftware/tk-config-publish_api_webinar)
+[GitHub 库与配置](https://github.com/shotgunsoftware/tk-config-publish_api_webinar)
 
 [31:00 - Pull 请求](https://github.com/shotgunsoftware/tk-config-publish_api_webinar/pull/1)
 
-[Publish API 文档](https://developer.shotgridsoftware.com/tk-multi-publish2/)
+[发布 API 文档](https://developer.shotgridsoftware.com/tk-multi-publish2/)
 
 7：{% include product %} Toolkit 网络讲座：After Effects 集成*（38 分钟）*
 
-Adobe After Effects 是我们最新的 {% include product %} 集成。在此网络讲座中，Rob Blau 将深入剖析 After Effects 集成并现场演示相关功能，而后讨论我们如何通过 Photoshop 集成推动为任何 Adobe 集成开发可重复使用的框架。
-
+Adobe After Effects 是我们最新的 {% include product %} 集成。在此网络讲座中，Rob Blau 将深入剖析 After Effects 集成并现场演示相关功能，而后讨论我们如何通过 Photoshop 集成推动为任何 Adobe 集成开发可重复使用的框架。  
+  
 此外，Tannaz Sassooni 为我们导览了新的开发人员文档站点，并展示我们如何让用户更轻松地了解与 {% include product %} 的集成方式。
 
 [![](https://img.youtube.com/vi/g-062_VTbAI/0.jpg)](https://www.youtube.com/watch?v=g-062_VTbAI)
@@ -99,17 +99,17 @@ Adobe After Effects 是我们最新的 {% include product %} 集成。在此网�
 
 在 SIGGRAPH 2018 和 2019 上，{% include product %} 团队展示了 {% include product %} 开发人员日：这是一系列课程，旨在使开发人员熟悉可用于实现任务自动化、编写自定义应用等的各种资源。在 SIGGRAPH 之后，我们举办了一系列以开发人员日的内容为专题的网络讲座。此播放列表包含这些网络讲座的录像。
 
-完整幻灯片、代码示例以及与此内容相关的其他资源位于[此处 (2019)](https://github.com/shotgunsoftware/sg-siggraph-2019) 和[此处 (2018)](https://github.com/shotgunsoftware/sg-devday-2018/)。
+有关完整幻灯片、代码示例和与此内容相关的其他资源，请单击[此处查看 2019 版](https://github.com/shotgunsoftware/sg-siggraph-2019)，单击[此处查看 2018 版](https://github.com/shotgunsoftware/sg-devday-2018/)。
 
 1：2019 SIGGRAPH 开发人员日：{% include product %} 开发简介*（83 分钟）*
 
-在此网络讲座中，Tannaz Sassooni 和 Patrick Boucher 对 {% include product %} 开发进行了介绍，其中讨论了 {% include product %} 的自动化入口点、{% include product %} 的 Python 和 REST API，以及 {% include product %} 的 API 如何自动化工作室的任务和数据跟踪。
+在此网络讲座中，Tannaz Sassooni 和 Patrick Boucher 对 {% include product %} 开发进行了介绍，并讨论了 {% include product %} 的自动化入口点、{% include product %} 的 Python 和 REST API，以及 {% include product %} 的 API 如何自动化工作室的任务和数据跟踪。
 
 [![](https://img.youtube.com/vi/i0aVJepZw8Y/0.jpg)](https://www.youtube.com/watch?v=i0aVJepZw8Y)
 
-[0:56](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=56s) 欢迎和情况介绍
+[0:56](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=56s) 欢迎和定位
 
-[3:00](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=180s) {% include product %} 开发简介：有关常见工作流需求以及如何使用 {% include product %} API 和开发框架解决这些需求的高级概述。[Tannaz Sassooni]
+[3:00](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=180s) {% include product %} 开发简介：从较高层面简单介绍常见流程需求以及如何使用 {% include product %} 的 API 和开发框架来解决这些需求。[Tannaz Sassooni]
 
 [25:59](https://www.youtube.com/watch?v=i0aVJepZw8Y&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=1&t=1559s) 介绍使用 {% include product %} API 管理数据的过程：深入剖析使用简单 Python 和 REST 脚本的 {% include product %} API，以及用于创建动作菜单项的框架。[Patrick Boucher]
 
@@ -119,25 +119,25 @@ Adobe After Effects 是我们最新的 {% include product %} 集成。在此网�
 
 [![](https://img.youtube.com/vi/xUeY1pECHdI/0.jpg)](https://www.youtube.com/watch?v=xUeY1pECHdI)
 
-[0:39](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=39s) 欢迎和情况介绍
+[0:39](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=39s) 欢迎和定位
 
-[2:33](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=153s) 处理 {% include product %} 事件 [Brandon Ashworth]
+[2:33](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=153s) 使用 {% include product %} 事件 [Brandon Ashworth]
 
-[41:25](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=2485s) 开发在多个艺术家应用中运行的 {% include product %} 工具 [Manne Öhrström]
+[41:25](https://www.youtube.com/watch?v=xUeY1pECHdI&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=2485s) 开发可在多个艺术家应用中运行的 {% include product %} 工具 [Manne Öhrström]
 
 3：SIGGRAPH 开发人员日：Toolkit 管理*（1 小时 15 分钟）*
 
-在此网络讲座中，Josh Tomlinson、Tannaz Sassooni 和 Phil Scadding 演示了如何掌管集成并创建自定义目录结构和挂钩以在工作室中实现更多数据流的自动化。
+在此网络讲座中，Josh Tomlinson、Tannaz Sassooni 和 Phil Scadding 演示了如何接管集成并创建自定义目录结构和挂钩以在工作室中实现更多数据流的自动化。
 
 [![](https://img.youtube.com/vi/7qZfy7KXXX0/0.jpg)](https://www.youtube.com/watch?v=7qZfy7KXXX0)
 
-[0:00](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=0s) 欢迎和情况介绍
+[0:00](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=0s) 欢迎和定位
 
-[1:04](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=64s) {% include product %} Toolkit 管理：了解如何通过我们的 {% include product %} Desktop 应用启动常用内容创建软件，并弄清艺术家如何在不离开其工作会话的情况下使用我们的默认工作流集成与 {% include product %} 交互。[Phil Scadding]
+[1:04](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=64s) {% include product %} Toolkit 管理：了解如何通过我们的 {% include product %} Desktop 应用启动常用内容创建软件，并了解艺术家如何在不离开其工作会话的情况下，通过我们的默认工作流集成与 {% include product %} 进行交互。[Phil Scadding]
 
-[32:41](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=1961s) Toolkit 配置简介：掌握 Toolkit 工作流配置导航过程，了解如何使用它自定义您的工作流。[Tannaz Sassooni]
+[32:41](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=1961s) Toolkit 配置简介：掌握如何浏览整个 Toolkit 工作流配置，了解如何使用该配置自定义工作流。[Tannaz Sassooni]
 
-[56:20](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=3380s) 管理挂钩：学习使用 {% include product %} Toolkit 的大量挂钩将自定义逻辑添加到配置并根据工作室的需求定制 Toolkit 工作流。[Josh Tomlinson]
+[56:20](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2&t=3380s) 管理挂钩：了解如何使用 {% include product %} Toolkit 的众多挂钩来向配置添加自定义逻辑并根据工作室的需求定制 Toolkit 工作流。[Josh Tomlinson]
 
 4：SIGGRAPH 开发人员日：高级 {% include product %} 开发*（1 小时 15 分钟）*
 
@@ -145,11 +145,11 @@ Manne Ohrstrom、Jeff Beeland 和 Rob Blau 演示了源控制和基于远程服�
 
 [![](https://img.youtube.com/vi/bT2WlQaJVmY/0.jpg)](https://www.youtube.com/watch?v=bT2WlQaJVmY)
 
-[0:00](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=0s) 欢迎和情况介绍
+[0:00](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=0s) 欢迎和定位
 
-[2:31](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=151s) Toolkit 平台：开发和部署模式：了解设置和部署 Toolkit 工作流配置的各种方式，包括开发工作流、版本控制最佳实践以及将工作流配置分发给远程用户（通过将工作流配置上传到 {% include product %} 站点）。[Manne Ohrstrom]
+[2:31](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=151s) Toolkit 平台：开发和部署模式：了解设置和部署 Toolkit 工作流配置的不同方法，包括开发工作流、版本控制最佳实践，以及通过将工作流配置上传到您的 {% include product %} 站点而将工作流配置分发给远程用户。[Manne Ohrstrom]
 
-[30:23](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=1823s) Toolkit 平台：编写您自己的应用：演练编写简单的 Toolkit 应用、利用提供的 API 和框架快速创建功能强大的 UI 的过程。[Jeff Beeland]
+[30:23](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=1823s) Toolkit 平台：编写您自己的应用：演示如何编写简单的 Toolkit 应用，利用提供的 API 和框架快速创建强大的 UI。[Jeff Beeland]
 
-[1:02:22](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=3742s) Autodesk Forge 简介：了解 Forge（由 API 驱动的 Autodesk 远程服务系列）以及如何利用它们延伸 {% include product %} 体验。[Rob Blau]
-
+[1:02:22](https://www.youtube.com/watch?v=bT2WlQaJVmY&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=3&t=3742s) Autodesk Forge 简介：了解 Autodesk 的 API 驱动型系列远程服务 Forge，以及如何使用这些远程服务来扩展 {% include product %} 体验。[Rob Blau]
+  

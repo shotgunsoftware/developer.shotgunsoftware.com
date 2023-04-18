@@ -34,8 +34,8 @@ ModuleNotFoundError: No module named 'Cookie'
 
 ## 修正方法
 
-この問題は、Python 3 の使用が原因である可能性があります。Python 2.7 には Cookie モジュールがありますが、3.x にはありません。したがって、この問題は python 2.7 を使用することで修正できます。
+この問題は、Python 3 を使用した場合に発生することがあります(旧バージョンの Python はサポートが終了しました)。
 
 ## 関連リンク
 
-[コミュニティの完全なスレッド](https://community.shotgridsoftware.com/t/bootstrap-sgtk-modulenotfounderror/11708)を参照してください。
+[コミュニティで完全なスレッドを見る](https://community.shotgridsoftware.com/t/bootstrap-sgtk-modulenotfounderror/11708)

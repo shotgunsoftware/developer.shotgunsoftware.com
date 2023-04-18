@@ -9,7 +9,7 @@ lang: zh_CN
 
 ## 用例
 
-使用分布式配置时，如果在插件外部引导 `tk-shell` 以访问 `tk.templates` 命令，则会出现此错误。按照[此文档](https://developer.shotgridsoftware.com/zh_CN/3d8cc69a/#part-2-logging)（第 4 部分）进行操作并从安装文件夹导入 sgtk v0.19.18 时，出现以下错误：
+使用分布式配置时，如果在插件外部引导 `tk-shell` 以访问 `tk.templates` 命令，则会出现此错误。按照[此文档](https://developer.shotgridsoftware.com/zh_CN/3d8cc69a/#part-2-logging)（第 4 部分）从安装文件夹导入 sgtk v0.19.18 时，出现以下错误：
 
 ```
 Traceback (most recent call last):
@@ -34,7 +34,7 @@ ModuleNotFoundError: No module named 'Cookie'
 
 ## 如何修复
 
-此问题可能是由于使用 Python 3 所致。Python 2.7 确实有 Cookie 模块，但 3.x 没有。因此，可以使用 Python 2.7 解决此问题。
+出现此问题，可能是因为使用的是 Python 3（不再支持旧版 Python）。
 
 ## 相关链接
 

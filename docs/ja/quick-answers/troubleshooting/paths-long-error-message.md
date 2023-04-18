@@ -9,7 +9,7 @@ lang: ja
 
 ## 厳然たる事実
 
-Windows のパス名に関する既定の制限である 255/260 文字は、非常に低い値です。この制限に関する Microsoft の情報については、[こちら](https://docs.microsoft.com/ja/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#maximum-path-length-limitation)を参照してください。技術的な情報については、[こちら](https://docs.microsoft.com/ja/windows/win32/fileio/maximum-file-path-limitation)を参照してください。
+Windows のパス名に関する既定の制限である 255/260 文字は、非常に低い値です。この制限に関する Microsoft の情報については[こちら](https://docs.microsoft.com/ja-jp/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#maximum-path-length-limitation)を、詳細な技術情報については[こちら](https://docs.microsoft.com/ja-jp/windows/win32/fileio/maximum-file-path-limitation)を参照してください。
 
 ## エラー
 
@@ -33,7 +33,7 @@ ERROR sgtk.core.bootstrap.cached_configuration Failed to install configuration s
 
 ## このエラーが発生する理由
 
-Windows では、{% include product %} Desktop はデータを `%APPDATA%` フォルダ(通常は `C:\Users\jane\AppData\Roaming\Shotgun`)に保存します。標準の default2 Toolkit 設定を使用しているときは、ユーザ名が極端に長い場合を除いて、ほとんどの場合問題ありません。ただし、独自のアプリ、エンジン、またはフレームワークを作成する場合は、この問題が発生するリスクが高くなります。特に、(オートデスクと同様に)コードとの依存関係をバンドルしていて、バンドル内のディレクトリ ツリーの階層が深い場合はリスクが高くなります。
+Windows では、{% include product %} Desktop はデータを `%APPDATA%` フォルダ(通常は `C:\Users\jane\AppData\Roaming\Shotgun`)に保存します。標準の default2 Toolkit 設定を使用しているときは、ユーザ名が極端に長い場合を除いて、ほとんどの場合問題ありません。ただし、独自のアプリ、エンジン、またはフレームワークを作成する場合は、この問題が発生するリスクが高くなります。特に、(オートデスクと同様に)コードとの依存関係をバンドルしていて、バンドル内のディレクトリ ツリーの階層が深い場合はリスクが高くなります。 
 
 ## 問題の回避策
 
@@ -41,7 +41,7 @@ Windows では、{% include product %} Desktop はデータを `%APPDATA%` フ�
 
 ### 将来の可能性
 
-[こちら](https://docs.microsoft.com/ja/windows/win32/fileio/maximum-file-path-limitation#enable-long-paths-in-windows-10-version-1607-and-later)に記載されているように、レジストリを更新することにより、新しいバージョンの Windows 10 でこの問題を軽減できる*可能性があります*。ただし、`longPathAware` の設定を利用することを指定するには、SG Desktop のマニフェスト ファイルを更新する必要もあります。私は Mac ユーザであるため、この内容が役に立たないかどうかは分かりません。
+[こちら](https://docs.microsoft.com/ja-jp/windows/win32/fileio/maximum-file-path-limitation#enable-long-paths-in-windows-10-version-1607-and-later)に記載されているように、レジストリを更新することにより、新しいバージョンの Windows 10 でこの問題を軽減できる*可能性があります*。ただし、`longPathAware` の設定を利用することを指定するには、SG Desktop のマニフェスト ファイルを更新する必要もあります。私は Mac ユーザであるため、この内容が役に立つかどうかは分かりません。
 
-[コミュニティの完全なスレッド](https://community.shotgridsoftware.com/t/errors-due-to-windows-paths-too-long-256-characters/10101)を参照してください。
+[コミュニティで完全なスレッドを参照](https://community.shotgridsoftware.com/t/errors-due-to-windows-paths-too-long-256-characters/10101)してください。
 
