@@ -28,9 +28,9 @@ Quickreview アプリを使用すると、Nuke でレンダリングしたファ
 
 既定では、アプリはスレートおよびバーンインを使用して QuickTime を生成します。
 
-![スレートの例](../images/apps/nuke-quickreview-slate.png)![バーンインの例](../images/apps/nuke-quickreview-burnins.png)
+![スレートの例](../images/apps/nuke-quickreview-slate.png) ![バーンインの例](../images/apps/nuke-quickreview-burnins.png) 
 
 ## カスタマイズ
 
-レビュー送信のほとんどの要素は、フックを使用して調整できます。詳細な説明については、[こちら](https://developer.shotgridsoftware.com/tk-nuke-quickreview)を参照してください。
+レビュー送信のほとんどの要素は、フックを使用して調整できます。ドキュメントについては、[こちら](https://developer.shotgridsoftware.com/tk-nuke-quickreview)を参照してください。
 

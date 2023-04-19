@@ -7,7 +7,7 @@ lang: zh_CN
 
 # Nuke 写入节点
 
-Nuke 写入节点应用提供一个自定义的 {% include product %} 写入节点，让您可轻松设置标准化的图像渲染位置。您可以为每个环境配置它。  除了路径以外，配置还将决定要使用的渲染格式。
+Nuke 写入节点应用提供一个自定义的 {% include product %} 写入节点，让您可轻松设置标准化的图像渲染位置。您可以为每个环境配置它。除了路径以外，配置还将决定要使用的渲染格式。
 
 ## 一般用法
 
@@ -15,22 +15,21 @@ Nuke 写入节点应用提供一个自定义的 {% include product %} 写入节�
 
 ![写入节点](../images/apps/nuke-writenode-write_node_creation.png)
 
-您不用输入路径，只需指定输出名称，Toolkit 便会自动计算路径的其余部分。您可以在用户界面中查看计算得到的路径，并可单击“Show in File System”**按钮打开磁盘上的位置。渲染内容的写入位置取决于 Toolkit 的配置。
+您不用输入路径，只需指定输出名称，Toolkit 便会自动计算路径的其余部分。您可以在用户界面中查看计算得到的路径，并可单击*“显示在文件系统中”(Show in File System)*按钮打开磁盘上的位置。渲染内容的写入位置取决于 Toolkit 的配置。
 
 渲染内容将实施版本控制，版本号始终遵循当前的 Nuke 脚本版本，会在您使用多发布进行发布时自动递增。
 
 ## 重置渲染路径
 
-写入节点会缓存当前路径，以便文件在 Toolkit 工作区外部打开时，路径仍然有效。  有时，这意味着路径可能会变得不同步和被“锁定”。  如果渲染路径被锁定，将无法发布使用此写入节点创建的渲染内容。
+写入节点会缓存当前路径，以便文件在 Toolkit 工作区外部打开时，路径仍然有效。有时，这意味着路径可能会变得不同步和被“锁定”。如果渲染路径被锁定，将无法发布使用此写入节点创建的渲染内容。
 
-要重置渲染路径，请使用工作文件应用的“升级场景版本”命令升级场景的版本，或单独选择写入节点，然后在属性中单击**“Reset Path”**：
+要重置渲染路径，请使用工作文件应用的“升级场景版本”命令升级场景的版本，或单独选择写入节点，然后在属性中单击**“重置路径”(Reset Path)**：
 
-![写入图表](../images/apps/nuke-writenode-write_node_reset_path.png)
+![写入图形](../images/apps/nuke-writenode-write_node_reset_path.png)
 
 ## 添加另一个写入节点配置文件
 
-{% include product %} 写入节点封装了 Nuke 内置的写入节点，因此 Nuke 支持的任何格式均可用于此应用，并且通过配置可另外再添加节点。最简单的入门方法是使用您需要的参数设置一个简单的 Nuke 写入节点。
-例如，我们假设您使用 LZW 压缩来保存 16 位 TIFF 文件。如果您在文本编辑器中查看自己的 Nuke 脚本，会发现写入节点将如下所示：
+{% include product %} 写入节点封装了 Nuke 内置的写入节点，因此 Nuke 支持的任何格式均可用于此应用，并且通过配置可另外再添加节点。最简单的入门方法是使用您需要的参数设置一个简单的 Nuke 写入节点。例如，我们假设您使用 LZW 压缩来保存 16 位 TIFF 文件。如果您在文本编辑器中查看自己的 Nuke 脚本，会发现写入节点将如下所示：
 
 ```
 Write {
@@ -45,7 +44,7 @@ Write {
 }
 ```
 
-上面的文本显示了您需要的参数名称和值各是什么。在本例中为 `datatype` 和 `compression`。接下来，转到环境配置（例如：`/path/to/pipeline/config/env/shot_step.yml`）并找到配置 `tk-nuke-writenode` 应用的部分。  在 `settings` 部分使用这两个参数添加另一个写入节点：
+上面的文本显示了您需要的参数名称和值各是什么。在本例中为 `datatype` 和 `compression`。接下来，转到环境配置（例如：`/path/to/pipeline/config/env/shot_step.yml`）并找到配置 `tk-nuke-writenode` 应用的部分。在 `settings` 部分使用这两个参数添加另一个写入节点：
 
 ```yaml
 tk-nuke-writenode:
@@ -71,7 +70,7 @@ tk-nuke-writenode:
 
 更新后的配置将在 Nuke 显示这个另外添加的 {% include product %} 写入节点：
 
-![添加新节点](../images/apps/nuke-writenode-write_node_add_new.png)
+![新增](../images/apps/nuke-writenode-write_node_add_new.png)
 
 __注意：__ 请务必将任何新模板（例如 nuke_shot_render_mono_tif）添加到 `templates.yml` 文件中，该文件可在项目配置中找到 (`<configuration root>/config/core/templates.yml`)。
 
@@ -98,17 +97,17 @@ tk-nuke-writenode:
 
 ## 渲染农场集成
 
-工作室使用运行作业管理工具（如 [Deadline](https://deadline.thinkboxsoftware.com/)，这些工具通常会在渲染时直接启动 Nuke）的渲染农场，这种情况很常见。由于这些工具不是以 {% include product %} 可识别的方式（例如，通过 Desktop 或 `tank` 命令）启动 Nuke，因此，{% include product %} 写入节点没有运行所需的信息。我们提供了几种方式来消除此限制。
+工作室常常使用渲染农场来运行作业管理工具（例如 [Deadline](https://deadline.thinkboxsoftware.com/)），这类工具往往会在渲染时直接启动 Nuke。由于这些工具不是以 {% include product %} 可识别的方式（例如，通过 Desktop 或 `tank` 命令）启动 Nuke，因此，{% include product %} 写入节点没有运行所需的信息。我们提供了几种方式来消除此限制。
 
 ### 将 {% include product %} 写入节点转换为标准 Nuke 写入节点
 
-一个简单的解决方案是先将 {% include product %} 写入节点转换为常规 Nuke 写入节点，然后再发送要渲染的脚本。有两个选项：1. 您可以启用并使用转换菜单选项；2. 您还可使用应用中的 API 转换方法。
+一个简单的解决方案是先将 {% include product %} 写入节点转换为常规 Nuke 写入节点，然后再发送要渲染的脚本。有两种方法：1\. 可以启用转换菜单选项并使用该选项；2\. 可以在应用上使用 API 转换方法。
 
 #### 启用转换菜单选项
 
-有一个名为 `show_convert_actions` 的配置选项，可以将其添加到应用设置的环境 yml 文件中。当您添加设置 `show_convert_actions: True` 时，*“将 SG 写入节点转转为写入节点...”(Convert SG Write Nodes to Write Nodes...)* 和 *“将写入节点转换回 SG 格式...”(Convert Write Nodes back to SG format...)* 菜单选项将可用。
+有一个名为 `show_convert_actions` 的配置选项，可以将其添加到应用设置的环境 yml 文件中。当您添加设置 `show_convert_actions: True` 时，*“将 SG 写入节点转转为写入节点...”(Convert SG Write Nodes to Write Nodes...) *和*“将写入节点转换回 SG 格式...”(Convert Write Nodes back to SG format...)*菜单选项将可用。
 
-![写入节点转换菜单选项](../images/apps/nuke-writenode-write_node_convert_menu_options.png)
+![写入节点转化菜单选项](../images/apps/nuke-writenode-write_node_convert_menu_options.png)
 
 但是，如果定义了任何提升写入旋钮的 {% include product %} 写入节点配置文件，则这些菜单选项将隐藏，即使 `show_convert_actions` 设置为 `True`。这是因为，目前转换回功能不支持提升的旋钮。
 
@@ -123,12 +122,12 @@ import sgtk
 eng = sgtk.platform.current_engine()
 app = eng.apps["tk-nuke-writenode"]
 if app:
-    app.convert_to_write_nodes()
+    app.convert_to_write_nodes() 
 ```
 
 这将从场景中移除 {% include product %} 写入节点，因此，我们建议的工作流是，为要渲染的脚本创建一个副本，对该副本执行转换，然后将副本提交到农场。场景中不再有任何 Toolkit 引用，因此在渲染农场上打开 Nuke 脚本时不需要 Toolkit。
 
-**注意：**提供了对应的 `convert_from_write_nodes()` 方法，但为了确保数据完整性，建议仅将其用于调试，不应在您的工作流中使用。
+**注意：**提供了对应的 `convert_from_write_nodes()` 方法，但为了确保数据完整性，建议仅将其用于调试，不应在您的工作流中使用。 
 
 ### 使用 init.py 引导 {% include product %} Pipeline Toolkit 插件
 
@@ -175,13 +174,13 @@ SHOTGUN_FARM_SCRIPT_USER = “sg_api_user”
 SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx”
 ```
 
-有关身份认证的详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-core/authentication.html)。
+有关身份验证的详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-core/authentication.html)。
 
-**有关保护脚本用户安全的注意事项：**建议锁定您在农场中使用的脚本用户，以使其没有管理员级别的权限。[您可在此处详细了解 API 用户权限。](https://developer.shotgridsoftware.com/zh_CN/bbae2ca7/)
+**有关保护脚本用户安全的注意事项：**建议锁定您在农场中使用的脚本用户，以免其拥有管理员级别的权限。[您可在此处详细了解 API 用户权限。](https://developer.shotgridsoftware.com/zh_CN/bbae2ca7/)
 
-#### 3. init.py 脚本
+#### 3\.init.py 脚本
 
-目前，Toolkit 环境数据是从渲染提交工具传递过来的，身份认证数据在渲染农场计算机上的环境变量中。在渲染作业中引导 Toolkit 的最后一部分是将以下示例 `init.py` 代码放置在 Nuke 的插件路径中，以便 Nuke 在启动时启动它。（有关更多详细信息，请参见 [Foundry 提供的有关启动脚本的文档](https://support.foundry.com/hc/zh-cn/articles/360003811839-Q100490)。）
+目前，Toolkit 环境数据是从渲染提交工具传递过来的，身份认证数据位于渲染农场计算机上的环境变量中。在渲染作业中引导 Toolkit 的最后一部分是将以下示例 `init.py` 代码放置在 Nuke 的插件路径中，以便 Nuke 在启动时启动它。（有关更多详细信息，请参见 [Foundry 的启动脚本文档](https://support.foundry.com/hc/en-us/articles/360003811839-Q100490)。）
 
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap
@@ -198,8 +197,8 @@ TK_CORE_PATH = os.environ["SHOTGUN_SGTK_MODULE_PATH"]
 if TK_CORE_PATH not in sys.path:
     sys.path.append(TK_CORE_PATH)
 
-# If your render nodes don’t have access to the Toolkit Core API in the same filesystem location as artist workstations, you have to make sure that it is available in the PYTHONPATH, so that render nodes can import it. An easy way
-# to install tk-core in a centralized location is with pip. You can read more
+# If your render nodes don’t have access to the Toolkit Core API in the same filesystem location as artist workstations, you have to make sure that it is available in the PYTHONPATH, so that render nodes can import it. An easy way 
+# to install tk-core in a centralized location is with pip. You can read more 
 # about it here:
 # https://developer.shotgridsoftware.com/tk-core/bootstrap.html#installing-the-sgtk-module-using-pip
 
@@ -226,7 +225,7 @@ mgr = sgtk.bootstrap.ToolkitManager(sg_user=user)
 # Set the base pipeline configuration from the environment variable:
 mgr.base_configuration = os.environ["SHOTGUN_CONFIG_URI"]
 
-# Disable {% include product %} lookup to ensure that we are getting the Pipeline
+# Disable {% include product %} lookup to ensure that we are getting the Pipeline 
 # Configuration defined in SHOTGUN_CONFIG_URI, and not a dev or override
 # Pipeline Configuration defined in {% include product %}.
 mgr.do_shotgun_config_lookup = False
@@ -251,7 +250,7 @@ nuke_engine = mgr.bootstrap_engine("tk-nuke", entity=sg_entity)
 
 Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这会导致 Toolkit 出现问题，因为这种情况下文件已不在 Toolkit 识别的磁盘位置。要禁用此行为并从原始位置加载脚本，请执行以下操作：
 
-1. 在 Deadline 中，导航到“Tools > Configure Plugin”（在超级用户模式下）
+1. 在 Deadline 中，导航到“Tools > Configure Plugin”（在超级用户模式下） 
 2. 禁用“Enable Path Mapping”选项
 
 ## 技术细节
@@ -264,7 +263,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `list` app.get_write_nodes()
 
-**参数和返回值**
+**参数和返回值** 
 
 * **返回值：**`list` - 在场景中找到的 Toolkit 写入节点的列表。
 
@@ -283,7 +282,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `string` get_node_name(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`string` - 节点名称。
@@ -303,7 +302,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `string` get_node_profile_name(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`string` - 配置为此写入节点定义的配置文件名称。
@@ -323,7 +322,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `string` get_node_render_path(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`string` - 此节点的渲染路径。
@@ -334,7 +333,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_render_path(nodes[0])
+>>> app.get_node_render_path(nodes[0]) 
 ```
 
 ### get_node_render_files()
@@ -343,7 +342,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `list` get_node_render_files(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`list` - 此写入节点渲染的图像文件的列表。
@@ -363,7 +362,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `template` get_node_render_template(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`template` - 此节点配置使用的渲染模板。
@@ -374,7 +373,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_render_template(nodes[0])
+>>> app.get_node_render_template(nodes[0]) 
 ```
 
 ### get_node_publish_template()
@@ -383,7 +382,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `template` get_node_publish_template(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`template` - 此节点配置使用的发布模板。
@@ -394,7 +393,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_publish_template(nodes[0])
+>>> app.get_node_publish_template(nodes[0]) 
 ```
 
 ### get_node_proxy_render_path()
@@ -403,7 +402,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `string` get_node_proxy_render_path(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`string` - 此节点的代理渲染路径。
@@ -414,7 +413,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_proxy_render_path(nodes[0])
+>>> app.get_node_proxy_render_path(nodes[0]) 
 ```
 
 ### get_node_proxy_render_files()
@@ -423,7 +422,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `list` get_node_proxy_render_files(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`list` - 此写入节点渲染的代理图像文件的列表。
@@ -445,7 +444,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `template` get_node_proxy_render_template(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`template` - 此节点配置使用的代理渲染模板。
@@ -456,7 +455,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_proxy_render_template(nodes[0])
+>>> app.get_node_proxy_render_template(nodes[0]) 
 ```
 
 ### get_node_proxy_publish_template()
@@ -467,7 +466,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `template` get_node_proxy_publish_template(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`template` - 此节点配置使用的代理发布模板。
@@ -478,7 +477,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_proxy_publish_template(nodes[0])
+>>> app.get_node_proxy_publish_template(nodes[0]) 
 ```
 
 ### get_node_published_file_type()
@@ -487,7 +486,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `string` get_node_published_file_type(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`string` - 此节点配置使用的发布文件类型。
@@ -498,16 +497,16 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.get_node_published_file_type(nodes[0])
+>>> app.get_node_published_file_type(nodes[0]) 
 ```
 
 ### generate_node_thumbnail()
 
-为指定的写入节点生成缩略图。  此方法会将镜头序列中间的一帧渲染到一个临时文件 (.png)，最大尺寸为 800x800 像素。  当不再需要此文件时，调用程序负责清理此文件。
+为指定的写入节点生成缩略图。此方法会将镜头序列中间的一帧渲染到一个临时文件 (.png)，最大尺寸为 800x800 像素。当不再需要此文件时，调用程序负责清理此文件。
 
 `string` generate_node_thumbnail(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`string` - 渲染的缩略图图像在磁盘上的路径。
@@ -518,7 +517,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.generate_node_thumbnail(nodes[0])
+>>> app.generate_node_thumbnail(nodes[0]) 
 ```
 
 ### reset_node_render_path()
@@ -527,7 +526,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `None` reset_node_render_path(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`None` - 不返回任何值。
@@ -538,7 +537,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.reset_node_render_path(nodes[0])
+>>> app.reset_node_render_path(nodes[0]) 
 ```
 
 ### is_node_render_path_locked()
@@ -547,7 +546,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 
 `bool` is_node_render_path_locked(`node` 节点)
 
-**参数和返回值**
+**参数和返回值** 
 
 * `node` **node** - 要查询的写入节点。
 * **返回值：**`bool` - 渲染路径锁定时返回 True，否则返回 False。
@@ -558,7 +557,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
 >>> nodes = app.get_write_nodes()
->>> app.is_node_render_path_locked(nodes[0])
+>>> app.is_node_render_path_locked(nodes[0]) 
 ```
 
 ### convert_to_write_nodes()
@@ -572,7 +571,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
->>> app.convert_to_write_nodes()
+>>> app.convert_to_write_nodes() 
 ```
 
 ### convert_from_write_nodes()
@@ -586,7 +585,7 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
->>> app.convert_from_write_nodes()
+>>> app.convert_from_write_nodes() 
 ```
 
 ### process_placeholder_nodes()
@@ -600,5 +599,5 @@ Deadline 可能会在渲染时将 Nuke 脚本复制到一个临时位置。这�
 >>> import sgtk
 >>> eng = sgtk.platform.current_engine()
 >>> app = eng.apps["tk-nuke-writenode"]
->>> app.process_placeholder_nodes()
+>>> app.process_placeholder_nodes() 
 ```

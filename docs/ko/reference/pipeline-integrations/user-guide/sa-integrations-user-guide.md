@@ -9,69 +9,70 @@ lang: ko
 # 통합 사용자 안내서
 
 이 안내서의 내용:
-- [소개](#Introduction)
+- [소개](#introduction)
 - [데스크톱 시작하기](#getting-started-with-desktop)
-   - [데스크톱 설치](#installation-of-desktop)
-   - [자체 호스팅되거나 프록시 서버 뒤에 있는 경우 로그인](#logging-in-when-self-hosted-or-behind-a-proxy-server)
-      - [인증 및 브라우저 통합](#authentication-and-browser-integration)
-   - [시스템 트레이](#the-system-tray)
-   - [프로젝트 브라우저](#the-project-browser)
-   - [명령 실행기](#the-command-launcher)
-   - [콘솔](#the-console)
+  - [데스크톱 설치](#installation-of-desktop)
+    - [최신 버전의 데스크톱 설치](#installing-a-newer-version-of-desktop)
+  - [자체 호스팅되거나 프록시 서버 뒤에 있는 경우 로그인](#logging-in-when-self-hosted-or-behind-a-proxy-server)
+    - [인증 및 브라우저 통합](#authentication-and-browser-integration)
+  - [시스템 트레이](#the-system-tray)
+  - [프로젝트 브라우저](#the-project-browser)
+  - [명령 실행기](#the-command-launcher)
+  - [콘솔](#the-console)
 - [응용프로그램 실행](#launching-applications)
 - [패널](#the-panel)
-   - [개요](#overview)
-   - [UI 상세 정보](#ui-details)
-      - [액티비티 스트림](#the-activity-stream)
-      - [노트 생성 및 노트에 회신](#creating-and-replying-to-notes)
-      - [노트, 버전, 게시 및 태스크](#notes-versions-publishes-and-tasks)
-      - [정보 탭](#the-info-tab)
-      - [검색](#searching)
-      - [액션](#actions)
-      - [현재 작업 영역 및 내 영역](#the-current-work-area-and-the-me-area)
-      - [현재 작업 영역](#current-work-area)
+  - [개요](#overview)
+  - [UI 상세 정보](#ui-details)
+    - [액티비티 스트림](#the-activity-stream)
+    - [노트 생성 및 노트에 회신](#creating-and-replying-to-notes)
+    - [노트, 버전, 게시 및 태스크](#notes-versions-publishes-and-tasks)
+    - [정보 탭](#the-info-tab)
+    - [검색](#searching)
+    - [액션](#actions)
+    - [현재 작업 영역 및 내 영역](#the-current-work-area-and-the-me-area)
+    - [현재 작업 영역](#current-work-area)
 - [Publisher](#the-publisher)
-   - [개요](#overview-1)
-   - [인터페이스 구성요소 및 개념](#interface-components-and-concepts)
-   - [기본 워크플로우 ](#basic-workflow)
-      - [컨텐츠 생성 소프트웨어 내에서 게시](#publishing-within-content-creation-software)
-      - [항목 및 태스크 게시](#publish-items-and-tasks)
-         - [컨텍스트](#context)
-         - [유효성 검사](#validation)
-         - [다중 문서 워크플로우](#multi-document-workflows)
-      - [독립 실행형 게시](#stand-alone-publishing)
-      - [게시 유형](#publish-types)
-         - [독립 실행형](#standalone)
-         - [3ds Max](#3ds-max)
-         - [Houdini](#houdini)
-         - [Maya](#maya)
-         - [Nuke](#nuke)
-         - [Nuke Studio](#nuke-studio)
-         - [Photoshop CC](#photoshop-cc)
-- [로더](#the-loader)
-   - [개요](#overview-2)
-   - [트리 뷰](#the-tree-view)
-   - [탐색](#navigation)
-   - [게시 살펴보기](#looking-at-publishes)
-   - [하나 이상의 게시를 씬으로 가져오기](#bringing-one-or-multiple-publishes-into-your-scene)
-   - [이전 게시를 사용하는 작업](#working-with-older-publishes)
-   - [연관 리뷰](#associated-review)
+  - [개요](#overview-1)
+  - [인터페이스 구성요소 및 개념](#interface-components-and-concepts)
+  - [기본 워크플로우](#basic-workflow)
+    - [컨텐츠 생성 소프트웨어 내에서 게시](#publishing-within-content-creation-software)
+    - [항목 및 태스크 게시](#publish-items-and-tasks)
+      - [컨텍스트](#context)
+      - [유효성 확인](#validation)
+      - [다중 문서 워크플로우](#multi-document-workflows)
+    - [독립 실행형 게시](#stand-alone-publishing)
+    - [게시 유형](#publish-types)
+      - [독립 실행형](#standalone)
+      - [3ds Max](#3ds-max)
+      - [Houdini](#houdini)
+      - [Maya](#maya)
+      - [Nuke](#nuke)
+      - [Nuke Studio](#nuke-studio)
+      - [Photoshop CC](#photoshop-cc)
+- [Loader](#the-loader)
+  - [개요](#overview-2)
+  - [트리 뷰](#the-tree-view)
+  - [네비게이션](#navigation)
+  - [게시 살펴보기](#looking-at-publishes)
+  - [하나 이상의 게시를 씬으로 가져오기](#bringing-one-or-multiple-publishes-into-your-scene)
+  - [이전 게시를 사용하는 작업](#working-with-older-publishes)
+  - [연관 리뷰](#associated-review)
 - [고급 기능](#advanced-functionality)
 - [감사의 인사](#acknowledgments)
 
-## 소개
+## 소개 
 
 {% include product %} 통합은 {% include product %}를 컨텐츠 생성 도구로 이용할 수 있도록 해 줍니다. {% include product %} 통합을 이용하면 간편하게 소프트웨어를 실행하고, 패널을 사용하여 {% include product %}의 태스크 관련 노트 및 데이터를 트래킹하고, Publisher 및 Loader를 통해 파일을 트래킹하고 이를 씬으로 가져올 수 있습니다. 아티스트는 앱 내에서 바로 태스크에 관한 모든 {% include product %} 데이터와 프로젝트의 모든 태스크에 액세스할 수 있습니다. 또한 노트에 회신하고, 버전을 재생하고, 파일을 게시하고, 동료가 게시한 파일에서 이를 로드할 수 있습니다.
 
-최신 {% include product %} 통합 업데이트를 받으려면 [릴리즈 정보](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)를 구독하십시오.
+{% include product %} 통합에 대한 최신 업데이트는 [릴리즈 정보](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)를 구독하십시오.
 
 ## 데스크톱 시작하기
 
 **{% include product %} 데스크톱** 앱은 이 통합의 심장에 해당합니다. {% include product %} 경험을 로컬 컴퓨터로 확장시켜 주는 소프트웨어 응용프로그램이며, 컴퓨터에서 바로 쉽게 {% include product %} 데이터에 액세스하고, 응용프로그램을 실행하고, 파이프라인 통합 도구를 실행할 수 있도록 해 줍니다.
 
-**툴킷 클래식 또는 커스텀 설정 실행?**
+**툴킷 클래식 또는 커스텀 설정 실행?**  
 
-{% include product %}  통합은 자동으로 설치됩니다. **클래식** 툴킷 구성을 설치하려는 앞선 고객이거나 **데스크톱 설정 마법사**를 통해 설치하려는 **커스텀** 툴킷 설정이 있는 경우에는 [관리자 안내서](https://developer.shotgridsoftware.com/ko/8085533c/)에서 그 방법을 알아보십시오.
+{% include product %} 통합은 자동으로 설치됩니다. **클래식** 툴킷 구성을 설치하려는 앞선 고객이거나 **데스크톱 설정 마법사**를 통해 설치하려는 **커스텀** 툴킷 설정이 있는 경우에는 [관리자 안내서](https://developer.shotgridsoftware.com/ko/8085533c/)에서 그 방법을 알아보십시오.
 
 ### 데스크톱 설치
 
@@ -83,11 +84,17 @@ lang: ko
 
 ![download-desktop-02.png](./images/sa-integrations-user-guide-download-desktop-02-v2.png)
 
+#### 최신 버전의 데스크톱 설치
+
+현재 버전을 제거하지 않고 지원되는 모든 운영 체제에서 {% include product %} 데스크톱을 업데이트할 수 있습니다. 그러나 **{% include product %} 데스크톱 버전을 업데이트하기 전에 기존 세션을 닫아야 합니다.**
+
+*참고: Windows에서 버전을 업데이트하는 동안 데스크톱이 실행 중이면 바이너리 잠금이 설치를 방해하고 설치 프로그램을 중지시킵니다. 이렇게 하면 일부 파일이 이미 복사되었으므로 설치가 완료되지 않습니다. 이 문제를 해결하려면 데스크톱을 종료하고 "재시도"를 선택하십시오.*
+
 ### 자체 호스팅되거나 프록시 서버 뒤에 있는 경우 로그인
 
 *참고: 로그인에 관한 다음 내용은 자체 호스팅되거나 프록시 서버를 사용하는 경우에 필요합니다. 이는 기본 동작이 아닙니다.*
 
-자체 호스팅되거나 프록시 서버를 사용하는 경우 처음 데스크톱을 열면 인증서에 관해 묻는 메시지가 브라우저에 표시됩니다. 이는 {% include product %}를 데스크톱 앱과 연결하기 위한 것입니다. 인증서 설정에 문제가 있다면 [Firefox](https://developer.shotgridsoftware.com/ko/d4936105/)와 [Chrome 및 기타 브라우저](https://developer.shotgridsoftware.com/ko/95518180/)에 관한 문제 해결 설명서를 참조하십시오.
+자체 호스팅되거나 프록시 서버를 사용하는 경우 처음 데스크톱을 열면 인증서에 관해 묻는 메시지가 브라우저에 표시됩니다. 이는 {% include product %}를 데스크톱 앱과 연결하기 위한 것입니다. 인증서를 설정하는 데 문제가 있는 경우 [Firefox](https://developer.shotgridsoftware.com/ko/d4936105/) 및 [Chrome 및 기타 브라우저](https://developer.shotgridsoftware.com/ko/95518180/)에 대한 문제 해결 문서를 참조하십시오.
 
 ![guide-desktop-cert-window-03.png](./images/sa-integrations-user-guide-desktop-cert-window-03.png)
 
@@ -95,7 +102,7 @@ lang: ko
 
 설정을 마치면 {% include product %} 사이트에 로그인해야 합니다.
 
-프록시를 이용하는 경우 추가 구성도 필요합니다. 추가 구성 방법은 [관리자 안내서](https://developer.shotgridsoftware.com/ko/8085533c/#toolkit-configuration-file)를 참조하십시오.
+프록시를 이용하는 경우 추가 구성도 필요합니다. 이 작업을 수행하는 방법에 대한 지침은 [관리자 안내서](https://developer.shotgridsoftware.com/ko/8085533c/#toolkit-configuration-file)를 참조하십시오.
 
 #### 인증 및 브라우저 통합
 
@@ -137,7 +144,7 @@ lang: ko
 
 ## 응용프로그램 실행
 
-{% include product %} 데스크톱을 실행하고 프로젝트를 선택하면 데스크톱이 사용 중인 운영 체제에 대한 표준 응용프로그램 디렉토리를 스캔합니다. 그리고 [해당하는 통합이 설정되어 있는 응용프로그램](https://www.shotgridsoftware.com/integrations/)의 시작 관리자를 표시합니다. 같은 소프트웨어의 버전이 여러 개인 경우 시작 관리자는 사용 가능한 모든 버전이 포함된 드롭다운 목록을 보여 줍니다. 시작 관리자 아이콘 자체를 클릭하면 최신 버전이 실행됩니다.
+{% include product %} 데스크톱을 실행하고 프로젝트를 선택하면 데스크톱이 사용 중인 운영 체제에 대한 표준 응용프로그램 디렉토리를 스캔합니다. 데스크톱에서 [해당하는 통합이 설정되어 있는 응용프로그램](https://www.shotgridsoftware.com/integrations/)의 시작 관리자를 표시합니다. 같은 소프트웨어의 버전이 여러 개인 경우 시작 관리자는 사용 가능한 모든 버전이 포함된 드롭다운 목록을 보여 줍니다. 시작 관리자 아이콘 자체를 클릭하면 최신 버전이 실행됩니다.
 
 Maya 및 Nuke 같은 응용프로그램은 {% include product %} 데스크톱에서 직접 실행해도 되고, {% include product %}에서 바로 실행해도 됩니다. 어떻게 실행하든 응용프로그램 내에서 {% include product %} 통합을 사용할 수 있습니다.
 
@@ -145,7 +152,7 @@ Maya 및 Nuke 같은 응용프로그램은 {% include product %} 데스크톱에
 
 스튜디오에는 보통 기본 제공되는 것 외에 추가 구성이 필요하기 마련입니다. 스튜디오의 소프트웨어가 표준이 아닌 위치에 있거나 스튜디오가 기본적으로 지원되지 않는 내부 엔진을 사용 중인 경우가 있을 수 있습니다. 이 경우에도 {% include product %} 웹 앱 내에서 바로 구성하기는 쉽습니다. 자세한 내용은 [관리자 안내서](https://developer.shotgridsoftware.com/ko/8085533c/)를 참조하십시오.
 
-원하는 앱이 보이지 않으면 [관리자(Admin)의 {% include product %} 데스크톱에서 소프트웨어 구성 섹션](https://developer.shotgridsoftware.com/ko/8085533c/)을 참조하십시오.
+원하는 앱이 표시되지 않으면 [관리자 안내서의 {% include product %} 데스크톱에서 소프트웨어 구성](https://developer.shotgridsoftware.com/ko/8085533c/) 섹션을 참조하십시오.
 
 ## 패널
 
@@ -155,7 +162,7 @@ Maya 및 Nuke 같은 응용프로그램은 {% include product %} 데스크톱에
 
 ### UI 상세 정보
 
-{% include product %} 패널은 다양한 기본 UI 요소들로 이루어져 있습니다. 맨 위에는 탐색 및 검색을 위한 버튼으로 이루어진 _도구막대_ 가 있습니다. 도구막대 오른쪽 아래에는 현재 보고 있는 항목에 관한 정보가 나와 있는 _상세 정보 영역_ 이 있습니다. 이 상세 정보 영역은 구성이 가능하기 때문에 커스텀 필드를 표시하고 싶다거나 파이프라인에서 특히 중요한 데이터가 있는 경우 이곳에 표시되도록 쉽게 구성할 수 있습니다. 끝으로 많은 _컨텐츠 탭_ 이 있습니다. 이 탭에는 모두 {% include product %} 데이터가 표시되며, 이를 통해 {% include product %} 패널을 쉽게 탐색하면서 게시 등의 항목을 빠르게 찾고, 버전을 리뷰하거나, 현재 선택한 항목에 링크되어 있는 태스크에 누가 할당되어 있는지 확인할 수 있습니다.
+{% include product %} 패널은 다양한 기본 UI 요소들로 이루어져 있습니다. 맨 위에는 네비게이션 및 검색을 위한 버튼으로 이루어진 _도구막대_가 있습니다. 도구막대 오른쪽 아래에는 현재 보고 있는 항목에 관한 정보가 나와 있는 _상세 정보 영역_이 있습니다. 이 상세 정보 영역은 구성이 가능하기 때문에 커스텀 필드를 표시하고 싶다거나 파이프라인에서 특히 중요한 데이터가 있는 경우 이곳에 표시되도록 쉽게 구성할 수 있습니다. 끝으로 많은 _컨텐츠 탭_이 있습니다. 이 탭에는 모두 {% include product %} 데이터가 표시되며, 이를 통해 {% include product %} 패널을 쉽게 탐색하면서 게시 등의 항목을 빠르게 찾고, 버전을 리뷰하거나, 현재 선택한 항목에 링크되어 있는 태스크에 누가 할당되어 있는지 확인할 수 있습니다.
 
 ![overview-08.png](./images/sa-integrations-user-guide-overview-08.png)
 
@@ -185,13 +192,13 @@ Maya 및 Nuke 같은 응용프로그램은 {% include product %} 데스크톱에
 
 ![notes-12.png](./images/sa-integrations-user-guide-notes-12.png)
 
-{% include product %} 패널에서 노트를 생성하거나 노트에 회신하는 일은 간단합니다. 액티비티 스트림 또는 노트 상세 정보 페이지로 이동한 다음 _노트 생성(create note)_ 또는 _노트에 회신(reply to note)_ 을 클릭하면 됩니다. 그러면 노트 텍스트를 입력할 수 있는 대화상자가 나타납니다. 노트를 특정인에게 전송하고 싶다면 `@name` 표기법을 사용하면 됩니다. 그러면 그 사람이 노트의 받는 사람 필드에 자동으로 추가됩니다.
+{% include product %} 패널에서 노트를 생성하거나 노트에 회신하는 일은 간단합니다. 액티비티 스트림 또는 노트 상세 정보 페이지로 이동한 다음 _노트 생성(create note)_ 또는 _노트에 회신(reply to note)_을 클릭하면 됩니다. 그러면 노트 텍스트를 입력할 수 있는 대화상자가 나타납니다. 노트를 특정인에게 전송하고 싶다면 `@name` 표기법을 사용하면 됩니다. 그러면 그 사람이 노트의 받는 사람 필드에 자동으로 추가됩니다.
 
 #### 노트, 버전, 게시 및 태스크
 
 ![tasks-and-versions-13.png](./images/sa-integrations-user-guide-tasks-and-versions-13.png)
 
-노트(Notes), 버전(Versions), 게시(Publishes) 및 태스크(Tasks) 탭은 모두 같은 방식으로 작동하여, 현재 사용자가 보고 있는 항목과 연관된 데이터를 표시합니다. 원하는 항목을 두 번 클릭하면 해당 항목을 집중해서 보여 줍니다. _Publish_ 로 이동했다면 해당 게시에 대한 종속성을 볼 수 있는데, 이는 파이프라인이 종속성 정보를 트래킹하는 경우 유용한 기능으로 에셋이 상호 연결되어 있는 방식을 즉시 파악할 수 있도록 해 줍니다.
+노트(Notes), 버전(Versions), 게시(Publishes) 및 태스크(Tasks) 탭은 모두 같은 방식으로 작동하여, 현재 사용자가 보고 있는 항목과 연관된 데이터를 표시합니다. 원하는 항목을 두 번 클릭하면 해당 항목을 집중해서 보여 줍니다. _게시(Publish)_로 이동했다면 해당 게시에 대한 종속성을 볼 수 있는데, 이는 파이프라인이 종속성 정보를 트래킹하는 경우 유용한 기능으로 에셋이 상호 연결되어 있는 방식을 즉시 파악할 수 있도록 해 줍니다.
 
 #### 정보 탭
 
@@ -209,7 +216,7 @@ Maya 및 Nuke 같은 응용프로그램은 {% include product %} 데스크톱에
 
 ![actions-16.png](./images/sa-integrations-user-guide-actions-16.png)
 
-{% include product %} 패널을 통해 {% include product %} 데이터를 이용하여 씬에서 작업을 실행할 수도 있습니다. 로더와 마찬가지로 패널에도 메뉴에 의해 트리거되는 코드 조각을 브라우저의 항목에 쉽게 등록할 수 있도록 해 주는 액션 시스템이 있습니다. 상세 정보 영역과 목록에서 액션에 액세스할 수 있습니다. 상세 정보 영역의 액션 버튼에는 {% include product %}로 빠르게 이동하거나 현재 뷰를 새로 고침하는 등 몇 가지 편리한 기본 제공 기능도 포함되어 있습니다.
+{% include product %} 패널을 통해 {% include product %} 데이터를 이용하여 씬에서 작업을 실행할 수도 있습니다. Loader와 마찬가지로 Panel에도 메뉴에 의해 트리거되는 코드 조각을 브라우저의 항목에 쉽게 등록할 수 있도록 해 주는 액션 시스템이 있습니다. 상세 정보 영역과 목록에서 액션에 액세스할 수 있습니다. 상세 정보 영역의 액션 버튼에는 {% include product %}로 빠르게 이동하거나 현재 뷰를 새로 고침하는 등 몇 가지 편리한 기본 제공 기능도 포함되어 있습니다.
 
 #### 현재 작업 영역 및 내 영역
 
@@ -225,7 +232,7 @@ Maya 및 Nuke 같은 응용프로그램은 {% include product %} 데스크톱에
 
 #### 현재 작업 영역
 
-태스크에 대한 작업을 시작할 때 패널을 사용하여 현재 작업 영역을 설정할 수 있습니다. 그러면 작업을 게시할 때 이 영역이 {% include product %}의 현재 태스크와 연결됩니다.
+태스크에 대한 작업을 시작할 때 Panel을 사용하여 현재 작업 영역을 설정할 수 있습니다. 그러면 작업을 게시할 때 이 영역이 {% include product %}의 현재 태스크와 연결됩니다.
 
 ## Publisher
 
@@ -233,7 +240,7 @@ Maya 및 Nuke 같은 응용프로그램은 {% include product %} 데스크톱에
 
 아티스트는 Publish 앱을 통해 아티스트 다운스트림에서 사용할 수 있도록 작업물을 게시할 수 있습니다. 아티스트의 컨텐츠 생성 소프트웨어 내에서 기존 게시 워크플로우를 지원하고 디스크상의 파일을 독립 실행형으로 게시할 수 있습니다. 컨텐츠 생성 소프트웨어에서 작업하거나 기본 {% include product %} 통합을 사용하여 작업할 때 이 앱은 아티스트가 게시할 수 있는 항목을 자동으로 검색해 표시해 줍니다. 보다 정교한 프로덕션이 필요한 경우 스튜디오는 커스텀 게시 플러그인을 작성하여 아티스트 워크플로우를 진행할 수 있습니다.
 
-다음 섹션에서는 Publisher UI 및 기본 통합 워크플로우를 다룹니다. 스튜디오의 특정 요구 사항에 맞게 Publisher를 커스터마이즈하는 방법은 [Publisher Dev 안내서](https://developer.shotgridsoftware.com/tk-multi-publish2/)를 참조하십시오.
+다음 섹션에서는 Publisher UI 및 기본 통합 워크플로우를 다룹니다. 스튜디오의 특정한 요구사항에 맞게 Publisher를 커스터마이즈하는 방법은 [Publisher Dev 안내서](https://developer.shotgridsoftware.com/tk-multi-publish2/)를 참조하십시오.
 
 ### 인터페이스 구성요소 및 개념
 
@@ -290,7 +297,7 @@ Maya 및 Nuke 같은 응용프로그램은 {% include product %} 데스크톱에
 
 #### 항목 및 태스크 게시
 
-왼쪽에 수집된 게시 항목들이 있습니다. 게시 항목은 세 가지로, 선택한 항목은 그 아래 하위 항목이 두 가지 있는 작업 파일 자체입니다. 또한, 이미지 파일 시퀀스와 Alembic 캐시도 있습니다. 이 항목들은 각각 **{% include product %}에 게시(Publish to Shotgun)** 게시 태스크가 첨부되어 있어, 이를 실행하면 개별 파일 또는 이미지 시퀀스를 트래킹할 수 있도록 {% include product %}에 게시 항목을 생성하는 작업이 진행됩니다.
+왼쪽에 수집된 게시 항목들이 있습니다. 게시 항목은 세 가지로, 선택한 항목은 그 아래 하위 항목이 두 가지 있는 작업 파일 자체입니다. 또한, 이미지 파일 시퀀스와 Alembic 캐시도 있습니다. 이 항목들은 각각 **{% include product %}에 게시(Publish to ShotGrid)** 게시 태스크가 첨부되어 있어, 이를 실행하면 개별 파일 또는 이미지 시퀀스를 트래킹할 수 있도록 {% include product %}에 게시 항목을 생성하는 작업이 진행됩니다.
 
 Nuke 스크립트를 나타내는 상위 항목에는 **파일 버전 지정 시작(Begin file versioning)** 플러그인이 부착되어 있습니다. 이 플러그인은 작업 파일의 경로에 버전 번호가 없는 경우 나타납니다. 이 체크박스를 선택하면 이 태스크를 통해 게시 전 파일 이름에 버전 번호가 삽입됩니다. 이 경우에는 파일 이름이 `bunny_010_0010.nk`에서 `bunny_010_0010.v001.nk`로 바뀝니다. 이렇게 하면 아티스트 작업 파일의 내역을 기록할 수 있습니다. 기본적으로 이 태스크는 선택되어 있지 않고, 반드시 실행할 필요도 없습니다. 이 태스크를 활성화한 상태로 항목을 게시하고 나면 다음에 해당 작업 파일을 게시할 때에는 파일 이름에 버전 번호가 이미 있기 때문에 이 태스크가 표시되지 않습니다.
 
@@ -352,7 +359,7 @@ Photoshop 또는 Nuke Studio 같은 컨텐츠 생성 소프트웨어에서 이�
 
 ![multi-doc-34.png](./images/sa-integrations-user-guide-multi-doc-34.png)
 
-그 중에서 현재/활성 문서만 확장 및 선택된 상태로 표시됩니다. 게시할 모든 문서를 선택하려면 `Shift` 키를 누른 채로 선택 취소된 항목의 체크박스 하나를 클릭하십시오. 축소된 항목을 확장하려면 아래쪽 도구막대에 있는 확장 버튼을 사용합니다.
+그중에서 현재/활성 문서만 확장 및 선택된 상태로 표시됩니다. 게시할 모든 문서를 선택하려면 `Shift` 키를 누른 채로 선택 취소된 항목의 체크박스 하나를 클릭하십시오. 축소된 항목을 확장하려면 아래쪽 도구막대에 있는 확장 버튼을 사용합니다.
 
 최고 레벨 항목이 여러 개인 경우에는 목록 맨 위에 요약 항목도 포함됩니다.
 
@@ -392,13 +399,13 @@ Publish 앱을 꼭 컨텐츠 생성 소프트웨어 내에서 실행할 필요�
 
 ##### 3ds Max
 
-현재 Max 세션은 로더를 통해 다른 Max 세션으로 병합 또는 참조될 수 있는 **3dsmax 씬**의 게시 유형으로 게시를 위해 수집됩니다.
+현재 Max 세션은 Loader를 통해 다른 Max 세션으로 병합 또는 참조될 수 있는 **3dsmax 씬**의 게시 유형으로 게시를 위해 수집됩니다.
 
 현재 세션에 대한 프로젝트 폴더를 지정할 수 있다면 그 프로젝트의 **export** 폴더에 있는 모든 파일이 게시 항목으로 표시되고, 마찬가지로 프로젝트의 **preview** 폴더에 있는 모든 영상 파일도 게시할 수 있게 됩니다.
 
 ##### Houdini
 
-현재 Houdini 세션은 로더를 통해 다른 Houdini 세션으로 병합될 수 있는 **Houdini 씬**의 게시 유형으로 게시를 위해 수집됩니다.
+현재 Houdini 세션은 Loader를 통해 다른 Houdini 세션으로 병합될 수 있는 **Houdini 씬**의 게시 유형으로 게시를 위해 수집됩니다.
 
 다음 유형의 노드에서 디스크로 작성된 모든 파일 역시 게시 항목으로 자동 수집 및 표시됩니다.
 
@@ -410,13 +417,13 @@ Publish 앱을 꼭 컨텐츠 생성 소프트웨어 내에서 실행할 필요�
 
 ##### Maya
 
-현재 Maya 세션은 로더를 통해 다른 Maya 세션으로 가져오거나 참조될 수 있는 **Maya 씬**의 게시 유형으로 게시를 위해 수집됩니다.
+현재 Maya 세션은 Loader를 통해 다른 Maya 세션으로 가져오거나 참조될 수 있는 **Maya 씬**의 게시 유형으로 게시를 위해 수집됩니다.
 
 현재 세션에 대한 프로젝트 루트를 지정할 수 있다면 그 프로젝트의 **cache/Alembic** 폴더에 있는 모든 Alembic 파일이 게시 항목으로 표시되고, 마찬가지로 프로젝트의 **movies** 폴더에 있는 모든 영상 파일도 게시할 수 있게 됩니다.
 
 ##### Nuke
 
-현재 Nuke 세션은 로더를 통해 다른 Nuke 세션으로 가져오거나 새 세션으로 열 수 있는 **Nuke 스크립트** 게시 유형으로 게시를 위해 수집됩니다.
+현재 Nuke 세션은 Loader를 통해 다른 Nuke 세션으로 가져오거나 새 세션으로 열 수 있는 **Nuke 스크립트** 게시 유형으로 게시를 위해 수집됩니다.
 
 다음 유형의 노드에서 디스크로 작성된 모든 파일 역시 게시 항목으로 자동 수집 및 표시됩니다.
 
@@ -425,19 +432,19 @@ Publish 앱을 꼭 컨텐츠 생성 소프트웨어 내에서 실행할 필요�
 
 ##### Nuke Studio
 
-열려 있는 Nuke Studio 프로젝트는 다른 Nuke Studio 세션에서 로더를 통해 새 프로젝트로 열 수 있는 **NukeStudio 프로젝트** 게시 유형으로 게시를 위해 수집됩니다.
+열려 있는 Nuke Studio 프로젝트는 다른 Nuke Studio 세션에서 Loader를 통해 새 프로젝트로 열 수 있는 **NukeStudio 프로젝트** 게시 유형으로 게시를 위해 수집됩니다.
 
 ##### Photoshop CC
 
-열려 있는 Photoshop 문서는 다른 Photoshop 세션에서 로더를 통해 새 레이어로 로드하거나 새 문서로 열 수 있는 **Photoshop 이미지** 게시 유형으로 게시를 위해 수집됩니다.
+열려 있는 Photoshop 문서는 다른 Photoshop 세션에서 Loader를 통해 새 레이어로 로드하거나 새 문서로 열 수 있는 **Photoshop 이미지** 게시 유형으로 게시를 위해 수집됩니다.
 
-## 로더
+## Loader
 
-{% include product %} Loader를 사용하면 {% include product %}에 게시한 파일을 신속하게 확인하고 탐색할 수 있습니다. 검색 가능한 트리 뷰 네비게이션 시스템 덕분에 원하는 태스크, 샷 또는 에셋을 빠르고 쉽게 찾을 수 있고, 찾고 나면 로더가 해당 항목의 모든 게시에 대한 개요를 기반으로 썸네일을 보여 줍니다. 그러면 구성 가능한 후크를 통해 쉽게 게시를 참조하거나 현재 씬으로 가져올 수 있습니다.
+{% include product %} Loader를 사용하면 {% include product %}에 게시한 파일을 신속하게 확인하고 탐색할 수 있습니다. 검색 가능한 트리 뷰 네비게이션 시스템 덕분에 원하는 태스크, 샷 또는 에셋을 빠르고 쉽게 찾을 수 있고, 찾고 나면 Loader가 해당 항목의 모든 게시에 대한 개요를 기반으로 썸네일을 보여 줍니다. 그러면 구성 가능한 후크를 통해 쉽게 게시를 참조하거나 현재 씬으로 가져올 수 있습니다.
 
 게시는 {% include product %}의 레코드로, 각각 디스크의 파일 또는 파일의 시퀀스(예: 이미지 시퀀스)를 나타냅니다. 게시는 모든 응용프로그램을 통해 생성할 수 있지만 보통 게시자를 통해 생성합니다.
 
-게시를 생성하고 나면 파이프라인의 다른 사람이 로드할 수 있는데 바로 여기에서 로더가 등장합니다. Loader를 사용하면 파일 시스템 브라우저와 비슷한 방식으로 {% include product %} 내에 저장되어 있는 게시를 찾을 수 있습니다.
+게시를 생성하고 나면 파이프라인의 다른 사람이 로드할 수 있는데 바로 여기에서 Loader가 등장합니다. Loader를 사용하면 파일 시스템 브라우저와 비슷한 방식으로 {% include product %} 내에 저장되어 있는 게시를 찾을 수 있습니다.
 
 ### 개요
 
@@ -453,13 +460,13 @@ Loader 앱을 사용하면 {% include product %}에 게시된 파일을 빠르�
 
 검색어를 입력하기 시작하면 더 이상 전체 트리를 보는 것이 아님을 나타내는 파란색 막대가 트리 주변에 나타나고, 검색어를 기반으로 트리에 해당 항목의 하위 세트만 표시됩니다. 검색을 시작하면 트리의 모든 노드가 자동으로 확장됩니다. 트리를 마우스 오른쪽 버튼으로 클릭하면 트리의 모든 노드를 간편하게 확장 또는 축소할 수 있는 옵션이 나타납니다.
 
-### 탐색
+### 네비게이션
 
-트리 뷰 맨 위에는 세 가지 탐색 버튼이 있습니다.
+트리 뷰 맨 위에는 세 가지 네비게이션 버튼이 있습니다.
 
 ![buttons-41.png](./images/sa-integrations-user-guide-buttons-41.png)
 
-홈 버튼을 클릭하면 로더가 현재 작업 영역을 나타내는 샷 또는 에셋으로 자동으로 이동합니다. 현재 진행 중인 작업과 관련된 무언가를 빠르게 로드하고 싶을 때 유용한 기능입니다. 이 화면은 시작 시 로더가 기본적으로 표시하는 위치이기도 합니다. 트리 뷰에서 다른 항목을 선택하면 점점 내역이 생성됩니다. 내역은 브라우저처럼 뒤로 및 앞으로 버튼을 사용하여 탐색할 수 있습니다.
+홈 버튼을 클릭하면 Loader가 현재 작업 영역을 나타내는 샷 또는 에셋으로 자동으로 이동합니다. 현재 진행 중인 작업과 관련된 무언가를 빠르게 로드하고 싶을 때 유용한 기능입니다. 이 화면은 시작 시 Loader가 기본적으로 표시하는 위치이기도 합니다. 트리 뷰에서 다른 항목을 선택하면 점점 내역이 생성됩니다. 내역은 브라우저처럼 뒤로 및 앞으로 버튼을 사용하여 탐색할 수 있습니다.
 
 ### 게시 살펴보기
 
@@ -475,11 +482,11 @@ Loader 앱을 사용하면 {% include product %}에 게시된 파일을 빠르�
 
 Nuke 스크립트나 Maya 파일처럼 텍스처보다 덜 시각적인 항목을 찾아보는 경우에는 썸네일 뷰 대신 목록 뷰를 사용하면 됩니다. 이 모드는 보다 많은 정보를 제공하고, 보다 콤팩트한 형태이기 때문에 많은 항목을 스크롤하면서 빠르게 살펴보기에 좋습니다.
 
-특정 유형의 항목만 보고 싶다면 왼쪽 아래에 있는 _필터 패널_ 을 사용해 게시를 빠르게 숨기거나 표시하면 됩니다. 목록의 각 유형 옆에는 요약 정보도 나와 있는데, 현재 선택한 트리 항목에 대해 각 유형별로 몇 개의 게시를 찾았는지 알려줍니다.
+특정 유형의 항목만 보고 싶다면 왼쪽 아래에 있는 _필터 패널_을 사용해 게시를 빠르게 숨기거나 표시하면 됩니다. 목록의 각 유형 옆에는 요약 정보도 나와 있는데, 현재 선택한 트리 항목에 대해 각 유형별로 몇 개의 게시를 찾았는지 알려줍니다.
 
 ### 하나 이상의 게시를 씬으로 가져오기
 
-한 항목을 씬으로 가져오려는 경우 해당 항목을 두 번 클릭하면 로더가 게시를 위한 _기본 액션_ 을 실행합니다. 항목을 씬으로 추가(예: Maya에서 다른 Maya 파일을 참조하거나 씬으로 가져오려는 경우)하는 방법이 둘 이상일 수도 있는데, 이 경우에는 _액션(Actions)_ 드롭다운 메뉴를 클릭하거나 게시에서 아무 곳이나 마우스 오른쪽 버튼으로 클릭하면 사용 가능한 모든 옵션이 나타납니다.
+한 항목을 씬으로 가져오려는 경우 해당 항목을 두 번 클릭하면 Loader가 게시를 위한 _기본 액션_을 실행합니다. 항목을 씬으로 추가(예: Maya에서 다른 Maya 파일을 참조하거나 씬으로 가져오려는 경우)하는 방법이 둘 이상일 수도 있는데, 이 경우에는 _액션(Actions)_ 드롭다운 메뉴를 클릭하거나 게시에서 아무 곳이나 마우스 오른쪽 버튼으로 클릭하면 사용 가능한 모든 옵션이 나타납니다.
 
 여러 항목을 씬으로 가져오려는 경우에는 여러 항목을 선택하고 선택 모음에서 아무 항목이나 마우스 오른쪽 버튼으로 클릭하면 _액션(Actions)_ 팝업 메뉴가 나타납니다. 선택 모음의 모든 항목에 적용할 수 있는 액션만 표시됩니다.
 
@@ -499,11 +506,11 @@ Nuke 스크립트나 Maya 파일처럼 텍스처보다 덜 시각적인 항목�
 
 ## 고급 기능
 
-{% include product %}의 모든 통합은 툴킷이라는 파이프라인 생성을 위한 커스터마이즈 범위가 넓고 확장성이 뛰어난 플랫폼에서 생성됩니다.  이 기능에 액세스하고 구성하는 자세한 방법은 [관리자 안내서](https://developer.shotgridsoftware.com/ko/8085533c/)를 참조하십시오.
+{% include product %}의 모든 통합은 툴킷이라는 파이프라인 생성을 위한 커스터마이즈 범위가 넓고 확장성이 뛰어난 플랫폼에서 생성됩니다. 이 기능에 액세스하고 구성하는 방법에 대한 자세한 내용은 [관리자 안내서](https://developer.shotgridsoftware.com/ko/8085533c/)를 참조하십시오.
 
 ## 감사의 인사
 
-* PySide의 버그 픽스 버전은 {% include product %} 데스크톱을 통해 배포되며, [여기](https://www.autodesk.com/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip)에서 얻을 수 있습니다.
+* PySide의 버그 수정 버전은 {% include product %} 데스크톱과 함께 배포되며 [여기](https://www.autodesk.com/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip)에서 사용할 수 있습니다.
 * Big Buck Bunny - footage 제공: (CC) Blender Foundation, www.blender.org
 
-이 특별 마크업(TANK_NO_HEADER)을 추가해 헤더가 없어도 된다고 문서 생성 시스템에 알리십시오
+이 특별 마크업(TANK_NO_HEADER)을 추가해 헤더가 없어도 된다고 문서 생성 시스템에 알리십시오.

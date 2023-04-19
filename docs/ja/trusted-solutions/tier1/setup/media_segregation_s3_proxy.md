@@ -130,8 +130,6 @@ Try to access your S3 proxy using the ping route. Eg. `https://s3-proxy.mystudio
 
 ## Next Steps
 
-See [Web Traffic Isolation](./traffic_segregation.md) to activate the Web Traffic Isolation feature.
-
-See [Media Replication](./s3_replication.md) to activate the Web Traffic Isolation feature.
+See [Media Replication](./s3_replication.md) to activate the Media Replicaton Traffic Isolation feature.
 
 Go to [Setup](./setup.md) for an overview of the possible next steps.

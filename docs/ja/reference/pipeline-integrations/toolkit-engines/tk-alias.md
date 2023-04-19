@@ -11,7 +11,7 @@ lang: ja
 
 ## サポート対象のアプリケーション バージョン
 
-この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。
+この項目はテスト済みです。次のアプリケーション バージョンで動作することが分かっています。 
 
 {% include tk-alias %}
 
@@ -19,20 +19,22 @@ lang: ja
 
 ## Python バージョンのサポート
 
-Alias Toolkit エンジンは、Shotgun Desktop に付属の Python インタプリタ、またはローカルにインストールされたインタプリタを使用します。
+> **重要:** Alias {% include product %} ツールキット エンジンの v2.1.5 のリリースでは、Python v2.7.x のサポートが廃止されました。[{% include product %} Desktop v1.7.3 (以降)をダウンロードして、Python 3 が既定で使用されるようにしてください。](https://community.shotgridsoftware.com/t/a-new-version-of-shotgrid-desktop-has-been-released/13877/14)
 
-| tk-alias エンジンのバージョン | Shotgun Desktop アプリケーションのバージョン | Shotgun Desktop エンジンのバージョン | Python インタプリタのバージョン |
-| ---------------------- | ----------------------------------- | ------------------------------ | -------------------------- |
-| v2.0.5 以前 | v1.5.8 以前 | v2.4.14 以前 | v2.7.x |
-| v2.0.6 以降 | v1.6.0 以降 | v2.5.0 以降 | v2.7.x と v3.7.x |
+## 旧バージョン
 
-ローカルにインストールされた Python インタプリタ(v2.7.x または v3.7.4)をテスト済み
+[旧バージョンに対する Python バージョンのサポートの詳細を確認してください](https://github.com/shotgunsoftware/tk-alias/wiki/Python-Version-Support#older-versions)。
+
+***
+### 注記
+
+ローカルにインストールされたインタプリタが予期しない動作を引き起こす可能性があります。スタジオ環境でこの機能を使用する場合は、[サポートにお問い合わせ](https://knowledge.autodesk.com/ja/contact-support)ください。
 
 ## アプリ開発者向けの情報
-
+    
 ### PySide
 
-{% include product %} Engine for Alias には、{% include product %} Desktop に付属の PySide がインストールされており、必要に応じて有効になります。
+{% include product %} Engine for Alias には、{% include product %} Desktop に付属の PySide がインストールされており、必要に応じて有効になります。 
 
 ### Alias プロジェクトの管理
 
@@ -46,41 +48,34 @@ Alias Toolkit エンジンは、Shotgun Desktop に付属の Python インタプ
 
 Alias を開くと、{% include product %} のメニュー(Alias エンジン)がメニュー バーに追加されます。
 
-![](https://help.autodesk.com/cloudhelp/2020/JPN/Alias-Shotgun/images/ShotgunOtherApps.png)
+![その他のアプリ](../images/engines/alias-other-apps.png)
 
 
 ### ファイルの表示と保存
 
-[マイ タスク] (My Tasks)タブと[アセット] (Assets)タブを使用すると、割り当てられたすべてのタスクを表示して、アセットを参照できます。右側では、これらのタブを使用してすべてのファイル、作業ファイル、またはパブリッシュ ファイルを表示します。これらのファイルは、左側で選択されているものに関連付けられています。
+[マイ タスク] (My Tasks)タブと[アセット] (Assets)タブを使用すると、割り当てられたすべてのタスクを表示して、アセットを参照できます。 右側では、これらのタブを使用してすべてのファイル、作業ファイル、またはパブリッシュ ファイルを表示します。これらのファイルは、左側で選択されているものに関連付けられています。
 
-![](https://help.autodesk.com/cloudhelp/2020/JPN/Alias-Shotgun/images/ShotgunFileOpen.png)
+![ファイルの表示](../images/engines/alias-file-open.png)
 
-![](https://help.autodesk.com/cloudhelp/2020/JPN/Alias-Shotgun/images/ShotgunFileSave.png)
-
-
-### スナップショット
-
-[スナップショット] (Snapshot)ダイアログを開き、現在のシーンの簡易バックアップを作成します。
-
-![](https://help.autodesk.com/cloudhelp/2020/JPN/Alias-Shotgun/images/ShotgunSnapshot.png)
+![ファイルの保存](../images/engines/alias-file-save.png)
 
 
 ### パブリッシュ
 
-[パブリッシュ] (Publish)ダイアログを開き、ファイルを {% include product %} にパブリッシュします。パブリッシュ ファイルは、下流工程でアーティストが使用します。詳細については、「[Alias でパブリッシュする](https://github.com/shotgunsoftware/tk-alias/wiki/Publishing)」を参照してください。
+[パブリッシュ] (Publish)ダイアログを開き、ファイルを {% include product %} にパブリッシュします。パブリッシュ ファイルは、下流工程でアーティストが使用します。詳細については、「[Alias でパブリッシュする](https://github.com/shotgunsoftware/tk-alias/wiki/Publishing)」を参照してください。 
 
-![](https://help.autodesk.com/cloudhelp/2020/JPN/Alias-Shotgun/images/ShotgunPublish.png)
+![パブリッシュ](../images/engines/alias-publish.png)
 
 
 ### ローダー
 
 Content Loader アプリを開いて、Alias にデータをロードできます。詳細については、「[Alias でロードする](https://github.com/shotgunsoftware/tk-alias/wiki/Loading)」を参照してください。
 
-![](https://help.autodesk.com/cloudhelp/2020/JPN/Alias-Shotgun/images/ShotgunLoader.png)
+![ローダー](../images/engines/alias-loader.png)
 
 ### シーンの詳細情報
 
-[詳細情報] (Breakdown)ダイアログが開き、シーン内の古い内容とともに、参照される(WREF 参照)コンテンツのリストが表示されます。1 つまたは複数のアイテムを選択し、[選択した内容を更新] (Update Selected)をクリックして切り替え、最新バージョンのコンテンツを使用します。詳細については、「[Alias の Scene Breakdown](https://github.com/shotgunsoftware/tk-alias/wiki/Scene-Breakdown)」を参照してください。
+[詳細情報](Breakdown)ダイアログが開き、参照される(WREF リファレンス)コンテンツのリストが表示され、シーン内で古くなっているものや Published File の別のバージョンを使用しているものが表示されます。詳細については、「[Alias の Scene Breakdown](https://github.com/shotgunsoftware/tk-alias/wiki/Scene-Breakdown)」を参照してください。
 
-![](https://help.autodesk.com/cloudhelp/2020/JPN/Alias-Shotgun/images/ShotgunBreakdown.png)
+![詳細情報](../images/engines/alias-breakdown.png)
 

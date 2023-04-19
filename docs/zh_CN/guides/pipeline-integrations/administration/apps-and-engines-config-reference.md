@@ -7,9 +7,9 @@ lang: zh_CN
 
 # 应用和插件配置参考
 
-本文档概述了在 {% include product %} Pipeline Toolkit 中为应用、插件和框架创建配置时可以包含的所有不同选项。在进行应用的高级配置时这很有用，而且在进行开发并需要向您的应用配置清单添加参数时可以起到很重要的作用。
+本文档概述了在 {% include product %} Pipeline Toolkit 中为应用、插件和框架创建配置时可以包含的所有不同选项。在进行应用的高级配置时这很有用，而且在进行开发并需要向您的应用配置清单添加参数时可以起到很重要的作用。  
 
-_本文档介绍仅当控制 Toolkit 配置时可用的功能。有关详细信息，请参见 [{% include product %} 集成管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/)。_
+_本文档介绍了仅当已控制 Toolkit 配置时可用的功能。有关详细信息，请参见 [{% include product %} 集成管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/)。_
 
 # 简介
 
@@ -21,11 +21,11 @@ _本文档介绍仅当控制 Toolkit 配置时可用的功能。有关详细信�
 
 Toolkit 有三个主要组件：
 
-- _插件_ - 在宿主应用程序（如 Maya 或 Nuke）与 Sgtk 应用之间提供转换层或适配器。应用通常使用 Python 和 PySide，而插件负责以标准化方式呈现宿主应用程序，例如如果 Pyside 尚不存在的话，会在宿主应用程序之上添加 Pyside。
-- _应用_ - 提供一种业务逻辑，本质上是具有某种用途的工具。我们可以手动编写应用，让它们只在特定的宿主应用程序中工作，也可以将它们设计成可在多个宿主应用程序中运行。
-- _框架_ - 一个可供插件、应用或其他框架使用的库。利用框架，可以更轻松地管理多个应用之间共享的代码或行为。
-
-_环境文件_ 包含一套插件、应用和框架的配置设置。这样一套内容称为一个环境。Sgtk 会为不同文件或不同人员启动不同的环境。例如，您可以为镜头制作和装配分别准备一个环境。每个环境各有一个 yaml 文件。
+-   _插件_ \- 在宿主应用程序（如 Maya 或 Nuke）与 Sgtk 应用之间提供转换层或适配器。应用通常使用 Python 和 PySide，而插件负责以标准化方式呈现宿主应用程序，例如如果 Pyside 尚不存在的话，会在宿主应用程序之上添加 Pyside。
+-   _应用_ \- 提供一种业务逻辑，本质上是具有某种用途的工具。我们可以手动编写应用，让它们只在特定的宿主应用程序中工作，也可以将它们设计成可在多个宿主应用程序中运行。
+-   _框架_ \- 一个可供插件、应用或其他框架使用的库。利用框架，可以更轻松地管理多个应用之间共享的代码或行为。
+    
+_环境文件_包含一套插件、应用和框架的配置设置。这样的一套内容称为一个环境。Sgtk 会为不同文件或不同人员启动不同的环境。例如，您可以为镜头制作和装配分别准备一个环境。每个环境各有一个 yaml 文件。
 
 环境文件位于：`/<sgtk_root>/software/shotgun/<project_name>/config/env`
 
@@ -36,29 +36,29 @@ yaml 文件的基本格式如下：
         tk-maya:
             location
             engine settings
-
+    
             apps:
                 tk-maya-publish:
                     location
                     app settings
-
+    
                 tk-maya-revolver:
                     location
                     app settings
-
+    
         tk-nuke:
             location
             engine settings
-
+    
             apps:
                 tk-nuke-setframerange:
                     location
                     app settings
-
+    
                 tk-nuke-nukepub:
                     location
                     app settings
-
+    
     frameworks:
         tk-framework-tools:
             location
@@ -73,17 +73,17 @@ yaml 文件的基本格式如下：
 
 环境文件中定义的每个应用、插件或框架各有一个 `location` 参数，用来定义要运行哪个版本的应用以及从哪里下载它。大多数情况下，这是由 `tank updates` 和 `tank install` 命令自动处理的。但是，如果您是手动编辑配置，则可使用各种选项帮助您部署 Toolkit 和设置结构：
 
-Toolkit 目前支持使用以下位置 _描述符_ 来安装和管理应用：
+Toolkit 目前支持使用以下位置_描述符_来安装和管理应用：
 
-- **app_store** 描述符表示 Toolkit 应用商店中的内容
-- **{% include product %}** 描述符表示 {% include product %} 中存储的内容
-- **git** 描述符表示 Git 库中存储的标记
-- **git_branch** 描述符表示 Git 分支中的提交
-- **path** 描述符表示磁盘位置
-- **dev** 描述符表示开发者沙盒
-- **manual** 描述符用于自定义部署和推行
+-   **app_store** 描述符表示 Toolkit 应用商店中的内容
+-   **{% include product %}** 描述符表示 {% include product %} 中存储的内容
+-   **git** 描述符表示 Git 库中存储的标记
+-   **git_branch** 描述符表示 Git 分支中的提交项
+-   **path** 描述符表示磁盘位置
+-   **dev** 描述符表示开发者沙盒
+-   **manual** 描述符用于自定义部署和推行
 
-有关不同描述符用法的文档，请参见 [Toolkit 参考文档](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types)。
+有关各描述符用法的文档，请参见 [Toolkit 参考文档](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptor-types)。
 
 ## 禁用应用和插件
 

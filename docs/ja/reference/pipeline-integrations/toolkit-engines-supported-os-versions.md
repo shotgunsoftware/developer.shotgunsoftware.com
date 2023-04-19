@@ -11,6 +11,6 @@ lang: ja
 
 ----------
 
-| Windows | macOS | CentOS |
+| Windows | macOS | Linux |
 |:-------:|:-----:|:------:|
-| 10 | 10.14 以降<br>**注:** M1 はまだサポートされていません。詳細については、[こちら](https://community.shotgridsoftware.com/t/13606)参照してください。 | 7.4 |
+|   10    |10.14+ <br>**注:** M1 ネイティブはサポートされていません。M1 と Rosetta を併用することはできません。詳細については、[こちら](https://community.shotgridsoftware.com/t/13606)を参照してください。   |  CentOS 7.4、Rocky 8.5    |

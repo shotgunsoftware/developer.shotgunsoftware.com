@@ -51,5 +51,5 @@ ACES(ICIO 모델이라고 가정함)를 사용 중이므로 `tk-multi-reviewsubm
 
 이제 이 모든 사항이 완료되면 Nuke에서 게시할 때 ACES 호환 색상 공간에서 QT가 생성됩니다.
 
-[커뮤니티에서 전체 스레드를 참조](https://community.shotgridsoftware.com/t/what-to-do-when-publish-from-aces-nuke-script-fails-with-error-invalid-lut-selected-gamma2-2/197)하십시오.
+[커뮤니티에서 전체 스레드 보기](https://community.shotgridsoftware.com/t/what-to-do-when-publish-from-aces-nuke-script-fails-with-error-invalid-lut-selected-gamma2-2/197)
 

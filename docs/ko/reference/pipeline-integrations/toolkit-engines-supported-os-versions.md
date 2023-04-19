@@ -11,6 +11,6 @@ lang: ko
 
 ----------
 
-| Windows | MacOS | CentOS |
+| Windows | MacOS | Linux |
 |:-------:|:-----:|:------:|
-| 10 | 10.14+ <br>**참고:** M1은 아직 지원되지 않습니다. 자세한 내용은 [여기](https://community.shotgridsoftware.com/t/13606)에서 확인하십시오. | 7.4 |
+|   10    |10.14+ <br>**참고:** M1 기본은 지원되지 않으며, Rosetta가 포함된 M1이 지원됩니다. [자세한 내용은 여기](https://community.shotgridsoftware.com/t/13606)에서 확인하십시오.   |  CentOS 7.4, Rocky 8.5    |

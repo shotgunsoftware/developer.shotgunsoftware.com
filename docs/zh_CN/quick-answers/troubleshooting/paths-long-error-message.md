@@ -9,7 +9,7 @@ lang: zh_CN
 
 ## 确凿的事实
 
-Windows 对路径名的默认限制非常低，即 255/260 个字符。[有关此限制的 Microsoft 信息位于此处](https://docs.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#maximum-path-length-limitation)，您可以在[此处查看更多技术信息](https://docs.microsoft.com/zh-cn/windows/win32/fileio/maximum-file-path-limitation)。
+Windows 对路径名的默认限制非常宽松，即 255 个/260 个字符。[Microsoft 在此提供了有关此限制的信息](https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#maximum-path-length-limitation)，您可以[在此处查看更多技术信息](https://docs.microsoft.com/zh-cn/windows/win32/fileio/maximum-file-path-limitation)。
 
 ## 错误
 
@@ -33,15 +33,15 @@ ERROR sgtk.core.bootstrap.cached_configuration Failed to install configuration s
 
 ## 为什么会发生这种情况
 
-在 Windows 上，{% include product %} Desktop 将数据存储在 `%APPDATA%` 文件夹（通常为 `C:\Users\jane\AppData\Roaming\Shotgun`）。当使用标准 default2 Toolkit 配置时，只要您的用户名不是超长，就应该没问题。但是，如果要创建自己的应用、插件或框架，则可能会有更大的风险遇到这种情况，尤其是当您将依存项与代码捆绑在一起（像我们一样），并且您的包中有很深的目录树时。
+在 Windows 上，{% include product %} Desktop 将数据存储在 `%APPDATA%` 文件夹（通常为 `C:\Users\jane\AppData\Roaming\Shotgun`）。当使用标准 default2 Toolkit 配置时，只要您的用户名不是超长，就应该没问题。但是，如果要创建自己的应用、插件或框架，则可能会有更大的风险遇到这种情况，尤其是当您将依存项与代码捆绑在一起（像我们一样），并且您的包中有很深的目录树时。 
 
 ## 解决该问题
 
-解决该问题的方法通常是，将 `$SHOTGUN_HOME` 环境变量设置为非常短的值，如 `C:\SG`。这会告知 SG Desktop 将其数据存储在 `C:\SG` 而不是 `C:\Users\jane\AppData\Roaming\Shotgun` 中，这样可以节省一些字符，通常足以使您保持在限制之内。您可以[在此处阅读有关环境变量的信息](https://developer.shotgridsoftware.com/tk-core/initializing.html?#environment-variables)。
+解决该问题的方法通常是，将 `$SHOTGUN_HOME` 环境变量设置为非常短的值，如 `C:\SG`。这会告知 SG Desktop 将其数据存储在 `C:\SG` 而不是 `C:\Users\jane\AppData\Roaming\Shotgun` 中，这样可以少使用一些字符，通常足以使路径名保持在限制范围内。您可以[在此处阅读有关环境变量的信息](https://developer.shotgridsoftware.com/tk-core/initializing.html?#environment-variables)。
 
 ### 未来的可能性？
 
-在 Windows 10 的最新版本中，还有另一种方法*可以*缓解此问题，即[如此处所述](https://docs.microsoft.com/zh-cn/windows/win32/fileio/maximum-file-path-limitation#enable-long-paths-in-windows-10-version-1607-and-later)更新注册表，但我认为还需要 SG Desktop 更新其清单文件，以表明它要利用 `longPathAware` 设置。我是 Mac 用户，因此我不确定我说的是否有用。
+在 Windows 10 的最新版本中，还有另一种方法*或许*可以缓解此问题，即[按此处所述](https://docs.microsoft.com/zh-cn/windows/win32/fileio/maximum-file-path-limitation#enable-long-paths-in-windows-10-version-1607-and-later)更新注册表，但我认为还需要 SG Desktop 更新其清单文件，以表明它要利用 `longPathAware` 设置。我是 Mac 用户，因此我不确定我说的是否有用。
 
-[在社区中查看完整主题](https://community.shotgridsoftware.com/t/errors-due-to-windows-paths-too-long-256-characters/10101)。
+[在社区中查看完整主题](https://community.shotgridsoftware.com/t/errors-due-to-windows-paths-too-long-256-characters/10101)
 

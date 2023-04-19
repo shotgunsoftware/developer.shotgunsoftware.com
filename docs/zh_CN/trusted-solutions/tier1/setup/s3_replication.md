@@ -11,8 +11,6 @@ lang: zh_CN
 
 It's possible to add S3 replication between two S3 buckets in different regions and configure {% include product %} to leverage it for faster access to media.
 
-![S3 Replication Diagram](../images/tier1-s3-replication.png)
-
 ## Features
 
  * Support one replica bucket in another region leveraging the [AWS S3 replication feature](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html)
@@ -42,11 +40,37 @@ The `IP Adresses for S3 replication` preference can be edited in Site Preference
   * Create the replica S3 bucket in a new AWS region. See [Media Isolation](./s3_bucket.md)
   * Update your existing {% include product %} role policy to allow {% include product %} to also access the replica bucket
   * Setup the replication rules on the primary S3 bucket. See [How do I add a replication rule to an S3 bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-replication.html#enable-replication-add-rule)
-  * Setup a VPC + Direct Connect + S3 proxy in the new AWS region. See [Media Traffic Isolation](./media_segregation.md)
-  * Contact {% include product %} Support to configure your site to use the new S3 replica bucket, providing the following information:
-    * Replica Bucket Name
-    * Replica Bucket Region
-    * Replica S3 proxy URL
+  * Setup a VPC + Direct Connect + S3 proxy in the new AWS region if needed. See [Media Traffic Isolation](./media_segregation.md)
+
+## Configure your site
+
+To configure S3 replication, you will need to add an additional entry to the "S3 Configuration" site preference.
+The complete entry may look something like the following:
+
+```json
+{​​​​​​​​
+   "<S3_CONFIG_NAME>": {​​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": "<S3_INTERFACE_VPC_ENDPOINT>"
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​,
+   "<S3_CONFIG_NAME_REPLICA>": {​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+     "region": "<BUCKET_REGION_REPLICA>",
+     "bucket": "<BUCKET_NAME_REPLICA>",
+     "prefix": "<BUCKET_PREFIX_REPLICA>",
+     "aws_role_arn": "<ROLE_ARN>",
+     "s3_interface_vpc_endpoint_dns_name": "<S3_INTERFACE_VPC_ENDPOINT_REPLICA>"
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+```
+
+After the configuration has been updated on your site, navigate to the /admin/speedtest route of your ShotGrid site. Select the new **S3_CONFIG_NAME_REPLICA** and start the test to confirm that all the upload/download tests work as intended.
+
+Update the following Site Preferences:
+  * S3 Bucket for Replication - This should have the same value as **S3_CONFIG_NAME_REPLICA** from the S3 Configuration
+  * S3 Replication Delay - Set this to something reasonable such as 60 seconds.
 
 ## FAQ
 

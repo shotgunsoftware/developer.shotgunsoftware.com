@@ -21,7 +21,7 @@ Read more about S3 Infrequent Access and other storage classes [here](https://aw
 
 We recommend you restrict access to your S3 bucket to only your VPC and {% include product %} transcoding services IPs. There is an example policy, replace `your_vpc_id` and `your_s3_bucket` by your values.
 
-We strongly recommend you test media access and media transcoding in your migration test site right after applying the bucket policy changes to be sure your S3 bucket is still accessible from your VPC and from {% include product %} transcoders.
+We strongly recommend you test media access and media transcoding in your site right after applying the bucket policy changes to be sure your S3 bucket is still accessible from your VPC and from {% include product %} transcoders.
 
 ```
 {
@@ -47,8 +47,8 @@ We strongly recommend you test media access and media transcoding in your migrat
             "Sid": "Access-to-specific-VPC-only and Shotgun transcoder",
             "Effect": "Deny",
             "Principal": "*",
-            "Action": "s3:*",
-            "Resource": "arn:aws:s3:::your_s3_bucket/*",
+            "Action": "s3:GetObject*",
+            "Resource": "arn:aws:s3:::your_s3_bucket/shotgun/*",
             "Condition": {
                 "NotIpAddress": {
                     "aws:SourceIp": [
@@ -80,6 +80,6 @@ We recommend setting a VPC endpoint policy on your S3 endpoint to allow access t
 
 ## Next Steps
 
-See [Migration](./migration.md) to migrate your production site to use the isolation features.
+See [Activation](./activation.md) to migrate your production site to use the isolation features.
 
 Go to [Setup](./setup.md) for an overview of the possible next steps.

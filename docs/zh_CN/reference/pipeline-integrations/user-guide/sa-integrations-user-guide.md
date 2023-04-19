@@ -11,68 +11,68 @@ lang: zh_CN
 在本手册中：
 - [简介](#introduction)
 - [Desktop 快速入门](#getting-started-with-desktop)
-   - [Desktop 安装](#installation-of-desktop)
-   - [自主托管时登录或在代理服务器后台登录](#logging-in-when-self-hosted-or-behind-a-proxy-server)
-      - [身份认证和浏览器集成](#authentication-and-browser-integration)
-   - [系统托盘](#the-system-tray)
-   - [项目浏览器](#the-project-browser)
-   - [命令启动器](#the-command-launcher)
-   - [控制台](#the-console)
+  - [Desktop 安装](#installation-of-desktop)
+    - [安装更高版本的 Desktop](#installing-a-newer-version-of-desktop)
+  - [自主托管时登录或在代理服务器后台登录](#logging-in-when-self-hosted-or-behind-a-proxy-server)
+    - [身份认证和浏览器集成](#authentication-and-browser-integration)
+  - [系统托盘](#the-system-tray)
+  - [项目浏览器](#the-project-browser)
+  - [命令启动器](#the-command-launcher)
+  - [控制台](#the-console)
 - [启动应用程序](#launching-applications)
 - [面板](#the-panel)
-   - [概述](#overview)
-   - [UI 详细信息](#ui-details)
-      - [活动流](#the-activity-stream)
-      - [创建和回复注释](#creating-and-replying-to-notes)
-      - [注释、版本、发布和任务](#notes-versions-publishes-and-tasks)
-      - [“信息”(Info)选项卡](#the-info-tab)
-      - [搜索](#searching)
-      - [动作](#actions)
-      - [当前工作区和主页区域](#the-current-work-area-and-the-me-area)
-      - [当前工作区](#current-work-area)
+  - [概述](#overview)
+  - [UI 详细信息](#ui-details)
+    - [活动流](#the-activity-stream)
+    - [创建和回复注释](#creating-and-replying-to-notes)
+    - [注释、版本、发布和任务](#notes-versions-publishes-and-tasks)
+    - [“信息”(Info)选项卡](#the-info-tab)
+    - [搜索](#searching)
+    - [动作](#actions)
+    - [当前工作区和主页区域](#the-current-work-area-and-the-me-area)
+    - [当前工作区](#current-work-area)
 - [发布器](#the-publisher)
-   - [概述](#overview-1)
-   - [界面组件和概念](#interface-components-and-concepts)
-   - [基本工作流](#basic-workflow)
-      - [在内容创建软件中发布](#publishing-within-content-creation-software)
-      - [发布项目和任务](#publish-items-and-tasks)
-         - [上下文](#context)
-         - [验证](#validation)
-         - [多文档工作流](#multi-document-workflows)
-      - [单机发布](#stand-alone-publishing)
-      - [发布类型](#publish-types)
-         - [单机](#standalone)
-         - [3ds Max](#3ds-max)
-         - [Houdini](#houdini)
-         - [Maya](#maya)
-         - [Nuke](#nuke)
-         - [Nuke Studio](#nuke-studio)
-         - [Photoshop CC](#photoshop-cc)
+  - [概述](#overview-1)
+  - [界面组件和概念](#interface-components-and-concepts)
+  - [基本工作流](#basic-workflow)
+    - [在内容创建软件中发布](#publishing-within-content-creation-software)
+    - [发布项目和任务](#publish-items-and-tasks)
+      - [上下文](#context)
+      - [验证](#validation)
+      - [多文档工作流](#multi-document-workflows)
+    - [单机发布](#stand-alone-publishing)
+    - [发布类型](#publish-types)
+      - [单机](#standalone)
+      - [3ds Max](#3ds-max)
+      - [Houdini](#houdini)
+      - [Maya](#maya)
+      - [Nuke](#nuke)
+      - [Nuke Studio](#nuke-studio)
+      - [Photoshop CC](#photoshop-cc)
 - [加载器](#the-loader)
-   - [概述](#overview-2)
-   - [树视图](#the-tree-view)
-   - [导航](#navigation)
-   - [查看发布](#looking-at-publishes)
-   - [将一个或多个发布添加到场景中](#bringing-one-or-multiple-publishes-into-your-scene)
-   - [使用早期发布](#working-with-older-publishes)
-   - [相关审核](#associated-review)
+  - [概述](#overview-2)
+  - [树视图](#the-tree-view)
+  - [导航](#navigation)
+  - [查看发布](#looking-at-publishes)
+  - [将一个或多个发布添加到场景中](#bringing-one-or-multiple-publishes-into-your-scene)
+  - [使用早期发布](#working-with-older-publishes)
+  - [相关审核](#associated-review)
 - [高级功能](#advanced-functionality)
 - [致谢](#acknowledgments)
 
-## 简介
+## 简介 
 
 {% include product %} 集成可将 {% include product %} 引入到您的内容创建工具中。使用 {% include product %} 集成时，您将能够轻松启动软件，使用面板来跟踪 {% include product %} 中与您的任务相关的注释和数据，并使用发布器和加载器来跟踪文件并将其带入到场景中。艺术家将有权从应用内直接访问与其任务相关的所有 {% include product %} 数据，以及其项目上的所有任务。他们可以回复注释、播放版本、发布文件，以及加载同事发布的文件。
 
-要获得 {% include product %} 集成的最新更新，请订阅[发行说明](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)。
+有关 {% include product %} 集成的最新更新，请订阅[发行说明](https://community.shotgridsoftware.com/tags/c/pipeline/6/release-notes)。
 
 ## Desktop 快速入门
 
 **{% include product %} Desktop** 应用是集成的核心。该软件应用程序将 {% include product %} 体验延伸到本地计算机，让您可以轻松访问 {% include product %} 数据、启动应用程序，并直接从您的计算机上运行工作流集成工具。
 
-**运行 Toolkit 经典还是自定义安装？**
+**运行 Toolkit 经典还是自定义安装？**  
 
-{% include product %}
- 集成可自动安装。 如果您是希望安装**经典** Toolkit 配置的高级客户，或者您拥有**自定义** Toolkit 安装程序并希望通过 **Desktop 安装向导**进行安装，请参见[管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/)以了解如何执行相关操作。
+{% include product %} 集成可自动安装。如果您是希望安装**经典** Toolkit 配置的高级客户，或者您拥有**自定义** Toolkit 安装程序并希望通过 **Desktop 安装向导**进行安装，请参见[管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/)了解如何执行此操作。
 
 ### Desktop 安装
 
@@ -84,11 +84,17 @@ lang: zh_CN
 
 ![download-desktop-02.png](./images/sa-integrations-user-guide-download-desktop-02-v2.png)
 
+#### 安装更高版本的 Desktop
+
+您可以在所有支持的操作系统上更新 {% include product %} Desktop，而无需卸载当前版本。但是，**请确保在更新 {% include product %} Desktop 版本之前关闭现有会话**。
+
+*注意：在 Windows 上，如果在 Desktop 正在运行时更新版本，则二进制锁将干扰安装并导致安装程序停止。这将导致安装不完整，因为已经复制了某些文件。要修复此问题，请退出 Desktop，然后选择“重试”(Retry)。*
+
 ### 自主托管时登录或在代理服务器后台登录
 
 *注意：如果您是自主托管的或使用代理服务器，则需要使用以下有关登录的内容。这不是默认行为。*
 
-如果您是自主托管的或使用代理服务器，则首次打开 Desktop 时，浏览器将提示您提供证书。这样做的目的是连接 {% include product %} 与 Desktop 应用。如果您无法正确设置证书，请查看我们针对 [Firefox](https://developer.shotgridsoftware.com/zh_CN/d4936105/) 与 [Chrome 和其他浏览器](https://developer.shotgridsoftware.com/zh_CN/95518180/)提供的疑难解答文档。
+如果您是自主托管的或使用代理服务器，则首次打开 Desktop 时，浏览器将提示您提供证书。这样做的目的是连接 {% include product %} 与 Desktop 应用。如果您在设置证书时遇到问题，请查看 [Firefox](https://developer.shotgridsoftware.com/zh_CN/d4936105/) 和 [Chrome 及其他浏览器](https://developer.shotgridsoftware.com/zh_CN/95518180/)的疑难解答文档。
 
 ![guide-desktop-cert-window-03.png](./images/sa-integrations-user-guide-desktop-cert-window-03.png)
 
@@ -96,7 +102,7 @@ lang: zh_CN
 
 设置完毕以后，您需要登录到您的 {% include product %} 站点。
 
-如果使用代理，则需要进行一些额外的配置。有关如何执行该操作的说明，请参见[管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/#toolkit-configuration-file)。
+如果使用代理，则需要进行一些额外的配置。请参见[管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/#toolkit-configuration-file)中有关如何执行此操作的说明。
 
 #### 身份认证和浏览器集成
 
@@ -114,11 +120,11 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 应用的第一个主视图是项目浏览器。在此，您将看到 {% include product %} 实例中的所有项目。最近访问的项目将首先列出。
 
-在窗口右下角附近，您将看到 {% include product %} 帐户的缩略图。这是用户菜单，从中可以执行许多操作，如停靠和取消停靠窗口、使其始终位于其他窗口之上、显示记录控制台。
+在窗口右下角附近，您将看到 {% include product %} 帐户的缩略图。这是用户菜单，从中可以执行许多操作，如停靠和取消停靠窗口、使其始终位于其他窗口之上、显示日志记录控制台。
 
 ![user-menu-04.png](./images/sa-integrations-user-guide-user-menu-04.png)
 
-在窗口的顶部，可以单击放大镜图标以显示搜索框。在此框中键入内容，会将所示项目列表筛选至仅显示那些包含您键入的字母的项目。
+在窗口的顶部，可以单击放大镜图标以显示搜索框。在此框中键入内容，会将所示项目列表过滤至仅显示那些包含您键入的字母的项目。
 
 ![search-05.png](./images/sa-integrations-user-guide-search-05.png)
 
@@ -132,13 +138,13 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 您可以通过用户菜单启动控制台。自启动项目以来的所有记录将在此处显示。如果您遇到错误，错误的详细信息也应在此处显示。
 
-如果右键单击控制台，将显示标准编辑菜单，您可以在控制台中选择所有文本、复制选择或清除文本。
+如果右键单击控制台，将显示标准编辑菜单，您可以在控制台中选择所有文本、复制所选内容或清除文本。
 
 ![console-06.png](./images/sa-integrations-user-guide-console-06.png)
 
 ## 启动应用程序
 
-启动 {% include product %} Desktop 并选择一个项目后，该程序将扫描您的操作系统的标准应用程序目录。Desktop 将显示[我们拥有其相应集成的任何应用程序](https://www.shotgridsoftware.com/integrations/)的启动器。如果您有同一软件的多个版本，启动器将给出一个包含所有可用版本的下拉列表。单击启动器图标将启动最新版本。
+启动 {% include product %} Desktop 并选择一个项目后，该程序将扫描您的操作系统的标准应用程序目录。Desktop 将显示我们[集成的任何应用程序](https://www.shotgridsoftware.com/integrations/)的启动器。如果您有同一软件的多个版本，启动器将给出一个包含所有可用版本的下拉列表。单击启动器图标将启动最新版本。
 
 您可以在 {% include product %} Desktop 中直接启动 Maya 和 Nuke 等应用程序，也可以通过 {% include product %} 直接启动它们。无论是哪种方式，都可从应用程序内访问 {% include product %} 集成。
 
@@ -146,7 +152,7 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 除了现有配置，工作室通常还需要其他配置。工作室可能具有位于非标准文件系统位置的软件或本地不支持的软件的内部插件。在 {% include product %} Web 应用中可以轻松配置这些情况。有关详细信息，请参见[管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/)。
 
-如果您没有看到所需应用，请查看[管理员手册中有关在 {% include product %} Desktop 中配置软件的章节](https://developer.shotgridsoftware.com/zh_CN/8085533c/)。
+如果您没有看到所需应用，请查看[管理员手册的“在 {% include product %} Desktop 中配置软件”部分](https://developer.shotgridsoftware.com/zh_CN/8085533c/)。
 
 ## 面板
 
@@ -156,7 +162,7 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 ### UI 详细信息
 
-{% include product %} 面板包含几个主 UI 元素。在顶部可以看到一个 _工具栏_，其中包含用于导航和搜索的按钮。工具栏正下方是 _详细信息区域_ ，列出您当前正在查看的项目的相关信息。此详细信息区域可供配置，因此，如果您要显示自定义字段或对您的工作流特别重要的数据，只需简单操作就可以在此处显示这些信息。最后，您会发现一些 _内容选项卡_ 。这些选项卡均显示 {% include product %} 数据列表，通过它们可以在 {% include product %} 面板内轻松导航，快速浏览发布等内容，检查版本，或查看何人分配到链接至当前焦点的任务。
+{% include product %} 面板包含几个主 UI 元素。在顶部可以看到一个 _工具栏_ ，其中包含用于导航和搜索的按钮。工具栏正下方是 _详细信息区域_ ，其中显示有关您当前正在查看的项目的信息。此详细信息区域可供配置，因此，如果您要显示自定义字段或对您的工作流特别重要的数据，只需简单操作就可以在此处显示这些信息。最后，您会发现一些 _内容选项卡_ 。这些选项卡均显示 {% include product %} 数据列表，通过它们可以在 {% include product %} 面板内轻松导航，快速浏览发布等内容，检查版本，或查看何人分配到链接至当前焦点的任务。
 
 ![overview-08.png](./images/sa-integrations-user-guide-overview-08.png)
 
@@ -192,7 +198,7 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 ![tasks-and-versions-13.png](./images/sa-integrations-user-guide-tasks-and-versions-13.png)
 
-“注释”(Notes)、“版本”(Versions)、“发布”(Publishes)和“任务”(Tasks)选项卡的工作方式均相同 - 显示与您正在查看的当前项目有关联的数据。您可以双击某个项目以聚焦该项目。一旦导航至某个 _发布_ ，即可查看该发布的依存关系。如果您的工作流要跟踪从属关系信息，则该功能非常有用，此外，您还可以即时了解资产的互连方式。
+“注释”(Notes)、“版本”(Versions)、“发布”(Publishes)和“任务”(Tasks)选项卡的工作方式均相同 - 显示与您正在查看的当前项目相关联的数据。您可以双击某个项目以聚焦该项目。一旦导航至某个 _发布_ ，即可查看该发布的依存关系。如果您的工作流要跟踪依存关系信息，则该功能非常有用，此外，您还可以即时了解资产的互连方式。
 
 #### “信息”(Info)选项卡
 
@@ -232,7 +238,7 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 ### 概述
 
-通过发布应用，美工人员可以发布他们的作品，以便其可供下游的美工人员使用。它支持在艺术家的内容创建软件中以传统方式发布工作流，以及在磁盘上单独发布任何文件。在内容创建软件中操作并使用基本 {% include product %} 集成时，该应用将自动发现并显示项目以供艺术家发布。对于较复杂的生产需求，工作室可以编写自定义发布插件来推动美工人员工作流。
+通过发布应用，艺术家可以发布他们的作品，以便其可供下游的艺术家使用。它支持在艺术家的内容创建软件中以传统方式发布工作流，以及在磁盘上单独发布任何文件。在内容创建软件中操作并使用基本 {% include product %} 集成时，该应用将自动发现并显示项目以供艺术家发布。对于较复杂的制作需求，工作室可以编写自定义发布插件来推动艺术家工作流。
 
 以下各部分介绍了发布器 UI 和基本集成工作流。有关根据工作室特定需求自定义发布器的信息，请参见[发布器开发手册](https://developer.shotgridsoftware.com/tk-multi-publish2/)。
 
@@ -262,7 +268,7 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 * **浏览(Browse)**：浏览要发布的文件
 * **刷新(Refresh)**：刷新发布项目列表
-* **删除(Delete)**：从列表中删除所选项目
+* **删除(Delete)**：从列表中移除所选项目
 * **展开(Expand)**：展开列表中的所有项目
 * **收拢(Collapse)**：收拢列表中的所有项目
 * **文档(Documentation)**：打开工作流文档
@@ -279,23 +285,23 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 ### 基本工作流
 
-发布应用的目的是，让美工人员将自己的作品提供给其他美工人员使用。在 {% include product %} 中，发布文件意味着在 {% include product %} 中创建包含待发布文件相关信息（包括路径、版本号、艺术家信息、{% include product %} 相关上下文等）的记录。在 {% include product %} 中跟踪文件后，其他用户可以通过[加载器](#the-loader)应用来使用它。
+发布应用的目的是，让艺术家将自己的作品提供给其他艺术家使用。在 {% include product %} 中，发布文件意味着在 {% include product %} 中创建包含待发布文件相关信息（包括路径、版本号、艺术家信息、{% include product %} 相关上下文等）的记录。在 {% include product %} 中跟踪文件后，其他用户可以通过[加载器](#the-loader)应用来使用它。
 
 基本 {% include product %} 集成提供了两种方式在工作流中使用发布应用：单机发布和在内容创建软件中发布。以下各部分概括介绍了这两种不同情况下的工作流。
 
 #### 在内容创建软件中发布
 
-基本 {% include product %} 集成包括对 3dsMax、Houdini、Maya、Nuke、Nuke Studio 和 Photoshop 等内容创建软件的发布工作流支持。当发布器与内容创建软件一同启动时，发布器将自动尝试查找要发布的项目。尽管根据不同的软件和美工人员工作文件内容，显示的待发布项目将稍有不同，但均适用相同的基本发布概念。此处是一个在 Nuke 中进行发布的示例：
+基本 {% include product %} 集成包括对 3dsMax、Houdini、Maya、Nuke、Nuke Studio 和 Photoshop 等内容创建软件的发布工作流支持。当发布器与内容创建软件一同启动时，发布器将自动尝试查找要发布的项目。尽管根据不同的软件和艺术家工作文件内容，显示的待发布项目将稍有不同，但均适用相同的基本发布概念。此处是一个在 Nuke 中进行发布的示例：
 
 ![publish-in-dcc-24.png](./images/sa-integrations-user-guide-publish-in-dcc-24.png)
 
 #### 发布项目和任务
 
-在此，您可以在左侧看到已收集的发布项目。有三个发布项目：选定的项目是工作文件本身，其下方则是两个子项目。此外，还有一个图像文件序列和一个 Alembic 缓存。这些项目都附有一个**“Publish to {% include product %}”**任务，执行该任务时，将在 {% include product %} 中创建发布条目以跟踪各个文件或图像序列。
+在此，您可以在左侧看到已收集的发布项目。有三个发布项目：选定的项目是工作文件本身，其下方则是两个子项目。此外，还有一个图像文件序列和一个 Alembic 缓存。这些项目都附有一个 **Publish to {% include product %}** 发布任务，执行该任务时，将在 {% include product %} 中创建发布条目以跟踪各个文件或图像序列。
 
-显示 Nuke 脚本的父项目都附有一个 **Begin file versioning** 插件。工作文件的路径中没有版本号时，将显示此插件。如果选中此任务，将在文件名中插入版本号，然后再进行发布。在本例中，文件将从 `bunny_010_0010.nk` 重命名为 `bunny_010_0010.v001.nk`。这促使人们保留美工人员工作文件的历史记录。此任务并非默认选中，并且也不一定要运行。如果项目已发布且任务处于启用状态，则下次发布工作文件时，由于文件名中包含版本号，任务将不显示。
+表示 Nuke 脚本的父项目都附有一个 **Begin file versioning** 插件。工作文件的路径中没有版本号时，将显示此插件。如果选中此任务，将在文件名中插入版本号，然后再进行发布。在本例中，文件将从 `bunny_010_0010.nk` 重命名为 `bunny_010_0010.v001.nk`。这促使人们保留艺术家工作文件的历史记录。此任务并非默认选中，并且也不一定要运行。如果项目已发布且任务处于启用状态，则下次发布工作文件时，由于文件名中包含版本号，任务将不显示。
 
-可以根据需要启用或禁用发布任务。项目上的复选框反映和控制其子任务的选中状态。例如，取消选中一个项目将取消选中其所有任务。取消选中多个任务中的一个会使项目处于半选中状态。要切换特定类型的所有任务（例如所有**“Publish to {% include product %}”**任务）的选中状态，只需在选中复选框时按住 `Shift` 键。
+可以根据需要启用或禁用发布任务。项目上的复选框反映和控制其子任务的选中状态。例如，取消选中一个项目将取消选中其所有任务。取消选中多个任务中的一个会使项目处于半选中状态。要切换特定类型的所有任务（例如，所有**“发布到 {% include product %}”(Publish to {% include product %})**任务）的选中状态，只需在选中复选框时按住 `Shift` 键。
 
 选择发布任务将显示任务内容相关信息。
 
@@ -393,13 +399,13 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 ##### 3ds Max
 
-将收集当前 Max 会话以供发布，其发布类型为 **3dsmax 场景**，该类型可以通过加载器合并或参照到其他 Max 会话中。
+将收集当前 Max 会话以供发布，其发布类型为 **3dsmax 场景**，可以通过加载器将其合并或参照到另一个 Max 会话中。
 
 如果可以确定用于当前会话的项目文件夹，则位于该项目 **export** 文件夹中的所有文件将显示为可发布。同样，位于该项目 **preview** 文件夹中的所有影片文件也将显示为可发布。
 
 ##### Houdini
 
-将收集当前 Houdini 会话以供发布，其发布类型为 **Houdini Scene**，该类型可以通过加载器合并到其他 Houdini 会话中。
+将收集当前 Houdini 会话以供发布，其发布类型为 **Houdini 场景**，可以通过加载器将其合并到另一个 Houdini 会话中。
 
 另外，还将自动收集从以下类型节点写入磁盘的任何文件并显示为发布项目：
 
@@ -411,13 +417,13 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 ##### Maya
 
-将收集当前 Maya 会话以供发布，其发布类型为 **Maya 场景**，该类型可以通过加载器导入或参照到其他 Maya 会话中。
+将收集当前 Maya 会话以供发布，其发布类型为 **Maya 场景**，可以通过加载器将其导入或参照到另一个 Maya 会话中。
 
 如果可以确定用于当前会话的项目根，则位于该项目 **cache/Alembic** 文件夹中的所有 Alembic 文件将显示为可发布。同样，位于该项目 **movies** 文件夹中的所有影片文件也将显示为可发布。
 
 ##### Nuke
 
-将收集当前 Nuke 会话以供发布，其发布类型为 **Nuke 脚本**，该类型可以通过加载器导入到其他 Nuke 会话中或作为新会话打开。
+将收集当前 Nuke 会话以供发布，其发布类型为 **Nuke 脚本**，可以通过加载器将其导入到另一个 Nuke 会话中或作为新会话打开。
 
 另外，还将自动收集从以下类型节点写入磁盘的任何文件并显示为发布项目：
 
@@ -426,11 +432,11 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 ##### Nuke Studio
 
-将收集打开的 Nuke Studio 项目以供发布，其发布类型为 **NukeStudio 项目**，该类型可以通过加载器在其他 Nuke Studio 会话中作为新项目打开。
+将收集任何打开的 Nuke Studio 项目以供发布，其发布类型为 **NukeStudio 项目**，可以通过加载器将其作为新项目在另一个 Nuke Studio 会话中打开。
 
 ##### Photoshop CC
 
-将收集打开的 Photoshop 文档以供发布，其发布类型为 **Photoshop 图像**，该类型可以通过加载器在其他 Photoshop 会话中作为新图层加载或作为新文档打开。
+将收集任何打开的 Photoshop 文档以供发布，其发布类型为 **Photoshop 图像**，可以通过加载器在另一个 Photoshop 会话中将其作为新图层加载或作为新文档打开。
 
 ## 加载器
 
@@ -476,13 +482,13 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 如果您浏览的内容不像纹理那么直观，例如 Nuke 脚本或 Maya 文件，您可以使用列表视图而非缩略图视图。此模式提供了更多信息，也更紧凑，允许您快速滚动浏览大量项目。
 
-如果您仅希望查看特定类型的项目，可以使用左下方的 _过滤器面板_ 来快速显示或隐藏发布。您还将在列表中的每个类型旁边看到一个摘要，表明为当前选择的树项目找到的每一类型发布数量。
+如果您仅希望查看特定类型的项目，则可以使用左下方的 _过滤器面板_ 来快速显示或隐藏发布。您还将在列表中的每个类型旁边看到一个摘要，表明为当前选择的树项目找到的每一类型发布数量。
 
 ### 将一个或多个发布添加到场景中
 
-如果要将项目添加到场景中，只需双击该项目，之后加载器将执行发布的 _默认动作_ 。可以采用多种方法将项目添加到场景中（例如，在 Maya 中，您可能希望将其他 Maya 文件参照或导入到场景中）。在这种情况下，单击 _“动作”(Actions)_ 下拉菜单或右键单击发布的任意位置即可查看所有可用选项。
+如果要将某个项目引入到场景中，只需双击它，加载器将执行发布的 _默认动作_ 。可以采用多种方法将项目添加到场景中（例如，在 Maya 中，您可能希望将其他 Maya 文件参照或导入到场景中）。在这种情况下，单击 _“动作”(Actions)_ 下拉菜单或右键单击发布的任意位置即可查看所有可用选项。
 
-如果要将多个项目添加到场景中，请选择多个元素，然后右键单击已选内容中的任意一项以显示 _“动作”(Actions)_ 弹出菜单。请注意，仅显示可应用于已选内容中每一项的动作。
+如果要将多个项目引入到场景中，请选择多个元素，然后右键单击已选内容中的任意一项以显示 _“动作”(Actions)_ 弹出菜单。请注意，仅显示可应用于已选内容中每一项的动作。
 
 ![actions2-44.png](./images/sa-integrations-user-guide-actions2-44.png)
 
@@ -500,11 +506,11 @@ Desktop 提供的服务支持 {% include product %} Web 应用程序与您的计
 
 ## 高级功能
 
-所有 {% include product %} 集成都是基于可高度自定义和扩展的工作流构建平台（名为 Toolkit）而建。有关如何访问和配置该功能的详细信息，请参见我们的[管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/)。
+所有 {% include product %} 集成都是基于可高度自定义和扩展的工作流构建平台（名为 Toolkit）而建。有关如何访问和配置此功能的详细信息，请参见[管理员手册](https://developer.shotgridsoftware.com/zh_CN/8085533c/)。
 
 ## 致谢
 
-* PySide 的错误修复版本随 {% include product %} Desktop 一起分发，可在[此处](https://www.autodesk.com/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip)下载。
+* PySide 的错误修复版本随 {% include product %} Desktop 一起分发，可在[此处](https://www.autodesk.com.cn/content/dam/autodesk/www/Company/files/PySide-1.2.2.sgtk.zip)获取。
 * 动画电影“Big Buck Bunny”（大雄兔）由 (CC) Blender Foundation (www.blender.org) 提供
 
 通过添加 TANK_NO_HEADER 这个特殊标记，指示文档生成系统不需要生成标题。

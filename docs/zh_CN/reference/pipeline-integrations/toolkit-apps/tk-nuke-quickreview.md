@@ -28,10 +28,9 @@ lang: zh_CN
 
 默认情况下，应用将生成一个包含场记板信息和场景信息覆层的 QuickTime 影片：
 
-![场记板示例](../images/apps/nuke-quickreview-slate.png)
-![场景信息覆层示例](../images/apps/nuke-quickreview-burnins.png)
+![场记板信息示例](../images/apps/nuke-quickreview-slate.png) ![场景信息覆层示例](../images/apps/nuke-quickreview-burnins.png) 
 
 ## 自定义
 
-审核提交的大多数方面都可以使用挂钩进行调整。可以在[此处](https://developer.shotgridsoftware.com/tk-nuke-quickreview)找到相关文档。
+审核提交的大多数方面都可以使用挂钩进行调整。请单击[此处](https://developer.shotgridsoftware.com/tk-nuke-quickreview)获取相关文档。
 

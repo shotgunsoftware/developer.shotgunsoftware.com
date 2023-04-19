@@ -7,11 +7,11 @@ lang: zh_CN
 
 # Photoshop
 
-{% include product %} Photoshop CC 插件提供一个用于在 Photoshop CC 工作流中集成 {% include product %} 的标准平台。它包含一个标准 {% include product %} Pipeline Toolkit 插件并依赖于 [tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP)。
+{% include product %} Photoshop CC 插件提供一个用于在 Photoshop CC 工作流中集成 {% include product %} 的平台。它包含一个标准 {% include product %} Pipeline Toolkit 插件并依赖于 [tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP)。
 
-启用后，Photoshop CC 中将出现一个 **{% include product %}** 面板。此面板显示有关当前 {% include product %} 上下文以及该上下文中安装的应用注册的各种命令的信息。
+启用后，Photoshop CC 中将出现一个 **{% include product %} Adobe Panel**。此面板显示有关当前 {% include product %} 上下文以及该上下文中安装的应用注册的各种命令的信息。
 
-![扩展](../images/engines/photoshopcc-photoshopcc_extension.png)
+![插件](../images/engines/photoshopcc-photoshopcc_extension.png)
 
 ## 支持的应用程序版本
 
@@ -23,15 +23,15 @@ lang: zh_CN
 
 ## 界面概述
 
-{% include product %} 扩展面板采用与原生 Photoshop CC 面板相同的配色和基本布局。面板有五个部分组成：
+{% include product %} 扩展面板采用与原生 Photoshop CC 面板相同的配色和基本布局。面板由五个部分组成：
 
-![扩展组件](../images/engines/photoshopcc-extension_components.png)
+![组件](../images/engines/photoshopcc-extension_components.png)
 
-1. **上下文标题** - 当前上下文的缩略图和字段。
-2. **收藏工具架** - 用于显示当前上下文中最常用的应用。
-3. **命令列表** - 当前上下文的所有未收藏命令。
-4. **上下文菜单** - 其他与上下文相关的命令和调试工具。
-5. **日志记录控制台** - 一个控制台叠加层，显示调试的日志记录输出。
+1. **上下文标题** \- 当前上下文的缩略图和字段。
+2. **收藏工具架** \- 用于显示当前上下文中最常用的应用。
+3. **命令列表** \- 当前上下文的所有未收藏命令。
+4. **上下文菜单** \- 与上下文相关的其他命令和调试工具。
+5. **日志记录控制台** \- 一个控制台叠加层，显示调试的日志记录输出。
 
 ## 安装
 
@@ -39,9 +39,9 @@ lang: zh_CN
 
 ## 启用扩展
 
-安装此扩展后，需要通过 Photoshop CC 中的扩展菜单启动它。
+安装此扩展后，需要通过 Photoshop CC 中的“Extensions”菜单启动它。
 
-![扩展菜单](../images/engines/photoshopcc-extensions_menu.png)
+![菜单](../images/engines/photoshopcc-extensions_menu.png)
 
 此操作只需要做一次，之后 {% include product %} 扩展面板便可一直留在 Photoshop CC 布局中，后续启动时不必再启用。
 
@@ -57,9 +57,9 @@ lang: zh_CN
 
 上下文标题是一个可自定义的区域，可显示有关当前 {% include product %} 上下文的信息。
 
-![扩展标题](../images/engines/photoshopcc-extension_header.png)
+![标题](../images/engines/photoshopcc-extension_header.png)
 
-上下文由当前激活的文档决定。插件确定上下文后，标题会更新并显示上下文的缩略图字段详情。这些字段信息由一个挂钩来控制。有关如何对字段的显示进行自定义的信息，请参见下面的**上下文字段显示挂钩** 部分。
+上下文由当前激活的文档决定。插件确定上下文后，标题会更新并显示上下文的缩略图字段详情。这些字段信息由一个挂钩来控制。有关如何对字段的显示进行自定义的信息，请参见下面的**上下文字段显示挂钩**部分。
 
 另外还要注意的是，由于 Photoshop CC 是一个多文档界面，上下文（因此也包括 {% include product %} 扩展）会随着您切换激活文档而更新。艺术家要理解这种行为，特别是当同时在多个 {% include product %} 上下文中工作时，明白这一点非常重要。
 
@@ -67,7 +67,7 @@ lang: zh_CN
 
 收藏工具架与 Maya 和 Houdini 等其他 {% include product %} DCC 集成中提供的菜单收藏夹类似。在界面的这个部分，用户随手即可访问最常用的 Toolkit 应用，并可按照上下文标题轻松找到应用。
 
-![扩展工具架](../images/engines/photoshopcc-extension_shelf.png)
+![工具架](../images/engines/photoshopcc-extension_shelf.png)
 
 此工具架以按钮的形式显示收藏的命令，将鼠标移至这些按钮时，按钮从灰色变为彩色，同时顶部的标签中显示它们的名称。将鼠标悬停在按钮上方时，将显示它们的工具提示。
 
@@ -79,7 +79,7 @@ lang: zh_CN
 
 命令列表显示当前上下文注册的其他“常规”命令。
 
-![扩展命令](../images/engines/photoshopcc-extension_commands.png)
+![命令](../images/engines/photoshopcc-extension_commands.png)
 
 通常，工作流配置内安装的应用会注册一个或多个命令，这些命令将显示在这里。如果命令未标识为收藏项，也未被指定为上下文菜单命令，它们将显示在此处。
 
@@ -89,7 +89,7 @@ lang: zh_CN
 
 所有注册为上下文菜单命令的命令将显示在 {% include product %} 扩展面板的上下文菜单中。
 
-![扩展上下文菜单](../images/engines/photoshopcc-extension_context_menu.png)
+![上下文菜单](../images/engines/photoshopcc-extension_context_menu.png)
 
 与其他命令区域一样，这些命令会随上下文一起变化。诸如 **Jump to {% include product %}** 和 **Jump to Filesystem** 这样的命令将始终位于此处。
 
@@ -97,7 +97,7 @@ lang: zh_CN
 
 日志记录控制台同时显示来自 CEP Javascript 解释器和 Toolkit Python 进程的所有日志记录输出。
 
-![扩展](../images/engines/photoshopcc-extension_console.png)
+![控制台(Console)](../images/engines/photoshopcc-extension_console.png)
 
 当扩展遇到任何需要技术支持的问题时，日志记录控制台的输出就变得极为有用，这些信息可帮助 {% include product %} 技术支持团队调试问题。
 
@@ -151,7 +151,7 @@ shelf_favorites:
 
 ### Photoshop API
 
-插件向 Python 公开了适用于 Photoshop CC 的 Javascript API。单击[此处](https://wwwimages.adobe.com/content/dam/Adobe/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf)可查看此 API 的完整文档。
+插件向 Python 公开了适用于 Photoshop CC 的 Javascript API。
 
 Photoshop API 对象被公开为 `engine.adobe`。下面的示例说明怎样才能从 Toolkit 应用和挂钩内直接操纵 Photoshop DOM。标准 Toolkit 应用还包含有关如何与 Photoshop 文档进行交互的可行示例。
 
@@ -219,8 +219,8 @@ for (i, layer) in enumerate(layers):
 
 `SHOTGUN_ADOBE_PYTHON` - 启动插件时使用的 Python 可执行文件的路径。如果不设置，将使用系统的 Python。如果 Photoshop 是从某个 Python 进程启动（如 {% include product %} Desktop 或通过 tk-shell 插件），则 Photoshop 集成将使用该进程使用的 Python。
 
-注意：其他环境变量存在于 Adobe 框架中。有关详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-framework-adobe/)。
+注意：Adobe 框架中存在其他环境变量。有关详细信息，请参见[开发人员文档](https://developer.shotgridsoftware.com/tk-framework-adobe/)。
 
 ### 应用开发人员须知
 
-* 因为 Python 进程与 Photoshop CC 进程彼此分离，所以插件内部会进行一些处理，让应用窗口以尽可能整洁的方式显示在 Photoshop 窗口之上。此项设置需要注意的一点是，默认选项是为 `QFileDialog` 使用原生操作系统窗口。如果您开发的是与此插件一起使用的应用，要确保将此选项设置为不使用原生对话框。 [请参见 tk-multi-pythonconsole 应用中关于此选项的示例](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218)。
+* 因为 Python 进程与 Photoshop CC 进程彼此分离，所以插件内部会进行一些处理，让应用窗口以尽可能整洁的方式显示在 Photoshop 窗口之上。此项设置需要注意的一点是，默认选项是为 `QFileDialog` 使用原生操作系统窗口。如果您要开发与此插件一起使用的应用，务必将此选项设置为不使用原生对话框。[请参见 tk-multi-pythonconsole 应用中关于此选项的示例](https://github.com/shotgunsoftware/tk-multi-pythonconsole/blob/master/python/app/console.py#L218)。

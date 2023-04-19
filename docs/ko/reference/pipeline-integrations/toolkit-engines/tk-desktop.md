@@ -19,11 +19,11 @@ tk-desktop 엔진은 툴킷 앱을 쉽게 실행할 수 있게 해 주는 응용
 
 프로젝트를 클릭하면 백그라운드에서 python 인터프리터가 시작됩니다. 프로젝트가 이 python 인터프리터를 사용하도록 구성되어 있으면 시작 시 해당 프로젝트의 tk-desktop을 초기화합니다. 해당 엔진 인스턴스는 실행할 수 있는 GUI 명령에 다시 연결합니다.
 
-명령을 클릭하면 해당 백그라운드 python 프로세스가 명령을 실행합니다. 이렇게 하면 예를 들어 하나의 프로젝트에서 python 2.7을 테스트하는 동안 다른 프로젝트가 python 2.6을 실행할 수 있습니다.
+명령을 클릭하면 해당 백그라운드 python 프로세스가 명령을 실행합니다.
 
 ## 커스텀 패널 등록
 
-[패널 기반 UI](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel)가 있는 툴킷 앱은 실행 시 데스크톱 내부의 탭에 자동으로 고정됩니다.
+[패널 기반 UI](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel)가 있는 툴킷 앱은 실행 시 데스크톱 내부의 탭에 자동으로 고정됩니다. 
 
 {% include product %} Panel과 같은 패널 기반 앱이 있고 {% include product %} 데스크톱에 탭으로 표시하려면 시작 시 실행되도록 구성하면 됩니다. 데스크톱이 사이트 컨텍스트 모드(모든 프로젝트 표시)에서 시작되면 자동 시작으로 등록된 모든 항목이 시작됩니다. 이러한 항목 중 하나가 패널이면 패널이 고정됩니다. 항목은 구성에서 정의된 순서대로 처리되며 탭 순서도 지정됩니다.
 

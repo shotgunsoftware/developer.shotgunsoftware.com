@@ -13,12 +13,12 @@ lang: ja
 <a id="System_Requirements"></a>
 ## 動作環境
 
-デーモンは、Python がインストールされ、{% include product %} サーバにネットワーク アクセスできる任意のマシン上で実行できます。** サーバ上で実行する必要は** ありません{% include product %}。実際、ホストされているバージョンの {% include product %} を使用している場合、これはオプションではありません。ただし、必要に応じて {% include product %} サーバ上で実行することもできます。そうでなければ、任意のサーバで実行できます。
+デーモンは、Python がインストールされ、{% include product %} サーバにネットワーク アクセスできる任意のマシン上で実行できます。{% include product %} サーバ上で実行する必要は** ありません**。実際、ホストされているバージョンの {% include product %} を使用している場合、これはオプションではありません。ただし、必要に応じて {% include product %} サーバ上で実行することもできます。そうでなければ、任意のサーバで実行できます。
 
 * Python v2.6、v2.7 または 3.7
 * [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)
-   * Python v2.6 または v2.7 には v3.0.37 以降を使用し、Python 3.7 には v3.1.0 以降を使用します。
-   * いずれの場合も、[最新の Python API バージョン](https://github.com/shotgunsoftware/python-api/releases)を使用し、この依存関係を継続して更新することを強くお勧めします。
+  * Python 3.7 以降には v3.1.0 以降を使用します(_注: Python 2 はサポートされなくなりました_)。
+  * いずれの場合も、[最新の Python API バージョン](https://github.com/shotgunsoftware/python-api/releases)を使用し、この依存関係を継続して更新することを強くお勧めします。
 * {% include product %} サーバへのネットワーク アクセス
 
 <a id="Installing_Shotgun_API"></a>
@@ -49,7 +49,7 @@ ImportError: No module named shotgun_api3
 
 {% include product %}Events のインストール先は、ユーザが自由に選択できます。ここでも、Python と {% include product %} API がコンピュータにインストールされ、{% include product %} サーバへのネットワーク アクセス権がある限り、任意の場所から実行することができます。ただし、スタジオにとって論理的な場所にインストールすることが自然です。`/usr/local/shotgun/shotgunEvents` などは論理的であるため、ここからは、これを例として使用します。
 
-ソースとアーカイブは、[ https://github.com/shotgunsoftware/shotgunEvents]() の GitHub で入手できます。
+ソースとアーカイブは、<https://github.com/shotgunsoftware/shotgunEvents> の GitHub で入手できます。
 
 {% include info title="注" content="**Windows の場合:** Windows サーバを使用している場合は `C:\shotgun\shotgunEvents` を使用できますが、このドキュメントでは Linux パスを使用します。" %}
 
@@ -63,14 +63,14 @@ $ cd /usr/local/shotgun
 $ git clone git://github.com/shotgunsoftware/shotgunEvents.git
 ```
 
-{% include info title="警告" content="GitHub から更新を取得する前に、構成、プラグイン、および shotgunEvents に加えた変更を必ずバックアップして、何も失われないようにしてください。または、自分でプロジェクトをフォークして、自分自身で変更のリポジトリを維持することもできます。" %}
+{% include info title="警告" content="GitHub から更新を取得する前に、構成、プラグイン、および shotgunEvents に加えた変更を必ずバックアップして、何も失われないようにしてください。または、自分でプロジェクトをフォークして、自分自身で変更のリポジトリを維持することもできます。)" %}
 
 <a id="Downloading_Archive"></a>
 ### アーカイブのダウンロード
 
 コンピュータに `git` がない場合、またはソースのアーカイブをダウンロードするだけの場合は、次の手順を実行します。
 
-- [https://github.com/shotgunsoftware/shotgunEvents/archives/master]() に移動します。
+- <https://github.com/shotgunsoftware/shotgunEvents/> にアクセスします。
 - 希望の形式でソースをダウンロードします。
 - コンピュータ上に保存します。
 - `/usr/local/shotgun` フォルダにファイルを解凍します。
@@ -122,8 +122,8 @@ $ pip install -r /path/to/requirements.txt
 
 Windows システムでは、次のいずれかが必要です。
 
-* [PyWin32](https://sourceforge.net/projects/pywin32/) がインストールされた Python
-* [Active Python](https://www.activestate.com/activepython)
+* [PyWin32](https://sourceforge.net/projects/pywin32/) がインストールされている Python
+* [アクティブな Python](https://www.activestate.com/activepython)
 
 Active Python には {% include product %} イベント デーモンと Windows のサービス アーキテクチャを統合するために必要な PyWin32 モジュールが付属しています。
 

@@ -9,7 +9,7 @@ lang: ko
 
 ## 사실 정보
 
-Windows는 경로 이름의 기본 제한 문자 수가 255자/260자로 매우 낮습니다. [이 제한에 대한 Microsoft의 정보는 여기](https://docs.microsoft.com/ko-kr/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#maximum-path-length-limitation)에 있으며, [자세한 기술 정보는 여기](https://docs.microsoft.com/ko-kr/windows/win32/fileio/maximum-file-path-limitation)에서 확인할 수 있습니다.
+Windows는 경로 이름의 기본 제한 문자 수가 255자/260자로 매우 낮습니다. [이 제한에 대한 Microsoft의 정보는 여기](https://docs.microsoft.com/ko-kr/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#maximum-path-length-limitation)에 있으며 [여기에서 자세한 기술 정보](https://docs.microsoft.com/ko-kr/windows/win32/fileio/maximum-file-path-limitation)를 확인할 수 있습니다.
 
 ## 오류
 
@@ -33,15 +33,15 @@ ERROR sgtk.core.bootstrap.cached_configuration Failed to install configuration s
 
 ## 이 문제가 발생하는 이유
 
-Windows에서 {% include product %} 데스크톱은 데이터를 `%APPDATA%` 폴더(일반적으로 `C:\Users\jane\AppData\Roaming\Shotgun`)에 저장합니다. 표준 default2 툴킷 구성을 사용할 때는 사용자 이름이 지나치게 길지만 않으면 대부분 괜찮습니다. 그러나 자체 앱, 엔진 또는 프레임워크를 만드는 경우, 특히 코드와 함께 종속성을 번들로 묶고(여기서처럼) 번들에 디렉토리의 깊은 트리가 있는 경우 이 문제가 발생할 위험이 더 클 수 있습니다.
+Windows에서 {% include product %} 데스크톱은 데이터를 `%APPDATA%` 폴더(일반적으로 `C:\Users\jane\AppData\Roaming\Shotgun`)에 저장합니다. 표준 default2 툴킷 구성을 사용할 때는 사용자 이름이 지나치게 길지만 않으면 대부분 괜찮습니다. 그러나 자체 앱, 엔진 또는 프레임워크를 만드는 경우, 특히 코드와 함께 종속성을 번들로 묶고(여기서처럼) 번들에 디렉토리의 깊은 트리가 있는 경우 이 문제가 발생할 위험이 더 클 수 있습니다. 
 
 ## 문제 해결
 
-이 문제를 해결하는 방법은 일반적으로 `$SHOTGUN_HOME` 환경 변수를 `C:\SG`와 같이 매우 짧게 설정하는 것입니다. 이렇게 하면 SG 데스크톱이 `C:\Users\jane\AppData\Roaming\Shotgun` 대신 `C:\SG`에 해당 데이터를 저장하게 되며 문자 길이가 줄어들어 일반적으로 제한 수준을 유지할 수 있습니다. [환경 변수에 대한 자세한 내용은 여기를 참조](https://developer.shotgridsoftware.com/tk-core/initializing.html?#environment-variables)하십시오.
+이 문제를 해결하는 방법은 일반적으로 `$SHOTGUN_HOME` 환경 변수를 `C:\SG`와 같이 매우 짧게 설정하는 것입니다. 이렇게 하면 SG 데스크톱이 `C:\Users\jane\AppData\Roaming\Shotgun` 대신 `C:\SG`에 해당 데이터를 저장하게 되며 문자 길이가 줄어들어 일반적으로 제한 수준을 유지할 수 있습니다. [여기에서 환경 변수에 대해 읽을](https://developer.shotgridsoftware.com/tk-core/initializing.html?#environment-variables) 수 있습니다.
 
 ### 향후 가능성
 
 [여기에 설명된 대로](https://docs.microsoft.com/ko-kr/windows/win32/fileio/maximum-file-path-limitation#enable-long-paths-in-windows-10-version-1607-and-later) 레지스트리 업데이트를 통해 Windows 10의 최신 버전에서 이 문제를 완화하는 다른 방법이 *있을 수도 있지만* SG 데스크톱에서 매니페스트 파일을 업데이트하여 `longPathAware` 설정을 활용하도록 하는 것도 필요하다고 생각합니다. 제가 Mac 사용자라 그런지는 모르겠지만 말입니다. ;)
 
-[커뮤니티에서 전체 스레드를 참조](https://community.shotgridsoftware.com/t/errors-due-to-windows-paths-too-long-256-characters/10101)하십시오.
+[커뮤니티에서 전체 스레드 보기](https://community.shotgridsoftware.com/t/errors-due-to-windows-paths-too-long-256-characters/10101)
 

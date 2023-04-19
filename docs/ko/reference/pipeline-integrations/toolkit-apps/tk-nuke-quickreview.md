@@ -13,7 +13,7 @@ Quickreview 앱을 사용하면 {% include product %}에서 리뷰를 위해 Nuk
 
 {% include product %}에서 버전이 생성되는 방법을 제어할 수 있도록 다음 UI가 제공됩니다.
 
-![UI 제출](../images/apps/nuke-quickreview-submit.png)
+![제출 UI](../images/apps/nuke-quickreview-submit.png)
 
 다음 항목을 제어할 수 있습니다.
 
@@ -28,7 +28,7 @@ Quickreview 앱을 사용하면 {% include product %}에서 리뷰를 위해 Nuk
 
 기본적으로 앱은 슬레이트 및 번인 기능이 있는 Quicktime을 생성합니다.
 
-![슬레이트 예](../images/apps/nuke-quickreview-slate.png)![번인 예](../images/apps/nuke-quickreview-burnins.png)
+![슬레이트 예](../images/apps/nuke-quickreview-slate.png) ![번인 예](../images/apps/nuke-quickreview-burnins.png) 
 
 ## 커스터마이즈
 

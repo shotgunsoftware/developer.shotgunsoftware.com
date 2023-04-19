@@ -12,7 +12,6 @@ The isolation feature set combines our Cloud Hosted Platform with client-managed
 Leveraging the isolation feature set has the following advantages over the Standard offering:
 
 * **Media Isolation** by hosting of assets and attachments in a **client-owned S3 Bucket**
-* **Web Traffic Isolation** from the public internet
 * **Media Traffic Isolation** from the public internet
 * **Media Replication** allowing you to replicate media in one additional AWS Region
 * Access to fully managed {% include product %} Cloud Services
@@ -30,8 +29,8 @@ The isolation feature set is a solution that requires less upkeep, as well as le
 ## Media isolation feature
 Media Isolation allows your studio to keep the ownership and control of the media and attachments that you upload to {% include product %}. With Media Isolation, all the content that you upload to {% include product %} can be store in your studio private S3 bucket. Access to the media is provided to the {% include product %} service only, using AWS AssumeRole keyless Security Token Service. Your studio remains in control of the assets and the access to the assets, access that you can revoke at will.
 
-## Traffic isolation features
-Media and Web traffic isolation features can be enabled to prevent your traffic from being routed on the public internet, limiting it to the AWS backbone and your studio network. The traffic between {% include product %} Services and your studio stays in closed network, never going outside AWS or your Studio network.
+## Traffic isolation feature
+Media traffic isolation feature can be enabled to prevent your media traffic from being routed on the public internet, limiting it to the AWS backbone and your studio network. The traffic between {% include product %} Services and your studio stays in closed network, never going outside AWS or your Studio network.
 
 With the Media Traffic Isolation feature activated, the media will only leave your studio infrastructure once to get transcoded.
 

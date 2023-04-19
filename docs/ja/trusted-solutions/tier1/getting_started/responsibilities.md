@@ -28,7 +28,6 @@ Autodesk does not guarantee any timeline for setup completion.
 |Closed VPC	|Setting up DirectConnect/VPN, etc. to allow closed access to the VPC. Securing the VPC by putting the correct Security Groups in place.	|You	|*AWS |
 |Media Isolation	|Creating the S3 end-points. Deploying the S3 Proxy.	|You|	{% include product %} and *AWS |
 |Traffic Isolation	|Creating VPCs. Creating Subnets.|	You|{% include product %}|
-|Private Access Point|Checking that the access point is only available from Your network.|	{% include product %}|	N/A|
 |Monitoring and Reliability|Maintaining uptime up to Autodesk standards. High availability and redundancy of Cloud Services. Metadata and database resiliency and redundancy. Maintaining Recovery Point Objective (RPO) for metadata and database.	|{% include product %}|N/A|
 |Service Level Objective|Maintaining {% include product %} target RPO and RTO (See [{% include product %} Security White Paper](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_general_security_ar_security_white_paper_html) for more details).|{% include product %}|	N/A|
 |Security and Governance |Maintaining the {% include product %} Cloud Services that Isolation clients are interfacing with, so that they are meeting expectations in terms of security, vulnerability patching, scanning, auditing, etc. (See [{% include product %} Security White Paper](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_general_security_ar_security_white_paper_html) for more details).|	{% include product %}	|N/A|

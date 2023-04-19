@@ -43,31 +43,46 @@ The template will create an AWS Role with the following permissions on your buck
 
 ## Media Isolation Activation
 
-Please contact {% include product %} support via the dedicated Slack channel and provide the following information:
-  * S3 bucket name
-  * AWS Region
-  * {% include product %} Role ARN
+Please contact {% include product %} support via the dedicated Microsoft Teams channel and provide the following information:
+  * {% include product %} IAM Role ARN
 
-{% include product %} will configure your test site to use your own S3 bucket.
+{% include product %} will allow your site to use your IAM role.
 
-## Validation
+## Media Configuration Setup
 
-At this stage, you should be able to upload and download media. The {% include product %} Transcoding Service should also be able to read, transcode and write back the thumbnails, filmstrip and web friendly versions of your media back to your S3 Bucket. To validate this:
+Navigate to your site's site preferences and under the Isolation section, fill in the S3 Configuration preference with the following JSON:
 
-1. Log in your Migration Test Site.
-2. From the Navigation Bar, go the the Media app
-3. Once in the Media App, drag and drop or upload an image or a video from your computer. If you didn't created a Project yet, you may have to create one first.
-4. A version should appear, with a thumbnail, in the Media App.
-5. Validate that you can playback the media by clicking the Play button.
-6. To validate that the media has been stored in your S3 bucket, from the media viewer, click on the cog and then select or hover over ‘view source’. The HTTPS link should contain your bucket name.
+```json
+{​​​​​​​
+   "<S3_CONFIG_NAME>": {​​​​​​​
+     "region": "<BUCKET_REGION>",
+     "bucket": "<BUCKET_NAME>",
+     "prefix": "<BUCKET_PREFIX>",
+     "aws_role_arn": "<ROLE_ARN>"
+   }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+}​​
+```
+
+### Fields description
+
+| Field| Description | 
+|------|----------------------------------------------|
+|S3_CONFIG_NAME|Unique name for the configuration. This will be selectable as a bucket later on.|
+|BUCKET_REGION|Isolation bucket's region|
+|BUCKET_NAME|Isolation bucket's name|
+|BUCKET_PREFIX|The S3 prefix where the media is located on the isolation bucket|
+|ROLE_ARN|AWS Role ARN that ShotGrid can use to access the bucket. This must be the same role specified in the Initial Setup|
+|S3_INTERFACE_VPC_ENDPOINT|Optional - This is only needed if Media Traffic Isolation is utilized.|
+
+## Testing Media Configuration
+
+After the configuration has been updated on your site, navigate to the /admin/speedtest route of your ShotGrid site. Select the new **S3_CONFIG_NAME** that was just set up previously and start the test to confirm that all the upload/download tests work as intended.
 
 ## Next Steps
 
 See [Media Traffic Isolation](./media_segregation.md) to activate the Media Traffic Isolation feature.
 
-See [Web Traffic Isolation](./traffic_segregation.md) to activate the Web Traffic Isolation feature.
-
-See [Media Replication](./s3_replication.md) to activate the Web Traffic Isolation feature.
+See [Media Replication](./s3_replication.md) to activate the Media Replication Isolation feature.
 
 Go to [Setup](./setup.md) for an overview of the possible next steps.
 
