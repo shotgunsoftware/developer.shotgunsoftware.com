@@ -95,7 +95,7 @@ def execute_multiple_actions(self, actions)
 
 `v1.12.0` よりも前のバージョンでは、アプリケーションがアクションを実行するには `execute_action` フックを起動していました。新しいバージョンでは `execute_multiple_actions` フックを起動します。既存のフックとの下位互換性を提供するために、`execute_multiple_actions` フックは提供される各アクションの `execute_action` を実際に起動します。アプリケーションを `v1.12.0` 以降にアップグレードした後に `execute_multiple_actions` フックが定義されていないと報告される場合は、環境の `actions_hook` 設定が組み込みフック `{self}/{engine_name}_actions.py` から正しく継承されるようにします。組み込みフックからカスタム フックを取得する方法については、[Toolkit リファレンス ドキュメント](https://developer.shotgridsoftware.com/tk-core/core.html#hook)を参照してください。
 
-第 2 世代のフック形式については、[こちら](https://developer.shotgridsoftware.com/ja/6d10dedf/)で確認してください。
+[第 2 世代のフック形式については、こちらで確認してください。](https://developer.shotgridsoftware.com/ja/6d10dedf/)
 
 フックの継承を使用すると、次のように既定のフックに他のアクションを追加できるようになります。
 

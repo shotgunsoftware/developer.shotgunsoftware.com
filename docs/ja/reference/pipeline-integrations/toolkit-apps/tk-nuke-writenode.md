@@ -105,7 +105,7 @@ tk-nuke-writenode:
 
 #### 変換メニューオプションを有効にする
 
-yml 環境ファイル内のアプリの設定に追加できる、`show_convert_actions` という名前の設定オプションがあります。設定 `show_convert_actions: True` を追加するときに、*[SG 書き込みノードを書き込みノードに変換...](Convert SG Write Nodes to Write Nodes...)*および*[書き込みノードを SG 形式に再変換...](Convert Write Nodes back to SG format...)*メニュー オプションが使用できるようになります。
+yml 環境ファイル内のアプリの設定に追加できる、`show_convert_actions` という名前の設定オプションがあります。設定 `show_convert_actions: True` を追加するときに、*[SG 書き込みノードを書き込みノードに変換...] (Convert SG Write Nodes to Write Nodes...)*および*[書き込みノードを SG 形式に再変換...] (Convert Write Nodes back to SG format...)*メニュー オプションが使用できるようになります。
 
 ![書き込みノード変換メニュー オプション](../images/apps/nuke-writenode-write_node_convert_menu_options.png)
 
@@ -180,7 +180,7 @@ SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 #### 3\.init.py スクリプト
 
-この時点で、レンダリング送信ツールから Toolkit 環境データが渡されていて、レンダリング ファーム マシンの環境変数に認証データが格納されています。レンダリング ジョブ内で Toolkit をブートストラップするためには、最後に、次の `init.py` サンプル コードを Nuke のプラグイン パスに配置して、Nuke を開始するときに起動されるようにする必要があります。(詳細については、[スタートアップ スクリプトに関する Foundry のドキュメント](https://support.foundry.com/hc/en-us/articles/360003811839-Q100490)を参照してください。)
+この時点で、レンダリング送信ツールから Toolkit 環境データが渡されていて、レンダリング ファーム マシンの環境変数に認証データが格納されています。レンダリング ジョブ内で Toolkit をブートストラップするためには、最後に、次の `init.py` サンプル コードを Nuke のプラグイン パスに配置して、Nuke を開始するときに起動されるようにする必要があります。(詳細については、[スタートアップ スクリプトに関する Foundry のドキュメント](https://support.foundry.com/hc/ja/articles/360003811839-Q100490)を参照してください。)
 
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap

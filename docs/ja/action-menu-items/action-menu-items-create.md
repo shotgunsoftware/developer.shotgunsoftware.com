@@ -18,37 +18,37 @@ API 開発者は、アクション メニュー アイテム(AMI)からエンテ
 
 **1\.[タイトル] (Title) (title):** メニュー項目の表示名です。
 
-**2\.[エンティティ タイプ](Entity Type) (entity_type)**: メニュー項目が特定のタイプのエンティティ ページ([バージョン] (Version)など)にのみ表示されるように制限します。このキー(nil 値)を省略すると、すべてのメニュー項目が有効になります。
+**2\.[エンティティ タイプ] (Entity Type) (entity_type):** メニュー項目が特定のタイプのエンティティ ページ([バージョン] (Version)など)にのみ表示されるように制限します。このキー(nil 値)を省略すると、すべてのメニュー項目が有効になります。
 
 **3\.URL (url):** PDF レポートを作成するスクリプトの URL です。
 
 **4\.[順序] (Order) (list_order):** メニュー項目の順番です(他のカスタム メニュー項目に関連)。
 
-**5\.[軽量ペイロード](Light Payload) (light_payload):** [カスタム プロトコル](https://developer.shotgridsoftware.com/ja/af0c94ce/)を使用している場合、スクリプトは、完全なペイロードではなく、ペイロード情報を保持するイベント ログ エントリ レコードの ID を受け取ります。
+**5\.[軽量ペイロード] (Light Payload) (light_payload):** [カスタム プロトコル](https://developer.shotgridsoftware.com/ja/af0c94ce/)を使用している場合、スクリプトは、完全なペイロードではなく、ペイロード情報を保持するイベント ログ エントリ レコードの ID を受け取ります。
 
 **6:設定メニュー オプション:** 次のオプションから選択できます。
 
-- **[エンティティ レコードの右クリック メニューに含める](Include in the right-click menu on an Entity record):** レコードを右クリックして AMI を含める既定値です。![レコードを右クリック](./images/ami-configure-menu-options-right-click-menu.png)
+- **[エンティティ レコードの右クリック メニューに含める] (Include in the right-click menu on an Entity record):** レコードを右クリックして AMI を含める既定値です。![レコードを右クリック](./images/ami-configure-menu-options-right-click-menu.png)
 
-- **エンティティ ページの[エンティティを追加](Add Entity)ドロップダウン メニューに含める:** この AMI を[エンティティの追加](Add Entity)ドロップダウンメニューに含めるオプション(例: 「アセットの追加」、「ショットの追加」など)。![[エンティティの追加] (Add Entity)ドロップダウンメニュー](./images/ami-configure-menu-options-add-entity-dropdown-menu.png)
+- **エンティティ ページの[エンティティを追加] (Add Entity)ドロップダウン メニューに含める:** この AMI を[エンティティの追加] (Add Entity)ドロップダウンメニューに含めるオプション(例: 「アセットの追加」、「ショットの追加」など)。![[エンティティの追加] (Add Entity)ドロップダウンメニュー](./images/ami-configure-menu-options-add-entity-dropdown-menu.png)
 
-- **エンティティ ページの[エンティティを追加](Add Entity)ボタンをオーバーライド:** このオプションを使用すると、[エンティティの追加] (Add Entity)ボタンを AMI で上書きすることができます。![[エンティティの追加] (Add Entity)ドロップダウンメニュー](./images/ami-configure-menu-options-add-entity-override.png)
+- **エンティティ ページの[エンティティを追加] (Add Entity)ボタンをオーバーライド:** このオプションを使用すると、[エンティティの追加] (Add Entity)ボタンを AMI で上書きすることができます。![[エンティティの追加] (Add Entity)ドロップダウンメニュー](./images/ami-configure-menu-options-add-entity-override.png)
 
 - **[ユーザ]メニューの内部リソース セクションに含める:** これにより、内部リソースを使用してユーザ メニューをカスタマイズすることができます。内部リソースを使用してユーザ メニューをカスタマイズする方法の詳細については、[こちら](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_display_options_ar_user_menu_customization_html)を参照してください。
 
 **7\.[フォルダ] (Folder) (folder)**: コンテキスト メニュー内のフォルダに AMI を収納できます(現在は単一レベルのフォルダのみをサポート)。![フォルダ](./images/ami-create-folder.png)
 
-**8\.[モーダル オーバーレイで開く](Open in Modal Overlay): **AMI を新しいタブで開かずに、iframe ウィンドウ内に開くことができます。Shotgun で HTTPS が実行されている場合は、すべての iframe を HTTPS に設定する必要もあります。
+**8\.[モーダル オーバーレイで開く] (Open in Modal Overlay):** AMI を新しいタブで開かずに、iframe ウィンドウ内に開くことができます。Shotgun で HTTPS が実行されている場合は、すべての iframe を HTTPS に設定する必要もあります。
 
-**9\.[データ更新のポーリング](Poll for Data Updates) (poll_for_data_updates):** イベント ログ エントリをクエリーするためのポーリング ループを開始します。これは、ActionMenuItem の反対側のコードを変更して、ActionMenuItem をトリガしたページに表示されているエンティティの API を介して Shotgun に戻る場合に使用します。
+**9\.[データ更新のポーリング] (Poll for Data Updates) (poll_for_data_updates):** イベント ログ エントリをクエリーするためのポーリング ループを開始します。これは、ActionMenuItem の反対側のコードを変更して、ActionMenuItem をトリガしたページに表示されているエンティティの API を介して Shotgun に戻る場合に使用します。
 
-**10\.[権限グループに制限](Restrict to Permission Groups) (permissions_groups):** AMI へのアクセスを、指定した権限グループのみに制限できます。空の場合は、すべてのユーザが AMI を使用できます。
+**10\.[権限グループに制限] (Restrict to Permission Groups) (permissions_groups):** AMI へのアクセスを、指定した権限グループのみに制限できます。空の場合は、すべてのユーザが AMI を使用できます。
 
-**11\.[プロジェクトに制限](Restrict to Projects) (projects):** AMI が指定したプロジェクトにのみ表示されるようにします。空の場合は、すべてのプロジェクトで AMI を使用できます。
+**11\.[プロジェクトに制限] (Restrict to Projects) (projects):** AMI が指定したプロジェクトにのみ表示されるようにします。空の場合は、すべてのプロジェクトで AMI を使用できます。
 
-**12\.[シークレット トークン](Secret Token):** [シークレット トークン](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_general_security_ar_securing_amis_html)を設定して、AMI を保護します。
+**12\.[シークレット トークン] (Secret Token):** [シークレット トークン](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_general_security_ar_securing_amis_html)を設定して、AMI を保護します。
 
-**13\.[選択が必要](Selection Required) (selection_required):** 選択中の行がない場合にメニュー項目を有効にするかどうかを決定します。
+**13\.[選択が必要] (Selection Required) (selection_required):** 選択中の行がない場合にメニュー項目を有効にするかどうかを決定します。
 
 ## アクション メニュー アイテムのタイプ
 
@@ -118,7 +118,7 @@ API 開発者は、アクション メニュー アイテム(AMI)からエンテ
 *   **page_id:**アクション メニュー アイテムのクリック元のページの ID (例: 1353)
 *   **server_hostname:** AMI がトリガされたシステムのホスト名。同じ AMI を呼び出す複数のサーバがある場合に役立ちます(ステージング サーバとプロダクション サーバなど)。
 *   **referrer_path:** AMI が呼び出された URL の正規のパス。
-*   **session_uuid:** この AMI が呼び出されたウィンドウの一意の識別子。これは、[データ更新のポーリング](Poll for Data Updates)チェックボックスと Python API の [`set_session_uuid`](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) メソッドと一緒に使用して、AMI が呼び出されたページに情報を一斉送信することができます。**注:** この機能の更新のポーリングは急激に減少し、最終的に停止します。そのため、ポーリングが停止する前に AMI が更新されない場合、ソース ページに更新が表示されないことがあります。
+*   **session_uuid:** この AMI が呼び出されたウィンドウの一意の識別子。これは、[データ更新のポーリング] (Poll for Data Updates)チェックボックスと Python API の [`set_session_uuid`](https://developer.shotgridsoftware.com/python-api/reference.html?highlight=session_uuid#shotgun_api3.shotgun.Shotgun.set_session_uuid) メソッドと一緒に使用して、AMI が呼び出されたページに情報を一斉送信することができます。**注:** この機能の更新のポーリングは急激に減少し、最終的に停止します。そのため、ポーリングが停止する前に AMI が更新されない場合、ソース ページに更新が表示されないことがあります。
 *   **cols:** ページで表示可能なすべての列のシステム フィールド名を含むカンマ区切りリスト(例: code, sg_status_list, description)
 *   **column_display_names:** ページで表示可能なすべての列の表示名を含むカンマ区切りリスト(例: Version, Status, Description)
 *   **view:** AMI が呼び出されたときに選択されていたビュー。ページのデザイン モードを使用して、任意のページに対して複数のビューを作成できます。

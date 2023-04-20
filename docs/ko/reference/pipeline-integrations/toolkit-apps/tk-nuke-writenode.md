@@ -180,7 +180,7 @@ SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 #### 3\. init.py 스크립트
 
-이 시점에서 툴킷 환경 데이터는 렌더 제출 도구에서 전달되고 인증 데이터는 렌더 팜 컴퓨터에서 환경 변수에 있습니다. 렌더 작업 내에서 툴킷을 부트스트랩(Bootstrapping)하는 마지막 단계는 Nuke의 플러그인 경로에 다음 예제 `init.py` 코드를 배치하여 Nuke가 시작될 때 이를 시작하도록 하는 것입니다. (자세한 내용은 [시작 스크립트에 대한 Foundry의 문서](https://support.foundry.com/hc/en-us/articles/360003811839-Q100490)를 참조하십시오.)
+이 시점에서 툴킷 환경 데이터는 렌더 제출 도구에서 전달되고 인증 데이터는 렌더 팜 컴퓨터에서 환경 변수에 있습니다. 렌더 작업 내에서 툴킷을 부트스트랩(Bootstrapping)하는 마지막 단계는 Nuke의 플러그인 경로에 다음 예제 `init.py` 코드를 배치하여 Nuke가 시작될 때 이를 시작하도록 하는 것입니다. (자세한 내용은 [시작 스크립트에 대한 Foundry의 문서](https://support.foundry.com/hc/ko/articles/360003811839-Q100490)를 참조하십시오.)
 
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap

@@ -128,7 +128,7 @@ YAML ファイルで表される動的な設定セットアップは次のモー
 - 上記の例のように、1 つのフィールドを使用できます(`name: code` など)。
 - 括弧内に複数のフィールド(`name:``"{asset_type}_{code}"` など)を使用できます。
 - 他にリンクされたエンティティのフィールドを追加する場合は、標準の {% include product %} ドット シンタックス(`name: "{sg_sequence.Sequence.code}_{code}"` など)を使用できます。
--   **filters** フィールドは {% include product %} クエリーです。比較的すぐ後に、[{% include product %} API 構文](https://developer.shotgridsoftware.com/python-api/reference.html)があります。これはディクショナリのリストで、各ディクショナリには、_path_、_relation_、および_values_ の各キーを指定する必要があります。$syntax の有効値は、{% include product %} エンティティ(ディレクトリ階層上位に sequence.yml がある場合はプロジェクトの `"$project"` と `"$sequence"` など)に対応した親フォルダです。{% include product %} エンティティ リンクの場合、$syntax (`{ "path": "project", "relation": "is", "values": [ "$project" ] }` など)を使用すると、環境設定内の親フォルダを参照できます。この詳細については、[以下の例](#examples)で説明します。
+-   **filters** フィールドは {% include product %} クエリーです。比較的すぐ後に、[{% include product %} API 構文](https://developer.shotgridsoftware.com/python-api/reference.html)があります。これはディクショナリのリストで、各ディクショナリには、_path_、_relation_、および _values_ の各キーを指定する必要があります。$syntax の有効値は、{% include product %} エンティティ(ディレクトリ階層上位に sequence.yml がある場合はプロジェクトの `"$project"` と `"$sequence"` など)に対応した親フォルダです。{% include product %} エンティティ リンクの場合、$syntax (`{ "path": "project", "relation": "is", "values": [ "$project" ] }` など)を使用すると、環境設定内の親フォルダを参照できます。この詳細については、[以下の例](#examples)で説明します。
     
 
 ## 複数のフォルダ
@@ -1279,7 +1279,7 @@ b) **カスタム エンティティを使用する:**`CustomEntity02` は、プ
 
 -   スキーマでこの新しいアセット タイプ vehicle の新しいブランチを作成します。
 -   `asset/` と `asset.yml` と同じレベルで、`asset_vehicle/` フォルダと `asset_vehicle.yml` を追加します。
--   この YAML ファイルにもフィルタ設定があります。vehicle _以外の_すべてのアセットに適用されるように `asset.yml` 内のフィルタを修正してから、タイプ vehicle のアセット_のみに_適用されるよう、`asset_vehicle.yml` を修正します。[これらのフィルタの例については、こちらを参照してください。](#different-file-system-layouts-for-different-pipeline-steps)
+-   この YAML ファイルにもフィルタ設定があります。vehicle _以外の_ すべてのアセットに適用されるように `asset.yml` 内のフィルタを修正してから、タイプ vehicle のアセット_のみに_ 適用されるよう、`asset_vehicle.yml` を修正します。[これらのフィルタの例については、こちらを参照してください。](#different-file-system-layouts-for-different-pipeline-steps)
 -   これで `asset` と `asset_vehicles` を表す 2 つのフォルダが作成されました。これらのアセット(`geoprep` や `lookdev` など)に対して作成するすべてのフォルダを、`asset_vehicle` の下に追加します。
     
 -   これらのアセットのファイルを保存およびパブリッシュする場合は、保存およびパブリッシュしたファイルのファイル パスを定義するテンプレートを、`core/templates.yml` 内に作成します。たとえば、[`maya_asset_work`](https://github.com/shotgunsoftware/tk-config-default/blob/v0.17.3/core/templates.yml#L480) に加えて、`maya_asset_work_vehicle` という名前のテンプレートを作成すると、その定義は vehicle アセットの Maya 作業ファイルを保存するテンプレート化されたパスになります。

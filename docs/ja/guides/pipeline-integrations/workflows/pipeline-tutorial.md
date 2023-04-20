@@ -13,7 +13,7 @@ lang: ja
 
 次に、このチュートリアルで作成されるパイプラインの概要を示します。 
 
-{% include figure src="./images/tutorial/image_0.png" caption="Pipeline Overview" %}
+{% include figure src="./images/tutorial/image_0.png" caption="パイプラインの概要" %}
 
 ## パイプラインの概要
 
@@ -63,11 +63,11 @@ lang: ja
 
 次に、{% include product %} で設定したプロジェクト エンティティのスクリーンショットを示します。
 
-{% include figure src="./images/tutorial/image_1.png" caption="Teapot and Table Assets" %}
+{% include figure src="./images/tutorial/image_1.png" caption="ティーポットとテーブル アセット" %}
 
-{% include figure src="./images/tutorial/image_2.png" caption="Shot linked to a Sequence" %}
+{% include figure src="./images/tutorial/image_2.png" caption="シーケンスにリンクされたショット" %}
 
-{% include figure src="./images/tutorial/image_3.png" caption="Tasks" width="400px" %}
+{% include figure src="./images/tutorial/image_3.png" caption="タスク" width="400px" %}
 
 ## ソフトウェア ランチャー
 
@@ -75,7 +75,7 @@ lang: ja
 
 Desktop にアプリケーションが表示されない場合、または予期したバージョンが起動しない場合は、ソフトウェア エンティティを使用して {% include product %} で起動を手動で設定しなければならない可能性があります。 
 
-{% include figure src="./images/tutorial/image_4.png" caption="The default Software entities defined in ShotGrid" %}
+{% include figure src="./images/tutorial/image_4.png" caption="ShotGrid で定義された規定のソフトウェア エンティティ" %}
 
 ソフトウェア エンティティは、プロダクションで使用する DCC パッケージを操作する場合に使用されます。既定では、標準のインストール場所でこれらのパッケージが検索され、Desktop を使用して起動できるようになります。複数のバージョンがインストールされている場合、または標準以外の場所にインストールされている場合は、{% include product %} の対応するソフトウェア エンティティのエントリを更新して、アーティストの起動環境を整理しなければならない可能性があります。 
 
@@ -91,29 +91,29 @@ Desktop にアプリケーションが表示されない場合、または予期
 
 {% include product %} Desktop (以下、「Desktop」)を使用して、プロジェクトの設定を引き継ぎます。Desktop 内で右マウス ボタンをクリックするか、または右下のユーザ アイコンをクリックして、ポップアップ メニューを表示します。**[高度なプロジェクト設定...] (Advanced project setup...)**オプションを選択し、ウィザードに従ってプロジェクトの設定をローカルにインストールします。次の図に、必要な手順を示します。また、『統合管理者ガイド』の「[パイプラインの設定を引き継ぐ](https://developer.shotgridsoftware.com/ja/8085533c/#パイプラインの設定を引き継ぐ)」に記載されている手順に従うこともできます。 
 
-{% include figure src="./images/tutorial/image_5.png" caption="Desktop のポップアップ メニューで**[高度なプロジェクト設定](Advanced project setup...)**を選択する" %}
+{% include figure src="./images/tutorial/image_5.png" caption="Desktop のポップアップ メニューで**[高度なプロジェクト設定] (Advanced project setup...)**を選択する" %}
 
 {% include figure src="./images/tutorial/wizard_01.png" caption="**[ShotGrid の既定値] (ShotGrid Default)**設定タイプを選択する" %}
 
 初めて {% include product %} プロジェクトをセットアップする場合は、プロジェクト データのストレージ場所を定義するためのプロンプトも表示されます。それ以外の場合は、既存の格納場所を選択することができます。
 
-{% include figure src="./images/tutorial/wizard_03.png" caption="Create a new storage." %}
+{% include figure src="./images/tutorial/wizard_03.png" caption="新しいストレージを作成します。" %}
 
-{% include figure src="./images/tutorial/wizard_04.png" caption="Name your new storage.  Remember, this storage is site-wide and not project specific." %}
+{% include figure src="./images/tutorial/wizard_04.png" caption="新しいストレージに名前を付けます。このストレージはプロジェクト固有のものではなく、サイト全体で使用されることに注意してください。" %}
 
-{% include figure src="./images/tutorial/wizard_05.png" caption="Set the path(s) where this storage will be accessible on the operating systems you intend to use." %}
+{% include figure src="./images/tutorial/wizard_05.png" caption="使用するオペレーティング システム上でこのストレージにアクセスするパスを設定します。" %}
 
-**[サイト基本設定](Site Preferences)**の**[ファイル管理](File Management)**セクションで、{% include product %} サイトのストレージを表示および編集できます。これらの設定の詳細については、[こちら](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html)を参照してください。
+**[サイト基本設定] (Site Preferences)**の**[ファイル管理] (File Management)**セクションで、{% include product %} サイトのストレージを表示および編集できます。これらの設定の詳細については、[こちら](https://help.autodesk.com/view/SGSUB/JPN/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html)を参照してください。
 
 格納場所が選択されたので、その場所にある新しいプロジェクトのディレクトリ名を選択します。
 
-{% include figure src="./images/tutorial/wizard_06.png" caption="Enter the name of the folder where your project's files will live." %}
+{% include figure src="./images/tutorial/wizard_06.png" caption="プロジェクト ファイルを配置するフォルダの名前を入力する。" %}
 
 このチュートリアルでは中央設定を使用します。**[分散設定] (Distributed Setup)**オプションは、さまざまなメリットを提供する代替オプションを提供します。これは、高速共有ストレージのないスタジオで役に立つ場合があります。さまざまな設定の長所と短所の詳細については、「[Toolkit の管理](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2)」のプレゼンテーションを参照してください。
 
 サイト全体にわたるストレージとは異なり、この設定はプロジェクトごとに異なるため、ここで選択するディレクトリが設定の保存に直接使用されます。
 
-{% include figure src="./images/tutorial/wizard_07.png" caption="Make a note of the configuration path you select for the current operating system." %}
+{% include figure src="./images/tutorial/wizard_07.png" caption="現在のオペレーティング システムに対して選択した設定パスをメモする。" %}
 
 上記の画面で選択したフォルダに設定がインストールされます。このチュートリアルを通して、このフォルダに含まれている設定の内容を調べ、変更します。 
 
@@ -121,7 +121,7 @@ Desktop にアプリケーションが表示されない場合、または予期
 
 Desktop インストールのチュートリアルで指定された設定場所は、{% include product %} のプロジェクトの[パイプラインの設定] (Pipeline Configurations)ページに記録されています。 
 
-{% include figure src="./images/tutorial/image_10.png" caption="The Pipeline Configuration entity in ShotGrid" %}
+{% include figure src="./images/tutorial/image_10.png" caption="ShotGrid のパイプラインの設定エンティティ" %}
 
 次のセクションに備えて、このフォルダの内容を理解しておいてください。
 
@@ -181,7 +181,7 @@ Maya が完全にロードされると、[ファイルを開く] (File Open)ダ�
 
 {% include figure src="./images/tutorial/image_14.png" %}
 
-ティーポット モデルに問題がなければ、**[{% include product %}] > [ファイルを保存...](File Save...)**メニュー アクションを選択します。このダイアログ ボックスで、ファイルを指定した名前、バージョン、タイプで保存するよう求められます。
+ティーポット モデルに問題がなければ、**[{% include product %}] > [ファイルを保存...] (File Save...)**メニュー アクションを選択します。このダイアログ ボックスで、ファイルを指定した名前、バージョン、タイプで保存するよう求められます。
 
 {% include figure src="./images/tutorial/image_15.png" %}
 
@@ -205,13 +205,13 @@ Maya が完全にロードされると、[ファイルを開く] (File Open)ダ�
 
 {% include figure src="./images/tutorial/image_16.png" %}
 
-作業内容に問題がなければ、**[{% include product %}] > [ファイルを保存...](File Save...)**メニュー アクションをもう一度実行します。今度は、ダイアログ ボックスの既定のバージョン番号が 2 になります。ファイルのバージョンは自動的に増分するため、アーティストは完了した作業の完全な履歴を維持することができます。[保存] (Save)ボタンをクリックします。
+作業内容に問題がなければ、**[{% include product %}] > [ファイルを保存...] (File Save...)**メニュー アクションをもう一度実行します。今度は、ダイアログ ボックスの既定のバージョン番号が 2 になります。ファイルのバージョンは自動的に増分するため、アーティストは完了した作業の完全な履歴を維持することができます。[保存] (Save)ボタンをクリックします。
 
 {% include figure src="./images/tutorial/image_17.png" %}
 
 ティーポット モデルをバージョン 2 に保存したら、チュートリアルのこのセクションの最後の手順に進むことができます。 
 
-ティーポット モデルの準備ができたので、モデルをパブリッシュして、サーフェスの作成やリギングを実行できるようにする必要があります。パブリッシュするには、**[{% include product %}] > [パブリッシュ...](Publish...)**メニュー アクションをクリックします。[アプリのパブリッシュ] (Publish App)ダイアログ ボックスが表示されます。 
+ティーポット モデルの準備ができたので、モデルをパブリッシュして、サーフェスの作成やリギングを実行できるようにする必要があります。パブリッシュするには、**[{% include product %}] > [パブリッシュ...] (Publish...)**メニュー アクションをクリックします。[アプリのパブリッシュ] (Publish App)ダイアログ ボックスが表示されます。 
 
 {% include figure src="./images/tutorial/image_18.png" %}
 
@@ -219,7 +219,7 @@ Maya が完全にロードされると、[ファイルを開く] (File Open)ダ�
 
 ダイアログ ボックスの左側には、現在の Maya セッションを表す項目が表示されます。その下に、**[ShotGrid にパブリッシュ] (Publish to ShotGrid)**子アクションが表示されます。**[すべてのセッション ジオメトリ] (All Session Geometry)**を表す追加項目が、現在のセッションの子項目として表示されます。**[ShotGrid にパブリッシュ] (Publish to ShotGrid)**子アクションも表示されます。  
 
-{% include info title="注" content="**[すべてのセッション ジオメトリ](All Session Geometry)**項目が表示されない場合は、Maya で Alembic 書き出しプラグインが有効になっていることを確認してください。" %}
+{% include info title="注" content="**[すべてのセッション ジオメトリ] (All Session Geometry)**項目が表示されない場合は、Maya で Alembic 書き出しプラグインが有効になっていることを確認してください。" %}
 
 ツリーの左側の項目をクリックして、Publish アプリを調べます。操作を行う項目を選択すると、パブリッシュする内容の説明を入力できます。また、右側のカメラ アイコンをクリックして、項目に関連付けられるスクリーンショットを作成することもできます。 
 
@@ -257,7 +257,7 @@ Maya が完全にロードされると、[ファイルを開く] (File Open)ダ�
 
 このセクションでは、モデリング セクションで学習した内容を基に作成します。Loader アプリを使用して、前のセクションで作成したティーポット モデルをロードする方法について学習します。また、ティーポットのシェーダをパブリッシュするために Publish アプリをカスタマイズする方法についても学習します。
 
-Desktop から Maya を起動して開始します。前のセクションの作業を行った後も Maya が開いている場合、再起動する必要はありません。Maya が開いたら、**[{% include product %}] > [ファイルを開く...](File Open...)**メニュー項目を使用して作業ファイル アプリを開きます。モデリング セクションと同様に、[アセット] (Assets)タブを使用して、ティーポット アセットのタスクにドリル ダウンします。今回は、サーフェス作成タスクを選択して、**[+ New File]**をクリックします。
+Desktop から Maya を起動して開始します。前のセクションの作業を行った後も Maya が開いている場合、再起動する必要はありません。Maya が開いたら、**[{% include product %}] > [ファイルを開く...] (File Open...)**メニュー項目を使用して作業ファイル アプリを開きます。モデリング セクションと同様に、[アセット] (Assets)タブを使用して、ティーポット アセットのタスクにドリル ダウンします。今回は、サーフェス作成タスクを選択して、**[+ New File]**をクリックします。
 
 {% include figure src="./images/tutorial/image_21.png" width="450px" %}
 
@@ -281,7 +281,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 パイプライン作成時のシェーダ管理は時間がかかり、複雑な作業になる場合があります。これは通常、スタジオに対して非常に固有な作業になります。付属の Maya 統合で、すぐに使用できるシェーダまたはテクスチャ管理が処理されないのは、これが理由です。 
 
-**[{% include product %}] > [ファイルを保存...](File Save...)**メニュー アクションを使用して、現在のセッションを保存してから続行します。
+**[{% include product %}] > [ファイルを保存...] (File Save...)**メニュー アクションを使用して、現在のセッションを保存してから続行します。
 
 ### カスタム シェーダ パブリッシュ
 
@@ -445,7 +445,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 ##### {% include product %} 統合を再ロードする
 
-カスタマイズを試すには、Maya セッション内で統合を再ロードする必要があります。このためには、**[{% include product %}] > (タスク名) > [作業領域の情報...](Work Area Info...)**メニュー アクションをクリックします。 
+カスタマイズを試すには、Maya セッション内で統合を再ロードする必要があります。このためには、**[{% include product %}] > (タスク名) > [作業領域の情報...] (Work Area Info...)**メニュー アクションをクリックします。 
 
 {% include figure src="./images/tutorial/image_30.png" %}
 
@@ -494,7 +494,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 {% include figure src="./images/tutorial/image_36.png" %}
 
-ティーポットのリギング ステップで、作業ファイルを再び開きます(**[{% include product %}] > [ファイルを開く...](File Open...]**を使用)。**[{% include product %}] > [シーンの詳細情報...](Scene Breakdown...)**メニュー アクションを起動します。この操作を行うと、Breakdown アプリが起動し、作業ファイル内で参照した上流工程のパブリッシュがすべて表示されます。この場合は、上流工程のティーポット モデルのみがあります。次のように表示されます。
+ティーポットのリギング ステップで、作業ファイルを再び開きます(**[{% include product %}] > [ファイルを開く...] (File Open...]**を使用)。**[{% include product %}] > [シーンの詳細情報...] (Scene Breakdown...)** メニュー アクションを起動します。この操作を行うと、Breakdown アプリが起動し、作業ファイル内で参照した上流工程のパブリッシュがすべて表示されます。この場合は、上流工程のティーポット モデルのみがあります。次のように表示されます。
 
 {% include figure src="./images/tutorial/image_37.png" width="400px" %}
 
@@ -528,7 +528,7 @@ Maya 参照がティーポット Alembic キャッシュの最新の繰り返し
 
 {% include figure src="./images/tutorial/image_41.gif" %}
 
-ショットのレイアウトに問題がなければ、**[{% include product %}] > [ファイルを保存...](File Save...)**メニュー アクションを使用してファイルを保存します。先に進んで、この時点でパブリッシュする場合は、Maya セッション全体のみがパブリッシュ可能な項目として表示されます。 
+ショットのレイアウトに問題がなければ、**[{% include product %}] > [ファイルを保存...] (File Save...)**メニュー アクションを使用してファイルを保存します。先に進んで、この時点でパブリッシュする場合は、Maya セッション全体のみがパブリッシュ可能な項目として表示されます。 
 
 簡単なカスタマイズを追加する場合、およびパイプラインの柔軟性を高めるためにカスタマイズする場合は、他のパッケージに簡単に読み込むことができるファイル形式にスタンドアロン カメラをパブリッシュします。これにより、カメラを一度作成すれば(通常はレイアウト内)、アニメーション、ライト、および合成など、他のすべてのパイプラインの手順でこのカメラを直接使用できるようになります。 
 
@@ -812,7 +812,7 @@ Nuke プロジェクト設定の出力フォーマットが、レンダリング
 
 {% include figure src="./images/tutorial/image_58.png" %}
 
-コンポジットに問題がなければ、**[{% include product %}] > [ファイルを保存...](File Save...)**メニュー アクションを使用して、作業ファイルを保存します。
+コンポジットに問題がなければ、**[{% include product %}] > [ファイルを保存...] (File Save...)**メニュー アクションを使用して、作業ファイルを保存します。
 
 次に、Nuke の左側メニューで {% include product %} のロゴをクリックします。このメニューの ShotGrid 対応書き込みノードの 1 つをクリックします。
 

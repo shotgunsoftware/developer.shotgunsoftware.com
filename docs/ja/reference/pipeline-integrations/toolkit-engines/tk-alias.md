@@ -75,7 +75,7 @@ Content Loader アプリを開いて、Alias にデータをロードできま�
 
 ### シーンの詳細情報
 
-[詳細情報](Breakdown)ダイアログが開き、参照される(WREF リファレンス)コンテンツのリストが表示され、シーン内で古くなっているものや Published File の別のバージョンを使用しているものが表示されます。詳細については、「[Alias の Scene Breakdown](https://github.com/shotgunsoftware/tk-alias/wiki/Scene-Breakdown)」を参照してください。
+[詳細情報] (Breakdown)ダイアログが開き、参照される(WREF リファレンス)コンテンツのリストが表示され、シーン内で古くなっているものや Published File の別のバージョンを使用しているものが表示されます。詳細については、「[Alias の Scene Breakdown](https://github.com/shotgunsoftware/tk-alias/wiki/Scene-Breakdown)」を参照してください。
 
 ![詳細情報](../images/engines/alias-breakdown.png)
 

@@ -9,10 +9,10 @@ lang: zh_CN
 
 ## 目录
 
-- [注册协议](#registering-a-protocol)
-  - [在 Windows 上注册协议](#registering-a-protocol-on-windows)
-  - [在 macOS 上注册协议](#registering-a-protocol-on-macos)
-  - [在 Linux 上注册协议](#registering-a-protocol-on-linux)
+- [注册协议](#注册协议)
+  - [在 Windows 上注册协议](#在 Windows 上注册协议)
+  - [在 macOS 上注册协议](#在 macOS 上注册协议)
+  - [在 Linux 上注册协议](#在 Linux 上注册协议)
 
 [动作菜单项](action-menu-items-create.md) (AMI) 有一个非常实用的版本，即可在本地计算机上运行应用程序或脚本的版本。要实现这一点，需要在浏览器与要运行的脚本或应用程序之间建立连接。此链接称为自定义浏览器协议。
 
