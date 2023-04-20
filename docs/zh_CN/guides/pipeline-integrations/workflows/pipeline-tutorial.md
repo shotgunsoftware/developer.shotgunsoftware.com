@@ -63,11 +63,11 @@ lang: zh_CN
 
 下面是一些屏幕截图，显示了您在 {% include product %} 中配置的项目实体：
 
-{% include figure src="./images/tutorial/image_1.png" caption="Teapot and Table Assets" %}
+{% include figure src="./images/tutorial/image_1.png" caption="茶壶和桌子资产" %}
 
-{% include figure src="./images/tutorial/image_2.png" caption="Shot linked to a Sequence" %}
+{% include figure src="./images/tutorial/image_2.png" caption="链接至场的镜头" %}
 
-{% include figure src="./images/tutorial/image_3.png" caption="Tasks" width="400px" %}
+{% include figure src="./images/tutorial/image_3.png" caption="任务" width="400px" %}
 
 ## 软件启动器
 
@@ -75,7 +75,7 @@ lang: zh_CN
 
 如果任一应用程序未显示在 Desktop 中或预期版本无法启动，则可能需要在 {% include product %} 中通过软件实体手动配置启动。 
 
-{% include figure src="./images/tutorial/image_4.png" caption="The default Software entities defined in ShotGrid" %}
+{% include figure src="./images/tutorial/image_4.png" caption="ShotGrid 中定义的默认软件实体" %}
 
 软件实体用于驱动在您的制作中使用哪些 DCC 软件包。默认情况下，集成将在标准安装位置搜索这些软件包并使其可通过 Desktop 启动。如果您安装了多个版本或将它们安装在非标准位置，您可能需要在 {% include product %} 中更新相应的软件实体条目以管理您的艺术家的启动体验。 
 
@@ -97,23 +97,23 @@ lang: zh_CN
 
 如果这是您第一次设置 {% include product %} 项目，系统还会提示您为项目数据定义一个存储位置。否则，可以选择现有存储位置。
 
-{% include figure src="./images/tutorial/wizard_03.png" caption="Create a new storage." %}
+{% include figure src="./images/tutorial/wizard_03.png" caption="创建新存储。" %}
 
-{% include figure src="./images/tutorial/wizard_04.png" caption="Name your new storage.  Remember, this storage is site-wide and not project specific." %}
+{% include figure src="./images/tutorial/wizard_04.png" caption="为新存储命名。 请记住，此存储属于站点范围，而非特定于项目。" %}
 
-{% include figure src="./images/tutorial/wizard_05.png" caption="Set the path(s) where this storage will be accessible on the operating systems you intend to use." %}
+{% include figure src="./images/tutorial/wizard_05.png" caption="设置在您要使用的操作系统上将可以访问此存储的路径。" %}
 
 您可以在**“站点偏好设置”(Site Preferences)**的**“文件管理”(File Management)**部分下查看和编辑 {% include product %} 站点的存储。您可以在[此处](https://help.autodesk.com/view/SGSUB/CHS/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html)了解有关这些设置的详细信息。
 
 现在，您已选择存储位置，需要在该位置为新项目选择目录名称。
 
-{% include figure src="./images/tutorial/wizard_06.png" caption="Enter the name of the folder where your project's files will live." %}
+{% include figure src="./images/tutorial/wizard_06.png" caption="输入项目文件所在文件夹的名称。" %}
 
 在本教程中，我们将使用集中式配置。**“Distributed Setup”**选项提供了一个具有一组不同优势的替代选项，这可能是没有快速共享存储的工作室的首选选项。您可以在 [Toolkit 管理](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2)演示中详细了解不同配置设置的优缺点。
 
 与站点范围的存储不同，配置特定于项目，因此您在此处选择的目录将直接用于存储您的配置。
 
-{% include figure src="./images/tutorial/wizard_07.png" caption="Make a note of the configuration path you select for the current operating system." %}
+{% include figure src="./images/tutorial/wizard_07.png" caption="记下为当前操作系统选择的配置路径。" %}
 
 您在上面的屏幕中选择的文件夹将作为配置的安装位置。在本教程中，您将了解并修改此文件夹中的配置的内容。 
 
@@ -121,7 +121,7 @@ lang: zh_CN
 
 您在学习 Desktop 安装教程期间指定的配置位置记录在 {% include product %} 中，位于项目的“工作流配置”(Pipeline Configurations)页面。 
 
-{% include figure src="./images/tutorial/image_10.png" caption="The Pipeline Configuration entity in ShotGrid" %}
+{% include figure src="./images/tutorial/image_10.png" caption="ShotGrid 中的工作流配置实体" %}
 
 熟悉此文件夹中的内容，以便为下一节做好准备。
 

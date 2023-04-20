@@ -37,7 +37,7 @@ Webhook の作成を開始するには、**[Webhooks] (Webhooks)**ページに�
 
 ![Webhook を作成ボタン](./images/webhooks/create_webhook_button_v3.png)
 
-{% include info title="注" content="Webhook へのアクセスは、[高度な権限](Advanced Permissions)の**[Webhook を表示](Show Webhooks)**でコントロールします。管理者およびマネージャ権限ロールでは、このオプションは既定で有効になっています。![Webhook を作成ダイアログ](./images/webhooks/show_webhooks_permission.png)" %}
+{% include info title="注" content="Webhook へのアクセスは、[高度な権限] (Advanced Permissions)の**[Webhook を表示] (Show Webhooks)**でコントロールします。管理者およびマネージャ権限ロールでは、このオプションは既定で有効になっています。![Webhook を作成ダイアログ](./images/webhooks/show_webhooks_permission.png)" %}
 
 次に、新しい Webhook を作成するために必要な情報を入力します。
 

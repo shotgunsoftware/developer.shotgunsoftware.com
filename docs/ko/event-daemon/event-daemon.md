@@ -57,7 +57,7 @@ lang: ko
 
 # 이벤트 구동 트리거 작성
 
-**참고: ** 이벤트 구동 트리거에 대한 자세한 내용은 [https://github.com/shotgunsoftware/shotgunEvents](https://github.com/shotgunsoftware/shotgunEvents)에 있는 설명서를 참조하십시오.
+**참고:** 이벤트 구동 트리거에 대한 자세한 내용은 [https://github.com/shotgunsoftware/shotgunEvents](https://github.com/shotgunsoftware/shotgunEvents)에 있는 설명서를 참조하십시오.
 
 {% include product %}는 {% include product %}에서 수행된 [모든 작업](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_data_management_ar_event_logs_html)에 대해 이벤트 로그 항목을 작성합니다. 이 이벤트는 {% include product %} 사이트와 {% include product %} API를 통해 확인할 수 있습니다.
 

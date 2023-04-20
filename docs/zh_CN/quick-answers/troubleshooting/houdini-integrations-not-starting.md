@@ -32,4 +32,4 @@ Houdini 从 {% include product %} 启动时，启动应用逻辑会将 {% includ
 
 如果出现这种情况，您应尝试改为使用 `%HOUDINI_PATH%`。" %}
 
-如果这样做无法解决问题，请联系我们的[支持团队](https://knowledge.autodesk.com.cn/contact-support)，他们将帮助您诊断问题。
+如果这样做无法解决问题，请联系我们的[支持团队](https://knowledge.autodesk.com/zh-hans/contact-support)，他们将帮助您诊断问题。

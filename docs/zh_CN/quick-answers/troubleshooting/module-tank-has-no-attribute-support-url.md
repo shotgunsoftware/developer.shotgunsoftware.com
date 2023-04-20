@@ -29,5 +29,5 @@ Error: module 'tank' has no attribute 'support_url'
 
 ## 相关链接
 
-- [知识库支持文章](https://knowledge.autodesk.com.cn/support/shotgrid/troubleshooting/caas/sfdcarticles/sfdcarticles/Error-module-tank-has-no-attribute-support-url-when-launching-ShotGrid-Desktop.html)
+- [知识库支持文章](https://knowledge.autodesk.com/zh-hans/support/shotgrid/troubleshooting/caas/sfdcarticles/sfdcarticles/CHS/Error-module-tank-has-no-attribute-support-url-when-launching-ShotGrid-Desktop.html)
 

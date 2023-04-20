@@ -37,7 +37,7 @@ Webhook 和 [{% include product %} 事件进程](https://github.com/shotgunsoftw
 
 ![“创建 Webhook”(Create Webhook)按钮](./images/webhooks/create_webhook_button_v3.png)
 
-{% include info title="注意" content="对 Webhook 的访问权限由“高级”(Advanced)权限下的**“显示 Webhook”(Show Webhooks)**控制。默认情况下，对于管理员和经理权限角色，此选项处于启用状态。![“创建 Webhook”(Create Webhook)](./images/webhooks/show_webhooks_permission.png)对话框" %}
+{% include info title="注意" content="对 Webhook 的访问权限由“高级”(Advanced)权限下的**“显示 Webhook”(Show Webhooks)**控制。默认情况下，对于管理员和经理权限角色，此选项处于启用状态。![“创建 Webhook”(Create Webhook)对话框](./images/webhooks/show_webhooks_permission.png)" %}
 
 接下来，填写创建新 Webhook 所需的信息。
 

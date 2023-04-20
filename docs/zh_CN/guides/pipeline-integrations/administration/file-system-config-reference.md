@@ -1279,7 +1279,7 @@ b) **使用自定义实体：**`CustomEntity02` 可以是从项目模板创建�
 
 -   先在数据结构中为这个新的资产类型创建一个新的分支：vehicle。
 -   在与 `asset/` 和 `asset.yml` 同一级目录中，添加一个 `asset_vehicle/` 文件夹和一个 `asset_vehicle.yml`。
--   这些 YAML 文件中还有一项过滤器设置。修改 `asset.yml` 中的过滤器，让它应用于 _除_ 车辆以外的所有资产，然后修改 `asset_vehicle.yml` 使其_仅_应用于车辆类型的资产。[下面是这些过滤器的一个示例](#different-file-system-layouts-for-different-pipeline-steps)。
+-   这些 YAML 文件中还有一项过滤器设置。修改 `asset.yml` 中的过滤器，让它应用于 _除_ 车辆以外的所有资产，然后修改 `asset_vehicle.yml` 使其 _仅_ 应用于车辆类型的资产。[下面是这些过滤器的一个示例](#different-file-system-layouts-for-different-pipeline-steps)。
 -   现在，您已有了两个文件夹来表示 `asset` 和 `asset_vehicles`，在 `asset_vehicle` 下添加您希望为这些资产创建的所有文件夹（例如 `geoprep`、`lookdev` 等）。
     
 -   如果您要为这些资产保存和发布文件，需要在 `core/templates.yml` 中创建模板，描述保存的和发布的文件的文件路径。例如，除了 [`maya_asset_work`](https://github.com/shotgunsoftware/tk-config-default/blob/v0.17.3/core/templates.yml#L480)，您还可以创建一个名为 `maya_asset_work_vehicle` 的模板，其定义将是要保存车辆资产的 Maya 工作文件的模板化路径。

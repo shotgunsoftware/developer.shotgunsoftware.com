@@ -7,7 +7,7 @@ lang: zh_CN
 
 # 社区共享集成
 
-下面是 Toolkit 社区人员热心分享的项目。它们不是由 {% include product %} 内部人员编写的，因此我们无法做出保证，但我们一定会回答我们可以回答的任何问题。如果您有要添加到列表的项目，请访问我们的[支持站点](https://www.autodesk.com.cn/support/contact-support)以获取帮助。
+下面是 Toolkit 社区人员热心分享的项目。它们不是由 {% include product %} 内部人员编写的，因此我们无法做出保证，但我们一定会回答我们可以回答的任何问题。如果您有要添加到列表的项目，请访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)以获取帮助。
 
 ### 插件
 

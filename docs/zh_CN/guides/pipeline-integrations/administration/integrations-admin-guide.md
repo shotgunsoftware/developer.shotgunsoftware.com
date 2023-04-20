@@ -342,7 +342,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1.  {% include product %} Desktop 的 websocket 服务器无法在启动时启动。可能仅在公开发布的 websocket 服务器版本错误时出现此情况，这应该极少发生。在这种情况下，[tk-desktop.log](https://developer.shotgridsoftware.com/zh_CN/38c5c024/) 中将显示对错误进行解释的日志，可以将该日志[发送给 {% include product %} 的支持团队](https://www.autodesk.com.cn/support/contact-support)。
+1.  {% include product %} Desktop 的 websocket 服务器无法在启动时启动。可能仅在公开发布的 websocket 服务器版本错误时出现此情况，这应该极少发生。在这种情况下，[tk-desktop.log](https://developer.shotgridsoftware.com/zh_CN/38c5c024/) 中将显示对错误进行解释的日志，可以将该日志[发送给 {% include product %} 的支持团队](https://knowledge.autodesk.com/zh-hans/contact-support)。
 
 **动作菜单中未显示任何动作**
 

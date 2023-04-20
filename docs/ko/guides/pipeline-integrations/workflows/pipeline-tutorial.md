@@ -13,7 +13,7 @@ lang: ko
 
 다음은 이 튜토리얼에서 빌드할 파이프라인의 개략적인 뷰입니다. 
 
-{% include figure src="./images/tutorial/image_0.png" caption="Pipeline Overview" %}
+{% include figure src="./images/tutorial/image_0.png" caption="파이프라인 개요" %}
 
 ## 파이프라인 개요
 
@@ -63,11 +63,11 @@ lang: ko
 
 다음은 구성된 프로젝트 엔티티가 {% include product %}에서 어떻게 표시되는지 보여 주는 일부 스크린샷입니다.
 
-{% include figure src="./images/tutorial/image_1.png" caption="Teapot and Table Assets" %}
+{% include figure src="./images/tutorial/image_1.png" caption="주전자 및 테이블 에셋" %}
 
-{% include figure src="./images/tutorial/image_2.png" caption="Shot linked to a Sequence" %}
+{% include figure src="./images/tutorial/image_2.png" caption="시퀀스에 링크된 샷" %}
 
-{% include figure src="./images/tutorial/image_3.png" caption="Tasks" width="400px" %}
+{% include figure src="./images/tutorial/image_3.png" caption="태스크" width="400px" %}
 
 ## 소프트웨어 시작 관리자
 
@@ -75,7 +75,7 @@ lang: ko
 
 응용프로그램이 데스크톱에 표시되지 않거나 예상한 버전이 시작되지 않을 경우 소프트웨어 엔티티를 통해 {% include product %}에서의 시작을 수동으로 구성해야 할 수 있습니다. 
 
-{% include figure src="./images/tutorial/image_4.png" caption="The default Software entities defined in ShotGrid" %}
+{% include figure src="./images/tutorial/image_4.png" caption="ShotGrid에 정의된 기본 소프트웨어 엔티티" %}
 
 소프트웨어 엔티티는 프로덕션에 사용할 DCC 패키지를 구동하는 데 사용됩니다. 기본적으로 통합은 표준 설치 위치에서 이러한 패키지를 검색하고 데스크톱을 통해 시작할 수 있도록 합니다. 둘 이상의 버전을 설치하거나 표준 위치가 아닌 곳에 설치한 경우 아티스트의 시작 환경을 조정하기 위해 {% include product %}의 해당 소프트웨어 엔티티 항목을 업데이트해야 할 수도 있습니다. 
 
@@ -97,23 +97,23 @@ lang: ko
 
 이번에 처음으로 {% include product %} 프로젝트를 설정하는 경우 프로젝트 데이터의 저장소 위치를 정의하라는 메시지가 표시될 수도 있습니다. 아니면 기존 저장소 위치를 선택할 수 있습니다.
 
-{% include figure src="./images/tutorial/wizard_03.png" caption="Create a new storage." %}
+{% include figure src="./images/tutorial/wizard_03.png" caption="새 저장소를 만듭니다." %}
 
-{% include figure src="./images/tutorial/wizard_04.png" caption="Name your new storage.  Remember, this storage is site-wide and not project specific." %}
+{% include figure src="./images/tutorial/wizard_04.png" caption="새 저장소 이름을 지정합니다. 이 저장소는 사이트 전체 수준의 저장소이며 프로젝트별 저장소가 아닙니다." %}
 
-{% include figure src="./images/tutorial/wizard_05.png" caption="Set the path(s) where this storage will be accessible on the operating systems you intend to use." %}
+{% include figure src="./images/tutorial/wizard_05.png" caption="사용할 운영 체제에서 이 저장소에 액세스할 수 있는 경로를 설정합니다." %}
 
 **사이트 기본 설정(Site Preferences)**의 **파일 관리(File Management)** 섹션에서 {% include product %} 사이트에 대한 저장소를 보고 편집할 수 있습니다. 이러한 설정에 대한 자세한 내용은 [여기](https://help.autodesk.com/view/SGSUB/KOR/?guid=SG_Administrator_ar_data_management_ar_linking_local_files_html)에서 확인할 수 있습니다.
 
 저장소 위치를 선택했으므로 이제 해당 위치에서 새 프로젝트에 대한 디렉토리 이름을 선택합니다.
 
-{% include figure src="./images/tutorial/wizard_06.png" caption="Enter the name of the folder where your project's files will live." %}
+{% include figure src="./images/tutorial/wizard_06.png" caption="프로젝트의 파일을 저장할 폴더 이름을 입력합니다." %}
 
 이 튜토리얼에서는 중앙 집중식 구성을 사용합니다. **분산 설정(Distributed Setup)** 옵션은 다른 혜택을 제공할 수 있는 대체 옵션을 제공하며 빠른 공유 저장소가 없는 스튜디오의 경우 자주 사용하는 옵션이 될 수 있습니다. 다른 구성 설정의 장단점에 대한 자세한 내용은 [툴킷 관리](https://www.youtube.com/watch?v=7qZfy7KXXX0&list=PLEOzU2tEw33r4yfX7_WD7anyKrsDpQY2d&index=2) 프리젠테이션에서 확인할 수 있습니다
 
 사이트 전체 수준의 저장소와 달리 구성은 프로젝트별로 다르므로 여기서 선택하는 디렉토리는 구성을 저장하는 데 직접 사용됩니다.
 
-{% include figure src="./images/tutorial/wizard_07.png" caption="Make a note of the configuration path you select for the current operating system." %}
+{% include figure src="./images/tutorial/wizard_07.png" caption="현재 운영 체제에 대해 선택하는 구성 경로를 기록합니다." %}
 
 위 화면에서 선택하는 폴더가 구성이 설치될 위치입니다. 이 튜토리얼에서는 이 폴더의 구성 컨텐츠를 살펴보고 수정합니다. 
 
@@ -121,7 +121,7 @@ lang: ko
 
 데스크톱 설치 튜토리얼에서 지정한 구성 위치는 {% include product %}에서 해당 프로젝트에 대한 파이프라인 구성(Pipeline Configurations) 페이지에 기록됩니다. 
 
-{% include figure src="./images/tutorial/image_10.png" caption="The Pipeline Configuration entity in ShotGrid" %}
+{% include figure src="./images/tutorial/image_10.png" caption="ShotGrid에서 파이프라인 구성 엔티티 복제" %}
 
 다음 섹션을 위한 준비로 이 폴더의 컨텐츠를 숙지합니다.
 

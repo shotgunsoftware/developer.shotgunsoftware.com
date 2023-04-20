@@ -105,7 +105,7 @@ tk-nuke-writenode:
 
 #### 启用转换菜单选项
 
-有一个名为 `show_convert_actions` 的配置选项，可以将其添加到应用设置的环境 yml 文件中。当您添加设置 `show_convert_actions: True` 时，*“将 SG 写入节点转转为写入节点...”(Convert SG Write Nodes to Write Nodes...) *和*“将写入节点转换回 SG 格式...”(Convert Write Nodes back to SG format...)*菜单选项将可用。
+有一个名为 `show_convert_actions` 的配置选项，可以将其添加到应用设置的环境 yml 文件中。当您添加设置 `show_convert_actions: True` 时，*“将 SG 写入节点转转为写入节点...”(Convert SG Write Nodes to Write Nodes...)* 和 *“将写入节点转换回 SG 格式...”(Convert Write Nodes back to SG format...)* 菜单选项将可用。
 
 ![写入节点转化菜单选项](../images/apps/nuke-writenode-write_node_convert_menu_options.png)
 
@@ -180,7 +180,7 @@ SHOTGUN_FARM_SCRIPT_KEY = “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 #### 3\.init.py 脚本
 
-目前，Toolkit 环境数据是从渲染提交工具传递过来的，身份认证数据位于渲染农场计算机上的环境变量中。在渲染作业中引导 Toolkit 的最后一部分是将以下示例 `init.py` 代码放置在 Nuke 的插件路径中，以便 Nuke 在启动时启动它。（有关更多详细信息，请参见 [Foundry 的启动脚本文档](https://support.foundry.com/hc/en-us/articles/360003811839-Q100490)。）
+目前，Toolkit 环境数据是从渲染提交工具传递过来的，身份认证数据位于渲染农场计算机上的环境变量中。在渲染作业中引导 Toolkit 的最后一部分是将以下示例 `init.py` 代码放置在 Nuke 的插件路径中，以便 Nuke 在启动时启动它。（有关更多详细信息，请参见 [Foundry 的启动脚本文档](https://support.foundry.com/hc/zh-cn/articles/360003811839-Q100490)。）
 
 ```python
 # This script shows how a Toolkit as a plugin approach could be used to bootstrap

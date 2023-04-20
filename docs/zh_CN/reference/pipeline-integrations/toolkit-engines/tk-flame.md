@@ -9,7 +9,7 @@ lang: zh_CN
 
 ## 安装
 
-{% include product %} Flame 插件依赖于 Flame 2015 Extension 2 中新增的几个集成挂钩。为了保证插件正常工作，*必须*使用这一版本的 Flame。有关 Flame 2015 Extension 2 的详细信息（包括如何获取），请联系 [Flame 支持](https://knowledge.autodesk.com.cn/search-result/caas/sfdcarticles/sfdcarticles/Contacting-Autodesk-Flame-or-Smoke-Customer-Support.html)。
+{% include product %} Flame 插件依赖于 Flame 2015 Extension 2 中新增的几个集成挂钩。为了保证插件正常工作，*必须*使用这一版本的 Flame。有关 Flame 2015 Extension 2 的详细信息（包括如何获取），请联系 [Flame 支持](https://knowledge.autodesk.com/zh-hans/search-result/caas/sfdcarticles/sfdcarticles/CHS/Contacting-Autodesk-Flame-or-Smoke-Customer-Support.html)。
 
 要想快速开始学习 {% include product %} Flame 插件，最简单的方法是使用我们的示例工作流配置设置一个新的测试项目。您只要启动 {% include product %} Desktop，运行项目设置向导设置一个新项目，然后选择默认的 Flame 配置（在默认配置部分）即可。
 
