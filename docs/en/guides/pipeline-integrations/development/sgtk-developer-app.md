@@ -190,7 +190,7 @@ As soon as you have added a user, they will see new entries on their menus insid
 
 ## Part 6: Preparing your first release
 
-In [part three](#part-3---adding-the-app-to-your-config) you set your configuration to point to your app using a dev descriptor.
+In [part three](#part-3-adding-the-app-to-your-config) you set your configuration to point to your app using a dev descriptor.
 For released software, you will want to ensure that your app can be accessed by all users and that things are versioned so that they can be upgraded safely and easily.
 
 All apps provided by {% include product %} use the Toolkit app store to track updates and releases, and they will have a location tag that looks something like this:
