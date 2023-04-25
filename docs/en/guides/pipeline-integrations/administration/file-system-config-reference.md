@@ -90,9 +90,9 @@ Digging further inside the sequences folder, there is a **sequence** folder and 
 
 The dynamic configuration setup expressed in the YAML files currently supports the following modes:
 
-- **[{% include product %} Query folders:](#shotgun-query-folders)** Dynamic folder names based on a {% include product %} Database Query. For example, this mode can be used to create a folder for every Shot in a project.
+- **[{% include product %} Query folders:](#query-folders)** Dynamic folder names based on a {% include product %} Database Query. For example, this mode can be used to create a folder for every Shot in a project.
     
-- **[{% include product %} List Field folders:](#shotgun-list-field-folders)** Dynamic folder names based on a {% include product %} List Field. For example, this mode can be used to create a folder for every value in the {% include product %} List field "Asset Type", found on the Asset Entity in {% include product %}.
+- **[{% include product %} List Field folders:](#list-field-folders)** Dynamic folder names based on a {% include product %} List Field. For example, this mode can be used to create a folder for every value in the {% include product %} List field "Asset Type", found on the Asset Entity in {% include product %}.
     
 - **[Deferred folders:](#workspaces-and-deferred-folder-creation)** Only executed when a second folder creation pass is requested via the create folders method of the Toolkit API, usually when an application (such as Maya) is launched. Typically, this method is executed by Toolkit's various application launchers just prior to starting up an application.
     
