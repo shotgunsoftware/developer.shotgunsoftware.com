@@ -16,6 +16,12 @@ If you are using {% include product %} for managing your Published Files, use th
 
 ![Overview of the breakdown2 app](../images/apps/07_scenebreakdown1.png)
 
+Both the Breakdown and [Legacy Breakdown](#legacy-breakdown) apps are available in your application via the **{% include product %}** menu > **Scene Breakdown**.
+
+![Accessing the breakdown app](../images/apps/breakdown-02.png)
+
+{% include info title="Note" content="You can run both the Breakdown and Legacy Breakdown apps concurrently, as seen in the above image. Running both apps at the same time is the default behavior." %}
+
 Please refer to the following documentation for the latest breakdown app:
 
 - [Breakdown App User Documentation](https://help.autodesk.com/view/SGSUB/ENU/?guid=VRED_ShotGrid_for_Automotive_Design_VRED_ShotGrid_Worflows_Scene_Breakdown_in_VRED_html)
