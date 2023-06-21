@@ -29,6 +29,8 @@ Webhooks and the [{% include product %} event daemon](https://github.com/shotgun
 
 ## Creating a Webhook
 
+### Creating a Webhook from the Wehooks Page
+
 To get started creating a webhook, go to the **Webhooks** page.
 
 ![Create Webhook Button](./images/webhooks/webhooks_page.png)
@@ -41,7 +43,17 @@ Then, select **Create Webhook**.
 
 Next, fill out the information required to create your new webhook.
 
-![Create Webhook Dialog](./images/webhooks/create_webhook_dialog_v2.png)
+![Create Webhook Dialog](./images/webhooks/create_webhook_dialog_v3.png)
+
+### Creating a Webhook from an Event Log
+
+While on an Event Log  Entries Page, right-click on an Event Log Entry record and select **Create Webhook from event**.  
+
+![Create Webhook Event Log](./images/webhooks/create_webhook_from_event_log_01.png)
+
+This will open up and pre-populate the Webhook creation form. 
+
+![Create Webhook Event Log](./images/webhooks/create_webhook_from_event_log_02.png)
 
 ### Secret token
 
@@ -96,9 +108,21 @@ Selecting specific projects, entities, and fields will minimize traffic to your 
 - Reduce resource costs
 - Prevent unnecessary backlogs
 
-![Webhook Filters](./images/webhooks/webhook_project_entity_field_filter_v2.png)
+![Webhook Filters](./images/webhooks/webhook_project_entity_field_filter_v3.png)
 
 {% include info title="Note" content="Selecting a project limits you to selecting an entity that always belongs to a single project, such as Versions. If you want to select a non-project (or multi-project) entity like Person, you should **not** select a project. This ensures webhook event filtering does not add performance overhead to entity updates." %}
+
+#### Entity lifecycle Events 
+
+These are standard CRUD (create/revive/update/delete) events for entities like Shots, Assets and Tasks. 
+
+![Webhook lifecycle](./images/webhooks/webhook_project_entity_field_filter_lifecycle.png)
+
+#### Custom Events
+
+Custom events are more events that can be subscribed to—like Client Review Site activity, User Logins, and Permission changes. 
+
+![Webhook lifecycle](./images/webhooks/webhook_project_entity_field_filter_custom.png)
 
 ## Webhook status
 
@@ -218,6 +242,43 @@ When a high rate of overall throughput is needed, consumer endpoints should be d
 | Success | < 400 | The delivery was received and processed successfully. |
 | Error | >= 400 | The delivery was received but was not processed successfully. |
 | Redirect | 3xx | The delivery was received, but should be redirected to another URL. |
+
+## Performance
+
+### Response Times
+
+When you select a Webhook, you can view the **Current response times**.
+
+![Response times](./images/webhooks/webhooks-response-times.png)
+
+#### Slow responses and heavy loads
+
+Slow response times and heavy loads are indicated with a colored badge on each Webhook. You can also sort Webhooks based on response times.
+
+![Performance and sorting](./images/webhooks/webhooks_performance_sorting.png)
+
+When a Webhook impacted by performance is selected, more information about the impact is visible in a banner.
+
+**Slow Response**
+- Issue: 
+  - This occurs when the average time to receive a response is > 500ms, impacting the Wehook to respond slowly
+- Solution:
+  - You will need to optimize your infrastructure since individual event processing has exceeded the 500ms threshold for some events.
+
+**Heavy Load**
+- Issue:
+  - This occurs when the ratio of time taken to process / event time span (for a set of deliveries) is >10%), impacting the Wehook to consume over 10% of your allocated bandwidth
+- Solution:
+  - You will need to optimize your infrastructure since the number of events being generated is high relative to the the number of events being processed.
+
+**Very Heavy Load**
+- Issue:
+  - This occurs when the ratio of time taken to process / event time span (for a set of deliveries) is >50%
+  - This webhook consumes over 50% of your allocated bandwidth
+- Solution: 
+  - You will need to optimize your infrastructure since the number of events being generated is very high relative to the the number of events being processed and [throttling will initiate](#throttling) when you consume over 100% of your allotted processing bandwidth.
+
+**Note:** 
 
 ### Acknowledgements
 
