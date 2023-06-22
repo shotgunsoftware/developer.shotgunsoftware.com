@@ -81,7 +81,24 @@ sgtk.LogManager().global_debug = True
 ## Part 3: Authentication
 
 When running a script that uses the Toolkit API outside of an environment where {% include product %} Toolkit has already been started, you will always need to authenticate.
+
 So before you can perform the bootstrapping, you need to authenticate the Toolkit API with your {% include product %} site.
+
+Upon launching Desktop and applications, you will be prompted to sign in to your {% include product %} site (example: `https://mysite.shotgrid.autodesk.com`). 
+
+![sign in](./images/sa-integrations-user-guide-session-launcher-01.png)
+
+After selecting **Sign In**, you will continue the sign in process through your default browser.
+
+![sign in](./images/sa-integrations-user-guide-session-launcher-02.png)
+
+In your browser, you will be prompted to **Approve** your authentication request.
+
+![approve authentication request](./images/sa-integrations-user-guide-approve-authentication.png)
+
+Other authentication options:
+- [Authenticate with the Desktop browser (legacy)](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Migration_mi_migration_account_mi_end_user_account_html#legacy-shotgrid-login-credentials)
+- [Authenticate with your legacy login credentials](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Migration_mi_migration_account_mi_end_user_account_html#legacy-shotgrid-login-credentials)
 
 You can authenticate with user credentials or with script credentials.
 
