@@ -63,13 +63,27 @@ In this guide, you will use the Wizard in {% include product %} Desktop to gener
 
 ![New project](./images/advanced_config/2_new_project.png)
 
-**Step 2:** Launch the {% include product %} Desktop app and log in using the username and password from your {% include product %} site.
+**Step 2:** Launch the {% include product %} Desktop app and log in using the {% include product %} Application Session Launcher.
 
-![Login](./images/advanced_config/3_login.png)
+Upon launching Desktop and applications, you will be prompted to sign in to your {% include product %} site (example: `https://mysite.shotgrid.autodesk.com`). 
 
-![Load project](./images/advanced_config/4_load_project.png)
+![sign in](./images/sa-integrations-user-guide-session-launcher-01.png)
+
+After selecting **Sign In**, you will continue the sign in process through your default browser.
+
+![sign in](./images/sa-integrations-user-guide-session-launcher-02.png)
+
+In your browser, you will be prompted to **Approve** your authentication request.
+
+![approve authentication request](./images/sa-integrations-user-guide-approve-authentication.png)
+
+Other authentication options:
+- [Authenticate with the Desktop browser (legacy)](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Migration_mi_migration_account_mi_end_user_account_html#legacy-shotgrid-login-credentials)
+- [Authenticate with your legacy login credentials](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Migration_mi_migration_account_mi_end_user_account_html#legacy-shotgrid-login-credentials)
 
 **Step 3:** Navigate to the project where you wish to run the Wizard by selecting its thumbnail image.
+
+![Load project](./images/advanced_config/4_load_project.png)
 
 {% include info title="Tip" content="If a new project was created while Desktop was open, the **Projects** window may need to be refreshed to see the new projects. Select your profile **avatar** at the bottom right of the desktop and select Refresh Projects." %}
 

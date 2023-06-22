@@ -64,9 +64,21 @@ sgtk.set_authenticated_user(user)
 authenticator.clear_default_user()
 ```
 
-If `QApplication` is available, you'll get something akin to this:
+If `QApplication` is available, you will be prompted to authenticate:
 
-![](./images/sign_in_window.png)
+![sign in](./images/sa-integrations-user-guide-session-launcher-01.png)
+
+After selecting **Sign In**, you will continue the sign in process through your default browser.
+
+![sign in](./images/sa-integrations-user-guide-session-launcher-02.png)
+
+In your browser, you will be prompted to **Approve** your authentication request.
+
+![approve authentication request](./images/sa-integrations-user-guide-approve-authentication.png)
+
+Other authentication options:
+- [Authenticate with the Desktop browser (legacy)](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Migration_mi_migration_account_mi_end_user_account_html#legacy-shotgrid-login-credentials)
+- [Authenticate with your legacy login credentials](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Migration_mi_migration_account_mi_end_user_account_html#legacy-shotgrid-login-credentials)
 
 {% include info title="Note" content="If you are importing a Toolkit API (`sgtk` package) that isn't associated with a configuration, for example one that you have downloaded to use to bootstrap into a different configuration, then you shouldn't attempt to create a `CoreDefaultsManager`. Instead, create a `ShotgunAuthenticator()` instance without passing a defaults manager.
 ```python

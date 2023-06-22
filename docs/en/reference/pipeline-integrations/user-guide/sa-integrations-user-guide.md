@@ -13,6 +13,7 @@ In this guide:
 - [Getting started with Desktop](#getting-started-with-desktop)
   - [Installation of Desktop](#installation-of-desktop)
     - [Installing a newer version of Desktop](#installing-a-newer-version-of-desktop)
+  - [Logging in and authenticating](#logging-in-and-authenticating)
   - [Logging in when self hosted or behind a proxy server](#logging-in-when-self-hosted-or-behind-a-proxy-server)
     - [Authentication and browser integration](#authentication-and-browser-integration)
   - [The system tray](#the-system-tray)
@@ -89,6 +90,26 @@ Follow the prompts and choose whether to download Desktop for Mac, Windows, or L
 You can update {% include product %} Desktop on all supported operating systems without uninstalling you current version. However, **ensure that you close your existing session prior to updating your {% include product %} Desktop version**.
 
 *Note: on Windows, if Desktop is running while updating the version, a binary lock will interfere with the install and cause the installer to stop. This will result in an incomplete installation since some files have already been copied. To fix this, exit Desktop and select "retry".*
+
+### Logging in and authenticating
+
+#### {% include product %} Application Session Launcher
+
+Upon launching Desktop and applications, you will be prompted to sign in to your {% include product %} site (example: `https://mysite.shotgrid.autodesk.com`). 
+
+![sign in](./images/sa-integrations-user-guide-session-launcher-01.png)
+
+After selecting **Sign In**, you will continue the sign in process through your default browser.
+
+![sign in](./images/sa-integrations-user-guide-session-launcher-02.png)
+
+In your browser, you will be prompted to **Approve** your authentication request.
+
+![approve authentication request](./images/sa-integrations-user-guide-approve-authentication.png)
+
+Other authentication options:
+- [Authenticate with the Desktop browser (legacy)](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Migration_mi_migration_account_mi_end_user_account_html#legacy-shotgrid-login-credentials)
+- [Authenticate with your legacy login credentials](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Migration_mi_migration_account_mi_end_user_account_html#legacy-shotgrid-login-credentials)
 
 ### Logging in when self hosted or behind a proxy server
 
