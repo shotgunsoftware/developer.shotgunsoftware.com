@@ -114,7 +114,7 @@ Selecting specific projects, entities, and fields will minimize traffic to your 
 
 #### Entity lifecycle Events 
 
-These are standard CRUD (create/revive/update/delete) events for entities like Shots, Assets and Tasks. 
+These are standard create/revive/update/delete events for entities like Shots, Assets and Tasks. 
 
 ![Webhook lifecycle](./images/webhooks/webhook_project_entity_field_filter_lifecycle.png)
 
