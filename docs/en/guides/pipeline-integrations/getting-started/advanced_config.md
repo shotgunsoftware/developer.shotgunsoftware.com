@@ -67,15 +67,15 @@ In this guide, you will use the Wizard in {% include product %} Desktop to gener
 
 Upon launching Desktop and applications, you will be prompted to sign in to your {% include product %} site (example: `https://mysite.shotgrid.autodesk.com`). 
 
-![sign in](./images/sa-integrations-user-guide-session-launcher-01.png)
+![sign in](./images/advanced_config/sa-integrations-user-guide-session-launcher-01.png)
 
 After selecting **Sign In**, you will continue the sign in process through your default browser.
 
-![sign in](./images/sa-integrations-user-guide-session-launcher-02.png)
+![sign in](./images/advanced_config/sa-integrations-user-guide-session-launcher-02.png)
 
 In your browser, you will be prompted to **Approve** your authentication request.
 
-![approve authentication request](./images/sa-integrations-user-guide-approve-authentication.png)
+![approve authentication request](./images/advanced_config/sa-integrations-user-guide-approve-authentication.png)
 
 Other authentication options:
 - [Authenticate with the Desktop browser (legacy)](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Migration_mi_migration_account_mi_end_user_account_html#legacy-shotgrid-login-credentials)
