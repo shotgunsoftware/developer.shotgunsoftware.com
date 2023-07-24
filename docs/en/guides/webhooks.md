@@ -1,4 +1,4 @@
----
+q2---
 layout: default
 title: Webhooks
 pagename: shotgun-webhooks
@@ -26,6 +26,69 @@ Another great example of how to automate status management would be to trigger a
 ## When should webhooks be used instead of the {% include product %} event daemon?
 
 Webhooks and the [{% include product %} event daemon](https://github.com/shotgunsoftware/shotgunEvents/wiki) offer similar features, but with a few key differences. The event daemon requires that you run, monitor, and maintain your own service. All of your code must be written in Python, and it allows you to initiate your own connections to {% include product %}. Webhooks, in contrast, answer connections and can be written in any programming language. They can be hosted in a serverless environment, such as [AWS Lambda](https://aws.amazon.com/lambda/), or can trigger any of the automation platforms available online, such as [Zapier](https://zapier.com) and [IFTTT](https://ifttt.com). If your use case works with webhooks, it should be the preferred solution.
+
+## Which events are available for Webhook subscriptions?
+
+ShotGrid supports Webhooks for two broad event groups. **Entity type lifecycle events**  and **custom events**. *Entity lifecycle* events are created whenever an Entity is created, revived, updated or deleted. *Custom events* are those events that are typically not related to the lifecycle of an entity but which are created when an event occurs in the ShotGrid system, for example when a user logs in, logs out, or a user performs a data Import or triggers an Action Menu Item. 
+
+The Entity options for Entity Lifecycle Events are limited to those that are available via API calls. Webhooks may be created for Entities that are *in use* for the SG site.
+
+You may retrieve the full list of the Entities available for API access using either the Shotgun  [Python API](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.schema_entity_read) or [Rest API](https://developer.shotgridsoftware.com/rest-api/#shotgrid-rest-api-Access-Schema-data).
+
+Webhooks are not available for some Entities returned by the API schema queries above. **Excusions include**: *API Users, Event Log Entries and Connection entities* (those Entities that are used by ShotGrid internally to create relationships between Entities). Connection Entities typically include **Connection** in their name.
+
+**Custom events available for webhook subscriptions**
+- ClientUser_FailedLogin
+- ClientUser_Login
+- ClientUser_Logout
+- CRS_HumanUser_Thumbnail_Access_By_Client
+- CRS_PlaylistShare_Create
+- CRS_PlaylistShare_Revoke
+- CRS_Preferences_Change
+- CRS_Version_Media_Download
+- CRS_Version_Thumbnail_Access_By_Client
+- SG_RV_Session_Validate_Success
+- ShotGrid_Invitation
+- ShotGrid_PAT_Added
+- ShotGrid_PAT_Exchanged
+- ShotGrid_PAT_Removed
+- Shotgun_ActionMenuItem_Triggered
+- Shotgun_CutSupportDataMigration_data_migration
+- Shotgun_CutSupportDataMigration_disable_cutversionconnection
+- Shotgun_CutSupportDataMigration_schema_cleanup
+- Shotgun_DisplayColumn_Delete
+- Shotgun_ImportApp_Complete
+- Shotgun_ImportApp_Failed
+- Shotgun_ImportApp_Start
+- Shotgun_NotesApp_Summary_Email
+- Shotgun_Nsx_Support_Ticket
+- Shotgun_PageSetting_Change
+- Shotgun_PermissionRuleSet_ChangeRule
+- Shotgun_PermissionRuleSet_DeleteRule
+- Shotgun_PermissionRuleSet_NewRule
+- Shotgun_Preferences_Change
+- Shotgun_ProjectConfiguration_Update
+- Shotgun_Reading_Change
+- Shotgun_Review_Tools_Version_View
+- Shotgun_User_FailedLogin
+- Shotgun_User_Login
+- Shotgun_User_Logout
+- Shotgun_User_PasswordChange
+- Shotgun_ValidationRule_Create
+- Shotgun_Webhook_Created
+- Shotgun_Webhook_Deleted
+- Shotgun_Webhook_Updated
+
+## When do Entity Life Cycle Events Occur
+ShotGrid supports subscriptions to Entity life-cycle events when *Created, Updated, Deleted and Revived.*
+
+**Create events:** created when a new entity has been created from the Web UI, or from an API request. 
+
+**Update events:** created when any field is updated on an entity after initial creation. When subscribed to an update lifecycle event, A Webhook delivery will occur for any update operation on a field *after initial creation*. **A Webhook delivery will not occur when subscribed to a field update for the initial creation operation of that entity.**
+
+**Delete events:** created when an entity is logically deleted (moved to the trash)
+
+**Revive events:** created when an entity is logically revived (restored from the trash)
 
 ## Creating a Webhook
 
@@ -226,6 +289,8 @@ Process time is recorded for each delivery and can be viewed in the Response det
 
 #### Throttling
 
+ShotGrid's delivery infrastructure is optimized to deliver a large number of customer Webhooks and has a number of mechanisms in place to ensure timeliness and reliability for all our customers. When a Webhook delivery is made, we examine the time that it took for the endpoint to respond. This metric along with information about the volume of deliveries being processed is combined to determine whether your Webhook endpoint is performing at a sustainable rate.
+
 Your consumer response times to deliveries will impact webhooks throughput for your site.
 
 Each site is allowed 1 minute of response time per minute. So if all configured consumer endpoints for a site take the full 6 seconds to respond, webhooks deliveries for that site will be throttled to 10 per a minute.
@@ -234,6 +299,16 @@ When a high rate of overall throughput is needed, consumer endpoints should be d
  1. Receive the request
  2. Spawn another process/thread to handle it the way you want
  3. Answer an acknowledging 200 immediately
+
+Factors that may contribute.
+- A poorly configured or under-resourced Webhook consumer endpoint
+- Delays in processing the delivery before sending a response
+
+#### Bursts
+if your ShotGrid site is being throttled as a result of short bursts of heavy activity, it will return to normal throughput once the burst of event activity has subsided. Our performance indicators will provide insight into which of your configured endpoints are not performing well.
+
+#### Webhooks and geographic considerations
+The ShotGrid Webhook delivery infrastructure is hosted in the AWS US-East (Oregon) region.  Optimization for delivery times may be possible when setting up your site in a location that is remote from this region. 
 
 #### Status codes
 
@@ -318,3 +393,4 @@ We recommend [webhook.site](https://webhook.site). It provides a unique URL that
 The webhook.site service is aggressively rate limited. This means that it is easy to end up in a situation where some deliveries are rejected, resulting in unstable or failed webhooks. When testing, we recommend that you use a known, controllable project environment rather than live data in production.
 
 {% include warning title="Production data" content="It is not good to send production event data to publicly available, third party web services! We recommend using test data only when using services like webhook.site to test webhooks." %}
+
