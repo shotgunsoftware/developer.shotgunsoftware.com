@@ -27,9 +27,81 @@ Another great example of how to automate status management would be to trigger a
 
 Webhooks and the [{% include product %} event daemon](https://github.com/shotgunsoftware/shotgunEvents/wiki) offer similar features, but with a few key differences. The event daemon requires that you run, monitor, and maintain your own service. All of your code must be written in Python, and it allows you to initiate your own connections to {% include product %}. Webhooks, in contrast, answer connections and can be written in any programming language. They can be hosted in a serverless environment, such as [AWS Lambda](https://aws.amazon.com/lambda/), or can trigger any of the automation platforms available online, such as [Zapier](https://zapier.com) and [IFTTT](https://ifttt.com). If your use case works with webhooks, it should be the preferred solution.
 
+## Which events are available for Webhook subscriptions?
+
+Webhooks may be created for Entities that are *in use* for the SG site. {% include product %} supports Webhooks for two broad event groups:
+
+1. **Entity type lifecycle events**  
+  - Events that are created whenever an Entity is created, revived, updated or deleted.
+  - The Entity options for Entity Lifecycle Events are limited to those that are available via API calls. 
+2. **Custom events**
+  - Events that are typically not related to the lifecycle of an entity, but which are created when an event occurs in the {% include product %} system. 
+  - _Example: when a user logs in, logs out, or a user performs a data Import or triggers an Action Menu Item._
+
+You may retrieve the full list of the Entities available for API access using either the {% include product %} [Python API](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.schema_entity_read) or [Rest API](https://developer.shotgridsoftware.com/rest-api/#shotgrid-rest-api-Access-Schema-data).
+
+### Custom events available for webhook subscriptions
+
+- ClientUser_FailedLogin
+- ClientUser_Login
+- ClientUser_Logout
+- CRS_HumanUser_Thumbnail_Access_By_Client
+- CRS_PlaylistShare_Create
+- CRS_PlaylistShare_Revoke
+- CRS_Preferences_Change
+- CRS_Version_Media_Download
+- CRS_Version_Thumbnail_Access_By_Client
+- SG_RV_Session_Validate_Success
+- ShotGrid_Invitation
+- ShotGrid_PAT_Added
+- ShotGrid_PAT_Exchanged
+- ShotGrid_PAT_Removed
+- Shotgun_ActionMenuItem_Triggered
+- Shotgun_CutSupportDataMigration_data_migration
+- Shotgun_CutSupportDataMigration_disable_cutversionconnection
+- Shotgun_CutSupportDataMigration_schema_cleanup
+- Shotgun_DisplayColumn_Delete
+- Shotgun_ImportApp_Complete
+- Shotgun_ImportApp_Failed
+- Shotgun_ImportApp_Start
+- Shotgun_NotesApp_Summary_Email
+- Shotgun_Nsx_Support_Ticket
+- Shotgun_PageSetting_Change
+- Shotgun_PermissionRuleSet_ChangeRule
+- Shotgun_PermissionRuleSet_DeleteRule
+- Shotgun_PermissionRuleSet_NewRule
+- Shotgun_Preferences_Change
+- Shotgun_ProjectConfiguration_Update
+- Shotgun_Reading_Change
+- Shotgun_Review_Tools_Version_View
+- Shotgun_User_FailedLogin
+- Shotgun_User_Login
+- Shotgun_User_Logout
+- Shotgun_User_PasswordChange
+- Shotgun_ValidationRule_Create
+- Shotgun_Webhook_Created
+- Shotgun_Webhook_Deleted
+- Shotgun_Webhook_Updated
+
+### Excluded events
+
+Webhooks are **not** available for some Entities returned by API schema queries (reference [Python API](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.schema_entity_read), [Rest API](https://developer.shotgridsoftware.com/rest-api/#shotgrid-rest-api-Access-Schema-data). Exclusions include: 
+- API Users
+- [Event Log Entries](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_event_logs_html)
+- [Connection entities](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_connection_entities_html) (entities that are used by {% include product %} internally to create relationships between entities). Connection Entities typically include `Connection` in their name.
+
+## When do entity lifecycle events occur?
+
+{% include product %} supports subscriptions to Entity lifecycle events when *Created, Updated, Deleted and Revived.*
+
+- **Create events:** generates when a new entity has been created from the Web U, or from an API request 
+- **Update events:** generates when any field is updated on an entity after initial creation. When subscribed to an update lifecycle event, A Webhook delivery will occur for any update operation on a field *after initial creation*. **A Webhook delivery will not occur when subscribed to a field update for the initial creation operation of that entity**
+- **Delete events:** generates when an entity is logically deleted (moved to the trash)
+- **Revive events:** generates when an entity is logically revived (restored from the trash)
+
 ## Creating a Webhook
 
-### Creating a Webhook from the Wehooks Page
+### Creating a Webhook from the Webhooks Page
 
 To get started creating a webhook, go to the **Webhooks** page.
 
@@ -47,7 +119,7 @@ Next, fill out the information required to create your new webhook.
 
 ### Creating a Webhook from an Event Log
 
-While on an Event Log  Entries Page, right-click on an Event Log Entry record and select **Create Webhook from event**.  
+While on an Event Log Entries Page, right-click on an Event Log Entry record and select **Create Webhook from event**. 
 
 ![Create Webhook Event Log](./images/webhooks/create_webhook_from_event_log_01.png)
 
@@ -226,14 +298,28 @@ Process time is recorded for each delivery and can be viewed in the Response det
 
 #### Throttling
 
+{% include product %}'s delivery infrastructure is optimized to deliver a large number of customer Webhooks and has a number of mechanisms in place to ensure optimal performance and reliability for all our customers. When a Webhook delivery is made, we examine the time that it took for the endpoint to respond. This metric, along with information about the volume of deliveries being processed, is combined to determine whether your Webhook endpoint is performing at a sustainable rate.
+
 Your consumer response times to deliveries will impact webhooks throughput for your site.
 
-Each site is allowed 1 minute of response time per minute. So if all configured consumer endpoints for a site take the full 6 seconds to respond, webhooks deliveries for that site will be throttled to 10 per a minute.
+Each site is allowed 1 minute of response time per minute. If all configured consumer endpoints for a site take the full 6 seconds to respond, webhooks deliveries for that site will be throttled to 10 per a minute.
 
 When a high rate of overall throughput is needed, consumer endpoints should be designed according to the following model:
  1. Receive the request
  2. Spawn another process/thread to handle it the way you want
  3. Answer an acknowledging 200 immediately
+
+Factors that may contribute to poor performance include:
+- A poorly configured or under-resourced Webhook consumer endpoint
+- Delays in processing the delivery before sending a response
+
+#### Bursts
+
+If your {% include product %} site is being throttled as a result of short bursts of heavy activity, it will return to normal throughput once the burst of event activity has subsided. The [performance indicators](#performance) will provide insight into which of your configured endpoints are not performing well.
+
+#### Webhooks and geographic considerations
+
+The {% include product %} Webhook delivery infrastructure is hosted in the AWS US-East (Oregon) region. Optimization for delivery times may be possible by hosting your webhook endpint in a location closer to US-East.
 
 #### Status codes
 
@@ -241,7 +327,7 @@ When a high rate of overall throughput is needed, consumer endpoints should be d
 |--------|:----:|:-----------:|
 | Success | < 400 | The delivery was received and processed successfully. |
 | Error | >= 400 | The delivery was received but was not processed successfully. |
-| Redirect | 3xx | The delivery was received, but should be redirected to another URL. |
+| Redirect | 3xx | The delivery was received but should be redirected to another URL. |
 
 ## Performance
 
@@ -261,22 +347,22 @@ When a Webhook impacted by performance is selected, more information about the i
 
 **Slow Response**
 - Issue: 
-  - This occurs when the average time to receive a response is > 500ms, impacting the Wehook to respond slowly
+  - This occurs when the average time to receive a response is > 500ms, impacting the Webhook to respond slowly
 - Solution:
   - You will need to optimize your infrastructure since individual event processing has exceeded the 500ms threshold for some events.
 
 **Heavy Load**
 - Issue:
-  - This occurs when the ratio of time taken to process / event time span (for a set of deliveries) is >10%), impacting the Wehook to consume over 10% of your allocated bandwidth
+  - This occurs when the ratio of time taken to process / event time span (for a set of deliveries) is >10%), impacting the Webhook to consume over 10% of your allocated bandwidth
 - Solution:
-  - You will need to optimize your infrastructure since the number of events being generated is high relative to the the number of events being processed.
+  - You will need to optimize your infrastructure since the number of events being generated is high relative to the number of events being processed.
 
 **Very Heavy Load**
 - Issue:
   - This occurs when the ratio of time taken to process / event time span (for a set of deliveries) is >50%
   - This webhook consumes over 50% of your allocated bandwidth
 - Solution: 
-  - You will need to optimize your infrastructure since the number of events being generated is very high relative to the the number of events being processed and [throttling will initiate](#throttling) when you consume over 100% of your allotted processing bandwidth.
+  - You will need to optimize your infrastructure since the number of events being generated is very high relative to the number of events being processed and [throttling will initiate](#throttling) when you consume over 100% of your allotted processing bandwidth.
 
 **Note:** 
 
@@ -318,3 +404,4 @@ We recommend [webhook.site](https://webhook.site). It provides a unique URL that
 The webhook.site service is aggressively rate limited. This means that it is easy to end up in a situation where some deliveries are rejected, resulting in unstable or failed webhooks. When testing, we recommend that you use a known, controllable project environment rather than live data in production.
 
 {% include warning title="Production data" content="It is not good to send production event data to publicly available, third party web services! We recommend using test data only when using services like webhook.site to test webhooks." %}
+
