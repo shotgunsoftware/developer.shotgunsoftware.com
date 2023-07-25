@@ -319,7 +319,7 @@ If your {% include product %} site is being throttled as a result of short burst
 
 #### Webhooks and geographic considerations
 
-The default {% include product %} Webhook delivery infrastructure is hosted in the AWS US-East (Oregon) region. Optimization for delivery times may be possible when [configuring your site to a location that is remote from this region](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_storage_location_html). 
+The {% include product %} Webhook delivery infrastructure is hosted in the AWS US-East (Oregon) region. Optimization for delivery times may be possible by hosting your webhook endpint in a location closer to US-East.
 
 #### Status codes
 
