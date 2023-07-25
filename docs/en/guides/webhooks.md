@@ -231,7 +231,7 @@ Deliveries can be expanded to show detailed information about the request sent t
 
 The payload sent to the webhook's URL contains information describing the event that occurred in {% include product %} and who triggered it. It is provided in JSON format.
 
-{% include warning title="Payload size" content="The maximum size of a delivery's payload is 1 megabyte. Any event triggered in {% include product %} that would result in a payload size larger than 1 megabyte will have its `new_value` and `old_value` keys removed, and a `warning` key added that contains a message explaining what happened, why, and how to retrieve the entire event log entry from ShotGrid." %}
+{% include warning title="Payload size" content="The maximum size of a delivery's payload is 1 megabyte. Any event triggered in ShotGrid that would result in a payload size larger than 1 megabyte will have its `new_value` and `old_value` keys removed, and a `warning` key added that contains a message explaining what happened, why, and how to retrieve the entire event log entry from ShotGrid." %}
 
 ##### Example payload
 
