@@ -319,7 +319,7 @@ If your {% include product %} site is being throttled as a result of short burst
 
 #### Webhooks and geographic considerations
 
-The {% include product %} Webhook delivery infrastructure is hosted in the AWS US-East (Oregon) region. Optimization for delivery times may be possible by hosting your webhook endpint in a location closer to US-East.
+The {% include product %} Webhook delivery infrastructure is hosted in the AWS US-East (Oregon) region. Optimization for delivery times may be possible by hosting your webhook endpint in that general location.
 
 #### Status codes
 
