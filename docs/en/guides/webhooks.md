@@ -31,12 +31,12 @@ Webhooks and the [{% include product %} event daemon](https://github.com/shotgun
 
 Webhooks may be created for Entities that are *in use* for the SG site. {% include product %} supports Webhooks for two broad event groups:
 
-1. **Entity type lifecycle events**  
-  - Events that are created whenever an Entity is created, revived, updated or deleted.
-  - The Entity options for Entity Lifecycle Events are limited to those that are available via API calls. 
-2. **Custom events**
-  - Events that are typically not related to the lifecycle of an entity, but which are created when an event occurs in the {% include product %} system. 
-  - _Example: when a user logs in, logs out, or a user performs a data Import or triggers an Action Menu Item._
+**1. Entity type lifecycle events**  
+- Events that are created whenever an Entity is created, revived, updated or deleted.
+- The Entity options for Entity Lifecycle Events are limited to those that are available via API calls. 
+**2. Custom events**
+- Events that are typically not related to the lifecycle of an entity, but which are created when an event occurs in the {% include product %} system. 
+- _Example: when a user logs in, logs out, or a user performs a data Import or triggers an Action Menu Item._
 
 You may retrieve the full list of the Entities available for API access using either the {% include product %} [Python API](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.schema_entity_read) or [Rest API](https://developer.shotgridsoftware.com/rest-api/#shotgrid-rest-api-Access-Schema-data).
 
@@ -85,7 +85,7 @@ You may retrieve the full list of the Entities available for API access using ei
 
 ### Excluded events
 
-Webhooks are **not** available for some Entities returned by API schema queries (reference [Python API](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.schema_entity_read), [Rest API](https://developer.shotgridsoftware.com/rest-api/#shotgrid-rest-api-Access-Schema-data). Exclusions include: 
+Webhooks are **not** available for some Entities returned by API schema queries (reference [Python API](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.schema_entity_read), [Rest API](https://developer.shotgridsoftware.com/rest-api/#shotgrid-rest-api-Access-Schema-data)). Exclusions include: 
 - API Users
 - [Event Log Entries](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_event_logs_html)
 - [Connection entities](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_connection_entities_html) (entities that are used by {% include product %} internally to create relationships between entities). Connection Entities typically include `Connection` in their name.
