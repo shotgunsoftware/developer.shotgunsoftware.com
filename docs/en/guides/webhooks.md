@@ -34,6 +34,7 @@ Webhooks may be created for Entities that are *in use* for the SG site. {% inclu
 **1. Entity type lifecycle events**  
 - Events that are created whenever an Entity is created, revived, updated or deleted.
 - The Entity options for Entity Lifecycle Events are limited to those that are available via API calls. 
+
 **2. Custom events**
 - Events that are typically not related to the lifecycle of an entity, but which are created when an event occurs in the {% include product %} system. 
 - _Example: when a user logs in, logs out, or a user performs a data Import or triggers an Action Menu Item._
