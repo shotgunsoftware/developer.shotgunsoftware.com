@@ -1,4 +1,4 @@
-q2---
+---
 layout: default
 title: Webhooks
 pagename: shotgun-webhooks
@@ -29,15 +29,19 @@ Webhooks and the [{% include product %} event daemon](https://github.com/shotgun
 
 ## Which events are available for Webhook subscriptions?
 
-ShotGrid supports Webhooks for two broad event groups. **Entity type lifecycle events**  and **custom events**. *Entity lifecycle* events are created whenever an Entity is created, revived, updated or deleted. *Custom events* are those events that are typically not related to the lifecycle of an entity but which are created when an event occurs in the ShotGrid system, for example when a user logs in, logs out, or a user performs a data Import or triggers an Action Menu Item. 
+Webhooks may be created for Entities that are *in use* for the SG site. {% include product %} supports Webhooks for two broad event groups:
 
-The Entity options for Entity Lifecycle Events are limited to those that are available via API calls. Webhooks may be created for Entities that are *in use* for the SG site.
+1. **Entity type lifecycle events**  
+  - Events that are created whenever an Entity is created, revived, updated or deleted.
+  - The Entity options for Entity Lifecycle Events are limited to those that are available via API calls. 
+2. **Custom events**
+  - Events that are typically not related to the lifecycle of an entity, but which are created when an event occurs in the {% include product %} system. 
+  - _Example: when a user logs in, logs out, or a user performs a data Import or triggers an Action Menu Item._
 
-You may retrieve the full list of the Entities available for API access using either the Shotgun  [Python API](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.schema_entity_read) or [Rest API](https://developer.shotgridsoftware.com/rest-api/#shotgrid-rest-api-Access-Schema-data).
+You may retrieve the full list of the Entities available for API access using either the {% include product %} [Python API](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.schema_entity_read) or [Rest API](https://developer.shotgridsoftware.com/rest-api/#shotgrid-rest-api-Access-Schema-data).
 
-Webhooks are not available for some Entities returned by the API schema queries above. **Excusions include**: *API Users, Event Log Entries and Connection entities* (those Entities that are used by ShotGrid internally to create relationships between Entities). Connection Entities typically include **Connection** in their name.
+### Custom events available for webhook subscriptions
 
-**Custom events available for webhook subscriptions**
 - ClientUser_FailedLogin
 - ClientUser_Login
 - ClientUser_Logout
@@ -79,16 +83,21 @@ Webhooks are not available for some Entities returned by the API schema queries 
 - Shotgun_Webhook_Deleted
 - Shotgun_Webhook_Updated
 
-## When do Entity Life Cycle Events Occur
-ShotGrid supports subscriptions to Entity life-cycle events when *Created, Updated, Deleted and Revived.*
+### Excluded events
 
-**Create events:** created when a new entity has been created from the Web UI, or from an API request. 
+Webhooks are **not** available for some Entities returned by API schema queries (reference [Python API](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.schema_entity_read), [Rest API](https://developer.shotgridsoftware.com/rest-api/#shotgrid-rest-api-Access-Schema-data). Exclusions include: 
+- API Users
+- [Event Log Entries](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_event_logs_html)
+- [Connection entities](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_connection_entities_html) (entities that are used by {% include product %} internally to create relationships between entities). Connection Entities typically include `Connection` in their name.
 
-**Update events:** created when any field is updated on an entity after initial creation. When subscribed to an update lifecycle event, A Webhook delivery will occur for any update operation on a field *after initial creation*. **A Webhook delivery will not occur when subscribed to a field update for the initial creation operation of that entity.**
+## When do entity lifecycle events occur?
 
-**Delete events:** created when an entity is logically deleted (moved to the trash)
+{% include product %} supports subscriptions to Entity lifecycle events when *Created, Updated, Deleted and Revived.*
 
-**Revive events:** created when an entity is logically revived (restored from the trash)
+- **Create events:** generates when a new entity has been created from the Web U, or from an API request 
+- **Update events:** generates when any field is updated on an entity after initial creation. When subscribed to an update lifecycle event, A Webhook delivery will occur for any update operation on a field *after initial creation*. **A Webhook delivery will not occur when subscribed to a field update for the initial creation operation of that entity**
+- **Delete events:** generates when an entity is logically deleted (moved to the trash)
+- **Revive events:** generates when an entity is logically revived (restored from the trash)
 
 ## Creating a Webhook
 
@@ -222,7 +231,7 @@ Deliveries can be expanded to show detailed information about the request sent t
 
 The payload sent to the webhook's URL contains information describing the event that occurred in {% include product %} and who triggered it. It is provided in JSON format.
 
-{% include warning title="Payload size" content="The maximum size of a delivery's payload is 1 megabyte. Any event triggered in ShotGrid that would result in a payload size larger than 1 megabyte will have its `new_value` and `old_value` keys removed, and a `warning` key added that contains a message explaining what happened, why, and how to retrieve the entire event log entry from ShotGrid." %}
+{% include warning title="Payload size" content="The maximum size of a delivery's payload is 1 megabyte. Any event triggered in {% include product %} that would result in a payload size larger than 1 megabyte will have its `new_value` and `old_value` keys removed, and a `warning` key added that contains a message explaining what happened, why, and how to retrieve the entire event log entry from ShotGrid." %}
 
 ##### Example payload
 
@@ -289,7 +298,7 @@ Process time is recorded for each delivery and can be viewed in the Response det
 
 #### Throttling
 
-ShotGrid's delivery infrastructure is optimized to deliver a large number of customer Webhooks and has a number of mechanisms in place to ensure timeliness and reliability for all our customers. When a Webhook delivery is made, we examine the time that it took for the endpoint to respond. This metric along with information about the volume of deliveries being processed is combined to determine whether your Webhook endpoint is performing at a sustainable rate.
+{% include product %}'s delivery infrastructure is optimized to deliver a large number of customer Webhooks and has a number of mechanisms in place to ensure optimal performance and reliability for all our customers. When a Webhook delivery is made, we examine the time that it took for the endpoint to respond. This metric, along with information about the volume of deliveries being processed, is combined to determine whether your Webhook endpoint is performing at a sustainable rate.
 
 Your consumer response times to deliveries will impact webhooks throughput for your site.
 
@@ -300,15 +309,17 @@ When a high rate of overall throughput is needed, consumer endpoints should be d
  2. Spawn another process/thread to handle it the way you want
  3. Answer an acknowledging 200 immediately
 
-Factors that may contribute.
+Factors that may contribute to poor performance include:
 - A poorly configured or under-resourced Webhook consumer endpoint
 - Delays in processing the delivery before sending a response
 
 #### Bursts
-if your ShotGrid site is being throttled as a result of short bursts of heavy activity, it will return to normal throughput once the burst of event activity has subsided. Our performance indicators will provide insight into which of your configured endpoints are not performing well.
+
+If your {% include product %} site is being throttled as a result of short bursts of heavy activity, it will return to normal throughput once the burst of event activity has subsided. The [performance indicators](#performance) will provide insight into which of your configured endpoints are not performing well.
 
 #### Webhooks and geographic considerations
-The ShotGrid Webhook delivery infrastructure is hosted in the AWS US-East (Oregon) region.  Optimization for delivery times may be possible when setting up your site in a location that is remote from this region. 
+
+The default {% include product %} Webhook delivery infrastructure is hosted in the AWS US-East (Oregon) region.  Optimization for delivery times may be possible when configuring your site to a location that is remote from this region. 
 
 #### Status codes
 
