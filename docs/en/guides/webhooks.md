@@ -119,7 +119,7 @@ Next, fill out the information required to create your new webhook.
 
 ### Creating a Webhook from an Event Log
 
-While on an Event Log Entries Page, right-click on an Event Log Entry record and select **Create Webhook from event**.  
+While on an Event Log Entries Page, right-click on an Event Log Entry record and select **Create Webhook from event**. 
 
 ![Create Webhook Event Log](./images/webhooks/create_webhook_from_event_log_01.png)
 
@@ -319,7 +319,7 @@ If your {% include product %} site is being throttled as a result of short burst
 
 #### Webhooks and geographic considerations
 
-The default {% include product %} Webhook delivery infrastructure is hosted in the AWS US-East (Oregon) region.  Optimization for delivery times may be possible when configuring your site to a location that is remote from this region. 
+The default {% include product %} Webhook delivery infrastructure is hosted in the AWS US-East (Oregon) region. Optimization for delivery times may be possible when [configuring your site to a location that is remote from this region](https://help.autodesk.com/view/SGSUB/ENU/?guid=SG_Administrator_ar_data_management_ar_storage_location_html). 
 
 #### Status codes
 
