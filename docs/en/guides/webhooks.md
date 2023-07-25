@@ -101,7 +101,7 @@ Webhooks are **not** available for some Entities returned by API schema queries 
 
 ## Creating a Webhook
 
-### Creating a Webhook from the Wehooks Page
+### Creating a Webhook from the Webhooks Page
 
 To get started creating a webhook, go to the **Webhooks** page.
 
@@ -119,7 +119,7 @@ Next, fill out the information required to create your new webhook.
 
 ### Creating a Webhook from an Event Log
 
-While on an Event Log  Entries Page, right-click on an Event Log Entry record and select **Create Webhook from event**.  
+While on an Event Log Entries Page, right-click on an Event Log Entry record and select **Create Webhook from event**.  
 
 ![Create Webhook Event Log](./images/webhooks/create_webhook_from_event_log_01.png)
 
@@ -302,7 +302,7 @@ Process time is recorded for each delivery and can be viewed in the Response det
 
 Your consumer response times to deliveries will impact webhooks throughput for your site.
 
-Each site is allowed 1 minute of response time per minute. So if all configured consumer endpoints for a site take the full 6 seconds to respond, webhooks deliveries for that site will be throttled to 10 per a minute.
+Each site is allowed 1 minute of response time per minute. If all configured consumer endpoints for a site take the full 6 seconds to respond, webhooks deliveries for that site will be throttled to 10 per a minute.
 
 When a high rate of overall throughput is needed, consumer endpoints should be designed according to the following model:
  1. Receive the request
@@ -327,7 +327,7 @@ The default {% include product %} Webhook delivery infrastructure is hosted in t
 |--------|:----:|:-----------:|
 | Success | < 400 | The delivery was received and processed successfully. |
 | Error | >= 400 | The delivery was received but was not processed successfully. |
-| Redirect | 3xx | The delivery was received, but should be redirected to another URL. |
+| Redirect | 3xx | The delivery was received but should be redirected to another URL. |
 
 ## Performance
 
@@ -347,22 +347,22 @@ When a Webhook impacted by performance is selected, more information about the i
 
 **Slow Response**
 - Issue: 
-  - This occurs when the average time to receive a response is > 500ms, impacting the Wehook to respond slowly
+  - This occurs when the average time to receive a response is > 500ms, impacting the Webhook to respond slowly
 - Solution:
   - You will need to optimize your infrastructure since individual event processing has exceeded the 500ms threshold for some events.
 
 **Heavy Load**
 - Issue:
-  - This occurs when the ratio of time taken to process / event time span (for a set of deliveries) is >10%), impacting the Wehook to consume over 10% of your allocated bandwidth
+  - This occurs when the ratio of time taken to process / event time span (for a set of deliveries) is >10%), impacting the Webhook to consume over 10% of your allocated bandwidth
 - Solution:
-  - You will need to optimize your infrastructure since the number of events being generated is high relative to the the number of events being processed.
+  - You will need to optimize your infrastructure since the number of events being generated is high relative to the number of events being processed.
 
 **Very Heavy Load**
 - Issue:
   - This occurs when the ratio of time taken to process / event time span (for a set of deliveries) is >50%
   - This webhook consumes over 50% of your allocated bandwidth
 - Solution: 
-  - You will need to optimize your infrastructure since the number of events being generated is very high relative to the the number of events being processed and [throttling will initiate](#throttling) when you consume over 100% of your allotted processing bandwidth.
+  - You will need to optimize your infrastructure since the number of events being generated is very high relative to the number of events being processed and [throttling will initiate](#throttling) when you consume over 100% of your allotted processing bandwidth.
 
 **Note:** 
 
