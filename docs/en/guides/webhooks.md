@@ -116,7 +116,7 @@ Then, select **Create Webhook**.
 
 Next, fill out the information required to create your new webhook.
 
-![Create Webhook Dialog](./images/webhooks/create_webhook_dialog_v3.png)
+![Create Webhook Dialog](./images/webhooks/create_webhook_dialog_v2.png)
 
 ### Creating a Webhook from an Event Log
 
