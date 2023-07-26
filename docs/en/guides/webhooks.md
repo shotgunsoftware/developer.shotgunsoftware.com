@@ -9,9 +9,54 @@ lang: en
 
 Webhooks allow a service you control to be notified of events that occur in {% include product %}. When you create a webhook, you specify the type of event you are interested in and tell {% include product %} what URL to send data to when it is triggered. Once the relevant event happens in {% include product %}, a payload of data describing the event will be sent to the webhook’s URL. This allows you to build tight integrations with {% include product %} and automate portions of your workflow.
 
-## What are some examples of how to use webhooks?
+## In this topic:
 
-There are numerous use cases for webhooks. A few that we think are compelling are outlined in this document, but their uses are by no means limited to these few examples.
+- [What are some examples of how to use Webhooks?](#what-are-some-examples-of-how-to-use-webhooks)
+  - [Create a directory structure on disk when an entity is created](#create-a-directory-structure-on-disk-when-an-entity-is-created)
+  - [Automation of status management](#automation-of-status-management)
+- [When should Webhooks be used instead of the ShotGrid event daemon?](#when-should-webhooks-be-used-instead-of-the-shotgrid-event-daemon)
+- [Which events are available for Webhook subscriptions?](#which-events-are-available-for-webhook-subscriptions)
+  - [Custom events available for Webhook subscriptions](#custom-events-available-for-webhook-subscriptions)
+  - [Excluded events](#excluded-events)
+- [When do entity lifecycle events occur?](#when-do-entity-lifecycle-events-occur)
+- [Creating a Webhook](#creating-a-webhook)
+  - [Creating a Webhook from the Webhooks Page](#creating-a-webhook-from-the-webhooks-page)
+  - [Creating a Webhook from an Event Log](#creating-a-webhook-from-an-event-log)
+  - [Secret token](#secret-token)
+    - [Header format](#header-format)
+    - [Why use a secret token?](#why-use-a-secret-token)
+    - [Signature verification](#signature-verification)
+  - [Validate SSL certificate](#validate-ssl-certificate)
+  - [Deliver in Batched Format](#deliver-in-batched-format)
+  - [Notify when unstable](#notify-when-unstable)
+  - [Filtering by Project and Entity](#filtering-by-project-and-entity)
+    - [Entity lifecycle Events](#entity-lifecycle-events)
+    - [Custom Events](#custom-events)
+- [Webhook status](#webhook-status)
+- [Deliveries](#deliveries)
+  - [Delivery status](#delivery-status)
+  - [Delivery details](#delivery-details)
+    - [Request Payload](#request-payload)
+      - [Example payload](#example-payload)
+      - [Session UUID](#session-uuid)
+    - [Response from the Webhook](#response-from-the-webhook)
+  - [Responding to deliveries](#responding-to-deliveries)
+    - **[Throttling](#throttling)**
+    - [Bursts](#bursts)
+    - [Webhooks and geographic considerations](#webhooks-and-geographic-considerations)
+    - [Status codes](#status-codes)
+- [Performance](#performance)
+  - [Response Times](#response-times)
+    - [Slow responses and heavy loads](#slow-responses-and-heavy-loads)
+- [Acknowledgements](#acknowledgements)
+  - [Example headers](#example-headers)
+  - [What are acknowledgements used for?](#what-are-acknowledgements-used-for)
+- [Testing Webhooks](#testing-webhooks)
+  - [Using webhook.site](#using-webhooksite)
+
+## What are some examples of how to use Webhooks?
+
+There are numerous use cases for Webhooks. A few that we think are compelling are outlined in this document, but their uses are by no means limited to these few examples.
 
 ### Create a directory structure on disk when an entity is created
 
@@ -23,9 +68,9 @@ When your animation team is finished with their work, why not go ahead and chang
 
 Another great example of how to automate status management would be to trigger a status change on a `Task` entity when a new `Note` is created. This is a good way to indicate to the artist and production teams that a supervisor has requested changes or fixes to the current work after a review session.
 
-## When should webhooks be used instead of the {% include product %} event daemon?
+## When should Webhooks be used instead of the ShotGrid event daemon?
 
-Webhooks and the [{% include product %} event daemon](https://github.com/shotgunsoftware/shotgunEvents/wiki) offer similar features, but with a few key differences. The event daemon requires that you run, monitor, and maintain your own service. All of your code must be written in Python, and it allows you to initiate your own connections to {% include product %}. Webhooks, in contrast, answer connections and can be written in any programming language. They can be hosted in a serverless environment, such as [AWS Lambda](https://aws.amazon.com/lambda/), or can trigger any of the automation platforms available online, such as [Zapier](https://zapier.com) and [IFTTT](https://ifttt.com). If your use case works with webhooks, it should be the preferred solution.
+Webhooks and the [{% include product %} event daemon](https://github.com/shotgunsoftware/shotgunEvents/wiki) offer similar features, but with a few key differences. The event daemon requires that you run, monitor, and maintain your own service. All of your code must be written in Python, and it allows you to initiate your own connections to {% include product %}. Webhooks, in contrast, answer connections and can be written in any programming language. They can be hosted in a serverless environment, such as [AWS Lambda](https://aws.amazon.com/lambda/), or can trigger any of the automation platforms available online, such as [Zapier](https://zapier.com) and [IFTTT](https://ifttt.com). If your use case works with Webhooks, it should be the preferred solution.
 
 ## Which events are available for Webhook subscriptions?
 
@@ -41,7 +86,7 @@ Webhooks may be created for Entities that are *in use* for the SG site. {% inclu
 
 You may retrieve the full list of the Entities available for API access using either the {% include product %} [Python API](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.schema_entity_read) or [Rest API](https://developer.shotgridsoftware.com/rest-api/#shotgrid-rest-api-Access-Schema-data).
 
-### Custom events available for webhook subscriptions
+### Custom events available for Webhook subscriptions
 
 - ClientUser_FailedLogin
 - ClientUser_Login
@@ -212,7 +257,7 @@ A webhook can have one of several different statuses, indicating its health and 
 
 ## Deliveries
 
-Selecting a webhook from the webhooks list will show all of the deliveries that have been made for that webhook dating back as far as seven days.
+Selecting a webhook from the Webhooks list will show all of the deliveries that have been made for that webhook dating back as far as seven days.
 
 {% include info title="Note" content="Delivery logs older than seven days are removed and are not recoverable." %}
 
@@ -301,9 +346,9 @@ Process time is recorded for each delivery and can be viewed in the Response det
 
 {% include product %}'s delivery infrastructure is optimized to deliver a large number of customer Webhooks and has a number of mechanisms in place to ensure optimal performance and reliability for all our customers. When a Webhook delivery is made, we examine the time that it took for the endpoint to respond. This metric, along with information about the volume of deliveries being processed, is combined to determine whether your Webhook endpoint is performing at a sustainable rate.
 
-Your consumer response times to deliveries will impact webhooks throughput for your site.
+Your consumer response times to deliveries will impact Webhooks throughput for your site.
 
-Each site is allowed 1 minute of response time per minute. If all configured consumer endpoints for a site take the full 6 seconds to respond, webhooks deliveries for that site will be throttled to 10 per a minute.
+Each site is allowed 1 minute of response time per minute. If all configured consumer endpoints for a site take the full 6 seconds to respond, Webhooks deliveries for that site will be throttled to 10 per a minute.
 
 When a high rate of overall throughput is needed, consumer endpoints should be designed according to the following model:
  1. Receive the request
@@ -367,13 +412,13 @@ When a Webhook impacted by performance is selected, more information about the i
 
 **Note:** 
 
-### Acknowledgements
+## Acknowledgements
 
 A delivery can be updated to include an acknowledgement. When a delivery is made, headers are provided as part of the request. Included in those headers is the ID of the delivery record, stored in the `x-sg-delivery-id` key. This ID can be used to update the delivery record to include an acknowledgement using [the {% include product %} REST API](https://developer.shotgridsoftware.com/rest-api).
 
 {% include warning title="Acknowledgement size" content="The maximum size allowed for an acknowledgement is 4 kilobytes." %}
 
-#### Example headers
+### Example headers
 
 ```json
 {
@@ -388,7 +433,7 @@ A delivery can be updated to include an acknowledgement. When a delivery is made
 }
 ```
 
-#### What are acknowledgements used for?
+### What are acknowledgements used for?
 
 Acknowledgements allow for out of band, detailed reporting of success or failure to process a delivery that was successfully received by your webhook's URL. This creates a separation between the status of receiving the delivery from {% include product %} and the success or failure to process the event associated with that delivery. As a result, successfully-delivered events can contain additional information useful for debugging purposes. 
 
@@ -396,13 +441,13 @@ A good example would be a webhook triggered on the creation of an `Asset` entity
 
 ## Testing Webhooks
 
-You can use any of the freely available webhook URL generators online for testing purposes. These services are specifically intended to be used for testing webhooks and other types of HTTP requests. This is a great way to get started learning about webhooks without needing to set up any infrastructure on your own network.
+You can use any of the freely available webhook URL generators online for testing purposes. These services are specifically intended to be used for testing Webhooks and other types of HTTP requests. This is a great way to get started learning about Webhooks without needing to set up any infrastructure on your own network.
 
 ### Using webhook.site
 
 We recommend [webhook.site](https://webhook.site). It provides a unique URL that can be copied and pasted into a webhook and will show you deliveries made to that address in real time. The page can be customized to respond to deliveries with a specific status code and body, which means you can test delivery success and failure. 
 
-The webhook.site service is aggressively rate limited. This means that it is easy to end up in a situation where some deliveries are rejected, resulting in unstable or failed webhooks. When testing, we recommend that you use a known, controllable project environment rather than live data in production.
+The webhook.site service is aggressively rate limited. This means that it is easy to end up in a situation where some deliveries are rejected, resulting in unstable or failed Webhooks. When testing, we recommend that you use a known, controllable project environment rather than live data in production.
 
-{% include warning title="Production data" content="It is not good to send production event data to publicly available, third party web services! We recommend using test data only when using services like webhook.site to test webhooks." %}
+{% include warning title="Production data" content="It is not good to send production event data to publicly available, third party web services! We recommend using test data only when using services like webhook.site to test Webhooks." %}
 
