@@ -9,7 +9,7 @@ lang: en
 
 Webhooks allow a service you control to be notified of events that occur in {% include product %}. When you create a webhook, you specify the type of event you are interested in and tell {% include product %} what URL to send data to when it is triggered. Once the relevant event happens in {% include product %}, a payload of data describing the event will be sent to the webhook’s URL. This allows you to build tight integrations with {% include product %} and automate portions of your workflow.
 
-## ![asterisk](./images/webhooks/asterisk.png) Contents
+## In this topic:
 
 - [What are some examples of how to use webhooks?](#what-are-some-examples-of-how-to-use-webhooks)
   - [Create a directory structure on disk when an entity is created](#create-a-directory-structure-on-disk-when-an-entity-is-created)
