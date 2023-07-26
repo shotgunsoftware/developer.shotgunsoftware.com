@@ -11,10 +11,10 @@ Webhooks allow a service you control to be notified of events that occur in {% i
 
 ## In this topic:
 
-- [What are some examples of how to use webhooks?](#what-are-some-examples-of-how-to-use-webhooks)
+- [What are some examples of how to use Webhooks?](#what-are-some-examples-of-how-to-use-webhooks)
   - [Create a directory structure on disk when an entity is created](#create-a-directory-structure-on-disk-when-an-entity-is-created)
   - [Automation of status management](#automation-of-status-management)
-- [When should webhooks be used instead of the ShotGrid event daemon?](#when-should-webhooks-be-used-instead-of-the-shotgrid-event-daemon)
+- [When should Webhooks be used instead of the ShotGrid event daemon?](#when-should-webhooks-be-used-instead-of-the-shotgrid-event-daemon)
 - [Which events are available for Webhook subscriptions?](#which-events-are-available-for-webhook-subscriptions)
   - [Custom events available for Webhook subscriptions](#custom-events-available-for-webhook-subscriptions)
   - [Excluded events](#excluded-events)
