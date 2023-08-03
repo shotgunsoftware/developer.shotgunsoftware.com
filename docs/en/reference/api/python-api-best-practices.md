@@ -15,6 +15,7 @@ Below is a list of best practices when using the {% include product %} Python AP
 1.  Don’t request any fields you don’t need for your script. Including additional fields can add unnecessary overhead to your request.
 2.  Make your filters as specific as possible. Wherever possible, filtering in the API query rather than parsing it after you have the results back is better.
 3.  Exact match filters will perform better than partial match filters. For example, using “is” will perform better than “contains”.
+4.  When requesting linked entities, if you only need the name or id of the linked entity, only request the linked field, as these fields are provided by default. Don't for example, request `field.EntityType.id` as this will take longer. If you need fields on the linked entities that are not provided by default, i.e not id or name, then it is appropriate to use the dot notation to access them. 
 
 ## Control and debugging
 
