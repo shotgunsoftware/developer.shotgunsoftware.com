@@ -5,6 +5,8 @@
 
 # [developer.shotgridsoftware.com](https://developer.shotgridsoftware.com/)
 
+> :warning: Our developer.shotgridsoftware.com documentation has moved and this site will soon be discontinued. [Visit our new developer documentation here.](https://help.autodesk.com/view/SGDEV/ENU/)
+
 Welcome to the source repository for [developer.shotgridsoftware.com](https://developer.shotgridsoftware.com/). This repository holds the markdown source and configuration used to generate the {% include product %} developer site.
 
 ## How does it work?
