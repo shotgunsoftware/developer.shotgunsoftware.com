@@ -54,12 +54,20 @@ We strongly recommend you test media access and media transcoding in your site r
                     "aws:SourceIp": [
                         "34.200.155.69/32",
                         "34.224.232.103/32",
-                        "34.202.127.170/32"
+                        "34.202.127.170/32",
+                        "34.195.16.11/32",
+                        "3.234.125.244/32",
+                        "3.234.133.244/32",
+                        "100.26.115.40/32",
+                        "3.224.231.216/32",
+                        "54.145.164.228/32"
                     ]
                 },
                 "StringNotEquals": {
                     "aws:sourceVpc": [
                         "vpc-2fd62a56",
+                        "vpc-098e0ff163debc966",
+                        "vpc-09441e47c87a28dd4",
                         "your_vpc_id"
                     ]
                 }
