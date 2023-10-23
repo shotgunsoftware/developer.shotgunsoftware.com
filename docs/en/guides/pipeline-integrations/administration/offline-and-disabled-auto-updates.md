@@ -7,6 +7,8 @@ lang: en
 
 # Offline usage and turning off auto updates
 
+**Important:** This topic applies only to locally installed instances of {% include product %}. Local installations of {% include product %} are no longer offered. This documentation is intended only for those with existing instances of Shotgun Enterprise Docker. [Click here](https://www.autodesk.com/products/shotgrid/overview?term=1-YEAR&support=null) for a list of our current offerings.
+
 - [Auto updates](#auto-updates)
     - [What parts auto update?](#what-parts-auto-update)
     - [What doesn't auto update?](#what-doesnt-auto-update)
